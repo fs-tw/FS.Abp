@@ -1,0 +1,53 @@
+﻿{
+  "name": "FS.Common",
+  "displayName": "Common",
+  "efCoreConfigureMethodName": "FS.Common.EntityFrameworkCore:ConfigureCommon",
+  "nugetPackages": [
+    {
+      "name": "FS.Common.Domain.Shared",
+      "moduleClass": "FS.Common.CommonDomainSharedModule",
+      "target": 1
+    },
+    {
+      "name": "FS.Common.Domain",
+      "moduleClass": "FS.Common.CommonDomainModule",
+      "target": 2
+    },
+    {
+      "name": "FS.Common.Application.Contracts",
+      "moduleClass": "FS.Common.CommonApplicationContractsModule",
+      "target": 3
+    },
+    {
+      "name": "FS.Common.Application",
+      "moduleClass": "FS.Common.CommonApplicationModule",
+      "target": 4
+    },
+    {
+      "name": "FS.Common.EntityFrameworkCore",
+      "moduleClass": "FS.Common.EntityFrameworkCore.CommonEntityFrameworkCoreModule",
+      "target": 8
+    },
+    {
+      "name": "FS.Common.MongoDB",
+      "moduleClass": "FS.Common.MongoDB.CommonMongoDbModule",
+      "target": 9
+    },
+    {
+      "name": "FS.Common.HttpApi",
+      "moduleClass": "FS.Common.CommonHttpApiModule",
+      "target": 5
+    },
+    {
+      "name": "FS.Common.HttpApi.Client",
+      "moduleClass": "FS.Common.CommonHttpApiClientModule",
+      "target": 6
+    },
+    {
+      "name": "FS.Common.Web",
+      "moduleClass": "FS.Common.Web.CommonWebModule",
+      "target": 7
+    }
+  ],
+  "npmPackages": []
+}

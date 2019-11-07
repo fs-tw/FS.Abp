@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FS.Abp.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "new FS.DynForm -t fs-module -o E:\\works\\test\\FS.DynForm"
+    }
+  }
+}
