@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("FS.Abp.AutoMapper")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FS.Abp.Cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2")]
-[assembly: System.Reflection.AssemblyProductAttribute("FS.Abp.AutoMapper")]
-[assembly: System.Reflection.AssemblyTitleAttribute("FS.Abp.AutoMapper")]
+[assembly: System.Reflection.AssemblyProductAttribute("FS.Abp.Cli")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FS.Abp.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]
 
 // 由 MSBuild WriteCodeFragment 類別產生。

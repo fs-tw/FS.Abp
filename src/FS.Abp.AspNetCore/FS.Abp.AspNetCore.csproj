@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\..\common.props" />
+  <Import Project="..\..\..\abp\common.props" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace />
@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\abp\framework\src\Volo.Abp.AspNetCore.MultiTenancy\Volo.Abp.AspNetCore.MultiTenancy.csproj" />
+    <ProjectReference Include="..\..\..\abp\framework\src\Volo.Abp.AspNetCore.MultiTenancy\Volo.Abp.AspNetCore.MultiTenancy.csproj" />
     <ProjectReference Include="..\FS.Abp.AspNetCore.Authentication\FS.Abp.AspNetCore.Authentication.csproj" />
     <ProjectReference Include="..\FS.Abp.AspNetCore.SwaggerDoc\FS.Abp.AspNetCore.SwaggerDoc.csproj" />
   </ItemGroup>

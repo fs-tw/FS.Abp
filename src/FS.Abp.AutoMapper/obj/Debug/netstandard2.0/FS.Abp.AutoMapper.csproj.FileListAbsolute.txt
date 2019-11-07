@@ -14,3 +14,11 @@ C:\Works\test\1.0.2\fs.website\framework\src\FS.Abp.AutoMapper\obj\Debug\netstan
 C:\Works\test\1.0.2\fs.website\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.csproj.CopyComplete
 C:\Works\test\1.0.2\fs.website\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.dll
 C:\Works\test\1.0.2\fs.website\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.pdb
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.AssemblyInfoInputs.cache
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.AssemblyInfo.cs
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.dll
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\obj\Debug\netstandard2.0\FS.Abp.AutoMapper.pdb
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\bin\Debug\netstandard2.0\FS.Abp.AutoMapper.dll.config
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\bin\Debug\netstandard2.0\FS.Abp.AutoMapper.deps.json
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\bin\Debug\netstandard2.0\FS.Abp.AutoMapper.dll
+C:\Works\1.0.2\FS\framework\src\FS.Abp.AutoMapper\bin\Debug\netstandard2.0\FS.Abp.AutoMapper.pdb

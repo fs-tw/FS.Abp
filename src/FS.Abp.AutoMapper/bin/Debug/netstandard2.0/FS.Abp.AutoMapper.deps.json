@@ -7,9 +7,10 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "FS.Abp.AutoMapper/0.19.0.5": {
+      "FS.Abp.AutoMapper/1.0.2": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
+          "SourceLink.Create.CommandLine": "2.8.3",
           "Volo.Abp.AutoMapper": "1.0.2"
         },
         "runtime": {
@@ -355,6 +356,7 @@
           }
         }
       },
+      "SourceLink.Create.CommandLine/2.8.3": {},
       "System.Buffers/4.5.0": {
         "runtime": {
           "lib/netstandard2.0/System.Buffers.dll": {
@@ -711,7 +713,10 @@
           "Volo.Abp.ObjectMapping": "1.0.2"
         },
         "runtime": {
-          "Volo.Abp.AutoMapper.dll": {}
+          "lib/netstandard2.0/Volo.Abp.AutoMapper.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
         }
       },
       "Volo.Abp.Core/1.0.2": {
@@ -735,7 +740,10 @@
           "System.Runtime.Loader": "4.3.0"
         },
         "runtime": {
-          "Volo.Abp.Core.dll": {}
+          "lib/netstandard2.0/Volo.Abp.Core.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
         }
       },
       "Volo.Abp.ObjectMapping/1.0.2": {
@@ -743,13 +751,16 @@
           "Volo.Abp.Core": "1.0.2"
         },
         "runtime": {
-          "Volo.Abp.ObjectMapping.dll": {}
+          "lib/netstandard2.0/Volo.Abp.ObjectMapping.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
         }
       }
     }
   },
   "libraries": {
-    "FS.Abp.AutoMapper/0.19.0.5": {
+    "FS.Abp.AutoMapper/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -985,6 +996,13 @@
       "path": "nito.disposables/2.0.0",
       "hashPath": "nito.disposables.2.0.0.nupkg.sha512"
     },
+    "SourceLink.Create.CommandLine/2.8.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IG9yWuEwkGDC94Be8U7XC/YwzGPGUhH7cF2/AzN3DeyJwo9Epp0kiwT8UGNg1lNkH1mXyjOTS7oN0DZSqMmoBQ==",
+      "path": "sourcelink.create.commandline/2.8.3",
+      "hashPath": "sourcelink.create.commandline.2.8.3.nupkg.sha512"
+    },
     "System.Buffers/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -1210,19 +1228,25 @@
       "hashPath": "system.threading.tasks.extensions.4.5.2.nupkg.sha512"
     },
     "Volo.Abp.AutoMapper/1.0.2": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kSGemmOA+gk7BLn2hreGqiixKeF9uERqECZ7SEjLSFea/zzTryI5FX3cxO1vbP1zXS/fywN0dm1gyuhGTT/fYA==",
+      "path": "volo.abp.automapper/1.0.2",
+      "hashPath": "volo.abp.automapper.1.0.2.nupkg.sha512"
     },
     "Volo.Abp.Core/1.0.2": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4cwu94DvdIeVBUAS8wlY1YixwY9sHf7V1lyx9SvIkvpbici1kFITSgH544Vg4ZB+2psO4gs1/dFXiqkG65wLdg==",
+      "path": "volo.abp.core/1.0.2",
+      "hashPath": "volo.abp.core.1.0.2.nupkg.sha512"
     },
     "Volo.Abp.ObjectMapping/1.0.2": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oZLljm5ifQRZcGUzoNkVjpsaGTsD508yVtkamnuAeefCeAFJJIswhkbhmOTOvvBk6+5HK9Y4kESDlekEQMH3dA==",
+      "path": "volo.abp.objectmapping/1.0.2",
+      "hashPath": "volo.abp.objectmapping.1.0.2.nupkg.sha512"
     }
   }
 }
