@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Localization\AbpAccount\zh-Hant.json" />
+    <None Remove="Localization\AbpAccount\application.json" />
+    <None Remove="Localization\AbpAccount\domain.json" />
     <None Remove="Localization\AbpIdentity\zh-Hant.json" />
     <None Remove="Localization\AbpMultiTenancy\zh-Hant.json" />
     <None Remove="Localization\AbpPermissionManagement\zh-Hant.json" />
@@ -23,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Localization\AbpAccount\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpAccount\Application\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpAccount\Domain\zh-Hant.json" />
     <EmbeddedResource Include="Localization\AbpIdentity\zh-Hant.json" />
     <EmbeddedResource Include="Localization\AbpMultiTenancy\zh-Hant.json" />
     <EmbeddedResource Include="Localization\AbpPermissionManagement\zh-Hant.json" />

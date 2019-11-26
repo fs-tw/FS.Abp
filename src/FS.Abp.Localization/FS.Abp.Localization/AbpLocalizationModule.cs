@@ -46,7 +46,8 @@ namespace FS.Abp.Localization
                     .AddVirtualJson("/Localization/AbpIdentity");
                 options.Resources
                     .Get<AccountResource>()
-                    .AddVirtualJson("/Localization/AbpAccount");
+                    .AddVirtualJson("/Localization/AbpAccount/Domain")
+                    .AddVirtualJson("/Localization/AbpAccount/Application");
                 options.Resources
                     .Get<AbpUiMultiTenancyResource>()
                     .AddVirtualJson("/Localization/AbpMultiTenancy");
