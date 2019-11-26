@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/blob/dev/modules/identity/src/Volo.Abp.Identity.Domain.Shared/Volo/Abp/Identity/Localization/en.json

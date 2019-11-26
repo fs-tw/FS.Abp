@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FS.Abp\**" />
+    <EmbeddedResource Remove="FS.Abp\**" />
+    <None Remove="FS.Abp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\AbpAccount\zh-Hant.json" />
+    <None Remove="Localization\AbpIdentity\zh-Hant.json" />
+    <None Remove="Localization\AbpMultiTenancy\zh-Hant.json" />
+    <None Remove="Localization\AbpPermissionManagement\zh-Hant.json" />
+    <None Remove="Localization\AbpTenantManagement\zh-Hant.json" />
+    <None Remove="Localization\AbpUiNavigation\zh-Hant.json" />
+    <None Remove="Localization\AbpUi\zh-Hant.json" />
+    <None Remove="Localization\AbpValidation\zh-Hant.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\AbpAccount\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpIdentity\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpMultiTenancy\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpPermissionManagement\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpTenantManagement\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpUiNavigation\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpUi\zh-Hant.json" />
+    <EmbeddedResource Include="Localization\AbpValidation\zh-Hant.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="1.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="1.0.2" />
+    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="1.0.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="1.0.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>
