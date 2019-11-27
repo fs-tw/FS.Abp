@@ -3,6 +3,7 @@ using Volo.Abp.Account;
 using Volo.Abp.Account.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.Localization;
+using Volo.Abp.FeatureManagement.Localization;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.Localization;
 using Volo.Abp.Localization;
@@ -54,6 +55,9 @@ namespace FS.Abp.Localization
                 options.Resources
                     .Get<AbpPermissionManagementResource>()
                     .AddVirtualJson("/Localization/AbpPermissionManagement");
+                options.Resources
+                    .Get<AbpFeatureManagementResource>()
+                    .AddVirtualJson("/Localization/AbpFeatureManagement");
                 options.Resources
                     .Get<AbpTenantManagementResource>()
                     .AddVirtualJson("/Localization/AbpTenantManagement");
