@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\..\abp\common.props" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="1.0.2" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="1.1.0" />
   </ItemGroup>
 
 </Project>
