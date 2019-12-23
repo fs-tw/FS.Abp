@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="$ComplexTypes">
+    <component class="FS.Cms.CreationAuditedEntity" IsExternal="true" p1:Guid="cfe17fcc-aa8a-4ead-9357-17aab744aad2" p1:GenerateDTO="False">
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="158718ff-3358-4afc-972f-e302ca624f49">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="25ee2a59-5130-43da-8179-56f1cf00e97f">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Cms.AuditedEntity" IsExternal="true" p1:Guid="f17073f8-9476-4176-83a5-bbfd9169b276" p1:GenerateDTO="False">
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="c2783598-0ae9-48c6-85a9-91f57fc8ad80">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bf981510-b3bb-4f9d-bb8c-927dac2c69a1">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2d840d74-de29-4bb1-8550-c50530ba7ad7">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e90f3a9e-f804-4141-b038-d1f024832bf7">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Cms.FullAuditedEntity" IsExternal="true" p1:Guid="a44ec678-6cbe-4611-8d23-2cf20e525916" p1:GenerateDTO="False">
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="af13cda3-ca0b-4aea-9ebc-ce2a643d95fe">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="99bc0c59-f12a-4eaa-9e65-07787daa0d74">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b10165c7-fc2e-47b7-b89a-a013a371fa0d">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="81d96ea0-054d-4450-87de-e3195d285db3">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="acc9deea-f95f-4fb6-bc78-2284dfd89751">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fd77c5ba-0f57-44d8-a724-433dbe58fa6c">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0e0c0ce4-bd23-4a6d-b979-b52f1d8bd94a">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Cms.AggregateRoot" IsExternal="true" p1:Guid="0d6330ad-d3b1-493d-b8e1-b34f27512218" p1:GenerateDTO="False">
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="45807d2e-9b49-4583-8ad1-3627f1b716a8">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1e788986-325b-4011-8ed8-045e4bfef533">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Cms.CreationAuditedAggregateRoot" IsExternal="true" p1:Guid="fa1f47b0-3493-461b-9abc-e8f36ef56b35" p1:GenerateDTO="False">
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="61f1cf1a-ec65-4651-ae93-f67d941acdfa">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="33052921-7dea-4571-a87e-9df9c4e98dbb">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a3d763d8-4018-435c-b6b6-8633231a5101">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8dc5582b-89aa-4199-8c5c-b3ea9f276c9f">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Cms.AuditedAggregateRoot" IsExternal="true" p1:Guid="2cac9532-1fe1-41e2-9f0e-ab2e45f5751a" p1:GenerateDTO="False">
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="8b38f339-a0c7-4709-b97c-a415f57d0021">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0fea14c4-43e2-4700-9a70-85171d3d33fc">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fd9d7816-9b78-4c1d-aef2-e969c2608320">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="30ee9797-2628-4287-82ce-0a95c3416102">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fb44ed0e-7886-45ae-9442-b4ef32e7b560">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="58528952-6183-4f68-ae00-fdd644ed9853">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Cms.FullAuditedAggregateRoot" IsExternal="true" p1:Guid="f4d1cac9-5775-4c3f-b4de-fce98467c8b8" p1:GenerateDTO="False">
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="ca2c6629-af09-457c-b9e1-ac788519b274">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="36e1e149-9755-4fe0-a042-5b8f0dbc42e2">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="67e963b2-f0a1-4ffe-b3d6-64ea0512e8f4">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7bcd4793-03c4-4f62-84dd-27f642781658">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="93ebd0b7-f445-4f55-a3cd-4aae50de7700">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="65ddbb50-7c2c-4960-ae2f-b6948a25383a">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1164bd1f-2169-49de-a0f3-9739e90f75bc">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13b954bc-a432-4e9c-9037-b3f67833468f">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="20d165de-bc9b-496a-a346-f9b8d1f04f4e">
+        <column name="" />
+      </property>
+    </component>
+  </class>
+</efcore>

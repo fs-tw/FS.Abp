@@ -16,4 +16,16 @@
     <Content Remove="Localization\Cms\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DataModel\Cms.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>Cms.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\Cms.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>
