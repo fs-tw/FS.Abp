@@ -5,11 +5,39 @@
     <Generation>
       <GeneratedFiles>
         <File Name="Cms.cs" />
+        <File Name="IBlogCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="IPostCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="ITagCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tagging" />
+        <File Name="BlogCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="PostCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="TagCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tagging" />
+        <File Name="BlogDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
+        <File Name="PostDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
+        <File Name="PostTagDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
+        <File Name="TagDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tagging\Dtos" />
+        <File Name="BlogDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="PostDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="PostTagDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="TagDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tagging" />
         <File Name="IServiceCollectionExtensions.AbpSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\Microsoft.Extensions.DependencyInjection" />
         <File Name="ICmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsModelBuilderConfigurationOptions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsDbContextModelCreatingExtensions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
+        <File Name="Blog.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="Post.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="PostTag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="Tag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tagging" />
+        <File Name="Blog.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="Post.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="PostTag.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="Tag.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tagging" />
+        <File Name="IBlogRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="IPostRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="ITagRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tagging" />
+        <File Name="EfCoreBlogRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="EfCorePostRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="EfCoreTagRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tagging" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>

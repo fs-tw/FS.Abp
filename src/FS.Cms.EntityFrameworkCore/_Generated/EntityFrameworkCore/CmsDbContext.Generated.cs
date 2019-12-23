@@ -28,6 +28,25 @@ namespace FS.Cms.EntityFrameworkCore
     [ConnectionStringName(CmsDbProperties.ConnectionStringName)]
     public partial class CmsDbContext : AbpDbContext<CmsDbContext>, ICmsDbContext
     {
+
+        public virtual DbSet<FS.Cms.Blogs.Blog> Blogs
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.Cms.Posts.Post> Posts
+        {
+            get;
+            set;
+        }
+
+
+        public virtual DbSet<FS.Cms.Tagging.Tag> Tags
+        {
+            get;
+            set;
+        }
         public CmsDbContext(DbContextOptions<CmsDbContext> options) :
             base(options)
         {
