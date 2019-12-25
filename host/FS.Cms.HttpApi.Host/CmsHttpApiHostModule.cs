@@ -25,6 +25,8 @@ using Volo.Abp.MultiTenancy;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.Security.Claims;
+using IdentityModel;
 
 namespace FS.Cms
 {
@@ -85,6 +87,12 @@ namespace FS.Cms
                 options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
                 options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
             });
+
+            //Updates AbpClaimTypes to be compatible with identity server claims.
+            AbpClaimTypes.UserId = JwtClaimTypes.Subject;
+            AbpClaimTypes.UserName = JwtClaimTypes.Name;
+            AbpClaimTypes.Role = JwtClaimTypes.Role;
+            AbpClaimTypes.Email = JwtClaimTypes.Email;
 
             context.Services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
