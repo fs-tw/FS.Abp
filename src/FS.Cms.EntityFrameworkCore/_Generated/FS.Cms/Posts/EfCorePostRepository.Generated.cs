@@ -16,7 +16,7 @@ using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 namespace FS.Cms.Posts
 {
     public partial class EfCorePostRepository : 
-        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext, FS.Cms.Posts.Post, Guid>,
+        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Posts.Post,Guid>,
         IPostRepository
     {
         public EfCorePostRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)

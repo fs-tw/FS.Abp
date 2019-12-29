@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Blogs
 {
     public partial interface IBlogRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Blogs.Blog, Guid>
+        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Blogs.Blog,Guid>
     {
 
     }

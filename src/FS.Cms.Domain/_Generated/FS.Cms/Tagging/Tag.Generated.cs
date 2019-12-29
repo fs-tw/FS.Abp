@@ -16,6 +16,7 @@ using System.Linq.Expressions;
 using System.Data.Common;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Volo.Abp.Data;
 
 namespace FS.Cms.Tagging
 {

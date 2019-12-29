@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Tagging
 {
     public partial interface ITagRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Tagging.Tag, Guid>
+        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Tagging.Tag,Guid>
     {
 
     }

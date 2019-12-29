@@ -14,14 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Posts
 {
     public partial class PostCrudAppService : 
-        CrudAppService<
-            FS.Cms.Posts.Post,
-            FS.Cms.Posts.Dtos.PostWithDetailsDto,
-            FS.Cms.Posts.Dtos.PostDto,
-            Guid,
-            FS.Cms.Posts.Dtos.PostGetListInput,
-            FS.Cms.Posts.Dtos.PostCreateInput,
-            FS.Cms.Posts.Dtos.PostUpdateInput>,
+        Volo.Abp.Application.Services.CrudAppService<FS.Cms.Posts.Post, FS.Cms.Posts.Dtos.PostWithDetailsDto, FS.Cms.Posts.Dtos.PostDto, Guid, FS.Cms.Posts.Dtos.PostGetListInput, FS.Cms.Posts.Dtos.PostCreateInput, FS.Cms.Posts.Dtos.PostUpdateInput>,
         IPostCrudAppService
     {
         private readonly IPostRepository _repository;

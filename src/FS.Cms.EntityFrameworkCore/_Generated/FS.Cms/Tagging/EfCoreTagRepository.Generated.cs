@@ -16,7 +16,7 @@ using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 namespace FS.Cms.Tagging
 {
     public partial class EfCoreTagRepository : 
-        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext, FS.Cms.Tagging.Tag, Guid>,
+        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Tagging.Tag,Guid>,
         ITagRepository
     {
         public EfCoreTagRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)

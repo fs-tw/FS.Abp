@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Posts
 {
     public partial interface IPostRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Posts.Post, Guid>
+        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Posts.Post,Guid>
     {
 
     }

@@ -7,8 +7,7 @@ namespace FS.Cms
     [DependsOn(
         typeof(CmsDomainModule),
         typeof(CmsApplicationContractsModule),
-        typeof(AbpDddApplicationModule),
-        typeof(FS.Abp.AutoMapper.AbpAutoMapperModule)
+        typeof(AbpDddApplicationModule)
         )]
     public class CmsApplicationModule : AbpModule
     {
@@ -16,7 +15,7 @@ namespace FS.Cms
         {
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<CmsApplicationModule>(validate: true);
+                options.AddMaps<CmsApplicationModule>(true);
             });
         }
     }

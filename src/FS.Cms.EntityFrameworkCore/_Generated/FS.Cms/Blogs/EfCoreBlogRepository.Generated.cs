@@ -16,7 +16,7 @@ using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 namespace FS.Cms.Blogs
 {
     public partial class EfCoreBlogRepository : 
-        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext, FS.Cms.Blogs.Blog, Guid>,
+        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Blogs.Blog,Guid>,
         IBlogRepository
     {
         public EfCoreBlogRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)

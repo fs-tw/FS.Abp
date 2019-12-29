@@ -3,7 +3,8 @@
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(CmsDomainSharedModule)
+        typeof(CmsDomainSharedModule),
+        typeof(FS.Abp.Zero.Domain.AbpZeroDomainModule)
         )]
     public class CmsDomainModule : AbpModule
     {

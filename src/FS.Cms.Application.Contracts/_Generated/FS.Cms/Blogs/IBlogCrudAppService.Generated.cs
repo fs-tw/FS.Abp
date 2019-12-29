@@ -14,13 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Blogs
 {
     public partial interface IBlogCrudAppService : 
-        ICrudAppService<
-            FS.Cms.Blogs.Dtos.BlogWithDetailsDto,
-            FS.Cms.Blogs.Dtos.BlogDto,
-            Guid,
-            FS.Cms.Blogs.Dtos.BlogGetListInput,
-            FS.Cms.Blogs.Dtos.BlogCreateInput,
-            FS.Cms.Blogs.Dtos.BlogUpdateInput>
+        Volo.Abp.Application.Services.ICrudAppService<FS.Cms.Blogs.Dtos.BlogWithDetailsDto, FS.Cms.Blogs.Dtos.BlogDto, Guid, FS.Cms.Blogs.Dtos.BlogGetListInput, FS.Cms.Blogs.Dtos.BlogCreateInput, FS.Cms.Blogs.Dtos.BlogUpdateInput>
     {
 
     }

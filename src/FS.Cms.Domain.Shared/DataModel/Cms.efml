@@ -126,8 +126,8 @@
           <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>FullAuditedAggregateRoot</string>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="MultiTenantStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>true</boolean>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZX19</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -151,9 +151,6 @@
           <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="CrudAppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
           <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
@@ -163,7 +160,7 @@
         </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="58dc322f-cfbc-498e-b15c-b8a86383ebc2">
+    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="58dc322f-cfbc-498e-b15c-b8a86383ebc2" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="96ff8dfd-d3ec-4953-8101-031e0b167636">
@@ -198,8 +195,8 @@
           <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>FullAuditedAggregateRoot</string>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="MultiTenantStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>true</boolean>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZX19</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -223,9 +220,6 @@
           <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="CrudAppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
           <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
@@ -235,7 +229,7 @@
         </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="cdaf488a-6d25-4ec3-97b8-99fd162c36e8">
+    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="cdaf488a-6d25-4ec3-97b8-99fd162c36e8" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="21511bac-6007-4975-b13e-7a1533f8fa1e">
@@ -279,8 +273,8 @@
           <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>FullAuditedEntity</string>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="MultiTenantStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>true</boolean>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZX19</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -304,9 +298,6 @@
           <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="CrudAppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
           <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
@@ -316,7 +307,7 @@
         </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="ef78a9bd-1c68-459b-b7ab-d90b507062e7">
+    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="ef78a9bd-1c68-459b-b7ab-d90b507062e7" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="PostId" type="Guid" p1:ValidateRequired="true" p1:Guid="20650e08-7610-4d0c-b2ff-4b4cbf1d35b1">
@@ -346,8 +337,8 @@
           <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>FullAuditedAggregateRoot</string>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="MultiTenantStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>true</boolean>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZX19</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -371,9 +362,6 @@
           <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
-          <p1:PropertyValue Name="CrudAppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
           <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <boolean>false</boolean>
           </p1:PropertyValue>
@@ -383,7 +371,7 @@
         </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="a8f1f622-2428-41fb-853c-34f5defb9e49">
+    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="a8f1f622-2428-41fb-853c-34f5defb9e49" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="e274328d-7211-4069-b674-4897edf02463">
