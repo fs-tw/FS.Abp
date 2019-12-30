@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+    <AssemblyName>FS.Abp.Zero</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="1.1.2" />
+    <PackageReference Include="Volo.Abp.Data" Version="1.1.2" />
+    <PackageReference Include="Volo.Abp.Json" Version="1.1.2" />
+  </ItemGroup>
+
+</Project>
