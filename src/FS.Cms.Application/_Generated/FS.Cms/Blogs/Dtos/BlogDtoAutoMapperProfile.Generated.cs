@@ -17,7 +17,7 @@ namespace FS.Cms.Blogs.Dtos
     {
         public BlogAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Blogs.Blog, BlogDto>();
+            CreateMap<FS.Cms.Blogs.Blog, BlogDto>().ReverseMap();
 
             CreateMap<FS.Cms.Blogs.Blog, BlogWithDetailsDto>();
 

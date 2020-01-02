@@ -19,7 +19,7 @@ namespace FS.Cms.Posts.Dtos
         {
             CreateMap<FS.Cms.Posts.PostTag, PostTagDto>().ReverseMap();
 
-            CreateMap<FS.Cms.Posts.PostTag, PostTagWithDetailsDto>().ReverseMap();
+            CreateMap<FS.Cms.Posts.PostTag, PostTagWithDetailsDto>();
 
             CustomizeConfiguration();
         }

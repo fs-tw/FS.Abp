@@ -17,7 +17,7 @@ namespace FS.Cms.Posts.Dtos
     {
         public PostAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Posts.Post, PostDto>();
+            CreateMap<FS.Cms.Posts.Post, PostDto>().ReverseMap();
 
             CreateMap<FS.Cms.Posts.Post, PostWithDetailsDto>();
 

@@ -17,7 +17,7 @@ namespace FS.Cms.Tagging.Dtos
     {
         public TagAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Tagging.Tag, TagDto>();
+            CreateMap<FS.Cms.Tagging.Tag, TagDto>().ReverseMap();
 
             CreateMap<FS.Cms.Tagging.Tag, TagWithDetailsDto>();
 
