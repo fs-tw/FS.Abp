@@ -39,7 +39,8 @@ namespace FS.Cms
         typeof(AbpEntityFrameworkCoreSqlServerModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-        typeof(AbpSettingManagementEntityFrameworkCoreModule)
+        typeof(AbpSettingManagementEntityFrameworkCoreModule),
+        typeof(FS.Abp.Zero.AutoMapper.AbpAutoMapperModule)
         )]
     public class CmsHttpApiHostModule : AbpModule
     {
