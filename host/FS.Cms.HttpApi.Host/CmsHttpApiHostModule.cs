@@ -27,6 +27,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.Security.Claims;
 using IdentityModel;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace FS.Cms
 {
@@ -50,6 +51,11 @@ namespace FS.Cms
         {
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
+
+            Configure<AbpAspNetCoreMvcOptions>(options =>
+            {
+                options.ConventionalControllers.Create(typeof(FS.Cms.CmsApplicationModule).Assembly, action => action.RootPath = "Cms");
+            });
 
             Configure<AbpDbContextOptions>(options =>
             {
