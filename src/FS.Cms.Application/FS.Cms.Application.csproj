@@ -8,10 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Document\DocumentDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\DocumentTreeAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDtoAutoMapperProfile.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="1.1.2" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="1.1.2" />
+    <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Application\FS.Abp.Trees.Application.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Document\Dtos\" />
   </ItemGroup>
 
 </Project>
