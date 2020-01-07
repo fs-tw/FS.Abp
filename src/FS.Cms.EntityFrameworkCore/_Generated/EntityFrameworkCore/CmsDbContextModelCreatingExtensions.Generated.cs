@@ -32,6 +32,8 @@ namespace FS.Cms.EntityFrameworkCore
             builder.ApplyConfiguration<FS.Cms.Posts.Post>(new FS.Cms.Posts.PostConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Posts.PostTag>(new FS.Cms.Posts.PostTagConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Tagging.Tag>(new FS.Cms.Tagging.TagConfiguration(options));
+            builder.ApplyConfiguration<FS.Cms.Documents.DocumentDefinition>(new FS.Cms.Documents.DocumentDefinitionConfiguration(options));
+            builder.ApplyConfiguration<FS.Cms.Documents.Document>(new FS.Cms.Documents.DocumentConfiguration(options));
         }
     }
 }

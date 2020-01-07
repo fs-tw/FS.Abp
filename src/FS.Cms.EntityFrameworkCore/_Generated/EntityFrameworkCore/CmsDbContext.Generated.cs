@@ -47,6 +47,18 @@ namespace FS.Cms.EntityFrameworkCore
             get;
             set;
         }
+
+        public virtual DbSet<FS.Cms.Documents.DocumentDefinition> DocumentDefinitions
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.Cms.Documents.Document> Documents
+        {
+            get;
+            set;
+        }
         public CmsDbContext(DbContextOptions<CmsDbContext> options) :
             base(options)
         {

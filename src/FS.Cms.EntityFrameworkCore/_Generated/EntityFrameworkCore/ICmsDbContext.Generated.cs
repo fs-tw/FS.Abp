@@ -31,5 +31,7 @@ namespace FS.Cms.EntityFrameworkCore
         DbSet<FS.Cms.Blogs.Blog> Blogs { get; set; }
         DbSet<FS.Cms.Posts.Post> Posts { get; set; }
         DbSet<FS.Cms.Tagging.Tag> Tags { get; set; }
+        DbSet<FS.Cms.Documents.DocumentDefinition> DocumentDefinitions { get; set; }
+        DbSet<FS.Cms.Documents.Document> Documents { get; set; }
     }
 }

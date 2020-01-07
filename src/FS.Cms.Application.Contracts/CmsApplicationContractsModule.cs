@@ -8,7 +8,8 @@ namespace FS.Cms
     [DependsOn(
         typeof(CmsDomainSharedModule),
         typeof(AbpDddApplicationContractsModule),
-        typeof(AbpAuthorizationModule)
+        typeof(AbpAuthorizationModule),
+        typeof(FS.Abp.Trees.TreesApplicationContractsModule)
         )]
     public class CmsApplicationContractsModule : AbpModule
     {

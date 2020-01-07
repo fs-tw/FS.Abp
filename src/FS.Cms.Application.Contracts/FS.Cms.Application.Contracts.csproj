@@ -8,13 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDefinitionDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\IDocumentDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\IDocumentTreeAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="1.1.2" />
     <PackageReference Include="Volo.Abp.Authorization" Version="1.1.2" />
+    <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Application.Contracts\FS.Abp.Trees.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="DataModel\" />
+    <Folder Include="_Generated\FS.Cms\Document\Dtos\" />
   </ItemGroup>
 
 </Project>
