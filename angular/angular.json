@@ -1,6 +1,40 @@
 {
   "version": 1,
   "projects": {
+    "fs.epsy": {
+      "projectType": "library",
+      "root": "libs/cms",
+      "sourceRoot": "libs/cms/src",
+      "prefix": "fs.cms",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/cms/tsconfig.lib.json",
+              "libs/cms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/cms/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/cms/jest.config.js",
+            "tsConfig": "libs/cms/tsconfig.spec.json",
+            "setupFile": "libs/cms/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "less"
+        }
+      }
+    },
     "ng-alain-app": {
       "projectType": "application",
       "schematics": {
