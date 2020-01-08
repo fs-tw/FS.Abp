@@ -1,19 +1,21 @@
-<nz-card nzTitle="Post setting">
+<nz-card nzTitle="Post setting"  [nzExtra]="extraTemplate">
     
     <nz-table #basicTable [nzData]="datas" >
         <thead>
           <tr>
             <th>number</th>
-            <th>Name</th>
-            <th>ShortName</th>
+            <th>Blog type</th>
+            <th>Title</th>
+            <th>Url</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let data of basicTable.data;let i=index;">
             <td>{{ i+1 }} </td>
-            <td>{{ data.name }}</td>
-            <td>{{ data.shortName }}</td>            
+            <td>--</td>
+            <td>{{ data.title }}</td>
+            <td>{{ data.url }}</td>            
             <td>             
               <!-- <fs-edit [id]="data.id"></fs-edit> -->
               <nz-divider nzType="vertical"></nz-divider>
@@ -26,6 +28,6 @@
 </nz-card>
 
 <ng-template #extraTemplate>  
-        
+  <button nz-button nzType="primary">Primary</button>
     
 </ng-template>
