@@ -18,9 +18,6 @@ export class BlogStateService{
   }
 
  
-//   getEmployeesTotalCount() {
-//     return this.store.selectSnapshot(EmployeeState.getEmployeesTotalCount);
-//   }
-    
+
 
 }
