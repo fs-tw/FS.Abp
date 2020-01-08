@@ -55,8 +55,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.data$.subscribe(x=>{
-      this.datas = x;
-      console.log(x)
+      this.datas = x;      
     });
   }
 
