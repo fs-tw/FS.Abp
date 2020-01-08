@@ -1,7 +1,7 @@
 import { ABP } from '@abp/ng.core';
 import { BlogDtos } from './blog.dtos';
  export  namespace PostDtos{
-    export type PostPage=ABP.PagedItemsResponse<{}>;
+    export type PostPage=ABP.PagedItemsResponse<postData>;
 
     export interface PostPageQueryParams extends ABP.PageQueryParams{
         skipCount:number;
@@ -16,6 +16,7 @@ import { BlogDtos } from './blog.dtos';
     }
 
     export interface PostInput{
+        id:string;
         url: string;
         coverImage: string;
         title: string;
