@@ -1,7 +1,7 @@
-﻿using FS.Abp.Zero.Application;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
@@ -14,63 +14,19 @@ using Volo.Abp.MultiTenancy;
 
 namespace FS.Abp.Application.Services
 {
-    public class CrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
-        : BaseCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>,
-        FS.Abp.Application.Services.ICrudAppService<TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
-        where TEntity : class, IEntity<TKey>
-        where TGetOutputDto : IEntityDto<TKey>
-        where TGetListOutputDto : IEntityDto<TKey>
-    {
-        protected new IRepository<TEntity,TKey> Repository { get; }
-        public CrudAppService(IRepository<TEntity,TKey> repository)
-            : base(repository) { }
-
-        public async Task<TGetOutputDto> GetAsync(TKey id)
-        {
-            await CheckGetPolicyAsync().ConfigureAwait(false);
-
-            var entity = await GetEntityByIdAsync(id).ConfigureAwait(false);
-
-            return MapToDto<TGetOutputDto>(entity);
-        }
-
-    }
-
-    public class CrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TFind, TGetListInput, TCreateInput, TUpdateInput>
-            : BaseCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>,
-            FS.Abp.Application.Services.ICrudAppService<TGetOutputDto, TGetListOutputDto, TKey, TFind, TGetListInput, TCreateInput, TUpdateInput>
+    public abstract class BaseCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
+            : Volo.Abp.Application.Services.ApplicationService,
+            FS.Abp.Application.Services.IBaseCrudAppService<TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
             where TEntity : class, IEntity
             where TGetOutputDto : IEntityDto
             where TGetListOutputDto : IEntityDto
-    {
-        public CrudAppService(IRepository<TEntity> repository)
-            : base(repository) { }
-
-        public async Task<TGetOutputDto> GetFindAsync(TFind key)
-        {
-            await CheckGetPolicyAsync().ConfigureAwait(false);
-
-            var entity = await GetEntityByIdAsync(key).ConfigureAwait(false);
-
-            return MapToDto<TGetOutputDto>(entity);
-
-        }
-
-    }
-
-    public abstract class BaseCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
-        : Volo.Abp.Application.Services.ApplicationService,
-        FS.Abp.Application.Services.IBaseCrudAppService<TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
-        where TEntity : class, IEntity
-        where TGetOutputDto : IEntityDto
-        where TGetListOutputDto : IEntityDto
     {
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
 
         protected IRepository<TEntity> Repository { get; }
 
-        private ICrudOperation _crudOperation;
-        protected ICrudOperation CrudOperation => LazyGetRequiredService(ref _crudOperation);
+        private IPagedAndSortedOperation _pagedAndSortedOperation;
+        protected IPagedAndSortedOperation PagedAndSortedOperation => LazyGetRequiredService(ref _pagedAndSortedOperation);
 
         protected virtual string GetPolicyName { get; set; }
 
@@ -81,6 +37,8 @@ namespace FS.Abp.Application.Services
         protected virtual string UpdatePolicyName { get; set; }
 
         protected virtual string DeletePolicyName { get; set; }
+
+        internal bool isEntityWithIdKey=> Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>));
 
         public BaseCrudAppService(IRepository<TEntity> repository)
         {
@@ -95,7 +53,11 @@ namespace FS.Abp.Application.Services
         {
             await CheckGetListPolicyAsync().ConfigureAwait(false);
 
-            var result = await CrudOperation.ListAsync(input, (x) => CreateFilteredQuery(input));
+            var result = await PagedAndSortedOperation.ListAsync(
+                input,
+                (x) => CreateFilteredQuery(input),
+                (query, i) => this.ApplySorting(query, input),
+                (query, i) => this.ApplyPaging(query, input));
 
             return CreatePagedResultDto<TGetListOutputDto>(result);
         }
@@ -104,12 +66,16 @@ namespace FS.Abp.Application.Services
         {
             await CheckGetListPolicyAsync().ConfigureAwait(false);
 
-            var result = await CrudOperation.ListAsync(input, (x) => CreateFilteredQuery(input));
+            var result = await PagedAndSortedOperation.ListAsync(
+                input,
+                (x) => ((IRepository<TEntity>)CreateFilteredQuery(input)).WithDetails(),
+                (query, i) => this.ApplySorting(query, input),
+                (query, i) => this.ApplyPaging(query, input));
 
             return CreatePagedResultDto<TGetOutputDto>(result);
         }
 
-        public async Task<TGetOutputDto> CreateAsync(TCreateInput input)
+        public virtual async Task<TGetOutputDto> CreateAsync(TCreateInput input)
         {
             await CheckCreatePolicyAsync().ConfigureAwait(false);
 
@@ -122,35 +88,43 @@ namespace FS.Abp.Application.Services
             return MapToDto<TGetOutputDto>(entity);
         }
 
-        public async Task<TGetOutputDto> UpdateAsync(TKey id, TUpdateInput input)
+        public virtual async Task<TGetOutputDto> UpdateAsync(TKey id, TUpdateInput input)
         {
             await CheckUpdatePolicyAsync().ConfigureAwait(false);
 
             var entity = await GetEntityByIdAsync(id).ConfigureAwait(false);
             //TODO: Check if input has id different than given id and normalize if it's default value, throw ex otherwise
             MapToEntity(input, entity);
+
             await Repository.UpdateAsync(entity, autoSave: true).ConfigureAwait(false);
 
             return MapToDto<TGetOutputDto>(entity);
         }
 
-        public async Task DeleteAsync(TKey id)
+        public virtual async Task DeleteAsync(TKey id)
         {
             await CheckDeletePolicyAsync().ConfigureAwait(false);
 
-            await Repository.DeleteAsync(createEqualityExpressionForKey(new { Id = id })).ConfigureAwait(false);
-        }
-
-        protected virtual Task<TEntity> GetEntityByIdAsync<TGetById>(TGetById id)
-        {
-            var isEntityWithIdKey = Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(IEntity), typeof(TKey));
             if (isEntityWithIdKey)
             {
-                return Task.FromResult(Repository.FirstOrDefault(createEqualityExpressionForKey(new { Id = id })));
+                await Repository.DeleteAsync(createEqualityExpression(new { Id = id })).ConfigureAwait(false);
             }
             else
             {
-                return Task.FromResult(Repository.FirstOrDefault(createEqualityExpressionForKey(id)));
+                await Repository.DeleteAsync(createEqualityExpression(id)).ConfigureAwait(false);
+            }
+        }
+
+
+        protected virtual Task<TEntity> GetEntityByIdAsync<TGetById>(TGetById id)
+        {
+            if (isEntityWithIdKey)
+            {
+                return Task.FromResult(Repository.FirstOrDefault(createEqualityExpression(new { Id = id })));
+            }
+            else
+            {
+                return Task.FromResult(Repository.FirstOrDefault(createEqualityExpression(id)));
             }
         }
 
@@ -177,6 +151,26 @@ namespace FS.Abp.Application.Services
         protected virtual async Task CheckDeletePolicyAsync()
         {
             await CheckPolicyAsync(DeletePolicyName).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Should apply sorting if needed.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <param name="input">The input.</param>
+        protected virtual IQueryable<TEntity> ApplySorting(IQueryable<TEntity> query, TGetListInput input)
+        {
+            return PagedAndSortedOperation.ApplyPaging(query, input);//default Strategy
+        }
+
+        /// <summary>
+        /// Should apply paging if needed.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <param name="input">The input.</param>
+        protected virtual IQueryable<TEntity> ApplyPaging(IQueryable<TEntity> query, TGetListInput input)
+        {
+            return PagedAndSortedOperation.ApplySorting(query, input);//default Strategy
         }
 
         protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
@@ -267,7 +261,7 @@ namespace FS.Abp.Application.Services
             return entity.GetType().GetProperty(nameof(IMultiTenant.TenantId)) != null;
         }
 
-        internal static Expression<Func<TEntity, bool>> createEqualityExpressionForKey(object compositekey)
+        internal static Expression<Func<TEntity, bool>> createEqualityExpression(object compositekey)
         {
             var keyProperties = compositekey.GetType().GetProperties();
 
@@ -290,11 +284,7 @@ namespace FS.Abp.Application.Services
                 predicate = Expression.AndAlso(predicate, GenerateEqualExpression(keyProperties[i], i));
             }
 
-
-
             return predicate;
-
-
 
             BinaryExpression GenerateEqualExpression(PropertyInfo property, int i) =>
                 Expression.Equal(

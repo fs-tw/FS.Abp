@@ -7,22 +7,24 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Linq;
 using System.Linq.Dynamic.Core;
+using Volo.Abp.Auditing;
 
-namespace FS.Abp.Zero.Application
+namespace FS.Abp.Application
 {
-    public class CrudOperation : ICrudOperation
+    public class PagedAndSortedOperation : IPagedAndSortedOperation
     {
         protected IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
 
-        public CrudOperation()
+        public PagedAndSortedOperation()
         {
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
 
         public virtual async Task<(int TotalCount, List<TEntity> Entities)> ListAsync<TEntity, TInput>(
             TInput input,
-            Func<TInput, IQueryable<TEntity>> createFilteredQuery
-            )
+            Func<TInput, IQueryable<TEntity>> createFilteredQuery,
+            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySorting = null,
+            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applyPaging = null)
             where TEntity : class, IEntity
         {
             if (createFilteredQuery == null) throw new Exception("createFilteredQuery must be not null");
@@ -30,8 +32,8 @@ namespace FS.Abp.Zero.Application
 
             var totalCount = await AsyncQueryableExecuter.CountAsync(query).ConfigureAwait(false);
 
-            query = ApplySorting(query, input);
-            query = ApplyPaging(query, input);
+            query = applySorting != null ? applySorting.Invoke(query, input) : ApplySorting(query, input);
+            query = applyPaging != null ? applyPaging.Invoke(query, input) : ApplyPaging(query, input);
 
             var entities = await AsyncQueryableExecuter.ToListAsync(query).ConfigureAwait(false);
 
@@ -43,7 +45,7 @@ namespace FS.Abp.Zero.Application
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="input">The input.</param>
-        protected virtual IQueryable<TEntity> ApplySorting<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+        public virtual IQueryable<TEntity> ApplySorting<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
             //Try to sort query if available
@@ -55,10 +57,19 @@ namespace FS.Abp.Zero.Application
                 }
             }
 
-            //IQueryable.Task requires sorting, so we should sort if Take will be used.
+            //IQueryable.Take requires sorting, so we should sort if Take will be used.
             if (input is ILimitedResultRequest)
             {
-                return query.OrderBy("Id Desc");
+                if (typeof(TEntity).IsAssignableTo<IHasCreationTime>())
+                {
+                    return query.OrderBy($"{nameof(IHasCreationTime.CreationTime)} Desc");
+                }
+                if (Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>)))
+                {
+                    
+                    return query.OrderBy($"{nameof(IEntity<Guid>.Id)} Desc");
+                }
+                
             }
 
             //No sorting
@@ -70,7 +81,7 @@ namespace FS.Abp.Zero.Application
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="input">The input.</param>
-        protected virtual IQueryable<TEntity> ApplyPaging<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+        public virtual IQueryable<TEntity> ApplyPaging<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
             //Try to use paging if available

@@ -4,13 +4,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 using Volo.Abp.Uow;
 
-namespace FS.Abp.Zero.Domain
+namespace FS.Abp.Domain
 {
     [DependsOn(
         typeof(Volo.Abp.Domain.AbpDddDomainModule),
         typeof(Volo.Abp.Json.AbpJsonModule)
         )]
-    public class AbpZeroDomainModule : AbpModule
+    public class AbpDddDomainModule : AbpModule
     {
     }
 }

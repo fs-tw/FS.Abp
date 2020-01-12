@@ -10,8 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FS.Abp.Zero.Application.Contracts\FS.Abp.Zero.Application.Contracts.csproj" />
-    <ProjectReference Include="..\FS.Abp.Zero.Domain\FS.Abp.Zero.Domain.csproj" />
+    <ProjectReference Include="..\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

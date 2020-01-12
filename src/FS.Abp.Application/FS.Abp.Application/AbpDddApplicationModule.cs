@@ -4,13 +4,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 using Volo.Abp.Uow;
 
-namespace FS.Abp.Zero.Application
+namespace FS.Abp.Application
 {
     [DependsOn(
-        typeof(FS.Abp.Zero.Application.AbpZeroApplicationContractsModule),
+        typeof(FS.Abp.Application.AbpDddApplicationContractsModule),
         typeof(Volo.Abp.Application.AbpDddApplicationModule)
         )]
-    public class AbpZeroApplicationModule : AbpModule
+    public class AbpDddApplicationModule : AbpModule
     {
     }
 }
