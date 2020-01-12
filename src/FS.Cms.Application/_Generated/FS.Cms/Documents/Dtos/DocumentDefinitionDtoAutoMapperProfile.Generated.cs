@@ -18,13 +18,9 @@ namespace FS.Cms.Documents.Dtos
         public DocumentDefinitionAutoMapperProfile()
         {
             CreateMap<FS.Cms.Documents.DocumentDefinition, DocumentDefinitionDto>().ReverseMap();
-
             CreateMap<FS.Cms.Documents.DocumentDefinition, DocumentDefinitionWithDetailsDto>();
-
             CreateMap<DocumentDefinitionCreateInput, FS.Cms.Documents.DocumentDefinition>();
-
             CreateMap<DocumentDefinitionUpdateInput, FS.Cms.Documents.DocumentDefinition>();
-
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();

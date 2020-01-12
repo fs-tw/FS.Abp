@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>FS.Cms</RootNamespace>
   </PropertyGroup>
 
@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="1.1.2" />
+    <ProjectReference Include="..\..\..\..\framework\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\framework\src\FS.Abp.Zero\FS.Abp.Zero.csproj" />
     <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Domain\FS.Abp.Trees.Domain.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />

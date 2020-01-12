@@ -18,9 +18,7 @@ namespace FS.Cms.Core.Dtos
         public FileFieldAutoMapperProfile()
         {
             CreateMap<FS.Cms.Core.FileField, FileFieldDto>().ReverseMap();
-
             CreateMap<FS.Cms.Core.FileField, FileFieldWithDetailsDto>();
-
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();

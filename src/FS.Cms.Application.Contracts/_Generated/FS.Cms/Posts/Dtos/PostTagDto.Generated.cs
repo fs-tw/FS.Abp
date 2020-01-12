@@ -13,7 +13,8 @@ using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostTagDto
+    public partial class PostTagDto : 
+        Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public System.Guid PostId { get; set; }
 

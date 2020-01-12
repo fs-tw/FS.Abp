@@ -73,9 +73,9 @@ namespace FS.Cms.Documents.Dtos
     }
     public partial class DocumentMoveInput : FS.Abp.Trees.Dtos.IMoveInput
     {
-        public Guid Id { get; set; }
+        public System.Guid Id { get; set; }
 
-        public Guid? NewParentId { get; set; }
+        public System.Guid? NewParentId { get; set; }
 
     }
 }

@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Blogs
 {
     public partial class BlogCrudAppService : 
-        Volo.Abp.Application.Services.CrudAppService<FS.Cms.Blogs.Blog, FS.Cms.Blogs.Dtos.BlogWithDetailsDto, FS.Cms.Blogs.Dtos.BlogDto, Guid, FS.Cms.Blogs.Dtos.BlogGetListInput, FS.Cms.Blogs.Dtos.BlogCreateInput, FS.Cms.Blogs.Dtos.BlogUpdateInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Blogs.Blog, FS.Cms.Blogs.Dtos.BlogWithDetailsDto, FS.Cms.Blogs.Dtos.BlogDto, Guid, FS.Cms.Blogs.Dtos.BlogGetListInput, FS.Cms.Blogs.Dtos.BlogCreateInput, FS.Cms.Blogs.Dtos.BlogUpdateInput>,
         IBlogCrudAppService
     {
         private readonly IBlogRepository _repository;

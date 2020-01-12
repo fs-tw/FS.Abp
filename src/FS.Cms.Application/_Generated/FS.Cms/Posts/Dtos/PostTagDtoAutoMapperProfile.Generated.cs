@@ -18,9 +18,7 @@ namespace FS.Cms.Posts.Dtos
         public PostTagAutoMapperProfile()
         {
             CreateMap<FS.Cms.Posts.PostTag, PostTagDto>().ReverseMap();
-
             CreateMap<FS.Cms.Posts.PostTag, PostTagWithDetailsDto>();
-
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
