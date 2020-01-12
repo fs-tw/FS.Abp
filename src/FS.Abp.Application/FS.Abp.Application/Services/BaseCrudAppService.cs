@@ -270,9 +270,9 @@ namespace FS.Abp.Application.Services
             return Expression.Lambda<Func<TEntity, bool>>(
                 buildPredicate(keyProperties, compositekey, entityParameter), entityParameter);
         }
-        internal static BinaryExpression buildPredicate<TEntityCompositeKeyDto>(
+        internal static BinaryExpression buildPredicate(
             IReadOnlyList<PropertyInfo> keyProperties,
-            TEntityCompositeKeyDto keyValues,
+            object keyValues,
             ParameterExpression entityParameter)
         {
             var keyValuesConstant = Expression.Constant(keyValues);
