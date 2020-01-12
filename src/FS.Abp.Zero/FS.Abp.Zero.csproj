@@ -6,11 +6,6 @@
     <AssemblyName>FS.Abp.Zero</AssemblyName>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="FS.Abp.Data\HasExtraPropertiesExtensions.cs" />
-    <Compile Remove="FS.Abp.Zero.Domain\AbpZeroDomainModule.cs" />
-  </ItemGroup>
-
 
 
   <ItemGroup>
@@ -18,13 +13,6 @@
     <PackageReference Include="Volo.Abp.Data" Version="1.1.2" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="1.1.2" />
     <PackageReference Include="Volo.Abp.Json" Version="1.1.2" />
-  </ItemGroup>
-
-
-
-  <ItemGroup>
-    <Folder Include="FS.Abp.Data\" />
-    <Folder Include="FS.Abp.Zero.Domain\" />
   </ItemGroup>
 
 </Project>
