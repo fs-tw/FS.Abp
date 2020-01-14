@@ -1,4 +1,4 @@
-<nz-card nzTitle="Post setting"  [nzExtra]="extraTemplate">
+<nz-card [nzTitle]="extraTemplate">
     
     <nz-table #basicTable [nzData]="datas" >
         <thead>
@@ -28,6 +28,15 @@
 </nz-card>
 
 <ng-template #extraTemplate>  
-  <button nz-button nzType="primary">Primary</button>
+  
+  <nz-select [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="顯示全部">
+    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
     
+  </nz-select>
+
+  <button nz-button nzType="primary">Search</button>
+  <br><br>
+  <button nz-button nzType="primary">Refresh</button>  
+  <button nz-button nzType="primary">Create</button>  
 </ng-template>
