@@ -7,19 +7,19 @@ using Volo.Abp.FeatureManagement.Localization;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.Localization;
 using Volo.Abp.Localization;
-using Volo.Abp.Localization.Resources.AbpValidation;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.Localization;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.Localization;
 using Volo.Abp.UI.Navigation.Localization.Resource;
+using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 
 namespace FS.Abp.Localization
 {
-
     [DependsOn(
+        typeof(Volo.Abp.Validation.AbpValidationModule),
         typeof(Volo.Abp.Localization.AbpLocalizationModule),
         typeof(AbpAccountApplicationContractsModule),
         typeof(AbpIdentityDomainSharedModule),

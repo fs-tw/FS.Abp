@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -17,12 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="1.1.2" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.Auditing" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
