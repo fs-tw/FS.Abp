@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Localization" Version="1.1.2" />
+    <EmbeddedResource Include="Localization\Cms\*.json" />
+    <Content Remove="Localization\Cms\*.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Localization\Cms\*.json" />
-    <Content Remove="Localization\Cms\*.json" />
+    <PackageReference Include="Volo.Abp.Validation" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

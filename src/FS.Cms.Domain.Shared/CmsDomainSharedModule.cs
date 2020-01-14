@@ -2,13 +2,14 @@
 using Volo.Abp.Localization;
 using FS.Cms.Localization;
 using Volo.Abp.Localization.ExceptionHandling;
-using Volo.Abp.Localization.Resources.AbpValidation;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.Validation;
+using Volo.Abp.Validation.Localization;
 
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(AbpLocalizationModule)
+        typeof(AbpValidationModule)
     )]
     public class CmsDomainSharedModule : AbpModule
     {

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.Modularity;
+using Volo.Abp.Testing;
 using Volo.Abp.Uow;
 
 namespace FS.Cms
@@ -16,12 +17,12 @@ namespace FS.Cms
             options.UseAutofac();
         }
 
-        protected virtual void WithUnitOfWork(Action action)
+        protected virtual async Task WithUnitOfWorkAsync(Action action)
         {
-            WithUnitOfWork(new AbpUnitOfWorkOptions(), action);
+            await WithUnitOfWorkAsync(new AbpUnitOfWorkOptions(), action);
         }
 
-        protected virtual void WithUnitOfWork(AbpUnitOfWorkOptions options, Action action)
+        protected virtual async Task WithUnitOfWorkAsync(AbpUnitOfWorkOptions options, Action action)
         {
             using (var scope = ServiceProvider.CreateScope())
             {
@@ -31,7 +32,7 @@ namespace FS.Cms
                 {
                     action();
 
-                    uow.Complete();
+                    await uow.CompleteAsync();
                 }
             }
         }
@@ -56,12 +57,12 @@ namespace FS.Cms
             }
         }
 
-        protected virtual TResult WithUnitOfWork<TResult>(Func<TResult> func)
+        protected virtual async Task<TResult> WithUnitOfWorkAsync<TResult>(Func<TResult> func)
         {
-            return WithUnitOfWork(new AbpUnitOfWorkOptions(), func);
+            return await WithUnitOfWorkAsync(new AbpUnitOfWorkOptions(), func);
         }
 
-        protected virtual TResult WithUnitOfWork<TResult>(AbpUnitOfWorkOptions options, Func<TResult> func)
+        protected virtual async Task<TResult> WithUnitOfWorkAsync<TResult>(AbpUnitOfWorkOptions options, Func<TResult> func)
         {
             using (var scope = ServiceProvider.CreateScope())
             {
@@ -70,7 +71,7 @@ namespace FS.Cms
                 using (var uow = uowManager.Begin(options))
                 {
                     var result = func();
-                    uow.Complete();
+                    await uow.CompleteAsync();
                     return result;
                 }
             }
