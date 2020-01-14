@@ -17,12 +17,16 @@ import { PostDtos } from '@fs/cms';
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
+ 
 
   @Select(PostState.getPosts)
   data$: Observable<PostDtos.postData[]>;
 
   @Select(PostState.getPostsTotalCount)
   getTotalCount$: Observable<number>;
+
+
+  selectedValue="jack"; 
 
   loading = false;
   confirmModal: NzModalRef;
