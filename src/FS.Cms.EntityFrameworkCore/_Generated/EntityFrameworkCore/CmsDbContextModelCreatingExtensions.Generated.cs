@@ -34,6 +34,9 @@ namespace FS.Cms.EntityFrameworkCore
             builder.ApplyConfiguration<FS.Cms.Tagging.Tag>(new FS.Cms.Tagging.TagConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.DocumentDefinition>(new FS.Cms.Documents.DocumentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.Document>(new FS.Cms.Documents.DocumentConfiguration(options));
+            builder.Ignore<FS.Cms.Core.FileField>();
+            builder.Ignore<FS.Cms.Core.ImageField>();
+            
         }
     }
 }

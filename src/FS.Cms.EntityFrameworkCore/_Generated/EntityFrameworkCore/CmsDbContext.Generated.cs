@@ -65,12 +65,12 @@ namespace FS.Cms.EntityFrameworkCore
             OnCreated();
         }
         protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-
+        {            
             builder.ConfigureCms();
 
             CustomizeMapping(ref builder);
+
+            base.OnModelCreating(builder);
         }
 
         partial void CustomizeMapping(ref ModelBuilder modelBuilder);

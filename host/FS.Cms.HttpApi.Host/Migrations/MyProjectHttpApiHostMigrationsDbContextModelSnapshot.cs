@@ -22,7 +22,6 @@ namespace FS.Cms.Migrations
             modelBuilder.Entity("FS.Cms.Blogs.Blog", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -91,7 +90,6 @@ namespace FS.Cms.Migrations
             modelBuilder.Entity("FS.Cms.Documents.Document", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -236,7 +234,6 @@ namespace FS.Cms.Migrations
             modelBuilder.Entity("FS.Cms.Posts.Post", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("BlogId")
@@ -320,7 +317,6 @@ namespace FS.Cms.Migrations
             modelBuilder.Entity("FS.Cms.Posts.PostTag", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationTime")
@@ -377,7 +373,6 @@ namespace FS.Cms.Migrations
             modelBuilder.Entity("FS.Cms.Tagging.Tag", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
