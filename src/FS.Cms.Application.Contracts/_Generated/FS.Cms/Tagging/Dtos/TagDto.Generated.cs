@@ -13,8 +13,7 @@ using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 namespace FS.Cms.Tagging.Dtos
 {
-    public partial class TagDto : 
-        Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
+    public partial class TagDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public string Name { get; set; }
 

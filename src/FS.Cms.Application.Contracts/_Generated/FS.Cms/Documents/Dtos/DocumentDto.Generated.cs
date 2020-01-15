@@ -13,8 +13,7 @@ using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 namespace FS.Cms.Documents.Dtos
 {
-    public partial class DocumentDto : 
-        Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>, FS.Abp.Trees.Dtos.ITreeDto
+    public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>, FS.Abp.Trees.Dtos.ITreeDto
     {
         public string Content { get; set; }
 

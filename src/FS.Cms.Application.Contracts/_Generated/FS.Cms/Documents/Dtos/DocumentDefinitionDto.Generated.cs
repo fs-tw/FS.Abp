@@ -13,8 +13,7 @@ using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 namespace FS.Cms.Documents.Dtos
 {
-    public partial class DocumentDefinitionDto : 
-        Volo.Abp.Application.Dtos.FullAuditedEntityDto<String>
+    public partial class DocumentDefinitionDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<String>
     {
         public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
 

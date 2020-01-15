@@ -327,7 +327,7 @@
       </Template>
     </Templates>
     <AttributeAssemblies>
-      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
+      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
         <AttributeType Name="AbpAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
         </AttributeType>
