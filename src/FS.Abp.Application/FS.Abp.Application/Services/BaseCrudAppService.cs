@@ -68,7 +68,7 @@ namespace FS.Abp.Application.Services
 
             var result = await PagedAndSortedOperation.ListAsync(
                 input,
-                (x) => ((IRepository<TEntity>)CreateFilteredQuery(input)).WithDetails(),
+                (x) => CreateFilteredQuery(input),
                 (query, i) => this.ApplySorting(query, input),
                 (query, i) => this.ApplyPaging(query, input));
 
