@@ -12,7 +12,7 @@ namespace FS.Cms.EntityFrameworkCore
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<MyProjectHttpApiHostMigrationsDbContext>()
-                .UseSqlServer(configuration.GetConnectionString("Default"));
+                .UseSqlServer(configuration.GetConnectionString("Cms"));
 
             return new MyProjectHttpApiHostMigrationsDbContext(builder.Options);
         }

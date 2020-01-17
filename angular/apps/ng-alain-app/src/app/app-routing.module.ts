@@ -41,6 +41,11 @@ const routes: Routes = [
         loadChildren: () =>
             import('./lazy-libs/setting-management-wrapper.module').then(m => m.SettingManagementWrapperModule),
     },
+    {
+        path: 'cms',
+        loadChildren: () =>
+            import('./lazy-libs/cms-wrapper.module').then(m => m.CmsWrapperModule),
+    },
     {//alain routers demo
         path: 'pages',
         loadChildren: () => import('./routes/routes.module').then(m => m.RoutesModule),

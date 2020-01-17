@@ -2,24 +2,24 @@ export const environment = {
   production: false,
   hmr: false,
   application: {
-    name: 'WebSite',
+    name: 'Cms',
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44356',
-    clientId: 'WebSite_App',
+    issuer: 'https://localhost:44357',
+    clientId: 'Cms_ConsoleTestApp',
     dummyClientSecret: '1q2w3e*',
-    scope: 'WebSite',
+    scope: 'Cms',
     showDebugInformation: true,
     oidc: false,
     requireHttps: true,
   },
   apis: {
     default: {
-      url: 'https://localhost:44356',
+      url: 'https://localhost:44387',
     },
   },
   localization: {
-    defaultResourceName: 'WebSite',
+    defaultResourceName: 'Cms',
   },
 };

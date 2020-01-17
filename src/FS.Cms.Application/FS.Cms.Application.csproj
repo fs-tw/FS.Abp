@@ -3,15 +3,28 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>FS.Cms</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="1.1.2" />
+    <Compile Remove="_Generated\FS.Cms\Document\DocumentDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\DocumentTreeAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDtoAutoMapperProfile.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="2.0.0" />
+    <ProjectReference Include="..\..\..\..\framework\src\FS.Abp.Application\FS.Abp.Application.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Application\FS.Abp.Trees.Application.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Document\Dtos\" />
   </ItemGroup>
 
 </Project>

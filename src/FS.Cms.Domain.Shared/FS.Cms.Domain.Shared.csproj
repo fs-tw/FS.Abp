@@ -3,17 +3,29 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>FS.Cms</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Localization" Version="1.1.2" />
+    <EmbeddedResource Include="Localization\Cms\*.json" />
+    <Content Remove="Localization\Cms\*.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Localization\Cms\*.json" />
-    <Content Remove="Localization\Cms\*.json" />
+    <PackageReference Include="Volo.Abp.Validation" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\Cms.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>Cms.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\Cms.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -3,14 +3,28 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>FS.Cms</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="1.1.2" />
-    <PackageReference Include="Volo.Abp.Authorization" Version="1.1.2" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDefinitionDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\IDocumentDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\IDocumentTreeAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="2.0.0" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="2.0.0" />
+    <ProjectReference Include="..\..\..\..\framework\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Application.Contracts\FS.Abp.Trees.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataModel\" />
+    <Folder Include="_Generated\FS.Cms\Document\Dtos\" />
   </ItemGroup>
 
 </Project>

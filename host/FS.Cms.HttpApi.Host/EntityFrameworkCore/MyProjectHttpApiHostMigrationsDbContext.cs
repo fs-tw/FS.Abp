@@ -13,9 +13,9 @@ namespace FS.Cms.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
             modelBuilder.ConfigureCms();
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

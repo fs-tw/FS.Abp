@@ -16,7 +16,7 @@ import { TenantManagementConfigModule } from '@abp/ng.tenant-management.config';
 import { SettingManagementConfigModule } from '@fs/setting-management/config';
 import { LayoutDefaultComponent, LayoutPassportComponent, LayoutFullScreenComponent } from '@fs/ng-alain/basic';
 import { Router } from '@angular/router';
-
+import { CmsConfigModule } from '@fs/cms/config';
 
 // 加载i18n语言文件
 export function I18nHttpLoaderFactory(http: HttpClient) {
@@ -64,6 +64,7 @@ const AlainLayouts = [LayoutDefaultComponent, LayoutPassportComponent, LayoutFul
     //@fs/ng-alain
     NgAlainSharedModule.forRoot(),
     //modules
+    CmsConfigModule
   ],
   exports: [
 
