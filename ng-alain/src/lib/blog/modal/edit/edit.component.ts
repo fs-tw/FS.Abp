@@ -14,7 +14,7 @@ import { BlogDtos } from '@fs/cms';
 })
 export class EditComponent implements OnInit {
   i: any = {};
-
+  loading=false;
   @Input()
   id;
 
