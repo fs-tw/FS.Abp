@@ -7,7 +7,8 @@ using Volo.Abp.Uow;
 namespace FS.Abp.Application
 {
     [DependsOn(
-        typeof(Volo.Abp.Application.AbpDddApplicationContractsModule)
+        typeof(Volo.Abp.Application.AbpDddApplicationContractsModule),
+        typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesContractsModule)
         )]
     public class AbpDddApplicationContractsModule : AbpModule
     {

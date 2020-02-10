@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using JsonSubTypes;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 using Volo.Abp.Uow;
