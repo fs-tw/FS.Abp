@@ -17,10 +17,15 @@ namespace FS.Cms.Tagging.Dtos
     {
         public TagAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Tagging.Tag, TagDto>().ReverseMap();
+            CreateMap<FS.Cms.Tagging.Tag, TagDto>()
+                .ReverseMap();
+
             CreateMap<FS.Cms.Tagging.Tag, TagWithDetailsDto>();
+
             CreateMap<TagCreateInput, FS.Cms.Tagging.Tag>();
+
             CreateMap<TagUpdateInput, FS.Cms.Tagging.Tag>();
+
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();

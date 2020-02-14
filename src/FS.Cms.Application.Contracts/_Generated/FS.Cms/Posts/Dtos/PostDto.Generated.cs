@@ -15,17 +15,27 @@ namespace FS.Cms.Posts.Dtos
 {
     public partial class PostDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
+        public string Title { get; set; }
+
+        public string Subtitle { get; set; }
+
         public string Url { get; set; }
+
+        public string Content { get; set; }
 
         public string CoverImage { get; set; }
 
-        public string Title { get; set; }
+        public bool Published { get; set; }
 
-        public string Content { get; set; }
+        public string Published_By { get; set; }
+
+        public System.DateTime Published_At { get; set; }
 
         public int ReadCount { get; set; }
 
         public System.Guid BlogId { get; set; }
+
+        public DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostWithDetailsDto : PostDto
@@ -35,32 +45,52 @@ namespace FS.Cms.Posts.Dtos
     }
     public partial class PostCreateInput
     {
+        public string Title { get; set; }
+
+        public string Subtitle { get; set; }
+
         public string Url { get; set; }
+
+        public string Content { get; set; }
 
         public string CoverImage { get; set; }
 
-        public string Title { get; set; }
+        public bool Published { get; set; }
 
-        public string Content { get; set; }
+        public string Published_By { get; set; }
+
+        public System.DateTime Published_At { get; set; }
 
         public int ReadCount { get; set; }
 
         public System.Guid BlogId { get; set; }
+
+        public DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostUpdateInput
     {
+        public string Title { get; set; }
+
+        public string Subtitle { get; set; }
+
         public string Url { get; set; }
+
+        public string Content { get; set; }
 
         public string CoverImage { get; set; }
 
-        public string Title { get; set; }
+        public bool Published { get; set; }
 
-        public string Content { get; set; }
+        public string Published_By { get; set; }
+
+        public System.DateTime Published_At { get; set; }
 
         public int ReadCount { get; set; }
 
         public System.Guid BlogId { get; set; }
+
+        public DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostGetListInput : PagedAndSortedResultRequestDto

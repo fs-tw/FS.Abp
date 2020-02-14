@@ -17,8 +17,15 @@ namespace FS.Cms.Core.Dtos
     {
         public ImageFieldAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Core.ImageField, ImageFieldDto>().ReverseMap();
+            CreateMap<FS.Cms.Core.ImageField, ImageFieldDto>()
+                .ReverseMap();
+
             CreateMap<FS.Cms.Core.ImageField, ImageFieldWithDetailsDto>();
+
+            CreateMap<ImageFieldCreateInput, FS.Cms.Core.ImageField>();
+
+            CreateMap<ImageFieldUpdateInput, FS.Cms.Core.ImageField>();
+
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();

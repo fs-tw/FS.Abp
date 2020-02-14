@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FS.Cms.Migrations
 {
-    public partial class CmsModule : Migration
+    public partial class Cms_Module : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -92,12 +92,17 @@ namespace FS.Cms.Migrations
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
                     DeleterId = table.Column<Guid>(nullable: true),
                     DeletionTime = table.Column<DateTime>(nullable: true),
-                    Url = table.Column<string>(nullable: false),
-                    CoverImage = table.Column<string>(nullable: false),
                     Title = table.Column<string>(nullable: false),
+                    Subtitle = table.Column<string>(nullable: false),
+                    Url = table.Column<string>(nullable: false),
                     Content = table.Column<string>(nullable: false),
+                    CoverImage = table.Column<string>(nullable: false),
+                    Published = table.Column<bool>(nullable: false),
+                    Published_By = table.Column<string>(nullable: true),
+                    Published_At = table.Column<DateTime>(nullable: false),
                     ReadCount = table.Column<int>(nullable: false),
                     BlogId = table.Column<Guid>(nullable: false),
+                    DisplayMode = table.Column<int>(nullable: false),
                     TenantId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>

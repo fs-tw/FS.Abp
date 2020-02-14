@@ -27,4 +27,29 @@ namespace FS.Cms.Core.Dtos
     public partial class FileFieldWithDetailsDto : FileFieldDto
     {
     }
+    public partial class FileFieldCreateInput
+    {
+        public string Title { get; set; }
+
+        public string Url { get; set; }
+
+        public string Size { get; set; }
+
+        public FS.Cms.Core.FileType FileType { get; set; }
+
+    }
+    public partial class FileFieldUpdateInput
+    {
+        public string Title { get; set; }
+
+        public string Url { get; set; }
+
+        public string Size { get; set; }
+
+        public FS.Cms.Core.FileType FileType { get; set; }
+
+    }
+    public partial class FileFieldGetListInput : PagedAndSortedResultRequestDto
+    {
+    }
 }

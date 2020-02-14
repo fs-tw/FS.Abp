@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FS.Cms.Migrations
 {
     [DbContext(typeof(MyProjectHttpApiHostMigrationsDbContext))]
-    [Migration("20200115091457_Cms-Module")]
-    partial class CmsModule
+    [Migration("20200214083301_Cms_Module")]
+    partial class Cms_Module
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -273,6 +273,10 @@ namespace FS.Cms.Migrations
                         .HasColumnName("DeletionTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DisplayMode")
+                        .HasColumnName("DisplayMode")
+                        .HasColumnType("int");
+
                     b.Property<string>("ExtraProperties")
                         .HasColumnName("ExtraProperties")
                         .HasColumnType("nvarchar(max)");
@@ -291,9 +295,26 @@ namespace FS.Cms.Migrations
                         .HasColumnName("LastModifierId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("Published")
+                        .HasColumnName("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Published_At")
+                        .HasColumnName("Published_At")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Published_By")
+                        .HasColumnName("Published_By")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ReadCount")
                         .HasColumnName("ReadCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("Subtitle")
+                        .IsRequired()
+                        .HasColumnName("Subtitle")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("TenantId")
                         .HasColumnName("TenantId")

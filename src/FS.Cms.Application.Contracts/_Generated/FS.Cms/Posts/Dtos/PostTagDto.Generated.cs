@@ -27,4 +27,21 @@ namespace FS.Cms.Posts.Dtos
         public FS.Cms.Tagging.Dtos.TagDto Tag { get; set; }
 
     }
+    public partial class PostTagCreateInput
+    {
+        public System.Guid PostId { get; set; }
+
+        public System.Guid TagId { get; set; }
+
+    }
+    public partial class PostTagUpdateInput
+    {
+        public System.Guid PostId { get; set; }
+
+        public System.Guid TagId { get; set; }
+
+    }
+    public partial class PostTagGetListInput : PagedAndSortedResultRequestDto
+    {
+    }
 }
