@@ -6,12 +6,11 @@ using Volo.Abp.Domain.Repositories;
 
 namespace FS.Abp.Application.Services
 {
-    public abstract class EntityWithCompositeKeyCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
-       : BaseCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>,
-        IEntityWithCompositeKeyCrudAppService<TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
+    public abstract class EntityWithCompositeKeyCrudAppService<TEntity, TGetOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
+       : BaseCrudAppService<TEntity, TGetOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>,
+        IEntityWithCompositeKeyCrudAppService<TGetOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
         where TEntity : class, IEntity
         where TGetOutputDto : IEntityDto
-        where TGetListOutputDto : IEntityDto
     {
         protected EntityWithCompositeKeyCrudAppService(IRepository<TEntity> repository)
             : base(repository) { }

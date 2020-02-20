@@ -15,12 +15,11 @@ using Volo.Abp.MultiTenancy;
 
 namespace FS.Abp.Application.Services
 {
-    public abstract class BaseCrudAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
+    public abstract class BaseCrudAppService<TEntity, TGetOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
             : Volo.Abp.Application.Services.ApplicationService,
-            FS.Abp.Application.Services.IBaseCrudAppService<TGetOutputDto, TGetListOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
+            FS.Abp.Application.Services.IBaseCrudAppService<TGetOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
             where TEntity : class, IEntity
             where TGetOutputDto : IEntityDto
-            where TGetListOutputDto : IEntityDto
     {
         public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
 
@@ -46,32 +45,29 @@ namespace FS.Abp.Application.Services
             Repository = repository;
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
-
-
-
-
-        public virtual async Task<PagedResultDto<TGetListOutputDto>> GetListAsync(TGetListInput input)
+        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
         {
-            await CheckGetListPolicyAsync().ConfigureAwait(false);
-
-            var result = await PagedAndSortedOperation.ListAsync(
-                input,
-                (x) => CreateFilteredQuery(input),
-                (query, i) => this.ApplySorting(query, input),
-                (query, i) => this.ApplyPaging(query, input));
-
-            return CreatePagedResultDto<TGetListOutputDto>(result);
+            return Repository.WithDetails();
         }
 
-        public virtual async Task<PagedResultDto<TGetOutputDto>> GetListWithDetailsAsync(TGetListInput input)
+        public virtual async Task<PagedResultDto<TGetOutputDto>> GetListAsync(TGetListInput input)
         {
             await CheckGetListPolicyAsync().ConfigureAwait(false);
 
+            var query = CreateFilteredQuery(input);
+            if (input is ISearchResultRequest searchInput)
+            {
+                if (!searchInput.KeyWord.IsNullOrWhiteSpace() && searchInput.Fields?.Split(',').Count() > 0)
+                {
+                    query = query.Where(FS.Abp.Shared.ExpressionHelper.CreateLikeExpression<TEntity>(searchInput.Fields, searchInput.KeyWord));
+                }
+            }
+
             var result = await PagedAndSortedOperation.ListAsync(
                 input,
-                (x) => CreateFilteredQuery(input),
-                (query, i) => this.ApplySorting(query, input),
-                (query, i) => this.ApplyPaging(query, input));
+                (x) => query,
+                (q, i) => this.ApplySorting(q, input),
+                (q, i) => this.ApplyPaging(q, input));
 
             return CreatePagedResultDto<TGetOutputDto>(result);
         }
@@ -174,7 +170,7 @@ namespace FS.Abp.Application.Services
             return PagedAndSortedOperation.ApplySorting(query, input);//default Strategy
         }
 
-        
+
 
 
 
@@ -257,20 +253,6 @@ namespace FS.Abp.Application.Services
         protected virtual bool HasTenantIdProperty(TEntity entity)
         {
             return entity.GetType().GetProperty(nameof(IMultiTenant.TenantId)) != null;
-        }
-
-        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
-        {
-            if (input is ISearchResultRequest searchInput)
-            {
-                //if (!searchInput.KeyWord.IsNullOrWhiteSpace() && searchInput.Fields?.Split(',').Count() > 0)
-                {
-                    return Repository.Where(FS.Abp.Shared.ExpressionHelper.CreateLikeExpression<TEntity>(searchInput.Fields, searchInput.KeyWord));
-
-
-                }
-            }
-            return Repository;
         }
 
 
