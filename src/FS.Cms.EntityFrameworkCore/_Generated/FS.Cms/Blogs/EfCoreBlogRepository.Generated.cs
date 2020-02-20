@@ -12,6 +12,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace FS.Cms.Blogs
 {
@@ -20,6 +21,6 @@ namespace FS.Cms.Blogs
         IBlogRepository
     {
         public EfCoreBlogRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
-            : base(dbContextProvider){}
+            : base(dbContextProvider) { }
     }
 }

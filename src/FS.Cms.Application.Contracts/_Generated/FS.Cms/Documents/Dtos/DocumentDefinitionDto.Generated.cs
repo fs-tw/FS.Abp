@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Documents.Dtos
 {
     public partial class DocumentDefinitionDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<String>
@@ -45,7 +47,7 @@ namespace FS.Cms.Documents.Dtos
         public string Url { get; set; }
 
     }
-    public partial class DocumentDefinitionGetListInput : PagedAndSortedResultRequestDto
+    public partial class DocumentDefinitionGetListInput : SearchResultRequestDto
     {
     }
 }

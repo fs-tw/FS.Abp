@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Documents.Dtos
 {
     public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>, FS.Abp.Trees.Dtos.ITreeDto

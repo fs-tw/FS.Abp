@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Core.Dtos
 {
     public partial class ImageFieldDto
@@ -55,7 +57,7 @@ namespace FS.Cms.Core.Dtos
         public string IsCover { get; set; }
 
     }
-    public partial class ImageFieldGetListInput : PagedAndSortedResultRequestDto
+    public partial class ImageFieldGetListInput : SearchResultRequestDto
     {
     }
 }

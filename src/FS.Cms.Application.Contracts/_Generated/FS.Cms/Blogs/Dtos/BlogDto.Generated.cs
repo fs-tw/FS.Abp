@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Blogs.Dtos
 {
     public partial class BlogDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
@@ -43,7 +45,7 @@ namespace FS.Cms.Blogs.Dtos
         public string Description { get; set; }
 
     }
-    public partial class BlogGetListInput : PagedAndSortedResultRequestDto
+    public partial class BlogGetListInput : SearchResultRequestDto
     {
     }
 }

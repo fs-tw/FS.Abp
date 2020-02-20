@@ -12,6 +12,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace FS.Cms.Documents
 {
@@ -20,6 +21,15 @@ namespace FS.Cms.Documents
         IDocumentTreeRepository
     {
         public EfCoreDocumentTreeRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
-            : base(dbContextProvider){}
+            : base(dbContextProvider) { }
+        public override IQueryable<FS.Cms.Documents.Document> WithDetails()
+        {
+            return base.WithDetails(new Expression<Func<FS.Cms.Documents.Document, object>>[] 
+            {
+                x => x.DocumentDefinition,
+                x => x.Children,
+                x => x.Parent
+            });
+        }
     }
 }

@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Core.Dtos
 {
     public partial class FileFieldDto
@@ -49,7 +51,7 @@ namespace FS.Cms.Core.Dtos
         public FS.Cms.Core.FileType FileType { get; set; }
 
     }
-    public partial class FileFieldGetListInput : PagedAndSortedResultRequestDto
+    public partial class FileFieldGetListInput : SearchResultRequestDto
     {
     }
 }

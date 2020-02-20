@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Posts.Dtos
 {
     public partial class PostTagDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
@@ -41,7 +43,7 @@ namespace FS.Cms.Posts.Dtos
         public System.Guid TagId { get; set; }
 
     }
-    public partial class PostTagGetListInput : PagedAndSortedResultRequestDto
+    public partial class PostTagGetListInput : SearchResultRequestDto
     {
     }
 }
