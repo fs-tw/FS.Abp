@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FS.Abp.Application.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
@@ -38,7 +39,7 @@ namespace FS.Abp.Application.Services
 
         protected virtual string DeletePolicyName { get; set; }
 
-        internal bool isEntityWithIdKey=> Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>));
+        internal bool isEntityWithIdKey => Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>));
 
         public BaseCrudAppService(IRepository<TEntity> repository)
         {
@@ -107,11 +108,11 @@ namespace FS.Abp.Application.Services
 
             if (isEntityWithIdKey)
             {
-                await Repository.DeleteAsync(createEqualityExpression(new { Id = id })).ConfigureAwait(false);
+                await Repository.DeleteAsync(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(new { Id = id })).ConfigureAwait(false);
             }
             else
             {
-                await Repository.DeleteAsync(createEqualityExpression(id)).ConfigureAwait(false);
+                await Repository.DeleteAsync(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(id)).ConfigureAwait(false);
             }
         }
 
@@ -120,11 +121,11 @@ namespace FS.Abp.Application.Services
         {
             if (isEntityWithIdKey)
             {
-                return Task.FromResult(Repository.FirstOrDefault(createEqualityExpression(new { Id = id })));
+                return Task.FromResult(Repository.FirstOrDefault(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(new { Id = id })));
             }
             else
             {
-                return Task.FromResult(Repository.FirstOrDefault(createEqualityExpression(id)));
+                return Task.FromResult(Repository.FirstOrDefault(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(id)));
             }
         }
 
@@ -173,10 +174,7 @@ namespace FS.Abp.Application.Services
             return PagedAndSortedOperation.ApplySorting(query, input);//default Strategy
         }
 
-        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
-        {
-            return Repository;
-        }
+        
 
 
 
@@ -261,39 +259,18 @@ namespace FS.Abp.Application.Services
             return entity.GetType().GetProperty(nameof(IMultiTenant.TenantId)) != null;
         }
 
-        internal static Expression<Func<TEntity, bool>> createEqualityExpression(object compositekey)
+        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
         {
-            var keyProperties = compositekey.GetType().GetProperties();
-
-            var entityParameter = Expression.Parameter(typeof(TEntity), "e");
-
-            return Expression.Lambda<Func<TEntity, bool>>(
-                buildPredicate(keyProperties, compositekey, entityParameter), entityParameter);
-        }
-        internal static BinaryExpression buildPredicate(
-            IReadOnlyList<PropertyInfo> keyProperties,
-            object keyValues,
-            ParameterExpression entityParameter)
-        {
-            var keyValuesConstant = Expression.Constant(keyValues);
-
-            var predicate = GenerateEqualExpression(keyProperties[0], 0);
-
-            for (var i = 1; i < keyProperties.Count; i++)
+            if (input is ISearchResultRequest searchInput)
             {
-                predicate = Expression.AndAlso(predicate, GenerateEqualExpression(keyProperties[i], i));
+                //if (!searchInput.KeyWord.IsNullOrWhiteSpace() && searchInput.Fields?.Split(',').Count() > 0)
+                {
+                    return Repository.Where(FS.Abp.Shared.ExpressionHelper.CreateLikeExpression<TEntity>(searchInput.Fields, searchInput.KeyWord));
+
+
+                }
             }
-
-            return predicate;
-
-            BinaryExpression GenerateEqualExpression(PropertyInfo property, int i) =>
-                Expression.Equal(
-                    Expression.PropertyOrField(entityParameter, property.Name),
-                    Expression.Convert(
-                        Expression.Property(
-                            keyValuesConstant,
-                            property),
-                        property.PropertyType));
+            return Repository;
         }
 
 
