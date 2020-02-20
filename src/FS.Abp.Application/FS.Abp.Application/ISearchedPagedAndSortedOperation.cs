@@ -6,11 +6,12 @@ using Volo.Abp.Linq;
 
 namespace FS.Abp.Application
 {
-    public interface IPagedAndSortedOperation: Volo.Abp.DependencyInjection.ITransientDependency
+    public interface ISearchedAndPagedAndSortedOperation: Volo.Abp.DependencyInjection.ITransientDependency
     {
         System.Threading.Tasks.Task<(int TotalCount, System.Collections.Generic.List<TEntity> Entities)> ListAsync<TEntity, TInput>(
             TInput input,
             System.Func<TInput, System.Linq.IQueryable<TEntity>> createFilteredQuery,
+            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySearching = null,
             Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySorting = null,
             Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applyPaging = null)
             where TEntity : class, IEntity;
@@ -19,6 +20,9 @@ namespace FS.Abp.Application
             where TEntity : class, IEntity;
 
         IQueryable<TEntity> ApplyPaging<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+            where TEntity : class, IEntity;
+
+        IQueryable<TEntity> ApplySearching<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity;
     }
 }

@@ -25,8 +25,8 @@ namespace FS.Abp.Application.Services
 
         protected IRepository<TEntity> Repository { get; }
 
-        private IPagedAndSortedOperation _pagedAndSortedOperation;
-        protected IPagedAndSortedOperation PagedAndSortedOperation => LazyGetRequiredService(ref _pagedAndSortedOperation);
+        private ISearchedAndPagedAndSortedOperation _searchedAndpagedAndSortedOperation;
+        protected ISearchedAndPagedAndSortedOperation SearchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndpagedAndSortedOperation);
 
         protected virtual string GetPolicyName { get; set; }
 
@@ -54,18 +54,10 @@ namespace FS.Abp.Application.Services
         {
             await CheckGetListPolicyAsync().ConfigureAwait(false);
 
-            var query = CreateFilteredQuery(input);
-            if (input is ISearchResultRequest searchInput)
-            {
-                if (!searchInput.KeyWord.IsNullOrWhiteSpace() && searchInput.Fields?.Split(',').Count() > 0)
-                {
-                    query = query.Where(FS.Abp.Shared.ExpressionHelper.CreateLikeExpression<TEntity>(searchInput.Fields, searchInput.KeyWord));
-                }
-            }
-
-            var result = await PagedAndSortedOperation.ListAsync(
+            var result = await SearchedAndPagedAndSortedOperation.ListAsync(
                 input,
-                (x) => query,
+                (x) => CreateFilteredQuery(input),
+                (q, i) => this.ApplySearching(q, input),
                 (q, i) => this.ApplySorting(q, input),
                 (q, i) => this.ApplyPaging(q, input));
 
@@ -149,6 +141,10 @@ namespace FS.Abp.Application.Services
         {
             await CheckPolicyAsync(DeletePolicyName).ConfigureAwait(false);
         }
+        protected virtual IQueryable<TEntity> ApplySearching(IQueryable<TEntity> query, TGetListInput input)
+        {
+            return SearchedAndPagedAndSortedOperation.ApplySearching(query, input);//default Strategy
+        }
 
         /// <summary>
         /// Should apply sorting if needed.
@@ -157,7 +153,7 @@ namespace FS.Abp.Application.Services
         /// <param name="input">The input.</param>
         protected virtual IQueryable<TEntity> ApplySorting(IQueryable<TEntity> query, TGetListInput input)
         {
-            return PagedAndSortedOperation.ApplyPaging(query, input);//default Strategy
+            return SearchedAndPagedAndSortedOperation.ApplyPaging(query, input);//default Strategy
         }
 
         /// <summary>
@@ -167,7 +163,7 @@ namespace FS.Abp.Application.Services
         /// <param name="input">The input.</param>
         protected virtual IQueryable<TEntity> ApplyPaging(IQueryable<TEntity> query, TGetListInput input)
         {
-            return PagedAndSortedOperation.ApplySorting(query, input);//default Strategy
+            return SearchedAndPagedAndSortedOperation.ApplySorting(query, input);//default Strategy
         }
 
 

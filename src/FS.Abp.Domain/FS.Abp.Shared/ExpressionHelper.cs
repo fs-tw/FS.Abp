@@ -43,7 +43,7 @@ namespace FS.Abp.Shared
         /// <param name="fields">Name,No</param>
         /// <param name="keyWord">search keyword or match number</param>
         /// <returns></returns>
-        public static Expression<Func<TEntity, bool>> CreateLikeExpression<TEntity>(string fields, string keyWord)
+        public static Expression<Func<TEntity, bool>> CreateSearchExpression<TEntity>(string mode, string fields, string keyWord)
         {
             var isKeyWordNumber = decimal.TryParse(keyWord, out var t);
             var propertyNames = fields.Split(",");
@@ -53,16 +53,30 @@ namespace FS.Abp.Shared
 
             var entityParameter = Expression.Parameter(typeof(TEntity), "e");
 
-            var predicate = GenerateLikeExpression(properties[0], 0);
+            var predicate = GenerateExpression(mode, properties[0], 0);
 
             for (var i = 1; i < properties.Count; i++)
             {
-                predicate = Expression.Or(predicate, GenerateLikeExpression(properties[i], i));
+                predicate = Expression.Or(predicate, GenerateExpression(mode, properties[i], i));
             }
 
             return Expression.Lambda<Func<TEntity, bool>>(predicate, entityParameter);
 
-            Expression GenerateLikeExpression(PropertyInfo property, int i)
+            Expression GenerateExpression(string m, PropertyInfo property, int i)
+            {
+                switch (m)
+                {
+                    case "Contains":
+                        return GenerateContainsExpression(property, i);
+                    case "Equal":
+                        return GenerateEqualExpression(property, i);
+                    default:
+                        return Expression.Constant(false);
+                }
+
+            }
+
+            Expression GenerateContainsExpression(PropertyInfo property, int i)
             {
                 Expression result = null;
                 if (property.PropertyType.IsNumeric())
@@ -77,11 +91,31 @@ namespace FS.Abp.Shared
                 }
                 else if (property.PropertyType == typeof(string))
                 {
+
                     var method = typeof(string).GetMethod("Contains", new[] { typeof(string) });
                     result = Expression.Call(Expression.Property(entityParameter, property.Name),
                          method,
                          Expression.Constant(keyWord));
                 }
+                if (result == null)
+                {
+                    return Expression.Constant(false);
+                }
+
+                return Expression.Equal(result, Expression.Constant(true));
+            }
+            Expression GenerateEqualExpression(PropertyInfo property, int i)
+            {
+                Expression result = null;
+
+                var method = Type.GetTypeCode(property.PropertyType).GetConverMethod();
+                if (method != null)
+                {
+                    result = Expression.Equal(
+                        Expression.Convert(Expression.Property(entityParameter, property.Name), TypeHelper.ToType(Type.GetTypeCode(property.PropertyType))),
+                        Expression.Call(null, method, Expression.Constant(keyWord)));
+                }
+
                 if (result == null)
                 {
                     return Expression.Constant(false);

@@ -68,6 +68,7 @@ namespace FS.Abp.Shared
             //{ TypeCode.DBNull, typeof(DBNull) },
             { TypeCode.Decimal, typeof(Convert).GetMethod("ToDecimal", new[] { typeof(object) }) },
             { TypeCode.Double, typeof(Convert).GetMethod("ToDouble", new[] { typeof(object) }) },
+            { TypeCode.String, typeof(Convert).GetMethod("ToString", new[] { typeof(object) }) },
             //{ TypeCode.Empty, null },
             { TypeCode.Int16, typeof(Convert).GetMethod("ToInt16", new[] { typeof(object) }) },
             { TypeCode.Int32, typeof(Convert).GetMethod("ToInt32", new[] { typeof(object) }) },

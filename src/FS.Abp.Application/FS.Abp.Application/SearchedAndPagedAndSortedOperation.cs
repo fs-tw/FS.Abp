@@ -8,14 +8,15 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Linq;
 using System.Linq.Dynamic.Core;
 using Volo.Abp.Auditing;
+using FS.Abp.Application.Dtos;
 
 namespace FS.Abp.Application
 {
-    public class PagedAndSortedOperation : IPagedAndSortedOperation
+    public class SearchedAndPagedAndSortedOperation : ISearchedAndPagedAndSortedOperation
     {
         protected IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
 
-        public PagedAndSortedOperation()
+        public SearchedAndPagedAndSortedOperation()
         {
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
@@ -23,12 +24,15 @@ namespace FS.Abp.Application
         public virtual async Task<(int TotalCount, List<TEntity> Entities)> ListAsync<TEntity, TInput>(
             TInput input,
             Func<TInput, IQueryable<TEntity>> createFilteredQuery,
+            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySearching = null,
             Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySorting = null,
             Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applyPaging = null)
             where TEntity : class, IEntity
         {
             if (createFilteredQuery == null) throw new Exception("createFilteredQuery must be not null");
             var query = createFilteredQuery.Invoke(input);
+
+            query = applySearching != null ? applySearching.Invoke(query, input) : applySearching(query, input);
 
             var totalCount = await AsyncQueryableExecuter.CountAsync(query).ConfigureAwait(false);
 
@@ -38,6 +42,20 @@ namespace FS.Abp.Application
             var entities = await AsyncQueryableExecuter.ToListAsync(query).ConfigureAwait(false);
 
             return (TotalCount: totalCount, Entities: entities);
+        }
+
+
+        public virtual IQueryable<TEntity> ApplySearching<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+            where TEntity : class, IEntity
+        {
+            if (input is ISearchResultRequest searchInput)
+            {
+                if (!searchInput.Value.IsNullOrWhiteSpace() && searchInput.Fields?.Split(',').Count() > 0)
+                {
+                    return query.Where(FS.Abp.Shared.ExpressionHelper.CreateSearchExpression<TEntity>(searchInput.Mode.ToString(), searchInput.Fields, searchInput.Value));
+                }
+            }
+            return query;
         }
 
         /// <summary>
@@ -66,10 +84,10 @@ namespace FS.Abp.Application
                 }
                 if (Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>)))
                 {
-                    
+
                     return query.OrderBy($"{nameof(IEntity<Guid>.Id)} Desc");
                 }
-                
+
             }
 
             //No sorting
@@ -99,7 +117,6 @@ namespace FS.Abp.Application
             //No paging
             return query;
         }
-
 
 
     }
