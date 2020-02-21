@@ -45,21 +45,11 @@ namespace FS.Abp.Application.Services
             Repository = repository;
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
-        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
-        {
-            return Repository.WithDetails();
-        }
-
         public virtual async Task<PagedResultDto<TGetOutputDto>> GetListAsync(TGetListInput input)
         {
             await CheckGetListPolicyAsync().ConfigureAwait(false);
 
-            var result = await SearchedAndPagedAndSortedOperation.ListAsync(
-                input,
-                (x) => CreateFilteredQuery(input),
-                (q, i) => this.ApplySearching(q, input),
-                (q, i) => this.ApplySorting(q, input),
-                (q, i) => this.ApplyPaging(q, input));
+            var result = await SearchedAndPagedAndSortedOperation.ListAsync(input, (x) => Repository.WithDetails());
 
             return CreatePagedResultDto<TGetOutputDto>(result);
         }
@@ -93,28 +83,14 @@ namespace FS.Abp.Application.Services
         public virtual async Task DeleteAsync(TKey id)
         {
             await CheckDeletePolicyAsync().ConfigureAwait(false);
-
-            if (isEntityWithIdKey)
-            {
-                await Repository.DeleteAsync(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(new { Id = id })).ConfigureAwait(false);
-            }
-            else
-            {
-                await Repository.DeleteAsync(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(id)).ConfigureAwait(false);
-            }
+            var keysEquality = CreateKeysEqualitySpec(id);
+            await Repository.DeleteAsync(keysEquality).ConfigureAwait(false);
         }
-
 
         protected virtual Task<TEntity> GetEntityByIdAsync<TGetById>(TGetById id)
         {
-            if (isEntityWithIdKey)
-            {
-                return Task.FromResult(Repository.FirstOrDefault(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(new { Id = id })));
-            }
-            else
-            {
-                return Task.FromResult(Repository.FirstOrDefault(FS.Abp.Shared.ExpressionHelper.CreatePropertiesEqualityExpression<TEntity>(id)));
-            }
+            var keysEquality = CreateKeysEqualitySpec(id);
+            return Task.FromResult(Repository.FirstOrDefault(keysEquality));
         }
 
         protected virtual async Task CheckGetPolicyAsync()
@@ -141,36 +117,6 @@ namespace FS.Abp.Application.Services
         {
             await CheckPolicyAsync(DeletePolicyName).ConfigureAwait(false);
         }
-        protected virtual IQueryable<TEntity> ApplySearching(IQueryable<TEntity> query, TGetListInput input)
-        {
-            return SearchedAndPagedAndSortedOperation.ApplySearching(query, input);//default Strategy
-        }
-
-        /// <summary>
-        /// Should apply sorting if needed.
-        /// </summary>
-        /// <param name="query">The query.</param>
-        /// <param name="input">The input.</param>
-        protected virtual IQueryable<TEntity> ApplySorting(IQueryable<TEntity> query, TGetListInput input)
-        {
-            return SearchedAndPagedAndSortedOperation.ApplyPaging(query, input);//default Strategy
-        }
-
-        /// <summary>
-        /// Should apply paging if needed.
-        /// </summary>
-        /// <param name="query">The query.</param>
-        /// <param name="input">The input.</param>
-        protected virtual IQueryable<TEntity> ApplyPaging(IQueryable<TEntity> query, TGetListInput input)
-        {
-            return SearchedAndPagedAndSortedOperation.ApplySorting(query, input);//default Strategy
-        }
-
-
-
-
-
-
 
         protected virtual PagedResultDto<TDto> CreatePagedResultDto<TDto>((int TotalCount, System.Collections.Generic.List<TEntity> Entities) queryResult)
         {
@@ -178,6 +124,7 @@ namespace FS.Abp.Application.Services
                 queryResult.TotalCount,
                 queryResult.Entities.Select(x => MapToDto<TDto>(x)).ToList());
         }
+
         protected virtual TDto MapToDto<TDto>(TEntity entity)
         {
             return ObjectMapper.Map<TEntity, TDto>(entity);
@@ -250,7 +197,17 @@ namespace FS.Abp.Application.Services
         {
             return entity.GetType().GetProperty(nameof(IMultiTenant.TenantId)) != null;
         }
-
+        protected virtual FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity> CreateKeysEqualitySpec<TGetById>(TGetById id)
+        {
+            if (isEntityWithIdKey)
+            {
+                return new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(new { Id = id });
+            }
+            else
+            {
+                return new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(id);
+            }
+        }
 
     }
 }

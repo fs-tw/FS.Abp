@@ -32,7 +32,7 @@ namespace FS.Abp.Application
             if (createFilteredQuery == null) throw new Exception("createFilteredQuery must be not null");
             var query = createFilteredQuery.Invoke(input);
 
-            query = applySearching != null ? applySearching.Invoke(query, input) : applySearching(query, input);
+            query = applySearching != null ? applySearching.Invoke(query, input) : ApplySearching(query, input);
 
             var totalCount = await AsyncQueryableExecuter.CountAsync(query).ConfigureAwait(false);
 
@@ -50,10 +50,8 @@ namespace FS.Abp.Application
         {
             if (input is ISearchResultRequest searchInput)
             {
-                if (!searchInput.Value.IsNullOrWhiteSpace() && searchInput.Fields?.Split(',').Count() > 0)
-                {
-                    return query.Where(FS.Abp.Shared.ExpressionHelper.CreateSearchExpression<TEntity>(searchInput.Mode.ToString(), searchInput.Fields, searchInput.Value));
-                }
+                var searchSpec = new FS.Abp.Specifications.SearchSpecification<TEntity>(searchInput.Fields, searchInput.Value);
+                return query.Where(searchSpec);
             }
             return query;
         }
