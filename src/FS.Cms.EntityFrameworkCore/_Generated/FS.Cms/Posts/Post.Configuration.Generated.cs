@@ -32,12 +32,17 @@ namespace FS.Cms.Posts
         public void Configure(EntityTypeBuilder<Post> builder)
         {
             builder.ToTable(options.TablePrefix + @"Posts", options.Schema);
-            builder.Property<string>(x => x.Url).HasColumnName(@"Url").IsRequired().ValueGeneratedNever();
-            builder.Property<string>(x => x.CoverImage).HasColumnName(@"CoverImage").IsRequired().ValueGeneratedNever();
             builder.Property<string>(x => x.Title).HasColumnName(@"Title").IsRequired().ValueGeneratedNever();
+            builder.Property<string>(x => x.Subtitle).HasColumnName(@"Subtitle").IsRequired().ValueGeneratedNever();
+            builder.Property<string>(x => x.Url).HasColumnName(@"Url").IsRequired().ValueGeneratedNever();
             builder.Property<string>(x => x.Content).HasColumnName(@"Content").IsRequired().ValueGeneratedNever();
+            builder.Property<string>(x => x.CoverImage).HasColumnName(@"CoverImage").IsRequired().ValueGeneratedNever();
+            builder.Property<bool>(x => x.Published).HasColumnName(@"Published").IsRequired().ValueGeneratedNever();
+            builder.Property<string>(x => x.Published_By).HasColumnName(@"Published_By").ValueGeneratedNever();
+            builder.Property<System.DateTime>(x => x.Published_At).HasColumnName(@"Published_At").IsRequired().ValueGeneratedNever();
             builder.Property<int>(x => x.ReadCount).HasColumnName(@"ReadCount").IsRequired().ValueGeneratedNever();
             builder.Property<System.Guid>(x => x.BlogId).HasColumnName(@"BlogId").ValueGeneratedNever();
+            builder.Property<FS.Cms.DisplayMode>(x => x.DisplayMode).HasColumnName(@"DisplayMode").IsRequired().ValueGeneratedNever();
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
             builder.HasOne(x => x.Blog).WithMany().IsRequired(true).HasForeignKey(@"BlogId");

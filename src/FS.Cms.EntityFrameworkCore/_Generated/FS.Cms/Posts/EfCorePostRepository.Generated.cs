@@ -12,6 +12,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace FS.Cms.Posts
 {
@@ -20,6 +21,13 @@ namespace FS.Cms.Posts
         IPostRepository
     {
         public EfCorePostRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
-            : base(dbContextProvider){}
+            : base(dbContextProvider) { }
+        public override IQueryable<FS.Cms.Posts.Post> WithDetails()
+        {
+            return base.WithDetails(new Expression<Func<FS.Cms.Posts.Post, object>>[] 
+            {
+                x => x.Blog,
+            });
+        }
     }
 }

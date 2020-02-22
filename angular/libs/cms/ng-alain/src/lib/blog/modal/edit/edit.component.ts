@@ -4,8 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { finalize, pluck } from 'rxjs/operators';
 import { NotifyService } from '../../../shared/services/notify/notify.service';
-import { GetBlogById, UpdateBlog, CreateBlog } from '../../providers/blog.actions';
-import { Blog } from '../../providers/blog.models';
+import { GetBlogById, UpdateBlog, CreateBlog } from '../../providers/blog/blog.actions';
+import { Blog } from '../../providers/blog/blog.models';
 import { BlogDtos } from '@fs/cms';
 @Component({
   selector: 'fs-edit',
@@ -14,7 +14,7 @@ import { BlogDtos } from '@fs/cms';
 })
 export class EditComponent implements OnInit {
   i: any = {};
-
+  loading=false;
   @Input()
   id;
 

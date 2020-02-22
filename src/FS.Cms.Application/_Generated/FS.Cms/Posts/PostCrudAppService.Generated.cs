@@ -9,12 +9,15 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Posts
 {
     public partial class PostCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Posts.Post, FS.Cms.Posts.Dtos.PostWithDetailsDto, FS.Cms.Posts.Dtos.PostDto, Guid, FS.Cms.Posts.Dtos.PostGetListInput, FS.Cms.Posts.Dtos.PostCreateInput, FS.Cms.Posts.Dtos.PostUpdateInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Posts.Post, FS.Cms.Posts.Dtos.PostDto, Guid, FS.Cms.Posts.Dtos.PostGetListInput, FS.Cms.Posts.Dtos.PostCreateInput, FS.Cms.Posts.Dtos.PostUpdateInput>,
         IPostCrudAppService
     {
         private readonly IPostRepository _repository;
@@ -23,5 +26,16 @@ namespace FS.Cms.Posts
         {
             this._repository = repository;
         }
+
+        public async Task<PagedResultDto<FS.Cms.Posts.Dtos.PostDto>> GetBlogAsync(FS.Cms.Blogs.Dtos.BlogPrimaryKeyDto foreignKey, FS.Abp.Application.Dtos.SearchResultRequestDto searchInput)
+        {
+            await CheckGetListPolicyAsync().ConfigureAwait(false);
+            var foreignKeySpec = new FS.Abp.Specifications.PropertiesEqualitySpecification<Post>(foreignKey);
+            var query = this.Repository.WithDetails().Where(foreignKeySpec);
+            var result = await this.SearchedAndPagedAndSortedOperation.ListAsync(searchInput, (input) => query).ConfigureAwait(false);
+            return CreatePagedResultDto<FS.Cms.Posts.Dtos.PostDto>(result);
+        }
+
+
     }
 }

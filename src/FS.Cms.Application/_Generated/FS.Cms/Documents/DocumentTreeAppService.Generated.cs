@@ -9,12 +9,15 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Documents
 {
     public partial class DocumentTreeAppService : 
-        FS.Abp.Trees.TreeAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentWithDetailsDto, FS.Cms.Documents.Dtos.DocumentDto, FS.Cms.Documents.Dtos.DocumentGetListInput, FS.Cms.Documents.Dtos.DocumentCreateInput, FS.Cms.Documents.Dtos.DocumentUpdateInput, FS.Cms.Documents.Dtos.DocumentMoveInput>,
+        FS.Abp.Trees.TreeAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentDto, FS.Cms.Documents.Dtos.DocumentGetListInput, FS.Cms.Documents.Dtos.DocumentCreateInput, FS.Cms.Documents.Dtos.DocumentUpdateInput, FS.Cms.Documents.Dtos.DocumentMoveInput>,
         IDocumentTreeAppService
     {
         private readonly IDocumentTreeRepository _repository;
@@ -23,5 +26,8 @@ namespace FS.Cms.Documents
         {
             this._repository = repository;
         }
+
+
+
     }
 }

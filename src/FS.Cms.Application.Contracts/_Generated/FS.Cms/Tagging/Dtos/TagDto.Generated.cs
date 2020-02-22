@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Tagging.Dtos
 {
     public partial class TagDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
@@ -21,9 +23,6 @@ namespace FS.Cms.Tagging.Dtos
 
         public string UsageCount { get; set; }
 
-    }
-    public partial class TagWithDetailsDto : TagDto
-    {
     }
     public partial class TagCreateInput
     {
@@ -43,7 +42,12 @@ namespace FS.Cms.Tagging.Dtos
         public string UsageCount { get; set; }
 
     }
-    public partial class TagGetListInput : PagedAndSortedResultRequestDto
+    public partial class TagGetListInput : SearchResultRequestDto
     {
+    }
+    public partial class TagPrimaryKeyDto
+    {
+        public System.Guid Id { get; set; }
+
     }
 }

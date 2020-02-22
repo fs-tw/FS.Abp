@@ -30,7 +30,25 @@ namespace FS.Cms.Posts
             OnCreated();
         }
 
+        public virtual string Title
+        {
+            get;
+            set;
+        }
+
+        public virtual string Subtitle
+        {
+            get;
+            set;
+        }
+
         public virtual string Url
+        {
+            get;
+            set;
+        }
+
+        public virtual string Content
         {
             get;
             set;
@@ -42,13 +60,19 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual string Title
+        public virtual bool Published
         {
             get;
             set;
         }
 
-        public virtual string Content
+        public virtual string Published_By
+        {
+            get;
+            set;
+        }
+
+        public virtual System.DateTime Published_At
         {
             get;
             set;
@@ -61,6 +85,12 @@ namespace FS.Cms.Posts
         }
 
         public virtual System.Guid BlogId
+        {
+            get;
+            set;
+        }
+
+        public virtual FS.Cms.DisplayMode DisplayMode
         {
             get;
             set;

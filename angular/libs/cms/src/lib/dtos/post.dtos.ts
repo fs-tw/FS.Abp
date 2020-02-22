@@ -1,7 +1,7 @@
 import { ABP } from '@abp/ng.core';
 import { BlogDtos } from './blog.dtos';
  export  namespace PostDtos{
-    export type PostPage=ABP.PagedItemsResponse<{}>;
+    export type PostPage=ABP.PagedResponse<postData>;
 
     export interface PostPageQueryParams extends ABP.PageQueryParams{
         skipCount:number;
@@ -16,11 +16,17 @@ import { BlogDtos } from './blog.dtos';
     }
 
     export interface PostInput{
-        url: string;
-        coverImage: string;
+        id:string;  
         title: string;
+        subtitle: string;
+        url: string;
         content: string;
-        readCount: number;
+        coverImage: string;
+        published: boolean;
+        published_By: string;
+        published_At: Date;
+        readCount: number;                
         blogId: string;
+        displayMode: number;
     }
  }

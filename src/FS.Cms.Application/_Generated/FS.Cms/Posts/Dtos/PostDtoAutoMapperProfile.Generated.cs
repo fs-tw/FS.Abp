@@ -17,10 +17,13 @@ namespace FS.Cms.Posts.Dtos
     {
         public PostAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Posts.Post, PostDto>().ReverseMap();
-            CreateMap<FS.Cms.Posts.Post, PostWithDetailsDto>();
+            CreateMap<FS.Cms.Posts.Post, PostDto>()
+                .ReverseMap();
+
             CreateMap<PostCreateInput, FS.Cms.Posts.Post>();
+
             CreateMap<PostUpdateInput, FS.Cms.Posts.Post>();
+
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();

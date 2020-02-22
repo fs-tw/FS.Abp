@@ -11,6 +11,8 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
 namespace FS.Cms.Documents.Dtos
 {
     public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>, FS.Abp.Trees.Dtos.ITreeDto
@@ -26,15 +28,6 @@ namespace FS.Cms.Documents.Dtos
         public System.Guid? ParentId { get; set; }
 
         public string DisplayName { get; set; }
-
-    }
-    public partial class DocumentWithDetailsDto : DocumentDto
-    {
-        public DocumentDefinitionDto DocumentDefinition { get; set; }
-
-        public List<DocumentDto> Children { get; set; }
-
-        public DocumentDto Parent { get; set; }
 
     }
     public partial class DocumentCreateInput : FS.Abp.Trees.Dtos.ICreateInput
@@ -75,6 +68,11 @@ namespace FS.Cms.Documents.Dtos
         public System.Guid Id { get; set; }
 
         public System.Guid? NewParentId { get; set; }
+
+    }
+    public partial class DocumentPrimaryKeyDto
+    {
+        public System.Guid Id { get; set; }
 
     }
 }
