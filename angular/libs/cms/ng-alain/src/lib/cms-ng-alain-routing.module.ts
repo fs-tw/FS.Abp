@@ -24,7 +24,7 @@ const routes: Routes = [
       ],
   }
 ];
-
+// @dynamic
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
