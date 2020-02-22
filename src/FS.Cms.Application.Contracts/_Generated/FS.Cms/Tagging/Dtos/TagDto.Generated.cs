@@ -24,9 +24,6 @@ namespace FS.Cms.Tagging.Dtos
         public string UsageCount { get; set; }
 
     }
-    public partial class TagWithDetailsDto : TagDto
-    {
-    }
     public partial class TagCreateInput
     {
         public string Name { get; set; }
@@ -47,5 +44,10 @@ namespace FS.Cms.Tagging.Dtos
     }
     public partial class TagGetListInput : SearchResultRequestDto
     {
+    }
+    public partial class TagPrimaryKeyDto
+    {
+        public System.Guid Id { get; set; }
+
     }
 }

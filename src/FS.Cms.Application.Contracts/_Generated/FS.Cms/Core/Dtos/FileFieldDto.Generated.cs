@@ -26,9 +26,6 @@ namespace FS.Cms.Core.Dtos
         public FS.Cms.Core.FileType FileType { get; set; }
 
     }
-    public partial class FileFieldWithDetailsDto : FileFieldDto
-    {
-    }
     public partial class FileFieldCreateInput
     {
         public string Title { get; set; }

@@ -20,8 +20,6 @@ namespace FS.Cms.Blogs.Dtos
             CreateMap<FS.Cms.Blogs.Blog, BlogDto>()
                 .ReverseMap();
 
-            CreateMap<FS.Cms.Blogs.Blog, BlogWithDetailsDto>();
-
             CreateMap<BlogCreateInput, FS.Cms.Blogs.Blog>();
 
             CreateMap<BlogUpdateInput, FS.Cms.Blogs.Blog>();

@@ -20,8 +20,6 @@ namespace FS.Cms.Documents.Dtos
             CreateMap<FS.Cms.Documents.DocumentDefinition, DocumentDefinitionDto>()
                 .ReverseMap();
 
-            CreateMap<FS.Cms.Documents.DocumentDefinition, DocumentDefinitionWithDetailsDto>();
-
             CreateMap<DocumentDefinitionCreateInput, FS.Cms.Documents.DocumentDefinition>();
 
             CreateMap<DocumentDefinitionUpdateInput, FS.Cms.Documents.DocumentDefinition>();

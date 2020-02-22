@@ -39,9 +39,6 @@ namespace FS.Cms.Posts.Dtos
 
         public DisplayMode DisplayMode { get; set; }
 
-    }
-    public partial class PostWithDetailsDto : PostDto
-    {
         public FS.Cms.Blogs.Dtos.BlogDto Blog { get; set; }
 
     }
@@ -97,5 +94,10 @@ namespace FS.Cms.Posts.Dtos
     }
     public partial class PostGetListInput : SearchResultRequestDto
     {
+    }
+    public partial class PostPrimaryKeyDto
+    {
+        public System.Guid Id { get; set; }
+
     }
 }

@@ -20,8 +20,6 @@ namespace FS.Cms.Tagging.Dtos
             CreateMap<FS.Cms.Tagging.Tag, TagDto>()
                 .ReverseMap();
 
-            CreateMap<FS.Cms.Tagging.Tag, TagWithDetailsDto>();
-
             CreateMap<TagCreateInput, FS.Cms.Tagging.Tag>();
 
             CreateMap<TagUpdateInput, FS.Cms.Tagging.Tag>();

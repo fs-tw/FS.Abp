@@ -28,9 +28,6 @@ namespace FS.Cms.Core.Dtos
         public string IsCover { get; set; }
 
     }
-    public partial class ImageFieldWithDetailsDto : ImageFieldDto
-    {
-    }
     public partial class ImageFieldCreateInput
     {
         public string Title { get; set; }

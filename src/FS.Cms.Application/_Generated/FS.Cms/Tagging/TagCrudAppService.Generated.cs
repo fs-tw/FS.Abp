@@ -9,12 +9,15 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Tagging
 {
     public partial class TagCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Tagging.Tag, FS.Cms.Tagging.Dtos.TagWithDetailsDto, Guid, FS.Cms.Tagging.Dtos.TagGetListInput, FS.Cms.Tagging.Dtos.TagCreateInput, FS.Cms.Tagging.Dtos.TagUpdateInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Tagging.Tag, FS.Cms.Tagging.Dtos.TagDto, Guid, FS.Cms.Tagging.Dtos.TagGetListInput, FS.Cms.Tagging.Dtos.TagCreateInput, FS.Cms.Tagging.Dtos.TagUpdateInput>,
         ITagCrudAppService
     {
         private readonly ITagRepository _repository;
@@ -23,5 +26,8 @@ namespace FS.Cms.Tagging
         {
             this._repository = repository;
         }
+
+
+
     }
 }

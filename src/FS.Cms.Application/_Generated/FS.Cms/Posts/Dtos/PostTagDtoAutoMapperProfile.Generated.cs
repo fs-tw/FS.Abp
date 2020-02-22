@@ -20,8 +20,6 @@ namespace FS.Cms.Posts.Dtos
             CreateMap<FS.Cms.Posts.PostTag, PostTagDto>()
                 .ReverseMap();
 
-            CreateMap<FS.Cms.Posts.PostTag, PostTagWithDetailsDto>();
-
             CreateMap<PostTagCreateInput, FS.Cms.Posts.PostTag>();
 
             CreateMap<PostTagUpdateInput, FS.Cms.Posts.PostTag>();
