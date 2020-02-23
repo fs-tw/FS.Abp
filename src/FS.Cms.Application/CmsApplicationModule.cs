@@ -17,7 +17,7 @@ namespace FS.Cms
         {
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<CmsApplicationModule>(true);
+                options.AddMaps<CmsApplicationModule>(false);
             });
         }
     }
