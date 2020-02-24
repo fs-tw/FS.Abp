@@ -8,10 +8,6 @@
     "types": [],
     "lib": ["dom", "es2018"],
     "paths": {
-      "@fs/ng-alain": [ "dist/themes/ng-alain" ],
-      "@fs/ng-alain/*": [ "dist/themes/ng-alain/*" ],
-      "@fs/ngx-admin": [ "dist/themes/ngx-admin" ],
-      "@fs/ngx-admin/*": [ "dist/themes/ngx-admin/*" ]
     }   
   },
   "angularCompilerOptions": {
