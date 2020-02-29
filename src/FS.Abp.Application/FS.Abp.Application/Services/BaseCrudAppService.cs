@@ -46,17 +46,21 @@ namespace FS.Abp.Application.Services
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
         [Obsolete("remove in next version,because only GetListAsync used")]
-        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
+        protected virtual IQueryable<TEntity> CreateFilteredQuery(object input)
         {
             return Repository.WithDetails();
         }
-        public virtual async Task<PagedResultDto<TGetOutputDto>> GetListAsync(TGetListInput input)
+        protected virtual async Task<PagedResultDto<TGetOutputDto>> getListAsync(object input,object searchObject=null)
         {
             await CheckGetListPolicyAsync().ConfigureAwait(false);
-
-            var result = await SearchedAndPagedAndSortedOperation.ListAsync(input, (x) => CreateFilteredQuery(x));
-
+            var searchSpec = new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(searchObject);
+            var query = CreateFilteredQuery(input).WhereIf(searchObject != null, searchSpec);
+            var result = await SearchedAndPagedAndSortedOperation.ListAsync(input, (x) => query);
             return CreatePagedResultDto<TGetOutputDto>(result);
+        }
+        public virtual async Task<PagedResultDto<TGetOutputDto>> GetListAsync(TGetListInput input)
+        {
+            return await getListAsync(input);
         }
 
         public virtual async Task<TGetOutputDto> CreateAsync(TCreateInput input)
