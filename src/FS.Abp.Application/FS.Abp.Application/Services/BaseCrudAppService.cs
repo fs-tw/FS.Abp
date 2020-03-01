@@ -45,22 +45,23 @@ namespace FS.Abp.Application.Services
             Repository = repository;
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
-        [Obsolete("remove in next version,because only GetListAsync used")]
-        protected virtual IQueryable<TEntity> CreateFilteredQuery(object input)
+        [Obsolete("remove in next version,because only GetListAsync used,please replace  with CreatePropertiesEqualityQuery to query")]
+        protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
         {
             return Repository.WithDetails();
         }
-        protected virtual async Task<PagedResultDto<TGetOutputDto>> getListAsync(object input,object searchObject=null)
+        protected virtual IQueryable<TEntity> CreatePropertiesEqualityQuery(object searchObject)
         {
-            await CheckGetListPolicyAsync().ConfigureAwait(false);
             var searchSpec = new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(searchObject);
-            var query = CreateFilteredQuery(input).WhereIf(searchObject != null, searchSpec);
-            var result = await SearchedAndPagedAndSortedOperation.ListAsync(input, (x) => query);
-            return CreatePagedResultDto<TGetOutputDto>(result);
+            var result = this.Repository.WithDetails().WhereIf(searchObject != null, searchSpec);
+            return result;
         }
         public virtual async Task<PagedResultDto<TGetOutputDto>> GetListAsync(TGetListInput input)
         {
-            return await getListAsync(input);
+            await CheckGetListPolicyAsync().ConfigureAwait(false);
+            var query = CreateFilteredQuery(input);
+            var result = await SearchedAndPagedAndSortedOperation.ListAsync(query,input);
+            return CreatePagedResultDto<TGetOutputDto>(result);
         }
 
         public virtual async Task<TGetOutputDto> CreateAsync(TCreateInput input)
@@ -217,6 +218,7 @@ namespace FS.Abp.Application.Services
                 return new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(id);
             }
         }
+
 
     }
 }

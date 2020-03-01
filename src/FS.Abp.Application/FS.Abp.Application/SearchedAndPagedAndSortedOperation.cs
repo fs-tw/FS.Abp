@@ -20,24 +20,19 @@ namespace FS.Abp.Application
         {
             AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
-
         public virtual async Task<(int TotalCount, List<TEntity> Entities)> ListAsync<TEntity, TInput>(
-            TInput input,
-            Func<TInput, IQueryable<TEntity>> createFilteredQuery,
-            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySearching = null,
-            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applySorting = null,
-            Func<IQueryable<TEntity>, TInput, IQueryable<TEntity>> applyPaging = null)
+            IQueryable<TEntity> query,
+            TInput input)
             where TEntity : class, IEntity
         {
-            if (createFilteredQuery == null) throw new Exception("createFilteredQuery must be not null");
-            var query = createFilteredQuery.Invoke(input);
+            if (query == null) throw new Exception("query must be not null");
 
-            query = applySearching != null ? applySearching.Invoke(query, input) : ApplySearching(query, input);
+            query = ApplySearching(query, input);
 
             var totalCount = await AsyncQueryableExecuter.CountAsync(query).ConfigureAwait(false);
 
-            query = applySorting != null ? applySorting.Invoke(query, input) : ApplySorting(query, input);
-            query = applyPaging != null ? applyPaging.Invoke(query, input) : ApplyPaging(query, input);
+            query = ApplySorting(query, input);
+            query = ApplyPaging(query, input);
 
             var entities = await AsyncQueryableExecuter.ToListAsync(query).ConfigureAwait(false);
 
