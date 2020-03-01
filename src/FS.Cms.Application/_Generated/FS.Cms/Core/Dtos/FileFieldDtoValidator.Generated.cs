@@ -12,44 +12,4 @@ using FluentValidation;
 
 namespace FS.Cms.Core.Dtos
 {
-    public partial class FileFieldCreateInputValidator : AbstractValidator<FileFieldCreateInput>
-    {
-        public FileFieldCreateInputValidator()
-        {
-            RuleFor(p => p.Title)
-                .NotNull()
-                ;
-            RuleFor(p => p.Url)
-                .NotNull()
-                ;
-            RuleFor(p => p.Size)
-                .NotNull()
-                ;
-            RuleFor(p => p.FileType)
-                .NotNull()
-                ;
-            CustomizeConfiguration();
-        }
-        partial void CustomizeConfiguration();
-    }
-    public partial class FileFieldUpdateInputValidator : AbstractValidator<FileFieldUpdateInput>
-    {
-        public FileFieldUpdateInputValidator()
-        {
-            RuleFor(p => p.Title)
-                .NotNull()
-                ;
-            RuleFor(p => p.Url)
-                .NotNull()
-                ;
-            RuleFor(p => p.Size)
-                .NotNull()
-                ;
-            RuleFor(p => p.FileType)
-                .NotNull()
-                ;
-            CustomizeConfiguration();
-        }
-        partial void CustomizeConfiguration();
-    }
 }

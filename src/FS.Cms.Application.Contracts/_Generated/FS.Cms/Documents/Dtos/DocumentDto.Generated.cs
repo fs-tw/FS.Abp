@@ -79,9 +79,4 @@ namespace FS.Cms.Documents.Dtos
         public System.Guid? NewParentId { get; set; }
 
     }
-    public partial class DocumentPrimaryKeyDto
-    {
-        public System.Guid Id { get; set; }
-
-    }
 }

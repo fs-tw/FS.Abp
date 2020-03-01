@@ -18,14 +18,10 @@ namespace FS.Cms.Core.Dtos
         public FileFieldAutoMapperProfile()
         {
             CreateMap<FS.Cms.Core.FileField, FileFieldDto>()
-                .ReverseMap();
-
+            .ReverseMap();
+        
             CreateMap<FS.Cms.Core.FileField, FileFieldWithDetailsDto>();
-
-            CreateMap<FileFieldCreateInput, FS.Cms.Core.FileField>();
-
-            CreateMap<FileFieldUpdateInput, FS.Cms.Core.FileField>();
-
+        
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();

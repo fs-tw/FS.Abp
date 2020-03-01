@@ -18,14 +18,16 @@ namespace FS.Cms.Blogs.Dtos
         public BlogAutoMapperProfile()
         {
             CreateMap<FS.Cms.Blogs.Blog, BlogDto>()
-                .ReverseMap();
-
+            .ReverseMap();
+        
             CreateMap<FS.Cms.Blogs.Blog, BlogWithDetailsDto>();
-
+        
             CreateMap<BlogCreateInput, FS.Cms.Blogs.Blog>();
-
+        
             CreateMap<BlogUpdateInput, FS.Cms.Blogs.Blog>();
-
+        
+            CreateMap<BlogUpdateInput, BlogDto.PrimaryKey>();
+        
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
