@@ -30,6 +30,15 @@ namespace FS.Cms.Documents.Dtos
         public string DisplayName { get; set; }
 
     }
+    public partial class DocumentWithDetailsDto : DocumentDto
+    {
+        public DocumentDefinitionDto DocumentDefinition { get; set; }
+
+        public List<DocumentDto> Children { get; set; }
+
+        public DocumentDto Parent { get; set; }
+
+    }
     public partial class DocumentCreateInput : FS.Abp.Trees.Dtos.ICreateInput
     {
         public string Content { get; set; }

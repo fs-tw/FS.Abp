@@ -23,6 +23,15 @@ namespace FS.Cms.Documents.Dtos
 
         public string Url { get; set; }
 
+        public class PrimaryKey
+        {
+            public string Id { get; set; }
+    
+        }
+
+    }
+    public partial class DocumentDefinitionWithDetailsDto : DocumentDefinitionDto
+    {
         public List<DocumentDto> Documents { get; set; }
 
     }
@@ -46,10 +55,5 @@ namespace FS.Cms.Documents.Dtos
     }
     public partial class DocumentDefinitionGetListInput : SearchResultRequestDto
     {
-    }
-    public partial class DocumentDefinitionPrimaryKeyDto
-    {
-        public string Id { get; set; }
-
     }
 }

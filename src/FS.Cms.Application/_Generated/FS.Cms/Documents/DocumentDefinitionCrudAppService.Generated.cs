@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Documents
 {
     public partial class DocumentDefinitionCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Documents.DocumentDefinition, FS.Cms.Documents.Dtos.DocumentDefinitionDto, String, FS.Cms.Documents.Dtos.DocumentDefinitionGetListInput, FS.Cms.Documents.Dtos.DocumentDefinitionCreateInput, FS.Cms.Documents.Dtos.DocumentDefinitionUpdateInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Documents.DocumentDefinition, FS.Cms.Documents.Dtos.DocumentDefinitionWithDetailsDto, String, FS.Cms.Documents.Dtos.DocumentDefinitionGetListInput, FS.Cms.Documents.Dtos.DocumentDefinitionCreateInput, FS.Cms.Documents.Dtos.DocumentDefinitionUpdateInput>,
         IDocumentDefinitionCrudAppService
     {
         private readonly IDocumentDefinitionRepository _repository;

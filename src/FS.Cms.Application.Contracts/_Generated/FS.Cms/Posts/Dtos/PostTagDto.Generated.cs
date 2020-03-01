@@ -21,6 +21,25 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid TagId { get; set; }
 
+        public class PrimaryKey
+        {
+            public System.Guid Id { get; set; }
+    
+        }
+
+        public class PostForeignKey
+        {
+            public System.Guid PostId { get; set; }
+    
+        }
+        public class TagForeignKey
+        {
+            public System.Guid TagId { get; set; }
+    
+        }
+    }
+    public partial class PostTagWithDetailsDto : PostTagDto
+    {
         public PostDto Post { get; set; }
 
         public FS.Cms.Tagging.Dtos.TagDto Tag { get; set; }
@@ -42,10 +61,5 @@ namespace FS.Cms.Posts.Dtos
     }
     public partial class PostTagGetListInput : SearchResultRequestDto
     {
-    }
-    public partial class PostTagPrimaryKeyDto
-    {
-        public System.Guid Id { get; set; }
-
     }
 }

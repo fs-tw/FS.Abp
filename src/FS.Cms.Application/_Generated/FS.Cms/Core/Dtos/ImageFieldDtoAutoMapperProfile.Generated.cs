@@ -20,6 +20,8 @@ namespace FS.Cms.Core.Dtos
             CreateMap<FS.Cms.Core.ImageField, ImageFieldDto>()
                 .ReverseMap();
 
+            CreateMap<FS.Cms.Core.ImageField, ImageFieldWithDetailsDto>();
+
             CreateMap<ImageFieldCreateInput, FS.Cms.Core.ImageField>();
 
             CreateMap<ImageFieldUpdateInput, FS.Cms.Core.ImageField>();

@@ -20,6 +20,8 @@ namespace FS.Cms.Core.Dtos
             CreateMap<FS.Cms.Core.FileField, FileFieldDto>()
                 .ReverseMap();
 
+            CreateMap<FS.Cms.Core.FileField, FileFieldWithDetailsDto>();
+
             CreateMap<FileFieldCreateInput, FS.Cms.Core.FileField>();
 
             CreateMap<FileFieldUpdateInput, FS.Cms.Core.FileField>();

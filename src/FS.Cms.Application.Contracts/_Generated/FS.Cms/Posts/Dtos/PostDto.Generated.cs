@@ -37,8 +37,22 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid BlogId { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.DisplayMode DisplayMode { get; set; }
 
+        public class PrimaryKey
+        {
+            public System.Guid Id { get; set; }
+    
+        }
+
+        public class BlogForeignKey
+        {
+            public System.Guid BlogId { get; set; }
+    
+        }
+    }
+    public partial class PostWithDetailsDto : PostDto
+    {
         public FS.Cms.Blogs.Dtos.BlogDto Blog { get; set; }
 
     }
@@ -64,7 +78,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid BlogId { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostUpdateInput
@@ -89,15 +103,10 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid BlogId { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto
     {
-    }
-    public partial class PostPrimaryKeyDto
-    {
-        public System.Guid Id { get; set; }
-
     }
 }

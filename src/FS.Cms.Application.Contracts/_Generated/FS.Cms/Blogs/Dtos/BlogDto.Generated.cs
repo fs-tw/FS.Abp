@@ -23,6 +23,15 @@ namespace FS.Cms.Blogs.Dtos
 
         public string Description { get; set; }
 
+        public class PrimaryKey
+        {
+            public System.Guid Id { get; set; }
+    
+        }
+
+    }
+    public partial class BlogWithDetailsDto : BlogDto
+    {
     }
     public partial class BlogCreateInput
     {
@@ -44,10 +53,5 @@ namespace FS.Cms.Blogs.Dtos
     }
     public partial class BlogGetListInput : SearchResultRequestDto
     {
-    }
-    public partial class BlogPrimaryKeyDto
-    {
-        public System.Guid Id { get; set; }
-
     }
 }
