@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.2.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.2.1" />
     <ProjectReference Include="..\..\..\..\framework\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
     <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Domain\FS.Abp.Trees.Domain.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
