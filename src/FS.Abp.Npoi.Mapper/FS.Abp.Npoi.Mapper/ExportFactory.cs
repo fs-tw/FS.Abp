@@ -7,11 +7,11 @@ using System.Text;
 
 namespace FS.Abp.Npoi.Mapper
 {
-    public interface IExportFactory:Volo.Abp.DependencyInjection.ITransientDependency
+    public interface IExportFactory 
     {
         byte[] Produce(string sheetName, dynamic modelJson);
     }
-    public class ExportFactory : IExportFactory
+    public class ExportFactory : Volo.Abp.DependencyInjection.ITransientDependency,IExportFactory
     {
         public byte[] Produce(string sheetName, dynamic modelJson)
         {
