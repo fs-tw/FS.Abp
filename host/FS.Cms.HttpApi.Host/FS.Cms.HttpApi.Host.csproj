@@ -29,7 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\src\FS.Abp.Zero\FS.Abp.Zero.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.HttpApi\FS.Cms.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.Application\FS.Cms.Application.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
