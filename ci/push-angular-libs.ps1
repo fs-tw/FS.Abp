@@ -1,10 +1,6 @@
-$lib="cms"
+$ErrorActionPreference = "Stop"
 
-$branch="angular/libs/"+$lib
-$remote="origin"
-$branchToPsuh=$branch+":"+$branch
+git subtree split -P angular/libs/cms -b angular/libs/cms
 
-git subtree split -P "$branch" -b "$branch"
-
-git push "$remote" "$branchToPsuh"
+git push origin angular/libs/cms:angular/libs/cms
 
