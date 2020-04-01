@@ -1,5 +1,5 @@
 import { NgModule, Injectable } from '@angular/core';
-import { DelonModule, CoreModule as AlainCoreModule } from '@fs/ng-alain';
+import { DelonModule, SharedModule } from '@fs/ng-alain';
 import { HttpClient } from '@angular/common/http'; import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NgAlainSharedModule } from '@fs/ng-alain/shared';
@@ -14,6 +14,7 @@ import { AccountConfigModule, AccountConfigService } from '@abp/ng.account.confi
 import { IdentityConfigModule } from '@abp/ng.identity.config';
 import { TenantManagementConfigModule } from '@abp/ng.tenant-management.config';
 import { SettingManagementConfigModule } from '@fs/setting-management/config';
+import { CodingManagementConfigModule } from '@fs/coding-management/config';
 import { LayoutDefaultComponent, LayoutPassportComponent, LayoutFullScreenComponent } from '@fs/ng-alain/basic';
 import { Router } from '@angular/router';
 import { CmsConfigModule } from '@fs/cms/config';
@@ -54,12 +55,13 @@ const AlainLayouts = [LayoutDefaultComponent, LayoutPassportComponent, LayoutFul
     IdentityConfigModule,
     TenantManagementConfigModule,
     SettingManagementConfigModule,
+    CodingManagementConfigModule,
     NgxsModule.forRoot([]),
 
     ...(environment.production ? [] : LOGGERS),
 
     //ng-alain
-    AlainCoreModule,
+    SharedModule,
     DelonModule.forRoot(),
     //@fs/ng-alain
     NgAlainSharedModule.forRoot(),

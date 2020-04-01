@@ -30,6 +30,7 @@ namespace FS.Cms.EntityFrameworkCore
 
             builder.Ignore<FS.Cms.Core.FileField>();
             builder.Ignore<FS.Cms.Core.ImageField>();
+            builder.Ignore<FS.Cms.Core.前台參數設定>();
             builder.ApplyConfiguration<FS.Cms.Blogs.Blog>(new FS.Cms.Blogs.BlogConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Posts.Post>(new FS.Cms.Posts.PostConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Posts.PostTag>(new FS.Cms.Posts.PostTagConfiguration(options));

@@ -32,15 +32,20 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(CmsApplicationModule),
-        typeof(CmsEntityFrameworkCoreModule),
-        typeof(CmsHttpApiModule),
+        typeof(FS.Cms.HttpApi.CmsHttpApiHostModule),
+        
         typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
         typeof(AbpAutofacModule),
         typeof(AbpEntityFrameworkCoreSqlServerModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-        typeof(AbpSettingManagementEntityFrameworkCoreModule)
+        typeof(AbpSettingManagementEntityFrameworkCoreModule),
+
+
+        typeof(FS.Abp.CodingManagement.Host.HttpApi.CodingManagementHttpApiHostModule),
+        typeof(FS.Abp.SettingManagement.Host.HttpApi.SettingManagementHttpApiHostModule),
+        typeof(FS.DynamicForm.HttpApi.DynamicFormHttpApiHostModule)
+
         )]
     public class CmsHttpApiHostModule : AbpModule
     {
@@ -51,10 +56,7 @@ namespace FS.Cms
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
 
-            Configure<AbpAspNetCoreMvcOptions>(options =>
-            {
-                options.ConventionalControllers.Create(typeof(FS.Cms.CmsApplicationModule).Assembly, action => action.RootPath = "Cms");
-            });
+      
 
             Configure<AbpDbContextOptions>(options =>
             {

@@ -42,49 +42,16 @@ const routes: Routes = [
             import('./lazy-libs/setting-management-wrapper.module').then(m => m.SettingManagementWrapperModule),
     },
     {
+        path: 'coding-management',
+        loadChildren: () =>
+            import('./lazy-libs/coding-management-wrapper.module').then(m => m.CodingManagementWrapperModule),
+    },
+    {
         path: 'cms',
         loadChildren: () =>
             import('./lazy-libs/cms-wrapper.module').then(m => m.CmsWrapperModule),
     },
-    {//alain routers demo
-        path: 'pages',
-        loadChildren: () => import('./routes/routes.module').then(m => m.RoutesModule),
-        data: {
-            routes: {
-                name: 'Ng-Alain Pages',
-                order: 99,
-                path: '',
-                iconClass: 'fa fa-folder',
-                children: [
-                    {
-                        path: 'dashboard', name: 'Dashboard', iconClass: 'anticon-dashboard', order: 1,
-                        children: [
-                            { path: 'v1', name: 'Default', order: 1 },
-                            { path: 'analysis', name: 'Analysis', order: 2 },
-                            { path: 'monitor', name: 'Monitor', order: 3 },
-                            { path: 'workplace', name: 'Workplace', order: 4 },
-                        ]
-                    },
-                    {
-                        path: 'pro/form', name: 'Form Page', iconClass: 'anticon-edit', order: 2,
-                        children: [
-                            { path: 'basic-form', name: 'Basic Form', order: 1 },
-                            { path: 'step-form', name: 'Step Form', order: 2 },
-                            { path: 'advanced-form', name: 'Advanced Form', order: 3 }
-                        ]
-                    },
-                    {
-                        path: 'pro/list', name: 'List', iconClass: 'anticon-appstore', order: 2,
-                        children: [
-                            { path: 'table-list', name: 'Table List', order: 1 },
-                            { path: 'basic-list', name: 'Basic List', order: 2 },
-                            { path: 'card-list', name: 'Card List', order: 3 }
-                        ]
-                    }
-                ],
-            } as ABP.Route,
-        }
-    }
+   
 
 
 ];

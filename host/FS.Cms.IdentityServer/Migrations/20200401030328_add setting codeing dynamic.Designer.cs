@@ -5,14 +5,16 @@ using FS.DynamicForm.Forms;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FS.Cms.Migrations
 {
     [DbContext(typeof(IdentityServerHostMigrationsDbContext))]
-    partial class IdentityServerHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200401030328_add setting codeing dynamic")]
+    partial class addsettingcodeingdynamic
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
