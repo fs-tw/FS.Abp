@@ -5,12 +5,14 @@ using System.Text;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
 
-namespace FS.Cms.HttpApi
+namespace FS.Cms.Host.HttpApi
 {
     [DependsOn(
         typeof(FS.Cms.CmsApplicationModule),
         typeof(FS.Cms.CmsHttpApiModule),
-        typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule)
+        typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule),
+
+        typeof(FS.DynamicForm.Host.HttpApi.DynamicFormHttpApiHostModule)
         )]
     public class CmsHttpApiHostModule:AbpModule
     {

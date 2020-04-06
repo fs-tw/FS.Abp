@@ -6,7 +6,9 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsApplicationContractsModule),
-        typeof(AbpHttpClientModule))]
+        typeof(AbpHttpClientModule),
+        typeof(FS.DynamicForm.DynamicFormHttpApiClientModule)
+        )]
     public class CmsHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "Cms";

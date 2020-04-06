@@ -9,7 +9,9 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsApplicationContractsModule),
-        typeof(AbpAspNetCoreMvcModule))]
+        typeof(AbpAspNetCoreMvcModule),
+        typeof(FS.DynamicForm.DynamicFormHttpApiModule)
+        )]
     public class CmsHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
