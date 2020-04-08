@@ -32,7 +32,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(FS.Cms.HttpApi.CmsHttpApiHostModule),
+        typeof(FS.Cms.Host.HttpApi.CmsHttpApiHostModule),
         
         typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
         typeof(AbpAutofacModule),
@@ -44,7 +44,7 @@ namespace FS.Cms
 
         typeof(FS.Abp.CodingManagement.Host.HttpApi.CodingManagementHttpApiHostModule),
         typeof(FS.Abp.SettingManagement.Host.HttpApi.SettingManagementHttpApiHostModule),
-        typeof(FS.DynamicForm.HttpApi.DynamicFormHttpApiHostModule)
+        typeof(FS.DynamicForm.Host.HttpApi.DynamicFormHttpApiHostModule)
 
         )]
     public class CmsHttpApiHostModule : AbpModule
