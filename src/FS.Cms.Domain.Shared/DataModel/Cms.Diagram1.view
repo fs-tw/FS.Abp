@@ -2221,8 +2221,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>1</Scale>
           <Location>
-            <X>-307.827587605468 px</X>
-            <Y>-296.517242116395 px</Y>
+            <X>-308 px</X>
+            <Y>-296.8 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

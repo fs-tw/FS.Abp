@@ -37,7 +37,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid BlogId { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.DisplayMode DisplayMode { get; set; }
 
         public class PrimaryKey
         {
@@ -78,7 +78,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid BlogId { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostUpdateInput
@@ -103,7 +103,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid BlogId { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto

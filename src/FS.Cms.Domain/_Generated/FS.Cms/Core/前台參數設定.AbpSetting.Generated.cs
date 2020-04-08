@@ -17,7 +17,7 @@ using Volo.Abp.Options;
 using Volo.Abp.Settings;
 using Volo.Abp.Threading;
 using FS.Abp.Shared;
-using FS.Abp.SettingManagement;
+using FS.Abp.Settings;
 using FS.Cms.Localization;
 
 
