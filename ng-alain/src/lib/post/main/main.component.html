@@ -1,42 +1,27 @@
-<nz-card [nzTitle]="extraTemplate">
-    
-    <nz-table #basicTable [nzData]="datas" >
-        <thead>
-          <tr>
-            <th>number</th>
-            <th>Blog type</th>
-            <th>Title</th>
-            <th>Url</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of basicTable.data;let i=index;">
-            <td>{{ i+1 }} </td>
-            <td>--</td>
-            <td>{{ data.title }}</td>
-            <td>{{ data.url }}</td>            
-            <td>             
-              <!-- <fs-edit [id]="data.id"></fs-edit> -->
-              <nz-divider nzType="vertical"></nz-divider>
-              <a (click)="delete(data)">delete</a>
-            </td>
-          </tr>
-        </tbody>
-      </nz-table>
 
-</nz-card>
+    
+    <div nz-row>      
+      <div nz-col nzSpan="7">       
+          <fs-list></fs-list>                         
+      </div>
+      <div nz-col nzSpan="1"></div>
+      <div nz-col nzSpan="16">
+        
+        <nz-card [nzTitle]="extraTemplate">    
+          <st [data]="datas" [columns]="columns"  [expand]="expand" expandRowByClick expandAccordion>
+            <ng-template #expand let-item let-index="index" let-column="column">
+              {{ item.description }}
+            </ng-template>
+          </st>
+        </nz-card>
+      </div>
+      
+    </div>
+
+
 
 <ng-template #extraTemplate>  
-  
-  <nz-select [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="顯示全部">
-    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-    
-  </nz-select>
-
   <button nz-button nzType="primary">Search</button>
-  <br><br>
-  <button nz-button nzType="primary">Refresh</button>  
   <button nz-button nzType="primary">Create</button>  
+
 </ng-template>

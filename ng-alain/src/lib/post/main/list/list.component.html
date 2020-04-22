@@ -1,0 +1,39 @@
+
+
+
+
+
+<nz-card [nzTitle]="cardTitle">
+    <nz-list  [nzHeader]="extraTemplate"  [nzNoResult] = "'無資料'" [nzDataSource]="news" nzBordered nzSize="small" [nzItemLayout]="'vertical'" [nzRenderItem]="item" [nzNoResult] = "'無資料'">
+        <ng-template #item let-item>
+            <nz-list-item [nzContent]="content"  [nzExtra]="opAction" class="listColor">
+                <ng-template #content>
+                    <div style="cursor: pointer; padding: 8px 0 8px 24px;" (click)="showDetail(item.id)">
+                        <div>
+                             {{item.displayName}}
+                       
+                        </div>                      
+                    </div>
+                </ng-template>
+                
+                <ng-template #opAction>
+                    <div style="margin-top:10px;margin-right:10px;margin-bottom: 10px;">
+                        <a (click)="delete(item.id)">編輯</a>
+                        <nz-divider nzType="vertical"></nz-divider>
+                        <a (click)="delete(item.id)">刪除</a>
+                    </div>
+                </ng-template>
+            </nz-list-item>
+        </ng-template>
+      </nz-list>
+</nz-card>
+
+
+<ng-template #extraTemplate>  
+    最新消息
+</ng-template>
+  
+
+<ng-template #cardTitle>  
+    <button nz-button nzType="primary">建立</button>
+</ng-template>

@@ -26,7 +26,7 @@ import { BlogDtos } from './blog.dtos';
         published_By: string;
         published_At: Date;
         readCount: number;                
-        blogId: string;
+        blogCodeId: string;
         displayMode: number;
     }
  }

@@ -5,8 +5,6 @@ import { CmsModule } from '@fs/cms';
 import { SharedModule } from './shared/shared.module';
 import { CmsNgAlainRoutingModule } from './cms-ng-alain-routing.module';
 
-import { BlogModule } from './blog/blog.module';
-import { PostModule } from './post/post.module';
 
 
 @NgModule({
@@ -17,9 +15,7 @@ import { PostModule } from './post/post.module';
     CmsNgAlainRoutingModule,
     NgAlainBasicModule,
     SharedModule,
-
-    BlogModule,
-    PostModule,
+        
 
   ]
 })

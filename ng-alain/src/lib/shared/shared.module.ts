@@ -3,7 +3,7 @@ import { CoreModule } from '@abp/ng.core';
 import { NgAlainBasicModule } from '@fs/ng-alain/basic';
 import { NgxsModule } from '@ngxs/store';
 import { NotifyService } from './services/notify/notify.service';
-
+import { CodeProcessService } from './services/code-process/code-process.service';
 
 
 
@@ -16,7 +16,8 @@ import { NotifyService } from './services/notify/notify.service';
   ],
   exports: [],
   providers: [
-    NotifyService
+    NotifyService,
+    CodeProcessService
   ]
 })
 export class SharedModule { }

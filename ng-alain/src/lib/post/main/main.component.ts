@@ -7,16 +7,21 @@ import * as _ from 'lodash';
 import { Select, Store } from '@ngxs/store';
 import { NotifyService } from '../../shared/services/notify/notify.service';
 import { Observable } from 'rxjs';
-
-import { Deletepost } from '../providers/post.actions';
-import { PostState } from '../providers/post.state';
+import { STColumn } from '@delon/abc/table';
+import { Deletepost } from '../providers/post/post.actions';
+import { PostState } from '../providers/post/post.state';
 import { PostDtos } from '@fs/cms';
+import { BlogState } from '../providers/blog/blog.state';
+import { CodesWithDetailsDto } from '@fs/coding-management/core';
+import { CodeProcessService, CodeDetailWithSettingObj } from '../../shared/services/code-process/code-process.service';
+import { GetDefinitionByNo } from '../providers/blog/blog.action';
 @Component({
   selector: 'fs-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
+ 
  
 
   @Select(PostState.getPosts)
@@ -25,7 +30,7 @@ export class MainComponent implements OnInit {
   @Select(PostState.getPostsTotalCount)
   getTotalCount$: Observable<number>;
 
-
+  news:CodeDetailWithSettingObj[] = []
   selectedValue="jack"; 
 
   loading = false;
@@ -40,13 +45,17 @@ export class MainComponent implements OnInit {
     private modal: NzModalService,
     private notifyService: NotifyService,
     private router: Router,
-    private activatedRoute: ActivatedRoute 
+    private codeProcessService:CodeProcessService
   ) { }
 
   ngOnInit() {
-    this.data$.subscribe(x=>{
-      this.datas = x;           
-    });
+    this.loadData();
+    
+
+  }
+
+  loadData(){
+ 
   }
 
   delete(item: any) {
@@ -80,5 +89,29 @@ export class MainComponent implements OnInit {
     this.router.navigate(['cms/post'], { queryParams: queryParams });
   }
 
+  columns: STColumn[] = [
+    { title: '標題', index: 'no' },
+    { title: '副標題', index: 'settings.在庫品番' },    
+    { title: '顯示模式', index: 'settings.圖番' },    
+    { title: '發佈時間', index: "settings.品名" },
+    { title: '更新時間', type: "date", dateFormat: "YYYY-MM-DD", index: 'lastModificationTime' },
+    {
+      buttons: [
+        {
+          text: '編輯',
+          click: (item) => {
+            this.edit(item.id);
+          }
+        },
+        {
+          text: '刪除',
+        },
+      ],
+    },
+  ];
+
+  edit(id){
+
+  }
 
 }
