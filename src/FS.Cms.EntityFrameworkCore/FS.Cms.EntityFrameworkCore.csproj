@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.5.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.6.0" />
     <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.EntityFrameworkCore\FS.Abp.Trees.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.EntityFrameworkCore\FS.DynamicForm.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
