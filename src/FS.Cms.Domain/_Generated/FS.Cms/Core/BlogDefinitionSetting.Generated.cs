@@ -20,15 +20,27 @@ using Volo.Abp.Data;
 
 namespace FS.Cms.Core
 {
-    public partial class 前台參數設定 
+    public partial class BlogDefinitionSetting 
     {
 
-        public 前台參數設定()
+        public BlogDefinitionSetting()
         {
             OnCreated();
         }
 
-        public virtual string Url
+        public virtual string FileView
+        {
+            get;
+            set;
+        }
+
+        public virtual string Article
+        {
+            get;
+            set;
+        }
+
+        public virtual string Tags
         {
             get;
             set;

@@ -16,6 +16,9 @@ namespace FS.Cms.Posts.Dtos
     {
         public PostCreateInputValidator()
         {
+            RuleFor(p => p.BlogCodeId)
+                .NotNull()
+                ;
             RuleFor(p => p.Title)
                 .NotNull()
                 ;
@@ -40,9 +43,6 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.ReadCount)
-                .NotNull()
-                ;
-            RuleFor(p => p.BlogId)
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayMode)
@@ -56,6 +56,9 @@ namespace FS.Cms.Posts.Dtos
     {
         public PostUpdateInputValidator()
         {
+            RuleFor(p => p.BlogCodeId)
+                .NotNull()
+                ;
             RuleFor(p => p.Title)
                 .NotNull()
                 ;
@@ -80,9 +83,6 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.ReadCount)
-                .NotNull()
-                ;
-            RuleFor(p => p.BlogId)
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayMode)

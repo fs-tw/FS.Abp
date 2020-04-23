@@ -17,6 +17,8 @@ namespace FS.Cms.Posts.Dtos
 {
     public partial class PostDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
+        public System.Guid BlogCodeId { get; set; }
+
         public string Title { get; set; }
 
         public string Subtitle { get; set; }
@@ -35,9 +37,7 @@ namespace FS.Cms.Posts.Dtos
 
         public int ReadCount { get; set; }
 
-        public System.Guid BlogId { get; set; }
-
-        public FS.Cms.DisplayMode DisplayMode { get; set; }
+        public DisplayMode DisplayMode { get; set; }
 
         public class PrimaryKey
         {
@@ -45,19 +45,14 @@ namespace FS.Cms.Posts.Dtos
     
         }
 
-        public class BlogForeignKey
-        {
-            public System.Guid BlogId { get; set; }
-    
-        }
     }
     public partial class PostWithDetailsDto : PostDto
     {
-        public FS.Cms.Blogs.Dtos.BlogDto Blog { get; set; }
-
     }
     public partial class PostCreateInput
     {
+        public System.Guid BlogCodeId { get; set; }
+
         public string Title { get; set; }
 
         public string Subtitle { get; set; }
@@ -76,13 +71,13 @@ namespace FS.Cms.Posts.Dtos
 
         public int ReadCount { get; set; }
 
-        public System.Guid BlogId { get; set; }
-
-        public FS.Cms.DisplayMode DisplayMode { get; set; }
+        public DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostUpdateInput
     {
+        public System.Guid BlogCodeId { get; set; }
+
         public string Title { get; set; }
 
         public string Subtitle { get; set; }
@@ -101,9 +96,7 @@ namespace FS.Cms.Posts.Dtos
 
         public int ReadCount { get; set; }
 
-        public System.Guid BlogId { get; set; }
-
-        public FS.Cms.DisplayMode DisplayMode { get; set; }
+        public DisplayMode DisplayMode { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto

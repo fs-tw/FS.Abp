@@ -30,6 +30,12 @@ namespace FS.Cms.Posts
             OnCreated();
         }
 
+        public virtual System.Guid BlogCodeId
+        {
+            get;
+            set;
+        }
+
         public virtual string Title
         {
             get;
@@ -84,12 +90,6 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual System.Guid BlogId
-        {
-            get;
-            set;
-        }
-
         public virtual FS.Cms.DisplayMode DisplayMode
         {
             get;
@@ -97,12 +97,6 @@ namespace FS.Cms.Posts
         }
 
         public virtual System.Guid? TenantId
-        {
-            get;
-            set;
-        }
-
-        public virtual FS.Cms.Blogs.Blog Blog
         {
             get;
             set;

@@ -27,13 +27,6 @@ namespace FS.Cms.Posts
             this._repository = repository;
         }
 
-        public async Task<PagedResultDto<FS.Cms.Posts.Dtos.PostWithDetailsDto>> GetBlogAsync(FS.Cms.Posts.Dtos.PostDto.BlogForeignKey foreignKey, FS.Abp.Application.Dtos.SearchResultRequestDto searchInput)
-        {
-            await CheckGetListPolicyAsync().ConfigureAwait(false);
-            var query = this.CreatePropertiesEqualityQuery(foreignKey);
-            var result = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, searchInput).ConfigureAwait(false);
-            return CreatePagedResultDto<FS.Cms.Posts.Dtos.PostWithDetailsDto>(result);
-        }
 
 
     }

@@ -8,10 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Document\DocumentDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\DocumentTreeAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
+    <None Remove="_Generated\FS.Cms\Document\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,10 +21,6 @@
     <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.Application\FS.DynamicForm.Application.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Document\Dtos\" />
   </ItemGroup>
 
 </Project>

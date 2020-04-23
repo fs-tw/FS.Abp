@@ -232,7 +232,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.Cms.Core.前台參數設定" p1:Guid="f40be1cf-ffe6-4e89-ad70-1cfdb9340f69" p1:ShapeColor="-8355648" p1:AbpEditor="YinChang">
+    <component class="FS.Cms.Core.BlogDefinitionSetting" p1:Guid="bab5d3ec-2763-4805-9c86-b0becd862998" p1:ShapeColor="-8355648">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -264,8 +264,214 @@
             </p1:PropertyValue>
           </p1:Properties>
         </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="LocalizationType" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Domain</string>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="cultures" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>zh-Hant,en</string>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="prefixs" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>DisplayName,Description</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
       </p1:Attributes>
-      <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="318b978a-1bec-4c60-96f7-4cf7dde48241">
+      <property name="FileView" type="String" p1:ValidateRequired="true" p1:Guid="e98daa5b-b459-447e-b859-ef612d972f83">
+        <p1:Attributes>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+        </p1:Attributes>
+        <column name="" />
+      </property>
+      <property name="Article" type="String" p1:ValidateRequired="true" p1:Guid="14b7880e-5e0c-4fea-853b-83120cdee72c">
+        <p1:Attributes>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+        </p1:Attributes>
+        <column name="" />
+      </property>
+      <property name="Tags" type="String" p1:ValidateRequired="true" p1:Guid="7946df4f-9ae2-4763-a6aa-15d9a4908c67">
+        <p1:Attributes>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+        </p1:Attributes>
         <column name="" />
       </property>
     </component>
@@ -384,6 +590,9 @@
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="cdaf488a-6d25-4ec3-97b8-99fd162c36e8" p1:GenerateDTO="False">
       <column name="" />
     </id>
+    <property name="BlogCodeId" type="Guid" p1:ValidateRequired="true" p1:Guid="677e8a78-1c65-409b-b4df-b62498242651">
+      <column name="" />
+    </property>
     <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="f28a88cc-396c-4865-91bf-0ac5b3764ec3">
       <column name="" />
     </property>
@@ -410,9 +619,6 @@
     </property>
     <property name="ReadCount" type="Int32" p1:ValidateRequired="true" p1:Guid="9272b8fc-3f3c-45c5-a6c0-9f6524486631">
       <column name="" />
-    </property>
-    <property name="BlogId" type="Guid" p1:ValidateRequired="true" p1:Guid="5b1e9a7f-fa2c-4f98-8189-0690a8007774">
-      <column name="" not-null="False" />
     </property>
     <property name="DisplayMode" type="FS.Cms.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
       <column name="" />
@@ -762,14 +968,6 @@
     </component>
   </class>
   <associations>
-    <association name="Blog_Post" cardinality="OneToMany" p1:Guid="a1ae39cc-f236-4952-9b8c-29806536384e">
-      <end1 multiplicity="One" name="Blog" class="Post" relation-class="Blog" constrained="True" lazy="False" p1:Guid="23860bd7-8d2f-413b-999c-aa3c5f688843">
-        <property name="Id" />
-      </end1>
-      <end2 multiplicity="Many" name="Posts" class="Blog" relation-class="Post" generate="False" lazy="False" p1:Guid="c4158023-0ce1-4ed2-9564-0bebca8fc21d">
-        <property name="BlogId" />
-      </end2>
-    </association>
     <association name="Post_PostTag" cardinality="OneToMany" p1:Guid="f190de42-71b1-457f-9822-d6bad2aa75a5">
       <end1 multiplicity="One" name="Post" class="PostTag" relation-class="Post" constrained="True" lazy="False" p1:Guid="10c6f327-2f7d-4f0c-a8ed-0441ef4c5780">
         <property name="Id" />

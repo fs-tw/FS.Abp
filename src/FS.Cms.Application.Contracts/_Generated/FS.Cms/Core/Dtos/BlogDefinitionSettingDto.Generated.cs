@@ -15,12 +15,16 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Core.Dtos
 {
-    public partial class 前台參數設定Dto
+    public partial class BlogDefinitionSettingDto
     {
-        public string Url { get; set; }
+        public string FileView { get; set; }
+
+        public string Article { get; set; }
+
+        public string Tags { get; set; }
 
     }
-    public partial class 前台參數設定WithDetailsDto : 前台參數設定Dto
+    public partial class BlogDefinitionSettingWithDetailsDto : BlogDefinitionSettingDto
     {
     }
 }

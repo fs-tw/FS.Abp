@@ -22,12 +22,5 @@ namespace FS.Cms.Posts
     {
         public EfCorePostRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
             : base(dbContextProvider) { }
-        public override IQueryable<FS.Cms.Posts.Post> WithDetails()
-        {
-            return base.WithDetails(new Expression<Func<FS.Cms.Posts.Post, object>>[] 
-            {
-                x => x.Blog,
-            });
-        }
     }
 }

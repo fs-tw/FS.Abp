@@ -13,6 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="_Generated\Localization\Cms\en.json" />
+    <None Remove="_Generated\Localization\Cms\zh-Hant.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="_Generated\Localization\Cms\en.json" />
+    <EmbeddedResource Include="_Generated\Localization\Cms\zh-Hant.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Validation" Version="2.5.0" />
   </ItemGroup>
 

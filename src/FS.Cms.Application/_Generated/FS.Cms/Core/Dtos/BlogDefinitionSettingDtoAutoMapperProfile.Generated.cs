@@ -13,14 +13,14 @@ using Volo.Abp.AutoMapper;
 
 namespace FS.Cms.Core.Dtos
 {
-    public partial class 前台參數設定AutoMapperProfile : Profile
+    public partial class BlogDefinitionSettingAutoMapperProfile : Profile
     {
-        public 前台參數設定AutoMapperProfile()
+        public BlogDefinitionSettingAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Core.前台參數設定, 前台參數設定Dto>()
+            CreateMap<FS.Cms.Core.BlogDefinitionSetting, BlogDefinitionSettingDto>()
             .ReverseMap();
         
-            CreateMap<FS.Cms.Core.前台參數設定, 前台參數設定WithDetailsDto>();
+            CreateMap<FS.Cms.Core.BlogDefinitionSetting, BlogDefinitionSettingWithDetailsDto>();
         
             CustomizeConfiguration();
         }
