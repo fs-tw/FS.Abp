@@ -10,7 +10,8 @@
         <nz-card [nzTitle]="extraTemplate">    
           <st [data]="datas" [columns]="columns"  [expand]="expand" expandRowByClick expandAccordion>
             <ng-template #expand let-item let-index="index" let-column="column">
-              {{ item.description }}
+              <h3>內容：</h3>
+              {{ item.content }}
             </ng-template>
           </st>
         </nz-card>
@@ -21,7 +22,14 @@
 
 
 <ng-template #extraTemplate>  
-  <button nz-button nzType="primary">Search</button>
-  <button nz-button nzType="primary">Create</button>  
+  <!-- <button nz-button nzType="primary" style="margin-right:20px">新增</button>   -->
+  <fs-create-post style="margin-right:20px"></fs-create-post>
+ <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+      <input type="text" nz-input placeholder="輸入名稱" />
+ </nz-input-group>
+<ng-template #suffixIconButton>
+      <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
+</ng-template>
+  
 
 </ng-template>

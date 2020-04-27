@@ -17,7 +17,7 @@ export class PostService{
     getPostsData(params={} as PostDtos.PostPageQueryParams):Observable<PostDtos.PostPage>{
         const request:Rest.Request<null>={
             method:"GET",
-            url:this.url,
+            url:"/api/Cms/postCrud/postByBlogDefinition",
             params
         }
         return this.rest.request<null,PostDtos.PostPage>(request);

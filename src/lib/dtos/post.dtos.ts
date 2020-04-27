@@ -6,6 +6,7 @@ import { BlogDtos } from './blog.dtos';
     export interface PostPageQueryParams extends ABP.PageQueryParams{
         skipCount:number;
         maxResultCount:number;
+        blogCodeId:string;
     }
 
     export interface postData extends PostInput{

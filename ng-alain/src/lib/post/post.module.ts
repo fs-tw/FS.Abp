@@ -10,9 +10,11 @@ import { NgxsModule } from '@ngxs/store';
 import { DetailComponent } from './detail/detail.component';
 import { BlogState } from './providers/blog/blog.state';
 import { ListComponent } from './main/list/list.component';
+import { CreateComponent } from './modal/create/create.component';
+import { CreatePostComponent } from './modal/create-post/create-post.component';
 // import { QuillModule } from 'ngx-quill';
 @NgModule({
-  declarations: [LayoutComponent, MainComponent, DetailComponent, ListComponent],
+  declarations: [LayoutComponent, MainComponent, DetailComponent, ListComponent, CreateComponent,CreatePostComponent],
   imports: [
     NgAlainBasicModule,
     CoreModule,
