@@ -1,8 +1,8 @@
 
-<button nz-button [nzType]="'primary'"  (click)="showModal()"><span>新增</span></button>
+<!-- <button nz-button [nzType]="'primary'"  (click)="showModal()"><span>新增</span></button> -->
 
 
-<nz-modal [(nzVisible)]="isVisible" nzTitle="建立文章" (nzOnCancel)="handleCancel()"  [nzFooter]="footer">
+<!-- <nz-modal [(nzVisible)]="isVisible" nzTitle="建立文章" (nzOnCancel)="handleCancel()"  [nzFooter]="footer">
     <form nz-form #f="ngForm" se-container="1" labelWidth="100">
         <se label="名稱" required >
           <input type="text" nz-input [(ngModel)]="i.no" name="no" required>
@@ -20,6 +20,30 @@
 
 
 <ng-template #footer>    
-    <button nz-button nzType="default" (click)="handleCancel()">取消</button>    
+    
+</ng-template>  -->
+
+
+
+<div class="modal-header">
+  <div class="modal-title">建立文章</div>
+</div>
+<div>
+  <form nz-form #f="ngForm" se-container="1" labelWidth="100">
+    <se label="名稱" required >
+      <input type="text" nz-input [(ngModel)]="i.no" name="no" required>
+    </se>
+    <se label="地址" required >
+      <input type="text" nz-input [(ngModel)]="i.d" name="name" required>
+    </se>  
+    <se label="信箱" required >
+      <input type="text" nz-input [(ngModel)]="i.c" name="name" required>
+    </se>        
+   
+      
+</form>
+</div>
+<div class="modal-footer">
+  <button nz-button nzType="default" (click)="cancel()">取消</button>    
     <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">儲存</button>        
-</ng-template>
+</div>

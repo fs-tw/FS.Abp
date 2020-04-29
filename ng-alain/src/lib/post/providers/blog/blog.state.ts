@@ -1,8 +1,8 @@
-import { Action, Selector, State, StateContext } from '@ngxs/store';
-import { tap } from 'rxjs/operators';
+import { Action, Selector, State, StateContext, createSelector } from '@ngxs/store';
+import { tap, switchMap } from 'rxjs/operators';
 
-import { CodesTreeService, CodesWithDetailsDto } from '@fs/coding-management/core';
-import { GetDefinitionByNo } from './blog.action';
+import { CodesTreeService, CodesWithDetailsDto, } from '@fs/coding-management/core';
+import { GetDefinitionByNo, CreateCoding, DeleteCoding } from './blog.action';
 import { Blog } from './blog.models';
 
 
@@ -12,6 +12,15 @@ import { Blog } from './blog.models';
 })
 export class BlogState{
 
+    DefinitionNo = "BlogDefinition";
+
+    static getOne(key: string) {
+        const selector = createSelector([BlogState], (state: Blog.State) => {
+          return state[key];
+        });
+    
+        return selector;
+      }
 
     @Selector()
     static getCodeingByNo({ codings }: Blog.State):CodesWithDetailsDto {
@@ -32,5 +41,20 @@ export class BlogState{
                 })
             )
         );
+    }
+
+    @Action(CreateCoding)
+    createCoding({ dispatch }: StateContext<Blog.State>, { payload }: CreateCoding) {
+        return this.codesTreeService.createByInput(payload).pipe(
+            switchMap(() => dispatch(new GetDefinitionByNo(this.DefinitionNo)))
+        );                  
+    }
+
+
+    @Action(DeleteCoding)
+    deleteCoding({ dispatch }: StateContext<Blog.State>, { id }: DeleteCoding) {
+        return this.codesTreeService.deleteById(id).pipe(
+            switchMap(() => dispatch(new GetDefinitionByNo(this.DefinitionNo)))
+        );                  
     }
 }

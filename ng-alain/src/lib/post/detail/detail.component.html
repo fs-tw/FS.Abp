@@ -1,39 +1,52 @@
-
-
-
-  <nz-card>
-
-  
+<nz-card>
 
   <div nz-row>
-    <div nz-col nzSpan="5"></div>
+    <div nz-col nzSpan="5">
+      <button nz-button [routerLink]="['/cms/post']" [nzType]="'default'" [nzSize]="'large'">
+        <i class="anticon anticon-left"></i>
+        <span>返回</span>
+      </button>
+
+    </div>
     <div nz-col nzSpan="10">
-        
-        <form nz-form #f="ngForm" se-container="1" labelWidth="150">
 
-            <se label="Blog type">
-                <nz-select [(ngModel)]="i.se">
-                    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                  </nz-select>
-            </se>
+      <form nz-form #f="ngForm" se-container="1" labelWidth="150">
 
-            <se label="Title" error="必填">
-              <input type="text" nz-input [(ngModel)]="i.title" name="title" required>
-            </se>
-          
-            <se>
-              <textarea name="content" id="content" cols="30" rows="10"></textarea>
-            </se>
+        <se label="公告類型">
+          <nz-select [(ngModel)]="i.se" name="type">
+            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+          </nz-select>
+        </se>
 
-            <se>
-              <button nz-button nzType="primary" [disabled]="f.invalid">Save</button>
-            </se>
-          </form>
+        <se label="標題" error="必填" required>
+          <input type="text" nz-input [(ngModel)]="i.title" name="title" required>
+        </se>
+
+        <se label="副標題">
+          <input type="text" nz-input [(ngModel)]="i.title" name="title" required>
+        </se>
+
+        <se label="顯示類型" required> 
+          <nz-select [(ngModel)]="i.se" name="type">
+            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+          </nz-select>
+        </se>
+
+        <se  label="發佈時間" required>
+          <nz-date-picker [(ngModel)]="date" name="date" ></nz-date-picker>          
+        </se>
+
+       
+
+        <se>
+          <button nz-button nzType="primary" [disabled]="f.invalid">Save</button>
+        </se>
+      </form>
 
     </div>
     <!-- <div nz-col nzSpan="7"></div> -->
   </div>
 
-  </nz-card>
-  
+</nz-card>

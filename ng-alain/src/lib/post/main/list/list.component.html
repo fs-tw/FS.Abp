@@ -6,12 +6,15 @@
 <nz-card [nzTitle]="cardTitle">
     <nz-list  [nzHeader]="extraTemplate"  [nzNoResult] = "'無資料'" [nzDataSource]="news" nzBordered nzSize="small" [nzItemLayout]="'vertical'" [nzRenderItem]="item" [nzNoResult] = "'無資料'">
         <ng-template #item let-item>
-            <nz-list-item [nzContent]="content"  [nzExtra]="opAction" class="listColor">
+            <nz-list-item [nzContent]="content"  [nzExtra]="opAction" class="listColor"  [ngClass]="{ 'listSelected': item.id == select }">
                 <ng-template #content>
                     <div style="cursor: pointer; padding: 8px 0 8px 24px;" (click)="showDetail(item.id)">
                         <div>
-                             {{item.displayName}}
-                       
+                             名稱：{{item.displayName}}
+                             <br>
+                             狀態：
+                             <span *ngIf="item.enable">啟用</span>
+                             <span *ngIf="!item.enable">關閉</span>                                            
                         </div>                      
                     </div>
                 </ng-template>

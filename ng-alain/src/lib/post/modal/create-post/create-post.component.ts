@@ -1,31 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 @Component({
   selector: 'fs-create-post',
   templateUrl: './create-post.component.html',
   styleUrls: ['./create-post.component.less']
 })
 export class CreatePostComponent implements OnInit {
-  isVisible = false;
-  i:any={
-    
-  };
-  constructor() { }
+  // @Input()
+  // record: any;
+  @Input()
+  i={
+    no:"",
+    d:"",
+    c:""
 
-  ngOnInit() {
+  }
+  constructor(private modal: NzModalRef) {}
+  ngOnInit(): void {
    
   }
 
-  showModal(){
-    this.isVisible = true;
+  save() {
+    this.modal.close(`new time: ${+new Date()}`);
+    this.cancel();
   }
 
-  handleCancel(){
-    this.isVisible = false;
-  }
-
-  save(){
-
+  cancel() {
+    this.modal.destroy();
   }
 
 }

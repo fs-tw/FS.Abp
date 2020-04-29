@@ -10,11 +10,9 @@ import { Observable } from 'rxjs';
 import { Deletepost, GetPosts } from '../providers/post/post.actions';
 import { PostState } from '../providers/post/post.state';
 import { PostDtos } from '@fs/cms';
-import { BlogState } from '../providers/blog/blog.state';
-import { CodesWithDetailsDto } from '@fs/coding-management/core';
-import { CodeProcessService, CodeDetailWithSettingObj } from '../../shared/services/code-process/code-process.service';
-import { GetDefinitionByNo } from '../providers/blog/blog.action';
-import { STColumn, STPage, STColumnTag } from '@delon/abc'; 
+import { CodeProcessService, CodeDetailWithSettingObj } from '@fs/coding-management/core';
+import { STColumn, STPage, STColumnTag } from '@delon/abc';
+
 const displayModeTAG: STColumnTag = {
   0: { text: '內文', color: 'green' },
   1: { text: '連結', color: 'blue' },
@@ -25,8 +23,8 @@ const displayModeTAG: STColumnTag = {
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
- 
- 
+
+
 
   @Select(PostState.getPosts)
   data$: Observable<PostDtos.postData[]>;
@@ -34,14 +32,12 @@ export class MainComponent implements OnInit {
   @Select(PostState.getPostsTotalCount)
   getTotalCount$: Observable<number>;
 
-  news:CodeDetailWithSettingObj[] = []
-  selectedValue="jack"; 
-
+  news: CodeDetailWithSettingObj[] = []
   loading = false;
   confirmModal: NzModalRef;
-  datas=[];
-  select:string="";
-  pageNumber:number=0;
+  datas = [];
+  select: string = "";
+  pageNumber: number = 0;
   dataCount: number = 0;
   constructor(
     private store: Store,
@@ -49,35 +45,34 @@ export class MainComponent implements OnInit {
     private modal: NzModalService,
     private notifyService: NotifyService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) {
     this.activatedRoute.queryParams.subscribe(x => {
       if (x && x.blog) {
-          this.select = x.blog;
-          this.loadData();
+        this.select = x.blog;
+        this.loadData();
       }
     })
 
-   }
+  }
 
   ngOnInit() {
-   
-    
+
+
 
   }
 
-  loadData(){
-    this.store.dispatch(new GetPosts({blogCodeId:this.select,skipCount:0,maxResultCount:10}))
-    .pipe(pluck("PostState","posts"))
-    .subscribe(x=>{
-      console.log("ddd",x.items);
-      this.datas = x.items;
-    });
+  loadData() {
+    this.store.dispatch(new GetPosts({ blogCodeId: this.select, skipCount: 0, maxResultCount: 10 }))
+      .pipe(pluck("PostState", "posts"))
+      .subscribe(x => {
+        this.datas = x.items;
+      });
   }
 
   delete(item: any) {
     this.confirmModal = this.modal.confirm({
-      nzTitle: '確定要刪除 ' + item.name + ' 嗎 ?',
+      nzTitle: '確定要刪除 ' + item.title + ' 嗎 ?',
       nzOnOk: () => {
         var isDelAll: boolean = this.dataCount == 1;
         this.loading = true;
@@ -98,8 +93,8 @@ export class MainComponent implements OnInit {
     });
   }
 
-  changePage(){
-    var queryParams = {      
+  changePage() {
+    var queryParams = {
       pageNumber: this.pageNumber
     }
 
@@ -108,27 +103,30 @@ export class MainComponent implements OnInit {
 
   columns: STColumn[] = [
     { title: '標題', index: 'title' },
-    { title: '副標題', index: 'subtitle' },               
+    { title: '副標題', index: 'subtitle' },
     { title: '顯示模式', index: 'displayMode', type: 'tag', tag: displayModeTAG },
-    { title: '發佈時間',type: "date", dateFormat: "YYYY-MM-DD",  index: "published_At" },
+    { title: '發佈時間', type: "date", dateFormat: "YYYY-MM-DD", index: "published_At" },
     { title: '更新時間', type: "date", dateFormat: "YYYY-MM-DD", index: 'lastModificationTime' },
     {
       buttons: [
         {
           text: '編輯',
           click: (item) => {
-            this.edit(item.id);
+            this.gotoDetail();
           }
         },
         {
           text: '刪除',
+          click: (item) => {
+            this.delete(item);
+          }
         },
       ],
     },
   ];
 
-  edit(id){
-
+  gotoDetail(){
+    this.router.navigate(["cms/post/detail"]);   
   }
 
 }

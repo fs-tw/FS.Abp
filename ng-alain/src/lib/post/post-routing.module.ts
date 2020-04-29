@@ -14,6 +14,10 @@ const routes: Routes = [
         data: { requiredPolicy: 'AbpIdentity.Roles' },
       },
       {
+        path:'detail',
+        component:DetailComponent
+      },
+      {
         path:'detail/:id',
         component:DetailComponent
       }
