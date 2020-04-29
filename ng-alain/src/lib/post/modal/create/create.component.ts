@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BlogStateService } from '../../providers/blog/blog.state.service';
-import { CodeDetailWithSettingObj } from '@fs/coding-management/core'
+import { CodeDetailWithSettingObj, CodesWithDetailsDto  } from '@fs/coding-management/core'
 import { CodingManagementDtos } from '@fs/coding-management';
 import { NotifyService } from '../../../shared/services/notify/notify.service';
 @Component({
@@ -10,10 +10,12 @@ import { NotifyService } from '../../../shared/services/notify/notify.service';
 })
 export class CreateComponent implements OnInit {
   isVisible = false;
+  @Input() input:CodingManagementDtos.coding;
+  @Output()  saveOutput = new EventEmitter();
   i: any = {
     enable: true
   };
-  news: CodeDetailWithSettingObj;
+  news: CodesWithDetailsDto ;
 
   constructor(
     private blogStateService: BlogStateService,
@@ -24,7 +26,8 @@ export class CreateComponent implements OnInit {
 
   }
 
-  showModal() {
+  showModal() {    
+    if(this.input) this.i=this.input;
     this.isVisible = true;
     var blogCode = this.blogStateService.getOne("codings");
     this.news = blogCode.children.find(x => { return x.no == "News" });
@@ -35,17 +38,29 @@ export class CreateComponent implements OnInit {
     this.i = {
       enable: true
     }
+    this.saveOutput.emit();
   }
 
   save() {
-    var input: CodingManagementDtos.coding;
-    input = { ...input, ...this.i }
-    input.definitionId = this.news.definitionId;
-    input.parentId = this.news.id
-    this.blogStateService.dispatchAddNews(input).subscribe(x => {
-      this.notifyService.success("建立成功！");
-      this.handleCancel();
-    })
+    if(!this.input){
+      var input: CodingManagementDtos.coding;
+      input = { ...input, ...this.i }
+      input.definitionId = this.news.definitionId;
+      input.parentId = this.news.id;
+
+      this.blogStateService.dispatchAddNews(input).subscribe(x => {
+        this.notifyService.success("建立成功！");
+        this.handleCancel();
+      });
+      
+    } else {
+      this.blogStateService.dispatchPatchNewsById(this.input).subscribe(x => {
+        this.notifyService.success("建立成功！");
+        this.handleCancel();
+      })
+    }
   }
+
+  
 
 }

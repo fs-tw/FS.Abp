@@ -12,6 +12,9 @@ import { BlogState } from './providers/blog/blog.state';
 import { ListComponent } from './main/list/list.component';
 import { CreateComponent } from './modal/create/create.component';
 import { BlogStateService } from './providers/blog/blog.state.service';
+import { PostsStateService } from './providers/post/poststate.service';
+// import { QuillModule } from 'ngx-quill'
+
 @NgModule({
   declarations: [LayoutComponent, MainComponent, DetailComponent, ListComponent, CreateComponent],
   imports: [
@@ -21,8 +24,9 @@ import { BlogStateService } from './providers/blog/blog.state.service';
     PostRoutingModule,
     NgxsModule.forFeature([PostState, BlogState]),
   ],
-  providers:[
-    BlogStateService
+  providers: [
+    BlogStateService,
+    PostsStateService
   ]
 })
 export class PostModule { }

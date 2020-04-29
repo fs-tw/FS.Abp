@@ -1,5 +1,5 @@
-<button nz-button [nzType]="'primary'" (click)="showModal()"><span>+建立</span></button>
-
+<button nz-button [nzType]="'primary'" *ngIf="!input" (click)="showModal()"><span>+建立</span></button>
+<a (click)="showModal()" *ngIf="input">編輯</a>
 
 <nz-modal [(nzVisible)]="isVisible" nzTitle="建立消息種類" (nzOnCancel)="handleCancel()" [nzFooter]="footer">
   <form nz-form #f="ngForm" se-container="1" labelWidth="100">

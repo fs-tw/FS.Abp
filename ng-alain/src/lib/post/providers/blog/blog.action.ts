@@ -17,3 +17,9 @@ export class GetDefinitionByNo{
     static readonly type = '[BlogCodings] Get DefinitionByNo';
     constructor(public payload?: string) {}
 }
+
+
+export class PatchNewsById {
+    static readonly type = '[BlogCodings] Patch News By Id';
+    constructor(public newValue:  CodingManagementDtos.coding) {}
+  }

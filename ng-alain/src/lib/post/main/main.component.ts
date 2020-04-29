@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { finalize, pluck } from 'rxjs/operators';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { finalize, pluck, takeUntil } from 'rxjs/operators';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
 import { Select, Store } from '@ngxs/store';
 import { NotifyService } from '../../shared/services/notify/notify.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Deletepost, GetPosts } from '../providers/post/post.actions';
 import { PostState } from '../providers/post/post.state';
 import { PostDtos } from '@fs/cms';
@@ -22,7 +22,7 @@ const displayModeTAG: STColumnTag = {
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit , OnDestroy{
 
 
 
@@ -39,15 +39,15 @@ export class MainComponent implements OnInit {
   select: string = "";
   pageNumber: number = 0;
   dataCount: number = 0;
+  destroy$= new Subject<void>();
   constructor(
-    private store: Store,
-    private fb: FormBuilder,
+    private store: Store,    
     private modal: NzModalService,
     private notifyService: NotifyService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
   ) {
-    this.activatedRoute.queryParams.subscribe(x => {
+    this.activatedRoute.queryParams.subscribe(x => {      
       if (x && x.blog) {
         this.select = x.blog;
         this.loadData();
@@ -56,18 +56,22 @@ export class MainComponent implements OnInit {
 
   }
 
+  ngOnDestroy() {
+    this.destroy$.next();
+  }  
+
   ngOnInit() {
-
-
-
+    this.data$ .pipe(
+      takeUntil(this.destroy$),
+    ).subscribe(x=>{
+      this.datas = x;
+    })
   }
 
   loadData() {
     this.store.dispatch(new GetPosts({ blogCodeId: this.select, skipCount: 0, maxResultCount: 10 }))
       .pipe(pluck("PostState", "posts"))
-      .subscribe(x => {
-        this.datas = x.items;
-      });
+      .subscribe(x => {});
   }
 
   delete(item: any) {
@@ -112,7 +116,7 @@ export class MainComponent implements OnInit {
         {
           text: '編輯',
           click: (item) => {
-            this.gotoDetail();
+            this.gotoDetail(item.id);
           }
         },
         {
@@ -125,8 +129,9 @@ export class MainComponent implements OnInit {
     },
   ];
 
-  gotoDetail(){
-    this.router.navigate(["cms/post/detail"]);   
+  gotoDetail(id?:string){
+    if(id)this.router.navigate(["/cms/post/detail/"+id]);   
+    else this.router.navigate(["/cms/post/detail"]);   
   }
 
 }

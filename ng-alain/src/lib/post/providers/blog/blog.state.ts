@@ -2,7 +2,7 @@ import { Action, Selector, State, StateContext, createSelector } from '@ngxs/sto
 import { tap, switchMap } from 'rxjs/operators';
 
 import { CodesTreeService, CodesWithDetailsDto, } from '@fs/coding-management/core';
-import { GetDefinitionByNo, CreateCoding, DeleteCoding } from './blog.action';
+import { GetDefinitionByNo, CreateCoding, DeleteCoding, PatchNewsById } from './blog.action';
 import { Blog } from './blog.models';
 
 
@@ -13,6 +13,14 @@ import { Blog } from './blog.models';
 export class BlogState{
 
     DefinitionNo = "BlogDefinition";
+
+
+    @Selector()
+    static getAll(state: Blog.State) {
+        return state;
+    }
+
+
 
     static getOne(key: string) {
         const selector = createSelector([BlogState], (state: Blog.State) => {
@@ -54,6 +62,15 @@ export class BlogState{
     @Action(DeleteCoding)
     deleteCoding({ dispatch }: StateContext<Blog.State>, { id }: DeleteCoding) {
         return this.codesTreeService.deleteById(id).pipe(
+            switchMap(() => dispatch(new GetDefinitionByNo(this.DefinitionNo)))
+        );                  
+    }
+
+
+    
+    @Action(PatchNewsById)
+    updateCoding({ dispatch }: StateContext<Blog.State>, { newValue }: PatchNewsById) {
+        return this.codesTreeService.updateByIdAndInput(newValue,newValue.id).pipe(
             switchMap(() => dispatch(new GetDefinitionByNo(this.DefinitionNo)))
         );                  
     }

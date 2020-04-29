@@ -20,8 +20,8 @@
                 </ng-template>
                 
                 <ng-template #opAction>
-                    <div style="margin-top:10px;margin-right:10px;margin-bottom: 10px;">
-                        <a (click)="delete(item.id)">編輯</a>
+                    <div style="margin-top:10px;margin-right:10px;margin-bottom: 10px;">                        
+                        <fs-create [input]="item" (saveOutput)="refresh()"></fs-create>
                         <nz-divider nzType="vertical"></nz-divider>
                         <a (click)="delete(item.id)">刪除</a>
                     </div>
@@ -38,5 +38,5 @@
   
 
 <ng-template #cardTitle>  
-   <fs-create></fs-create>
+   <fs-create (saveOutput)="refresh()"></fs-create>
 </ng-template>
