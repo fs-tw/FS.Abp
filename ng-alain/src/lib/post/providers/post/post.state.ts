@@ -66,7 +66,8 @@ export class PostState{
     @Action(Createpost)
     createPost({ getState,dispatch }: StateContext<Post.State>, { payload }: Createpost){
         return this.postService.createPost(payload).pipe(
-            switchMap(() => dispatch(new GetPosts(getState().postsPageQueryParam)))
+            switchMap(
+                () => dispatch(new GetPosts(getState().postsPageQueryParam)))
         );
     }
 

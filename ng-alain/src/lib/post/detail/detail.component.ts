@@ -6,101 +6,170 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CodeProcessService, CodesWithDetailsDto } from '@fs/coding-management/core';
 import { Createpost, GetPostById, Updatepost } from '../providers/post/post.actions';
 import { PostDtos } from '@fs/cms';
+import { AddRoute, ABP, PatchRouteByName, ConfigStateService } from '@abp/ng.core';
 import { NotifyService } from '../../shared/services/notify/notify.service';
 import { PostsStateService } from '../providers/post/poststate.service';
-import { pluck } from 'rxjs/operators';
+import { pluck, delay } from 'rxjs/operators';
+import { HttpRequest, HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'fs-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.less']
 })
 export class DetailComponent implements OnInit {
-  i:PostDtos.PostInput={   
-    id:null, 
-    title:"",
-    published:true,
-    published_By:new Date(),
-    subtitle:"",
-    readCount:0,    
-    published_At:new Date(),
-    blogCodeId:"",
-    displayMode:0,
-    url:"",
-    content:""
+  apiUrl = "";
+  i: PostDtos.PostInput = {
+    id: null,
+    images: [],
+    title: "",
+    published: true,
+    published_By: new Date(),
+    subtitle: "",
+    readCount: 0,
+    published_At: new Date(),
+    blogCodeId: "",
+    displayMode: 0,
+    url: "",
+    content: ""
   };
   fileList: any = [];
-  uploadList = [];
-  isUpdate=false;
+
+  showList=[];
+  deleteList=[];
+  selectPostId;
   news: any;
   constructor(
     private i18n: NzI18nService,
     private store: Store,
-    private blogStateService:BlogStateService,
+    private blogStateService: BlogStateService,
     private notifyService: NotifyService,
-    private router: Router,
-    private postsStateService:PostsStateService,
-    private activatedRoute: ActivatedRoute,    
-    ) {
-      this.activatedRoute.params.subscribe(x=>{
-        if(x["id"]){
-          this.store.dispatch(new GetPostById(x["id"]))
-          .pipe(pluck("PostState","postData"))
-          .subscribe(x=>{            
-            this.i=x;            
-            this.isUpdate=true;
-          })          
-        }        
-      });
-    }
+    private http: HttpClient,
+    private postsStateService: PostsStateService,
+    private configStateService: ConfigStateService,
+    private activatedRoute: ActivatedRoute,
+  ) {
+    this.apiUrl = this.configStateService.getApiUrl() + "/";
+    this.activatedRoute.params.subscribe(x => {
+      if (x["id"]) {
+        this.store.dispatch(new GetPostById(x["id"]))
+          .pipe(pluck("PostState", "postData"))
+          .subscribe(x => {
+            this.i = x;                                    
+            this.selectPostId = x["id"];
+            this.i.images.forEach((item, index) => {
+                                          
+              this.showList.push({
+                uid: index.toString(),
+                name: item.title,
+                status: 'done',
+                type: "image/jpeg",
+                url: this.apiUrl + item.url,
+                thumbUrl:this.apiUrl + item.url,
+                needDelete:true                
+              })
+            });
+
+          })
+      }
+    });
+  }
 
 
-  initData(){
-    this.i ={   
-      id:null, 
-      title:"",
-      published:true,
-      published_By:new Date(),
-      subtitle:"",
-      readCount:0,    
-      published_At:new Date(),
-      blogCodeId:"",
-      displayMode:0,
-      url:"",
-      content:""
+
+  initData() {
+    this.i = {
+      id: null,
+      title: "",
+      images: [],
+      published: true,
+      published_By: new Date(),
+      subtitle: "",
+      readCount: 0,
+      published_At: new Date(),
+      blogCodeId: "",
+      displayMode: 0,
+      url: "",
+      content: ""
     };
-    this.isUpdate=false;
-    this.fileList = [];
-    this.uploadList = [];
+    
+    this.showList=[];
+    this.deleteList=[];
+    this.selectPostId="";
+    this.fileList = [];    
     this.i.blogCodeId = this.news[0].id;
   }
 
   ngOnInit() {
     this.i18n.setLocale(en_US);
-    this.news = this.blogStateService.getCodeChildrenDetail("News");    
+    this.news = this.blogStateService.getCodeChildrenDetail("News");
     this.i.blogCodeId = this.news[0].id;
   }
 
   beforeUpload = (file: any): boolean => {
     //要顯示列表回傳 false 自行處理欲 上傳檔案的列表
+    file.needDelete=false;
     this.fileList.push(file);
+    this.showList.push(file);
     return false;
   };
 
-  removeFile(file) {
-    var result = this.fileList.filter(x => {
-      return x.uid != file.uid;
-    });
-    this.fileList = result;
-  }
+  delete(item: any, needDelete: boolean) {
+		if (!needDelete) {
+			var fileListIndex = this.fileList.indexOf(item);
+      this.fileList.splice(fileListIndex, 1);
+      this.showList.splice(fileListIndex, 1);
+		} else {
+			var saveListIndex = this.showList.indexOf(item);
+			this.deleteList.push(item);
+			this.showList.splice(saveListIndex, 1);
+		}
+	}
 
-  save(){
-    console.log(this.i);
+  save() {          
     var mes = "建立成功！";
-    if(this.isUpdate)  mes = "更新成功！";
-    this.store.dispatch(this.isUpdate?new Updatepost(this.i):new Createpost(this.i)).subscribe(x=>{
-      this.notifyService.success(mes);
+    if ( this.selectPostId) mes = "更新成功！";
+    this.store.dispatch( this.selectPostId ? new Updatepost(this.i) : new Createpost(this.i))    
+    .pipe(pluck("PostState"))
+    .subscribe(x => {      
+      this.notifyService.success(mes);     
+      if (!this.selectPostId)  this.selectPostId = x.posts.items.filter(y=>y.title==this.i.title)[0].id;
+      this.handleUpload(this.selectPostId);
       this.initData();
-    })
+    })    
   } 
+
+
+ 
+
+  handleUpload(id: string) {
+    const formData = new FormData();
+    this.fileList.forEach((file: any) => {
+      console.log("run ",file)
+      formData.append('files[]', file);
+    });
+
+    var input = {
+			originFiles: this.showList.map(x => x.name),
+			deleteFiles: this.deleteList.map(x => x.name)
+		}
+    formData.append('input', JSON.stringify(input));
+
+    const req = new HttpRequest(
+      'POST',
+      this.apiUrl + 'api/Cms/UploadFile/PostUploadImage?PostId=' + id,
+      formData,
+      {}
+    );
+
+    this.http.request(req).subscribe(
+      (x: any) => {},
+      error => {        
+        this.notifyService.error('無法上傳');
+      }
+    );
+
+
+  }
 
 }

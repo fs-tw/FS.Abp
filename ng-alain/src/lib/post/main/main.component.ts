@@ -11,7 +11,7 @@ import { Deletepost, GetPosts } from '../providers/post/post.actions';
 import { PostState } from '../providers/post/post.state';
 import { PostDtos } from '@fs/cms';
 import { CodeProcessService, CodeDetailWithSettingObj } from '@fs/coding-management/core';
-import { STColumn, STPage, STColumnTag } from '@delon/abc';
+import { STColumn, STChange, STColumnTag,STPage } from '@delon/abc';
 
 const displayModeTAG: STColumnTag = {
   0: { text: '內文', color: 'green' },
@@ -40,6 +40,8 @@ export class MainComponent implements OnInit , OnDestroy{
   pageNumber: number = 0;
   dataCount: number = 0;
   destroy$= new Subject<void>();
+
+ 
   constructor(
     private store: Store,    
     private modal: NzModalService,
@@ -56,6 +58,8 @@ export class MainComponent implements OnInit , OnDestroy{
 
   }
 
+  
+
   ngOnDestroy() {
     this.destroy$.next();
   }  
@@ -69,7 +73,7 @@ export class MainComponent implements OnInit , OnDestroy{
   }
 
   loadData() {
-    this.store.dispatch(new GetPosts({ blogCodeId: this.select, skipCount: 0, maxResultCount: 10 }))
+    this.store.dispatch(new GetPosts({ blogCodeId: this.select, skipCount: 0, maxResultCount: 999 }))
       .pipe(pluck("PostState", "posts"))
       .subscribe(x => {});
   }

@@ -48,15 +48,19 @@
         </se>
 
 
-        <se label="上傳封面圖">
-          <nz-upload [nzBeforeUpload]="beforeUpload" nzType="drag" [nzMultiple]="true">
-            <p class="ant-upload-drag-icon">
+        <se label="上傳圖片">
+          <nz-upload 
+           [nzBeforeUpload]="beforeUpload" nzType="drag" [nzMultiple]="true"
+           nzListType="picture"
+           >
+           
+           <p class="ant-upload-drag-icon">
               <i nz-icon type="inbox"></i>
             </p>
             <p class="ant-upload-text">請將檔案拖移至此，或按下此圖示上傳檔案</p>
           </nz-upload>
 
-          <nz-table [(nzData)]="fileList" *ngIf="fileList.length > 0" nzSimple="false">
+          <nz-table [(nzData)]="showList" *ngIf="showList.length > 0" nzSimple="false">
             <thead>
               <tr>
                 <th>名稱</th>
@@ -64,20 +68,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let data of fileList">
+              <tr *ngFor="let data of showList">
                 <td>{{data.name}}</td>
-                <td><a (click)="removeFile(data)">刪除</a></td>
+                <td>
+                  <a (click)="delete(data,data.needDelete)">刪除</a>
+                  <!-- <nz-divider></nz-divider> -->
+                  <!-- <a >檢示</a> -->
+                </td>
               </tr>
             </tbody>
           </nz-table>
         </se>
 
-
+      
 
         <se>
           <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">            
-            <span *ngIf="!isUpdate" >建立</span>
-            <span *ngIf="isUpdate" >更新</span>
+            <span *ngIf="!selectPostId" >建立</span>
+            <span *ngIf="selectPostId" >更新</span>
           </button>
           <!-- <button nz-button nzType="default" (click)="initData()">繼續建立</button> -->
         </se>

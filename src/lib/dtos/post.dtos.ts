@@ -25,8 +25,17 @@ import { BlogDtos } from './blog.dtos';
         published: boolean;
         published_By: Date;
         published_At: Date;
-        readCount: number;                
+        readCount: number;    
+        images:imageinput[];                
         blogCodeId: string;
         displayMode: number;
+    }
+
+    export interface imageinput{
+        height: number;
+        isCover: boolean;
+        title: string;
+        url: string;
+        width: number;
     }
  }
