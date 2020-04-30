@@ -27,17 +27,17 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
-        public string CoverImage { get; set; }
-
         public bool Published { get; set; }
 
-        public string Published_By { get; set; }
+        public System.DateTime? Published_By { get; set; }
 
         public System.DateTime Published_At { get; set; }
 
         public int ReadCount { get; set; }
 
         public DisplayMode DisplayMode { get; set; }
+
+        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
 
         public class PrimaryKey
         {
@@ -61,17 +61,17 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
-        public string CoverImage { get; set; }
-
         public bool Published { get; set; }
 
-        public string Published_By { get; set; }
+        public System.DateTime? Published_By { get; set; }
 
         public System.DateTime Published_At { get; set; }
 
         public int ReadCount { get; set; }
 
         public DisplayMode DisplayMode { get; set; }
+
+        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
 
     }
     public partial class PostUpdateInput
@@ -86,17 +86,17 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
-        public string CoverImage { get; set; }
-
         public bool Published { get; set; }
 
-        public string Published_By { get; set; }
+        public System.DateTime? Published_By { get; set; }
 
         public System.DateTime Published_At { get; set; }
 
         public int ReadCount { get; set; }
 
         public DisplayMode DisplayMode { get; set; }
+
+        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto

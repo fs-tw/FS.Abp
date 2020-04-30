@@ -21,11 +21,11 @@ namespace FS.Cms.Core.Dtos
 
         public string Url { get; set; }
 
-        public string Width { get; set; }
+        public decimal Width { get; set; }
 
-        public string Height { get; set; }
+        public decimal Height { get; set; }
 
-        public string IsCover { get; set; }
+        public bool IsCover { get; set; }
 
     }
     public partial class ImageFieldWithDetailsDto : ImageFieldDto

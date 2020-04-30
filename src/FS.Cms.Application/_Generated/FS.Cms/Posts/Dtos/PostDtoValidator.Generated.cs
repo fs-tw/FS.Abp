@@ -31,9 +31,6 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Content)
                 .NotNull()
                 ;
-            RuleFor(p => p.CoverImage)
-                .NotNull()
-                ;
             RuleFor(p => p.Published)
                 .NotNull()
                 ;
@@ -47,6 +44,8 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.DisplayMode)
                 .NotNull()
+                ;
+            RuleFor(p => p.Images)
                 ;
             CustomizeConfiguration();
         }
@@ -71,9 +70,6 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Content)
                 .NotNull()
                 ;
-            RuleFor(p => p.CoverImage)
-                .NotNull()
-                ;
             RuleFor(p => p.Published)
                 .NotNull()
                 ;
@@ -87,6 +83,8 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.DisplayMode)
                 .NotNull()
+                ;
+            RuleFor(p => p.Images)
                 ;
             CustomizeConfiguration();
         }

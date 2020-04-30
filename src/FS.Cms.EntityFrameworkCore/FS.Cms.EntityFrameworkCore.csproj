@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\Blog.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\EfCoreBlogRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Document\Document.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Document\DocumentDefinition.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Document\EfCoreDocumentDefinitionRepository.Generated.cs" />
@@ -22,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Blogs\" />
     <Folder Include="_Generated\FS.Cms\Document\" />
   </ItemGroup>
 

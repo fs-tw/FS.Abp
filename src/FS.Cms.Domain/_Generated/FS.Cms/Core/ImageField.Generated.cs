@@ -40,19 +40,19 @@ namespace FS.Cms.Core
             set;
         }
 
-        public virtual string Width
+        public virtual decimal Width
         {
             get;
             set;
         }
 
-        public virtual string Height
+        public virtual decimal Height
         {
             get;
             set;
         }
 
-        public virtual string IsCover
+        public virtual bool IsCover
         {
             get;
             set;

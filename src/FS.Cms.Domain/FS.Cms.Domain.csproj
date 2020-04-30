@@ -4,14 +4,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>FS.Cms</RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Document\Document.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\DocumentDefinition.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\IDocumentDefinitionRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\IDocumentTreeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Document\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
+    <None Remove="_Generated\FS.Cms\Document\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\Blog.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\IBlogRepository.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Document\" />
+    <Folder Include="_Generated\FS.Cms\Blogs\" />
   </ItemGroup>
 
 </Project>

@@ -60,19 +60,13 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual string CoverImage
-        {
-            get;
-            set;
-        }
-
         public virtual bool Published
         {
             get;
             set;
         }
 
-        public virtual string Published_By
+        public virtual System.DateTime? Published_By
         {
             get;
             set;
@@ -95,6 +89,18 @@ namespace FS.Cms.Posts
             get;
             set;
         }
+        public virtual List<FS.Cms.Core.ImageField> Images 
+        {
+
+            get
+            {
+                return this.GetExtraProperty<List<FS.Cms.Core.ImageField>>(nameof(Images));
+            }
+            set
+            {
+                this.SetExtraProperty(nameof(Images), value);
+            }
+        } 
 
         public virtual System.Guid? TenantId
         {

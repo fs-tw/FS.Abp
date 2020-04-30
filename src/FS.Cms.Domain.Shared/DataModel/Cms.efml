@@ -222,13 +222,13 @@
       <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="001c101b-a1b5-498b-8cc2-cbbc55cea281">
         <column name="" />
       </property>
-      <property name="Width" type="String" p1:ValidateRequired="true" p1:Guid="893d3ad4-f645-4b86-bde8-f8844ff294cd">
+      <property name="Width" type="Decimal" p1:ValidateRequired="true" p1:Guid="893d3ad4-f645-4b86-bde8-f8844ff294cd">
         <column name="" />
       </property>
-      <property name="Height" type="String" p1:ValidateRequired="true" p1:Guid="e7faea75-b71e-495e-a82b-274f7c740bc5">
+      <property name="Height" type="Decimal" p1:ValidateRequired="true" p1:Guid="e7faea75-b71e-495e-a82b-274f7c740bc5">
         <column name="" />
       </property>
-      <property name="IsCover" type="String" p1:ValidateRequired="true" p1:Guid="3d7586e8-2460-4cff-ae68-1c78cddb89a5">
+      <property name="IsCover" type="Boolean" p1:ValidateRequired="true" p1:Guid="3d7586e8-2460-4cff-ae68-1c78cddb89a5">
         <column name="" />
       </property>
     </component>
@@ -476,75 +476,6 @@
       </property>
     </component>
   </class>
-  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="9ae2ff43-dd05-4071-be92-9ebbe0a8d2b9" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
-    <p1:Attributes>
-      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>FullAuditedAggregateRoot</string>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZX19</string>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>Blogs</string>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
-    </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="58dc322f-cfbc-498e-b15c-b8a86383ebc2" p1:GenerateDTO="False">
-      <column name="" />
-    </id>
-    <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="96ff8dfd-d3ec-4953-8101-031e0b167636">
-      <column name="" />
-    </property>
-    <property name="ShortName" type="String" p1:ValidateRequired="true" p1:Guid="bc869aaa-7c4a-4de7-b17c-8a338a630235">
-      <column name="" />
-    </property>
-    <property name="Description" type="String" p1:ValidateRequired="true" p1:Guid="8a09da18-20b1-4e94-870b-60953f07a809">
-      <column name="" />
-    </property>
-    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3c784bf4-f491-4ab4-9c0b-c5852a94a2d3" p1:GenerateDTO="False">
-      <column name="" />
-    </property>
-    <component name="FullAuditedAggregateRoot" class="FS.Cms.FullAuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="fc530b51-d4f6-4a6f-b489-7bacbb4e2bf9" p1:Shadow="True">
-      <property name="CreationTime" />
-      <property name="CreatorId" />
-      <property name="LastModificationTime" />
-      <property name="LastModifierId" />
-      <property name="IsDeleted" />
-      <property name="DeleterId" />
-      <property name="DeletionTime" />
-      <property name="ExtraProperties" />
-      <property name="ConcurrencyStamp" />
-    </component>
-  </class>
   <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
@@ -605,13 +536,10 @@
     <property name="Content" type="String" p1:ValidateRequired="true" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8">
       <column name="" />
     </property>
-    <property name="CoverImage" type="String" p1:ValidateRequired="true" p1:Guid="80fbc815-fdfa-41c9-a850-3acbeca690d2">
-      <column name="" />
-    </property>
     <property name="Published" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
       <column name="" />
     </property>
-    <property name="Published_By" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a09d36a6-534a-4c54-a444-9a737a83e25c">
+    <property name="Published_By" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a09d36a6-534a-4c54-a444-9a737a83e25c">
       <column name="" />
     </property>
     <property name="Published_At" type="DateTime" p1:ValidateRequired="true" p1:Guid="02767eea-0458-497d-ada2-6a4d5c242a3e">
@@ -623,6 +551,31 @@
     <property name="DisplayMode" type="FS.Cms.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
       <column name="" />
     </property>
+    <component name="Images" class="FS.Cms.Core.ImageField" p1:ValidateRequired="false" p1:Guid="dfe50025-0419-49a4-ad00-02643c0f8eec" p1:Shadow="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Title" />
+      <property name="Url" />
+      <property name="Width" />
+      <property name="Height" />
+      <property name="IsCover" />
+    </component>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cca2825d-0e3a-446d-9020-dab36bb0aab4" p1:GenerateDTO="False">
       <column name="" />
     </property>

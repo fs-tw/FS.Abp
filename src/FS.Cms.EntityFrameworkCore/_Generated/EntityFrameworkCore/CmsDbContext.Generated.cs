@@ -29,12 +29,6 @@ namespace FS.Cms.EntityFrameworkCore
     public partial class CmsDbContext : AbpDbContext<CmsDbContext>, ICmsDbContext
     {
 
-        public virtual DbSet<FS.Cms.Blogs.Blog> Blogs
-        {
-            get;
-            set;
-        }
-
         public virtual DbSet<FS.Cms.Posts.Post> Posts
         {
             get;

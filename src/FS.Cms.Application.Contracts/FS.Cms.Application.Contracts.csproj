@@ -4,14 +4,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>FS.Cms</RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDefinitionDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\Dtos\DocumentDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\IDocumentDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\IDocumentTreeAppService.Generated.cs" />
+    <Compile Remove="DataModel\**" />
+    <Compile Remove="_Generated\FS.Cms\Document\**" />
+    <EmbeddedResource Remove="DataModel\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
+    <None Remove="DataModel\**" />
+    <None Remove="_Generated\FS.Cms\Document\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +23,6 @@
     <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.Application.Contracts\FS.Abp.Trees.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.Application.Contracts\FS.DynamicForm.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataModel\" />
-    <Folder Include="_Generated\FS.Cms\Document\Dtos\" />
   </ItemGroup>
 
 </Project>
