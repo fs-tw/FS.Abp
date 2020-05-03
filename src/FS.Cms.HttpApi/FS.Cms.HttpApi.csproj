@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.6.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.6.2" />
     <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.HttpApi\FS.DynamicForm.HttpApi.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
   </ItemGroup>
