@@ -17,5 +17,6 @@ namespace FS.Cms.Posts.Dtos
     {
         public List<string> OriginFiles { get; set; }
         public List<string> DeleteFiles { get; set; }
+        public string IsCoverName { get; set; }
     }
 }

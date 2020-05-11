@@ -14,7 +14,7 @@ namespace FS.Cms.Posts
     {
         private ISearchedAndPagedAndSortedOperation _searchedAndPagedAndSortedOperation;
 
-        public ISearchedAndPagedAndSortedOperation SearchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndPagedAndSortedOperation);        
+        public ISearchedAndPagedAndSortedOperation searchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndPagedAndSortedOperation);        
 
 
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
@@ -23,7 +23,7 @@ namespace FS.Cms.Posts
             var query = this.Repository
                             .WithDetails()
                             .Where(x => x.BlogCodeId == input.BlogCodeId);
-            var entities = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
+            var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
             var result = this.CreatePagedResultDto<PostWithDetailsDto>(entities);
             return result;           
         }

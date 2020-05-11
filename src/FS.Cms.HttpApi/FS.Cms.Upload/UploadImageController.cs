@@ -42,7 +42,7 @@ namespace FS.Cms.Upload
             var files = Request.Form.Files.ToList();
 
             UploadImageInput input = JsonConvert.DeserializeObject<UploadImageInput>(Request.Form["input"]);          
-            var fileUrls = this.saveFile(folderName, files);
+            var fileUrls = this.saveFile(folderName, files, input.IsCoverName);
             this.deleteFile(folderName, input.DeleteFiles);
 
             this._postCrudAppService.Save(fileUrls, PostId, input);
@@ -50,7 +50,7 @@ namespace FS.Cms.Upload
         }
 
 
-        private List<Core.Dtos.ImageFieldDto> saveFile(string folderName, List<IFormFile> files)
+        private List<Core.Dtos.ImageFieldDto> saveFile(string folderName, List<IFormFile> files, string coverName)
         {
             string webRootPath = env.ContentRootPath;
             string folderPath = Path.Combine(webRootPath, folderName);
@@ -83,7 +83,11 @@ namespace FS.Cms.Upload
                         image.Height = 0;
                         image.Title = fileName;
                         image.Url = noRootUrl + "/" + fileName;
-                        images.Add(image);                                              
+                        if (file.FileName.Equals(coverName))
+                        {
+                            image.IsCover = true;
+                        }
+                        images.Add(image);
                     }
                 }
                 catch
