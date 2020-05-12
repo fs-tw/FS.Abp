@@ -62,7 +62,7 @@
             <thead>
               <tr>
                 <th>封面圖</th>
-                <th>名稱</th>
+                <th>圖片</th>
                 <th>設定</th>
               </tr>
             </thead>
@@ -70,28 +70,58 @@
               <tr *ngFor="let data of showList">
                 <td nzShowCheckbox [(nzChecked)]="data.isCover" (nzCheckedChange)="refreshStatus(data)">
                 </td>
-                <td>{{data.name}}</td>
+                <td>
+                  <img *ngIf="data.url" [src]="data.url" (click)="showModal(data.url)" style= "height: 200px;cursor:pointer;">                  
+                </td>
                 <td>
                   <a (click)="delete(data,data.needDelete)">刪除</a>                 
                 </td>
               </tr>
             </tbody>
           </nz-table>
-        </se>
-
-       
+        </se>       
 
         <se>
           <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">
             <span *ngIf="!selectPostId">建立</span>
             <span *ngIf="selectPostId">更新</span>
-          </button>
-         
+          </button>         
         </se>
       </form>
 
     </div>
     <!-- <div nz-col nzSpan="7"></div> -->
   </div>
-
 </nz-card>
+
+
+
+<!-- <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()">
+  <img [src]="selectImage"  style= "height: 200px;">
+</nz-modal> -->
+
+
+
+<nz-modal
+[(nzVisible)]="isVisible"
+[nzTitle]="modalTitle"
+[nzContent]="modalContent"
+[nzFooter]="modalFooter"
+(nzOnCancel)="handleCancel()"
+nzWidth = "800"
+>
+<ng-template #modalTitle>
+  圖片
+</ng-template>
+
+<ng-template #modalContent>
+  <div style="align-items: center;"  style="overflow-y:scroll;">
+    <img [src]="selectImage" style="height: 400px;">
+  </div>
+  
+</ng-template>
+
+<ng-template #modalFooter>  
+  
+</ng-template>
+</nz-modal>

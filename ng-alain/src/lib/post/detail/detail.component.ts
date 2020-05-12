@@ -35,6 +35,9 @@ export class DetailComponent implements OnInit {
   };
   fileList: any = [];
 
+
+  isVisible = false;
+  selectImage = "";
   showList = [];
   deleteList = [];
   selectPostId;
@@ -77,32 +80,19 @@ export class DetailComponent implements OnInit {
     });
   }
 
-
-
-  initData() {
-    this.i = {
-      id: null,
-      title: "",
-      images: [],
-      published: true,
-      published_By: new Date(),
-      subtitle: "",
-      readCount: 0,
-      published_At: new Date(),
-      blogCodeId: "",
-      displayMode: 0,
-      url: "",
-      content: ""
-    };
-
-    this.showList = [];
-    this.deleteList = [];
-    this.selectPostId = "";
-    this.fileList = [];
-    this.i.blogCodeId = this.news[0].id;
-    this.router.navigate(["cms/post"], { queryParams: { blog: this.news[0].id } });
-
+  showModal(imgUrl): void {
+    this.isVisible = true;
+    this.selectImage = imgUrl;
   }
+
+ 
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
+  }
+
+
 
   ngOnInit() {
     this.i18n.setLocale(en_US);
@@ -111,10 +101,18 @@ export class DetailComponent implements OnInit {
   }
 
   beforeUpload = (file: any): boolean => {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    
+    var vm = this;
+    reader.addEventListener("load", function () {
+			file.url = reader.result;
+      file.needDelete = false;
+      vm.fileList.push(file);
+      vm.showList.push(file);
+		}, false);
     //要顯示列表回傳 false 自行處理欲 上傳檔案的列表
-    file.needDelete = false;
-    this.fileList.push(file);
-    this.showList.push(file);
+   
     return false;
   };
 
@@ -133,8 +131,8 @@ export class DetailComponent implements OnInit {
   save() {
     var mes = "建立成功！";
     if (this.selectPostId) mes = "更新成功！";
-    
-    var cover = this.showList.filter(x => { return x.isCover == true });    
+
+    var cover = this.showList.filter(x => { return x.isCover == true });
     if (cover.length > 0) {
       this.i.images.forEach(x => {
         if (x.title != cover[0].name) x.isCover = false;
@@ -148,11 +146,9 @@ export class DetailComponent implements OnInit {
         this.notifyService.success(mes);
         if (!this.selectPostId) this.selectPostId = x.posts.items.filter(y => y.title == this.i.title)[0].id;
         this.handleUpload(this.selectPostId);
-        this.initData();
+        this.router.navigate(["cms/post"], { queryParams: { blog: this.news[0].id } });
       })
   }
-
-
 
   handleUpload(id: string) {
     const formData = new FormData();
@@ -166,7 +162,7 @@ export class DetailComponent implements OnInit {
       isCoverName: ""
     }
 
-    var cover = this.showList.filter(x => { return x.isCover == true });    
+    var cover = this.showList.filter(x => { return x.isCover == true });
     if (cover.length > 0) {
       input.isCoverName = cover[0].name;
     }
@@ -196,5 +192,5 @@ export class DetailComponent implements OnInit {
   }
 
 
- 
+
 }
