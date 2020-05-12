@@ -17,13 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="2.6.2" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="2.6.2" />
-    <PackageReference Include="Volo.Abp.Auditing" Version="2.6.2" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="2.6.2" />
-    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="2.6.2" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="2.6.2" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="2.6.2" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.Auditing" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="2.7.0" />
   </ItemGroup>
 
 </Project>
