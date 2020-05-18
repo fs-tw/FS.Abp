@@ -22,7 +22,7 @@ namespace FS.Cms.Posts
             await CheckGetListPolicyAsync().ConfigureAwait(false);
             var query = this.Repository
                             .WithDetails()
-                            .Where(x => x.BlogCodeId == input.BlogCodeId);
+                            .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId);
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
             var result = this.CreatePagedResultDto<PostWithDetailsDto>(entities);
             return result;           

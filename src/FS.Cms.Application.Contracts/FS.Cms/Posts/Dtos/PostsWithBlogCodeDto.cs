@@ -10,7 +10,7 @@ namespace FS.Cms.Posts.Dtos
     {
         public string Fields { get; set; }
         public string Value { get; set; }
-        public Guid BlogCodeId { get; set; }
+        public Guid? BlogCodeId { get; set; }
     }
 
     public class UploadImageInput
