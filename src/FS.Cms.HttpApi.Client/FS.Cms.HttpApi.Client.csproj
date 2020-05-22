@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client" Version="2.7.0" />
+    <PackageReference Include="Volo.Abp.Http.Client" Version="2.8.0" />
     <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.HttpApi.Client\FS.DynamicForm.HttpApi.Client.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
   </ItemGroup>
