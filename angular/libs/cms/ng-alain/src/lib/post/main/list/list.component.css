@@ -1,0 +1,16 @@
+.listColor {
+    padding: 0px !important;
+}
+.listColor:hover {
+    background-color: aliceblue;
+}
+
+.listSelected {
+    background-color: aliceblue;
+}
+
+nz-list-item{
+    font-size: 15px;
+    /* margin-top: 15px;     */
+}
+

@@ -1,42 +1,67 @@
-<nz-card [nzTitle]="extraTemplate">
-    
-    <nz-table #basicTable [nzData]="datas" >
+<div nz-row>
+  <div nz-col nzSpan="7">
+    <fs-list></fs-list>
+  </div>
+  <div nz-col nzSpan="1"></div>
+  <div nz-col nzSpan="16">
+
+    <nz-card [nzTitle]="extraTemplate">
+
+      <nz-table #nzTable [nzData]="datas" nzPageSize="10" [nzTotal]="total" [nzFrontPagination]="false" (nzPageIndexChange)="changePage($event)">
         <thead>
           <tr>
-            <th>number</th>
-            <th>Blog type</th>
-            <th>Title</th>
-            <th>Url</th>
-            <th>Action</th>
+            <th nzShowExpand></th>
+            <th>標題</th>
+            <th>副標題</th>
+            <th>顯示模式</th>
+            <th>發佈時間</th>
+            <th>更新時間</th>
+            <th>動作</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of basicTable.data;let i=index;">
-            <td>{{ i+1 }} </td>
-            <td>--</td>
-            <td>{{ data.title }}</td>
-            <td>{{ data.url }}</td>            
-            <td>             
-              <!-- <fs-edit [id]="data.id"></fs-edit> -->
-              <nz-divider nzType="vertical"></nz-divider>
-              <a (click)="delete(data)">delete</a>
-            </td>
-          </tr>
+          <ng-template ngFor let-data [ngForOf]="nzTable.data">
+            <tr>
+              <td nzShowExpand [(nzExpand)]="mapOfExpandData[data.id]"></td>
+              <td>{{ data.title }}</td>
+              <td>{{ data.subtitle }}</td>
+              <td>
+                <span *ngIf="data.displayMode==0">內容</span>
+                <span *ngIf="data.displayMode==1">連結</span>
+              </td>
+              <td>{{ data.published_At | date:'yyyy-MM-dd'}}</td>
+              <td>{{ data.lastModificationTime  | date:'yyyy-MM-dd'}}</td>
+
+              <td>
+                <a (click)="gotoDetail(data.id)">編輯</a>
+                <nz-divider nzType="vertical"></nz-divider>
+                <a (click)="delete(data)">刪除</a>
+              </td>
+            </tr>
+            <tr [nzExpand]="mapOfExpandData[data.id]">
+              <td></td>
+              <td colspan="3">
+                <h3>內容：</h3>{{ data.content }}
+              </td>
+            </tr>
+          </ng-template>
         </tbody>
       </nz-table>
+    </nz-card>
+  </div>
 
-</nz-card>
+</div>
 
-<ng-template #extraTemplate>  
-  
-  <nz-select [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="顯示全部">
-    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-    
-  </nz-select>
 
-  <button nz-button nzType="primary">Search</button>
-  <br><br>
-  <button nz-button nzType="primary">Refresh</button>  
-  <button nz-button nzType="primary">Create</button>  
+
+<ng-template #extraTemplate>
+  <button nz-button nzType="primary" (click)="gotoDetail()" style="margin-right:20px">新增</button>
+  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+    <input type="text" [(ngModel)]="keyword" nz-input placeholder="輸入名稱" />
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" (click)="search()" nzSearch><i nz-icon nzType="search"></i></button>
+  </ng-template>
+
+
 </ng-template>

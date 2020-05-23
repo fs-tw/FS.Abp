@@ -1,0 +1,36 @@
+<button nz-button [nzType]="'primary'" *ngIf="!input" (click)="showModal()"><span>+建立</span></button>
+<a (click)="showModal()" *ngIf="input">編輯</a>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="建立消息種類" (nzOnCancel)="handleCancel()" [nzFooter]="footer">
+  <form nz-form #f="ngForm" se-container="1" labelWidth="100">
+    <se label="是否啟用" required>
+      <nz-radio-group [(ngModel)]="i.enable" name="enable">
+        <label nz-radio [nzValue]="true">是</label>
+        <label nz-radio [nzValue]="false">否</label>
+      </nz-radio-group>
+    </se>
+    <se label="編號" required>
+      <input type="text" nz-input [(ngModel)]="i.no" name="no" required>
+    </se>
+    <se label="名稱" required>
+      <input type="text" nz-input [(ngModel)]="i.displayName" name="displayName" required>
+    </se>
+
+    <se  label="敘述">
+      <textarea
+      nz-input
+      name="description"      
+      [(ngModel)]="i.description"
+      [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+    ></textarea>
+    </se>
+
+
+  </form>
+</nz-modal>
+
+
+<ng-template #footer>
+  <button nz-button nzType="default" (click)="handleCancel()">取消</button>
+  <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">儲存</button>
+</ng-template>

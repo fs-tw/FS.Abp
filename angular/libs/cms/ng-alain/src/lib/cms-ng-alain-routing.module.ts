@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { DynamicLayoutComponent, AuthGuard, PermissionGuard } from '@abp/ng.core';
 import { LayoutPassportComponent, LayoutDefaultComponent } from '@fs/ng-alain/basic';
 
-import { BlogModule } from './blog/blog.module';
 import { PostModule } from './post/post.module';
 
 const routes: Routes = [
@@ -12,11 +11,7 @@ const routes: Routes = [
       path: '',
       component: LayoutDefaultComponent,
       canActivate: [AuthGuard, PermissionGuard],
-      children: [
-          {
-              path: 'blog',
-              loadChildren: ()=>BlogModule
-          },
+      children: [         
           {
               path: 'post',
               loadChildren: ()=>PostModule

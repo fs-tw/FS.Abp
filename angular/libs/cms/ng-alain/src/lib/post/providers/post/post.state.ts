@@ -28,7 +28,7 @@ export class PostState{
 
 
     @Action(GetPosts)
-    getBlogs({ patchState, getState }: StateContext<Post.State>, { payload }: GetPosts) {
+    getPost({ patchState, getState }: StateContext<Post.State>, { payload }: GetPosts) {
         if(payload){
             getState().postsPageQueryParam = payload;
         }else{
@@ -46,7 +46,7 @@ export class PostState{
 
 
     @Action(GetPostById)
-    getEmployee({ patchState }: StateContext<Post.State>, { payload }: GetPostById) {
+    getpostById({ patchState }: StateContext<Post.State>, { payload }: GetPostById) {
         return this.postService.getPostById(payload).pipe(
             tap(postData=>{
                 patchState({
@@ -57,21 +57,22 @@ export class PostState{
     }
 
     @Action(Deletepost)
-    deleteBlog({ dispatch,getState }: StateContext<Post.State>, { payload }: Deletepost){
+    deletePost({ dispatch,getState }: StateContext<Post.State>, { payload }: Deletepost){
         return this.postService.deletePost(payload).pipe(
             switchMap(() => dispatch(new GetPosts(getState().postsPageQueryParam)))
         );
     }
 
     @Action(Createpost)
-    createBlog({ getState,dispatch }: StateContext<Post.State>, { payload }: Createpost){
+    createPost({ getState,dispatch }: StateContext<Post.State>, { payload }: Createpost){
         return this.postService.createPost(payload).pipe(
-            switchMap(() => dispatch(new GetPosts(getState().postsPageQueryParam)))
+            switchMap(
+                () => dispatch(new GetPosts(getState().postsPageQueryParam)))
         );
     }
 
     @Action(Updatepost)
-    updateBlog({ dispatch,getState }: StateContext<Post.State>, { payload }: Updatepost){
+    updatePost({ dispatch,getState }: StateContext<Post.State>, { payload }: Updatepost){
         return this.postService.updatePost(payload).pipe(
             switchMap(() => dispatch(new GetPosts(getState().postsPageQueryParam)))
         );
