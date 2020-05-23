@@ -13,7 +13,7 @@ import { Injectable, Inject, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store, Actions, ofActionDispatched } from '@ngxs/store';
-import { ThemeCoreService } from '@fs/theme-core';
+import { ThemeCoreService } from '@fs/theme.core';
 @Injectable({
   providedIn: 'root',
 })
