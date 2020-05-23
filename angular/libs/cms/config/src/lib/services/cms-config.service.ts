@@ -13,7 +13,7 @@ import { Injectable, Inject, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store, Actions, ofActionDispatched } from '@ngxs/store';
-import { CoreConfigService } from '@fs/core';
+import { ThemeCoreService } from '@fs/theme-core';
 @Injectable({
   providedIn: 'root',
 })
@@ -22,8 +22,8 @@ export class CmsConfigService {
   get configStateService(): ConfigStateService {
     return this.injector.get(ConfigStateService);
   }
-  get coreConfigService(): CoreConfigService {
-    return this.injector.get(CoreConfigService);
+  get themeCoreService(): ThemeCoreService {
+    return this.injector.get(ThemeCoreService);
   }
 
   get store(): Store {
@@ -64,7 +64,7 @@ export class CmsConfigService {
     addAbpRoutes(this.routes);
     setTimeout(() => {
       this.routes.forEach(route => {
-        this.coreConfigService.dispatchDeeply(route);
+        this.themeCoreService.dispatchAddOrPatchRoute$(route);
       });
 
       this.registerRoutes();
