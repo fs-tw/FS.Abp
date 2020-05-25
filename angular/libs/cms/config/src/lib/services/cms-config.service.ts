@@ -1,33 +1,17 @@
-import {
-  AddRoute,
-  ABP,
-  addAbpRoutes,
-  eLayoutType,
-  RestService,
-  PatchRouteByName,
-  ConfigStateService,
-  ConfigState,
-  GetAppConfiguration,
-} from '@abp/ng.core';
+import { eLayoutType, ConfigStateService, } from '@abp/ng.core';
 import { Injectable, Inject, Injector } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Store, Actions, ofActionDispatched } from '@ngxs/store';
-import { ThemeCoreService } from '@fs/theme.core';
+import { ThemeCoreService, IConfigService } from '@fs/theme.core'
 @Injectable({
   providedIn: 'root',
 })
-export class CmsConfigService {
+export class CmsConfigService implements IConfigService {
 
   get configStateService(): ConfigStateService {
     return this.injector.get(ConfigStateService);
   }
   get themeCoreService(): ThemeCoreService {
     return this.injector.get(ThemeCoreService);
-  }
-
-  get store(): Store {
-    return this.injector.get(Store);
   }
 
 
@@ -41,12 +25,12 @@ export class CmsConfigService {
         title: 'Cms',
         doc: 'Cms',
         nav: { routeName: 'cms' }
-      },      
-      children: [                   
+      },
+      children: [
         {
           path: '',
           name: '開發中',
-          children: [           
+          children: [
             {
               path: 'post',
               name: 'post',
@@ -61,17 +45,9 @@ export class CmsConfigService {
   ] as any[];
 
   constructor(private injector: Injector) {
-    addAbpRoutes(this.routes);
-    setTimeout(() => {
-      this.routes.forEach(route => {
-        this.themeCoreService.dispatchAddOrPatchRoute$(route);
-      });
-
-      this.registerRoutes();
-    });
   }
-  registerRoutes() {
-    var oldRoute = this.configStateService.getRoute(null, 'AbpUiNavigation::Menu:Administration');
+  registerRoutes(): Observable<any> {
+    return this.themeCoreService.dispatchAddOrPatchRoute(this.routes[0]);
 
   }
 }
