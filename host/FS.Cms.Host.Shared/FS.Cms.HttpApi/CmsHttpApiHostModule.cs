@@ -10,9 +10,7 @@ namespace FS.Cms.Host.HttpApi
     [DependsOn(
         typeof(FS.Cms.CmsApplicationModule),
         typeof(FS.Cms.CmsHttpApiModule),
-        typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule),
-
-        typeof(FS.DynamicForm.Host.HttpApi.DynamicFormHttpApiHostModule)
+        typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule)
         )]
     public class CmsHttpApiHostModule:AbpModule
     {

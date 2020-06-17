@@ -7,7 +7,6 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using FS.Abp.CodingManagement.EntityFrameworkCore;
-using FS.DynamicForm.EntityFrameworkCore;
 
 namespace FS.Cms.EntityFrameworkCore
 {
@@ -31,7 +30,6 @@ namespace FS.Cms.EntityFrameworkCore
             modelBuilder.ConfigureTenantManagement();
             
             modelBuilder.ConfigureCodingManagement();
-            modelBuilder.ConfigureDynamicForm();
         }
     }
 }

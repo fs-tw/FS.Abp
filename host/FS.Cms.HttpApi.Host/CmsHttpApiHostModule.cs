@@ -43,8 +43,7 @@ namespace FS.Cms
 
 
         typeof(FS.Abp.CodingManagement.Host.HttpApi.CodingManagementHttpApiHostModule),
-        typeof(FS.Abp.SettingManagement.Host.HttpApi.SettingManagementHttpApiHostModule),
-        typeof(FS.DynamicForm.Host.HttpApi.DynamicFormHttpApiHostModule)
+        typeof(FS.Abp.SettingManagement.Host.HttpApi.SettingManagementHttpApiHostModule)
 
         )]
     public class CmsHttpApiHostModule : AbpModule

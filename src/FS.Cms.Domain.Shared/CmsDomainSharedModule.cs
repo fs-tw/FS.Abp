@@ -9,8 +9,7 @@ using Volo.Abp.Validation.Localization;
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(AbpValidationModule),
-        typeof(FS.DynamicForm.DynamicFormDomainSharedModule)
+        typeof(AbpValidationModule)
     )]
     public class CmsDomainSharedModule : AbpModule
     {

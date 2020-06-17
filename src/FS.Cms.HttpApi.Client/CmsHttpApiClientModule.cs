@@ -6,8 +6,7 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsApplicationContractsModule),
-        typeof(AbpHttpClientModule),
-        typeof(FS.DynamicForm.DynamicFormHttpApiClientModule)
+        typeof(AbpHttpClientModule)
         )]
     public class CmsHttpApiClientModule : AbpModule
     {

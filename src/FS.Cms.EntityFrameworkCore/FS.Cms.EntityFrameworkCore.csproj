@@ -8,24 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Blogs\Blog.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Blogs\EfCoreBlogRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\Document.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\DocumentDefinition.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\EfCoreDocumentDefinitionRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Document\EfCoreDocumentTreeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\**" />
+    <Compile Remove="_Generated\FS.Cms\Document\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Blogs\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
+    <None Remove="_Generated\FS.Cms\Blogs\**" />
+    <None Remove="_Generated\FS.Cms\Document\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.9.0" />
-    <ProjectReference Include="..\..\..\FS.Abp.Trees\src\FS.Abp.Trees.EntityFrameworkCore\FS.Abp.Trees.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.EntityFrameworkCore\FS.DynamicForm.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Blogs\" />
-    <Folder Include="_Generated\FS.Cms\Document\" />
   </ItemGroup>
 
 </Project>

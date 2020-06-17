@@ -8,9 +8,7 @@ namespace FS.Cms
         typeof(CmsDomainModule),
         typeof(CmsApplicationContractsModule),
         typeof(AbpDddApplicationModule),
-        typeof(FS.Abp.Application.AbpDddApplicationModule),
-        typeof(FS.Abp.Trees.TreesApplicationModule),
-        typeof(FS.DynamicForm.DynamicFormApplicationModule)
+        typeof(FS.Abp.Application.AbpDddApplicationModule)
         )]
     public class CmsApplicationModule : AbpModule
     {

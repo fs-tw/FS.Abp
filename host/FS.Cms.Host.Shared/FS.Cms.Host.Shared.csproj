@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FS.DynamicForm\host\FS.DynamicForm.Host.Shared\FS.DynamicForm.Host.Shared.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.Application\FS.Cms.Application.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.HttpApi\FS.Cms.HttpApi.csproj" />

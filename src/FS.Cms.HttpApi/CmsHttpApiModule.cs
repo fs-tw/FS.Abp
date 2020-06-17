@@ -9,8 +9,7 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsApplicationContractsModule),
-        typeof(AbpAspNetCoreMvcModule),
-        typeof(FS.DynamicForm.DynamicFormHttpApiModule)
+        typeof(AbpAspNetCoreMvcModule)
         )]
     public class CmsHttpApiModule : AbpModule
     {

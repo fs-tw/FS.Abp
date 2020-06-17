@@ -27,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FS.DynamicForm\src\FS.DynamicForm.Domain.Shared\FS.DynamicForm.Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="DataModel\Cms.efml">
       <Generator>DevartEFCoreGenerator</Generator>
       <LastGenOutput>Cms.info</LastGenOutput>
