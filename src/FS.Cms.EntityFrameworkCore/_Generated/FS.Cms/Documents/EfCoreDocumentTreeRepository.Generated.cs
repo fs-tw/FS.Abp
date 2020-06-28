@@ -17,7 +17,7 @@ using System.Linq.Expressions;
 namespace FS.Cms.Documents
 {
     public partial class EfCoreDocumentTreeRepository : 
-        FS.Abp.Trees.EfCoreTreeRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Documents.Document>,
+        EasyAbp.Abp.Trees.EfCoreTreeRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Documents.Document>,
         IDocumentTreeRepository
     {
         public EfCoreDocumentTreeRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)

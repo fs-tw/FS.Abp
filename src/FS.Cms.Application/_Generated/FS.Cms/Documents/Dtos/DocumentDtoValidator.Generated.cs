@@ -32,6 +32,9 @@ namespace FS.Cms.Documents.Dtos
             RuleFor(p => p.DisplayName)
                 .NotNull()
                 ;
+            RuleFor(p => p.Level)
+                .NotNull()
+                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -54,6 +57,9 @@ namespace FS.Cms.Documents.Dtos
             RuleFor(p => p.ParentId)
                 ;
             RuleFor(p => p.DisplayName)
+                .NotNull()
+                ;
+            RuleFor(p => p.Level)
                 .NotNull()
                 ;
             CustomizeConfiguration();

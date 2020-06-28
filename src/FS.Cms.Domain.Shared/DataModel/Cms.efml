@@ -818,7 +818,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Documents.Document" entity-set="Documents" p1:Guid="c57499cc-5f8b-4e05-9f08-7fa7e2463d0d" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        FS.Abp.Trees.ITree&lt;Document&gt;">
+  <class name="FS.Cms.Documents.Document" entity-set="Documents" p1:Guid="c57499cc-5f8b-4e05-9f08-7fa7e2463d0d" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Document&gt;">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -905,6 +905,9 @@
     <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="e870373b-a614-4f1f-bd86-97ac2df1adb2">
       <column name="" />
     </property>
+    <property name="Level" type="Int32" p1:ValidateRequired="true" p1:Guid="0a6aeb8c-8150-44bf-a1c6-8893899e8822">
+      <column name="" />
+    </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="07d70bea-408c-45ba-8cc5-b43d61c5b1ec" p1:GenerateDTO="False">
       <column name="" />
     </property>
@@ -949,7 +952,7 @@
       <end1 multiplicity="ZeroOrOne" name="Parent" class="Document" relation-class="Document" constrained="True" lazy="False" p1:Guid="1be5fc22-d338-4d2c-87d3-8dd962b2de50">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="Children" class="Document" relation-class="Document" lazy="False" p1:Guid="5ccc07e8-4edb-42bc-b2f7-c27cdd49ecf3">
+      <end2 multiplicity="Many" name="Children" class="Document" relation-class="Document" lazy="False" p1:Guid="5ccc07e8-4edb-42bc-b2f7-c27cdd49ecf3" p1:CollectionTypeName="ICollection&lt;Document&gt;">
         <property name="ParentId" />
       </end2>
     </association>

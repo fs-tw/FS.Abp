@@ -15,7 +15,7 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Documents.Dtos
 {
-    public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>, FS.Abp.Trees.Dtos.ITreeDto
+    public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public string Content { get; set; }
 
@@ -29,6 +29,24 @@ namespace FS.Cms.Documents.Dtos
 
         public string DisplayName { get; set; }
 
+        public int Level { get; set; }
+
+        public class PrimaryKey
+        {
+            public System.Guid Id { get; set; }
+    
+        }
+
+        public class DocumentDefinitionForeignKey
+        {
+            public string DocumentDefinitionId { get; set; }
+    
+        }
+        public class ParentForeignKey
+        {
+            public System.Guid? ParentId { get; set; }
+    
+        }
     }
     public partial class DocumentWithDetailsDto : DocumentDto
     {
@@ -39,7 +57,7 @@ namespace FS.Cms.Documents.Dtos
         public DocumentDto Parent { get; set; }
 
     }
-    public partial class DocumentCreateInput : FS.Abp.Trees.Dtos.ICreateInput
+    public partial class DocumentCreateInput
     {
         public string Content { get; set; }
 
@@ -53,8 +71,10 @@ namespace FS.Cms.Documents.Dtos
 
         public string DisplayName { get; set; }
 
+        public int Level { get; set; }
+
     }
-    public partial class DocumentUpdateInput : FS.Abp.Trees.Dtos.IUpdateInput
+    public partial class DocumentUpdateInput
     {
         public string Content { get; set; }
 
@@ -68,15 +88,10 @@ namespace FS.Cms.Documents.Dtos
 
         public string DisplayName { get; set; }
 
-    }
-    public partial class DocumentGetListInput : PagedAndSortedResultRequestDto, FS.Abp.Trees.Dtos.IGetListInput
-    {
-    }
-    public partial class DocumentMoveInput : FS.Abp.Trees.Dtos.IMoveInput
-    {
-        public System.Guid Id { get; set; }
+        public int Level { get; set; }
 
-        public System.Guid? NewParentId { get; set; }
-
+    }
+    public partial class DocumentGetListInput : SearchResultRequestDto
+    {
     }
 }

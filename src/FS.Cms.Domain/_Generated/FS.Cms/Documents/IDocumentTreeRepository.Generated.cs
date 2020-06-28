@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Documents
 {
     public partial interface IDocumentTreeRepository : 
-        FS.Abp.Trees.ITreeRepository<FS.Cms.Documents.Document>
+        EasyAbp.Abp.Trees.ITreeRepository<FS.Cms.Documents.Document>
     {
 
     }

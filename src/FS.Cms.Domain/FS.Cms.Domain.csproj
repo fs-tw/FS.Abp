@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="0.290.4" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.9.0" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
     <ProjectReference Include="..\..\..\FS.Abp.SettingManagement\src\FS.Abp.SettingManagement.Domain\FS.Abp.SettingManagement.Domain.csproj" />
@@ -27,6 +28,61 @@
 
   <ItemGroup>
     <Folder Include="_Generated\FS.Cms\Blogs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\FileField.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\ImageField.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\Document.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentDefinition.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\IDocumentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\IDocumentTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\IPostRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\Post.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostTag.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tagging\ITagRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tagging</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tagging\Tag.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tagging</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

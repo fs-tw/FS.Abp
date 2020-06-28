@@ -23,7 +23,7 @@ namespace FS.Cms.Documents
     public partial class Document : 
         Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot<Guid>,
         Volo.Abp.MultiTenancy.IMultiTenant,
-        FS.Abp.Trees.ITree<Document>
+        EasyAbp.Abp.Trees.ITree<Document>
     {
 
         public Document()
@@ -74,6 +74,12 @@ namespace FS.Cms.Documents
             set;
         }
 
+        public virtual int Level
+        {
+            get;
+            set;
+        }
+
         public virtual System.Guid? TenantId
         {
             get;
@@ -86,7 +92,7 @@ namespace FS.Cms.Documents
             set;
         }
 
-        public virtual IList<Document> Children
+        public virtual ICollection<Document> Children
         {
             get;
             set;

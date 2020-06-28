@@ -38,6 +38,7 @@ namespace FS.Cms.Documents
             builder.Property<string>(x => x.Code).HasColumnName(@"Code").IsRequired().ValueGeneratedNever();
             builder.Property<System.Guid?>(x => x.ParentId).HasColumnName(@"ParentId").ValueGeneratedNever();
             builder.Property<string>(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
+            builder.Property<int>(x => x.Level).HasColumnName(@"Level").IsRequired().ValueGeneratedNever();
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
             builder.HasOne(x => x.DocumentDefinition).WithMany(op => op.Documents).IsRequired(true).HasForeignKey(@"DocumentDefinitionId");

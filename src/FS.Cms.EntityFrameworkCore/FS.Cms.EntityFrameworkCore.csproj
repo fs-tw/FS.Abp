@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -17,9 +17,65 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="0.290.4" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.9.0" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\EntityFrameworkCore\CmsDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CmsDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CmsModelBuilderConfigurationOptions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\ICmsDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\Document.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\EfCoreDocumentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\EfCoreDocumentTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\EfCorePostRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\Post.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostTag.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tagging\EfCoreTagRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tagging</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tagging\Tag.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tagging</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

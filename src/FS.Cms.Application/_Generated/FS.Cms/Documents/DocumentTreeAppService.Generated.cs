@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Documents
 {
     public partial class DocumentTreeAppService : 
-        FS.Abp.Trees.TreeAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentWithDetailsDto, FS.Cms.Documents.Dtos.DocumentGetListInput, FS.Cms.Documents.Dtos.DocumentCreateInput, FS.Cms.Documents.Dtos.DocumentUpdateInput, FS.Cms.Documents.Dtos.DocumentMoveInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentWithDetailsDto, Guid, FS.Cms.Documents.Dtos.DocumentGetListInput, FS.Cms.Documents.Dtos.DocumentCreateInput, FS.Cms.Documents.Dtos.DocumentUpdateInput>,
         IDocumentTreeAppService
     {
         private readonly IDocumentTreeRepository _repository;
