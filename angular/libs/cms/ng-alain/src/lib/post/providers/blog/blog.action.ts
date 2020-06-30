@@ -1,4 +1,4 @@
-import { CodingManagementDtos } from '@fs/coding-management';
+import { CodingManagementDtos } from '../../../shared/coding-management.dtos';
 
 export class CreateCoding{
     static readonly type = '[BlogCodings] Create Coding';
