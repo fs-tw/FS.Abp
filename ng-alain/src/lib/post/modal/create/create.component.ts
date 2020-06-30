@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BlogStateService } from '../../providers/blog/blog.state.service';
 import { CodeDetailWithSettingObj, CodesWithDetailsDto  } from '@fs/coding-management/core'
-import { CodingManagementDtos } from '@fs/coding-management';
+import { CodingManagementDtos } from '../../../shared/coding-management.dtos';
 import { NotifyService } from '../../../shared/services/notify/notify.service';
 @Component({
   selector: 'fs-create',
