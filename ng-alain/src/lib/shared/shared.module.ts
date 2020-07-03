@@ -13,7 +13,9 @@ import { MessagesService } from './services/messages/messages.service';
     NgAlainBasicModule,
     // NgxsModule.forFeature([AddEmployeeState, EditUnitEmployeeState])
   ],
-  exports: [],
+  exports: [
+    NgAlainBasicModule
+  ],
   providers: [
     NotifyService,  MessagesService  
   ]
