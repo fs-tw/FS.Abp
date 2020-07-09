@@ -6,17 +6,13 @@ import { SharedModule } from './shared/shared.module';
 import { CmsNgAlainRoutingModule } from './cms-ng-alain-routing.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [
-  
-    CmsModule,
-    CmsNgAlainRoutingModule,
-    NgAlainBasicModule,
     SharedModule,
-        
-
+    CmsModule,
+    CmsNgAlainRoutingModule,    
+   
   ]
 })
 export class CmsNgAlainModule { }

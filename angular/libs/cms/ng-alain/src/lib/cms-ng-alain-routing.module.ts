@@ -2,20 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DynamicLayoutComponent, AuthGuard, PermissionGuard } from '@abp/ng.core';
 import { LayoutPassportComponent, LayoutDefaultComponent } from '@fs/ng-alain/basic';
-
+import * as module from './modules';
 import { PostModule } from './post/post.module';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'blog' },
+  { path: '', pathMatch: 'full', redirectTo: 'post' },
   {
       path: '',
-      component: LayoutDefaultComponent,
+      component: DynamicLayoutComponent,
       canActivate: [AuthGuard, PermissionGuard],
       children: [         
-          {
-              path: 'post',
-              loadChildren: ()=>PostModule
-          },          
+        module.loadPostModuleRoute(),   
       ],
   }
 ];
