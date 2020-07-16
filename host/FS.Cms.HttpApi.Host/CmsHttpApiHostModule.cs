@@ -28,6 +28,7 @@ using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.Security.Claims;
 using IdentityModel;
 using Volo.Abp.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace FS.Cms
 {
@@ -84,7 +85,13 @@ namespace FS.Cms
                     options.SwaggerDoc("v1", new OpenApiInfo { Title = "Cms API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
+                    // Only for cms HostModule module
+                    var xmlFile = "FS.Cms.HttpApi.xml";
+                    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                    if(File.Exists(xmlPath)) options.IncludeXmlComments(xmlPath);
+
                 });
+
 
             Configure<AbpLocalizationOptions>(options =>
             {
@@ -173,7 +180,7 @@ namespace FS.Cms
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
             });
             app.UseAuditing();
-            app.UseMvcWithDefaultRouteAndArea();
+            app.UseConfiguredEndpoints();
         }
     }
 }

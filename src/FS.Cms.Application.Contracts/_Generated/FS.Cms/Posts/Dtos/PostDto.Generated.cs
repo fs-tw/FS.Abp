@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 using FS.Abp.Application.Dtos;
+using System.ComponentModel.DataAnnotations;
 
 namespace FS.Cms.Posts.Dtos
 {
@@ -53,14 +54,15 @@ namespace FS.Cms.Posts.Dtos
     {
         public System.Guid BlogCodeId { get; set; }
 
+        [Required]
         public string Title { get; set; }
-
+        [Required]
         public string Subtitle { get; set; }
-
+        [Required]
         public string Url { get; set; }
-
+        [Required]
         public string Content { get; set; }
-
+        [Required]
         public bool Published { get; set; }
 
         public System.DateTime? Published_By { get; set; }

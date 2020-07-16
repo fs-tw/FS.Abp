@@ -30,14 +30,24 @@ namespace FS.Cms.Posts
             _postCrudAppService = postCrudAppService;
         }
 
+
+        /// <summary>
+        /// 建立貼文
+        /// </summary>
+        /// <param name="input">新增文章，設定發佈日期</param>
+        /// <returns></returns>
         [HttpPost]
-        //[Route("")]
-        
         public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateInput input)
         {
             return await this._postCrudAppService.CreateAsync(input);
         }
 
+        /// <summary>
+        /// 更新文章
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [HttpPut]      
         public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateInput input)
         {
@@ -50,6 +60,11 @@ namespace FS.Cms.Posts
             await this._postCrudAppService.DeleteAsync(id);
         }
 
+        /// <summary>
+        /// 根據BlogDefinition 查詢文章(全部列出管理者用，不管發佈日期、隱藏)
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("PostByBlogDefinition")]
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
