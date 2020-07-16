@@ -19,7 +19,7 @@ namespace FS.Cms.Documents.Dtos
     {
         public string Content { get; set; }
 
-        public List<FS.Cms.Core.Dtos.FileFieldDto> Files { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsFileFieldDto> Files { get; set; }
 
         public string DocumentDefinitionId { get; set; }
 
@@ -61,7 +61,7 @@ namespace FS.Cms.Documents.Dtos
     {
         public string Content { get; set; }
 
-        public List<FS.Cms.Core.Dtos.FileFieldDto> Files { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsFileFieldDto> Files { get; set; }
 
         public string DocumentDefinitionId { get; set; }
 
@@ -78,7 +78,7 @@ namespace FS.Cms.Documents.Dtos
     {
         public string Content { get; set; }
 
-        public List<FS.Cms.Core.Dtos.FileFieldDto> Files { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsFileFieldDto> Files { get; set; }
 
         public string DocumentDefinitionId { get; set; }
 

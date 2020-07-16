@@ -13,14 +13,14 @@ using Volo.Abp.AutoMapper;
 
 namespace FS.Cms.Core.Dtos
 {
-    public partial class ImageFieldAutoMapperProfile : Profile
+    public partial class CmsFileFieldAutoMapperProfile : Profile
     {
-        public ImageFieldAutoMapperProfile()
+        public CmsFileFieldAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Core.ImageField, ImageFieldDto>()
+            CreateMap<FS.Cms.Core.CmsFileField, CmsFileFieldDto>()
             .ReverseMap();
         
-            CreateMap<FS.Cms.Core.ImageField, ImageFieldWithDetailsDto>();
+            CreateMap<FS.Cms.Core.CmsFileField, CmsFileFieldWithDetailsDto>();
         
             CustomizeConfiguration();
         }

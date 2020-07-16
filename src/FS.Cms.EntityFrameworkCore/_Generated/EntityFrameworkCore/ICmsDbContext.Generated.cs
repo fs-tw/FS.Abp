@@ -29,6 +29,7 @@ namespace FS.Cms.EntityFrameworkCore
     public partial interface ICmsDbContext : IEfCoreDbContext
     {
         DbSet<FS.Cms.Posts.Post> Posts { get; set; }
+        DbSet<FS.Cms.Posts.PostTag> PostTags { get; set; }
         DbSet<FS.Cms.Tagging.Tag> Tags { get; set; }
         DbSet<FS.Cms.Documents.DocumentDefinition> DocumentDefinitions { get; set; }
         DbSet<FS.Cms.Documents.Document> Documents { get; set; }

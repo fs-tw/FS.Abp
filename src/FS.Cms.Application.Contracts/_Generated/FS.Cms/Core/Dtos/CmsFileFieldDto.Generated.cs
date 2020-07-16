@@ -7,24 +7,26 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System.Reflection;
-using AutoMapper;
-using Volo.Abp.AutoMapper;
+
+using System;
+using System.Collections.Generic;
+using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Core.Dtos
 {
-    public partial class FileFieldAutoMapperProfile : Profile
+    public partial class CmsFileFieldDto
     {
-        public FileFieldAutoMapperProfile()
-        {
-            CreateMap<FS.Cms.Core.FileField, FileFieldDto>()
-            .ReverseMap();
-        
-            CreateMap<FS.Cms.Core.FileField, FileFieldWithDetailsDto>();
-        
-            CustomizeConfiguration();
-        }
-        partial void CustomizeConfiguration();
-    }
+        public string Title { get; set; }
 
+        public string Url { get; set; }
+
+        public string Size { get; set; }
+
+        public FS.Cms.Core.FileType FileType { get; set; }
+
+    }
+    public partial class CmsFileFieldWithDetailsDto : CmsFileFieldDto
+    {
+    }
 }

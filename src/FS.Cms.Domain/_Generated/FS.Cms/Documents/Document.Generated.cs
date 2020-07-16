@@ -37,12 +37,12 @@ namespace FS.Cms.Documents
             get;
             set;
         }
-        public virtual List<FS.Cms.Core.FileField> Files 
+        public virtual List<FS.Cms.Core.CmsFileField> Files 
         {
 
             get
             {
-                return this.GetExtraProperty<List<FS.Cms.Core.FileField>>(nameof(Files));
+                return this.GetExtraProperty<List<FS.Cms.Core.CmsFileField>>(nameof(Files));
             }
             set
             {

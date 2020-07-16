@@ -16,13 +16,13 @@ using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Documents
 {
-    public partial class DocumentTreeAppService : 
+    public partial class DocumentCrudAppService : 
         FS.Abp.Application.Services.CrudAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentWithDetailsDto, Guid, FS.Cms.Documents.Dtos.DocumentGetListInput, FS.Cms.Documents.Dtos.DocumentCreateInput, FS.Cms.Documents.Dtos.DocumentUpdateInput>,
-        IDocumentTreeAppService
+        IDocumentCrudAppService
     {
         private readonly IDocumentTreeRepository _repository;
 
-        public DocumentTreeAppService(IDocumentTreeRepository repository) : base(repository)
+        public DocumentCrudAppService(IDocumentTreeRepository repository) : base(repository)
         {
             this._repository = repository;
         }

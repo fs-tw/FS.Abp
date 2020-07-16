@@ -14,6 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Documents\DocumentTreeAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="3.0.3" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="3.0.3" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
@@ -21,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.Cms\Posts\PostTagCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -29,27 +40,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\FileFieldDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\FileFieldDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Documents\DocumentDefinitionCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Documents\DocumentTreeAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
@@ -86,6 +97,10 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\PostCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostTagCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

@@ -137,7 +137,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.Cms.Core.FileField" p1:Guid="5264d83b-97ab-4156-8a8f-8f01f270f14b" p1:AbpEditor="YinChang">
+    <component class="FS.Cms.Core.CmsFileField" p1:Guid="5264d83b-97ab-4156-8a8f-8f01f270f14b" p1:AbpEditor="YinChang">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -183,7 +183,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.Cms.Core.ImageField" p1:Guid="da573535-0254-43d8-8ca5-8bf1fe92483a" p1:AbpEditor="YinChang">
+    <component class="FS.Cms.Core.CmsImageField" p1:Guid="da573535-0254-43d8-8ca5-8bf1fe92483a" p1:AbpEditor="YinChang">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -551,7 +551,7 @@
     <property name="DisplayMode" type="FS.Cms.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
       <column name="" />
     </property>
-    <component name="Images" class="FS.Cms.Core.ImageField" p1:ValidateRequired="false" p1:Guid="dfe50025-0419-49a4-ad00-02643c0f8eec" p1:Shadow="True">
+    <component name="Images" class="FS.Cms.Core.CmsImageField" p1:ValidateRequired="false" p1:Guid="dfe50025-0419-49a4-ad00-02643c0f8eec" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -772,7 +772,7 @@
     <id name="Id" type="String" shadow="True" p1:ValidateRequired="true" p1:Guid="d4007a38-539e-4e89-9127-fe30e225fff4" p1:GenerateDTO="False">
       <column name="" />
     </id>
-    <component name="Images" class="FS.Cms.Core.ImageField" p1:ValidateRequired="false" p1:Guid="303ed340-d2b1-49f1-9a46-3b2d80ccdd2b" p1:Shadow="True">
+    <component name="Images" class="FS.Cms.Core.CmsImageField" p1:ValidateRequired="false" p1:Guid="303ed340-d2b1-49f1-9a46-3b2d80ccdd2b" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -869,7 +869,7 @@
     <property name="Content" type="String" p1:ValidateRequired="true" p1:Guid="a5914676-5e62-4061-889c-b78739371d77">
       <column name="" />
     </property>
-    <component name="Files" class="FS.Cms.Core.FileField" p1:ValidateRequired="false" p1:Guid="2bf01f29-8c1b-43ae-b7f2-891b13de091a" p1:Shadow="True">
+    <component name="Files" class="FS.Cms.Core.CmsFileField" p1:ValidateRequired="false" p1:Guid="2bf01f29-8c1b-43ae-b7f2-891b13de091a" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />

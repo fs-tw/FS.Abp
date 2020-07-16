@@ -60,6 +60,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\EfCorePostTagRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Post.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>

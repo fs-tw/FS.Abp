@@ -20,10 +20,10 @@ using Volo.Abp.Data;
 
 namespace FS.Cms.Core
 {
-    public partial class FileField 
+    public partial class CmsFileField 
     {
 
-        public FileField()
+        public CmsFileField()
         {
             OnCreated();
         }

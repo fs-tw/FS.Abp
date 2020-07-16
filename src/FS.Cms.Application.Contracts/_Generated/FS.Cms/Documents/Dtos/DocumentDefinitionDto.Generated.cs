@@ -17,7 +17,7 @@ namespace FS.Cms.Documents.Dtos
 {
     public partial class DocumentDefinitionDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<String>
     {
-        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
         public string Title { get; set; }
 
@@ -37,7 +37,7 @@ namespace FS.Cms.Documents.Dtos
     }
     public partial class DocumentDefinitionCreateInput
     {
-        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
         public string Title { get; set; }
 
@@ -46,7 +46,7 @@ namespace FS.Cms.Documents.Dtos
     }
     public partial class DocumentDefinitionUpdateInput
     {
-        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
         public string Title { get; set; }
 

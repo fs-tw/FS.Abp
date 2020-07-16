@@ -11,10 +11,10 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Services;
 
-namespace FS.Cms.Documents
+namespace FS.Cms.Posts
 {
-    public partial interface IDocumentTreeAppService : 
-        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Documents.Dtos.DocumentWithDetailsDto, Guid, FS.Cms.Documents.Dtos.DocumentGetListInput, FS.Cms.Documents.Dtos.DocumentCreateInput, FS.Cms.Documents.Dtos.DocumentUpdateInput>
+    public partial interface IPostTagCrudAppService : 
+        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostTagWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostTagGetListInput, FS.Cms.Posts.Dtos.PostTagCreateInput, FS.Cms.Posts.Dtos.PostTagUpdateInput>
     {
 
     }

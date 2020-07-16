@@ -15,7 +15,7 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Core.Dtos
 {
-    public partial class ImageFieldDto
+    public partial class CmsImageFieldDto
     {
         public string Title { get; set; }
 
@@ -28,7 +28,7 @@ namespace FS.Cms.Core.Dtos
         public bool IsCover { get; set; }
 
     }
-    public partial class ImageFieldWithDetailsDto : ImageFieldDto
+    public partial class CmsImageFieldWithDetailsDto : CmsImageFieldDto
     {
     }
 }

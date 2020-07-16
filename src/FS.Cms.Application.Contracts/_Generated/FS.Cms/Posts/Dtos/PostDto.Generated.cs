@@ -37,7 +37,7 @@ namespace FS.Cms.Posts.Dtos
 
         public DisplayMode DisplayMode { get; set; }
 
-        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
         public class PrimaryKey
         {
@@ -71,7 +71,7 @@ namespace FS.Cms.Posts.Dtos
 
         public DisplayMode DisplayMode { get; set; }
 
-        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
     }
     public partial class PostUpdateInput
@@ -96,7 +96,7 @@ namespace FS.Cms.Posts.Dtos
 
         public DisplayMode DisplayMode { get; set; }
 
-        public List<FS.Cms.Core.Dtos.ImageFieldDto> Images { get; set; }
+        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto

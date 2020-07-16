@@ -35,7 +35,7 @@ namespace FS.Cms.Upload
 
         [HttpPost, DisableRequestSizeLimit]
         [Route("PostUploadImage")]
-        public List<Core.Dtos.ImageFieldDto> UploadImage(Guid PostId)
+        public List<Core.Dtos.CmsImageFieldDto> UploadImage(Guid PostId)
         {
 
             string folderName = String.Format("wwwroot/File/Cms/Posts/{0}", PostId.ToString());
@@ -45,17 +45,17 @@ namespace FS.Cms.Upload
             var fileUrls = this.saveFile(folderName, files, input.IsCoverName);
             this.deleteFile(folderName, input.DeleteFiles);
 
-            this._postCrudAppService.Save(fileUrls, PostId, input);
+            //this._postCrudAppService.Save(fileUrls, PostId, input);
             return fileUrls;
         }
 
 
-        private List<Core.Dtos.ImageFieldDto> saveFile(string folderName, List<IFormFile> files, string coverName)
+        private List<Core.Dtos.CmsImageFieldDto> saveFile(string folderName, List<IFormFile> files, string coverName)
         {
             string webRootPath = env.ContentRootPath;
             string folderPath = Path.Combine(webRootPath, folderName);
            
-            List<Core.Dtos.ImageFieldDto> images = new List<Core.Dtos.ImageFieldDto>();
+            List<Core.Dtos.CmsImageFieldDto> images = new List<Core.Dtos.CmsImageFieldDto>();
 
 
             files.ForEach(file =>
@@ -68,7 +68,7 @@ namespace FS.Cms.Upload
 
                 try
                 {
-                    Core.Dtos.ImageFieldDto image = new Core.Dtos.ImageFieldDto();
+                    Core.Dtos.CmsImageFieldDto image = new Core.Dtos.CmsImageFieldDto();
                     
                     string fullPath = Path.Combine(folderPath, fileName);
 

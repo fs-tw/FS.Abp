@@ -28,8 +28,8 @@ namespace FS.Cms.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
-            builder.Ignore<FS.Cms.Core.FileField>();
-            builder.Ignore<FS.Cms.Core.ImageField>();
+            builder.Ignore<FS.Cms.Core.CmsFileField>();
+            builder.Ignore<FS.Cms.Core.CmsImageField>();
             builder.Ignore<FS.Cms.Core.BlogDefinitionSetting>();
             builder.ApplyConfiguration<FS.Cms.Posts.Post>(new FS.Cms.Posts.PostConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Posts.PostTag>(new FS.Cms.Posts.PostTagConfiguration(options));

@@ -35,6 +35,11 @@ namespace FS.Cms.EntityFrameworkCore
             set;
         }
 
+        public virtual DbSet<FS.Cms.Posts.PostTag> PostTags
+        {
+            get;
+            set;
+        }
 
         public virtual DbSet<FS.Cms.Tagging.Tag> Tags
         {

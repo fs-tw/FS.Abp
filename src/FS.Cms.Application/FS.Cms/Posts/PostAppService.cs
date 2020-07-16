@@ -14,8 +14,18 @@ namespace FS.Cms.Posts
     {
         private ISearchedAndPagedAndSortedOperation _searchedAndPagedAndSortedOperation;
 
-        public ISearchedAndPagedAndSortedOperation searchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndPagedAndSortedOperation);        
+        public ISearchedAndPagedAndSortedOperation searchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndPagedAndSortedOperation);
 
+
+        public override Task<PostWithDetailsDto> GetAsync(Guid id)
+        {
+            return base.GetAsync(id);
+        }
+
+        public override Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListInput input)
+        {
+            return base.GetListAsync(input);
+        }
 
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
@@ -25,24 +35,18 @@ namespace FS.Cms.Posts
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId);
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
             var result = this.CreatePagedResultDto<PostWithDetailsDto>(entities);
-            return result;           
+            return result;
         }
 
-        public async Task Save(List<Core.Dtos.ImageFieldDto> images,Guid postId, UploadImageInput uploadImageInput) 
+        public async Task Save(CmsImageModel input, Guid postId)
         {
-            Post input = new Post();
             var post = this.Repository.Where(x => x.Id == postId).FirstOrDefault();
+            var newData = ObjectMapper.Map<List<Core.Dtos.CmsImageFieldDto>, List<Core.CmsImageField>>(input.ImgaeField);
+            var removeDeleteImage = post.Images.
+                 WhereIf(input.UploadImageInput.DeleteFiles.Count > 0, x => !input.UploadImageInput.DeleteFiles.Contains(x.Title)).ToList();
 
-            var newData = ObjectMapper.Map<List<Core.Dtos.ImageFieldDto>, List<Core.ImageField>>(images);
-
-          
-           var removeDeleteImage = post.Images.
-                WhereIf(uploadImageInput.DeleteFiles.Count > 0,x=> !uploadImageInput.DeleteFiles.Contains(x.Title)).ToList();
-
-            post.Images= removeDeleteImage;
+            post.Images = removeDeleteImage;
             post.Images.AddRange(newData);
-
-            //post.Images.AddRange(); 
             await this.Repository.UpdateAsync(post).ConfigureAwait(false);
         }
 

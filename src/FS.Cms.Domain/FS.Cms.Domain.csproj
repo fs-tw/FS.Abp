@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Core\FileField.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\ImageField.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="3.0.3" />
     <ProjectReference Include="..\..\..\..\framework\Abp.Trees\src\EasyAbp.Abp.Trees.Domain\EasyAbp.Abp.Trees.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
@@ -33,11 +38,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\FileField.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\CmsFileField.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\ImageField.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\CmsImageField.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
     </Compile>
@@ -58,6 +63,10 @@
       <DependentUpon>Documents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\IPostTagRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

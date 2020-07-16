@@ -30,12 +30,12 @@ namespace FS.Cms.Documents
             this.Documents = new List<Document>();
             OnCreated();
         }
-        public virtual List<FS.Cms.Core.ImageField> Images 
+        public virtual List<FS.Cms.Core.CmsImageField> Images 
         {
 
             get
             {
-                return this.GetExtraProperty<List<FS.Cms.Core.ImageField>>(nameof(Images));
+                return this.GetExtraProperty<List<FS.Cms.Core.CmsImageField>>(nameof(Images));
             }
             set
             {

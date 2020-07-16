@@ -1,4 +1,5 @@
 ﻿using FS.Abp.Application.Dtos;
+using FS.Cms.Core.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,5 +19,11 @@ namespace FS.Cms.Posts.Dtos
         public List<string> OriginFiles { get; set; }
         public List<string> DeleteFiles { get; set; }
         public string IsCoverName { get; set; }
+    }
+
+    public class CmsImageModel 
+    {
+        public List<CmsImageFieldDto> ImgaeField { get; set; }
+        public UploadImageInput UploadImageInput { get; set; }
     }
 }

@@ -20,10 +20,10 @@ using Volo.Abp.Data;
 
 namespace FS.Cms.Core
 {
-    public partial class ImageField 
+    public partial class CmsImageField 
     {
 
-        public ImageField()
+        public CmsImageField()
         {
             OnCreated();
         }
