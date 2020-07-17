@@ -1,0 +1,4 @@
+[submodule "aspnet-core"]
+	path = aspnet-core
+	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.git
+	branch = develop
