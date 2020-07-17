@@ -2,3 +2,7 @@
 	path = aspnet-core
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.git
 	branch = develop
+[submodule "angular"]
+	path = angular
+	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.ng.git
+	branch = develop
