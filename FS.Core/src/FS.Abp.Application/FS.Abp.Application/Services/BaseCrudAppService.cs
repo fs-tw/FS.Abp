@@ -43,7 +43,6 @@ namespace FS.Abp.Application.Services
         public BaseCrudAppService(IRepository<TEntity> repository)
         {
             Repository = repository;
-            AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
         [Obsolete("remove in next version,because only GetListAsync used,please replace  with CreatePropertiesEqualityQuery to query")]
         protected virtual IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)

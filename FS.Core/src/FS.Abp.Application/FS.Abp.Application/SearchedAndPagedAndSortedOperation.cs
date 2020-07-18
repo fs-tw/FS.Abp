@@ -14,11 +14,10 @@ namespace FS.Abp.Application
 {
     public class SearchedAndPagedAndSortedOperation : ISearchedAndPagedAndSortedOperation
     {
-        protected IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
+        public IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
 
         public SearchedAndPagedAndSortedOperation()
         {
-            AsyncQueryableExecuter = DefaultAsyncQueryableExecuter.Instance;
         }
         public virtual async Task<(int TotalCount, List<TEntity> Entities)> ListAsync<TEntity, TInput>(
             IQueryable<TEntity> query,
