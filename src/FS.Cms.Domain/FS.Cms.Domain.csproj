@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="3.0.3" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="3.0.4" />
     <ProjectReference Include="..\..\..\..\framework\Abp.Trees\src\EasyAbp.Abp.Trees.Domain\EasyAbp.Abp.Trees.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
     <ProjectReference Include="..\..\..\FS.Abp.SettingManagement\src\FS.Abp.SettingManagement.Domain\FS.Abp.SettingManagement.Domain.csproj" />
