@@ -10,3 +10,6 @@
 	path = abp/abp
 	url = https://github.com/FurtherSoftware/abp.git
 	branch = develop
+[submodule "abp/abp-samples"]
+	path = abp/abp-samples
+	url = https://github.com/abpframework/abp-samples.git
