@@ -6,3 +6,7 @@
 	path = angular
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.ng.git
 	branch = develop
+[submodule "abp/abp"]
+	path = abp/abp
+	url = https://github.com/FurtherSoftware/abp.git
+	branch = develop
