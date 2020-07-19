@@ -16,3 +16,6 @@
 [submodule "EasyAbp/EShop"]
 	path = EasyAbp/EShop
 	url = https://github.com/EasyAbp/EShop.git
+[submodule "EasyAbp/WeChatManagement"]
+	path = EasyAbp/WeChatManagement
+	url = https://github.com/EasyAbp/WeChatManagement.git
