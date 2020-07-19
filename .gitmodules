@@ -13,3 +13,6 @@
 [submodule "abp/abp-samples"]
 	path = abp/abp-samples
 	url = https://github.com/abpframework/abp-samples.git
+[submodule "EasyAbp/EShop"]
+	path = EasyAbp/EShop
+	url = https://github.com/EasyAbp/EShop.git
