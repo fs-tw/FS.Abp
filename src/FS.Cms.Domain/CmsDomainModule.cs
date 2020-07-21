@@ -4,10 +4,8 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsDomainSharedModule),
-        typeof(EasyAbp.Abp.Trees.AbpTreesDomainModule),
-        //typeof(FS.Abp.Domain.AbpDddDomainModule),
-        //typeof(FS.Abp.Trees.TreesDomainModule),
-        typeof(FS.Abp.SettingManagement.SettingManagementDomainModule)
+        typeof(FS.Abp.Domain.AbpDddDomainModule)
+
         )]
     public class CmsDomainModule : AbpModule
     {

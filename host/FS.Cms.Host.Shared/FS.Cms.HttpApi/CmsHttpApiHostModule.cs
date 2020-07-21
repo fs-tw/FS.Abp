@@ -11,7 +11,8 @@ namespace FS.Cms.Host.HttpApi
     [DependsOn(
         typeof(FS.Cms.CmsApplicationModule),
         typeof(FS.Cms.CmsHttpApiModule),
-        typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule)
+        typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule),
+        typeof(FS.Abp.Host.HttpApi.AbpHttpApiHostModule)
         )]
     public class CmsHttpApiHostModule : AbpModule
     {
