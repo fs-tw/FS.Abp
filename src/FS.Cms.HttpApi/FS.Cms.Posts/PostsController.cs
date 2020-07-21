@@ -72,5 +72,17 @@ namespace FS.Cms.Posts
             return await this._postCrudAppService.GetPostByBlogDefinition(input);
         }
 
+        /// <summary>
+        /// 取得一筆文章
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<PostWithDetailsDto> GetAsync(Guid id)
+        {
+            return await this._postCrudAppService.GetAsync(id);
+        }
+
     }
 }

@@ -12,6 +12,6 @@ namespace FS.Cms.Posts
         FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostGetListInput, FS.Cms.Posts.Dtos.PostCreateInput, FS.Cms.Posts.Dtos.PostUpdateInput>
     {
         Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
-        //public Task Save(List<Core.Dtos.CmsImageFieldDto> images, Guid postId, UploadImageInput input);
+        Task Save(CmsImageModel input, Guid postId);
     }
 }

@@ -45,7 +45,10 @@ namespace FS.Cms.Upload
             var fileUrls = this.saveFile(folderName, files, input.IsCoverName);
             this.deleteFile(folderName, input.DeleteFiles);
 
-            //this._postCrudAppService.Save(fileUrls, PostId, input);
+            CmsImageModel ImageModel = new CmsImageModel();
+            ImageModel.ImgaeField = fileUrls;
+            ImageModel.UploadImageInput = input;
+            this._postCrudAppService.Save(ImageModel, PostId);
             return fileUrls;
         }
 
