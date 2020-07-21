@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
+    <PackageReference Include="Volo.Abp.AspNetCore" Version="3.0.4" />
+  </ItemGroup>
+
+</Project>
