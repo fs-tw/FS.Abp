@@ -3,7 +3,6 @@
 namespace FS.Abp.Core.Host.HttpApi
 {
     [DependsOn(
-        //typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesModule),
         typeof(Volo.Abp.Account.Host.HttpApi.AbpAccountHttpApiHostModule),
         typeof(Volo.Abp.Identity.Host.HttpApi.AbpIdentityHttpApiHostModule),
         typeof(Volo.Abp.PermissionManagement.Host.HttpApi.AbpPermissionManagementHttpApiHostModule),
