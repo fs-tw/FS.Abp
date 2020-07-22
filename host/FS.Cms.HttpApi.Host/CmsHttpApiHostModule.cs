@@ -40,11 +40,7 @@ namespace FS.Cms
         typeof(AbpEntityFrameworkCoreSqlServerModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-        typeof(AbpSettingManagementEntityFrameworkCoreModule),
-
-
-        typeof(FS.Abp.CodingManagement.Host.HttpApi.CodingManagementHttpApiHostModule),
-        typeof(FS.Abp.SettingManagement.Host.HttpApi.SettingManagementHttpApiHostModule)
+        typeof(AbpSettingManagementEntityFrameworkCoreModule)
 
         )]
     public class CmsHttpApiHostModule : AbpModule
