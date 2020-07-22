@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\integrations\FS.Abp\src\FS.Abp.Host.Shared\FS.Abp.Host.Shared.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.Application\FS.Cms.Application.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.HttpApi\FS.Cms.HttpApi.csproj" />
