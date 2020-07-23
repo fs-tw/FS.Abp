@@ -8,5 +8,5 @@
 
         public const string Token = "FS.Abp.Line.Notify.Token";
 
-    }
+    }   
 }
