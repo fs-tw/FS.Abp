@@ -19,3 +19,6 @@
 	path = fs/angular
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.ng.git
 	branch = develop
+[submodule "EasyAbp/FileManagement"]
+	path = EasyAbp/FileManagement
+	url = https://github.com/EasyAbp/FileManagement.git
