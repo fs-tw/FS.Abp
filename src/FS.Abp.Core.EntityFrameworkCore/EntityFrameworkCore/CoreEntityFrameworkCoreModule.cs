@@ -7,7 +7,8 @@ namespace FS.Abp.Core.EntityFrameworkCore
     [DependsOn(
         typeof(CoreDomainModule),
         typeof(AbpEntityFrameworkCoreModule),
-        typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule)
+        typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule),
+        typeof(Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule)
     )]
     public class CoreEntityFrameworkCoreModule : AbpModule
     {
