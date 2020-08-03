@@ -20,6 +20,7 @@
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Documents\IDocumentTreeAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\IPostTagCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +59,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Menu\MenuPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Menu</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Menu\MenuPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Menu</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -67,10 +76,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\IPostTagCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

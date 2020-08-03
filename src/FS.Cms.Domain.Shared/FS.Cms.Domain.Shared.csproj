@@ -70,6 +70,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>
     </None>
+    <None Update="DataModel\Cms.Permissions.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
     <None Update="DataModel\Cms.Setting.view">
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>
