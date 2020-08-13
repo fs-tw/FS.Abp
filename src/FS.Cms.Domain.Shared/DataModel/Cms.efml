@@ -567,10 +567,10 @@
     <property name="Subtitle" type="String" p1:ValidateRequired="true" p1:Guid="b97a60ed-0448-41c3-b229-38c9afd1d4af">
       <column name="" />
     </property>
-    <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="21511bac-6007-4975-b13e-7a1533f8fa1e">
+    <property name="Url" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="21511bac-6007-4975-b13e-7a1533f8fa1e">
       <column name="" />
     </property>
-    <property name="Content" type="String" p1:ValidateRequired="true" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8">
+    <property name="Content" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8">
       <column name="" />
     </property>
     <property name="Published" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
@@ -580,9 +580,6 @@
       <column name="" />
     </property>
     <property name="Published_At" type="DateTime" p1:ValidateRequired="true" p1:Guid="02767eea-0458-497d-ada2-6a4d5c242a3e">
-      <column name="" />
-    </property>
-    <property name="ReadCount" type="Int32" p1:ValidateRequired="true" p1:Guid="9272b8fc-3f3c-45c5-a6c0-9f6524486631">
       <column name="" />
     </property>
     <property name="DisplayMode" type="FS.Cms.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
@@ -942,7 +939,7 @@
     <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="e870373b-a614-4f1f-bd86-97ac2df1adb2">
       <column name="" />
     </property>
-    <property name="Level" type="Int32" p1:ValidateRequired="true" p1:Guid="0a6aeb8c-8150-44bf-a1c6-8893899e8822">
+    <property name="Level" type="int" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0a6aeb8c-8150-44bf-a1c6-8893899e8822">
       <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="07d70bea-408c-45ba-8cc5-b43d61c5b1ec" p1:GenerateDTO="False">

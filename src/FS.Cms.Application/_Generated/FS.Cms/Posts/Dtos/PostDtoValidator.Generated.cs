@@ -26,10 +26,8 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Url)
-                .NotNull()
                 ;
             RuleFor(p => p.Content)
-                .NotNull()
                 ;
             RuleFor(p => p.Published)
                 .NotNull()
@@ -37,9 +35,6 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Published_By)
                 ;
             RuleFor(p => p.Published_At)
-                .NotNull()
-                ;
-            RuleFor(p => p.ReadCount)
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayMode)
@@ -65,10 +60,8 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Url)
-                .NotNull()
                 ;
             RuleFor(p => p.Content)
-                .NotNull()
                 ;
             RuleFor(p => p.Published)
                 .NotNull()
@@ -76,9 +69,6 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Published_By)
                 ;
             RuleFor(p => p.Published_At)
-                .NotNull()
-                ;
-            RuleFor(p => p.ReadCount)
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayMode)

@@ -78,12 +78,6 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual int ReadCount
-        {
-            get;
-            set;
-        }
-
         public virtual FS.Cms.DisplayMode DisplayMode
         {
             get;

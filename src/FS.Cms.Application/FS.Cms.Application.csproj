@@ -18,7 +18,7 @@
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Documents\DocumentTreeAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Documents\DocumentCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostTagCrudAppService.Generated.cs" />
   </ItemGroup>
 
@@ -58,11 +58,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Documents\DocumentCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Documents\DocumentDefinitionCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentTreeAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>

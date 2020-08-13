@@ -33,7 +33,6 @@ namespace FS.Cms.Documents.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Level)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }
@@ -60,7 +59,6 @@ namespace FS.Cms.Documents.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Level)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }
