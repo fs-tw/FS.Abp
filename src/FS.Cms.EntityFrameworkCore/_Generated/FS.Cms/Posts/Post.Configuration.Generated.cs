@@ -34,7 +34,7 @@ namespace FS.Cms.Posts
             builder.ToTable(options.TablePrefix + @"Posts", options.Schema);
             builder.Property<System.Guid>(x => x.BlogCodeId).HasColumnName(@"BlogCodeId").IsRequired().ValueGeneratedNever();
             builder.Property<string>(x => x.Title).HasColumnName(@"Title").IsRequired().ValueGeneratedNever();
-            builder.Property<string>(x => x.Subtitle).HasColumnName(@"Subtitle").IsRequired().ValueGeneratedNever();
+            builder.Property<string>(x => x.Subtitle).HasColumnName(@"Subtitle").ValueGeneratedNever();
             builder.Property<string>(x => x.Url).HasColumnName(@"Url").ValueGeneratedNever();
             builder.Property<string>(x => x.Content).HasColumnName(@"Content").ValueGeneratedNever();
             builder.Property<bool>(x => x.Published).HasColumnName(@"Published").IsRequired().ValueGeneratedNever();

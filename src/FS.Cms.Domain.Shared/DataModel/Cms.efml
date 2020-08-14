@@ -564,7 +564,7 @@
     <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="f28a88cc-396c-4865-91bf-0ac5b3764ec3">
       <column name="" />
     </property>
-    <property name="Subtitle" type="String" p1:ValidateRequired="true" p1:Guid="b97a60ed-0448-41c3-b229-38c9afd1d4af">
+    <property name="Subtitle" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b97a60ed-0448-41c3-b229-38c9afd1d4af">
       <column name="" />
     </property>
     <property name="Url" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="21511bac-6007-4975-b13e-7a1533f8fa1e">

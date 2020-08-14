@@ -23,7 +23,6 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Subtitle)
-                .NotNull()
                 ;
             RuleFor(p => p.Url)
                 ;
@@ -57,7 +56,6 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Subtitle)
-                .NotNull()
                 ;
             RuleFor(p => p.Url)
                 ;

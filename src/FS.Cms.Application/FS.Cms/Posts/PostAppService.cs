@@ -27,16 +27,7 @@ namespace FS.Cms.Posts
             return base.GetListAsync(input);
         }
 
-        public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
-        {
-            await CheckGetListPolicyAsync().ConfigureAwait(false);
-            var query = this.Repository
-                            .WithDetails()
-                            .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId);
-            var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
-            var result = this.CreatePagedResultDto<PostWithDetailsDto>(entities);
-            return result;
-        }
+       
 
         public async Task Save(CmsImageModel input, Guid postId)
         {

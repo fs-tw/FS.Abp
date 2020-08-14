@@ -22,12 +22,16 @@ namespace FS.Cms.Posts
     [Route("api/cms/PostCrud")]    
     public class PostsController : CmsController
     {
-        private IPostCrudAppService _postCrudAppService; 
+        private IPostCrudAppService _postCrudAppService;
+        private readonly IPostsAppService postsAppService;
+
         public PostsController(
-            IPostCrudAppService postCrudAppService
+            IPostCrudAppService postCrudAppService,
+            IPostsAppService postsAppService
             )
         {
             _postCrudAppService = postCrudAppService;
+            this.postsAppService = postsAppService;
         }
 
 
@@ -69,7 +73,7 @@ namespace FS.Cms.Posts
         [Route("PostByBlogDefinition")]
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
-            return await this._postCrudAppService.GetPostByBlogDefinition(input);
+            return await this.postsAppService.GetPostByBlogDefinition(input);
         }
 
         /// <summary>
