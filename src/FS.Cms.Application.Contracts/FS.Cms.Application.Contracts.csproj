@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Posts\Dtos\PostDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
