@@ -7,6 +7,6 @@ namespace FS.Cms.Posts
 {
     public interface IPostsAppService
     {        
-        Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
+        Task<PagedResultDto<PostWithDetailsNoContentDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
     }
 }

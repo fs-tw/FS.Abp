@@ -71,7 +71,7 @@ namespace FS.Cms.Posts
         /// <returns></returns>
         [HttpPost]
         [Route("PostByBlogDefinition")]
-        public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
+        public async Task<PagedResultDto<PostWithDetailsNoContentDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
             return await this.postsAppService.GetPostByBlogDefinition(input);
         }

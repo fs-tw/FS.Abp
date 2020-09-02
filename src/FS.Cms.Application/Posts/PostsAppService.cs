@@ -32,7 +32,7 @@ namespace FS.Cms.Posts
         }
 
 
-        public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
+        public async Task<PagedResultDto<PostWithDetailsNoContentDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
 
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
@@ -42,10 +42,10 @@ namespace FS.Cms.Posts
                             .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
                             .OrderByDescending(x=>x.Published_At);
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
-            return new PagedResultDto<PostWithDetailsDto>()
+            return new PagedResultDto<PostWithDetailsNoContentDto>()
             {
                 TotalCount = entities.TotalCount,
-                Items = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities)
+                Items = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsNoContentDto>>(entities.Entities)
             };
         }
 
