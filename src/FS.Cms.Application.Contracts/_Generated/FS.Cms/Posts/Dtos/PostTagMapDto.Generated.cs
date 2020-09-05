@@ -15,7 +15,7 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostTagDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
+    public partial class PostTagMapDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public System.Guid PostId { get; set; }
 
@@ -38,28 +38,28 @@ namespace FS.Cms.Posts.Dtos
     
         }
     }
-    public partial class PostTagWithDetailsDto : PostTagDto
+    public partial class PostTagMapWithDetailsDto : PostTagMapDto
     {
         public PostDto Post { get; set; }
 
-        public FS.Cms.Tagging.Dtos.TagDto Tag { get; set; }
+        public FS.Cms.Tags.Dtos.TagDto Tag { get; set; }
 
     }
-    public partial class PostTagCreateInput
+    public partial class PostTagMapCreateInput
     {
         public System.Guid PostId { get; set; }
 
         public System.Guid TagId { get; set; }
 
     }
-    public partial class PostTagUpdateInput
+    public partial class PostTagMapUpdateInput
     {
         public System.Guid PostId { get; set; }
 
         public System.Guid TagId { get; set; }
 
     }
-    public partial class PostTagGetListInput : SearchResultRequestDto
+    public partial class PostTagMapGetListInput : SearchResultRequestDto
     {
     }
 }

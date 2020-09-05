@@ -96,6 +96,24 @@ namespace FS.Cms.Posts
             }
         } 
 
+        public virtual int Sequence
+        {
+            get;
+            set;
+        }
+        public virtual List<String> AttachmentFileIds 
+        {
+
+            get
+            {
+                return this.GetExtraProperty<List<String>>(nameof(AttachmentFileIds));
+            }
+            set
+            {
+                this.SetExtraProperty(nameof(AttachmentFileIds), value);
+            }
+        } 
+
         public virtual System.Guid? TenantId
         {
             get;

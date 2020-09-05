@@ -14,15 +14,15 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace FS.Cms.Tagging
+namespace FS.Cms.Posts
 {
-    public partial class TagCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Tagging.Tag, FS.Cms.Tagging.Dtos.TagWithDetailsDto, Guid, FS.Cms.Tagging.Dtos.TagGetListInput, FS.Cms.Tagging.Dtos.TagCreateInput, FS.Cms.Tagging.Dtos.TagUpdateInput>,
-        ITagCrudAppService
+    public partial class PostAttachmentFilesCrudAppService : 
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Posts.PostAttachmentFiles, FS.Cms.Posts.Dtos.PostAttachmentFilesWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostAttachmentFilesGetListInput, FS.Cms.Posts.Dtos.PostAttachmentFilesCreateInput, FS.Cms.Posts.Dtos.PostAttachmentFilesUpdateInput>,
+        IPostAttachmentFilesCrudAppService
     {
-        private readonly ITagRepository _repository;
+        private readonly IPostAttachmentFilesRepository _repository;
 
-        public TagCrudAppService(ITagRepository repository) : base(repository)
+        public PostAttachmentFilesCrudAppService(IPostAttachmentFilesRepository repository) : base(repository)
         {
             this._repository = repository;
         }

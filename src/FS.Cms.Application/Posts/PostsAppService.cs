@@ -49,5 +49,10 @@ namespace FS.Cms.Posts
             };
         }
 
+        public async Task GetPostWithAttachmentFile(Guid id) 
+        {
+            
+        }
+
     }
 }

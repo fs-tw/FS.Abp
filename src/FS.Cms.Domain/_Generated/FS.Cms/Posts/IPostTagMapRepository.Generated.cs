@@ -10,10 +10,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace FS.Cms.Tagging
+namespace FS.Cms.Posts
 {
-    public partial interface ITagRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Tagging.Tag,Guid>
+    public partial interface IPostTagMapRepository : 
+        Volo.Abp.Domain.Repositories.IRepository<FS.Cms.Posts.PostTagMap,Guid>
     {
 
     }

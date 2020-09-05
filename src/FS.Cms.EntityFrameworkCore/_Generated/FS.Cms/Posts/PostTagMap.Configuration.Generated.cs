@@ -22,16 +22,16 @@ using FS.Cms.EntityFrameworkCore;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostTagConfiguration : IEntityTypeConfiguration<PostTag>
+    public partial class PostTagMapConfiguration : IEntityTypeConfiguration<PostTagMap>
     {
         private CmsModelBuilderConfigurationOptions options;
-        public PostTagConfiguration(CmsModelBuilderConfigurationOptions options)
+        public PostTagMapConfiguration(CmsModelBuilderConfigurationOptions options)
         {
             this.options = options;
         }
-        public void Configure(EntityTypeBuilder<PostTag> builder)
+        public void Configure(EntityTypeBuilder<PostTagMap> builder)
         {
-            builder.ToTable(options.TablePrefix + @"PostTags", options.Schema);
+            builder.ToTable(options.TablePrefix + @"PostTagMaps", options.Schema);
             builder.Property<System.Guid>(x => x.PostId).HasColumnName(@"PostId").ValueGeneratedNever();
             builder.Property<System.Guid>(x => x.TagId).HasColumnName(@"TagId").ValueGeneratedNever();
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
@@ -39,14 +39,14 @@ namespace FS.Cms.Posts
             builder.HasOne(x => x.Post).WithMany().IsRequired(true).HasForeignKey(@"PostId");
             builder.HasOne(x => x.Tag).WithMany().IsRequired(true).HasForeignKey(@"TagId");
 
-            builder.ConfigureFullAudited();
+            builder.ConfigureFullAuditedAggregateRoot();
 
             CustomizeConfiguration(builder);
         }
 
         #region Partial Methods
 
-        partial void CustomizeConfiguration(EntityTypeBuilder<PostTag> builder);
+        partial void CustomizeConfiguration(EntityTypeBuilder<PostTagMap> builder);
 
         #endregion
     }

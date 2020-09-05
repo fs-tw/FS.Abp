@@ -13,20 +13,20 @@ using Volo.Abp.AutoMapper;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostTagAutoMapperProfile : Profile
+    public partial class PostAttachmentFilesAutoMapperProfile : Profile
     {
-        public PostTagAutoMapperProfile()
+        public PostAttachmentFilesAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Posts.PostTag, PostTagDto>()
+            CreateMap<FS.Cms.Posts.PostAttachmentFiles, PostAttachmentFilesDto>()
             .ReverseMap();
         
-            CreateMap<FS.Cms.Posts.PostTag, PostTagWithDetailsDto>();
+            CreateMap<FS.Cms.Posts.PostAttachmentFiles, PostAttachmentFilesWithDetailsDto>();
         
-            CreateMap<PostTagCreateInput, FS.Cms.Posts.PostTag>();
+            CreateMap<PostAttachmentFilesCreateInput, FS.Cms.Posts.PostAttachmentFiles>();
         
-            CreateMap<PostTagUpdateInput, FS.Cms.Posts.PostTag>();
+            CreateMap<PostAttachmentFilesUpdateInput, FS.Cms.Posts.PostAttachmentFiles>();
         
-            CreateMap<PostTagUpdateInput, PostTagDto.PrimaryKey>();
+            CreateMap<PostAttachmentFilesUpdateInput, PostAttachmentFilesDto.PrimaryKey>();
         
             CustomizeConfiguration();
         }

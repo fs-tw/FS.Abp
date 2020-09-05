@@ -20,6 +20,9 @@
     <Compile Remove="_Generated\FS.Cms\Core\FileField.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\ImageField.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostTagRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostTag.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tagging\ITagRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tagging\Tag.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,7 +64,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\IPostTagMapRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
@@ -69,18 +80,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostTag.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\PostAttachmentFiles.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tagging\ITagRepository.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\PostTagMap.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tagging</DependentUpon>
+      <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tagging\Tag.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Tags\ITagRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tagging</DependentUpon>
+      <DependentUpon>Tags</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\Tag.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Tagging\" />
   </ItemGroup>
 
 </Project>

@@ -14,13 +14,13 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace FS.Cms.Tagging
+namespace FS.Cms.Posts
 {
-    public partial class EfCoreTagRepository : 
-        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Tagging.Tag,Guid>,
-        ITagRepository
+    public partial class EfCorePostAttachmentFilesRepository : 
+        EfCoreRepository<FS.Cms.EntityFrameworkCore.ICmsDbContext,FS.Cms.Posts.PostAttachmentFiles,Guid>,
+        IPostAttachmentFilesRepository
     {
-        public EfCoreTagRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
+        public EfCorePostAttachmentFilesRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
             : base(dbContextProvider) { }
     }
 }

@@ -20,41 +20,29 @@ using Volo.Abp.Data;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostTag : 
-        Volo.Abp.Domain.Entities.Auditing.FullAuditedEntity<Guid>,
+    public partial class PostAttachmentFiles : 
+        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot<Guid>,
         Volo.Abp.MultiTenancy.IMultiTenant
     {
 
-        public PostTag()
+        public PostAttachmentFiles()
         {
             OnCreated();
         }
 
-        public virtual System.Guid PostId
+        public virtual ContentType ContentType
         {
             get;
             set;
         }
 
-        public virtual System.Guid TagId
+        public virtual string Content
         {
             get;
             set;
         }
 
         public virtual System.Guid? TenantId
-        {
-            get;
-            set;
-        }
-
-        public virtual Post Post
-        {
-            get;
-            set;
-        }
-
-        public virtual FS.Cms.Tagging.Tag Tag
         {
             get;
             set;

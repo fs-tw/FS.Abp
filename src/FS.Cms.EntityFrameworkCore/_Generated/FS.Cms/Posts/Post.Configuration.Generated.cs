@@ -42,6 +42,8 @@ namespace FS.Cms.Posts
             builder.Property<System.DateTime>(x => x.Published_At).HasColumnName(@"Published_At").IsRequired().ValueGeneratedNever();
             builder.Property<FS.Cms.DisplayMode>(x => x.DisplayMode).HasColumnName(@"DisplayMode").IsRequired().ValueGeneratedNever();
             builder.Ignore(x => x.Images);
+            builder.Property<int>(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
+            builder.Ignore(x => x.AttachmentFileIds);
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 

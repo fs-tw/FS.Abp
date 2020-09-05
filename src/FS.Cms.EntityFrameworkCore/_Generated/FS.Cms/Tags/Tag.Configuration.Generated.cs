@@ -20,7 +20,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using FS.Cms.EntityFrameworkCore;
 
-namespace FS.Cms.Tagging
+namespace FS.Cms.Tags
 {
     public partial class TagConfiguration : IEntityTypeConfiguration<Tag>
     {

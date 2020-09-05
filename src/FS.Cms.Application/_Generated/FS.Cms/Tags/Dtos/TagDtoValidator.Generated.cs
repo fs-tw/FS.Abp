@@ -10,7 +10,7 @@
 using System.Reflection;
 using FluentValidation;
 
-namespace FS.Cms.Tagging.Dtos
+namespace FS.Cms.Tags.Dtos
 {
     public partial class TagCreateInputValidator : AbstractValidator<TagCreateInput>
     {
