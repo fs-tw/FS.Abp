@@ -5,20 +5,6 @@
       <Member Name="內文" Value="0" p1:Guid="d12d25ca-cb71-4427-b5ec-0c46414cb904" />
       <Member Name="連結" Value="1" p1:Guid="9373e10f-5c3d-41d8-bcc6-a3334654e74b" />
     </EnumType>
-    <EnumType Name="ContentType" class="FS.Cms.Posts.ContentType" p1:Guid="96201fd9-b42f-4ed2-be42-de5077b968db" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Posts</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <Member Name="base64" p1:Guid="cd9067b6-66ce-467c-8433-8efa09088ef2" />
-      <Member Name="url" p1:Guid="d006ef3b-90fc-474d-b7fd-6eee87261f72" />
-    </EnumType>
   </class>
   <class name="$ComplexTypes">
     <component class="FS.Cms.CreationAuditedEntity" IsExternal="true" p1:Guid="cfe17fcc-aa8a-4ead-9357-17aab744aad2" p1:GenerateDTO="False">
@@ -613,7 +599,7 @@
     <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="b2fe0afb-6965-4c75-bf2a-eef6c8365a7b">
       <column name="" />
     </property>
-    <property name="AttachmentFileIds" type="String" p1:ValidateRequired="true" p1:Guid="3e54adea-7257-4ae5-a17e-4ce7e0048951" p1:Shadow="True">
+    <property name="AttachmentFileUrls" type="String" p1:ValidateRequired="true" p1:Guid="3e54adea-7257-4ae5-a17e-4ce7e0048951" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -1036,9 +1022,6 @@
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="e9b249ac-e9ec-46f6-b203-fd591ceec5d5" p1:GenerateDTO="False">
       <column name="" />
     </id>
-    <property name="ContentType" type="FS.Cms.Posts.ContentType" p1:ValidateRequired="true" p1:Guid="f3f12806-8591-47f6-be12-6e05fcba527b">
-      <column name="" />
-    </property>
     <property name="Content" type="String" p1:ValidateRequired="true" p1:Guid="ba6c391d-e259-48a4-ac34-c417af487678">
       <column name="" />
     </property>

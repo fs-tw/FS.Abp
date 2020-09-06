@@ -52,7 +52,6 @@
         <File Name="CmsImageField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="BlogDefinitionSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="DisplayMode.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms" />
-        <File Name="ContentType.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="Post.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMap.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostAttachmentFiles.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />

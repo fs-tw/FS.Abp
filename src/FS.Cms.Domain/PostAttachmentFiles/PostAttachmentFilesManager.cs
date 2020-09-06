@@ -49,7 +49,7 @@ namespace FS.Cms.Posts
         public async Task<PostAttachmentFiles> CreateOneAsync(string base64,Guid PostId)
         {          
             PostAttachmentFiles entity = new PostAttachmentFiles();
-            entity.ContentType = ContentType.base64;
+            //entity.ContentType = ContentType.base64;
             entity.Content = base64;
             entity.PostId = PostId;
             EntityHelper.TrySetId(entity, () => guidGenerator.Create(), true);

@@ -30,12 +30,6 @@ namespace FS.Cms.Posts
             OnCreated();
         }
 
-        public virtual ContentType ContentType
-        {
-            get;
-            set;
-        }
-
         public virtual string Content
         {
             get;

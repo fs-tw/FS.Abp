@@ -39,7 +39,7 @@ namespace FS.Cms.Posts.Dtos
 
         public int Sequence { get; set; }
 
-        public List<string> AttachmentFileIds { get; set; }
+        public List<string> AttachmentFileUrls { get; set; }
 
         public class PrimaryKey
         {
@@ -75,7 +75,7 @@ namespace FS.Cms.Posts.Dtos
 
         public int Sequence { get; set; }
 
-        public List<string> AttachmentFileIds { get; set; }
+        public List<string> AttachmentFileUrls { get; set; }
 
     }
     public partial class PostUpdateInput
@@ -102,7 +102,7 @@ namespace FS.Cms.Posts.Dtos
 
         public int Sequence { get; set; }
 
-        public List<string> AttachmentFileIds { get; set; }
+        public List<string> AttachmentFileUrls { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto

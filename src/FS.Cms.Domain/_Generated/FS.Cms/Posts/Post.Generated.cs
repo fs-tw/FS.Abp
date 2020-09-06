@@ -101,16 +101,16 @@ namespace FS.Cms.Posts
             get;
             set;
         }
-        public virtual List<String> AttachmentFileIds 
+        public virtual List<String> AttachmentFileUrls 
         {
 
             get
             {
-                return this.GetExtraProperty<List<String>>(nameof(AttachmentFileIds));
+                return this.GetExtraProperty<List<String>>(nameof(AttachmentFileUrls));
             }
             set
             {
-                this.SetExtraProperty(nameof(AttachmentFileIds), value);
+                this.SetExtraProperty(nameof(AttachmentFileUrls), value);
             }
         } 
 

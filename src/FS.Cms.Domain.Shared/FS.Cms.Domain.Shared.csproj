@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.Cms\Core\FileType.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\ContentType.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,10 +52,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FS.Cms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\ContentType.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\Volo.Abp.Localization\LocalizationResourceExtensions.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Volo.Abp.Localization</DependentUpon>
@@ -87,6 +84,7 @@
 
   <ItemGroup>
     <Folder Include="_Generated\FS.Cms\Core\" />
+    <Folder Include="_Generated\FS.Cms\Posts\" />
     <Folder Include="_Generated\Localization\Cms\" />
   </ItemGroup>
 

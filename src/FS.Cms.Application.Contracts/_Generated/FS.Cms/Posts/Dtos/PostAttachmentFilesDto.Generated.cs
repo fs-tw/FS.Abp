@@ -17,8 +17,6 @@ namespace FS.Cms.Posts.Dtos
 {
     public partial class PostAttachmentFilesDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
-        public FS.Cms.Posts.ContentType ContentType { get; set; }
-
         public string Content { get; set; }
 
         public System.Guid PostId { get; set; }
@@ -35,8 +33,6 @@ namespace FS.Cms.Posts.Dtos
     }
     public partial class PostAttachmentFilesCreateInput
     {
-        public FS.Cms.Posts.ContentType ContentType { get; set; }
-
         public string Content { get; set; }
 
         public System.Guid PostId { get; set; }
@@ -44,8 +40,6 @@ namespace FS.Cms.Posts.Dtos
     }
     public partial class PostAttachmentFilesUpdateInput
     {
-        public FS.Cms.Posts.ContentType ContentType { get; set; }
-
         public string Content { get; set; }
 
         public System.Guid PostId { get; set; }

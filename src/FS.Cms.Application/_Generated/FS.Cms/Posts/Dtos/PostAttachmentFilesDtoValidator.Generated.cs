@@ -16,9 +16,6 @@ namespace FS.Cms.Posts.Dtos
     {
         public PostAttachmentFilesCreateInputValidator()
         {
-            RuleFor(p => p.ContentType)
-                .NotNull()
-                ;
             RuleFor(p => p.Content)
                 .NotNull()
                 ;
@@ -33,9 +30,6 @@ namespace FS.Cms.Posts.Dtos
     {
         public PostAttachmentFilesUpdateInputValidator()
         {
-            RuleFor(p => p.ContentType)
-                .NotNull()
-                ;
             RuleFor(p => p.Content)
                 .NotNull()
                 ;

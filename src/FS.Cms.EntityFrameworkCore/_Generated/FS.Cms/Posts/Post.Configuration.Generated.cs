@@ -43,7 +43,7 @@ namespace FS.Cms.Posts
             builder.Property<FS.Cms.DisplayMode>(x => x.DisplayMode).HasColumnName(@"DisplayMode").IsRequired().ValueGeneratedNever();
             builder.Ignore(x => x.Images);
             builder.Property<int>(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
-            builder.Ignore(x => x.AttachmentFileIds);
+            builder.Ignore(x => x.AttachmentFileUrls);
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 
