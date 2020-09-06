@@ -42,6 +42,12 @@ namespace FS.Cms.Posts
             set;
         }
 
+        public virtual System.Guid PostId
+        {
+            get;
+            set;
+        }
+
         public virtual System.Guid? TenantId
         {
             get;

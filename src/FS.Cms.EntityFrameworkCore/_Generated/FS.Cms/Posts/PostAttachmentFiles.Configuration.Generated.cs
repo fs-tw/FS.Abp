@@ -34,6 +34,7 @@ namespace FS.Cms.Posts
             builder.ToTable(options.TablePrefix + @"PostAttachmentFiles", options.Schema);
             builder.Property<FS.Cms.Posts.ContentType>(x => x.ContentType).HasColumnName(@"ContentType").IsRequired().ValueGeneratedNever();
             builder.Property<string>(x => x.Content).HasColumnName(@"Content").IsRequired().ValueGeneratedNever();
+            builder.Property<System.Guid>(x => x.PostId).HasColumnName(@"PostId").IsRequired().ValueGeneratedNever();
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 

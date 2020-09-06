@@ -21,6 +21,8 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
+        public System.Guid PostId { get; set; }
+
         public class PrimaryKey
         {
             public System.Guid Id { get; set; }
@@ -37,12 +39,16 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
+        public System.Guid PostId { get; set; }
+
     }
     public partial class PostAttachmentFilesUpdateInput
     {
         public FS.Cms.Posts.ContentType ContentType { get; set; }
 
         public string Content { get; set; }
+
+        public System.Guid PostId { get; set; }
 
     }
     public partial class PostAttachmentFilesGetListInput : SearchResultRequestDto

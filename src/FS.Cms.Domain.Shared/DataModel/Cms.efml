@@ -1042,6 +1042,9 @@
     <property name="Content" type="String" p1:ValidateRequired="true" p1:Guid="ba6c391d-e259-48a4-ac34-c417af487678">
       <column name="" />
     </property>
+    <property name="PostId" type="Guid" p1:ValidateRequired="true" p1:Guid="241f44a9-bce7-4214-b801-fe189e5950fd">
+      <column name="" />
+    </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="42d59181-c45a-40e9-be2f-62403856056e" p1:GenerateDTO="False">
       <column name="" />
     </property>

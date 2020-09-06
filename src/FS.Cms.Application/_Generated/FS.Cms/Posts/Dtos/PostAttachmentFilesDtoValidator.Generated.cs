@@ -22,6 +22,9 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Content)
                 .NotNull()
                 ;
+            RuleFor(p => p.PostId)
+                .NotNull()
+                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -34,6 +37,9 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Content)
+                .NotNull()
+                ;
+            RuleFor(p => p.PostId)
                 .NotNull()
                 ;
             CustomizeConfiguration();
