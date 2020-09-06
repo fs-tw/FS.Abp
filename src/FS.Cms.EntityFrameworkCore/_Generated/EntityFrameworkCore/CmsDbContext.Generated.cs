@@ -35,8 +35,13 @@ namespace FS.Cms.EntityFrameworkCore
             set;
         }
 
+        public virtual DbSet<FS.Cms.Posts.PostTagMap> PostTagMaps
+        {
+            get;
+            set;
+        }
 
-        public virtual DbSet<FS.Cms.Tagging.Tag> Tags
+        public virtual DbSet<FS.Cms.Tags.Tag> Tags
         {
             get;
             set;
@@ -49,6 +54,12 @@ namespace FS.Cms.EntityFrameworkCore
         }
 
         public virtual DbSet<FS.Cms.Documents.Document> Documents
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.Cms.Posts.PostAttachmentFiles> PostAttachmentFiles
         {
             get;
             set;

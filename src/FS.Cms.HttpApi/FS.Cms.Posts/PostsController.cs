@@ -43,7 +43,7 @@ namespace FS.Cms.Posts
         [HttpPost]
         public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateInput input)
         {
-            return await this._postCrudAppService.CreateAsync(input);
+            return await this.postsAppService.CreateAsync(input);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace FS.Cms.Posts
         [HttpPut]      
         public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateInput input)
         {
-            return await this._postCrudAppService.UpdateAsync(id, input);
+            return await this.postsAppService.UpdateAsync(id, input);
         }
 
         [HttpDelete]
@@ -85,7 +85,7 @@ namespace FS.Cms.Posts
         [Route("{id}")]
         public async Task<PostWithDetailsDto> GetAsync(Guid id)
         {
-            return await this._postCrudAppService.GetAsync(id);
+            return await this.postsAppService.GetAsync(id);
         }
 
     }

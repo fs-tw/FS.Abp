@@ -37,6 +37,10 @@ namespace FS.Cms.Posts.Dtos
 
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
+        public int Sequence { get; set; }
+
+        public List<string> AttachmentFileIds { get; set; }
+
         public class PrimaryKey
         {
             public System.Guid Id { get; set; }
@@ -69,6 +73,10 @@ namespace FS.Cms.Posts.Dtos
 
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
+        public int Sequence { get; set; }
+
+        public List<string> AttachmentFileIds { get; set; }
+
     }
     public partial class PostUpdateInput
     {
@@ -91,6 +99,10 @@ namespace FS.Cms.Posts.Dtos
         public DisplayMode DisplayMode { get; set; }
 
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
+
+        public int Sequence { get; set; }
+
+        public List<string> AttachmentFileIds { get; set; }
 
     }
     public partial class PostGetListInput : SearchResultRequestDto

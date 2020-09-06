@@ -41,6 +41,12 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.Images)
                 ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.AttachmentFileIds)
+                .NotNull()
+                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -73,6 +79,12 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Images)
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.AttachmentFileIds)
+                .NotNull()
                 ;
             CustomizeConfiguration();
         }

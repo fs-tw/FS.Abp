@@ -18,29 +18,43 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Cms.Core
+namespace FS.Cms.Posts
 {
-    public partial class CmsFileField 
+    public partial class PostTagMap : 
+        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot<Guid>,
+        Volo.Abp.MultiTenancy.IMultiTenant
     {
 
-        public CmsFileField()
+        public PostTagMap()
         {
             OnCreated();
         }
 
-        public virtual string Title
+        public virtual System.Guid PostId
         {
             get;
             set;
         }
 
-        public virtual string Url
+        public virtual System.Guid TagId
         {
             get;
             set;
         }
 
-        public virtual string Size
+        public virtual System.Guid? TenantId
+        {
+            get;
+            set;
+        }
+
+        public virtual Post Post
+        {
+            get;
+            set;
+        }
+
+        public virtual FS.Cms.Tags.Tag Tag
         {
             get;
             set;

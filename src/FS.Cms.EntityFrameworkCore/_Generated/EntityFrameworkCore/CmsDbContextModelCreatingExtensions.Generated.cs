@@ -32,10 +32,11 @@ namespace FS.Cms.EntityFrameworkCore
             builder.Ignore<FS.Cms.Core.CmsImageField>();
             builder.Ignore<FS.Cms.Core.BlogDefinitionSetting>();
             builder.ApplyConfiguration<FS.Cms.Posts.Post>(new FS.Cms.Posts.PostConfiguration(options));
-            builder.ApplyConfiguration<FS.Cms.Posts.PostTag>(new FS.Cms.Posts.PostTagConfiguration(options));
-            builder.ApplyConfiguration<FS.Cms.Tagging.Tag>(new FS.Cms.Tagging.TagConfiguration(options));
+            builder.ApplyConfiguration<FS.Cms.Posts.PostTagMap>(new FS.Cms.Posts.PostTagMapConfiguration(options));
+            builder.ApplyConfiguration<FS.Cms.Tags.Tag>(new FS.Cms.Tags.TagConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.DocumentDefinition>(new FS.Cms.Documents.DocumentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.Document>(new FS.Cms.Documents.DocumentConfiguration(options));
+            builder.ApplyConfiguration<FS.Cms.Posts.PostAttachmentFiles>(new FS.Cms.Posts.PostAttachmentFilesConfiguration(options));
         }
     }
 }

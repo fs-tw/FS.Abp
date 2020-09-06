@@ -7,14 +7,22 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-namespace Volo.Abp.Localization
+
+using System;
+using System.Data;
+using System.ComponentModel;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Data.Common;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using Volo.Abp.Data;
+
+namespace FS.Cms.Posts
 {
-    public static partial class LocalizationResourceExtensions
+    public enum ContentType : int
     {
-        public static LocalizationResource AddCmsDomainLocalizations(this LocalizationResource resource)
-        {
-            return resource
-                .AddVirtualJson(@"/_Generated/Localization/Core/BlogDefinitionSetting");
-         }
+        base64,
+        url
     }
 }

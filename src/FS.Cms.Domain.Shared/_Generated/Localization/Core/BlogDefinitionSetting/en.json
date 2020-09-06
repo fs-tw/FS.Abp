@@ -1,0 +1,15 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "BlogDefinitionSetting.FileView": "FileView",
+    "Description:BlogDefinitionSetting.FileView": "FileView",
+    "DisplayName:BlogDefinitionSetting.FileView": "FileView",
+    "BlogDefinitionSetting.Article": "Article",
+    "Description:BlogDefinitionSetting.Article": "Article",
+    "DisplayName:BlogDefinitionSetting.Article": "Article",
+    "BlogDefinitionSetting.Tags": "Tags",
+    "Description:BlogDefinitionSetting.Tags": "Tags",
+    "DisplayName:BlogDefinitionSetting.Tags": "Tags"
+
+  }
+}

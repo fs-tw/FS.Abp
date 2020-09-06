@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -20,6 +20,7 @@
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Documents\IDocumentCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostTagDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostTagCrudAppService.Generated.cs" />
   </ItemGroup>
 
@@ -70,25 +71,37 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Menu</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostTagDto.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostTagMapDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tagging\Dtos\TagDto.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\IPostTagMapCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tagging\ITagCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Tags\ITagCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tagging</DependentUpon>
+      <DependentUpon>Tags</DependentUpon>
     </Compile>
   </ItemGroup>
 
