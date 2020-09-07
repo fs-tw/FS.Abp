@@ -99,6 +99,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="FS.Cms.DataSeed\Model\" />
     <Folder Include="_Generated\FS.Cms\Tagging\" />
   </ItemGroup>
 

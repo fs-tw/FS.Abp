@@ -1,0 +1,40 @@
+﻿[
+  {
+    "No": "CmsDefinition",
+    "DisplayName": "CmsDefinition",
+    "Description": "",
+    "Children": [
+      {
+        "No": "FileView",
+        "DisplayName": "FileView",
+        "Description": "",
+        "Children": []
+      },
+      {
+        "No": "Article",
+        "DisplayName": "Article",
+        "Description": "",
+        "Children": []
+      },
+      {
+        "No": "News",
+        "DisplayName": "News",
+        "Description": "不分類",
+        "Children": [
+          {
+            "No": "企業消息",
+            "DisplayName": "企業消息",
+            "Description": "",
+            "Children": []
+          },
+          {
+            "No": "品牌合作",
+            "DisplayName": "品牌合作",
+            "Description": "",
+            "Children": []
+          }
+        ]
+      }
+    ]
+  }
+]
