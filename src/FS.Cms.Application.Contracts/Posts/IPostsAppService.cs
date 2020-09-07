@@ -9,7 +9,7 @@ namespace FS.Cms.Posts
     {
         Task<PostWithDetailsDto> CreateAsync(PostCreateInput input);
         Task<PostWithDetailsDto> GetAsync(System.Guid id);
-        Task<PagedResultDto<PostWithDetailsNoContentDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
+        Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
         Task<PostWithDetailsDto> UpdateAsync(System.Guid id, PostUpdateInput input);
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
+using Volo.Abp.Uow;
 
 namespace FS.Cms.Posts
 {
@@ -40,20 +41,20 @@ namespace FS.Cms.Posts
         }
 
 
-        public async Task<PagedResultDto<PostWithDetailsNoContentDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
+        //[UnitOfWork]
+        public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
 
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
             var query = this.postsRepository
                             .WithDetails()
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
-                            .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
-                            .OrderByDescending(x=>x.Published_At);
+                            .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true);
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
-            return new PagedResultDto<PostWithDetailsNoContentDto>()
+            return new PagedResultDto<PostWithDetailsDto>()
             {
                 TotalCount = entities.TotalCount,
-                Items = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsNoContentDto>>(entities.Entities)
+                Items = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities)
             };
         }
 
