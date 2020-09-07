@@ -10,6 +10,7 @@ namespace FS.Cms.Posts.Dtos
   
     public partial class PostWithDetailsDto : PostDto
     {
+        public string BlogDisplayName { get; set; }
         //public FS.Cms.Core.Dtos.CmsImageFieldDto CoverImage => Images.Where(x => x.IsCover == true).FirstOrDefault();
         public FS.Cms.Core.Dtos.CmsImageFieldDto CoverImage
         {

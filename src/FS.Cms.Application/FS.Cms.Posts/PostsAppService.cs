@@ -1,4 +1,5 @@
 ﻿using FS.Abp.Application;
+using FS.Abp.CodingManagement.Coding;
 using FS.Cms.Posts.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using System;
@@ -9,7 +10,6 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
-using Volo.Abp.Uow;
 
 namespace FS.Cms.Posts
 {
@@ -26,35 +26,52 @@ namespace FS.Cms.Posts
         private readonly IGuidGenerator guidGenerator;
         private readonly IPostAttachmentFilesManager postAttachmentFilesManager;
         private readonly IAuthorizationService authorizationService;
+        private readonly ICodesTreeRepository codesTreeRepository;
 
         public PostsAppService(
             IPostRepository postsRepository,
             IGuidGenerator guidGenerator,
             IPostAttachmentFilesManager postAttachmentFilesManager,
-            IAuthorizationService authorizationService
+            IAuthorizationService authorizationService,
+             ICodesTreeRepository codesTreeRepository
             )
         {
             this.postsRepository = postsRepository;
             this.guidGenerator = guidGenerator;
             this.postAttachmentFilesManager = postAttachmentFilesManager;
             this.authorizationService = authorizationService;
+            this.codesTreeRepository = codesTreeRepository;
         }
 
 
-        //[UnitOfWork]
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
-
+           
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
             var query = this.postsRepository
                             .WithDetails()
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
-                            .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true);
+                            .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
+                            .OrderByDescending(x=>x.LastModificationTime);
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
+
+            var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities);
+            foreach (var item in result)
+            {
+                var blogCode = this.codesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
+                if (blogCode.No != "News")
+                {
+                    item.BlogDisplayName = blogCode.DisplayName;
+                }
+                else
+                {
+                    item.BlogDisplayName = "不分類";
+                }
+            }
             return new PagedResultDto<PostWithDetailsDto>()
             {
                 TotalCount = entities.TotalCount,
-                Items = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities)
+                Items = result
             };
         }
 
@@ -107,6 +124,11 @@ namespace FS.Cms.Posts
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(entityInput);
         }
 
+
+        //public async Task DeleteAsync(Guid id) 
+        //{
+            
+        //}
 
         public async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(Guid id,PostUpdateInput input)
         {

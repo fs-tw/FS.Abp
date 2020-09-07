@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Posts\Dtos\PostDto.cs">
+    <Compile Update="FS.Cms.Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs">
