@@ -33,6 +33,8 @@ namespace FS.Cms.Posts.Dtos
     {
         public System.Guid BlogCodeId { get; set; }
 
+        public string BlogDisplayName { get; set; }
+
         public string Title { get; set; }
 
         public string Subtitle { get; set; }
