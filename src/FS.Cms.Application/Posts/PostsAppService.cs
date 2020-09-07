@@ -48,7 +48,7 @@ namespace FS.Cms.Posts
                             .WithDetails()
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
                             .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
-                            .OrderByDescending(x=>x.Published_At);
+                            .OrderByDescending(x=>x.LastModificationTime);
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
             return new PagedResultDto<PostWithDetailsNoContentDto>()
             {
