@@ -22,14 +22,8 @@
         "Description": "不分類",
         "Children": [
           {
-            "No": "企業消息",
-            "DisplayName": "企業消息",
-            "Description": "",
-            "Children": []
-          },
-          {
-            "No": "品牌合作",
-            "DisplayName": "品牌合作",
+            "No": "一般消息",
+            "DisplayName": "一般消息",
             "Description": "",
             "Children": []
           }
