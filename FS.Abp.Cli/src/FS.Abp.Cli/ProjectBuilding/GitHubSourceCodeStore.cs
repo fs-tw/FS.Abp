@@ -176,6 +176,11 @@ namespace FS.Abp.Cli.ProjectBuilding
                 return zipStream.ToArray();
             }
         }
+
+        public Task<TemplateFile> GetAsync(string name, string type, string version = null, string templateSource = null, bool includePreReleases = false)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class GitHubSourceCodeDownloadInputDto : SourceCodeDownloadInputDto
     {
