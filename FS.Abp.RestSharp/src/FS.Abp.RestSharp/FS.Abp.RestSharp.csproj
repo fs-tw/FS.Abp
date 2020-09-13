@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="106.11.4" />
-    <PackageReference Include="Volo.Abp.Core" Version="3.1.0" />
+    <PackageReference Include="Volo.Abp.Core" Version="3.1.2" />
   </ItemGroup>
 
 </Project>
