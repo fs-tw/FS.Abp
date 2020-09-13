@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="3.1.0" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="3.1.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="3.1.2" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="3.1.2" />
     <ProjectReference Include="..\..\..\..\integrations\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
