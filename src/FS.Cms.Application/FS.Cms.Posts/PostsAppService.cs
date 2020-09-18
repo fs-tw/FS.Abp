@@ -48,11 +48,21 @@ namespace FS.Cms.Posts
         {
            
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
+
+            var blogIds = this.postsRepository.Select(x => x.BlogCodeId).Distinct().ToList();
+            var blogCodes = this.codesTreeRepository.Where(x => blogIds.Any(b => b == x.Id) && x.Enable == true).Select(x=>x.Id).ToList();
+
             var query = this.postsRepository
                             .WithDetails()
+                            .WhereIf(!permission.Succeeded,x=>blogCodes.Any(b=>x.BlogCodeId == b))
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
                             .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
                             .OrderByDescending(x=>x.LastModificationTime);
+            
+           
+
+
+
             var entities = await this.searchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
 
             var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities);
