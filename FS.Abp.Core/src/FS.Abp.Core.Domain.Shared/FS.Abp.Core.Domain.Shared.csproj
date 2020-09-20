@@ -22,7 +22,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.Domain.Shared\EasyAbp.Abp.Trees.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.Domain.Shared\EasyAbp.Abp.Trees.Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>
