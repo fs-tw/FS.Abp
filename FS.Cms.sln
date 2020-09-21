@@ -87,11 +87,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.CodingManagement.Web
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasyAbp.Abp.Trees", "EasyAbp.Abp.Trees", "{66765E74-D959-48D8-BC15-E0295CCAA957}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.Abp.Trees.Domain", "..\..\framework\Abp.Trees\src\EasyAbp.Abp.Trees.Domain\EasyAbp.Abp.Trees.Domain.csproj", "{3E88F3FF-C0FF-4749-A46D-D4EE379F832A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.Abp.Trees.Domain", "..\..\framework\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.Domain\EasyAbp.Abp.Trees.Domain.csproj", "{3E88F3FF-C0FF-4749-A46D-D4EE379F832A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.Abp.Trees.Domain.Shared", "..\..\framework\Abp.Trees\src\EasyAbp.Abp.Trees.Domain.Shared\EasyAbp.Abp.Trees.Domain.Shared.csproj", "{FCD1C9CF-5A06-4019-8B74-81E6681EB86C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.Abp.Trees.Domain.Shared", "..\..\framework\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.Domain.Shared\EasyAbp.Abp.Trees.Domain.Shared.csproj", "{FCD1C9CF-5A06-4019-8B74-81E6681EB86C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.Abp.Trees.EntityFrameworkCore", "..\..\framework\Abp.Trees\src\EasyAbp.Abp.Trees.EntityFrameworkCore\EasyAbp.Abp.Trees.EntityFrameworkCore.csproj", "{5DEF8D3E-66B3-4B98-8BF8-43123B16D9A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.Abp.Trees.EntityFrameworkCore", "..\..\framework\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.EntityFrameworkCore\EasyAbp.Abp.Trees.EntityFrameworkCore.csproj", "{5DEF8D3E-66B3-4B98-8BF8-43123B16D9A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integrations", "integrations", "{C4B497E8-CF73-4C0A-A212-76C4B2B92F90}"
 EndProject
