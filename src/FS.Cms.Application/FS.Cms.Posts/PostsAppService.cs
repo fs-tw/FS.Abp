@@ -33,7 +33,7 @@ namespace FS.Cms.Posts
             IGuidGenerator guidGenerator,
             IPostAttachmentFilesManager postAttachmentFilesManager,
             IAuthorizationService authorizationService,
-             ICodesTreeRepository codesTreeRepository
+            ICodesTreeRepository codesTreeRepository
             )
         {
             this.postsRepository = postsRepository;
@@ -46,20 +46,20 @@ namespace FS.Cms.Posts
 
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
         {
-           
+
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
 
             var blogIds = this.postsRepository.Select(x => x.BlogCodeId).Distinct().ToList();
-            var blogCodes = this.codesTreeRepository.Where(x => blogIds.Any(b => b == x.Id) && x.Enable == true).Select(x=>x.Id).ToList();
+            var blogCodes = this.codesTreeRepository.Where(x => blogIds.Any(b => b == x.Id) && x.Enable == true).Select(x => x.Id).ToList();
 
             var query = this.postsRepository
                             .WithDetails()
-                            .WhereIf(!permission.Succeeded,x=>blogCodes.Any(b=>x.BlogCodeId == b))
+                            .WhereIf(!permission.Succeeded, x => blogCodes.Any(b => x.BlogCodeId == b))
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
                             .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
-                            .OrderByDescending(x=>x.LastModificationTime);
-            
-           
+                            .OrderByDescending(x => x.LastModificationTime);
+
+
 
 
 
@@ -86,7 +86,7 @@ namespace FS.Cms.Posts
         }
 
 
-        public async Task<PostWithDetailsDto> GetAsync(Guid id) 
+        public async Task<PostWithDetailsDto> GetAsync(Guid id)
         {
             var post = this.postsRepository.WithDetails().Where(x => x.Id == id).First();
             var output = ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
@@ -98,7 +98,7 @@ namespace FS.Cms.Posts
                 {
                     int firstIndex = output.Content.IndexOf(firstStr);
                     string lastContent = output.Content.Substring(firstIndex);
-                    int lastIndex = lastContent.IndexOf(lastStr) +1;
+                    int lastIndex = lastContent.IndexOf(lastStr) + 1;
                     string replaceData = output.Content.Substring(firstIndex, lastIndex);
                     var guidStr = replaceData.Substring(firstStr.Length, 36);
                     var postAttachmentFile = this.postAttachmentFilesManager.GetByStrId(guidStr);
@@ -111,11 +111,11 @@ namespace FS.Cms.Posts
         public async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateInput input)
         {
             Guid postId = guidGenerator.Create();
-            if (input.DisplayMode == DisplayMode.內文) 
-            {              
+            if (input.DisplayMode == DisplayMode.內文)
+            {
                 string firstStr = "<img src=\"";
                 string lastStr = "\">";
-                while (input.Content.Contains(firstStr)) 
+                while (input.Content.Contains(firstStr))
                 {
                     int firstIndex = input.Content.IndexOf(firstStr);
                     string lastContent = input.Content.Substring(firstIndex);
@@ -137,10 +137,10 @@ namespace FS.Cms.Posts
 
         //public async Task DeleteAsync(Guid id) 
         //{
-            
+
         //}
 
-        public async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(Guid id,PostUpdateInput input)
+        public async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(Guid id, PostUpdateInput input)
         {
             var post = this.postsRepository.Where(x => x.Id == id).First();
             ObjectMapper.Map(input, post);
@@ -163,7 +163,7 @@ namespace FS.Cms.Posts
                     post.Content = post.Content.Replace(replaceData, imageId);
                 }
             }
-                      
+
             await this.postsRepository.UpdateAsync(post).ConfigureAwait(false);
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
         }

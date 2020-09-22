@@ -33,9 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Cms\Posts\PostTagCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
