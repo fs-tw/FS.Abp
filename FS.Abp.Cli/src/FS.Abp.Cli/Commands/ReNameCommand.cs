@@ -42,7 +42,7 @@ namespace FS.Abp.Cli.Commands
         {
             var currentFolder = Path.Combine(Directory.GetCurrentDirectory(),"work");
 
-            if (!File.Exists(Path.Combine(currentFolder, "target.zip"))) return Task.CompletedTask;
+            if (File.Exists(Path.Combine(currentFolder, "target.zip"))) return Task.CompletedTask;
 
             var CompanyNamePlaceHolder = commandLineArgs.Options.GetOrNull(Options.CompanyNamePlaceHolder.Short, Options.CompanyNamePlaceHolder.Long);
             var ProjectNamePlaceHolder = commandLineArgs.Options.GetOrNull(Options.ProjectNamePlaceHolder.Short, Options.ProjectNamePlaceHolder.Long);
