@@ -24,14 +24,14 @@ namespace FS.Abp.Core
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
-                    .Add<CoreResource>("en")
+                    .Add<AbpCoreResource>("en")
                     .AddBaseTypes(typeof(AbpValidationResource))
-                    .AddVirtualJson("/Localization/Core");
+                    .AddVirtualJson("/Localization/AbpCore");
             });
 
             Configure<AbpExceptionLocalizationOptions>(options =>
             {
-                options.MapCodeNamespace("Core", typeof(CoreResource));
+                options.MapCodeNamespace("Core", typeof(AbpCoreResource));
             });
         }
     }

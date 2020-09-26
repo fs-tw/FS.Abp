@@ -25,7 +25,7 @@ namespace FS.Abp.Core
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
-                    .Get<CoreResource>()
+                    .Get<AbpCoreResource>()
                     .AddBaseTypes(typeof(AbpUiResource));
             });
         }

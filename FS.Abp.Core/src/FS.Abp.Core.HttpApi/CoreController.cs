@@ -7,7 +7,7 @@ namespace FS.Abp.Core
     {
         protected CoreController()
         {
-            LocalizationResource = typeof(CoreResource);
+            LocalizationResource = typeof(AbpCoreResource);
         }
     }
 }

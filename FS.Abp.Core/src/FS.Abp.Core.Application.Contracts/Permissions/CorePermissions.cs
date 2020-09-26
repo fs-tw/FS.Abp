@@ -4,7 +4,7 @@ namespace FS.Abp.Core.Permissions
 {
     public class CorePermissions
     {
-        public const string GroupName = "Core";
+        public const string GroupName = "AbpCore";
 
         public static string[] GetAll()
         {
