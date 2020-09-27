@@ -42,10 +42,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="DataModel\Cms.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>
@@ -88,6 +84,10 @@
     <Folder Include="_Generated\FS.Cms\Core\" />
     <Folder Include="_Generated\FS.Cms\Posts\" />
     <Folder Include="_Generated\Localization\Cms\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Domain.Shared\FS.Abp.CodingManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>

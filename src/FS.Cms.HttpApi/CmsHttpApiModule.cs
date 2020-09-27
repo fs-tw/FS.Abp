@@ -4,15 +4,14 @@ using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Emailing;
 
 namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsApplicationContractsModule),
-        typeof(AbpAspNetCoreMvcModule)
+        typeof(AbpAspNetCoreMvcModule),
+        typeof(FS.Abp.CodingManagement.CodingManagementHttpApiModule)
         )]
-    [DependsOn(typeof(AbpEmailingModule))]
     public class CmsHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

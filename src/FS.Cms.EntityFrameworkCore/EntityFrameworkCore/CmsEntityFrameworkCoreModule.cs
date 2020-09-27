@@ -7,7 +7,7 @@ namespace FS.Cms.EntityFrameworkCore
     [DependsOn(
         typeof(CmsDomainModule),
         typeof(AbpEntityFrameworkCoreModule),
-        typeof(FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule)
+        typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule)
     )]
     public class CmsEntityFrameworkCoreModule : AbpModule
     {

@@ -33,7 +33,10 @@ using System.Reflection;
 namespace FS.Cms
 {
     [DependsOn(
+        typeof(FS.Abp.Core.Host.HttpApi.AbpHttpApiHostModule),
         typeof(FS.Cms.Host.HttpApi.CmsHttpApiHostModule),
+        typeof(FS.Abp.CodingManagement.Host.HttpApi.CodingManagementHttpApiHostModule),
+        typeof(FS.Abp.SettingManagement.Host.HttpApi.SettingManagementHttpApiHostModule),
         
         typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
         typeof(AbpAutofacModule),

@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\host\FS.Abp.Core.Host.Shared\FS.Abp.Core.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\host\FS.Abp.CodingManagement.Host.Shared\FS.Abp.CodingManagement.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.SettingManagement\host\FS.Abp.SettingManagement.Host.Shared\FS.Abp.SettingManagement.Host.Shared.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.HttpApi\FS.Cms.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.Application\FS.Cms.Application.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
