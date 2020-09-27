@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.0" />
+    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.EntityFrameworkCore\FS.Abp.CodingManagement.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Cms.TestBase\FS.Cms.TestBase.csproj" />
   </ItemGroup>
