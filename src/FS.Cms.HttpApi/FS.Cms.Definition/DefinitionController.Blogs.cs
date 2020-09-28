@@ -8,35 +8,35 @@ namespace FS.Cms.Definition
     public partial class DefinitionController: IBlogAppService
     {
         [HttpGet]
-        [Route("blog")]
+        [Route("blogs")]
         public async Task<List<BlogDto>> BlogGetListAsync()
         {
             return await this._appService.BlogGetListAsync();
         }
 
         [HttpGet]
-        [Route("blog/{id}")]
+        [Route("blogs/{id}")]
         public async Task<BlogDto> BlogGetAsync(Guid id)
         {
             return await this._appService.BlogGetAsync(id);
         }
 
         [HttpPost]
-        [Route("blog")]
+        [Route("blogs")]
         public Task<BlogDto> BlogCreateAsync(BlogCreateInput input)
         {
             return this._appService.BlogCreateAsync(input);
         }
 
         [HttpPut]
-        [Route("blog/{id}")]
+        [Route("blogs/{id}")]
         public Task<BlogDto> BlogUpdateAsync(Guid id, BlogUpdateInput input)
         {
             return this._appService.BlogUpdateAsync(id, input);
         }
 
         [HttpDelete]
-        [Route("blog/{id}")]
+        [Route("blogs/{id}")]
         public async Task BlogDeleteAsync(Guid id)
         {
             await this._appService.BlogDeleteAsync(id);

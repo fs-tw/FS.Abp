@@ -7,6 +7,11 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts.Dtos
 {
+    public partial class PostGetListDto
+    {
+        public Guid? BlogCodeId { get; set; }
+    }
+    [Obsolete]
     public class PostsWithBlogCodeDto: PagedAndSortedResultRequestDto, ISearchResultRequest
     {
         public string Fields { get; set; }

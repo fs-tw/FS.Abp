@@ -1,34 +1,21 @@
 ﻿using FS.Abp.Application;
-using FS.Cms.Posts;
+using FS.Abp.CodingManagement.Coding;
 using FS.Cms.Posts.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Domain.Entities;
+using Volo.Abp.Guids;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostCrudAppService: IPostCrudAppService
+
+    public partial class PostsAppService : IPostImagesAppService
     {
-        private ISearchedAndPagedAndSortedOperation _searchedAndPagedAndSortedOperation;
-
-        public ISearchedAndPagedAndSortedOperation searchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndPagedAndSortedOperation);
-
-
-        public override Task<PostWithDetailsDto> GetAsync(Guid id)
-        {
-            return base.GetAsync(id);
-        }
-
-        public override Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
-        {
-            return base.GetListAsync(input);
-        }
-
-       
-
         public async Task Save(CmsImageModel input, Guid postId)
         {
             var post = this.Repository.Where(x => x.Id == postId).FirstOrDefault();
@@ -40,7 +27,5 @@ namespace FS.Cms.Posts
             post.Images.AddRange(newData);
             await this.Repository.UpdateAsync(post).ConfigureAwait(false);
         }
-
-
     }
 }

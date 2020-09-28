@@ -14,7 +14,7 @@ namespace FS.Cms.Definition
     [RemoteService(true)]
     [Area("cms")]
     [Route("api/cms/definition")]
-    [ControllerName("definition-cms")]
+    [ControllerName("Definition Cms")]
     public partial class DefinitionController : CmsController
     {
         private readonly IAbpTenantAppService _abpTenantAppService;

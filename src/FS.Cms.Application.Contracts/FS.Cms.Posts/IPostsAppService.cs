@@ -1,15 +1,18 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using FS.Abp.Application;
 using FS.Cms.Posts.Dtos;
 using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts
 {
-    public interface IPostsAppService
+    public interface IPostsAppService : IPostCrudAppService, IPostImagesAppService
     {
-        Task<PostWithDetailsDto> CreateAsync(PostCreateDto input);
-        Task<PostWithDetailsDto> GetAsync(System.Guid id);
-        Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
-        Task<PostWithDetailsDto> UpdateAsync(System.Guid id, PostUpdateDto input);
     }
+
+    public partial interface IPostImagesAppService
+    {
+        Task Save(CmsImageModel input, Guid postId);
+    }
+
 }
