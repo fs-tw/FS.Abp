@@ -27,7 +27,12 @@ namespace FS.Cms.Definition
             return result;
         }
 
-        public async Task BlogCreateAsync(BlogCreateInput input)
+        public async Task BlogDeleteAsync(Guid id)
+        {
+            await _codesTreeRepository.DeleteAsync(id, true);
+        }
+
+        public async Task<BlogDto> BlogCreateAsync(BlogCreateInput input)
         {
             var definition = await _codesService.GetDefinitionAsync("CmsDefinition");
             Codes codes = new Codes()
@@ -37,18 +42,15 @@ namespace FS.Cms.Definition
                 No = input.DisplayName
             };
             await _codesTreeRepository.InsertAsync(codes, true);
+            return new BlogDto { CodesId = codes.Id, DisplayName = codes.DisplayName };
         }
 
-        public async Task BlogUpdateAsync(Guid id, BlogUpdateInput input)
+        public async Task<BlogDto> BlogUpdateAsync(Guid id, BlogUpdateInput input)
         {
             var entity = await this._codesTreeRepository.GetAsync(id);
             entity.DisplayName = input.DisplayName;
             await _codesTreeRepository.UpdateAsync(entity, true);
-        }
-
-        public async Task BlogDeleteAsync(Guid id)
-        {
-            await _codesTreeRepository.DeleteAsync(id, true);
+            return new BlogDto { CodesId = entity.Id, DisplayName = entity.DisplayName };
         }
     }
 }
