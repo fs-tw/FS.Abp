@@ -13,8 +13,9 @@ namespace FS.Cms.Definition
         public async Task<List<BlogDto>> BlogGetListAsync()
         {
             //CmsBlogDefinition
+            var tenantId = CurrentTenant.Id;
             var definition = await _codesService.GetDefinitionAsync("CmsBlogDefinition");
-            var blogs = definition.CodeList.Where(c => c.Parent.No == "Blog");
+            var blogs = definition.CodeList;
 
             var result = blogs.Select(x =>
             {
@@ -77,6 +78,7 @@ namespace FS.Cms.Definition
             Codes codes = new Codes()
             {
                 ParentId = definition.Id,
+                DefinitionId = definition.Id,
                 DisplayName = input.DisplayName,
                 No = input.DisplayName
             };            

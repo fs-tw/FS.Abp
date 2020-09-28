@@ -13,14 +13,14 @@ namespace FS.Cms.DataSeed
         private readonly ICmsDefinitionSeeder cmsDefinitionSeeder;
 
         public CmsDataSeedContributor(
-            ICmsDefinitionSeeder cmsDefinitionSeeder
+            ICmsDefinitionSeeder cmsDefinitionSeeder            
             ) 
         {
             this.cmsDefinitionSeeder = cmsDefinitionSeeder;
         }
 
         public async Task SeedAsync(DataSeedContext context) 
-        {
+        {          
             await this.cmsDefinitionSeeder.SeedAsync(context);
         }
 

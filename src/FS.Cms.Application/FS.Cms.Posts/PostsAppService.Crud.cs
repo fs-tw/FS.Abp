@@ -32,7 +32,7 @@ namespace FS.Cms.Posts
             foreach (var item in result)
             {
                 var blogCode = this.codesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
-                if (blogCode.No != "News")
+                if (blogCode.ParentId != null)
                 {
                     item.BlogDisplayName = blogCode.DisplayName;
                 }

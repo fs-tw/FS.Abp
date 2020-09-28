@@ -5,17 +5,16 @@
     "Description": "",
     "Children": [
       {
-        "No": "Blog",
-        "DisplayName": "News",
-        "Description": "不分類",
-        "Children": [
-          {
-            "No": "一般消息",
-            "DisplayName": "一般消息",
-            "Description": "",
-            "Children": []
-          }
-        ]
+        "No": "一般消息",
+        "DisplayName": "一般消息",
+        "Description": "",
+        "Children": []
+      },
+      {
+        "No": "企業消息",
+        "DisplayName": "企業消息",
+        "Description": "",
+        "Children": []
       }
     ]
   }

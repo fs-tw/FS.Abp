@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Data;
 
 namespace FS.Cms.Posts
 {
@@ -23,14 +24,18 @@ namespace FS.Cms.Posts
     [Route("api/cms/PostCrud")]
     public class OldPostsController : CmsController
     {
+        private readonly IDataSeeder _dataSeeder;
+
         //private IPostCrudAppService _postCrudAppService;
         private readonly IPostsAppService _postsAppService;
 
         public OldPostsController(
             //IPostCrudAppService postCrudAppService,
+            IDataSeeder dataSeeder,
             IPostsAppService postsAppService
             )
         {
+            this._dataSeeder = dataSeeder;
             //_postCrudAppService = postCrudAppService;
             this._postsAppService = postsAppService;
         }
@@ -95,6 +100,15 @@ namespace FS.Cms.Posts
         public async Task<PostWithDetailsDto> GetAsync(Guid id)
         {
             return await this._postsAppService.GetAsync(id);
+        }
+
+
+
+        [HttpGet]
+        [Route("dataseed")]
+        public async Task dataseed()
+        {
+            await this._dataSeeder.SeedAsync();
         }
 
     }
