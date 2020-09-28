@@ -1,18 +1,7 @@
-﻿using FS.Cms.Posts;
-using FS.Cms.Posts.Dtos;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+﻿using FS.Cms.Posts.Dtos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
-using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts
@@ -20,16 +9,10 @@ namespace FS.Cms.Posts
     public partial class PostsController : CmsController
     {
         /// <summary>
-        /// 根據BlogDefinition 查詢文章(全部列出管理者用，不管發佈日期、隱藏)
+        /// 根據BlogCodeId 查詢文章(全部列出管理者用，不管發佈日期、隱藏)
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        //[HttpPost]
-        //[Route("PostByBlogDefinition")]
-        //public async Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input)
-        //{
-        //    return await this._postsAppService.GetPostByBlogDefinition(input);
-        //}
         [HttpGet]
         public Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
         {

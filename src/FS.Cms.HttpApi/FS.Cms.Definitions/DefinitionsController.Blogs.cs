@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FS.Cms.Definition
+namespace FS.Cms.Definitions
 {
-    public partial class DefinitionController: IBlogAppService
+    public partial class DefinitionsController: IBlogAppService
     {
         [HttpGet]
         [Route("blogs")]

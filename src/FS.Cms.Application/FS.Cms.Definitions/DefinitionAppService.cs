@@ -6,11 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.SettingManagement;
 
-namespace FS.Cms.Definition
+namespace FS.Cms.Definitions
 {
-    public partial class DefinitionAppService : CmsAppService, IDefinitionAppService
+
+    [ExposeServices(
+        typeof(IDefinitionsAppService),
+        typeof(IBlogAppService)
+        )]
+    public partial class DefinitionsAppService : CmsAppService, IDefinitionsAppService
     {
         private readonly ICodesService _codesService;
         private readonly IPostRepository postsRepository;
@@ -20,7 +26,7 @@ namespace FS.Cms.Definition
         private readonly ICodesTreeRepository _codesTreeRepository;
 
 
-        public DefinitionAppService(
+        public DefinitionsAppService(
             ICodesService codesService,
             IPostRepository postsRepository,
             ICurrentCodes currentCodes,

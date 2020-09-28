@@ -9,12 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 
 namespace FS.Cms.Posts
 {
-
+    [ExposeServices(
+        typeof(IPostCrudAppService),
+        typeof(IPostImagesAppService),
+        typeof(IPostsAppService)
+        )]
     public partial class PostsAppService : PostCrudAppService, IPostsAppService
     {
         private readonly IPostRepository postsRepository;
@@ -29,7 +34,7 @@ namespace FS.Cms.Posts
             IPostAttachmentFilesManager postAttachmentFilesManager,
             IAuthorizationService authorizationService,
             ICodesTreeRepository codesTreeRepository
-            ):base(postsRepository)
+            ) : base(postsRepository)
         {
             this.postsRepository = postsRepository;
             this.guidGenerator = guidGenerator;

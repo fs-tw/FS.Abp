@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static FS.Cms.Core.CmsSettingNames;
 
-namespace FS.Cms.Definition
+namespace FS.Cms.Definitions
 {
-    public partial class DefinitionAppService : CmsAppService, IBlogAppService
+    public partial class DefinitionsAppService : CmsAppService, IBlogAppService
     {
         public async Task<List<BlogDto>> BlogGetListAsync()
         {

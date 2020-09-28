@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using FS.Abp.CodingManagement.EntityFrameworkCore;
+using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
 namespace FS.Cms.EntityFrameworkCore
 {
@@ -38,6 +39,10 @@ namespace FS.Cms.EntityFrameworkCore
 
             new CodingManagementDbContext(
                 new DbContextOptionsBuilder<CodingManagementDbContext>().UseSqlite(connection).Options
+            ).GetService<IRelationalDatabaseCreator>().CreateTables();
+
+            new SettingManagementDbContext(
+                new DbContextOptionsBuilder<SettingManagementDbContext>().UseSqlite(connection).Options
             ).GetService<IRelationalDatabaseCreator>().CreateTables();
 
             return connection;

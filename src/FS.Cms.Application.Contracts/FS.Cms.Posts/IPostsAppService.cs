@@ -6,7 +6,9 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts
 {
-    public interface IPostsAppService : IPostCrudAppService, IPostImagesAppService
+    public interface IPostsAppService : 
+        IPostCrudAppService, 
+        IPostImagesAppService
     {
     }
 

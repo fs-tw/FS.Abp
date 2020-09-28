@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FS.Cms.Definition
+namespace FS.Cms.Definitions
 {
-    public interface IDefinitionAppService : IBlogAppService
+    public interface IDefinitionsAppService : 
+        IBlogAppService
     {
     }
     public interface IBlogAppService

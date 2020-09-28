@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FS.Cms.Definition
+namespace FS.Cms.Definitions
 {
     public class BlogDto
     {

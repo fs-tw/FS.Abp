@@ -8,21 +8,21 @@ HttpApi
 Settings
 Domain=>Settings
 
-## Main Function (Api)
+## Main Function
+Domain
+FS.Cms.PostAttachmentFiles : save image base64  in post content
+
+Application
 Posts
-	PostsAppService : Post Crud?
-	PostCrudAppService : Post Crud?
-	PostsController : ?
-Emailing
-	EmailingController : Test?
-Upload
-	UploadImageController : 上傳圖片
+	DefinitionAppService : Blog
+	PostsAppService : Posts Images
 
 
 ## Dependencies
 Modules:
-	FS.Abp
+	FS.Abp.CodingManagement
 
 ## Todo
 angular ui
 unit test
+sample for httpclient
