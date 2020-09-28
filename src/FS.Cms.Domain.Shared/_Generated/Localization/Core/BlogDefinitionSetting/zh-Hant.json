@@ -1,15 +1,15 @@
 ﻿{
   "culture": "zh-Hant",
   "texts": {
-    "BlogDefinitionSetting.FileView": "FileView",
-    "Description:BlogDefinitionSetting.FileView": "FileView",
-    "DisplayName:BlogDefinitionSetting.FileView": "FileView",
-    "BlogDefinitionSetting.Article": "Article",
-    "Description:BlogDefinitionSetting.Article": "Article",
-    "DisplayName:BlogDefinitionSetting.Article": "Article",
-    "BlogDefinitionSetting.Tags": "Tags",
-    "Description:BlogDefinitionSetting.Tags": "Tags",
-    "DisplayName:BlogDefinitionSetting.Tags": "Tags"
+    "BlogDefinitionSetting.ListStyle": "ListStyle",
+    "Description:BlogDefinitionSetting.ListStyle": "ListStyle",
+    "DisplayName:BlogDefinitionSetting.ListStyle": "ListStyle",
+    "BlogDefinitionSetting.Sequence": "Sequence",
+    "Description:BlogDefinitionSetting.Sequence": "Sequence",
+    "DisplayName:BlogDefinitionSetting.Sequence": "Sequence",
+    "BlogDefinitionSetting.MoreUrl": "MoreUrl",
+    "Description:BlogDefinitionSetting.MoreUrl": "MoreUrl",
+    "DisplayName:BlogDefinitionSetting.MoreUrl": "MoreUrl"
 
   }
 }

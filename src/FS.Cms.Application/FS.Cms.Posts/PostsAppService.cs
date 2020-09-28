@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
@@ -69,6 +70,7 @@ namespace FS.Cms.Posts
             foreach (var item in result)
             {
                 var blogCode = this.codesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
+                if (blogCode == null) throw new UserFriendlyException($"找不到 {item.BlogCodeId} code Id");
                 if (blogCode.No != "News")
                 {
                     item.BlogDisplayName = blogCode.DisplayName;

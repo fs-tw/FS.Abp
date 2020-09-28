@@ -28,19 +28,19 @@ namespace FS.Cms.Core
             OnCreated();
         }
 
-        public virtual string FileView
+        public virtual string ListStyle
         {
             get;
             set;
         }
 
-        public virtual string Article
+        public virtual int Sequence
         {
             get;
             set;
         }
 
-        public virtual string Tags
+        public virtual string MoreUrl
         {
             get;
             set;

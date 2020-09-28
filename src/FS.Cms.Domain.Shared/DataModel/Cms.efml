@@ -262,7 +262,7 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <property name="FileView" type="String" p1:ValidateRequired="true" p1:Guid="e98daa5b-b459-447e-b859-ef612d972f83">
+      <property name="ListStyle" type="String" p1:ValidateRequired="true" p1:Guid="5ff66f98-4a5e-41ed-8465-3e882379c92a">
         <p1:Attributes>
           <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
             <p1:AttributeConstructor />
@@ -327,7 +327,7 @@
         </p1:Attributes>
         <column name="" />
       </property>
-      <property name="Article" type="String" p1:ValidateRequired="true" p1:Guid="14b7880e-5e0c-4fea-853b-83120cdee72c">
+      <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="fd0c2171-2508-4149-9f9d-a3c42fb5a938">
         <p1:Attributes>
           <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
             <p1:AttributeConstructor />
@@ -392,7 +392,7 @@
         </p1:Attributes>
         <column name="" />
       </property>
-      <property name="Tags" type="String" p1:ValidateRequired="true" p1:Guid="7946df4f-9ae2-4763-a6aa-15d9a4908c67">
+      <property name="MoreUrl" type="String" p1:ValidateRequired="true" p1:Guid="58f755f5-7705-440c-ba15-9c76463ffe23">
         <p1:Attributes>
           <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
             <p1:AttributeConstructor />

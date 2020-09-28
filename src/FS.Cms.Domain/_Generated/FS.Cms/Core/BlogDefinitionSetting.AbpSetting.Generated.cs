@@ -28,9 +28,9 @@ namespace FS.Cms.Core
         public partial class BlogDefinitionSetting
         {
             private const string Prefix = "FS.Cms.Core.BlogDefinitionSetting";
-            public const string FileView = Prefix + ".FileView";
-            public const string Article = Prefix + ".Article";
-            public const string Tags = Prefix + ".Tags";
+            public const string ListStyle = Prefix + ".ListStyle";
+            public const string Sequence = Prefix + ".Sequence";
+            public const string MoreUrl = Prefix + ".MoreUrl";
         }
     }
     public partial class BlogDefinitionSettingSettingDefinitionProvider : SettingDefinitionProvider
@@ -38,9 +38,9 @@ namespace FS.Cms.Core
         public override void Define(ISettingDefinitionContext context)
         {
             context.Add(
-                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.FileView, @"", L("DisplayName:BlogDefinitionSetting.FileView"), L("Description:BlogDefinitionSetting.FileView"), false).WithProperty("Type","String"),
-                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.Article, @"", L("DisplayName:BlogDefinitionSetting.Article"), L("Description:BlogDefinitionSetting.Article"), false).WithProperty("Type","String"),
-                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.Tags, @"", L("DisplayName:BlogDefinitionSetting.Tags"), L("Description:BlogDefinitionSetting.Tags"), false).WithProperty("Type","String")
+                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.ListStyle, @"", L("DisplayName:BlogDefinitionSetting.ListStyle"), L("Description:BlogDefinitionSetting.ListStyle"), false).WithProperty("Type","String"),
+                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.Sequence, @"", L("DisplayName:BlogDefinitionSetting.Sequence"), L("Description:BlogDefinitionSetting.Sequence"), false).WithProperty("Type","Int32"),
+                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.MoreUrl, @"", L("DisplayName:BlogDefinitionSetting.MoreUrl"), L("Description:BlogDefinitionSetting.MoreUrl"), false).WithProperty("Type","String")
                         );
         }
         private static LocalizableString L(string name)
@@ -59,9 +59,9 @@ namespace FS.Cms.Core
 
         protected override async Task CreateAsync(BlogDefinitionSetting options)
         {
-            options.FileView = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.FileView);
-            options.Article = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.Article);
-            options.Tags = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.Tags);
+            options.ListStyle = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.ListStyle);
+            options.Sequence = await _settingProvider.TryGetAsync(CmsSettingNames.BlogDefinitionSetting.Sequence, options.Sequence);
+            options.MoreUrl = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.MoreUrl);
         }
     }
 }
