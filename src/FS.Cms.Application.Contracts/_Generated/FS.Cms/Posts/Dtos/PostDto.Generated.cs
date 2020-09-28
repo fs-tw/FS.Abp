@@ -41,17 +41,11 @@ namespace FS.Cms.Posts.Dtos
 
         public List<string> AttachmentFileUrls { get; set; }
 
-        public class PrimaryKey
-        {
-            public System.Guid Id { get; set; }
-    
-        }
-
     }
     public partial class PostWithDetailsDto : PostDto
     {
     }
-    public partial class PostCreateInput
+    public partial class PostCreateDto
     {
         public System.Guid BlogCodeId { get; set; }
 
@@ -78,7 +72,7 @@ namespace FS.Cms.Posts.Dtos
         public List<string> AttachmentFileUrls { get; set; }
 
     }
-    public partial class PostUpdateInput
+    public partial class PostUpdateDto
     {
         public System.Guid BlogCodeId { get; set; }
 
@@ -105,7 +99,7 @@ namespace FS.Cms.Posts.Dtos
         public List<string> AttachmentFileUrls { get; set; }
 
     }
-    public partial class PostGetListInput : SearchResultRequestDto
+    public partial class PostGetListDto : SearchResultRequestDto
     {
     }
 }

@@ -14,15 +14,15 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace FS.Cms.Posts
+namespace FS.Cms.Documents
 {
-    public partial class PostCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Posts.Post, FS.Cms.Posts.Dtos.PostWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostGetListDto, FS.Cms.Posts.Dtos.PostCreateDto, FS.Cms.Posts.Dtos.PostUpdateDto>,
-        IPostCrudAppService
+    public partial class DocumentCrudAppService : 
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentWithDetailsDto, Guid, FS.Cms.Documents.Dtos.DocumentGetListDto, FS.Cms.Documents.Dtos.DocumentCreateDto, FS.Cms.Documents.Dtos.DocumentUpdateDto>,
+        IDocumentCrudAppService
     {
-        private readonly IPostRepository _repository;
+        private readonly IDocumentTreeRepository _repository;
 
-        public PostCrudAppService(IPostRepository repository) : base(repository)
+        public DocumentCrudAppService(IDocumentTreeRepository repository) : base(repository)
         {
             this._repository = repository;
         }

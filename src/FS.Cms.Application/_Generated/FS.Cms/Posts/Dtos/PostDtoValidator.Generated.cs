@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostCreateInputValidator : AbstractValidator<PostCreateInput>
+    public partial class PostCreateDtoValidator : AbstractValidator<PostCreateDto>
     {
-        public PostCreateInputValidator()
+        public PostCreateDtoValidator()
         {
             RuleFor(p => p.BlogCodeId)
                 .NotNull()
@@ -51,9 +51,9 @@ namespace FS.Cms.Posts.Dtos
         }
         partial void CustomizeConfiguration();
     }
-    public partial class PostUpdateInputValidator : AbstractValidator<PostUpdateInput>
+    public partial class PostUpdateDtoValidator : AbstractValidator<PostUpdateDto>
     {
-        public PostUpdateInputValidator()
+        public PostUpdateDtoValidator()
         {
             RuleFor(p => p.BlogCodeId)
                 .NotNull()

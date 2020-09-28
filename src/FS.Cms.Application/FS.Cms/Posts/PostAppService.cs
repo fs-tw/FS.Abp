@@ -22,7 +22,7 @@ namespace FS.Cms.Posts
             return base.GetAsync(id);
         }
 
-        public override Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListInput input)
+        public override Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
         {
             return base.GetListAsync(input);
         }

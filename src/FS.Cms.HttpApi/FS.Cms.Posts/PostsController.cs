@@ -41,7 +41,7 @@ namespace FS.Cms.Posts
         /// <param name="input">新增文章，設定發佈日期</param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateInput input)
+        public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateDto input)
         {
             return await this.postsAppService.CreateAsync(input);
         }
@@ -53,7 +53,7 @@ namespace FS.Cms.Posts
         /// <param name="input"></param>
         /// <returns></returns>
         [HttpPut]      
-        public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateInput input)
+        public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateDto input)
         {
             return await this.postsAppService.UpdateAsync(id, input);
         }

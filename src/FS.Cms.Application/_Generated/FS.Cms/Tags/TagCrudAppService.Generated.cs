@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Tags
 {
     public partial class TagCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Tags.Tag, FS.Cms.Tags.Dtos.TagWithDetailsDto, Guid, FS.Cms.Tags.Dtos.TagGetListInput, FS.Cms.Tags.Dtos.TagCreateInput, FS.Cms.Tags.Dtos.TagUpdateInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Tags.Tag, FS.Cms.Tags.Dtos.TagWithDetailsDto, Guid, FS.Cms.Tags.Dtos.TagGetListDto, FS.Cms.Tags.Dtos.TagCreateDto, FS.Cms.Tags.Dtos.TagUpdateDto>,
         ITagCrudAppService
     {
         private readonly ITagRepository _repository;
@@ -26,8 +26,5 @@ namespace FS.Cms.Tags
         {
             this._repository = repository;
         }
-
-
-
     }
 }

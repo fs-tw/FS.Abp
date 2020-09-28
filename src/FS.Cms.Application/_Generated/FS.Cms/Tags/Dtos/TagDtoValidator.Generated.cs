@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.Cms.Tags.Dtos
 {
-    public partial class TagCreateInputValidator : AbstractValidator<TagCreateInput>
+    public partial class TagCreateDtoValidator : AbstractValidator<TagCreateDto>
     {
-        public TagCreateInputValidator()
+        public TagCreateDtoValidator()
         {
             RuleFor(p => p.Name)
                 .NotNull()
@@ -29,9 +29,9 @@ namespace FS.Cms.Tags.Dtos
         }
         partial void CustomizeConfiguration();
     }
-    public partial class TagUpdateInputValidator : AbstractValidator<TagUpdateInput>
+    public partial class TagUpdateDtoValidator : AbstractValidator<TagUpdateDto>
     {
-        public TagUpdateInputValidator()
+        public TagUpdateDtoValidator()
         {
             RuleFor(p => p.Name)
                 .NotNull()

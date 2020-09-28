@@ -22,11 +22,9 @@ namespace FS.Cms.Posts.Dtos
         
             CreateMap<FS.Cms.Posts.PostTagMap, PostTagMapWithDetailsDto>();
         
-            CreateMap<PostTagMapCreateInput, FS.Cms.Posts.PostTagMap>();
+            CreateMap<PostTagMapCreateDto, FS.Cms.Posts.PostTagMap>();
         
-            CreateMap<PostTagMapUpdateInput, FS.Cms.Posts.PostTagMap>();
-        
-            CreateMap<PostTagMapUpdateInput, PostTagMapDto.PrimaryKey>();
+            CreateMap<PostTagMapUpdateDto, FS.Cms.Posts.PostTagMap>();
         
             CustomizeConfiguration();
         }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityDeveloper Version="6.8.1019.0">
-  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore30" DetectManyToManyAssociations="False" DetectTPTInheritance="False" EntityFrameworkCoreVersion="Version2" DetectFunctionBasedColumnDefault="True">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore20" DetectManyToManyAssociations="False" DetectTPTInheritance="False" EntityFrameworkCoreVersion="Version2" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="" Provider="" />
     <Generation>
       <GeneratedFiles>
@@ -74,13 +74,13 @@
         <File Name="IPostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="ITagCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="IDocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
-        <File Name="IDocumentTreeAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="IDocumentCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IPostAttachmentFilesCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="TagCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="DocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
-        <File Name="DocumentTreeAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="DocumentCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="PostAttachmentFilesCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
       </GeneratedFiles>
     </Generation>

@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.Cms.Documents.Dtos
 {
-    public partial class DocumentDefinitionCreateInputValidator : AbstractValidator<DocumentDefinitionCreateInput>
+    public partial class DocumentDefinitionCreateDtoValidator : AbstractValidator<DocumentDefinitionCreateDto>
     {
-        public DocumentDefinitionCreateInputValidator()
+        public DocumentDefinitionCreateDtoValidator()
         {
             RuleFor(p => p.Images)
                 ;
@@ -28,9 +28,9 @@ namespace FS.Cms.Documents.Dtos
         }
         partial void CustomizeConfiguration();
     }
-    public partial class DocumentDefinitionUpdateInputValidator : AbstractValidator<DocumentDefinitionUpdateInput>
+    public partial class DocumentDefinitionUpdateDtoValidator : AbstractValidator<DocumentDefinitionUpdateDto>
     {
-        public DocumentDefinitionUpdateInputValidator()
+        public DocumentDefinitionUpdateDtoValidator()
         {
             RuleFor(p => p.Images)
                 ;

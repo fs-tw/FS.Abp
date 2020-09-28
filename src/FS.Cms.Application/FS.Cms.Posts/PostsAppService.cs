@@ -108,7 +108,7 @@ namespace FS.Cms.Posts
             return output;
         }
 
-        public async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateInput input)
+        public async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateDto input)
         {
             Guid postId = guidGenerator.Create();
             if (input.DisplayMode == DisplayMode.內文)
@@ -128,7 +128,7 @@ namespace FS.Cms.Posts
                 }
             }
 
-            var entityInput = ObjectMapper.Map<PostCreateInput, Post>(input);
+            var entityInput = ObjectMapper.Map<PostCreateDto, Post>(input);
             EntityHelper.TrySetId(entityInput, () => postId, true);
             await this.postsRepository.InsertAsync(entityInput).ConfigureAwait(false);
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(entityInput);
@@ -140,7 +140,7 @@ namespace FS.Cms.Posts
 
         //}
 
-        public async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(Guid id, PostUpdateInput input)
+        public async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(Guid id, PostUpdateDto input)
         {
             var post = this.postsRepository.Where(x => x.Id == id).First();
             ObjectMapper.Map(input, post);

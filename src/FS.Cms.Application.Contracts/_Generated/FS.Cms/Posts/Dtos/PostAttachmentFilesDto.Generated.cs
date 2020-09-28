@@ -21,31 +21,25 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid PostId { get; set; }
 
-        public class PrimaryKey
-        {
-            public System.Guid Id { get; set; }
-    
-        }
-
     }
     public partial class PostAttachmentFilesWithDetailsDto : PostAttachmentFilesDto
     {
     }
-    public partial class PostAttachmentFilesCreateInput
+    public partial class PostAttachmentFilesCreateDto
     {
         public string Content { get; set; }
 
         public System.Guid PostId { get; set; }
 
     }
-    public partial class PostAttachmentFilesUpdateInput
+    public partial class PostAttachmentFilesUpdateDto
     {
         public string Content { get; set; }
 
         public System.Guid PostId { get; set; }
 
     }
-    public partial class PostAttachmentFilesGetListInput : SearchResultRequestDto
+    public partial class PostAttachmentFilesGetListDto : SearchResultRequestDto
     {
     }
 }

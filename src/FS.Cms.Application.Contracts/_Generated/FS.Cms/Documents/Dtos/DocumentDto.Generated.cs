@@ -31,22 +31,6 @@ namespace FS.Cms.Documents.Dtos
 
         public int Level { get; set; }
 
-        public class PrimaryKey
-        {
-            public System.Guid Id { get; set; }
-    
-        }
-
-        public class DocumentDefinitionForeignKey
-        {
-            public string DocumentDefinitionId { get; set; }
-    
-        }
-        public class ParentForeignKey
-        {
-            public System.Guid? ParentId { get; set; }
-    
-        }
     }
     public partial class DocumentWithDetailsDto : DocumentDto
     {
@@ -57,7 +41,7 @@ namespace FS.Cms.Documents.Dtos
         public DocumentDto Parent { get; set; }
 
     }
-    public partial class DocumentCreateInput
+    public partial class DocumentCreateDto
     {
         public string Content { get; set; }
 
@@ -74,7 +58,7 @@ namespace FS.Cms.Documents.Dtos
         public int Level { get; set; }
 
     }
-    public partial class DocumentUpdateInput
+    public partial class DocumentUpdateDto
     {
         public string Content { get; set; }
 
@@ -91,7 +75,7 @@ namespace FS.Cms.Documents.Dtos
         public int Level { get; set; }
 
     }
-    public partial class DocumentGetListInput : SearchResultRequestDto
+    public partial class DocumentGetListDto : SearchResultRequestDto
     {
     }
 }

@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostAttachmentFilesCreateInputValidator : AbstractValidator<PostAttachmentFilesCreateInput>
+    public partial class PostAttachmentFilesCreateDtoValidator : AbstractValidator<PostAttachmentFilesCreateDto>
     {
-        public PostAttachmentFilesCreateInputValidator()
+        public PostAttachmentFilesCreateDtoValidator()
         {
             RuleFor(p => p.Content)
                 .NotNull()
@@ -26,9 +26,9 @@ namespace FS.Cms.Posts.Dtos
         }
         partial void CustomizeConfiguration();
     }
-    public partial class PostAttachmentFilesUpdateInputValidator : AbstractValidator<PostAttachmentFilesUpdateInput>
+    public partial class PostAttachmentFilesUpdateDtoValidator : AbstractValidator<PostAttachmentFilesUpdateDto>
     {
-        public PostAttachmentFilesUpdateInputValidator()
+        public PostAttachmentFilesUpdateDtoValidator()
         {
             RuleFor(p => p.Content)
                 .NotNull()

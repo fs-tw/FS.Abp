@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Tags
 {
     public partial interface ITagCrudAppService : 
-        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Tags.Dtos.TagWithDetailsDto, Guid, FS.Cms.Tags.Dtos.TagGetListInput, FS.Cms.Tags.Dtos.TagCreateInput, FS.Cms.Tags.Dtos.TagUpdateInput>
+        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Tags.Dtos.TagWithDetailsDto, Guid, FS.Cms.Tags.Dtos.TagGetListDto, FS.Cms.Tags.Dtos.TagCreateDto, FS.Cms.Tags.Dtos.TagUpdateDto>
     {
 
     }

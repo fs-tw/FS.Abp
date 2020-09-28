@@ -21,22 +21,6 @@ namespace FS.Cms.Posts.Dtos
 
         public System.Guid TagId { get; set; }
 
-        public class PrimaryKey
-        {
-            public System.Guid Id { get; set; }
-    
-        }
-
-        public class PostForeignKey
-        {
-            public System.Guid PostId { get; set; }
-    
-        }
-        public class TagForeignKey
-        {
-            public System.Guid TagId { get; set; }
-    
-        }
     }
     public partial class PostTagMapWithDetailsDto : PostTagMapDto
     {
@@ -45,21 +29,21 @@ namespace FS.Cms.Posts.Dtos
         public FS.Cms.Tags.Dtos.TagDto Tag { get; set; }
 
     }
-    public partial class PostTagMapCreateInput
+    public partial class PostTagMapCreateDto
     {
         public System.Guid PostId { get; set; }
 
         public System.Guid TagId { get; set; }
 
     }
-    public partial class PostTagMapUpdateInput
+    public partial class PostTagMapUpdateDto
     {
         public System.Guid PostId { get; set; }
 
         public System.Guid TagId { get; set; }
 
     }
-    public partial class PostTagMapGetListInput : SearchResultRequestDto
+    public partial class PostTagMapGetListDto : SearchResultRequestDto
     {
     }
 }

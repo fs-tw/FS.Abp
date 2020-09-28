@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostTagMapCreateInputValidator : AbstractValidator<PostTagMapCreateInput>
+    public partial class PostTagMapCreateDtoValidator : AbstractValidator<PostTagMapCreateDto>
     {
-        public PostTagMapCreateInputValidator()
+        public PostTagMapCreateDtoValidator()
         {
             RuleFor(p => p.PostId)
                 .NotNull()
@@ -26,9 +26,9 @@ namespace FS.Cms.Posts.Dtos
         }
         partial void CustomizeConfiguration();
     }
-    public partial class PostTagMapUpdateInputValidator : AbstractValidator<PostTagMapUpdateInput>
+    public partial class PostTagMapUpdateDtoValidator : AbstractValidator<PostTagMapUpdateDto>
     {
-        public PostTagMapUpdateInputValidator()
+        public PostTagMapUpdateDtoValidator()
         {
             RuleFor(p => p.PostId)
                 .NotNull()

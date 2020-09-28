@@ -22,11 +22,9 @@ namespace FS.Cms.Posts.Dtos
         
             CreateMap<FS.Cms.Posts.Post, PostWithDetailsDto>();
         
-            CreateMap<PostCreateInput, FS.Cms.Posts.Post>();
+            CreateMap<PostCreateDto, FS.Cms.Posts.Post>();
         
-            CreateMap<PostUpdateInput, FS.Cms.Posts.Post>();
-        
-            CreateMap<PostUpdateInput, PostDto.PrimaryKey>();
+            CreateMap<PostUpdateDto, FS.Cms.Posts.Post>();
         
             CustomizeConfiguration();
         }

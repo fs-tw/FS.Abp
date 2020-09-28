@@ -8,8 +8,7 @@ using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Posts
 {
-    public partial interface IPostCrudAppService : 
-        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostGetListInput, FS.Cms.Posts.Dtos.PostCreateInput, FS.Cms.Posts.Dtos.PostUpdateInput>
+    public partial interface IPostCrudAppService 
     {
        // Task<PagedResultDto<PostWithDetailsDto>> GetPostByBlogDefinition(PostsWithBlogCodeDto input);
         Task Save(CmsImageModel input, Guid postId);

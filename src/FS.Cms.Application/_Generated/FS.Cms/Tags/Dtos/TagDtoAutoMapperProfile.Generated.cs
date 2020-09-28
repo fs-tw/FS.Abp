@@ -22,11 +22,9 @@ namespace FS.Cms.Tags.Dtos
         
             CreateMap<FS.Cms.Tags.Tag, TagWithDetailsDto>();
         
-            CreateMap<TagCreateInput, FS.Cms.Tags.Tag>();
+            CreateMap<TagCreateDto, FS.Cms.Tags.Tag>();
         
-            CreateMap<TagUpdateInput, FS.Cms.Tags.Tag>();
-        
-            CreateMap<TagUpdateInput, TagDto.PrimaryKey>();
+            CreateMap<TagUpdateDto, FS.Cms.Tags.Tag>();
         
             CustomizeConfiguration();
         }
