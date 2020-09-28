@@ -4,12 +4,15 @@ using System.Threading.Tasks;
 
 namespace FS.Cms.Definition
 {
-    public interface IDefinitionAppService
+    public interface IDefinitionAppService : IBlogAppService
     {
-        Task<List<string>> BlogAsync();
-
-        Task BlogCreateAsync(string displayName);
-
+    }
+    public interface IBlogAppService
+    {
+        Task<List<BlogDto>> BlogGetListAsync();
+        Task<BlogDto> BlogGetAsync(Guid id);
+        Task<BlogDto> BlogCreateAsync(BlogCreateInput input);
+        Task<BlogDto> BlogUpdateAsync(Guid id, BlogUpdateInput input);
         Task BlogDeleteAsync(Guid id);
     }
 }

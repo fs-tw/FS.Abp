@@ -1,44 +1,45 @@
-﻿using FS.Abp.CodingManagement.Coding;
-using FS.Cms;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Volo.Abp;
-using Volo.Abp.AspNetCore.Mvc.MultiTenancy;
 
 namespace FS.Cms.Definition
 {
-    public partial class DefinitionController : CmsController
+    public partial class DefinitionController: IBlogAppService
     {
         [HttpGet]
         [Route("blog")]
-        public async Task<List<string>> BlogAsync(string tenantName)
+        public async Task<List<BlogDto>> BlogGetListAsync()
         {
-            var tenant=await _abpTenantAppService.FindTenantByNameAsync(tenantName);
-            using (this.CurrentTenant.Change(tenant.TenantId))
-            {
-                return await this._appService.BlogAsync();
-            }       
+            return await this._appService.BlogGetListAsync();
+        }
+
+        [HttpGet]
+        [Route("blog/{id}")]
+        public async Task<BlogDto> BlogGetAsync(Guid id)
+        {
+            return await this._appService.BlogGetAsync(id);
+        }
+
+        [HttpPost]
+        [Route("blog")]
+        public Task<BlogDto> BlogCreateAsync(BlogCreateInput input)
+        {
+            return this._appService.BlogCreateAsync(input);
         }
 
         [HttpPut]
-        [Route("blog")]
-        public async Task BlogCreateAsync(string tenantName,string displayName)
+        [Route("blog/{id}")]
+        public Task<BlogDto> BlogUpdateAsync(Guid id, BlogUpdateInput input)
         {
-            var tenant = await _abpTenantAppService.FindTenantByNameAsync(tenantName);
-            using (this.CurrentTenant.Change(tenant.TenantId))
-            {
-                 await this._appService.BlogCreateAsync(displayName);
-            }
+            return this._appService.BlogUpdateAsync(id, input);
         }
+
         [HttpDelete]
         [Route("blog/{id}")]
-        public virtual Task DeleteAsync(Guid id)
+        public async Task BlogDeleteAsync(Guid id)
         {
-            return this._appService.BlogDeleteAsync(id);
+            await this._appService.BlogDeleteAsync(id);
         }
 
     }
