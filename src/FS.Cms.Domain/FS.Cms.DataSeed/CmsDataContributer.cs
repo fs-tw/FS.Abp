@@ -8,13 +8,14 @@ using Volo.Abp.DependencyInjection;
 
 namespace FS.Cms.DataSeed
 {
-    public class CmsDataContributer : IDataSeedContributor, ITransientDependency
+    public class CmsDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
         private readonly ICmsDefinitionSeeder cmsDefinitionSeeder;
 
-        public CmsDataContributer(
+        public CmsDataSeedContributor(
             ICmsDefinitionSeeder cmsDefinitionSeeder
-            ) {
+            ) 
+        {
             this.cmsDefinitionSeeder = cmsDefinitionSeeder;
         }
 

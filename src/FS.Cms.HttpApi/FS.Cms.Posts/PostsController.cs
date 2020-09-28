@@ -34,17 +34,5 @@ namespace FS.Cms.Posts
             this._env = env;
             this._postsAppService = postsAppService;
         }
-
-
-      
-
-
-        [HttpGet]
-        [Route("seed")]
-        public async Task seed()
-        {
-            await dataSeeder.SeedAsync(CurrentTenant.Id).ConfigureAwait(false);
-        }
-
     }
 }
