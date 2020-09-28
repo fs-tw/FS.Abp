@@ -12,8 +12,6 @@ namespace FS.Cms.Definition
     {
         public async Task<List<BlogDto>> BlogGetListAsync()
         {
-            //CmsBlogDefinition
-            var tenantId = CurrentTenant.Id;
             var definition = await _codesService.GetDefinitionAsync("CmsBlogDefinition");
             var blogs = definition.CodeList;
 
@@ -37,7 +35,7 @@ namespace FS.Cms.Definition
         public async Task<BlogDto> BlogGetAsync(Guid id)
         {
             var entity= await this._codesTreeRepository.GetAsync(id);
-
+            
             var sequence = 0;
             var listStyle = "";
             var url = "";
@@ -80,7 +78,8 @@ namespace FS.Cms.Definition
                 ParentId = definition.Id,
                 DefinitionId = definition.Id,
                 DisplayName = input.DisplayName,
-                No = input.DisplayName
+                No = input.DisplayName,
+                TenantId = CurrentTenant.Id
             };            
             await _codesTreeRepository.InsertAsync(codes, true);
             await this.settingManager.SetAsync(BlogDefinitionSetting.ListStyle, input.ListStyle, "Codes", codes.Id.ToString()).ConfigureAwait(false);

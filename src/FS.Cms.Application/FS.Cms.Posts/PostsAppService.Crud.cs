@@ -71,7 +71,7 @@ namespace FS.Cms.Posts
         }
 
         public override async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateDto input)
-        {
+        {            
             Guid postId = guidGenerator.Create();
             if (input.DisplayMode == DisplayMode.內文)
             {
@@ -91,7 +91,9 @@ namespace FS.Cms.Posts
             }
 
             var entityInput = ObjectMapper.Map<PostCreateDto, Post>(input);
+            
             EntityHelper.TrySetId(entityInput, () => postId, true);
+            entityInput.TenantId = CurrentTenant.Id;
             await this.postsRepository.InsertAsync(entityInput).ConfigureAwait(false);
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(entityInput);
         }
@@ -119,7 +121,7 @@ namespace FS.Cms.Posts
                     post.Content = post.Content.Replace(replaceData, imageId);
                 }
             }
-
+            post.TenantId = CurrentTenant.Id;
             await this.postsRepository.UpdateAsync(post).ConfigureAwait(false);
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
         }
