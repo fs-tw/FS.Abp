@@ -13,20 +13,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Core\FileType.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Posts\ContentType.Generated.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Files\Imports\Codes\Definition.json" />
-    <None Remove="_Generated\Localization\Cms\en.json" />
-    <None Remove="_Generated\Localization\Cms\zh-Hant.json" />
+    <None Remove="_Generated\Localization\Blogs\PostsPermissions\en.json" />
+    <None Remove="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json" />
     <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\en.json" />
     <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\zh-Hant.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Files\Imports\Codes\Definition.json" />
+    <EmbeddedResource Include="_Generated\Localization\Blogs\PostsPermissions\en.json">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PostsPermissions</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PostsPermissions</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_Generated\Localization\Core\BlogDefinitionSetting\en.json">
       <AutoGen>True</AutoGen>
       <DependentUpon>BlogDefinitionSetting</DependentUpon>
@@ -78,12 +81,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Core\" />
-    <Folder Include="_Generated\FS.Cms\Posts\" />
-    <Folder Include="_Generated\Localization\Cms\" />
   </ItemGroup>
 
   <ItemGroup>

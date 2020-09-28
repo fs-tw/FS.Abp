@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Data;
 
 namespace FS.Cms.Posts
 {
@@ -36,6 +37,14 @@ namespace FS.Cms.Posts
 
 
       
+
+
+        [HttpGet]
+        [Route("seed")]
+        public async Task seed()
+        {
+            await dataSeeder.SeedAsync(CurrentTenant.Id).ConfigureAwait(false);
+        }
 
     }
 }
