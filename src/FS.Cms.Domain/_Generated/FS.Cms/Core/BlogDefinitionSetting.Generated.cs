@@ -40,7 +40,7 @@ namespace FS.Cms.Core
             set;
         }
 
-        public virtual string MoreUrl
+        public virtual string Url
         {
             get;
             set;

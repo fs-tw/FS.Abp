@@ -11,8 +11,9 @@ namespace FS.Cms.Definition
     {
         public async Task<List<BlogDto>> BlogGetListAsync()
         {
-            var definition = await _codesService.GetDefinitionAsync("CmsDefinition");
-            var blogs = definition.CodeList.Where(c => c.Parent.No == "News");
+            //CmsBlogDefinition
+            var definition = await _codesService.GetDefinitionAsync("CmsBlogDefinition");
+            var blogs = definition.CodeList.Where(c => c.Parent.No == "Blog");
             return blogs.Select(x => new BlogDto() { CodesId = x.Id, DisplayName = x.DisplayName }).ToList();
         }
 
@@ -34,7 +35,7 @@ namespace FS.Cms.Definition
 
         public async Task<BlogDto> BlogCreateAsync(BlogCreateInput input)
         {
-            var definition = await _codesService.GetDefinitionAsync("CmsDefinition");
+            var definition = await _codesService.GetDefinitionAsync("CmsBlogDefinition");
             Codes codes = new Codes()
             {
                 ParentId = definition.Id,

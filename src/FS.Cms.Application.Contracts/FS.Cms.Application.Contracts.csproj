@@ -9,19 +9,8 @@
 
   <ItemGroup>
     <Compile Remove="DataModel\**" />
-    <Compile Remove="_Generated\FS.Cms\Document\**" />
     <EmbeddedResource Remove="DataModel\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
     <None Remove="DataModel\**" />
-    <None Remove="_Generated\FS.Cms\Document\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Documents\IDocumentTreeAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostTagDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Posts\IPostTagCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +23,14 @@
   <ItemGroup>
     <Compile Update="FS.Cms.Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs">
       <AutoGen>True</AutoGen>

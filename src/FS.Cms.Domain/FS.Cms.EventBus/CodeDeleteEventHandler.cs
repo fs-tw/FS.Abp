@@ -23,7 +23,7 @@ namespace FS.Cms.EventBus
         }
         public async Task HandleEventAsync(EntityDeletedEventData<Codes> eventData)
         {
-            if (!eventData.Entity.Parent.No.Equals("News")) return;
+            if (!eventData.Entity.Parent.No.Equals("Blog")) return;
             var posts = this.postRepository.Where(x => x.BlogCodeId == eventData.Entity.Id).ToList();
 
             foreach (var post in posts) 

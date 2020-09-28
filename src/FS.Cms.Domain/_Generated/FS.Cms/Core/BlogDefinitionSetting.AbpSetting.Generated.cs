@@ -30,7 +30,7 @@ namespace FS.Cms.Core
             private const string Prefix = "FS.Cms.Core.BlogDefinitionSetting";
             public const string ListStyle = Prefix + ".ListStyle";
             public const string Sequence = Prefix + ".Sequence";
-            public const string MoreUrl = Prefix + ".MoreUrl";
+            public const string Url = Prefix + ".Url";
         }
     }
     public partial class BlogDefinitionSettingSettingDefinitionProvider : SettingDefinitionProvider
@@ -40,7 +40,7 @@ namespace FS.Cms.Core
             context.Add(
                         new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.ListStyle, @"", L("DisplayName:BlogDefinitionSetting.ListStyle"), L("Description:BlogDefinitionSetting.ListStyle"), false).WithProperty("Type","String"),
                         new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.Sequence, @"", L("DisplayName:BlogDefinitionSetting.Sequence"), L("Description:BlogDefinitionSetting.Sequence"), false).WithProperty("Type","Int32"),
-                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.MoreUrl, @"", L("DisplayName:BlogDefinitionSetting.MoreUrl"), L("Description:BlogDefinitionSetting.MoreUrl"), false).WithProperty("Type","String")
+                        new SettingDefinition(CmsSettingNames.BlogDefinitionSetting.Url, @"", L("DisplayName:BlogDefinitionSetting.Url"), L("Description:BlogDefinitionSetting.Url"), false).WithProperty("Type","String")
                         );
         }
         private static LocalizableString L(string name)
@@ -61,7 +61,7 @@ namespace FS.Cms.Core
         {
             options.ListStyle = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.ListStyle);
             options.Sequence = await _settingProvider.TryGetAsync(CmsSettingNames.BlogDefinitionSetting.Sequence, options.Sequence);
-            options.MoreUrl = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.MoreUrl);
+            options.Url = await _settingProvider.GetOrNullAsync(CmsSettingNames.BlogDefinitionSetting.Url);
         }
     }
 }

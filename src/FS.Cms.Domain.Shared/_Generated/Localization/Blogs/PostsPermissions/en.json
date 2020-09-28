@@ -1,0 +1,18 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "PostsPermissions.租戶管理": "租戶管理",
+    "Description:PostsPermissions.租戶管理": "租戶管理",
+    "DisplayName:PostsPermissions.租戶管理": "租戶管理",
+    "PostsPermissions.Create": "Create",
+    "Description:PostsPermissions.Create": "Create",
+    "DisplayName:PostsPermissions.Create": "Create",
+    "PostsPermissions.Edit": "Edit",
+    "Description:PostsPermissions.Edit": "Edit",
+    "DisplayName:PostsPermissions.Edit": "Edit",
+    "PostsPermissions.Delete": "Delete",
+    "Description:PostsPermissions.Delete": "Delete",
+    "DisplayName:PostsPermissions.Delete": "Delete"
+
+  }
+}

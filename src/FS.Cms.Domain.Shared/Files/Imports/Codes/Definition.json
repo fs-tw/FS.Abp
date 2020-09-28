@@ -1,23 +1,11 @@
 ﻿[
   {
-    "No": "CmsDefinition",
-    "DisplayName": "CmsDefinition",
+    "No": "CmsBlogDefinition",
+    "DisplayName": "CmsBlogDefinition",
     "Description": "",
     "Children": [
       {
-        "No": "FileView",
-        "DisplayName": "FileView",
-        "Description": "",
-        "Children": []
-      },
-      {
-        "No": "Article",
-        "DisplayName": "Article",
-        "Description": "",
-        "Children": []
-      },
-      {
-        "No": "News",
+        "No": "Blog",
         "DisplayName": "News",
         "Description": "不分類",
         "Children": [

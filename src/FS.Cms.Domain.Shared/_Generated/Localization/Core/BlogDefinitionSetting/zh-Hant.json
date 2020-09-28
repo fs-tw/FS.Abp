@@ -7,9 +7,9 @@
     "BlogDefinitionSetting.Sequence": "Sequence",
     "Description:BlogDefinitionSetting.Sequence": "Sequence",
     "DisplayName:BlogDefinitionSetting.Sequence": "Sequence",
-    "BlogDefinitionSetting.MoreUrl": "MoreUrl",
-    "Description:BlogDefinitionSetting.MoreUrl": "MoreUrl",
-    "DisplayName:BlogDefinitionSetting.MoreUrl": "MoreUrl"
+    "BlogDefinitionSetting.Url": "Url",
+    "Description:BlogDefinitionSetting.Url": "Url",
+    "DisplayName:BlogDefinitionSetting.Url": "Url"
 
   }
 }

@@ -71,7 +71,7 @@ namespace FS.Cms.Posts
             {
                 var blogCode = this.codesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
                 if (blogCode == null) throw new UserFriendlyException($"找不到 {item.BlogCodeId} code Id");
-                if (blogCode.No != "News")
+                if (blogCode.No != "Blog")
                 {
                     item.BlogDisplayName = blogCode.DisplayName;
                 }

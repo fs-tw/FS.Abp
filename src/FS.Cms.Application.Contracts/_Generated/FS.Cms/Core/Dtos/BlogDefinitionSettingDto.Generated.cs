@@ -21,7 +21,7 @@ namespace FS.Cms.Core.Dtos
 
         public int Sequence { get; set; }
 
-        public string MoreUrl { get; set; }
+        public string Url { get; set; }
 
     }
     public partial class BlogDefinitionSettingWithDetailsDto : BlogDefinitionSettingDto

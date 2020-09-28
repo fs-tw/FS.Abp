@@ -14,7 +14,8 @@ namespace Volo.Abp.Localization
         public static LocalizationResource AddCmsDomainLocalizations(this LocalizationResource resource)
         {
             return resource
-                .AddVirtualJson(@"/_Generated/Localization/Core/BlogDefinitionSetting");
+                .AddVirtualJson(@"/_Generated/Localization/Core/BlogDefinitionSetting")
+                .AddVirtualJson(@"/_Generated/Localization/Blogs/PostsPermissions");
          }
     }
 }
