@@ -33,7 +33,7 @@ namespace FS.Cms.Definitions
             .WhereIf(!permission.Succeeded,x=>x.Enable == true)
             .ToList();
 
-            if (definition.Enable != false) 
+            if (permission.Succeeded  || definition.Enable != false) 
             {
               var definitionBlogData =  new BlogDto() { CodesId = definition.Id, DisplayName = "不分類", Sequence = 0, Url = "", ListStyle = "", Enable = definition.Enable };
               result.Add(definitionBlogData);

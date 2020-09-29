@@ -8,9 +8,10 @@ namespace FS.Cms.Definitions
     {
         public Guid CodesId { get; set; }
         public string DisplayName { get; set; }
-        public int Sequence { get; set; }
+     
 
         public Boolean Enable { get; set; }
+        public int Sequence { get; set; }
         public string Url { get; set; }
         public string ListStyle { get; set; }
     }
