@@ -1,6 +1,7 @@
 ﻿using FS.Abp.CodingManagement.Coding;
 using FS.Cms.Core;
 using FS.Cms.Posts;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace FS.Cms.Definitions
     {
         private readonly ICodesService _codesService;
         private readonly IPostRepository postsRepository;
+        private readonly IAuthorizationService authorizationService;
         private readonly ICurrentCodes currentCodes;
         private readonly ISettingManager settingManager;
         private readonly IBlogDefinitionSettingFactory blogDefinitionSettingFactory;
@@ -29,6 +31,7 @@ namespace FS.Cms.Definitions
         public DefinitionsAppService(
             ICodesService codesService,
             IPostRepository postsRepository,
+            IAuthorizationService authorizationService,
             ICurrentCodes currentCodes,
             ISettingManager settingManager,
             IBlogDefinitionSettingFactory blogDefinitionSettingFactory,
@@ -37,6 +40,7 @@ namespace FS.Cms.Definitions
         {
             _codesService = codesService;
             this.postsRepository = postsRepository;
+            this.authorizationService = authorizationService;
             this.currentCodes = currentCodes;
             this.settingManager = settingManager;
             this.blogDefinitionSettingFactory = blogDefinitionSettingFactory;

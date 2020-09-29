@@ -23,7 +23,8 @@ namespace FS.Cms.Posts
                             .WhereIf(!permission.Succeeded, x => blogCodes.Any(b => x.BlogCodeId == b))
                             .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
                             .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
-                            .OrderByDescending(x => x.LastModificationTime);
+                            .OrderBy(x => x.Sequence);
+                            //.OrderByDescending(x => x.LastModificationTime);
 
 
             var entities = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);

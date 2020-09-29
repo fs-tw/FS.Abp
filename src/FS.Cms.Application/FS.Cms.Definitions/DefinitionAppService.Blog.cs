@@ -1,4 +1,5 @@
 ﻿using FS.Abp.CodingManagement.Coding;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace FS.Cms.Definitions
     {
         public async Task<List<BlogDto>> BlogGetListAsync()
         {
+            var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
             var definition = await _codesService.GetDefinitionAsync("CmsBlogDefinition");
             var blogs = definition.CodeList;
 
@@ -26,10 +28,18 @@ namespace FS.Cms.Definitions
                     listStyle = (this.blogDefinitionSettingFactory.Value.ListStyle ??= "");
                     url = (this.blogDefinitionSettingFactory.Value.Url ??= "");
                 }
-                return new BlogDto() { CodesId = x.Id, DisplayName = x.DisplayName, Sequence = sequence, Url = url, ListStyle = listStyle };
-            }).OrderBy(x => x.Sequence).ToList();
+                return new BlogDto() { CodesId = x.Id, DisplayName = x.DisplayName, Sequence = sequence, Url = url, ListStyle = listStyle,Enable = x.Enable };
+            })
+            .WhereIf(!permission.Succeeded,x=>x.Enable == true)
+            .ToList();
 
-            return result;
+            if (definition.Enable != false) 
+            {
+              var definitionBlogData =  new BlogDto() { CodesId = definition.Id, DisplayName = "不分類", Sequence = 0, Url = "", ListStyle = "", Enable = definition.Enable };
+              result.Add(definitionBlogData);
+            }
+
+            return result.OrderBy(x => x.Sequence).ToList();
         }
 
         public async Task<BlogDto> BlogGetAsync(Guid id)
@@ -51,6 +61,7 @@ namespace FS.Cms.Definitions
                 CodesId = entity.Id,
                 DisplayName = entity.DisplayName,
                 Sequence = sequence,
+                Enable = entity.Enable,
                 ListStyle = listStyle,
                 Url = url
             };
@@ -79,6 +90,7 @@ namespace FS.Cms.Definitions
                 DefinitionId = definition.Id,
                 DisplayName = input.DisplayName,
                 No = input.DisplayName,
+                Enable = input.Enable,
                 TenantId = CurrentTenant.Id
             };            
             await _codesTreeRepository.InsertAsync(codes, true);
@@ -86,18 +98,19 @@ namespace FS.Cms.Definitions
             await this.settingManager.SetAsync(BlogDefinitionSetting.Url, input.Url, "Codes", codes.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Sequence, input.Sequence.ToString(), "Codes", codes.Id.ToString()).ConfigureAwait(false);
 
-            return new BlogDto { CodesId = codes.Id, DisplayName = codes.DisplayName, Url = input.Url, ListStyle = input.ListStyle, Sequence = input.Sequence };
+            return new BlogDto { CodesId = codes.Id, DisplayName = codes.DisplayName, Url = input.Url, ListStyle = input.ListStyle, Sequence = input.Sequence, Enable = input.Enable };
         }
 
         public async Task<BlogDto> BlogUpdateAsync(Guid id, BlogUpdateInput input)
         {
             var entity = await this._codesTreeRepository.GetAsync(id);
             entity.DisplayName = input.DisplayName;
+            entity.Enable = input.Enable;
             await _codesTreeRepository.UpdateAsync(entity, true);
             await this.settingManager.SetAsync(BlogDefinitionSetting.ListStyle, input.ListStyle, "Codes", entity.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Url, input.Url, "Codes", entity.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Sequence, input.Sequence.ToString(), "Codes", entity.Id.ToString()).ConfigureAwait(false);
-            return new BlogDto { CodesId = entity.Id, DisplayName = entity.DisplayName, Url = input.Url, ListStyle = input.ListStyle,Sequence = input.Sequence };
+            return new BlogDto { CodesId = entity.Id, DisplayName = entity.DisplayName, Url = input.Url, ListStyle = input.ListStyle,Sequence = input.Sequence, Enable = input.Enable };
         }
     }
 }
