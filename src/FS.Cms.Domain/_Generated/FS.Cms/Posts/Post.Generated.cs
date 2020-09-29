@@ -78,7 +78,7 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual FS.Cms.DisplayMode DisplayMode
+        public virtual DisplayMode DisplayMode
         {
             get;
             set;

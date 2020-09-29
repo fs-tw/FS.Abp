@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\DisplayMode.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Files\Imports\Codes\Definition.json" />
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\en.json" />
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json" />
@@ -49,9 +53,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\DisplayMode.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\DisplayMode.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FS.Cms</DependentUpon>
+      <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\Volo.Abp.Localization\LocalizationResourceExtensions.Generated.cs">
       <AutoGen>True</AutoGen>

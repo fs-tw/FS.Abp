@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$EnumTypes">
-    <EnumType Name="DisplayMode" class="FS.Cms.DisplayMode" p1:Guid="0d88d79f-6b02-43d7-8775-a48ea12dd710">
+    <EnumType Name="DisplayMode" class="FS.Cms.Posts.DisplayMode" p1:Guid="0d88d79f-6b02-43d7-8775-a48ea12dd710" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Posts</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
       <Member Name="內文" Value="0" p1:Guid="d12d25ca-cb71-4427-b5ec-0c46414cb904" />
       <Member Name="連結" Value="1" p1:Guid="9373e10f-5c3d-41d8-bcc6-a3334654e74b" />
     </EnumType>
@@ -888,7 +898,7 @@
     <property name="Published_At" type="DateTime" p1:ValidateRequired="true" p1:Guid="02767eea-0458-497d-ada2-6a4d5c242a3e">
       <column name="" />
     </property>
-    <property name="DisplayMode" type="FS.Cms.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
+    <property name="DisplayMode" type="FS.Cms.Posts.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
       <column name="" />
     </property>
     <component name="Images" class="FS.Cms.Core.CmsImageField" p1:ValidateRequired="false" p1:Guid="dfe50025-0419-49a4-ad00-02643c0f8eec" p1:Shadow="True">

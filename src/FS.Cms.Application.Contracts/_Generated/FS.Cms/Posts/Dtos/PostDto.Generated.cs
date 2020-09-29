@@ -33,7 +33,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.DateTime Published_At { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
@@ -63,7 +63,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.DateTime Published_At { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
@@ -90,7 +90,7 @@ namespace FS.Cms.Posts.Dtos
 
         public System.DateTime Published_At { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
+        public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 

@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Cms
+namespace FS.Cms.Posts
 {
     public enum DisplayMode : int
     {
