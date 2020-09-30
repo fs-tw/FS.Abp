@@ -22,3 +22,6 @@
 [submodule "EasyAbp/FileManagement"]
 	path = EasyAbp/FileManagement
 	url = https://github.com/EasyAbp/FileManagement.git
+[submodule "EasyAbp/Abp.DynamicEntity"]
+	path = EasyAbp/Abp.DynamicEntity
+	url = https://github.com/EasyAbp/Abp.DynamicEntity.git
