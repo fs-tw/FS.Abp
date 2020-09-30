@@ -14,6 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\ITagCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="3.1.2" />
     <PackageReference Include="Volo.Abp.Authorization" Version="3.1.2" />
     <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Application.Contracts\FS.Abp.CodingManagement.Application.Contracts.csproj" />
@@ -76,6 +82,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostImageDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostTagMapDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -92,14 +102,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\ITagCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Tags</DependentUpon>
-    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Tags\Dtos\" />
   </ItemGroup>
 
 </Project>

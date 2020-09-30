@@ -11,20 +11,16 @@ using System.Reflection;
 using AutoMapper;
 using Volo.Abp.AutoMapper;
 
-namespace FS.Cms.Tags.Dtos
+namespace FS.Cms.Posts.Dtos
 {
-    public partial class TagAutoMapperProfile : Profile
+    public partial class PostImageAutoMapperProfile : Profile
     {
-        public TagAutoMapperProfile()
+        public PostImageAutoMapperProfile()
         {
-            CreateMap<FS.Cms.Tags.Tag, TagDto>()
+            CreateMap<FS.Cms.Posts.PostImage, PostImageDto>()
             .ReverseMap();
         
-            CreateMap<FS.Cms.Tags.Tag, TagWithDetailsDto>();
-        
-            CreateMap<TagCreateDto, FS.Cms.Tags.Tag>();
-        
-            CreateMap<TagUpdateDto, FS.Cms.Tags.Tag>();
+            CreateMap<FS.Cms.Posts.PostImage, PostImageWithDetailsDto>();
         
             CustomizeConfiguration();
         }

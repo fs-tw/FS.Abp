@@ -20,11 +20,11 @@ namespace FS.Cms.Posts
         {
             var post = this.Repository.Where(x => x.Id == postId).FirstOrDefault();
             var newData = ObjectMapper.Map<List<Core.Dtos.CmsImageFieldDto>, List<Core.CmsImageField>>(input.ImgaeField);
-            var removeDeleteImage = post.Images.
-                 WhereIf(input.UploadImageInput.DeleteFiles.Count > 0, x => !input.UploadImageInput.DeleteFiles.Contains(x.Title)).ToList();
+            //var removeDeleteImage = post.Images.
+            //     WhereIf(input.UploadImageInput.DeleteFiles.Count > 0, x => !input.UploadImageInput.DeleteFiles.Contains(x.Title)).ToList();
 
-            post.Images = removeDeleteImage;
-            post.Images.AddRange(newData);
+            //post.Images = removeDeleteImage;
+            //post.Images.AddRange(newData);
             await this.Repository.UpdateAsync(post).ConfigureAwait(false);
         }
     }

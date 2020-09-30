@@ -83,18 +83,6 @@ namespace FS.Cms.Posts
             get;
             set;
         }
-        public virtual List<FS.Cms.Core.CmsImageField> Images 
-        {
-
-            get
-            {
-                return this.GetExtraProperty<List<FS.Cms.Core.CmsImageField>>(nameof(Images));
-            }
-            set
-            {
-                this.SetExtraProperty(nameof(Images), value);
-            }
-        } 
 
         public virtual int Sequence
         {
@@ -111,6 +99,18 @@ namespace FS.Cms.Posts
             set
             {
                 this.SetExtraProperty(nameof(AttachmentFileUrls), value);
+            }
+        } 
+        public virtual List<FS.Cms.Posts.PostImage> PostImages 
+        {
+
+            get
+            {
+                return this.GetExtraProperty<List<FS.Cms.Posts.PostImage>>(nameof(PostImages));
+            }
+            set
+            {
+                this.SetExtraProperty(nameof(PostImages), value);
             }
         } 
 

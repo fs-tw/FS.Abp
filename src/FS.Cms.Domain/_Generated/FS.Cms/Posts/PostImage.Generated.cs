@@ -18,37 +18,23 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Cms.Tags
+namespace FS.Cms.Posts
 {
-    public partial class Tag : 
-        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot<Guid>,
-        Volo.Abp.MultiTenancy.IMultiTenant
+    public partial class PostImage 
     {
 
-        public Tag()
+        public PostImage()
         {
             OnCreated();
         }
 
-        public virtual string Name
+        public virtual string Url
         {
             get;
             set;
         }
 
-        public virtual string Description
-        {
-            get;
-            set;
-        }
-
-        public virtual string UsageCount
-        {
-            get;
-            set;
-        }
-
-        public virtual System.Guid? TenantId
+        public virtual bool IsCover
         {
             get;
             set;

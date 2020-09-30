@@ -41,12 +41,6 @@ namespace FS.Cms.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.Cms.Tags.Tag> Tags
-        {
-            get;
-            set;
-        }
-
         public virtual DbSet<FS.Cms.Documents.DocumentDefinition> DocumentDefinitions
         {
             get;

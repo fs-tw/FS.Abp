@@ -19,7 +19,7 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.PostId)
                 .NotNull()
                 ;
-            RuleFor(p => p.TagId)
+            RuleFor(p => p.TagCodeId)
                 .NotNull()
                 ;
             CustomizeConfiguration();
@@ -33,7 +33,7 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.PostId)
                 .NotNull()
                 ;
-            RuleFor(p => p.TagId)
+            RuleFor(p => p.TagCodeId)
                 .NotNull()
                 ;
             CustomizeConfiguration();

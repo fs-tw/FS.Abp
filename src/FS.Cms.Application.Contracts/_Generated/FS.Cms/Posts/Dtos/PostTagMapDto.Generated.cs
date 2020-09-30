@@ -19,28 +19,26 @@ namespace FS.Cms.Posts.Dtos
     {
         public System.Guid PostId { get; set; }
 
-        public System.Guid TagId { get; set; }
+        public System.Guid TagCodeId { get; set; }
 
     }
     public partial class PostTagMapWithDetailsDto : PostTagMapDto
     {
         public PostDto Post { get; set; }
 
-        public FS.Cms.Tags.Dtos.TagDto Tag { get; set; }
-
     }
     public partial class PostTagMapCreateDto
     {
         public System.Guid PostId { get; set; }
 
-        public System.Guid TagId { get; set; }
+        public System.Guid TagCodeId { get; set; }
 
     }
     public partial class PostTagMapUpdateDto
     {
         public System.Guid PostId { get; set; }
 
-        public System.Guid TagId { get; set; }
+        public System.Guid TagCodeId { get; set; }
 
     }
     public partial class PostTagMapGetListDto : SearchResultRequestDto

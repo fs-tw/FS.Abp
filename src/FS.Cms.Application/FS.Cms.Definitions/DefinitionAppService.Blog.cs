@@ -31,15 +31,16 @@ namespace FS.Cms.Definitions
                 return new BlogDto() { CodesId = x.Id, DisplayName = x.DisplayName, Sequence = sequence, Url = url, ListStyle = listStyle,Enable = x.Enable };
             })
             .WhereIf(!permission.Succeeded,x=>x.Enable == true)
-            .ToList();
+            .OrderBy(x => x.Sequence).ToList();
 
             if (permission.Succeeded  || definition.Enable != false) 
             {
               var definitionBlogData =  new BlogDto() { CodesId = definition.Id, DisplayName = "不分類", Sequence = 0, Url = "", ListStyle = "", Enable = definition.Enable };
-              result.Add(definitionBlogData);
+              result = new List<BlogDto>() { definitionBlogData }.Concat(result).ToList();
+                
             }
-
-            return result.OrderBy(x => x.Sequence).ToList();
+            
+            return result;
         }
 
         public async Task<BlogDto> BlogGetAsync(Guid id)

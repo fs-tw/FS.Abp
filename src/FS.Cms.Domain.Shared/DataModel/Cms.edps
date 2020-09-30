@@ -7,31 +7,31 @@
         <File Name="Cms.cs" />
         <File Name="PostDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="TagDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="DocumentDefinitionDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="PostAttachmentFilesDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="CmsFileFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="BlogDefinitionSettingDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
+        <File Name="PostImageDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="TagDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="DocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="PostAttachmentFilesDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="CmsFileFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
+        <File Name="PostImageDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="TagDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="DocumentDefinitionDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="PostAttachmentFilesDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="CmsFileFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="BlogDefinitionSettingDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
+        <File Name="PostImageDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\BlogDefinitionSetting" />
         <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\BlogDefinitionSetting" />
         <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\PostsPermissions" />
@@ -49,40 +49,35 @@
         <File Name="Post.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMap.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostAttachmentFiles.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="Tag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="DocumentDefinition.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="Document.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="CmsFileField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="CmsImageField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="BlogDefinitionSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
+        <File Name="PostImage.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DisplayMode.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="Post.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMap.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostAttachmentFiles.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="Tag.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="DocumentDefinition.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="Document.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IPostRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IPostTagMapRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="ITagRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="IDocumentDefinitionRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IDocumentTreeRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IPostAttachmentFilesRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="EfCorePostRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="EfCorePostTagMapRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="EfCoreTagRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="EfCoreDocumentDefinitionRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="EfCoreDocumentTreeRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="EfCorePostAttachmentFilesRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IPostCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IPostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="ITagCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="IDocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IDocumentCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IPostAttachmentFilesCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="TagCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="DocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="DocumentCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="PostAttachmentFilesCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />

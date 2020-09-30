@@ -39,13 +39,13 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.DisplayMode)
                 .NotNull()
                 ;
-            RuleFor(p => p.Images)
-                ;
             RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
             RuleFor(p => p.AttachmentFileUrls)
                 .NotNull()
+                ;
+            RuleFor(p => p.PostImages)
                 ;
             CustomizeConfiguration();
         }
@@ -78,13 +78,13 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.DisplayMode)
                 .NotNull()
                 ;
-            RuleFor(p => p.Images)
-                ;
             RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
             RuleFor(p => p.AttachmentFileUrls)
                 .NotNull()
+                ;
+            RuleFor(p => p.PostImages)
                 ;
             CustomizeConfiguration();
         }

@@ -35,11 +35,11 @@ namespace FS.Cms.Posts.Dtos
 
         public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
-        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
-
         public int Sequence { get; set; }
 
         public List<string> AttachmentFileUrls { get; set; }
+
+        public List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 
     }
     public partial class PostWithDetailsDto : PostDto
@@ -65,11 +65,11 @@ namespace FS.Cms.Posts.Dtos
 
         public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
-        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
-
         public int Sequence { get; set; }
 
         public List<string> AttachmentFileUrls { get; set; }
+
+        public List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 
     }
     public partial class PostUpdateDto
@@ -92,11 +92,11 @@ namespace FS.Cms.Posts.Dtos
 
         public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
-        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
-
         public int Sequence { get; set; }
 
         public List<string> AttachmentFileUrls { get; set; }
+
+        public List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 
     }
     public partial class PostGetListDto : SearchResultRequestDto
