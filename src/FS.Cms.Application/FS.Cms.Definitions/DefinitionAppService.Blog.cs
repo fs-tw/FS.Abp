@@ -116,7 +116,7 @@ namespace FS.Cms.Definitions
             await this.settingManager.SetAsync(BlogDefinitionSetting.Sequence, input.Sequence.ToString(), "Codes", codes.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.IconUrl, input.IconUrl, "Codes", codes.Id.ToString()).ConfigureAwait(false);
 
-            return new BlogDto { CodesId = codes.Id, DisplayName = codes.DisplayName, Url = input.Url, ListStyle = input.ListStyle, Sequence = input.Sequence, Enable = input.Enable };
+            return new BlogDto { CodesId = codes.Id, DisplayName = codes.DisplayName, Description = codes.Description, Url = input.Url, ListStyle = input.ListStyle, Sequence = input.Sequence, Enable = input.Enable, IconUrl = input.IconUrl };
         }
 
         public async Task<BlogDto> BlogUpdateAsync(Guid id, BlogUpdateInput input)
@@ -130,7 +130,7 @@ namespace FS.Cms.Definitions
             await this.settingManager.SetAsync(BlogDefinitionSetting.Url, input.Url, "Codes", entity.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Sequence, input.Sequence.ToString(), "Codes", entity.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.IconUrl, input.IconUrl, "Codes", entity.Id.ToString()).ConfigureAwait(false);
-            return new BlogDto { CodesId = entity.Id, DisplayName = entity.DisplayName, Url = input.Url, ListStyle = input.ListStyle,Sequence = input.Sequence, Enable = input.Enable };
+            return new BlogDto { CodesId = entity.Id, DisplayName = entity.DisplayName, Description = entity.Description, Url = input.Url, ListStyle = input.ListStyle,Sequence = input.Sequence, Enable = input.Enable, IconUrl = input.IconUrl };
         }
     }
 }
