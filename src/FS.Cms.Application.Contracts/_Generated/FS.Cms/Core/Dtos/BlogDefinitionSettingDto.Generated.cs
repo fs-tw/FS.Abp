@@ -23,6 +23,8 @@ namespace FS.Cms.Core.Dtos
 
         public string Url { get; set; }
 
+        public string IconUrl { get; set; }
+
     }
     public partial class BlogDefinitionSettingWithDetailsDto : BlogDefinitionSettingDto
     {

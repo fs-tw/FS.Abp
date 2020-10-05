@@ -8,27 +8,32 @@ namespace FS.Cms.Definitions
     {
         public Guid CodesId { get; set; }
         public string DisplayName { get; set; }
-     
+        public string Description { get; set; }
 
         public Boolean Enable { get; set; }
         public int Sequence { get; set; }
         public string Url { get; set; }
         public string ListStyle { get; set; }
+        public string IconUrl { get; set; }
     }
     public class BlogCreateInput
     {
         public Boolean Enable { get; set; }
         public string DisplayName { get; set; }
+        public string Description { get; set; }
         public int Sequence { get; set; }
         public string Url { get; set; }
         public string ListStyle { get; set; }
+        public string IconUrl { get; set; }
     }
     public class BlogUpdateInput
     {
         public Boolean Enable { get; set; }
         public string DisplayName { get; set; }
+        public string Description { get; set; }
         public int Sequence { get; set; }
         public string Url { get; set; }
         public string ListStyle { get; set; }
+        public string IconUrl { get; set; }
     }
 }

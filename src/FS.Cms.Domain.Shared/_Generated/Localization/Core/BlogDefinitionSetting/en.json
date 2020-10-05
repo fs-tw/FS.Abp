@@ -9,7 +9,10 @@
     "DisplayName:BlogDefinitionSetting.Sequence": "Sequence",
     "BlogDefinitionSetting.Url": "Url",
     "Description:BlogDefinitionSetting.Url": "Url",
-    "DisplayName:BlogDefinitionSetting.Url": "Url"
+    "DisplayName:BlogDefinitionSetting.Url": "Url",
+    "BlogDefinitionSetting.IconUrl": "IconUrl",
+    "Description:BlogDefinitionSetting.IconUrl": "IconUrl",
+    "DisplayName:BlogDefinitionSetting.IconUrl": "IconUrl"
 
   }
 }

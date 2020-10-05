@@ -46,6 +46,12 @@ namespace FS.Cms.Core
             set;
         }
 
+        public virtual string IconUrl
+        {
+            get;
+            set;
+        }
+
 
         #region Extensibility Method Definitions
 

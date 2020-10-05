@@ -77,14 +77,33 @@
                       <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
                     </Oid>
                   </Model>
+                  <Model xsi:type="PropertyVwModel">
+                    <CustomProperties>
+                      <OID>6</OID>
+                      <Parent>2</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Location>
+                      <X>1 px</X>
+                      <Y>55 px</Y>
+                    </Location>
+                    <Size>
+                      <Width>166 px</Width>
+                      <Height>18 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>671fe72f-fca1-4f37-a62a-f02c77f4d31c</Path>
+                      <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
                 </Children>
                 <Size>
                   <Width>168 px</Width>
-                  <Height>53 px</Height>
+                  <Height>71 px</Height>
                 </Size>
                 <MaxSize>
                   <Width>0 px</Width>
-                  <Height>55 px</Height>
+                  <Height>73 px</Height>
                 </MaxSize>
               </Model>
             </Children>
@@ -94,15 +113,15 @@
             </Location>
             <Size>
               <Width>172 px</Width>
-              <Height>103 px</Height>
+              <Height>121 px</Height>
             </Size>
             <MinSize>
               <Width>100 px</Width>
-              <Height>103 px</Height>
+              <Height>121 px</Height>
             </MinSize>
             <MaxSize>
               <Width>800 px</Width>
-              <Height>103 px</Height>
+              <Height>121 px</Height>
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
@@ -117,8 +136,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>2.01</Scale>
           <Location>
-            <X>-278.606966496021 px</X>
-            <Y>0.995024880342953 px</Y>
+            <X>-421.393036825232 px</X>
+            <Y>73.6318411453771 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

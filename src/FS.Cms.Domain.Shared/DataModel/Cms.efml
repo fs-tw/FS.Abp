@@ -467,6 +467,71 @@
         </p1:Attributes>
         <column name="" />
       </property>
+      <property name="IconUrl" type="String" p1:ValidateRequired="true" p1:Guid="671fe72f-fca1-4f37-a62a-f02c77f4d31c">
+        <p1:Attributes>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>zh-Hant</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>DisplayName</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+          <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>en</string>
+              </p1:PropertyValue>
+              <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <string>Description</string>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+        </p1:Attributes>
+        <column name="" />
+      </property>
     </component>
     <component class="FS.Cms.Menu.前台內容管理Permissions" IsExternal="true" p1:Guid="c1bda3f2-2065-411f-a59a-4ca11a84c8d6" p1:ShapeColor="-4168604" p1:AbpEditor="YinChang" p1:GenerateDTO="False">
       <p1:Attributes>

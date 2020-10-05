@@ -22,13 +22,24 @@ namespace FS.Cms.Definitions
                 var sequence = 0;
                 var listStyle = "";
                 var url = "";
+                var iconUrl = "";
                 using (currentCodes.Change(x.Id))
                 {
                     sequence = this.blogDefinitionSettingFactory.Value.Sequence;
                     listStyle = (this.blogDefinitionSettingFactory.Value.ListStyle ??= "");
                     url = (this.blogDefinitionSettingFactory.Value.Url ??= "");
+                    iconUrl = (this.blogDefinitionSettingFactory.Value.IconUrl ??= "");
                 }
-                return new BlogDto() { CodesId = x.Id, DisplayName = x.DisplayName, Sequence = sequence, Url = url, ListStyle = listStyle,Enable = x.Enable };
+                return new BlogDto() { 
+                    CodesId = x.Id, 
+                    DisplayName = x.DisplayName,
+                    Description = x.Description,
+                    Sequence = sequence, 
+                    Url = url, 
+                    ListStyle = listStyle,
+                    Enable = x.Enable,
+                    IconUrl = iconUrl
+                };
             })
             .WhereIf(!permission.Succeeded,x=>x.Enable == true)
             .OrderBy(x => x.Sequence).ToList();
@@ -50,21 +61,25 @@ namespace FS.Cms.Definitions
             var sequence = 0;
             var listStyle = "";
             var url = "";
+            var iconUrl = "";
             using (currentCodes.Change(entity.Id))
             {
                 sequence = this.blogDefinitionSettingFactory.Value.Sequence;
                 listStyle = (this.blogDefinitionSettingFactory.Value.ListStyle ??= "");
                 url = (this.blogDefinitionSettingFactory.Value.Url ??= "");
+                iconUrl = (this.blogDefinitionSettingFactory.Value.IconUrl ??= "");
             }
 
             BlogDto result = new BlogDto()
             {
                 CodesId = entity.Id,
                 DisplayName = entity.DisplayName,
+                Description = entity.Description,
                 Sequence = sequence,
                 Enable = entity.Enable,
                 ListStyle = listStyle,
-                Url = url
+                Url = url,
+                IconUrl = iconUrl
             };
             
             return result;
@@ -90,6 +105,7 @@ namespace FS.Cms.Definitions
                 ParentId = definition.Id,
                 DefinitionId = definition.Id,
                 DisplayName = input.DisplayName,
+                Description = input.Description,
                 No = input.DisplayName,
                 Enable = input.Enable,
                 TenantId = CurrentTenant.Id
@@ -98,6 +114,7 @@ namespace FS.Cms.Definitions
             await this.settingManager.SetAsync(BlogDefinitionSetting.ListStyle, input.ListStyle, "Codes", codes.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Url, input.Url, "Codes", codes.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Sequence, input.Sequence.ToString(), "Codes", codes.Id.ToString()).ConfigureAwait(false);
+            await this.settingManager.SetAsync(BlogDefinitionSetting.IconUrl, input.IconUrl, "Codes", codes.Id.ToString()).ConfigureAwait(false);
 
             return new BlogDto { CodesId = codes.Id, DisplayName = codes.DisplayName, Url = input.Url, ListStyle = input.ListStyle, Sequence = input.Sequence, Enable = input.Enable };
         }
@@ -106,11 +123,13 @@ namespace FS.Cms.Definitions
         {
             var entity = await this._codesTreeRepository.GetAsync(id);
             entity.DisplayName = input.DisplayName;
+            entity.Description = input.Description;
             entity.Enable = input.Enable;
             await _codesTreeRepository.UpdateAsync(entity, true);
             await this.settingManager.SetAsync(BlogDefinitionSetting.ListStyle, input.ListStyle, "Codes", entity.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Url, input.Url, "Codes", entity.Id.ToString()).ConfigureAwait(false);
             await this.settingManager.SetAsync(BlogDefinitionSetting.Sequence, input.Sequence.ToString(), "Codes", entity.Id.ToString()).ConfigureAwait(false);
+            await this.settingManager.SetAsync(BlogDefinitionSetting.IconUrl, input.IconUrl, "Codes", entity.Id.ToString()).ConfigureAwait(false);
             return new BlogDto { CodesId = entity.Id, DisplayName = entity.DisplayName, Url = input.Url, ListStyle = input.ListStyle,Sequence = input.Sequence, Enable = input.Enable };
         }
     }
