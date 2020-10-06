@@ -40,6 +40,8 @@ namespace FS.Abp.CodeSettings
     {
         public string DisplayName { get; set; }
         public string No { get; set; }
+        public Guid Id { get; set; }
+
     }
 
     public class DtoWithSettingsConverter : Newtonsoft.Json.JsonConverter
