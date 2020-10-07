@@ -1,8 +1,10 @@
-﻿using FS.Abp.Application;
+﻿
+using FS.Abp.Application;
 using FS.Abp.CodingManagement.Coding;
-using FS.Cms.Files;
 using FS.Cms.Posts.Dtos;
+using FS.Theme.Core.Files;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
+using Volo.Abp.Settings;
 
 namespace FS.Cms.Posts
 {
@@ -26,7 +29,9 @@ namespace FS.Cms.Posts
     {
         private readonly IPostRepository postsRepository;
         private readonly IFileManager fileManager;
+        private readonly ISettingProvider settingProvider;
         private readonly IGuidGenerator guidGenerator;
+        private readonly IConfiguration configuration;
         private readonly IPostAttachmentFilesManager postAttachmentFilesManager;
         private readonly IAuthorizationService authorizationService;
         private readonly ICodesTreeRepository codesTreeRepository;
@@ -34,8 +39,10 @@ namespace FS.Cms.Posts
 
         public PostsAppService(
             IPostRepository postsRepository,
-             IFileManager fileManager,
+            IFileManager fileManager,
+            ISettingProvider settingProvider,  
             IGuidGenerator guidGenerator,
+            IConfiguration configuration,
             IPostAttachmentFilesManager postAttachmentFilesManager,
             IAuthorizationService authorizationService,
             ICodesTreeRepository codesTreeRepository,
@@ -44,7 +51,9 @@ namespace FS.Cms.Posts
         {
             this.postsRepository = postsRepository;
             this.fileManager = fileManager;
+            this.settingProvider = settingProvider;
             this.guidGenerator = guidGenerator;
+            this.configuration = configuration;
             this.postAttachmentFilesManager = postAttachmentFilesManager;
             this.authorizationService = authorizationService;
             this.codesTreeRepository = codesTreeRepository;
