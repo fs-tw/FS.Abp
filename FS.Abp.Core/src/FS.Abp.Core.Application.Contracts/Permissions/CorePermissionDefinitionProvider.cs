@@ -8,12 +8,12 @@ namespace FS.Abp.Core.Permissions
     {
         public override void Define(IPermissionDefinitionContext context)
         {
-            var myGroup = context.AddGroup(CorePermissions.GroupName, L("Permission:Core"));
+            var myGroup = context.AddGroup(CorePermissions.GroupName, L("Permission:AbpCore"));
         }
 
         private static LocalizableString L(string name)
         {
-            return LocalizableString.Create<CoreResource>(name);
+            return LocalizableString.Create<AbpCoreResource>(name);
         }
     }
 }

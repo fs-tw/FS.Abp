@@ -15,6 +15,7 @@ namespace FS.Abp.Core.Host.HttpApi
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            
         }
     }
 }

@@ -36,6 +36,18 @@ namespace FS.Abp.Line.Notify
             return SettingManager.SetGlobalAsync(LineNotifySettingNames.Token, token);
         }
 
+        public Task SetTokenByUserAsync(Guid userId, string token)
+        {
+            return SettingManager.SetForUserAsync(userId, LineNotifySettingNames.Token, token);            
+        }
+
+        public Task<string> GetTokenByUserAsync(Guid userId)
+        {
+            return SettingManager.GetOrNullForUserAsync(LineNotifySettingNames.Token, userId);
+        }
+
+        
+
         protected async Task<string> GetNotEmptySettingValueAsync(string name)
         {
             var value = await SettingProvider.GetOrNullAsync(name);

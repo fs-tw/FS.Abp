@@ -1,3 +1,4 @@
+FS.Abp.Core : framework
 # How to use
 Domain
 Application

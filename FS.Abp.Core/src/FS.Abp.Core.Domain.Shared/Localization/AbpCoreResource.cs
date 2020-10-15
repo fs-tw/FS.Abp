@@ -2,8 +2,8 @@
 
 namespace FS.Abp.Core.Localization
 {
-    [LocalizationResourceName("Core")]
-    public class CoreResource
+    [LocalizationResourceName("AbpCore")]
+    public class AbpCoreResource
     {
         
     }

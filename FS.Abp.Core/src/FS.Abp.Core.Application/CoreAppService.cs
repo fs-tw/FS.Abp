@@ -7,7 +7,7 @@ namespace FS.Abp.Core
     {
         protected CoreAppService()
         {
-            LocalizationResource = typeof(CoreResource);
+            LocalizationResource = typeof(AbpCoreResource);
             ObjectMapperContext = typeof(CoreApplicationModule);
         }
     }
