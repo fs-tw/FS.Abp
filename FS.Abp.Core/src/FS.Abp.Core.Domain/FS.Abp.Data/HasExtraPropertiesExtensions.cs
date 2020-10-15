@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Volo.Abp;
 using Volo.Abp.Data;
 using Volo.Abp.Reflection;
@@ -15,11 +16,19 @@ namespace Volo.Abp.Data
             where TProperty : class
         {
             var jsonObject = source.ExtraProperties.GetOrDefault(name);
-            if (jsonObject == null)
+            if (jsonObject != null)
+                return jsonObject is TProperty ?
+                    jsonObject as TProperty :
+                    Newtonsoft.Json.JsonConvert.DeserializeObject<TProperty>(jsonObject?.ToString());
+            if (Volo.Abp.Reflection.TypeHelper.IsEnumerable(typeof(TProperty),out var itemType))
+            {
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<TProperty>(@"[]");
+            }
+            else
+            {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<TProperty>(@"{}");
-            return jsonObject is TProperty ?
-                jsonObject as TProperty :
-                Newtonsoft.Json.JsonConvert.DeserializeObject<TProperty>(jsonObject?.ToString());
+            }
+            
         }
 
         public static void SetExtraProperty<TProperty>(this IHasExtraProperties source, string name, TProperty value)
