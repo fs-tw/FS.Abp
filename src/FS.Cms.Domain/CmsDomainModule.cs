@@ -6,13 +6,14 @@ namespace FS.Cms
     [DependsOn(
         typeof(CmsDomainSharedModule),
         typeof(FS.Abp.CodingManagement.CodingManagementDomainModule),
-        typeof(FS.Theme.Core.ThemeCoreDomainModule)
+        typeof(FS.Abp.Core.CoreDomainModule),
+        typeof(FS.Theme.ThemeDomainModule)
         )]
     public class CmsDomainModule : AbpModule
     {
-        public override void ConfigureServices(ServiceConfigurationContext context) 
+        public override void ConfigureServices(ServiceConfigurationContext context)
         {
-           
+
         }
     }
 }

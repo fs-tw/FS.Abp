@@ -1,5 +1,5 @@
 ﻿using FS.Cms.Posts.Dtos;
-using HtmlAgilityPack;
+//using HtmlAgilityPack;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
@@ -77,19 +77,19 @@ namespace FS.Cms.Posts
         private async Task<string> contentUrlToRelativeUrl(string content) 
         {
             var targetUrl = "api/themes-core/file";
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(content);
-            var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//img").ToList();
-            foreach (var htmlNode in htmlNodes) 
-            {
-                var imgUrl = htmlNode.Attributes["src"].Value;
-                if (!imgUrl.StartsWith(targetUrl) && !imgUrl.StartsWith("data:image")) 
-                {
-                    var firstIndex = imgUrl.IndexOf(targetUrl);
-                    var newUrl = imgUrl.Substring(firstIndex);
-                    content = content.Replace(imgUrl, newUrl);
-                }                
-            }           
+            //var htmlDoc = new HtmlDocument();
+            //htmlDoc.LoadHtml(content);
+            //var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//img").ToList();
+            //foreach (var htmlNode in htmlNodes) 
+            //{
+            //    var imgUrl = htmlNode.Attributes["src"].Value;
+            //    if (!imgUrl.StartsWith(targetUrl) && !imgUrl.StartsWith("data:image")) 
+            //    {
+            //        var firstIndex = imgUrl.IndexOf(targetUrl);
+            //        var newUrl = imgUrl.Substring(firstIndex);
+            //        content = content.Replace(imgUrl, newUrl);
+            //    }                
+            //}           
             return content;
         }
 

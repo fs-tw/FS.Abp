@@ -9,7 +9,8 @@ namespace FS.Cms
         typeof(CmsDomainSharedModule),
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule),
-        typeof(FS.Abp.CodingManagement.CodingManagementApplicationContractsModule)
+        typeof(FS.Abp.CodingManagement.CodingManagementApplicationContractsModule),
+        typeof(FS.Abp.Core.CoreApplicationContractsModule)
         )]
     public class CmsApplicationContractsModule : AbpModule
     {

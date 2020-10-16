@@ -8,7 +8,8 @@ namespace FS.Cms
         typeof(CmsDomainModule),
         typeof(CmsApplicationContractsModule),
         typeof(AbpDddApplicationModule),
-        typeof(FS.Abp.CodingManagement.CodingManagementApplicationModule)        
+        typeof(FS.Abp.CodingManagement.CodingManagementApplicationModule),
+        typeof(FS.Abp.Core.CoreApplicationModule)
         )]
     public class CmsApplicationModule : AbpModule
     {
