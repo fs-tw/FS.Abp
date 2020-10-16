@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="3.2.1" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.EntityFrameworkCore" Version="3.2.1" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="3.2.1" />
     <ProjectReference Include="..\..\..\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.EntityFrameworkCore\EasyAbp.Abp.Trees.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Abp.Core.Domain\FS.Abp.Core.Domain.csproj" />

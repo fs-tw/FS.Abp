@@ -8,7 +8,8 @@ namespace FS.Abp.Core.EntityFrameworkCore
         typeof(CoreDomainModule),
         typeof(AbpEntityFrameworkCoreModule),
         typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule),
-        typeof(Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule)
+        typeof(Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule),
+        typeof(Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule)
     )]
     public class CoreEntityFrameworkCoreModule : AbpModule
     {

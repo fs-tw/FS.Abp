@@ -10,7 +10,8 @@ namespace FS.Abp.Core
 {
     [DependsOn(
         typeof(AbpValidationModule),
-        typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule)
+        typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule),
+        typeof(Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule)
     )]
     public class CoreDomainSharedModule : AbpModule
     {
