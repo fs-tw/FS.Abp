@@ -105,7 +105,7 @@ namespace FS.Cms.Posts
                 int lastIndex = lastContent.IndexOf(lastStr) + 2;
                 string replaceData = content.Substring(firstIndex, lastIndex);
                 var fileUrl = $"cms\\posts\\{postId}\\{guidGenerator.Create()}{checkFileType(replaceData)}";
-                //await this.fileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));
+                await this.fileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));
                 var fileUrlOutput = fileUrl.Replace("\\", "%5C");
                 content = content.Replace(replaceData, "<img src='api/themes-core/file/" + $"{fileUrlOutput}" + "'>");
             }
@@ -134,7 +134,7 @@ namespace FS.Cms.Posts
             var post = this.postsRepository.Where(x => x.Id == id).First();
             ObjectMapper.Map(input, post);
             List<string> deleteTargetList = new List<string>();
-            await this.postAttachmentFilesManager.DeleteListByPostId(id);
+            //await this.postAttachmentFilesManager.DeleteListByPostId(id);
 
             if (post.DisplayMode == DisplayMode.內文)
             {
