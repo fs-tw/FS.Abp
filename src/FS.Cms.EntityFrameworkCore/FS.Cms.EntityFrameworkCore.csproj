@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="3.2.1" />
     <ProjectReference Include="..\..\..\..\modules\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
   </ItemGroup>
