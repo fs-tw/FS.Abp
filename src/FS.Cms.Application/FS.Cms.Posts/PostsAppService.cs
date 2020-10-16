@@ -2,7 +2,7 @@
 using FS.Abp.Application;
 using FS.Abp.CodingManagement.Coding;
 using FS.Cms.Posts.Dtos;
-using FS.Theme.Core.Files;
+//using FS.Theme.Core.Files;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -28,7 +28,7 @@ namespace FS.Cms.Posts
     public partial class PostsAppService : PostCrudAppService, IPostsAppService
     {
         private readonly IPostRepository postsRepository;
-        private readonly IFileManager fileManager;
+        //private readonly IFileManager fileManager;
         private readonly ISettingProvider settingProvider;
         private readonly IGuidGenerator guidGenerator;
         private readonly IConfiguration configuration;
@@ -39,7 +39,7 @@ namespace FS.Cms.Posts
 
         public PostsAppService(
             IPostRepository postsRepository,
-            IFileManager fileManager,
+            //IFileManager fileManager,
             ISettingProvider settingProvider,  
             IGuidGenerator guidGenerator,
             IConfiguration configuration,
@@ -50,7 +50,7 @@ namespace FS.Cms.Posts
             ) : base(postsRepository)
         {
             this.postsRepository = postsRepository;
-            this.fileManager = fileManager;
+            //this.fileManager = fileManager;
             this.settingProvider = settingProvider;
             this.guidGenerator = guidGenerator;
             this.configuration = configuration;

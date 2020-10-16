@@ -18,7 +18,7 @@ namespace FS.Cms.Samples
         public async Task Blog_GetList_Async()
         {
             var blogs = await _definitionAppService.BlogGetListAsync();
-            blogs.Count.ShouldBe(2);
+            blogs.Count.ShouldBe(3);
         }
     }
 }
