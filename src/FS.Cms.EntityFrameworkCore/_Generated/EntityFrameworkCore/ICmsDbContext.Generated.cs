@@ -30,7 +30,6 @@ namespace FS.Cms.EntityFrameworkCore
     {
         DbSet<FS.Cms.Posts.Post> Posts { get; set; }
         DbSet<FS.Cms.Posts.PostTagMap> PostTagMaps { get; set; }
-        DbSet<FS.Cms.Tags.Tag> Tags { get; set; }
         DbSet<FS.Cms.Documents.DocumentDefinition> DocumentDefinitions { get; set; }
         DbSet<FS.Cms.Documents.Document> Documents { get; set; }
         DbSet<FS.Cms.Posts.PostAttachmentFiles> PostAttachmentFiles { get; set; }

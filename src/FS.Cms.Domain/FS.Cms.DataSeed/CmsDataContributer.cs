@@ -8,18 +8,19 @@ using Volo.Abp.DependencyInjection;
 
 namespace FS.Cms.DataSeed
 {
-    public class CmsDataContributer : IDataSeedContributor, ITransientDependency
+    public class CmsDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
         private readonly ICmsDefinitionSeeder cmsDefinitionSeeder;
 
-        public CmsDataContributer(
-            ICmsDefinitionSeeder cmsDefinitionSeeder
-            ) {
+        public CmsDataSeedContributor(
+            ICmsDefinitionSeeder cmsDefinitionSeeder            
+            ) 
+        {
             this.cmsDefinitionSeeder = cmsDefinitionSeeder;
         }
 
         public async Task SeedAsync(DataSeedContext context) 
-        {
+        {          
             await this.cmsDefinitionSeeder.SeedAsync(context);
         }
 

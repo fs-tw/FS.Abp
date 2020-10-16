@@ -1,31 +1,25 @@
-﻿
-using System;
-using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
-using System.Linq;
+﻿using System.Linq;
 
 namespace FS.Cms.Posts.Dtos
 {
-  
-    public partial class PostWithDetailsDto : PostDto
+    public partial class PostWithDetailsDto
     {
         public string BlogDisplayName { get; set; }
-        //public FS.Cms.Core.Dtos.CmsImageFieldDto CoverImage => Images.Where(x => x.IsCover == true).FirstOrDefault();
-        public FS.Cms.Core.Dtos.CmsImageFieldDto CoverImage
+        public PostImageDto CoverImage
         {
-            get {
-                if (Images.Count == 0) return null;
-                if (Images.Where(x => x.IsCover == true).FirstOrDefault() != null)
+            get
+            {
+                var images = PostImages.ToList();
+                if (images.Count == 0) return null;
+                if (images.Where(x => x.IsCover == true).FirstOrDefault() != null)
                 {
-                    return Images.Where(x => x.IsCover == true).First();
+                    return images.Where(x => x.IsCover == true).First();
                 }
-                else {
-                    return Images.First();
+                else
+                {
+                    return images.First();
                 }
-                
-
-            } 
+            }
         }
     }
 }

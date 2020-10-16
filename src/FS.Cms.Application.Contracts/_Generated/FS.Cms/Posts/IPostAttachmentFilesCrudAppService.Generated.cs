@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Posts
 {
     public partial interface IPostAttachmentFilesCrudAppService : 
-        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostAttachmentFilesWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostAttachmentFilesGetListInput, FS.Cms.Posts.Dtos.PostAttachmentFilesCreateInput, FS.Cms.Posts.Dtos.PostAttachmentFilesUpdateInput>
+        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostAttachmentFilesWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostAttachmentFilesGetListDto, FS.Cms.Posts.Dtos.PostAttachmentFilesCreateDto, FS.Cms.Posts.Dtos.PostAttachmentFilesUpdateDto>
     {
 
     }

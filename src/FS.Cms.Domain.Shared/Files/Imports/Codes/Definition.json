@@ -1,33 +1,20 @@
 ﻿[
   {
-    "No": "CmsDefinition",
-    "DisplayName": "CmsDefinition",
+    "No": "CmsBlogDefinition",
+    "DisplayName": "CmsBlogDefinition",
     "Description": "",
     "Children": [
       {
-        "No": "FileView",
-        "DisplayName": "FileView",
+        "No": "一般消息",
+        "DisplayName": "一般消息",
         "Description": "",
         "Children": []
       },
       {
-        "No": "Article",
-        "DisplayName": "Article",
+        "No": "企業消息",
+        "DisplayName": "企業消息",
         "Description": "",
         "Children": []
-      },
-      {
-        "No": "News",
-        "DisplayName": "News",
-        "Description": "不分類",
-        "Children": [
-          {
-            "No": "一般消息",
-            "DisplayName": "一般消息",
-            "Description": "",
-            "Children": []
-          }
-        ]
       }
     ]
   }

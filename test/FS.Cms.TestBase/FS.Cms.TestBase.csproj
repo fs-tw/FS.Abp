@@ -20,4 +20,8 @@
     <ProjectReference Include="..\..\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataSeed\" />
+  </ItemGroup>
+
 </Project>

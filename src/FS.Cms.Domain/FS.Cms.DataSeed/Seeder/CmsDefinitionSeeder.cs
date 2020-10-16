@@ -13,6 +13,14 @@ using Volo.Abp.Guids;
 
 namespace FS.Cms.DataSeed.Seeder
 {
+    public interface ICmsDefinitionSeeder
+    {
+        Task SeedAsync(DataSeedContext context);
+    }
+}
+
+namespace FS.Cms.DataSeed.Seeder
+{
     public class CmsDefinitionSeeder : ITransientDependency, ICmsDefinitionSeeder
     {
         private readonly string fileRoute = "/Files/Imports/Codes/Definition.json";

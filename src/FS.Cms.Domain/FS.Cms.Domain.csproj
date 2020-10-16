@@ -8,21 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Blogs\**" />
-    <Compile Remove="_Generated\FS.Cms\Document\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Blogs\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
-    <None Remove="_Generated\FS.Cms\Blogs\**" />
-    <None Remove="_Generated\FS.Cms\Document\**" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostImagePrototype.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\ITagRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\Tag.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Core\FileField.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Core\ImageField.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Posts\IPostTagRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Posts\PostTag.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tagging\ITagRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tagging\Tag.Generated.cs" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="3.1.2" />
+    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Domain\FS.Abp.CodingManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\..\FS.Theme\modules\FS.Theme.Core\src\FS.Theme.Core.Domain\FS.Theme.Core.Domain.csproj" />
+    <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -84,23 +79,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostImage.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\PostTagMap.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\ITagRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Tags</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\Tag.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Tags</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FS.Cms.DataSeed\Model\" />
-    <Folder Include="_Generated\FS.Cms\Tagging\" />
   </ItemGroup>
 
 </Project>

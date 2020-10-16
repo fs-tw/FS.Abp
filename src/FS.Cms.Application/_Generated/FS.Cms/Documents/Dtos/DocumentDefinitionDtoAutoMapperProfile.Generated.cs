@@ -22,11 +22,9 @@ namespace FS.Cms.Documents.Dtos
         
             CreateMap<FS.Cms.Documents.DocumentDefinition, DocumentDefinitionWithDetailsDto>();
         
-            CreateMap<DocumentDefinitionCreateInput, FS.Cms.Documents.DocumentDefinition>();
+            CreateMap<DocumentDefinitionCreateDto, FS.Cms.Documents.DocumentDefinition>();
         
-            CreateMap<DocumentDefinitionUpdateInput, FS.Cms.Documents.DocumentDefinition>();
-        
-            CreateMap<DocumentDefinitionUpdateInput, DocumentDefinitionDto.PrimaryKey>();
+            CreateMap<DocumentDefinitionUpdateDto, FS.Cms.Documents.DocumentDefinition>();
         
             CustomizeConfiguration();
         }

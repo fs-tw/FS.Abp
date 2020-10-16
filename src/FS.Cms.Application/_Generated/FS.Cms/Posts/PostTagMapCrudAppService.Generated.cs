@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Posts
 {
     public partial class PostTagMapCrudAppService : 
-        FS.Abp.Application.Services.CrudAppService<FS.Cms.Posts.PostTagMap, FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostTagMapGetListInput, FS.Cms.Posts.Dtos.PostTagMapCreateInput, FS.Cms.Posts.Dtos.PostTagMapUpdateInput>,
+        FS.Abp.Application.Services.CrudAppService<FS.Cms.Posts.PostTagMap, FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostTagMapGetListDto, FS.Cms.Posts.Dtos.PostTagMapCreateDto, FS.Cms.Posts.Dtos.PostTagMapUpdateDto>,
         IPostTagMapCrudAppService
     {
         private readonly IPostTagMapRepository _repository;
@@ -26,22 +26,5 @@ namespace FS.Cms.Posts
         {
             this._repository = repository;
         }
-
-        public async Task<PagedResultDto<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto>> GetPostAsync(FS.Cms.Posts.Dtos.PostTagMapDto.PostForeignKey foreignKey, FS.Abp.Application.Dtos.SearchResultRequestDto searchInput)
-        {
-            await CheckGetListPolicyAsync().ConfigureAwait(false);
-            var query = this.CreatePropertiesEqualityQuery(foreignKey);
-            var result = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, searchInput).ConfigureAwait(false);
-            return CreatePagedResultDto<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto>(result);
-        }
-        public async Task<PagedResultDto<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto>> GetTagAsync(FS.Cms.Posts.Dtos.PostTagMapDto.TagForeignKey foreignKey, FS.Abp.Application.Dtos.SearchResultRequestDto searchInput)
-        {
-            await CheckGetListPolicyAsync().ConfigureAwait(false);
-            var query = this.CreatePropertiesEqualityQuery(foreignKey);
-            var result = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, searchInput).ConfigureAwait(false);
-            return CreatePagedResultDto<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto>(result);
-        }
-
-
     }
 }

@@ -17,11 +17,13 @@ namespace FS.Cms.Core.Dtos
 {
     public partial class BlogDefinitionSettingDto
     {
-        public string FileView { get; set; }
+        public string ListStyle { get; set; }
 
-        public string Article { get; set; }
+        public int Sequence { get; set; }
 
-        public string Tags { get; set; }
+        public string Url { get; set; }
+
+        public string IconUrl { get; set; }
 
     }
     public partial class BlogDefinitionSettingWithDetailsDto : BlogDefinitionSettingDto

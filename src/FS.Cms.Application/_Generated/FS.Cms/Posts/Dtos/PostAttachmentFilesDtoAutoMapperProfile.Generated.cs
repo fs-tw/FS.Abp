@@ -22,11 +22,9 @@ namespace FS.Cms.Posts.Dtos
         
             CreateMap<FS.Cms.Posts.PostAttachmentFiles, PostAttachmentFilesWithDetailsDto>();
         
-            CreateMap<PostAttachmentFilesCreateInput, FS.Cms.Posts.PostAttachmentFiles>();
+            CreateMap<PostAttachmentFilesCreateDto, FS.Cms.Posts.PostAttachmentFiles>();
         
-            CreateMap<PostAttachmentFilesUpdateInput, FS.Cms.Posts.PostAttachmentFiles>();
-        
-            CreateMap<PostAttachmentFilesUpdateInput, PostAttachmentFilesDto.PrimaryKey>();
+            CreateMap<PostAttachmentFilesUpdateDto, FS.Cms.Posts.PostAttachmentFiles>();
         
             CustomizeConfiguration();
         }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -8,12 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Blogs\**" />
-    <Compile Remove="_Generated\FS.Cms\Document\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Blogs\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Document\**" />
-    <None Remove="_Generated\FS.Cms\Blogs\**" />
-    <None Remove="_Generated\FS.Cms\Document\**" />
+    <Compile Remove="_Generated\FS.Cms\Tags\EfCoreTagRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\Tag.Configuration.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,18 +82,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\EfCoreTagRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Tags</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\Tag.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Tags</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Tagging\" />
+    <Folder Include="_Generated\FS.Cms\Tags\" />
   </ItemGroup>
 
 </Project>

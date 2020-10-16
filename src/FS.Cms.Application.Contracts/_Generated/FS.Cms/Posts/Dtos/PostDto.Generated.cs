@@ -33,25 +33,19 @@ namespace FS.Cms.Posts.Dtos
 
         public System.DateTime Published_At { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
-
-        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
+        public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
         public int Sequence { get; set; }
 
         public List<string> AttachmentFileUrls { get; set; }
 
-        public class PrimaryKey
-        {
-            public System.Guid Id { get; set; }
-    
-        }
+        public List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 
     }
     public partial class PostWithDetailsDto : PostDto
     {
     }
-    public partial class PostCreateInput
+    public partial class PostCreateDto
     {
         public System.Guid BlogCodeId { get; set; }
 
@@ -69,16 +63,16 @@ namespace FS.Cms.Posts.Dtos
 
         public System.DateTime Published_At { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
-
-        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
+        public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
         public int Sequence { get; set; }
 
         public List<string> AttachmentFileUrls { get; set; }
 
+        public List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
+
     }
-    public partial class PostUpdateInput
+    public partial class PostUpdateDto
     {
         public System.Guid BlogCodeId { get; set; }
 
@@ -96,16 +90,16 @@ namespace FS.Cms.Posts.Dtos
 
         public System.DateTime Published_At { get; set; }
 
-        public DisplayMode DisplayMode { get; set; }
-
-        public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
+        public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
         public int Sequence { get; set; }
 
         public List<string> AttachmentFileUrls { get; set; }
 
+        public List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
+
     }
-    public partial class PostGetListInput : SearchResultRequestDto
+    public partial class PostGetListDto : SearchResultRequestDto
     {
     }
 }

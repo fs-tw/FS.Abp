@@ -33,11 +33,10 @@ namespace FS.Cms.Posts
         {
             builder.ToTable(options.TablePrefix + @"PostTagMaps", options.Schema);
             builder.Property<System.Guid>(x => x.PostId).HasColumnName(@"PostId").ValueGeneratedNever();
-            builder.Property<System.Guid>(x => x.TagId).HasColumnName(@"TagId").ValueGeneratedNever();
+            builder.Property<System.Guid>(x => x.TagCodeId).HasColumnName(@"TagCodeId").ValueGeneratedNever();
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
             builder.HasOne(x => x.Post).WithMany().IsRequired(true).HasForeignKey(@"PostId");
-            builder.HasOne(x => x.Tag).WithMany().IsRequired(true).HasForeignKey(@"TagId");
 
             builder.ConfigureFullAuditedAggregateRoot();
 

@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class PostCreateInputValidator : AbstractValidator<PostCreateInput>
+    public partial class PostCreateDtoValidator : AbstractValidator<PostCreateDto>
     {
-        public PostCreateInputValidator()
+        public PostCreateDtoValidator()
         {
             RuleFor(p => p.BlogCodeId)
                 .NotNull()
@@ -39,21 +39,21 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.DisplayMode)
                 .NotNull()
                 ;
-            RuleFor(p => p.Images)
-                ;
             RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
             RuleFor(p => p.AttachmentFileUrls)
                 .NotNull()
+                ;
+            RuleFor(p => p.PostImages)
                 ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
     }
-    public partial class PostUpdateInputValidator : AbstractValidator<PostUpdateInput>
+    public partial class PostUpdateDtoValidator : AbstractValidator<PostUpdateDto>
     {
-        public PostUpdateInputValidator()
+        public PostUpdateDtoValidator()
         {
             RuleFor(p => p.BlogCodeId)
                 .NotNull()
@@ -78,13 +78,13 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.DisplayMode)
                 .NotNull()
                 ;
-            RuleFor(p => p.Images)
-                ;
             RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
             RuleFor(p => p.AttachmentFileUrls)
                 .NotNull()
+                ;
+            RuleFor(p => p.PostImages)
                 ;
             CustomizeConfiguration();
         }

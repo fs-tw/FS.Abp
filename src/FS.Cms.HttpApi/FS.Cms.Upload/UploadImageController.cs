@@ -15,19 +15,23 @@ using Volo.Abp;
 
 namespace FS.Cms.Upload
 {
+    [Obsolete]
     [RemoteService]
     [Route("api/Cms/UploadFile")]
     public class UploadImageController : CmsController
     {
         private IHostEnvironment env;
         private IPostCrudAppService _postCrudAppService;
+        private IPostImagesAppService _postImagesAppService;
         public UploadImageController(
             IHostEnvironment env,
-            IPostCrudAppService postCrudAppService
+            IPostCrudAppService postCrudAppService,
+            IPostImagesAppService postImagesAppService
             )
         {
             this.env = env;
             _postCrudAppService = postCrudAppService;
+            _postImagesAppService = postImagesAppService;
         }
 
 
@@ -48,7 +52,7 @@ namespace FS.Cms.Upload
             CmsImageModel ImageModel = new CmsImageModel();
             ImageModel.ImgaeField = fileUrls;
             ImageModel.UploadImageInput = input;
-            this._postCrudAppService.Save(ImageModel, PostId);
+            this._postImagesAppService.Save(ImageModel, PostId);
             return fileUrls;
         }
 

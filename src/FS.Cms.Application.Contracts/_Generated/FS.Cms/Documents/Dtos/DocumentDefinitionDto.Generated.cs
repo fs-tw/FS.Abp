@@ -23,19 +23,13 @@ namespace FS.Cms.Documents.Dtos
 
         public string Url { get; set; }
 
-        public class PrimaryKey
-        {
-            public string Id { get; set; }
-    
-        }
-
     }
     public partial class DocumentDefinitionWithDetailsDto : DocumentDefinitionDto
     {
         public List<DocumentDto> Documents { get; set; }
 
     }
-    public partial class DocumentDefinitionCreateInput
+    public partial class DocumentDefinitionCreateDto
     {
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
@@ -44,7 +38,7 @@ namespace FS.Cms.Documents.Dtos
         public string Url { get; set; }
 
     }
-    public partial class DocumentDefinitionUpdateInput
+    public partial class DocumentDefinitionUpdateDto
     {
         public List<FS.Cms.Core.Dtos.CmsImageFieldDto> Images { get; set; }
 
@@ -53,7 +47,7 @@ namespace FS.Cms.Documents.Dtos
         public string Url { get; set; }
 
     }
-    public partial class DocumentDefinitionGetListInput : SearchResultRequestDto
+    public partial class DocumentDefinitionGetListDto : SearchResultRequestDto
     {
     }
 }

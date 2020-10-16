@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Cms.Posts
 {
     public partial interface IPostTagMapCrudAppService : 
-        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostTagMapGetListInput, FS.Cms.Posts.Dtos.PostTagMapCreateInput, FS.Cms.Posts.Dtos.PostTagMapUpdateInput>
+        FS.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto, Guid, FS.Cms.Posts.Dtos.PostTagMapGetListDto, FS.Cms.Posts.Dtos.PostTagMapCreateDto, FS.Cms.Posts.Dtos.PostTagMapUpdateDto>
     {
 
     }

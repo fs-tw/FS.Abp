@@ -10,7 +10,7 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(AbpValidationModule),
-        typeof(FS.Abp.Domain.AbpDomainSharedModule)
+        typeof(FS.Abp.CodingManagement.CodingManagementDomainSharedModule)
     )]
     public class CmsDomainSharedModule : AbpModule
     {

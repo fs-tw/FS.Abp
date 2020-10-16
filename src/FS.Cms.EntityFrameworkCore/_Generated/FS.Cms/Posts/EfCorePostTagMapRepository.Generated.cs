@@ -26,8 +26,7 @@ namespace FS.Cms.Posts
         {
             return base.WithDetails(new Expression<Func<FS.Cms.Posts.PostTagMap, object>>[] 
             {
-                x => x.Post,
-                x => x.Tag
+                x => x.Post
             });
         }
     }

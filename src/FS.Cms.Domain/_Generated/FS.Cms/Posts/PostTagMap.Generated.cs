@@ -36,7 +36,7 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual System.Guid TagId
+        public virtual System.Guid TagCodeId
         {
             get;
             set;
@@ -49,12 +49,6 @@ namespace FS.Cms.Posts
         }
 
         public virtual Post Post
-        {
-            get;
-            set;
-        }
-
-        public virtual FS.Cms.Tags.Tag Tag
         {
             get;
             set;
