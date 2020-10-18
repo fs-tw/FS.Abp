@@ -9,6 +9,7 @@ namespace FS.Abp.Core
         typeof(Volo.Abp.Specifications.AbpSpecificationsModule),
         typeof(Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule),
         typeof(EasyAbp.Abp.Trees.AbpTreesDomainModule),
+        typeof(Volo.Abp.SettingManagement.AbpSettingManagementDomainModule),
         typeof(Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule)
         )]
     public class CoreDomainModule : AbpModule
