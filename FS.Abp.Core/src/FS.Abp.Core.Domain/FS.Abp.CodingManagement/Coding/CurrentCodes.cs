@@ -24,15 +24,15 @@ namespace FS.Abp.CodingManagement.Coding
     }
     public class CurrentCodes : ICurrentCodes, ITransientDependency
     {
-        public Guid? Id => _currentRoomTypeAccessor.Current?.CodesId;
+        public Guid? Id => _currentCodesAccessor.Current?.CodesId;
 
-        public string Name => _currentRoomTypeAccessor.Current?.Name;
+        public string Name => _currentCodesAccessor.Current?.Name;
 
-        private readonly ICurrentCodesAccessor _currentRoomTypeAccessor;
+        private readonly ICurrentCodesAccessor _currentCodesAccessor;
 
         public CurrentCodes(ICurrentCodesAccessor currentRoomTypeAccessor)
         {
-            _currentRoomTypeAccessor = currentRoomTypeAccessor;
+            _currentCodesAccessor = currentRoomTypeAccessor;
         }
         public IDisposable Change(Guid? id, string name = null)
         {
@@ -40,11 +40,11 @@ namespace FS.Abp.CodingManagement.Coding
         }
         private IDisposable SetCurrent(Guid? codesId, string name = null)
         {
-            var parentScope = _currentRoomTypeAccessor.Current;
-            _currentRoomTypeAccessor.Current = new BasicCodesInfo(codesId, name);
+            var parentScope = _currentCodesAccessor.Current;
+            _currentCodesAccessor.Current = new BasicCodesInfo(codesId, name);
             return new DisposeAction(() =>
             {
-                _currentRoomTypeAccessor.Current = parentScope;
+                _currentCodesAccessor.Current = parentScope;
             });
         }
     }
