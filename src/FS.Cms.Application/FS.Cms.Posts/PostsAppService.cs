@@ -43,7 +43,6 @@ namespace FS.Cms.Posts
             ISettingProvider settingProvider,  
             IGuidGenerator guidGenerator,
             IConfiguration configuration,
-            //IPostAttachmentFilesManager postAttachmentFilesManager,
             IAuthorizationService authorizationService,
             ICodesTreeRepository codesTreeRepository,
             IHostEnvironment env
@@ -54,7 +53,6 @@ namespace FS.Cms.Posts
             this.settingProvider = settingProvider;
             this.guidGenerator = guidGenerator;
             this.configuration = configuration;
-            //this.postAttachmentFilesManager = postAttachmentFilesManager;
             this.authorizationService = authorizationService;
             this.codesTreeRepository = codesTreeRepository;
             this.env = env;
