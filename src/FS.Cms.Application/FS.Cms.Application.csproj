@@ -8,11 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Tags\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Tags\**" />
+    <None Remove="_Generated\FS.Cms\Tags\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\Dtos\TagDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\Dtos\TagDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\TagCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFilesCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +26,6 @@
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\FileFieldDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\ImageFieldDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Documents\DocumentCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostTagDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostTagDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostTagCrudAppService.Generated.cs" />
@@ -85,14 +90,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -117,10 +114,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostAttachmentFilesCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\PostCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
@@ -129,10 +122,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Tags\Dtos\" />
   </ItemGroup>
 
 </Project>

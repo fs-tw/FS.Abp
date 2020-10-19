@@ -52,12 +52,6 @@ namespace FS.Cms.EntityFrameworkCore
             get;
             set;
         }
-
-        public virtual DbSet<FS.Cms.Posts.PostAttachmentFiles> PostAttachmentFiles
-        {
-            get;
-            set;
-        }
         public CmsDbContext(DbContextOptions<CmsDbContext> options) :
             base(options)
         {

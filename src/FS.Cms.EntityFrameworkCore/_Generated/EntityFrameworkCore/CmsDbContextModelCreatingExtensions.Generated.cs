@@ -36,7 +36,6 @@ namespace FS.Cms.EntityFrameworkCore
             builder.ApplyConfiguration<FS.Cms.Posts.PostTagMap>(new FS.Cms.Posts.PostTagMapConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.DocumentDefinition>(new FS.Cms.Documents.DocumentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.Document>(new FS.Cms.Documents.DocumentConfiguration(options));
-            builder.ApplyConfiguration<FS.Cms.Posts.PostAttachmentFiles>(new FS.Cms.Posts.PostAttachmentFilesConfiguration(options));
         }
     }
 }

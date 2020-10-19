@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFiles.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostImagePrototype.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\ITagRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\Tag.Generated.cs" />
@@ -58,10 +60,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
@@ -71,10 +69,6 @@
       <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Post.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostAttachmentFiles.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

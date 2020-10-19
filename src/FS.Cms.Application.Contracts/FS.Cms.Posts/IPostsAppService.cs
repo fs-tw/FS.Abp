@@ -7,14 +7,7 @@ using Volo.Abp.Application.Dtos;
 namespace FS.Cms.Posts
 {
     public interface IPostsAppService : 
-        IPostCrudAppService, 
-        IPostImagesAppService
+        IPostCrudAppService
     {
     }
-
-    public partial interface IPostImagesAppService
-    {
-        Task Save(CmsImageModel input, Guid postId);
-    }
-
 }

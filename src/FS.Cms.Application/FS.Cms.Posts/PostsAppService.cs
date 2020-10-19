@@ -22,7 +22,6 @@ namespace FS.Cms.Posts
 {
     [ExposeServices(
         typeof(IPostCrudAppService),
-        typeof(IPostImagesAppService),
         typeof(IPostsAppService)
         )]
     public partial class PostsAppService : PostCrudAppService, IPostsAppService

@@ -9,14 +9,17 @@
 
   <ItemGroup>
     <Compile Remove="DataModel\**" />
+    <Compile Remove="_Generated\FS.Cms\Tags\**" />
     <EmbeddedResource Remove="DataModel\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Tags\**" />
     <None Remove="DataModel\**" />
+    <None Remove="_Generated\FS.Cms\Tags\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\ITagCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,10 +78,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Menu</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -91,10 +90,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
@@ -103,10 +98,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Tags\Dtos\" />
   </ItemGroup>
 
 </Project>

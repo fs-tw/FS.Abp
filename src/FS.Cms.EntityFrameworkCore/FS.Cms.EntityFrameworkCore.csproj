@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Posts\EfCorePostAttachmentFilesRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFiles.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\EfCoreTagRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\Tag.Configuration.Generated.cs" />
   </ItemGroup>
@@ -59,10 +61,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\EfCorePostAttachmentFilesRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\EfCorePostRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
@@ -72,10 +70,6 @@
       <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Post.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostAttachmentFiles.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
