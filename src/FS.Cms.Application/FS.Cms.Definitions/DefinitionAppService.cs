@@ -19,32 +19,28 @@ namespace FS.Cms.Definitions
         )]
     public partial class DefinitionsAppService : CmsAppService, IDefinitionsAppService
     {
-        private readonly ICodesService _codesService;
+        private ICodingStore _codingStore;
+        public ICodingStore CodingStore => LazyGetRequiredService(ref _codingStore);
         private readonly IPostRepository postsRepository;
         private readonly IAuthorizationService authorizationService;
         private readonly ICurrentCodes currentCodes;
         private readonly ISettingManager settingManager;
         private readonly IBlogDefinitionSettingFactory blogDefinitionSettingFactory;
-        private readonly ICodesTreeRepository _codesTreeRepository;
 
 
         public DefinitionsAppService(
-            ICodesService codesService,
             IPostRepository postsRepository,
             IAuthorizationService authorizationService,
             ICurrentCodes currentCodes,
             ISettingManager settingManager,
-            IBlogDefinitionSettingFactory blogDefinitionSettingFactory,
-            ICodesTreeRepository codesTreeRepository
+            IBlogDefinitionSettingFactory blogDefinitionSettingFactory
             )
         {
-            _codesService = codesService;
             this.postsRepository = postsRepository;
             this.authorizationService = authorizationService;
             this.currentCodes = currentCodes;
             this.settingManager = settingManager;
             this.blogDefinitionSettingFactory = blogDefinitionSettingFactory;
-            _codesTreeRepository = codesTreeRepository;
         }
 
     }
