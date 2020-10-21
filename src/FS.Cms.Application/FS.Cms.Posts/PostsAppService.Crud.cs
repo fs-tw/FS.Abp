@@ -69,7 +69,7 @@ namespace FS.Cms.Posts
 
         private async Task<string> contentUrlToRelativeUrl(string content) 
         {
-            var targetUrl = "api/themes-core/file";
+            var targetUrl = "api/theme-core/file";
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(content);
             var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//img").ToList();
@@ -100,7 +100,7 @@ namespace FS.Cms.Posts
                 var fileUrl = $"cms\\posts\\{postId}\\{guidGenerator.Create()}{checkFileType(replaceData)}";
                 await this.fileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));
                 var fileUrlOutput = fileUrl.Replace("\\", "%5C");
-                content = content.Replace(replaceData, "<img src='api/themes-core/file/" + $"{fileUrlOutput}" + "'>");
+                content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileUrlOutput}" + "'>");
             }
             return content;
         }
