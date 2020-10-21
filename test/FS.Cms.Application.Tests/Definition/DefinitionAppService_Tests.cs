@@ -5,11 +5,11 @@ using Xunit;
 
 namespace FS.Cms.Samples
 {
-    public class DefinitionAppService_Tests : CmsApplicationTestBase
+    public class PostAppService_Tests : CmsApplicationTestBase
     {
         private readonly IDefinitionsAppService _definitionAppService;
 
-        public DefinitionAppService_Tests()
+        public PostAppService_Tests()
         {
             _definitionAppService = GetRequiredService<IDefinitionsAppService>();
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.Users;
 
 namespace FS.Cms.Posts
 {
@@ -14,19 +15,11 @@ namespace FS.Cms.Posts
     {
         public override async Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
         {
+            var uer = currentUser.Id;
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
             var url = this.configuration["App:SelfUrl"];
 
-            var blogIds = this.postsRepository.Select(x => x.BlogCodeId).Distinct().ToList();
-            var blogCodes = this.codesTreeRepository.Where(x => blogIds.Any(b => b == x.Id) && x.Enable == true).Select(x => x.Id).ToList();
-
-            var query = this.postsRepository
-                            .WithDetails()
-                            .WhereIf(!permission.Succeeded, x => blogCodes.Any(b => x.BlogCodeId == b))
-                            .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
-                            .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
-                            .OrderBy(x => x.Sequence);                           
-
+            var query =  this.postsManager.CheckPublished_AtForPermission(input.BlogCodeId, permission.Succeeded);                
             var entities = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
 
             var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities);

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <None Remove="Files\Imports\Codes\Definition.json" />
+    <None Remove="Files\Imports\Posts\Posts.json" />
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\en.json" />
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json" />
     <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\en.json" />
@@ -26,6 +27,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Files\Imports\Codes\Definition.json" />
+    <EmbeddedResource Include="Files\Imports\Posts\Posts.json" />
     <EmbeddedResource Include="_Generated\Localization\Blogs\PostsPermissions\en.json">
       <AutoGen>True</AutoGen>
       <DependentUpon>PostsPermissions</DependentUpon>

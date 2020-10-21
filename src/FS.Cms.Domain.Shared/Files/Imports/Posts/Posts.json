@@ -1,1 +1,20 @@
-﻿
+﻿[
+  {
+    "BlogCode": "一般消息",
+    "Title": "什麼是RWD？",
+    "Images": [],
+    "IsExpiryDate": false
+  },
+  {
+    "BlogCode": "企業消息",
+    "Title": "網站正式上線…",
+    "Images": [],
+    "IsExpiryDate": true
+  },
+  {
+    "BlogCode": "一般消息",
+    "Title": "歡迎來到本站台！！",
+    "Images": [],
+    "IsExpiryDate": true
+  }
+]
