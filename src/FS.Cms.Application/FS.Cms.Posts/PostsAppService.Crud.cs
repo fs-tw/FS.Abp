@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.Users;
 
 namespace FS.Cms.Posts
 {
@@ -14,19 +15,11 @@ namespace FS.Cms.Posts
     {
         public override async Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
         {
+            var uer = currentUser.Id;
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
             var url = this.configuration["App:SelfUrl"];
 
-            var blogIds = this.postsRepository.Select(x => x.BlogCodeId).Distinct().ToList();
-            var blogCodes = this.codesTreeRepository.Where(x => blogIds.Any(b => b == x.Id) && x.Enable == true).Select(x => x.Id).ToList();
-
-            var query = this.postsRepository
-                            .WithDetails()
-                            .WhereIf(!permission.Succeeded, x => blogCodes.Any(b => x.BlogCodeId == b))
-                            .WhereIf(input.BlogCodeId.HasValue, x => x.BlogCodeId == input.BlogCodeId)
-                            .WhereIf(!permission.Succeeded, x => x.Published_At <= DateTime.Now && x.Published == true)
-                            .OrderBy(x => x.Sequence);                           
-
+            var query =  this.postsManager.CheckPublished_AtForPermission(input.BlogCodeId, permission.Succeeded);                
             var entities = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
 
             var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities);
@@ -76,7 +69,7 @@ namespace FS.Cms.Posts
 
         private async Task<string> contentUrlToRelativeUrl(string content) 
         {
-            var targetUrl = "api/themes-core/file";
+            var targetUrl = "api/theme-core/file";
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(content);
             var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//img").ToList();
@@ -107,7 +100,7 @@ namespace FS.Cms.Posts
                 var fileUrl = $"cms\\posts\\{postId}\\{guidGenerator.Create()}{checkFileType(replaceData)}";
                 await this.fileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));
                 var fileUrlOutput = fileUrl.Replace("\\", "%5C");
-                content = content.Replace(replaceData, "<img src='api/themes-core/file/" + $"{fileUrlOutput}" + "'>");
+                content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileUrlOutput}" + "'>");
             }
             return content;
         }

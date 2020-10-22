@@ -15,7 +15,7 @@ namespace FS.Cms.Samples
         [Fact]
         public async Task Method1Async()
         {
-
+            
         }
     }
 }
