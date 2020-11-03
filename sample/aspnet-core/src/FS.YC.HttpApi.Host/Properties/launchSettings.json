@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "https://localhost:44399",
-      "sslPort": 44399
+      "applicationUrl": "https://localhost:44326",
+      "sslPort": 44326
     }
   },
   "profiles": {
@@ -18,7 +18,7 @@
     "FS.YC.HttpApi.Host": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:44399",
+      "applicationUrl": "https://localhost:44326",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

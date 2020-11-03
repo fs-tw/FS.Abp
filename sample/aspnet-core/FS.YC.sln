@@ -39,7 +39,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.YC.HttpApi.Host", "src\F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.YC.Blazor", "src\FS.YC.Blazor\FS.YC.Blazor.csproj", "{27B2DDC7-8B75-4322-A312-25419C15D9D8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{01C267CA-D351-4D28-B88D-C9B967B9B086}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{0A2D0A86-5CD9-4063-B19E-1C1E852B30D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volo.Abp.AspNetCore.Components.WebAssembly", "..\..\abp\abp\framework\src\Volo.Abp.AspNetCore.Components.WebAssembly\Volo.Abp.AspNetCore.Components.WebAssembly.csproj", "{4CB3CDE7-DB5A-46FA-95B1-D74F6CF70D02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme", "..\..\abp\abp\framework\src\Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme\Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme.csproj", "{D380EE1D-E65F-4CCF-8E38-69F23153C99C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volo.Abp.AspNetCore.Components.WebAssembly.Theming", "..\..\abp\abp\framework\src\Volo.Abp.AspNetCore.Components.WebAssembly.Theming\Volo.Abp.AspNetCore.Components.WebAssembly.Theming.csproj", "{88523783-50DA-41DA-914E-4303E55B5FD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +117,18 @@ Global
 		{27B2DDC7-8B75-4322-A312-25419C15D9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27B2DDC7-8B75-4322-A312-25419C15D9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27B2DDC7-8B75-4322-A312-25419C15D9D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CB3CDE7-DB5A-46FA-95B1-D74F6CF70D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB3CDE7-DB5A-46FA-95B1-D74F6CF70D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB3CDE7-DB5A-46FA-95B1-D74F6CF70D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB3CDE7-DB5A-46FA-95B1-D74F6CF70D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D380EE1D-E65F-4CCF-8E38-69F23153C99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D380EE1D-E65F-4CCF-8E38-69F23153C99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D380EE1D-E65F-4CCF-8E38-69F23153C99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D380EE1D-E65F-4CCF-8E38-69F23153C99C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88523783-50DA-41DA-914E-4303E55B5FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88523783-50DA-41DA-914E-4303E55B5FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88523783-50DA-41DA-914E-4303E55B5FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88523783-50DA-41DA-914E-4303E55B5FD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,6 +150,9 @@ Global
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{748584B1-BA69-4F6A-81AA-F4BDE6BCE29D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{27B2DDC7-8B75-4322-A312-25419C15D9D8} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{4CB3CDE7-DB5A-46FA-95B1-D74F6CF70D02} = {0A2D0A86-5CD9-4063-B19E-1C1E852B30D9}
+		{D380EE1D-E65F-4CCF-8E38-69F23153C99C} = {0A2D0A86-5CD9-4063-B19E-1C1E852B30D9}
+		{88523783-50DA-41DA-914E-4303E55B5FD7} = {0A2D0A86-5CD9-4063-B19E-1C1E852B30D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}
