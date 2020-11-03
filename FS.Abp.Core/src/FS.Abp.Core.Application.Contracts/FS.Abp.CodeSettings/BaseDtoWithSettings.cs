@@ -45,14 +45,21 @@ namespace FS.Abp.CodeSettings
 
     }
 
+    public class CodesDtoWithSettingsForCreate<T> : BaseDtoWithSettings<T>
+       where T : new()
+    {
+        public string DisplayName { get; set; }
+        public string No { get; set; }
+       
+    }
+
 
     public class CodesDtoWithSettings<T>: BaseDtoWithSettings<T>
         where T:new()
     {
         public string DisplayName { get; set; }
         public string No { get; set; }
-        public Guid Id { get; set; }
-
+        public Guid Id { get; set; }             
     }
 
     public class DtoWithSettingsConverter : Newtonsoft.Json.JsonConverter
