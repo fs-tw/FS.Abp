@@ -25,3 +25,6 @@
 [submodule "EasyAbp/Abp.DynamicEntity"]
 	path = EasyAbp/Abp.DynamicEntity
 	url = https://github.com/EasyAbp/Abp.DynamicEntity.git
+[submodule "Blazorise"]
+	path = Blazorise
+	url = https://github.com/stsrki/Blazorise.git
