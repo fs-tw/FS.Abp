@@ -70,9 +70,11 @@ namespace FS.Cms.Posts
         private async Task<string> contentUrlToRelativeUrl(string content) 
         {
             var targetUrl = "api/theme-core/file";
-            var htmlDoc = new HtmlDocument();
+            var htmlDoc = new HtmlDocument();            
             htmlDoc.LoadHtml(content);
-            var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//img").ToList();
+            var source = htmlDoc.DocumentNode.SelectNodes("//img");
+            if (source.IsNullOrEmpty()) return content;
+            var htmlNodes = source.ToList();
             foreach (var htmlNode in htmlNodes)
             {
                 var imgUrl = htmlNode.Attributes["src"].Value;
