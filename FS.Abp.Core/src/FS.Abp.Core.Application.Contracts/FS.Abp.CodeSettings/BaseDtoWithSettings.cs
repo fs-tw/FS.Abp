@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace FS.Abp.CodeSettings
@@ -22,7 +24,16 @@ namespace FS.Abp.CodeSettings
             }
         }
         [Newtonsoft.Json.JsonIgnore]
-        public T Setting { get; set; }
+        public T Setting {  get; set; }
+
+
+        [JsonProperty("Setting")]
+        private T ObsoleteSettingAlternateSetter
+        {
+            // get is intentionally omitted here
+            set { Setting = value; }
+        }
+
         [Newtonsoft.Json.JsonIgnore]
         public List<string> SettingsPropertyName => typeof(T).GetProperties().Select(x => x.Name).ToList();
 
@@ -31,8 +42,18 @@ namespace FS.Abp.CodeSettings
             this.Setting = new T();
         }
 
+
+     
+
     }
 
+    public class CodesDtoWithSettingsForCreate<T> : BaseDtoWithSettings<T>
+       where T : new()
+    {
+        public string DisplayName { get; set; }
+        public string No { get; set; }
+       
+    }
 
 
     public class CodesDtoWithSettings<T>: BaseDtoWithSettings<T>
@@ -40,12 +61,16 @@ namespace FS.Abp.CodeSettings
     {
         public string DisplayName { get; set; }
         public string No { get; set; }
-        public Guid Id { get; set; }
-
+        public Guid Id { get; set; }             
     }
 
     public class DtoWithSettingsConverter : Newtonsoft.Json.JsonConverter
     {
+
+        private string firstCharToLower(string s) 
+        {
+            return char.ToLower(s[0]) + s.Substring(1);
+        }
         public override bool CanConvert(Type objectType)
         {
             return typeof(IDtoWithSettings).IsAssignableFrom(objectType);
@@ -57,28 +82,61 @@ namespace FS.Abp.CodeSettings
             writer.WriteStartObject();
 
             JObject jObj = JObject.FromObject(value);
+            var serializerSettings = new JsonSerializerSettings();
+            serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+           
             foreach (var f in jObj.Properties())
             {
-                writer.WritePropertyName(f.Name);
+                writer.WritePropertyName(firstCharToLower(f.Name));
+                
                 serializer.Serialize(writer, f.Value);
             }
             foreach (string foo in obj.SettingsPropertyName)
             {
-                writer.WritePropertyName(foo);
+                writer.WritePropertyName(firstCharToLower(foo));
                 var jsonValue = ((IDtoWithSettings)value)[foo];
                 serializer.Serialize(writer, jsonValue);
             }
             writer.WriteEndObject();
         }
 
+       
+
         public override bool CanRead
         {
-            get { return false; }
+            get { return true; }
         }
 
+       
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            const string settingKey = "Setting";
+            if (reader.TokenType == JsonToken.Null) return null;
+
+            //建立來源實體
+            object instance = Activator.CreateInstance(objectType);
+
+            //讀取input資料
+            var jObj = JObject.Load(reader);
+
+            //取得已有屬性
+            List<string> ignoreKey = objectType.GetProperties().Select(x => x.Name).ToList();
+            serializer.Populate(jObj.CreateReader(), instance);
+
+            var target = JObject.FromObject(instance);
+            foreach (var f in jObj.Properties())
+            {
+                //過濾掉已有屬性
+                if (!ignoreKey.Contains(f.Name))
+                {               
+                    //判斷Setting屬性是否已存在
+                    if(target.ContainsKey(settingKey)) target[settingKey][f.Name] = f.Value;
+                    else target.Add(new JProperty(settingKey, new JObject(new JProperty(f.Name, f.Value))));
+                }
+            }
+            
+            return target.ToObject(objectType);
         }
+      
     }
 }

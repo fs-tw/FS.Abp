@@ -7,7 +7,7 @@ namespace FS.Abp.Core
     [DependsOn(
         typeof(CoreDomainSharedModule),
         typeof(Volo.Abp.Specifications.AbpSpecificationsModule),
-        typeof(Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule),
+        //typeof(Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule),
         typeof(EasyAbp.Abp.Trees.AbpTreesDomainModule),
         typeof(Volo.Abp.SettingManagement.AbpSettingManagementDomainModule),
         typeof(Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule)
