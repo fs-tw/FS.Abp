@@ -5,14 +5,14 @@
     "Description": "",
     "Children": [
       {
-        "No": "一般消息",
-        "DisplayName": "一般消息",
+        "No": "一般消息(example)",
+        "DisplayName": "一般消息(example)",
         "Description": "",
         "Children": []
       },
       {
-        "No": "企業消息",
-        "DisplayName": "企業消息",
+        "No": "企業消息(example)",
+        "DisplayName": "企業消息(example)",
         "Description": "",
         "Children": []
       }
