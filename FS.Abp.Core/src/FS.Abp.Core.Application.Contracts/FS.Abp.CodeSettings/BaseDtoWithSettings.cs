@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace FS.Abp.CodeSettings
@@ -45,18 +47,30 @@ namespace FS.Abp.CodeSettings
 
     }
 
+    public class CodesDtoWithSettingsForCreate<T> : BaseDtoWithSettings<T>
+       where T : new()
+    {
+        public string DisplayName { get; set; }
+        public string No { get; set; }
+       
+    }
+
 
     public class CodesDtoWithSettings<T>: BaseDtoWithSettings<T>
         where T:new()
     {
         public string DisplayName { get; set; }
         public string No { get; set; }
-        public Guid Id { get; set; }
-
+        public Guid Id { get; set; }             
     }
 
     public class DtoWithSettingsConverter : Newtonsoft.Json.JsonConverter
-    {     
+    {
+
+        private string firstCharToLower(string s) 
+        {
+            return char.ToLower(s[0]) + s.Substring(1);
+        }
         public override bool CanConvert(Type objectType)
         {
             return typeof(IDtoWithSettings).IsAssignableFrom(objectType);
@@ -68,19 +82,25 @@ namespace FS.Abp.CodeSettings
             writer.WriteStartObject();
 
             JObject jObj = JObject.FromObject(value);
+            var serializerSettings = new JsonSerializerSettings();
+            serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+           
             foreach (var f in jObj.Properties())
             {
-                writer.WritePropertyName(f.Name);
+                writer.WritePropertyName(firstCharToLower(f.Name));
+                
                 serializer.Serialize(writer, f.Value);
             }
             foreach (string foo in obj.SettingsPropertyName)
             {
-                writer.WritePropertyName(foo);
+                writer.WritePropertyName(firstCharToLower(foo));
                 var jsonValue = ((IDtoWithSettings)value)[foo];
                 serializer.Serialize(writer, jsonValue);
             }
             writer.WriteEndObject();
         }
+
+       
 
         public override bool CanRead
         {
