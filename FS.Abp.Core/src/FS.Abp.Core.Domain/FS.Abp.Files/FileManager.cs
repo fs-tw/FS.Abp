@@ -32,6 +32,18 @@ namespace FS.Abp.Files
             return entity;
         }
 
+        public async Task<string> GetBase64Async(string name)
+        {
+            var result = this.GetContentByName(name);
+            string base64 = Convert.ToBase64String(result.Content);
+            return base64;
+        }
+
+        public async Task<byte[]> GetBytesAsync(string name)
+        {
+            var data = await _blobContainer.GetAllBytesOrNullAsync(name).ConfigureAwait(false);
+            return data;
+        }
 
         public async Task SaveBytesAsync(string name, string base64)
         {
@@ -42,22 +54,10 @@ namespace FS.Abp.Files
             await this.SaveBytesAsync(name, bytes).ConfigureAwait(false);
         }
 
-        public async Task<string> GetBase64Async(string name)
-        {
-            var result = this.GetContentByName(name);
-            string base64 = Convert.ToBase64String(result.Content);
-            return base64;
-        }
 
         public async Task SaveBytesAsync(string name, byte[] bytes)
         {
             await _blobContainer.SaveAsync(name, bytes, true).ConfigureAwait(false);
-        }
-
-        public async Task<byte[]> GetBytesAsync(string name)
-        {
-            var data = await _blobContainer.GetAllBytesOrNullAsync(name).ConfigureAwait(false);
-            return data;
         }
 
         public Task DeleteAsync(string name)
