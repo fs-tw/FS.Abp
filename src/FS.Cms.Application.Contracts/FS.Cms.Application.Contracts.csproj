@@ -34,6 +34,22 @@
     <Compile Update="FS.Cms.Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="FS.Cms\Documents\IDocumentsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Documents\IDocumentsAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Posts\IPostsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Posts\IPostsAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
@@ -70,6 +86,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\IDocumentsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Menu\MenuPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Menu</DependentUpon>
@@ -91,6 +111,10 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\IPostsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

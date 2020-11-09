@@ -1,6 +1,9 @@
-﻿using FS.Cms.Posts.Dtos;
+﻿using FS.Abp.CodingManagement.Coding;
+using FS.Abp.Files;
+using FS.Cms.Posts.Dtos;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +14,31 @@ using Volo.Abp.Users;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostsAppService : IPostCrudAppService
+    public partial class PostCrudAppService : IPostCrudAppService
     {
+        private IFileManager fileManager;
+        protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
+
+        private IConfiguration configuration;
+        protected IConfiguration Configuration => this.LazyGetRequiredService(ref configuration);
+
+        private IPostsManager postsManager;
+        protected IPostsManager PostsManager => this.LazyGetRequiredService(ref postsManager);
+
+        private ICodesTreeRepository codesTreeRepository;
+        protected ICodesTreeRepository CodesTreeRepository => this.LazyGetRequiredService(ref codesTreeRepository);
         public override async Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
         {
-            var uer = currentUser.Id;
-            var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
-            var url = this.configuration["App:SelfUrl"];
+            var uer = CurrentUser.Id;
+            var permission = await AuthorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
+            var url = this.Configuration["App:SelfUrl"];
 
-            var query =  this.postsManager.CheckPublished_AtForPermission(input.BlogCodeId, permission.Succeeded);                
-            var entities = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
+            var query = this.postsManager.CheckPublished_AtForPermission(input.BlogCodeId, permission.Succeeded);
 
-            var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities.Entities);
+
+            var entities = this.CreateFilteredQuery(input).ToList();//  query.ToList();//this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
+
+            var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(entities);
             foreach (var item in result)
             {
                 var blogCode = this.codesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
@@ -47,30 +63,30 @@ namespace FS.Cms.Posts
 
             return new PagedResultDto<PostWithDetailsDto>()
             {
-                TotalCount = entities.TotalCount,
+                TotalCount = 0,//entities.TotalCount,
                 Items = result
             };
         }
 
-        public override async Task<PostWithDetailsDto> GetAsync(Guid id)
+        public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
         {
 
             var url = this.configuration["App:SelfUrl"];
-            var post = this.postsRepository.WithDetails().Where(x => x.Id == id).First();           
+            var post = this.Repository.WithDetails().Where(x => x.Id == key.Id).First();
             var output = ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
-            if (output.DisplayMode == DisplayMode.內文) 
+            if (output.DisplayMode == DisplayMode.內文)
             {
                 output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
                 output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
-            }                
+            }
             return output;
         }
 
 
-        private async Task<string> contentUrlToRelativeUrl(string content) 
+        private async Task<string> contentUrlToRelativeUrl(string content)
         {
             var targetUrl = "api/theme-core/file";
-            var htmlDoc = new HtmlDocument();            
+            var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(content);
             var source = htmlDoc.DocumentNode.SelectNodes("//img");
             if (source.IsNullOrEmpty()) return content;
@@ -89,7 +105,7 @@ namespace FS.Cms.Posts
         }
 
 
-        private async Task<string> contentBase64ToUrl(string content, Guid postId) 
+        private async Task<string> contentBase64ToUrl(string content, Guid postId)
         {
             string firstStr = "<img src=\"data";
             string lastStr = "\">";
@@ -99,44 +115,44 @@ namespace FS.Cms.Posts
                 string lastContent = content.Substring(firstIndex);
                 int lastIndex = lastContent.IndexOf(lastStr) + 2;
                 string replaceData = content.Substring(firstIndex, lastIndex);
-                var fileUrl = $"cms\\posts\\{postId}\\{guidGenerator.Create()}{checkFileType(replaceData)}";
+                var fileUrl = $"cms\\posts\\{postId}\\{GuidGenerator.Create()}{checkFileType(replaceData)}";
                 await this.fileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));
                 var fileUrlOutput = fileUrl.Replace("\\", "%5C");
                 content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileUrlOutput}" + "'>");
             }
             return content;
         }
- 
+
 
         public override async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateDto input)
-        {           
-            Guid postId = guidGenerator.Create();
+        {
+            Guid postId = GuidGenerator.Create();
             if (input.DisplayMode == DisplayMode.內文)
             {
-                input.Content = await this.contentBase64ToUrl(input.Content, postId);               
+                input.Content = await this.contentBase64ToUrl(input.Content, postId);
             }
 
             var entityInput = ObjectMapper.Map<PostCreateDto, Post>(input);
-            
+
             EntityHelper.TrySetId(entityInput, () => postId, true);
             entityInput.TenantId = CurrentTenant.Id;
-            await this.postsRepository.InsertAsync(entityInput).ConfigureAwait(false);
+            await this.Repository.InsertAsync(entityInput).ConfigureAwait(false);
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(entityInput);
         }
 
-        public override async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(Guid id, PostUpdateDto input)
+        public override async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(PostPrimaryKeyDto key, PostUpdateDto input)
         {
-            var post = this.postsRepository.Where(x => x.Id == id).First();
+            var post = this.Repository.Where(x => x.Id == key.Id).First();
             ObjectMapper.Map(input, post);
-            List<string> deleteTargetList = new List<string>();            
+            List<string> deleteTargetList = new List<string>();
 
             if (post.DisplayMode == DisplayMode.內文)
             {
                 post.Content = await this.contentUrlToRelativeUrl(post.Content);
-                post.Content = await this.contentBase64ToUrl(post.Content, post.Id);               
+                post.Content = await this.contentBase64ToUrl(post.Content, post.Id);
             }
             post.TenantId = CurrentTenant.Id;
-            await this.postsRepository.UpdateAsync(post).ConfigureAwait(false);
+            await this.Repository.UpdateAsync(post).ConfigureAwait(false);
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
         }
         private string checkFileType(string input)
@@ -148,5 +164,5 @@ namespace FS.Cms.Posts
             else return ".jpg";
         }
 
-    }   
+    }
 }

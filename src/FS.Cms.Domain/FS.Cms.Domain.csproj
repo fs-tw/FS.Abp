@@ -28,6 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.Cms\Documents\DocumentsStore.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Posts\PostsStore.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
@@ -52,6 +60,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\IDocumentDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
@@ -73,6 +85,10 @@
       <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\PostImage.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

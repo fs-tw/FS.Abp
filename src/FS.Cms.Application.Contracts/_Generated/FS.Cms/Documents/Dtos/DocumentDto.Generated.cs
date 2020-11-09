@@ -15,6 +15,9 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Documents.Dtos
 {
+    public partial class DocumentPrimaryKeyDto : EntityDto<Guid>
+    {
+    }
     public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public string Content { get; set; }

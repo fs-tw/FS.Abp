@@ -15,6 +15,9 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts.Dtos
 {
+    public partial class PostTagMapPrimaryKeyDto : EntityDto<Guid>
+    {
+    }
     public partial class PostTagMapDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public System.Guid PostId { get; set; }

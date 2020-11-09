@@ -15,6 +15,9 @@ using FS.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts.Dtos
 {
+    public partial class PostPrimaryKeyDto : EntityDto<Guid>
+    {
+    }
     public partial class PostDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
         public System.Guid BlogCodeId { get; set; }

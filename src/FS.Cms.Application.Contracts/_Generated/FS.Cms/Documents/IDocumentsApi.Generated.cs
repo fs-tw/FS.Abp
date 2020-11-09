@@ -9,13 +9,13 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
-using Volo.Abp.Application.Services;
 
-namespace FS.Cms.Posts
+namespace FS.Cms.Documents
 {
-    public partial interface IPostTagMapCrudAppService : 
-        Volo.Abp.Application.Services.ICrudAppService<FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto, FS.Cms.Posts.Dtos.PostTagMapPrimaryKeyDto, FS.Cms.Posts.Dtos.PostTagMapGetListDto, FS.Cms.Posts.Dtos.PostTagMapCreateDto, FS.Cms.Posts.Dtos.PostTagMapUpdateDto>
+    public partial interface IDocumentsApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService,
+        IDocumentDefinitionCrudAppService,
+        IDocumentCrudAppService
     {
-
     }
 }
