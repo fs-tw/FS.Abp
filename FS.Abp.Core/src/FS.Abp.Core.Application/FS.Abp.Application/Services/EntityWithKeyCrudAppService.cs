@@ -18,6 +18,9 @@ namespace FS.Abp.Application.Services
     {
         protected new IRepository<TEntity, TKey> Repository { get; }
 
+        private ISearchedAndPagedAndSortedOperation _searchedAndpagedAndSortedOperation;
+        protected ISearchedAndPagedAndSortedOperation SearchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndpagedAndSortedOperation);
+
         protected EntityWithKeyCrudAppService(IRepository<TEntity, TKey> repository)
             : base(repository)
         {
@@ -43,7 +46,6 @@ namespace FS.Abp.Application.Services
 
             base.MapToEntity(updateInput, entity);
         }
-
         protected override IQueryable<TEntity> ApplyDefaultSorting(IQueryable<TEntity> query)
         {
             if (typeof(TEntity).IsAssignableTo<IHasCreationTime>())
