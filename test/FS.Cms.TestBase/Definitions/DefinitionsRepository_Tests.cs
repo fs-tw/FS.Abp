@@ -3,21 +3,24 @@ using Volo.Abp.Modularity;
 using Xunit;
 using FS.Abp.CodingManagement.Coding;
 using Shouldly;
+using FS.Cms.Posts;
 
-namespace FS.Cms.Samples
+namespace FS.Cms.Definitions
 {
     /* Write your custom repository tests like that, in this project, as abstract classes.
      * Then inherit these abstract classes from EF Core & MongoDB test projects.
      * In this way, both database providers are tests with the same set tests.
      */
-    public abstract class SampleRepository_Tests<TStartupModule> : CmsTestBase<TStartupModule>
+    public abstract class DefinitionsRepository_Tests<TStartupModule> : CmsTestBase<TStartupModule>
         where TStartupModule : IAbpModule
     {
         private readonly ICodesTreeRepository _codeRepository;
+        private readonly IPostRepository _postRepository;
 
-        protected SampleRepository_Tests()
+        protected DefinitionsRepository_Tests()
         {
             _codeRepository = GetRequiredService<ICodesTreeRepository>();
+            _postRepository = GetRequiredService<IPostRepository>();
         }
 
         [Fact]
@@ -26,5 +29,8 @@ namespace FS.Cms.Samples
             var definition = await _codeRepository.GetDefinitionAsync("CmsBlogDefinition");
             definition.Children.Count.ShouldBe(2);
         }
+
+
+     
     }
 }
