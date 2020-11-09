@@ -27,6 +27,12 @@ namespace FS.Abp.Application.Services
             Repository = repository;
         }
 
+        protected override IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
+        {
+            //var searchSpec = new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(input);
+            return Repository.WithDetails();//.WhereIf(input != null, searchSpec); ;
+        }
+
         protected override async Task DeleteByIdAsync(TKeyDto id)
         {
             await Repository.DeleteAsync(id.Id);
