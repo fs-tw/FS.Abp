@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Cms.Posts\Dtos\PostDto.cs">
+    <Compile Update="FS.Cms\Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="FS.Cms\Documents\IDocumentsApi.cs">
@@ -41,6 +41,10 @@
     <Compile Update="FS.Cms\Documents\IDocumentsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Posts\IPostCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="FS.Cms\Posts\IPostsApi.cs">
       <AutoGen>True</AutoGen>

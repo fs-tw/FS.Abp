@@ -16,7 +16,7 @@ using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostCrudAppService : 
+    public partial class PostCrudAppService :  // auto-generated
         FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.Cms.Posts.Post, FS.Cms.Posts.Dtos.PostWithDetailsDto, FS.Cms.Posts.Dtos.PostPrimaryKeyDto, Guid, FS.Cms.Posts.Dtos.PostGetListDto, FS.Cms.Posts.Dtos.PostCreateDto, FS.Cms.Posts.Dtos.PostUpdateDto>,
         IPostCrudAppService
     {

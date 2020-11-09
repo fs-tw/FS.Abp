@@ -13,7 +13,7 @@ using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Documents
 {
-    public partial interface IDocumentDefinitionCrudAppService : 
+    public partial interface IDocumentDefinitionCrudAppService : // auto-generated
         Volo.Abp.Application.Services.ICrudAppService<FS.Cms.Documents.Dtos.DocumentDefinitionWithDetailsDto, FS.Cms.Documents.Dtos.DocumentDefinitionPrimaryKeyDto, FS.Cms.Documents.Dtos.DocumentDefinitionGetListDto, FS.Cms.Documents.Dtos.DocumentDefinitionCreateDto, FS.Cms.Documents.Dtos.DocumentDefinitionUpdateDto>
     {
 

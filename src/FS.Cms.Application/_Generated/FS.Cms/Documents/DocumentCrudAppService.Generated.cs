@@ -16,7 +16,7 @@ using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Documents
 {
-    public partial class DocumentCrudAppService : 
+    public partial class DocumentCrudAppService :  // auto-generated
         FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.Cms.Documents.Document, FS.Cms.Documents.Dtos.DocumentWithDetailsDto, FS.Cms.Documents.Dtos.DocumentPrimaryKeyDto, Guid, FS.Cms.Documents.Dtos.DocumentGetListDto, FS.Cms.Documents.Dtos.DocumentCreateDto, FS.Cms.Documents.Dtos.DocumentUpdateDto>,
         IDocumentCrudAppService
     {

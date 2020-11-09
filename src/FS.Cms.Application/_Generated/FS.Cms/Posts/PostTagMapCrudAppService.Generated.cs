@@ -16,7 +16,7 @@ using Volo.Abp.Application.Services;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostTagMapCrudAppService : 
+    public partial class PostTagMapCrudAppService :  // auto-generated
         FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.Cms.Posts.PostTagMap, FS.Cms.Posts.Dtos.PostTagMapWithDetailsDto, FS.Cms.Posts.Dtos.PostTagMapPrimaryKeyDto, Guid, FS.Cms.Posts.Dtos.PostTagMapGetListDto, FS.Cms.Posts.Dtos.PostTagMapCreateDto, FS.Cms.Posts.Dtos.PostTagMapUpdateDto>,
         IPostTagMapCrudAppService
     {

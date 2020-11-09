@@ -64,10 +64,12 @@
         <File Name="EfCorePostTagMapRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="EfCoreDocumentDefinitionRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="EfCoreDocumentTreeRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="IPostCrudAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="IPostCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IPostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IDocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IDocumentCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="PostCrudAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />

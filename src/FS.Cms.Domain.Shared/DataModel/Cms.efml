@@ -931,7 +931,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
