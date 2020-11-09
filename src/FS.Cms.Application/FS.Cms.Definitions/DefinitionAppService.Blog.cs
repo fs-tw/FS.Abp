@@ -14,7 +14,7 @@ namespace FS.Cms.Definitions
         public async Task<List<BlogDto>> BlogGetListAsync()
         {
             var permission = await authorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
-            var definition = await CodingStore.Codes.GetDefinitionAsync("CmsBlogDefinition");
+            var definition = await CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsBlogDefinition);
             var blogs = definition.CodeList;
 
             var result = blogs.Select(x =>
@@ -99,7 +99,7 @@ namespace FS.Cms.Definitions
 
         public async Task<BlogDto> BlogCreateAsync(BlogCreateInput input)
         {
-            var definition = await CodingStore.Codes.GetDefinitionAsync("CmsBlogDefinition");
+            var definition = await CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsBlogDefinition);
             Codes codes = new Codes()
             {
                 ParentId = definition.Id,
