@@ -15,7 +15,7 @@ namespace FS.Cms.Posts
     {
         [HttpGet]
         [Route("post/id")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> GetAsync([FromQuery] PostPrimaryKeyDto key)
         {
             return this.PostCrudAppService.GetAsync(key);
@@ -23,7 +23,7 @@ namespace FS.Cms.Posts
 
         [HttpGet]
         [Route("post")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
         {
             return this.PostCrudAppService.GetListAsync(input);
@@ -31,7 +31,7 @@ namespace FS.Cms.Posts
 
         [HttpPost]
         [Route("post")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> CreateAsync(PostCreateDto input)
         {
             return this.PostCrudAppService.CreateAsync(input);
@@ -39,7 +39,7 @@ namespace FS.Cms.Posts
 
         [HttpPut]
         [Route("post/id")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> UpdateAsync([FromQuery] PostPrimaryKeyDto key, PostUpdateDto input)
         {
             return this.PostCrudAppService.UpdateAsync(key,input);
@@ -47,7 +47,7 @@ namespace FS.Cms.Posts
 
         [HttpDelete]
         [Route("post/id")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task DeleteAsync([FromQuery] PostPrimaryKeyDto key)
         {
             return this.PostCrudAppService.DeleteAsync(key);

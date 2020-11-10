@@ -14,59 +14,59 @@ namespace FS.Cms.Posts
 {
     public partial class PostsApi : IPostsApi
     {
-        /// <summary>
-        /// 根據BlogCodeId 查詢文章(全部列出管理者用，不管發佈日期、隱藏)
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public Task<PagedResultDto<PostWithDetailsDto>> GetList(PostGetListDto input)
-        {
-            return this.PostCrudAppService.GetListAsync(input);
-        }
+        ///// <summary>
+        ///// 根據BlogCodeId 查詢文章(全部列出管理者用，不管發佈日期、隱藏)
+        ///// </summary>
+        ///// <param name="input"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //public Task<PagedResultDto<PostWithDetailsDto>> GetList(PostGetListDto input)
+        //{
+        //    return this.PostCrudAppService.GetListAsync(input);
+        //}
 
-        /// <summary>
-        /// 取得一筆文章
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<PostWithDetailsDto> GetAsync(Guid id)
-        {
-            return await this.PostCrudAppService.GetAsync(new PostPrimaryKeyDto() { Id = id });
-        }
+        ///// <summary>
+        ///// 取得一筆文章
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //[Route("{id}")]
+        //public async Task<PostWithDetailsDto> GetAsync(Guid id)
+        //{
+        //    return await this.PostCrudAppService.GetAsync(new PostPrimaryKeyDto() { Id = id });
+        //}
 
-        /// <summary>
-        /// 建立貼文
-        /// </summary>
-        /// <param name="input">新增文章，設定發佈日期</param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateDto input)
-        {
-            return await this.PostCrudAppService.CreateAsync(input);
-        }
+        ///// <summary>
+        ///// 建立貼文
+        ///// </summary>
+        ///// <param name="input">新增文章，設定發佈日期</param>
+        ///// <returns></returns>
+        //[HttpPost]
+        //public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateDto input)
+        //{
+        //    return await this.PostCrudAppService.CreateAsync(input);
+        //}
 
-        /// <summary>
-        /// 更新文章
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        [HttpPut]
-        [Route("{id}")]
-        public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateDto input)
-        {
-            return await this.PostCrudAppService.UpdateAsync(new PostPrimaryKeyDto() { Id = id }, input);
-        }
+        ///// <summary>
+        ///// 更新文章
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <param name="input"></param>
+        ///// <returns></returns>
+        //[HttpPut]
+        //[Route("{id}")]
+        //public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateDto input)
+        //{
+        //    return await this.PostCrudAppService.UpdateAsync(new PostPrimaryKeyDto() { Id = id }, input);
+        //}
 
-        [HttpDelete]
-        [Route("{id}")]
-        public async Task Delete(Guid id)
-        {
-            await this.PostCrudAppService.DeleteAsync(new PostPrimaryKeyDto() { Id = id });
-        }
+        //[HttpDelete]
+        //[Route("{id}")]
+        //public async Task Delete(Guid id)
+        //{
+        //    await this.PostCrudAppService.DeleteAsync(new PostPrimaryKeyDto() { Id = id });
+        //}
 
     }
 }
