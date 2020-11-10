@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FS.Abp.Application.Dtos;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -15,6 +16,7 @@ namespace FS.Abp.Application.Services
         where TEntity : class, IEntity<TKey>
         where TGetOutputDto : IEntityDto
         where TKeyDto : IEntityDto<TKey>
+        where TGetListInput : ISearchResultRequest
     {
         protected new IRepository<TEntity, TKey> Repository { get; }
 
@@ -26,11 +28,16 @@ namespace FS.Abp.Application.Services
         {
             Repository = repository;
         }
-
+        //GetList need WithDetail
         protected override IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
         {
-            //var searchSpec = new FS.Abp.Specifications.PropertiesEqualitySpecification<TEntity>(input);
-            return Repository.WithDetails();//.WhereIf(input != null, searchSpec); ;
+            var query = Repository.WithDetails();
+            if (input is ISearchResultRequest searchInput)
+            {
+                var searchSpec = new FS.Abp.Specifications.SearchSpecification<TEntity>(searchInput.Fields, searchInput.Value);
+                query = query.Where(searchSpec);
+            }
+            return query;
         }
 
         protected override async Task DeleteByIdAsync(TKeyDto id)
