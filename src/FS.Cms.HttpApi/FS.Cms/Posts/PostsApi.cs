@@ -20,7 +20,7 @@ namespace FS.Cms.Posts
         ///// <param name="input"></param>
         ///// <returns></returns>
         //[HttpGet]
-        //public Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
+        //public Task<PagedResultDto<PostWithDetailsDto>> GetList(PostGetListDto input)
         //{
         //    return this.PostCrudAppService.GetListAsync(input);
         //}
@@ -34,7 +34,7 @@ namespace FS.Cms.Posts
         //[Route("{id}")]
         //public async Task<PostWithDetailsDto> GetAsync(Guid id)
         //{
-        //    return await this.PostCrudAppService.GetAsync(id);
+        //    return await this.PostCrudAppService.GetAsync(new PostPrimaryKeyDto() { Id = id });
         //}
 
         ///// <summary>
@@ -45,7 +45,7 @@ namespace FS.Cms.Posts
         //[HttpPost]
         //public async Task<Posts.Dtos.PostWithDetailsDto> Create(PostCreateDto input)
         //{
-        //    return await this._postsAppService.CreateAsync(input);
+        //    return await this.PostCrudAppService.CreateAsync(input);
         //}
 
         ///// <summary>
@@ -58,14 +58,14 @@ namespace FS.Cms.Posts
         //[Route("{id}")]
         //public async Task<Posts.Dtos.PostWithDetailsDto> Update(Guid id, PostUpdateDto input)
         //{
-        //    return await this._postsAppService.UpdateAsync(id, input);
+        //    return await this.PostCrudAppService.UpdateAsync(new PostPrimaryKeyDto() { Id = id }, input);
         //}
 
         //[HttpDelete]
         //[Route("{id}")]
         //public async Task Delete(Guid id)
         //{
-        //    await this._postsAppService.DeleteAsync(id);
+        //    await this.PostCrudAppService.DeleteAsync(new PostPrimaryKeyDto() { Id = id });
         //}
 
     }

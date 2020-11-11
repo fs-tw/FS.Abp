@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataSeed\**" />
+    <EmbeddedResource Remove="DataSeed\**" />
+    <None Remove="DataSeed\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
     <PackageReference Include="NSubstitute" Version="4.2.1" />
     <PackageReference Include="Shouldly" Version="3.0.2" />
@@ -18,10 +24,6 @@
     <PackageReference Include="Volo.Abp.Authorization" Version="3.2.1" />
     <PackageReference Include="Volo.Abp.TestBase" Version="3.2.1" />
     <ProjectReference Include="..\..\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataSeed\" />
   </ItemGroup>
 
 </Project>

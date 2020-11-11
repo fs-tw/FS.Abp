@@ -9,10 +9,10 @@ namespace FS.Cms.Posts
 {
     public class PostAppService_Tests : CmsApplicationTestBase
     {
-        private readonly IPostsAppService _postsAppService;
+        private readonly IPostCrudAppService _postsAppService;
         public PostAppService_Tests()
         {
-            _postsAppService = GetRequiredService<IPostsAppService>();
+            _postsAppService = GetRequiredService<IPostCrudAppService>();
         }
 
         [Fact]
