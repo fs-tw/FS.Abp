@@ -7,15 +7,21 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
-namespace FS.Cms.Documents
+namespace FS.Cms.Posts
 {
-    public partial interface IDocumentsApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IDocumentDefinitionCrudAppService,
-        IDocumentCrudAppService
+    public static class PostsQueryableExtensions //auto-generated
     {
+        public static IQueryable<PostTagMap> IncludeDetails(this IQueryable<PostTagMap> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
+            return queryable
+                .Include(x => x.Post);
+        }
     }
 }
