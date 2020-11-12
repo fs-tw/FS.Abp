@@ -1,6 +1,6 @@
 ﻿using FS.Abp.CodingManagement.Coding;
 using FS.Abp.VirtualFileSystem;
-using FS.Cms.DataSeed.Model;
+using FS.Cms.Data.Posts;
 using FS.Cms.Posts;
 using System;
 using System.Collections.Generic;
@@ -11,19 +11,13 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 
-namespace FS.Cms.DataSeed.Seeder
-{
-    public interface IPostSeeder
-    {
-        Task SeedAsync(DataSeedContext context);
-    }
-}
+
 namespace FS.Cms.DataSeed.Seeder
 {
    
-    public class PostSeeder : ITransientDependency, IPostSeeder
+    public class PostSeeder : ITransientDependency
     {
-        private const string jsonFile = "/Files/Imports/Posts/Posts.json";
+        private const string jsonFile = "/Files/Data/Posts/Posts.json";
         private readonly IGuidGenerator _guidGenerator;
         private readonly IVirtualFileJsonReader _virtualFileJsonReader;
         private readonly IPostRepository _postRepository;
@@ -44,7 +38,7 @@ namespace FS.Cms.DataSeed.Seeder
         public async Task SeedAsync(DataSeedContext context)
         {
             var tenantId = context.TenantId;
-            var sourceData = this._virtualFileJsonReader.ReadJson<List<PostModel>>(jsonFile);
+            var sourceData = this._virtualFileJsonReader.ReadJson<List<PostJson>>(jsonFile);
 
             var hasData = this._postRepository.Count() > 0;
             if (hasData) return;

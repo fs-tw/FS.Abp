@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FS.Cms.DataSeed.Model
+namespace FS.Cms.Data.Posts
 {
-    public class PostModel
+    public class PostJson
     {
         public string BlogCode { get; set; }
         public string Title { get; set; }

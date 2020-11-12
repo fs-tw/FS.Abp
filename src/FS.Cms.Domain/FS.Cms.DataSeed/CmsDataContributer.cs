@@ -10,12 +10,12 @@ namespace FS.Cms.DataSeed
 {
     public class CmsDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
-        private readonly ICmsDefinitionSeeder cmsDefinitionSeeder;
-        private readonly IPostSeeder postSeeder;
+        private readonly CmsDefinitionSeeder cmsDefinitionSeeder;
+        private readonly PostSeeder postSeeder;
 
         public CmsDataSeedContributor(
-            ICmsDefinitionSeeder cmsDefinitionSeeder,
-            IPostSeeder postSeeder
+            CmsDefinitionSeeder cmsDefinitionSeeder,
+            PostSeeder postSeeder
             ) 
         {
             this.cmsDefinitionSeeder = cmsDefinitionSeeder;

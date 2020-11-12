@@ -1,6 +1,6 @@
 ﻿using FS.Abp.CodingManagement.Coding;
 using FS.Abp.VirtualFileSystem;
-using FS.Cms.DataSeed.Seeder.Model;
+using FS.Cms.Data.Definitions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +11,12 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 
-namespace FS.Cms.DataSeed.Seeder
-{
-    public interface ICmsDefinitionSeeder
-    {
-        Task SeedAsync(DataSeedContext context);
-    }
-}
 
 namespace FS.Cms.DataSeed.Seeder
 {
-    public class CmsDefinitionSeeder : ITransientDependency, ICmsDefinitionSeeder
+    public class CmsDefinitionSeeder : ITransientDependency
     {
-        private readonly string fileRoute = "/Files/Imports/Codes/Definition.json";
+        private readonly string fileRoute = "/Files/Data/Codes/Definition.json";
         private readonly IGuidGenerator guidGenerator;
         private readonly IVirtualFileJsonReader virtualFileJsonReader;
         private readonly ICodesTreeRepository codesTreeRepository;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FS.Cms.DataSeed.Seeder.Model
+namespace FS.Cms.Data.Definitions
 {
     public class BaseCodesJson
     {
