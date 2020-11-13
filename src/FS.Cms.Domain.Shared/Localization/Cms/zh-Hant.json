@@ -2,6 +2,12 @@
   "culture": "zh-Hant",
   "texts": {
     "FS.Cms.Blogs": "部落格",
-    "FS.Cms.Blogs.Posts": "文章"
+    "FS.Cms.Blogs.Posts": "文章",
+    "FS.Cms.Core": "網站內容管理",
+    "FS.Cms.Basic": "管理",
+    "FS.Cms.PostManagement": "消息內容管理",
+    "FS.Cms.Menu": "網站內容管理選單 ",
+    "FS.Cms.Menu.前台內容管理": "網站內容管理頁面",
+    "DisplayName:前台內容管理Permissions.最新消息管理": "消息內容管理權限"
   }
 }
