@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
@@ -53,14 +55,6 @@
     <Compile Update="FS.Cms\Posts\IPostsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -126,6 +120,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Blogs\" />
   </ItemGroup>
 
 </Project>
