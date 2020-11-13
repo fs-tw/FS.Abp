@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <EnableDefaultCssItems>false</EnableDefaultCssItems>
+    <WwwRootResourcePath>wwwroot</WwwRootResourcePath>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.MobileBlazorBindings" Version="0.5.50-preview" />
+    <PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\1007\bsl.works\applications\BSL.WebSite\aspnet-core\src\BSL.WebSite.HttpApi.Client\BSL.WebSite.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\..\..\abp\abp\framework\src\Volo.Abp.Autofac\Volo.Abp.Autofac.csproj" />
+    <ProjectReference Include="..\..\..\aspnet-core\src\FS.YC.HttpApi.Client\FS.YC.HttpApi.Client.csproj" />
+  </ItemGroup>
+</Project>
