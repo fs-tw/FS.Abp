@@ -29,12 +29,6 @@ namespace FS.Abp.Core
                     .Get<AbpCoreResource>()
                     .AddBaseTypes(typeof(AbpUiResource));
             });
-
-            Configure<MvcNewtonsoftJsonOptions>(options =>
-            {
-
-                options.SerializerSettings.Converters.Add(new FS.Abp.CodeSettings.DtoWithSettingsConverter());
-            });
         }
     }
 }
