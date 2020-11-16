@@ -17,21 +17,11 @@ namespace FS.Cms.DataSeed.Seeder
     public class CmsDefinitionSeeder : ITransientDependency
     {
         private readonly string fileRoute = "/Files/Data/Codes/Definition.json";
-        private readonly IGuidGenerator guidGenerator;
-        private readonly IVirtualFileJsonReader virtualFileJsonReader;
-        private readonly ICodesTreeRepository codesTreeRepository;
+        public IGuidGenerator guidGenerator { get; set; }
+        public IVirtualFileJsonReader virtualFileJsonReader { get; set; }
+        public ICodesTreeRepository codesTreeRepository { get; set; }
 
-        public CmsDefinitionSeeder(
-             IGuidGenerator guidGenerator,
-              IVirtualFileJsonReader virtualFileJsonReader,
-              ICodesTreeRepository codesTreeRepository
-              )
-        {
-            this.guidGenerator = guidGenerator;
-            this.virtualFileJsonReader = virtualFileJsonReader;
-            this.codesTreeRepository = codesTreeRepository;
-        }
-
+       
         public async Task SeedAsync(DataSeedContext context)
         {
             List<BaseCodesJson> sourceData = this.virtualFileJsonReader.ReadJson<List<BaseCodesJson>>(fileRoute);
