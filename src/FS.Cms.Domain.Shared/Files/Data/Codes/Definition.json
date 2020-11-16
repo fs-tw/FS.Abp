@@ -17,5 +17,11 @@
         "Children": []
       }
     ]
+  },
+  {
+    "No": "CmsTagDefinition",
+    "DisplayName": "CmsTagDefinition",
+    "Description": "",
+    "Children": []
   }
 ]

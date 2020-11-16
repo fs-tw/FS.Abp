@@ -18,23 +18,12 @@ namespace FS.Cms.DataSeed.Seeder
     public class PostSeeder : ITransientDependency
     {
         private const string jsonFile = "/Files/Data/Posts/Posts.json";
-        private readonly IGuidGenerator _guidGenerator;
-        private readonly IVirtualFileJsonReader _virtualFileJsonReader;
-        private readonly IPostRepository _postRepository;
-        private readonly ICodesTreeRepository _codesTreeRepository;
+        public IGuidGenerator _guidGenerator { get; set; }
+        public IVirtualFileJsonReader _virtualFileJsonReader { get; set; }
+        public IPostRepository _postRepository { get; set; }
+        public ICodesTreeRepository _codesTreeRepository { get; set; }
 
-        public PostSeeder(
-            IGuidGenerator guidGenerator,
-            IVirtualFileJsonReader virtualFileJsonReader,
-            IPostRepository postRepository,
-            ICodesTreeRepository codesTreeRepository)
-        {
-            this._guidGenerator = guidGenerator;
-            this._virtualFileJsonReader = virtualFileJsonReader;
-            this._postRepository = postRepository;
-            this._codesTreeRepository = codesTreeRepository;
-        }
-
+      
         public async Task SeedAsync(DataSeedContext context)
         {
             var tenantId = context.TenantId;

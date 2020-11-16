@@ -10,18 +10,10 @@ namespace FS.Cms.DataSeed
 {
     public class CmsDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
-        private readonly CmsDefinitionSeeder cmsDefinitionSeeder;
-        private readonly PostSeeder postSeeder;
+        public  CmsDefinitionSeeder cmsDefinitionSeeder { get; set; }
+        public  PostSeeder postSeeder { get; set; }
 
-        public CmsDataSeedContributor(
-            CmsDefinitionSeeder cmsDefinitionSeeder,
-            PostSeeder postSeeder
-            ) 
-        {
-            this.cmsDefinitionSeeder = cmsDefinitionSeeder;
-            this.postSeeder = postSeeder;
-        }
-
+       
         public async Task SeedAsync(DataSeedContext context) 
         {          
             await this.cmsDefinitionSeeder.SeedAsync(context);
