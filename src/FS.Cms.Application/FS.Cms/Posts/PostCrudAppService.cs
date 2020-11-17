@@ -120,8 +120,9 @@ namespace FS.Cms.Posts
             return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
         }
 
-        private async Task<string> contentUrlToRelativeUrl(string content)
+        private async Task<string> contentUrlToRelativeUrl(string content = "")
         {
+            if (content.IsNullOrEmpty()) return "";
             var targetUrl = "api/theme-core/file";
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(content);
