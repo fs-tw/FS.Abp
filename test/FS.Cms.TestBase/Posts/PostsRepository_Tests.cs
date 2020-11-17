@@ -7,14 +7,14 @@ using FS.Cms.Posts;
 
 namespace FS.Cms.Posts
 {
-    public abstract class  PostsRepository_Tests<TStartupModule> : CmsTestBase<TStartupModule>
+    public abstract class PostsRepository_Tests<TStartupModule> : CmsTestBase<TStartupModule>
         where TStartupModule : IAbpModule
     {
 
         private readonly IPostRepository _postRepository;
 
         protected PostsRepository_Tests()
-        {          
+        {
             _postRepository = GetRequiredService<IPostRepository>();
         }
 
