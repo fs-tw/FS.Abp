@@ -16,6 +16,6 @@ namespace FS.Abp.Files
         //DatabaseBlob GetContentByName(string name);
         //bool IsBase64String(string base64);
         Task SaveBytesAsync(string name, byte[] bytes);
-        Task SaveBytesAsync(string name, string base64);
+        Task<string> SaveBytesAsync(string name, string base64);
     }
 }
