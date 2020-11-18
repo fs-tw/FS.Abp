@@ -26,6 +26,12 @@ namespace FS.Abp.Files
             this._blobContainer = blobContainer;
         }
 
+        public string GetFileApiUrl(string fileName) 
+        {
+            if (fileName.IsNullOrEmpty()) return "";
+            string apiUrl = "api/theme-core/file";
+            return $"/{apiUrl}/{fileName}";       
+        }
 
         private DatabaseBlob GetContentByName(string name)
         {

@@ -17,5 +17,6 @@ namespace FS.Abp.Files
         //bool IsBase64String(string base64);
         Task SaveBytesAsync(string name, byte[] bytes);
         Task<string> SaveBytesAsync(string name, string base64);
+        string GetFileApiUrl(string fileName);
     }
 }
