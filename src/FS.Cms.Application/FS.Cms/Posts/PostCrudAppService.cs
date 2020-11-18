@@ -143,6 +143,7 @@ namespace FS.Cms.Posts
         }
         private async Task<string> contentBase64ToUrl(string content, Guid postId)
         {
+            if (content.IsNullOrEmpty()) return "";
             string firstStr = "<img src=\"data";
             string lastStr = "\">";
             while (content.Contains(firstStr))
@@ -151,21 +152,11 @@ namespace FS.Cms.Posts
                 string lastContent = content.Substring(firstIndex);
                 int lastIndex = lastContent.IndexOf(lastStr) + 2;
                 string replaceData = content.Substring(firstIndex, lastIndex);
-                var fileUrl = $"cms\\posts\\{postId}\\{GuidGenerator.Create()}{checkFileType(replaceData)}";
-                await this.FileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));
-                var fileUrlOutput = fileUrl.Replace("\\", "%5C");
-                content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileUrlOutput}" + "'>");
+                var fileUrl = $"cms\\posts\\{postId}\\{GuidGenerator.Create()}";
+                var fileName = await this.FileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));                
+                content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileName}" + "'>");
             }
             return content;
-        }
-        private string checkFileType(string input)
-        {
-            if (input.Contains("image/png")) return ".png";
-            else if (input.Contains("image/gif")) return ".gif";
-            else if (input.Contains("image/jpeg")) return ".jpg";
-            else if (input.Contains("image/bmp")) return ".bmp";
-            else return ".jpg";
-        }
-
+        }       
     }
 }
