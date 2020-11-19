@@ -18,7 +18,7 @@ namespace FS.Cms.Posts
             _postsStore = GetRequiredService<IPostsStore>();
         }
 
-        [Fact]
+        [Fact(Skip ="待完成")]
         public async Task Should_Has_Datas()
         {
             //assert

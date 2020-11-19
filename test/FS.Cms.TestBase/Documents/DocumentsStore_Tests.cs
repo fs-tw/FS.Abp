@@ -19,7 +19,7 @@ namespace FS.Cms.Posts
             _documentsStore = GetRequiredService<IDocumentsStore>();
         }
 
-        [Fact]
+        [Fact(Skip ="待完成")]
         public async Task Should_Has_Datas()
         {
             //assert
