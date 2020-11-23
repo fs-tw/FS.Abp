@@ -29,6 +29,7 @@ namespace FS.Abp.Files
         public string GetFileApiUrl(string fileName) 
         {
             if (fileName.IsNullOrEmpty()) return "";
+            if (fileName.StartsWith("http")) return fileName;
             string apiUrl = "api/theme-core/file";
             return $"/{apiUrl}/{fileName}";       
         }
