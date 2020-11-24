@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FS.Abp.Core.Files;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,7 @@ using Volo.Abp.BlobStoring;
 using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
+using Volo.Abp.EventBus.Local;
 
 namespace FS.Abp.Files
 {
@@ -16,14 +18,17 @@ namespace FS.Abp.Files
     {
         private readonly IRepository<DatabaseBlob, Guid> _databaseBlobsRepository;
         private readonly IBlobContainer _blobContainer;
+        private readonly ILocalEventBus _localEventBus;
 
         public FileManager(
         IRepository<DatabaseBlob, Guid> databaseBlobsRepository,
-        IBlobContainer blobContainer
+        IBlobContainer blobContainer,
+        ILocalEventBus localEventBus
             )
         {
             this._databaseBlobsRepository = databaseBlobsRepository;
             this._blobContainer = blobContainer;
+            this._localEventBus = localEventBus;
         }
 
         public string GetFileApiUrl(string fileName) 
@@ -73,13 +78,23 @@ namespace FS.Abp.Files
 
 
         public async Task SaveBytesAsync(string name, byte[] bytes)
-        {
+        {        
             await _blobContainer.SaveAsync(name, bytes, true).ConfigureAwait(false);
+            await this._localEventBus.PublishAsync(new FileChangedEvent()
+            {
+                Name = name,
+                IsDelete = false
+            });
         }
 
-        public Task DeleteAsync(string name)
+        public async Task DeleteAsync(string name)
         {
-            return _blobContainer.DeleteAsync(name);
+            await _blobContainer.DeleteAsync(name);
+            await this._localEventBus.PublishAsync(new FileChangedEvent()
+            {
+                Name = name.Replace("\\", "%5C"),
+                IsDelete = true
+            });            
         }
 
 
@@ -122,4 +137,7 @@ namespace FS.Abp.Files
             }
         }
     }
+
+
+
 }
