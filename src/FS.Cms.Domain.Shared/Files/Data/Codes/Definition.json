@@ -23,5 +23,11 @@
     "DisplayName": "CmsTagDefinition",
     "Description": "",
     "Children": []
+  },
+  {
+    "No": "CmsStorageDefinition",
+    "DisplayName": "CmsStorageDefinition",
+    "Description": "",
+    "Children": []
   }
 ]

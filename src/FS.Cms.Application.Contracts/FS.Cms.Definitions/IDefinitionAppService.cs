@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace FS.Cms.Definitions
 {
     public interface IDefinitionsAppService : 
-        IBlogAppService, ITagAppService
+        IBlogAppService, ITagAppService, IStorageAppService
     {
     }
     public interface IBlogAppService
@@ -20,5 +20,11 @@ namespace FS.Cms.Definitions
     public interface ITagAppService 
     {
         
+    }
+
+    public interface IStorageAppService
+    {
+        Task<List<StorageDto>> GetFile();
+
     }
 }

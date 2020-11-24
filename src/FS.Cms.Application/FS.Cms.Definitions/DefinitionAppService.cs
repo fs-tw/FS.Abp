@@ -1,6 +1,8 @@
 ﻿using FS.Abp.CodingManagement.Coding;
+using FS.Abp.Files;
 using FS.Cms.Core;
 using FS.Cms.Posts;
+using FS.Cms.Storage;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,13 @@ namespace FS.Cms.Definitions
     {
         private ICodingStore _codingStore;
         public ICodingStore CodingStore => LazyGetRequiredService(ref _codingStore);
+
+        private IStorageManager _storageManager;
+        public IStorageManager StorageManager => LazyGetRequiredService(ref _storageManager);
+
+        private IFileManager fileManager;
+        protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
+
         private readonly IPostRepository postsRepository;
         private readonly IAuthorizationService authorizationService;
         private readonly ICurrentCodes currentCodes;

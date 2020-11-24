@@ -8,5 +8,6 @@ namespace FS.Cms
     {
         public const string CmsBlogDefinition = "CmsBlogDefinition";
         public const string CmsTagDefinition = "CmsTagDefinition";
+        public const string CmsStorageDefinition = "CmsStorageDefinition";
     }
 }
