@@ -28,6 +28,19 @@
     "No": "CmsStorageDefinition",
     "DisplayName": "CmsStorageDefinition",
     "Description": "",
-    "Children": []
+    "Children": [
+      {
+        "No": "Files",
+        "DisplayName": "Files",
+        "Description": "",
+        "Children": []
+      },
+      {
+        "No": "Folders",
+        "DisplayName": "Folders",
+        "Description": "",
+        "Children": []
+      }
+    ]
   }
 ]

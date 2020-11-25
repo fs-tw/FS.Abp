@@ -21,10 +21,16 @@ namespace FS.Cms.Samples
         [Fact]
         public async Task Save_No_Error_When_Create_File_Codes()
         {
-            await storageManager.CreateCodeFile("test.jpg");
+            await storageManager.CreateCodeFile(new Abp.Core.Files.FileChangedEvent() 
+            {
+                Name = "test.jpg",
+                FileSize = 5,
+                FileSizeStr = "5bit",
+                IsDelete = false
+            });
         }
 
-        [Fact(Skip = "Wait fix storageManager")]
+ 
         public async Task Save_And_Delete_ForBase64()
         {
             var fileName = "further1.png";            
@@ -41,7 +47,7 @@ namespace FS.Cms.Samples
             bytes.ShouldBe(null);
         }
 
-        [Fact(Skip = "Wait fix storageManager")]
+
         public async Task Save_And_Delete_ForBytes()
         {
             var fileName = "further2.png";
