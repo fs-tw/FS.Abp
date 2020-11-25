@@ -23,14 +23,13 @@ namespace FS.Abp.Core
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             var configuration = context.Services.GetConfiguration();
-            Boolean fileSaveDb = true;
-            string saveFilePath = configuration["FS.Cms:FileStorage:SaveFilePath"];
-            if (saveFilePath != null) fileSaveDb = false;           
+            
+            string saveFilePath = configuration["FS.Cms:FileStorage:SaveFilePath"];          
             Configure<AbpBlobStoringOptions>(options =>
             {
                 options.Containers.ConfigureDefault(container =>
                 {
-                    if (fileSaveDb) container.UseDatabase();
+                    if (saveFilePath.IsNullOrEmpty()) container.UseDatabase();
                     else 
                     {
                         container.UseFileSystem(fileSystem =>
