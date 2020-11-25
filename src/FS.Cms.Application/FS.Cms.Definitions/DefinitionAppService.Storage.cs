@@ -24,10 +24,25 @@ namespace FS.Cms.Definitions
                     CreationTime = x.CreationTime,
                     FileSizeStr = x.Description
                 };
-            }).ToList();
+            }).OrderByDescending(x=>x.CreationTime).ToList();
 
             return result;
         }
+
+        //public async Task<StorageLockDto> CheckDeleteFile(string FileName) 
+        //{
+        //    var @lock = await this.StorageManager.CheckDeleteFile(FileName);
+        //    return new StorageLockDto()
+        //    {
+        //        IsLock = @lock
+        //    };
+        //}
+
+
+        //public async Task SetFileLock(PutStorageLockDto input,string fileName) 
+        //{
+
+        //}
        
     }
 }

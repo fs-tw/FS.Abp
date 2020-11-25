@@ -25,6 +25,8 @@ namespace FS.Cms.Definitions
     public interface IStorageAppService
     {
         Task<List<StorageDto>> GetFile();
+        //Task<StorageLockDto> CheckDeleteFile(string FileName);
+        //Task SetFileLock(PutStorageLockDto input,string fileName);
 
     }
 }

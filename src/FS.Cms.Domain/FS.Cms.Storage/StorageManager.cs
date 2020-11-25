@@ -49,7 +49,7 @@ namespace FS.Cms.Storage
                 DisplayName = name,
                 Description = input.FileSizeStr,
                 No = input.Name.Replace("\\", "%5C"),
-                Enable = true,
+                Enable = false,
                 TenantId = CurrentTenant.Id
             };
 
@@ -62,7 +62,15 @@ namespace FS.Cms.Storage
             if (target != null) await this.CodingStore.Codes.DeleteAsync(target).ConfigureAwait(false);
         }
 
+        public async Task<Boolean> CheckDeleteFile(string FileName)
+        {
+            var target = this.CodingStore.Codes.Where(x => x.No == FileName).FirstOrDefault();
+            return target.Enable;
+        }
 
+        public async Task SetStorageLock()
+        {
 
+        }
     }
 }
