@@ -1,4 +1,5 @@
 ﻿using FS.Abp.CodingManagement.Coding;
+using FS.Abp.Core.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,21 +34,21 @@ namespace FS.Cms.Storage
         }
 
 
-        public async Task CreateCodeFile(string FileName)
+        public async Task CreateCodeFile(FileChangedEvent input)
         {
             //todo 建立資料夾
             var definition = await this.CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsStorageDefinition);
             var fileCode = definition.CodeList.Where(x => x.No == FilesNo).FirstOrDefault();
 
-            var name = FileName.Split("\\").Last();
+            var name = input.Name.Split("\\").Last();
 
             var entity = new Codes()
             {
                 ParentId = fileCode.Id,
                 DefinitionId = definition.Id,
                 DisplayName = name,
-                Description = "",
-                No = FileName.Replace("\\", "%5C"),
+                Description = input.FileSizeStr,
+                No = input.Name.Replace("\\", "%5C"),
                 Enable = true,
                 TenantId = CurrentTenant.Id
             };

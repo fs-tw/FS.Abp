@@ -8,6 +8,7 @@
     "FS.Cms.PostManagement": "消息內容管理",
     "FS.Cms.Menu": "網站內容管理選單 ",
     "FS.Cms.Menu.前台內容管理": "網站內容管理頁面",
+    "Fs.Cms.Storage": "檔案管理",
     "DisplayName:前台內容管理Permissions.最新消息管理": "消息內容管理權限"
   }
 }

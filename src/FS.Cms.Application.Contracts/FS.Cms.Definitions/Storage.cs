@@ -9,5 +9,7 @@ namespace FS.Cms.Definitions
         public Guid Id { get; set; }
         public string FileName{ get; set; }
         public string FileUrl { get; set; }
+        public DateTime CreationTime { get; set; }
+        public string FileSizeStr { get; set; }
     }
 }

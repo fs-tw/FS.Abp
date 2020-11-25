@@ -20,7 +20,9 @@ namespace FS.Cms.Definitions
                 {
                     FileName = x.DisplayName,
                     FileUrl = fileUrl,
-                    Id = x.Id
+                    Id = x.Id,
+                    CreationTime = x.CreationTime,
+                    FileSizeStr = x.Description
                 };
             }).ToList();
 

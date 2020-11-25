@@ -24,7 +24,7 @@ namespace FS.Cms.Storage
         public async Task HandleEventAsync(FileChangedEvent eventData)
         {
             if (eventData.IsDelete) await this.storageManager.DeleteCodeFile(eventData.Name);
-            else await this.storageManager.CreateCodeFile(eventData.Name);            
+            else await this.storageManager.CreateCodeFile(eventData);            
         }
     }
 }
