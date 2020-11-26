@@ -7,6 +7,8 @@ using System.Linq;
 using System.Data;
 using System.IO;
 using NPOI.XSSF.UserModel;
+using Volo.Abp.Uow;
+using Microsoft.Extensions.Options;
 
 namespace FS.Abp.Npoi.Mapper
 {
@@ -14,13 +16,16 @@ namespace FS.Abp.Npoi.Mapper
     {
         private readonly Volo.Abp.VirtualFileSystem.IVirtualFileProvider _virtualFileProvider;
         private readonly IErrorHandler errorHandler;
+        private readonly DataSeedOptions dataSeedOptions;
         public VirtualFileNpoiReader(
             Volo.Abp.VirtualFileSystem.IVirtualFileProvider virtualFileProvider,
-            IErrorHandler errorHandler
+            IErrorHandler errorHandler,
+            IOptions<DataSeedOptions> dataSeedOptions
             )
         {
             this._virtualFileProvider = virtualFileProvider;
             this.errorHandler = errorHandler;
+            this.dataSeedOptions = dataSeedOptions.Value;
         }
 
         public List<T> Read<T>(string filePath, string sheetName)
@@ -40,6 +45,7 @@ namespace FS.Abp.Npoi.Mapper
         public List<T> ReadToTreeNode<T>(string filePath, string sheetName, List<T> errors = null)
             where T : ITreeNode<T>, new()
         {
+
             var attribute = Volo.Abp.Reflection.ReflectionHelper.GetSingleAttributeOrDefault<Npoi.Mapper.Attributes.LevelStartAtAttribute>(typeof(T));
             if (attribute == null) throw new Exception($"{typeof(T).Name} should has LevelStartAtAttribute");
             var levelIndex = attribute.Index;
@@ -81,7 +87,11 @@ namespace FS.Abp.Npoi.Mapper
                     rowList.Clear();
                 }
             }
-            var list = dtTable.AsEnumerable().Select(x =>
+            var rows = dtTable.AsEnumerable().AsEnumerable();
+            if (dataSeedOptions.MaxProcessCount > 0)
+                rows = rows.Take(dataSeedOptions.MaxProcessCount);
+
+            var list = rows.Select(x =>
             {
                 var node = new T();
                 typeof(T).GetProperties().ForEach(p =>
