@@ -7,7 +7,6 @@ using System.Linq;
 using System.Data;
 using System.IO;
 using NPOI.XSSF.UserModel;
-using Volo.Abp.Uow;
 using Microsoft.Extensions.Options;
 
 namespace FS.Abp.Npoi.Mapper
@@ -139,7 +138,7 @@ namespace FS.Abp.Npoi.Mapper
             {
                 var errorInfo = new ErrorHandler.ErrorInfo()
                 {
-                    Message = $"找不到上層節點，名稱:{n.ToString()},位於：{sheet.SheetName} 工作簿。"
+                    Message = $"找不到上層節點，節點:{n.ToString()},位於：{sheet.SheetName} 工作簿。"
                 };
                 errorHandler.Add(errorInfo);
             }
@@ -147,7 +146,7 @@ namespace FS.Abp.Npoi.Mapper
             {
                 var errorInfo = new ErrorHandler.ErrorInfo()
                 {
-                    Message = $"找到多個上層節點，名稱:{n.ToString()},位於：{sheet.SheetName} 工作簿。"
+                    Message = $"找到多個上層節點，節點:{n.ToString()},位於：{sheet.SheetName} 工作簿。"
                 };
                 errorHandler.Add(errorInfo);
             }
