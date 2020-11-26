@@ -24,7 +24,7 @@ namespace FS.Abp.Core
         {
             var configuration = context.Services.GetConfiguration();
             
-            string saveFilePath = configuration["FS.Cms:FileStorage:SaveFilePath"];          
+            string saveFilePath = configuration["FS.Abp.Core:FileStorage:SaveFilePath"];          
             Configure<AbpBlobStoringOptions>(options =>
             {
                 options.Containers.ConfigureDefault(container =>
