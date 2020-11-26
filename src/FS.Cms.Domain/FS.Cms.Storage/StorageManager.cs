@@ -41,19 +41,29 @@ namespace FS.Cms.Storage
             var fileCode = definition.CodeList.Where(x => x.No == FilesNo).FirstOrDefault();
 
             var name = input.Name.Split("\\").Last();
+            var fileNo = input.Name.Replace("\\", "%5C");
+            var check = this.CodingStore.Codes.Where(x => x.No == fileNo).FirstOrDefault();
 
-            var entity = new Codes()
+            if (check == null)
             {
-                ParentId = fileCode.Id,
-                DefinitionId = definition.Id,
-                DisplayName = name,
-                Description = input.FileSizeStr,
-                No = input.Name.Replace("\\", "%5C"),
-                Enable = false,
-                TenantId = CurrentTenant.Id
-            };
-
-            await this.CodingStore.Codes.InsertAsync(entity).ConfigureAwait(false);
+                var entity = new Codes()
+                {
+                    ParentId = fileCode.Id,
+                    DefinitionId = definition.Id,
+                    DisplayName = name,
+                    Description = input.FileSizeStr,
+                    No = fileNo,
+                    Enable = false,
+                    TenantId = CurrentTenant.Id
+                };
+                await this.CodingStore.Codes.InsertAsync(entity).ConfigureAwait(false);
+            }
+            else 
+            {
+                check.Description = input.FileSizeStr;
+                await this.CodingStore.Codes.UpdateAsync(check).ConfigureAwait(false);
+            }
+           
         }
 
         public async Task DeleteCodeFile(string FileName)
