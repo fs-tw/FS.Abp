@@ -56,12 +56,12 @@ namespace FS.Cms.Storage
                     Enable = false,
                     TenantId = CurrentTenant.Id
                 };
-                await this.CodingStore.Codes.InsertAsync(entity).ConfigureAwait(false);
+                await this.CodingStore.Codes.InsertAsync(entity,true).ConfigureAwait(false);
             }
             else 
             {
                 check.Description = input.FileSizeStr;
-                await this.CodingStore.Codes.UpdateAsync(check).ConfigureAwait(false);
+                await this.CodingStore.Codes.UpdateAsync(check, true).ConfigureAwait(false);
             }
            
         }
