@@ -569,6 +569,9 @@
       <property name="最新消息管理" type="String" p1:ValidateRequired="true" p1:Guid="9a23b434-f23b-47e6-bdb4-c849758b84cc">
         <column name="" />
       </property>
+      <property name="檔案管理" type="String" p1:ValidateRequired="true" p1:Guid="f7e3a7cf-a21a-4e13-8169-e25b971cb666">
+        <column name="" />
+      </property>
     </component>
     <component class="FS.Cms.Posts.PostImage" p1:Guid="a144aba2-90f1-46f6-9c60-1d60108752ad" p1:AbpEditor="YinChang">
       <p1:Attributes>

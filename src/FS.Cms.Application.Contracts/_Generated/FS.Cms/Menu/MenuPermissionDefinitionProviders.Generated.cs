@@ -20,6 +20,7 @@ namespace FS.Cms.Menu
 
             var 前台內容管理 = MenuGroup.AddPermission(MenuPermissionNames.前台內容管理.Default,L(MenuPermissionNames.前台內容管理.Default));
             前台內容管理.AddChild(MenuPermissionNames.前台內容管理.最新消息管理 , L("DisplayName:前台內容管理Permissions.最新消息管理"));
+            前台內容管理.AddChild(MenuPermissionNames.前台內容管理.檔案管理 , L("DisplayName:前台內容管理Permissions.檔案管理"));
         }
 
         private static LocalizableString L(string name)
