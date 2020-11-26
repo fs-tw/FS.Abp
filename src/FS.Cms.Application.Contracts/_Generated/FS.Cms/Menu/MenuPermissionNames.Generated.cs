@@ -19,6 +19,7 @@ namespace FS.Cms.Menu
         {
             public const string Default = GroupName + ".前台內容管理";
             public const string 最新消息管理 = Default + ".最新消息管理";
+            public const string 檔案管理 = Default + ".檔案管理";
         }
 
         public static string[] GetAll()

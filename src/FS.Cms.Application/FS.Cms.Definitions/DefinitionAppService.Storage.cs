@@ -21,7 +21,7 @@ namespace FS.Cms.Definitions
                     FileName = x.DisplayName,
                     FileUrl = fileUrl,
                     Id = x.Id,
-                    CreationTime = x.CreationTime,
+                    CreationTime = x.LastModificationTime.HasValue? x.LastModificationTime.Value: x.CreationTime,
                     FileSizeStr = x.Description
                 };
             }).OrderByDescending(x=>x.CreationTime).ToList();
