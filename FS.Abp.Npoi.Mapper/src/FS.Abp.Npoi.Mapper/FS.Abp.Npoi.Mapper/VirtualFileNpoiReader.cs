@@ -41,7 +41,7 @@ namespace FS.Abp.Npoi.Mapper
 
     public partial class VirtualFileNpoiReader
     {
-        public List<T> ReadToTreeNode<T>(string filePath, string sheetName, List<T> errors = null)
+        public List<T> ReadToTreeNode<T>(string filePath, string sheetName)
             where T : ITreeNode<T>, new()
         {
 

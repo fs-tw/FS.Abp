@@ -10,7 +10,7 @@ namespace FS.Abp.Npoi.Mapper
         List<T> Read<T>(string filePath, string sheetName)
             where T : class, new();
 
-        List<T> ReadToTreeNode<T>(string filePath, string sheetName, List<T> errors = null)
+        List<T> ReadToTreeNode<T>(string filePath, string sheetName)
             where T : ITreeNode<T>, new();
 
     }
