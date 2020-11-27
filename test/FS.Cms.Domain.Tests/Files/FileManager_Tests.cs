@@ -21,13 +21,16 @@ namespace FS.Cms.Samples
         [Fact]
         public async Task Save_No_Error_When_Create_File_Codes()
         {
-            await storageManager.CreateCodeFile(new Abp.Core.Files.FileChangedEvent() 
+            await this.WithUnitOfWorkAsync(async () =>
             {
-                Name = "test.jpg",
-                FileSize = 5,
-                FileSizeStr = "5bit",
-                IsDelete = false
-            });
+                await storageManager.CreateCodeFile(new Abp.Core.Files.FileChangedEvent()
+                {
+                    Name = "test.jpg",
+                    FileSize = 5,
+                    FileSizeStr = "5bit",
+                    IsDelete = false
+                });
+            });            
         }
 
  

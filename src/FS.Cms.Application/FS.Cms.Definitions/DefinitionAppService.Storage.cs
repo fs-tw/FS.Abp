@@ -25,7 +25,7 @@ namespace FS.Cms.Definitions
                     var userName = "";
                     if (!settings.UserId.IsNullOrEmpty()) 
                     {
-                        var user = await this.userManager.FindByIdAsync(settings.UserId);
+                        var user = await this.UserManager.FindByIdAsync(settings.UserId);
                         userName = user.UserName;
                     }
                     var data = new StorageDto()

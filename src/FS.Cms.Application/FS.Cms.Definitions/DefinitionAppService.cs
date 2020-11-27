@@ -33,9 +33,13 @@ namespace FS.Cms.Definitions
         private IFileManager fileManager;
         protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
 
+        private UserManager<IdentityUser> userManager;
+        protected UserManager<IdentityUser> UserManager => this.LazyGetRequiredService(ref userManager);
+
+
         private readonly IPostRepository postsRepository;
         private readonly ICurrentUser currentUser;
-        private readonly UserManager<IdentityUser> userManager;
+        
         private readonly IAuthorizationService authorizationService;
         private readonly ICurrentCodes currentCodes;
         private readonly IStorageDefinitionSettingFactory storageDefinitionSettingFactory;
@@ -46,7 +50,7 @@ namespace FS.Cms.Definitions
         public DefinitionsAppService(
             IPostRepository postsRepository,
             ICurrentUser currentUser,
-            UserManager<IdentityUser> userManager,
+            
             IAuthorizationService authorizationService,
             ICurrentCodes currentCodes,
             IStorageDefinitionSettingFactory storageDefinitionSettingFactory,
@@ -55,8 +59,7 @@ namespace FS.Cms.Definitions
             )
         {
             this.postsRepository = postsRepository;
-            this.currentUser = currentUser;
-            this.userManager = userManager;
+            this.currentUser = currentUser;            
             this.authorizationService = authorizationService;
             this.currentCodes = currentCodes;
             this.storageDefinitionSettingFactory = storageDefinitionSettingFactory;

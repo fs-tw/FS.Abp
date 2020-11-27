@@ -6,7 +6,7 @@ namespace FS.Cms
     [DependsOn(
         typeof(CmsDomainSharedModule),
         typeof(FS.Abp.CodingManagement.CodingManagementDomainModule),
-        typeof(FS.Abp.Identity.IdentityDomainModule),
+        //typeof(FS.Abp.Identity.IdentityDomainModule),
         typeof(FS.Abp.Core.CoreDomainModule)//,
         //typeof(FS.Theme.ThemeDomainModule)
         )]
