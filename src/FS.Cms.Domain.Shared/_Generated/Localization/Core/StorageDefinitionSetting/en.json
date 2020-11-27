@@ -1,0 +1,12 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "StorageDefinitionSetting.UserId": "UserId",
+    "Description:StorageDefinitionSetting.UserId": "UserId",
+    "DisplayName:StorageDefinitionSetting.UserId": "UserId",
+    "StorageDefinitionSetting.IsLock": "IsLock",
+    "Description:StorageDefinitionSetting.IsLock": "IsLock",
+    "DisplayName:StorageDefinitionSetting.IsLock": "IsLock"
+
+  }
+}

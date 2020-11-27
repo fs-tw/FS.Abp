@@ -11,6 +11,5 @@ namespace FS.Cms.Storage
         Task<List<Codes>> GetFiles();
         Task CreateCodeFile(FileChangedEvent input);
         Task DeleteCodeFile(string FileName);
-        Task<Boolean> CheckDeleteFile(string FileName);
     }
 }

@@ -72,15 +72,5 @@ namespace FS.Cms.Storage
             if (target != null) await this.CodingStore.Codes.DeleteAsync(target).ConfigureAwait(false);
         }
 
-        public async Task<Boolean> CheckDeleteFile(string FileName)
-        {
-            var target = this.CodingStore.Codes.Where(x => x.No == FileName).FirstOrDefault();
-            return target.Enable;
-        }
-
-        public async Task SetStorageLock()
-        {
-
-        }
     }
 }

@@ -11,6 +11,9 @@ namespace FS.Cms.Definitions
         public string FileUrl { get; set; }
         public DateTime CreationTime { get; set; }
         public string FileSizeStr { get; set; }
+        public Boolean IsLock { get; set; }
+        public string? LockUserId { get; set; }
+        public string? UserName { get; set; }
     }
 
 

@@ -7,15 +7,22 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-namespace Volo.Abp.Localization
+
+using System;
+using System.Collections.Generic;
+using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
+
+namespace FS.Cms.Core.Dtos
 {
-    public static partial class LocalizationResourceExtensions
+    public partial class StorageDefinitionSettingDto
     {
-        public static LocalizationResource AddCmsDomainLocalizations(this LocalizationResource resource)
-        {
-            return resource
-                .AddVirtualJson(@"/_Generated/Localization/Core/BlogDefinitionSetting")
-                .AddVirtualJson(@"/_Generated/Localization/Core/StorageDefinitionSetting");
-         }
+        public string UserId { get; set; }
+
+        public bool IsLock { get; set; }
+
+    }
+    public partial class StorageDefinitionSettingWithDetailsDto : StorageDefinitionSettingDto
+    {
     }
 }

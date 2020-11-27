@@ -78,6 +78,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\DocumentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>

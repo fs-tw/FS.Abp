@@ -23,6 +23,8 @@
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json" />
     <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\en.json" />
     <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\zh-Hant.json" />
+    <None Remove="_Generated\Localization\Core\StorageDefinitionSetting\en.json" />
+    <None Remove="_Generated\Localization\Core\StorageDefinitionSetting\zh-Hant.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +37,14 @@
     <EmbeddedResource Include="_Generated\Localization\Core\BlogDefinitionSetting\zh-Hant.json">
       <AutoGen>True</AutoGen>
       <DependentUpon>BlogDefinitionSetting</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Generated\Localization\Core\StorageDefinitionSetting\en.json">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StorageDefinitionSetting</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Generated\Localization\Core\StorageDefinitionSetting\zh-Hant.json">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StorageDefinitionSetting</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
 
