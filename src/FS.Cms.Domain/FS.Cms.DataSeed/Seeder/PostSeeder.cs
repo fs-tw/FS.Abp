@@ -54,7 +54,7 @@ namespace FS.Cms.DataSeed.Seeder
                     DisplayMode = DisplayMode.內文,
                     PostImages = new List<PostImage>(),
                     AttachmentFileUrls = new List<string>(),
-
+                    TenantId = context.TenantId,
                     Sequence = i
                 };
 

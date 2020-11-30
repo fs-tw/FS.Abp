@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Volo.Abp.Domain.Services;
+using Volo.Abp.MultiTenancy;
 
 namespace FS.Cms.Posts
 {
@@ -11,14 +12,17 @@ namespace FS.Cms.Posts
     {
         private readonly IPostRepository postsRepository;
         private readonly ICodesTreeRepository codesTreeRepository;
+        private readonly ICurrentTenant currentTenant;
 
         public PostsManager(
               IPostRepository postsRepository,
-              ICodesTreeRepository codesTreeRepository
+              ICodesTreeRepository codesTreeRepository,
+              ICurrentTenant currentTenant
               )
         {
             this.postsRepository = postsRepository;
             this.codesTreeRepository = codesTreeRepository;
+            this.currentTenant = currentTenant;
         }
 
 
@@ -29,6 +33,7 @@ namespace FS.Cms.Posts
 
             var query = this.postsRepository
                             .WithDetails()
+                            .Where(x=>x.TenantId == this.currentTenant.Id)
                             .WhereIf(!permission, x => blogCodes.Any(b => x.BlogCodeId == b))
                             .WhereIf(blogCodeId.HasValue, x => x.BlogCodeId == blogCodeId)
                             .WhereIf(!permission, x => x.Published_At <= DateTime.Now && x.Published == true)
