@@ -49,7 +49,7 @@ namespace FS.Cms.Definitions
         public async Task<StorageLockDto> CheckDeleteFile(string fileName)
         {
             var code = this.CodingStore.Codes.Where(x => x.No.Equals(fileName)).FirstOrDefault();
-            if (code == null) throw new UserFriendlyException("沒有此檔案！");
+            if (code == null) return new StorageLockDto() { IsLock = false };
             using (currentCodes.Change(code.Id))
             {
                 var settings = storageDefinitionSettingFactory.Value;
