@@ -147,6 +147,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Report", "FS.Report", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Report", "FS.Core\src\FS.Report\FS.Report.csproj", "{7BE7792D-EAB0-4C97-8874-06024A08104E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.EntitySettings", "FS.Abp.EntitySettings", "{FFBAED66-C611-46F7-8267-AD88AADE71AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntitySettings", "FS.Abp.EntitySettings\FS.Abp.EntitySettings.csproj", "{0E8634C1-34B2-418B-AC4A-4A536D217F99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -305,6 +309,10 @@ Global
 		{7BE7792D-EAB0-4C97-8874-06024A08104E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE7792D-EAB0-4C97-8874-06024A08104E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE7792D-EAB0-4C97-8874-06024A08104E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8634C1-34B2-418B-AC4A-4A536D217F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8634C1-34B2-418B-AC4A-4A536D217F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8634C1-34B2-418B-AC4A-4A536D217F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8634C1-34B2-418B-AC4A-4A536D217F99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -367,6 +375,7 @@ Global
 		{DAA966E5-B77C-4717-B031-8E3381A1C90B} = {1263614D-50BF-4F9B-9014-1F7292356BFA}
 		{959A6E36-ED55-4723-B173-EEDC1C35F8D1} = {0B1178BA-6683-4AB5-9263-C6CCE1DC6837}
 		{7BE7792D-EAB0-4C97-8874-06024A08104E} = {6AF34682-B003-40A8-BD25-87374C5B7562}
+		{0E8634C1-34B2-418B-AC4A-4A536D217F99} = {FFBAED66-C611-46F7-8267-AD88AADE71AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
