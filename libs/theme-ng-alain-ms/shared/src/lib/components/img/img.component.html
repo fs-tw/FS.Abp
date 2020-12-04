@@ -1,0 +1,53 @@
+<div nz-row [nzGutter]="8">
+  <div nz-col [nzSpan]="6">
+    <nz-tree [ngModel]="cat.ls" (nzClick)="changeCat($event)"> </nz-tree>
+  </div>
+  <div nz-col [nzSpan]="18">
+    <file-manager #fm [actions]="fmAction" [multiple]="multiple" (selected)="cho($event)" [params]="params">
+      <ng-template #fmAction>
+        <button *ngIf="result.length > 0" nz-button nz-dropdown [nzDropdownMenu]="copyMenu" class="ml-md">
+          <i nz-icon nzType="setting" nzTheme="outline"></i>
+          <i nz-icon nzType="down"></i>
+        </button>
+        <nz-dropdown-menu #copyMenu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item (click)="copyData('link')">Copy Link</li>
+            <li nz-menu-item (click)="copyData('code')">Copy Code</li>
+          </ul>
+        </nz-dropdown-menu>
+        <nz-input-group nzCompact style="display: inherit; width: 270px;" class="ml-md">
+          <nz-select [(ngModel)]="params.orderby" (ngModelChange)="load()">
+            <nz-option [nzValue]="0" nzLabel="按上传时间从晚到早"></nz-option>
+            <nz-option [nzValue]="2" nzLabel="按修改时间从晚到早"></nz-option>
+            <nz-option [nzValue]="4" nzLabel="按修改时间从早到晚"></nz-option>
+            <nz-option [nzValue]="6" nzLabel="按图片名升序"></nz-option>
+            <nz-option [nzValue]="8" nzLabel="按图片名降序"></nz-option>
+          </nz-select>
+          <input [(ngModel)]="params.q" delay (delayChange)="load()" nz-input placeholder="按文件名称" />
+        </nz-input-group>
+      </ng-template>
+    </file-manager>
+  </div>
+</div>
+<nz-card
+  [nzTitle]="choTpl"
+  nzType="inner"
+  *ngIf="multiple && result.length > 0"
+  [nzBodyStyle]="{ background: 'rgba(204, 204, 204, 0.33)' }"
+  class="mt-sm"
+>
+  <ng-template #choTpl>
+    已选图
+    <small class="pl-md text-grey">（按住拖动可调整顺序）</small>
+    <button (click)="ok()" nz-button nzType="primary">确认所选</button>
+  </ng-template>
+  <div class="file-manager" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+    <div class="file-item" *ngFor="let i of result" cdkDrag [title]="i.title">
+      <div class="file-item__img" [ngStyle]="{ 'background-image': 'url(' + i.mp + ')' }"></div>
+      <div class="file-item__name">{{ i.title }}</div>
+      <div class="file-item__pixel">
+        <span *ngIf="i.is_img">{{ i.width }}x{{ i.height }}</span>
+      </div>
+    </div>
+  </div>
+</nz-card>

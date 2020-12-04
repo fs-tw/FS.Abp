@@ -1,0 +1,82 @@
+<div class="hidden-pc ay-footer__m">
+  <div class="ay-footer__m-line ay-footer__m-hot">
+    <strong class="ay-footer__m-hot-title">热门产品</strong>
+    <a *ngFor="let i of hotsInMobile" routerLink="{{ i.link }}">{{ i.title }}</a>
+  </div>
+  <div class="ay-footer__m-line mt-md">
+    <a class="d-block">切换至电脑版</a>
+    <a class="d-block">APP 下载</a>
+    <a class="d-block">关于我们</a>
+  </div>
+  <div class="mt-md ay-footer__m-tel">
+    <a href="tel:88888,1">售前咨询：88888转1</a>
+  </div>
+  <div class="pt-md">
+    &copy; 2018 xxxxxx 版权所有
+  </div>
+</div>
+<div class="hidden-mobile ay-footer__pc">
+  <div class="ay-footer__know">
+    <div class="ay-footer__wrap">
+      <div class="ay-footer__know-tel">
+        <i nz-icon nzType="customer-service" class="mr-lg icon-md text-white"></i>
+        <div>
+          售前咨询热线
+          <a class="d-block text-lg text-white" href="tel:88888,1">88888转1</a>
+          <ul class="ay-footer__know-links my-md">
+            <li><a>专业技术咨询</a></li>
+            <li><a>专业技术咨询</a></li>
+            <li><a>专业技术咨询</a></li>
+            <li><a>专业技术咨询</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="ay-footer__know-menus">
+        <li *ngFor="let p of menus">
+          <h3>{{ p.title }}</h3>
+          <ul class="ay-footer__know-links my-md">
+            <li *ngFor="let i of p.list">
+              <a routerLink="{{ i.link }}">{{ i.title }}</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>关注我们</h3>
+          <ul class="ay-footer__know-links ay-footer__know-imgs my-md" mouseFocus>
+            <li>
+              <a href="javascript:;">必读</a>
+              <img src="//qr.liantu.com/api.php?text=https://e.ng-alain.com/" />
+            </li>
+            <li class="active">
+              <a href="javascript:;">APP</a>
+              <img src="//qr.liantu.com/api.php?text=https://e.ng-alain.com/" />
+            </li>
+            <li>
+              <a href="javascript:;">微信</a>
+              <img src="//qr.liantu.com/api.php?text=https://e.ng-alain.com/" />
+            </li>
+            <li>
+              <a href="javascript:;">微博</a>
+              <img src="//qr.liantu.com/api.php?text=https://e.ng-alain.com/" />
+            </li>
+            <li>
+              <a href="javascript:;">满意中心</a>
+              <img src="//qr.liantu.com/api.php?text=https://e.ng-alain.com/" />
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ay-footer__hot">
+    <div class="ay-footer__wrap">
+      <div *ngFor="let p of hots" class="ay-footer__hot-item">
+        <strong class="ay-footer__hot-title">{{ p.title }}</strong>
+        <div class="ay-footer__hot-links">
+          <a *ngFor="let i of p.list" routerLink="{{ i.link }}">{{ i.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer-copyright class="pt0"></footer-copyright>
+</div>

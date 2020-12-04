@@ -1,0 +1,63 @@
+<div class="ms-page-nav__body">
+  <div class="ms-page-nav__stage">
+    <div class="ms-page-nav__scene ms-page-nav__scene-main">
+      <div
+        class="ms-page-nav__title"
+        [ngClass]="{ 'ms-page-nav__back': config.backHref }"
+        (click)="to(config.backHref, $event)"
+        [title]="config.backHref ? ('ms.page-nav.back' | i18n) : ''"
+      >
+        <i *ngIf="config.backHref" nz-icon nzType="left"></i>
+        {{ config.title }}
+      </div>
+      <div class="ms-page-nav__list scrollbar">
+        <ng-template #treeTpl let-ls let-level="level">
+          <li *ngFor="let i of ls">
+            <ng-container *ngIf="i.children.length == 0">
+              <div
+                *ngIf="i.link"
+                class="ms-page-nav__item"
+                role="treeitem"
+                routerLink="{{ i.link }}"
+                routerLinkActive="ms-page-nav__item-active"
+              >
+                <span class="ms-page-nav__item-icon"></span>
+                <span class="ms-page-nav__item-tit">{{ i.text }}</span>
+                <span *ngIf="i.badge" class="ms-page-nav__item-badge">{{ i.badge }}</span>
+              </div>
+              <a *ngIf="!i.link" [href]="i.externalLink" [target]="i.target" class="ms-page-nav__item" role="treeitem">
+                <span class="ms-page-nav__item-icon"></span>
+                <span class="ms-page-nav__item-tit">{{ i.text }}</span>
+                <span *ngIf="i.badge" class="ms-page-nav__item-badge">{{ i.badge }}</span>
+              </a>
+            </ng-container>
+            <ng-container *ngIf="i.children.length > 0">
+              <div class="ms-page-nav__item" role="treeitem" (click)="i.active = !i.active">
+                <span class="ms-page-nav__item-icon">
+                  <i nz-icon [nzType]="i.active ? 'caret-down' : 'caret-right'"></i>
+                </span>
+                <span class="ms-page-nav__item-tit">{{ i.text }}</span>
+              </div>
+              <ul role="tree" class="list-unstyled" [ngClass]="{ 'd-none': !i.active }">
+                <ng-container
+                  *ngTemplateOutlet="treeTpl; context: { $implicit: i.children, level: level + 1 }"
+                ></ng-container>
+              </ul>
+            </ng-container>
+          </li>
+        </ng-template>
+        <ul role="tree" class="list-unstyled">
+          <ng-container *ngTemplateOutlet="treeTpl; context: { $implicit: list, level: 1 }"></ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ms-page-nav__control" (click)="toggle()">
+  <div class="ms-page-nav__control-wrap">
+    <div class="ms-page-nav__control-bg"></div>
+    <div class="ms-page-nav__control-btn">
+      <i nz-icon nzType="menu-fold"></i>
+    </div>
+  </div>
+</div>

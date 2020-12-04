@@ -1,0 +1,11 @@
+<div class="ms-page-bar__title">
+  <h2 *ngIf="title" class="ms-page-bar__title-main">
+    <ng-container *nzStringTemplateOutlet="title">{{ title }}</ng-container>
+  </h2>
+  <div *ngIf="subTitle" class="ms-page-bar__title-sub">
+    <ng-container *nzStringTemplateOutlet="subTitle">{{ subTitle }}</ng-container>
+  </div>
+</div>
+<div class="ms-page-bar__action">
+  <ng-content></ng-content>
+</div>
