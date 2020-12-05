@@ -3,16 +3,19 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FS.Abp.Core</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.5" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\..\src\FS.Abp.Core.EntityFrameworkCore\FS.Abp.Core.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Abp.Core.TestBase\FS.Abp.Core.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="3.2.1" />
   </ItemGroup>
 
 </Project>
