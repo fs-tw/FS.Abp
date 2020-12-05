@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace FS.Cms.Definitions
 {
     public interface IDefinitionsAppService : 
-        IBlogAppService, ITagAppService, IStorageAppService
+        IBlogAppService, ITagAppService//, IStorageAppService
     {
     }
     public interface IBlogAppService
@@ -22,11 +22,11 @@ namespace FS.Cms.Definitions
         
     }
 
-    public interface IStorageAppService
-    {
-        Task<List<StorageDto>> GetFile();
-        Task<StorageLockDto> CheckDeleteFile(string fileName);
-        Task SetFileLock(PutStorageLockDto input, string fileName);
+    //public interface IStorageAppService
+    //{
+    //    Task<List<StorageDto>> GetFile();
+    //    Task<StorageLockDto> CheckDeleteFile(string fileName);
+    //    Task SetFileLock(PutStorageLockDto input, string fileName);
 
-    }
+    //}
 }

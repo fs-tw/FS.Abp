@@ -4,14 +4,14 @@ using FS.Cms.Core;
 using FS.Cms.Posts;
 using FS.Cms.Storage;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.Identity;
+//using Volo.Abp.Identity;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.Users;
 
@@ -33,8 +33,8 @@ namespace FS.Cms.Definitions
         private IFileManager fileManager;
         protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
 
-        private UserManager<IdentityUser> userManager;
-        protected UserManager<IdentityUser> UserManager => this.LazyGetRequiredService(ref userManager);
+        //private UserManager<IdentityUser> userManager;
+        //protected UserManager<IdentityUser> UserManager => this.LazyGetRequiredService(ref userManager);
 
 
         private readonly IPostRepository postsRepository;

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="3.2.1" />
-    <PackageReference Include="Volo.Abp.Authorization" Version="3.2.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="4.0.0" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application.Contracts\FS.Abp.Core.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Application.Contracts\FS.Abp.CodingManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
