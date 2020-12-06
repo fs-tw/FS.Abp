@@ -31,3 +31,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "framework"]
 	path = framework
 	url = http://bitbucket.furthersoftware.com.tw/scm/fram/framework.git
+[submodule "tools/entitydeveloper"]
+	path = tools/entitydeveloper
+	url = http://bitbucket.furthersoftware.com.tw/scm/tool/entitydeveloper.git
