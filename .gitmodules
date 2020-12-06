@@ -34,3 +34,12 @@ url=https://github.com/abpframework/abp.git
 [submodule "tools/entitydeveloper"]
 	path = tools/entitydeveloper
 	url = http://bitbucket.furthersoftware.com.tw/scm/tool/entitydeveloper.git
+[submodule "modules/FS.Abp"]
+	path = modules/FS.Abp
+	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.abp.git
+[submodule "modules/FS.Cms"]
+	path = modules/FS.Cms
+	url = http://bitbucket.furthersoftware.com.tw/scm/mod/fs.cms.git
+[submodule "modules/FS.Theme"]
+	path = modules/FS.Theme
+	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.theme.git
