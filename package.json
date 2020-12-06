@@ -51,6 +51,7 @@
     "@npm/lepton": "file:npm/lepton",
     "@npm/ng-alain": "file:npm/ng-alain",
     "@npm/ng-alain-ms": "file:npm/ng-alain-ms",
+    "@npm/the-project": "file:npm/the-project",
     "@nrwl/cli": "10.4.4",
     "@nrwl/cypress": "10.4.4",
     "@nrwl/eslint-plugin-nx": "10.4.4",

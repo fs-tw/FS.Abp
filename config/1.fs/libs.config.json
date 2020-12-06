@@ -6,6 +6,9 @@
     },
     "fs.theme-ng-alain-ms": {
       "tags": []
+    },
+    "fs.theme-the-project": {
+      "tags": []
     }    
   },
   "angular": {  
@@ -93,6 +96,49 @@
         }
       },
       "schematics": {}
+    },
+    "fs.theme-the-project": {
+      "projectType": "library",
+      "root": "libs/theme-the-project",
+      "sourceRoot": "libs/theme-the-project/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "tsconfig.lib.json",
+            "project": "libs/theme-the-project/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-the-project/tsconfig.lib.json",
+              "libs/theme-the-project/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/theme-the-project/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/theme-the-project/jest.config.js",
+            "tsConfig": "libs/theme-the-project/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/theme-the-project/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }    
   },
   "tsconfig": {
@@ -107,7 +153,13 @@
     ],
     "@fs/theme.ng-alain-ms/*": [
       "libs/theme-ng-alain-ms/*/src/index.ts"
-    ]        
+    ],
+    "@fs/theme.the-project": [
+      "libs/theme-the-project/src/index.ts"
+    ],
+    "@fs/theme.the-project/*": [
+      "libs/theme-the-project/*/src/index.ts"
+    ]
   },
   "tsconfigProd": { 
     "@fs/theme.ng-alain": [
@@ -121,6 +173,12 @@
     ],
     "@fs/theme.ng-alain-ms/*": [
       "dist/theme-ng-alain-ms/*"
-    ] 
+    ],
+    "@fs/theme.the-project": [
+      "dist/theme-the-project"
+    ],
+    "@fs/theme.the-project/*": [
+      "dist/theme-the-project/*"
+    ]    
   }
 }

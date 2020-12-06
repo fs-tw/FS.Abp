@@ -510,6 +510,142 @@
         }
       }
     },
+    "fs.the-project-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/the-project-app",
+      "sourceRoot": "apps/the-project-app/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/the-project-app",
+            "index": "apps/the-project-app/src/index.html",
+            "main": "apps/the-project-app/src/main.ts",
+            "polyfills": "apps/the-project-app/src/polyfills.ts",
+            "tsConfig": "apps/the-project-app/tsconfig.dev.json",
+            "aot": true,
+            "assets": [
+              "apps/the-project-app/src/favicon.ico",
+              "apps/the-project-app/src/assets"
+            ],
+            "styles": [
+              "apps/the-project-app/src/styles.scss",
+              "apps/the-project-app/src/assets/css/skins/light_blue.css"
+            ],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/the-project-app/src/environments/environment.ts",
+                  "with": "apps/the-project-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "further": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/the-project-app/src/environments/environment.ts",
+                  "with": "apps/the-project-app/src/environments/environment.further.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "fs.the-project-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "fs.the-project-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "fs.the-project-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/the-project-app/tsconfig.dev.json",
+              "apps/the-project-app/tsconfig.prod.json",
+              "apps/the-project-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/the-project-app/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/the-project-app/jest.config.js",
+            "tsConfig": "apps/the-project-app/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/the-project-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
     "fs.theme-ng-alain": {
       "projectType": "library",
       "root": "libs/ng-alain",
@@ -590,6 +726,49 @@
             "tsConfig": "libs/theme-ng-alain-ms/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/theme-ng-alain-ms/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "fs.theme-the-project": {
+      "projectType": "library",
+      "root": "libs/theme-the-project",
+      "sourceRoot": "libs/theme-the-project/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "tsconfig.lib.json",
+            "project": "libs/theme-the-project/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-the-project/tsconfig.lib.json",
+              "libs/theme-the-project/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/theme-the-project/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/theme-the-project/jest.config.js",
+            "tsConfig": "libs/theme-the-project/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/theme-the-project/src/test-setup.ts"
           }
         }
       },

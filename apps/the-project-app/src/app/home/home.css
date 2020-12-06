@@ -1,0 +1,105 @@
+.productCaption {
+    border: 1px solid rgba(0,0,0,.1);
+    border-top: none
+}
+
+.productCaption h3 {
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+    /* margin: 20px 0 10px; */
+    padding: 0 15px
+}
+.mheight {
+    height: 400px;
+    width: 100%;
+}
+
+.productCaption h3 a {
+    color: #000
+}
+
+.productCaption .product-meta span {
+    font-size: 13px;
+    color: rgba(0,0,0,.5);
+    display: block;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    font-style: italic
+}
+
+.productCaption .rating {
+    padding: 0 15px;
+    margin-bottom: 30px
+}
+
+.productCaption .rating span {
+    display: inline-block
+}
+
+.productCaption .rating span .fa {
+    color: #ffc100
+}
+
+.productCaption .rating .rating-star {
+    margin-right: 5px
+}
+
+.productCaption .rating-review {
+    font-size: 13px;
+    color: rgba(0,0,0,.5)
+}
+
+.productCaption .caption-bottom>div {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    height: 50px;
+    float: left
+}
+
+.productCaption .caption-bottom .price {
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-right: 1px solid rgba(0,0,0,.1)
+}
+
+.productCaption .caption-bottom .price span {
+    line-height: 50px
+}
+
+.productCaption .caption-bottom .offer-price {
+    font-family: 'Roboto Slab',serif;
+    font-weight: 700;
+    font-size: 20px
+}
+
+.productCaption .caption-bottom .regular-price {
+    font-family: 'Roboto Slab',serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0,0,0,.5)
+}
+
+.productCaption .caption-bottom .user {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 0 20px
+}
+
+.productCaption .caption-bottom .user i {
+    font-size: 20px;
+    color: rgba(0,0,0,.5);
+    line-height: 50px;
+    float: left
+}
+
+.productCaption .caption-bottom .user span {
+    font-family: 'Roboto Slab',serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: rgba(0,0,0,.5);
+    line-height: 14px;
+    display: table-cell;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 7px
+}

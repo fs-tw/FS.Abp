@@ -37,10 +37,16 @@
     "fs.ng-alain-ms-app": {
       "tags": []
     },
+    "fs.the-project-app": {
+      "tags": []
+    },
     "fs.theme.ng-alain": {
       "tags": []
     },
     "fs.theme-ng-alain-ms": {
+      "tags": []
+    },
+    "fs.theme-the-project": {
       "tags": []
     }
   }

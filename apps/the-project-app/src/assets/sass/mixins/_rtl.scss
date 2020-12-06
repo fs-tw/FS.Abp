@@ -1,0 +1,310 @@
+@import '../variables';
+
+// ------------------------------------------
+// bi app mixins
+// authors: 
+// twitter.com/anasnakawa
+// twitter.com/victorzamfir
+// licensed under the MIT license 
+// http://www.opensource.org/licenses/mit-license.php
+// ------------------------------------------
+
+// ------------------------------------------
+// Table of contents
+// ------------------------------------------
+// padding
+// margin
+// float
+// text align
+// clear
+// left / right
+// border
+//  - width
+//  - style
+//  - color
+//  - generic
+//  - radius
+// ltr / rtl contents
+// ------------------------------------------
+
+// Variables
+$ltr-to-rtl-left              : left;
+$ltr-to-rtl-right             : right;
+$ltr-to-rtl-direction         : ltr;
+$ltr-to-rtl-invert-direction  : rtl;
+$imp                      : !important;
+
+@if $text-direction == rtl {
+  $ltr-to-rtl-left              : right;
+  $ltr-to-rtl-right             : left;
+  $ltr-to-rtl-direction         : rtl;
+  $ltr-to-rtl-invert-direction  : ltr;
+  $imp                      : !important;
+}
+
+// generic mixin for properties with values
+// (top right bottom left)
+// ------------------------------------------
+@mixin ltr-to-rtl-compact($property, $top, $right, $bottom, $left) {
+  @if $text-direction == ltr {
+    #{$property}: $top $right $bottom $left;
+  } @else {
+    #{$property}: $top $left $bottom $right;
+  }
+}
+
+// padding
+// ------------------------------------------
+@mixin padding-left($distance) {
+  padding-#{$ltr-to-rtl-left}: $distance;
+}
+
+@mixin padding-right($distance) {
+  padding-#{$ltr-to-rtl-right}: $distance;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  @include ltr-to-rtl-compact(padding, $top, $right, $bottom, $left);
+}
+
+// margin
+// ------------------------------------------
+@mixin margin-left($distance) {
+  margin-#{$ltr-to-rtl-left}: $distance;
+}
+
+@mixin margin-right($distance) {
+  margin-#{$ltr-to-rtl-right}: $distance;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  @include ltr-to-rtl-compact(margin, $top, $right, $bottom, $left);
+}
+
+// float
+// ------------------------------------------
+@mixin ltr-to-rtl-float-left($important: '') {
+  float: $ltr-to-rtl-left unquote($important);
+}
+
+@mixin ltr-to-rtl-float-right($important: '') {
+  float: $ltr-to-rtl-right unquote($important);
+}
+
+@mixin float($direction, $important: '') {
+  @if $direction == left {
+    @include ltr-to-rtl-float-left($important);
+  } @else if $direction == right {
+    @include ltr-to-rtl-float-right($important);
+  } @else {
+    float: $direction;
+  }
+}
+
+// text align
+// ------------------------------------------
+@mixin ltr-to-rtl-text-align-left {
+  text-align: $ltr-to-rtl-left;
+}
+
+@mixin ltr-to-rtl-text-align-right {
+  text-align: $ltr-to-rtl-right;
+}
+
+@mixin text-align($direction) {
+  @if $direction == left {
+    @include ltr-to-rtl-text-align-left;
+  } @else if $direction == right {
+    @include ltr-to-rtl-text-align-right;
+  } @else {
+    text-align: $direction;
+  }
+}
+
+// clear
+// ------------------------------------------
+@mixin ltr-to-rtl-clear-left {
+  clear: $ltr-to-rtl-left;
+}
+
+@mixin ltr-to-rtl-clear-right {
+  clear: $ltr-to-rtl-right;
+}
+
+@mixin clear($direction) {
+  @if $direction == left {
+    @include ltr-to-rtl-clear-left;
+  } @else if $direction == right {
+    @include ltr-to-rtl-clear-right;
+  } @else {
+    clear: $direction;
+  }
+}
+
+// left / right
+// ------------------------------------------
+@mixin left($distance) {
+  @if $text-direction == ltr {
+    left: $distance;
+  } @else if $text-direction == rtl {
+    right: $distance;
+  }
+}
+
+@mixin right($distance) {
+  @if $text-direction == ltr {
+    right: $distance;
+  } @else if $text-direction == rtl {
+    left: $distance;
+  }
+}
+
+// border
+// ------------------------------------------
+
+// width
+@mixin border-left-width($width) {
+  border-#{$ltr-to-rtl-left}-width: $width;
+}
+
+@mixin border-right-width($width) {
+  border-#{$ltr-to-rtl-right}-width: $width;
+}
+
+@mixin border-width($top, $right, $bottom, $left) {
+  @include ltr-to-rtl-compact(border-width, $top, $right, $bottom, $left);
+}
+
+// style
+@mixin border-left-style($style) {
+  border-#{$ltr-to-rtl-left}-style: $style;
+}
+
+@mixin border-right-style($style) {
+  border-#{$ltr-to-rtl-right}-style: $style;
+}
+
+@mixin border-style($top, $right, $bottom, $left) {
+  @include ltr-to-rtl-compact(border-style, $top, $right, $bottom, $left);
+}
+
+// color
+@mixin border-left-color($color) {
+  border-#{$ltr-to-rtl-left}-color: $color;
+}
+
+@mixin border-right-color($color) {
+  border-#{$ltr-to-rtl-right}-color: $color;
+}
+
+@mixin border-color($top, $right, $bottom, $left) {
+  @include ltr-to-rtl-compact(border-color, $top, $right, $bottom, $left);
+}
+
+// generic
+@mixin border-left($border-style) {
+  border-#{$ltr-to-rtl-left}: $border-style;
+}
+
+@mixin border-right($border-style) {
+  border-#{$ltr-to-rtl-right}: $border-style;
+}
+
+// radius
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-#{$ltr-to-rtl-left}-radius: $radius;
+     -moz-border-top#{$ltr-to-rtl-left}-radius: $radius;
+          border-top-#{$ltr-to-rtl-left}-radius: $radius;
+}
+
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-#{$ltr-to-rtl-right}-radius: $radius;
+     -moz-border-top#{$ltr-to-rtl-right}-radius: $radius;
+          border-top-#{$ltr-to-rtl-right}-radius: $radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-#{$ltr-to-rtl-left}-radius: $radius;
+     -moz-border-bottom#{$ltr-to-rtl-left}-radius: $radius;
+          border-bottom-#{$ltr-to-rtl-left}-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-#{$ltr-to-rtl-right}-radius: $radius;
+     -moz-border-bottom#{$ltr-to-rtl-right}-radius: $radius;
+          border-bottom-#{$ltr-to-rtl-right}-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+@mixin border-top-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-top-right-radius($radius);
+}
+
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-left-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+
+@mixin border-radius($topLeft, $topRight: null, $bottomRight: null, $bottomLeft: null) {
+  @if $topRight != null {
+    @include border-top-left-radius($topLeft);
+    @include border-top-right-radius($topRight);
+    @include border-bottom-right-radius($bottomRight);
+    @include border-bottom-left-radius($bottomLeft);
+  } @else {
+    -webkit-border-radius: $topLeft;
+       -moz-border-radius: $topLeft;
+        -ms-border-radius: $topLeft;
+         -o-border-radius: $topLeft;
+            border-radius: $topLeft;
+  }
+}
+
+// Returns "en" or "ar", useful for image suffixes.
+@function lang() {
+  @if $text-direction == ltr {
+    @return 'en';
+  } @else {
+    @return 'ar';
+  }
+}
+
+// Support for "direction" declaration (renders ltr/rtl).
+// Useful for form elements as they swap the text-indent property and align the text accordingly.
+@mixin direction {
+  direction: $text-direction;
+}
+
+// Inverts a percentage value. Example: 97% becames 3%.
+// Useful for background-position.
+@function ltr-to-rtl-invert-percentage($percentage) {
+  @if $text-direction == rtl {
+    @return 100% - $percentage;
+  } @else {
+    @return $percentage;
+  }
+}
+
+// ltr / rtl contents
+// ------------------------------------------
+@mixin ltr {
+  @if $text-direction == ltr {
+    @content;
+  }
+}
+
+@mixin rtl {
+  @if $text-direction == rtl {
+    @content;
+  }
+}
