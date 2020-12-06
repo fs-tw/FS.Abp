@@ -19,12 +19,6 @@
       ],
       "@fs/theme.the-project/*": [
         "dist/theme-the-project/*"
-      ],
-      "@fs/crm": [
-        "dist/crm"
-      ],
-      "@fs/crm/*": [
-        "dist/crm/*"
       ]
     }
   },

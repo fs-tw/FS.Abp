@@ -6,19 +6,19 @@ export const environment = {
   production: true,
   application: {
     baseUrl,
-    name: 'IIC',
+    name: 'FS',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44394',
+    issuer: 'https://localhost:44344',
     redirectUri: baseUrl,
-    clientId: 'IIC_App',
+    clientId: 'FS_App',
     responseType: 'code',
-    scope: 'offline_access IIC',
+    scope: 'offline_access FS',
   },
   apis: {
     default: {
-      url: 'https://localhost:44394',
-      rootNamespace: 'IIC',
+      url: 'https://localhost:44344',
+      rootNamespace: 'FS',
     },
   },
 } as Environment;

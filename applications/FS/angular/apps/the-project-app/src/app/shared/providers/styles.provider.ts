@@ -1,7 +1,6 @@
 import { ReplaceableComponentsService } from '@abp/ng.core';
 import { APP_INITIALIZER } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { eThemeTheProjectComponents } from '@fs/theme.the-project/basic';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 
@@ -21,12 +20,12 @@ export function configureStyles(replaceableComponents: ReplaceableComponentsServ
 }
 
 function initLayouts(replaceableComponents: ReplaceableComponentsService) {
-  replaceableComponents.add({
-    key: eThemeTheProjectComponents.Header,
-    component: HeaderComponent,
-  });
-  replaceableComponents.add({
-    key: eThemeTheProjectComponents.Footer,
-    component: FooterComponent,
-  });
+  // replaceableComponents.add({
+  //   key: eThemeTheProjectComponents.Header,
+  //   component: HeaderComponent,
+  // });
+  // replaceableComponents.add({
+  //   key: eThemeTheProjectComponents.Footer,
+  //   component: FooterComponent,
+  // });
 }

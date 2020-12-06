@@ -536,7 +536,7 @@
             ],
             "styles": [
               "apps/the-project-app/src/styles.scss",
-              "apps/the-project-app/src/assets/css/skins/light_blue.css"
+              "apps/the-project-app/src/assets/template/css/skins/light_blue.css"
             ],
             "scripts": [],
             "stylePreprocessorOptions": {
@@ -773,53 +773,6 @@
         }
       },
       "schematics": {}
-    },
-    "fs.crm": {
-      "projectType": "library",
-      "root": "libs/crm",
-      "sourceRoot": "libs/crm/src",
-      "prefix": "fs",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "tsconfig.lib.json",
-            "project": "libs/crm/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/crm/tsconfig.lib.json",
-              "libs/crm/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/crm/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/crm/jest.config.js",
-            "tsConfig": "libs/crm/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/crm/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "less"
-        }
-      }
     }
   },
   "cli": {

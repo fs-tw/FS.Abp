@@ -17,7 +17,6 @@ import { LanguageManagementConfigModule } from '@volo/abp.ng.language-management
 import { SaasConfigModule } from '@volo/abp.ng.saas/config';
 import { TextTemplateManagementConfigModule } from '@volo/abp.ng.text-template-management/config';
 import { SettingManagementConfigModule } from '@abp/ng.setting-management/config';
-import { CrmNgAlainConfigModule } from '@fs/crm/ng-alain/config';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { registerLocale } from '@volo/abp.ng.language-management/locale';
@@ -43,7 +42,6 @@ import { registerLocale } from '@volo/abp.ng.language-management/locale';
     IdentityServerConfigModule.forRoot(),
     TextTemplateManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
-    CrmNgAlainConfigModule.forRoot(),
     NgxsModule.forRoot(),
 
     ThemeNgAlainMsModule.forRoot(),
