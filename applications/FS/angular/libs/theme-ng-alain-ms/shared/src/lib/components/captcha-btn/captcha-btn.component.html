@@ -1,0 +1,11 @@
+<button
+  type="button"
+  nz-button
+  [nzType]="type"
+  [nzSize]="size"
+  [nzBlock]="block"
+  (click)="_click()"
+  [disabled]="disabled || count"
+>
+  {{ count ? count + ('common.captcha-btn.second' | i18n) : ('common.captcha-btn.send' | i18n) }}
+</button>

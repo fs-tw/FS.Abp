@@ -1,0 +1,16 @@
+<nz-cascader
+  *ngIf="data"
+  [(ngModel)]="value"
+  (ngModelChange)="change()"
+  [nzOptions]="data"
+  [nzDisabled]="disabled"
+  [nzAllowClear]="allowClear"
+  [nzAutoFocus]="autoFocus"
+  [nzNotFoundContent]="notFoundContent"
+  [nzSize]="size"
+  [nzShowSearch]="showSearch"
+  [nzPlaceHolder]="placeHolder"
+  [nzMouseEnterDelay]="mouseEnterDelay"
+  [nzMouseLeaveDelay]="mouseLeaveDelay"
+  [nzTriggerAction]="triggerAction"
+></nz-cascader>

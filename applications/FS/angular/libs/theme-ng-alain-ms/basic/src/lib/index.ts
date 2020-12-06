@@ -1,0 +1,1 @@
+export * from './ng-alain-ms-basic.module';

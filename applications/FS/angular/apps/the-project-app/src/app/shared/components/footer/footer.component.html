@@ -1,0 +1,81 @@
+
+
+<footer id="footer" class="clearfix">
+
+    <!-- .footer start -->
+    <!-- ================ -->
+    <div class="footer">
+        <div class="container">
+            <h2 class="text-center title"  id="contact">聯絡我們</h2>
+            <div class="separator"></div>
+          <div class="footer-inner">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-content">
+                      <h2 class="title">歡迎與我們聯繫</h2>
+                      <br>
+                      <form class="margin-clear">
+                        <div class="form-group has-feedback">
+                          <label class="sr-only" for="name2">聯絡人</label>
+                          <input type="text" class="form-control" id="name2" placeholder="聯絡人" required [(ngModel)]="email.targetName" [ngModelOptions]="{standalone: true}">
+                          <i class="fa fa-user form-control-feedback"></i>
+                        </div>
+                        <div class="form-group has-feedback">
+                          <label class="sr-only" for="email2">信箱</label>
+                          <input type="email" class="form-control" id="email2" placeholder="信箱" [(ngModel)]="email.targetEmail" [ngModelOptions]="{standalone: true}">
+                          <i class="fa fa-envelope form-control-feedback"></i>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="sr-only" for="name2">主旨</label>
+                            <input type="text" class="form-control" id="name2" placeholder="主旨" required [(ngModel)]="email.subject" [ngModelOptions]="{standalone: true}">
+                            <i class="fa fa-user form-control-feedback"></i>
+                          </div>
+                        <div class="form-group has-feedback">
+                          <label class="sr-only" for="message2">內容</label>
+                          <textarea class="form-control" rows="6" id="message2" placeholder="內容"  [(ngModel)]="email.content" [ngModelOptions]="{standalone: true}"></textarea>
+                          <i class="fa fa-pencil form-control-feedback"></i>
+                        </div>
+                        <input type="button" value="Send" class="margin-clear submit-button btn btn-default" (click)="sendMail()">
+                      </form>
+                    </div>
+                  </div>
+              <div class="col-lg-6">
+                <div class="footer-content">
+                  <div class="logo-footer">
+                    <!-- <img id="logo-footer" src="images/logo_dark_cyan.png" alt=""> -->
+                  </div>
+                  <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJXfKbpl4EbjQRxDOrWFjB9ck&key=AIzaSyBEP4u1YZGoRFf3Z9FWhBBTz3PKUTks-no" allowfullscreen></iframe>
+                  <!-- <div class="row"> 
+                    <div class="col-lg-6">
+                      
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- .footer end -->
+
+    <!-- .subfooter start -->
+    <!-- ================ -->
+    <div class="subfooter default-bg">
+      <div class="container">
+        <div class="subfooter-inner">
+          <div class="row">
+            <div class="col-12">
+              <p>翊傑國際貿易股份有限公司-YIJIE INTERNATIONAL TRADING</p>
+              <p>地址:807高雄市三民區中華二路216號 </p>
+              <p>Email:<a href="mailto:yijie.trading.tw@gmail.com">yijie.trading.tw@gmail.com</a></p>
+              <p>電話:07-3232023 </p>
+              <p>傳真:07-3232005 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .subfooter end -->
+
+  </footer>

@@ -1,0 +1,40 @@
+<a *ngIf="data" class="text-blue" (click)="createTplModal(tplTitle,tplEditContent,tplFooter)">
+  編輯
+</a>
+
+<button *ngIf="!data" nz-button nzType="primary" nzGhost style="float: right;"
+  (click)="createTplModal(tplTitle,tplCreateContent,tplFooter)">新增</button>
+
+<ng-template #tplTitle>
+  <span *ngIf="data">{{groupoTitle}}</span>
+  <span *ngIf="!data">新增資料</span>
+</ng-template>
+
+<ng-template #tplEditContent>
+  <form nz-form #f="ngForm" se-container="1">
+    <se label="選項值">
+      <input type="text" nz-input [(ngModel)]="_data.options" name="title" required>
+    </se>
+  </form>
+</ng-template>
+
+<ng-template #tplCreateContent>
+  <div>
+    <button nz-button (click)="addOption()" class="mb-md">新增</button>
+    <div style="display: grid;grid-template-columns: repeat(auto-fill,200px);gap:8px">
+      <div *ngFor="let inputItem of inputList;let i = index">
+        <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+          <input nz-input [(ngModel)]="inputItem.name" />
+        </nz-input-group>
+        <ng-template #addOnBeforeTemplate>
+          <i nz-icon nzType="close" class="pointer text-red" (click)="removeOption(i)"></i>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #tplFooter>
+  <button nz-button (click)="close()">取消</button>
+  <button nz-button nzType="primary" (click)="save()">儲存</button>
+</ng-template>
