@@ -28,3 +28,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "Blazorise"]
 	path = Blazorise
 	url = https://github.com/stsrki/Blazorise.git
+[submodule "framework"]
+	path = framework
+	url = http://bitbucket.furthersoftware.com.tw/scm/fram/framework.git
