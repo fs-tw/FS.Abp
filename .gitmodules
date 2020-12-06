@@ -43,3 +43,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "modules/FS.Theme"]
 	path = modules/FS.Theme
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.theme.git
+[submodule "themes/theproject"]
+	path = themes/theproject
+	url = http://bitbucket.furthersoftware.com.tw/scm/them/theproject.git
