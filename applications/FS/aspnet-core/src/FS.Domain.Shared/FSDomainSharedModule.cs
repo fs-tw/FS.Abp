@@ -16,6 +16,9 @@ using Volo.Abp.TextTemplateManagement;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
+using FS.Abp;
+using FS.Cms;
+using FS.Theme;
 
 namespace FS
 {
@@ -32,6 +35,11 @@ namespace FS
         typeof(TextTemplateManagementDomainSharedModule),
         typeof(LeptonThemeManagementDomainSharedModule),
         typeof(BlobStoringDatabaseDomainSharedModule)
+        )]
+    [DependsOn(
+        typeof(FS.Abp.Domain.AbpDomainSharedModule),
+        typeof(CmsDomainSharedModule),
+        typeof(ThemeDomainSharedModule)
         )]
     public class FSDomainSharedModule : AbpModule
     {

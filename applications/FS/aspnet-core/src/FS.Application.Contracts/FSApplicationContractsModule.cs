@@ -10,6 +10,9 @@ using Volo.Abp.ObjectExtending;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
+using FS.Abp;
+using FS.Cms;
+using FS.Theme;
 
 namespace FS
 {
@@ -27,6 +30,11 @@ namespace FS
         typeof(LeptonThemeManagementApplicationContractsModule),
         typeof(TextTemplateManagementApplicationContractsModule)
     )]
+    [DependsOn(
+        typeof(FS.Abp.Application.AbpDddApplicationContractsModule),
+        typeof(CmsApplicationContractsModule),
+        typeof(ThemeApplicationContractsModule)
+        )]
     public class FSApplicationContractsModule : AbpModule
     {
 

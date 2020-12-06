@@ -135,6 +135,7 @@ namespace FS
                 {
                     options.SwaggerDoc("v1", new OpenApiInfo {Title = "FS API", Version = "v1"});
                     options.DocInclusionPredicate((docName, description) => true);
+                    options.CustomSchemaIds(t => t.ToString());
                 });
         }
 

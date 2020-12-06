@@ -11,6 +11,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
+using FS.Abp.EntityFrameworkCore;
+using FS.Cms.EntityFrameworkCore;
+using FS.Theme.EntityFrameworkCore;
 
 namespace FS.EntityFrameworkCore
 {
@@ -45,6 +48,9 @@ namespace FS.EntityFrameworkCore
             builder.ConfigureTextTemplateManagement();
             builder.ConfigureBlobStoring();
 
+            builder.ConfigureAbp();
+            builder.ConfigureCms();
+            builder.ConfigureTheme();
             /* Configure your own tables/entities inside the ConfigureFS method */
 
             builder.ConfigureFS();

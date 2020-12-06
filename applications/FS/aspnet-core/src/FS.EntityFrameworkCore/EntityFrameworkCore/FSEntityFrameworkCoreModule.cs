@@ -13,6 +13,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
+using FS.Abp.EntityFrameworkCore;
+using FS.Cms.EntityFrameworkCore;
+using FS.Theme.EntityFrameworkCore;
 
 namespace FS.EntityFrameworkCore
 {
@@ -30,6 +33,11 @@ namespace FS.EntityFrameworkCore
         typeof(SaasEntityFrameworkCoreModule),
         typeof(TextTemplateManagementEntityFrameworkCoreModule),
         typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
+        )]
+    [DependsOn(
+        typeof(FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule),
+        typeof(CmsEntityFrameworkCoreModule),
+        typeof(ThemeEntityFrameworkCoreModule)
         )]
     public class FSEntityFrameworkCoreModule : AbpModule
     {

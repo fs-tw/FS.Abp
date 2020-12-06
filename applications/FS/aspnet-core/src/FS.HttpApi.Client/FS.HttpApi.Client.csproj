@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.HttpApi.Client\FS.Abp.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.HttpApi.Client\FS.Cms.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.HttpApi.Client\FS.Theme.HttpApi.Client.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
   </ItemGroup>
 

@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain\FS.Theme.Domain.csproj" />
     <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
   </ItemGroup>
 

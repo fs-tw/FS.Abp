@@ -13,6 +13,9 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
+using FS.Abp;
+using FS.Cms;
+using FS.Theme;
 
 namespace FS
 {
@@ -30,6 +33,11 @@ namespace FS
         typeof(LanguageManagementApplicationModule),
         typeof(LeptonThemeManagementApplicationModule),
         typeof(TextTemplateManagementApplicationModule)
+        )]
+    [DependsOn(
+        typeof(FS.Abp.Application.AbpDddApplicationModule),
+        typeof(CmsApplicationModule),
+        typeof(ThemeApplicationModule)
         )]
     public class FSApplicationModule : AbpModule
     {

@@ -19,6 +19,9 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
+using FS.Abp;
+using FS.Cms;
+using FS.Theme;
 
 namespace FS
 {
@@ -39,6 +42,11 @@ namespace FS
         typeof(VoloAbpCommercialSuiteTemplatesModule),
         typeof(AbpEmailingModule),
         typeof(BlobStoringDatabaseDomainModule)
+        )]
+    [DependsOn(
+        typeof(FS.Abp.Domain.AbpDddDomainModule),
+        typeof(CmsDomainModule),
+        typeof(ThemeDomainModule)
         )]
     public class FSDomainModule : AbpModule
     {

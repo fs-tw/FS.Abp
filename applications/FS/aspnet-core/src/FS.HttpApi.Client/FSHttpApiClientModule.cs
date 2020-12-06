@@ -10,6 +10,9 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
+using FS.Abp;
+using FS.Cms;
+using FS.Theme;
 
 namespace FS
 {
@@ -27,6 +30,11 @@ namespace FS
         typeof(LeptonThemeManagementHttpApiClientModule),
         typeof(TextTemplateManagementHttpApiClientModule)
     )]
+    [DependsOn(
+        typeof(FS.Abp.AbpHttpApiClientModule),
+        typeof(CmsHttpApiClientModule),
+        typeof(ThemeHttpApiClientModule)
+        )]
     public class FSHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "Default";

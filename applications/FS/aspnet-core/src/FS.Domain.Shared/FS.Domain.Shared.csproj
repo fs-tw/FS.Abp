@@ -33,4 +33,10 @@
     <Content Remove="Localization\FS\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
