@@ -48,6 +48,9 @@
     },
     "fs.theme-the-project": {
       "tags": []
+    },
+    "fs.crm": {
+      "tags": []
     }
   }
 }

@@ -40,14 +40,14 @@
     "@nrwl/angular": "10.4.4",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "^0.10.2"
+    "zone.js": "^0.10.2",
+    "@npm/root": "file:npm/root"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.3",
     "@angular/cli": "~10.1.3",
     "@angular/compiler-cli": "^10.1.0",
     "@angular/language-service": "^10.1.0",
-    "@npm/root": "file:npm/root",
     "@npm/lepton": "file:npm/lepton",
     "@npm/ng-alain": "file:npm/ng-alain",
     "@npm/ng-alain-ms": "file:npm/ng-alain-ms",

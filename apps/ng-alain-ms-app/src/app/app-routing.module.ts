@@ -48,6 +48,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@abp/ng.setting-management').then((m) => m.SettingManagementModule.forLazy()),
   },
+  {
+    path: 'crm',
+    loadChildren: () =>
+      import('@fs/crm/ng-alain').then((m) => m.CrmNgAlainModule.forLazy()),
+  }  
   // {
   //   path: '',
   //   loadChildren: () =>
