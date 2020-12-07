@@ -1,0 +1,493 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.IdentityServer.Localization
+@using Volo.Abp.IdentityServer.Web.Pages.IdentityServer.Clients
+@using Volo.Abp.Localization
+@using Volo.Abp.ObjectExtending
+@model EditModel
+@inject IHtmlLocalizer<AbpIdentityServerResource> L
+@inject IStringLocalizerFactory StringLocalizerFactory
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/IdentityServer/Clients/Edit" class="form-with-card" id="ClientEditForm">
+    <abp-modal size="@(AbpModalSize.Large)" id="ClientEditModalId">
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-tabs name="ClientsEditTabsId">
+                <abp-tab title="@L["Details"].Value">
+                    <abp-input asp-for="Client.Id" />
+                    <abp-input asp-for="Client.ClientName" />
+                    <abp-input asp-for="Client.Description" />
+                    <abp-input asp-for="Client.ClientUri" />
+                    <abp-input asp-for="Client.LogoUri" />
+                    <abp-input asp-for="Client.RequireConsent" />
+                    <abp-input asp-for="Client.RequireRequestObject" />
+                    <abp-input asp-for="Client.AllowRememberConsent" />
+                    <abp-input asp-for="Client.Enabled" />
+                    <abp-input asp-for="Client.AllowOfflineAccess" />
+                    <abp-input asp-for="Client.FrontChannelLogoutUri" />
+                    <abp-input asp-for="Client.FrontChannelLogoutSessionRequired" />
+                    <abp-input asp-for="Client.BackChannelLogoutUri" />
+                    <abp-input asp-for="Client.BackChannelLogoutSessionRequired" />
+                    <abp-input asp-for="Client.AllowedIdentityTokenSigningAlgorithms" />
+
+                    @foreach (var propertyInfo in ObjectExtensionManager.Instance.GetProperties<ClientUpdateModalView>())
+                    {
+                        if (!propertyInfo.Name.EndsWith("_Text"))
+                        {
+                            if (propertyInfo.Type.IsEnum || !propertyInfo.Lookup.Url.IsNullOrEmpty())
+                            {
+                                <abp-select asp-for="Client.ExtraProperties[propertyInfo.Name]"
+                                            label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                            autocomplete-api-url="@propertyInfo.Lookup.Url"
+                                            autocomplete-selected-item-name="@Model.Client.ExtraProperties[propertyInfo.Name+"_Text"]"
+                                            autocomplete-selected-item-value="@Model.Client.ExtraProperties[propertyInfo.Name]"
+                                            autocomplete-filter-param-name="@propertyInfo.Lookup.FilterParamName"
+                                            autocomplete-items-property-name="@propertyInfo.Lookup.ResultListPropertyName"
+                                            autocomplete-display-property-name="@propertyInfo.Lookup.DisplayPropertyName"
+                                            autocomplete-value-property-name="@propertyInfo.Lookup.ValuePropertyName"></abp-select>
+                            }
+                            else
+                            {
+                                <abp-input type="@propertyInfo.GetInputType()"
+                                           asp-for="Client.ExtraProperties[propertyInfo.Name]"
+                                           label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                           asp-format="@propertyInfo.GetInputFormatOrNull()"
+                                           value="@propertyInfo.GetInputValueOrNull(Model.Client.ExtraProperties[propertyInfo.Name])" />
+                            }
+                        }
+                    }
+                </abp-tab>
+                <abp-tab-dropdown title="@L["ApplicationUrls"].Value" name="ApplicationUrlsTab">
+                    <abp-tab title="@L["Callback"].Value" parent-dropdown-name="ApplicationUrlsTab">
+                        <h3>@L["CallbackUrl"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-input asp-for="SampleCallbackUri" label="@L["Uri"].Value" />
+                            <abp-button id="AddNewCallbackUriButton" button-type="Success" class="float-right mb-2"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="CallbackUriTableId" style="@(Model.Client.RedirectUris.Length > 0 ? "" : "display: none;")">
+                            <tbody id="CallbackUriTableBodyId">
+                                @for (int i = 0; i < Model.Client.RedirectUris.Length; i++)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Model.Client.RedirectUris[i]
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteApplicationUriButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <input asp-for="Client.RedirectUris[i]" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+
+                    </abp-tab>
+                    <abp-tab title="@L["Signout"].Value" parent-dropdown-name="ApplicationUrlsTab">
+                        <h3>@L["SignoutUrl"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-input asp-for="SampleSignoutUri" label="@L["Uri"].Value" />
+                            <abp-button id="AddNewSignoutUriButton" button-type="Success" class="float-right mb-2"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="SignoutUriTableId" style="@(Model.Client.PostLogoutRedirectUris.Length > 0 ? "" : "display: none;")">
+                            <tbody id="SignoutUriTableBodyId">
+                                @for (int i = 0; i < Model.Client.PostLogoutRedirectUris.Length; i++)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Model.Client.PostLogoutRedirectUris[i]
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteApplicationUriButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <input asp-for="Client.PostLogoutRedirectUris[i]" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+                    </abp-tab>
+                    <abp-tab title="@L["CORS"].Value" parent-dropdown-name="ApplicationUrlsTab">
+                        <h3>@L["AllowedCorsOrigins"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-input asp-for="SampleCorsUri" label="@L["Uri"].Value" />
+                            <abp-button id="AddNewCorsUriButton" button-type="Success" class="float-right mb-2"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="CorsUriTableId" style="@(Model.Client.AllowedCorsOrigins.Length > 0 ? "" : "display: none;")">
+                            <tbody id="CorsUriTableBodyId">
+                                @for (int i = 0; i < Model.Client.AllowedCorsOrigins.Length; i++)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Model.Client.AllowedCorsOrigins[i]
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteApplicationUriButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <input asp-for="Client.AllowedCorsOrigins[i]" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+                    </abp-tab>
+                </abp-tab-dropdown>
+                <abp-tab title="@L["Secrets"].Value">
+                    <div class="pt-3 pb-5 clearfix">
+                        <abp-row>
+                            <abp-column size="_6">
+                                <abp-select asp-for="SampleSecret.Type" />
+                                <abp-input asp-for="SampleSecret.Value" />
+                            </abp-column>
+
+                            <abp-column size="_6">
+                                <abp-input asp-for="SampleSecret.Description" />
+                                <div class="form-group">
+                                    <label for="SampleSecret_Expiration">@L["Expiration"]</label>
+                                    <input class="form-control" type="date" asp-for="SampleSecret.Expiration" />
+                                    <span class="text-danger field-validation-valid" data-valmsg-for="SampleSecret.Expiration" data-valmsg-replace="true"></span>
+                                </div>
+                            </abp-column>
+                        </abp-row>
+                        <abp-button id="AddNewSecretButton" button-type="Primary" class="float-right"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                    </div>
+
+
+                    <abp-table striped-rows="true" responsive-sm="true" id="SecretTableId" style="@(Model.Client.ClientSecrets.Length > 0 ? "" : "display: none;")">
+                        <thead>
+                            <tr>
+                                <th scope="Column">@L["Type"]</th>
+                                <th scope="Column">@L["Value"]</th>
+                                <th scope="Column">@L["Description"]</th>
+                                <th scope="Column">@L["Expiration"]</th>
+                                <th scope="Column"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="SecretTableBodyId">
+                            @for (int i = 0; i < Model.Client.ClientSecrets.Length; i++)
+                            {
+                                var secret = Model.Client.ClientSecrets[i];
+
+                                <tr>
+                                    <td>
+                                        @secret.Type
+                                    </td>
+                                    <td>
+                                        <span class="d-inline-block text-truncate" style="max-width: 150px;">
+                                            @secret.Value
+                                        </span>
+                                    </td>
+                                    <td>
+                                        @secret.Description
+                                    </td>
+                                    <td>
+                                        <span class="d-inline-block text-truncate" style="max-width: 150px;">
+                                            @secret.Expiration
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-danger deleteSecretButton float-right"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                    <td hidden>
+                                        <abp-input asp-for="Client.ClientSecrets[i].Type" />
+                                        <abp-input asp-for="Client.ClientSecrets[i].Value" />
+                                        <abp-input asp-for="Client.ClientSecrets[i].Description" />
+                                        <abp-input asp-for="Client.ClientSecrets[i].Expiration" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </abp-table>
+                </abp-tab>
+                <abp-tab-dropdown title="@L["Resources"].Value" name="ResourcesTabDropdown">
+                    <abp-tab title="@L["ApiResources"].Value" parent-dropdown-name="ResourcesTabDropdown">
+                        <h4 class="mb-4">@L["ApiResources"]</h4>
+                        <div class="card bg-light shadow-none">
+                            <div class="card-body">
+                                <abp-row>
+                                    <abp-column size="_6">
+                                        <abp-card>
+                                            <abp-card-header>@L["Assigned"]</abp-card-header>
+                                            <abp-card-body style="height: 320px; overflow: auto;">
+                                                @for (var i = 0; i < Model.AllApiResources.Count; i++)
+                                                {
+                                                    var apiResource = Model.AllApiResources[i];
+                                                    var isOwned = Model.Client.Scopes.Any(uc => uc == apiResource.Name);
+                                                    <button style="@(isOwned ? "" : "display: none;")" type="button" class="ownedResource btn btn-block btn-primary btn-sm mb-1 mt-0 text-truncate text-left" id="@(apiResource.Id.ToString() + "OwnedId")" abp-tooltip-bottom="@(apiResource.DisplayName != null &&apiResource.DisplayName.Length>35?apiResource.DisplayName:"")"><i class="fa fa-long-arrow-right"></i>
+                                                        @(apiResource.DisplayName.IsNullOrEmpty() ? apiResource.Name: apiResource.DisplayName)
+                                                    </button>
+                                                    <input id="@(apiResource.Id.ToString() + "InputId")" type="text" name="@("Client.Scopes[" + i + "]")" value="@(isOwned ? apiResource.Name : "")" hidden />
+                                                }
+                                            </abp-card-body>
+                                        </abp-card>
+                                    </abp-column>
+
+                                    <abp-column size="_6">
+
+                                        <abp-card>
+                                            <abp-card-header>@L["Available"]</abp-card-header>
+                                            <abp-card-body style="height: 320px; overflow: auto;">
+                                                @for (var index = 0; index < Model.AllApiResources.Count; index++)
+                                                {
+                                                    var apiResource = Model.AllApiResources[index];
+                                                    var isOwned = Model.Client.Scopes.Any(uc => uc == apiResource.Name);
+                                                    <button style="@(!isOwned ? "" : "display: none;")" type="button" class="otherResource btn btn-block btn-outline-primary btn-sm mb-1 mt-0 text-truncate text-left" id="@(apiResource.Id.ToString() + "OtherId")" data-name="@apiResource.Name" abp-tooltip-bottom="@(apiResource.DisplayName != null && apiResource.DisplayName.Length > 35 ? apiResource.DisplayName : "")">
+                                                        <i class="fa fa-long-arrow-left "></i> @(apiResource.DisplayName.IsNullOrEmpty() ? apiResource.Name: apiResource.DisplayName)
+                                                    </button>
+                                                }
+                                            </abp-card-body>
+                                        </abp-card>
+                                    </abp-column>
+                                </abp-row>
+                            </div>
+                        </div>
+                    </abp-tab>
+                    <abp-tab title="@L["IdentityResources"].Value" parent-dropdown-name="ResourcesTabDropdown">
+                        <h4 class="mb-3">@L["IdentityResources"]</h4>
+
+                        <div class="card bg-light shadow-none">
+                            <div class="card-body">
+                                <abp-row>
+                                    <abp-column size="_6">
+                                        <abp-card>
+                                            <abp-card-header>@L["Assigned"]</abp-card-header>
+                                            <abp-card-body style="height: 320px; overflow: auto;">
+                                                @{ var allApiResourcesCount = Model.AllApiResources.Count; }
+                                                @for (var i = 0; i < Model.AllIdentityResources.Count; i++)
+                                                {
+                                                    var identityResource = Model.AllIdentityResources[i];
+                                                    var isOwned = Model.Client.Scopes.Any(uc => uc == identityResource.Name);
+                                                    <button style="@(isOwned ? "" : "display: none;")" type="button" class="ownedResource btn btn-block btn-primary btn-sm mb-1 mt-0 text-truncate text-left" id="@(identityResource.Id.ToString() + "OwnedId")" abp-tooltip-bottom="@(identityResource.DisplayName != null && identityResource.DisplayName.Length > 35 ? identityResource.DisplayName : "")">
+                                                        <i class="fa fa-long-arrow-right"></i> @(identityResource.DisplayName.IsNullOrEmpty() ? identityResource.Name: identityResource.DisplayName)
+                                                    </button>
+                                                    <input id="@(identityResource.Id.ToString() + "InputId")" type="text" name="@("Client.Scopes[" + (allApiResourcesCount + i) + "]")" value="@(isOwned ? identityResource.Name : "")" hidden />
+                                                }
+                                            </abp-card-body>
+                                        </abp-card>
+                                    </abp-column>
+                                    <abp-column size="_6">
+                                        <abp-card>
+                                            <abp-card-header>@L["Available"]</abp-card-header>
+                                            <abp-card-body style="height: 320px; overflow: auto;">
+                                                @for (var index = 0; index < Model.AllIdentityResources.Count; index++)
+                                                {
+                                                    var identityResource = Model.AllIdentityResources[index];
+                                                    var isOwned = Model.Client.Scopes.Any(uc => uc == identityResource.Name);
+                                                    <button style="@(!isOwned ? "" : "display: none;")" type="button" class="otherResource btn btn-block btn-outline-primary btn-sm mb-1 mt-0 text-truncate text-left" id="@(identityResource.Id.ToString() + "OtherId")" data-name="@identityResource.Name" abp-tooltip-bottom="@(identityResource.DisplayName != null && identityResource.DisplayName.Length > 35 ? identityResource.DisplayName : "")">
+                                                        <i class="fa fa-long-arrow-left "></i> @(identityResource.DisplayName.IsNullOrEmpty() ? identityResource.Name: identityResource.DisplayName)
+                                                    </button>
+                                                }
+                                            </abp-card-body>
+                                        </abp-card>
+                                    </abp-column>
+                                </abp-row>
+                            </div>
+                        </div>
+                    </abp-tab>
+                </abp-tab-dropdown>
+                <abp-tab-dropdown title="@L["Advanced"].Value" name="AdvancedTabDropdown">
+                    <abp-tab title="@L["Tokens"].Value" parent-dropdown-name="AdvancedTabDropdown">
+                        <h3>@L["Tokens"]</h3>
+                        <abp-input asp-for="Client.AccessTokenLifetime" />
+                        <abp-input asp-for="Client.AccessTokenType" />
+                        <abp-input asp-for="Client.ConsentLifetime" />
+                        <abp-input asp-for="Client.PairWiseSubjectSalt" />
+                        <abp-input asp-for="Client.IncludeJwtId" />
+                        <abp-input asp-for="Client.UserSsoLifetime" />
+                        <abp-input asp-for="Client.UserCodeType" />
+                        <abp-input asp-for="Client.DeviceCodeLifetime" />
+                        <abp-input asp-for="Client.RequirePkce" />
+                        <abp-input asp-for="Client.RequireClientSecret" />
+                    </abp-tab>
+                    <abp-tab title="@L["Claims"].Value" parent-dropdown-name="AdvancedTabDropdown">
+                        <h3>@L["Claims"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-row>
+                                <abp-column size="_6">
+                                    <abp-input asp-for="SampleClaim.Type" />
+                                </abp-column>
+                                <abp-column size="_6">
+                                    <abp-input asp-for="SampleClaim.Value" />
+                                </abp-column>
+                            </abp-row>
+                            <abp-button id="AddNewClaimButton" button-type="Primary" size="Small" class="float-right"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="ClaimTableId" style="@(Model.Client.Claims.Length > 0 ? "" : "display: none;")">
+                            <abp-input asp-for="Client.AlwaysSendClientClaims" />
+                            <thead>
+                                <tr>
+                                    <th scope="Column">@L["Type"]</th>
+                                    <th scope="Column">@L["Value"]</th>
+                                    <th scope="Column"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="ClaimTableBodyId">
+                                @for (int i = 0; i < Model.Client.Claims.Length; i++)
+                                {
+                                    var claim = Model.Client.Claims[i];
+
+                                    <tr>
+                                        <td>
+                                            @claim.Type
+                                        </td>
+                                        <td>
+                                            @claim.Value
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteClaimButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <abp-input asp-for="Client.Claims[i].Type" />
+                                            <abp-input asp-for="Client.Claims[i].Value" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+
+                    </abp-tab>
+                    <abp-tab title="@L["GrantTypes"].Value" parent-dropdown-name="AdvancedTabDropdown">
+                        <h3>@L["GrantTypes"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-row>
+                                <abp-column size="_12">
+                                    <label for="GrantTypeSelect">Grant Type</label>
+                                    <div class="form-group">
+                                        <select class="form-control" id="GrantTypeSelect">
+                                            <option value="implicit">implicit</option>
+                                            <option value="authorization_code">authorization_code</option>
+                                            <option value="hybrid">hybrid</option>
+                                            <option value="client_credentials">client_credentials</option>
+                                            <option value="password">password</option>
+                                            <option value="custom">Custom</option>
+                                        </select>
+                                    </div>
+                                </abp-column>
+                                <abp-column size="_12">
+                                    <div class="form-group" id="GrantTypeCustomInputGroup" style="display: none;">
+                                        <input class="form-control" type="text" id="GrantTypeCustomInput" placeholder="@L["CustomGrantType"]" />
+                                    </div>
+
+                                </abp-column>
+                            </abp-row>
+                            <abp-button id="AddNewGrantTypeButton" button-type="Primary" size="Small" class="float-right "><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="GrantTypeTableId" style="@(Model.Client.AllowedGrantTypes.Length > 0 ? "" : "display: none;")">
+                            <tbody id="GrantTypeTableBodyId">
+                                @for (int i = 0; i < Model.Client.AllowedGrantTypes.Length; i++)
+                                {
+                                    var allowedGrantType = Model.Client.AllowedGrantTypes[i];
+
+                                    <tr>
+                                        <td>
+                                            @allowedGrantType
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteGrantTypeButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <input asp-for="Client.AllowedGrantTypes[i]" id="@(Model.Client.AllowedGrantTypes[i] + "GrantTypeInput")" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+                    </abp-tab>
+                    <abp-tab title="@L["IdentityProviderRestrictions"].Value" parent-dropdown-name="AdvancedTabDropdown">
+                        <h3>@L["IdentityProviderRestrictions"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-input asp-for="SampleIdentityProviderRestriction" label="@L["Name"].Value" />
+                            <abp-button id="AddNewRestrictionButton" button-type="Success" class="float-right mb-2"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="RestrictionTableId" style="@(Model.Client.IdentityProviderRestrictions.Length > 0 ? "" : "display: none;")">
+                            <tbody id="RestrictionTableBodyId">
+                                @for (int i = 0; i < Model.Client.IdentityProviderRestrictions.Length; i++)
+                                {
+                                    var restriction = Model.Client.IdentityProviderRestrictions[i];
+
+                                    <tr>
+                                        <td>
+                                            @restriction
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteRestrictionButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <input asp-for="Client.IdentityProviderRestrictions[i]" id="@(Model.Client.IdentityProviderRestrictions[i] + "RestrictionInput")" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+
+                        <abp-input asp-for="Client.EnableLocalLogin" />
+                    </abp-tab>
+                    <abp-tab title="@L["Properties"].Value" parent-dropdown-name="AdvancedTabDropdown">
+                        <h3>@L["Properties"]</h3>
+                        <div class="pt-3 pb-5 clearfix">
+                            <abp-row>
+                                <abp-column size="_6">
+                                    <abp-input asp-for="SampleProperty.Key" />
+                                </abp-column>
+                                <abp-column size="_6">
+                                    <abp-input asp-for="SampleProperty.Value" />
+                                </abp-column>
+                            </abp-row>
+                            <abp-button id="AddNewPropertyButton" button-type="Success" class="float-right mb-2"><i class="fa fa-plus"></i> @L["AddNew"]</abp-button>
+                        </div>
+                        <abp-table striped-rows="true" responsive-sm="true" id="PropertyTableId" style="@(Model.Client.Properties.Length > 0 ? "" : "display: none;")">
+                            <thead>
+                                <tr>
+                                    <th scope="Column">@L["Key"]</th>
+                                    <th scope="Column">@L["Value"]</th>
+                                    <th scope="Column"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="PropertyTableBodyId">
+                                @for (int i = 0; i < Model.Client.Properties.Length; i++)
+                                {
+                                    var property = Model.Client.Properties[i];
+
+                                    <tr>
+                                        <td>
+                                            @property.Key
+                                        </td>
+                                        <td>
+                                            @property.Value
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-danger deletePropertyButton float-right"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td hidden>
+                                            <input asp-for="Client.Properties[i].Key" id="@(Model.Client.Properties[i].Key + "PropertyInput")" />
+                                            <input asp-for="Client.Properties[i].Value" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </abp-table>
+                    </abp-tab>
+                </abp-tab-dropdown>
+            </abp-tabs>
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)">
+        </abp-modal-footer>
+    </abp-modal>
+</form>
+<input hidden id="SecretsStartIndex" value="@Model.Client.ClientSecrets.Length" />
+<input hidden id="ClaimsStartIndex" value="@Model.Client.Claims.Length" />
+<input hidden id="GrantTypeStartIndex" value="@Model.Client.AllowedGrantTypes.Length" />
+<input hidden id="RestrictionStartIndex" value="@Model.Client.IdentityProviderRestrictions.Length" />
+<input hidden id="CallbackUriStartIndex" value="@Model.Client.RedirectUris.Length" />
+<input hidden id="SignoutUriStartIndex" value="@Model.Client.PostLogoutRedirectUris.Length" />
+<input hidden id="CorsUriStartIndex" value="@Model.Client.AllowedCorsOrigins.Length" />
+<input hidden id="PropertyStartIndex" value="@Model.Client.Properties.Length" />
+<input hidden id="AppUrisMergedStartIndex" value="@Model.AppUrisMerged.Count" />

@@ -1,0 +1,442 @@
+﻿@attribute [Authorize(AbpAuditLoggingPermissions.AuditLogs.Default)]
+@using Microsoft.AspNetCore.Authorization
+@using System.Net
+@using Volo.Abp.Auditing
+@inherits AbpAuditLoggingComponentBase
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <Fields Horizontal="true">
+            <Field ColumnSize="@ColumnSize.Is2" class="mb-0">
+                <FieldLabel>@L["UserName"]</FieldLabel>
+                <TextEdit @bind-Text="@Filter.UserName" />
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is2" class="mb-0">
+                <FieldLabel>@L["UrlFilter"]</FieldLabel>
+                <TextEdit @bind-Text="@Filter.Url" />
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is2" class="mb-0">
+                <FieldLabel>@L["MinDuration"]</FieldLabel>
+                <NumericEdit TValue="int?" @bind-Value="@Filter.MinExecutionDuration" />
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is2" class="mb-0">
+                <FieldLabel>@L["MaxDuration"]</FieldLabel>
+                <NumericEdit TValue="int?" @bind-Value="@Filter.MaxExecutionDuration" />
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is2" class="mb-0">
+                <FieldLabel>@L["HttpMethod"]</FieldLabel>
+                <Select TValue="string" @bind-SelectedValue="@Filter.HttpMethod">
+                    <SelectItem Value="@NullStringValue"></SelectItem>
+                    @foreach (var httpMethod in GetHttpMethods())
+                    {
+                        <SelectItem Value="@httpMethod">@httpMethod</SelectItem>
+                    }
+                </Select>
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is2" class="mb-0">
+                <FieldLabel>@L["HttpStatusCode"]</FieldLabel>
+                <Select TValue="HttpStatusCode?" @bind-SelectedValue="@Filter.HttpStatusCode">
+                    <SelectItem Value="@NullStatusCodeValue"></SelectItem>
+                    @foreach (var httpStatusCode in GetHttpStatusCodeList())
+                    {
+                        <SelectItem Value="@httpStatusCode">@GetHttpStatusCodeText(httpStatusCode)</SelectItem>
+                    }
+                </Select>
+            </Field>
+        </Fields>
+        <Fields Horizontal="true">
+            <Field ColumnSize="@ColumnSize.Is3" class="mb-0">
+                <FieldLabel>@L["ApplicationName"]</FieldLabel>
+                <TextEdit @bind-Text="@Filter.ApplicationName" />
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is3" class="mb-0">
+                <FieldLabel>@L["CorrelationId"]</FieldLabel>
+                <TextEdit @bind-Text="@Filter.CorrelationId" />
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is3" class="mb-0">
+                <FieldLabel>@L["HasException"]</FieldLabel>
+                <Select TValue="bool?" @bind-SelectedValue="@Filter.HasException">
+                    <SelectItem Value="@NullBoolValue"></SelectItem>
+                    <SelectItem Value="true">@L["Yes"]</SelectItem>
+                    <SelectItem Value="false">@L["No"]</SelectItem>
+                </Select>
+            </Field>
+            <Field ColumnSize="@ColumnSize.Is3" class="mb-0">
+                <FieldLabel>&nbsp;</FieldLabel>
+                <Button Block="true"
+                        Color="@Color.Primary"
+                        Clicked="@GetEntitiesAsync">
+                    <Icon Name="IconName.Search" />
+                </Button>
+            </Field>
+        </Fields>
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<DataGrid TItem="AuditLogDto"
+          Data="AuditLogList"
+          ReadData="OnDataGridReadAsync"
+          TotalItems="TotalCount"
+          ShowPager="true"
+          PageSize="PageSize">
+    <DataGridColumns>
+        <DataGridEntityActionsColumn TItem="AuditLogDto">
+            <DisplayTemplate>
+                <EntityActions TItem="AuditLogDto">
+                    <EntityAction TItem="AuditLogDto"
+                                  Clicked="@(() => OpenDetailModalAsync(context.Id))"
+                                  Text="@L["Detail"]" />
+                </EntityActions>
+            </DisplayTemplate>
+        </DataGridEntityActionsColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.HttpMethod)" Caption="@L["HttpRequest"]">
+            <DisplayTemplate>
+                @{
+                    var item = context;
+                    <Badge Color="@GetHttpStatusCodeBadgeColor(item.HttpStatusCode)"
+                           Margin="Margin.Is1.FromRight"
+                           @onclick="@(e => Filter.HttpStatusCode = (HttpStatusCode) item.HttpStatusCode)">
+                        @item.HttpStatusCode
+                    </Badge>
+
+                    <Badge Color="@GetHttpMethodBadgeColor(item.HttpMethod)"
+                           Margin="Margin.Is1.FromRight"
+                           @onclick="@(e => Filter.HttpMethod = item.HttpMethod.ToString())">
+                        @item.HttpMethod
+                    </Badge>
+
+                    <span @onclick="@(e => Filter.Url = item.Url)">
+                        @item.Url
+                    </span>
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.UserName)" Caption="@L["User"]">
+            <DisplayTemplate>
+                @{
+                    var userName = context.UserName;
+
+                    <span @onclick="@(e => Filter.UserName = userName)">
+                        @userName
+                    </span>
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.ClientIpAddress)" Caption="@L["IpAddress"]">
+            <DisplayTemplate>
+                @(context.ClientIpAddress)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.ExecutionTime)" Caption="@L["Time"]">
+            <DisplayTemplate>
+                @(context.ExecutionTime)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.ExecutionDuration)" Caption="@L["DurationMs"]">
+            <DisplayTemplate>
+                @(context.ExecutionDuration)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.ApplicationName)" Caption="@L["ApplicationName"]">
+            <DisplayTemplate>
+                @{
+                    var applicationName = context.ApplicationName;
+
+                    <span @onclick="@(e => Filter.ApplicationName = applicationName)">
+                        @applicationName
+                    </span>
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="AuditLogDto" Field="@nameof(AuditLogDto.CorrelationId)" Caption="@L["CorrelationId"]">
+            <DisplayTemplate>
+                @{
+                    var correlationId = context.CorrelationId;
+
+                    <span @onclick="@(e => Filter.CorrelationId = correlationId)">
+                        @correlationId
+                    </span>
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+    </DataGridColumns>
+</DataGrid>
+
+@* ************************* DETAIL MODAL ************************* *@
+<Modal @ref="@DetailModal">
+    <ModalBackdrop />
+    <ModalContent Size="@ModalSize.Large" IsCentered="true">
+        <ModalHeader>
+            <ModalTitle>@L["Detail"]</ModalTitle>
+            <CloseButton Clicked="@CloseDetailModalAsync" />
+        </ModalHeader>
+        <ModalBody>
+            <Tabs @bind-SelectedTab="@DetailModalSelectedTab">
+                <Items>
+                    <Tab Name="Overall">
+                        @L["Overall"]
+                    </Tab>
+                    <Tab Name="Actions">
+                        @L["Actions"] (@AuditLogDetail.Actions?.Count)
+                    </Tab>
+                    @if (AuditLogDetail.EntityChanges?.Count > 0)
+                    {
+                        <Tab Name="Changes">
+                            @L["Changes"] (@AuditLogDetail.EntityChanges.Count)
+                        </Tab>
+                    }
+                </Items>
+                <Content>
+                    <TabPanel Name="Overall">
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["HttpStatusCode"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                <Badge Color="@GetHttpStatusCodeBadgeColor(AuditLogDetail.HttpStatusCode)">
+                                    @AuditLogDetail.HttpStatusCode
+                                </Badge>
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["HttpMethod"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                <Badge Color="@GetHttpMethodBadgeColor(AuditLogDetail.HttpMethod)">
+                                    @AuditLogDetail.HttpMethod
+                                </Badge>
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["Url"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.Url
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["ClientIpAddress"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.ClientIpAddress
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["Exceptions"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                <pre lang="c-sharp">@AuditLogDetail.Exceptions</pre>
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["UserName"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.UserName
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["ExecutionTime"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.ExecutionTime
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["ExecutionDuration"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.ExecutionDuration
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["BrowserInfo"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.BrowserInfo
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["ApplicationName"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.ApplicationName
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["CorrelationId"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.CorrelationId
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["Comments"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                @AuditLogDetail.Comments
+                            </Column>
+                        </Row>
+
+                        <Divider />
+
+                        <Row>
+                            <Column ColumnSize="@ColumnSize.Is3">
+                                @L["ExtraProperties"]
+                            </Column>
+                            <Column ColumnSize="@ColumnSize.Is9">
+                                <pre lang="json" style="padding:10px">@SerializeDictionary(AuditLogDetail.ExtraProperties)</pre>
+                            </Column>
+                        </Row>
+                    </TabPanel>
+                    <TabPanel Name="Actions">
+                        @if (AuditLogDetail.Actions?.Count > 0)
+                        {
+                            foreach (var auditLogActionDto in AuditLogDetail.Actions)
+                            {
+                                @if (!AuditLogDetailActionPanelStatus.ContainsKey(auditLogActionDto.Id))
+                                {
+                                    AuditLogDetailActionPanelStatus.Add(auditLogActionDto.Id, AuditLogDetail.Actions[0].Id == auditLogActionDto.Id);
+                                }
+
+                                <Accordion>
+                                    <Collapse Visible="@AuditLogDetailActionPanelStatus[auditLogActionDto.Id]">
+                                        <CollapseHeader>
+                                            <Button Color="@Color.Primary"
+                                                    Block="true"
+                                                    Clicked="@(() => AuditLogDetailActionPanelStatus[auditLogActionDto.Id] = !AuditLogDetailActionPanelStatus[auditLogActionDto.Id])">
+                                                @auditLogActionDto.ServiceName - @auditLogActionDto.MethodName
+                                            </Button>
+                                        </CollapseHeader>
+                                        <CollapseBody>
+                                            <Row>
+                                                <Column ColumnSize="@ColumnSize.Is3">
+                                                    <strong>@L["ExecutionDuration"]</strong>
+                                                </Column>
+                                                <Column ColumnSize="@ColumnSize.Is9">
+                                                    @L["{0}Milliseconds", auditLogActionDto.ExecutionDuration]
+                                                </Column>
+                                            </Row>
+                                            <Row>
+                                                <Column ColumnSize="@ColumnSize.Is3">
+                                                    <strong>@L["Parameters"]</strong>
+                                                </Column>
+                                                <Column ColumnSize="@ColumnSize.Is9">
+                                                    <pre lang="json" style="padding:10px">@auditLogActionDto.Parameters</pre>
+                                                </Column>
+                                            </Row>
+                                        </CollapseBody>
+                                    </Collapse>
+                                </Accordion>
+                            }
+                        }
+                    </TabPanel>
+                    @if (AuditLogDetail.EntityChanges?.Count > 0)
+                    {
+                        <TabPanel Name="Changes">
+                            @foreach (var entityChangeDto in AuditLogDetail.EntityChanges)
+                            {
+                                @if (!AuditLogDetailEntityChangesPanelStatus.ContainsKey(entityChangeDto.Id))
+                                {
+                                    AuditLogDetailEntityChangesPanelStatus.Add(entityChangeDto.Id, AuditLogDetail.EntityChanges[0].Id == entityChangeDto.Id);
+                                }
+
+                                <Accordion>
+                                    <Collapse Visible="@AuditLogDetailEntityChangesPanelStatus[entityChangeDto.Id]">
+                                        <CollapseHeader>
+                                            <Heading Size="HeadingSize.Is5">
+                                                <Button Color="@Color.Primary"
+                                                        Block="true"
+                                                        Clicked="@(() => AuditLogDetailEntityChangesPanelStatus[entityChangeDto.Id] = !AuditLogDetailEntityChangesPanelStatus[entityChangeDto.Id])">
+                                                    @entityChangeDto.EntityTypeFullName - @entityChangeDto.ChangeType
+                                                </Button>
+                                            </Heading>
+                                        </CollapseHeader>
+                                        <CollapseBody>
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHeaderCell>@L["PropertyName"]</TableHeaderCell>
+                                                        <TableHeaderCell>@L["OriginalValue"]</TableHeaderCell>
+                                                        <TableHeaderCell>@L["NewValue"]</TableHeaderCell>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    @foreach (var propertyChange in entityChangeDto.PropertyChanges.OrderBy(x => x.PropertyName))
+                                                    {
+                                                        <TableRow>
+                                                            <TableRowCell>@propertyChange.PropertyName</TableRowCell>
+                                                            <TableRowCell>@propertyChange.OriginalValue</TableRowCell>
+                                                            @{
+                                                                var color = TextColor.None;
+                                                            }
+                                                            @if (entityChangeDto.ChangeType != EntityChangeType.Created && (propertyChange.NewValue != propertyChange.OriginalValue))
+                                                            {
+                                                                color = TextColor.Danger;
+                                                            }
+
+                                                            <TableRowCell TextColor="@color">@propertyChange.NewValue</TableRowCell>
+                                                        </TableRow>
+                                                    }
+                                                </TableBody>
+                                            </Table>
+                                        </CollapseBody>
+                                    </Collapse>
+                                </Accordion>
+                            }
+                        </TabPanel>
+                    }
+                </Content>
+            </Tabs>
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="@Color.Secondary" Clicked="@CloseDetailModalAsync">@L["Close"]</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>

@@ -1,0 +1,122 @@
+﻿@page "/identity/security-logs"
+@attribute [Authorize(IdentityPermissions.SecurityLogs.Default)]
+@using Microsoft.AspNetCore.Authorization
+@inherits AbpIdentityProComponentBase
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["SecurityLogs"]" BreadcrumbItems="@BreadcrumbItems">
+
+</PageHeader>
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <Fields Horizontal="true">
+            <Field ColumnSize="ColumnSize.Is3">
+                <DateEdit TValue="DateTime?" Max="@Filter.EndTime" Placeholder="@L["SecurityLogs:StartTime"]" @bind-Date="@Filter.StartTime" />
+            </Field>
+            <Field ColumnSize="ColumnSize.Is3">
+                <DateEdit TValue="DateTime?" Min="@Filter.StartTime" Placeholder="@L["SecurityLogs:EndTime"]" @bind-Date="@Filter.EndTime" />
+            </Field>
+            <Field ColumnSize="ColumnSize.Is3">
+                <TextEdit Placeholder="@L["SecurityLogs:Application"]" @bind-Text="@Filter.ApplicationName" />
+            </Field>
+            <Field ColumnSize="ColumnSize.Is3">
+                <TextEdit Placeholder="@L["SecurityLogs:Identity"]" @bind-Text="@Filter.Identity" />
+            </Field>
+        </Fields>
+
+        <Fields Horizontal="true">
+            <Field ColumnSize="ColumnSize.Is3">
+                <TextEdit Placeholder="@L["SecurityLogs:UserName"]" @bind-Text="@Filter.UserName" />
+            </Field>
+            <Field ColumnSize="ColumnSize.Is3">
+                <TextEdit Placeholder="@L["SecurityLogs:Action"]" @bind-Text="@Filter.Action" />
+            </Field>
+            <Field ColumnSize="ColumnSize.Is3">
+                <TextEdit Placeholder="@L["SecurityLogs:Client"]" @bind-Text="@Filter.ClientId" />
+            </Field>
+            <Field ColumnSize="ColumnSize.Is3">
+                <TextEdit Placeholder="@L["SecurityLogs:CorrelationId"]" @bind-Text="@Filter.CorrelationId" />
+            </Field>
+        </Fields>
+
+        <Fields>
+            <Field ColumnSize="ColumnSize.Is1" class="mb-0">
+                <Button Block="true"
+                        Color="Color.Primary"
+                        Clicked="GetEntitiesAsync">
+                    <Icon Name="IconName.Search" />
+                </Button>
+            </Field>
+        </Fields>
+    </CardBody>
+</Card>
+
+
+@* ************************* DATA GRID ************************* *@
+<DataGrid TItem="IdentitySecurityLogDto"
+          Data="Entities"
+          ReadData="OnDataGridReadAsync"
+          TotalItems="TotalCount"
+          ShowPager="true"
+          PageSize="PageSize">
+    <DataGridColumns>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.CreationTime)" Caption="@L["SecurityLogs:Time"].Value">
+            <DisplayTemplate>
+                @(context.CreationTime)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.Action)" Caption="@L["SecurityLogs:Action"].Value">
+            <DisplayTemplate>
+                @(context.Action)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.ClientIpAddress)" Caption="@L["SecurityLogs:IpAddress"].Value">
+            <DisplayTemplate>
+                @(context.ClientIpAddress)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.BrowserInfo)" Caption="@L["SecurityLogs:Browser"].Value">
+            <DisplayTemplate>
+                @{
+                    var browserInfo = context.BrowserInfo;
+                    if (browserInfo.Length > 20)
+                    {
+                        <Tooltip Text="@browserInfo" Placement="Placement.Top">
+                            @(browserInfo[..20])...
+                        </Tooltip>
+                    }
+                    else
+                    {
+                        <span>@browserInfo</span>
+                    }
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.ApplicationName)" Caption="@L["SecurityLogs:Application"].Value">
+            <DisplayTemplate>
+                @(context.ApplicationName)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.Identity)" Caption="@L["SecurityLogs:Identity"].Value">
+            <DisplayTemplate>
+                @(context.Identity)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.UserName)" Caption="@L["SecurityLogs:UserName"].Value">
+            <DisplayTemplate>
+                @(context.UserName)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.ClientId)" Caption="@L["SecurityLogs:Client"].Value">
+            <DisplayTemplate>
+                @(context.ClientId)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="IdentitySecurityLogDto" Field="@nameof(IdentitySecurityLogDto.CorrelationId)" Caption="@L["SecurityLogs:CorrelationId"].Value">
+            <DisplayTemplate>
+                @(context.CorrelationId)
+            </DisplayTemplate>
+        </DataGridColumn>
+    </DataGridColumns>
+</DataGrid>

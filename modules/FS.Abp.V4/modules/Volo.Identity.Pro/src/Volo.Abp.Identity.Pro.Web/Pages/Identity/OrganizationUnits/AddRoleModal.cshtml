@@ -1,0 +1,26 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.Identity.Localization
+@model Volo.Abp.Identity.Web.Pages.Identity.OrganizationUnits.AddRoleModal
+@inject IHtmlLocalizer<IdentityResource> L
+@{
+    Layout = null;
+}
+
+<abp-modal size="Large">
+    <abp-modal-header title="@L["SelectRoles"].Value"></abp-modal-header>
+    <abp-modal-body>
+        <div id="IdentityRolesModalWrapper">
+            <abp-card>
+                <abp-card-body>
+                    <abp-table striped-rows="false" class="nowrap"></abp-table>
+                </abp-card-body>
+            </abp-card>
+        </div>
+    </abp-modal-body>
+    <abp-modal-footer buttons="@(AbpModalButtons.None)">
+        <button type="submit" class="btn btn-secondary" data-dismiss="modal">@L["Cancel"]</button>
+        <button type="submit" class="btn btn-primary" id="AddRolesToOuButton" data-busy-text="@L["Save"].Value">@L["Save"]</button>
+    </abp-modal-footer>
+</abp-modal>

@@ -1,0 +1,34 @@
+﻿@page
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageSearchBox
+@using Volo.Abp.TextTemplateManagement.Web.Navigation
+@using Volo.Abp.TextTemplateManagement.Web.Pages.TextTemplates
+@model Volo.Abp.TextTemplateManagement.Web.Pages.TextTemplates.IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.TextTemplateManagement.Localization
+@inject IHtmlLocalizer<TextTemplateManagementResource> L
+
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Menu:TextTemplates"].Value;
+    PageLayout.Content.MenuItemName = TextTemplateManagementMainMenuNames.GroupName;
+}
+
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script src="/Pages/TextTemplates/index.js"/>
+    </abp-script-bundle>
+}
+
+<div id="TextTemplatesWrapper">
+    <abp-card>
+        <abp-card-body>
+            <abp-row>
+                <abp-column>
+                    @await Component.InvokeAsync(typeof(AbpPageSearchBoxViewComponent))
+                </abp-column>
+            </abp-row>
+        </abp-card-body>
+    </abp-card>
+    <abp-table striped-rows="true" id="TemplateDefinitionsTable"></abp-table>
+</div>

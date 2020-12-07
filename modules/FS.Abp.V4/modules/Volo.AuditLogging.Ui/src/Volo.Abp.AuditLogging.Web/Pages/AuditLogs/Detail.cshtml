@@ -1,0 +1,214 @@
+﻿@page
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.AuditLogging.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Button
+@using Volo.Abp.Auditing
+@inject IHtmlLocalizer<AuditLoggingResource> L
+@model Volo.Abp.AuditLogging.Web.Pages.AuditLogs.DetailModel
+@{
+    var auditLog = Model.AuditLog;
+}
+@{
+    Layout = null;
+}
+
+<abp-modal size="@(AbpModalSize.Large)">
+    <abp-modal-header title="@L["Detail"].Value"></abp-modal-header>
+    <abp-modal-body>
+        <abp-tabs>
+            <abp-tab title="@L["Overall"].Value">
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["HttpStatusCode"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">
+                        @if (auditLog.HttpStatusCode.ToString().StartsWith("2"))
+                        {
+                            <span class="badge badge-success">@auditLog.HttpStatusCode</span>
+                        }
+                        else if (auditLog.HttpStatusCode.ToString().StartsWith("3"))
+                        {
+                            <span class="badge badge-warning">@auditLog.HttpStatusCode</span>
+                        }
+                        else if (auditLog.HttpStatusCode.ToString().StartsWith("4"))
+                        {
+                            <span class="badge badge-danger">@auditLog.HttpStatusCode</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-primary">@auditLog.HttpStatusCode</span>
+                        }
+                    </abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["HttpMethod"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">
+
+                        @if (auditLog.HttpMethod == "GET")
+                        {
+                            <span class="badge badge-dark">@auditLog.HttpMethod</span>
+                        }
+                        else if (auditLog.HttpMethod == "POST")
+                        {
+                            <span class="badge badge-success">@auditLog.HttpMethod</span>
+                        }
+                        else if (auditLog.HttpMethod == "DELETE")
+                        {
+                            <span class="badge badge-danger">@auditLog.HttpMethod</span>
+                        }
+                        else if (auditLog.HttpMethod == "PUT")
+                        {
+                            <span class="badge badge-warning">@auditLog.HttpMethod</span>
+                        }
+                        else
+                        {
+                            <span class="badge">@auditLog.HttpMethod</span>
+                        }
+                    </abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["Url"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.Url</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["ClientIpAddress"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.ClientIpAddress</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["ClientName"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.ClientName</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["Exceptions"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">
+                        <pre lang="c-sharp">@auditLog.Exceptions</pre>
+                    </abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["UserName"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.UserName</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["ExecutionTime"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.ExecutionTime</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["ExecutionDuration"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.ExecutionDuration</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["BrowserInfo"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.BrowserInfo</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["ApplicationName"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.ApplicationName</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["CorrelationId"]</strong> </abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.CorrelationId</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["Comments"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">@auditLog.Comments</abp-column>
+                </abp-row>
+                <hr />
+                <abp-row>
+                    <abp-column size-lg="_3" class="col-form-label"><strong>@L["ExtraProperties"]</strong></abp-column>
+                    <abp-column size-lg="_9" class="col-form-label">
+                        <pre lang="json" style="padding:10px">@Model.SerializeDictionary(auditLog.ExtraProperties)</pre>
+                    </abp-column>
+                </abp-row>
+            </abp-tab>
+            <abp-tab title="@(L["Actions"].Value + " (" + auditLog.Actions?.Count +  ")")">
+                @for (var i = 0; i < auditLog.Actions?.Count; i++)
+                {
+                    var action = auditLog.Actions[i];
+                    var id = "C" + Guid.NewGuid();
+                    var title = action.ServiceName + " - " + action.MethodName;
+                    <div abp-border="Dark" abp-rounded="Default" class="mb-3">
+                        <abp-button button-type="Primary" size="Block" abp-collapse-id="@id" text="@title" />
+                        <abp-collapse-body id="@id" class="m-3" show="i == 0">
+                            <abp-row>
+                                <abp-column size-lg="_3" class="col-form-label"><strong>@L["ExecutionDuration"]</strong></abp-column>
+                                <abp-column size-lg="_9" class="col-form-label">@L["{0}Milliseconds", action.ExecutionDuration]</abp-column>
+                            </abp-row>
+                            <hr />
+                            <abp-row>
+                                <abp-column size-lg="_3" class="col-form-label"><strong>@L["Parameters"]</strong></abp-column>
+                                <abp-column size-lg="_9" class="col-form-label">
+                                    <pre lang="json" style="padding:10px">@action.Parameters</pre>
+                                </abp-column>
+                            </abp-row>
+                        </abp-collapse-body>
+                    </div>
+                }
+            </abp-tab>
+            @if (auditLog.EntityChanges.Any())
+            {
+                <abp-tab title="@(L["Changes"].Value + " (" + auditLog.EntityChanges.Count +  ")")">
+                    @if (auditLog.EntityChanges.Count == 0)
+                    {
+                        <div class="text-center">@L["NoChanges"]</div>
+                    }
+                    @for (var i = 0; i < auditLog.EntityChanges.Count; i++)
+                    {
+                        var entityChange = auditLog.EntityChanges[i];
+                        var id = "C" + Guid.NewGuid();
+                        var title = entityChange.EntityTypeFullName + " - " + entityChange.ChangeType;
+                        var type = AbpButtonType.Success;
+                        if (entityChange.ChangeType == EntityChangeType.Deleted)
+                        {
+                            type = AbpButtonType.Danger;
+                        }
+                        else if (entityChange.ChangeType == EntityChangeType.Updated)
+                        {
+                            type = AbpButtonType.Info;
+                        }
+                        <div abp-border="Dark" abp-rounded="Default" class="mb-3">
+                            <abp-button button-type="@(type)" size="Block" abp-collapse-id="@id" text="@title" />
+                            <abp-collapse-body style="overflow-x: scroll" id="@id" class="m-3" show="i == 0">
+                                <abp-table striped-rows="true">
+                                    <thead>
+                                        <tr>
+                                            <th>@L["PropertyName"]</th>
+                                            <th>@L["OriginalValue"]</th>
+                                            <th>@L["NewValue"]</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var propertyChange in entityChange.PropertyChanges.OrderBy(x => x.PropertyName))
+                                        {
+                                            var isChanged = "";
+                                            if (entityChange.ChangeType != EntityChangeType.Created && (propertyChange.NewValue != propertyChange.OriginalValue))
+                                            {
+                                                isChanged = "color: red;";
+                                            }
+                                            <tr>
+                                                <th style="font-weight: normal;">@propertyChange.PropertyName</th>
+                                                <th style="font-weight: normal;">@propertyChange.OriginalValue</th>
+                                                <th style="font-weight: normal;@isChanged">@propertyChange.NewValue</th>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </abp-table>
+                            </abp-collapse-body>
+                        </div>
+                    }
+                </abp-tab>
+            }
+        </abp-tabs>
+    </abp-modal-body>
+    <abp-modal-footer buttons="@(AbpModalButtons.Close)"></abp-modal-footer>
+</abp-modal>

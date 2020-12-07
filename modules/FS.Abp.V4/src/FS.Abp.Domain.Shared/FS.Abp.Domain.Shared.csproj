@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Abp</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain.Shared\Volo.Abp.TextTemplateManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Domain.Shared\Volo.Saas.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain.Shared\Volo.Abp.LanguageManagement.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.Validation" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Abp\*.json" />
+    <Content Remove="Localization\Abp\*.json" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <IsPackable>true</IsPackable>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Volo.Saas.Host</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\**\*.scss" />
+    <EmbeddedResource Include="Pages\**\*.css" />
+    <EmbeddedResource Include="Pages\**\*.js" />
+    <EmbeddedResource Include="Components\**\*.js" />
+    <EmbeddedResource Include="Components\**\*.css" />
+    <Content Remove="Pages\**\*.scss" />
+    <Content Remove="Pages\**\*.css" />
+    <Content Remove="Pages\**\*.js" />
+    <Content Remove="Components\**\*.js" />
+    <Content Remove="Components\**\*.css" />
+    <Content Remove="Properties\launchSettings.json" />
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volo.Saas.Host.HttpApi\Volo.Saas.Host.HttpApi.csproj" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Web" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

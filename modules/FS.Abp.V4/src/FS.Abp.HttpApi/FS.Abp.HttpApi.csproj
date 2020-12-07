@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.Abp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.0.0" />
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.HttpApi\Volo.Abp.TextTemplateManagement.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Host.HttpApi\Volo.Saas.Host.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Tenant.HttpApi\Volo.Saas.Tenant.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.HttpApi\Volo.Abp.LanguageManagement.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Identityserver.Ui\src\Volo.Abp.IdentityServer.HttpApi\Volo.Abp.IdentityServer.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.AuditLogging.Ui\src\Volo.Abp.AuditLogging.HttpApi\Volo.Abp.AuditLogging.HttpApi.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.HttpApi\Volo.Abp.Identity.Pro.HttpApi.csproj" />
+    <ProjectReference Include="..\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

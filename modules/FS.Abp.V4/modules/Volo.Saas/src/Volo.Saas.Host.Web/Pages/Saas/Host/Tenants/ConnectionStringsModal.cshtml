@@ -1,0 +1,26 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Saas.Host.Pages.Saas.Host.Tenants
+@using Volo.Saas.Localization
+@model ConnectionStringsModal
+@inject IStringLocalizer<SaasResource> L
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/Saas/Host/Tenants/ConnectionStringsModal">
+    <abp-modal>
+        <abp-modal-header title="@L["ConnectionStrings"]"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Tenant.Id"/>
+            
+            <abp-input asp-for="Tenant.UseSharedDatabase"/>
+
+            <div id="Tenant_DefaultConnectionString_Wrap" class="@(Model.Tenant.UseSharedDatabase ? "d-none" : "")" >
+                <abp-input asp-for="Tenant.DefaultConnectionString"/>
+            </div>
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

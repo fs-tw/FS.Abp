@@ -1,0 +1,98 @@
+﻿@page
+@using System.Net
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Packages.JsTree
+@using Volo.Abp.Identity
+@using Volo.Abp.Identity.Localization
+@using Volo.Abp.Identity.Web.Navigation
+@using Volo.Abp.Identity.Web.Pages.Identity.OrganizationUnits
+@model IndexModel
+@inject IHtmlLocalizer<IdentityResource> L
+@inject IAuthorizationService Authorization
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["OrganizationUnits"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:IdentityManagement"].Value);
+    PageLayout.Content.MenuItemName = IdentityMenuNames.OrganizationUnits;
+}
+
+@section styles {
+    <abp-style-bundle name="@typeof(IndexModel).FullName">
+        <abp-style type="typeof(JsTreeStyleContributor)" />
+        <abp-style src="/Pages/AbpPermissionManagement/permission-management-modal.css" />
+        <abp-style src="/Pages/Identity/OrganizationUnits/organization-unit.css" />
+    </abp-style-bundle>
+}
+
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script type="typeof(JsTreeScriptContributor)" />
+        <abp-script src="/Pages/AbpPermissionManagement/permission-management-modal.js" />
+        <abp-script src="/Pages/Identity/OrganizationUnits/index.js"></abp-script>
+        <abp-script src="/Pages/Identity/OrganizationUnits/addMemberModal.js"></abp-script>
+        <abp-script src="/Pages/Identity/OrganizationUnits/addRoleModal.js"></abp-script>
+    </abp-script-bundle>
+}
+
+@section content_toolbar {
+}
+
+<div id="OrganizationUnitsWrapper">
+    <abp-row>
+        <abp-column size-md="_12" size-lg="_6">
+            <abp-card>
+                <abp-card-body>
+                    <abp-card-title>
+                        <abp-row h-align="Between">
+                            <abp-column>
+                                <span style="font-size:initial"> @L["OrganizationTree"]</span>
+                            </abp-column>
+                            <abp-column>
+                                @if (await Authorization.IsGrantedAsync(IdentityPermissions.OrganizationUnits.ManageOU))
+                                {
+                                    <abp-button class="float-right" button-type="Primary" size="Small" name="CreateOrganizationUnit" text="@L["AddRootUnit"].Value" icon="plus" />
+                                }
+                            </abp-column>
+                        </abp-row>
+                    </abp-card-title>
+                    <div id="OrganizationUnitEditTree"></div>
+                    <div id="OrganizationUnitTreeEmptyInfo" class="text-muted">@L["NoOrganizationUnits"]</div>
+                </abp-card-body>
+            </abp-card>
+        </abp-column>
+        <abp-column size-md="_12" size-lg="_6">
+            <abp-tabs>
+                <abp-tab name="Members" title="@L["Members"].Value">
+                    <div id="OuMembersTable" style="display:none">
+                        @if (await Authorization.IsGrantedAsync(IdentityPermissions.OrganizationUnits.ManageUsers))
+                        {
+                            <div class="text-right mb-3">
+                                <abp-button button-type="Primary" size="Small" name="AddMember" text="@L["AddMember"].Value" icon="plus" />
+                            </div>
+                        }
+                        <abp-table striped-rows="true" class="nowrap"></abp-table>
+                    </div>
+                    <div id="OuMembersEmptyInfo" class="text-muted">
+                        @L["SelectAnOrganizationUnitToSeeMembers"]
+                    </div>
+                </abp-tab>
+                <abp-tab name="Roles" title="@L["Roles"].Value">
+                    <div id="OuRolesTable" style="display:none">
+                        @if (await Authorization.IsGrantedAsync(IdentityPermissions.OrganizationUnits.ManageRoles))
+                        {
+                            <div class="text-right mb-3">
+                                <abp-button button-type="Primary" size="Small" name="AddRole" text="@L["AddRole"].Value" icon="plus" />
+                            </div>
+                        }
+                        <abp-table striped-rows="true" class="nowrap"></abp-table>
+                    </div>
+                    <div id="OuRolesEmptyInfo" class="text-muted">
+                        @L["SelectAnOrganizationUnitToSeeRoles"]
+                    </div>
+                </abp-tab>
+            </abp-tabs>
+        </abp-column>
+    </abp-row>
+</div>

@@ -1,0 +1,32 @@
+﻿@using Volo.Abp.Identity.Web.Pages.Identity.Users
+@model Volo.Abp.Identity.Web.Pages.Identity.Users.OrganizationUnitTreeNodeModel
+
+
+@if (Model.Node.Children != null && Model.Node.Children.Count > 0)
+{
+    <li role="treeitem" aria-selected="false" aria-level="@Model.Depth" aria-labelledby="@Model.OrganizationUnits[Model.Node.Index].Id.ToString().Replace("-","_")_anchor" aria-expanded="true" id="@Model.OrganizationUnits[Model.Node.Index].Id.ToString().Replace("-","_")_Jstree" class="jstree-node  jstree-open">
+
+        <i class="jstree-icon jstree-ocl" role="presentation"></i>
+        <a checkbox-id="OrganizationUnits_@(Model.Node.Index)__IsAssigned" class="jstree-anchor" href="#" tabindex="-1" id="@Model.OrganizationUnits[Model.Node.Index].Id.ToString().Replace("-","_")_anchor">
+            <i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>
+            @Model.OrganizationUnits[Model.Node.Index].DisplayName
+        </a>
+        <ul role="group" class="jstree-children">
+            @for (int i = 0; i < Model.Node.Children.Count; i++)
+            {
+                @await Html.PartialAsync("OrganizationUnitTreeNode", new OrganizationUnitTreeNodeModel { Depth = Model.Depth + 1, Node = Model.Node.Children[i], OrganizationUnits = Model.OrganizationUnits })
+            }
+        </ul>
+    </li>
+}
+else
+{
+    <li role="treeitem" aria-selected="false" aria-level="@Model.Depth" aria-labelledby="@Model.OrganizationUnits[Model.Node.Index].Id.ToString().Replace("-","_")_anchor" id="@Model.OrganizationUnits[Model.Node.Index].Id.ToString().Replace("-","_")_Jstree" class="jstree-node  jstree-leaf">
+
+                <i class="jstree-icon jstree-ocl" role="presentation"></i>
+        <a checkbox-id="OrganizationUnits_@(Model.Node.Index)__IsAssigned" class="jstree-anchor" href="#" tabindex="-1" id="@Model.OrganizationUnits[Model.Node.Index].Id.ToString().Replace("-","_")_anchor">
+            <i class="jstree-icon jstree-checkbox" role="presentation"></i><i class="jstree-icon jstree-themeicon" role="presentation"></i>
+            @Model.OrganizationUnits[Model.Node.Index].DisplayName
+        </a>
+    </li>
+}

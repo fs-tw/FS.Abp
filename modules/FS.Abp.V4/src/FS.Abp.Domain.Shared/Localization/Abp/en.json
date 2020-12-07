@@ -1,0 +1,7 @@
+{
+  "culture": "en",
+  "texts": {
+    "SamplePageMessage": "A sample page for the Abp module",
+    "Menu:Abp": "Abp"
+  }
+}

@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Saas.Localization
+@inject IHtmlLocalizer<SaasResource> L
+    <abp-card>
+        <abp-card-header>
+			<h5 class="card-title">@L["EditionUsageStatistics"]</h5>
+        </abp-card-header>
+        <abp-card-body>
+            <div class="row">
+                <canvas class="SaasEditionPercentageWidgetChart"></canvas>
+            </div>
+        </abp-card-body>
+    </abp-card>

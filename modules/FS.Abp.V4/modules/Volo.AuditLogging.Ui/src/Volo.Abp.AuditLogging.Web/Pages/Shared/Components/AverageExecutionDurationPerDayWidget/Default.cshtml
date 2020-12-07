@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AuditLogging.Localization
+@inject IHtmlLocalizer<AuditLoggingResource> L
+<abp-card>
+    <abp-card-header>
+		<h5 class="card-title">@L["AverageExecutionDurationInLogsPerDay"]</h5>
+    </abp-card-header>
+    <abp-card-body>
+        <div class="row">
+            <canvas class="AverageExecutionDurationPerDayChart"></canvas>
+        </div>
+    </abp-card-body>
+</abp-card>

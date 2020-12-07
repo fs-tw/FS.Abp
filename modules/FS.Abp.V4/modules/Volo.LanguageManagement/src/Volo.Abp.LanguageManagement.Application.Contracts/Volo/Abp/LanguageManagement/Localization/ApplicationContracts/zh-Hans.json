@@ -1,0 +1,13 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "Permission:LanguageManagement": "语言管理",
+    "Permission:LanguageTexts": "语言文本",
+    "Permission:LanguageTextsEdit": "编辑语言文本",
+    "Permission:Languages": "语言",
+    "Permission:LanguagesEdit": "编辑语言",
+    "Permission:LanguagesCreate": "创建语言",
+    "Permission:LanguagesChangeDefault": "修改默认语言",
+    "Permission:LanguagesDelete": "删除语言"
+  }
+}
