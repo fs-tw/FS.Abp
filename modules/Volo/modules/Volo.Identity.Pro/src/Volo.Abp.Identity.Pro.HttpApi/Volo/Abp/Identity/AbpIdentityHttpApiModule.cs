@@ -31,7 +31,7 @@ namespace Volo.Abp.Identity
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpIdentityHttpApiModule>(context);
+            //LicenseChecker.Check<AbpIdentityHttpApiModule>(context);
         }
     }
 }

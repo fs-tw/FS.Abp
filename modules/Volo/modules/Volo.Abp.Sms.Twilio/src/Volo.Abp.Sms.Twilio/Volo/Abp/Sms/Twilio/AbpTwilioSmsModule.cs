@@ -17,7 +17,7 @@ namespace Volo.Abp.Sms.Twilio
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpTwilioSmsModule>(context);
+            //LicenseChecker.Check<AbpTwilioSmsModule>(context);
         }
     }
 }

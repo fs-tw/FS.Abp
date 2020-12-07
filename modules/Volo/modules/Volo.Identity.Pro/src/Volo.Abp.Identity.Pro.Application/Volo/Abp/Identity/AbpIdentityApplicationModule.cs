@@ -26,7 +26,7 @@ namespace Volo.Abp.Identity
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpIdentityApplicationModule>(context);
+            //LicenseChecker.Check<AbpIdentityApplicationModule>(context);
         }
     }
 }

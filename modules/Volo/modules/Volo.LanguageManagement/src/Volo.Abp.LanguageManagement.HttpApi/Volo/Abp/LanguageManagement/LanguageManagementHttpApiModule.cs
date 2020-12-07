@@ -33,7 +33,7 @@ namespace Volo.Abp.LanguageManagement
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<LanguageManagementHttpApiModule>(context);
+            //LicenseChecker.Check<LanguageManagementHttpApiModule>(context);
         }
     }
 }

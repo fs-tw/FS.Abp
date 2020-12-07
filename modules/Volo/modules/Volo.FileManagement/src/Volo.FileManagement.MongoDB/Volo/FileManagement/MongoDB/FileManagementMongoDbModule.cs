@@ -25,7 +25,7 @@ namespace Volo.FileManagement.MongoDB
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<FileManagementMongoDbModule>(context);
+            //LicenseChecker.Check<FileManagementMongoDbModule>(context);
         }
     }
 }

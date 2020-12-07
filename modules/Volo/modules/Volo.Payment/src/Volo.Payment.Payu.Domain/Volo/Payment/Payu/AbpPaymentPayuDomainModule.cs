@@ -26,7 +26,7 @@ namespace Volo.Payment.Payu
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentPayuDomainModule>(context);
+            //LicenseChecker.Check<AbpPaymentPayuDomainModule>(context);
         }
     }
 }

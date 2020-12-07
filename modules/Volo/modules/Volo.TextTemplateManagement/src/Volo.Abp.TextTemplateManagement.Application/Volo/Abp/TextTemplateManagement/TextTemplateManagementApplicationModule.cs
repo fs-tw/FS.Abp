@@ -24,7 +24,7 @@ namespace Volo.Abp.TextTemplateManagement
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<TextTemplateManagementApplicationModule>(context);
+            //LicenseChecker.Check<TextTemplateManagementApplicationModule>(context);
         }
     }
 }

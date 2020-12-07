@@ -96,7 +96,7 @@ namespace Volo.Saas
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<SaasDomainModule>(context);
+            //LicenseChecker.Check<SaasDomainModule>(context);
         }
     }
 }

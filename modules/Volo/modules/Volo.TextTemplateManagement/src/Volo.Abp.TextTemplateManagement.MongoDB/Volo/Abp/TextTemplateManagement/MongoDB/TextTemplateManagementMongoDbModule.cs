@@ -21,7 +21,7 @@ namespace Volo.Abp.TextTemplateManagement.MongoDB
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<TextTemplateManagementMongoDbModule>(context);
+            //LicenseChecker.Check<TextTemplateManagementMongoDbModule>(context);
         }
     }
 }

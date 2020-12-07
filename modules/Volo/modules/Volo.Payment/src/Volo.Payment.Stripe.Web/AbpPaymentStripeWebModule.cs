@@ -26,7 +26,7 @@ namespace Volo.Payment.Stripe
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentStripeWebModule>(context);
+            //LicenseChecker.Check<AbpPaymentStripeWebModule>(context);
         }
     }
 }

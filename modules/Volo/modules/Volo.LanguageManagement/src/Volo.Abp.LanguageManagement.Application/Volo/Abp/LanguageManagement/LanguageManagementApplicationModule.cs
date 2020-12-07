@@ -46,7 +46,7 @@ namespace Volo.Abp.LanguageManagement
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<LanguageManagementApplicationModule>(context);
+            //LicenseChecker.Check<LanguageManagementApplicationModule>(context);
         }
     }
 }

@@ -73,7 +73,7 @@ namespace Volo.Abp.LeptonTheme.Management
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<LeptonThemeManagementWebModule>(context);
+            //LicenseChecker.Check<LeptonThemeManagementWebModule>(context);
         }
     }
 }

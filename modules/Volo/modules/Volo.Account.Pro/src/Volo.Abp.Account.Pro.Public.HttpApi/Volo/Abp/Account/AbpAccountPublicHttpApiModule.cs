@@ -40,7 +40,7 @@ namespace Volo.Abp.Account
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAccountPublicHttpApiModule>(context);
+            //LicenseChecker.Check<AbpAccountPublicHttpApiModule>(context);
         }
     }
 }

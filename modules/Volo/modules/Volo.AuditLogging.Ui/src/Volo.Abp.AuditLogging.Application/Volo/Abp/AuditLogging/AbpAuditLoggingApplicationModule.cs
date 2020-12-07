@@ -53,7 +53,7 @@ namespace Volo.Abp.AuditLogging
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAuditLoggingApplicationModule>(context);
+            //LicenseChecker.Check<AbpAuditLoggingApplicationModule>(context);
         }
     }
 }

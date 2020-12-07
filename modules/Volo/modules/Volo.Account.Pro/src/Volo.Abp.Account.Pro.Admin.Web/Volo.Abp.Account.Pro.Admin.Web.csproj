@@ -35,7 +35,7 @@
 
     <PackageReference Include="Volo.Abp.SettingManagement.Web" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial" Version="4.0.0" />
+    <ProjectReference Include="..\..\..\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial\Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.csproj" />
     <ProjectReference Include="..\Volo.Abp.Account.Pro.Admin.HttpApi\Volo.Abp.Account.Pro.Admin.HttpApi.csproj" />
   </ItemGroup>
 

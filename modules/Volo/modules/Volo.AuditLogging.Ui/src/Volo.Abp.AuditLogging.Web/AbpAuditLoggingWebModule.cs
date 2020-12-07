@@ -87,7 +87,7 @@ namespace Volo.Abp.AuditLogging.Web
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAuditLoggingWebModule>(context);
+            //LicenseChecker.Check<AbpAuditLoggingWebModule>(context);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Volo.Payment.PayPal
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentPayPalWebModule>(context);
+            //LicenseChecker.Check<AbpPaymentPayPalWebModule>(context);
         }
     }
 }

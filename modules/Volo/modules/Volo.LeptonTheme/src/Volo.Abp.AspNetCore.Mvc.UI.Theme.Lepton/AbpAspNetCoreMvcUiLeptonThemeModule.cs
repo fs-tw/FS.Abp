@@ -102,7 +102,7 @@ namespace Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAspNetCoreMvcUiLeptonThemeModule>(context);
+            //LicenseChecker.Check<AbpAspNetCoreMvcUiLeptonThemeModule>(context);
         }
     }
 }

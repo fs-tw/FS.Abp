@@ -12,8 +12,8 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.0.0" />
+    <ProjectReference Include="..\..\..\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.HttpApi\Volo.Abp.Identity.Pro.HttpApi.csproj" />
     <ProjectReference Include="..\Volo.Abp.Account.Pro.Public.Application.Contracts\Volo.Abp.Account.Pro.Public.Application.Contracts.csproj" />
-    <PackageReference Include="Volo.Abp.Identity.Pro.HttpApi" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
   </ItemGroup>
 

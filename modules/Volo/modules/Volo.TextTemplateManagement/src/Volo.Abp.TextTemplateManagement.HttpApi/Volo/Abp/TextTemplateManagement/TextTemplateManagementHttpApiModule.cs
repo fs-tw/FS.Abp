@@ -32,7 +32,7 @@ namespace Volo.Abp.TextTemplateManagement
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<TextTemplateManagementHttpApiModule>(context);
+            //LicenseChecker.Check<TextTemplateManagementHttpApiModule>(context);
         }
     }
 }

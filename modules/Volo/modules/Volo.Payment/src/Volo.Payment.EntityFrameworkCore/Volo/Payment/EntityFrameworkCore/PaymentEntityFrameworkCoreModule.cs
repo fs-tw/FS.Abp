@@ -23,7 +23,7 @@ namespace Volo.Payment.EntityFrameworkCore
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentEntityFrameworkCoreModule>(context);
+            //LicenseChecker.Check<AbpPaymentEntityFrameworkCoreModule>(context);
         }
     }
 }

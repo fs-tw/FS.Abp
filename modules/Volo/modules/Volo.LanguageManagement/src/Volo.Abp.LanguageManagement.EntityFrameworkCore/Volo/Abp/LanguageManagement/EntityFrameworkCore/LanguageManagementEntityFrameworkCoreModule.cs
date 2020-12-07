@@ -21,7 +21,7 @@ namespace Volo.Abp.LanguageManagement.EntityFrameworkCore
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<LanguageManagementEntityFrameworkCoreModule>(context);
+            //LicenseChecker.Check<LanguageManagementEntityFrameworkCoreModule>(context);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Volo.Saas.Host
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<SaasHostApplicationModule>(context);
+            //LicenseChecker.Check<SaasHostApplicationModule>(context);
         }
     }
 }

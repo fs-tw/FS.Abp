@@ -146,7 +146,7 @@ namespace Volo.Abp.Account.Public.Web
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAccountPublicWebModule>(context);
+            //LicenseChecker.Check<AbpAccountPublicWebModule>(context);
         }
     }
 }

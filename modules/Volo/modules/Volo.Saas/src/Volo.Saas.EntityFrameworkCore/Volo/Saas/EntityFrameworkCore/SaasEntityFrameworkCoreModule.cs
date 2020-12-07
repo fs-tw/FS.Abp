@@ -26,7 +26,7 @@ namespace Volo.Saas.EntityFrameworkCore
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<SaasEntityFrameworkCoreModule>(context);
+            //LicenseChecker.Check<SaasEntityFrameworkCoreModule>(context);
         }
     }
 }

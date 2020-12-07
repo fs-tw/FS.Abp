@@ -40,7 +40,7 @@ namespace Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAspNetCoreMvcUiThemeCommercialModule>(context);
+            //LicenseChecker.Check<AbpAspNetCoreMvcUiThemeCommercialModule>(context);
         }
     }
 }

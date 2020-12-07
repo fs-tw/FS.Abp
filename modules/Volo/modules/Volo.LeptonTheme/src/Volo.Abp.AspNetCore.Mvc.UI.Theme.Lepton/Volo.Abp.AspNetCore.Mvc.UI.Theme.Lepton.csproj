@@ -58,7 +58,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial" Version="4.0.0" />
+    <ProjectReference Include="..\Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial\Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.csproj" />
     <ProjectReference Include="..\Volo.Abp.LeptonTheme.Management.Web\Volo.Abp.LeptonTheme.Management.Web.csproj" />
   </ItemGroup>
 </Project>

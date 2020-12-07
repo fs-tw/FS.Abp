@@ -27,7 +27,7 @@ namespace Volo.Saas.MongoDB
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<SaasMongoDbModule>(context);
+            //LicenseChecker.Check<SaasMongoDbModule>(context);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace Volo.Abp.LeptonTheme
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<LeptonThemeManagementHttpApiModule>(context);
+            //LicenseChecker.Check<LeptonThemeManagementHttpApiModule>(context);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Volo.FileManagement.EntityFrameworkCore
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<FileManagementEntityFrameworkCoreModule>(context);
+            //LicenseChecker.Check<FileManagementEntityFrameworkCoreModule>(context);
         }
     }
 }

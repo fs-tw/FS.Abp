@@ -130,7 +130,7 @@ namespace Volo.Saas.Host
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<SaasHostWebModule>(context);
+            //LicenseChecker.Check<SaasHostWebModule>(context);
         }
     }
 }

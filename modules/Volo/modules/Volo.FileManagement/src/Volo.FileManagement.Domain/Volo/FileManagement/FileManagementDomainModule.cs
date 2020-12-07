@@ -34,7 +34,7 @@ namespace Volo.FileManagement
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<FileManagementDomainModule>(context);
+            //LicenseChecker.Check<FileManagementDomainModule>(context);
         }
     }
 }

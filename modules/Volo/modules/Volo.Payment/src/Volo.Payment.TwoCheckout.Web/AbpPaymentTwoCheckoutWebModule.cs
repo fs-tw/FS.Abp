@@ -25,7 +25,7 @@ namespace Volo.Payment.TwoCheckout
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentTwoCheckoutWebModule>(context);
+            //LicenseChecker.Check<AbpPaymentTwoCheckoutWebModule>(context);
         }
     }
 }

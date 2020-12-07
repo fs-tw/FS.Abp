@@ -33,7 +33,7 @@ namespace Volo.FileManagement
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<FileManagementHttpApiModule>(context);
+            //LicenseChecker.Check<FileManagementHttpApiModule>(context);
         }
     }
 }

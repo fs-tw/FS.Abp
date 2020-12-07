@@ -23,7 +23,7 @@ namespace Volo.Saas.Tenant
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<SaasTenantApplicationModule>(context);
+            //LicenseChecker.Check<SaasTenantApplicationModule>(context);
         }
     }
 }

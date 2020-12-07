@@ -158,7 +158,7 @@ namespace Volo.Abp.IdentityServer.Web
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpIdentityServerWebModule>(context);
+            //LicenseChecker.Check<AbpIdentityServerWebModule>(context);
         }
     }
 }

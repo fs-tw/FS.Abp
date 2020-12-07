@@ -38,7 +38,7 @@ namespace Volo.Abp.Account
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAccountPublicApplicationModule>(context);
+            //LicenseChecker.Check<AbpAccountPublicApplicationModule>(context);
         }
     }
 }

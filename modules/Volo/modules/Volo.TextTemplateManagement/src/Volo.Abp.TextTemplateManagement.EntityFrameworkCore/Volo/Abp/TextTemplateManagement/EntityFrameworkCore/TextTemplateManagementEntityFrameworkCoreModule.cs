@@ -21,7 +21,7 @@ namespace Volo.Abp.TextTemplateManagement.EntityFrameworkCore
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<TextTemplateManagementEntityFrameworkCoreModule>(context);
+            //LicenseChecker.Check<TextTemplateManagementEntityFrameworkCoreModule>(context);
         }
     }
 }

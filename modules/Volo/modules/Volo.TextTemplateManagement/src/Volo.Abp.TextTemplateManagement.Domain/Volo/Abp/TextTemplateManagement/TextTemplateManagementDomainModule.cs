@@ -13,7 +13,7 @@ namespace Volo.Abp.TextTemplateManagement
     {
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<TextTemplateManagementDomainModule>(context);
+            //LicenseChecker.Check<TextTemplateManagementDomainModule>(context);
         }
     }
 }

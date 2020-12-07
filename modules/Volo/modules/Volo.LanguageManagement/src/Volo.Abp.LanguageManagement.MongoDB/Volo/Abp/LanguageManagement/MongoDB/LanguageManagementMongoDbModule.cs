@@ -21,7 +21,7 @@ namespace Volo.Abp.LanguageManagement.MongoDB
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<LanguageManagementMongoDbModule>(context);
+            //LicenseChecker.Check<LanguageManagementMongoDbModule>(context);
         }
     }
 }

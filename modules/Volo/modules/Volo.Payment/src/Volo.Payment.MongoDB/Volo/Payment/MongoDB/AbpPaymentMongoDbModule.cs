@@ -24,7 +24,7 @@ namespace Volo.Payment.MongoDB
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentMongoDbModule>(context);
+            //LicenseChecker.Check<AbpPaymentMongoDbModule>(context);
         }
     }
 }

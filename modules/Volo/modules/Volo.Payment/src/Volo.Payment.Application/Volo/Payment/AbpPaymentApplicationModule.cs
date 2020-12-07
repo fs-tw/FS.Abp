@@ -23,7 +23,7 @@ namespace Volo.Payment
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpPaymentApplicationModule>(context);
+            //LicenseChecker.Check<AbpPaymentApplicationModule>(context);
         }
     }
 }

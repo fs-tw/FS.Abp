@@ -53,7 +53,7 @@ namespace Volo.Abp.Account.Web
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<AbpAccountPublicWebIdentityServerModule>(context);
+            //LicenseChecker.Check<AbpAccountPublicWebIdentityServerModule>(context);
         }
     }
 }

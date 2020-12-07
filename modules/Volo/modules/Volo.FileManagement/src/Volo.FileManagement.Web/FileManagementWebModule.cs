@@ -66,7 +66,7 @@ namespace Volo.FileManagement.Web
         
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
-            LicenseChecker.Check<FileManagementWebModule>(context);
+            //LicenseChecker.Check<FileManagementWebModule>(context);
         }
     }
 }
