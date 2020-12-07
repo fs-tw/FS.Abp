@@ -1,0 +1,13 @@
+<div class="row mb-3">
+  <div class="col">
+    <abp-file-management-breadcrumb
+      [navigatedFolders]="navigator.navigatedFolderPath$ | async"
+      (breadcrumbClick)="navigator.goToFolder($event)"
+    ></abp-file-management-breadcrumb>
+  </div>
+</div>
+
+<abp-file-management-folder-filter></abp-file-management-folder-filter>
+<abp-file-management-folder-content
+  (contentUpdate)="contentUpdate.emit($event)"
+></abp-file-management-folder-content>

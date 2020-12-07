@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>net5.0</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>Volo.Chat</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Volo.Abp.Autofac" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Web" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Web" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Web" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="4.0.0" />
+    <PackageReference Include="Volo.Saas.Host.Web" Version="4.0.0" />
+    <PackageReference Include="Volo.Saas.Host.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Saas.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.EntityFrameworkCore" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Volo.Chat.Application\Volo.Chat.Application.csproj" />
+    <ProjectReference Include="..\..\src\Volo.Chat.EntityFrameworkCore\Volo.Chat.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\src\Volo.Chat.SignalR\Volo.Chat.SignalR.csproj" />
+    <ProjectReference Include="..\..\src\Volo.Chat.Web\Volo.Chat.Web.csproj" />
+    <ProjectReference Include="..\Volo.Chat.Host.Shared\Volo.Chat.Host.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200422130646_Added_Chat_Tables.cs" />
+    <Compile Remove="Migrations\20200422130646_Added_Chat_Tables.Designer.cs" />
+    <Compile Remove="Migrations\20200511082626_ChatMessage_Cascade_Delete.cs" />
+    <Compile Remove="Migrations\20200511082626_ChatMessage_Cascade_Delete.Designer.cs" />
+    <Compile Remove="Migrations\20200514103438_Added_ChatConversation.cs" />
+    <Compile Remove="Migrations\20200514103438_Added_ChatConversation.Designer.cs" />
+    <Compile Remove="Migrations\20200810024406_Initial.cs" />
+    <Compile Remove="Migrations\20200810024406_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20200831083751_Added_BlobStoringDBModule.cs" />
+    <Compile Remove="Migrations\20200831083751_Added_BlobStoringDBModule.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Volo.Chat.HttpApi.Host\Seed\ChatDataSeeder.cs" Link="Seed\ChatDataSeeder.cs" />
+    <Compile Include="..\Volo.Chat.IdentityServer\Seed\IdentityDataSeeder.cs" Link="Seed\IdentityDataSeeder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Pages\**\*.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Pages\**\*.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

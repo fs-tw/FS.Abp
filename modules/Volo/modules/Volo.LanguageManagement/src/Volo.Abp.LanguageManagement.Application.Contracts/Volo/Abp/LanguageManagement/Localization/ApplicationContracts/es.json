@@ -1,0 +1,13 @@
+{
+  "culture": "es",
+  "texts": {
+    "Permission:LanguageManagement": "administración de lenguaje",
+    "Permission:LanguageTexts": "Textos de lenguaje",
+    "Permission:LanguageTextsEdit": "Editar textos de lenguaje",
+    "Permission:Languages": "Lenguajes",
+    "Permission:LanguagesEdit": "Editar lenguaje",
+    "Permission:LanguagesCreate": "Crear lenguaje",
+    "Permission:LanguagesChangeDefault": "Cambiar el lenguaje por defecto",
+    "Permission:LanguagesDelete": "Eliminar lenguaje"
+  }
+}

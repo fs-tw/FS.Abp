@@ -1,0 +1,15 @@
+<abp-file-management-modal title="CreateFolder" [parent]="self">
+  <form [formGroup]="form" (keyup.enter)="save()">
+    <div class="form-group">
+      <label for="createFolderInput"
+        >{{ "FileManagement::Name" | abpLocalization }} *</label
+      >
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="createFolderInput"
+      />
+    </div>
+  </form>
+</abp-file-management-modal>

@@ -1,0 +1,271 @@
+﻿@page "/identity/claim-types"
+@attribute [Authorize(IdentityPermissions.Users.Default)]
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.Identity.Localization
+@inject AbpBlazorMessageLocalizerHelper<IdentityResource> LH
+@inherits AbpCrudPageBase<IIdentityClaimTypeAppService, ClaimTypeDto, Guid, GetIdentityClaimTypesInput, CreateClaimTypeDto, UpdateClaimTypeDto>
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["ClaimTypes"]" BreadcrumbItems="@BreadcrumbItems">
+    @if (HasCreatePermission)
+    {
+        <Column ColumnSize="ColumnSize.IsAuto" Class="px-1 pt-2">
+            <Button Color="Color.Primary" Clicked="OpenCreateModalAsync">
+                <Icon Name="IconName.Add" Class="mr-1"></Icon>@L["NewClaimType"]
+            </Button>
+        </Column>
+    }
+</PageHeader>
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <Form id="ClaimTypeSearchForm">
+            <Fields Horizontal="true">
+                <Field ColumnSize="ColumnSize.Is11" class="mb-0">
+                    <TextEdit Placeholder="@L["Search"]" @bind-Text="@GetListInput.Filter" />
+                </Field>
+                <Field ColumnSize="ColumnSize.Is1" class="mb-0">
+                    <Button form="ClaimTypeSearchForm"
+                            Block="true"
+                            Type="ButtonType.Submit"
+                            PreventDefaultOnSubmit="true"
+                            Color="Color.Primary"
+                            Clicked="GetEntitiesAsync">
+                        <Icon Name="IconName.Search" />
+                    </Button>
+                </Field>
+            </Fields>
+        </Form>
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<DataGrid TItem="ClaimTypeDto"
+          Data="Entities"
+          ReadData="OnDataGridReadAsync"
+          TotalItems="TotalCount"
+          ShowPager="true"
+          PageSize="PageSize">
+    <DataGridColumns>
+        <DataGridEntityActionsColumn TItem="ClaimTypeDto" @ref="EntityActionsColumn">
+            <DisplayTemplate>
+                <EntityActions TItem="ClaimTypeDto" EntityActionsColumn="@EntityActionsColumn">
+
+                    <div style="display: @(context.IsStatic ? "none" : "block")">
+                        <EntityAction TItem="ClaimTypeDto"
+                                      RequiredPolicy="@UpdatePolicyName"
+                                      Clicked="() => OpenEditModalAsync(context)"
+                                      Text="@L["Edit"]">
+                        </EntityAction>
+                    </div>
+
+                    <EntityAction TItem="ClaimTypeDto"
+                                  RequiredPolicy="@DeletePolicyName"
+                                  ConfirmationMessage="() => GetDeleteConfirmationMessage(context)"
+                                  Clicked="() => DeleteEntityAsync(context)"
+                                  Text="@L["Delete"]">
+                    </EntityAction>
+
+                </EntityActions>
+            </DisplayTemplate>
+        </DataGridEntityActionsColumn>
+        <DataGridColumn TItem="ClaimTypeDto" Field="@nameof(ClaimTypeDto.Name)" Caption="@L["Name"].Value">
+            <DisplayTemplate>
+                @(context.Name)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="ClaimTypeDto" Field="@nameof(ClaimTypeDto.ValueType)" Caption="@L["ValueType"].Value">
+            <DisplayTemplate>
+                @(context.ValueType)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="ClaimTypeDto" Field="@nameof(ClaimTypeDto.Description)" Caption="@L["Description"].Value">
+            <DisplayTemplate>
+                @(context.Description)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="ClaimTypeDto" Field="@nameof(ClaimTypeDto.Regex)" Caption="@L["Regex"].Value">
+            <DisplayTemplate>
+                @(context.Regex)
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="ClaimTypeDto" Field="@nameof(ClaimTypeDto.Required)" Caption="@L["Required"].Value">
+            <DisplayTemplate>
+                @if (context.Required)
+                {
+                    <Icon class="text-success" Name="IconName.Check" />
+                }
+                else
+                {
+                    <Icon class="text-danger" Name="IconName.Times" />
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="ClaimTypeDto" Field="@nameof(ClaimTypeDto.IsStatic)" Caption="@L["IsStatic"].Value">
+            <DisplayTemplate>
+                @if (context.IsStatic)
+                {
+                    <Icon class="text-success" Name="IconName.Check" />
+                }
+                else
+                {
+                    <Icon class="text-danger" Name="IconName.Times" />
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+    </DataGridColumns>
+</DataGrid>
+
+
+@* ************************* CREATE MODAL ************************* *@
+@if (HasCreatePermission)
+{
+    <Modal @ref="CreateModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <Form id="IdentityClaimTypeCreateForm">
+                <ModalHeader>
+                    <ModalTitle>@L["NewClaimType"]</ModalTitle>
+                    <CloseButton Clicked="CloseCreateModalAsync"/>
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@CreateValidationsRef" Model="@NewEntity" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Name"]</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Name">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Field>
+                            <Check TValue="bool" @bind-Checked="@NewEntity.Required">@L["Required"]</Check>
+                        </Field>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Regex"]</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Regex">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["RegexDescription"]</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.RegexDescription">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Description"]</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Description">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Field>
+                            <FieldLabel>@L["ValueType"]</FieldLabel>
+                            <Select TValue="IdentityClaimValueType" @bind-SelectedValue="@NewEntity.ValueType">
+                                <SelectItem Value="@IdentityClaimValueType.String">@(IdentityClaimValueType.String.ToString())</SelectItem>
+                                <SelectItem Value="@IdentityClaimValueType.Int">@(IdentityClaimValueType.String.ToString())</SelectItem>
+                                <SelectItem Value="@IdentityClaimValueType.Boolean">@(IdentityClaimValueType.Boolean.ToString())</SelectItem>
+                                <SelectItem Value="@IdentityClaimValueType.DateTime">@(IdentityClaimValueType.DateTime.ToString())</SelectItem>
+                            </Select>
+                        </Field>
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="CloseCreateModalAsync">@L["Cancel"]</Button>
+                    <Button form="IdentityClaimTypeCreateForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="CreateEntityAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* EDIT MODAL ************************* *@
+@if (HasUpdatePermission)
+{
+    <Modal @ref="EditModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <Form id="IdentityClaimTypeEditForm">
+                <ModalHeader>
+                    <ModalTitle>@L["Edit"]</ModalTitle>
+                    <CloseButton Clicked="CloseEditModalAsync"/>
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@EditValidationsRef" Model="@EditingEntity" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Name"]</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Name">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Field>
+                            <Check TValue="bool" @bind-Checked="@EditingEntity.Required">@L["Required"]</Check>
+                        </Field>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Regex"]</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Regex">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["RegexDescription"]</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.RegexDescription">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Description"]</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Description">
+                                    <Feedback>
+                                        <ValidationError/>
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Field>
+                            <FieldLabel>@L["ValueType"]</FieldLabel>
+                            <Select TValue="IdentityClaimValueType" @bind-SelectedValue="@EditingEntity.ValueType">
+                                <SelectItem Value="@IdentityClaimValueType.String">@(IdentityClaimValueType.String.ToString())</SelectItem>
+                                <SelectItem Value="@IdentityClaimValueType.Int">@(IdentityClaimValueType.String.ToString())</SelectItem>
+                                <SelectItem Value="@IdentityClaimValueType.Boolean">@(IdentityClaimValueType.Boolean.ToString())</SelectItem>
+                                <SelectItem Value="@IdentityClaimValueType.DateTime">@(IdentityClaimValueType.DateTime.ToString())</SelectItem>
+                            </Select>
+                        </Field>
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="CloseEditModalAsync">@L["Cancel"]</Button>
+                    <Button form="IdentityClaimTypeEditForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="UpdateEntityAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}

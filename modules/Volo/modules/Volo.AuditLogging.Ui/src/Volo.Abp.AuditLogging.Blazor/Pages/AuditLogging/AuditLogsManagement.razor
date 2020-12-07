@@ -1,0 +1,33 @@
+﻿@page "/audit-logs"
+@attribute [Authorize(AbpAuditLoggingPermissions.AuditLogs.Default)]
+@using Microsoft.AspNetCore.Authorization
+@inherits AbpAuditLoggingComponentBase
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["AuditLogs"]" BreadcrumbItems="@BreadcrumbItems">
+
+</PageHeader>
+
+@* ************************* CONTENT ************************* *@
+<Row>
+    <Column>
+        <Tabs @bind-SelectedTab="@SelectedTab">
+            <Items>
+                <Tab Name="AuditLogging">
+                    @L["AuditLogs"]
+                </Tab>
+                <Tab Name="EntityChanges">
+                    @L["EntityChanges"]
+                </Tab>
+            </Items>
+            <Content>
+                <TabPanel Name="AuditLogging">
+                    <AuditLogs />
+                </TabPanel>
+                <TabPanel Name="EntityChanges">
+                    <EntityChanges />
+                </TabPanel>
+            </Content>
+        </Tabs>
+    </Column>
+</Row>

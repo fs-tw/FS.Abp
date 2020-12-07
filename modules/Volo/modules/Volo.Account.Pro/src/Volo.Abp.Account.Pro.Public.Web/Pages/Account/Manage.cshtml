@@ -1,0 +1,50 @@
+﻿@page
+@using Volo.Abp.Account.Public.Web.Pages.Account
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@inject IThemeManager ThemeManager
+@inject IHtmlLocalizer<AccountResource> L
+@model ManageModel
+@{
+    Layout = ThemeManager.CurrentTheme.GetApplicationLayout();
+}
+
+@section styles{
+    <abp-style-bundle name="@typeof(ManageModel).FullName"/>
+}
+
+@section scripts {
+    <abp-script-bundle name="@typeof(ManageModel).FullName"/>
+}
+
+@if (!Model.ReturnUrl.IsNullOrWhiteSpace())
+{
+    <abp-row class="mb-2">
+        <abp-column>
+            <a class="btn btn-primary" href="@Model.ReturnUrl">
+                <i class="fa fa-chevron-left mr-2"></i>@L["ReturnToApplication"]
+            </a>
+        </abp-column>
+    </abp-row>
+}
+
+<div id="ProfileManagementWrapper">
+    <abp-card>
+        <abp-card-body>
+            <abp-tabs id="ProfileManagementTab" tab-style="PillVertical" vertical-header-size="_3">
+                @foreach (var group in Model.ProfileManagementPageCreationContext.Groups)
+                {
+                    <abp-tab name="@group.Id" title="@group.DisplayName" >
+                        <h2>@group.DisplayName</h2>
+                        <hr class="my-4" />
+                        @await Component.InvokeAsync(group.ComponentType, new
+                        {
+                            parameter = group.Parameter
+                        })
+                    </abp-tab>
+                }
+            </abp-tabs>
+        </abp-card-body>
+    </abp-card>
+</div>

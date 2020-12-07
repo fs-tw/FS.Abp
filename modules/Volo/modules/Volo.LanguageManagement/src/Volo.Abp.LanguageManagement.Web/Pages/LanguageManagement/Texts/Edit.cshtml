@@ -1,0 +1,38 @@
+﻿@page
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.LanguageManagement.Localization
+@inject IHtmlLocalizer<LanguageManagementResource> L
+@model Volo.Abp.LanguageManagement.Pages.LanguageManagement.Texts.EditModel
+@{
+    Layout = null;
+}
+<form method="post" id="EditFormId" asp-page="/LanguageManagement/Texts/Edit">
+    <abp-modal size="@(AbpModalSize.Large)">
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="LanguageTextToEdit.RestoreToDefault" />
+            <abp-input asp-for="LanguageTextToEdit.Name" />
+            <abp-input asp-for="LanguageTextToEdit.ResourceName" />
+            <abp-input asp-for="LanguageTextToEdit.TargetCultureName" />
+
+            <div class="form-group">
+                <label>@L["Key"]</label>
+                <div>
+                    <strong>@Model.LanguageTextToEdit.Name</strong>
+                </div>
+            </div>
+
+            <input type="hidden" id="NextId" value="false">
+            <abp-input asp-for="LanguageTextToEdit.BaseCultureValue" disabled="true" />
+            <abp-input asp-for="LanguageTextToEdit.TargetCultureValue" autofocus />
+
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.None)">
+            <button type="submit" class="btn btn-sm btn-outline-primary" data-dismiss="modal">@L["Close"]</button>
+            <button type="submit" class="btn btn-sm btn-outline-primary" id="RestoreToDefaultButton" data-busy-text="@L["SavingWithThreeDot"].Value">@L["RestoreToDefault"]</button>
+            <button type="submit" class="btn btn-sm btn-primary" data-busy-text="@L["SavingWithThreeDot"].Value"><i class="fa fa-check"></i> <span>@L["Save"]</span></button>
+            <button type="submit" class="btn btn-sm btn-success" id="SaveAndNextButton" data-busy-text="@L["SavingWithThreeDot"].Value"><i class="fa fa-check"></i> <span>@L["SaveAndNext"]</span> <i class="fa fa-arrow-right"></i></button>
+        </abp-modal-footer>
+    </abp-modal>
+</form>

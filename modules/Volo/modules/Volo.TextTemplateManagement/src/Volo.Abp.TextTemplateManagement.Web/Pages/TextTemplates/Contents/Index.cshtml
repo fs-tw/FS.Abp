@@ -1,0 +1,64 @@
+﻿@page "{templateDefinitionName}"
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.Localization
+@using Volo.Abp.TextTemplateManagement.Web.Navigation
+@model Volo.Abp.TextTemplateManagement.Web.Pages.TextTemplates.Contents.IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.TextTemplateManagement.Localization
+@inject IHtmlLocalizer<TextTemplateManagementResource> L
+
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Contents"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:TextTemplates"].Value, "/TextTemplates");
+    PageLayout.Content.MenuItemName = TextTemplateManagementMainMenuNames.GroupName;
+}
+
+@section styles {
+    <abp-style src="/Pages/TextTemplates/Contents/ContentShared.css"/>
+}
+
+@section scripts {
+    <abp-script src="/Pages/TextTemplates/Contents/index.js"/>
+}
+
+<abp-card>
+    <abp-card-header>
+        <label>@L["Name"]: <strong>@Model.TemplateDefinition.DisplayName (@Model.TemplateDefinition.Name)</strong></label>
+    </abp-card-header>
+    <abp-card-body>
+        <form id="FilterFormId" definition="@Model.TemplateDefinitionName" method="post">
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-select class="culture-selector" target="BaseContent" asp-for="@Model.BaseCultureName"/>
+                </abp-column>
+
+                <abp-column size-md="_6">
+                    <abp-select class="culture-selector" target="TargetContent" asp-for="@Model.TargetCultureName"/>
+                </abp-column>
+            </abp-row>
+        </form>
+        <abp-row>
+            <abp-column>
+                <abp-input asp-for="@Model.BaseContent" readonly="true"/>
+            </abp-column>
+            <abp-column>
+                <abp-input asp-for="@Model.TargetContent"/>
+            </abp-column>
+        </abp-row>
+        <abp-row>
+            <abp-column>
+                <div class="float-left action-group">
+                    <a href="/TextTemplates" class="btn btn-primary">
+                        <span class="fa fa-arrow-left"></span>
+                        <span>@L["ReturnToTemplates"]</span>
+                    </a>
+                </div>
+                <div class="float-right action-group">
+                    <abp-button id="save-content" text="@L["SaveContent"].Value" button-type="Primary"/>
+                    <abp-button id="restore-to-default" text="@L["RestoreToDefault"].Value" button-type="Danger"/>
+                </div>
+            </abp-column>
+        </abp-row>
+    </abp-card-body>
+</abp-card>

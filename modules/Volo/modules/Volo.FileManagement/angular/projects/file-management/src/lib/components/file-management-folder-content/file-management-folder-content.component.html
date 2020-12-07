@@ -1,0 +1,20 @@
+<ng-container *ngIf="content$ | async; let data">
+  <abp-extensible-table
+    [list]="list"
+    [data]="data"
+    [recordsTotal]="data.length"
+  >
+  </abp-extensible-table>
+
+  <abp-rename-modal
+    [(visible)]="renameModalOpen"
+    [(contentToRename)]="contentToRename"
+    (contentSaved)="onContentSaved()"
+  ></abp-rename-modal>
+
+  <abp-move-file-modal
+    [(visible)]="moveModalOpen"
+    (contentSaved)="onContentSaved()"
+    [fileToMove]="fileToMove"
+  ></abp-move-file-modal>
+</ng-container>

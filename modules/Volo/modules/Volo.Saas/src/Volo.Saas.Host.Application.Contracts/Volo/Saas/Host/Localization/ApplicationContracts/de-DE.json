@@ -1,0 +1,14 @@
+{
+  "culture": "de-DE",
+  "texts": {
+    "Permission:Saas": "Saas",
+    "Permission:TenantManagement": "Mandantenverwaltung",
+    "Permission:EditionManagement": "Editionsverwaltung",
+    "Permission:Create": "Erstellen",
+    "Permission:Edit": "Bearbeiten",
+    "Permission:Delete": "Löschen",
+    "Permission:ManageConnectionStrings": "Connection Strings verwalten",
+    "Permission:ManageFeatures": "Features verwalten",
+    "Permission:ViewChangeHistory": "Änderungsverlauf anzeigen"
+  }
+}

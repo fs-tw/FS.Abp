@@ -1,0 +1,18 @@
+{
+  "culture": "en",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Lepton Theme",
+    "Permission:LeptonThemeSettings": "Lepton Theme settings",
+    "Permission:LeptonThemeManagement": "Lepton Theme management",
+    "DisplayName:BoxedLayout": "Boxed layout",
+    "DisplayName:MenuPlacement": "Menu placement",
+    "DisplayName:MenuStatus": "Menu status",
+    "SuccessfullySaved": "Successfully saved",
+    "Left": "Left",
+    "Top": "Top",
+    "AlwaysOpened": "Always opened",
+    "OpenOnHover": "Open on hover",
+    "DisplayName:Style": "Style",
+    "Authentication:YouAreLoggedOut": "You are logged out."
+  }
+}

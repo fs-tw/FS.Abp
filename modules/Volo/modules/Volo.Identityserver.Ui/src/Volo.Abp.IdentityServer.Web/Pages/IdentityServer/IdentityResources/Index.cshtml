@@ -1,0 +1,43 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageSearchBox
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageToolbar
+@using Volo.Abp.IdentityServer.Localization
+@using Volo.Abp.IdentityServer.Web.Navigation
+@using Volo.Abp.IdentityServer.Web.Pages.IdentityServer.IdentityResources
+@model IndexModel
+@inject IAuthorizationService Authorization
+@inject IHtmlLocalizer<AbpIdentityServerResource> L
+@{
+    ViewBag.PageTitle = "Identity Server";
+}
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["IdentityResources"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:IdentityServer"].Value);
+    PageLayout.Content.MenuItemName = AbpIdentityServerMenuNames.IdentityResources;
+}
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script src="/Pages/IdentityServer/IdentityResources/index.js" />
+        <abp-script src="/Pages/IdentityServer/IdentityResources/create.js" />
+        <abp-script src="/Pages/IdentityServer/IdentityResources/edit.js" />
+    </abp-script-bundle>
+}
+@section content_toolbar {
+    @await Component.InvokeAsync(typeof(AbpPageToolbarViewComponent), new { pageName = typeof(IndexModel).FullName })
+}
+<div id="IdentityResourcesWrapper">
+    <abp-card>
+        <abp-card-body>
+            <abp-row>
+                <abp-column>
+                    @await Component.InvokeAsync(typeof(AbpPageSearchBoxViewComponent))
+                </abp-column>
+            </abp-row>
+        </abp-card-body>
+    </abp-card>
+    <abp-table striped-rows="true" id="IdentityResourcesTable" class="nowrap"></abp-table>
+</div>

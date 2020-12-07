@@ -1,0 +1,46 @@
+<h2>{{ 'AbpAccount::Menu:Account' | abpLocalization }}</h2>
+<hr class="my-4" />
+
+<div id="AccountSettingsForm" class="row">
+  <div class="col-md-12">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li ngbNavItem>
+        <a ngbNavLink>{{ 'AbpAccount::AccountSettingsGeneral' | abpLocalization }}</a>
+        <ng-template ngbNavContent>
+          <abp-account-settings-general [isTenant]="isTenant"></abp-account-settings-general>
+        </ng-template>
+      </li>
+      <li ngbNavItem *ngIf="isTwoFactorSettingsEnabled">
+        <a ngbNavLink>{{ 'AbpAccount::AccountSettingsTwoFactor' | abpLocalization }}</a>
+        <ng-template ngbNavContent>
+          <abp-account-settings-two-factor [isTenant]="isTenant"></abp-account-settings-two-factor>
+        </ng-template>
+      </li>
+      <li ngbNavItem *ngIf="isLdapSettingsEnabled">
+        <a ngbNavLink>{{ 'AbpAccount::AccountSettingsLdap' | abpLocalization }}</a>
+        <ng-template ngbNavContent>
+          <abp-account-settings-ldap [isTenant]="isTenant"></abp-account-settings-ldap>
+        </ng-template>
+      </li>
+      <li ngbNavItem *ngIf="isCaptchaEnabled$ | async">
+        <a ngbNavLink>
+          {{ 'AbpAccount::Captcha' | abpLocalization }}
+        </a>
+        <ng-template ngbNavContent>
+          <abp-account-settings-captcha [isTenant]="isTenant"></abp-account-settings-captcha>
+        </ng-template>
+      </li>
+      <li ngbNavItem *ngIf="isExternalProviderEnabled$ | async">
+        <a ngbNavLink>
+          {{ 'AbpAccount::AccountExternalProviderSettings' | abpLocalization }}
+        </a>
+        <ng-template ngbNavContent>
+          <abp-account-settings-external-provider
+            [isTenant]="isTenant"
+          ></abp-account-settings-external-provider>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+﻿@page
+@using Microsoft.Extensions.Options
+@using Volo.Payment
+@model Volo.Payment.Payu.Pages.Payment.Payu.PrePaymentModel
+@section scripts {
+    <abp-script src="/Pages/Payment/Payu/payment.js" />
+}
+@{
+}
+<main>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mx-auto mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">You will pay with PAYU</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Please enter your name and e-mail informations.</p>
+                            <form role="form" name="payu-form" method="post" action="https://secure.payu.com.tr/order/lu.php">
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-1">
+                                        <div class="position-relative">
+                                            <input type="text" name="BILL_FNAME" id="payu-first-name" class="form-control" style="cursor: auto;" value="@Model.Name">
+                                            <label id="name-error" class="text-danger field-validation-error" style="display: none">Invalid name!</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pl-md-1">
+                                        <div class="position-relative">
+                                            <input type="text" name="BILL_LNAME" id="payu-last-name" class="form-control" value="@Model.Surname">
+                                            <label id="lastName-error" class="text-danger field-validation-error" style="display: none">Invalid lastName!</label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="position-relative">
+                                            <input type="text" name="BILL_EMAIL" id="payu-email-address" class="form-control" value="@Model.Email">
+                                            <label id="EmailAddress-error" class="text-danger field-validation-error" style="display: none">Invalid email!</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    @foreach (var purchaseParameter in Model.PurchaseParameters)
+                                    {
+                                        <input type="hidden" name="@purchaseParameter.Key" value="@purchaseParameter.Value" />
+                                    }
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <button class="btn btn-success btn-lg btn-block mt-4 @Model.PrePaymentCheckoutButtonStyle" name="checkout">Continue to Checkout <i class="fa fa-long-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <p class="m-0 text-muted">
+                                    <i class="fa fa-info"></i>
+                                    <small>You will be directed to PAYU official website for payment.</small>
+                                </p>
+                                <p class="m-0 text-muted">
+                                    <i class="fa fa-info"></i>
+                                    <small>PAYU accepts Visa and MasterCard</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

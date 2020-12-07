@@ -1,0 +1,56 @@
+<ng-container *ngIf="settings$ | async; let settings">
+  <div (keyup.enter)="submit(settings)">
+    <h4>{{ 'AbpAccount::TwoFactorAuthentication' | abpLocalization }}</h4>
+    <div>
+      <div class="form-group">
+        <label for="AccountTwoFactorSettings_TwoFactorBehaviour">{{
+          'AbpIdentity::DisplayName:Abp.Identity.TwoFactorBehaviour' | abpLocalization
+        }}</label>
+        <select
+          name="TwoFactorBehaviour"
+          class="custom-select form-control"
+          [(ngModel)]="settings.twoFactorBehaviour"
+        >
+          <option *ngFor="let option of twoFactorBehaviourOptions" [ngValue]="option.value">{{
+            option.key
+          }}</option>
+        </select>
+      </div>
+      <div
+        *ngIf="settings.twoFactorBehaviour === eTwoFactorBehaviour.Optional"
+        class="custom-checkbox custom-control mb-2"
+      >
+        <input
+          name="UsersCanChange"
+          type="checkbox"
+          checked="checked"
+          id="AccountTwoFactorSettings_UsersCanChange"
+          [(ngModel)]="settings.usersCanChange"
+          class="custom-control-input"
+        /><label class="custom-control-label" for="AccountTwoFactorSettings_UsersCanChange">{{
+          'AbpIdentity::DisplayName:Abp.Identity.UsersCanChange' | abpLocalization
+        }}</label>
+      </div>
+      <div class="custom-checkbox custom-control mb-2">
+        <input
+          name="IsRememberBrowserEnabled"
+          type="checkbox"
+          checked="checked"
+          id="AccountTwoFactorSettings_IsRememberBrowserEnabled"
+          [(ngModel)]="settings.isRememberBrowserEnabled"
+          class="custom-control-input "
+        /><label
+          class="custom-control-label"
+          for="AccountTwoFactorSettings_IsRememberBrowserEnabled"
+          >{{ 'AbpAccount::RememberBrowser' | abpLocalization }}</label
+        >
+      </div>
+    </div>
+    <hr class="my-4" />
+    <div>
+      <abp-button (click)="submit(settings)" iconClass="fa fa-save" [loading]="loading">{{
+        'AbpAccount::Save' | abpLocalization
+      }}</abp-button>
+    </div>
+  </div>
+</ng-container>

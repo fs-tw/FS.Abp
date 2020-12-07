@@ -1,0 +1,363 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.AntiForgery
+@using Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.Ui.Branding
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Volo.Abp.AspNetCore.Mvc.UI.Widgets.Components.WidgetScripts
+@using Volo.Abp.AspNetCore.Mvc.UI.Widgets.Components.WidgetStyles
+@using System.Globalization
+@using Volo.Abp.LeptonTheme.Demo.Bundling
+@using Volo.Abp.LeptonTheme.Demo.Pages._Components.PageAlerts
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@inject IBrandingProvider BrandingProvider
+@inject IPageLayout PageLayout
+@{
+    Layout = null;
+    AbpAntiForgeryManager.SetCookie();
+
+    var pageTitle = ViewBag.Title == null ? "Lepton Theme" : ViewBag.Title;
+
+    if (PageLayout.Content.Title != null)
+    {
+        if (!string.IsNullOrWhiteSpace(pageTitle))
+        {
+            pageTitle = " | " + pageTitle;
+        }
+
+        pageTitle = PageLayout.Content.Title + pageTitle;
+    }
+}
+
+<!DOCTYPE html>
+
+<html lang="@CultureInfo.CurrentCulture.Name">
+<head>
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.First, StandardLayouts.Empty)
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@pageTitle</title>
+
+    <abp-style-bundle name="@LeptonDemoBundles.Styles.SiteLayout" />
+
+    @await Component.InvokeAsync(typeof(WidgetStylesViewComponent))
+
+    @await RenderSectionAsync("styles", false)
+
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.Last, StandardLayouts.Empty)
+</head>
+<body>
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.First, StandardLayouts.Empty)
+
+    <!-- NAVBAR
+    ================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="@Url.Page("/")">
+                <img src="~/img/lepton-dark.svg" class="navbar-brand-img" alt="...">
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-x"></i>
+                </button>
+
+                <!-- Navigation -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown hovered">
+                        <a class="nav-link dropdown-toggle" id="navbarLandings" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="true">
+                            Dashboard
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-xl p-0" aria-labelledby="navbarLandings">
+                            <div class="dropdown-body">
+                                <div class="row no-gutters">
+                                    <div class="col-12 col-lg-4">
+                                        <h6 class="dropdown-header">
+                                            Components
+                                        </h6>
+                                        <a class="dropdown-item" href="@Url.Page("/Landings/Landings")">Alerts</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Badges")">
+                                            Badges <span class="badge badge-pill badge-success-soft ml-auto">NEW</span>
+                                        </a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Buttons")">Buttons</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Cards")">Cards</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Collapse")">
+                                            Collapse
+                                            <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span>
+                                        </a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Dropdowns")">Dropdowns</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Icons")">Icons</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Alerts")">
+                                            List Groups <span class="badge badge-pill badge-primary-soft ml-auto">UPDATED</span>
+                                        </a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Modals")">Modals</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Pagination")">Pagination</a>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <h6 class="dropdown-header">
+                                            &nbsp;
+                                        </h6>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Progress")">Progress</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Navs")">Navs</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Tabs")">Tabs <span class="badge badge-pill badge-primary-soft ml-auto">UPDATED</span></a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Pills")">Pills <span class="badge badge-pill badge-primary-soft ml-auto">UPDATED</span></a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Tooltips")">Tooltips</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Popovers")">Popovers</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Components/Typography")">
+                                            Typography
+                                            <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <h6 class="dropdown-header">
+                                            Libraries
+                                        </h6>
+                                        <a class="dropdown-item" href="@Url.Page("/Libraries/BasicTables")">CustomScroll</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Libraries/Toastr")">Toastr</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Libraries/SweetAlert")">Sweet Alert</a>
+                                        <hr />
+                                        <h6 class="dropdown-header">
+                                            Tables
+                                        </h6>
+                                        <a class="dropdown-item" href="@Url.Page("/Tables/BasicTables")">Basic Tables</a>
+                                        <a class="dropdown-item" href="@Url.Page("/Tables/DataTables")">DataTables</a>
+                                        <hr />
+                                        <h6 class="dropdown-header">
+                                            Forms
+                                        </h6>
+                                        <a class="dropdown-item" href="@Url.Page("/Forms/BasicTables")">Controls</a>
+                                    </div>
+                                </div>
+                            </div> <!-- / .row -->
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown hovered">
+                        <a class="nav-link dropdown-toggle" id="navbarPages" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="true">
+                            Landings
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarPages">
+                            <div class="row no-gutters">
+                                <div class="col-12 col-lg-6">
+                                    <h6 class="dropdown-header">Content Management System</h6>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Home <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span> </a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">About <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Features <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Pricing <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">FAQ <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Documentations <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Blog <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <hr />
+                                    <h6 class="dropdown-header">Custom Pages</h6>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Login</a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Register")">Register</a>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h6 class="dropdown-header">Ecommerce</h6>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/401")">Home <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/401")">Product List Page <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/401")">Product Detail Page <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/401")">Payment <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/401")">Account Pages <span class="badge badge-pill badge-secondary-soft ml-auto">SOON</span></a> 
+                                    <hr />
+                                    <h6 class="dropdown-header">Error Pages</h6>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/401")">Error Page 401</a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/403")">Error Page 403</a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/404")">Error Page 404</a>
+                                    <a class="dropdown-item" href="@Url.Page("/ErrorPages/500")">Error Page 500</a>
+                                </div>
+                            </div>
+                        </div> <!-- / .row -->
+                    </li>
+                    <li class="nav-item dropdown hovered">
+                        <a class="nav-link dropdown-toggle" href="@Url.Page("/Pricing")">
+                            Pricing
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown hovered">
+                        <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="true">
+                            Learn
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDocumentation">
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    <h6 class="dropdown-header">Learn</h6>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Login")">Documentation</a>
+                                    <a class="dropdown-item" href="@Url.Page("/CustomPages/Register")">
+                                        Change Log
+                                        <span class="badge badge-pill badge-primary-soft ml-auto">
+                                            1.1.3
+                                        </span>
+                                    </a>
+                                    <a class="dropdown-item" href="@Url.Page("Faq")">FAQ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <a class="navbar-btn btn btn-sm btn-white lift ml-auto px-4" href="#" target="_blank">
+                    Support
+                </a>
+                <a class="navbar-btn btn btn-sm btn-primary lift ml-3 px-4" href="#" target="_blank">
+                    Get Lepton <i class="fa fa-arrow-right d-none d-md-inline ml-2"></i>
+                </a>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div>
+        @(await Component.InvokeAsync<PageAlertsViewComponent>())
+        @RenderBody()
+    </div>
+    <!-- FOOTER
+    ================================================== -->
+
+    <section class="py-4 bg-gray-200">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-12 col-md">
+
+                    <!-- Heading -->
+                    <h3 class="mb-1 font-weight-bold">
+                        Get the latest news first
+                    </h3>
+
+                    <!-- Text -->
+                    <p class="font-size-sm text-muted mb-6 mb-md-0">
+                        We will send weekly to your inbox.
+                    </p>
+
+                </div>
+                <div class="col-12 col-md-5">
+
+                    <!-- Form -->
+                    <form>
+                        <div class="row">
+                            <div class="col">
+
+                                <!-- Input -->
+                                <input type="email" class="form-control" placeholder="Enter your email">
+
+                            </div>
+                            <div class="col-auto ml-n5">
+
+                                <!-- Button -->
+                                <button class="btn btn-primary" type="submit">
+                                    Subscribe
+                                </button>
+
+                            </div>
+                        </div> <!-- / .row -->
+                    </form>
+
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+    <footer class="py-5 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-3">
+                    <img src="~/img/lepton-dark.svg" width="100" alt="..." class="footer-brand img-fluid mb-2">
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="font-weight-bold text-uppercase text-gray-700">
+                        Products
+                    </h6>
+                    <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+                        <li class="mb-3">
+                            <a href="#!" class="text-reset">
+                                Page Builder
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#!" class="text-reset">
+                                UI Kit
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#!" class="text-reset">
+                                Styleguide
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="font-weight-bold text-uppercase text-gray-700">
+                        Services
+                    </h6>
+                    <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+                        <li class="mb-3">
+                            <a href="#!" class="text-reset">
+                                Documentation
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#!" class="text-reset">
+                                Changelog
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#!" class="text-reset">
+                                Support
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h6 class="font-weight-bold text-uppercase text-gray-700">
+                        Social
+                    </h6>
+                    <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+                        <li class="list-inline-item list-social-item mr-2">
+                            <a href="#!" class="text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(#clip0)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="#869AB8" /></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h24v24H0z" /></clipPath></defs></svg>
+                            </a>
+                        </li>
+                        <li class="list-inline-item list-social-item mr-2">
+                            <a href="#!" class="text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(#clip0)"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" fill="#869AB8" /></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h24v24H0z" /></clipPath></defs></svg>
+                            </a>
+                        </li>
+                        <li class="list-inline-item list-social-item mr-2">
+                            <a href="#!" class="text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(#clip0)"><path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.916 4.916 0 00-3.594-1.555c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 3.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 19.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 4.557z" fill="#869AB8" /></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h24v24H0z" /></clipPath></defs></svg>
+                            </a>
+                        </li>
+                        <li class="list-inline-item list-social-item">
+                            <a href="#!" class="text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" fill="#869AB8" /></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <abp-script-bundle name="@LeptonDemoBundles.Scripts.SiteLayout" />
+
+    <script src="~/Abp/ApplicationConfigurationScript"></script>
+    <script src="~/Abp/ServiceProxyScript"></script>
+
+    @await RenderSectionAsync("scripts", false)
+
+    @await Component.InvokeAsync(typeof(WidgetScriptsViewComponent))
+
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.Last, StandardLayouts.Empty)
+</body>
+</html>

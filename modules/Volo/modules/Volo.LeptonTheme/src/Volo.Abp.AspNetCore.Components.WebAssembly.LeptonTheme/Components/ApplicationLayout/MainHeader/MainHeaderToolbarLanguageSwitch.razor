@@ -1,0 +1,35 @@
+﻿@using Volo.Abp.Localization
+@inject ILanguageProvider LanguageProvider
+@inject IJSRuntime JsRuntime
+@if (CurrentLanguage != null && OtherLanguages != null)
+{
+    <BarDropdown>
+        <BarDropdownToggle Class="btn">
+            @if (CurrentLanguage.FlagIcon != null)
+            {
+                <span class="flag-icon flag-icon-squared mr-1 flag-icon-@CurrentLanguage.FlagIcon" data-toggle="tooltip" title="@CurrentLanguage.DisplayName"></span>
+            }
+            else
+            {
+                <span class="flag-icon flag-icon-squared mr-1 flag-icon-@CurrentLanguage.CultureName" data-toggle="tooltip" title="@CurrentLanguage.DisplayName"></span>
+            }
+            <span class="current-language-name">@CurrentLanguage.DisplayName</span>
+        </BarDropdownToggle>
+        <BarDropdownMenu RightAligned="true">
+            @foreach (var language in OtherLanguages)
+            {
+                <BarDropdownItem Clicked="() => ChangeLanguageAsync(language)">
+                    @if (language.FlagIcon != null)
+                    {
+                        <span class="flag-icon flag-icon-squared mr-2 flag-icon-@language.FlagIcon"></span>
+                    }
+                    else
+                    {
+                        <span class="flag-icon flag-icon-squared mr-2 flag-icon-@language.CultureName"></span>
+                    }
+                    @language.DisplayName
+                </BarDropdownItem>
+            }
+        </BarDropdownMenu>
+    </BarDropdown>
+}

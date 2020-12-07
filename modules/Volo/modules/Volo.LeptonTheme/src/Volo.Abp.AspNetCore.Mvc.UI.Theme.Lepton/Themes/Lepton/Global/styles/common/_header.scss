@@ -1,0 +1,138 @@
+/* ~ */
+/* ---------- HEADER STYLES - START */
+
+header { 
+    background: rgba($global-bg, .35);
+    color: $text-color;
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 102; 
+    transition: all .3s;
+    @import "_header_toolbar.scss";
+
+    @include respond-to($sm) {
+        background: $sidebar-bg;
+        height: 60px;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+}
+@media only screen and (min-width: 1024px) {
+
+    .scrolled:not(.lp-topmenu) {
+        header {
+            background: $global-bg;
+            box-shadow: $shadow;
+        }
+    }
+}
+
+    body.lp-topmenu {
+        header {
+            background: $sidebar-bg;
+            background: $sidebar-bg-gradient;
+            box-shadow: $shadow;
+            color: $sidebar-text;
+            min-height: 63px;
+
+            .toolbar-nav {
+                .btn {
+                    color: $sidebar-text;
+
+                    span {
+                        color: $sidebar-text;
+                    }
+
+                    i {
+                        color: $sidebar-text;
+                    }
+
+                    @include respond-to($sm) {
+                        color: $sidebar-text !important;
+                    }
+
+                    &:hover, &:focus, &:active, &:visited {
+                        background: darken($sidebar-bg,5) !important;
+                    }
+                }
+
+                .dropdown-menu {
+                    background: lighten($sidebar-bg,5) !important;
+                    color: $sidebar-text;
+
+                    strong {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: block;
+                    }
+
+                    &.dropdown-menu-notifications {
+                        background: $sidebar-bg;
+                        color: $sidebar-text;
+
+                        .list-group {
+                            background: $sidebar-bg;
+
+                            .list-group-item {
+                                border-color: darken($sidebar-bg, 5);
+
+                                a {
+                                    background: darken($sidebar-bg, 3);
+                                    color: $sidebar-text;
+
+                                    .fa-notification-icon {
+                                        background: $sidebar-bg;
+                                    }
+
+                                    &:hover {
+                                        background: darken($sidebar-bg, 1);
+
+                                        .fa-notification-icon {
+                                            color: $primary;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @include respond-to($sm) {
+
+                        &.dropdown-menu-notifications {
+                            background: $sidebar-bg;
+                        }
+
+                        &.search-dropdown {
+                            .btn {
+                                color: $sidebar-text;
+                                background: $sidebar-bg;
+
+                                .fa {
+                                    color: $sidebar-text;
+                                }
+                            }
+                        }
+                    }
+
+                    .btn {
+                        color: $sidebar-text;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-mobile {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+    /* ---------- HEADER STYLES - END */
+    /* ~ */

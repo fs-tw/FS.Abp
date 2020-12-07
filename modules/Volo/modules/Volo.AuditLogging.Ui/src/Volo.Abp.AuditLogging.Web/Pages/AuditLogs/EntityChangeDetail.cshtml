@@ -1,0 +1,22 @@
+﻿@page
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.AuditLogging.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AuditLogging
+@using Volo.Abp.AuditLogging.Web.Pages.Shared.Components.EntityChangeWidget
+@inject IHtmlLocalizer<AuditLoggingResource> L
+@model Volo.Abp.AuditLogging.Web.Pages.AuditLogs.EntityChangeDetailModel
+@{
+    Layout = null;
+    var entityChange = Model.EntityChangeWithUsername.EntityChange;
+    var modalTitle = entityChange.EntityTypeFullName + 
+                     "<br/><span style='font-size:small'>(" + entityChange.EntityId + ")</span>";
+}
+
+<abp-modal size="@(AbpModalSize.Large)">
+    <abp-modal-header title="@modalTitle"></abp-modal-header>
+    <abp-modal-body>
+        @(await Component.InvokeAsync<EntityChangeWidgetViewComponent>(new List<EntityChangeWithUsernameDto>() { Model.EntityChangeWithUsername }))
+    </abp-modal-body>
+    <abp-modal-footer buttons="@(AbpModalButtons.Close)"></abp-modal-footer>
+</abp-modal>

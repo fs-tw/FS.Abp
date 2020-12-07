@@ -1,0 +1,148 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.Identity
+@using Volo.Abp.Identity.Localization
+@using Volo.Abp.Identity.Web.Pages.Identity.Users
+@model Volo.Abp.Identity.Web.Pages.Identity.Users.ClaimTypeEditModalModel
+@inject IHtmlLocalizer<IdentityResource> L
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/Identity/Users/ClaimTypeEditModal">
+    <input type="text" name="UserId" value="@Model.UserId" hidden />
+    <abp-modal>
+        <abp-modal-header title="@(L["Claims"].Value + " - " + Model.User?.UserName)"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-row>
+                <abp-column size-sm="_6">
+                    <div class="form-group">
+                        <label for="NewClaimTypeSelect">@L["Type"]</label>
+                        <select id="NewClaimTypeSelect" class="form-control">
+                            @for (var index = 0; index < Model.Claims.Length; index++)
+                            {
+                                var claim = Model.Claims[index];
+                                if (index == 0)
+                                {
+                                    <option value="@claim.Name" selected>@claim.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@claim.Name">@claim.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </abp-column>
+
+
+                <abp-column size-sm="_6" id="NewClaimInputs">
+                    @for (var index = 0; index < Model.Claims.Length; index++)
+                    {
+                        var claim = Model.Claims[index];
+                        <div class="form-group newClaimValueInput">
+                            <label for="New@(claim.Name)ClaimValueInput">@L["Value"]</label>
+
+                            @if (claim.ValueType == IdentityClaimValueType.String)
+                            {
+                                <input type="text" class="form-control" id="New@(claim.Name)ClaimValueInput" />
+                            }
+                            else if (claim.ValueType == IdentityClaimValueType.Int)
+                            {
+                                <input type="number" class="form-control" id="New@(claim.Name)ClaimValueInput" />
+                            }
+                            else if (claim.ValueType == IdentityClaimValueType.DateTime)
+                            {
+                                <input type="date" class="form-control" id="New@(claim.Name)ClaimValueInput" />
+                            }
+                            else if (claim.ValueType == IdentityClaimValueType.Boolean)
+                            {
+                                <select id="New@(claim.Name)ClaimValueInput" class="form-control">
+                                    <option value="true">true</option>
+                                    <option value="false">false</option>
+                                </select>
+                            }
+                        </div>
+                    }
+                </abp-column>
+                <abp-column size-sm="_12" v-align="Center">
+                    <abp-button button-type="Success" class="btn-block" id="CreateNewClaimButton"><i class="fa fa-plus"></i> Add Claim</abp-button>
+                </abp-column>
+            </abp-form-row>
+
+            <hr class="my-4" />
+
+            @for (var index = 0; index < Model.Claims.Length; index++)
+            {
+                var claim = Model.Claims[index];
+                <input type="text" value="@claim.Name" name="Claims[@(index)].Name" hidden>
+                <input type="text" value="@claim.Regex" name="Claims[@(index)].Regex" id="Claims@(claim.Name)Regex" hidden>
+                <input type="text" value="@claim.RegexDescription" name="Claims[@(index)].RegexDescription" hidden>
+                <input type="checkbox" @(claim.Required ? "checked=\"checked\"" : "") name="Claims[@(index)].Required" hidden>
+                <input type="text" value="@claim.ValueType" name="Claims[@(index)].ValueType" id="Claims@(index)ValueType" hidden>
+                <input type="text" value="@(index)" id="Claims@(claim.Name)Index" hidden>
+
+                for (var i = 0; i < claim.Value.Count; i++)
+                {
+                    var value = claim.Value[i];
+                    <div id="@(claim.Name + "GroupId_" + i)" class="@(claim.Value[i].IsNullOrWhiteSpace() ? "willBeHidden" : "")">
+
+                        <div class="input-group  mb-3">
+
+                            <div class="input-group-prepend">
+                                <label class="input-group-text mw-100 fs-9" for="@(claim.Name + "InputId_" + i)">@claim.Name</label>
+                            </div>
+
+                            @if (claim.ValueType == IdentityClaimValueType.String)
+                            {
+                                <input type="text" class="form-control" id="@(claim.Name + "InputId_" + i)" value="@claim.Value[i]" pattern="@claim.Regex" name="Claims[@index].Value[@i]" aria-describedby="DeleteClaim" />
+                            }
+                            else
+                            {
+                                if (claim.ValueType == IdentityClaimValueType.Int)
+                                {
+                                    <input type="number" class="form-control" id="@(claim.Name + "InputId_" + i)" value="@claim.Value[i]" name="Claims[@index].Value[@i]" aria-describedby="DeleteClaim" />
+                                }
+                                else if (claim.ValueType == IdentityClaimValueType.DateTime)
+                                {
+                                    <input type="datetime" class="form-control" id="@(claim.Name + "InputId_" + i)" value="@claim.Value[i]" name="Claims[@index].Value[@i]" aria-describedby="DeleteClaim" />
+                                }
+                                else if (claim.ValueType == IdentityClaimValueType.Boolean)
+                                {
+                                    <select id="@(claim.Name + "InputId_" + i)" value="@claim.Value[i]" name="Claims[@index].Value[@i]" class="form-control" aria-describedby="DeleteClaim">
+                                        @if (value == "true")
+                                        {
+                                            <option value=""></option>
+                                            <option value="true" selected>true</option>
+                                            <option value="false">false</option>
+                                        }
+                                        else if (value == "false")
+                                        {
+                                            <option value=""></option>
+                                            <option value="true">true</option>
+                                            <option value="false" selected>false</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="" selected></option>
+                                            <option value="true">true</option>
+                                            <option value="false">false</option>
+                                        }
+                                    </select>
+                                }
+                            }
+
+                            <div class="input-group-append">
+                                <button class="btn btn-danger deleteClaim" type="button" data="@claim.Name" index="@i">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            <div asp-validation-summary="All"></div>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

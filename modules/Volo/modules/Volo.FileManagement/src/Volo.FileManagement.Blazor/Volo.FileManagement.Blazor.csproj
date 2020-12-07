@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    
+    
+
+    <PropertyGroup><LangVersion>latest</LangVersion>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+        <PackageReference Include="Volo.Abp.SettingManagement.Blazor" Version="4.0.0" />
+        <ProjectReference Include="..\Volo.FileManagement.HttpApi.Client\Volo.FileManagement.HttpApi.Client.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Excubo.Blazor.TreeViews" Version="1.3.17" />
+        <PackageReference Include="MimeTypeMapOfficial" Version="1.0.11" />
+    </ItemGroup>
+
+</Project>

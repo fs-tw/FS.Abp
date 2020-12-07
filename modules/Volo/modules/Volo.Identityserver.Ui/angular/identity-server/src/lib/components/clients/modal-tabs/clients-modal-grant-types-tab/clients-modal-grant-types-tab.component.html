@@ -1,0 +1,59 @@
+<ng-template>
+  <h3>{{ 'AbpIdentityServer::' + title | abpLocalization }}</h3>
+  <div class="pt-3 pb-5 clearfix">
+    <form (submit)="add()">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="sample-propert-grant-type">Grant Type </label>
+            <select
+              class="form-control"
+              id="sample-propert-grant-type"
+              name="sample-propert-grant-type"
+              [(ngModel)]="model"
+            >
+              <option *ngFor="let option of grantTypesOptions" [ngValue]="option">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12" *ngIf="model === customModel">
+          <div class="form-group">
+            <label for="sample-propert-custom-grant-type">Grant Type </label>
+            <input
+              type="text"
+              id="sample-propert-custom-grant-type"
+              name="sample-propert-custom-grant-type"
+              class="form-control"
+              [placeholder]="'AbpIdentityServer::CustomGrantType' | abpLocalization"
+              [(ngModel)]="customModelValue"
+            />
+          </div>
+        </div>
+      </div>
+      <button id="add-new-property" class="float-right mb-2 btn btn-success" type="submit">
+        <i class="fa fa-plus"></i> {{ 'AbpIdentityServer::AddNew' | abpLocalization }}
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="selected?.length" class="table-responsive-sm">
+    <table id="property-table" class="table table-striped">
+      <thead>
+        <th scope="col">Grant Type</th>
+        <th scope="col"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of selected; trackBy: trackByFn; let i = index">
+          <td>{{ row }}</td>
+          <td>
+            <button type="button" class="btn btn-outline-danger float-right" (click)="delete(i)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>

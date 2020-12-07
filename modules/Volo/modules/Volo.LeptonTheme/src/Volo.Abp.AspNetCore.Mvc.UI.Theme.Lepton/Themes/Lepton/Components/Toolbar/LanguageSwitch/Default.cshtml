@@ -1,0 +1,35 @@
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Toolbar.LanguageSwitch
+@using Microsoft.AspNetCore.Http.Extensions
+@model LanguageSwitchViewComponentModel
+<div class="dropdown">
+    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @if (@Model.CurrentLanguage.FlagIcon != null)
+        {
+            <span class="flag-icon flag-icon-squared flag-icon-@Model.CurrentLanguage.FlagIcon" data-toggle="tooltip" title="@Model.CurrentLanguage.DisplayName"></span> 
+        }
+        else
+        {
+            <span class="flag-icon flag-icon-squared flag-icon-@Model.CurrentLanguage.CultureName" data-toggle="tooltip" title="@Model.CurrentLanguage.DisplayName"></span> 
+        }
+    <span class="current-language-name">@Model.CurrentLanguage.DisplayName</span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+        @foreach (var language in Model.OtherLanguages)
+        {
+            <a class="dropdown-item" href="~/Abp/Languages/Switch?culture=@(language.CultureName)&uiCulture=@(language.UiCultureName)&returnUrl=@(System.Net.WebUtility.UrlEncode(Context.Request.GetEncodedPathAndQuery()))">
+                @if (language.FlagIcon != null)
+                {
+                    <span class="flag-icon flag-icon-squared mr-2 flag-icon-@language.FlagIcon"></span>
+                }
+                else
+                {
+                    <span class="flag-icon flag-icon-squared mr-2 flag-icon-@language.CultureName"></span>
+                }
+                @language.DisplayName
+            </a>
+        }
+    </div>
+</div>
+
+

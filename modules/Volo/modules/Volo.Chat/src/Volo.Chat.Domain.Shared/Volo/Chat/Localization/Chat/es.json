@@ -1,0 +1,33 @@
+{
+  "culture": "es",
+  "texts": {
+    "Volo.Chat:010001": "El mensage no puede estar vacio!",
+    "Volo.Chat:010002": "Usuario receptor no encontrado!",
+    "Volo.Chat:010003": "No se encontro el otro usuario!",
+    "Permission:Chat": "Chat",
+    "Permission:Messaging": "Mensajeria",
+    "Feature:ChatGroup": "Chat",
+    "Feature:ChatEnable": "Activar chat",
+    "Feature:ChatEnableDescription": "Activar sistema de mensajería en la aplicación",
+    "SearchInContacts": "Buscar en contactos...",
+    "SendOnEnter": "Enviar al presionar enter",
+    "Send": "Enviar",
+    "OtherContacts": "OTROS CONTACTOS",
+    "TypeMessage": "Escriba un mensaje",
+    "YouHave{0}UnreadMessages": "Tiene {0} mensajes sin leer",
+    "YouHaveAnUnreadMessage": "Tiene un mensaje sin leer",
+    "NewChatMessage": "Nuevo mensaje de chat",
+    "Jan": "Ene",
+    "Feb": "Feb",
+    "Mar": "Mar",
+    "Apr": "Abr",
+    "May": "May",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Aug": "Ago",
+    "Sept": "Set",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dec": "Dic"
+  }
+}

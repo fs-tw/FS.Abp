@@ -1,0 +1,97 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.IdentityServer.Localization
+@using Volo.Abp.IdentityServer.Web.Pages.IdentityServer.IdentityResources
+@using Volo.Abp.Localization
+@using Volo.Abp.ObjectExtending
+@model CreateModel
+@inject IStringLocalizerFactory StringLocalizerFactory
+@inject IHtmlLocalizer<AbpIdentityServerResource> L
+@{
+    Layout = null;
+}
+<form method="post" class="form-with-card" asp-page="/IdentityServer/IdentityResources/Create">
+    <abp-modal size="@(AbpModalSize.Large)">
+        <abp-modal-header title="@L["Create"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-tabs name="IdentityResourcesCreateTabsId">
+                <abp-tab title="@L["Info"].Value">
+                    <abp-input asp-for="IdentityResource.Name" />
+                    <abp-input asp-for="IdentityResource.DisplayName" />
+                    <abp-input asp-for="IdentityResource.Description" />
+                    <abp-input asp-for="IdentityResource.Enabled" />
+                    <abp-input asp-for="IdentityResource.Required" />
+                    <abp-input asp-for="IdentityResource.Emphasize" />
+                    <abp-input asp-for="IdentityResource.ShowInDiscoveryDocument" />
+                    @foreach (var propertyInfo in ObjectExtensionManager.Instance.GetProperties<IdentityResourceCreateModalView>())
+                    {
+                        if (!propertyInfo.Name.EndsWith("_Text"))
+                        {
+                            if (propertyInfo.Type.IsEnum || !propertyInfo.Lookup.Url.IsNullOrEmpty())
+                            {
+                                <abp-select asp-for="IdentityResource.ExtraProperties[propertyInfo.Name]"
+                                            label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                            autocomplete-api-url="@propertyInfo.Lookup.Url"
+                                            autocomplete-selected-item-name="@Model.IdentityResource.ExtraProperties[propertyInfo.Name+"_Text"]"
+                                            autocomplete-selected-item-value="@Model.IdentityResource.ExtraProperties[propertyInfo.Name]"
+                                            autocomplete-filter-param-name="@propertyInfo.Lookup.FilterParamName"
+                                            autocomplete-items-property-name="@propertyInfo.Lookup.ResultListPropertyName"
+                                            autocomplete-display-property-name="@propertyInfo.Lookup.DisplayPropertyName"
+                                            autocomplete-value-property-name="@propertyInfo.Lookup.ValuePropertyName"></abp-select>
+                            }
+                            else
+                            {
+                                <abp-input type="@propertyInfo.GetInputType()"
+                                           asp-for="IdentityResource.ExtraProperties[propertyInfo.Name]"
+                                           label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                           asp-format="@propertyInfo.GetInputFormatOrNull()"
+                                           value="@propertyInfo.GetInputValueOrNull(Model.IdentityResource.ExtraProperties[propertyInfo.Name])" />
+                            }
+                        }
+                    }
+                </abp-tab>
+                <abp-tab title="@L["Claims"].Value">
+                    <abp-card class="shadow-none bg-light">
+                        <abp-card-body>
+                            <abp-row>
+                                <abp-column size="_6">
+                                    <abp-card>
+                                        <abp-card-header>
+                                            <h4 class="card-title">@L["OwnedClaims"]</h4>
+                                        </abp-card-header>
+                                        <abp-card-body class="custom-body">
+                                            @for (var i = 0; i < Model.AllClaims.Length; i++)
+                                            {
+                                                var claim = Model.AllClaims[i];
+                                                <button type="button" class="ownedClaim btn btn-block btn-primary btn-sm mb-2 mt-0 text-truncate text-left" id="@(claim + "OwnedId")" abp-tooltip-bottom="@(claim.Length>35?claim:"")"><i class="fa fa-long-arrow-right"></i> @claim</button>
+                                                <input id="@(claim + "InputId")" type="text" name="@("IdentityResource.UserClaims[" + i + "]")" value="" hidden />
+                                            }
+                                        </abp-card-body>
+                                    </abp-card>
+                                </abp-column>
+
+                                <abp-column size="_6">
+                                    <abp-card>
+                                        <abp-card-header>
+                                            <h4 class="card-title">@L["NotOwnedClaims"]</h4>
+                                        </abp-card-header>
+                                        <abp-card-body class="custom-body">
+                                            @foreach (var claim in Model.AllClaims)
+                                            {
+                                                <button type="button" class="otherClaim btn btn-block btn-outline-primary btn-sm mb-2 mt-0 text-truncate text-left" id="@(claim + "OtherId")" abp-tooltip-bottom="@(claim.Length>35?claim:"")"><i class="fa fa-long-arrow-left "></i> @claim</button>
+                                            }
+                                        </abp-card-body>
+                                    </abp-card>
+                                </abp-column>
+                            </abp-row>
+                        </abp-card-body>
+                    </abp-card>
+                </abp-tab>
+            </abp-tabs>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)">
+        </abp-modal-footer>
+    </abp-modal>
+</form>

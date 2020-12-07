@@ -1,0 +1,35 @@
+<ng-container *ngIf="settings$ | async; let settings">
+  <div (keyup.enter)="submit(settings)">
+    <div class="custom-checkbox custom-control mb-2">
+      <input
+        type="checkbox"
+        id="IsSelfRegistrationEnabled"
+        name="IsSelfRegistrationEnabled"
+        class="custom-control-input"
+        [(ngModel)]="settings.isSelfRegistrationEnabled"
+        autofocus
+      /><label class="custom-control-label" for="IsSelfRegistrationEnabled">{{
+        'AbpAccount::DisplayName:IsSelfRegistrationEnabled' | abpLocalization
+      }}</label>
+    </div>
+    <div class="custom-checkbox custom-control mb-2">
+      <input
+        type="checkbox"
+        id="EnableLocalLogin"
+        name="EnableLocalLogin"
+        class="custom-control-input"
+        [(ngModel)]="settings.enableLocalLogin"
+      /><label class="custom-control-label" for="EnableLocalLogin">{{
+        'AbpAccount::DisplayName:EnableLocalLogin' | abpLocalization
+      }}</label>
+    </div>
+  </div>
+
+  <hr class="my-4" />
+
+  <div>
+    <abp-button (click)="submit(settings)" iconClass="fa fa-save" [loading]="loading">{{
+      'AbpAccount::Save' | abpLocalization
+    }}</abp-button>
+  </div>
+</ng-container>

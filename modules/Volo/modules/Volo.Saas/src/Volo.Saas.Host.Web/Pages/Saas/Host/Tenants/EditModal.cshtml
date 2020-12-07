@@ -1,0 +1,49 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.Localization
+@using Volo.Abp.ObjectExtending
+@using Volo.Saas.Host.Pages.Saas.Host.Tenants
+@using Volo.Saas.Localization
+@model EditModalModel
+@inject IHtmlLocalizer<SaasResource> L
+@inject IStringLocalizerFactory StringLocalizerFactory
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/Saas/Host/Tenants/EditModal" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <input asp-for="Tenant.Id" />
+            <abp-input asp-for="Tenant.Name" />
+            @if (Model.EditionsComboboxItems.Count > 1)
+            {
+                <abp-select asp-for="Tenant.EditionId" />
+            }
+            @foreach (var propertyInfo in ObjectExtensionManager.Instance.GetProperties<EditModalModel.TenantInfoModel>())
+            {
+                if (propertyInfo.Type.IsEnum || !propertyInfo.Lookup.Url.IsNullOrEmpty())
+                {
+                    <abp-select asp-for="Tenant.ExtraProperties[propertyInfo.Name]"
+                                label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                autocomplete-api-url="@propertyInfo.Lookup.Url"
+                                autocomplete-filter-param-name="@propertyInfo.Lookup.FilterParamName"
+                                autocomplete-items-property-name="@propertyInfo.Lookup.ResultListPropertyName"
+                                autocomplete-display-property-name="@propertyInfo.Lookup.DisplayPropertyName"
+                                autocomplete-value-property-name="@propertyInfo.Lookup.ValuePropertyName"></abp-select>
+                }
+                else
+                {
+                    <abp-input type="@propertyInfo.GetInputType()"
+                               asp-for="Tenant.ExtraProperties[propertyInfo.Name]"
+                               label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                               asp-format="@propertyInfo.GetInputFormatOrNull()"
+                               value="@propertyInfo.GetInputValueOrNull(Model.Tenant.ExtraProperties[propertyInfo.Name])" />
+                }
+            }
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

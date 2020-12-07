@@ -1,0 +1,37 @@
+@using Volo.Abp.AspNetCore.Components.WebAssembly.Theming.Routing
+@using Microsoft.Extensions.Options
+@using Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme.Components.ApplicationLayout
+@using Microsoft.Extensions.Localization
+@using global::Localization.Resources.AbpUi
+@inject IOptions<AbpRouterOptions> RouterOptions
+@inject IStringLocalizer<AbpUiResource> UiLocalizer
+<CascadingAuthenticationState>
+    <Router AppAssembly="RouterOptions.Value.AppAssembly"
+            AdditionalAssemblies="RouterOptions.Value.AdditionalAssemblies">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(DefaultLayout)">
+                <NotAuthorized>
+                    @if (!context.User.Identity.IsAuthenticated)
+                    {
+                        <RedirectToLogin/>
+                    }
+                    else
+                    {
+                        <ErrorView
+                            Title="@UiLocalizer["403Message"]"
+                            HttpStatusCode="403"
+                            Message="@UiLocalizer["403MessageDetail"]"/>
+                    }
+                </NotAuthorized>
+            </AuthorizeRouteView>
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(DefaultLayout)">
+                <ErrorView
+                    Title="@UiLocalizer["404Message"]"
+                    HttpStatusCode="404"
+                    Message="@UiLocalizer["404MessageDetail"]"/>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>

@@ -1,0 +1,30 @@
+﻿@page "/authentication/{action}"
+@using global::Localization.Resources.AbpUi
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Blazorise
+@using Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme.Components
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.LeptonTheme.Management.Localization
+@inherits AbpComponentBase
+
+<Card>
+    <CardBody>
+        <RemoteAuthenticatorView Action="@Action">
+            <LoggingIn>
+                <LoadingIndicator/>
+            </LoggingIn>
+            <CompletingLoggingIn>
+                <LoadingIndicator/>
+            </CompletingLoggingIn>
+            <LogOut>
+                <LoadingIndicator/>
+            </LogOut>
+            <CompletingLogOut>
+                <LoadingIndicator/>
+            </CompletingLogOut>
+            <LogOutSucceeded>
+                 @L["Authentication:YouAreLoggedOut"]
+            </LogOutSucceeded>
+        </RemoteAuthenticatorView>
+    </CardBody>
+</Card>

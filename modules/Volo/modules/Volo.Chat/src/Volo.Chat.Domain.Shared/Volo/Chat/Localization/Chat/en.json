@@ -1,0 +1,33 @@
+{
+  "culture": "en",
+  "texts": {
+    "Volo.Chat:010001": "Message should not be empty!",
+    "Volo.Chat:010002": "Receiver user not found!",
+    "Volo.Chat:010003": "Other user not found!",
+    "Permission:Chat": "Chat",
+    "Permission:Messaging": "Messaging",
+    "Feature:ChatGroup": "Chat",
+    "Feature:ChatEnable": "Enable chat",
+    "Feature:ChatEnableDescription": "Enable messaging system in application.",
+    "SearchInContacts": "Search in Contacs...",
+    "SendOnEnter": "Send on enter",
+    "Send": "Send",
+    "OtherContacts": "OTHER CONTACTS",
+    "TypeMessage": "Type a message",
+    "YouHave{0}UnreadMessages": "You have {0} unread messages",
+    "YouHaveAnUnreadMessage": "You have an unread message",
+    "NewChatMessage": "New chat message",
+    "Jan": "Jan",
+    "Feb": "Feb",
+    "Mar": "Mar",
+    "Apr": "Apr",
+    "May": "May",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Aug": "Aug",
+    "Sept": "Sept",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dec": "Dec"
+  }
+}

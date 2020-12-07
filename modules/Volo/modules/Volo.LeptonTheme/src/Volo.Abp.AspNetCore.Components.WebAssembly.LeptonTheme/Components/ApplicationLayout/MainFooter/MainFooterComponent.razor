@@ -1,0 +1,11 @@
+﻿@inherits MainFooterComponentBase
+@if (Options?.Value?.FooterComponent != null)
+{
+    <footer class="lp-footer">
+        <div class="d-flex">
+            <div class="mr-auto">
+                @FooterFragment
+            </div>
+        </div>
+    </footer>
+}

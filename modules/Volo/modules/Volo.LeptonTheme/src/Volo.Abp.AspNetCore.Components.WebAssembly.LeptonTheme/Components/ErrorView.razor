@@ -1,0 +1,32 @@
+﻿@using Volo.Abp.Http
+@using Microsoft.Extensions.Localization
+@using global::Localization.Resources.AbpUi
+@inject IStringLocalizer<AbpUiResource> L
+<div class="error-page-container">
+    <Row>
+        <Column ColumnSize="ColumnSize.IsAuto">
+            <div class="status-icon">
+                <i class="fa fa-frown-o text-danger" aria-hidden="true"></i>
+                <span></span>
+            </div>
+        </Column>
+        <Column>
+            <div class="status-content">
+                <h1>@HttpStatusCode</h1>
+                <h2 class="text-danger mb-0">@Title</h2>
+                <p class="mt-3 mb-4">@Message</p>
+                <a href="/" class="btn btn-primary">@L["GoHomePage"]</a>
+            </div>
+        </Column>
+    </Row>
+</div>
+@code {
+    [Parameter]
+    public int HttpStatusCode { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Message { get; set; }
+}

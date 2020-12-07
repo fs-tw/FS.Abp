@@ -1,0 +1,15 @@
+<abp-file-management-modal title="Rename" [parent]="self">
+  <form [formGroup]="form" (keyup.enter)="save()">
+    <div class="form-group">
+      <label for="renameFileInput"
+        >{{ "FileManagement::Name" | abpLocalization }} *</label
+      >
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="renameFileInput"
+      />
+    </div>
+  </form>
+</abp-file-management-modal>

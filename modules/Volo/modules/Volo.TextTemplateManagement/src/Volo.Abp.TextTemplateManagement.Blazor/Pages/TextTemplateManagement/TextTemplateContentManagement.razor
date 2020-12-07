@@ -1,0 +1,82 @@
+﻿@page "/text-templates/contents"
+@attribute [Authorize(TextTemplateManagementPermissions.TextTemplates.EditContents)]
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.TextTemplateManagement.Authorization
+@inherits TextTemplateManagementComponentBase
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["Contents"]">
+
+</PageHeader>
+
+<Card>
+    <CardBody>
+        <Field>
+            @L["Name"]: <strong>@TemplateDefinitionName</strong>
+        </Field>
+        <Row>
+            <Column ColumnSize="@ColumnSize.Is6">
+                <Field>
+                    <FieldLabel>
+                        @L["BaseCultureName"]
+                    </FieldLabel>
+                    <FieldBody>
+                        <Select TValue="string" SelectedValue="@SelectedBaseCulture" SelectedValueChanged="@OnBaseCultureChanged">
+                            @foreach (var language in Languages)
+                            {
+                                <SelectItem Value="@language.CultureName">@language.DisplayName</SelectItem>
+                            }
+                        </Select>
+                    </FieldBody>
+                </Field>
+                <Field>
+                    <FieldLabel>
+                        @L["BaseContent"]
+                    </FieldLabel>
+                    <FieldBody>
+                        <MemoEdit Rows="10" @bind-Text="@BaseContent" Disabled="true" />
+                    </FieldBody>
+                </Field>
+            </Column>
+            <Column ColumnSize="ColumnSize.Is6">
+                <Field>
+                    <FieldLabel>
+                        @L["TargetCultureName"]
+                    </FieldLabel>
+                    <FieldBody>
+                        <Select TValue="string" SelectedValue="@SelectedTargetCulture" SelectedValueChanged="@OnTargetCultureChanged">
+                            @foreach (var language in Languages)
+                            {
+                                <SelectItem Value="@language.CultureName">@language.DisplayName</SelectItem>
+                            }
+                        </Select>
+                    </FieldBody>
+                </Field>
+                <Field>
+                    <FieldLabel>
+                        @L["TargetContent"]
+                    </FieldLabel>
+                    <FieldBody>
+                        <MemoEdit @bind-Text="@TargetContent" Rows="10" />
+                    </FieldBody>
+                </Field>
+            </Column>
+        </Row>
+        <div class="float-left action-group">
+            <Button Color="@Color.Primary"
+                    Clicked="@NavigateToTemplateListing">
+                <Icon Name="@IconName.ArrowLeft" />
+                @L["ReturnToTemplates"]
+            </Button>
+        </div>
+        <div class="float-right action-group">
+            <Button Color="@Color.Primary"
+                    Clicked="@SaveContentAsync">
+                @L["SaveContent"]
+            </Button>
+            <Button Color="@Color.Danger"
+                    Clicked="@RestoreToDefaultAsync">
+                @L["RestoreToDefault"]
+            </Button>
+        </div>
+    </CardBody>
+</Card>

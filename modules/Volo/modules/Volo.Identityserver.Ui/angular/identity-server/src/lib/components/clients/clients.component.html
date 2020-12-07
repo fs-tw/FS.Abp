@@ -1,0 +1,135 @@
+<abp-identity-server-entity-base
+  [list]="list"
+  [service]="service"
+  entityName="Clients"
+></abp-identity-server-entity-base>
+
+<abp-identity-server-modal
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <abp-identity-server-modal-info-tab
+    [form]="newScopeForm"
+    title="Basic"
+  ></abp-identity-server-modal-info-tab>
+  <abp-clients-modal-uris-tab></abp-clients-modal-uris-tab>
+  <abp-identity-server-modal-secrets-tab></abp-identity-server-modal-secrets-tab>
+
+  <abp-identity-server-modal-tab-group title="Resources">
+    <abp-clients-modal-resources-tab
+      title="IdentityResources"
+      [resources]="identityResourcesPicklistValue"
+      fieldName="identityResources"
+    >
+    </abp-clients-modal-resources-tab>
+    <abp-clients-modal-resources-tab
+      title="ApiResources"
+      [resources]="apiResourcesPicklistValue"
+      fieldName="apiResources"
+    >
+    </abp-clients-modal-resources-tab>
+  </abp-identity-server-modal-tab-group>
+</abp-identity-server-modal>
+
+<abp-identity-server-modal
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+  type="Edit"
+>
+  <abp-identity-server-modal-info-tab
+    title="Details"
+    [form]="editScopeForm"
+    [selectedRecord]="editSelectedRecord"
+  ></abp-identity-server-modal-info-tab>
+
+  <abp-identity-server-modal-tab-group title="ApplicationUrls">
+    <abp-identity-server-modal-free-text-values-tab
+      title="Callback"
+      formTitle="CallbackUrl"
+      [fields]="[{ name: 'redirectUri', title: 'Uri' }]"
+      fieldName="redirectUris"
+      [selected]="editSelectedRecord?.redirectUris"
+    ></abp-identity-server-modal-free-text-values-tab>
+    <abp-identity-server-modal-free-text-values-tab
+      title="Signout"
+      formTitle="SignoutUrl"
+      [fields]="[{ name: 'postLogoutRedirectUri', title: 'Uri' }]"
+      fieldName="postLogoutRedirectUris"
+      [selected]="editSelectedRecord?.postLogoutRedirectUris"
+    ></abp-identity-server-modal-free-text-values-tab>
+    <abp-identity-server-modal-free-text-values-tab
+      title="CORS"
+      formTitle="AllowedCorsOrigins"
+      [fields]="[{ name: 'origin', title: 'Uri' }]"
+      fieldName="allowedCorsOrigins"
+      [selected]="editSelectedRecord?.allowedCorsOrigins"
+    ></abp-identity-server-modal-free-text-values-tab>
+  </abp-identity-server-modal-tab-group>
+  <abp-identity-server-modal-secrets-tab
+    [selectedSecrets]="editSelectedRecord?.clientSecrets"
+    fieldName="clientSecrets"
+  ></abp-identity-server-modal-secrets-tab>
+  <abp-identity-server-modal-tab-group title="Resources">
+    <abp-clients-modal-resources-tab
+      title="IdentityResources"
+      [resources]="editIdentityResources"
+      fieldName="identityResources"
+    >
+    </abp-clients-modal-resources-tab>
+    <abp-clients-modal-resources-tab
+      title="ApiResources"
+      [resources]="editApiResources"
+      fieldName="apiResources"
+    >
+    </abp-clients-modal-resources-tab>
+  </abp-identity-server-modal-tab-group>
+
+  <abp-identity-server-modal-tab-group title="Advanced">
+    <abp-clients-modal-tokens-tab [selected]="editSelectedRecord"></abp-clients-modal-tokens-tab>
+    <abp-identity-server-modal-free-text-values-tab
+      title="Claims"
+      [fields]="[
+        { name: 'type', title: 'Type' },
+        { name: 'value', title: 'Value' }
+      ]"
+      fieldName="claims"
+      [selected]="editSelectedRecord?.claims"
+      [checkboxValue]="editSelectedRecord?.alwaysSendClientClaims"
+      checkboxFieldName="alwaysSendClientClaims"
+      checkboxLabel="AlwaysSendClientClaims"
+    ></abp-identity-server-modal-free-text-values-tab>
+    <abp-clients-modal-grant-types-tab
+      [selected]="editGrantTypes"
+    ></abp-clients-modal-grant-types-tab>
+    <abp-identity-server-modal-free-text-values-tab
+      title="Restrictions"
+      [fields]="[{ name: 'provider', title: 'Name' }]"
+      fieldName="identityProviderRestrictions"
+      [selected]="editSelectedRecord?.identityProviderRestrictions"
+      [checkboxValue]="editSelectedRecord?.enableLocalLogin"
+      checkboxFieldName="enableLocalLogin"
+      checkboxLabel="EnableLocalLogin"
+    ></abp-identity-server-modal-free-text-values-tab>
+    <abp-identity-server-modal-properties-tab
+      [selectedProperties]="editSelectedRecord.properties"
+    ></abp-identity-server-modal-properties-tab>
+  </abp-identity-server-modal-tab-group>
+</abp-identity-server-modal>
+
+<abp-permission-management
+  *abpReplaceableTemplate="{
+    inputs: {
+      providerName: { value: 'C' },
+      providerKey: { value: providerKey },
+      visible: { value: visiblePermissions, twoWay: true }
+    },
+    outputs: { visibleChange: onVisiblePermissionChange },
+    componentKey: 'PermissionManagement.PermissionManagementComponent'
+  }"
+  [(visible)]="visiblePermissions"
+  providerName="C"
+  [providerKey]="providerKey"
+>
+</abp-permission-management>

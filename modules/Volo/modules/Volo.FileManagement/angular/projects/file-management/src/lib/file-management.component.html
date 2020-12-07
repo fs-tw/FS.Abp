@@ -1,0 +1,30 @@
+<div class="row entry-row">
+  <div class="col-auto">
+    <h1 class="content-header-title">
+      {{ "FileManagement::Menu:FileManagement" | abpLocalization }}
+    </h1>
+  </div>
+  <div class="col-lg-auto pl-lg-0"><abp-breadcrumb></abp-breadcrumb></div>
+  <div class="col">
+    <abp-page-toolbar [record]="currentContent"></abp-page-toolbar>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 col-lg-3 col">
+        <div class="p-lg-3 p-md-0 mb-4">
+          <abp-file-management-buttons></abp-file-management-buttons>
+          <abp-file-management-directory-tree></abp-file-management-directory-tree>
+        </div>
+      </div>
+      <div class="col-md-8 col-lg-9 col">
+        <div class="p-lg-3 p-md-0">
+          <abp-file-management-folder-panel
+            (contentUpdate)="currentContent = $event"
+          ></abp-file-management-folder-panel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

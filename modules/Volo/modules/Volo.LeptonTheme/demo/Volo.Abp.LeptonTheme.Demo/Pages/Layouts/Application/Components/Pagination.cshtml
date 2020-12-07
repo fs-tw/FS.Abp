@@ -1,0 +1,19 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Demo.Views.Components.Themes.Shared.Demos.PaginatorDemo
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@model Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.Components.PaginationModel
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Pagination"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["Components"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.Components.Pagination;
+}
+@section content_toolbar {
+}
+<div class="lepton-demo">
+    @await Component.InvokeAsync(typeof(PaginatorDemoViewComponent), new { pagerModel = Model.PagerModel })
+</div> 

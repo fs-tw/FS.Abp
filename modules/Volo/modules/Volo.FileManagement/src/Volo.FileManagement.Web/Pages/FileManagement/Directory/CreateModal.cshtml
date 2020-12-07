@@ -1,0 +1,22 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.FileManagement.Localization
+@model Volo.FileManagement.Web.Pages.FileManagement.Directory.CreateModalModel
+@inject IHtmlLocalizer<FileManagementResource> L
+
+@{
+    Layout = null;
+}
+
+<form data-ajaxForm="true" asp-page="/FileManagement/Directory/CreateModal" asp-route-parentId="@Model.ParentId" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["CreateFolder"].Value"></abp-modal-header>
+        
+        <abp-modal-body>
+            <abp-input asp-for="@Model.CreateDirectoryInput.Name" label="@L["Name"].Value" />
+        </abp-modal-body>
+        
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    
+    
+
+    <PropertyGroup><LangVersion>latest</LangVersion>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Volo.Abp.AuditLogging.Blazor</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="4.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Volo.Abp.AuditLogging.HttpApi.Client\Volo.Abp.AuditLogging.HttpApi.Client.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Pages\AuditLogging\AuditLogs.razor">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </Content>
+      <Content Update="Pages\AuditLogging\EntityChanges.razor">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\AuditLogging\AuditLogs.razor.cs">
+        <DependentUpon>AuditLogs.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Pages\AuditLogging\EntityChanges.razor.cs">
+        <DependentUpon>EntityChanges.razor</DependentUpon>
+      </Compile>
+    </ItemGroup>
+</Project>

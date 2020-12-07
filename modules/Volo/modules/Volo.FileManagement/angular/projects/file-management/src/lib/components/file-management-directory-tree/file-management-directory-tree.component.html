@@ -1,0 +1,29 @@
+<div>
+  <ng-container *ngIf="directories">
+    <abp-tree
+      [(nodes)]="directories"
+      [(expandedKeys)]="service.extendedKeys"
+      [draggable]="true"
+      (dropOver)="onDrop($event)"
+      (selectedNodeChange)="onNodeClick($event)"
+    >
+      <ng-template abp-tree-expanded-icon-template let-node let-origin="origin">
+        <i
+          class="far"
+          style="line-height: 30px"
+          [class.fa-plus-square]="!node.isExpanded"
+          [class.fa-minus-square]="node.isExpanded"
+          aria-hidden="true"
+        ></i>
+      </ng-template>
+
+      <ng-template abp-tree-node-template let-node
+        ><i class="fa fa-folder text-primary mr-2" aria-hidden="true"></i
+        ><ng-container *ngIf="node.origin.entity.isRoot; else leafNode">
+          {{ "FileManagement::AllFiles" | abpLocalization }}
+        </ng-container>
+        <ng-template #leafNode>{{ node.title }}</ng-template></ng-template
+      >
+    </abp-tree>
+  </ng-container>
+</div>
