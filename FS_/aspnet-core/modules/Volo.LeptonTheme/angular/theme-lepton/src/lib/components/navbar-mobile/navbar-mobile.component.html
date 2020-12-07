@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-xl navbar-dark d-lg-none nav-mobile">
+  <button
+    class="navbar-toggler border-0"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarToolbar"
+    aria-controls="navbarText"
+    aria-label="Toggle navigation"
+    [attr.aria-expanded]="isNavbarExpanded"
+    (click)="navbarIconClick.emit(!isNavbarExpanded)"
+  >
+    <i class="fa fa-user"></i>
+  </button>
+  <button
+    class="navbar-toggler border-0"
+    [class.collapsed]="!isMenuExpanded"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSidebar"
+    aria-controls="navbarText"
+    aria-label="Toggle navigation"
+    [attr.aria-expanded]="isMenuExpanded"
+    (click)="menuIconClick.emit(!isMenuExpanded)"
+  >
+    <i class="fa fa-align-justify"></i>
+  </button>
+</nav>

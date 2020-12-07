@@ -1,0 +1,167 @@
+
+@media only screen and (min-width: 1024px) {
+    .lp-topmenu {
+        @media only screen and (max-width: 1366px) {
+            padding-top: 129px !important;
+        }
+
+        .toolbar-nav {  
+            margin: 2px 0 0;
+        }
+
+        .navbar-brand {
+            top: 19px;
+            left: 15px;
+            position: absolute;
+        }
+
+        .lp-sidebar {
+            .lp-icon {
+                margin-right: 4px;
+            }
+
+            .lp-sidebar-wrapper {
+                @media only screen and (min-width: 1366px) {
+                    margin: -51px auto 0;
+                }
+
+                nav {
+                    text-align: center;
+
+                    @media only screen and (min-width: 1366px) {
+                        text-align: left;
+                        padding-left: 210px;
+                    }
+
+                    a, li, .lp-icon {
+                        transition: all .3s;
+                    }
+
+                    & > ul > li > a {
+                        border-radius: $radius !important;
+                    }
+
+                    ul {
+                        border-radius: $radius;
+
+                        li {
+                            &.current {
+                                > a {
+                                    background: rgba($sidebar-text,.1) !important;
+
+                                    .lp-icon {
+                                        color: $brand;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                border-radius: 0 0 $radius $radius;
+                            }
+
+                            &:first-child {
+                                border-radius: $radius $radius 0 0;
+                            }
+                        }
+
+                        ul {
+                            display: none !important;
+                            margin: 0;
+                            background: $sidebar-bg;
+                            padding: 0;
+                            position: absolute;
+                            top: 100%;
+
+                            li {
+                                float: none;
+                                min-width: 240px;
+                                position: relative;
+
+                                &.has-drop {
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        right: 16px;
+                                        top: 17px;
+                                        border-top: 4px solid transparent;
+                                        border-bottom: 4px solid transparent;
+                                        border-left: 5px solid $sidebar-text;
+                                    }
+                                }
+
+                                a {
+                                    padding: 10px 20px;
+                                    color: $sidebar-text;
+                                    text-align: left;
+                                    font-size: .92em;
+
+                                    &:hover {
+                                        background: rgba($sidebar-text,.1);
+
+                                        .lp-icon {
+                                            color: $brand;
+                                        }
+                                    }
+                                }
+                            }
+
+                            ul {
+                                position: absolute;
+                                left: 100%;
+                                top: 0;
+                            }
+                        }
+
+                        li {
+                            &:hover {
+                                > ul {
+                                    display: block !important;
+                                }
+
+                                .lp-icon {
+                                    color: $brand;
+                                }
+
+                                background: rgba($sidebar-text,.1);
+
+                                a {
+                                    color: $sidebar-text;
+                                }
+                            }
+
+                            float: left;
+
+                            a {
+                                color: $sidebar-text;
+                                display: block;
+                                padding: 15px 10px;
+                                text-decoration: none;
+                            }
+                        }
+
+                        list-style: none;
+                        position: relative;
+                        display: inline-table;
+
+                        &:after {
+                            content: "";
+                            clear: both;
+                            display: block;
+                        }
+                    }
+                }
+
+                ul {
+                    text-align: left;
+                    display: inline;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .lp-arrow-icon {
+                    display: none;
+                }
+            }
+        }
+    }
+} 

@@ -1,0 +1,61 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@using Volo.Abp.Account.Public.Web.Security.Recaptcha
+@using Volo.Abp.Account.Security.Recaptcha
+@using Volo.Abp.Account.Settings
+@using Volo.Abp.Settings
+@model Volo.Abp.Account.Public.Web.Pages.Account.RegisterModel
+@inject IHtmlLocalizer<AccountResource> L
+@inject Volo.Abp.AspNetCore.Mvc.UI.Layout.IPageLayout PageLayout
+@inject ISettingProvider SettingProvider
+@{
+    PageLayout.Content.Title = L["Register"].Value;
+    var reCaptchaVersion = await SettingProvider.GetAsync<int>(AccountSettingNames.Captcha.Version);
+}
+
+@section scripts
+{
+    @if (Model.UseCaptcha)
+    {
+        if (reCaptchaVersion == 3)
+        {
+            <recaptcha-script-v3/>
+            <recaptcha-script-v3-js action="register" callback="(function(){$('#@RecaptchaValidatorBase.RecaptchaResponseKey').val(token)})"/>
+        }
+        else
+        {
+            <recaptcha-script-v2/>
+        }
+    }
+}
+
+<div class="account-module-form">
+    <form method="post">
+
+        @if (Model.UseCaptcha)
+        {
+            <input type="hidden" name="@RecaptchaValidatorBase.RecaptchaResponseKey" id="@RecaptchaValidatorBase.RecaptchaResponseKey"/>
+        }
+
+        @if (!Model.IsExternalLogin)
+        {
+            <abp-input asp-for="Input.UserName" auto-focus="true"/>
+        }
+
+        <abp-input asp-for="Input.EmailAddress"/>
+
+        @if (!Model.IsExternalLogin)
+        {
+            <abp-input asp-for="Input.Password"/>
+        }
+
+        @if (reCaptchaVersion == 2)
+        {
+            <recaptcha-div-v2 callback="(function(){$('#@RecaptchaValidatorBase.RecaptchaResponseKey').val(token)})" />
+        }
+
+        <abp-button button-type="Primary" size="Block" type="submit" class="mt-2 mb-3">@L["Register"]</abp-button>
+        @L["AlreadyRegistered"] <a asp-page="./Login">@L["Login"]</a>
+    </form>
+</div>

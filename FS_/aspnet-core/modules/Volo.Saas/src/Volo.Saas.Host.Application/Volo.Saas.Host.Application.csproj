@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+    <ProjectReference Include="..\Volo.Saas.Host.Application.Contracts\Volo.Saas.Host.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Volo.Saas.Domain\Volo.Saas.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

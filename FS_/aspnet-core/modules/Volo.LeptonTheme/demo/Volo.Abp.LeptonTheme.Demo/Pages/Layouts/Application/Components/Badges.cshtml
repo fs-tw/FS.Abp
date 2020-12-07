@@ -1,0 +1,21 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Demo.Views.Components.Themes.Shared.Demos.BadgesDemo
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@using Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application
+@using Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.Components
+@model Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.Components.BadgesModel
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Badges"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["Components"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.Components.Badges;
+}
+@section content_toolbar {
+}
+<div class="lepton-demo">
+    @await Component.InvokeAsync(typeof(BadgesDemoViewComponent))
+</div>

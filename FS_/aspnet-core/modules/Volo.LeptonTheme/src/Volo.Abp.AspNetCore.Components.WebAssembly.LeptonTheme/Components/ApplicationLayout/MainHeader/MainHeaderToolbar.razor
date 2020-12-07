@@ -1,0 +1,13 @@
+﻿@foreach (var render in ToolbarItemRenders)
+{
+    <li class="nav-item">
+        @render
+    </li>
+}
+
+<li class="nav-item" id="navItemFullScreen">
+    <a href="javascript:;" class="btn @(IsFullScreen ? "expanded" : "")" id="btnFullscreen" @onclick="ToogleFullScreen">
+        <i class="fas fa-expand"></i>
+        <i class="fas fa-compress"></i>
+    </a>
+</li>

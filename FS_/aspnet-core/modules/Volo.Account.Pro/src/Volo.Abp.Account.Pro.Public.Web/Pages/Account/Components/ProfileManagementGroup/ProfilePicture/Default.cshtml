@@ -1,0 +1,79 @@
+﻿@using Volo.Abp.Account
+@using Volo.Abp.Account.Localization
+@using Volo.Abp.Users
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<AccountResource> L
+@inject ICurrentUser CurrentUser
+@model Volo.Abp.Account.Public.Web.Pages.Account.Components.ProfileManagementGroup.ProfilePicture.AccountProfilePictureManagementGroupViewComponent.UploadProfilePictureInfoModel
+
+<form id="ChangeProfilePictureForm">
+    <abp-row>
+        <abp-column>
+            <div class="form-group">
+                <label>@L["CurrentProfilePicture"]</label>
+                <br/>
+                <img id="CurrentProfilePicture" src="@($"/api/account/profile-picture-file/{CurrentUser.GetId()}")"/>
+            </div>
+        </abp-column>
+    </abp-row>
+    <hr/>
+
+    <abp-row>
+        <abp-column>
+            <div class="custom-checkbox custom-control mb-2">
+                <input
+                    type="radio"
+                    name="pptype"
+                    id="Radio_UseDefault"
+                    value="use-default"
+                    class="custom-control-input pp-type-selector" @(Model.Type == ProfilePictureType.None ? "checked='checked'" : "")>
+                <label class="custom-control-label" for="Radio_UseDefault">@L["UseDefault"]</label>
+            </div>
+            <div class="custom-checkbox custom-control mb-2">
+                <input
+                    type="radio"
+                    name="pptype"
+                    id="Radio_UseGravatar"
+                    value="use-gravatar"
+                    class="custom-control-input pp-type-selector" @(Model.Type == ProfilePictureType.Gravatar ? "checked='checked'" : "")>
+                <label class="custom-control-label" for="Radio_UseGravatar">@L["DisplayName:UseGravatar"]</label>
+            </div>
+            <div class="custom-checkbox custom-control mb-2">
+                <input
+                    type="radio"
+                    name="pptype"
+                    id="Radio_UploadFile"
+                    value="use-picture"
+                    class="custom-control-input pp-type-selector" @(Model.Type == ProfilePictureType.Image ? "checked='checked'" : "")>
+                <label class="custom-control-label" for="Radio_UploadFile">@L["UploadFile"]</label>
+            </div>
+        </abp-column>
+    </abp-row>
+
+    <div class="row @(Model.Type == ProfilePictureType.Image ? "" : "hidden-section")" id="UploadPPContainer">
+        <abp-column>
+            <h3>@L["ChangeProfilePicture"]</h3>
+            <abp-input label="@L["SelectNewImage"].Value" asp-for="Picture" accept="image/*"/>
+
+            <div class="general-image-container">
+                <img id="image"/>
+            </div>
+
+            <span id="CursorInfo" class="mt-2 hidden-section">@L["MoveCursorOnExamples"]</span>
+
+            <div class="image-process-section">
+                <ul class="sample-images clearfix mt-2">
+                    <li class="big"></li>
+                    <li class="medium"></li>
+                    <li class="small"></li>
+                </ul>
+            </div>
+        </abp-column>
+    </div>
+
+    <abp-row class="mt-2">
+        <abp-column>
+            <abp-button button-type="Primary" id="SaveProfilePicture" text="@L["SaveChanges"].Value"/>
+        </abp-column>
+    </abp-row>
+</form>

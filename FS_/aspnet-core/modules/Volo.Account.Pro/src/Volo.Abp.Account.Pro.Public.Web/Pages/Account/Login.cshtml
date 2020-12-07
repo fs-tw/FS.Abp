@@ -1,0 +1,117 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+@using Owl.reCAPTCHA
+@using Volo.Abp.Account.Localization
+@using Volo.Abp.Account.Public.Web.Security.Recaptcha
+@using Volo.Abp.Account.Settings
+@using Volo.Abp.Settings
+@model Volo.Abp.Account.Public.Web.Pages.Account.LoginModel
+@inject IHtmlLocalizer<AccountResource> L
+@inject Volo.Abp.AspNetCore.Mvc.UI.Layout.IPageLayout PageLayout
+@inject ISettingProvider SettingProvider
+@{
+    PageLayout.Content.Title = L["Login"].Value;
+    var reCaptchaVersion = await SettingProvider.GetAsync<int>(AccountSettingNames.Captcha.Version);
+    if (Model.UseCaptcha)
+    {
+        await Model.ReCaptchaOptions.SetAsync(reCaptchaVersion == 3 ? reCAPTCHAConsts.V3 :reCAPTCHAConsts.V2);
+    }
+
+}
+
+@section scripts
+{
+    @if (Model.UseCaptcha)
+    {
+        if (reCaptchaVersion == 3)
+        {
+            <recaptcha-script-v3/>
+            <recaptcha-script-v3-js action="login" callback="(function(){$('#@RecaptchaValidatorBase.RecaptchaResponseKey').val(token)})"/>
+        }
+        else
+        {
+            <recaptcha-script-v2/>
+        }
+    }
+}
+
+@if (Model.IsLinkLogin)
+{
+    <abp-alert alert-type="Warning">
+        @L["LinkUserWarning", Url.PageLink()]
+    </abp-alert>
+}
+
+<div class="account-module-form">
+    @if (Model.EnableLocalLogin)
+    {
+        <form method="post">
+            <input asp-for="ReturnUrl"/>
+            <input asp-for="ReturnUrlHash"/>
+            @if (Model.UseCaptcha)
+            {
+                <input type="hidden" name="@RecaptchaValidatorBase.RecaptchaResponseKey" id="@RecaptchaValidatorBase.RecaptchaResponseKey"/>
+            }
+            <abp-input asp-for="LoginInput.UserNameOrEmailAddress" required-symbol="false"/>
+            <abp-input asp-for="LoginInput.Password" required-symbol="false"/>
+            <abp-row>
+                <abp-column>
+                    <abp-input asp-for="LoginInput.RememberMe" class="mb-4"/>
+                </abp-column>
+                <abp-column class="text-right">
+                    <a href="@Url.Page("./ForgotPassword", new { returnUrl = Model.ReturnUrl, returnUrlHash = Model.ReturnUrlHash })">@L["ForgotPassword"]</a>
+                </abp-column>
+            </abp-row>
+
+            @if (reCaptchaVersion == 2)
+            {
+                <recaptcha-div-v2 callback="(function(){$('#@RecaptchaValidatorBase.RecaptchaResponseKey').val(token)})" />
+            }
+
+            <abp-button button-type="Primary" size="Block" type="submit" class="mt-2 mb-3" name="Action" value="Login">@L["Login"]</abp-button>
+            @if (Model.ShowCancelButton)
+            {
+                <abp-button button-type="Secondary" size="Block" type="submit" formnovalidate="formnovalidate" class="mt-2 mb-3" name="Action" value="Cancel">@L["Cancel"]</abp-button>
+            }
+        </form>
+        if (Model.IsSelfRegistrationEnabled)
+        {
+            @L["NotAMemberYet"]
+            <a href="@Url.Page("./Register", new {returnUrl = Model.ReturnUrl, returnUrlHash = Model.ReturnUrlHash})">@L["Register"]</a>
+        }
+    }
+
+    @if (Model.VisibleExternalProviders.Any())
+    {
+        <hr/>
+        @L["OrSignInWith"]<br/>
+        <form asp-page="./Login" asp-page-handler="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" asp-route-returnUrlHash="@Model.ReturnUrlHash" method="post">
+            <input asp-for="ReturnUrl"/>
+            <input asp-for="ReturnUrlHash"/>
+            @foreach (var provider in Model.VisibleExternalProviders)
+            {
+                <button
+                    type="submit"
+                    class="mt-2 mr-2 btn btn-outline-primary btn-sm"
+                    name="provider"
+                    value="@provider.AuthenticationScheme"
+                    data-busy-text="@L["ProcessingWithThreeDot"]">
+                    @if (provider.Icon != null)
+                    {
+                        <i class="@provider.Icon"></i>
+                    }
+                    <span>@provider.DisplayName</span>
+                </button>
+            }
+        </form>
+    }
+
+    @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
+    {
+        <div class="alert alert-warning">
+            <strong>Invalid login request</strong>
+            There are no login schemes configured for this client.
+        </div>
+    }
+</div>

@@ -1,0 +1,58 @@
+﻿@if (LeptonSettings != null)
+{
+    <Form id="LeptonThemeSettingEditForm">
+        <Row>
+                    <Column>
+                        <Field>
+                            <FieldLabel>@L["DisplayName:Style"]</FieldLabel>
+                            <Select TValue="LeptonStyle" @bind-SelectedValue="@LeptonSettings.Style">
+                                <SelectItem Value="@LeptonStyle.Style1">Style 1</SelectItem>
+                                <SelectItem Value="@LeptonStyle.Style2">Style 2</SelectItem>
+                                <SelectItem Value="@LeptonStyle.Style3">Style 3</SelectItem>
+                                <SelectItem Value="@LeptonStyle.Style4">Style 4</SelectItem>
+                                <SelectItem Value="@LeptonStyle.Style5">Style 5</SelectItem>
+                                <SelectItem Value="@LeptonStyle.Style6">Style 6</SelectItem>
+                            </Select>
+                        </Field>
+                        
+                        <Field>
+                            <FieldLabel>@L["DisplayName:MenuPlacement"]</FieldLabel>
+                            <Select TValue="MenuPlacement" @bind-SelectedValue="@LeptonSettings.MenuPlacement">
+                                <SelectItem Value="@MenuPlacement.Left">@L["Left"]</SelectItem>
+                                <SelectItem Value="@MenuPlacement.Top">@L["Top"]</SelectItem>
+                            </Select>
+                        </Field>
+                        
+                        @if (LeptonSettings.MenuPlacement != MenuPlacement.Top)
+                        {
+                            <Field>
+                                <FieldLabel>@L["DisplayName:MenuStatus"]</FieldLabel>
+                                <Select TValue="MenuStatus" @bind-SelectedValue="@LeptonSettings.MenuStatus">
+                                    <SelectItem Value="@MenuStatus.AlwaysOpened">@L["AlwaysOpened"]</SelectItem>
+                                    <SelectItem Value="@MenuStatus.OpenOnHover">@L["OpenOnHover"]</SelectItem>
+                                </Select>
+                            </Field>
+                        }
+        
+                        <Field>
+                            <Check TValue="bool" @bind-checked="@LeptonSettings.BoxedLayout">
+                                @L["DisplayName:BoxedLayout"]
+                            </Check>
+                        </Field>
+                    </Column>
+                </Row>
+        <hr class="my-4" />
+        <Row>
+            <Column>
+                <Button
+                    form="LeptonThemeSettingEditForm"
+                    Type="ButtonType.Submit"
+                    PreventDefaultOnSubmit="true"
+                    Color="Color.Primary"
+                    Clicked="UpdateSettingsAsync">
+                    @L["Save"]
+                </Button>
+            </Column>
+        </Row>
+    </Form>
+}

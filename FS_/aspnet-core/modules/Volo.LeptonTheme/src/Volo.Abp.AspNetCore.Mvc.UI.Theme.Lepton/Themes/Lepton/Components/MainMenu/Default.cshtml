@@ -1,0 +1,26 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.MainMenu;
+@model MenuViewModel
+@using Volo.Abp.LeptonTheme.Management
+@using Volo.Abp.Settings
+@inject ISettingProvider SettingProvider
+@{
+    var menuPlacement = await SettingProvider.GetOrNullAsync(LeptonThemeSettingNames.Layout.MenuPlacement);
+}
+<div class="lp-sidebar collapse navbar-collapse d-lg-block" id="navbarSidebar">
+    <div class="lp-sidebar-header">
+        <div class="lp-toggle-sidebar">
+            <i class="fa fa-align-left material-icons lp-open-icon"></i>
+            <i class="fa fa-align-justify material-icons lp-close-icon"></i>
+        </div>
+    </div>
+    <div class="lp-sidebar-wrapper">
+        <nav role="navigation" class="lp-sidebar-navi">
+            <ul>
+                @foreach (var menuItem in Model.Items)
+                {
+                    @await Html.PartialAsync("~/Themes/Lepton/Components/MainMenu/_MenuItem.cshtml", menuItem)
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

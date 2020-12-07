@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@using Volo.Abp.Users
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<AccountResource> L
+@inject ICurrentUser CurrentUser
+
+<abp-card>
+    <abp-card-body>
+        <div class="float-right">
+            <abp-button button-type="Primary" id="CreateLinkUser" text="@L["NewLinkUser"].Value"/>
+        </div>
+
+        <form method="post" asp-page="Login" asp-page-handler="LinkLogin" id="linkUserLoginForm">
+            <input type="hidden" name="LinkUserId">
+            <input type="hidden" name="LinkTenantId">
+            <input type="hidden" name="ReturnUrl" value="@Context.Request.Path">
+        </form>
+
+        <abp-table striped-rows="true" id="MyLinkUsersTable" class="nowrap"></abp-table>
+
+    </abp-card-body>
+</abp-card>

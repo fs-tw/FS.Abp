@@ -1,0 +1,102 @@
+﻿@using Volo.Abp.Account.Localization
+@using Volo.Abp.Identity
+@using Volo.Abp.Identity.Settings
+@using Volo.Abp.Settings
+@using Volo.Abp.Users
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<AccountResource> L
+@inject ICurrentUser CurrentUser
+@inject ISettingProvider SettingManager
+@model Volo.Abp.Account.Public.Web.Pages.Account.Components.ProfileManagementGroup.PersonalInfo.AccountProfilePersonalInfoManagementGroupViewComponent.PersonalInfoModel
+@{
+    var isUserNameUpdateEnabled = string.Equals(await SettingManager.GetOrNullAsync(IdentitySettingNames.User.IsUserNameUpdateEnabled), "true",
+        StringComparison.OrdinalIgnoreCase);
+
+    var isEmailUpdateEnabled = string.Equals(await SettingManager.GetOrNullAsync(IdentitySettingNames.User.IsEmailUpdateEnabled), "true",
+        StringComparison.OrdinalIgnoreCase);
+
+    var phoneConfirmationEnabled = string.Equals(await SettingManager.GetOrNullAsync(IdentitySettingNames.SignIn.EnablePhoneNumberConfirmation), "true",
+        StringComparison.OrdinalIgnoreCase);
+}
+
+<input id="CurrentUserId" value="@CurrentUser.GetId()" hidden/>
+
+<form method="post" id="PersonalSettingsForm">
+
+    <abp-input asp-for="UserName" readonly="!isUserNameUpdateEnabled"/>
+
+    <abp-row>
+        <abp-column size-md="_6">
+            <abp-input asp-for="Name"/>
+        </abp-column>
+        <abp-column size-md="_6">
+            <abp-input asp-for="Surname"/>
+        </abp-column>
+    </abp-row>
+
+    <label for="Email">@L["DisplayName:Email"].Value *</label>
+    <div class="input-group mb-3">
+        <input aria-describedby="VerifyEmailButton" type="text" id="Email"
+               data-saved-email="@Model.Email"
+               data-email-verified="@Model.EmailConfirmed"
+               @(!isEmailUpdateEnabled ? "readonly" : "")
+               maxlength="@IdentityUserConsts.MaxSurnameLength" name="Email" value="@Model.Email" class="form-control">
+        @{
+            var emailVerifyButtonStyle = Model.EmailConfirmed || string.IsNullOrWhiteSpace(Model.Email) ? "display:none;" : "";
+            var emailVerifiedStyle = Model.EmailConfirmed ? "" : "display:none;";
+        }
+
+        @if (isEmailUpdateEnabled)
+        {
+            <div class="input-group-append">
+
+                <span class="input-group-text" id="EmailNotVerified" style="display:none;"
+                      data-toggle="tooltip" data-placement="top" title="@L["FirstlySubmitToVerify"].Value">
+                    <i class="mr-1 fa fa-times"> </i><span class="text-danger">@L["NotVerified"]</span>
+                </span>
+
+                <span class="input-group-text" id="EmailVerified" style="@emailVerifiedStyle">
+                    <i class="mr-1 text-success fa fa-check-square"> </i><span class="text-success">@L["Verified"]</span>
+                </span>
+
+                <abp-button button-type="Warning" id="VerifyEmailButton" style="@emailVerifyButtonStyle">
+                    <i class="mr-1 fa fa-vcard"></i> @L["Verify"]
+                </abp-button>
+
+            </div>
+        }
+    </div>
+
+    <label for="PhoneNumber">@L["DisplayName:PhoneNumber"].Value</label>
+    <div class="input-group mb-3">
+        <input aria-describedby="VerifyPhoneButton" type="text" id="PhoneNumber"
+               maxlength="16" name="PhoneNumber" value="@Model.PhoneNumber"
+               class="form-control"
+               data-saved-phone="@Model.PhoneNumber"
+               data-phone-verified="@Model.PhoneNumberConfirmed">
+        @if (phoneConfirmationEnabled)
+        {
+            var proneVerifyButtonStyle = Model.PhoneNumberConfirmed || string.IsNullOrWhiteSpace(Model.PhoneNumber) ? "display:none;" : "";
+            var phonoVerifiedStyle = Model.PhoneNumberConfirmed ? "" : "display:none;";
+
+            <div class="input-group-append">
+
+                <span class="input-group-text" id="PhoneNotVerified" style="display:none;"
+                      data-toggle="tooltip" data-placement="top" title="@L["FirstlySubmitToVerify"].Value">
+                    <i class="mr-1 fa fa-times"> </i><span class="text-danger">@L["NotVerified"]</span>
+                </span>
+
+                <span class="input-group-text" id="PhoneVerified" style="@phonoVerifiedStyle">
+                    <i class="mr-1 text-success fa fa-check-square"> </i><span class="text-success">@L["Verified"]</span>
+                </span>
+
+                <abp-button button-type="Warning" id="VerifyPhoneButton" style="@proneVerifyButtonStyle">
+                    <i class="mr-1 fa fa-vcard"></i> @L["Verify"]
+                </abp-button>
+
+            </div>
+        }
+    </div>
+
+    <abp-button type="submit" button-type="Primary" text="@L["Submit"].Value"/>
+</form>

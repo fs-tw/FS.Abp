@@ -1,0 +1,9 @@
+
+.jstree-default .jstree-icon {
+    background-image: url(32px.png);
+}
+.jstree-default .jstree-themeicon-custom {
+    background-color: transparent;
+    background-image: none;
+    background-position: 0 0;
+}

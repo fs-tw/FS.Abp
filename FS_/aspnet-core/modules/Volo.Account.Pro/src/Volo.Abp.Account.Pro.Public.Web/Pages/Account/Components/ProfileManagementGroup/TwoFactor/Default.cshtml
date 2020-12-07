@@ -1,0 +1,9 @@
+@using Volo.Abp.Account.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<AccountResource> L
+@model Volo.Abp.Account.Public.Web.Pages.Account.Components.ProfileManagementGroup.TwoFactor.AccountProfileTwoFactorManagementGroupViewComponent.ChangeTwoFactorModel
+
+<form method="post" id="PersonalTwoFactorForm">
+    <abp-input asp-for="TwoFactorEnabled"/>
+    <abp-button type="submit" button-type="Primary" text="@L["Submit"].Value"/>
+</form>

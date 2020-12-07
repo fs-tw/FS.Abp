@@ -1,0 +1,18 @@
+{
+  "culture": "tr",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Lepton Teması",
+    "Permission:LeptonThemeManagement": "Lepton Teması yönetimi",
+    "Permission:LeptonThemeSettings": "Lepton Teması ayarları",
+    "DisplayName:BoxedLayout": "Ortalanmış içerik",
+    "DisplayName:MenuPlacement": "Menü yerleşimi",
+    "DisplayName:MenuStatus": "Menü durumu",
+    "SuccessfullySaved": "Başarıyla kaydedildi",
+    "Left": "Sol",
+    "Top": "Üst",
+    "AlwaysOpened": "Hep açık",
+    "OpenOnHover": "Üstüne gelince açık",
+    "DisplayName:Style": "Stil",
+    "Authentication:YouAreLoggedOut": "Çıkış yaptınız."
+  }
+}

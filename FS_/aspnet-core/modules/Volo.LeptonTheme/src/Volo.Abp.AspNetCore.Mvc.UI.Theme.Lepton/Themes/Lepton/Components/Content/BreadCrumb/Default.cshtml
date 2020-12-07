@@ -1,0 +1,26 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@model ContentLayout
+@if (Model.ShouldShowBreadCrumb())
+{
+    <ol class="breadcrumb">
+        @if (Model.BreadCrumb.ShowHome)
+        {
+            <li class="breadcrumb-item"><a href="~/"><i class="fa fa-home"></i> </a></li>
+        }
+        @foreach (var breadCrumbItem in Model.BreadCrumb.Items)
+        {
+            if (breadCrumbItem.Url.IsNullOrWhiteSpace())
+            {
+                <li class="breadcrumb-item">@breadCrumbItem.Text</li>
+            }
+            else
+            {
+                <li class="breadcrumb-item"><a href="@breadCrumbItem.Url">@breadCrumbItem.Text</a></li>
+            }
+        }
+        @if (Model.BreadCrumb.ShowCurrent)
+        {
+            <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+        }
+    </ol>
+}

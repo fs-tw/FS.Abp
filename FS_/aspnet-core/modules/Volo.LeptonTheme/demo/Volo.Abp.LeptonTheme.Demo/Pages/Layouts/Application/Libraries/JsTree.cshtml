@@ -1,0 +1,161 @@
+﻿@page
+@using Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.Libraries
+@using Volo.Abp.AspNetCore.Mvc.UI.Packages.JsTree
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Microsoft.AspNetCore.Mvc.Localization
+@model JsTreeModel
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["JsTree"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["Libraries"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.Libraries.JsTree;
+}
+@section styles {
+    <abp-style-bundle>
+        <abp-style type="typeof(JsTreeStyleContributor)" />
+    </abp-style-bundle>
+}
+@section scripts {
+    <abp-script-bundle>
+        <abp-script type="typeof(JsTreeScriptContributor)" />
+        <abp-script src="/Pages/Layouts/Application/Libraries/JsTree.js" />
+    </abp-script-bundle>
+}
+
+<abp-row>
+    <abp-column size="_6">
+        <abp-card>
+            <abp-card-header>
+                Nodes with children
+            </abp-card-header>
+            <abp-card-body>
+                <div id="JsTreeDefault" class="tree">
+                    <ul>
+                        <li>
+                            Root node 1
+                            <ul>
+                                <li>Child node 1</li>
+                                <li>Child node 2</li> 
+                                <li><a href="#">Child node 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Root node 2
+                            <ul>
+                                <li>Child node 4</li>
+                                <li>Child node 5</li> 
+                                <li><a href="#">Child node 6</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </abp-card-body>
+        </abp-card>
+    </abp-column>
+    <abp-column size="_6">
+        <abp-card>
+            <abp-card-header>
+                Checkable Tree
+            </abp-card-header>
+            <abp-card-body>
+                <div id="JsTreeCheckable" class="tree">
+                    <ul>
+                        <li>
+                            Root node 1
+                            <ul>
+                                <li>Child node 1</li>
+                                <li>Child node 2</li> 
+                                <li><a href="#">Child node 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Root node 2
+                            <ul>
+                                <li>Child node 4</li>
+                                <li>Child node 5</li> 
+                                <li><a href="#">Child node 6</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </abp-card-body>
+        </abp-card>
+    </abp-column>
+</abp-row>
+
+<abp-row>
+    <abp-column size="_6">
+        <abp-card>
+            <abp-card-header>
+                Contextual Menu with Drag & Drop
+            </abp-card-header>
+            <abp-card-body>
+                <div id="JsTreeContextualAndDD" class="tree">
+                    <ul>
+                        <li>
+                            Root node 1
+                            <ul>
+                                <li>Child node 1</li>
+                                <li>Child node 2</li> 
+                                <li><a href="#">Child node 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Root node 2
+                            <ul>
+                                <li>Child node 4</li>
+                                <li>Child node 5</li> 
+                                <li><a href="#">Child node 6</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </abp-card-body>
+        </abp-card>
+    </abp-column>
+    <abp-column size="_6">
+        <abp-card>
+            <abp-card-header>
+                Json Tree
+            </abp-card-header>
+            <abp-card-body>
+                <div id="JsTreeJson" class="tree"></div>
+            </abp-card-body>
+        </abp-card>
+    </abp-column>
+</abp-row>
+
+<abp-row>
+    <abp-column size="_6">
+        <abp-card>
+            <abp-card-header>
+                Whole Row
+            </abp-card-header>
+            <abp-card-body>
+                <div id="JsTreeWholeRow" class="tree">
+                    <ul>
+                        <li>
+                            Root node 1
+                            <ul>
+                                <li>Child node 1</li>
+                                <li>Child node 2</li> 
+                                <li><a href="#">Child node 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Root node 2
+                            <ul>
+                                <li>Child node 4</li>
+                                <li>Child node 5</li> 
+                                <li><a href="#">Child node 6</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </abp-card-body>
+        </abp-card>
+    </abp-column>
+</abp-row>

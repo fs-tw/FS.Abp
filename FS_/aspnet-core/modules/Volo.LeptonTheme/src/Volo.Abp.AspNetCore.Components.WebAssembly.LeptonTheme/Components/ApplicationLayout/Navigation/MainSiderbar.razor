@@ -1,0 +1,11 @@
+﻿<nav role="navigation" class="lp-sidebar-navi">
+    <ul>
+        @if (Menu != null)
+        {
+            @foreach (var menuItem in Menu.Items)
+            {
+                <MainSiderbarMenuItem Menu="@Menu" MenuItem="@menuItem"/>
+            }
+        }
+    </ul>
+</nav>

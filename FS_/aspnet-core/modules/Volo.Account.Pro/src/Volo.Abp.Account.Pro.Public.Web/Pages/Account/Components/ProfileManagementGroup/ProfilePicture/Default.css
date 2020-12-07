@@ -1,0 +1,56 @@
+﻿div.general-image-container img {
+    display: block;
+
+    /* This rule is very important, please don't ignore this */
+    max-width: 100%;
+}
+
+.hidden-section{
+    display: none;
+}
+
+.cursor-info{
+    display: block;
+}
+
+#CurrentProfilePicture{
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+}
+
+div.image-process-section{
+    display: none;
+}
+
+ul.sample-images {
+    list-style-type: none;
+}
+
+ul.sample-images li {
+    float: left;
+    margin-left: 1.2em;
+}
+
+ul.sample-images li canvas {
+    border: 1px dotted slategray;
+}
+
+ul.sample-images li canvas:hover {
+    border-radius: 50%;
+}
+
+ul.sample-images li.big canvas {
+    width: 250px;
+    height: 250px;
+}
+
+ul.sample-images li.medium canvas {
+    width: 150px;
+    height: 150px;
+}
+
+ul.sample-images li.small canvas {
+    width: 75px;
+    height: 75px;
+}

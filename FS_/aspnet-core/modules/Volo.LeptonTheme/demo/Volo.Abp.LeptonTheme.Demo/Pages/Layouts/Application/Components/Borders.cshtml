@@ -1,0 +1,18 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Demo.Views.Components.Themes.Shared.Demos.BordersDemo
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Borders"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["Components"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.Components.Borders;
+}
+@section content_toolbar {
+}
+<div class="lepton-demo lepton-border-demo">
+    @await Component.InvokeAsync(typeof(BordersDemoViewComponent))
+</div>

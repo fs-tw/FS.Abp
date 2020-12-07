@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg user-nav-mobile">
+  <div
+    class="navbar-collapse d-lg-block toolbar-nav-wrapper collapse"
+    id="navbarToolbar"
+    [class.show]="smallScreen"
+    [class.abp-collapsed-height]="smallScreen"
+    [class.abp-mh-100]="smallScreen && isNavbarExpanded"
+  >
+    <div class="ml-auto">
+      <abp-nav-items
+        *abpReplaceableTemplate="{ componentKey: navItemsComponentKey }"
+      ></abp-nav-items>
+    </div>
+  </div>
+</nav>

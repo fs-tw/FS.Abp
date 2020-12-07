@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Volo.Abp.Account.Pro.Admin.HttpApi</AssemblyName>
+    <PackageId>Volo.Abp.Account.Pro.Admin.HttpApi</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.0.0" />
+    <ProjectReference Include="..\Volo.Abp.Account.Pro.Admin.Application.Contracts\Volo.Abp.Account.Pro.Admin.Application.Contracts.csproj" />
+    <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

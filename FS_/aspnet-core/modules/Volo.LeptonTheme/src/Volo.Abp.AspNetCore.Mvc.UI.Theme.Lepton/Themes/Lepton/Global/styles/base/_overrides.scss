@@ -1,0 +1,1771 @@
+/* ~ */
+/* ---------- BOOTSTRAP OVERRIDES - START */
+body {
+
+    h1, .h1 {
+        font-size: $h1;
+    }
+
+    h2, .h2 {
+        font-size: $h2;
+    }
+
+    h3, .h3 {
+        font-size: $h3;
+    }
+
+    h4, .h4 {
+        font-size: $h4;
+    }
+
+    h5, .h5 {
+        font-size: $h5;
+    }
+
+    h6, .h6 {
+        font-size: $h6;
+    }
+
+    label {
+        margin-bottom: 0.25rem;
+    }
+
+    .row {
+        margin-right: -$base;
+        margin-left: -$base;
+    }
+
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: $head-font-family;
+        font-weight: $bold;
+        line-height: 1.5;
+    }
+
+    pre {
+        background: darken($global-bg,0);
+        color: $text-color;
+        margin-bottom: 0;
+    }
+
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+        padding-right: $base;
+        padding-left: $base;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    & + p {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+.btn {
+    border-width: 2px;
+    border-radius: $radius;
+    padding: 5px 18px;
+    font-size: 1em;
+    box-shadow: $shadow;
+
+    &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus, &.visible {
+        outline: none;
+        box-shadow: $shadow-big;
+    }
+
+    &.btn-sm {
+        padding: 4px 12px;
+        font-size: 0.9em;
+    }
+
+    &.btn-md {
+        padding: 6px 18px;
+        font-size: 1em;
+    }
+
+    &.btn-lg {
+        padding: 8px 27px;
+        font-size: 1.1em;
+    }
+
+    &.btn-primary {
+        color: #fff;
+        background-color: $primary;
+        border-color: $primary;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: darken($primary, 10);
+            border-color: darken($primary, 10);
+        }
+    }
+
+    &.btn-outline-primary {
+        color: $primary;
+        border-color: $primary;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $primary;
+            border-color: $primary;
+        }
+    }
+
+    &.btn-secondary {
+        color: #fff;
+        background-color: $secondary;
+        border-color: $secondary;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: darken($secondary, 10);
+            border-color: darken($secondary, 10);
+        }
+    }
+
+    &.btn-outline-secondary {
+        color: $secondary;
+        border-color: $secondary;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $secondary;
+            border-color: $secondary;
+        }
+    }
+
+    &.btn-success {
+        color: #fff;
+        background-color: $success;
+        border-color: $success;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: darken($success, 10);
+            border-color: darken($success, 10);
+        }
+    }
+
+    &.btn-outline-success {
+        color: $success;
+        border-color: $success;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $success;
+            border-color: $success;
+        }
+    }
+
+    &.btn-info {
+        color: #484848;
+        background-color: $info;
+        border-color: $info;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #484848;
+            background-color: darken($info, 10);
+            border-color: darken($info, 10);
+        }
+    }
+
+    &.btn-outline-info {
+        color: $info;
+        border-color: $info;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $info;
+            border-color: $info;
+        }
+    }
+
+    &.btn-warning {
+        color: #fff;
+        background-color: $warning;
+        border-color: $warning;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: darken($warning, 10);
+            border-color: darken($warning, 10);
+        }
+    }
+
+    &.btn-outline-warning {
+        color: $warning;
+        border-color: $warning;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $warning;
+            border-color: $warning;
+        }
+    }
+
+    &.btn-danger {
+        color: #fff;
+        background-color: $danger;
+        border-color: $danger;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: darken($danger, 10);
+            border-color: darken($danger, 10);
+        }
+    }
+
+    &.btn-outline-danger {
+        color: $danger;
+        border-color: $danger;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $danger;
+            border-color: $danger;
+        }
+    }
+
+    &.btn-outline-default {
+        color: $dark;
+        border-color: $light;
+        background: none;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            color: #fff;
+            background-color: $dark;
+            border-color: $dark;
+        }
+    }
+
+    &.btn-link {
+        box-shadow: none;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            box-shadow: $shadow;
+        }
+    }
+
+    &.dropdown-toggle-split {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.btn-group, .btn-group-vertical {
+    &.btn-group-lg {
+        .btn {
+            padding: 8px 27px;
+            font-size: 1.1em;
+        }
+    }
+
+    &.btn-group-md {
+        .btn {
+            padding: 6px 18px;
+            font-size: 1em;
+        }
+    }
+
+    &.btn-group-sm {
+        .btn {
+            padding: 4px 12px;
+            font-size: 0.9em;
+        }
+    }
+
+    .btn {
+        text-align: left;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
+    margin-left: -2px !important;
+}
+
+.btn-toolbar {
+    .btn {
+        padding: 6px 14px !important;
+    }
+}
+
+.breadcrumb {
+    padding: 12px 0 0;
+    margin-bottom: 0;
+    background: none;
+    font-size: .82em;
+
+    @include respond-to($sm) {
+        padding: 5px 0 0;
+    }
+
+    .breadcrumb-item {
+        padding-left: 0.25rem;
+        opacity: .65;
+
+        &:nth-child(1) { 
+            &:before {
+                display:none;
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+
+        a {
+            font-weight: 600;
+            &:hover {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+
+        &:before {
+            padding-right: 0.5rem;
+            padding-left: 0.25rem;
+            content: "\2022";
+            opacity: .35;
+        }
+    }
+}
+
+.alert {
+    padding: $grid*0.75;
+    background: $global-bg;
+    color: $global-text;
+    box-shadow: $shadow;
+    border-color: $light;
+    border-radius: $radius;
+    border-width: 2px;
+
+    .alert-heading {
+        font-size: 1.2em;
+        margin-bottom: 2px;
+    }
+
+    a {
+        border-bottom: 1px solid;
+
+        &:hover {
+            text-decoration: none;
+            border-bottom: 2px solid;
+        }
+    }
+
+    .alert-icon {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        margin: -8px 0 -8px 0;
+        border-radius: $radius-big;
+        font-size: 32px;
+    }
+
+    &.alert-dismissible .close {
+        padding: 0.125rem .75rem;
+        top: 50%;
+        margin-top: -18px;
+        right: 8px;
+    }
+
+    &.alert-primary {
+        border-color: $primary;
+        color: $text-color;
+
+        a, .fa {
+            color: $primary;
+        }
+    }
+
+    &.alert-secondary {
+        border-color: $secondary;
+        color: $text-color;
+
+        a, .fa, .alert-heading {
+            color: $secondary;
+        }
+    }
+
+    &.alert-success {
+        border-color: $success;
+        color: $text-color;
+
+        a, .fa, .alert-heading {
+            color: $success;
+        }
+    }
+
+    &.alert-info {
+        border-color: $info;
+        color: $text-color;
+
+        a, .fa, .alert-heading {
+            color: $info;
+        }
+    }
+
+    &.alert-warning {
+        border-color: $warning;
+        color: $text-color;
+
+        a, .fa, .alert-heading {
+            color: $warning;
+        }
+    }
+
+    &.alert-danger {
+        border-color: $danger;
+        color: $text-color;
+
+        a, .fa, .alert-heading {
+            color: $danger;
+        }
+    }
+
+    &.alert-outline {
+        border-color: rgba($global-text, .2) !important;
+        color: rgba($global-text, .9) !important;
+        box-shadow: none;
+
+        a, .fa, .alert-heading {
+            color: $global-text !important;
+        }
+
+        .close {
+            color: $global-text !important;
+
+            &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active, &.visible {
+                color: $global-text !important;
+            }
+        }
+    }
+}
+
+#toast-container {
+    &.toast-top-full-width, &.toast-top-center {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%,rgba(0,0,0,0) 100%);
+        padding: 20px 15px 100px;
+        transition: $cubic;
+    }
+
+    &.toast-bottom-full-width, &.toast-bottom-center {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%,rgba(0,0,0,0) 100%);
+        padding: 100px 15px 20px 15px;
+        transition: $cubic;
+    }
+
+    &.toast-top-right {
+        top: 8px;
+        right: 8px;
+    }
+
+    &.toast-top-left {
+        top: 8px;
+        left: 8px;
+    }
+
+    &.toast-bottom-left {
+        bottom: 8px;
+        left: 8px;
+    }
+
+    &.toast-bottom-right {
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .toast {
+        position: relative;
+        border: 2px solid transparent;
+        background: $global-bg !important;
+        color: $text-color;
+        border-radius: $radius;
+        box-shadow: $shadow-big;
+
+        &:hover {
+            box-shadow: $shadow;
+        }
+
+        &:before {
+            content: "\f00c";
+            position: absolute;
+            left: 16px;
+            top: 15px;
+            display: inline-block;
+            font: normal normal normal 14px/1 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-size: 1.65em;
+            text-align: center;
+        }
+
+        &.toast-info {
+            border-color: $info;
+
+            &:before {
+                content: "\f129";
+                color: $info;
+            }
+        }
+
+        &.toast-success {
+            border-color: $success;
+
+            &:before {
+                content: "\f00c";
+                color: $success;
+            }
+        }
+
+        &.toast-warning {
+            border-color: $warning;
+
+            &:before {
+                content: "\f12a";
+                color: $warning;
+            }
+        }
+
+        &.toast-error {
+            border-color: $danger;
+
+            &:before {
+                content: "\f00d";
+                color: $danger;
+            }
+        }
+    }
+
+    > div {
+        opacity: .975;
+    }
+
+    button.toast-close-button {
+        color: #000;
+    }
+}
+
+.card {
+    border: 0;
+    background: $global-bg;
+    color: $global-text;
+    box-shadow: $shadow;
+    border-radius: $radius;
+    margin-bottom: $grid;
+
+    .card-header {
+        border-bottom: 0;
+        padding: $grid/5*3 $grid;
+        background: none;
+
+        .card-title {
+            font-size: 1.1em;
+            margin: 0;
+            color: $global-text;
+        }
+
+        /*.btn {
+            font-size: .9em !important;
+            box-shadow: $shadow-sm;
+            color: rgba($global-text,.5);
+            background: rgba($background,.35);
+            box-shadow: none;
+            border: none;
+
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+                background: $background;
+                box-shadow: none;
+            }
+        }*/
+
+
+        .btn-group {
+            .btn {
+                &.btn-link {
+                    color: $secondary;
+                    border: 0;
+
+                    &:hover, &:focus, &:active {
+                        text-decoration: none;
+                        background: $background;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-body {
+        padding: $grid;
+
+        .card-body-section {
+            & + .card-body-section {
+                margin-top: $grid;
+            }
+        }
+
+        .nav-pills.flex-column {
+            box-shadow: none;
+            padding: 0;
+
+            .tab-content {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .card-footer {
+        border: 0;
+        background: none;
+        border-top: 1px solid rgba($text-color,.05);
+        border-radius: 0 0 $radius $radius;
+        padding: $grid/5*3 $grid;
+
+        .btn.btn-sm {
+            padding: 4px 18px;
+            font-size: 0.9em;
+            margin: -5px 0;
+        }
+    }
+
+    .list-group {
+        box-shadow: $shadow;
+        border-radius: $radius;
+
+        .list-group-item {
+            border-color: $background;
+        }
+    }
+}
+
+.form-control {
+    font-size: 1em;
+    color: $global-text !important;
+}
+
+.input-group-text {
+    font-size: 1em;
+    color: $global-text !important;
+}
+
+.input-group {
+    .input-group-text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-color: $global-bg;
+    }
+}
+
+.form-control, .custom-select, .custom-file-label {
+    border: 2px solid darken($global-bg, 8);
+    background-color: darken($global-bg, 5) !important;
+
+    &:focus, &:active, &:visited {
+        color: $global-text !important;
+        background-color: darken($global-bg, 1) !important;
+        background-color: $global-bg;
+        border-color: rgba($primary,.25) !important;
+        outline: 0 !important;
+        box-shadow: 0 0 0.2rem $primary !important;
+    }
+
+    &:disabled, &[readonly] {
+        background-color: darken($global-bg, 3);
+    }
+
+    &[readonly] {
+        border: 2px solid darken($global-bg, 3);
+        background-color: darken($global-bg, 3) !important;
+
+        &:focus, &:active, &:visited {
+            background-color: $global-bg;
+            border-color: darken($global-bg, 3) !important;
+            outline: 0 !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.input-group-text {
+    background-color: darken($global-bg, 3);
+    border: 0px;
+}
+
+.dropdown-menu {
+    min-width: $base*15;
+    background: $global-bg;
+    color: $text-color;
+    font-size: .9em;
+    margin: 0;
+    border-radius: 0 $radius $radius $radius;
+    box-shadow: $shadow-big;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+    padding: 0.25rem 0;
+
+    .dropdown-item {
+        padding: 6px 20px;
+        color: unset;
+        opacity: .85;
+        font-weight: 600;
+
+        &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+            background: none;
+            opacity: 1;
+        }
+
+        &.active, &:active, &:not(:disabled):not(.disabled):active {
+            color: $global-text;
+            text-decoration: none;
+            background-color: lighten($global-bg,1);
+            padding: 6px 20px;
+            border-radius: $radius;
+        }
+    }
+
+    .dropdown-item-text, p {
+        padding: 6px 20px;
+    }
+
+    .dropdown-header {
+        background: $global-bg;
+        margin: -12px -12px 8px;
+        padding: 14px 20px !important;
+        border-radius: $radius $radius 0 0;
+    }
+
+    .dropdown-divider {
+        margin: 8px -12px;
+    }
+
+    &.dropdown-menu-right {
+        border-radius: $radius 0 $radius $radius;
+    }
+
+
+    form {
+        padding: 18px;
+        margin: 13px 0;
+        border-radius: 6.125px;
+    }
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $success;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $primary;
+}
+  
+.checkbox-lg {
+    .custom-control-label::before,
+    .custom-control-label::after {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+.badge {
+    padding: 0.35em 0.5em 0.25em 0.5em;
+    font-size: 72%;
+    border-radius: $radius;
+}
+
+.tooltip {
+    > .tooltip-inner {
+        background-color: #fff;
+        color: #000;
+        box-shadow: $shadow-big;
+        padding: 0.5rem 1rem;
+    }
+
+    &.bs-tooltip-left {
+        > .arrow {
+            &:before {
+                border-left-color: #fff;
+            }
+        }
+    }
+
+    &.bs-tooltip-top {
+        > .arrow {
+            &:before {
+                border-top-color: #fff;
+            }
+        }
+    }
+
+    &.bs-tooltip-right {
+        > .arrow {
+            &:before {
+                border-right-color: #fff;
+            }
+        }
+    }
+
+    &.bs-tooltip-bottom {
+        > .arrow {
+            &:before {
+                border-bottom-color: #fff;
+            }
+        }
+    }
+}
+
+
+.modal {
+    transition: $cubic;
+    color: $text-color;
+
+    .modal-content {
+        border-radius: $radius;
+        background: $global-bg;
+        box-shadow: $shadow;
+        border: 0;
+
+        .modal-header {
+            padding: $grid/2 $grid;
+            background: $global-bg;
+            border-color: darken($global-bg,2);
+            color: $text-color;
+
+            .modal-title {
+                margin: 8px 0px;
+                line-height: 1;
+                word-break: break-all;
+                font-size: 1.5em;
+            }
+        }
+
+        .modal-body {
+            padding: $grid;
+            background: $global-bg;
+            color: $text-color;
+
+            .nav-pills.flex-column {
+                box-shadow: none;
+                padding: 0;
+
+                .tab-content {
+                    padding-top: 0;
+                }
+            }
+
+            .nav-tabs:not(.nav-pills) {
+                box-shadow: none;
+                margin-top: -$grid;
+                margin-left: -$grid;
+                margin-right: -$grid;
+                margin-bottom: 0;
+            }
+
+            .tab-content {
+                box-shadow: none;
+                margin-top: 0;
+                margin-left: -$grid;
+                margin-right: -$grid;
+                margin-bottom: -$grid;
+
+                .nav-tabs {
+                    box-shadow: none;
+                    margin: 0;
+                    border: 1px solid darken($global-bg, 3);
+                    border-bottom: 0;
+                }
+
+                .tab-content {
+                    box-shadow: none;
+                    margin: 0;
+                    border: 1px solid darken($global-bg, 3);
+                    border-top: 0;
+                    margin-bottom: 20px;
+                }
+            }
+
+            > .row {
+                > div[class^="col-"] {
+                    .tab-content {
+                        padding-top: 0;
+                        padding-left: $grid+10;
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+            background: darken($global-bg,1);
+            border-radius: 0 0 $radius $radius;
+            border: 0;
+        }
+    }
+
+    .modal-lg {
+        max-width: 720px;
+    }
+}
+
+.swal-modal {
+    border-radius: $radius;
+    box-shadow: $shadow;
+    border: 0;
+    animation: none !important;
+    transition: all .2s ease-in-out;
+    background: lighten($background,4);
+
+    .swal-footer {
+        padding: 1rem;
+        margin-top: 30px;
+        background: $background;
+
+        .swal-button-container {
+            margin: 0;
+
+            .swal-button {
+                padding: 4px 12px;
+                margin-left: 10px;
+                color: #fff;
+                background-color: $primary;
+                border-color: $primary;
+                border-radius: $radius;
+
+                &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active {
+                    color: #fff;
+                    background-color: darken($primary, 10);
+                    border-color: darken($primary, 10);
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .swal-title {
+        font-size: 18px;
+        color: $text-color;
+        word-break: break-word;
+    }
+
+    .swal-text {
+        font-size: 14px;
+        color: $text-color;
+        word-break: break-word;
+    }
+
+    .swal-icon {
+        transform: scale(.6);
+        margin-bottom: -5px;
+    }
+
+    .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {
+        background: lighten($background,4);
+    }
+}
+
+.swal-overlay {
+    background: rgba((darken($background,5)),.7) !important;
+}
+
+.confirmation {
+    .confirmation-backdrop {
+        background: rgba((darken($background,5)),.7) !important;
+    }
+
+    .confirmation-dialog {
+        border: 0;
+        border-radius: $radius;
+        box-shadow: $shadow;
+        background: lighten($background,4);
+
+        .icon-container {
+            .icon {
+                stroke: $primary;
+                color: $primary;
+            }
+
+            &.info .icon {
+                stroke: $info;
+                color: $info;
+            }
+
+            &.success .icon {
+                stroke: $success;
+                color: $success;
+            }
+
+            &.warning .icon {
+                stroke: $warning;
+                color: $warning;
+            }
+
+            &.error .icon {
+                stroke: $danger;
+                color: $danger;
+            }
+        }
+
+        .content {
+            .title {
+                color: $text-color;
+            }
+
+            .message {
+                color: $text-color;
+            }
+        }
+
+        .footer {
+            background: $background;
+
+            .confirmation-button {
+                background-color: $primary;
+                color: #FFF;
+
+                &:hover, &:focus, &:active {
+                    background-color: darken($primary, 5);
+                }
+            }
+        }
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background: darken($background,5);
+    transition: $cubic;
+    @extend %bg-cover;
+
+    &.show {
+        opacity: 0.8;
+    }
+}
+
+.close {
+    font-weight: 100;
+    font-size: 32px;
+    opacity: .6;
+    text-shadow: none;
+    color: $global-text;
+
+    &:hover, &:focus, &:active, &:not(:disabled):not(.disabled):active, &.visible {
+        outline: none;
+        box-shadow: none;
+        opacity: .5;
+    }
+}
+
+.select2-container--default {
+    .select2-selection--multiple, .select2-selection--single {
+        background-color: darken($global-bg, 4);
+        border: 2px solid darken($global-bg, 8) !important;
+        border-radius: $radius;
+        color: $text-color;
+        min-height: 36px;
+
+        .select2-selection__choice__remove, .select2-selection__rendered {
+            color: $text-color;
+            font-weight: normal;
+            margin-right: 7px;
+
+            &:hover {
+                color: $text-color;
+            }
+        }
+
+        .select2-selection__choice {
+            background-color: $global-bg;
+            border: 0;
+            border-radius: $radius;
+            color: $text-color;
+            padding: 0px 6px;
+            font-size: .86em;
+        }
+    }
+
+    .select2-results__option[aria-selected=true], .select2-results__option--highlighted[aria-selected] {
+        background-color: darken($global-bg, 5);
+        color: $text-color;
+
+        &:hover {
+            background-color: darken($global-bg, 5) !important;
+            color: $text-color !important;
+        }
+    }
+
+    &.select2-container--open, &.select2-container--focus, &:focus, &.select2-container--below {
+        .select2-selection--multiple, .select2-selection--single {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .select2-results > .select2-results__options {
+    }
+}
+
+.custom-control-label::before {
+    background-color: darken($global-bg, 4);
+    border: 2px solid darken($global-bg, 8) !important;
+}
+
+
+
+.select2-dropdown {
+    background-color: darken($global-bg, 4);
+    color: $text-color;
+    border: 0 !important;
+    margin-top: -3px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 2px solid darken($global-bg, 3) !important;
+    border-radius: $radius;
+    background: #fafafa;
+
+    &:focus {
+        color: $primary;
+        border-color: rgba($primary,.25) !important;
+        box-shadow: 0 0 0.2rem $background;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.accordion {
+    h5 {
+        color: $primary;
+        display: block;
+        padding: $grid/2 $grid/3*2;
+        font-size: 1.125em;
+        transition: $cubic;
+        margin: 0;
+    }
+
+    .card {
+        margin-bottom: 0;
+        border-radius: $radius;
+        border: 2px solid darken($global-bg, 3);
+        box-shadow: none;
+
+        .card-header {
+            border: 0;
+            color: $text-color;
+            background-color: $global-bg;
+            border-color: darken($global-bg,1);
+            padding: 0;
+            user-select: none;
+
+            .fa {
+                margin-right: 10px;
+            }
+
+            .card-title, .btn-link {
+                color: $global-text;
+                display: block;
+                padding: $grid/2 $grid/3*2;
+                font-size: 1.125em;
+                transition: $cubic;
+                margin: 0;
+                box-shadow: none;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:after {
+                    content: "";
+                    position: relative;
+                    top: 1px;
+                    display: inline-block;
+                    font-weight: 600;
+                    font-size: 1.5em;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    float: right;
+                    transition: transform .25s linear;
+                    -webkit-transition: -webkit-transform .25s linear;
+                    color: $global-text;
+
+
+                    @include respond-to($sm) {
+                        position: absolute;
+                        top: 16px;
+                        right: 15px;
+                        font-size: 1em;
+                    }
+                }
+            }
+
+            .card-title[aria-expanded="true"]:after {
+                content: "\2212";
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+
+            .card-title[aria-expanded="false"]:after {
+                content: "\002b";
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                color: #bbb;
+            }
+        }
+    }
+}
+
+.tab-content {
+    padding: 1.75rem;
+    background: $global-bg;
+    box-shadow: $shadow;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-tabs {
+    background: $background;
+    border: 0;
+    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.05);
+   /* position: relative;*/
+    z-index: 2;
+    border-bottom-width: 2px;
+
+    .nav-item {
+        margin-bottom: 0;
+        background: $background;
+
+        &:hover {
+            background: rgba($global-bg,.4);
+
+            .nav-link {
+                color: rgba($text-color,.8);
+                border-width: 2px;
+            }
+        }
+
+        .nav-link {
+            border: 0;
+            padding: 1.25rem 1.75rem;
+            border-radius: 0;
+            color: rgba($text-color,.6);
+            font-weight: 600;
+
+            &.active {
+                color: $primary;
+                background: $global-bg;
+            }
+        }
+    }
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: $text-color;
+    background-color: lighten($global-bg,4);
+    border-color: lighten($global-bg,8);
+}
+
+.nav-pills {
+    padding: 1.75rem;
+    border: 0;
+    box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.1);
+    background: $global-bg;
+    position: relative;
+    z-index: 2;
+
+    .nav-item {
+        margin-bottom: 0;
+        border-radius: $radius;
+
+        & + .nav-item {
+            .nav-link, &.nav-link {
+                margin-left: 10px;
+            }
+        }
+
+        &:hover { 
+            .nav-link {
+                color: rgba($text-color,.8);
+                background: rgba($global-bg,.4);
+            }
+        }
+        .nav-link {
+            border: 2px solid $background;
+            padding: 0.5rem 1.75rem;
+            border-radius: 0;
+            color: rgba($text-color,.6);
+            font-weight: 600;
+            border-radius: $radius;
+
+            &.active {
+                border: 2px solid $primary;
+                background: $primary;
+                color: #fff;
+                position: relative;
+            }
+        }
+        &.nav-link {
+            border: 2px solid $background;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            color: rgba($text-color,.6);
+            font-weight: 600;
+            border-radius: $radius;
+
+            &.active {
+                border: 2px solid $primary;
+                background: $primary;
+                color: #fff;
+                position: relative;
+            }
+        }
+    }
+
+    .show > .navlink {
+        border: 2px solid $primary;
+        background: $primary;
+        color: #fff;
+        position: relative;
+    }
+
+    &.flex-column {
+        padding: 1.75rem;
+
+
+        & + .nav-item {
+            .nav-link {
+                margin-left: 0px;
+            }
+        }
+
+        .nav-link {
+            border: 2px solid $background;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            color: rgba($text-color,.6);
+            font-weight: 600;
+            border-radius: $radius;
+            margin-bottom: .5rem;
+            margin-left: 0 !important;
+
+            &.active {
+                border: 2px solid $primary;
+                background: $primary;
+                color: #fff;
+            }
+        }
+    }
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: $primary;
+}
+
+.nav-pills .nav-link {
+    color: $global-text; 
+}
+
+.flag-icon.flag-icon-squared {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    top: -2px;
+}
+
+.dropdown-divider {
+    border-color: rgba($text-color, .1);
+}
+
+.bg-light {
+    background-color: $background !important;
+}
+/* ---------- BOOTSTRAP OVERRIDES - END */
+/* ~ */
+
+.list-group {
+    box-shadow: $shadow;
+
+    .list-group-item {
+        padding: 1.25rem 1.75rem;
+        display: block;
+        font-size: .9em;
+        color: $text-color;
+        background: $global-bg;
+        transition: $cubic;
+        border-width: 0;
+        margin: 0;
+
+        .fa-notification-icon {
+            background: $background;
+            padding: 14px;
+            transition: $cubic;
+            font-size: 18px;
+            border-radius: $radius-big;
+        }
+
+        &:hover {
+            text-decoration: none;
+            background: rgba($brand, .04);
+
+            .fa-notification-icon {
+                color: $primary;
+                padding: 14px;
+                font-size: 18px;
+                border-radius: $radius-big;
+            }
+        }
+
+        h5 {
+            font-size: 1.2em;
+            margin: 2px 0;
+        }
+
+        & + .list-group-item {
+            border-top-width: 1px;
+        }
+
+        &.active, &.selected {
+            color: #fff;
+            background: rgba($primary,1);
+        }
+    }
+}
+
+.list-notifications {
+    .list-group {
+        max-height: 352px;
+        overflow-y: auto;
+        margin: 20px 0;
+    }
+}
+
+.popover {
+    font-size: 0.85rem;
+    background-color: $global-bg;
+    color: $text-color;
+    border: 0;
+    box-shadow: $shadow;
+    border-radius: $radius;
+
+    .popover-header {
+        padding: 0.75rem 1rem;
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        background-color: darken($global-bg,2);
+        border-bottom: 0;
+        border-top-left-radius: calc($radius - 1px);
+        border-top-right-radius: calc($radius - 1px);
+    }
+
+    .popover-body {
+        padding: 0.75rem 1rem 1rem;
+        color: $text-color;
+    }
+}
+
+.font-smaller {
+    font-size: .9em;
+}
+
+.progress {
+    background: $background;
+}
+
+.progress-bar {
+    background-color: $primary;
+}
+
+.abp-loading {
+    background: rgba(darken($background,5), .15);
+}
+
+.bg-brand {
+    background-color: $brand !important;
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+.bg-secondary {
+    background-color: $secondary !important;
+}
+
+.bg-success {
+    background-color: $success !important;
+}
+
+.bg-info {
+    background-color: $info !important;
+}
+
+.bg-warning {
+    background-color: $warning !important;
+}
+
+.bg-danger {
+    background-color: $danger !important;
+}
+
+.bg-light {
+    background-color: $light !important;
+}
+
+.bg-dark {
+    background-color: $dark !important;
+}
+
+.text-brand {
+    color: $brand !important;
+}
+
+.text-primary {
+    color: $primary !important;
+}
+
+.text-secondary {
+    color: $secondary !important;
+}
+
+.text-success {
+    color: $success !important;
+}
+
+.text-info {
+    color: $info !important;
+}
+
+.text-warning {
+    color: $warning !important;
+}
+
+.text-danger {
+    color: $danger !important;
+}
+
+.text-light {
+    color: $light !important;
+}
+
+.text-dark {
+    color: $dark !important;
+}
+
+
+
+.badge-brand {
+    background-color: $brand !important;
+}
+
+.badge-primary {
+    background-color: $primary !important;
+}
+
+.badge-secondary {
+    background-color: $secondary !important;
+}
+
+.badge-success {
+    background-color: $success !important;
+}
+
+.badge-info {
+    background-color: $info !important;
+}
+
+.badge-warning {
+    background-color: $warning !important;
+}
+
+.badge-danger {
+    background-color: $danger !important;
+}
+
+.badge-light {
+    background-color: $light !important;
+}
+
+.badge-dark {
+    background-color: $dark !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.border {
+    border: 1px solid rgba($text-color, .1);
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba($text-color, .1) !important;
+}
+
+.border-top {
+    border-top: 1px solid rgba($text-color, .1) !important;
+}
+
+.border-left {
+    border-left: 1px solid rgba($text-color, .1) !important;
+}
+
+.border-right {
+    border-right: 1px solid rgba($text-color, .1) !important;
+}
+
+
+
+.border-brand {
+    border-color: $brand !important;
+}
+
+.border-primary {
+    border-color: $primary !important;
+}
+
+.border-secondary {
+    border-color: $secondary !important;
+}
+
+.border-success {
+    border-color: $success !important;
+}
+
+.border-info {
+    border-color: $info !important;
+}
+
+.border-warning {
+    border-color: $warning !important;
+}
+
+.border-danger {
+    border-color: $danger !important;
+}
+
+.border-light {
+    border-color: $light !important;
+}
+
+.border-dark {
+    border-color: $dark !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.font-size-xs {
+    font-size: .9em;
+}
+
+.opacity-50 {
+    opacity: .5;
+}
+
+.vakata-context, .vakata-context ul {
+    background: $global-bg;
+    border: 2px solid darken($global-bg, 3);
+    box-shadow: $shadow, $shadow;
+    border-radius: $radius/2;
+}
+
+.vakata-context li > a {
+    color: $global-text;
+    text-shadow: 1px 1px 0 $background;
+    border-radius: $radius/2;
+
+    &:hover {
+        background-color: rgba($primary, .1);
+        box-shadow: $shadow;
+    }
+}
+
+.vakata-context .vakata-context-hover > a {
+    background-color: rgba($primary, .1);
+    box-shadow: $shadow;
+}
+
+.vakata-context .vakata-context-separator > a, .vakata-context .vakata-context-separator > a:hover {
+    background: rgba($global-text, .2);
+    border-top: 1px solid rgba($global-bg, .5);
+    border-left: 1px solid rgba($global-text, .1);
+}
+
+.vakata-context li > a .vakata-contextmenu-sep {
+    border-left: 1px solid rgba($global-text, .1);
+    background: rgba($global-text, .1);
+}
+
+.mw-65 {
+    max-width: 65% !important;
+}
+
+.w-lp-auto {
+    width: auto !important;
+}
+
+hr.divider.divider-solid {
+    border-color: rgba($global-text, .1);
+}
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+// GLOBAL PLACEHOLDERS
+/* ~ */
+/* ---------- GLOBAL PLACEHOLDERS - START */
+%bg-cover {
+    background-attachment: fixed !important;
+    background-size: contain !important;
+}
+%ellipsis {
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* ---------- GLOBAL PLACEHOLDERS - END */
+/* ~ */

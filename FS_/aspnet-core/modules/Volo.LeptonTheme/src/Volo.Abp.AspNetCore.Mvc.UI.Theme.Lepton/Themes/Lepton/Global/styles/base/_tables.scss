@@ -1,0 +1,1165 @@
+/* ~ */
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: darken($global-bg, 2);
+}
+
+.table-bordered th,
+.table-bordered td {
+    border-color: darken($global-bg, 4);
+}
+
+.table .thead-dark th {
+    color: $text-color;
+    background-color: darken($global-bg, 3);
+    border-color: darken($global-bg, 8);
+}
+
+.table thead th {
+    border-color: darken($global-bg, 8);
+}
+
+//
+// Tables
+// --------------------------------------------------
+
+table {
+    background-color: $global-bg;
+    color: $text-color;
+}
+
+caption {
+    color: $text-color;
+    opacity: 0.6;
+}
+
+.table {
+    color: $text-color;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border-top: 1px solid darken($global-bg, 4);
+            }
+        }
+    }
+
+    > thead > tr > th {
+        border-bottom: 2px solid darken($global-bg, 4);
+    }
+
+    > tbody + tbody {
+        border-top: 1px solid darken($global-bg, 4);
+    }
+
+    .table {
+        background-color: $background;
+    }
+
+    &.table-bordered {
+        border: 1px solid darken($global-bg, 4);
+
+        > thead,
+        > tbody,
+        > tfoot {
+            > tr {
+                > th,
+                > td {
+                    border: 1px solid darken($global-bg, 8);
+                }
+            }
+        }
+
+        > thead > tr {
+            > th,
+            > td {
+                border-bottom-width: 1px !important;
+            }
+        }
+    }
+
+    &.table-striped {
+        > tbody > tr:nth-of-type(odd) {
+            background-color: darken($global-bg, 4);
+        }
+    }
+
+    &.table-dark {
+        color: $global-bg;
+        background-color: darken($text-color, 3);
+        border-color: darken($text-color, 8);
+
+        > thead,
+        > tbody,
+        > tfoot {
+            > tr {
+                > th,
+                > td {
+                    border-color: darken($text-color, 12);
+                }
+            }
+        }
+
+        &.table-striped {
+            > thead,
+            > tbody,
+            > tfoot {
+                > tr {
+                    > th,
+                    > td {
+                        border-color: darken($text-color, 12);
+                    }
+                }
+            }
+
+            > tbody > tr:nth-of-type(odd) {
+                background-color: darken($text-color, 8);
+                border-color: darken($text-color, 8);
+            }
+        }
+    }
+}
+
+.table-hover {
+    > tbody > tr:hover {
+        background-color: lighten($global-bg, 8);
+    }
+}
+
+.table-info,
+.table-info > th,
+.table-info > td,
+.table-danger,
+.table-danger > th,
+.table-danger > td,
+.table-warning,
+.table-warning > th,
+.table-warning > td,
+.table-success,
+.table-success > th,
+.table-success > td {
+    color: #333;
+}
+/* ---------- DATATABLES - START */
+.dataTables_wrapper {
+    .btn {
+        &:hover,
+        &:focus,
+        &:active,
+        &:not(:disabled):not(.disabled):active {
+        }
+    }
+}
+
+table.dataTable thead > tr > th.sorting_asc,
+table.dataTable thead > tr > th.sorting_desc,
+table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+    padding-right: 20px;
+}
+
+.dataTables_wrapper {
+    box-shadow: $shadow;
+    border-radius: $radius;
+    padding: 0;
+}
+
+.card .dataTables_wrapper {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    /*margin-left: -$grid;
+    margin-right: -$grid;
+    margin-bottom: -$grid;
+    margin-top: -$grid;
+    width: calc( 100% + 49px );*/
+    border: 1px solid $global-bg;
+    border-width: 0 1px;
+}
+
+.dataTables_scrollBody {
+    min-height: 245px;
+}
+
+table.dataTable {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    thead,
+    tfoot {
+        th {
+            padding: 0.75rem 1rem;
+            font-size: 0.9em;
+            color: rgba($global-text, 0.5);
+            vertical-align: bottom;
+            line-height: 1.25;
+            border-bottom: 1px solid darken($global-bg, 05);
+            font-weight: 600;
+            background: $global-bg;
+
+            & + th {
+            }
+
+            &:after,
+            &:before {
+                opacity: 0.4 !important;
+                font-weight: 900;
+                margin-top: -1px;
+                transition: $cubic;
+            }
+
+            &:hover {
+                &:after,
+                &:before {
+                    opacity: 0.8 !important;
+                    font-weight: 900;
+                }
+            }
+
+            &.sorting_asc {
+                &:before {
+                    color: $primary;
+                    opacity: 1 !important;
+                }
+            }
+
+            &.sorting_desc {
+                &:after {
+                    color: $primary;
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+
+    thead {
+        tr {
+            th {
+                border-top: 0;
+
+                input[type="text"] {
+                    border: 0;
+                    background: $global-bg;
+                    margin: -1rem;
+                    width: calc(100% + 1.6rem);
+                    padding: 0 1rem;
+                    height: 25px;
+                    font-size: 0.9em;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    opacity: 0.5;
+                    transition: $cubic;
+
+                    &:focus {
+                        opacity: 1;
+                        outline: none;
+                        box-shadow: none;
+                        background: #fff;
+                    }
+                }
+            }
+
+            &:last-child {
+                th {
+                    border-bottom: 2px solid darken($global-bg, 3);
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            transition: $cubic-2;
+            background: $global-bg;
+            z-index: 1;
+
+            &.even {
+            }
+
+            &:hover {
+                td {
+                    border-bottom-color: rgba($primary, 0.25);
+                }
+            }
+
+            td {
+                padding: 0 1rem;
+                vertical-align: middle;
+                height: 60px;
+                transition: $cubic-2;
+                border-bottom: 1px solid darken($global-bg, 05);
+                border-top: 0;
+                color: rgba($global-text, 0.7);
+
+                & + td {
+                }
+
+                &.highlight {
+                }
+
+                .btn-group {
+                    .btn {
+                        &.btn-link {
+                            color: $secondary;
+                            border: 0;
+
+                            &:hover, &:focus, &:active {
+                                text-decoration: none;
+                                background: $background;
+                                box-shadow: none;
+                            }
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+
+                &.sorting_1 {
+                    color: $global-text;
+                }
+            }
+        }
+    }
+
+    tfoot {
+        th {
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 0;
+            vertical-align: baseline;
+        }
+    }
+
+    .form-control,
+    .custom-select {
+        border-width: 1px !important;
+    }
+}
+
+.action-col {
+    vertical-align: middle;
+
+    .btn-group {
+        .btn {
+            &.btn-link {
+                color: $secondary;
+                border: 0;
+
+                &:hover, &:focus, &:active {
+                    text-decoration: none;
+                    background: $background;
+                    box-shadow: none;
+                }
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .btn {
+        &.btn-link {
+            color: $secondary;
+            border: 0;
+
+            &:hover, &:focus, &:active {
+                text-decoration: none;
+                background: $background;
+                box-shadow: none;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.table-col-sm {
+    width: 40px;
+}
+
+.paginate_button {
+    &.page-item {
+        margin-left: 1px;
+
+        a.page-link {
+            padding: 6px 10px !important;
+            border-radius: $radius;
+            transition: $cubic;
+            border: 0 !important;
+            background: none;
+            min-width: 27px;
+            text-align: center;
+            color: $text-color;
+
+            &:hover {
+                background: darken($global-bg, 05);
+            }
+        }
+
+        &.active {
+            a.page-link {
+                box-shadow: $shadow-big;
+                background: $primary;
+                color: #fff;
+            }
+        }
+
+        &.previous,
+        &.next {
+            a.page-link {
+                border: 0;
+                color: $text-color;
+                background: none;
+            }
+
+            &.disabled {
+                a.page-link {
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+}
+
+.dataTables_filter {
+    background: $global-bg;
+    padding: 0.75rem;
+
+    label {
+        margin: 0;
+        font-size: 0.8em;
+        font-weight: bold !important;
+        color: rgba($global-text, 0.5);
+        text-transform: uppercase;
+    }
+}
+
+.dataTable_footer {
+    background: $global-bg;
+    color: rgba($text-color, 0.75);
+    margin: 0 !important;
+    min-height: 48px;
+    border-top: 2px solid darken($global-bg, 3);
+}
+
+.dataTables_paginate,
+.dataTables_info,
+.dataTables_length {
+    margin: 0;
+    padding: 0.5rem 0.25rem !important;
+    font-size: 0.9em !important;
+}
+
+.dataTables_info {
+    line-height: 32px;
+    opacity: 0.5;
+    font-size: 0.9em !important;
+}
+
+.dataTables_length {
+    margin: 2px 0;
+    font-size: 0.9em !important;
+
+    label {
+        margin: 0 !important;
+    }
+}
+
+td.dataTables_empty {
+    padding: 2rem !important;
+}
+
+.dataTable tbody tr td div.dropdown ul.dropdown-menu li:hover {
+    background: darken($global-bg, 1);
+}
+/* ---------- DATATABLES - END */
+/* ~ */
+
+/* --------------- PRIMENG TABLES */
+$color_1: $text-color;
+$color_2: lighten($text-color, 8);
+$color_3: $global-bg;
+$font_family_1: $poppins;
+$background_color_1: darken($global-bg, 4);
+$background_color_2: $global-bg;
+$background_color_3: darken($global-bg, 8);
+$background_color_4: darken($global-bg, 8);
+$background_color_5: inherit;
+$background_color_6: darken($global-bg, 2);
+$background_color_7: darken($global-bg, 10);
+
+/* Sections */
+/* Paginator */
+/* Scrollable */
+/* Frozen Columns */
+/* Resizable */
+/* Edit */
+/* Reorder */
+/* Responsive */
+/* Loader */
+.ui-table {
+    position: relative;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .ui-table-thead {
+        > tr {
+            > th {
+                padding: 0.25em 0.5em;
+            }
+        }
+    }
+
+    .ui-table-tbody {
+        > tr {
+            > td {
+                padding: 0.25em 0.5em;
+            }
+
+            > td.ui-editing-cell {
+                padding: 0;
+
+                p-celleditor {
+                    > * {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-table-tfoot {
+        > tr {
+            > td {
+                padding: 0.25em 0.5em;
+            }
+        }
+    }
+
+    .ui-sortable-column {
+        cursor: pointer;
+    }
+
+    p-sorticon {
+        vertical-align: middle;
+    }
+
+    .ui-column-resizer {
+        display: block;
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        margin: 0;
+        width: 0.5em;
+        height: 100%;
+        padding: 0px;
+        cursor: col-resize;
+        border: 1px solid transparent;
+    }
+
+    .ui-column-resizer-helper {
+        width: 1px;
+        position: absolute;
+        z-index: 10;
+        display: none;
+    }
+
+    .ui-table-loading-icon {
+        font-size: 2em;
+    }
+
+    .pagination-wrapper {
+        background-color: $global-bg;
+        border: 1px solid darken($global-bg, 5);
+
+        .page-link {
+            color: $text-color;
+
+            &:hover {
+                background-color: darken($global-bg, 5);
+                color: $text-color;
+            }
+        }
+
+        .page-item.active {
+            .page-link {
+                background-color: $primary;
+                color: $global-bg;
+            }
+        }
+    }
+}
+
+.ui-table-auto-layout {
+    > .ui-table-wrapper {
+        overflow-x: auto;
+
+        > table {
+            table-layout: auto;
+        }
+    }
+}
+
+.ui-table-caption {
+    padding: 0.25em 0.5em;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 0 none;
+}
+
+.ui-table-summary {
+    padding: 0.25em 0.5em;
+    text-align: center;
+    font-weight: bold;
+    border-top: 0 none;
+}
+
+.ui-table-scrollable-wrapper {
+    position: relative;
+}
+
+.ui-table-scrollable-header {
+    overflow: hidden;
+    border: 0 none;
+}
+
+.ui-table-scrollable-footer {
+    overflow: hidden;
+    border: 0 none;
+}
+
+.ui-table-scrollable-body {
+    overflow: auto;
+    position: relative;
+}
+
+.ui-table-virtual-table {
+    position: absolute;
+}
+
+.ui-table-loading-virtual-table {
+    display: none;
+}
+
+.ui-table-frozen-view {
+    .ui-table-scrollable-body {
+        overflow: hidden;
+    }
+
+    > .ui-table-scrollable-body {
+        > table {
+            > .ui-table-tbody {
+                > tr {
+                    > td {
+                        &:last-child {
+                            border-right: 0 none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ui-table-unfrozen-view {
+    position: absolute;
+    top: 0px;
+}
+
+.ui-table-resizable {
+    > .ui-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .ui-table-thead {
+        > tr {
+            > th {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .ui-table-tfoot {
+        > tr {
+            > td {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .ui-table-tbody {
+        > tr {
+            > td {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .ui-resizable-column {
+        background-clip: padding-box;
+        position: relative;
+    }
+}
+
+.ui-table-resizable-fit {
+    .ui-resizable-column {
+        &:last-child {
+            .ui-column-resizer {
+                display: none;
+            }
+        }
+    }
+}
+
+.ui-table-reorder-indicator-up {
+    position: absolute;
+    display: none;
+}
+
+.ui-table-reorder-indicator-down {
+    position: absolute;
+    display: none;
+}
+
+.ui-table-responsive {
+    .ui-table-tbody {
+        > tr {
+            > td {
+                .ui-column-title {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.ui-table-loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.ui-table-loading-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    margin-top: -1em;
+    margin-left: -1em;
+}
+
+body {
+    .ui-table {
+        .ui-table-caption {
+            background-color: $background_color_1;
+            color: $color_1;
+            border: 1px solid darken($global-bg, 8);
+            padding: 0.571em 1em;
+            text-align: center;
+            border-bottom: 0 none;
+            font-weight: 700;
+        }
+
+        .ui-table-summary {
+            background-color: $background_color_1;
+            color: $color_1;
+            border: 1px solid darken($global-bg, 8);
+            padding: 0.571em 1em;
+            text-align: center;
+            border-top: 0 none;
+            font-weight: 700;
+        }
+
+        .ui-table-thead {
+            > tr {
+                > th {
+                    padding: 0.571em 0.857em;
+                    border: 1px solid darken($global-bg, 8);
+                    font-weight: 700;
+                    color: $color_1;
+                    background-color: $background_color_1;
+                }
+            }
+        }
+
+        .ui-table-tbody {
+            > tr {
+                > td,
+                .empty-row-content {
+                    padding: 0.571em 0.857em;
+                    background-color: $background_color_5;
+                    border: 1px solid darken($global-bg, 8);
+                }
+
+                background-color: $background_color_2;
+                color: $color_1;
+
+                &:nth-child(even) {
+                    background-color: $background_color_6;
+                }
+
+                &:nth-child(even).ui-state-highlight {
+                    background-color: $background_color_4;
+                    color: $color_3;
+
+                    a {
+                        color: $color_3;
+                    }
+                }
+
+                &:nth-child(even).ui-contextmenu-selected {
+                    background-color: $background_color_4;
+                    color: $color_3;
+                }
+            }
+
+            > tr.ui-state-highlight {
+                background-color: $background_color_4;
+                color: $color_3;
+
+                a {
+                    color: $color_3;
+                }
+            }
+
+            > tr.ui-contextmenu-selected {
+                background-color: $background_color_4;
+                color: $color_3;
+            }
+
+            > tr.ui-table-dragpoint-top {
+                > td {
+                    -webkit-box-shadow: inset 0 2px 0 0 #007ad9;
+                    -moz-box-shadow: inset 0 2px 0 0 #007ad9;
+                    box-shadow: inset 0 2px 0 0 #007ad9;
+                }
+            }
+
+            > tr.ui-table-dragpoint-bottom {
+                > td {
+                    -webkit-box-shadow: inset 0 -2px 0 0 #007ad9;
+                    -moz-box-shadow: inset 0 -2px 0 0 #007ad9;
+                    box-shadow: inset 0 -2px 0 0 #007ad9;
+                }
+            }
+        }
+
+        .ui-table-tfoot {
+            > tr {
+                > td {
+                    padding: 0.571em 0.857em;
+                    border: 1px solid darken($global-bg, 8);
+                    font-weight: 700;
+                    color: $color_1;
+                    background-color: $background_color_2;
+                }
+            }
+        }
+
+        .ui-sortable-column {
+            .ui-sortable-column-icon {
+                color: $color_2;
+            }
+
+            &:not(.ui-state-highlight) {
+                &:hover {
+                    background-color: $background_color_3;
+                    color: $color_1;
+
+                    .ui-sortable-column-icon {
+                        color: $color_1;
+                    }
+                }
+            }
+        }
+
+        .ui-sortable-column.ui-state-highlight {
+            background-color: $background_color_4;
+            color: $color_3;
+
+            .ui-sortable-column-icon {
+                color: $color_3;
+            }
+        }
+
+        .ui-editable-column {
+            input {
+                font-size: 14px;
+                font-family: $font_family_1;
+
+                &:focus {
+                    outline: 1px solid darken($global-bg, 12);
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        .ui-column-resizer-helper {
+            background-color: $background_color_4;
+        }
+    }
+
+    .ui-table.ui-table-hoverable-rows {
+        .ui-table-tbody {
+            > tr.ui-selectable-row {
+                &:not(.ui-state-highlight) {
+                    &:not(.ui-contextmenu-selected) {
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $background_color_7;
+                            color: $color_1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 40em) {
+    .ui-table-responsive {
+        .ui-table-thead {
+            > tr {
+                > th {
+                    display: none !important;
+                }
+            }
+        }
+
+        .ui-table-tfoot {
+            > tr {
+                > td {
+                    display: none !important;
+                }
+            }
+        }
+
+        .ui-table-tbody {
+            > tr {
+                > td {
+                    text-align: left;
+                    display: block;
+                    border: 0 none;
+                    width: 100% !important;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    float: left;
+                    clear: left;
+
+                    .ui-column-title {
+                        padding: 0.4em;
+                        min-width: 30%;
+                        display: inline-block;
+                        margin: -0.4em 1em -0.4em -0.4em;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    body {
+        .ui-table.ui-table-responsive {
+            .ui-table-tbody {
+                > tr {
+                    > td {
+                        border: 0 none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.abp-confirm .abp-confirm-footer {
+    background: $global-bg;
+}
+
+.abp-confirm .ui-toast-message-content {
+    background-color: $global-bg;
+    color: $text-color;
+}
+
+body abp-toast .ui-toast .ui-toast-message.ui-toast-message-error {
+    border: 2px solid $danger;
+    background-color: $global-bg;
+    color: $text-color;
+}
+
+body
+abp-toast
+.ui-toast
+.ui-toast-message.ui-toast-message-error
+.ui-toast-message-content
+.ui-toast-icon {
+    color: $danger;
+}
+
+body abp-toast .ui-toast .ui-toast-message.ui-toast-message-warn {
+    border: 2px solid $warning;
+    background-color: $global-bg;
+    color: $text-color;
+}
+
+body
+abp-toast
+.ui-toast
+.ui-toast-message.ui-toast-message-warn
+.ui-toast-message-content
+.ui-toast-icon {
+    color: $warning;
+}
+
+body abp-toast .ui-toast .ui-toast-message.ui-toast-message-success {
+    border: 2px solid $success;
+    background-color: $global-bg;
+    color: $text-color;
+}
+
+body
+abp-toast
+.ui-toast
+.ui-toast-message.ui-toast-message-success
+.ui-toast-message-content
+.ui-toast-icon {
+    color: $success;
+}
+
+body abp-toast .ui-toast .ui-toast-message.ui-toast-message-info {
+    border: 2px solid $info;
+    background-color: $global-bg;
+    color: $text-color;
+}
+
+body
+abp-toast
+.ui-toast
+.ui-toast-message.ui-toast-message-info
+.ui-toast-message-content
+.ui-toast-icon {
+    color: $info;
+}
+
+abp-toast .ui-toast-close-icon {
+    color: $text-color !important;
+}
+
+abp-loader-bar .abp-progress {
+    background-color: $brand !important;
+}
+
+.dataTable tbody tr td div.dropdown ul.dropdown-menu li {
+    cursor: pointer;
+    padding: 0;
+
+    a {
+        padding: 6px 18px
+    }
+}
+
+
+
+.ngx-datatable.material {
+    background: $global-bg;
+    box-shadow: $shadow;
+    color: $global-text;
+}
+
+.ngx-datatable.material .datatable-header {
+    border-bottom: 1px solid darken($global-bg, 5);
+}
+
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover, .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+    background-color: darken($global-bg, 5);
+}
+
+.ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+    color: rgba($global-text, 0.87);
+}
+
+.bordered .datatable-body-row {
+    border-top: 1px solid darken($global-bg, 5);
+}
+
+.ngx-datatable.material .datatable-header .datatable-header-cell {
+    background: $global-bg;
+    color: $global-text;
+}
+
+.ngx-datatable.material .datatable-footer {
+    color: rgba($global-text, 0.54);
+}
+
+.ngx-datatable.material .datatable-footer .datatable-pager li.disabled a {
+    color: rgba($global-text, 0.26) !important;
+}
+
+.ngx-datatable.material .datatable-footer .datatable-pager a {
+    color: rgba($global-text, 0.54);
+}
+
+.ngx-datatable.material .datatable-footer .datatable-pager li.active a {
+    background-color: $primary;
+    color: #fff;
+}
+
+.ngx-datatable.material .datatable-header .resize-handle {
+    border-right: 1px solid darken($global-bg, 5);
+}
+
+.ant-tree {
+    background: $global-bg !important;
+}
+
+.ant-tree .ant-tree-node-content-wrapper:hover {
+    background-color: darken($global-bg, 5) !important;
+}
+
+
+
+.page-item {
+    .page-link {
+        color: $global-text;
+        background-color: $global-bg;
+        border: 1px solid darken($global-bg, 5);
+    }
+
+    &.disabled {
+        .page-link {
+            color: $global-text;
+            background-color: $global-bg;
+            border-color: darken($global-bg, 5);
+            opacity: .5;
+        }
+    }
+}
+
+.modal-dialog {
+    z-index: 1050;
+}
+
+table.table {
+    tbody {
+        tr.table-row-selectable.bg-primary {
+            background-color: rgba($global-text, 0.08) !important;
+        }
+    }
+}

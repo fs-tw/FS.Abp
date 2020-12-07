@@ -1,0 +1,30 @@
+﻿@using Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme.Components.ApplicationLayout.Navigation
+<header>
+    <MainHeaderBranding/>
+    <nav class="navbar navbar-expand-xl navbar-dark d-lg-none nav-mobile">
+        <button @onclick="ToggleToolbarNav" class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarToolbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-user"></i>
+        </button>
+        <button @onclick="ToggleSidebarNav" class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-align-justify"></i>
+        </button>
+    </nav>
+    <nav class="navbar navbar-expand-lg user-nav-mobile">
+        <div class="collapse navbar-collapse d-lg-block toolbar-nav-wrapper @(IsToolbarNavShown ? "show" : "")" id="navbarToolbar">
+            <ul class="navbar-nav toolbar-nav ml-auto">
+                <MainHeaderToolbar/>
+            </ul>
+        </div>
+    </nav>
+    <div class="lp-sidebar collapse navbar-collapse d-lg-block @(IsSidebarNavShown ? "show" : "")" id="navbarSidebar" @onmouseover="OnNavBarMouseOverAsync" @onmouseout="OnNavbarMouseOutAsync">
+        <div class="lp-sidebar-header">
+            <div class="lp-toggle-sidebar" @onclick="ToggleNavbarStatusAsync">
+                <i class="fa fa-align-left material-icons lp-open-icon"></i>
+                <i class="fa fa-align-justify material-icons lp-close-icon"></i>
+            </div>
+        </div>
+        <div class="lp-sidebar-wrapper">
+            <MainSiderbar/>
+        </div>
+    </div>
+</header>

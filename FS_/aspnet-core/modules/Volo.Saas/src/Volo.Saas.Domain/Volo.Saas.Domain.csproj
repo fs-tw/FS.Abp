@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volo.Saas.Domain.Shared\Volo.Saas.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Data" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.MultiTenancy" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Volo\Saas\Localization\Domain\*.json" />
+    <Content Remove="Volo\Saas\Localization\Domain\*.json" />
+  </ItemGroup>
+
+</Project>

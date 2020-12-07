@@ -1,0 +1,59 @@
+﻿@using Localization.Resources.AbpUi
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.MultiTenancy
+@using Volo.Abp.UI.Navigation
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+@inject ICurrentTenant CurrentTenant
+@inject IHtmlLocalizer<AbpUiResource> L
+@model ApplicationMenu
+
+<abp-dropdown>
+    <abp-dropdown-button link="true" id="dropdownMenuUser">
+        <img src="@($"/api/account/profile-picture-file/{CurrentUser.GetId()}")" width="21" class="user-avatar">
+
+        @if (@CurrentUser.TenantId != null)
+        {
+            <span><i>@CurrentTenant.Name</i>\@CurrentUser.UserName</span>
+        }
+        else
+        {
+            <span>@CurrentUser.UserName</span>
+        }
+
+    </abp-dropdown-button>
+
+    <abp-dropdown-menu align="Right" aria-labelledby="dropdownMenuUser">
+        <abp-row class="p-2">
+            <abp-column size="Auto" class="pr-0">
+                <img src="@($"/api/account/profile-picture-file/{CurrentUser.GetId()}")" class="user-avatar-big" width="48">               
+            </abp-column>
+            <abp-column class="pl-2">
+                <span>@L["Welcome"]</span><br />
+                @if (@CurrentUser.TenantId != null)
+                {
+                    <small><i>@CurrentTenant.Name</i>\</small><strong>@CurrentUser.UserName</strong>
+                }
+                else
+                {
+                    <strong>@CurrentUser.UserName</strong>
+                }
+            </abp-column>
+        </abp-row>
+        @if (Model.Items.Any())
+        {
+            <abp-dropdown-divider />
+            foreach (var menuItem in Model.Items)
+            {
+                var elementId = string.IsNullOrEmpty(menuItem.ElementId) ? string.Empty : menuItem.ElementId;
+                var cssClass = string.IsNullOrEmpty(menuItem.CssClass) ? string.Empty : menuItem.CssClass;
+                var disabled = menuItem.IsDisabled ? "disabled" : string.Empty;
+                var url = string.IsNullOrEmpty(menuItem.Url) ? "#" : Url.Content(menuItem.Url);
+
+                <abp-dropdown-item class="@cssClass @disabled" href="@url" id="@elementId" target="@menuItem.Target">
+                    @menuItem.DisplayName
+                </abp-dropdown-item>
+            }
+        }
+    </abp-dropdown-menu>
+</abp-dropdown>
