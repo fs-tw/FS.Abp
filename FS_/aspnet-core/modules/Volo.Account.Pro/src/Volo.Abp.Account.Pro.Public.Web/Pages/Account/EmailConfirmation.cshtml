@@ -1,0 +1,15 @@
+﻿@page
+@model Volo.Abp.Account.Public.Web.Pages.Account.EmailConfirmationModel
+@inject Volo.Abp.AspNetCore.Mvc.UI.Layout.IPageLayout PageLayout
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@inject IHtmlLocalizer<AccountResource> L
+@{
+    PageLayout.Content.Title = L["EmailConfirmation"].Value;
+}
+<div id="account_module_email_confirmed_page_content">
+    <p>@L["YourEmailAddressIsSuccessfullyConfirmed"]</p>
+    <div class="mt-4">
+        <a abp-button="Primary" href="@Url.Content(Model.ReturnUrl)">@L["GoToTheApplication"]</a>
+    </div>
+</div>

@@ -1,0 +1,244 @@
+﻿body.rtl {
+    direction: rtl;
+    text-align: right;
+
+    .lp-content {
+        padding: 0 $grid*1.5 $grid*1.5 $grid;
+    }
+
+    &.lp-opened-sidebar {
+        .lp-content {
+            padding: 0 $main-menu-width+$grid*1.5 $grid $grid*1.5;
+        }
+
+        .lp-footer {
+            padding-left: auto;
+            padding-right: $main-menu-width+$grid*1.5;
+        }
+    }
+
+    &.lp-closed {
+        .lp-content {
+            padding: 0 $grid*1.5+78 $grid $grid*1.5;
+        }
+
+        .lp-footer {
+            padding-left: auto;
+            padding-right: $grid*2+78;
+        }
+    }
+
+    &.lp-topmenu {
+        .lp-footer {
+            padding-left: auto;
+            padding-right: $grid*2/3;
+        }
+    }
+
+    &.lp-boxed {
+
+        .lp-footer {
+            padding-left: auto;
+            padding-right: $main-menu-width+$grid*1.5;
+        }
+    }
+
+    .lp-sidebar {
+        left: auto;
+        right: 0;
+    }
+
+    .navbar-brand {
+        left: auto;
+        right: 27px;
+    }
+
+    &.lp-opened-sidebar, &.lp-closed {
+        .lp-toggle-sidebar {
+            left: auto;
+            right: 19px;
+
+            i {
+                left: auto;
+                right: 7px;
+            }
+        }
+
+        .lp-sidebar-navi > ul ul li a, .lp-closed .lp-sidebar .lp-sidebar-navi > ul ul li a {
+            padding-right: 37px;
+            padding-left: 0;
+        }
+
+        .lp-sidebar-navi {
+
+            ul {
+                li {
+
+                    &.current, &.active-page {
+
+                        > ul {
+                            .current, .active-page {
+                                > a {
+                                    &:before {
+                                        margin-left: auto;
+                                        margin-right: -20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > ul {
+                > li.current, > li.active-page {
+
+                    > a {
+                        > .lp-text {
+                            padding-right: 0px;
+                        }
+                    }
+                }
+
+                ul {
+
+                    li {
+                        margin-left: 15px !important;
+                        margin-right: 10px !important;
+
+                        a {
+                            padding-left: auto;
+                            padding-right: $menu-element-padding;
+                        }
+
+                        ul {
+                            li {
+
+                                a {
+                                    padding-left: auto;
+                                    padding-right: $menu-element-padding + 10;
+                                }
+
+                                ul {
+                                    li {
+                                        a {
+                                            padding-left: auto;
+                                            padding-right: $menu-element-padding + 20;
+                                        }
+
+                                        ul {
+                                            li {
+                                                a {
+                                                    padding-left: auto;
+                                                    padding-right: $menu-element-padding + 30;
+                                                }
+
+                                                ul {
+                                                    li {
+                                                        a {
+                                                            padding-left: auto;
+                                                            padding-right: $menu-element-padding + 40;
+                                                        }
+
+                                                        ul {
+                                                            li {
+                                                                a {
+                                                                    padding-left: auto;
+                                                                    padding-right: $menu-element-padding + 50;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .lp-sidebar-wrapper {
+        text-align: right;
+    }
+
+    header .toolbar-nav {
+        padding-right: 10px;
+        font-size: .96em;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        padding-left: 10px;
+    }
+
+    .dropdown-menu-right {
+        left: 0;
+        right: auto;
+    }
+
+    .mCustomScrollBox {
+        direction: rtl;
+    }
+
+    .text-right {
+        text-align: left !important;
+    }
+
+    .text-left {
+        text-align: right !important;
+    }
+
+    .text-md-right {
+        text-align: left !important;
+    }
+
+    .text-md-left {
+        text-align: right !important;
+    }
+
+    .text-lg-right {
+        text-align: left !important;
+    }
+
+    .text-lg-left {
+        text-align: right !important;
+    }
+
+    .card .card-header .card-title {
+        text-align: right;
+    }
+
+    @media only screen and (min-width: 767px) {
+        &.lp-topmenu .lp-sidebar .lp-sidebar-wrapper nav {
+            text-align: right;
+            padding-right: 270px;
+            padding-left: auto;
+        }
+
+        &.lp-topmenu .lp-sidebar .lp-sidebar-wrapper nav ul ul ul {
+            left: auto;
+            right: 100%;
+            text-align: right;
+        }
+
+        &.lp-topmenu .lp-sidebar .lp-sidebar-wrapper nav ul li a {
+            text-align: right;
+        }
+
+        &.lp-topmenu .lp-sidebar .lp-sidebar-wrapper nav ul ul li.has-drop:before {
+            right: auto;
+            left: 16px;
+            top: 17px;
+            border-left: 0;
+            border-right: 5px solid #ffffff;
+        }
+    }
+
+    .nav-mobile {
+        left: 15px;
+        right: auto;
+    }
+}

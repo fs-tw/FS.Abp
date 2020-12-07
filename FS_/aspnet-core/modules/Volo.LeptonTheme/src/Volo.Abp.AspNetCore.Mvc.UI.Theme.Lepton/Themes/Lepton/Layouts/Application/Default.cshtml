@@ -1,0 +1,133 @@
+﻿@using Microsoft.Extensions.Options
+@using Volo.Abp.AspNetCore.Mvc.AntiForgery
+@using Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Bundling
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Content.Alerts
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Content.BreadCrumb
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Content.Title
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Header
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton
+@using Volo.Abp.Ui.Branding
+@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@using Volo.Abp.AspNetCore.Mvc.UI.Widgets.Components.WidgetScripts
+@using Volo.Abp.AspNetCore.Mvc.UI.Widgets.Components.WidgetStyles
+@using Volo.Abp.LeptonTheme.Management
+@using Volo.Abp.Localization
+@using Volo.Abp.Settings
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@inject IBrandingProvider BrandingProvider
+@inject ISettingProvider SettingProvider
+@inject IOptions<LeptonThemeOptions> LeptonThemeOptions
+@{
+    Layout = null;
+    AbpAntiForgeryManager.SetCookie();
+    var bodyClass = string.Empty;
+
+    var pageMetaDescription = ViewBag.MetaDescription == null  ?? "";
+
+    @if (!LeptonThemeOptions.Value.EnableDemoFeatures)
+    {
+        if (Convert.ToBoolean(await SettingProvider.GetOrNullAsync(LeptonThemeSettingNames.Layout.Boxed)))
+        {
+            bodyClass += " lp-boxed";
+        }
+
+        if (await SettingProvider.GetOrNullAsync(LeptonThemeSettingNames.Layout.MenuPlacement) == MenuPlacement.Top.ToString())
+        {
+            bodyClass += " lp-topmenu";
+        }
+        else
+        {
+            if (await SettingProvider.GetOrNullAsync(LeptonThemeSettingNames.Layout.MenuStatus) == MenuStatus.AlwaysOpened.ToString())
+            {
+                bodyClass += " lp-opened-sidebar";
+            }
+
+            if (await SettingProvider.GetOrNullAsync(LeptonThemeSettingNames.Layout.MenuStatus) == MenuStatus.OpenOnHover.ToString())
+            {
+                bodyClass += " lp-closed";
+            }
+        }
+    }
+
+    var logoUrl = BrandingProvider.LogoUrl == null ? null : "--logo: url(" + BrandingProvider.LogoUrl + ") !important;";
+    var logoReverseUrl = BrandingProvider.LogoReverseUrl == null ? null : "--logo-reverse: url(" + BrandingProvider.LogoReverseUrl + ") !important;";
+    var langDir = CultureHelper.IsRtl ? "rtl" : string.Empty;
+}
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentCulture.Name" class="openNav" dir="@langDir">
+<head>
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.First, StandardLayouts.Application)
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="@pageMetaDescription">
+    <meta name="author" content="">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="~/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="~/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>@(ViewBag.Title == null ? BrandingProvider.AppName : ViewBag.Title)</title>
+    <abp-style-bundle name="@LeptonThemeBundles.Styles.Global" />
+
+    @* TODO: We can continue with this until find a better way *@
+    @if (logoUrl != null || logoReverseUrl != null)
+    {
+        <style>
+            :root {
+                @logoUrl
+                @logoReverseUrl
+            }
+        </style>
+    }
+
+    @await Component.InvokeAsync(typeof(WidgetStylesViewComponent))
+    @await RenderSectionAsync("styles", false)
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Head.Last, StandardLayouts.Application)
+</head>
+
+<body class="abp-application-layout @bodyClass @langDir">
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.First, StandardLayouts.Application)
+    @if (LeptonThemeOptions.Value.EnableDemoFeatures)
+    {
+        @await Html.PartialAsync("Demo/ThemeSettings.cshtml")
+    }
+
+    @(await Component.InvokeAsync<HeaderViewComponent>())
+
+    <div class="lp-content h-100">
+        <div class="row entry-row">
+            <div class="col-auto">
+                @(await Component.InvokeAsync<ContentTitleViewComponent>())
+            </div>
+            <div class="col-lg-auto pl-lg-0">
+                @(await Component.InvokeAsync<ContentBreadCrumbViewComponent>())
+            </div>
+            <div class="col">
+                <div class="text-lg-right pt-2" id="AbpContentToolbar">
+                    @await RenderSectionAsync("content_toolbar", false)
+                </div>
+            </div>
+        </div>
+        @(await Component.InvokeAsync<ContentAlertsViewComponent>())
+        @RenderBody()
+    </div>
+
+    @await Html.PartialAsync("~/Themes/Lepton/Layouts/Application/_Footer.cshtml")
+
+    <abp-script-bundle name="@LeptonThemeBundles.Scripts.Global" />
+    <script type="text/javascript" src="~/Abp/ApplicationConfigurationScript"></script>
+    <script type="text/javascript" src="~/Abp/ServiceProxyScript"></script>
+
+    @await Component.InvokeAsync(typeof(WidgetScriptsViewComponent))
+
+    @await RenderSectionAsync("scripts", false)
+
+    @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.Last, StandardLayouts.Application)
+</body>
+</html>

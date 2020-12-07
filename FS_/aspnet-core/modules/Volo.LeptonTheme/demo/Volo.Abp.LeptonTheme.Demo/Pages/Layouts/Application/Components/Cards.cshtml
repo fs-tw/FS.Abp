@@ -1,0 +1,17 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Demo.Views.Components.Themes.Shared.Demos.CardsDemo
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@model Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.Components.CardsModel
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Cards"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["BasicElements"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.Components.Cards;
+}
+<div class="lepton-demo lepton-demo-card">
+    @await Component.InvokeAsync(typeof(CardsDemoViewComponent))
+</div> 

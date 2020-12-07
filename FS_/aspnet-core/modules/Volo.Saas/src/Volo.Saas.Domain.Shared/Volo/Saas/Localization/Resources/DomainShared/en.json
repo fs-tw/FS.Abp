@@ -1,0 +1,28 @@
+{
+  "culture": "en",
+  "texts": {
+    "Volo.Saas:DuplicateTenantName": "Tenant name already exist: {Name}",
+    "Menu:Saas": "Saas",
+    "Tenants": "Tenants",
+    "NewTenant": "New tenant",
+    "TenantName": "Tenant name",
+    "DisplayName:TenantName": "Tenant name",
+    "TenantDeletionConfirmationMessage": "Tenant '{0}' will be deleted. Do you confirm that?",
+    "EditionDeletionConfirmationMessage": "Edition '{0}' will be deleted. Do you confirm that?",
+    "ConnectionStrings": "Connection Strings",
+    "DisplayName:DefaultConnectionString": "Default Connection String",
+    "DisplayName:UseSharedDatabase": "Use the Shared Database",
+    "DisplayName:EditionId": "Edition",
+    "Edition": "Edition",
+    "Editions": "Editions",
+    "NewEdition": "New edition",
+    "EditionName": "Edition name",
+    "Name": "Name",
+    "LatestTenants": "Latest tenants",
+    "EditionUsageStatistics": "Edition usage statistics",
+    "DisplayName:AdminEmailAddress": "Tenant admin's email address",
+    "DisplayName:AdminPassword": "Tenant admin's password",
+    "ChangeHistory": "Change History",
+    "ManageHostFeatures": "Manage Host features"
+  }
+}

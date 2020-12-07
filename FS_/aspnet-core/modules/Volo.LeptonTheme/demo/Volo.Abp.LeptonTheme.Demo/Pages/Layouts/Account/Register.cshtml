@@ -1,0 +1,14 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Account
+@model RegisterModel
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Register"].Value;
+}
+<h1>Register</h1>
+
+<div>TODO!</div>

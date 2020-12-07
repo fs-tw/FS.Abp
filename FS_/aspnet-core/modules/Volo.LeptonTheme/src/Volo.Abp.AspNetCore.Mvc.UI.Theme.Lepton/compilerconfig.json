@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "Themes/Lepton/Global/Styles/lepton1.css",
+    "inputFile": "Themes/Lepton/Global/Styles/lepton1.scss"
+  },
+  {
+    "outputFile": "Themes/Lepton/Global/Styles/lepton2.css",
+    "inputFile": "Themes/Lepton/Global/Styles/lepton2.scss"
+  },
+  {
+    "outputFile": "Themes/Lepton/Global/Styles/lepton3.css",
+    "inputFile": "Themes/Lepton/Global/Styles/lepton3.scss"
+  },
+  {
+    "outputFile": "Themes/Lepton/Global/Styles/lepton4.css",
+    "inputFile": "Themes/Lepton/Global/Styles/lepton4.scss"
+  },
+  {
+    "outputFile": "Themes/Lepton/Global/Styles/lepton5.css",
+    "inputFile": "Themes/Lepton/Global/Styles/lepton5.scss"
+  },
+  {
+    "outputFile": "Themes/Lepton/Global/Styles/lepton6.css",
+    "inputFile": "Themes/Lepton/Global/Styles/lepton6.scss"
+  },
+  {
+    "outputFile": "Themes/Lepton/Global/styles/common/_header_toolbar.css",
+    "inputFile": "Themes/Lepton/Global/styles/common/_header_toolbar.scss"
+  }
+]

@@ -12,6 +12,8 @@ import { BannerComponent } from './components/banner/banner.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { THE_PROJECT_THEME_SETTING_TAB_PROVIDERS } from './providers/setting-tab.provider';
 
 export const LAYOUTS = [ApplicationLayoutComponent, AccountLayoutComponent, EmptyLayoutComponent];
 @NgModule({
@@ -20,13 +22,15 @@ export const LAYOUTS = [ApplicationLayoutComponent, AccountLayoutComponent, Empt
     HeaderComponent,
     FooterComponent,
     BannerComponent,
-    ValidationErrorComponent
+    ValidationErrorComponent,
+    SettingsComponent
 
   ],
   exports: [
     ...LAYOUTS,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SettingsComponent
   ],
   entryComponents: [
     ...LAYOUTS
@@ -45,7 +49,8 @@ export class ThemeTheProjectModule {
       ngModule: RootTheProjectModule,
       providers: [
         THE_PROJECT_THEME_STYLES_PROVIDERS,
-        THE_PROJECT_THEME_INITIAL_PROVIDERS
+        THE_PROJECT_THEME_INITIAL_PROVIDERS,
+        THE_PROJECT_THEME_SETTING_TAB_PROVIDERS
       ],
     };
   }

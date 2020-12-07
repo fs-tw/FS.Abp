@@ -1,0 +1,321 @@
+// HEADER TOOLBAR
+/* ---------- ---------- HEADER TOOLBAR STYLES - START */
+
+
+.toolbar-nav {
+    padding-right: 10px;
+    font-size: .96em;
+
+    > .nav-item > * > .dropdown > .btn, > .nav-item > .dropdown > .btn {
+        color: $global-text;
+
+        @include respond-to($sm) {
+            width: 100%;
+            display: block;
+            text-align: left !important;
+            height: 32px;
+            line-height: 22px;
+        }
+
+        i {
+            opacity: .35;
+        }
+
+        &:hover {
+            i {
+                opacity: 1;
+            }
+
+            span {
+                opacity: 1;
+            }
+        }
+
+        &:hover, &:focus, &:active, &:visited {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+
+    .btn {
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-shadow: none;
+        line-height: 26px;
+        border: 0;
+        margin: 10px 0;
+        display: inline-block;
+        transition: $cubic;
+
+        @include respond-to($sm) {
+            height: 44px;
+            line-height: 24px;
+            color: $sidebar-text !important;
+
+            .fa {
+                width: 44px;
+                height: 32px;
+                line-height: 1.8;
+                vertical-align: middle;
+                font-size: 16px;
+                opacity: .5;
+                text-align: center;
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+                opacity: .5;
+                margin: 0 10px;
+            }
+
+            .flag-icon {
+                width: 24px;
+                height: 24px;
+                margin: 0 10px;
+                top: -6px;
+            }
+
+            span {
+                font-size: .96em;
+                opacity: .8;
+            }
+        }
+
+        &:hover, &:focus, &:active, &:visited {
+            outline: none;
+            box-shadow: none;
+        }
+
+        &.dropdown-toggle {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        background: lighten($global-bg,2) !important;
+
+        &.search-dropdown {
+            padding: 2px !important;
+
+            .btn {
+                height: 31px;
+                margin: 0;
+                line-height: 1;
+            }
+        }
+
+        &.dropdown-menu-notifications {
+            min-width: 400px;
+            background: $global-bg;
+            padding: 20px !important;
+
+            .list-group {
+                max-height: 352px;
+                overflow-y: auto;
+                margin: 20px 0;
+                box-shadow: $shadow;
+
+                .list-group-item {
+                    padding: 0;
+
+                    a {
+                        padding: 20px;
+                        display: block;
+                        font-size: .9em;
+                        color: $text-color;
+                        transition: $cubic;
+
+                        .fa-notification-icon {
+                            background: $background;
+                            padding: 14px;
+                            transition: $cubic;
+                            font-size: 18px;
+                            border-radius: $radius-big;
+                        }
+
+                        &:hover {
+                            text-decoration: none;
+                            background: rgba($global-bg, .5);
+
+                            .fa-notification-icon {
+                                color: $primary;
+                                padding: 14px;
+                                font-size: 18px;
+                                border-radius: $radius-big;
+                            }
+                        }
+
+                        h5 {
+                            font-size: 1.2em;
+                            margin: 2px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include respond-to($sm) {
+            margin: 5px 30px 20px;
+            border-radius: $radius;
+
+            &.dropdown-menu-notifications {
+                min-width: auto;
+                background: $global-bg;
+            }
+
+            &.search-dropdown {
+                .btn {
+                    padding: 3px 10px 2px;
+                    color: $text-color;
+                    background: $global-bg;
+
+                    .fa {
+                        color: $text-color;
+                        width: auto;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            height: auto;
+        }
+    }
+
+    > li {
+        > .btn, > .btn-group > .btn {
+            background: none;
+
+            &:hover, &:active, &:visited, &:focus {
+                background: none;
+            }
+        }
+    }
+}
+
+.search-dropdown {
+    min-width: 300px;
+    padding: 10px;
+}
+/*
+
+.lp-topmenu {
+    .toolbar-nav {
+        margin-top: 5px !important;
+        margin-bottom: -5px !important;
+
+        > .nav-item > .dropdown > .btn {
+            color: $sidebar-text !important;
+             
+            span { 
+                color: $brand !important;
+            }
+             
+            &:hover, &:focus, &:active, &:visited { 
+                background: darken($sidebar-bg, .1);
+            }
+        }
+    }
+}
+*/
+
+body.lp-topmenu {
+    header {
+        background: $sidebar-bg;
+        background: $sidebar-bg-gradient;
+        box-shadow: $shadow;
+        color: $sidebar-text;
+        min-height: 63px;
+
+        .toolbar-nav {
+            .btn {
+                color: $sidebar-text;
+
+                span {
+                    color: $sidebar-text;
+                }
+
+                @include respond-to($sm) {
+                    color: $sidebar-text !important;
+                }
+            }
+
+            .dropdown-menu {
+                background: lighten($sidebar-bg,5) !important;
+                color: $sidebar-text;
+
+
+                &.dropdown-menu-notifications {
+                    background: $sidebar-bg;
+                    color: $sidebar-text;
+
+                    .list-group {
+                        background: $sidebar-bg;
+
+                        .list-group-item {
+                            border-color: darken($sidebar-bg, 5);
+
+                            a {
+                                background: darken($sidebar-bg, 3);
+                                color: $sidebar-text;
+
+                                .fa-notification-icon {
+                                    background: $sidebar-bg;
+                                }
+
+                                &:hover {
+                                    background: darken($sidebar-bg, 1);
+
+                                    .fa-notification-icon {
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @include respond-to($sm) {
+
+                    &.dropdown-menu-notifications {
+                        background: $sidebar-bg;
+                    }
+
+                    &.search-dropdown {
+                        .btn {
+                            color: $sidebar-text;
+                            background: $sidebar-bg;
+
+                            .fa {
+                                color: $sidebar-text;
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    color: $sidebar-text;
+                }
+            }
+        }
+    }
+}
+
+@include respond-to($sm) { 
+    .user-nav-mobile {
+        background: $sidebar-bg;
+        top: 60px;
+
+        .toolbar-nav {
+            padding: 5px;
+        }
+    } 
+} 
+    /* ---------- ---------- HEADER TOOLBAR STYLES - END */
+ 

@@ -1,0 +1,17 @@
+{
+  "culture": "sl",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Teme Lepton",
+    "Permission:LeptonThemeSettings": "Nastavitve Teme Lepton",
+    "Permission:LeptonThemeManagement": "Upravljanje Teme Lepton",
+    "DisplayName:BoxedLayout": "'Boxed' postavitev",
+    "DisplayName:MenuPlacement": "Umestitev menija",
+    "DisplayName:MenuStatus": "Status menija",
+    "SuccessfullySaved": "Uspešno shranjeno",
+    "Left": "Levo",
+    "Top": "Zgoraj",
+    "AlwaysOpened": "Vedno odprt",
+    "OpenOnHover": "Odpri, ko je miškin kazalec nad elementom",
+    "DisplayName:Style": "Stil"
+  }
+}

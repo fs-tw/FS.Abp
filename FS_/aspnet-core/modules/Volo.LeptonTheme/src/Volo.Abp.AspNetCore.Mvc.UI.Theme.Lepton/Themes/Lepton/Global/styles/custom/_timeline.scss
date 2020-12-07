@@ -1,0 +1,67 @@
+﻿.lp-timeline {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 75px;
+        width: 3px;
+        top: 0;
+        bottom: 0;
+        background-color: rgba($global-text, .05);
+    }
+
+    .lp-timeline-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 1.5em;
+
+        .lp-timeline-content {
+            flex-grow: 1;
+        }
+
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .lp-timeline-label {
+            width: 75px;
+            padding-right: 10px;
+            flex-shrink: 0;
+            position: relative;
+            color: $global-text;
+            text-align: center;
+            opacity: .5;
+        }
+
+
+        .lp-timeline-badge {
+            flex-shrink: 0;
+            background: $global-bg;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+            margin-top: 0px;
+            margin-left: -8px;
+            margin-right: 18px;
+            font-size: 1.5em;
+            padding: 2px !important;
+            border: 8px solid $global-bg !important;
+
+            span {
+                display: block;
+                border-radius: 100%;
+                width: 6px;
+                height: 6px;
+                background-color: #EBEDF3;
+            }
+        }
+    }
+}

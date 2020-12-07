@@ -1,0 +1,26 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Views.Error.DefaultErrorComponent
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Views.Error
+@using Volo.Abp.Http
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@model Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.CustomPages.ErrorPage401Model
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["ErrorPage401"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["CustomPages"].Value));
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["ErrorPages"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.CustomPages.ErrorPages.ErrorPage401; 
+}
+
+@(await Component.InvokeAsync<LeptonErrorViewComponent>(new
+    {
+        model = new AbpErrorViewModel{
+            ErrorInfo = new RemoteServiceErrorInfo(@L["ClientError"].Value, @L["401Description"].Value, "401"), 
+            HttpStatusCode = 401
+            },
+        defaultErrorMessageKey = "401Message"
+    })) 

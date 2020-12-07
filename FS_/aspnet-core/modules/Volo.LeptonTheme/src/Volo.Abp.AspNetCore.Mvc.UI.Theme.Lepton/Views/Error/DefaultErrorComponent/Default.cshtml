@@ -1,0 +1,23 @@
+﻿@using Localization.Resources.AbpUi
+@using Microsoft.AspNetCore.Mvc.Localization
+@model Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Views.Error.DefaultErrorComponent.LeptonErrorPageModel
+@inject IHtmlLocalizer<AbpUiResource> L
+<div class="error-page-container">
+    <abp-row>
+        <abp-column size="Auto">
+            <div class="status-icon">
+                <i class="fa fa-frown-o text-danger" aria-hidden="true"></i>
+                <span></span>
+            </div>
+        </abp-column>
+        <abp-column>
+            <div class="status-content">
+                <h1>@Model.HttpStatusCode</h1>
+                <h2 class="text-danger mb-0">@L[Model.DefaultErrorMessageKey]<small class="text-muted">@Model.ErrorInfo.Message</small></h2>
+                <p class="mt-3 mb-4">@Model.ErrorInfo.Details</p>
+                <a href="/" class="btn btn-primary">@L["GoHomePage"]</a>
+                <a href="javascript:history.back()" class="mt-4 mb-1 d-block"><i class="fa fa-long-arrow-left"></i> @L["GoBack"]</a>
+            </div>
+        </abp-column>
+    </abp-row>
+</div>

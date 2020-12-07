@@ -1,0 +1,18 @@
+{
+  "culture": "de-DE",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Lepton-Theme",
+    "Permission:LeptonThemeSettings": "Einstellungen vom Lepton-Theme",
+    "Permission:LeptonThemeManagement": "Lepton-Theme-Verwaltung",
+    "DisplayName:BoxedLayout": "Boxed Layout",
+    "DisplayName:MenuPlacement": "Menüplatzierung",
+    "DisplayName:MenuStatus": "Menüstatus",
+    "SuccessfullySaved": "Erfolgreich gespeichert",
+    "Left": "Links",
+    "Top": "Oben",
+    "AlwaysOpened": "Immer geöffnet",
+    "OpenOnHover": "Beim Hovern öffnen",
+    "DisplayName:Style": "Style",
+    "Authentication:YouAreLoggedOut": "Sie sind abgemeldet."
+  }
+}

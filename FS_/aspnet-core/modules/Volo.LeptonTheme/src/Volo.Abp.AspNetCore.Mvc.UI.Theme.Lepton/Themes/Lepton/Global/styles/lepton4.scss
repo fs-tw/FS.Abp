@@ -1,0 +1,130 @@
+/* ALL - START  */ 
+$themes: (
+  'lepton4': (
+    'logo': var(--logo),
+    'logo-reverse': var(--logo-reverse),
+    'base': 12px, 
+    'brand': #29cabf, 
+
+    'primary': #3a6af0,
+    'secondary': #7731f1,
+    'success': #29cabf,
+    'info': #5c9afe,
+    'warning': #efbc00,
+    'danger': #c32d5c,
+    'light': #4d5782, 
+    'dark': #fff, 
+    'default': #fff, 
+
+    'global-text': #ffffff,
+    'global-bg': #2c3146,
+
+    'text-color': #ffffff,
+    'background': #24293e, 
+
+    'sidebar-bg': #2c3146,
+    'sidebar-bg-gradient':  #2c3146,
+    'sidebar-text': #ffffff, 
+
+    'shadow': ( 0px 0px 15px rgba(0, 0, 0, 0.1) , inset 0px 0px 3px rgba(255, 255, 255, 0.05)),
+    'shadow-big': ( 0px 0px 35px rgba(0, 0, 0, 0.1) , inset 0px 0px 5px rgba(255, 255, 255, 0.05)),
+    'shadow-sm': ( 0px 0px 5px rgba(0, 0, 0, 0.1) , inset 0px 0px 1px rgba(255, 255, 255, 0.05)),
+
+    'radius':  5px,
+  ),
+);
+
+@function theme($theme: 'lepton4', $type: 'primary') {
+  $map: map-get($themes, $theme);
+  @return map-get($map, $type);
+}
+
+$theme-name: 'lepton4'; // Lepton Theme - Style Name
+
+$logo: theme($theme-name, 'logo'); // Logo URL as --root
+$logo-reverse: theme($theme-name, 'logo-reverse'); // Logo URL as --root / Colors are reverse (Can be used on login page etc.)
+$base: theme($theme-name, 'base'); // Base font size. Grid dimensions and paddings are adjusted accordingly.
+  
+$brand: theme($theme-name, 'brand');
+$primary: theme($theme-name, 'primary');
+$secondary: theme($theme-name, 'secondary');
+$success: theme($theme-name, 'success');
+$info: theme($theme-name, 'info');
+$warning: theme($theme-name, 'warning');
+$danger: theme($theme-name, 'danger');
+$light: theme($theme-name, 'light');
+$dark: theme($theme-name, 'dark');
+  
+$global-text: theme($theme-name, 'global-text');
+$global-bg: theme($theme-name, 'global-bg');
+
+$text-color: theme($theme-name, 'text-color');
+$background: theme($theme-name, 'background');
+
+$sidebar-bg: theme($theme-name, 'sidebar-bg');
+$sidebar-bg-gradient: theme($theme-name, 'sidebar-bg-gradient');
+$sidebar-text: theme($theme-name, 'sidebar-text'); 
+
+$border-color: rgba($text-color, 0.1);
+
+$shadow: theme($theme-name, 'shadow');
+$shadow-big: theme($theme-name, 'shadow-big');
+$shadow-sm: theme($theme-name, 'shadow-sm');
+
+$radius: theme($theme-name, 'radius');
+
+:root {
+    --logo: url(/images/logo/logo-light.png) !important;
+    --logo-reverse: url(/images/logo/logo-light.png) !important;
+    --sidebar-bg: $sidebar-bg;
+    --brand: $brand;
+    --primary: $primary;
+    --secondary: $secondary;
+    --success: $success;
+    --info: $info;
+    --warning: $warning;
+    --danger: $danger;
+    --light: $light;
+    --dark: $dark;
+    --global-text: $global-text;
+    --global-bg: $global-bg;
+    --text-color: $text-color;
+    --background: $background;
+    --sidebar-bg: $sidebar-bg;
+    --sidebar-text: $sidebar-text;
+    --border-color: $border-color;
+    --shadow: $shadow;
+    --shadow-big: $shadow-big;
+    --shadow-smooth: $shadow-sm;
+} 
+
+@import 'Base/_fonts.scss';
+@import 'Base/_variables.scss';
+@import 'Base/_mixins.scss';
+@import 'Base/_placeholders.scss';
+@import 'Base/_datepicker.scss';
+
+@import 'Base/_general.scss';
+@import 'Base/_overrides.scss';
+@import 'Base/_tables.scss';
+@import 'Base/_jstree.scss';
+
+@import 'Common/_header.scss';
+@import 'Common/_content.scss';
+@import 'Common/_footer.scss';
+@import 'Common/Menus/_main_menu.scss';
+@import 'Common/Menus/_main_menu_top.scss';
+
+
+@import 'Custom/_timeline.scss';
+
+@import 'Base/_democolorchange.scss';
+
+@import 'Base/_rtl.scss';
+ 
+/* ALL - END */
+
+
+
+
+

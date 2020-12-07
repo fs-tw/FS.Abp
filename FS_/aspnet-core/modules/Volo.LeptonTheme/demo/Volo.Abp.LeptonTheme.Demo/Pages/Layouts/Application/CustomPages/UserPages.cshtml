@@ -1,0 +1,22 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@model Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.CustomPages.UserPagesModel
+
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["UserPages"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["CustomPages"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.CustomPages.UserPages;
+}
+@section content_toolbar {
+    <abp-button button-type="Primary">Primary</abp-button>
+    <abp-button button-type="Secondary">Secondary</abp-button>
+    <abp-button button-type="Success">Success</abp-button>
+}
+<div class="card">
+    <abp-button button-type="Primary">Primary</abp-button>
+</div>

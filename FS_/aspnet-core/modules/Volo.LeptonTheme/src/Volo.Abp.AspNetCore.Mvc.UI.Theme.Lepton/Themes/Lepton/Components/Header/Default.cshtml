@@ -1,0 +1,27 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Header.ToolBar;
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.Header.Brand
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Themes.Lepton.Components.MainMenu
+
+    <header>
+
+        @(await Component.InvokeAsync<HeaderBrandViewComponent>())
+
+        <nav class="navbar navbar-expand-xl navbar-dark d-lg-none nav-mobile">
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarToolbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-user"></i>
+            </button>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarSidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-align-justify"></i>
+            </button>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg user-nav-mobile">
+            <div class="collapse navbar-collapse d-lg-block toolbar-nav-wrapper" id="navbarToolbar">
+                <ul class="navbar-nav toolbar-nav ml-auto">
+                    @(await Component.InvokeAsync<HeaderToolBarViewComponent>())
+                </ul>
+            </div>
+        </nav>
+
+        @(await Component.InvokeAsync<MainMenuViewComponent>())
+    </header>

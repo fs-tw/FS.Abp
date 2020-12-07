@@ -1,0 +1,42 @@
+﻿<AuthorizeView>
+    <Authorized>
+        @if ( UserMenu != null )
+        {
+            <BarDropdown>
+                <BarDropdownToggle Class="btn">
+                    <img src="@ProfileImageUrl" width="21" class="user-avatar mr-1" alt="@UserName" />
+                    @if ( TenantName != null )
+                    {
+                        <span><i>@TenantName</i>\@UserName</span>
+                    }
+                    else
+                    {
+                        <span>@UserName</span>
+                    }
+                </BarDropdownToggle>
+                <BarDropdownMenu RightAligned="true">
+                    <BarDropdownItem>
+                        <Row Padding="Padding.Is2">
+                            <Column ColumnSize="ColumnSize.IsAuto">
+                                <img src="@ProfileImageUrl" class="user-avatar-big" width="48" alt="@UserName" />
+                            </Column>
+                            <Column>
+                                <span>@UiLocalizer["Welcome"]</span><br />
+                                @UserFullName
+                            </Column>
+                        </Row>
+                    </BarDropdownItem>
+                    <DropdownDivider />
+                    @foreach ( var item in UserMenu.Items )
+                    {
+                        <BarDropdownItem Clicked="() => NavigateTo(item.Url)">@item.DisplayName</BarDropdownItem>
+                    }
+                    <BarDropdownItem Clicked="BeginSignOut">@UiLocalizer["Logout"]</BarDropdownItem>
+                </BarDropdownMenu>
+            </BarDropdown>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <a class="nav-link btn" href="authentication/login">Log in</a>
+    </NotAuthorized>
+</AuthorizeView>

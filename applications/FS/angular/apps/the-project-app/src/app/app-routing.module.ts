@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   },
   {
+    path: 'setting-management',
+    loadChildren: () =>
+      import('@abp/ng.setting-management').then((m) => m.SettingManagementModule.forLazy()),
+  },
+  {
     path: 'about-sample',
     loadChildren: () => import('./about-sample/about-sample.module').then(m => m.AboutSampleModule),
   },
@@ -19,7 +24,6 @@ const routes: Routes = [
     path: 'platform-sample',
     loadChildren: () => import('./platform-sample/platform-sample.module').then(m => m.PlatformSampleModule),
   }
-
 ];
 
 @NgModule({

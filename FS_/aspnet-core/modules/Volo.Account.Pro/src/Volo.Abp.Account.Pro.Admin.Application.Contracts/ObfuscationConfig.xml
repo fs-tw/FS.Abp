@@ -1,0 +1,18 @@
+<Obfuscator>
+  <Var name="InPath" value=".\" />
+  <Var name="OutPath" value=".\output" />
+
+  <Var name="HideStrings" value="true" />
+  <Var name="UseKoreanNames" value="true" />
+  <Var name="ReuseNames" value="true" />
+  <Var name="RenameFields" value="true" />
+  <Var name="RenameProperties" value="true" />
+  <Var name="RenameEvents" value="true" />
+  <Var name="OptimizeMethods" value="true" />
+  <Var name="SuppressIldasm" value="true" />
+  <Var name="KeepPublicApi" value="false" />
+  <Var name="HidePrivateApi" value="true" />  
+  <AssemblySearchPath path="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.viewfeatures\2.2.0\lib\netstandard2.0" />
+
+  <Module file="$(InPath)\Volo.Abp.Account.Pro.Admin.Application.Contracts.dll" />
+</Obfuscator>

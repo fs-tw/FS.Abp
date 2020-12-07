@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { ThemeTheProjectModule } from '@fs/theme.the-project';
 import { registerLocale } from '@volo/abp.ng.language-management/locale';
+import { IdentityConfigModule } from '@volo/abp.ng.identity/config';
+import { SettingManagementConfigModule } from '@abp/ng.setting-management/config';
 
 const LOGGERS = [NgxsLoggerPluginModule.forRoot({ disabled: false })];
 
@@ -25,7 +27,8 @@ const LOGGERS = [NgxsLoggerPluginModule.forRoot({ disabled: false })];
       registerLocaleFn: registerLocale(),
     }),
     ThemeSharedModule.forRoot(),
-
+    IdentityConfigModule.forRoot(),
+    SettingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
 
     ThemeTheProjectModule.forRoot(),
