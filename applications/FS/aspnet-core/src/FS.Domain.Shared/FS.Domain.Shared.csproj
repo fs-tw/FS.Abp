@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
+  </ItemGroup>  
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.IdentityServer.Domain.Shared" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="4.0.0" />
@@ -31,12 +37,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\FS\*.json" />
     <Content Remove="Localization\FS\*.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>

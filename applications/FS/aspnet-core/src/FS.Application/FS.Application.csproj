@@ -6,13 +6,16 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FS</RootNamespace>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
+    <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
+  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Application\FS.Cms.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Application\FS.Theme.Application.csproj" />
-    <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
-    <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Application\FS.Theme.Application.csproj" />    
   </ItemGroup>
 
   <ItemGroup>
