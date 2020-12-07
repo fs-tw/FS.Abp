@@ -11,14 +11,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "EasyAbp/WeChatManagement"]
 	path = EasyAbp/WeChatManagement
 	url = https://github.com/EasyAbp/WeChatManagement.git
-[submodule "fs/aspnet-core"]
-	path = fs/aspnet-core
-	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.git
-	branch = develop
-[submodule "fs/angular"]
-	path = fs/angular
-	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.ng.git
-	branch = develop
 [submodule "EasyAbp/FileManagement"]
 	path = EasyAbp/FileManagement
 	url = https://github.com/EasyAbp/FileManagement.git
