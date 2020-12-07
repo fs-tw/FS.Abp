@@ -10,7 +10,7 @@ import { CoreModule } from '@abp/ng.core';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
-import { TheProjectModule } from '@fs/theme.the-project';
+import { ThemeTheProjectModule } from '@fs/theme.the-project';
 import { registerLocale } from '@volo/abp.ng.language-management/locale';
 
 const LOGGERS = [NgxsLoggerPluginModule.forRoot({ disabled: false })];
@@ -28,7 +28,7 @@ const LOGGERS = [NgxsLoggerPluginModule.forRoot({ disabled: false })];
 
     NgxsModule.forRoot(),
 
-    TheProjectModule.forRoot(),
+    ThemeTheProjectModule.forRoot(),
     ...(environment.production ? [] : LOGGERS)
 
   ],

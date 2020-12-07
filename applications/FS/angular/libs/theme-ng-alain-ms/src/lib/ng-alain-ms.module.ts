@@ -36,10 +36,7 @@ const I18NSERVICE_PROVIDES = [{ provide: ALAIN_I18N_TOKEN, useClass: I18NService
 
 // #endregion
 
-// #region JSON Schema form (using @delon/form)
-import { JsonSchemaModule } from '@fs/theme.ng-alain-ms/shared';
-const FORM_MODULES = [JsonSchemaModule];
-// #endregion
+
 
 // #region Http Interceptors
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -82,12 +79,14 @@ import { ThemeSharedModule } from '@abp/ng.theme.shared';
 
 @NgModule({
   imports: [
-    AbpCoreModule,
+    //AbpCoreModule,
     //ThemeSharedModule,
     //NgbDropdownModule,
+    NgAlainMsSharedModule,
+    NgAlainMsBasicModule,
     NgxValidateCoreModule,
-    STWidgetModule,
-    ...FORM_MODULES,
+    //STWidgetModule,
+    //...FORM_MODULES,
   ],
   declarations: [
     ValidationErrorComponent

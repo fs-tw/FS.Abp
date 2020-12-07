@@ -1,0 +1,3250 @@
+/* 5 Components
+----------------------------------------------------------------------------- */
+/* Buttons
+---------------------------------- */
+/*Buttons Color Variations*/
+.btn:focus {
+  color: inherit;
+}
+.btn {
+  @include transition (all 0.2s ease-in-out);
+}
+
+/*Default Button*/
+.btn-default {
+  color: $white;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.show > .dropdown-toggle.btn-default {
+  color: $white;
+}
+.btn-default-transparent {
+  color: $gray-dark;
+  background-color: transparent;
+}
+.btn-default-transparent:hover,
+.btn-default-transparent:focus,
+.btn-default-transparent.focus,
+.btn-default-transparent:active,
+.btn-default-transparent.active,
+.show > .dropdown-toggle.btn-default-transparent {
+  color: $white;
+}
+.dark-bg .btn-default-transparent {
+  color: $white;
+}
+.default-bg .btn-default,
+.default-translucent-bg .btn-default,
+.default-bg .btn-default-transparent,
+.default-translucent-bg .btn-default-transparent {
+  background-color: $white;
+  border-color: $white;
+}
+.default-bg .btn-default:hover,
+.default-translucent-bg .btn-default:hover,
+.default-bg .btn-default:focus,
+.default-translucent-bg .btn-default:focus,
+.default-bg .btn-default.focus,
+.default-translucent-bg .btn-default.focus,
+.default-bg .btn-default:active,
+.default-translucent-bg .btn-default:active,
+.default-bg .btn-default.active,
+.default-translucent-bg .btn-default.active,
+.default-bg .show > .dropdown-toggle.btn-default,
+.default-translucent-bg .show > .dropdown-toggle.btn-default,
+.default-bg .btn-default-transparent:hover,
+.default-translucent-bg .btn-default-transparent:hover,
+.default-bg .btn-default-transparent:focus,
+.default-translucent-bg .btn-default-transparent:focus,
+.default-bg .btn-default-transparent.focus,
+.default-translucent-bg .btn-default-transparent.focus,
+.default-bg .btn-default-transparent:active,
+.default-translucent-bg .btn-default-transparent:active,
+.default-bg .btn-default-transparent.active,
+.default-translucent-bg .btn-default-transparent.active,
+.default-bg .show > .dropdown-toggle.btn-default-transparent,
+.default-translucent-bg .show > .dropdown-toggle.btn-default-transparent {
+  color: $white;
+  background-color: transparent;
+  border-color: $white;
+}
+.dark {
+  .btn-default {
+    color: $white;
+    background-color: rgba($black, 0.2);
+    border-color: rgba($black, 0.1);
+  }
+  .btn-default .badge {
+    color: rgba($black, 0.2);
+    background-color: $white;
+  }
+  .btn-default:hover,
+  .btn-default:focus,
+  .btn-default.focus,
+  .btn-default:active,
+  .btn-default.active,
+  .show > .dropdown-toggle.btn-default {
+    color: $white;
+    background-color: rgba($black, 0.35);
+    border-color: rgba($black, 0.2);
+  }
+}
+.colored {
+  .btn-default {
+    color: $white;
+    background-color: rgba($black, 0.2);
+    border-color: rgba($black, 0.01);
+  }
+  .btn-default .badge {
+    color: rgba($black, 0.2);
+    background-color: $white;
+  }
+  .btn-default:hover,
+  .btn-default:focus,
+  .btn-default.focus,
+  .btn-default:active,
+  .btn-default.active,
+  .show > .dropdown-toggle.btn-default {
+    color: $white;
+    background-color: rgba($black, 0.3);
+    border-color: rgba($black, 0.02);
+  }
+}
+.default-hovered:hover .btn-default-transparent {
+  border-color: $white;
+}
+
+/*White Button*/
+.btn-white {
+  color: $gray;
+  background-color: $white;
+  border-color: $white;
+}
+
+/*Gray Button*/
+.btn-gray {
+  color: $gray-dark;
+  background-color: #e1e1e1;
+  border-color: #d3d3d3;
+}
+.btn-gray:hover,
+.btn-gray:focus,
+.btn-gray.focus,
+.btn-gray:active,
+.btn-gray.active,
+.show > .dropdown-toggle.btn-gray {
+  color: $gray-dark;
+  background-color: $gray-lighter;
+  border-color: $gray-lighter;
+}
+.btn-gray-transparent {
+  color: $gray-dark;
+  background-color: transparent;
+  border-color: $gray;
+}
+.btn-gray-transparent:hover,
+.btn-gray-transparent:focus,
+.btn-gray-transparent.focus,
+.btn-gray-transparent:active,
+.btn-gray-transparent.active,
+.show > .dropdown-toggle.btn-gray-transparent {
+  color: $white;
+  background-color: $gray-dark;
+  border-color: $gray-dark;
+}
+.dark-bg {
+  .btn-gray-transparent {
+    color: $white;
+  }
+  .btn-gray-transparent:hover {
+    border-color: $white;
+    color: $gray;
+    background-color: $white;
+  }
+}
+.dark-translucent-bg .btn-gray-transparent,
+.default-translucent-bg .btn-gray-transparent,
+.default-bg .btn-gray-transparent {
+  border-color: $white;
+  color: $white;
+}
+.dark-translucent-bg .btn-gray-transparent:hover,
+.default-translucent-bg .btn-gray-transparent:hover,
+.default-bg .btn-gray-transparent:hover,
+.dark-translucent-bg .btn-gray-transparent:focus,
+.default-translucent-bg .btn-gray-transparent:focus,
+.default-bg .btn-gray-transparent:focus {
+  border-color: $white;
+  color: $gray;
+  background-color: $white;
+}
+.default-hovered:hover .btn-gray-transparent {
+  border-color: $white;
+}
+.light-gray-bg.default-hovered:hover .btn-gray-transparent:hover {
+  border-color: $gray-dark;
+}
+
+/* Medium devices (desktops, tablets, 992px and up) */
+@media (min-width: 992px) {
+  .two-col-translucent-bg .container > .row > div + div .btn-gray-transparent {
+    border-color: $white;
+    color: $white;
+  }
+  .two-col-translucent-bg .container > .row > div + div .btn-gray-transparent:hover,
+  .two-col-translucent-bg .container > .row > div + div .btn-gray-transparent:focus {
+    border-color: $white;
+    color: $gray;
+    background-color: $white;
+  }
+}
+
+/*Dark Button*/
+.btn-dark {
+  color: $white;
+  background-color: #373737;
+  border-color: $gray-dark;
+}
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark.focus,
+.btn-dark:active,
+.btn-dark.active,
+.show > .dropdown-toggle.btn-dark {
+  color: $white;
+  background-color: #111111;
+  border-color: #111111;
+}
+.dark-bg .btn-dark {
+  color: $white;
+  background-color: #222222;
+  border-color: #171717;
+}
+.dark-bg .btn-dark:hover,
+.dark-bg .btn-dark:focus,
+.dark-bg .btn-dark.focus,
+.dark-bg .btn-dark:active,
+.dark-bg .btn-dark.active,
+.dark-bg .show > .dropdown-toggle.btn-dark {
+  color: $white;
+  background-color: $black;
+  border-color: $black;
+}
+
+/*Buttons Sizes*/
+.btn {
+  @include button-size(7px, 20px, 14px, $line-height-base, 3px);
+  margin: 10px 0;
+}
+.btn-sm {
+  @include button-size(5px, 15px, 12px, $line-height-base, 3px);
+  margin: 5px 0;
+}
+.btn-lg {
+  @include button-size(10px, 25px, 18px, $line-height-base, 4px);
+  margin: 10px 0;
+}
+.btn-xl {
+  @include button-size(15px, 50px, 22px, $line-height-base, 6px);
+  margin: 10px 0;
+}
+.btn-md-link {
+  @include button-size(7px, 15px, 14px, $line-height-base, 0px);
+  margin: 10px 0;
+}
+.btn-sm-link {
+  @include button-size(5px, 15px, 12px, $line-height-base, 0px);
+  margin: 5px 0;
+}
+.btn-lg-link {
+  @include button-size(10px, 15px, 18px, $line-height-base, 0px);
+  margin: 10px 0;
+}
+.btn-remove {
+  font-size: 10px;
+  padding: 3px 15px;
+  min-width: 0;
+  margin: -5px 0 0 0;
+}
+
+/*Buttons with radius*/
+.radius-50 {
+  @include border-radius(50px);
+}
+
+/*Animated Buttons*/
+.btn-animated {
+  position: relative;
+  min-width: 0!important;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include padding-right(45px!important);
+  i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include transition($ltr-to-rtl-right 0.2s ease-in-out);
+    z-index: 3;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(17px);
+    position: absolute;
+    line-height: 34px;
+    top: 0;
+    min-width: 12px;
+  }
+  &:after {
+    width: 35px;
+    height: 100%;
+    background-color: rgba($black, 0.1);
+    position: absolute;
+    content: "";
+    top: 0;
+    @include opacity(0);
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(0px);
+    z-index: 2;
+    @include transition(all 0.2s ease-in-out);
+  }
+  &.radius-50:after {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include ltr-to-rtl-compact(border-radius, 0, 50px, 50px, 0);
+  }
+  &.btn-gray-transparent:after {
+    background-color: rgba($black, 0.05);
+  }
+  &:hover:after {
+    @include opacity(1);
+  }
+  &:hover i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(11px);
+  }
+  &.btn-sm {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-right(35px!important);
+  }
+  &.btn-sm:after {
+    width: 25px;
+  }
+  &.btn-sm i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(14px);
+    line-height: 28px;
+    min-width: 11px;
+  }
+  &.btn-sm:hover i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(7px);
+  }
+  &.btn-lg {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-right(60px!important);
+  }
+  &.btn-lg:after {
+    width: 45px;
+  }
+  &.btn-lg i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(25px);
+    line-height: 48px;
+    min-width: 15px;
+  }
+  &.btn-lg:hover i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(15px);
+  }
+  &.btn-xl {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-right(60px!important);
+  }
+  &.btn-xl:after {
+    width: 45px;
+  }
+  &.btn-xl i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(25px);
+    line-height: 64px;
+    min-width: 15px;
+    text-align: center;
+  }
+  &.btn-xl:hover i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(13px);
+  }
+}
+
+/*Background Transition*/
+.btn-animation {
+  @include transition(all 0.1s ease-in-out);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-animation:hover,
+.btn-animation:focus {
+  @include transition(all 0.3s ease-in-out);
+}
+.btn-animation:before {
+  background-color: transparent;
+  content: "";
+  position: absolute;
+  @include transition(all 0.3s ease-in-out);
+}
+.btn-animation:hover:before,
+.btn-animation:focus:before {
+  z-index: -1;
+}
+.btn-default-transparent.btn-animation:hover,
+.btn-default-transparent.btn-animation:focus {
+  background-color: transparent;
+}
+.btn-animation.btn-animation--slide-to-right:before {
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+}
+.btn-animation.btn-animation--slide-to-right:hover:before,
+.btn-animation.btn-animation--slide-to-right:focus:before {
+  right: 0;
+}
+.btn-animation.btn-animation--slide-to-left:before {
+  top: 0;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+}
+.btn-animation.btn-animation--slide-to-left:hover:before,
+.btn-animation.btn-animation--slide-to-left:focus:before {
+  left: 0;
+}
+.btn-animation.btn-animation--slide-to-top:before {
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.btn-animation.btn-animation--slide-to-top:hover:before,
+.btn-animation.btn-animation--slide-to-top:focus:before {
+  top: 0;
+}
+.btn-animation.btn-animation--slide-to-bottom:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+}
+.btn-animation.btn-animation--slide-to-bottom:hover:before,
+.btn-animation.btn-animation--slide-to-bottom:focus:before {
+  bottom: 0;
+}
+.btn-animation.btn-animation--slide-horizontal:before {
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+}
+.btn-animation.btn-animation--slide-horizontal:hover:before,
+.btn-animation.btn-animation--slide-horizontal:focus:before {
+  left: 0;
+  right: 0;
+}
+.btn-animation.btn-animation--slide-vertical:before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+}
+.btn-animation.btn-animation--slide-vertical:hover:before,
+.btn-animation.btn-animation--slide-vertical:focus:before {
+  top: 0;
+  bottom: 0;
+}
+
+/* Tabs
+---------------------------------- */
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == rtl {
+  .nav-tabs .nav-item {
+    float: right;
+    > a {
+      margin-right: 0;
+      margin-left: 2px;
+    }
+  }
+}
+.nav-tabs.style-1 {
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 15px;
+  & > li > a {
+    position: relative;
+    color: $gray-dark;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-right(0);
+    line-height: 1;
+    border: 1px solid transparent;
+    padding: 12px 15px 11px 15px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  border-radius(15px 15px 0 0);
+    @include transition(none);
+    height: 40px;
+  }
+  & > li > a:hover {
+    border-color: #222222!important;
+    background-color: $gray-dark!important;
+    color: $white;
+  }
+  & > li > a:focus {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  & > li > a:after {
+    position: absolute;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(-14px);
+    bottom: -1px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  ltr-to-rtl-compact(border-width, 31px, 0, 0, 14px);
+    border-color: transparent transparent transparent transparent;
+  }
+  & > li > a:before {
+    position: absolute;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(-14px);
+    bottom: -1px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  ltr-to-rtl-compact(border-width, 31px, 14px, 0, 0);
+    border-color: transparent transparent transparent transparent;
+  }
+  & > li > a:hover:after {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  ltr-to-rtl-compact(border-color, transparent, transparent, transparent, $gray-dark);
+    @include  ltr-to-rtl-compact(border-width, 31px, 0, 0, 14px);
+  }
+  & > li > a:hover:before {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  ltr-to-rtl-compact(border-color, transparent, $gray-dark, transparent, transparent);
+    @include  ltr-to-rtl-compact(border-width, 31px, 14px, 0, 0);
+  }
+  & > li > a.active {
+    background-color: $gray-dark!important;
+  }
+  & > li > a.active,
+  & > li > a.active:hover,
+  & > li > a.active:focus {
+    color: $white;
+    cursor: default;
+    border-color: #222222;
+  }
+  & > li > a.active:after {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  ltr-to-rtl-compact(border-color, transparent, transparent, transparent, $gray-dark);
+  }
+  & > li > a.active:before {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include  ltr-to-rtl-compact(border-color, transparent, $gray-dark, transparent, transparent);
+  }
+  & > li:first-child > a:before,
+  & > li:last-child > a:after {
+    border-width: 0 0 0 0;
+    border-color: transparent transparent transparent transparent;
+  }
+  & + .tab-content > .tab-pane {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+.nav-tabs.style-2 {
+  border-bottom: 1px solid #f1f1f1;
+  & > li > a {
+    color: $gray-light;
+  }
+  & > li > a:hover {
+    color: $gray-dark;
+    background-color: #fafafa!important;
+    border-color: #f1f1f1;
+    border-bottom-color: #fafafa!important;
+  }
+  & > li > a:focus {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  & > li > a.active,
+  & > li > a.active:hover,
+  & > li > a.active:focus {
+    color: $gray-dark;
+    cursor: default;
+    background-color: #fafafa;
+    border-color: #f1f1f1;
+    border-bottom-color: transparent;
+  }
+  & + .tab-content > .tab-pane {
+    padding: 15px;
+    border: 1px solid #f1f1f1;
+    border-top: none;
+    background-color: #fafafa;
+  }
+}
+.nav-tabs.style-3 {
+  border-bottom: 1px solid $gray-light;
+  background-color: $gray-light;
+  & > li > a {
+    color: $white;
+    @include border-radius(0);
+    margin: 0;
+  }
+  & > li > a:hover {
+    color: $gray-dark;
+    background-color: $white!important;
+    border-color: $gray-light;
+    border-bottom-color: $white!important;
+  }
+  & > li > a:focus {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  & > li > a.active,
+  & > li > a.active:hover,
+  & > li > a.active:focus {
+    color: $gray-dark;
+    cursor: default;
+    background-color: $white;
+    border-color: $gray-light;
+    border-bottom-color: transparent;
+  }
+  & + .tab-content > .tab-pane {
+    padding: 15px;
+    border: 1px solid $gray-light;
+    border-top: none;
+    background-color: $white;
+  }
+}
+.nav-tabs.style-4 {
+  margin-bottom: 15px;
+  border-bottom: 1px solid $gray-dark;
+  & > li > a {
+    color: $gray-light;
+  }
+  & > li > a:hover {
+    color: $white;
+    background-color: $gray-dark !important;
+    border-color: $gray-dark;
+    border-bottom-color: $gray-dark !important;
+  }
+  & > li > a:focus {
+    border-color: $gray-dark;
+    background-color: $gray-dark;
+  }
+  & > li > a.active,
+  & > li > a.active:hover,
+  & > li > a.active:focus {
+    color: $white;
+    cursor: default;
+    background-color: $gray-dark;
+    border-color: $gray-dark;
+    border-bottom-color: transparent;
+  }
+}
+
+/* Small devices (tablets, smartphones) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .nav-tabs > li > a {
+    padding: 12px 10px;
+    font-size: 11px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-right(0);
+  }
+}
+
+/* Extra small devices (phones, less than 575px) */
+@media (max-width: 575px) {
+  .nav-tabs {
+    background-color: #eaeaea;
+    border-bottom: none!important;
+    display: block;
+    & > .nav-item {
+      float: none;
+      display: block;
+    }
+    & > li a {
+      color: $white;
+      // RTL support.
+      // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+      // RTL related mixins are located in mixins/_rtl.scss file.
+      @include margin-right(0);
+      @include border-radius(0px!important);
+    }
+    &.style-3 > li > a.active,
+    &.style-3 > li > a.active:hover,
+    &.style-3 > li > a.active:focus,
+    &.style-3 > li > a:hover,
+    &.style-3 > li > a:focus {
+      border-bottom: 1px solid $gray-light!important;
+    }
+    &.style-3 + .tab-content > .tab-pane {
+      border-top: 1px solid $gray-light;
+    }
+    & > li a:after,
+    & > li a:before {
+      border-color: transparent transparent transparent transparent!important;
+    }
+  }
+}
+
+/* vertical tabs */
+.vertical {
+  margin: 20px 0;
+  .nav-tabs,
+  .tab-content {
+    display: table-cell;
+    margin: 0;
+    vertical-align: top;
+  }
+  .nav-tabs {
+    border-bottom-color: transparent;
+    background-color: $gray-light;
+  }
+  .nav-tabs > li {
+    float: none;
+  }
+  .nav-tabs > li a {
+    margin: 0;
+    padding: 10px 20px;
+    white-space: nowrap;
+    color: $white;
+    border-bottom: 1px solid #919191;
+    @include border-radius(0);
+  }
+  .nav-tabs > li > a:hover,
+  .nav-tabs > li > a:focus {
+    background-color: #fafafa;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-right-color(transparent);
+    border-bottom: 1px solid #f1f1f1;
+    color: $gray;
+    z-index: 2;
+  }
+  .nav-tabs > li > a.active,
+  .nav-tabs > li > a.active:hover,
+  .nav-tabs > li > a.active:focus {
+    border: 1px solid #f1f1f1;
+    background-color: #fafafa;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-right-color(transparent);
+    color: $gray;
+    z-index: 2;
+  }
+  &.left .nav-tabs > li > a:hover,
+  &.left .nav-tabs > li > a:focus {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-left-color(transparent);
+    @include border-right-color(#f1f1f1);
+  }
+  &.left .nav-tabs > li > a.active,
+  &.left .nav-tabs > li > a.active:hover,
+  &.left .nav-tabs > li > a.active:focus {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-right-color(#f1f1f1);
+    @include border-left-color(transparent);
+  }
+  .tab-content {
+    border: 1px solid #f1f1f1;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-left(1px solid #fafafa);
+    background-color: #fafafa;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(-1px);
+    z-index: 1;
+    padding: 20px 30px;
+  }
+}
+.left.vertical .tab-content {
+  // RTL support.
+  // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include border-left-color(#f1f1f1);
+  @include border-right-color(transparent);
+}
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 767px) {
+  .vertical {
+    .nav-tabs,
+    .tab-content {
+      display: block;
+    }
+    .nav-tabs > li a {
+      font-size: 15px;
+    }
+  }
+}
+
+/* Pager
+---------------------------------- */
+ul.pagination,
+ul.pager {
+  margin: 20px 0 40px;
+  text-align: left;
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == rtl {
+    padding-right: 0;
+  }
+}
+ul.pagination .page-item {
+  padding: 0;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include ltr-to-rtl-compact(margin, 0, 10px, 0, 0);
+  border-bottom: none;
+  display: inline-block;
+  @include border-radius(0px);
+}
+ul.pagination .page-item:last-child {
+  margin: 0;
+}
+ul.pagination .page-item .page-link,
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link,
+ul.pager .page-item .page-link {
+  text-align: center;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  border: 1px solid $gray;
+  line-height: 39px;
+  background-color: $gray;
+  color: $white;
+  display: inline-block;
+  @include border-radius(100%);
+}
+ul.pagination .page-item .page-link:hover,
+ul.pagination .page-item .page-link:focus {
+  background-color: transparent;
+  color: $white;
+}
+ul.pagination .page-item.active .page-link,
+.page-item.active .page-link:hover,
+.page-item.active .page-link:focus {
+  color: $white;
+}
+
+/* Breadcrumb
+---------------------------------- */
+.breadcrumb-container {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #f4f4f4;
+}
+.dark.breadcrumb-container {
+  background-color: $gray;
+  border-color: $gray-dark;
+  color: $white;
+}
+.breadcrumb {
+  background-color: transparent;
+  @include border-radius(0);
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 8px 15px 8px 0;
+}
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == ltr {
+  .breadcrumb-item + .breadcrumb-item:before {
+    font-family: "FontAwesome";
+    content: "\f101";
+    font-size: 11px;
+    padding: 0 7px;
+    color: #cccccc;
+  }
+} @else {
+  .breadcrumb-item + .breadcrumb-item:before {
+    content: "";
+    padding-right: 0px;
+  }
+  .breadcrumb-item + .breadcrumb-item:after {
+    font-family: "FontAwesome";
+    content: "\f100";
+    font-size: 11px;
+    padding-left: 5px;
+  }
+}
+.banner {
+  .breadcrumb-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba($white, 0.85);
+    border-bottom-color: rgba($white, 0.1);
+  }
+  .dark.breadcrumb-container {
+    border-bottom-color: rgba(119, 119, 119, 0.1);
+  }
+  .breadcrumb .breadcrumb-item a,
+  .breadcrumb .breadcrumb-item i {
+    color: $black;
+  }
+  .breadcrumb .breadcrumb-item.active,
+  .breadcrumb-item + .breadcrumb-item:before {
+    color: $gray;
+  }
+}
+.dark .breadcrumb .breadcrumb-item a,
+.dark .breadcrumb .breadcrumb-item i,
+.dark .breadcrumb > .active,
+.banner .dark .breadcrumb > .active,
+.dark .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
+  color: $white;
+}
+
+/* Nav pills
+---------------------------------- */
+.nav-pills:not(.nav-stacked) {
+  margin-bottom: 15px;
+}
+.nav-pills {
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == rtl {
+    > li {
+      float: right;
+    }
+  }
+  > li .nav-link {
+    @include border-radius(0);
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    color: $gray-light;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  > li .nav-link.active,
+  > li .nav-link.active:hover,
+  > li .nav-link.active:focus,
+  > li .nav-link:hover,
+  > li .nav-link:focus {
+    color: $gray;
+    background-color: transparent;
+    border-bottom: 1px solid $gray;
+  }
+}
+.nav-pills.style-2 {
+  > li .nav-link {
+    @include border-radius(5px);
+  }
+  > li .nav-link.active,
+  > li .nav-link.active:hover,
+  > li .nav-link.active:focus,
+  > li .nav-link:hover,
+  > li .nav-link:focus {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+  }
+}
+.nav-pills > li + li {
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == ltr {
+  margin-left: 5px;
+  } @else {
+  margin-right: 5px;
+  margin-left: 0;
+  }
+}
+.nav.flex-column {
+  > li .nav-link {
+    padding: 7px 0px;
+    color: $gray;
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  &.list-style-icons > li .nav-link {
+    padding: 6px 0px;
+  }
+  & > li .nav-link.active,
+  & > li .nav-link.active:hover,
+  & > li .nav-link.active:focus,
+  & > li .nav-link:hover,
+  & > li .nav-link:focus {
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:not(.list-style-icons) > li .nav-link:after {
+    font-family: "FontAwesome";
+    // RTL support
+    // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+    @if $text-direction == ltr {
+    content: "\f101";
+    } @else {
+    content: "\f100";
+    }
+    font-size: 12px;
+    position: absolute;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(15px);
+    top: 6px;
+    color: #d1d1d1;
+    @include transition(all 0.2s ease-in-out);
+  }
+}
+.nav.flex-column {
+  &:not(.list-style-icons) > li .nav-link.active:hover:after,
+  &:not(.list-style-icons) > li .nav-link.active:focus:after,
+  &:not(.list-style-icons) > li .nav-link:hover:after,
+  &:not(.list-style-icons) > li .nav-link:focus:after {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(10px);
+  }
+  &.list-style-icons > li .nav-link > i {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-right(10px);
+    font-size: 14px;
+    color: $gray-lighter;
+    width: 25px;
+  }
+}
+
+/* Process pills */
+.process .nav-pills {
+  > li + li {
+    // RTL support
+    // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+    @if $text-direction == ltr {
+    margin-left: 40px;
+    } @else {
+    margin-right: 40px;
+    margin-left: 0;
+    }
+    position: relative;
+  }
+  > li + li:after {
+    font-family: "FontAwesome";
+    // RTL support
+    // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+    @if $text-direction == ltr {
+    content: "\f101";
+    } @else {
+    content: "\f100";
+    }
+    position: absolute;
+    top: 6px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(-24px);
+    width: 10px;
+    color: $gray-lighter;
+  }
+}
+@media (max-width: 575px) {
+  .nav.nav-pills {
+    display: block;
+    .nav-item {
+      display: inline-block;
+    }
+  }
+}
+
+/*Dark bgs*/
+.dark-bg .nav-pills > li .nav-link,
+.dark-translucent-bg .nav-pills > li .nav-link {
+  text-decoration: none;
+}
+.dark-bg .nav-pills > li .nav-link.active,
+.dark-bg .nav-pills > li .nav-link.active:focus,
+.dark-bg .nav-pills > li .nav-link:focus,
+.dark-translucent-bg .nav-pills > li .nav-link.active,
+.dark-translucent-bg .nav-pills > li .nav-link.active:focus,
+.dark-translucent-bg .nav-pills > li .nav-link:focus {
+  color: $white;
+  border-bottom-color: $white;
+}
+
+/*footer*/
+.footer-content .nav.flex-column {
+  > li > a {
+    padding: 5px 0px;
+  }
+  > li > a:after {
+    top: 5px;
+  }
+}
+.dark .footer-content .nav.flex-column {
+  & > li > a,
+  & > li > a.active,
+  & > li > a.active:focus,
+  & > li > a:focus {
+    color: $gray-light;
+  }
+}
+
+/* Collapse
+---------------------------------- */
+/*Style 1*/
+.collapse-style-1 {
+  .card {
+    border-color: #eaeaea;
+  }
+  .card + .card {
+    margin-top: 5px;
+  }
+  .card-header {
+    background-color: #fafafa;
+    padding: 0;
+    border-bottom: none;
+  }
+  .card-header a {
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding(10px, 40px, 10px, 15px);
+    color: inherit;
+    font-size: 16px;
+  }
+  .card-header a.collapsed {
+    color: $gray-light;
+  }
+  .card-header a:not(.collapsed) {
+    color: $gray;
+  }
+  .card-header a:after {
+    font-family: "FontAwesome";
+    content: "\f146";
+    position: absolute;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(15px);
+    font-size: 14px;
+    font-weight: 300;
+    top: 50%;
+    line-height: 1;
+    margin-top: -7px;
+  }
+  .card-header a.collapsed:after {
+    content: "\f0fe";
+  }
+  .card-block {
+    border-top: none!important;
+    background-color: #fafafa;
+    padding: 0 15px 15px 15px;
+  }
+}
+
+/*Style 2*/
+.collapse-style-2 {
+  .card {
+    border-color: transparent;
+  }
+  .card + .card {
+    margin-top: 5px;
+  }
+  .card-header {
+    background-color: transparent;
+    padding: 0;
+  }
+  .card-header a {
+    color: $white;
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding(10px, 40px, 10px, 15px);
+    font-size: 16px;
+  }
+  .card-header a.collapsed {
+    background-color: $gray-dark;
+  }
+  .card-header a:after {
+    font-family: "FontAwesome";
+    content: "\f106";
+    position: absolute;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(15px);
+    font-size: 14px;
+    font-weight: 300;
+    top: 50%;
+    line-height: 1;
+    margin-top: -7px;
+  }
+  .card-header a.collapsed:after {
+    content: "\f107";
+  }
+  .card-block {
+    border-top: none!important;
+    background-color: transparent;
+    padding: 15px 0;
+  }
+  .card-block.p-15 {
+    padding: 15px;
+  }
+}
+
+/*Style 3*/
+.collapse-style-3 {
+  .card {
+    border-color: $gray-light;
+  }
+  .card + .card {
+    margin-top: 5px;
+  }
+  .card-header {
+    background-color: transparent;
+    padding: 0;
+    border-color: #999999;
+  }
+  .card-header a {
+    color: $white;
+    background-color: $gray-light;
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding(10px, 40px, 10px, 15px);
+    font-size: 16px;
+  }
+  .card-header a.collapsed {
+    background-color: $gray-light;
+  }
+  .card-header a:after {
+    font-family: "FontAwesome";
+    content: "\f139";
+    position: absolute;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(15px);
+    font-size: 12px;
+    font-weight: 300;
+    top: 50%;
+    line-height: 1;
+    margin-top: -7px;
+  }
+  .card-header a.collapsed:after {
+    content: "\f13a";
+  }
+  .card-block {
+    border-top: none!important;
+    background-color: transparent;
+    padding: 15px;
+  }
+}
+.card-header a:hover {
+  text-decoration: none;
+}
+.card-header a i {
+  font-size: 16px;
+}
+
+/*Contextual Headings*/
+.collapse-contextual {
+  .card + .card {
+    margin-top: 5px;
+  }
+  .card-primary,
+  .card-success,
+  .card-danger,
+  .card-info,
+  .card-warning {
+    color: #ffffff;
+    .card-header a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+  .card-header {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 0;
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      display: block;
+      padding: 10px 20px;
+    }
+    a:after {
+      font-family: "FontAwesome";
+      content: "\f068";
+      position: absolute;
+      // RTL support.
+      // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+      // RTL related mixins are located in mixins/_rtl.scss file.
+      @include right(15px);
+      font-size: 10px;
+      font-weight: 300;
+      top: 50%;
+      line-height: 1;
+      margin-top: -6px;
+    }
+    a.collapsed:after {
+      content: "\f067";
+    }
+  }
+  .card-block {
+    padding: 15px;
+  }
+}
+
+/*Content Collapse*/
+.btn[data-toggle="collapse"] i:before {
+  font-size: 10px;
+  content: "\f068";
+}
+.btn.collapsed[data-toggle="collapse"] i:before {
+  content: "\f067";
+}
+
+/* Progress bars
+---------------------------------- */
+.progress.style-1 {
+  margin-top: 25px;
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  height: 8px;
+  @include border-radius(4px);
+  @include box-shadow(none);
+  overflow: visible;
+  position: relative;
+  .progress-bar {
+    padding: 0;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 300;
+    margin-top: 0px;
+    height: 4px;
+    margin: 1px;
+    @include border-radius(5px);
+    @include box-shadow(none);
+    position: relative;
+  }
+}
+.progress.style-2 {
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  height: 20px;
+  @include box-shadow(none);
+  .progress-bar {
+    padding: 0;
+    text-align: left;
+    @include box-shadow(none);
+    height: 20px;
+  }
+  span {
+    font-size: 11px;
+    line-height: 1;
+    position: relative;
+    top: -2px;
+    left: 10px;
+  }
+}
+.progress-bar {
+  @include transition(width 1.5s ease);
+}
+.progress {
+  .label {
+    position: absolute;
+    top: -16px;
+    font-size: 11px;
+    color: $gray-dark;
+    right: 10px;
+    font-weight: 400;
+    padding: 0;
+  }
+  .text {
+    position: absolute;
+    font-size: 11px;
+    top: -17px;
+    left: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $gray-light;
+  }
+  &.dark {
+    background-color: $gray-lighter;
+    border-color: $gray-lighter;
+  }
+  &.dark.style-1 {
+    border-color: $white;
+  }
+}
+.dark .progress-striped .progress-bar,
+.dark .progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba($black, 0.05) 25%, transparent 25%, transparent 50%, rgba($black, 0.05) 50%, rgba($black, 0.05) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba($black, 0.05) 25%, transparent 25%, transparent 50%, rgba($black, 0.05) 50%, rgba($black, 0.05) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba($black, 0.05) 25%, transparent 25%, transparent 50%, rgba($black, 0.05) 50%, rgba($black, 0.05) 75%, transparent 75%, transparent);
+}
+.progress-bar-white {
+  background-color: $white;
+  color: $gray;
+}
+.progress-bar-gray {
+  background-color: $gray-light;
+}
+.progress-bar-dark {
+  background-color: $gray-dark;
+}
+.gray-bg .progress {
+  background-color: $white;
+  @include box-shadow(inset 0 2px 2px rgba($black, 0.1));
+}
+
+/* Circular Progress Bars
+---------------------------------- */
+.knob-container {
+  margin: 10px;
+  position: relative;
+  display: inline-block;
+}
+.knob-container canvas {
+  width: 132px;
+  height: 132px;
+  margin: 0 auto;
+}
+.knob-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  margin-top: -14px;
+}
+
+/* Large devices (Large desktops 1200px and up) */
+@media (min-width: 1200px) {
+  .knob-container canvas {
+    width: 169px;
+    height: 169px;
+  }
+}
+
+/* Dropdowns
+---------------------------------- */
+.dropdown-toggle--no-caret::after {
+  margin: 0;
+  border-width: 0;
+  border: none;
+}
+@if $text-direction == rtl {
+  .dropdown-menu {
+    text-align: right;
+  }
+}
+.dark .dropdown-menu,
+.dark-bg .dropdown-menu,
+.colored .dropdown-menu {
+  color: $white;
+  font-size: 0.9rem;
+}
+.dropdown-menu .divider {
+  background-color: #ededed;
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+}
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+/* Forms
+---------------------------------- */
+form {
+  margin: 20px 0;
+}
+textarea {
+  resize: vertical;
+}
+textarea.form-control {
+  height: auto;
+}
+.sidebar form {
+  margin: 5px 0 20px 0;
+}
+.form-control {
+  @include border-radius(5px);
+  background-color: $white;
+  height: 40px;
+  font-weight: 300;
+  font-size: 14px;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include padding-right(30px);
+  border-color: #e1e1e1;
+  color: $gray;
+  position: relative;
+  -webkit-appearance: none;
+  @include box-shadow(inset 0 1px 2px rgba($black, 0.075));
+}
+.form-control.form-control-lg,
+.form-control.form-control-sm {
+  height: auto;
+}
+.form-control.radius-50 {
+  @include border-radius(50px);
+}
+.form-inline .form-control-lg {
+  height: 48px;
+}
+.form-inline [type="submit"] {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Small devices (tablets, phones 576px and up) */
+@media (min-width: 576px) {
+  .form-control-lg {
+    min-width: 350px;
+  }
+}
+
+/* Small devices (tablets, phones 575px and down) */
+@media (max-width: 575px) {
+  .form-inline {
+    display: block!important;
+  }
+}
+.form-control:focus {
+  border-color: $gray-light;
+  @include box-shadow(inset 0 1px 2px rgba($black, 0.075));
+}
+select.form-control {
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include padding-right(5px);
+  -webkit-appearance: menulist;
+}
+select[multiple].form-control {
+  -webkit-appearance: listbox;
+  height: auto;
+}
+.form-control::-moz-placeholder {
+  color: inherit;
+}
+.form-control:-ms-input-placeholder {
+  color: inherit;
+}
+.form-control::-webkit-input-placeholder {
+  color: inherit;
+}
+.input-group-text {
+  background-color: #f1f1f1;
+  border-color: #e1e1e1;
+  min-height: 40px;
+}
+
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == rtl {
+  .input-group .form-control:first-child,
+  .input-group-prepend:first-child,
+  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn-group > .btn,
+  .input-group-btn:first-child > .dropdown-toggle,
+  .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-radius(0 4px 4px 0);
+  }
+  .input-group .form-control:last-child,
+  .input-group-prepend:last-child,
+  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn-group > .btn,
+  .input-group-btn:last-child > .dropdown-toggle,
+  .input-group-btn:first-child > .btn:not(:first-child),
+  .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include border-radius(5px 0 0 5px);
+  }
+  .input-group-prepend:first-child {
+    border-left: 0;
+  }
+}
+.form-list > div {
+  padding: 7px 15px;
+  border-bottom: 1px solid #dddddd;
+  background-color: #f3f3f3;
+  margin: 6px 0;
+  display: block;
+}
+form label,
+.radio label,
+.checkbox label {
+  font-weight: 300;
+}
+fieldset {
+  padding: 10px 25px;
+  margin: 15px 0px;
+  border: 1px solid #dddddd;
+  background-color: #fafafa;
+}
+fieldset legend {
+  display: block;
+  width: auto;
+  padding: 3px 10px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: inherit;
+  color: $gray-dark;
+  border: 1px solid #ddd;
+  background-color: $white;
+}
+fieldset .form-control,
+fieldset .form-control:focus {
+  @include box-shadow(inset 0 2px 3px rgba($black, 0.12));
+  border-color: #f3f3f3;
+}
+.form-check {
+  margin-bottom: 5px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == rtl {
+    margin-right: -20px;
+    margin-left: 0;
+  }
+}
+
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == rtl {
+  .radio label,
+  .checkbox label {
+    padding-left: 0;
+    padding-right: 20px;
+  }
+}
+
+/* forms with icons */
+.has-feedback {
+  position: relative;
+}
+.has-feedback label ~ .form-control-feedback {
+  top: 29px;
+}
+.has-feedback label.sr-only ~ .form-control-feedback {
+  top: 0;
+}
+.has-feedback .form-control-feedback {
+  width: 40px;
+  height: 40px;
+  line-height: 40px !important;
+  top: 0;
+  @include right(0);
+  color: $gray;
+  position: absolute;
+  text-align: center;
+  margin-top: 0;
+}
+.has-feedback .form-control-lg + .form-control-feedback,
+.has-feedback label.sr-only ~ .form-control-lg + .form-control-feedback {
+  height: 48px;
+  top: 4px;
+}
+
+/* Disabled forms */
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  @include opacity(0.5);
+}
+
+/* Forms in all backgrounds */
+.dark-bg {
+  .form-control {
+    background-color: rgba($white, 0.15);
+    border-color: #353535;
+    @include box-shadow(inset 0 1px 2px rgba($black, 0.8));
+    color: $gray-lighter;
+  }
+  .is-valid.form-control:focus,
+  .is-warning.form-control:focus,
+  .is-invalid.form-control:focus {
+    @include box-shadow(inset 0 1px 2px rgba($black, 0.8));
+  }
+  .input-group-text {
+    background-color: rgba($white, 0.2);
+    border-color: $black;
+  }
+  .form-control:focus,
+  .is-valid.form-control:focus,
+  .is-warning.form-control:focus,
+  .is-invalid.form-control:focus {
+    background-color: rgba($white, 0.25);
+  }
+  .has-feedback .form-control-feedback {
+    color: $gray-lighter;
+  }
+}
+.default-bg {
+  .form-control {
+    background-color: rgba($black, 0.2);
+    @include box-shadow(inset 0 2px 3px rgba($black, 0.35));
+    color: $white;
+  }
+  .is-valid.form-control:focus,
+  .is-warning.form-control:focus,
+  .is-invalid.form-control:focus {
+    @include box-shadow(inset 0 2px 3px rgba($black, 0.35));
+  }
+  .input-group-text {
+    background-color: rgba($black, 0.2);
+  }
+  .form-control:focus {
+    background-color: rgba($black, 0.1);
+  }
+  .has-feedback .form-control-feedback {
+    color: $white;
+  }
+  .form-check.disabled .form-check-label {
+    color: rgba($white, 0.8);
+  }
+}
+.dark {
+  .form-control {
+    @include box-shadow(inset 0 2px 3px rgba($black, 0.6));
+    color: #cccccc;
+    background-color: rgba($white, 0.1);
+    border-color: #373737;
+  }
+  .form-control:focus {
+    background-color: rgba($white, 0.15);
+  }
+  .has-feedback .form-control-feedback {
+    color: $gray-lighter;
+  }
+  .footer-content .form-control {
+    border-color: #222222;
+  }
+}
+
+/* Validation states */
+.dark-bg {
+  .is-valid .help-block,
+  .is-valid .control-label,
+  .is-valid .radio,
+  .is-valid .checkbox,
+  .is-valid .radio-inline,
+  .is-valid .checkbox-inline,
+  .is-valid.radio label,
+  .is-valid.checkbox label,
+  .is-valid.radio-inline label,
+  .is-valid.checkbox-inline label,
+  .is-valid .form-control-feedback {
+    color: #15c019;
+  }
+  .is-warning .help-block,
+  .is-warning .control-label,
+  .is-warning .radio,
+  .is-warning .checkbox,
+  .is-warning .radio-inline,
+  .is-warning .checkbox-inline,
+  .is-warning.radio label,
+  .is-warning.checkbox label,
+  .is-warning.radio-inline label,
+  .is-warning.checkbox-inline label,
+  .is-warning .form-control-feedback {
+    color: #e5af51;
+  }
+  .is-invalid .help-block,
+  .is-invalid .control-label,
+  .is-invalid .radio,
+  .is-invalid .checkbox,
+  .is-invalid .radio-inline,
+  .is-invalid .checkbox-inline,
+  .is-invalid.radio label,
+  .is-invalid.checkbox label,
+  .is-invalid.radio-inline label,
+  .is-invalid.checkbox-inline label,
+  .is-invalid .form-control-feedback {
+    color: #ef4f4c;
+  }
+}
+.is-valid.form-control,
+.is-valid.form-control:focus {
+  border-color: #65bb66;
+}
+.is-warning.form-control,
+.is-warning.form-control:focus {
+  border-color: #e8c782;
+}
+.is-invalid.form-control,
+.is-invalid.form-control:focus {
+  border-color: #e83a37;
+}
+.default-bg {
+  .is-valid.form-control,
+  .is-warning.form-control,
+  .is-invalid.form-control,
+  .is-valid.form-control:focus,
+  .is-warning.form-control:focus,
+  .is-invalid.form-control:focus {
+    border-color: $white;
+    color: $white;
+  }
+  .valid-feedback,
+  .warning-feedback,
+  .invalid-feedback {
+    color: $white;
+  }
+}
+.is-valid.form-control:focus,
+.is-warning.form-control:focus,
+.is-invalid.form-control:focus {
+  @include box-shadow(none);
+}
+.has-error .error {
+  font-weight: 400;
+  margin-bottom: 5px;
+  display: block;
+}
+.warning-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #e8c782;
+}
+.form-control.is-warning ~ .warning-feedback {
+  display: block;
+}
+
+/*Sorting Filters*/
+.sorting-filters {
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include text-align(left);
+  }
+  form {
+    margin: 0;
+  }
+  .form-inline .form-control {
+    width: 100%;
+  }
+  .btn {
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Small devices (tablets, smartphones) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .sorting-filters .form-inline .form-group {
+    width: 16%;
+  }
+}
+
+/* Small devices (tablets, smartphones 768px and up) */
+@media (min-width: 992px) {
+  .sorting-filters .btn {
+    margin: 25px 0 0;
+  }
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 991px) {
+  .sorting-filters .form-control {
+    margin: 0 0 5px;
+  }
+  .sorting-filters .form-inline,
+  .sorting-filters .form-inline .form-group {
+    display: block;
+  }
+  .sorting-filters form {
+    width: 100%;
+  }
+}
+
+/*forms style 2*/
+.form-style-2 .form-control {
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+  @include border-radius(0px);
+  @include box-shadow(none);
+  font-size: 22px;
+  padding: 10px 20px;
+  height: auto;
+}
+.text-white .form-style-2 .form-control {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.text-white .form-style-2 .form-control:focus,
+.text-white .form-style-2 .form-control:hover {
+  border-color: rgba(255, 255, 255, 1);
+  background-color: transparent;
+}
+.form-style-2 .has-feedback label.sr-only ~ .form-control-feedback {
+  top: 8px;
+  font-size: 24px;
+}
+
+/* Alerts
+---------------------------------- */
+.alert {
+  margin: 20px 0;
+  @include border-radius(5px);
+  border: none;
+}
+.alert-success {
+  color: #2a5f2b;
+  background-color: #bcdab0;
+}
+.alert-info {
+  color: #1a4e68;
+  background-color: #c6e8fa;
+}
+.alert-warning {
+  color: #72582b;
+  background-color: #f7f0ce;
+}
+.alert-icon {
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include padding-left(70px);
+  position: relative;
+}
+.alert-icon i {
+  position: absolute;
+  font-size: 28px;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include left(21px);
+  top: 13px;
+  width: 30px;
+  text-align: center;
+}
+.alert .close {
+  font-weight: normal;
+  filter: alpha(opacity=40);
+  opacity: 0.4;
+  top: 0px;
+}
+[data-notify="container"] {
+  max-width: 400px;
+}
+[data-notify="progressbar"] {
+  display: none;
+}
+
+/*Announcments
+---------------------------------- */
+.announcement {
+  font-size: 13px;
+  .alert {
+    @include border-radius(0px);
+    padding: 10px 0;
+    position: relative;
+    .close {
+      position: absolute;
+      top: 30px;
+      padding: 0 20px;
+      // RTL support.
+      // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+      // RTL related mixins are located in mixins/_rtl.scss file.
+      @include right(10px);
+      z-index: 3;
+      margin-top: -14px;
+      text-shadow: none;
+      @include opacity(0.7);
+      &:hover,
+      &:focus {
+        color: $white;
+        @include opacity(1);
+      }
+    }
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  h2,
+  h3,
+  h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+/*Item Box
+---------------------------------- */
+.hc-item-box,
+.hc-item-box-2 {
+  margin-bottom: 30px;
+}
+.hc-item-box .title,
+.hc-item-box-2 .title {
+  margin-top: 0px;
+}
+
+/*style-1*/
+.hc-item-box h3 {
+  margin-top: 0;
+}
+.hc-item-box .icon {
+  margin-bottom: 10px;
+}
+.hc-item-box p {
+  clear: both;
+  margin-bottom: 15px;
+}
+.hc-item-box:not(.hc-shadow):hover .icon {
+  @include opacity(0.8);
+}
+/*style-2*/
+.hc-item-box-2 {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 0px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(0px);
+  }
+  .icon.without-bg {
+    width: 0;
+    height: 0;
+  }
+  &.boxed {
+    border: 1px solid #f1f1f1;
+  }
+  &.boxed .icon {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(20px);
+    top: 20px;
+  }
+  .icon {
+    @include transition(all 0.2s ease-in-out);
+  }
+  .body {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-left(62px);
+  }
+  &:hover .icon {
+    @include opacity(0.8);
+  }
+  &.right .body {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-right(62px);
+    @include margin-left(0px);
+    @include text-align(right);
+  }
+  &.right .icon {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(auto);
+    @include right(0px);
+  }
+  &.right .icon.without-bg {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(40px);
+  }
+  &.boxed.right .icon {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(auto);
+    @include right(20px);
+  }
+  &.boxed.right .icon.without-bg {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(60px);
+  }
+}
+
+/* Medium devices (desktops, tablets less than 991px) */
+@media (max-width: 991px) {
+  .hc-item-box-2:not(.boxed) {
+    padding-bottom: 0;
+  }
+}
+
+/*Icons
+---------------------------------- */
+.icon {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  background-color: rgba($white, 0.85);
+  color: $black;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  line-height: 58px;
+  @include transition(all 0.2s ease-in-out);
+  @include border-radius(5px);
+  border: 1px solid transparent;
+}
+.icons .icon {
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include margin(0, 5px, 5px, 0);
+}
+.icon {
+  i {
+    position: relative;
+    z-index: 1;
+  }
+  &.dark-bg {
+    background-color: rgba(66, 66, 66, 0.66);
+    color: $white;
+  }
+  &.default-bg {
+    color: $white;
+  }
+  &.light-bg {
+    background-color: $white;
+  }
+  &.without-bg {
+    font-size: 36px;
+    line-height: 1;
+    color: inherit;
+    background-color: transparent;
+    height: 100%;
+  }
+  &.large {
+    font-size: 36px;
+    width: 100px;
+    height: 100px;
+    line-height: 97px;
+  }
+  &.small {
+    font-size: 18px;
+    width: 45px;
+    height: 45px;
+    line-height: 43px;
+  }
+}
+
+/*Feature Box
+---------------------------------- */
+.feature-box,
+.feature-box-2 {
+  margin-bottom: 30px;
+}
+.feature-box .title,
+.feature-box-2 .title {
+  margin-top: 0px;
+}
+
+/*style-1*/
+.feature-box h3 {
+  margin-top: 0;
+}
+.feature-box .icon {
+  margin-bottom: 10px;
+}
+.feature-box p {
+  clear: both;
+  margin-bottom: 15px;
+}
+.feature-box:not(.hc-shadow):hover .icon {
+  @include opacity(0.8);
+}
+/*style-2*/
+.feature-box-2 {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 0px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(0px);
+  }
+  .icon.without-bg {
+    width: 0;
+    height: 0;
+  }
+  &.boxed {
+    border: 1px solid #f1f1f1;
+  }
+  &.boxed .icon {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(20px);
+    top: 20px;
+  }
+  .icon {
+    @include transition(all 0.2s ease-in-out);
+  }
+  .body {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-left(62px);
+  }
+  &:hover .icon {
+    @include opacity(0.8);
+  }
+  &.right .body {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-right(62px);
+    @include margin-left(0px);
+    @include text-align(right);
+  }
+  &.right .icon {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(auto);
+    @include right(0px);
+  }
+  &.right .icon.without-bg {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(40px);
+  }
+  &.boxed.right .icon {
+    // RTL support.
+    // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include left(auto);
+    @include right(20px);
+  }
+  &.boxed.right .icon.without-bg {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(60px);
+  }
+}
+
+/* Medium devices (desktops, tablets less than 991px) */
+@media (max-width: 991px) {
+  .feature-box-2:not(.boxed) {
+    padding-bottom: 0;
+  }
+}
+
+/*shadow*/
+.hc-shadow,
+.hc-shadow-narrow {
+  position: relative;
+  background-color: $white;
+}
+.light-gray-bg.hc-shadow,
+.light-gray-bg.hc-shadow-narrow {
+  background-color: #fafafa;
+}
+.bordered {
+  border: 1px solid #f1f1f1;
+  @include border-radius(3px);
+}
+.dark-bg .bordered {
+  border: 1px solid #555555;
+}
+.hc-shadow *,
+.hc-shadow-narrow * {
+  position: relative;
+  z-index: 3;
+}
+.hc-shadow:before,
+.hc-shadow-narrow:before {
+  position: absolute;
+  left: 0;
+  height: 60%;
+  bottom: 0;
+  width: 100%;
+  content: "";
+  background-color: $white;
+  z-index: 2;
+}
+.light-gray-bg.hc-shadow:before,
+.light-gray-bg.hc-shadow-narrow:before {
+  background-color: #fafafa;
+}
+.hc-shadow:after,
+.hc-shadow-narrow:after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 96%;
+  left: 50%;
+  bottom: 2px;
+  margin-left: -48%;
+  @include box-shadow(0 5px 7px $gray-light);
+  z-index: 1;
+  border-radius: 10%;
+  @include transition(all 0.3s ease-in-out);
+}
+.hc-shadow-narrow:after {
+  width: 90%;
+  margin-left: -45%;
+}
+.hc-shadow:hover:after,
+.hc-shadow-narrow:hover:after {
+  bottom: 10px;
+}
+.hc-shadow-2 {
+  @include box-shadow(0 10px 6px -6px #999);
+  @include transition(all 0.25s ease-in-out);
+}
+.hc-shadow-2:hover {
+  @include box-shadow(0 18px 24px -9px #999);
+}
+
+/*Image box
+---------------------------------- */
+.slick-slide.image-box {
+  margin-bottom: 20px;
+}
+.image-box {
+  .body {
+    padding: 15px;
+  }
+  .body h3 {
+    margin-top: 0;
+  }
+  .body p:last-child {
+    margin-bottom: 0;
+  }
+  &.style-4 {
+    border: none;
+  }
+  &.style-3-b {
+    display: block;
+    margin-bottom: 40px;
+  }
+  &.style-3-b .body {
+    padding: 10px 0;
+  }
+}
+.image-box--shadowed {
+  @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
+  @include transition(all 0.25s ease-in-out);
+}
+.image-box--shadowed:hover {
+  @include box-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+}
+
+/* Medium devices (tablets, laptops, smartphones 768px and up) */
+@media (min-width: 768px) {
+  .image-box.style-3-b .body {
+    padding: 0;
+  }
+}
+
+/* Medium devices (desktops, tablets less than 991px) */
+@media (max-width: 991px) {
+  .image-box.style-4 {
+    margin-bottom: 30px;
+  }
+}
+
+/*Listing Items
+---------------------------------- */
+.listing-item {
+  .overlay-container .badge {
+    position: absolute;
+    background-color: rgba($white, 0.95);
+    font-weight: 400;
+    padding: 4px;
+    top: 10px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(10px);
+    @include border-radius(2px);
+  }
+  .body {
+    padding: 15px;
+  }
+  .body h3 {
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .elements-list {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 18px;
+    margin-top: 1px;
+    display: inline-block;
+    font-weight: 400;
+    // RTL support
+    // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+    @if $text-direction == rtl {
+      float: left;
+    }
+  }
+  .price del {
+    font-size: 12px;
+    color: $gray-light;
+  }
+  .overlay-to-top {
+    padding: 10px 0!important;
+  }
+  .overlay-to-top .btn-sm-link {
+    padding: 5px;
+  }
+}
+
+/*Modals
+---------------------------------- */
+.modal-content .modal-title {
+  color: $white;
+}
+.modal-open .page-wrapper {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.modal-footer .btn + .btn {
+  margin-bottom: 5px;
+}
+
+/* Large devices (Large desktops 1200px and up) */
+@media (min-width: 1200px) {
+  .modal-lg {
+    width: 1140px;
+    max-width: none;
+  }
+}
+
+/*Images and Overlays
+---------------------------------- */
+.overlay-container {
+  position: relative;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+}
+.overlay-bottom,
+.overlay-top {
+  position: absolute;
+  top: auto;
+  padding: 15px;
+  bottom: 0px;
+  left: 0;
+  right: 0px;
+  background-color: rgba(30, 30, 30, 0.5);
+  overflow: hidden;
+  @include opacity(0);
+  @include transition(all ease-in-out 0.25s);
+  height: 0;
+  color: $white;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+}
+.overlay-bottom.links,
+.overlay-to-top.links {
+  z-index: 11;
+}
+.overlay-to-top {
+  position: absolute;
+  top: auto;
+  padding: 10px;
+  bottom: -30px;
+  left: 0;
+  right: 0px;
+  background-color: rgba(30, 30, 30, 0.5);
+  @include opacity(0);
+  @include transition(all ease-in-out 0.25s);
+  color: $white;
+}
+.overlay-top {
+  top: 0;
+}
+.overlay-visible .overlay-bottom,
+.overlay-visible .overlay-top {
+  @include opacity(1);
+  height: auto!important;
+  padding-bottom: 20px;
+}
+.overlay-visible.overlay-container:hover .overlay-bottom:not(.links),
+.overlay-visible.overlay-container:hover .overlay-top {
+  @include opacity(0.5);
+}
+.overlay-top a,
+.overlay-bottom a,
+.overlay-to-top a,
+.overlay-top a:hover,
+.overlay-bottom a:hover,
+.overlay-to-top a:hover {
+  color: $white;
+  text-decoration: none;
+}
+.overlay-container .text {
+  padding: 0 20px;
+  position: relative;
+}
+.overlay-container .text h3,
+.overlay-container .text h3 .small {
+  margin-top: 0;
+  color: $white;
+}
+.overlay-container .text a:hover {
+  color: $white;
+}
+.overlay-bottom .btn,
+.overlay-top .btn {
+  color: $white;
+  border-color: $white;
+  margin: 0;
+}
+.overlay-bottom .btn:hover,
+.overlay-top .btn:hover {
+  color: $gray;
+  background-color: $white;
+}
+.overlay-container:hover .overlay-top,
+.overlay-container:hover .overlay-bottom,
+.image-box.style-2:hover .overlay-top,
+.image-box.style-2:hover .overlay-bottom {
+  height: 50%;
+  @include opacity(1);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+}
+.overlay-container:hover .overlay-to-top,
+.image-box:hover .overlay-to-top {
+  @include opacity(1);
+  bottom: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+}
+.overlay-link {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  padding: 15px;
+  bottom: 0px;
+  left: 0;
+  right: 0px;
+  background-color: rgba(30, 30, 30, 0.5);
+  overflow: hidden;
+  @include opacity(0);
+  @include transition(all ease-in-out 0.25s);
+  color: $white;
+}
+.overlay-link i {
+  @include transition(all 0.2s ease-in-out);
+  width: 80px;
+  height: 80px;
+  border: 1px solid $white;
+  @include border-radius(100%);
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -40px 0 0 -40px;
+  font-size: 32px;
+  line-height: 80px;
+}
+.overlay-link i:hover {
+  background-color: $white;
+  color: $gray;
+}
+.overlay-link.small i {
+  width: 25px;
+  height: 25px;
+  margin: -12.5px 0 0 -12.5px;
+  font-size: 14px;
+  line-height: 25px;
+}
+.overlay-container:hover .overlay-link {
+  height: 100%;
+  @include opacity(1);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+}
+
+/* Large devices (Large desktops 1200px and up) */
+@media (min-width: 1200px) {
+  .overlay-container .text {
+    top: 30%;
+  }
+}
+
+/* Extra small devices (phones, less than 575px) */
+@media (max-width: 575px) {
+  .overlay-container .text {
+    top: 30%;
+  }
+  .overlay-container .text p:not(.mobile-visible) {
+    display: none;
+  }
+}
+
+/* Large and Medium devices (desktops, tablets less than 1199px) */
+@media (min-width: 575px) and (max-width: 1199px) {
+  .overlay-container:not(.overlay-visible) .overlay-top ~ .overlay-bottom {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .slick-slide .overlay-container:hover .overlay-top {
+    height: 71%;
+  }
+  .slick-slide .overlay-container:hover .overlay-bottom {
+    height: 29%;
+  }
+}
+
+/*Video Backgrounds
+---------------------------------- */
+.video-background,
+.video-background-banner {
+  position: relative;
+  overflow: hidden;
+}
+.video-background video,
+.video-background-banner video {
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: scroll;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  display: none;
+  position: absolute;
+  display: block;
+}
+.video-background-banner .video-background-poster,
+.video-background  .video-background-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: scroll;
+  background-size: cover;
+  z-index: 0;
+}
+
+/* Responsive iframe
+---------------------------------- */
+.tp-caption .embed-responsive {
+  overflow: visible;
+}
+
+/* Audio wrapper
+---------------------------------- */
+.audio-wrapper iframe {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
+
+/* Jumbotron
+---------------------------------- */
+.jumbotron {
+  background-color: transparent;
+}
+
+/*Carousel
+---------------------------------- */
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == rtl {
+  .carousel-indicators {
+    padding-right: 0;
+  }
+}
+.top.carousel-indicators {
+  bottom: auto;
+  top: 10px;
+}
+.bottom.carousel-indicators {
+  bottom: 10px;
+}
+.hc-shadow .carousel-indicators {
+  position: absolute;
+  z-index: 4;
+}
+
+/*Badges
+---------------------------------- */
+.main-navigation .badge {
+  position: absolute;
+  top: 13px;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include right(20px);
+  font-size: 12px;
+  background-color: transparent;
+  color: inherit;
+  font-weight: 300;
+  padding: 2px 4px;
+}
+.main-navigation .mega-menu .badge {
+  top: 8px;
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == rtl {
+    left: 0;
+  }
+}
+
+/* Extra small devices (phones, less than 767px) */
+@media (max-width: 767px) {
+  .main-navigation .dropdown-toggle .badge {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right(50px);
+  }
+}
+
+/*Pace (Page loader)
+---------------------------------- */
+/*loader 1*/
+.page-loader-1 {
+  .page-wrapper {
+    @include opacity(0);
+  }
+  &.pace-done .page-wrapper {
+    @include opacity(1);
+    @include transition(ease-in-out opacity 0.2s);
+  }
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    @include user-select(none);
+    z-index: 2000;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    width: 200px;
+    background: $white;
+    overflow: hidden;
+  }
+  .pace .pace-progress {
+    @include box-sizing(border-box);
+    @include translate3d(0, 0, 0);
+    max-width: 200px;
+    position: fixed;
+    z-index: 2000;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/*loader 2*/
+.page-loader-2 {
+  .page-wrapper {
+    @include opacity(0);
+  }
+  &.pace-done .page-wrapper {
+    @include opacity(1);
+    @include transition(ease-in-out opacity 0.2s);
+  }
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    @include user-select(none);
+    z-index: 2000;
+    position: fixed;
+    height: 60px;
+    width: 100px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .pace .pace-progress {
+    z-index: 2000;
+    position: absolute;
+    height: 60px;
+    width: 100px;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .pace .pace-progress:before {
+    content: attr(data-progress-text);
+    text-align: center;
+    color: $white;
+    border-radius: 50%;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 45px;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    margin: 8px 0 0 29px;
+    display: block;
+    z-index: 999;
+    position: absolute;
+  }
+  .pace .pace-activity {
+    font-size: 15px;
+    line-height: 1;
+    z-index: 2000;
+    position: absolute;
+    height: 60px;
+    width: 100px;
+    display: block;
+    @include animation(pace-theme-center-atom-spin 2s linear infinite);
+  }
+  .pace .pace-activity {
+    border-radius: 50%;
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100px;
+  }
+  .pace .pace-activity:after {
+    border-radius: 50%;
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    height: 60px;
+    width: 100px;
+    @include rotate(60deg);
+  }
+  .pace .pace-activity:before {
+    border-radius: 50%;
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    height: 60px;
+    width: 100px;
+    @include rotate(120deg);
+  }
+}
+@-webkit-keyframes pace-theme-center-atom-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@-moz-keyframes pace-theme-center-atom-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes pace-theme-center-atom-spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes pace-theme-center-atom-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/*loader 3*/
+.page-loader-3 {
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    @include user-select(none);
+  }
+  .pace .pace-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+  }
+}
+.pace.pace-inactive {
+  display: none;
+}
+
+/*loader 4*/
+.page-loader-4 {
+  .page-wrapper {
+    @include opacity(0);
+  }
+  &.pace-done .page-wrapper {
+    @include opacity(1);
+    @include transition(ease-in-out opacity 0.2s);
+  }
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    @include user-select(none);
+    @include perspective(12rem);
+    z-index: 2000;
+    position: fixed;
+    height: 6rem;
+    width: 6rem;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .pace .pace-progress {
+    position: fixed;
+    z-index: 2000;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 6rem;
+    width: 6rem !important;
+    line-height: 6rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    color: $white;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    text-align: center;
+    @include animation(pace-theme-center-circle-spin linear infinite 2s);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .pace .pace-progress:after {
+    content: attr(data-progress-text);
+    display: block;
+  }
+}
+@-webkit-keyframes pace-theme-center-circle-spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+@-moz-keyframes pace-theme-center-circle-spin {
+  from {
+    -moz-transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(360deg);
+  }
+}
+@-ms-keyframes pace-theme-center-circle-spin {
+  from {
+    -ms-transform: rotateY(0deg);
+  }
+  to {
+    -ms-transform: rotateY(360deg);
+  }
+}
+@-o-keyframes pace-theme-center-circle-spin {
+  from {
+    -o-transform: rotateY(0deg);
+  }
+  to {
+    -o-transform: rotateY(360deg);
+  }
+}
+@keyframes pace-theme-center-circle-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/*loader 5*/
+.page-loader-5 {
+  .page-wrapper {
+    @include opacity(0);
+  }
+  &.pace-done .page-wrapper {
+    @include opacity(1);
+    @include transition(ease-in-out opacity 0.2s);
+  }
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    @include user-select(none);
+  }
+  .pace .pace-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    height: 5rem;
+    width: 5rem;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .pace .pace-progress:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: .5rem;
+    content: attr(data-progress-text);
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 100px;
+    line-height: 1;
+    text-align: right;
+  }
+}
+
+/*loader 6*/
+.page-loader-6 {
+  .page-wrapper {
+    @include opacity(0);
+  }
+  &.pace-done .page-wrapper {
+    @include opacity(1);
+    @include transition(ease-in-out opacity 0.2s);
+  }
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    @include user-select(none);
+  }
+  .pace .pace-activity {
+    display: block;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform: translateX(100%) translateY(-100%) rotate(45deg);
+    transform: translateX(100%) translateY(-100%) rotate(45deg);
+    pointer-events: none;
+  }
+  .pace.pace-active .pace-activity {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(45deg);
+    transform: translateX(50%) translateY(-50%) rotate(45deg);
+  }
+  .pace .pace-activity::before,
+  .pace .pace-activity::after {
+    @include box-sizing(border-box);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    display: block;
+    border: 5px solid $white;
+    border-radius: 50%;
+    content: '';
+  }
+  .pace .pace-activity::before {
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+    border-right-color: rgba($black, 0.2);
+    border-left-color: rgba($black, 0.2);
+    @include animation(pace-theme-corner-indicator-spin 3s linear infinite);
+  }
+  .pace .pace-activity::after {
+    bottom: 50px;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    border-top-color: rgba($black, 0.2);
+    border-bottom-color: rgba($black, 0.2);
+    @include animation(pace-theme-corner-indicator-spin 1s linear infinite);
+  }
+}
+@-webkit-keyframes pace-theme-corner-indicator-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes pace-theme-corner-indicator-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/*Text Rotator (typed.js)
+---------------------------------- */
+.typed-cursor {
+   @include animation(blink 0.9s infinite);
+  font-size: 33px;
+  padding-left: 5px;
+  line-height: 1;
+  color: $black;
+}
+@keyframes blink{
+  50% { opacity:0; }
+}
+@-webkit-keyframes blink{
+  50% { opacity:0; }
+}
+@-moz-keyframes blink{
+  50% { opacity:0; }
+}
+@-ms-keyframes blink{
+  50% { opacity:0; }
+}
+@-o-keyframes blink{
+  50% { opacity:0; }
+}
