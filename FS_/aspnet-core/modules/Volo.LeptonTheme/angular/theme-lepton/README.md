@@ -1,1 +1,0 @@
-# @volo/abp.ng.theme.lepton
