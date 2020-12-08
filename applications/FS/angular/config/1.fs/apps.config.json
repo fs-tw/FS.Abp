@@ -538,7 +538,7 @@
             ],
             "styles": [
               "apps/the-project-app/src/styles.scss",
-              "apps/the-project-app/src/assets/css/skins/light_blue.css"
+              "apps/the-project-app/src/assets/template/css/skins/light_blue.css"
             ],
             "scripts": [],
             "stylePreprocessorOptions": {
