@@ -6,9 +6,14 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Volo</RootNamespace>
   </PropertyGroup>
-
-ㄇ
   
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Domain\Volo.Abp.LeptonTheme.Management.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain\Volo.Abp.LanguageManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Domain\Volo.Saas.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain\Volo.Abp.TextTemplateManagement.Domain.csproj" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.Domain\Volo.FileManagement.Domain.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.Domain\Volo.Chat.Domain.csproj" />
