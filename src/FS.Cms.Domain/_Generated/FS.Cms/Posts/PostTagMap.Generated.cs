@@ -48,12 +48,6 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual Post Post
-        {
-            get;
-            set;
-        }
-
 
         #region Extensibility Method Definitions
 

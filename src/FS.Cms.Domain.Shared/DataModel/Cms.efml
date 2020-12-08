@@ -792,7 +792,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True" p1:GetAsync="True" p1:GetListAsync="True" p1:CreateAsync="True" p1:DeleteAsync="True">
+  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -928,7 +928,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Posts.PostTagMap" entity-set="PostTagMaps" p1:Guid="f7660505-f7b9-47b6-9d8e-7f24847e8b22" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.Cms.Posts.PostTagMap" entity-set="PostTagMaps" p1:Guid="f7660505-f7b9-47b6-9d8e-7f24847e8b22" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GetAsync="True" p1:GetListAsync="True" p1:CreateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -1197,10 +1197,10 @@
   </class>
   <associations>
     <association name="Post_PostTag" cardinality="OneToMany" p1:Guid="f190de42-71b1-457f-9822-d6bad2aa75a5">
-      <end1 multiplicity="One" name="Post" class="PostTagMap" relation-class="Post" constrained="True" lazy="False" p1:Guid="10c6f327-2f7d-4f0c-a8ed-0441ef4c5780">
+      <end1 multiplicity="One" name="Post" class="PostTagMap" relation-class="Post" generate="False" constrained="True" lazy="False" p1:Guid="10c6f327-2f7d-4f0c-a8ed-0441ef4c5780">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="PostTags" class="Post" relation-class="PostTagMap" generate="False" lazy="False" p1:Guid="e29bbdf4-ef14-4fbb-ac39-f5ca66114346">
+      <end2 multiplicity="Many" name="PostTags" class="Post" relation-class="PostTagMap" lazy="False" p1:Guid="e29bbdf4-ef14-4fbb-ac39-f5ca66114346">
         <property name="PostId" />
       </end2>
     </association>

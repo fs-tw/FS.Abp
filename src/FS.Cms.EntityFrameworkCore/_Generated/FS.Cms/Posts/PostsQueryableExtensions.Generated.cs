@@ -14,14 +14,14 @@ namespace FS.Cms.Posts
 {
     public static class PostsQueryableExtensions //auto-generated
     {
-        public static IQueryable<PostTagMap> IncludeDetails(this IQueryable<PostTagMap> queryable, bool include = true)
+        public static IQueryable<Post> IncludeDetails(this IQueryable<Post> queryable, bool include = true)
         {
             if (!include)
             {
                 return queryable;
             }
             return queryable
-                .Include(x => x.Post);
+                .Include(x => x.PostTags);
         }
     }
 }

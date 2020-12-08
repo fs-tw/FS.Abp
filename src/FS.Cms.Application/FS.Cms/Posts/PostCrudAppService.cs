@@ -15,6 +15,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
+using FS.Cms.Definitions;
 
 namespace FS.Cms.Posts
 {
@@ -33,7 +34,10 @@ namespace FS.Cms.Posts
         private ICodesTreeRepository codesTreeRepository;
         protected ICodesTreeRepository CodesTreeRepository => this.LazyGetRequiredService(ref codesTreeRepository);
 
-        public override async Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
+        private ICodingStore _codingStore;
+        public ICodingStore CodingStore => LazyGetRequiredService(ref _codingStore);
+
+        public async Task<PagedResultDto<PostWithTagsDto>> GetListWithTagAsync(PostGetListDto input)
         {
             var uer = CurrentUser.Id;
             var permission = await AuthorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
@@ -44,41 +48,83 @@ namespace FS.Cms.Posts
 
             var listResult = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
 
-            var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(listResult.Entities);
-            foreach (var item in result)
+
+            var definition = await CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
+            List<TagDto> tags = new List<TagDto>();
+            ObjectMapper.Map(definition.CodeList, tags);
+            var result = new List<PostWithTagsDto>();
+
+            foreach (var item in listResult.Entities)
             {
-                var blogCode = this.CodesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
+                var target = new PostWithTagsDto(tags);
+                ObjectMapper.Map(item, target);
+                var blogCode = this.CodesTreeRepository.Where(x => x.Id == target.BlogCodeId).FirstOrDefault();
                 if (blogCode.ParentId != null)
                 {
-                    item.BlogDisplayName = blogCode.DisplayName;
+                    target.BlogDisplayName = blogCode.DisplayName;
                 }
                 else
                 {
-                    item.BlogDisplayName = "不分類";
+                    target.BlogDisplayName = "不分類";
+                }
+                
+                if (target.DisplayMode == DisplayMode.內文)
+                {
+                    target.Content = target.Content.Replace("<img src='api", $"<img src='{url}/api");
+                    target.Content = target.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
                 }
 
-                if (item.DisplayMode == DisplayMode.內文)
-                {
-                    item.Content = item.Content.Replace("<img src='api", $"<img src='{url}/api");
-                    item.Content = item.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
-                }
+                result.Add(target);
             }
 
 
 
 
-            return new PagedResultDto<PostWithDetailsDto>()
+            return new PagedResultDto<PostWithTagsDto>()
             {
                 TotalCount = listResult.TotalCount,
                 Items = result
             };
         }
 
-        public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
+
+        public async Task<PostWithTagsDto> GetWithTags(Guid id) 
         {
+            var definition = await CodingStore.Codes
+            .GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
+            List<TagDto> tags = new List<TagDto>();
+            ObjectMapper.Map(definition.CodeList, tags);
+            var output = new PostWithTagsDto(tags);
 
             var url = this.Configuration["App:SelfUrl"];
+            var post = this.Repository.WithDetails().Where(x => x.Id == id).First();
+
+            ObjectMapper.Map(post, output);
+
+            var blogCode = this.CodesTreeRepository.Where(x => x.Id == output.BlogCodeId).FirstOrDefault();
+            if (blogCode.ParentId != null)
+            {
+                output.BlogDisplayName = blogCode.DisplayName;
+            }
+            else
+            {
+                output.BlogDisplayName = "不分類";
+            }
+
+
+            if (output.DisplayMode == DisplayMode.內文)
+            {
+                output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
+                output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
+            }
+            return output;
+        }
+
+        public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
+        {           
+            var url = this.Configuration["App:SelfUrl"];
             var post = this.Repository.WithDetails().Where(x => x.Id == key.Id).First();
+            
             var output = ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
             if (output.DisplayMode == DisplayMode.內文)
             {

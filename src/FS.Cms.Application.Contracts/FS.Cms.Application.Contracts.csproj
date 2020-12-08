@@ -9,16 +9,17 @@
 
   <ItemGroup>
     <Compile Remove="DataModel\**" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\**" />
     <Compile Remove="_Generated\FS.Cms\Tags\**" />
     <EmbeddedResource Remove="DataModel\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Blogs\**" />
     <EmbeddedResource Remove="_Generated\FS.Cms\Tags\**" />
     <None Remove="DataModel\**" />
+    <None Remove="_Generated\FS.Cms\Blogs\**" />
     <None Remove="_Generated\FS.Cms\Tags\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
@@ -124,10 +125,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Blogs\" />
   </ItemGroup>
 
 </Project>

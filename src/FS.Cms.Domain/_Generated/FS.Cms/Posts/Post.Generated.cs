@@ -27,6 +27,7 @@ namespace FS.Cms.Posts
 
         public Post()
         {
+            this.PostTags = new List<PostTagMap>();
             OnCreated();
         }
 
@@ -115,6 +116,12 @@ namespace FS.Cms.Posts
         } 
 
         public virtual System.Guid? TenantId
+        {
+            get;
+            set;
+        }
+
+        public virtual IList<PostTagMap> PostTags
         {
             get;
             set;

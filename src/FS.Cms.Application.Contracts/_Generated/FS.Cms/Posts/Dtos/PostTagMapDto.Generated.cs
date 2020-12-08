@@ -27,8 +27,6 @@ namespace FS.Cms.Posts.Dtos
     }
     public partial class PostTagMapWithDetailsDto : PostTagMapDto
     {
-        public PostDto Post { get; set; }
-
     }
     public partial class PostTagMapCreateDto
     {

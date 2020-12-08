@@ -19,7 +19,10 @@ namespace FS.Cms.Definitions
 
     public interface ITagAppService 
     {
-        
+        Task TagCreateAsync(TagForCreateDto input);
+        Task<List<TagDto>> TagGetListAsync();
+        Task TagUpdateAsync(TagForUpdateDto input);
+        Task TageDeleteAsync(Guid id);
     }
 
     public interface IStorageAppService
