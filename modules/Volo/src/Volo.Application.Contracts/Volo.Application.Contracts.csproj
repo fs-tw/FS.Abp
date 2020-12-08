@@ -8,13 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.Application.Contracts\Volo.FileManagement.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.Application.Contracts\Volo.Chat.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Application.Contracts\Volo.Abp.LeptonTheme.Management.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Application.Contracts\Volo.Payment.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Tenant.Application.Contracts\Volo.Saas.Tenant.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Shared.Application.Contracts\Volo.Abp.Account.Pro.Shared.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Host.Application.Contracts\Volo.Saas.Host.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Tenant.Application.Contracts\Volo.Saas.Tenant.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Volo.AuditLogging.Ui\src\Volo.Abp.AuditLogging.Application.Contracts\Volo.Abp.AuditLogging.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.Application.Contracts\Volo.Abp.Identity.Pro.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Identityserver.Ui\src\Volo.Abp.IdentityServer.Application.Contracts\Volo.Abp.IdentityServer.Application.Contracts.csproj" />
@@ -22,6 +17,14 @@
     <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Admin.Application.Contracts\Volo.Abp.Account.Pro.Admin.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Application.Contracts\Volo.Abp.LanguageManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Application.Contracts\Volo.Abp.TextTemplateManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Application.Contracts\Volo.Abp.LeptonTheme.Management.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.Application.Contracts\Volo.FileManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.Application.Contracts\Volo.Chat.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Application.Contracts\Volo.Payment.Application.Contracts.csproj" />
+    <!--<ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Shared.Application.Contracts\Volo.Abp.Account.Pro.Shared.Application.Contracts.csproj" />-->
   </ItemGroup>
 
   <ItemGroup>

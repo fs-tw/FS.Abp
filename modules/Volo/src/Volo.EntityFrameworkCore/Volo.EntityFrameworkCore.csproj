@@ -6,13 +6,17 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Volo</RootNamespace>
   </PropertyGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Volo.FileManagement\src\Volo.FileManagement.EntityFrameworkCore\Volo.FileManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Chat\src\Volo.Chat.EntityFrameworkCore\Volo.Chat.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Payment\src\Volo.Payment.EntityFrameworkCore\Volo.Payment.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.EntityFrameworkCore\Volo.Abp.LanguageManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Saas\src\Volo.Saas.EntityFrameworkCore\Volo.Saas.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.EntityFrameworkCore\Volo.Abp.TextTemplateManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.EntityFrameworkCore\Volo.Abp.LanguageManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.EntityFrameworkCore\Volo.Saas.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.EntityFrameworkCore\Volo.Abp.TextTemplateManagement.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.EntityFrameworkCore\Volo.FileManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.EntityFrameworkCore\Volo.Chat.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.EntityFrameworkCore\Volo.Payment.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

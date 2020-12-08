@@ -8,18 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Volo.FileManagement\src\Volo.FileManagement.HttpApi.Client\Volo.FileManagement.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Chat\src\Volo.Chat.HttpApi.Client\Volo.Chat.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.HttpApi.Client\Volo.Abp.LeptonTheme.Management.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Payment\src\Volo.Payment.HttpApi.Client\Volo.Payment.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Saas\src\Volo.Saas.Host.HttpApi.Client\Volo.Saas.Host.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.AuditLogging.Ui\src\Volo.Abp.AuditLogging.HttpApi.Client\Volo.Abp.AuditLogging.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.HttpApi.Client\Volo.Abp.Identity.Pro.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Admin.HttpApi.Client\Volo.Abp.Account.Pro.Admin.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.HttpApi.Client\Volo.Abp.Account.Pro.Public.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.Identityserver.Ui\src\Volo.Abp.IdentityServer.HttpApi.Client\Volo.Abp.IdentityServer.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.HttpApi.Client\Volo.Abp.LanguageManagement.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.HttpApi.Client\Volo.Abp.TextTemplateManagement.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Host.HttpApi.Client\Volo.Saas.Host.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Tenant.HttpApi.Client\Volo.Saas.Tenant.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.AuditLogging.Ui\src\Volo.Abp.AuditLogging.HttpApi.Client\Volo.Abp.AuditLogging.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.HttpApi.Client\Volo.Abp.Identity.Pro.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Admin.HttpApi.Client\Volo.Abp.Account.Pro.Admin.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.HttpApi.Client\Volo.Abp.Account.Pro.Public.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Identityserver.Ui\src\Volo.Abp.IdentityServer.HttpApi.Client\Volo.Abp.IdentityServer.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.HttpApi.Client\Volo.Abp.LanguageManagement.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.HttpApi.Client\Volo.Abp.LeptonTheme.Management.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.HttpApi.Client\Volo.Abp.TextTemplateManagement.HttpApi.Client.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.HttpApi.Client\Volo.FileManagement.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.HttpApi.Client\Volo.Chat.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.HttpApi.Client\Volo.Payment.HttpApi.Client.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,17 +17,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Web.IdentityServer\Volo.Abp.Account.Pro.Public.Web.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.Web\Volo.FileManagement.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.SignalR\Volo.Chat.SignalR.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.Web\Volo.Chat.Web.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.csproj" />
     <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Web\Volo.Abp.LeptonTheme.Management.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Payu.Web\Volo.Payment.Payu.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.TwoCheckout.Web\Volo.Payment.TwoCheckout.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Web\Volo.Payment.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Tenant.Web\Volo.Saas.Tenant.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Web\Volo.Abp.Account.Pro.Public.Web.csproj" />
-    <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Web.IdentityServer\Volo.Abp.Account.Pro.Public.Web.IdentityServer.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Admin.Web\Volo.Abp.Account.Pro.Admin.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.AuditLogging.Ui\src\Volo.Abp.AuditLogging.Web\Volo.Abp.AuditLogging.Web.csproj" />
     <ProjectReference Include="..\..\modules\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.Web\Volo.Abp.Identity.Pro.Web.csproj" />
