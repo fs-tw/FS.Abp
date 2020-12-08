@@ -13,6 +13,10 @@ const routes: Routes = [
       import('@abp/ng.setting-management').then((m) => m.SettingManagementModule.forLazy()),
   },
   {
+    path: 'index-sample',
+    loadChildren: () => import('./index-sample/index-sample.module').then(m => m.IndexSampleModule),
+  },
+  {
     path: 'about-sample',
     loadChildren: () => import('./about-sample/about-sample.module').then(m => m.AboutSampleModule),
   },
