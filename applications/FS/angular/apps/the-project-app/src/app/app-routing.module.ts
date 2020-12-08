@@ -11,6 +11,18 @@ const routes: Routes = [
     path: 'setting-management',
     loadChildren: () =>
       import('@abp/ng.setting-management').then((m) => m.SettingManagementModule.forLazy()),
+  },
+  {
+    path: 'about-sample',
+    loadChildren: () => import('./about-sample/about-sample.module').then(m => m.AboutSampleModule),
+  },
+  {
+    path: 'contact-sample',
+    loadChildren: () => import('./contact-sample/contact-sample.module').then(m => m.ContactSampleModule),
+  },
+  {
+    path: 'platform-sample',
+    loadChildren: () => import('./platform-sample/platform-sample.module').then(m => m.PlatformSampleModule),
   }
 ];
 
