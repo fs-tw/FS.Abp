@@ -25,7 +25,7 @@ namespace FS.Cms.Posts.Dtos
                     result.Add(new PostsTagsForDisplayName()
                     {
                         TagId = item.TagCodeId,
-                        DisplayName = code.DisplayName
+                        DisplayName = code.Name
                     });
                 }
                 return result;
