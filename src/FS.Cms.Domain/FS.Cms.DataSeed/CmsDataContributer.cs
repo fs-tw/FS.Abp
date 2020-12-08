@@ -12,12 +12,13 @@ namespace FS.Cms.DataSeed
     {
         public  CmsDefinitionSeeder cmsDefinitionSeeder { get; set; }
         public  PostSeeder postSeeder { get; set; }
+        public TagSeeder tagSeeder { get; set; }
 
-       
         public async Task SeedAsync(DataSeedContext context) 
         {          
             await this.cmsDefinitionSeeder.SeedAsync(context);
             await this.postSeeder.SeedAsync(context);
+            await this.tagSeeder.SeedAsync(context);
         }
 
 

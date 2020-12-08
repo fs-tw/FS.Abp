@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using FS.Cms.Definitions;
+using FS.Cms.Tags;
 
 namespace FS.Cms.Posts
 {
@@ -51,7 +52,7 @@ namespace FS.Cms.Posts
 
             var definition = await CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
             List<TagDto> tags = new List<TagDto>();
-            ObjectMapper.Map(definition.CodeList, tags);
+            ObjectMapper.Map(definition.CodeList.ToList(), tags);
             var result = new List<PostWithTagsDto>();
 
             foreach (var item in listResult.Entities)

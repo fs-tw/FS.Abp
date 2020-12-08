@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace FS.Cms.Definitions
 {
     public interface IDefinitionsAppService : 
-        IBlogAppService, ITagAppService, IStorageAppService
+        IBlogAppService, IStorageAppService
     {
     }
     public interface IBlogAppService
@@ -17,13 +17,7 @@ namespace FS.Cms.Definitions
         Task BlogDeleteAsync(Guid id);
     }
 
-    public interface ITagAppService 
-    {
-        Task TagCreateAsync(TagForCreateDto input);
-        Task<List<TagDto>> TagGetListAsync();
-        Task TagUpdateAsync(TagForUpdateDto input);
-        Task TageDeleteAsync(Guid id);
-    }
+  
 
     public interface IStorageAppService
     {

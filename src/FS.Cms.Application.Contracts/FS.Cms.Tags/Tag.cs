@@ -20,23 +20,33 @@ namespace FS.Cms.Tags
     {   
         public Guid Id { get; set; }
         public string Name { get; set; }
-      //  public List<TagDto> Tags { get; set; }
     }
 
+
+    public class TagGroupForCreateDto 
+    {     
+        public string TagGroupName { get; set; }
+    }
+
+
+    public class TagGroupForUpdateDto
+    {       
+        public string TagGroupName { get; set; }
+    }
+
+
+    //----
     public class TagForCreateDto
     {
         [Required]
         public string Name { get; set; }
-        public List<TagForCreateDto> Tags { get; set; }
     }
 
     
 
     public class TagForUpdateDto
     {
-        public Guid? Id { get; set; }
         [Required]
-        public string DisplayName { get; set; }
-        public List<TagForUpdateDto> Tags { get; set; }
+        public string Name { get; set; }
     }
 }

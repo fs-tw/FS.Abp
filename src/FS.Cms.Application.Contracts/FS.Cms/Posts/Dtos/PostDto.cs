@@ -1,4 +1,5 @@
 ﻿using FS.Cms.Definitions;
+using FS.Cms.Tags;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace FS.Cms.Posts.Dtos
                 List<PostsTagsForDisplayName> result = new List<PostsTagsForDisplayName>();
                 foreach (var item in PostTags) 
                 {
-                    var code = tags.Find(x => x.Id == item.TagCodeId);
+                    var code = tags.Where(x => x.Id == item.TagCodeId).FirstOrDefault();
+                    if (code == null) continue;
                     result.Add(new PostsTagsForDisplayName()
                     {
                         TagId = item.TagCodeId,
