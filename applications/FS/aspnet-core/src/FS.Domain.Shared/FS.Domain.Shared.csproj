@@ -23,11 +23,18 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain.Shared" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.LanguageManagement.Domain.Shared" Version="4.0.0" />
+    <!--<PackageReference Include="Volo.Abp.LanguageManagement.Domain.Shared" Version="4.0.0" />
     <PackageReference Include="Volo.Saas.Domain.Shared" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain.Shared" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain.Shared" Version="4.0.0" />-->
     <PackageReference Include="Volo.Abp.Commercial.SuiteTemplates" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain.Shared\Volo.Abp.LanguageManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Saas\src\Volo.Saas.Domain.Shared\Volo.Saas.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain.Shared\Volo.Abp.TextTemplateManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Domain.Shared\Volo.Abp.LeptonTheme.Management.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,15 +6,15 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FS</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.EntityFrameworkCore\FS.Theme.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,9 +27,15 @@
     <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.BlobStoring.Database.EntityFrameworkCore" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.LanguageManagement.EntityFrameworkCore" Version="4.0.0" />
+    <!--<PackageReference Include="Volo.Abp.LanguageManagement.EntityFrameworkCore" Version="4.0.0" />
     <PackageReference Include="Volo.Saas.EntityFrameworkCore" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.TextTemplateManagement.EntityFrameworkCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.EntityFrameworkCore" Version="4.0.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.EntityFrameworkCore\Volo.Abp.LanguageManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Saas\src\Volo.Saas.EntityFrameworkCore\Volo.Saas.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.EntityFrameworkCore\Volo.Abp.TextTemplateManagement.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>
