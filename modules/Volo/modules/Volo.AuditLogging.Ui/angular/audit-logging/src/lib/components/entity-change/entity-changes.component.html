@@ -1,0 +1,131 @@
+<div class="card">
+  <div class="card-body pb-lg-3">
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+      <div class="row">
+        <div class="col-md-6 col-xl-3">
+          <div class="form-group">
+            <label for="start-date">{{
+              'AbpAuditLogging::EntityChangeStartTime' | abpLocalization
+            }}</label
+            ><input
+              ngbDatepicker
+              #pickerStart="ngbDatepicker"
+              id="start-date"
+              class="form-control"
+              formControlName="startDate"
+              readonly
+              (click)="pickerStart.toggle()"
+              (keyup.space)="pickerStart.open()"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="form-group">
+            <label for="end-date">{{
+              'AbpAuditLogging::EntityChangeEndTime' | abpLocalization
+            }}</label
+            ><input
+              ngbDatepicker
+              #pickerEnd="ngbDatepicker"
+              id="end-date"
+              class="form-control"
+              formControlName="endDate"
+              readonly
+              (click)="pickerEnd.toggle()"
+              (keyup.space)="pickerEnd.open()"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="form-group">
+            <label for="change-type">{{ 'AbpAuditLogging::ChangeType' | abpLocalization }}</label
+            ><select
+              id="change-type"
+              class="custom-select form-control"
+              formControlName="entityChangeType"
+              (change)="handleSubmit()"
+            >
+              <option [ngValue]=""></option>
+              <option
+                *ngFor="let type of changeTypes; trackBy: track.by('id')"
+                [ngValue]="type.value"
+                >{{ 'AbpAuditLogging::' + type.key | abpLocalization }}</option
+              >
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="form-group">
+            <label for="entity-type-full-name">{{
+              'AbpAuditLogging::EntityTypeFullName' | abpLocalization
+            }}</label
+            ><input
+              id="entity-type-full-name"
+              type="text"
+              class="form-control"
+              formControlName="entityTypeFullName"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btn-block mt-0 mt-md-4">
+            <span>
+              {{ 'AbpAuditLogging::Refresh' | abpLocalization }}
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body p-0">
+    <ngx-datatable default [rows]="data" [count]="count" [list]="list">
+      <ngx-datatable-column
+        [name]="'AbpAuditLogging::Detail' | abpLocalization"
+        [maxWidth]="150"
+        [width]="150"
+        [sortable]="false"
+      >
+        <ng-template let-row="row" let-i="rowIndex" ngx-datatable-cell-template>
+          <abp-grid-actions
+            [index]="i"
+            [record]="row"
+            text="AbpAuditLogging::Actions"
+          ></abp-grid-actions>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        [name]="'AbpAuditLogging::Time' | abpLocalization"
+        [width]="230"
+        prop="changeTime"
+      >
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        [name]="'AbpAuditLogging::ChangeType' | abpLocalization"
+        [width]="140"
+        [sortable]="false"
+      >
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{ 'AbpAuditLogging::' + changeType[row.changeType] | abpLocalization }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="TenantId" [width]="150" [sortable]="false">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <div abpEllipsis>{{ row.tenantId }}</div>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        [name]="'AbpAuditLogging::EntityTypeFullName' | abpLocalization"
+        [width]="150"
+        [sortable]="false"
+      >
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <div abpEllipsis>{{ row.entityTypeFullName }}</div>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</div>

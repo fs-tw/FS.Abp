@@ -1,0 +1,54 @@
+﻿@page "/text-templates/contents/inline"
+@attribute [Authorize(TextTemplateManagementPermissions.TextTemplates.EditContents)]
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.TextTemplateManagement.Authorization
+@using Volo.Abp.TextTemplateManagement.Localization
+@inherits TextTemplateManagementComponentBase
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["Contents"]">
+
+</PageHeader>
+<Card Class="border border-danger">
+    <CardBody>
+        <CardText>
+            @((MarkupString)L["InlineContentDescription"].Value)
+        </CardText>
+    </CardBody>
+</Card>
+
+<Card>
+    <CardBody>
+        <Field>
+            @L["Name"]: <strong>@TemplateDefinitionName</strong>
+        </Field>
+        <Field>
+            <FieldLabel> @L["TemplateContent"]</FieldLabel>
+            <FieldBody>
+                <MemoEdit @bind-Text="@TemplateContent" Rows="10" />
+            </FieldBody>
+        </Field>
+        <div class="float-left action-group">
+            <Button Color="@Color.Primary"
+                    Clicked="@NavigateToTemplateListing">
+                <Icon Name="@IconName.ArrowLeft" />
+                @L["ReturnToTemplates"]
+            </Button>
+        </div>
+        <div class="float-right action-group">
+            <Button Color="@Color.Primary"
+                    Clicked="@SaveContentAsync">
+                @L["SaveContent"]
+            </Button>
+            <Button Color="@Color.Danger"
+                    Clicked="@RestoreToDefaultAsync">
+                @L["RestoreToDefault"]
+            </Button>
+            <Button Color="@Color.Link"
+                    Clicked="@NavigateToContentManagement">
+                @L["CustomizePerCulture"]
+            </Button>
+        </div>
+    </CardBody>
+</Card>

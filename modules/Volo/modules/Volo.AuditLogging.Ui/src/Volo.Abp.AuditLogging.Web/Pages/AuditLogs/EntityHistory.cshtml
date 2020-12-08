@@ -1,0 +1,30 @@
+﻿@page
+@using System.Globalization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.AuditLogging.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AuditLogging.Web.Pages.Shared.Components.EntityChangeWidget
+@inject IHtmlLocalizer<AuditLoggingResource> L
+@model Volo.Abp.AuditLogging.Web.Pages.AuditLogs.EntityHistoryModel
+@{
+    Layout = null;
+}
+@section scripts{
+    <abp-script src="/libs/timeago/locales/jquery.timeago.@(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName).js"/>
+    <abp-script src="/Pages/AuditLogs/timeago.js"/>
+}
+
+<abp-modal size="@(AbpModalSize.Large)">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            @Model.EntityTypeFullName <br/><span style="font-size:small">( @Model.EntityId )</span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <abp-modal-body>
+        @(await Component.InvokeAsync<EntityChangeWidgetViewComponent>(Model.EntityChanges))
+    </abp-modal-body>
+    <abp-modal-footer buttons="@(AbpModalButtons.Close)"></abp-modal-footer>
+</abp-modal>

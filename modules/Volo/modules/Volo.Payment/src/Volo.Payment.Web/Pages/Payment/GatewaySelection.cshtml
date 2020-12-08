@@ -1,0 +1,64 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Payment.Localization
+@model Volo.Payment.Pages.Payment.GatewaySelectionModel
+@inject IHtmlLocalizer<PaymentResource> Localizer
+@section scripts {
+    <abp-script src="/Pages/Payment/gateway-selection.js" />
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="m-0 text-center">Select a Payment Gateway</h4>
+                </div>
+                <div class="card-body">
+                    <form id="frmGatewaySelection" method="post" action="">
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            @for (int gatewayIndex = 0; gatewayIndex < Model.Gateways.Count; gatewayIndex++)
+                            {
+                                var gateway = Model.Gateways[gatewayIndex];
+
+                                <div class="col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="hidden" id="@($"{@gateway.Name}PrePaymentUrl")" value="@(gateway.PrePaymentUrl)?paymentRequestId=@Model.PaymentRequestId"/>
+                                        <input type="radio" name="gateway" class="custom-control-input" checked="@(gatewayIndex == 0)" value="@gateway.Name" id="@gateway.Name">
+                                        <label for="@gateway.Name" class="custom-control-label">
+                                            <strong>@Localizer["PayWithGateway", Localizer[gateway.Name]]</strong>
+                                            @if (gateway.Recommended)
+                                            {
+                                                <small class="text-muted">(Recommended)</small>
+                                            }
+                                        </label>
+                                        @if (gateway.ExtraInfos.Any())
+                                        {
+                                            <div class="payment-info-boxes">
+                                                @foreach (var extraInfo in gateway.ExtraInfos)
+                                                {
+                                                    <p class="mt-1 mb-0 text-muted">
+                                                        <small class="d-block"><i class="fa fa-info-circle"></i> @Html.Raw(extraInfo)</small>
+                                                    </p>
+                                                }
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                                <input type="hidden" name="paymentRequestId" value="@Model.PaymentRequestId" />
+                            }
+                        </div>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <a id="btnSubmit" href="#" class="btn btn btn-success btn-block @Model.CheckoutButtonStyle">Continue to Checkout <i class="fas fa-arrow-right"></i></a>
+                    <p class="mt-2 mb-1 text-muted text-center">
+                        <small>
+                            <i class="fa fa-info-circle"></i> Next, you will be redirected to the selected payment gateway's website for the transaction
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

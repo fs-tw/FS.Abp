@@ -1,0 +1,67 @@
+﻿@page
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageToolbar
+@using Volo.Abp.LanguageManagement.Navigation
+@using Volo.Abp.LanguageManagement.Pages.LanguageManagement.Texts
+@model Volo.Abp.LanguageManagement.Pages.LanguageManagement.Texts.IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.LanguageManagement.Localization
+@inject IHtmlLocalizer<LanguageManagementResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["LanguageTexts"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:Languages"].Value);
+    PageLayout.Content.MenuItemName = LanguageManagementMenuNames.Texts;
+}
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script src="/Pages/LanguageManagement/Texts/edit.js" />
+        <abp-script src="/Pages/LanguageManagement/Texts/index.js" />
+    </abp-script-bundle>
+}
+@section content_toolbar {
+    @await Component.InvokeAsync(typeof(AbpPageToolbarViewComponent), new { pageName = typeof(IndexModel).FullName })
+}
+<abp-card>
+    <abp-card-body>
+        <form id="FilterFormId" method="post">
+            <abp-row>
+                <abp-column size-md="_3">
+                    <abp-select asp-for="@Model.BaseCultureName" />
+                </abp-column>
+                <abp-column size-md="_3">
+                    <abp-select asp-for="@Model.TargetCultureName" />
+                </abp-column>
+                <abp-column size-md="_3">
+                    <abp-select asp-for="@Model.ResourceName" />
+                </abp-column>
+                <abp-column size-md="_3">
+                    <abp-select asp-for="@Model.GetOnlyEmptyValues" />
+                </abp-column>
+            </abp-row>
+            <abp-row>
+                <abp-column size-md="_12">
+                    <div class="input-group mb-3">
+                        <input class="form-control" asp-for="@Model.Filter" placeholder="@L["Filter"].Value" />
+                        <div class="input-group-append">
+                            <abp-button button-type="Primary" id="FilterFormSubmitButtonId">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </abp-button>
+                        </div>
+                    </div>
+                </abp-column>
+            </abp-row>
+        </form>
+    </abp-card-body>
+</abp-card>
+<abp-table striped-rows="true" id="LanguageTextsTable" class="nowrap">
+    <thead>
+        <tr>
+            <th>@L["Edit"]</th>
+            <th>@L["Key"]</th>
+            <th>@L["BaseValue"]</th>
+            <th>@L["Value"]</th>
+            <th>@L["ResourceName"]</th>
+        </tr>
+    </thead>
+</abp-table>

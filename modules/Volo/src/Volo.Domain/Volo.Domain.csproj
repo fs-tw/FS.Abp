@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Volo</RootNamespace>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Domain\Volo.Abp.LeptonTheme.Management.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain\Volo.Abp.LanguageManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Domain\Volo.Saas.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain\Volo.Abp.TextTemplateManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.Domain\Volo.FileManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.Domain\Volo.Chat.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Domain\Volo.Payment.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Payu.Domain\Volo.Payment.Payu.Domain.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.TwoCheckout.Domain\Volo.Payment.TwoCheckout.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,131 @@
+<div class="row entry-row">
+  <div class="col-auto">
+    <h1 class="content-header-title">
+      {{ 'TextTemplateManagement::Contents' | abpLocalization }}
+    </h1>
+  </div>
+  <div class="col-lg-auto pl-lg-0">
+    <abp-breadcrumb></abp-breadcrumb>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <label
+      >{{ 'TextTemplateManagement::Name' | abpLocalization }}:
+      <strong>{{ templateContent.name }}</strong></label
+    >
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="target-culture-name">{{
+            'TextTemplateManagement::BaseCultureName' | abpLocalization
+          }}</label>
+          <select
+            class="culture-selector custom-select form-control"
+            id="target-culture-name"
+            name="target-culture-name"
+            [(ngModel)]="referenceTemplateContent.cultureName"
+            (ngModelChange)="getReferenceTemplateContent()"
+            ><option *ngFor="let language of languages" [ngValue]="language.cultureName">{{
+              language.displayName
+            }}</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="reference-content">{{
+                'TextTemplateManagement::BaseContent' | abpLocalization
+              }}</label
+              ><textarea
+                id="reference-content"
+                name="reference-content"
+                rows="10"
+                class="form-control"
+                readonly
+                [value]="referenceTemplateContent.content"
+              >
+              </textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="target-culture-name">{{
+            'TextTemplateManagement::TargetCultureName' | abpLocalization
+          }}</label>
+          <select
+            class="culture-selector custom-select form-control"
+            id="target-culture-name"
+            name="target-culture-name"
+            [(ngModel)]="selectedCultureName"
+            (ngModelChange)="onChangeSelectedCultureName()"
+            ><option *ngFor="let language of languages" [ngValue]="language.cultureName">{{
+              language.displayName
+            }}</option>
+          </select>
+        </div>
+        <form id="template-inline-content-form" [formGroup]="form">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="TemplateContent">{{
+                  'TextTemplateManagement::TemplateContent' | abpLocalization
+                }}</label
+                ><span> * </span
+                ><textarea
+                  id="TemplateContent"
+                  name="TemplateContent"
+                  rows="10"
+                  class="form-control"
+                  formControlName="content"
+                  [disabled]="busy"
+                >
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-md-4">
+        <a
+          routerLink="/text-template-management/text-templates"
+          role="button"
+          class="btn btn-primary"
+        >
+          <i class="fa fa-arrow-left mr-1"></i>
+          <span>{{ 'TextTemplateManagement::ReturnToTemplates' | abpLocalization }}</span>
+        </a>
+      </div>
+      <div class="col col-md-8">
+        <div class="float-right">
+          <button
+            id="save-content"
+            class="btn btn-primary"
+            type="button"
+            [disabled]="busy"
+            (click)="save()"
+          >
+            <span>{{ 'TextTemplateManagement::SaveContent' | abpLocalization }}</span>
+          </button>
+          <button
+            id="restore-to-default"
+            class="btn btn-danger ml-1"
+            type="button"
+            [disabled]="busy"
+            (click)="restoreToDefault()"
+          >
+            <span>{{ 'TextTemplateManagement::RestoreToDefault' | abpLocalization }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+﻿@page
+@model Volo.Abp.Identity.Pro.DemoApp.Pages.IndexModel
+<h3>Welcome to the IdentityManagement demo application.</h3>
+@if (!User.Identity.IsAuthenticated)
+{
+    <a href="/Account/Login">Login</a>
+}

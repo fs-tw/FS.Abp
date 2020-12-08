@@ -1,0 +1,155 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.IdentityServer.Localization
+@using Volo.Abp.IdentityServer.Web.Pages.IdentityServer.IdentityResources
+@using Volo.Abp.Localization
+@using Volo.Abp.ObjectExtending
+@model EditModel
+@inject IStringLocalizerFactory StringLocalizerFactory
+@inject IHtmlLocalizer<AbpIdentityServerResource> L
+@{
+    Layout = null;
+}
+<form class="form-with-card" method="post" asp-page="/IdentityServer/IdentityResources/Edit">
+    <abp-modal size="@(AbpModalSize.Large)">
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-tabs name="IdentityResourcesEditTabsId">
+                <abp-tab title="@L["Info"].Value">
+                    <abp-input asp-for="IdentityResource.Id" />
+                    <abp-input asp-for="IdentityResource.Name" />
+                    <abp-input asp-for="IdentityResource.DisplayName" />
+                    <abp-input asp-for="IdentityResource.Description" />
+                    <abp-input asp-for="IdentityResource.Enabled" />
+                    <abp-input asp-for="IdentityResource.Required" />
+                    <abp-input asp-for="IdentityResource.Emphasize" />
+                    <abp-input asp-for="IdentityResource.ShowInDiscoveryDocument" />
+                    @foreach (var propertyInfo in ObjectExtensionManager.Instance.GetProperties<IdentityResourceUpdateModalView>())
+                    {
+                        if (!propertyInfo.Name.EndsWith("_Text"))
+                        {
+                            if (propertyInfo.Type.IsEnum || !propertyInfo.Lookup.Url.IsNullOrEmpty())
+                            {
+                                <abp-select asp-for="IdentityResource.ExtraProperties[propertyInfo.Name]"
+                                            label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                            autocomplete-api-url="@propertyInfo.Lookup.Url"
+                                            autocomplete-selected-item-name="@Model.IdentityResource.ExtraProperties[propertyInfo.Name+"_Text"]"
+                                            autocomplete-selected-item-value="@Model.IdentityResource.ExtraProperties[propertyInfo.Name]"
+                                            autocomplete-filter-param-name="@propertyInfo.Lookup.FilterParamName"
+                                            autocomplete-items-property-name="@propertyInfo.Lookup.ResultListPropertyName"
+                                            autocomplete-display-property-name="@propertyInfo.Lookup.DisplayPropertyName"
+                                            autocomplete-value-property-name="@propertyInfo.Lookup.ValuePropertyName"></abp-select>
+                            }
+                            else
+                            {
+                                <abp-input type="@propertyInfo.GetInputType()"
+                                           asp-for="IdentityResource.ExtraProperties[propertyInfo.Name]"
+                                           label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                           asp-format="@propertyInfo.GetInputFormatOrNull()"
+                                           value="@propertyInfo.GetInputValueOrNull(Model.IdentityResource.ExtraProperties[propertyInfo.Name])" />
+                            }
+                        }
+                    }
+                </abp-tab>
+                <abp-tab title="@L["Claims"].Value">
+
+                    <div class="card shadow-none bg-light">
+                        <div class="card-body">
+                            <abp-row>
+                                <abp-column size="_6">
+                                    <abp-card>
+                                        <abp-card-header>@L["OwnedClaims"]</abp-card-header>
+                                        <abp-card-body style="height: 320px; overflow: auto;">
+
+                                            @for (var i = 0; i < Model.AllClaims.Length; i++)
+                                            {
+                                                var claim = Model.AllClaims[i];
+                                                var isOwned = Model.IdentityResource.UserClaims.Contains(claim);
+                                                <button type="button" class="ownedClaim btn btn-block btn-primary btn-sm mb-2 mt-0 text-truncate text-left" id="@(claim + "OwnedId")" style="@(isOwned ? "" : "display: none;")" abp-tooltip-bottom="@(claim.Length > 35 ? claim : "")">
+                                                    <i class="fa fa-long-arrow-right"></i> @claim
+                                                </button>
+                                                <input id="@(claim + "InputId")" type="text" name="@("IdentityResource.UserClaims[" + i + "]")" value="@(isOwned ? claim : "")" hidden />
+                                            }
+
+                                        </abp-card-body>
+                                    </abp-card>
+                                </abp-column>
+
+                                <abp-column size="_6">
+
+                                    <abp-card>
+                                        <abp-card-header>@L["NotOwnedClaims"]</abp-card-header>
+                                        <abp-card-body style="height: 320px; overflow: auto;">
+                                            @foreach (var claim in Model.AllClaims)
+                                            {
+                                                <button type="button" class="otherClaim btn btn-block btn-outline-primary btn-sm mb-2 mt-0 text-truncate text-left" id="@(claim + "OtherId")" style="@(Model.IdentityResource.UserClaims.Contains(claim) ? "display: none;" : "")" abp-tooltip-bottom="@(claim.Length > 35 ? claim : "")">
+                                                    <i class="fa fa-long-arrow-left "></i> @claim
+                                                </button>
+                                            }
+
+                                        </abp-card-body>
+                                    </abp-card>
+                                </abp-column>
+
+                            </abp-row>
+                        </div>
+                    </div>
+                </abp-tab>
+                <abp-tab title="@L["Properties"].Value">
+                    <h3>@L["Properties"]</h3>
+                    <div class="pt-3 pb-5 clearfix">
+                        <abp-row>
+                            <abp-column size="_6">
+                                <abp-input asp-for="SampleProperty.Key" />
+                            </abp-column>
+                            <abp-column size="_6">
+                                <abp-input asp-for="SampleProperty.Value" />
+                            </abp-column>
+                        </abp-row>
+                        <abp-button id="AddNewPropertyButton" button-type="Success" class="float-right mb-2">
+                            <i class="fa fa-plus"></i> @L["AddNew"]
+                        </abp-button>
+                    </div>
+                    <abp-table striped-rows="true" responsive-sm="true" id="PropertyTableId" style="@(Model.IdentityResource.Properties.Length > 0 ? "" : "display: none;")">
+                        <thead>
+                            <tr>
+                                <th scope="Column">@L["Key"]</th>
+                                <th scope="Column">@L["Value"]</th>
+                                <th scope="Column"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="PropertyTableBodyId">
+                            @for (int i = 0; i < Model.IdentityResource.Properties.Length; i++)
+                            {
+                                var property = Model.IdentityResource.Properties[i];
+
+                                <tr>
+                                    <td>
+                                        @property.Key
+                                    </td>
+                                    <td>
+                                        @property.Value
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger deletePropertyButton float-right">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                    <td hidden>
+                                        <input asp-for="IdentityResource.Properties[i].Key" id="@(Model.IdentityResource.Properties[i].Key + "PropertyInput")" />
+                                        <input asp-for="IdentityResource.Properties[i].Value" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </abp-table>
+                </abp-tab>
+            </abp-tabs>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel | AbpModalButtons.Save)">
+        </abp-modal-footer>
+    </abp-modal>
+</form>
+<input hidden id="PropertyStartIndex" value="@Model.IdentityResource.Properties.Length" />

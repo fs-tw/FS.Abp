@@ -6,19 +6,22 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FS</RootNamespace>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Application\FS.Cms.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Application\FS.Theme.Application.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="4.0.0" />
-    <PackageReference Include="Volo.Saas.Host.Application" Version="4.0.0" />
+    <!--<PackageReference Include="Volo.Saas.Host.Application" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.AuditLogging.Application" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.IdentityServer.Application" Version="4.0.0" />
@@ -26,7 +29,20 @@
     <PackageReference Include="Volo.Abp.Account.Pro.Admin.Application" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.LanguageManagement.Application" Version="4.0.0" />
     <PackageReference Include="Volo.Abp.TextTemplateManagement.Application" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Application" Version="4.0.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Saas\src\Volo.Saas.Host.Application\Volo.Saas.Host.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Saas\src\Volo.Saas.Tenant.Application\Volo.Saas.Tenant.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.AuditLogging.Ui\src\Volo.Abp.AuditLogging.Application\Volo.Abp.AuditLogging.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Identity.Pro\src\Volo.Abp.Identity.Pro.Application\Volo.Abp.Identity.Pro.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Identityserver.Ui\src\Volo.Abp.IdentityServer.Application\Volo.Abp.IdentityServer.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Application\Volo.Abp.Account.Pro.Public.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Admin.Application\Volo.Abp.Account.Pro.Admin.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Application\Volo.Abp.LanguageManagement.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Application\Volo.Abp.TextTemplateManagement.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Application\Volo.Abp.LeptonTheme.Management.Application.csproj" />
   </ItemGroup>
 
 </Project>

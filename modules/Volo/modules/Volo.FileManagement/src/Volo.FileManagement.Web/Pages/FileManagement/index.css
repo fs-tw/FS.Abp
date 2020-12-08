@@ -1,0 +1,28 @@
+﻿.card-body .breadcrumb, .modal-body .breadcrumb {
+  padding: 3px 0 0 !important;
+  opacity: 1 !important;
+  font-size: 1em !important; }
+  .card-body .breadcrumb .breadcrumb-item, .modal-body .breadcrumb .breadcrumb-item {
+    padding: 0 !important; }
+    .card-body .breadcrumb .breadcrumb-item:hover span, .modal-body .breadcrumb .breadcrumb-item:hover span {
+      cursor: pointer;
+      background: var(--background); }
+    .card-body .breadcrumb .breadcrumb-item.active:hover span, .modal-body .breadcrumb .breadcrumb-item.active:hover span {
+      cursor: inherit;
+      background: none; }
+    .card-body .breadcrumb .breadcrumb-item.active span, .modal-body .breadcrumb .breadcrumb-item.active span {
+      opacity: .5;
+      cursor: inherit; }
+    .card-body .breadcrumb .breadcrumb-item span, .modal-body .breadcrumb .breadcrumb-item span {
+      padding: 3px 8px;
+      border-radius: 3px; }
+    .card-body .breadcrumb .breadcrumb-item + .breadcrumb-item:before, .modal-body .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
+      content: ">";
+      opacity: .3;
+      margin: 3px 0px 0 3px; }
+
+span.fileName:hover {
+  cursor: pointer; }
+
+span.directoryName:hover {
+  cursor: pointer; }

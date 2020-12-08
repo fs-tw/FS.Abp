@@ -1,0 +1,32 @@
+<abp-identity-server-entity-base
+  [list]="list"
+  [service]="service"
+  entityName="IdentityResources"
+></abp-identity-server-entity-base>
+
+<abp-identity-server-modal
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <abp-identity-server-modal-info-tab [form]="newScopeForm"></abp-identity-server-modal-info-tab>
+  <abp-identity-server-modal-claims-tab></abp-identity-server-modal-claims-tab>
+</abp-identity-server-modal>
+
+<abp-identity-server-modal
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+  type="Edit"
+>
+  <abp-identity-server-modal-info-tab
+    [form]="editScopeForm"
+    [selectedRecord]="editSelectedRecord"
+  ></abp-identity-server-modal-info-tab>
+  <abp-identity-server-modal-claims-tab
+    [claims]="editClaims"
+  ></abp-identity-server-modal-claims-tab>
+  <abp-identity-server-modal-properties-tab
+    [selectedProperties]="editProperties"
+  ></abp-identity-server-modal-properties-tab>
+</abp-identity-server-modal>

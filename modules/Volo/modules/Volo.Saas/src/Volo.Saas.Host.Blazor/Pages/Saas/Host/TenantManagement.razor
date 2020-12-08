@@ -1,0 +1,257 @@
+﻿@page "/saas/host/tenants"
+@attribute [Authorize(SaasHostPermissions.Tenants.Default)]
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.FeatureManagement.Blazor.Components
+@using Volo.Saas.Host.Dtos
+@using Volo.Saas.Localization
+@inject AbpBlazorMessageLocalizerHelper<SaasResource> LH
+@inherits AbpCrudPageBase<ITenantAppService, SaasTenantDto, Guid, GetTenantsInput, SaasTenantCreateDto, SaasTenantUpdateDto>
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["Tenants"]" BreadcrumbItems="@BreadcrumbItems">
+    <Column ColumnSize="ColumnSize.IsAuto" Class="px-1 pt-2">
+        <Button Color="Color.Primary"
+                Clicked="() => FeatureManagementModal.OpenAsync(FeatureProviderName)">
+            <i class="mr-1 fa fa-cog"></i>@L["Permission:FeatureManagement.ManageHostFeatures"]
+        </Button>
+    </Column>
+
+    @if (HasCreatePermission)
+    {
+        <Column ColumnSize="ColumnSize.IsAuto" Class="px-1 pt-2">
+            <Button Color="Color.Primary" Clicked="OpenCreateModalAsync">
+                <Icon Name="IconName.Add" Class="mr-1"></Icon> @L["NewTenant"]
+            </Button>
+        </Column>
+    }
+</PageHeader>
+
+@* ************************* SEARCH ************************* *@
+<Card>
+    <CardBody>
+        <Form id="TenantSearchForm">
+            <Fields Horizontal="true">
+                <Field ColumnSize="ColumnSize.Is11" Margin="Margin.Is0.FromBottom">
+                    <TextEdit Placeholder="@L["Search"]" @bind-Text="@GetListInput.Filter" />
+                </Field>
+                <Field ColumnSize="ColumnSize.Is1" Margin="Margin.Is0.FromBottom">
+                    <Button form="TenantSearchForm"
+                            Type="ButtonType.Submit"
+                            Block="true"
+                            Color="Color.Primary"
+                            Clicked="GetEntitiesAsync">
+                        <Icon Name="IconName.Search" />
+                    </Button>
+                </Field>
+            </Fields>
+        </Form>
+    </CardBody>
+</Card>
+
+@* ************************* DATA GRID ************************* *@
+<DataGrid TItem="SaasTenantDto"
+          Data="Entities"
+          ReadData="OnDataGridReadAsync"
+          TotalItems="TotalCount"
+          ShowPager="true"
+          PageSize="PageSize">
+    <DataGridColumns>
+        <DataGridEntityActionsColumn TItem="SaasTenantDto" @ref="@EntityActionsColumn">
+            <DisplayTemplate>
+                <EntityActions TItem="SaasTenantDto" EntityActionsColumn="@EntityActionsColumn">
+                    <EntityAction TItem="SaasTenantDto"
+                                  RequiredPolicy="@UpdatePolicyName"
+                                  Clicked="() => OpenEditModalAsync(context)"
+                                  Text="@L["Edit"]" />
+                    <EntityAction TItem="SaasTenantDto"
+                                  RequiredPolicy="@ManageConnectionStringsPolicyName"
+                                  Clicked="() => OpenEditConnectionStringModalAsync(context)"
+                                  Text="@L["ConnectionStrings"]" />
+                    <EntityAction TItem="SaasTenantDto"
+                                  RequiredPolicy="@ManageFeaturesPolicyName"
+                                  Clicked="() => FeatureManagementModal.OpenAsync(FeatureProviderName, context.Id.ToString())"
+                                  Text="@L["Features"]" />
+                    <EntityAction TItem="SaasTenantDto"
+                                  RequiredPolicy="@DeletePolicyName"
+                                  Clicked="() => DeleteEntityAsync(context)"
+                                  ConfirmationMessage="() => GetDeleteConfirmationMessage(context)"
+                                  Text="@L["Delete"]" />
+                </EntityActions>
+            </DisplayTemplate>
+        </DataGridEntityActionsColumn>
+        <DataGridColumn TItem="SaasTenantDto" Field="@nameof(SaasTenantDto.Name)" Caption="@L["TenantName"].Value">
+            <DisplayTemplate>
+                @(context.Name)
+            </DisplayTemplate>
+        </DataGridColumn>
+    </DataGridColumns>
+</DataGrid>
+
+@* ************************* CREATE MODAL ************************* *@
+@if (HasCreatePermission)
+{
+    <Modal @ref="CreateModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <Form id="TenantCreateForm">
+                <ModalHeader>
+                    <ModalTitle>@L["NewTenant"]</ModalTitle>
+                    <CloseButton Clicked="CloseCreateModalAsync" />
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@CreateValidationsRef" Model="@NewEntity" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["TenantName"]</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Name">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        @if (Editions != null)
+                        {
+                            <Field>
+                                <FieldLabel>@L["Edition"]</FieldLabel>
+                                <Select TValue="Guid?"
+                                        @bind-SelectedValue="@NewEntity.EditionId">
+    
+                                    <SelectItem Value="@Guid.Empty"></SelectItem>
+    
+                                    @foreach (var edition in Editions)
+                                    {
+                                        <SelectItem Value="@edition.Id">
+                                            @edition.DisplayName
+                                        </SelectItem>
+                                    }
+                                </Select>
+                            </Field>
+                        }
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["DisplayName:AdminEmailAddress"]</FieldLabel>
+                                <TextEdit Role="@TextRole.Email" @bind-Text="@NewEntity.AdminEmailAddress">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["DisplayName:AdminPassword"]</FieldLabel>
+                                <TextEdit Role="@TextRole.Password" @bind-Text="@NewEntity.AdminPassword">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="CloseCreateModalAsync">@L["Cancel"]</Button>
+                    <Button form="TenantCreateForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="CreateEntityAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* EDIT MODAL ************************* *@
+@if (HasUpdatePermission)
+{
+    <Modal @ref="EditModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <Form id="TenantEditForm">
+                <ModalHeader>
+                                <ModalTitle>@L["Edit"]</ModalTitle>
+                                <CloseButton Clicked="CloseEditModalAsync" />
+                            </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@EditValidationsRef" Model="@EditingEntity" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["TenantName"]</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Name">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                        @if (Editions != null)
+                        {
+                            <Field>
+                                <FieldLabel>@L["Edition"]</FieldLabel>
+                                <Select TValue="Guid?"
+                                        @bind-SelectedValue="@EditingEntity.EditionId">
+                
+                                    <SelectItem Value="@Guid.Empty"></SelectItem>
+                
+                                    @foreach (var edition in Editions)
+                                    {
+                                        <SelectItem Value="@edition.Id">
+                                            @edition.DisplayName
+                                        </SelectItem>
+                                    }
+                                </Select>
+                            </Field>
+                        }
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="CloseEditModalAsync">@L["Cancel"]</Button>
+                    <Button form="TenantEditForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="UpdateEntityAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* EDIT CONNECTION STRING MODAL ************************* *@
+@if (HasUpdatePermission)
+{
+    <Modal @ref="@ManageConnectionStringModal">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <Form id="ConnectionStringEditForm">
+                <ModalHeader>
+                    <ModalTitle>@L["ConnectionStrings"]</ModalTitle>
+                    <CloseButton Clicked="CloseEditConnectionStringModal" />
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@ManageConnectionStringValidations" Model="@TenantInfo" ValidateOnLoad="false">
+                        <Field>
+                            <Check TValue="bool" @bind-Checked="@TenantInfo.UseSharedDatabase" Cursor="@Cursor.Pointer">@L["DisplayName:UseSharedDatabase"]</Check>
+                        </Field>
+                        @if (!TenantInfo.UseSharedDatabase)
+                        {
+                            <Validation MessageLocalizer="@LH.Localize">
+                                <Field>
+                                    <FieldLabel>@L["DisplayName:DefaultConnectionString"]</FieldLabel>
+                                    <TextEdit @bind-Text="@TenantInfo.DefaultConnectionString">
+                                        <Feedback>
+                                            <ValidationError />
+                                        </Feedback>
+                                    </TextEdit>
+                                </Field>
+                            </Validation>
+                        }
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="CloseEditConnectionStringModal">@L["Cancel"]</Button>
+                    <Button form="ConnectionStringEditForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="UpdateConnectionStringAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@if (HasManageFeaturesPermission)
+{
+    <FeatureManagementModal @ref="FeatureManagementModal" />
+}

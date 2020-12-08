@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col col-6">
+    <div class="card p-1 p-md-2">
+      <div class="card-header px-1 px-md-2 px-lg-3">{{ leftListTitle | abpLocalization }}</div>
+      <div class="card-body px-1 px-md-2 px-lg-3" style="height:320px; overflow: auto;">
+        <button
+          type="button"
+          class="ownedClaim btn btn-block btn-primary btn-sm mb-2 mt-0 text-truncate text-left px-1 px-md-2"
+          *abpFor="
+            let left of value || [];
+            filterBy: 'left';
+            filterVal: true;
+            trackBy: trackByFn;
+            let i = index
+          "
+          [id]="left[bindLabel]"
+          (click)="transferItem(left[bindLabel])"
+        >
+          <i class="fa fa-long-arrow-right"></i>
+          {{ left[bindLabel] }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col col-6">
+    <div class="card p-1 p-md-2">
+      <div class="card-header px-1 px-md-2 px-lg-3">{{ rightListTitle | abpLocalization }}</div>
+      <div class="card-body px-1 px-md-2 px-lg-3" style="height:320px; overflow: auto;">
+        <button
+          type="button"
+          class="otherClaim btn btn-block btn-outline-primary btn-sm mb-2 mt-0 text-truncate text-left px-1 px-md-2"
+          *abpFor="
+            let right of value || [];
+            filterBy: 'left';
+            filterVal: false;
+            trackBy: trackByFn;
+            let i = index
+          "
+          [id]="right[bindLabel]"
+          (click)="transferItem(right[bindLabel])"
+        >
+          <i class="fa fa-long-arrow-left"></i>
+          {{ right[bindLabel] }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

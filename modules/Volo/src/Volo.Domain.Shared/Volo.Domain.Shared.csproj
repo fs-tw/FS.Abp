@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Volo</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain.Shared\Volo.Abp.LanguageManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Saas\src\Volo.Saas.Domain.Shared\Volo.Saas.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain.Shared\Volo.Abp.TextTemplateManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Domain.Shared\Volo.Abp.LeptonTheme.Management.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\Volo.FileManagement\src\Volo.FileManagement.Domain.Shared\Volo.FileManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Chat\src\Volo.Chat.Domain.Shared\Volo.Chat.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\modules\Volo.Payment\src\Volo.Payment.Domain.Shared\Volo.Payment.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain.Shared" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Commercial.SuiteTemplates" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,79 @@
+<ng-container *ngIf="settings$ | async; let settings">
+  <div (keyup.enter)="submit(settings.settings)">
+    <ng-container *ngFor="let provider of settings.settings">
+      <ng-container *ngIf="isTenant; else host">
+        <ng-container>
+          <h4>{{ provider.name }}</h4>
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              [attr.id]="provider.name + '.use-host-settings'"
+              [(ngModel)]="provider.useHostSettings"
+            />
+            <label class="custom-control-label" [for]="provider.name + '.use-host-settings'">{{
+              'AbpAccount::ExternalProviderUseHostSettings' | abpLocalization
+            }}</label>
+          </div>
+
+          <div class="collapse" [class.show]="!provider.useHostSettings">
+            <ng-container *ngTemplateOutlet="propertySetsTemplate"></ng-container>
+          </div>
+
+          <hr class="my-4" />
+        </ng-container>
+      </ng-container>
+
+      <ng-template #host>
+        <h4>{{ provider.name }}</h4>
+
+        <div class="custom-checkbox custom-control mb-2">
+          <input
+            type="checkbox"
+            [attr.id]="provider.name + '.enabled'"
+            [attr.name]="provider.name + '.enabled'"
+            class="custom-control-input"
+            [(ngModel)]="provider.enabled"
+            autofocus
+          /><label class="custom-control-label" [attr.for]="provider.name + '.enabled'">{{
+            'AbpAccount::ExternalProviderEnabled' | abpLocalization
+          }}</label>
+        </div>
+
+        <ng-container *ngTemplateOutlet="propertySetsTemplate"></ng-container>
+      </ng-template>
+
+      <ng-template #propertySetsTemplate>
+        <ng-container
+          *ngTemplateOutlet="singlePropertySetTemplate; context: { $implicit: provider.properties }"
+        ></ng-container>
+        <ng-container
+          *ngTemplateOutlet="
+            singlePropertySetTemplate;
+            context: { $implicit: provider.secretProperties, type: 'password' }
+          "
+        ></ng-container>
+
+        <ng-template #singlePropertySetTemplate let-properties let-type="type">
+          <ng-container *ngFor="let property of properties">
+            <div class="form-group">
+              <label [attr.for]="provider.name + '.' + property.name">{{ property.name }}</label>
+              <input
+                [type]="type || 'text'"
+                class="form-control"
+                [(ngModel)]="property.value"
+                [attr.id]="provider.name + '.' + property.name"
+              />
+            </div>
+          </ng-container>
+        </ng-template>
+      </ng-template>
+    </ng-container>
+
+    <div>
+      <abp-button (click)="submit(settings.settings)" iconClass="fa fa-save" [loading]="loading">{{
+        'AbpAccount::Save' | abpLocalization
+      }}</abp-button>
+    </div>
+  </div>
+</ng-container>

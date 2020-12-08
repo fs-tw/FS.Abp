@@ -1,0 +1,48 @@
+<ng-container *ngIf="pagedData$ | async as pagedData">
+  <div class="row entry-row">
+    <div class="col-auto">
+      <h1 class="content-header-title">
+        {{ 'TextTemplateManagement::Menu:TextTemplates' | abpLocalization }}
+      </h1>
+    </div>
+    <div class="col-lg-auto pl-lg-0">
+      <abp-breadcrumb></abp-breadcrumb>
+    </div>
+    <div class="col">
+      <abp-page-toolbar [record]="pagedData.items"></abp-page-toolbar>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div class="card">
+      <div class="card-body">
+        <div id="data-tables-table-filter" class="row">
+          <div class="col">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+                [(ngModel)]="list.filter"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-primary" (click)="list.get()">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <abp-extensible-table
+        [actionsColumnWidth]="170"
+        [data]="pagedData.items"
+        [recordsTotal]="pagedData.totalCount"
+        [list]="list"
+      ></abp-extensible-table>
+    </div>
+  </div>
+</ng-container>

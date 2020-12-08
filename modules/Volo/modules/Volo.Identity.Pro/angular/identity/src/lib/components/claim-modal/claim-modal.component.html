@@ -1,0 +1,60 @@
+<abp-modal size="md" [(visible)]="visible" [busy]="modalBusy">
+  <ng-template #abpHeader>
+    <h5 class="modal-title">{{ 'AbpIdentity::Claims' | abpLocalization }}</h5>
+  </ng-template>
+  <ng-template #abpBody>
+    <form (ngSubmit)="addClaim()">
+      <div class="form-row">
+        <div class="col col-sm-6">
+          <div class="form-group">
+            <label for="claimTypeSelect">{{ 'AbpIdentity::Type' | abpLocalization }}</label
+            ><select
+              autofocus
+              id="claimTypeSelect"
+              class="custom-select form-control"
+              [(ngModel)]="newClaimType"
+              [ngModelOptions]="{ standalone: true }"
+            >
+              <option *ngFor="let type of claimTypes" [ngValue]="type.name">{{ type.name }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col col-sm-6">
+          <div class="form-group">
+            <label for="newClaimValue">Value</label>
+            <input
+              required
+              id="newClaimValue"
+              type="text"
+              class="form-control"
+              [(ngModel)]="newClaimValue"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+        </div>
+        <div class="col col-sm-12 align-self-center">
+          <button class="btn btn-success btn-block" type="button" (click)="addClaim()">
+            <i class="fa fa-plus"></i>
+            {{ 'AbpIdentity::AddClaim' | abpLocalization }}
+          </button>
+        </div>
+      </div>
+    </form>
+    <hr class="my-4" />
+    <div class="willBeHidden" *ngIf="subjectClaims && subjectClaims.length">
+      <div class="input-group mb-3" *ngFor="let claim of subjectClaims; let i = index">
+        <div class="input-group-prepend">
+          <label class="input-group-text mw-100 fs-9">{{ claim.claimType }}</label>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="subjectClaims[i].claimValue" required />
+        <div class="input-group-append">
+          <button class="btn btn-danger deleteClaim" (click)="removeClaim(i)"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #abpFooter>
+    <button type="button" class="btn btn-secondary" #abpClose>{{ 'AbpIdentity::Cancel' | abpLocalization }}</button>
+    <abp-button iconClass="fa fa-check" (click)="save()">{{ 'AbpIdentity::Save' | abpLocalization }}</abp-button>
+  </ng-template>
+</abp-modal>

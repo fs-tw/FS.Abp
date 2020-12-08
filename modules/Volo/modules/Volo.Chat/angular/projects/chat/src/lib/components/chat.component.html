@@ -1,0 +1,137 @@
+<div class="row entry-row">
+  <div class="col-auto"></div>
+  <div class="col-lg-auto pl-lg-0"></div>
+  <div class="col">
+    <div class="text-lg-right pt-2" id="AbpContentToolbar"></div>
+  </div>
+</div>
+
+<div id="chat_wrapper">
+  <div class="container-fluid">
+    <div class="row rounded-lg overflow-hidden shadow bor der">
+      <div class="col-3 col-md-5 col-lg-4 px-0">
+        <abp-chat-contacts (selected)="onSelectContact($event)"></abp-chat-contacts>
+      </div>
+
+      <!-- Chat Box-->
+      <div class="col-9 col-md-7 col-lg-8 px-0">
+        <div class="p-3 bg-light border-bottom">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-row">
+                <div class="col-auto">
+                  <abp-conversation-avatar
+                    small
+                    [contact]="selectedContact"
+                  ></abp-conversation-avatar>
+                </div>
+                <div class="col pt-1" style="line-height: 1.2;">
+                  <strong id="conversation-title" class="font-weight-bold">{{ contactName }}</strong
+                  ><br />
+                  <small id="conversation-info"></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div #chatBox id="chat-conversation-wrapper" class="chat-box m-0 p-0">
+          <div class="chat-box-container p-4" [id]="'chat-conversation'">
+            <ng-container
+              *ngFor="
+                let message of selectedContactMessages;
+                let i = index;
+                trackBy: trackByMessageDate
+              "
+            >
+              <div
+                *ngIf="selectedContactMessages.length - unreadMessageCount === i"
+                class="row justify-content-center unread-message-count-badge-wrapper"
+              >
+                <h3>
+                  <span class="badge badge-info">
+                    <ng-container *ngIf="unreadMessageCount === 1; else moreThanOne">
+                      {{ 'Chat::YouHaveAnUnreadMessage' | abpLocalization }}
+                    </ng-container>
+
+                    <ng-template #moreThanOne>
+                      {{
+                        'Chat::YouHave{0}UnreadMessages' | abpLocalization: '' + unreadMessageCount
+                      }}
+                    </ng-template>
+                  </span>
+                </h3>
+              </div>
+
+              <div
+                *ngIf="{ isSender: message.side === chatMessageSide.Sender } as data"
+                class="media w-75 mw-65 w-lp-auto mb-2"
+                [class.ml-auto]="data.isSender"
+              >
+                <div class="media-body position-relative">
+                  <div
+                    class="shadow rounded py-3 px-4 mb-1 {{
+                      data.isSender ? 'bg-primary' : 'bg-light'
+                    }}"
+                  >
+                    <p
+                      class="text-small mb-0 {{ data.isSender ? 'text-white' : 'text-muted' }}"
+                      [innerHTML]="message.message"
+                    ></p>
+                  </div>
+                  <p
+                    class="message-date small text-muted m-0 {{ data.isSender ? 'left' : 'right' }}"
+                  >
+                    {{ message.messageDate | date: getDateFormat(message.messageDate) }}
+                  </p>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <!-- Typing area -->
+        <div *ngIf="selectedContact?.userId" id="send-message-form" class="bg-light border-top m-0">
+          <div class="p-3">
+            <textarea
+              id="chat-message-box"
+              name="message"
+              type="text"
+              [placeholder]="'Chat::TypeMessage' | abpLocalization"
+              class="form-control rounded py-2 bg-white"
+              [(ngModel)]="message"
+              (keydown.enter)="sendWithEnter($event)"
+            ></textarea>
+            <div class="custom-control custom-checkbox float-left mt-3">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="send-on-enter"
+                [(ngModel)]="sendOnEnter"
+              />
+              <label class="custom-control-label" for="send-on-enter">{{
+                'Chat::SendOnEnter' | abpLocalization
+              }}</label>
+            </div>
+            <div class="mt-2 text-right">
+              <button
+                [disabled]="!message"
+                (click)="send()"
+                id="send-message-button"
+                type="button"
+                class="btn btn-primary px-3"
+              >
+                {{ 'Chat::Send' | abpLocalization }}
+                <i *ngIf="!loading; else loadingIcon" class="fa fa-paper-plane ml-2"></i>
+
+                <ng-template #loadingIcon>
+                  <i class="fas fa-spinner fa-spin ml-2"></i>
+                </ng-template>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<ng-template>
+  <div class="form-group">
+    <label for="client-callback-url">{{ 'AbpIdentityServer::CallbackUrl' | abpLocalization }}</label
+    ><input
+      type="text"
+      id="client-callback-url"
+      name="client-callback-url"
+      class="form-control"
+      [(ngModel)]="callbackUrl"
+    />
+  </div>
+  <div class="form-group">
+    <label for="client-logout-url">{{ 'AbpIdentityServer::LogoutUrl' | abpLocalization }}</label
+    ><input
+      type="text"
+      id="client-logout-url"
+      name="client-logout-url"
+      class="form-control"
+      [(ngModel)]="logoutUrl"
+    />
+  </div>
+</ng-template>

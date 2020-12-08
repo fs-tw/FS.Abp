@@ -1,0 +1,11 @@
+<ng-template>
+  <h2>{{ 'AbpIdentityServer::' + title | abpLocalization }}</h2>
+
+  <abp-picklist
+    trackByProp="name"
+    bindLabel="displayName"
+    [leftListTitle]="'AbpIdentityServer::Available' | abpLocalization"
+    [rightListTitle]="'AbpIdentityServer::Assigned' | abpLocalization"
+    [(ngModel)]="resources"
+  ></abp-picklist>
+</ng-template>

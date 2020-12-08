@@ -1,0 +1,29 @@
+.breadcrumb {
+  padding: 3px 0 0;
+  opacity: 1;
+  font-size: 1em;
+}
+
+.breadcrumb-item {
+  padding: 0;
+}
+
+.breadcrumb-item.active .breadcrumb-item-text {
+  opacity: 0.5;
+}
+
+.breadcrumb-item-text {
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.breadcrumb-item-text:hover {
+  cursor: pointer;
+  background: var(--background);
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+  content: ">";
+  opacity: 0.3;
+  margin: 3px 0px 0 3px;
+}

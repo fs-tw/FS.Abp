@@ -1,0 +1,19 @@
+﻿@page
+@model Volo.Payment.Stripe.Pages.Payment.Stripe.PrePaymentModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        Stripe("@Model.PublishableKey").redirectToCheckout({ sessionId: "@Model.SessionId"});
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>

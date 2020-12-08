@@ -1,0 +1,86 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="row entry-row">
+    <div class="col-auto">
+      <h1 class="content-header-title">{{ 'AbpIdentity::Roles' | abpLocalization }}</h1>
+    </div>
+    <div class="col-lg-auto pl-lg-0">
+      <abp-breadcrumb></abp-breadcrumb>
+    </div>
+    <div class="col">
+      <abp-page-toolbar [record]="data"></abp-page-toolbar>
+    </div>
+  </div>
+
+  <div id="identity-roles-wrapper">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+                [(ngModel)]="list.filter"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-primary" (click)="list.get()">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <abp-extensible-table
+        [data]="data"
+        [recordsTotal]="totalCount$ | async"
+        [list]="list"
+      ></abp-extensible-table>
+    </div>
+  </div>
+</ng-container>
+
+<abp-modal size="md" [(visible)]="isModalVisible" [busy]="modalBusy">
+  <ng-template #abpHeader>
+    <h3>{{ (selected?.id ? 'AbpIdentity::Edit' : 'AbpIdentity::NewRole') | abpLocalization }}</h3>
+  </ng-template>
+
+  <ng-template #abpBody>
+    <form [formGroup]="form" (ngSubmit)="save()" validateOnSubmit>
+      <abp-extensible-form [selectedRecord]="selected"></abp-extensible-form>
+    </form>
+  </ng-template>
+
+  <ng-template #abpFooter>
+    <button type="button" class="btn btn-secondary" #abpClose>
+      {{ 'AbpIdentity::Cancel' | abpLocalization }}
+    </button>
+    <abp-button iconClass="fa fa-check" [disabled]="form?.invalid" (click)="save()">{{
+      'AbpIdentity::Save' | abpLocalization
+    }}</abp-button>
+  </ng-template>
+</abp-modal>
+
+<abp-permission-management
+  *abpReplaceableTemplate="{
+    inputs: {
+      providerName: { value: 'R' },
+      providerKey: { value: providerKey },
+      hideBadges: { value: true },
+      visible: { value: visiblePermissions, twoWay: true }
+    },
+    outputs: { visibleChange: onVisiblePermissionChange },
+    componentKey: 'PermissionManagement.PermissionManagementComponent'
+  }"
+  [(visible)]="visiblePermissions"
+  [providerKey]="providerKey"
+  providerName="R"
+  [hideBadges]="true"
+>
+</abp-permission-management>
+
+<abp-claim-modal [(visible)]="visibleClaims" [subject]="claimSubject"></abp-claim-modal>
