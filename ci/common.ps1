@@ -5,10 +5,9 @@ $rootFolder = (Get-Item -Path "./" -Verbose).FullName
 # List of solutions
 $solutionPaths = (
     "..\framework",
-    "..\modules\FS.Abp",
-    "..\modules\FS.Abp.V4",
-    "..\modules\FS.Cms",
-    "..\modules\FS.Theme"
+    "..\modules\Volo",
+
+    "..\applications\FS\aspnet-core"
     
     #"../"
     #"../tools/entitydeveloper/FS.ED"
