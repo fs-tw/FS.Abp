@@ -7,10 +7,10 @@ using Xunit;
  
 namespace FS.Cms.Posts
 {
-    public class PostAppService_Tests : CmsApplicationTestBase
+    public class TagAppService_Tests : CmsApplicationTestBase
     {
         private readonly IPostCrudAppService _postsAppService;
-        public PostAppService_Tests()
+        public TagAppService_Tests()
         {
             _postsAppService = GetRequiredService<IPostCrudAppService>();
         }

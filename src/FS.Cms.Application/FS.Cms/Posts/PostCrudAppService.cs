@@ -15,6 +15,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
+using FS.Cms.Definitions;
+using FS.Cms.Tags;
 
 namespace FS.Cms.Posts
 {
@@ -74,11 +76,44 @@ namespace FS.Cms.Posts
         //    };
         //}
 
-        public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
+
+        public async Task<PostWithTagsDto> GetWithTags(Guid id) 
         {
+            var definition = await CodingStore.Codes
+            .GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
+            List<TagDto> tags = new List<TagDto>();
+            ObjectMapper.Map(definition.CodeList, tags);
+            var output = new PostWithTagsDto(tags);
 
             var url = this.Configuration["App:SelfUrl"];
+            var post = this.Repository.WithDetails().Where(x => x.Id == id).First();
+
+            ObjectMapper.Map(post, output);
+
+            var blogCode = this.CodesTreeRepository.Where(x => x.Id == output.BlogCodeId).FirstOrDefault();
+            if (blogCode.ParentId != null)
+            {
+                output.BlogDisplayName = blogCode.DisplayName;
+            }
+            else
+            {
+                output.BlogDisplayName = "不分類";
+            }
+
+
+            if (output.DisplayMode == DisplayMode.內文)
+            {
+                output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
+                output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
+            }
+            return output;
+        }
+
+        public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
+        {           
+            var url = this.Configuration["App:SelfUrl"];
             var post = this.Repository.WithDetails().Where(x => x.Id == key.Id).First();
+            
             var output = ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
             if (output.DisplayMode == DisplayMode.內文)
             {

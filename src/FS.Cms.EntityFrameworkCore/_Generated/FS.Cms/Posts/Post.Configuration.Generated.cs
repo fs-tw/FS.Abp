@@ -46,6 +46,7 @@ namespace FS.Cms.Posts
             builder.Ignore(x => x.PostImages);
             builder.Property<System.Guid?>(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
+            builder.HasMany(x => x.PostTags).WithOne().IsRequired(true).HasForeignKey(@"PostId");
 
             builder.ConfigureFullAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);

@@ -19,7 +19,7 @@ namespace FS.Cms.Posts
     {
         [HttpGet]
         [Route("post-tag-map/id")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostTagMapWithDetailsDto> GetAsync([FromQuery] PostTagMapPrimaryKeyDto PostTagMapPrimaryKey)
         {
             return this.PostTagMapCrudAppService.GetAsync(PostTagMapPrimaryKey);
@@ -27,7 +27,7 @@ namespace FS.Cms.Posts
 
         [HttpGet]
         [Route("post-tag-map")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PagedResultDto<PostTagMapWithDetailsDto>> GetListAsync(PostTagMapGetListDto PostTagMapGetList)
         {
             return this.PostTagMapCrudAppService.GetListAsync(PostTagMapGetList);
@@ -35,7 +35,7 @@ namespace FS.Cms.Posts
 
         [HttpPost]
         [Route("post-tag-map")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostTagMapWithDetailsDto> CreateAsync(PostTagMapCreateDto PostTagMapCreate)
         {
             return this.PostTagMapCrudAppService.CreateAsync(PostTagMapCreate);
@@ -51,7 +51,7 @@ namespace FS.Cms.Posts
 
         [HttpDelete]
         [Route("post-tag-map/id")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task DeleteAsync([FromQuery] PostTagMapPrimaryKeyDto PostTagMapPrimaryKey)
         {
             return this.PostTagMapCrudAppService.DeleteAsync(PostTagMapPrimaryKey);

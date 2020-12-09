@@ -17,10 +17,7 @@ namespace FS.Cms.Definitions
         //Task BlogDeleteAsync(Guid id);
     }
 
-    public interface ITagAppService 
-    {
-        
-    }
+  
 
     //public interface IStorageAppService
     //{

@@ -22,9 +22,5 @@ namespace FS.Cms.Posts
     {
         public EfCorePostTagMapRepository(IDbContextProvider<FS.Cms.EntityFrameworkCore.ICmsDbContext> dbContextProvider)
             : base(dbContextProvider) { }
-        public override IQueryable<FS.Cms.Posts.PostTagMap> WithDetails()
-        {
-            return GetQueryable().IncludeDetails();
-        }
     }
 }

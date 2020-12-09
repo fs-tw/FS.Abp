@@ -27,7 +27,7 @@ namespace FS.Cms.Posts
 
         [HttpGet]
         [Route("post")]
-        [RemoteService(true)]
+        [RemoteService(false)]
         public Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto PostGetList)
         {
             return this.PostCrudAppService.GetListAsync(PostGetList);
@@ -43,7 +43,7 @@ namespace FS.Cms.Posts
 
         [HttpPut]
         [Route("post/id")]
-        [RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> UpdateAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey, PostUpdateDto PostUpdate)
         {
             return this.PostCrudAppService.UpdateAsync(PostPrimaryKey,PostUpdate);
