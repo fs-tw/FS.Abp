@@ -8,31 +8,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application.Contracts\FS.Abp.Core.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="DataModel\**" />
-    <Compile Remove="_Generated\FS.Cms\Tags\**" />
+    <Compile Remove="FS.Cms.Definitions\**" />
     <EmbeddedResource Remove="DataModel\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Tags\**" />
+    <EmbeddedResource Remove="FS.Cms.Definitions\**" />
     <None Remove="DataModel\**" />
-    <None Remove="_Generated\FS.Cms\Tags\**" />
+    <None Remove="FS.Cms.Definitions\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Authorization" Version="4.0.0" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application.Contracts\FS.Abp.Core.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Application.Contracts\FS.Abp.CodingManagement.Application.Contracts.csproj" />
-    <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\IBlogsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Blogs\IBlogsAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
     </Compile>
@@ -56,9 +67,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs">
+    <Compile Update="FS.Cms\Tags\ITagsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Tags\ITagsAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\IBlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\IBlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDto.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -124,10 +155,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Blogs\" />
+    <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\ITagCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\ITagsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

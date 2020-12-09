@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -6,6 +6,21 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FS.Cms</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FS.Cms.Definitions\**" />
+    <EmbeddedResource Remove="FS.Cms.Definitions\**" />
+    <None Remove="FS.Cms.Definitions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.0.0" />
+  </ItemGroup>  
+  
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
@@ -16,13 +31,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.0.0" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.HttpApi\FS.Abp.Core.HttpApi.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.HttpApi\FS.Abp.CodingManagement.HttpApi.csproj" />
-    <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\BlogsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Documents\DocumentsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
@@ -30,6 +42,18 @@
     <Compile Update="FS.Cms\Posts\PostsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Tags\TagsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsApi.Blog.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.Document.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -54,6 +78,14 @@
     <Compile Update="_Generated\FS.Cms\Posts\PostsApi.PostTagMap.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>PostsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsApi.Tag.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TagsApi.Generated.cs</DependentUpon>
     </Compile>
   </ItemGroup>
 

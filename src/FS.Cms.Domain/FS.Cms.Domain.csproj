@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -8,26 +8,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.Cms.Storage\IStorageManager.cs" />
+    <Compile Remove="FS.Cms.Storage\StorageEventHandler.cs" />
+    <Compile Remove="FS.Cms.Storage\StorageManager.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFiles.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostImagePrototype.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\ITagRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\Tag.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.0.0" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Domain\FS.Abp.Core.Domain.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Domain\FS.Abp.CodingManagement.Domain.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.0.0" />
-    <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\BlogsStore.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Documents\DocumentsStore.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
@@ -36,13 +40,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs">
+    <Compile Update="FS.Cms\Tags\TagsStore.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Core</DependentUpon>
+      <DependentUpon>Tags</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Blogs\Blog.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Core</DependentUpon>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogConfig.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\IBlogTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Core\CmsFileField.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -104,6 +120,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\ITagTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\Tag.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FS.Cms.Storage\" />
   </ItemGroup>
 
 </Project>

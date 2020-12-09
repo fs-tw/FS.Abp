@@ -2,7 +2,7 @@
 using FS.Abp.Files;
 using FS.Cms.Core;
 using FS.Cms.Posts;
-using FS.Cms.Storage;
+//using FS.Cms.Storage;
 using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNetCore.Identity;
 using System;
@@ -24,11 +24,11 @@ namespace FS.Cms.Definitions
         )]
     public partial class DefinitionsAppService : CmsAppService, IDefinitionsAppService
     {
-        private ICodingStore _codingStore;
-        public ICodingStore CodingStore => LazyGetRequiredService(ref _codingStore);
+        //private ICodingStore _codingStore;
+        //public ICodingStore CodingStore => LazyGetRequiredService(ref _codingStore);
 
-        private IStorageManager _storageManager;
-        public IStorageManager StorageManager => LazyGetRequiredService(ref _storageManager);
+        //private IStorageManager _storageManager;
+        //public IStorageManager StorageManager => LazyGetRequiredService(ref _storageManager);
 
         private IFileManager fileManager;
         protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
@@ -44,7 +44,7 @@ namespace FS.Cms.Definitions
         private readonly ICurrentCodes currentCodes;
         private readonly IStorageDefinitionSettingFactory storageDefinitionSettingFactory;
         private readonly ISettingManager settingManager;
-        private readonly IBlogDefinitionSettingFactory blogDefinitionSettingFactory;
+        //private readonly IBlogDefinitionSettingFactory blogDefinitionSettingFactory;
 
 
         public DefinitionsAppService(
@@ -54,8 +54,8 @@ namespace FS.Cms.Definitions
             IAuthorizationService authorizationService,
             ICurrentCodes currentCodes,
             IStorageDefinitionSettingFactory storageDefinitionSettingFactory,
-            ISettingManager settingManager,
-            IBlogDefinitionSettingFactory blogDefinitionSettingFactory
+            ISettingManager settingManager//,
+            //IBlogDefinitionSettingFactory blogDefinitionSettingFactory
             )
         {
             this.postsRepository = postsRepository;
@@ -64,7 +64,7 @@ namespace FS.Cms.Definitions
             this.currentCodes = currentCodes;
             this.storageDefinitionSettingFactory = storageDefinitionSettingFactory;
             this.settingManager = settingManager;
-            this.blogDefinitionSettingFactory = blogDefinitionSettingFactory;
+            //this.blogDefinitionSettingFactory = blogDefinitionSettingFactory;
         }
 
     }

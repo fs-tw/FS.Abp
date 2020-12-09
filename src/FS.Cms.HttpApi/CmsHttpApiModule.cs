@@ -9,9 +9,9 @@ namespace FS.Cms
 {
     [DependsOn(
         typeof(CmsApplicationContractsModule),
-        typeof(AbpAspNetCoreMvcModule),
-        typeof(FS.Abp.CodingManagement.CodingManagementHttpApiModule),
-        typeof(FS.Abp.Core.CoreHttpApiModule)
+        typeof(AbpAspNetCoreMvcModule)//,
+        //typeof(FS.Abp.CodingManagement.CodingManagementHttpApiModule),
+        //typeof(FS.Abp.Core.CoreHttpApiModule)
         )]
     public class CmsHttpApiModule : AbpModule
     {

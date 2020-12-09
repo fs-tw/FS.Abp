@@ -30,49 +30,49 @@ namespace FS.Cms.Posts
         private IPostsManager postsManager;
         protected IPostsManager PostsManager => this.LazyGetRequiredService(ref postsManager);
 
-        private ICodesTreeRepository codesTreeRepository;
-        protected ICodesTreeRepository CodesTreeRepository => this.LazyGetRequiredService(ref codesTreeRepository);
+        //private ICodesTreeRepository codesTreeRepository;
+        //protected ICodesTreeRepository CodesTreeRepository => this.LazyGetRequiredService(ref codesTreeRepository);
 
-        public override async Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
-        {
-            var uer = CurrentUser.Id;
-            var permission = await AuthorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
-            var url = this.Configuration["App:SelfUrl"];
+        //public override async Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto input)
+        //{
+        //    var uer = CurrentUser.Id;
+        //    var permission = await AuthorizationService.AuthorizeAsync("FS.Cms.Menu.前台內容管理.最新消息管理");
+        //    var url = this.Configuration["App:SelfUrl"];
 
-            var query = this.PostsManager.CheckPublished_AtForPermission(input.BlogCodeId, permission.Succeeded);
-
-
-            var listResult = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
-
-            var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(listResult.Entities);
-            foreach (var item in result)
-            {
-                var blogCode = this.CodesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
-                if (blogCode.ParentId != null)
-                {
-                    item.BlogDisplayName = blogCode.DisplayName;
-                }
-                else
-                {
-                    item.BlogDisplayName = "不分類";
-                }
-
-                if (item.DisplayMode == DisplayMode.內文)
-                {
-                    item.Content = item.Content.Replace("<img src='api", $"<img src='{url}/api");
-                    item.Content = item.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
-                }
-            }
+        //    var query = this.PostsManager.CheckPublished_AtForPermission(input.BlogCodeId, permission.Succeeded);
 
 
+        //    var listResult = await this.SearchedAndPagedAndSortedOperation.ListAsync(query, input).ConfigureAwait(false);
+
+        //    var result = ObjectMapper.Map<List<Posts.Post>, List<PostWithDetailsDto>>(listResult.Entities);
+        //    foreach (var item in result)
+        //    {
+        //        var blogCode = this.CodesTreeRepository.Where(x => x.Id == item.BlogCodeId).FirstOrDefault();
+        //        if (blogCode.ParentId != null)
+        //        {
+        //            item.BlogDisplayName = blogCode.DisplayName;
+        //        }
+        //        else
+        //        {
+        //            item.BlogDisplayName = "不分類";
+        //        }
+
+        //        if (item.DisplayMode == DisplayMode.內文)
+        //        {
+        //            item.Content = item.Content.Replace("<img src='api", $"<img src='{url}/api");
+        //            item.Content = item.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
+        //        }
+        //    }
 
 
-            return new PagedResultDto<PostWithDetailsDto>()
-            {
-                TotalCount = listResult.TotalCount,
-                Items = result
-            };
-        }
+
+
+        //    return new PagedResultDto<PostWithDetailsDto>()
+        //    {
+        //        TotalCount = listResult.TotalCount,
+        //        Items = result
+        //    };
+        //}
 
         public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
         {

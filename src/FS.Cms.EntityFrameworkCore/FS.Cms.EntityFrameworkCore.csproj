@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -8,10 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.EntityFrameworkCore\EasyAbp.Abp.Trees.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.EntityFrameworkCore\FS.Abp.Core.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="_Generated\FS.Cms\Posts\EfCorePostAttachmentFilesRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFiles.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\EfCoreTagRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Tags\Tag.Configuration.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,13 +28,6 @@
     <Compile Remove="_Generated\FS.Cms\Posts\PostTag.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tagging\EfCoreTagRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tagging\Tag.Configuration.Generated.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="4.0.0" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.EntityFrameworkCore\FS.Abp.Core.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.EntityFrameworkCore\FS.Abp.CodingManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +46,18 @@
     <Compile Update="_Generated\EntityFrameworkCore\ICmsDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\Blog.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\EfCoreBlogTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\Document.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -85,10 +99,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Tags\" />
+    <Compile Update="_Generated\FS.Cms\Tags\EfCoreTagTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\Tag.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

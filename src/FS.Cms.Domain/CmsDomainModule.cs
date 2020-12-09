@@ -4,11 +4,11 @@ using Volo.Abp.Modularity;
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(CmsDomainSharedModule),
-        typeof(FS.Abp.CodingManagement.CodingManagementDomainModule),
-        //typeof(FS.Abp.Identity.IdentityDomainModule),
+        typeof(CmsDomainSharedModule)
+        )]
+    [DependsOn(
         typeof(FS.Abp.Core.CoreDomainModule)//,
-        //typeof(FS.Theme.ThemeDomainModule)
+        //typeof(FS.Abp.CodingManagement.CodingManagementDomainModule)
         )]
     public class CmsDomainModule : AbpModule
     {

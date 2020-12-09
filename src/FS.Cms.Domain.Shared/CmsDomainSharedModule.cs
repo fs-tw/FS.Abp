@@ -9,10 +9,12 @@ using Volo.Abp.Validation.Localization;
 namespace FS.Cms
 {
     [DependsOn(
-        typeof(AbpValidationModule),
-        typeof(FS.Abp.Core.CoreDomainSharedModule),
-        typeof(FS.Abp.CodingManagement.CodingManagementDomainSharedModule)
+        typeof(AbpValidationModule)
     )]
+    [DependsOn(
+        typeof(FS.Abp.Core.CoreDomainSharedModule)//,
+        //typeof(FS.Abp.CodingManagement.CodingManagementDomainSharedModule)
+        )]
     public class CmsDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Domain.Shared\FS.Abp.Core.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Localization\Cms\*.json" />
     <Content Remove="Localization\Cms\*.json" />
   </ItemGroup>
@@ -19,6 +23,8 @@
   <ItemGroup>
     <None Remove="Files\Data\Codes\Definition.json" />
     <None Remove="Files\Data\Posts\Posts.json" />
+    <None Remove="_Generated\Localization\Blogs\BlogConfig\en.json" />
+    <None Remove="_Generated\Localization\Blogs\BlogConfig\zh-Hant.json" />
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\en.json" />
     <None Remove="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json" />
     <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\en.json" />
@@ -30,13 +36,13 @@
   <ItemGroup>
     <EmbeddedResource Include="Files\Data\Codes\Definition.json" />
     <EmbeddedResource Include="Files\Data\Posts\Posts.json" />
-    <EmbeddedResource Include="_Generated\Localization\Core\BlogDefinitionSetting\en.json">
+    <EmbeddedResource Include="_Generated\Localization\Blogs\BlogConfig\en.json">
       <AutoGen>True</AutoGen>
-      <DependentUpon>BlogDefinitionSetting</DependentUpon>
+      <DependentUpon>BlogConfig</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_Generated\Localization\Core\BlogDefinitionSetting\zh-Hant.json">
+    <EmbeddedResource Include="_Generated\Localization\Blogs\BlogConfig\zh-Hant.json">
       <AutoGen>True</AutoGen>
-      <DependentUpon>BlogDefinitionSetting</DependentUpon>
+      <DependentUpon>BlogConfig</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Generated\Localization\Core\StorageDefinitionSetting\en.json">
       <AutoGen>True</AutoGen>
@@ -91,13 +97,11 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Domain.Shared\FS.Abp.Core.Domain.Shared.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Domain.Shared\FS.Abp.CodingManagement.Domain.Shared.csproj" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <Folder Include="_Generated\Localization\Blogs\PostsPermissions\" />
+    <Folder Include="_Generated\Localization\Core\BlogDefinitionSetting\" />
   </ItemGroup>
 
 </Project>

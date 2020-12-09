@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityDeveloper Version="6.9.1092.0">
+<EntityDeveloper Version="6.9.1112.0">
   <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore20" DetectManyToManyAssociations="False" DetectTPTInheritance="False" EntityFrameworkCoreVersion="Version2" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="" Provider="" />
     <Generation>
@@ -9,37 +9,42 @@
         <File Name="PostTagMapDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
+        <File Name="BlogDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
+        <File Name="TagDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="CmsFileFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="BlogDefinitionSettingDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
+        <File Name="BlogConfigDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="StorageDefinitionSettingDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="PostDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
+        <File Name="BlogDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
+        <File Name="TagDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="CmsFileFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
+        <File Name="BlogConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="StorageDefinitionSettingDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="PostDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
+        <File Name="BlogDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
+        <File Name="TagDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="CmsFileFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="BlogDefinitionSettingDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
+        <File Name="BlogConfigDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="StorageDefinitionSettingDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\BlogDefinitionSetting" />
-        <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\BlogDefinitionSetting" />
+        <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
+        <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
         <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\StorageDefinitionSetting" />
         <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\StorageDefinitionSetting" />
         <File Name="LocalizationResourceExtensions.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Volo.Abp.Localization" />
         <File Name="MenuPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
         <File Name="MenuPermissionDefinitionProviders.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
-        <File Name="BlogDefinitionSetting.AbpSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="StorageDefinitionSetting.AbpSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="ICmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -49,40 +54,58 @@
         <File Name="PostTagMap.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentDefinition.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="Document.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="Blog.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="Tag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="CmsFileField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="CmsImageField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
-        <File Name="BlogDefinitionSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="StorageDefinitionSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
+        <File Name="BlogConfig.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="PostImage.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DisplayMode.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="Post.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMap.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentDefinition.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="Document.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="Blog.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="Tag.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="IPostRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IPostTagMapRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IDocumentDefinitionRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IDocumentTreeRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="IBlogTreeRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="ITagTreeRepository.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="EfCorePostRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="EfCorePostTagMapRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="EfCoreDocumentDefinitionRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="EfCoreDocumentTreeRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="EfCoreBlogTreeRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="EfCoreTagTreeRepository.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="PostsQueryableExtensions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentsQueryableExtensions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="BlogsQueryableExtensions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="TagsQueryableExtensions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="IPostCrudAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="IPostCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IPostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IDocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IDocumentCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="IBlogCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="ITagCrudAppService.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="PostCrudAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMapCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="DocumentCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="BlogCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="TagCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="IPostsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="IDocumentsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
         <File Name="DocumentsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
+        <File Name="IBlogsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="ITagsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="TagsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
         <File Name="IPostsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="IPostsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
@@ -95,10 +118,24 @@
         <File Name="DocumentsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="DocumentsApi.DocumentDefinition.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="DocumentsApi.Document.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="IBlogsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="BlogsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="BlogsApi.Blog.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="ITagsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="ITagsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
+        <File Name="TagsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="TagsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Tags" />
+        <File Name="TagsApi.Tag.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="PostsStore.cs" Project="FS.Cms.Domain" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostsStore.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentsStore.cs" Project="FS.Cms.Domain" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
         <File Name="DocumentsStore.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="BlogsStore.cs" Project="FS.Cms.Domain" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsStore.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="TagsStore.cs" Project="FS.Cms.Domain" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="TagsStore.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -128,28 +165,28 @@
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application.Contracts</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -176,7 +213,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -188,28 +225,28 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain.Shared</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application.Contracts</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain.Shared</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application.Contracts</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
@@ -221,7 +258,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpPermissionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpPermissionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application.Contracts</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -233,14 +270,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>Microsoft.Extensions.DependencyInjection</ProjectFolder>
@@ -252,7 +289,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.EntityFrameworkCore</Project>
             <ProjectFolder>EntityFrameworkCore</ProjectFolder>
@@ -261,13 +298,13 @@
         </ed:Property>
       </Template>
       <Template Name="EFCore.Entities" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Entities.tmpl">
-        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationFramework>None</ValidationFramework>
         </ed:Property>
-        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
         </ed:Property>
-        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -316,7 +353,7 @@
         <ed:Property Name="JsonFileBasePath" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain.Shared</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -328,7 +365,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.EntityFrameworkCore</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -337,14 +374,14 @@
         </ed:Property>
       </Template>
       <Template Name="EFCore.Repository" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Repository.tmpl">
-        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.EntityFrameworkCore</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -368,14 +405,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application.Contracts</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -387,14 +424,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Application.Contracts</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.HttpApi</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -406,14 +443,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1092.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
@@ -423,7 +460,7 @@
       </Template>
     </Templates>
     <AttributeAssemblies>
-      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
+      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="..\..\..\..\..\..\..\..\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
         <AttributeType Name="EntityEnumTypeAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>

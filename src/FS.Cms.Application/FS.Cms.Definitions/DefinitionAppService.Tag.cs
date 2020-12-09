@@ -11,7 +11,7 @@ namespace FS.Cms.Definitions
 
         public async Task TagGetListAsync()
         {
-            var definition = await CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
+            //var definition = await CodingStore.Codes.GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
             
         }
     }

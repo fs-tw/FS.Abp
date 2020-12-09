@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client" Version="4.0.0" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Http.Client" Version="4.0.0" />
   </ItemGroup>
 
 </Project>

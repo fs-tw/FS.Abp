@@ -1,0 +1,18 @@
+﻿{
+  "culture": "en",
+  "texts": {
+    "BlogConfig.ListStyle": "ListStyle",
+    "Description:BlogConfig.ListStyle": "ListStyle",
+    "DisplayName:BlogConfig.ListStyle": "ListStyle",
+    "BlogConfig.Sequence": "Sequence",
+    "Description:BlogConfig.Sequence": "Sequence",
+    "DisplayName:BlogConfig.Sequence": "Sequence",
+    "BlogConfig.Url": "Url",
+    "Description:BlogConfig.Url": "Url",
+    "DisplayName:BlogConfig.Url": "Url",
+    "BlogConfig.IconUrl": "IconUrl",
+    "Description:BlogConfig.IconUrl": "IconUrl",
+    "DisplayName:BlogConfig.IconUrl": "IconUrl"
+
+  }
+}

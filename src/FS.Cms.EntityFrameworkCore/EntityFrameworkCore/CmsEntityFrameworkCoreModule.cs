@@ -6,10 +6,13 @@ namespace FS.Cms.EntityFrameworkCore
 {
     [DependsOn(
         typeof(CmsDomainModule),
-        typeof(AbpEntityFrameworkCoreModule),
-        typeof(FS.Abp.CodingManagement.EntityFrameworkCore.CodingManagementEntityFrameworkCoreModule),
-        typeof(FS.Abp.Core.EntityFrameworkCore.CoreEntityFrameworkCoreModule)
+        typeof(AbpEntityFrameworkCoreModule)//,
+        //typeof(FS.Abp.CodingManagement.EntityFrameworkCore.CodingManagementEntityFrameworkCoreModule),
+        //typeof(FS.Abp.Core.EntityFrameworkCore.CoreEntityFrameworkCoreModule)
     )]
+    [DependsOn(
+        typeof(FS.Abp.Core.EntityFrameworkCore.CoreEntityFrameworkCoreModule)
+        )]
     public class CmsEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

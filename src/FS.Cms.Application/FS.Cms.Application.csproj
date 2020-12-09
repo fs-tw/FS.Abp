@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -8,12 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Tags\**" />
-    <EmbeddedResource Remove="_Generated\FS.Cms\Tags\**" />
-    <None Remove="_Generated\FS.Cms\Tags\**" />
+    <Compile Remove="FS.Cms.Definitions\**" />
+    <EmbeddedResource Remove="FS.Cms.Definitions\**" />
+    <None Remove="FS.Cms.Definitions\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application\FS.Abp.Core.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.HtmlAgilityPack\src\FS.Abp.HtmlAgilityPack\FS.Abp.HtmlAgilityPack.csproj" />
+    <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDtoAutoMapperProfile.Generated.cs" />
@@ -31,17 +45,13 @@
     <Compile Remove="_Generated\FS.Cms\Posts\PostTagCrudAppService.Generated.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="4.0.0" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application\FS.Abp.Core.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.HtmlAgilityPack\src\FS.Abp.HtmlAgilityPack\FS.Abp.HtmlAgilityPack.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\modules\FS.Abp.CodingManagement\src\FS.Abp.CodingManagement.Application\FS.Abp.CodingManagement.Application.csproj" />
-    <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
-    <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
-  </ItemGroup>
+
 
   <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\BlogsAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Documents\DocumentsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
@@ -54,11 +64,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="FS.Cms\Tags\TagsAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -141,6 +167,18 @@
     <Compile Update="_Generated\FS.Cms\Posts\PostTagMapCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
     </Compile>
   </ItemGroup>
 
