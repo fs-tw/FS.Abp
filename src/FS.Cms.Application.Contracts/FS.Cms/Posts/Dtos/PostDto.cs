@@ -1,4 +1,4 @@
-﻿using FS.Cms.Definitions;
+﻿//using FS.Cms.Definitions;
 using FS.Cms.Tags;
 using System;
 using System.Collections.Generic;
@@ -8,31 +8,31 @@ namespace FS.Cms.Posts.Dtos
 {
     public class PostWithTagsDto : PostWithDetailsDto
     {
-        private List<TagDto> tags;
+        //private List<TagDto> tags;
         public string BlogDisplayName { get; set; }
-        public PostWithTagsDto(List<TagDto> tags) 
-        {            
-            this.tags = tags;
-            PostTags = new List<PostTagMapDto>();
-        }
-        public List<PostsTagsForDisplayName> Tags 
-        {
-            get 
-            {
-                List<PostsTagsForDisplayName> result = new List<PostsTagsForDisplayName>();
-                foreach (var item in PostTags) 
-                {
-                    var code = tags.Where(x => x.Id == item.TagCodeId).FirstOrDefault();
-                    if (code == null) continue;
-                    result.Add(new PostsTagsForDisplayName()
-                    {
-                        TagId = item.TagCodeId,
-                        DisplayName = code.Name
-                    });
-                }
-                return result;
-            }
-        }
+        //public PostWithTagsDto(List<TagDto> tags) 
+        //{            
+        //    this.tags = tags;
+        //    PostTags = new List<PostTagMapDto>();
+        //}
+        //public List<PostsTagsForDisplayName> Tags 
+        //{
+        //    get 
+        //    {
+        //        List<PostsTagsForDisplayName> result = new List<PostsTagsForDisplayName>();
+        //        foreach (var item in PostTags) 
+        //        {
+        //            var code = tags.Where(x => x.Id == item.TagCodeId).FirstOrDefault();
+        //            if (code == null) continue;
+        //            result.Add(new PostsTagsForDisplayName()
+        //            {
+        //                TagId = item.TagCodeId,
+        //                DisplayName = code.Name
+        //            });
+        //        }
+        //        return result;
+        //    }
+        //}
 
        
         public PostImageDto CoverImage

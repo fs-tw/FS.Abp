@@ -8,9 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FS.Cms.Storage\IStorageManager.cs" />
-    <Compile Remove="FS.Cms.Storage\StorageEventHandler.cs" />
-    <Compile Remove="FS.Cms.Storage\StorageManager.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs" />
@@ -132,10 +129,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Tags</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FS.Cms.Storage\" />
   </ItemGroup>
 
 </Project>

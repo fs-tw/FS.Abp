@@ -13,7 +13,7 @@ namespace FS.Cms.Posts
 {
     public partial interface IPostCrudAppService
     {
-        Task<PostWithTagsDto> GetWithTags(Guid id);
-        Task<PagedResultDto<PostWithTagsDto>> GetListWithTagAsync(PostGetListDto input);
+        //Task<PostWithTagsDto> GetWithTags(Guid id);
+        //Task<PagedResultDto<PostWithTagsDto>> GetListWithTagAsync(PostGetListDto input);
     }
 }

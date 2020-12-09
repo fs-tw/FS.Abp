@@ -15,7 +15,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
-using FS.Cms.Definitions;
 using FS.Cms.Tags;
 
 namespace FS.Cms.Posts
@@ -77,121 +76,121 @@ namespace FS.Cms.Posts
         //}
 
 
-        public async Task<PostWithTagsDto> GetWithTags(Guid id) 
-        {
-            var definition = await CodingStore.Codes
-            .GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
-            List<TagDto> tags = new List<TagDto>();
-            ObjectMapper.Map(definition.CodeList, tags);
-            var output = new PostWithTagsDto(tags);
+        //public async Task<PostWithTagsDto> GetWithTags(Guid id) 
+        //{
+        //    var definition = await CodingStore.Codes
+        //    .GetDefinitionAsync(CmsDefinition.CmsTagDefinition);
+        //    List<TagDto> tags = new List<TagDto>();
+        //    ObjectMapper.Map(definition.CodeList, tags);
+        //    var output = new PostWithTagsDto(tags);
 
-            var url = this.Configuration["App:SelfUrl"];
-            var post = this.Repository.WithDetails().Where(x => x.Id == id).First();
+        //    var url = this.Configuration["App:SelfUrl"];
+        //    var post = this.Repository.WithDetails().Where(x => x.Id == id).First();
 
-            ObjectMapper.Map(post, output);
+        //    ObjectMapper.Map(post, output);
 
-            var blogCode = this.CodesTreeRepository.Where(x => x.Id == output.BlogCodeId).FirstOrDefault();
-            if (blogCode.ParentId != null)
-            {
-                output.BlogDisplayName = blogCode.DisplayName;
-            }
-            else
-            {
-                output.BlogDisplayName = "不分類";
-            }
+        //    var blogCode = this.CodesTreeRepository.Where(x => x.Id == output.BlogCodeId).FirstOrDefault();
+        //    if (blogCode.ParentId != null)
+        //    {
+        //        output.BlogDisplayName = blogCode.DisplayName;
+        //    }
+        //    else
+        //    {
+        //        output.BlogDisplayName = "不分類";
+        //    }
 
 
-            if (output.DisplayMode == DisplayMode.內文)
-            {
-                output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
-                output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
-            }
-            return output;
-        }
+        //    if (output.DisplayMode == DisplayMode.內文)
+        //    {
+        //        output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
+        //        output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
+        //    }
+        //    return output;
+        //}
 
-        public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
-        {           
-            var url = this.Configuration["App:SelfUrl"];
-            var post = this.Repository.WithDetails().Where(x => x.Id == key.Id).First();
+        //public override async Task<PostWithDetailsDto> GetAsync(PostPrimaryKeyDto key)
+        //{           
+        //    var url = this.Configuration["App:SelfUrl"];
+        //    var post = this.Repository.WithDetails().Where(x => x.Id == key.Id).First();
             
-            var output = ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
-            if (output.DisplayMode == DisplayMode.內文)
-            {
-                output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
-                output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
-            }
-            return output;
-        }
+        //    var output = ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
+        //    if (output.DisplayMode == DisplayMode.內文)
+        //    {
+        //        output.Content = output.Content.Replace("<img src='api", $"<img src='{url}/api");
+        //        output.Content = output.Content.Replace("<img src=\"api", $"<img src=\"{url}/api");
+        //    }
+        //    return output;
+        //}
 
-        public override async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateDto input)
-        {
-            Guid postId = GuidGenerator.Create();
-            if (input.DisplayMode == DisplayMode.內文)
-            {
-                input.Content = await this.contentBase64ToUrl(input.Content, postId);
-            }
+        //public override async Task<Posts.Dtos.PostWithDetailsDto> CreateAsync(PostCreateDto input)
+        //{
+        //    Guid postId = GuidGenerator.Create();
+        //    if (input.DisplayMode == DisplayMode.內文)
+        //    {
+        //        input.Content = await this.contentBase64ToUrl(input.Content, postId);
+        //    }
 
-            var entityInput = ObjectMapper.Map<PostCreateDto, Post>(input);
+        //    var entityInput = ObjectMapper.Map<PostCreateDto, Post>(input);
 
-            EntityHelper.TrySetId(entityInput, () => postId, true);
-            entityInput.TenantId = CurrentTenant.Id;
-            await this.Repository.InsertAsync(entityInput).ConfigureAwait(false);
-            return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(entityInput);
-        }
+        //    EntityHelper.TrySetId(entityInput, () => postId, true);
+        //    entityInput.TenantId = CurrentTenant.Id;
+        //    await this.Repository.InsertAsync(entityInput).ConfigureAwait(false);
+        //    return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(entityInput);
+        //}
 
-        public override async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(PostPrimaryKeyDto key, PostUpdateDto input)
-        {
-            var post = this.Repository.Where(x => x.Id == key.Id).First();
-            ObjectMapper.Map(input, post);
-            List<string> deleteTargetList = new List<string>();
+        //public override async Task<Posts.Dtos.PostWithDetailsDto> UpdateAsync(PostPrimaryKeyDto key, PostUpdateDto input)
+        //{
+        //    var post = this.Repository.Where(x => x.Id == key.Id).First();
+        //    ObjectMapper.Map(input, post);
+        //    List<string> deleteTargetList = new List<string>();
 
-            if (post.DisplayMode == DisplayMode.內文)
-            {
-                post.Content = await this.contentUrlToRelativeUrl(post.Content);
-                post.Content = await this.contentBase64ToUrl(post.Content, post.Id);
-            }
-            post.TenantId = CurrentTenant.Id;
-            await this.Repository.UpdateAsync(post).ConfigureAwait(false);
-            return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
-        }
+        //    if (post.DisplayMode == DisplayMode.內文)
+        //    {
+        //        post.Content = await this.contentUrlToRelativeUrl(post.Content);
+        //        post.Content = await this.contentBase64ToUrl(post.Content, post.Id);
+        //    }
+        //    post.TenantId = CurrentTenant.Id;
+        //    await this.Repository.UpdateAsync(post).ConfigureAwait(false);
+        //    return ObjectMapper.Map<Post, Posts.Dtos.PostWithDetailsDto>(post);
+        //}
 
-        private async Task<string> contentUrlToRelativeUrl(string content = "")
-        {
-            if (content.IsNullOrEmpty()) return "";
-            var targetUrl = "api/theme-core/file";
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(content);
-            var source = htmlDoc.DocumentNode.SelectNodes("//img");
-            if (source.IsNullOrEmpty()) return content;
-            var htmlNodes = source.ToList();
-            foreach (var htmlNode in htmlNodes)
-            {
-                var imgUrl = htmlNode.Attributes["src"].Value;
-                if (!imgUrl.StartsWith(targetUrl) && !imgUrl.StartsWith("data:image"))
-                {
-                    var firstIndex = imgUrl.IndexOf(targetUrl);
-                    var newUrl = imgUrl.Substring(firstIndex);
-                    content = content.Replace(imgUrl, newUrl);
-                }
-            }
-            return content;
-        }
-        private async Task<string> contentBase64ToUrl(string content, Guid postId)
-        {
-            if (content.IsNullOrEmpty()) return "";
-            string firstStr = "<img src=\"data";
-            string lastStr = "\">";
-            while (content.Contains(firstStr))
-            {
-                int firstIndex = content.IndexOf(firstStr);
-                string lastContent = content.Substring(firstIndex);
-                int lastIndex = lastContent.IndexOf(lastStr) + 2;
-                string replaceData = content.Substring(firstIndex, lastIndex);
-                var fileUrl = $"cms\\posts\\{postId}\\{GuidGenerator.Create()}";
-                var fileName = await this.FileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));                
-                content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileName}" + "'>");
-            }
-            return content;
-        }       
+        //private async Task<string> contentUrlToRelativeUrl(string content = "")
+        //{
+        //    if (content.IsNullOrEmpty()) return "";
+        //    var targetUrl = "api/theme-core/file";
+        //    var htmlDoc = new HtmlDocument();
+        //    htmlDoc.LoadHtml(content);
+        //    var source = htmlDoc.DocumentNode.SelectNodes("//img");
+        //    if (source.IsNullOrEmpty()) return content;
+        //    var htmlNodes = source.ToList();
+        //    foreach (var htmlNode in htmlNodes)
+        //    {
+        //        var imgUrl = htmlNode.Attributes["src"].Value;
+        //        if (!imgUrl.StartsWith(targetUrl) && !imgUrl.StartsWith("data:image"))
+        //        {
+        //            var firstIndex = imgUrl.IndexOf(targetUrl);
+        //            var newUrl = imgUrl.Substring(firstIndex);
+        //            content = content.Replace(imgUrl, newUrl);
+        //        }
+        //    }
+        //    return content;
+        //}
+        //private async Task<string> contentBase64ToUrl(string content, Guid postId)
+        //{
+        //    if (content.IsNullOrEmpty()) return "";
+        //    string firstStr = "<img src=\"data";
+        //    string lastStr = "\">";
+        //    while (content.Contains(firstStr))
+        //    {
+        //        int firstIndex = content.IndexOf(firstStr);
+        //        string lastContent = content.Substring(firstIndex);
+        //        int lastIndex = lastContent.IndexOf(lastStr) + 2;
+        //        string replaceData = content.Substring(firstIndex, lastIndex);
+        //        var fileUrl = $"cms\\posts\\{postId}\\{GuidGenerator.Create()}";
+        //        var fileName = await this.FileManager.SaveBytesAsync(fileUrl, replaceData.Replace("\">", ""));                
+        //        content = content.Replace(replaceData, "<img src='api/theme-core/file/" + $"{fileName}" + "'>");
+        //    }
+        //    return content;
+        //}       
     }
 }

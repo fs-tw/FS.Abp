@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FS.Cms.Tags
 {
-    public interface ITagApi:
-        ITagAppService
-    {
-        Task<List<Tags.TagDto>> TagGroupGetByIdForTagsAsync(Guid id);
-    }
+    //public interface ITagApi:
+    //    ITagAppService
+    //{
+    //    Task<List<Tags.TagDto>> TagGroupGetByIdForTagsAsync(Guid id);
+    //}
 }
