@@ -9,7 +9,7 @@ export const environment = {
     name: 'FS',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44320',
+    issuer: 'https://localhost:44344',
     redirectUri: baseUrl,
     clientId: 'FS_App',
     responseType: 'code',
@@ -17,7 +17,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44320',
+      url: 'https://localhost:44344',
       rootNamespace: 'FS',
     },
   },
