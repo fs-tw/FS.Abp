@@ -8,6 +8,7 @@ import { timeout, delay } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './index-sample.component.html',
+  styleUrls: ['./index-sample.css'],
 })
 export class IndexSampleComponent implements AfterViewInit {
   get hasLoggedIn(): boolean {
