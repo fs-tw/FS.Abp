@@ -8,6 +8,7 @@ import { timeout, delay } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './contact-sample.component.html',
+  styleUrls: ['./contact-sample.css'],
 })
 export class ContactSampleComponent implements AfterViewInit {
   get hasLoggedIn(): boolean {
