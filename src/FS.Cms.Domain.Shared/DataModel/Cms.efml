@@ -1195,7 +1195,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="70f04b6a-d3ce-439f-9739-d6bc9dea15c4" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Blog&gt;">
+  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="70f04b6a-d3ce-439f-9739-d6bc9dea15c4" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Blog&gt;" p1:AppServicePartialClass="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -1264,7 +1264,7 @@
     <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="dece8c31-4985-46b3-8537-9b402745a876">
       <column name="" default="true" />
     </property>
-    <property name="BlogConfig" type="String" p1:ValidateRequired="true" p1:Guid="125b84b1-47c1-4bf0-949c-755ea6b1f8f7" p1:Shadow="True">
+    <component name="BlogConfig" class="FS.Cms.Blogs.BlogConfig" p1:ValidateRequired="false" p1:Guid="125b84b1-47c1-4bf0-949c-755ea6b1f8f7" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -1275,8 +1275,11 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <column name="" />
-    </property>
+      <property name="ListStyle" />
+      <property name="Sequence" />
+      <property name="Url" />
+      <property name="IconUrl" />
+    </component>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4c537566-4b46-45dd-9090-9be3b5a91d48" p1:GenerateDTO="False">
       <column name="" />
     </property>

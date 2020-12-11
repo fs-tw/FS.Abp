@@ -34,7 +34,7 @@ namespace FS.Cms.Blogs.Dtos
 
         public bool Enable { get; set; }
 
-        public string BlogConfig { get; set; }
+        public FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
 
     }
     public partial class BlogWithDetailsDto : BlogDto
@@ -60,7 +60,7 @@ namespace FS.Cms.Blogs.Dtos
 
         public bool Enable { get; set; }
 
-        public string BlogConfig { get; set; }
+        public FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
 
     }
     public partial class BlogUpdateDto
@@ -79,7 +79,7 @@ namespace FS.Cms.Blogs.Dtos
 
         public bool Enable { get; set; }
 
-        public string BlogConfig { get; set; }
+        public FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
 
     }
     public partial class BlogGetListDto : SearchResultRequestDto

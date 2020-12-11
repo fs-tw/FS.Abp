@@ -28,6 +28,7 @@ namespace FS.Cms.Blogs
         [HttpGet]
         [Route("blog")]
         [RemoteService(false)]
+        [NonAction]
         public Task<PagedResultDto<BlogWithDetailsDto>> GetListAsync(BlogGetListDto BlogGetList)
         {
             return this.BlogCrudAppService.GetListAsync(BlogGetList);

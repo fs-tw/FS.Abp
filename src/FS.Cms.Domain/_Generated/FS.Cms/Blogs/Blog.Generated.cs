@@ -79,12 +79,12 @@ namespace FS.Cms.Blogs
             get;
             set;
         }
-        public virtual String BlogConfig 
+        public virtual FS.Cms.Blogs.BlogConfig BlogConfig 
         {
 
             get
             {
-                return this.GetExtraProperty<String>(nameof(BlogConfig));
+                return this.GetExtraProperty<FS.Cms.Blogs.BlogConfig>(nameof(BlogConfig));
             }
             set
             {

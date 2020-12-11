@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -36,6 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\IBlogCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Blogs\IBlogsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>

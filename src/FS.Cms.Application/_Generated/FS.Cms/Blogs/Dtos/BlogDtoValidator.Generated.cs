@@ -34,7 +34,6 @@ namespace FS.Cms.Blogs.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.BlogConfig)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }
@@ -62,7 +61,6 @@ namespace FS.Cms.Blogs.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.BlogConfig)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }

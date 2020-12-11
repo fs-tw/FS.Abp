@@ -48,6 +48,10 @@
 
 
   <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\BlogCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Blogs\BlogsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
