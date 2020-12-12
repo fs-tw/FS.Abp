@@ -15,10 +15,11 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Documents
 {
-    public partial class DocumentsApi : IDocumentDefinitionCrudAppService //auto-generated 
+    public partial class DocumentsApi //: IDocumentDefinitionCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("document-definition/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<DocumentDefinitionWithDetailsDto> GetAsync([FromQuery] DocumentDefinitionPrimaryKeyDto DocumentDefinitionPrimaryKey)
         {
@@ -27,7 +28,8 @@ namespace FS.Cms.Documents
 
         [HttpGet]
         [Route("document-definition")]
-        [RemoteService(false)]
+        
+        [RemoteService(true)]
         public Task<PagedResultDto<DocumentDefinitionWithDetailsDto>> GetListAsync(DocumentDefinitionGetListDto DocumentDefinitionGetList)
         {
             return this.DocumentDefinitionCrudAppService.GetListAsync(DocumentDefinitionGetList);
@@ -35,6 +37,7 @@ namespace FS.Cms.Documents
 
         [HttpPost]
         [Route("document-definition")]
+        [NonAction]
         [RemoteService(false)]
         public Task<DocumentDefinitionWithDetailsDto> CreateAsync(DocumentDefinitionCreateDto DocumentDefinitionCreate)
         {
@@ -43,6 +46,7 @@ namespace FS.Cms.Documents
 
         [HttpPut]
         [Route("document-definition/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<DocumentDefinitionWithDetailsDto> UpdateAsync([FromQuery] DocumentDefinitionPrimaryKeyDto DocumentDefinitionPrimaryKey, DocumentDefinitionUpdateDto DocumentDefinitionUpdate)
         {
@@ -51,6 +55,7 @@ namespace FS.Cms.Documents
 
         [HttpDelete]
         [Route("document-definition/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task DeleteAsync([FromQuery] DocumentDefinitionPrimaryKeyDto DocumentDefinitionPrimaryKey)
         {

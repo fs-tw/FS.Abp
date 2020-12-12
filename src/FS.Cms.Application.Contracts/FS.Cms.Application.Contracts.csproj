@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application.Contracts\FS.Abp.Core.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -40,10 +40,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="FS.Cms\Blogs\IBlogsApi.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
     <Compile Update="FS.Cms\Blogs\IBlogsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
@@ -51,19 +47,11 @@
     <Compile Update="FS.Cms\Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="FS.Cms\Documents\IDocumentsApi.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
     <Compile Update="FS.Cms\Documents\IDocumentsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
     <Compile Update="FS.Cms\Posts\IPostCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Cms\Posts\IPostsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

@@ -14,7 +14,7 @@ namespace FS.Cms.Posts
 {
     [Area("cms")]
     [RemoteService(true)]
-    [ControllerName("Posts Api")]
+    [ControllerName("FS.Cms.Posts(cms)")]
     [Route("api/cms/posts")]
     public partial class PostsApi : CmsController //auto-generated IPostsApi
     {

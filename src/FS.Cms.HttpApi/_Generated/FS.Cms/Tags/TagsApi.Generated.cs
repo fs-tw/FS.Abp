@@ -14,7 +14,7 @@ namespace FS.Cms.Tags
 {
     [Area("cms")]
     [RemoteService(true)]
-    [ControllerName("Tags Api")]
+    [ControllerName("FS.Cms.Tags(cms)")]
     [Route("api/cms/tags")]
     public partial class TagsApi : CmsController //auto-generated ITagsApi
     {

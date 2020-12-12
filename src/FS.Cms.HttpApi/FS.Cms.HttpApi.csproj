@@ -14,6 +14,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsApi.Blog.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Documents\DocumentsApi.Document.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinition.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.Post.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.PostTagMap.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\TagsApi.Tag.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
   </ItemGroup>
   
@@ -31,8 +40,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Cms\Blogs\BlogsApi.Blog.cs">
+    <Compile Update="FS.Cms\Blogs\BlogsApi.BlogCrudAppService.cs">
       <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.cs</DependentUpon>
     </Compile>
     <Compile Update="FS.Cms\Blogs\BlogsApi.cs">
       <AutoGen>True</AutoGen>
@@ -42,15 +52,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
+    <Compile Update="FS.Cms\Documents\DocumentsApi.DocumentCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentsApi.cs</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Documents\DocumentsApi.DocumentDefinitionCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentsApi.cs</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Posts\PostsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Posts\PostsApi.PostCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PostsApi.cs</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Posts\PostsApi.PostTagMapCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PostsApi.cs</DependentUpon>
     </Compile>
     <Compile Update="FS.Cms\Tags\TagsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Tags</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\BlogsApi.Blog.Generated.cs">
+    <Compile Update="FS.Cms\Tags\TagsApi.TagCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TagsApi.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsApi.BlogCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
     </Compile>
@@ -58,11 +88,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.Document.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.DocumentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinition.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
     </Compile>
@@ -74,11 +104,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.Post.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.PostCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>PostsApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.PostTagMap.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.PostTagMapCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>PostsApi.Generated.cs</DependentUpon>
     </Compile>
@@ -86,7 +116,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Tags</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Tags\TagsApi.Tag.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Tags\TagsApi.TagCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>TagsApi.Generated.cs</DependentUpon>
     </Compile>

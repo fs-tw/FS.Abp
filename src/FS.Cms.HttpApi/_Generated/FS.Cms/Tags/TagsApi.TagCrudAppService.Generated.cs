@@ -15,10 +15,11 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Tags
 {
-    public partial class TagsApi : ITagCrudAppService //auto-generated 
+    public partial class TagsApi //: ITagCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("tag/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<TagWithDetailsDto> GetAsync([FromQuery] TagPrimaryKeyDto TagPrimaryKey)
         {
@@ -27,7 +28,8 @@ namespace FS.Cms.Tags
 
         [HttpGet]
         [Route("tag")]
-        [RemoteService(false)]
+        
+        [RemoteService(true)]
         public Task<PagedResultDto<TagWithDetailsDto>> GetListAsync(TagGetListDto TagGetList)
         {
             return this.TagCrudAppService.GetListAsync(TagGetList);
@@ -35,6 +37,7 @@ namespace FS.Cms.Tags
 
         [HttpPost]
         [Route("tag")]
+        [NonAction]
         [RemoteService(false)]
         public Task<TagWithDetailsDto> CreateAsync(TagCreateDto TagCreate)
         {
@@ -43,6 +46,7 @@ namespace FS.Cms.Tags
 
         [HttpPut]
         [Route("tag/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<TagWithDetailsDto> UpdateAsync([FromQuery] TagPrimaryKeyDto TagPrimaryKey, TagUpdateDto TagUpdate)
         {
@@ -51,6 +55,7 @@ namespace FS.Cms.Tags
 
         [HttpDelete]
         [Route("tag/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task DeleteAsync([FromQuery] TagPrimaryKeyDto TagPrimaryKey)
         {

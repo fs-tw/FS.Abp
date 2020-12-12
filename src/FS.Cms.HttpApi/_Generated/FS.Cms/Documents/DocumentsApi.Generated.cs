@@ -14,7 +14,7 @@ namespace FS.Cms.Documents
 {
     [Area("cms")]
     [RemoteService(true)]
-    [ControllerName("Documents Api")]
+    [ControllerName("FS.Cms.Documents(cms)")]
     [Route("api/cms/documents")]
     public partial class DocumentsApi : CmsController //auto-generated IDocumentsApi
     {

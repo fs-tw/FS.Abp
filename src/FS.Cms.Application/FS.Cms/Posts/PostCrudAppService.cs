@@ -5,8 +5,8 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
-using FS.Abp.CodingManagement.Coding;
-using FS.Abp.Files;
+//using FS.Abp.CodingManagement.Coding;
+//using FS.Abp.Files;
 using FS.Cms.Posts.Dtos;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Authorization;
@@ -22,8 +22,8 @@ namespace FS.Cms.Posts
 
     public partial class PostCrudAppService : IPostCrudAppService
     {
-        private IFileManager fileManager;
-        protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
+        //private IFileManager fileManager;
+        //protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
 
         private IConfiguration configuration;
         protected IConfiguration Configuration => this.LazyGetRequiredService(ref configuration);

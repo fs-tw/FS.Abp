@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Volo.Abp.Modularity;
 using Xunit;
-using FS.Abp.CodingManagement.Coding;
+//using FS.Abp.CodingManagement.Coding;
 using Shouldly;
 using FS.Cms.Posts;
 

@@ -15,11 +15,12 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostsApi : IPostCrudAppService //auto-generated 
+    public partial class PostsApi //: IPostCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("post/id")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task<PostWithDetailsDto> GetAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey)
         {
             return this.PostCrudAppService.GetAsync(PostPrimaryKey);
@@ -27,7 +28,8 @@ namespace FS.Cms.Posts
 
         [HttpGet]
         [Route("post")]
-        [RemoteService(false)]
+        
+        [RemoteService(true)]
         public Task<PagedResultDto<PostWithDetailsDto>> GetListAsync(PostGetListDto PostGetList)
         {
             return this.PostCrudAppService.GetListAsync(PostGetList);
@@ -35,7 +37,8 @@ namespace FS.Cms.Posts
 
         [HttpPost]
         [Route("post")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task<PostWithDetailsDto> CreateAsync(PostCreateDto PostCreate)
         {
             return this.PostCrudAppService.CreateAsync(PostCreate);
@@ -43,7 +46,8 @@ namespace FS.Cms.Posts
 
         [HttpPut]
         [Route("post/id")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task<PostWithDetailsDto> UpdateAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey, PostUpdateDto PostUpdate)
         {
             return this.PostCrudAppService.UpdateAsync(PostPrimaryKey,PostUpdate);
@@ -51,7 +55,8 @@ namespace FS.Cms.Posts
 
         [HttpDelete]
         [Route("post/id")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task DeleteAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey)
         {
             return this.PostCrudAppService.DeleteAsync(PostPrimaryKey);

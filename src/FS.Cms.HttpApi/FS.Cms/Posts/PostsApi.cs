@@ -15,20 +15,20 @@ namespace FS.Cms.Posts
     public partial class PostsApi : IPostsApi
     {
 
-        [HttpGet]
-        [Route("with-tag/{id}")]
-        public async Task<PostWithTagsDto> GetWithTags(Guid id)
-        {
-            return null;
-            //return await this.PostCrudAppService.GetWithTags(id);
-        }
+        //[HttpGet]
+        //[Route("with-tag/{id}")]
+        //public async Task<PostWithTagsDto> GetWithTags(Guid id)
+        //{
+        //    return null;
+        //    //return await this.PostCrudAppService.GetWithTags(id);
+        //}
 
-        [HttpGet]
-        [Route("get-list-with-tag")]        
-        public async Task<PagedResultDto<PostWithTagsDto>> GetListWithTagAsync(PostGetListDto input)
-        {
-            return null;
-            //return await this.PostCrudAppService.GetListWithTagAsync(input);
-        }
+        //[HttpGet]
+        //[Route("get-list-with-tag")]        
+        //public async Task<PagedResultDto<PostWithTagsDto>> GetListWithTagAsync(PostGetListDto input)
+        //{
+        //    return null;
+        //    //return await this.PostCrudAppService.GetListWithTagAsync(input);
+        //}
     }
 }

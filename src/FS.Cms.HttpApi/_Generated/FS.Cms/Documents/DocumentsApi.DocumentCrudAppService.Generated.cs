@@ -15,10 +15,11 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Documents
 {
-    public partial class DocumentsApi : IDocumentCrudAppService //auto-generated 
+    public partial class DocumentsApi //: IDocumentCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("document/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<DocumentWithDetailsDto> GetAsync([FromQuery] DocumentPrimaryKeyDto DocumentPrimaryKey)
         {
@@ -27,7 +28,8 @@ namespace FS.Cms.Documents
 
         [HttpGet]
         [Route("document")]
-        [RemoteService(false)]
+        
+        [RemoteService(true)]
         public Task<PagedResultDto<DocumentWithDetailsDto>> GetListAsync(DocumentGetListDto DocumentGetList)
         {
             return this.DocumentCrudAppService.GetListAsync(DocumentGetList);
@@ -35,6 +37,7 @@ namespace FS.Cms.Documents
 
         [HttpPost]
         [Route("document")]
+        [NonAction]
         [RemoteService(false)]
         public Task<DocumentWithDetailsDto> CreateAsync(DocumentCreateDto DocumentCreate)
         {
@@ -43,6 +46,7 @@ namespace FS.Cms.Documents
 
         [HttpPut]
         [Route("document/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<DocumentWithDetailsDto> UpdateAsync([FromQuery] DocumentPrimaryKeyDto DocumentPrimaryKey, DocumentUpdateDto DocumentUpdate)
         {
@@ -51,6 +55,7 @@ namespace FS.Cms.Documents
 
         [HttpDelete]
         [Route("document/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task DeleteAsync([FromQuery] DocumentPrimaryKeyDto DocumentPrimaryKey)
         {

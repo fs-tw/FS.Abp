@@ -15,11 +15,12 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostsApi : IPostTagMapCrudAppService //auto-generated 
+    public partial class PostsApi //: IPostTagMapCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("post-tag-map/id")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task<PostTagMapWithDetailsDto> GetAsync([FromQuery] PostTagMapPrimaryKeyDto PostTagMapPrimaryKey)
         {
             return this.PostTagMapCrudAppService.GetAsync(PostTagMapPrimaryKey);
@@ -27,6 +28,7 @@ namespace FS.Cms.Posts
 
         [HttpGet]
         [Route("post-tag-map")]
+        
         [RemoteService(true)]
         public Task<PagedResultDto<PostTagMapWithDetailsDto>> GetListAsync(PostTagMapGetListDto PostTagMapGetList)
         {
@@ -35,7 +37,8 @@ namespace FS.Cms.Posts
 
         [HttpPost]
         [Route("post-tag-map")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task<PostTagMapWithDetailsDto> CreateAsync(PostTagMapCreateDto PostTagMapCreate)
         {
             return this.PostTagMapCrudAppService.CreateAsync(PostTagMapCreate);
@@ -43,6 +46,7 @@ namespace FS.Cms.Posts
 
         [HttpPut]
         [Route("post-tag-map/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<PostTagMapWithDetailsDto> UpdateAsync([FromQuery] PostTagMapPrimaryKeyDto PostTagMapPrimaryKey, PostTagMapUpdateDto PostTagMapUpdate)
         {
@@ -51,7 +55,8 @@ namespace FS.Cms.Posts
 
         [HttpDelete]
         [Route("post-tag-map/id")]
-        [RemoteService(true)]
+        [NonAction]
+        [RemoteService(false)]
         public Task DeleteAsync([FromQuery] PostTagMapPrimaryKeyDto PostTagMapPrimaryKey)
         {
             return this.PostTagMapCrudAppService.DeleteAsync(PostTagMapPrimaryKey);

@@ -15,10 +15,11 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Blogs
 {
-    public partial class BlogsApi : IBlogCrudAppService //auto-generated 
+    public partial class BlogsApi //: IBlogCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("blog/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<BlogWithDetailsDto> GetAsync([FromQuery] BlogPrimaryKeyDto BlogPrimaryKey)
         {
@@ -27,8 +28,8 @@ namespace FS.Cms.Blogs
 
         [HttpGet]
         [Route("blog")]
-        [RemoteService(false)]
         [NonAction]
+        [RemoteService(false)]
         public Task<PagedResultDto<BlogWithDetailsDto>> GetListAsync(BlogGetListDto BlogGetList)
         {
             return this.BlogCrudAppService.GetListAsync(BlogGetList);
@@ -36,6 +37,7 @@ namespace FS.Cms.Blogs
 
         [HttpPost]
         [Route("blog")]
+        [NonAction]
         [RemoteService(false)]
         public Task<BlogWithDetailsDto> CreateAsync(BlogCreateDto BlogCreate)
         {
@@ -44,6 +46,7 @@ namespace FS.Cms.Blogs
 
         [HttpPut]
         [Route("blog/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task<BlogWithDetailsDto> UpdateAsync([FromQuery] BlogPrimaryKeyDto BlogPrimaryKey, BlogUpdateDto BlogUpdate)
         {
@@ -52,6 +55,7 @@ namespace FS.Cms.Blogs
 
         [HttpDelete]
         [Route("blog/id")]
+        [NonAction]
         [RemoteService(false)]
         public Task DeleteAsync([FromQuery] BlogPrimaryKeyDto BlogPrimaryKey)
         {

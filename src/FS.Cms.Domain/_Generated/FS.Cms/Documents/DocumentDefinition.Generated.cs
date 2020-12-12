@@ -35,11 +35,11 @@ namespace FS.Cms.Documents
 
             get
             {
-                return this.GetExtraProperty<List<FS.Cms.Core.CmsImageField>>(nameof(Images));
+                return this.GetProperty<List<FS.Cms.Core.CmsImageField>>(nameof(Images));
             }
             set
             {
-                this.SetExtraProperty(nameof(Images), value);
+                this.SetProperty(nameof(Images), value);
             }
         } 
 

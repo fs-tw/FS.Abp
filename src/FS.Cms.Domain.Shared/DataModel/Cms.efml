@@ -18,6 +18,11 @@
   </class>
   <class name="$ComplexTypes">
     <component class="FS.Cms.CreationAuditedEntity" IsExternal="true" p1:Guid="cfe17fcc-aa8a-4ead-9357-17aab744aad2" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="158718ff-3358-4afc-972f-e302ca624f49">
         <column name="" />
       </property>
@@ -26,6 +31,11 @@
       </property>
     </component>
     <component class="FS.Cms.AuditedEntity" IsExternal="true" p1:Guid="f17073f8-9476-4176-83a5-bbfd9169b276" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="c2783598-0ae9-48c6-85a9-91f57fc8ad80">
         <column name="" />
       </property>
@@ -40,6 +50,11 @@
       </property>
     </component>
     <component class="FS.Cms.FullAuditedEntity" IsExternal="true" p1:Guid="a44ec678-6cbe-4611-8d23-2cf20e525916" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="af13cda3-ca0b-4aea-9ebc-ce2a643d95fe">
         <column name="" />
       </property>
@@ -63,6 +78,11 @@
       </property>
     </component>
     <component class="FS.Cms.AggregateRoot" IsExternal="true" p1:Guid="0d6330ad-d3b1-493d-b8e1-b34f27512218" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="45807d2e-9b49-4583-8ad1-3627f1b716a8">
         <column name="" />
       </property>
@@ -71,6 +91,11 @@
       </property>
     </component>
     <component class="FS.Cms.CreationAuditedAggregateRoot" IsExternal="true" p1:Guid="fa1f47b0-3493-461b-9abc-e8f36ef56b35" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="61f1cf1a-ec65-4651-ae93-f67d941acdfa">
         <column name="" />
       </property>
@@ -85,6 +110,11 @@
       </property>
     </component>
     <component class="FS.Cms.AuditedAggregateRoot" IsExternal="true" p1:Guid="2cac9532-1fe1-41e2-9f0e-ab2e45f5751a" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="8b38f339-a0c7-4709-b97c-a415f57d0021">
         <column name="" />
       </property>
@@ -105,6 +135,11 @@
       </property>
     </component>
     <component class="FS.Cms.FullAuditedAggregateRoot" IsExternal="true" p1:Guid="f4d1cac9-5775-4c3f-b4de-fce98467c8b8" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
       <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="ca2c6629-af09-457c-b9e1-ac788519b274">
         <column name="" />
       </property>
@@ -792,7 +827,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
+  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -928,7 +963,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Posts.PostTagMap" entity-set="PostTagMaps" p1:Guid="f7660505-f7b9-47b6-9d8e-7f24847e8b22" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GetAsync="True" p1:GetListAsync="True" p1:CreateAsync="True" p1:DeleteAsync="True">
+  <class name="FS.Cms.Posts.PostTagMap" entity-set="PostTagMaps" p1:Guid="f7660505-f7b9-47b6-9d8e-7f24847e8b22" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -1195,7 +1230,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="70f04b6a-d3ce-439f-9739-d6bc9dea15c4" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Blog&gt;" p1:AppServicePartialClass="True">
+  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="70f04b6a-d3ce-439f-9739-d6bc9dea15c4" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Blog&gt;" p1:AppServicePartialClass="True" p1:GetListAsync="False">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

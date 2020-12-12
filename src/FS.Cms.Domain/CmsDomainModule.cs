@@ -7,7 +7,7 @@ namespace FS.Cms
         typeof(CmsDomainSharedModule)
         )]
     [DependsOn(
-        typeof(FS.Abp.Core.CoreDomainModule)//,
+        typeof(FS.Abp.AbpDomainModule)//,
         //typeof(FS.Abp.CodingManagement.CodingManagementDomainModule)
         )]
     public class CmsDomainModule : AbpModule

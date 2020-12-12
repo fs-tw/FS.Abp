@@ -10,7 +10,7 @@ namespace FS.Cms
         typeof(AbpDddApplicationModule)
         )]
     [DependsOn(
-        typeof(FS.Abp.Core.CoreApplicationModule)//,
+        typeof(FS.Abp.AbpApplicationModule)//,
         //typeof(FS.Abp.CodingManagement.CodingManagementApplicationModule)
         )]
     public class CmsApplicationModule : AbpModule

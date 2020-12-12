@@ -108,28 +108,30 @@
         <File Name="BlogsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
         <File Name="ITagsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
         <File Name="TagsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
-        <File Name="IPostsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="IPostsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="PostsApi.Post.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="PostsApi.PostTagMap.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="IDocumentsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
+        <File Name="PostsApi.PostCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
+        <File Name="PostsApi.PostCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="PostsApi.PostTagMapCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
+        <File Name="PostsApi.PostTagMapCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="IDocumentsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="DocumentsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
         <File Name="DocumentsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
-        <File Name="DocumentsApi.DocumentDefinition.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
-        <File Name="DocumentsApi.Document.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
-        <File Name="IBlogsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="DocumentsApi.DocumentDefinitionCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
+        <File Name="DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
+        <File Name="DocumentsApi.DocumentCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
+        <File Name="DocumentsApi.DocumentCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="BlogsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
         <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="BlogsApi.Blog.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="ITagsApi.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="BlogsApi.BlogCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsApi.BlogCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="ITagsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="TagsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
         <File Name="TagsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Tags" />
-        <File Name="TagsApi.Tag.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Tags" />
+        <File Name="TagsApi.TagCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="TagsApi.TagCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="PostsStore.cs" Project="FS.Cms.Domain" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostsStore.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DocumentsStore.cs" Project="FS.Cms.Domain" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />

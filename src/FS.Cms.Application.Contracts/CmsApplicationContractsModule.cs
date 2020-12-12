@@ -11,7 +11,7 @@ namespace FS.Cms
         typeof(AbpAuthorizationModule)
         )]
     [DependsOn(
-        typeof(FS.Abp.Core.CoreApplicationContractsModule)//,
+        typeof(FS.Abp.AbpApplicationContractsModule)//,
         //typeof(FS.Abp.CodingManagement.CodingManagementApplicationContractsModule)
         )]
     public class CmsApplicationContractsModule : AbpModule

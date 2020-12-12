@@ -14,7 +14,7 @@ namespace FS.Cms.Blogs
 {
     [Area("cms")]
     [RemoteService(true)]
-    [ControllerName("Blogs Api")]
+    [ControllerName("FS.Cms.Blogs(cms)")]
     [Route("api/cms/blogs")]
     public partial class BlogsApi : CmsController //auto-generated IBlogsApi
     {

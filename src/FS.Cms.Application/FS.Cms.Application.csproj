@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Core\src\FS.Abp.Core.Application\FS.Abp.Core.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.HtmlAgilityPack\src\FS.Abp.HtmlAgilityPack\FS.Abp.HtmlAgilityPack.csproj" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />

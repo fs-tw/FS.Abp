@@ -11,7 +11,7 @@ namespace FS.Cms.EntityFrameworkCore
         //typeof(FS.Abp.Core.EntityFrameworkCore.CoreEntityFrameworkCoreModule)
     )]
     [DependsOn(
-        typeof(FS.Abp.Core.EntityFrameworkCore.CoreEntityFrameworkCoreModule)
+        typeof(FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule)
         )]
     public class CmsEntityFrameworkCoreModule : AbpModule
     {
