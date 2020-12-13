@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\EasyAbp.Abp.Trees\src\EasyAbp.Abp.Trees.EntityFrameworkCore\EasyAbp.Abp.Trees.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
   </ItemGroup>
