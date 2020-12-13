@@ -1,0 +1,19 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.Identity.Localization
+@model Volo.Abp.Identity.Web.Pages.Identity.Users.TwoFactorModel
+@inject IHtmlLocalizer<IdentityResource> L
+@{
+    Layout = null;
+}
+<form method="post" class="cupForm" asp-page="/Identity/Users/TwoFactor">
+    <abp-modal>
+        <abp-modal-header title="@(L["TwoFactor"].Value + " - " + Model.UserName)"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="TwoFactorInput.Id"/>
+            <abp-input asp-for="TwoFactorInput.TwoFactorEnabled" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

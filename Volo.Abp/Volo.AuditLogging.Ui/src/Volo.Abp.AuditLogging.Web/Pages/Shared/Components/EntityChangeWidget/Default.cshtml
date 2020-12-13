@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Button
+@using Volo.Abp.Auditing
+@using Volo.Abp.AuditLogging.Localization
+@inject IHtmlLocalizer<AuditLoggingResource> L
+@model List<Volo.Abp.AuditLogging.EntityChangeWithUsernameDto>
+
+
+@if (Model.Count == 0)
+{
+    <div class="text-center">@L["NoChanges"]</div>
+}
+@for (var i = 0; i < Model.Count; i++)
+{
+    var entityChange = Model[i].EntityChange;
+    var username = Model[i].UserName;
+    var id = "C" + Guid.NewGuid();
+
+    var title = string.Empty;
+    var daysAgo = $"<time class=\"timeago\" data-toggle=\"popover\" data-placement=\"top\" data-trigger=\"hover\" datetime=\"{entityChange.ChangeTime}\" data-content=\"{entityChange.ChangeTime}\"></time>";
+    if (string.IsNullOrEmpty(username))
+    {
+        title = string.Format(L["DaysAgoTitle"].Value, L[entityChange.ChangeType.ToString()].Value, daysAgo);
+    }
+    else
+    {
+        title = string.Format(L["DaysAgoWithUserTitle"].Value, L[entityChange.ChangeType.ToString()].Value, daysAgo, username);
+    }
+
+    var type = AbpButtonType.Success;
+    if (entityChange.ChangeType == EntityChangeType.Deleted)
+    {
+        type = AbpButtonType.Danger;
+    }
+    else if (entityChange.ChangeType == EntityChangeType.Updated)
+    {
+        type = AbpButtonType.Info;
+    }
+    <div abp-border="Dark" abp-rounded="Default" class="mb-3">
+        <abp-button button-type="@(type)" size="Block" abp-collapse-id="@id" text="@title" />
+        <abp-collapse-body style="overflow-x: scroll" id="@id" class="m-3" show="i == 0">
+            <abp-table striped-rows="true">
+                <thead>
+                    <tr>
+                        <th>@L["PropertyName"]</th>
+                        <th>@L["OriginalValue"]</th>
+                        <th>@L["NewValue"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var propertyChange in entityChange.PropertyChanges.OrderBy(x => x.PropertyName))
+                    {
+                        var isChanged = "";
+                        if (entityChange.ChangeType != EntityChangeType.Created && (propertyChange.NewValue != propertyChange.OriginalValue))
+                        {
+                            isChanged = "color: red;";
+                        }
+                        <tr>
+                            <th style="font-weight: normal;">@propertyChange.PropertyName</th>
+                            <th style="font-weight: normal;">@propertyChange.OriginalValue</th>
+                            <th style="font-weight: normal; @isChanged">@propertyChange.NewValue</th>
+                        </tr>
+                    }
+                </tbody>
+            </abp-table>
+        </abp-collapse-body>
+    </div>
+}

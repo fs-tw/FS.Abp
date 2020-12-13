@@ -1,0 +1,460 @@
+﻿@page "/file-management"
+@attribute [Authorize(FileManagementPermissions.DirectoryDescriptor.Default)]
+@using Microsoft.AspNetCore.Authorization
+@using Volo.FileManagement.Authorization
+@using Volo.FileManagement.Directories
+@using Volo.FileManagement.Files
+@using Volo.FileManagement.Localization
+@inject AbpBlazorMessageLocalizerHelper<FileManagementResource> LH
+@inherits FileManagementComponentBase
+
+@* ************************* PAGE HEADER ************************* *@
+<PageHeader Title="@L["Menu:FileManagement"]" BreadcrumbItems="@BreadcrumbItems">
+
+</PageHeader>
+
+<Card>
+    <CardBody>
+        <Row>
+            <Column Class="col-12 col-md-4 col-lg-3 directory-tree-column">
+                <Column class="p-lg-3 p-md-0 mb-4">
+                    <Column>
+                        @if (HasFileCreatePermission)
+                        {
+                            <Button Color="@Color.Primary"
+                                    Class="mb-2 btn-block px-1 shadow-none"
+                                    Clicked="OpenUploadFilesModalAsync">
+                                <i class="fas fa-upload mr-2"></i>@L["UploadFiles"]
+                            </Button>
+                        }
+
+                        @if (HasDirectoryCreatePermission)
+                        {
+                            <Button Color="@Color.Primary"
+                                    Outline="true"
+                                    Class="mb-4 btn-block px-1 shadow-none"
+                                    Clicked="OpenCreateDirectoryModalAsync">
+                                <i class="fas fa-folder-plus mr-2"></i>@L["CreateFolder"]
+                            </Button>
+                        }
+                    </Column>
+
+                    <Column Class="directory-tree">
+                    @if (DirectoryDescriptorTree?.First()?.Children?.Any() == true)
+                    {
+                        <TreeView Items="DirectoryDescriptorTree"
+                                  GetChildren="@(item => item.Children)"
+                                  HasChildren="@(item => item.HasChildren)">
+                            <ItemTemplate>
+                                <Excubo.Blazor.TreeViews.Collapse @bind-Value="@context.Item.Collapsed" />
+                                <Dropdown>
+                                    <span style="cursor: pointer" @onclick="() => OnSelectedDirectoryNodeChangedAsync(context.Item)">
+                                        @if (context.Item.Children?.Any() == true)
+                                        {
+                                            <Icon Class="@context.Item.Icon"></Icon>
+                                        }
+                                        else
+                                        {
+                                            <Icon Class="fa-angle-right hidden"></Icon>
+                                        }
+
+                                        <Icon Class="fa-folder text-primary m-2"></Icon>
+                                        @context.Item.Name
+                                    </span>
+
+                                    @if (context.Item.Id != null)
+                                    {
+                                        <DropdownToggle Padding="Padding.Is0" Color="Color.None" Size="Size.ExtraSmall" Split="true"/>
+                                        <DropdownMenu>
+                                            @if (HasDirectoryUpdatePermission)
+                                            {
+                                                <DropdownItem Style="cursor: pointer" Clicked="() => OpenRenameDirectoryModalAsync(context.Item.Id.Value, context.Item.Name)">
+                                                    @L["Rename"]
+                                                </DropdownItem>
+                                                <DropdownItem Style="cursor: pointer" Clicked="() => OpenMoveContentModalAsync(context.Item.Id.Value, true, true)">
+                                                    @L["Move"]
+                                                </DropdownItem>
+                                            }
+                                            @if (HasDirectoryDeletePermission)
+                                            {
+                                                <DropdownItem Style="cursor: pointer" Clicked="() => DeleteDirectoryAsync(context.Item.Id.Value, true)">
+                                                    @L["Delete"]
+                                                </DropdownItem>
+                                            }
+                                        </DropdownMenu>
+                                    }
+                                </Dropdown>
+
+                            </ItemTemplate>
+                        </TreeView>
+                    }
+                    else
+                    {
+                        @L["ThereIsNoDirectory"]
+                    }
+                     </Column>
+                </Column>
+            </Column>
+
+            <Column Class="col-12 col-md-8 col-lg-9">
+                <Column class="p-lg-3 p-md-0">
+                    <Row>
+                        <Column Class="col-12">
+                            <ol class="breadcrumb mb-2">
+                                <li class="breadcrumb-item">
+                                    <span @onclick="() => OnDirectoryRoutingAsync(null)">@L["AllFiles"]</span>
+                                </li>
+                                @foreach (var route in DirectoryRoutes)
+                                {
+                                    <li class="breadcrumb-item">
+                                        @if (DirectoryRoutes.Last() == route)
+                                        {
+                                            <span>@route.Name</span>
+                                        }
+                                        else
+                                        {
+                                            <span @onclick="() => OnDirectoryRoutingAsync(route)">@route.Name</span>
+                                        }
+                                    </li>
+                                }
+                            </ol>
+                        </Column>
+                    </Row>
+                    <Row Class="form-row">
+                        <div class="col-12 col-md-auto mb-3 mb-md-0">
+                            <Button Color="@Color.Secondary"
+                                    Outline="true"
+                                    Class="mb-2 mb-md-0 shadow-none btn-block"
+                                    Disabled="@(DirectoryRoutes?.Any() == false)"
+                                    Clicked="GoUpFolderAsync">
+                                <i class="fas fa-level-up-alt fa-flip-horizontal mr-2"></i>@L["GoUpFolder"]
+                            </Button>
+                        </div>
+                        <Column Class="col-12 col-md">
+                            <div class="input-group">
+                                <TextEdit Placeholder="@L["Filter"]"
+                                          @bind-text="DirectoryContentRequestInput.Filter"
+                                          Class="form-control page-search-filter-text" />
+                                <div class="input-group-append">
+                                    <Button Color="@Color.Primary"
+                                            Clicked="GetDirectoryContentAsync">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </Button>
+                                </div>
+                            </div>
+                        </Column>
+                    </Row>
+                    <Row>
+                        <Column>
+                            <DataGrid TItem="DirectoryContentDto"
+                                      Data="DirectoryContents"
+                                      ReadData="OnDirectoryContentDataGridReadAsync"
+                                      TotalItems="DirectoryContents?.Count"
+                                      ShowPager="false">
+                                <DataGridColumns>
+                                    <DataGridEntityActionsColumn TItem="DirectoryContentDto">
+                                        <DisplayTemplate>
+                                            <EntityActions TItem="DirectoryContentDto">
+
+                                                @if (context.IsDirectory)
+                                                {
+                                                    <EntityAction TItem="DirectoryContentDto"
+                                                                  Text="@L["Open"]"
+                                                                  Clicked="() => OpenFolderAsync(context)">
+                                                    </EntityAction>
+                                                }
+
+                                                @if (!context.IsDirectory)
+                                                {
+                                                    <span class="dropdown-item" @onclick="() => DownloadFile(context)">@L["Download"]</span>
+                                                }
+
+                                                <EntityAction TItem="DirectoryContentDto"
+                                                              RequiredPolicy="@(context.IsDirectory ? FileManagementPermissions.DirectoryDescriptor.Update : FileManagementPermissions.FileDescriptor.Update)"
+                                                              Clicked="() => OpenRenameModalAsync(context)"
+                                                              Text="@L["Rename"]">
+                                                </EntityAction>
+
+                                                <EntityAction TItem="DirectoryContentDto"
+                                                              RequiredPolicy="@FileManagementPermissions.FileDescriptor.Update"
+                                                              Clicked="() => OpenMoveContentModalAsync(context.Id, context.IsDirectory)"
+                                                              Text="@L["Move"]">
+                                                </EntityAction>
+
+                                                <EntityAction TItem="DirectoryContentDto"
+                                                              ConfirmationMessage="() => GetDeleteConfirmationMessage(context)"
+                                                              RequiredPolicy="@(context.IsDirectory ? FileManagementPermissions.DirectoryDescriptor.Delete : FileManagementPermissions.FileDescriptor.Delete)"
+                                                              Text="@L["Delete"]"
+                                                              Clicked="() => DeleteEntityAsync(context)">
+                                                </EntityAction>
+                                            </EntityActions>
+                                        </DisplayTemplate>
+                                    </DataGridEntityActionsColumn>
+                                    <DataGridColumn TItem="DirectoryContentDto" Field="@nameof(DirectoryContentDto.Name)" Caption="@L["Name"]">
+                                        <DisplayTemplate>
+                                            @if (context.IsDirectory)
+                                            {
+                                                <span class="directoryName" @onclick="() => OpenFolderAsync(context)">
+                                                    <i class="directory-content-icon fa fa-folder text-primary text-center mr-1"></i>@context.Name
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="fileName" @onclick="() => DownloadFile(context)">
+                                                @if (context.IconInfo.Type == FileIconType.FontAwesome)
+                                                {
+                                                    // font-awesome
+                                                    <i class='directory-content-icon @context.IconInfo.Icon text-muted text-center mr-1'></i>
+                                                        @context.Name
+                                                }
+                                                else
+                                                {
+                                                    // url
+                                                    <span class='directory-content-icon mr-1' style='background-image: url(@context.IconInfo.Icon)'></span>
+                                                        @context.Name
+                                                }
+                                            </span>
+                                            }
+                                        </DisplayTemplate>
+                                    </DataGridColumn>
+                                    <DataGridColumn TItem="DirectoryContentDto" Field="@nameof(DirectoryContentDto.Size)" Caption="@L["Size"]">
+                                        <DisplayTemplate>
+                                            @if (!context.IsDirectory)
+                                            {
+                                                @FormatBytes(context.Size)
+                                            }
+                                        </DisplayTemplate>
+                                    </DataGridColumn>
+                                </DataGridColumns>
+                                <EmptyTemplate>
+                                    @L["NoDataAvailableInDatatable"]
+                                </EmptyTemplate>
+                            </DataGrid>
+                        </Column>
+                    </Row>
+                </Column>
+            </Column>
+        </Row>
+    </CardBody>
+</Card>
+
+@* ************************* CREATE DIRECTORY MODAL ************************* *@
+
+@if (HasDirectoryCreatePermission)
+{
+    <Modal @ref="CreateDirectoryModal">
+        <ModalBackdrop/>
+        <ModalContent IsCentered="true">
+            <Form id="DirectoryCreateForm">
+                <ModalHeader>
+                    <ModalTitle>@L["CreateFolder"]</ModalTitle>
+                    <CloseButton Clicked="CloseCreateDirectoryModalAsync"/>
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@RenameFileValidationsRef" Model="@CreateDirectoryInput" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Name"]</FieldLabel>
+                                <TextEdit @bind-text="@CreateDirectoryInput.Name">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="CloseCreateDirectoryModalAsync">@L["Cancel"]</Button>
+                    <Button form="DirectoryCreateForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="CreateDirectoryAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* RENAME DIRECTORY MODAL ************************* *@
+
+@if (HasDirectoryUpdatePermission)
+{
+    <Modal @ref="RenameDirectoryModal">
+        <ModalBackdrop/>
+        <ModalContent IsCentered="true">
+            <Form id="RenameDirectoryForm">
+                <ModalHeader>
+                    <ModalTitle>@L["Rename"]</ModalTitle>
+                    <CloseButton Clicked="() => CloseRenameModalAsync(true)"/>
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@RenameFileValidationsRef" Model="@RenameDirectoryInput" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Name"]</FieldLabel>
+                                <TextEdit @bind-text="@RenameDirectoryInput.Name">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="() => CloseRenameModalAsync(true)">@L["Cancel"]</Button>
+                    <Button form="RenameDirectoryForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="RenameDirectoryAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* RENAME FILE MODAL ************************* *@
+
+@if (HasFileUpdatePermission)
+{
+    <Modal @ref="RenameFileModal">
+        <ModalBackdrop/>
+        <ModalContent IsCentered="true">
+            <Form id="RenameFileForm">
+                <ModalHeader>
+                    <ModalTitle>@L["Rename"]</ModalTitle>
+                    <CloseButton Clicked="() => CloseRenameModalAsync(false)"/>
+                </ModalHeader>
+                <ModalBody>
+                    <Validations @ref="@RenameFileValidationsRef" Model="@RenameFileInput" ValidateOnLoad="false">
+                        <Validation MessageLocalizer="@LH.Localize">
+                            <Field>
+                                <FieldLabel>@L["Name"]</FieldLabel>
+                                <TextEdit @bind-text="@RenameFileInput.Name">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                        </Validation>
+                    </Validations>
+                </ModalBody>
+                <ModalFooter>
+                    <Button Color="Color.Secondary" Clicked="() => CloseRenameModalAsync(false)">@L["Cancel"]</Button>
+                    <Button form="RenameFileForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="RenameFileAsync">@L["Save"]</Button>
+                </ModalFooter>
+            </Form>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* UPLOAD FILE MODAL ************************* *@
+
+@if (HasFileCreatePermission)
+{
+    <Modal @ref="UploadFilesModal">
+        <ModalBackdrop/>
+        <ModalContent IsCentered="true">
+            <ModalHeader>
+                <CloseButton Clicked="CloseUploadFilesModalAsync"/>
+            </ModalHeader>
+            <ModalBody>
+                <Row Class="mb-3">
+                    @foreach (var file in FileManagementUploadFileModels)
+                    {
+                        <Column ColumnSize="ColumnSize.IsThird.OnWidescreen" Class="view-files">
+                            <Card Margin="Margin.Is2.OnY">
+                                <CardImage Source="@file.Url" />
+                                <CardBody Class="p-2">
+                                    <span class="d-block mb-1">@file.DisplayFileName()</span>
+                                    <Button Color="Color.Primary" Class="btn-sm btn-block" Clicked="() => RemoveSelectedFile(file)">@L["Delete"]</Button>
+                                </CardBody>
+                            </Card>
+                        </Column>
+                    }
+                </Row>
+                <Row>
+                    <Column>
+                        <div class="drag-drop-zone">
+                            <InputFile OnChange="SelectedFilesAsync" multiple />
+                            <div class="mb-4" style="opacity: .25">
+                                <i class="far fa-hand-pointer fa-2x mx-3"></i>
+                                <span class="text-muted font-weight-bold" style="opacity: .75">/</span>
+                                <i class="far fa-copy fa-2x mx-3"></i>
+                                <span class="text-muted font-weight-bold" style="opacity: .75">/</span>
+                                <i class="fas fa-mouse-pointer fa-2x mx-3"></i>
+                            </div>
+                            @L["DropPaste"].Value.Replace("%{browse}", @L["Browse"])
+                        </div>
+                    </Column>
+                </Row>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary" Clicked="CloseUploadFilesModalAsync">@L["Cancel"]</Button>
+                <Button form="UploadFilesForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Disabled="@(FileManagementUploadFileModels?.Any() == false)" Clicked="UploadFilesAsync">@L["Upload"]</Button>
+            </ModalFooter>
+        </ModalContent>
+    </Modal>
+}
+
+@* ************************* MOVE CONTENT MODAL ************************* *@
+
+@if (HasFileUpdatePermission || HasDirectoryUpdatePermission)
+{
+    <Modal @ref="MoveContentModal">
+        <ModalBackdrop/>
+        <ModalContent IsCentered="true">
+            <ModalHeader>
+                <ModalTitle>@L["Move"]</ModalTitle>
+                <CloseButton Clicked="CloseMoveContentModalAsync"/>
+            </ModalHeader>
+            <ModalBody>
+                <Column>
+                    <span class="d-block p-2">@L["MoveToUnder"] </span>
+                    <Row>
+                        <Column>
+                            <ol class="breadcrumb mb-2">
+                                <li class="breadcrumb-item">
+                                    <span @onclick="() => OnMoveContentDirectoryRoutingAsync(null)">@L["AllFiles"]</span>
+                                </li>
+                                @foreach (var route in MoveFileDirectoryRoutes)
+                                {
+                                    <li class="breadcrumb-item">
+                                        @if (MoveFileDirectoryRoutes.Last() == route)
+                                        {
+                                            <span class="directoryName">@route.Name</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="directoryName" @onclick="() => OnMoveContentDirectoryRoutingAsync(route)">@route.Name</span>
+                                        }
+                                    </li>
+                                }
+                            </ol>
+                        </Column>
+                    </Row>
+                    <DataGrid TItem="DirectoryContentDto"
+                              Data="MoveDirectoryContents"
+                              TotalItems="MoveDirectoryContents?.Count"
+                              ShowPager="false">
+                        <DataGridColumns>
+                            <DataGridColumn TItem="DirectoryContentDto" Field="@nameof(DirectoryContentDto.Name)" Caption="@L["Name"]">
+                                <DisplayTemplate>
+                                    <span class="directoryName" @onclick="() => GetMoveDirectoryContents(context)">
+                                        <i class="directory-content-icon fa fa-folder text-primary text-center mr-1"></i>
+                                        @context.Name
+                                    </span>
+                                </DisplayTemplate>
+                            </DataGridColumn>
+                        </DataGridColumns>
+                        <EmptyTemplate>
+                            <Column class="box">
+                                @L["MoveHere"]
+                            </Column>
+                        </EmptyTemplate>
+                    </DataGrid>
+
+                </Column>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary" Clicked="CloseMoveContentModalAsync">@L["Cancel"]</Button>
+                <Button form="MoveContentForm" Type="ButtonType.Submit" PreventDefaultOnSubmit="true" Color="Color.Primary" Clicked="MoveContentAsync">@L["Save"]</Button>
+            </ModalFooter>
+        </ModalContent>
+    </Modal>
+}

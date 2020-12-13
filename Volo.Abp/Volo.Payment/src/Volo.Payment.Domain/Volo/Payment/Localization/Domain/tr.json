@@ -1,0 +1,10 @@
+{
+  "culture": "tr",
+  "texts": {
+    "PayWithGateway": "{0} ile öde",
+    "two-checkout": "2Checkout",
+    "payu": "PayU",
+    "paypal": "PayPal",
+    "stripe": "Stripe"
+  }
+}

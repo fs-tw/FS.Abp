@@ -1,0 +1,99 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Packages.JsTree
+@using Volo.Abp.AspNetCore.Mvc.UI.Packages.Uppy
+@using Volo.FileManagement.Authorization
+@using Volo.FileManagement.Localization
+@using Volo.FileManagement.Web.Navigation
+@model Volo.FileManagement.Web.Pages.FileManagement.IndexModel
+@inject IPageLayout PageLayout
+@inject IHtmlLocalizer<FileManagementResource> L
+@inject IAuthorizationService Authorization
+
+@{
+    PageLayout.Content.Title = L["Menu:FileManagement"].Value;
+    PageLayout.Content.MenuItemName = FileManagementMenuNames.GroupName;
+}
+
+@section styles{
+    <abp-style-bundle>
+        <abp-style type="typeof(UppyStyleContributor)"/>
+        <abp-style type="typeof(JsTreeStyleContributor)"/>
+        <abp-style src="/Pages/FileManagement/index.min.css"/>
+    </abp-style-bundle>
+}
+
+@section scripts {
+    <abp-script-bundle>
+        <abp-script type="typeof(UppyScriptContributor)"/>
+        <abp-script type="typeof(JsTreeScriptContributor)"/>
+        <abp-script src="/Pages/FileManagement/File/moveModal.js"/>
+        <abp-script src="/Pages/FileManagement/index.js"/>
+    </abp-script-bundle>
+}
+
+<abp-card>
+    <abp-card-body>
+        <abp-row>
+            <abp-column class="col-md-4 col-lg-3 directory-tree-column">
+                <div class="p-lg-3 p-md-0 mb-4">
+                    <div id="header-button-area">
+                        @if (await Authorization.IsGrantedAsync(FileManagementPermissions.FileDescriptor.Create))
+                        {
+                            <abp-button button-type="Primary" class="mb-2 btn-block px-1 shadow-none" id="UploadFilesBtn">
+                                <i class="fas fa-upload mr-2"></i>@L["UploadFiles"]
+                            </abp-button>
+                        }
+
+                        @if (await Authorization.IsGrantedAsync(FileManagementPermissions.DirectoryDescriptor.Create))
+                        {
+                            <abp-button button-type="Outline_Primary" class="mb-4 btn-block px-1 shadow-none" id="CreateFolderBtn">
+                                <i class="fas fa-folder-plus mr-2"></i>@L["CreateFolder"]
+                            </abp-button>
+                        }
+                    </div>
+                    <div id="DirectoryTree"></div>
+                    <div id="DirectoryTreeEmptyInfo">@L["ThereIsNoDirectory"]</div>
+                </div>
+            </abp-column>
+
+            <abp-column class="col-md-8 col-lg-9">
+                <div class="p-lg-3 p-md-0">
+                    <abp-row class="mb-3">
+                        <abp-column>
+                            <ol id="DirectoryRouting" class="breadcrumb">
+                                <li class="breadcrumb-item" directory-id=""><span> @L["AllFiles"]</span></li>
+                            </ol>
+                        </abp-column>
+                    </abp-row>
+                    <abp-row id="FileManagement_Table_Header" class="mb-3">
+                        <div id="header-button-area-2" class="col-sm-12 col-md-auto col-lg-auto col-xl-auto">
+                            <abp-button button-type="Outline_Secondary" class="mb-2 mb-md-0 shadow-none btn-block" id="GoBackBtn" disabled="true">
+                                <i class="fas fa-level-up-alt fa-flip-horizontal mr-2"></i>@L["GoUpFolder"]
+                            </abp-button>
+                        </div>
+                        <abp-column>
+                            <form method="post" class="page-search-form">
+                                <div class="input-group">
+                                    <input id="DirectoryContentFilter" class="form-control page-search-filter-text" placeholder="@L["Filter"]">
+                                    <div class="input-group-append">
+                                        <abp-button button-type="Primary" type="submit">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </abp-button>
+                                    </div>
+                                </div>
+                            </form>
+                        </abp-column>
+                    </abp-row>
+                    <abp-row>
+                        <abp-column>
+                            <abp-table id="DirectoryContentTable" directory-id="" striped-rows="true" class="nowrap"></abp-table>
+                        </abp-column>
+                    </abp-row>
+                </div>
+            </abp-column>
+        </abp-row>
+    </abp-card-body>
+</abp-card>

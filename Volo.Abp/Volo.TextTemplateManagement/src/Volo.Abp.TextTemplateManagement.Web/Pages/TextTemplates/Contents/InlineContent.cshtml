@@ -1,0 +1,56 @@
+﻿@page "{templateDefinitionName}"
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.Localization
+@using Volo.Abp.TextTemplateManagement.Web.Navigation
+@model Volo.Abp.TextTemplateManagement.Web.Pages.TextTemplates.Contents.InlineContentModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.TextTemplateManagement.Localization
+@inject IHtmlLocalizer<TextTemplateManagementResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Contents"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:TextTemplates"].Value, "/TextTemplates");
+    PageLayout.Content.MenuItemName = TextTemplateManagementMainMenuNames.GroupName;
+}
+
+@section styles {
+    <abp-style src="/Pages/TextTemplates/Contents/ContentShared.css" />
+}
+
+@section scripts {
+    <abp-script src="/Pages/TextTemplates/Contents/inlineContent.js" />
+}
+
+<abp-alert alert-type="Danger">
+    @L["InlineContentDescription"]
+</abp-alert>
+
+<abp-card>
+    <abp-card-header>
+        <label>@L["Name"]: <strong>@Model.TemplateDefinition.DisplayName (@Model.TemplateDefinition.Name)</strong></label>
+    </abp-card-header>
+    <abp-card-body>
+        <form id="TemplateInlineContentForm" definition="@Model.TemplateDefinitionName" method="post">
+            <abp-row>
+                <abp-column>
+                    <abp-input asp-for="@Model.TemplateContent" />
+                </abp-column>
+            </abp-row>
+            <abp-row>
+                <abp-column>
+                    <div class="float-left action-group">
+                        <a href="/TextTemplates" class="btn btn-primary">
+                            <span class="fa fa-arrow-left"></span>
+                            <span>@L["ReturnToTemplates"]</span>
+                        </a>
+                    </div>
+                    <div class="float-right action-group">
+                        <abp-button id="save-content" text="@L["SaveContent"].Value" button-type="Primary" />
+                        <abp-button id="restore-to-default" text="@L["RestoreToDefault"].Value" button-type="Danger" />
+                        <abp-button id="edit-unique-localization" text="@L["CustomizePerCulture"].Value" button-type="Link" />
+                    </div>
+                </abp-column>
+            </abp-row>
+        </form>
+    </abp-card-body>
+</abp-card>

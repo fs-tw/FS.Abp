@@ -1,0 +1,47 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageSearchBox
+@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Pages.Shared.Components.AbpPageToolbar
+@using Volo.Abp.LanguageManagement
+@using Volo.Abp.LanguageManagement.Navigation
+@using Volo.Abp.LanguageManagement.Pages.LanguageManagement
+@model Volo.Abp.LanguageManagement.Pages.LanguageManagement.IndexModel
+@inject IAuthorizationService Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.LanguageManagement.Localization
+@inject IHtmlLocalizer<LanguageManagementResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Languages"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:Languages"].Value);
+    PageLayout.Content.MenuItemName = LanguageManagementMenuNames.Languages;
+}
+@section styles {
+    <abp-style-bundle name="@typeof(IndexModel).FullName">
+        <abp-style src="/libs/select2/css/select2.min.css" />
+    </abp-style-bundle>
+}
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script src="/libs/select2/js/select2.min.js" />
+        <abp-script src="/Pages/LanguageManagement/index.js" />
+        <abp-script src="/Pages/LanguageManagement/create.js" />
+        <abp-script src="/Pages/LanguageManagement/edit.js" />
+    </abp-script-bundle>
+}
+@section content_toolbar {
+    @await Component.InvokeAsync(typeof(AbpPageToolbarViewComponent), new { pageName = typeof(IndexModel).FullName })
+}
+<div id="LanguagesWrapper">
+    <abp-card>
+        <abp-card-body>
+            <abp-row>
+                <abp-column>
+                    @await Component.InvokeAsync(typeof(AbpPageSearchBoxViewComponent))
+                </abp-column>
+            </abp-row>
+        </abp-card-body>
+    </abp-card>
+    <abp-table striped-rows="true" id="LanguagesTable" class="nowrap"></abp-table>
+</div>

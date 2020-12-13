@@ -1,0 +1,152 @@
+.demo-container {
+    position: fixed;
+    bottom: 10px;
+    z-index: 10001;
+    width: 200px;
+    right: -250px;
+    transition: all .3s;
+    margin-left: -150px;
+    border-radius: $radius;
+    background: darken($global-bg, 5);
+    border: 2px solid lighten($global-bg, 05);
+    color: $global-text;
+    font-size: .9em;
+    padding: 10px 15px;
+    border-right: 0;
+    box-shadow: $shadow-big, $shadow;
+
+    .demo-styles-container {
+        padding: 6px 10px 8px 10px;
+        border-radius: $radius/3*2;
+        background: $global-bg;
+        cursor: pointer;
+        transition: all .3s;
+        border: 1px solid darken($global-bg, 15);
+        margin-bottom: 5px;
+
+        &:hover {
+            box-shadow: $shadow;
+            border: 1px solid darken($global-bg, 35);
+        }
+    }
+
+    .demo-layout {
+        height: 10px;
+        border-radius: $radius;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 2px;
+        box-shadow: $shadow;
+
+        > div {
+            width: 25%;
+            height: 10px;
+            float: left;
+        }
+    }
+
+    .demo-toggler {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        position: absolute;
+        top: 0;
+        left: -100px;
+        background: $global-bg;
+        color: $global-text;
+        box-shadow: $shadow-big, $shadow;
+        border-radius: 50px;
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            background: ligthen($brand,05);
+        }
+
+        .fa-times {
+            display: none;
+        }
+    }
+
+    &.demo-open {
+        right: 20px;
+
+        .demo-toggler { 
+            left: -50px; 
+        }
+
+        .fa-times {
+            display: inline-block;
+        }
+
+        .fa-cog {
+            display: none;
+        }
+    }
+} 
+ 
+.menu {
+    width: 50px;
+    height: 50px;  
+    background: var(--bg-menu); 
+}
+
+
+
+
+.abp-component-demo-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    & + .abp-component-demo-section {
+        border-top: 1px solid $background;
+        padding: 2em 0;
+        margin: 2em 0;
+    }
+
+    .abp-component-demo-section-body {
+        display: block;
+        width: 100%;
+    }
+
+    .abp-component-demo-section-raw-source,
+    .abp-component-demo-section-bs-source {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        @media (max-width:767px) {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        padding: .25em;
+
+        h3 {
+            border-radius: $radius $radius 0 0;
+            background: darken($background, 5);
+            text-align: center;
+            font-size: 1em;
+            padding: .5em;
+            margin-bottom: 0;
+            margin-top: 1em;
+        }
+
+        pre {
+            background: $background;
+            color: $global-text;
+            border-radius: 0 0 $radius $radius;
+            padding: 1em;
+            font-size: .8em;
+            margin-bottom: 1em;
+            min-height: 20em;
+        }
+    }
+}

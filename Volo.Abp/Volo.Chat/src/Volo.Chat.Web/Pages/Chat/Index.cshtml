@@ -1,0 +1,89 @@
+﻿@page "/Chat"
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Packages.SignalR
+@using Volo.Chat.Localization
+@using Volo.Chat.Web.Pages.Chat
+@model IndexModel
+@inject IHtmlLocalizer<ChatResource> L
+@{
+    ViewBag.PageTitle = L["Chat"];
+}
+@section styles {
+    <abp-style-bundle name="@typeof(IndexModel).FullName">
+        <abp-style src="/Pages/Chat/index.css" />
+    </abp-style-bundle>
+}
+@section scripts {
+    <abp-script-bundle name="@typeof(IndexModel).FullName">
+        <abp-script src="/Pages/Chat/index.js" />
+    </abp-script-bundle>
+}
+<div id="chat_wrapper">
+    <div class="container-fluid">
+        <div class="row rounded-lg overflow-hidden shadow bor der">
+            <!-- Users box-->
+            <div class="col-3 col-md-5 col-lg-4 px-0">
+                <div class="border-right">
+                    <div class="p-3 bg-light border-bottom">
+                        <div class="form-row">
+                            @*<div class="col-auto">
+                                <div class="btn-group">
+                                   <img src="https://avatars.dicebear.com/v2/human/volos.svg" alt="user" width="32" class="rounded-circle border-primary" style="border: 2px solid">
+                                </div>
+                            </div>*@
+                            <div class="col">
+                                <input id="Contacts_Filter" type="search" class="form-control form-control-sm" id="search-input" placeholder="@L["SearchInContacts"].Value" aria-label="@L["SearchInContacts"].Value" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="messages-box m-0 p-0" style=" height: calc(100vh - 390px); overflow-y: auto;">
+                        <div class="list-group rounded-0" id="contact_list">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chat Box-->
+            <div class="col-9 col-md-7 col-lg-8 px-0">
+
+                <div class="p-3 bg-light border-bottom">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-row">
+                                <div class="col-auto">
+                                    @*<img src="https://avatars.dicebear.com/v2/human/volo.svg" alt="user" width="32" class="rounded-circle   border-secondary" style="border: 2px solid">*@
+                                    <canvas id="Conversation_Avatar" class="rounded-circle" width="27" height="27"></canvas>
+                                </div>
+                                <div class="col pt-1" style="line-height: 1.2;">
+                                    <strong id="Conversation_Title" class="font-weight-bold"></strong><br>
+                                    <small id="Conversation_Info"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chat_conversation_wrapper" class="chat-box m-0 p-0" style="  height: calc(100vh - 390px); overflow-y: auto;">
+                    <div class="chat-box-container p-4" id="chat_conversation">
+
+                    </div>
+                </div>
+
+                <!-- Typing area -->
+                <form id="Send_Message_Form" action="#" class="bg-light border-top m-0">
+                    <div class="p-3">
+                        <input id="userId" name="userId" hidden value="" />
+                        <textarea id="Chat_Message_Box" name="message" type="text" placeholder="@L["TypeMessage"].Value" class="form-control rounded py-2 bg-white"></textarea>
+                        <div class="custom-control custom-checkbox float-left mt-3">
+                            <input type="checkbox" class="custom-control-input" id="Send_On_Enter">
+                            <label class="custom-control-label" for="Send_On_Enter">@L["SendOnEnter"].Value</label>
+                        </div>
+                        <div class="mt-2 text-right">
+                            <button id="Send_Message_Button" disabled type="submit" class="btn btn-primary px-3">@L["Send"] <i class="fa fa-paper-plane ml-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

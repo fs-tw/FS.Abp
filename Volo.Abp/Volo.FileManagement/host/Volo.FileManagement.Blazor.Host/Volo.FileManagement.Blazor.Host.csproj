@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>net5.0</TargetFramework>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <RootNamespace>Volo.FileManagement.Blazor.Host</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3-preview2" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.3-preview2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Blazor" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Blazor" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volo.FileManagement.Host.Shared\Volo.FileManagement.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\src\Volo.FileManagement.Blazor\Volo.FileManagement.Blazor.csproj" />
+  </ItemGroup>
+
+</Project>

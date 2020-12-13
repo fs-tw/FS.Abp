@@ -1,0 +1,34 @@
+<div
+  class="mb-3 border border-dark rounded"
+  *ngIf="getInterpolationParams(entityChange.changeTime | date: 'medium') as params"
+>
+  <button
+    type="button"
+    class="btn btn-{{ color }} btn-block"
+    (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed"
+    [attr.aria-controls]="uuid"
+  >
+    {{ 'AbpAuditLogging::DaysAgoWithUserTitle' | abpLocalization: params }}
+  </button>
+  <div [id]="uuid" [@collapse]="isCollapsed ? 'collapsed' : 'expanded'">
+    <div class="m-3">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>{{ 'AbpAuditLogging::PropertyName' | abpLocalization }}</th>
+            <th>{{ 'AbpAuditLogging::OriginalValue' | abpLocalization }}</th>
+            <th>{{ 'AbpAuditLogging::NewValue' | abpLocalization }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prop of entityChange.propertyChanges; trackBy: track.by('id')">
+            <td>{{ prop.propertyName }}</td>
+            <td>{{ prop.originalValue }}</td>
+            <td [style.color]="getPropColor(prop)">{{ prop.newValue }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

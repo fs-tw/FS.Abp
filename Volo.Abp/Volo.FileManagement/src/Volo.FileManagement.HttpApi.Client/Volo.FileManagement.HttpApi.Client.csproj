@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Http.Client" Version="4.0.0" />
+    <ProjectReference Include="..\Volo.FileManagement.Application.Contracts\Volo.FileManagement.Application.Contracts.csproj" />
+    <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

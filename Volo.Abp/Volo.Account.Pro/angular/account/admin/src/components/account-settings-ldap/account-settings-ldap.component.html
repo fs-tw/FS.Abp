@@ -1,0 +1,56 @@
+<ng-container *ngIf="settings$ | async; let settings">
+  <div id="ldap-login-settings" (keyup.enter)="submit(settings)">
+    <h4>{{ 'AbpAccount::LdapLoginSettings' | abpLocalization }}</h4>
+
+    <div class="custom-checkbox custom-control mb-2">
+      <input
+        type="checkbox"
+        id="enable-ldap-login"
+        class="custom-control-input"
+        [(ngModel)]="settings.enableLdapLogin"
+        autofocus
+      /><label class="custom-control-label" for="enable-ldap-login">{{
+        'AbpAccount::DisplayName:EnableLdapLogin' | abpLocalization
+      }}</label>
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpLdap::DisplayName:Abp.Ldap.ServerHost' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.ldapServerHost" />
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpLdap::DisplayName:Abp.Ldap.ServerPort' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.ldapServerPort" />
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpLdap::DisplayName:Abp.Ldap.BaseDc' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.ldapBaseDc" />
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpLdap::DisplayName:Abp.Ldap.UserName' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.ldapUserName" />
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpLdap::DisplayName:Abp.Ldap.Password' | abpLocalization }}</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="{{ 'AbpAccount::LdapPasswordPlaceholder' | abpLocalization }}"
+        [(ngModel)]="settings.ldapPassword"
+        autocomplete="new-password"
+      />
+    </div>
+  </div>
+
+  <hr class="my-4" />
+
+  <div>
+    <abp-button (click)="submit(settings)" iconClass="fa fa-save" [loading]="loading">{{
+      'AbpAccount::Save' | abpLocalization
+    }}</abp-button>
+  </div>
+</ng-container>

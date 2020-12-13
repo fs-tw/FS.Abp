@@ -1,0 +1,33 @@
+{
+  "culture": "zh-Hant",
+  "texts": {
+    "Volo.Chat:010001": "訊息不能為空!",
+    "Volo.Chat:010002": "找不到接收使用者!",
+    "Volo.Chat:010003": "找不到其它使用者",
+    "Permission:Chat": "聊天",
+    "Permission:Messaging": "訊息",
+    "Feature:ChatGroup": "聊天",
+    "Feature:ChatEnable": "啟用聊天",
+    "Feature:ChatEnableDescription": "在應用程式中啟用聊天",
+    "SearchInContacts": "再聯絡人中搜索",
+    "SendOnEnter": "按Enter鍵發送",
+    "Send": "發送",
+    "OtherContacts": "其他聯絡人",
+    "TypeMessage": "輸入訊息",
+    "YouHave{0}UnreadMessages": "你有{0}個未讀訊息",
+    "YouHaveAnUnreadMessage": "你有一個未讀訊息",
+    "NewChatMessage": "新聊天訊息",
+    "Jan": "一月",
+    "Feb": "二月",
+    "Mar": "三月",
+    "Apr": "四月",
+    "May": "五月",
+    "Jun": "六月",
+    "Jul": "七月",
+    "Aug": "八月",
+    "Sept": "九月",
+    "Oct": "十月",
+    "Nov": "十一月",
+    "Dec": "十二月"
+  }
+}

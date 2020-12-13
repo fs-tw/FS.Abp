@@ -1,0 +1,37 @@
+// GLOBAL MIXINS
+/* ~ */
+/* ---------- GLOBAL MIXINS - START */
+ 
+$xs: '(max-width: 576px)';   /*  <  576px  */
+$sm: '(max-width: 991px)';   /*  >= 576px  */
+$md--: '(min-width: 768px)';   /*  >= 768px  */
+$md: '(min-width: 768px) and (max-width: 991px)';   /*  >= 768px  */
+$lg: '(min-width: 992px) and (max-width: 1199px)';   /*  >= 992px  */
+$xl: '(min-width: 1200px)';  /*  >= 1200px */
+
+@mixin respond-to($media)  {
+    @media only screen and #{$media} {
+        @content;
+    } 
+}
+
+body {  
+    @include respond-to($xs) { 
+    }
+
+    @include respond-to($sm) { 
+    }
+
+    @include respond-to($md) { 
+    }
+
+    @include respond-to($lg) { 
+    }
+
+    @include respond-to($xl) { 
+    }
+}
+ 
+ 
+/* ---------- GLOBAL MIXINS - END */
+/* ~ */

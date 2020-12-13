@@ -1,0 +1,10 @@
+{
+  "culture": "en",
+  "texts": {
+    "PayWithGateway": "Pay with {0}",
+    "two-checkout": "2Checkout",
+    "payu": "PayU",
+    "paypal": "PayPal",
+    "stripe": "Stripe"
+  }
+}

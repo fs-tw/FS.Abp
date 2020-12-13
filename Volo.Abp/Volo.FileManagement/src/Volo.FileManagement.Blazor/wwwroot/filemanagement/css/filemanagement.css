@@ -1,0 +1,114 @@
+﻿.card-body .breadcrumb,
+.modal-body .breadcrumb {
+  padding: 3px 0 2px !important;
+  font-size: 1.125em !important; }
+
+    .card-body .breadcrumb .breadcrumb-item,
+    .modal-body .breadcrumb .breadcrumb-item {
+        padding: 0 !important;
+        opacity: 1 !important;
+    }
+
+.card-body .breadcrumb .breadcrumb-item:hover span,
+.modal-body .breadcrumb .breadcrumb-item:hover span {
+  cursor: pointer;
+  background: var(--background); }
+
+.card-body .breadcrumb .breadcrumb-item.active:hover span,
+.modal-body .breadcrumb .breadcrumb-item.active:hover span {
+  cursor: inherit;
+  background: none; }
+
+.card-body .breadcrumb .breadcrumb-item.active span,
+.modal-body .breadcrumb .breadcrumb-item.active span {
+  cursor: inherit; }
+
+.card-body .breadcrumb .breadcrumb-item span,
+.modal-body .breadcrumb .breadcrumb-item span {
+  padding: 3px 6px;
+  border-radius: 3px; }
+
+.card-body .breadcrumb .breadcrumb-item + .breadcrumb-item:before,
+.modal-body .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
+  content: ">";
+  opacity: .3;
+  margin: 3px 0px 0 3px; }
+
+span.fileName:hover {
+  cursor: pointer; }
+
+span.directoryName:hover {
+  cursor: pointer; }
+
+.tree-view-icon{
+  float: left;
+}
+
+.drag-drop-zone {
+    padding: 2.5em 2em !important;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 3px dashed var(--border-color);
+    border-radius: 6px;
+    position: relative;
+    transition: border-color .5s;
+}
+    .drag-drop-zone:hover {
+        border-color: var(--primary);
+    }
+
+.drag-drop-zone input[type=file] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.directory-tree svg {
+  display: none !important;
+}
+
+.directory-tree .hidden {
+  visibility: hidden !important;
+}
+
+.view-files .card-img-top {
+  height: 100px;
+  object-fit: cover;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+.directory-tree ul {
+    padding-inline-start: 0px !important;
+}
+    .directory-tree ul ul {
+        padding-inline-start: 20px !important;
+    }
+.directory-tree .btn {
+    box-shadow: none !important;
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+}
+.directory-tree .dropdown .btn {
+    opacity: .35;
+    transition: all .5s;
+}
+.directory-tree .dropdown:hover .btn {
+    opacity: 1;
+}
+i.fas.fa-angle-down,i.fas.fa-angle-right {
+    width: 9px;
+}
+
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+    border-color: var(--secondary) !important;
+    background: var(--global-bg) !important;
+    color: var(--secondary) !important;
+    cursor: default !important;
+}

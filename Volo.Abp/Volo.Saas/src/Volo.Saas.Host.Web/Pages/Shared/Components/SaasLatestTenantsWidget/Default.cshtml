@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Saas.Localization
+@inject IHtmlLocalizer<SaasResource> L
+@model Volo.Abp.Application.Dtos.PagedResultDto<Volo.Saas.Host.Dtos.SaasTenantDto>
+<abp-card>
+    <abp-card-header>
+		<h5 class="card-title">@L["LatestTenants"]</h5>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table hoverable-rows="true" small="true">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>@L["Name"]</th>
+                    <th>@L["EditionName"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.Items.Count; i++)
+                {
+                    var tenant = Model.Items[i];
+                    <tr>
+                        <th>@(i+1)</th>
+                        <td>@tenant.Name</td>
+                        <td>@tenant.EditionName</td>
+                    </tr>
+                }
+            </tbody>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

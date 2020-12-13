@@ -1,0 +1,13 @@
+﻿{
+  "culture": "tr",
+  "texts": {
+    "Permission:LanguageManagement": "Dil Yönetimi",
+    "Permission:LanguageTexts": "Çeviriler",
+    "Permission:LanguageTextsEdit": "Çeviriyi düzenleyebilme",
+    "Permission:Languages": "Diller",
+    "Permission:LanguagesEdit": "Dil düzenleyebilme",
+    "Permission:LanguagesCreate": "Yeni Dil Oluşturabilme",
+    "Permission:LanguagesChangeDefault": "Varsayılan Dili Değiştirebilme",
+    "Permission:LanguagesDelete": "Dil silebilme"
+  }
+}

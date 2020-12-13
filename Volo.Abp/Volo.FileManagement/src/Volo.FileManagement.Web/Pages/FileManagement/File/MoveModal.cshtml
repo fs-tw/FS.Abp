@@ -1,0 +1,38 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.FileManagement.Localization
+@model Volo.FileManagement.Web.Pages.FileManagement.File.MoveModalModel
+@inject IHtmlLocalizer<FileManagementResource> L
+
+@{
+    Layout = null;
+}
+
+<form data-ajaxForm="true" asp-page="/FileManagement/File/MoveModal" asp-route-id="@Model.Id" autocomplete="off">
+    <abp-modal>
+        <abp-modal-header title="@L["Move"].Value"></abp-modal-header>
+        
+        <abp-modal-body>
+            <abp-row>
+                <abp-column>
+                    <span class="d-block p-2">@L["MoveToUnder"] </span>
+                    <ol class="breadcrumb" id="DirectoryPathList"></ol>
+                </abp-column>
+            </abp-row>
+            
+            <abp-row class="mt-2">
+                <abp-column>
+                    
+                    <abp-input type="hidden" asp-for="@Model.MoveFileInput.Id" />
+                    
+                    <abp-input type="hidden" asp-for="@Model.MoveFileInput.NewDirectoryId" />
+                    
+                    <abp-table id="MoveFile_DirectoryContentTable" directory-id="" striped-rows="true" class="nowrap"></abp-table>
+                </abp-column>
+            </abp-row>
+        </abp-modal-body>
+        
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

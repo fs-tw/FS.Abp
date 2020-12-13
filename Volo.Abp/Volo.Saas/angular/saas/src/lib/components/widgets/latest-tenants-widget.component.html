@@ -1,0 +1,32 @@
+<div
+  *abpPermission="'Saas.Tenants'"
+  class="abp-widget-wrapper"
+  data-widget-name="SaasLatestTenantsWidget"
+  data-refresh-url="SaasWidgets/LatestTenants"
+>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Latest tenants</h5>
+    </div>
+    <div class="card-body">
+      <div [style.min-height.px]="minHeight">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>{{ 'Saas::Name' | abpLocalization }}</th>
+              <th>{{ 'Saas::EditionName' | abpLocalization }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of datas$ | async; trackBy: trackByFn; let i = index">
+              <th>{{ i + 1 }}</th>
+              <td>{{ data.name }}</td>
+              <td>{{ data.editionName }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

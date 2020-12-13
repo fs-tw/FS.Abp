@@ -1,0 +1,33 @@
+{
+  "culture": "tr",
+  "texts": {
+    "Volo.Chat:010001": "Mesaj boş olamaz!",
+    "Volo.Chat:010002": "Alıcı kullanıcı bulunamadı!",
+    "Volo.Chat:010003": "Öteki kullanıcı bulunamadı!",
+    "Permission:Chat": "Sohber",
+    "Permission:Messaging": "Mesajlaşma",
+    "Feature:ChatGroup": "Sohbet",
+    "Feature:ChatEnable": "Sohbete izin ver",
+    "Feature:ChatEnableDescription": "Uygulamada mesajlaşma sistemini etkinleştir.",
+    "SearchInContacts": "Bağlantılarda ara...",
+    "SendOnEnter": "Enter'a basınca gönder",
+    "Send": "Gönder",
+    "OtherContacts": "Diğer bağlantılar",
+    "TypeMessage": "Mesaj yaz",
+    "YouHave{0}UnreadMessages": "{0} okunmamış mesajınız var",
+    "YouHaveAnUnreadMessage": "Okunmamış bir mesajınız var",
+    "NewChatMessage": "Yeni sohbet mesajı",
+    "Jan": "Ocak",
+    "Feb": "Şub",
+    "Mar": "Mar",
+    "Apr": "Nis",
+    "May": "May",
+    "Jun": "Haz",
+    "Jul": "Tem",
+    "Aug": "Auğ",
+    "Sept": "Eyl",
+    "Oct": "Ekim",
+    "Nov": "Kas",
+    "Dec": "Ara"
+  }
+}

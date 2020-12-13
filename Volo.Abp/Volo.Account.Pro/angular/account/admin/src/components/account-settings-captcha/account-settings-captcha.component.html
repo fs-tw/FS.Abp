@@ -1,0 +1,59 @@
+<ng-container *ngIf="settings$ | async; let settings">
+  <div (keyup.enter)="submit(settings)">
+    <h4>{{ 'AbpAccount::Captcha' | abpLocalization }}</h4>
+
+    <ng-container *ngIf="!isTenant">
+      <div class="custom-checkbox custom-control mb-2">
+        <input
+          type="checkbox"
+          id="use-captcha-on-login"
+          name="useCaptchaOnLogin"
+          class="custom-control-input"
+          [(ngModel)]="settings.useCaptchaOnLogin"
+          autofocus
+        /><label class="custom-control-label" for="use-captcha-on-login">{{
+          'AbpAccount::Description:UseCaptchaOnLogin' | abpLocalization
+        }}</label>
+      </div>
+      <div class="custom-checkbox custom-control mb-2">
+        <input
+          type="checkbox"
+          id="use-captcha-on-registration"
+          name="useCaptchaOnRegistration"
+          class="custom-control-input"
+          [(ngModel)]="settings.useCaptchaOnRegistration"
+        /><label class="custom-control-label" for="use-captcha-on-registration">{{
+          'AbpAccount::Description:UseCaptchaOnRegistration' | abpLocalization
+        }}</label>
+      </div>
+
+      <div class="form-group">
+        <label>{{ 'AbpAccount::DisplayName:VerifyBaseUrl' | abpLocalization }}</label>
+        <input type="text" class="form-control" [(ngModel)]="settings.verifyBaseUrl" />
+      </div>
+    </ng-container>
+
+    <div class="form-group">
+      <label>{{ 'AbpAccount::DisplayName:Version' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.version" />
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpAccount::DisplayName:SiteKey' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.siteKey" />
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'AbpAccount::DisplayName:SiteSecret' | abpLocalization }}</label>
+      <input type="text" class="form-control" [(ngModel)]="settings.siteSecret" />
+    </div>
+
+    <hr class="my-4" />
+
+    <div>
+      <abp-button (click)="submit(settings)" iconClass="fa fa-save" [loading]="loading">{{
+        'AbpAccount::Save' | abpLocalization
+      }}</abp-button>
+    </div>
+  </div>
+</ng-container>

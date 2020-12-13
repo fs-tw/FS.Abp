@@ -1,0 +1,36 @@
+<div
+  #navbarSidebar
+  class="lp-sidebar navbar-collapse d-lg-block collapse"
+  id="navbarSidebar"
+  [class.show]="smallScreen"
+  [class.abp-collapsed-height]="smallScreen"
+  [class.abp-mh-100]="smallScreen && isMenuExpanded"
+  *ngIf="{
+    isSidebarCollapsed: isSidebarCollapsed$ | async,
+    mouseOnSidebar: mouseOnSidebar$ | async
+  } as data"
+>
+  <div class="lp-sidebar-header" [class.w-75]="!data.mouseOnSidebar">
+    <div class="lp-toggle-sidebar" (click)="onClickMenuIcon(data.isSidebarCollapsed)">
+      <i
+        class="fa fa-align-{{ data.isSidebarCollapsed ? 'left' : 'justify' }} material-icons lp-{{
+          data.isSidebarCollapsed ? 'open' : 'close'
+        }}-icon"
+      ></i>
+    </div>
+  </div>
+
+  <abp-routes
+    *abpReplaceableTemplate="{
+      componentKey: routesComponentKey,
+      outputs: { clickedToLink: onClickLink },
+      inputs: {
+        isMenuPlacementTop: { value: isMenuPlacementTop },
+        smallScreen: { value: smallScreen }
+      }
+    }"
+    (clickedToLink)="onClickLink()"
+    [isMenuPlacementTop]="isMenuPlacementTop"
+    [smallScreen]="smallScreen"
+  ></abp-routes>
+</div>

@@ -1,0 +1,80 @@
+﻿.datepicker table tr td.range,
+.datepicker table tr td.range.disabled,
+.datepicker table tr td.range.disabled:hover,
+.datepicker table tr td.range:hover {
+  background: rgba($primary, 0.1);
+}
+
+.datepicker table tr td span.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover {
+  background: rgba($primary, 1);
+}
+
+.datepicker td,
+.datepicker th {
+  width: 40px;
+  height: 38px;
+}
+
+.datepicker .datepicker-switch:hover,
+.datepicker .next:hover,
+.datepicker .prev:hover,
+.datepicker tfoot tr th:hover,
+.datepicker table tr td.day.focused,
+.datepicker table tr td.day:hover {
+  background: darken($global-bg, 5);
+}
+
+.datepicker-dropdown {
+  background: lighten($global-bg, 3) !important;
+  box-shadow: $shadow-big;
+}
+
+ngb-datepicker {
+  .btn-light {
+    background: $global-bg;
+    border-color: $global-bg;
+    color: $text-color;
+
+    &:hover {
+      background: darken($global-bg, 5);
+      color: $text-color;
+    }
+  }
+
+  .custom-select {
+    color: $text-color !important;
+  }
+
+  .ng-range {
+    background: rgba($primary, 0.1);
+  }
+
+  .ng-range-end {
+    background: $secondary;
+    color: #fff;
+  }
+
+  .ngb-dp-header {
+    background: $global-bg;
+    border-color: $global-bg;
+    color: $text-color;
+  }
+
+  .ngb-dp-weekdays {
+    background: $global-bg;
+    border-color: $global-bg;
+    color: $text-color;
+  }
+
+  .text-muted {
+    color: $text-color !important;
+    opacity: 0.35 !important;
+  }
+}

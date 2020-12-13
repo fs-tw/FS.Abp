@@ -1,0 +1,29 @@
+
+
+ 
+.jstree-default .jstree-clicked,
+.jstree-default .jstree-wholerow-clicked {
+    background: rgba($global-text, .1) !important;
+}
+
+.jstree-wholerow-ul {
+    .jstree-clicked {
+        background: none !important;
+    }
+
+    .jstree-anchor {
+        background: none !important;
+    }
+}
+
+.jstree-default {
+    .jstree-hovered, .jstree-wholerow-hovered {
+        background: rgba($global-text, .05) !important;
+    }
+}
+
+.jstree-wholerow-hovered {
+    .jstree-anchor {
+        background: none !important;
+    }
+}

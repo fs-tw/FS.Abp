@@ -1,0 +1,11 @@
+{
+	"version": "0.1.0",
+	"name": "volo.lepton-theme-demo",
+	"private": true,
+	"dependencies": {
+		"@volo/abp.aspnetcore.mvc.ui.theme.lepton": "^4.0.0",
+		"@abp/chart.js": "^4.0.0",
+		"@abp/jstree": "^4.0.0",
+		"@abp/prismjs": "^4.0.0"
+	}
+}

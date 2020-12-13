@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Volo.Abp.Account.Pro.Public.Web</AssemblyName>
+    <PackageId>Volo.Abp.Account.Pro.Public.Web</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <IsPackable>true</IsPackable>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Volo.Abp.Account.Public.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\**\*.css" />
+    <EmbeddedResource Include="Modules\**\*.js" />
+    <EmbeddedResource Include="Pages\**\*.js" />
+    <EmbeddedResource Include="Pages\**\*.css" />
+    <EmbeddedResource Include="Components\**\*.js" />
+    <EmbeddedResource Include="Components\**\*.css" />
+    <Content Remove="Modules\**\*.css" />
+    <Content Remove="Modules\**\*.js" />
+    <Content Remove="Pages\**\*.js" />
+    <Content Remove="Pages\**\*.css" />
+    <Content Remove="Components\**\*.js" />
+    <Content Remove="Components\**\*.css" />
+    <Content Remove="Properties\launchSettings.json" />
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.AspNetCore" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Emailing" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Sms" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="4.0.0" />
+    <ProjectReference Include="..\Volo.Abp.Account.Pro.Public.HttpApi\Volo.Abp.Account.Pro.Public.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial\Volo.Abp.AspNetCore.Mvc.UI.Theme.Commercial.csproj" />
+    <PackageReference Include="Volo.Abp.Commercial.Core" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.0" />
+    <PackageReference Include="Owl.reCAPTCHA" Version="0.3.0" />
+  </ItemGroup>
+
+</Project>

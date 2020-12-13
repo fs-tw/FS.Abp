@@ -1,0 +1,14 @@
+﻿{
+  "culture": "tr",
+  "texts": {
+    "Permission:Saas": "Saas",
+    "Permission:TenantManagement": "Müşteri yönetimi",
+    "Permission:EditionManagement": "Paket yönetimi",
+    "Permission:Create": "Oluşturma",
+    "Permission:Edit": "Düzenleme",
+    "Permission:Delete": "Silme",
+    "Permission:ManageConnectionStrings": "Bağlantı cümlelerini yönet",
+    "Permission:ManageFeatures": "Özellikleri yönet",
+    "Permission:ViewChangeHistory": "Değişiklik geçmişini görüntüleme"
+  }
+}

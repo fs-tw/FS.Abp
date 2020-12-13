@@ -1,0 +1,23 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@using Volo.Abp.LeptonTheme.Demo.Navigation
+@using Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application
+@using Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.CustomPages
+@model Volo.Abp.LeptonTheme.Demo.Pages.Layouts.Application.CustomPages.InvoicesModel
+@inject IHtmlLocalizer<DemoResource> L
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Invoices"].Value;
+    PageLayout.Content.BreadCrumb.Items.Add(new BreadCrumbItem(L["CustomPages"].Value));
+    PageLayout.Content.MenuItemName = DemoMenu.CustomPages.Invoices;
+}
+@section content_toolbar {
+    <abp-button button-type="Primary">Primary</abp-button>
+    <abp-button button-type="Secondary">Secondary</abp-button>
+    <abp-button button-type="Success">Success</abp-button>
+}
+<div class="card">
+    <abp-button button-type="Primary">Primary</abp-button>
+</div>

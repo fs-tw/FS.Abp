@@ -1,0 +1,90 @@
+// MAIN MENU
+/* ~ */
+/* ---------- MAIN MENU STYLES - START */
+
+.lp-closed {
+    .lp-sidebar {
+        width: 66px;
+
+        .navbar-brand {
+            opacity: 0;
+            transition: opacity .1s ease-in-out;
+        }
+
+        .lp-sidebar-wrapper {
+            padding: 10px 0px;
+            overflow: hidden;
+
+            .lp-sidebar-navi {
+
+                ul {
+                    li {
+                        a {
+                            span.lp-text, span.lp-arrow-icon {
+                                opacity: 0;
+                                transition: opacity .1s ease-in-out;
+                            }
+                        }
+
+                        &.has-drop {
+                            &.current {
+                                > ul {
+                                    height: 0;
+                                    overflow: hidden;
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lp-toggle-sidebar {
+            transform: scale(1);
+        }
+    }
+
+    &.lp-extended {
+        .lp-sidebar {
+            width: $main-menu-width;
+            z-index: 105;
+
+            .navbar-brand {
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+            }
+
+            .lp-sidebar-navi {
+                ul {
+                    li {
+                        a {
+                            span.lp-text, span.lp-arrow-icon {
+                                opacity: 1;
+                                transition: opacity .5s ease-in-out;
+                            }
+                        }
+
+                        &.has-drop {
+                            &.current {
+                                > ul {
+                                    height: auto;
+                                    overflow: inherit;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .lp-toggle-sidebar {
+            transform: scale(1);
+        }
+    }
+}
+
+
+/* ---------- MAIN MENU STYLES - END */
+/* ~ */

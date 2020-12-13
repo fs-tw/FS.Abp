@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "name": "demo-app",
+  "private": true,
+  "dependencies": {
+    "@abp/aspnetcore.mvc.ui.theme.basic": "^4.0.0",
+    "@abp/utils": "4.0.0"
+  }
+}

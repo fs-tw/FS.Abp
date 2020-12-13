@@ -1,0 +1,9 @@
+--- 
+version: "3.4"
+services:
+  lepton-theme: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: "${REGISTRY:-}abpio-lepton-theme:${TAG:-latest}"
+

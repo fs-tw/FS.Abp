@@ -1,0 +1,68 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Volo.Abp.LanguageManagement.Localization
+@using Volo.Abp.LanguageManagement.Pages.LanguageManagement
+@using Volo.Abp.Localization
+@using Volo.Abp.ObjectExtending
+@model EditModel
+@inject IHtmlLocalizer<LanguageManagementResource> L
+@inject IStringLocalizerFactory StringLocalizerFactory
+@{
+    Layout = null;
+}
+<form asp-page="/LanguageManagement/Edit">
+    <abp-modal size="@(AbpModalSize.Large)">
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Language.Id" />
+            <abp-input asp-for="Language.DisplayName" />
+            <label for="Language_FlagIcon" class="mb-3">
+                @L["FlagIcon"]
+                <select class="flag-select mt-1" id="Language_FlagIcon" name="Language.FlagIcon" style="width: 300%">
+                    @foreach (var flag in Model.FlagSelectList)
+                    {
+                        if (Model.Language.FlagIcon == flag.Value)
+                        {
+                            <option value="@flag.Value" selected="selected">@(flag.Text)</option>
+                        }
+                        else
+                        {
+                            <option value="@flag.Value">@(flag.Text)</option>
+                        }
+                    }
+                </select>
+            </label>
+            @foreach (var propertyInfo in ObjectExtensionManager.Instance.GetProperties<EditModel.LanguageEditModalView>())
+            {
+                if (!propertyInfo.Name.EndsWith("_Text"))
+                {
+                    if (propertyInfo.Type.IsEnum || !propertyInfo.Lookup.Url.IsNullOrEmpty())
+                    {
+                        <abp-select asp-for="Language.ExtraProperties[propertyInfo.Name]"
+                                    label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                    autocomplete-api-url="@propertyInfo.Lookup.Url"
+                                    autocomplete-selected-item-name="@Model.Language.ExtraProperties[propertyInfo.Name + "_Text"]"
+                                    autocomplete-selected-item-value="@Model.Language.ExtraProperties[propertyInfo.Name]"
+                                    autocomplete-filter-param-name="@propertyInfo.Lookup.FilterParamName"
+                                    autocomplete-items-property-name="@propertyInfo.Lookup.ResultListPropertyName"
+                                    autocomplete-display-property-name="@propertyInfo.Lookup.DisplayPropertyName"
+                                    autocomplete-value-property-name="@propertyInfo.Lookup.ValuePropertyName"></abp-select>
+                    }
+                    else
+                    {
+                        <abp-input type="@propertyInfo.GetInputType()"
+                                   asp-for="Language.ExtraProperties[propertyInfo.Name]"
+                                   label="@propertyInfo.GetLocalizedDisplayName(StringLocalizerFactory)"
+                                   asp-format="@propertyInfo.GetInputFormatOrNull()"
+                                   value="@propertyInfo.GetInputValueOrNull(Model.Language.ExtraProperties[propertyInfo.Name])" />
+                    }
+                }
+            }
+            <abp-input asp-for="Language.IsEnabled" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)">
+        </abp-modal-footer>
+    </abp-modal>
+</form>
