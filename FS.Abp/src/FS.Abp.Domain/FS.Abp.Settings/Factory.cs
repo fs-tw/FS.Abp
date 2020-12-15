@@ -2,29 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.Settings;
 using Volo.Abp.Threading;
 
 namespace FS.Abp.Settings
 {
-    //todo: from SettingManagement
     public interface IFactory<T>
         where T : class, new()
     {
-        //Task<T> CreateAsync();
         T Value { get; }
+        Task UpdateAsync(T input, string providerName, string providerKey);
     }
     public abstract class Factory<T> : IFactory<T>
         where T : class, new()
     {
-        protected readonly ISettingProvider _settingProvider;
-
-        public Factory(
-            ISettingProvider settingProvider
-            )
-        {
-            _settingProvider = settingProvider;
-        }
+        public ISettingManager SettingManager { get; set; }
+        public ISettingProvider SettingProvider { get; set; }
         public virtual T Value
         {
             get
@@ -35,6 +29,19 @@ namespace FS.Abp.Settings
             }
         }
 
-        protected abstract Task CreateAsync(T options);
+        public abstract Task CreateAsync(T options);
+        protected virtual async Task SetAsync(string name,string value, string providerName, string providerKey)
+        {
+            if (string.IsNullOrEmpty(providerName))
+            {
+                await SettingManager.SetGlobalAsync(name, value);
+            }
+            else
+            {
+                await SettingManager.SetAsync(name, value, providerName, providerKey);
+            }
+        }
+
+        public abstract Task UpdateAsync(T input, string providerName, string providerKey);
     }
 }
