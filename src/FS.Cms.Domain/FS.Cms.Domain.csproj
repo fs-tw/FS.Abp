@@ -10,6 +10,8 @@
   <ItemGroup>
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\StorageDefinitionSetting.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\StorageDefinitionSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFiles.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostImagePrototype.Generated.cs" />
@@ -62,14 +64,6 @@
       <DependentUpon>Core</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Core\CmsImageField.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Core</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\StorageDefinitionSetting.AbpSetting.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Core</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\StorageDefinitionSetting.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
     </Compile>

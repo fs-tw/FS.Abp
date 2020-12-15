@@ -7,14 +7,20 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-namespace Volo.Abp.Localization
+using Volo.Abp;
+using Microsoft.AspNetCore.Mvc;
+
+namespace FS.Cms.Core
 {
-    public static partial class LocalizationResourceExtensions
+    [Area("cms")]
+    [RemoteService(true)]
+    [ControllerName("FS.Cms.Core(cms)")]
+    [Route("api/cms/core")]
+    public partial class CoreApi : CmsController //auto-generated ICoreApi
     {
-        public static LocalizationResource AddCmsDomainLocalizations(this LocalizationResource resource)
-        {
-            return resource
-                .AddVirtualJson(@"/_Generated/Localization/Blogs/BlogConfig");
-         }
+        ICoreAppService _CoreAppService;
+        protected ICoreAppService CoreAppService => this.LazyGetRequiredService(ref _CoreAppService);
+
+
     }
 }

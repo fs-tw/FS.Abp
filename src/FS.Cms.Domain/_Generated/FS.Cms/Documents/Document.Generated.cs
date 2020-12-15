@@ -42,11 +42,11 @@ namespace FS.Cms.Documents
 
             get
             {
-                return this.GetProperty<List<FS.Cms.Core.CmsFileField>>(nameof(Files));
+                return this.GetExtraProperty<List<FS.Cms.Core.CmsFileField>>(nameof(Files));
             }
             set
             {
-                this.SetProperty(nameof(Files), value);
+                this.SetExtraProperty(nameof(Files), value);
             }
         } 
 

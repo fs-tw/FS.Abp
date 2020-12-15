@@ -48,6 +48,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
+    <Compile Update="FS.Cms\Core\CoreApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
     <Compile Update="FS.Cms\Documents\DocumentsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
@@ -59,6 +63,10 @@
     <Compile Update="FS.Cms\Documents\DocumentsApi.DocumentDefinitionCrudAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>DocumentsApi.cs</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Menu\MenuApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Menu</DependentUpon>
     </Compile>
     <Compile Update="FS.Cms\Posts\PostsApi.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +96,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\CoreApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.DocumentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
@@ -99,6 +111,10 @@
     <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Menu\MenuApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Menu</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\PostsApi.Generated.cs">
       <AutoGen>True</AutoGen>

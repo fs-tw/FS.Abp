@@ -7,9 +7,13 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System.Reflection;
-using FluentValidation;
+using System;
+using System.Collections.Generic;
 
-namespace FS.Cms.Core.Dtos
+namespace FS.Cms.Menu
 {
+    public partial interface IMenuApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService
+    {
+    }
 }

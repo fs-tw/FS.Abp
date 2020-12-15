@@ -7,22 +7,13 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-
 using System;
 using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
-namespace FS.Cms.Core.Dtos
+namespace FS.Cms.Core
 {
-    public partial class StorageDefinitionSettingDto
-    {
-        public string UserId { get; set; }
-
-        public bool IsLock { get; set; }
-
-    }
-    public partial class StorageDefinitionSettingWithDetailsDto : StorageDefinitionSettingDto
+    public partial interface ICoreApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService
     {
     }
 }

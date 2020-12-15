@@ -15,7 +15,6 @@
         <File Name="CmsImageFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="BlogConfigDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="StorageDefinitionSettingDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="PostDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
@@ -26,7 +25,6 @@
         <File Name="CmsImageFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="BlogConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="StorageDefinitionSettingDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="PostDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
@@ -37,15 +35,11 @@
         <File Name="CmsImageFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="BlogConfigDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="StorageDefinitionSettingDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
         <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
-        <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\StorageDefinitionSetting" />
-        <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Core\StorageDefinitionSetting" />
         <File Name="LocalizationResourceExtensions.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Volo.Abp.Localization" />
         <File Name="MenuPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
         <File Name="MenuPermissionDefinitionProviders.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
-        <File Name="StorageDefinitionSetting.AbpSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="ICmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsModelBuilderConfigurationOptions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -58,7 +52,6 @@
         <File Name="Tag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="CmsFileField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="CmsImageField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
-        <File Name="StorageDefinitionSetting.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="BlogConfig.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="PostImage.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DisplayMode.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms\Posts" />
@@ -100,14 +93,29 @@
         <File Name="BlogCrudAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
         <File Name="BlogCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="TagCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags" />
+        <File Name="ICoreAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Core" OverwriteMode="None" />
+        <File Name="CoreAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Core" OverwriteMode="None" />
+        <File Name="IBlogsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="IMenuAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Menu" OverwriteMode="None" />
+        <File Name="MenuAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Menu" OverwriteMode="None" />
         <File Name="IPostsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="IDocumentsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
         <File Name="DocumentsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
-        <File Name="IBlogsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
-        <File Name="BlogsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
         <File Name="ITagsAppService.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
         <File Name="TagsAppService.cs" Project="FS.Cms.Application" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
+        <File Name="ICoreApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core" />
+        <File Name="CoreApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Core" OverwriteMode="None" />
+        <File Name="CoreApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Core" />
+        <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="BlogsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="BlogsApi.BlogCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
+        <File Name="BlogsApi.BlogCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="IMenuApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
+        <File Name="MenuApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Menu" OverwriteMode="None" />
+        <File Name="MenuApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Menu" />
         <File Name="IPostsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Posts" OverwriteMode="None" />
         <File Name="PostsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
@@ -122,11 +130,6 @@
         <File Name="DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="DocumentsApi.DocumentCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Documents" OverwriteMode="None" />
         <File Name="DocumentsApi.DocumentCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Documents" />
-        <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="BlogsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
-        <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="BlogsApi.BlogCrudAppService.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Blogs" OverwriteMode="None" />
-        <File Name="BlogsApi.BlogCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="ITagsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="TagsApi.cs" Project="FS.Cms.HttpApi" ProjectFolder="FS.Cms\Tags" OverwriteMode="None" />
         <File Name="TagsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Tags" />
@@ -277,6 +280,20 @@
         <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Cms.Domain</Project>
+            <ProjectFolder>FS.Cms</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>FS.Cms.Application.Contracts</Project>
+            <ProjectFolder>FS.Cms</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>FS.Cms.Application</Project>
             <ProjectFolder>FS.Cms</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>

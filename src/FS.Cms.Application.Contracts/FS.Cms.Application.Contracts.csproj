@@ -30,6 +30,7 @@
     <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
@@ -43,6 +44,14 @@
     <Compile Update="FS.Cms\Blogs\IBlogsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Core\ICoreAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Menu\IMenuAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Menu</DependentUpon>
     </Compile>
     <Compile Update="FS.Cms\Posts\Dtos\PostDto.cs">
       <AutoGen>True</AutoGen>
@@ -91,9 +100,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDto.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\ICoreApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
+      <DependentUpon>Core</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\Dtos\DocumentDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +123,10 @@
     <Compile Update="_Generated\FS.Cms\Documents\IDocumentsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Menu\IMenuApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Menu</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Menu\MenuPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>

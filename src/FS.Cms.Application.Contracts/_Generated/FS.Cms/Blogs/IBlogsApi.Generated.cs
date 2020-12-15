@@ -13,8 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Blogs
 {
     public partial interface IBlogsApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IBlogCrudAppService
+        Volo.Abp.Application.Services.IApplicationService,        IBlogCrudAppService
     {
     }
 }

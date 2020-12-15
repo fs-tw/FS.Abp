@@ -13,8 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Documents
 {
     public partial interface IDocumentsApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IDocumentDefinitionCrudAppService,
+        Volo.Abp.Application.Services.IApplicationService,        IDocumentDefinitionCrudAppService,
         IDocumentCrudAppService
     {
     }

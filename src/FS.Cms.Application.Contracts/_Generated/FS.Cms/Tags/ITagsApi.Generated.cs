@@ -13,8 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Tags
 {
     public partial interface ITagsApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        ITagCrudAppService
+        Volo.Abp.Application.Services.IApplicationService,        ITagCrudAppService
     {
     }
 }

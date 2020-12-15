@@ -7,14 +7,20 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-namespace Volo.Abp.Localization
+using Volo.Abp;
+using Microsoft.AspNetCore.Mvc;
+
+namespace FS.Cms.Menu
 {
-    public static partial class LocalizationResourceExtensions
+    [Area("cms")]
+    [RemoteService(true)]
+    [ControllerName("FS.Cms.Menu(cms)")]
+    [Route("api/cms/menu")]
+    public partial class MenuApi : CmsController //auto-generated IMenuApi
     {
-        public static LocalizationResource AddCmsDomainLocalizations(this LocalizationResource resource)
-        {
-            return resource
-                .AddVirtualJson(@"/_Generated/Localization/Blogs/BlogConfig");
-         }
+        IMenuAppService _MenuAppService;
+        protected IMenuAppService MenuAppService => this.LazyGetRequiredService(ref _MenuAppService);
+
+
     }
 }

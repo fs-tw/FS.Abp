@@ -95,11 +95,11 @@ namespace FS.Cms.Posts
 
             get
             {
-                return this.GetProperty<List<String>>(nameof(AttachmentFileUrls));
+                return this.GetExtraProperty<List<String>>(nameof(AttachmentFileUrls));
             }
             set
             {
-                this.SetProperty(nameof(AttachmentFileUrls), value);
+                this.SetExtraProperty(nameof(AttachmentFileUrls), value);
             }
         } 
         public virtual List<FS.Cms.Posts.PostImage> PostImages 
@@ -107,11 +107,11 @@ namespace FS.Cms.Posts
 
             get
             {
-                return this.GetProperty<List<FS.Cms.Posts.PostImage>>(nameof(PostImages));
+                return this.GetExtraProperty<List<FS.Cms.Posts.PostImage>>(nameof(PostImages));
             }
             set
             {
-                this.SetProperty(nameof(PostImages), value);
+                this.SetExtraProperty(nameof(PostImages), value);
             }
         } 
 

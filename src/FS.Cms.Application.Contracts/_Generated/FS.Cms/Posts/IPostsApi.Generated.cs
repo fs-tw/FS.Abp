@@ -13,8 +13,7 @@ using System.Collections.Generic;
 namespace FS.Cms.Posts
 {
     public partial interface IPostsApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IPostCrudAppService,
+        Volo.Abp.Application.Services.IApplicationService,        IPostCrudAppService,
         IPostTagMapCrudAppService
     {
     }
