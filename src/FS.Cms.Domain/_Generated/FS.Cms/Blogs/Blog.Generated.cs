@@ -84,11 +84,11 @@ namespace FS.Cms.Blogs
 
             get
             {
-                return this.GetProperty<FS.Cms.Blogs.BlogConfig>(nameof(BlogConfig));
+                return this.GetExtraProperty<FS.Cms.Blogs.BlogConfig>(nameof(BlogConfig));
             }
             set
             {
-                this.SetProperty(nameof(BlogConfig), value);
+                this.SetExtraProperty(nameof(BlogConfig), value);
             }
         } 
 

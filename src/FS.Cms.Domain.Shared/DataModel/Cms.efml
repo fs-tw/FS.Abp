@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" p1:VersionTag="4.0.0" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$EnumTypes">
     <EnumType Name="DisplayMode" class="FS.Cms.Posts.DisplayMode" p1:Guid="0d88d79f-6b02-43d7-8775-a48ea12dd710" p1:AbpEditor="YinChang">
       <p1:Attributes>
@@ -890,13 +890,13 @@
     <property name="Content" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8">
       <column name="" />
     </property>
-    <property name="Published" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
+    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
       <column name="" />
     </property>
-    <property name="Published_By" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a09d36a6-534a-4c54-a444-9a737a83e25c">
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="02767eea-0458-497d-ada2-6a4d5c242a3e">
       <column name="" />
     </property>
-    <property name="Published_At" type="DateTime" p1:ValidateRequired="true" p1:Guid="02767eea-0458-497d-ada2-6a4d5c242a3e">
+    <property name="EndTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a09d36a6-534a-4c54-a444-9a737a83e25c">
       <column name="" />
     </property>
     <property name="DisplayMode" type="FS.Cms.Posts.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">

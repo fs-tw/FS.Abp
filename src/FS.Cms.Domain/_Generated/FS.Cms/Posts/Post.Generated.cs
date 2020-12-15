@@ -61,19 +61,19 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual bool Published
+        public virtual bool Enable
         {
             get;
             set;
         }
 
-        public virtual System.DateTime? Published_By
+        public virtual System.DateTime StartTime
         {
             get;
             set;
         }
 
-        public virtual System.DateTime Published_At
+        public virtual System.DateTime? EndTime
         {
             get;
             set;
@@ -95,11 +95,11 @@ namespace FS.Cms.Posts
 
             get
             {
-                return this.GetProperty<List<String>>(nameof(AttachmentFileUrls));
+                return this.GetExtraProperty<List<String>>(nameof(AttachmentFileUrls));
             }
             set
             {
-                this.SetProperty(nameof(AttachmentFileUrls), value);
+                this.SetExtraProperty(nameof(AttachmentFileUrls), value);
             }
         } 
         public virtual List<FS.Cms.Posts.PostImage> PostImages 
@@ -107,11 +107,11 @@ namespace FS.Cms.Posts
 
             get
             {
-                return this.GetProperty<List<FS.Cms.Posts.PostImage>>(nameof(PostImages));
+                return this.GetExtraProperty<List<FS.Cms.Posts.PostImage>>(nameof(PostImages));
             }
             set
             {
-                this.SetProperty(nameof(PostImages), value);
+                this.SetExtraProperty(nameof(PostImages), value);
             }
         } 
 
