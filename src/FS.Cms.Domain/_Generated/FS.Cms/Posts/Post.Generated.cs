@@ -61,19 +61,19 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual bool Published
+        public virtual bool Enable
         {
             get;
             set;
         }
 
-        public virtual System.DateTime? Published_By
+        public virtual System.DateTime StartTime
         {
             get;
             set;
         }
 
-        public virtual System.DateTime Published_At
+        public virtual System.DateTime? EndTime
         {
             get;
             set;

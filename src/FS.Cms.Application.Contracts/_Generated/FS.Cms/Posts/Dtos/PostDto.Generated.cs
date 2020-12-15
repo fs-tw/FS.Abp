@@ -30,11 +30,11 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
-        public bool Published { get; set; }
+        public bool Enable { get; set; }
 
-        public System.DateTime? Published_By { get; set; }
+        public System.DateTime StartTime { get; set; }
 
-        public System.DateTime Published_At { get; set; }
+        public System.DateTime? EndTime { get; set; }
 
         public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
@@ -62,11 +62,11 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
-        public bool Published { get; set; }
+        public bool Enable { get; set; }
 
-        public System.DateTime? Published_By { get; set; }
+        public System.DateTime StartTime { get; set; }
 
-        public System.DateTime Published_At { get; set; }
+        public System.DateTime? EndTime { get; set; }
 
         public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 
@@ -89,11 +89,11 @@ namespace FS.Cms.Posts.Dtos
 
         public string Content { get; set; }
 
-        public bool Published { get; set; }
+        public bool Enable { get; set; }
 
-        public System.DateTime? Published_By { get; set; }
+        public System.DateTime StartTime { get; set; }
 
-        public System.DateTime Published_At { get; set; }
+        public System.DateTime? EndTime { get; set; }
 
         public FS.Cms.Posts.DisplayMode DisplayMode { get; set; }
 

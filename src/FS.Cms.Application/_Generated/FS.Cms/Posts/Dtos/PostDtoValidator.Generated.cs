@@ -28,13 +28,13 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.Content)
                 ;
-            RuleFor(p => p.Published)
+            RuleFor(p => p.Enable)
                 .NotNull()
                 ;
-            RuleFor(p => p.Published_By)
-                ;
-            RuleFor(p => p.Published_At)
+            RuleFor(p => p.StartTime)
                 .NotNull()
+                ;
+            RuleFor(p => p.EndTime)
                 ;
             RuleFor(p => p.DisplayMode)
                 .NotNull()
@@ -67,13 +67,13 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.Content)
                 ;
-            RuleFor(p => p.Published)
+            RuleFor(p => p.Enable)
                 .NotNull()
                 ;
-            RuleFor(p => p.Published_By)
-                ;
-            RuleFor(p => p.Published_At)
+            RuleFor(p => p.StartTime)
                 .NotNull()
+                ;
+            RuleFor(p => p.EndTime)
                 ;
             RuleFor(p => p.DisplayMode)
                 .NotNull()

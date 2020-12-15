@@ -168,7 +168,7 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>a09d36a6-534a-4c54-a444-9a737a83e25c</Path>
+                      <Path>02767eea-0458-497d-ada2-6a4d5c242a3e</Path>
                       <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
                     </Oid>
                   </Model>
@@ -187,7 +187,7 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>02767eea-0458-497d-ada2-6a4d5c242a3e</Path>
+                      <Path>a09d36a6-534a-4c54-a444-9a737a83e25c</Path>
                       <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
                     </Oid>
                   </Model>
@@ -2523,10 +2523,10 @@
         <GridSize>8 px</GridSize>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.66</Scale>
+          <Scale>1.32</Scale>
           <Location>
-            <X>-576.969672641808 px</X>
-            <Y>-282.424229800538 px</Y>
+            <X>-311.363623991158 px</X>
+            <Y>-143.939388219757 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

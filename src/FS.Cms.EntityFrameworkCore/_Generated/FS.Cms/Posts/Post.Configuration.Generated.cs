@@ -37,9 +37,9 @@ namespace FS.Cms.Posts
             builder.Property<string>(x => x.Subtitle).HasColumnName(@"Subtitle").ValueGeneratedNever();
             builder.Property<string>(x => x.Url).HasColumnName(@"Url").ValueGeneratedNever();
             builder.Property<string>(x => x.Content).HasColumnName(@"Content").ValueGeneratedNever();
-            builder.Property<bool>(x => x.Published).HasColumnName(@"Published").IsRequired().ValueGeneratedNever();
-            builder.Property<System.DateTime?>(x => x.Published_By).HasColumnName(@"Published_By").ValueGeneratedNever();
-            builder.Property<System.DateTime>(x => x.Published_At).HasColumnName(@"Published_At").IsRequired().ValueGeneratedNever();
+            builder.Property<bool>(x => x.Enable).HasColumnName(@"Enable").IsRequired().ValueGeneratedNever();
+            builder.Property<System.DateTime>(x => x.StartTime).HasColumnName(@"StartTime").IsRequired().ValueGeneratedNever();
+            builder.Property<System.DateTime?>(x => x.EndTime).HasColumnName(@"EndTime").ValueGeneratedNever();
             builder.Property<FS.Cms.Posts.DisplayMode>(x => x.DisplayMode).HasColumnName(@"DisplayMode").IsRequired().ValueGeneratedNever();
             builder.Property<int>(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
             builder.Ignore(x => x.AttachmentFileUrls);
