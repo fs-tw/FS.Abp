@@ -13,6 +13,7 @@ namespace FS.Abp.Settings
     {
         //Task<T> CreateAsync();
         T Value { get; }
+        Task UpdateAsync(T domain, string providerName, string providerKey);
     }
     public abstract class Factory<T> : IFactory<T>
         where T : class, new()
@@ -36,5 +37,10 @@ namespace FS.Abp.Settings
         }
 
         protected abstract Task CreateAsync(T options);
+
+        public virtual Task UpdateAsync(T domain, string providerName, string providerKey)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
