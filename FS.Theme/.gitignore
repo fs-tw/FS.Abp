@@ -251,8 +251,3 @@ paket-files/
 .idea/
 *.sln.iml
 
-# Theme
-host/FS.Theme.IdentityServer/Logs/logs.txt
-host/FS.Theme.HttpApi.Host/Logs/logs.txt
-host/FS.Theme.Web.Host/Logs/logs.txt
-host/FS.Theme.Web.Unified/Logs/logs.txt
