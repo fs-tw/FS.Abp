@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Theme</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Domain" Version="0.402.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.0.2" />
+    <ProjectReference Include="..\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FS.Theme\Banners\BannersStore.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Theme\Routes\RoutesStore.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\Banner.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\BannerConfig.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\BannerDefinition.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\BannersStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\IBannerDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\IBannerRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\IRouteDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\IRouteTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\Route.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\RouteConfig.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\RouteDefinition.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\RoutesStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

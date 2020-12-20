@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="FS.Theme.EntityFrameworkCore" namespace="FS.Theme" p1:name="ThemeDbContext" p1:Guid="5c40debe-9400-4979-a2b2-5faf1e23b6e9" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="$ComplexTypes">
+    <component class="FS.Theme.Banners.BannerConfig" p1:Guid="67da9b7a-95c6-4c90-81b7-fba6bb18a5b7" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>None</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Banners</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="FileName" type="String" p1:ValidateRequired="true" p1:Guid="e87d938e-037e-4652-9ba5-93d94a2e9936">
+        <column name="" />
+      </property>
+      <property name="FileUrl" type="String" p1:ValidateRequired="true" p1:Guid="2a8a67b0-ec90-4e92-ae53-0bf6f5e73741">
+        <column name="" />
+      </property>
+      <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="5fb1e6d3-030f-4d6d-a408-9530cb00db64">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.Routes.RouteConfig" p1:Guid="e49bf770-7714-4a27-b4f5-f536d5e9e098" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>None</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Routes</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Icon" type="String" p1:ValidateRequired="true" p1:Guid="6a308228-444d-4850-b50a-d2905cf1c4bc">
+        <column name="" />
+      </property>
+      <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="1c46a91a-65e8-42c5-b63c-9e62ef84f2ee">
+        <column name="" />
+      </property>
+      <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="bc1bd5cc-bd54-46ad-9cb8-756979d8611e">
+        <column name="" />
+      </property>
+      <property name="OpenAnotherWindow" type="Boolean" p1:ValidateRequired="true" p1:Guid="be8fde7a-9ef0-437f-b28e-f32088641736">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.CreationAuditedEntity" IsExternal="true" p1:Guid="d92aa5e9-5b46-4cb2-b129-fd01693a4298" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="ba9c81da-539c-4002-81f7-67cba88e5885">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1ab30a5c-bf22-4ec5-b355-875830318e8f">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.AuditedEntity" IsExternal="true" p1:Guid="37d35a3d-e192-4821-ac0f-9da1512f87fb" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="66683a33-8c32-4fa1-ac50-14b11e8cacc0">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7158be44-169f-4d37-a5bd-3cb16007989a">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="af6db8dc-0259-4349-ada2-8d381e67d0a9">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1b51466c-243c-4b9d-9d31-13ac4e876fd0">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.FullAuditedEntity" IsExternal="true" p1:Guid="cf6f8150-9d90-4aba-bb2f-91eb67312b8c" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="880784ee-6783-4ab1-b35d-a4809631c297">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27af3462-ccf6-4528-a9b2-51cdd696f90e">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f224e339-ed17-4b0a-8cb2-602ce9cc81de">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1fade66b-f54b-4f15-9fba-1354a5146850">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="70aadd34-6e8c-42ee-9678-b138d24e4220">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c678b0ac-4040-4939-aa6b-cfada34115ee">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b2e19801-81ef-4364-be25-aa8dc35c94ae">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.AggregateRoot" IsExternal="true" p1:Guid="616a2020-671b-4ae2-ae7d-2fbe050a99d8" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1799af3a-33b8-47e2-822e-40c289c86228">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9ccff724-feb5-44b0-8bfc-d5e650536950">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.CreationAuditedAggregateRoot" IsExternal="true" p1:Guid="caf6cbbc-5477-40fa-aaf6-9efaef94fb4f" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="59ba2f08-b7a4-4eb1-b8cf-c38b751b6061">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2443d3cc-5b7d-4fc7-b3ba-3edc5137f244">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="159c7bdc-c752-453c-9e40-96aecc1d9bc6">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0d902138-a622-4625-ac2b-1f794860e490">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.AuditedAggregateRoot" IsExternal="true" p1:Guid="68efa0f5-0d1f-4384-b809-24192ca7bd48" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="d2833606-4845-42d4-aa24-698892561e07">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a1a3e3fd-d88c-4e82-801a-0f577453b0a1">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d54e3f01-bd69-4464-bf92-5ad38def5520">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9056cc5d-84ca-4c6b-aa7f-440a9c1a5500">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e716f77a-dfb4-4053-ae8c-2f200d23978b">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ceadc2af-b65c-4f5b-ac93-981d611232c4">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Theme.FullAuditedAggregateRoot" IsExternal="true" p1:Guid="96df292e-6ced-4c07-92bd-5031a50fb0aa" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a568999e-5f9c-476e-95ac-5b5489494a3f">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bd0114a1-82e3-4307-bd6d-83981b53af2e">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="49847c18-ac01-40de-89da-8995f5767e56">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e9114934-050d-4967-96c8-112f900ecd4b">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="fb2255e8-b17b-4bb5-863f-798d0c6fb9c4">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27cbb1b0-c8fa-4d79-b253-3a7a56ff6c71">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f8e5cb20-5906-47c5-ad78-e490d5435821">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="65d79337-a21c-441c-8c4c-fb82d8c05e84">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f4821fff-60a6-4cac-88ab-77625b9554ae">
+        <column name="" />
+      </property>
+    </component>
+  </class>
+  <class name="FS.Theme.Routes.RouteDefinition" entity-set="RouteDefinitions" p1:Guid="a3618286-3540-4790-be63-f7ac79560e76" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Routes</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="ecb3a3d5-32a1-4547-9415-af1cc7ab5085" p1:GenerateDTO="False">
+      <column name="" />
+    </id>
+    <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="d437ef37-08a8-468e-90fb-b485fb12574f">
+      <column name="" />
+    </property>
+    <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="aa81143c-1646-4611-ab64-22972f992f6b">
+      <column name="" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cf716354-5505-4065-ad0f-d29e5e55e081">
+      <column name="" />
+    </property>
+    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="355f8bf8-4271-443e-b604-a8e28b80e5a2">
+      <column name="" default="true" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f925bd6e-395d-4d86-b918-bfd73f5f111e" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.Theme.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="03146681-ee36-4736-80fe-ae40b3bbb7f8" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.Theme.Routes.Route" entity-set="Routes" p1:Guid="ec751314-3cb6-4b0f-a652-7c4a49141892" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Route&gt;">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOnRydWUsIk11bHRpVGVuYW50Ijp0cnVlLCJNdWx0aVZlcnNpb24iOmZhbHNlLCJIYXNOYXR1cmFsS2V5IjpmYWxzZX19</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Routes</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="b017b91f-abc0-4c4b-ba83-fec6974c97b5" p1:GenerateDTO="False">
+      <column name="" />
+    </id>
+    <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="ab9ffc1a-48c9-4e70-87d4-9094ba10ebf0">
+      <column name="" />
+    </property>
+    <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="db824e9b-3aa7-47a0-9775-62bb0b197e52">
+      <column name="" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="188591d1-f8c9-4a81-a84d-3980f7fe3d38">
+      <column name="" />
+    </property>
+    <property name="Code" type="String" p1:ValidateRequired="false" p1:Guid="b7bbb0cc-d86d-4214-85bf-0a2622fe9edc">
+      <column name="" />
+    </property>
+    <property name="Level" type="int" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9b1b12d4-6690-4f66-952a-ea0b03fcab88">
+      <column name="" />
+    </property>
+    <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4327e28a-93b7-467e-a17a-49acab7400c3">
+      <column name="" />
+    </property>
+    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="de7b3ed5-4680-4438-9b3b-19d5b4020306">
+      <column name="" default="true" />
+    </property>
+    <component name="RouteConfig" class="FS.Theme.Routes.RouteConfig" p1:ValidateRequired="false" p1:Guid="512e9440-e071-4d93-935b-e6addd586b68" p1:Shadow="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Icon" />
+      <property name="Url" />
+      <property name="Sequence" />
+      <property name="OpenAnotherWindow" />
+    </component>
+    <property name="RouteDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="9fb2ebb0-5bdd-4982-b56c-a699c0eacd35">
+      <column name="" not-null="False" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e959fd44-2fbe-4029-b191-a005fbc9c9a3" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.Theme.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="cfb8984b-18c2-4edb-a8a0-dfb083a31662" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.Theme.Banners.BannerDefinition" entity-set="BannerDefinitions" p1:Guid="ce1d306e-4471-4e4b-be71-29e47762b022" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Banners</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="df92f630-9b09-4831-a8e0-4d261140d81e" p1:GenerateDTO="False">
+      <column name="" />
+    </id>
+    <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="244c615f-f520-4122-a01e-8d3c9894431e">
+      <column name="" />
+    </property>
+    <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="6b04a0b3-fe01-4c39-a20a-d768232d203d">
+      <column name="" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="29f7e4d1-7912-4164-8256-f2e6b47a851b">
+      <column name="" />
+    </property>
+    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="1f3e322e-934e-48f1-9e82-eb04dfe00914">
+      <column name="" default="true" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2889ffc1-df31-4af0-9021-f63d2fca13ef" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.Theme.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="893c025a-a157-4ab3-aff7-e356de43d323" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.Theme.Banners.Banner" entity-set="Banners" p1:Guid="1ff0247d-3493-4f27-ab8e-56c2e7e4f09b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Banners</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="c9541cc0-42f3-4432-8b25-1e22686556c0" p1:GenerateDTO="False">
+      <column name="" />
+    </id>
+    <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="d8dd55e0-9d1a-4aab-b1ce-e615bd1209ef">
+      <column name="" />
+    </property>
+    <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="e76ef794-6506-4947-9176-8adbe3218df4">
+      <column name="" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7b0d7a28-ce98-4204-93e1-4ad308ad6de0">
+      <column name="" />
+    </property>
+    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="6ed16005-5aa0-4c93-add6-64c671458a39">
+      <column name="" default="true" />
+    </property>
+    <component name="BannerConfig" class="FS.Theme.Banners.BannerConfig" p1:ValidateRequired="false" p1:Guid="2b86f849-45e7-498a-9693-320359480772" p1:Shadow="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="FileName" />
+      <property name="FileUrl" />
+      <property name="Sequence" />
+    </component>
+    <property name="BannerDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="e2116493-8cbd-4e78-b9c6-3e7979e33bd1">
+      <column name="" not-null="False" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f4d4f29e-6f86-41c4-b9e8-97950d2e21be" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.Theme.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="4310e0e6-0b8d-43c0-88c9-9991a430c810" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <associations>
+    <association name="RouteDefinition_Route" cardinality="OneToMany" p1:Guid="06e50ef7-ddba-414f-bef7-a9f615bed67b">
+      <end1 multiplicity="One" name="RouteDefinition" class="Route" relation-class="RouteDefinition" constrained="True" lazy="False" p1:Guid="5ef5c240-1396-470a-88b2-3decf6bc6081">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Routes" class="RouteDefinition" relation-class="Route" lazy="False" p1:Guid="95380960-0a3e-4c4c-8737-6af6937552c1">
+        <property name="RouteDefinitionId" />
+      </end2>
+    </association>
+    <association name="BannerDefinition_Banner" cardinality="OneToMany" p1:Guid="1263314e-ff4f-4507-b023-eb69070473e7">
+      <end1 multiplicity="One" name="BannerDefinition" class="Banner" relation-class="BannerDefinition" constrained="True" lazy="False" p1:Guid="5615416d-fd6f-4261-81a0-116423a92313">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Banners" class="BannerDefinition" relation-class="Banner" lazy="False" p1:Guid="6dd32b21-49ab-4761-b871-74738a34c63d">
+        <property name="BannerDefinitionId" />
+      </end2>
+    </association>
+    <association name="Route_Routes" cardinality="OneToMany" p1:Guid="57b986d8-a6b4-42d2-b11f-b75e59570104">
+      <end1 multiplicity="ZeroOrOne" name="Parent" class="Route" relation-class="Route" constrained="True" lazy="False" p1:Guid="5b25e7ec-d830-41d0-bbf1-28ce223b06f7">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Children" class="Route" relation-class="Route" lazy="False" p1:Guid="dd22ce79-591d-4768-924c-922794327ff8" p1:CollectionTypeName="ICollection&lt;Route&gt;">
+        <property name="ParentId" />
+      </end2>
+    </association>
+  </associations>
+</efcore>
