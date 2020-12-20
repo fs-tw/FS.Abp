@@ -15,14 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Blazor" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Blazor" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Account.Pro.Public.Blazor" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Blazor" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
