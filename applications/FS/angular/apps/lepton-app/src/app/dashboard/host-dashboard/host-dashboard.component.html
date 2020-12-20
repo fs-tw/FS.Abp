@@ -87,7 +87,7 @@
         </div>
         <div class="col-12 col-lg-2 col-md-12">
           <button type="submit" class="btn btn-primary btn-block" (click)="refresh()">
-            <i class="fa fa-refresh mr-1 "></i>
+            <i class="fa fa-refresh mr-1"></i>
             <span>{{ 'AbpAuditLogging::Refresh' | abpLocalization }}</span>
           </button>
         </div>
@@ -98,22 +98,22 @@
 
 <div id="DashboardWidgetsArea">
   <div class="row">
-    <div class="col col-md-12 col-lg-6" [abpPermission]="'AuditLogging.AuditLogs'">
+    <div class="col col-md-12 col-lg-6" *abpPermission="'AuditLogging.AuditLogs'">
       <abp-error-rate-widget #errorRateWidget [height]="250"></abp-error-rate-widget>
     </div>
 
-    <div class="col col-md-12 col-lg-6" [abpPermission]="'AuditLogging.AuditLogs'">
+    <div class="col col-md-12 col-lg-6" *abpPermission="'AuditLogging.AuditLogs'">
       <abp-average-execution-duration-widget
         #averageExecutionDurationWidget
         [height]="250"
       ></abp-average-execution-duration-widget>
     </div>
 
-    <div class="col col-md-12 col-lg-6" [abpPermission]="'Saas.Tenants'">
+    <div class="col col-md-12 col-lg-6" *abpPermission="'Saas.Tenants'">
       <abp-editions-usage-widget #editionsUsageWidget [height]="250"></abp-editions-usage-widget>
     </div>
 
-    <div class="col col-md-12 col-lg-6" [abpPermission]="'Saas.Tenants'">
+    <div class="col col-md-12 col-lg-6" *abpPermission="'Saas.Tenants'">
       <abp-latest-tenants-widget #latestTenantsWidget [minHeight]="250"></abp-latest-tenants-widget>
     </div>
   </div>

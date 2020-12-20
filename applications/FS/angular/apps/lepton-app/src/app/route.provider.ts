@@ -21,7 +21,7 @@ function configureRoutes(routes: RoutesService) {
         iconClass: 'fas fa-chart-line',
         order: 2,
         layout: eLayoutType.application,
-        requiredPolicy: 'Ota.Dashboard.Host || AbpAccount.SettingManagement',
+        requiredPolicy: 'FS.Dashboard.Host  || FS.Dashboard.Tenant',
       },
     ]);
   };
