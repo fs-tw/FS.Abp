@@ -45,3 +45,10 @@ jobs:
           PROJECT_FILE_PATH: src/FS.Theme.EntityFrameworkCore/FS.Theme.EntityFrameworkCore.csproj
           VERSION_FILE_PATH: common.props
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+      - name: publish FS.Theme.HttpApi.dll
+        uses: brandedoutcast/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/FS.Theme.HttpApi/FS.Theme.HttpApi.csproj
+          VERSION_FILE_PATH: common.props
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
