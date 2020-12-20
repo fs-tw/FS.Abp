@@ -1,8 +1,0 @@
-{
-  "name": "text-template-management",
-  "version": "0.0.1",
-  "dependencies": {
-    "@abp/ng.theme.shared": "~4.0.0",
-    "text-template-management.config": "^0.0.1"
-  }
-}

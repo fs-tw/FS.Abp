@@ -1,7 +1,0 @@
-{
-  "name": "text-template-management.config",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@abp/ng.core": "~4.0.0"
-  }
-}
