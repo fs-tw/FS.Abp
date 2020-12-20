@@ -1,1 +1,0 @@
-# @volo/abp.ng.language-management

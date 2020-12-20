@@ -1,7 +1,0 @@
-﻿@using Localization.Resources.AbpUi
-@using Microsoft.AspNetCore.Mvc.Localization
-@using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Views.Error.DefaultErrorComponent
-@model Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Views.Error.AbpErrorViewModel
-@inject IHtmlLocalizer<AbpUiResource> L
-
-@(await Component.InvokeAsync<LeptonErrorViewComponent>(new { model = Model, defaultErrorMessageKey = "403Message" }))
