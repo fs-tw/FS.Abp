@@ -1,4 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\framework\Volo.Abp\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Web.IdentityServer\Volo.Abp.Account.Pro.Public.Web.IdentityServer.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\Volo.Abp\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.csproj" />
+  </ItemGroup>
 
   <Import Project="..\..\common.props" />
 
@@ -8,30 +12,25 @@
     <RootNamespace>FS</RootNamespace>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\FS.Application\FS.Application.csproj" />
-    <ProjectReference Include="..\FS.EntityFrameworkCore.DbMigrations\FS.EntityFrameworkCore.DbMigrations.csproj" />
-    <ProjectReference Include="..\FS.HttpApi\FS.HttpApi.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Autofac" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Swashbuckle" Version="4.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="5.0.0" />
-    <!--<PackageReference Include="Volo.Abp.Account.Pro.Public.Web.IdentityServer" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="4.0.0" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="3.1.8" />
+    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.IdentityServer" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Account.Pro\src\Volo.Abp.Account.Pro.Public.Web.IdentityServer\Volo.Abp.Account.Pro.Public.Web.IdentityServer.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.csproj" />
+    <ProjectReference Include="..\FS.Application\FS.Application.csproj" />
+    <ProjectReference Include="..\FS.EntityFrameworkCore.DbMigrations\FS.EntityFrameworkCore.DbMigrations.csproj" />
+    <ProjectReference Include="..\FS.HttpApi\FS.HttpApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

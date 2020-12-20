@@ -13,9 +13,6 @@ using Volo.Saas.Host;
 using Volo.Abp.LeptonTheme;
 using Volo.Abp.Localization;
 using Volo.Abp.TextTemplateManagement;
-using FS.Abp;
-using FS.Cms;
-using FS.Theme;
 
 namespace FS
 {
@@ -32,11 +29,6 @@ namespace FS
         typeof(SaasHostHttpApiModule),
         typeof(LeptonThemeManagementHttpApiModule),
         typeof(TextTemplateManagementHttpApiModule)
-        )]
-    [DependsOn(
-        typeof(FS.Abp.AbpHttpApiModule),
-        typeof(CmsHttpApiModule),
-        typeof(ThemeHttpApiModule)
         )]
     public class FSHttpApiModule : AbpModule
     {

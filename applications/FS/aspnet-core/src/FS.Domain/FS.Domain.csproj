@@ -1,4 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\framework\Volo.Abp\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain\Volo.Abp.LanguageManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\Volo.Abp\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Domain\Volo.Abp.LeptonTheme.Management.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\Volo.Abp\Volo.Saas\src\Volo.Saas.Domain\Volo.Saas.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\Volo.Abp\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain\Volo.Abp.TextTemplateManagement.Domain.csproj" />
+  </ItemGroup>
 
   <Import Project="..\..\common.props" />
 
@@ -8,37 +14,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain\FS.Theme.Domain.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Emailing" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Identity.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="4.0.0" />
-    <!--<PackageReference Include="Volo.Abp.LanguageManagement.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Saas.Domain" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="4.0.0" />-->
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LanguageManagement\src\Volo.Abp.LanguageManagement.Domain\Volo.Abp.LanguageManagement.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.LeptonTheme\src\Volo.Abp.LeptonTheme.Management.Domain\Volo.Abp.LeptonTheme.Management.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.Saas\src\Volo.Saas.Domain\Volo.Saas.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\volo\modules\Volo.TextTemplateManagement\src\Volo.Abp.TextTemplateManagement.Domain\Volo.Abp.TextTemplateManagement.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.Emailing" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Saas.Domain" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="4.0.2" />
   </ItemGroup>
 
 </Project>
