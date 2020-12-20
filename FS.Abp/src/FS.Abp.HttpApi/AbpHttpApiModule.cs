@@ -1,5 +1,4 @@
 ﻿using Localization.Resources.AbpUi;
-using FS.Abp.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
@@ -22,12 +21,6 @@ namespace FS.Abp
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            Configure<AbpLocalizationOptions>(options =>
-            {
-                options.Resources
-                    .Get<AbpResource>()
-                    .AddBaseTypes(typeof(AbpUiResource));
-            });
         }
     }
 }
