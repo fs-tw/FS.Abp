@@ -36,6 +36,9 @@
     },
     "fs.theme.ng-alain": {
       "tags": []
+    },
+    "fs.account": {
+      "tags": []
     }
   }
 }

@@ -26,6 +26,12 @@
       ],
       "@fs/theme.ng-alain/*": [
         "libs/theme-ng-alain/*/src/index.ts"
+      ],
+      "@abp/ng.account": [
+        "libs/account/src/public-api.ts"
+      ],
+      "@abp/ng.account/config": [
+        "libs/account/config/src/public-api.ts"
       ]
     }
   },
