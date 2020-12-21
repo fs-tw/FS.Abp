@@ -12,7 +12,7 @@ export const environment = {
     issuer: 'https://localhost:44309',
     redirectUri: baseUrl,
     clientId: 'FS_App',
-    responseType: 'code',
+    responseType: 'password',
     scope: 'offline_access FS',
   },
   apis: {

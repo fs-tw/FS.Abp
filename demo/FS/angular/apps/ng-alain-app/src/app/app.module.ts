@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
+import { AccountConfigModule } from '@abp/ng.account/config';
 
 const INSPECTION_TOOLS = [
   NgxsLoggerPluginModule.forRoot({ disabled: true }),
@@ -36,6 +37,7 @@ const INSPECTION_TOOLS = [
     IdentityConfigModule.forRoot(),
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
+    AccountConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeNgAlainModule.forRoot(),
     ...(environment.production || environment.test ? [] : INSPECTION_TOOLS),

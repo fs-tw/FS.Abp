@@ -21,6 +21,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@abp/ng.setting-management').then(m => m.SettingManagementModule.forLazy()),
   },
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('@abp/ng.account').then(m => m.AccountModule.forLazy({ redirectUrl: '/' })),
+  }  
 ];
 
 @NgModule({
