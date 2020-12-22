@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'account',
     loadChildren: () =>
       import('@abp/ng.account').then(m => m.AccountModule.forLazy({ redirectUrl: '/' })),
-  }  
+  }
 ];
 
 @NgModule({
