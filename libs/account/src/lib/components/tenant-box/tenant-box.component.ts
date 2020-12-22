@@ -1,10 +1,9 @@
 // import { ABP, GetAppConfiguration, SessionState, SetTenant } from '@abp/ng.core';
-import { ABP } from '@abp/ng.core';
+import { ABP, SessionStateService, CurrentTenantDto, SubscriptionService, AbpApplicationConfigurationService,ConfigStateService } from '@abp/ng.core';
 import { ToasterService } from '@abp/ng.theme.shared';
 import { Component } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { finalize, take } from 'rxjs/operators';
+import { finalize, take, tap } from 'rxjs/operators';
 import { Account } from '../../models/account';
 import { AccountService } from '../../services/account.service';
 
@@ -14,8 +13,8 @@ import { AccountService } from '../../services/account.service';
 })
 export class TenantBoxComponent
   implements Account.TenantBoxComponentInputs, Account.TenantBoxComponentOutputs {
-  //@Select(SessionState.getTenant)
-  currentTenant$: Observable<ABP.BasicItem>;
+
+  currentTenant$: Observable<CurrentTenantDto>;
 
   name: string;
 
@@ -24,14 +23,19 @@ export class TenantBoxComponent
   modalBusy: boolean;
 
   constructor(
-    private store: Store,
     private toasterService: ToasterService,
     private accountService: AccountService,
-  ) { }
+    private sessionStateService: SessionStateService,
+    private subscriptionService: SubscriptionService,
+    private abpApplicationConfigurationService: AbpApplicationConfigurationService,
+    private configStateService: ConfigStateService
+  ) {
+    this.currentTenant$ = this.sessionStateService.getTenant$()
+  }
 
   onSwitch() {
-    // const tenant = this.store.selectSnapshot(SessionState.getTenant);
-    // this.name = (tenant || ({} as ABP.BasicItem)).name;
+    const tenant = this.sessionStateService.getTenant();//this.store.selectSnapshot(SessionState.getTenant);
+    this.name = (tenant || ({} as ABP.BasicItem)).name;
     this.isModalVisible = true;
   }
 
@@ -58,7 +62,12 @@ export class TenantBoxComponent
   }
 
   private setTenant(tenant: ABP.BasicItem) {
-    //return this.store.dispatch([new SetTenant(tenant), new GetAppConfiguration()]);
+    this.sessionStateService.setTenant(tenant as CurrentTenantDto);
+    this.subscriptionService.addOne(
+      this.sessionStateService.getTenant$(),
+      (x) => {
+        this.abpApplicationConfigurationService.get().pipe(tap(x => this.configStateService.setState(x))).subscribe();
+      });
   }
 
   private showError() {

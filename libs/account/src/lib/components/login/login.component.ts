@@ -1,4 +1,5 @@
 //import { AuthService, SetRemember, ConfigState } from '@abp/ng.core';
+import { ConfigStateService } from '@abp/ng.core';
 import { AuthService } from '../../services/auth.service';
 import { ToasterService } from '@abp/ng.theme.shared';
 import { Component, OnInit } from '@angular/core';
@@ -31,15 +32,14 @@ export class LoginComponent implements OnInit {
     private store: Store,
     private toasterService: ToasterService,
     private authService: AuthService,
+    private configStateService:ConfigStateService
   ) {}
 
   ngOnInit() {
-    // this.isSelfRegistrationEnabled =
-    //   (
-    //     (this.store.selectSnapshot(
-    //       ConfigState.getSetting('Abp.Account.IsSelfRegistrationEnabled'),
-    //     ) as string) || ''
-    //   ).toLowerCase() !== 'false';
+    this.isSelfRegistrationEnabled =
+    (this.configStateService.getSetting('Abp.Account.IsSelfRegistrationEnabled') as string ||'').toLowerCase()!=='false';
+
+      
 
     this.form = this.fb.group({
       username: ['', [required, maxLength(255)]],

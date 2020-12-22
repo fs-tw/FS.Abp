@@ -1,4 +1,4 @@
-import { ConfigState, SubscriptionService, MultiTenancyService } from '@abp/ng.core';
+import { ConfigState, SubscriptionService, MultiTenancyService, ConfigStateService } from '@abp/ng.core';
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
@@ -19,7 +19,6 @@ export class AuthWrapperComponent
   @Input()
   readonly cancelContentRef: TemplateRef<any>;
 
-  @Select(ConfigState.getDeep('multiTenancy.isEnabled'))
   isMultiTenancyEnabled$: Observable<boolean>;
 
   enableLocalLogin = true;
@@ -30,11 +29,14 @@ export class AuthWrapperComponent
     public readonly multiTenancy: MultiTenancyService,
     private store: Store,
     private subscription: SubscriptionService,
-  ) {}
+    private configStateService: ConfigStateService
+  ) {
+    this.isMultiTenancyEnabled$ = this.configStateService.getDeep$('multiTenancy.isEnabled');
+  }
 
   ngOnInit() {
     this.subscription.addOne(
-      this.store.select(ConfigState.getSetting('Abp.Account.EnableLocalLogin')),
+      this.configStateService.getSetting$('Abp.Account.EnableLocalLogin'),
       value => {
         if (value) {
           this.enableLocalLogin = value.toLowerCase() !== 'false';
