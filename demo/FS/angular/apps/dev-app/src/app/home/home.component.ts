@@ -1,5 +1,5 @@
 //import { AuthService } from '@abp/ng.core';
-import { AuthService } from '@abp/ng.account'
+import { AuthService } from '@abp/ng.account';
 import { Component } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 
@@ -12,7 +12,7 @@ export class HomeComponent {
     return this.oAuthService.hasValidAccessToken();
   }
 
-  constructor(private oAuthService: OAuthService, private authService: AuthService) { }
+  constructor(private oAuthService: OAuthService, private authService: AuthService) {}
 
   login() {
     this.authService.initLogin();
