@@ -1,4 +1,5 @@
-import { AuthService } from '@abp/ng.core';
+//import { AuthService } from '@abp/ng.core';
+import { AuthService } from '@abp/ng.account';
 import { Component } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 

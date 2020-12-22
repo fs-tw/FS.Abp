@@ -12,15 +12,15 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
     ThemeSharedModule,
     ThemeBasicModule,
     NgbDropdownModule,
-    NgxValidateCoreModule,
+    NgxValidateCoreModule
   ],
   exports: [
     CoreModule,
     ThemeSharedModule,
     ThemeBasicModule,
     NgbDropdownModule,
-    NgxValidateCoreModule,
+    NgxValidateCoreModule
   ],
-  providers: [],
+  providers: []
 })
 export class SharedModule {}

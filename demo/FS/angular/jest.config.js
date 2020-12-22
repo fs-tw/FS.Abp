@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/apps/fs/website'],
+  projects: ['<rootDir>/apps/ng-alain-app'],
 };
