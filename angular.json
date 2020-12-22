@@ -31,16 +31,6 @@
             ],
             "styles": [
               {
-                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
-                "inject": false,
-                "bundleName": "bootstrap-rtl.min"
-              },
-              {
-                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "inject": true,
-                "bundleName": "bootstrap-ltr.min"
-              },
-              {
                 "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
                 "inject": true,
                 "bundleName": "fontawesome-all.min"
@@ -64,6 +54,16 @@
                 "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
                 "inject": true,
                 "bundleName": "ngx-datatable-material"
+              },
+              {
+                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
+                "inject": false,
+                "bundleName": "bootstrap-rtl.min"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap-ltr.min"
               },
               "apps/dev-app/src/styles.scss"
             ],
@@ -173,8 +173,19 @@
             "outputPath": "dist/apps/ng-alain-app",
             "index": "apps/ng-alain-app/src/index.html",
             "main": "apps/ng-alain-app/src/main.ts",
-            "tsConfig": "apps/ng-alain-app/tsconfig.dev.json",
             "polyfills": "apps/ng-alain-app/src/polyfills.ts",
+            "tsConfig": "apps/ng-alain-app/tsconfig.dev.json",
+            "aot": true,
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "js-sha256",
+              "file-saver",
+              "@antv/path-util/lib/is-polygons-intersect",
+              "@antv/attr/lib/factory",
+              "@antv/adjust/lib/factory",
+              "@antv/component/lib/util/event",
+              "@antv/g-canvas/lib/util/arc-params"
+            ],
             "assets": [
               {
                 "glob": "**/*",
@@ -296,7 +307,7 @@
         }
       }
     },
-    "fs.theme-ng-alain": {
+    "fs.theme.ng-alain": {
       "projectType": "library",
       "root": "libs/ng-alain",
       "sourceRoot": "libs/theme-ng-alain/src",
@@ -337,6 +348,45 @@
         }
       },
       "schematics": {}
+    },
+    "fs.account": {
+      "projectType": "library",
+      "root": "libs/account",
+      "sourceRoot": "libs/account/src",
+      "prefix": "abp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/account/tsconfig.lib.json",
+            "project": "libs/account/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/account/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "coverage": true,
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/tsconfig.lib.json",
+              "libs/account/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
