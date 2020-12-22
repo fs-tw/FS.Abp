@@ -1,4 +1,4 @@
-import { ApplicationConfigurationService, AuthFlowStrategy, ConfigStateService, RestService } from '@abp/ng.core';
+import { AbpApplicationConfigurationService, AuthFlowStrategy, ConfigStateService, RestService } from '@abp/ng.core';
 import { Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
 export const oAuthStorage = localStorage;
@@ -18,10 +18,9 @@ export class AuthPasswordFlowStrategy extends AuthFlowStrategy {
     logout() {
         const rest = this.injector.get(RestService);
         const configStateService = this.injector.get(ConfigStateService);
-        const applicationConfigurationService = this.injector.get(ApplicationConfigurationService);
-
-        
+        const abpApplicationConfigurationService = this.injector.get(AbpApplicationConfigurationService);
         const issuer: string = configStateService.getDeep('environment.oAuthConfig.issuer');
+
         return rest
             .request(
                 {
@@ -34,7 +33,7 @@ export class AuthPasswordFlowStrategy extends AuthFlowStrategy {
             .pipe(
                 tap(() => this.oAuthService.logOut()),
                 switchMap(() => {
-                    return applicationConfigurationService.getConfiguration()
+                    return abpApplicationConfigurationService.get()
                         .pipe(tap(x => configStateService.setState(x)))
                 }),
             );

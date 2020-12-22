@@ -8,7 +8,7 @@ import snq from 'snq';
 import { Router } from '@angular/router';
 import {
   EnvironmentService, ConfigStateService,
-  ApplicationConfigurationService, SessionStateService, AuthFlowStrategy,
+  AbpApplicationConfigurationService, SessionStateService, AuthFlowStrategy,
   AUTH_FLOW_STRATEGY
 } from '@abp/ng.core';
 import { AuthPasswordFlowStrategy } from '../strategies/auth-flow.strategy'
@@ -24,7 +24,7 @@ export class AuthService {
     private injector: Injector,
     private environment: EnvironmentService,
     private oAuthService: OAuthService,
-    private applicationConfigurationService: ApplicationConfigurationService,
+    private abpApplicationConfigurationService: AbpApplicationConfigurationService,
     private router: Router,
     private sessionStateService: SessionStateService,
     private configStateService: ConfigStateService,
@@ -40,7 +40,17 @@ export class AuthService {
   }
 
   private setStrategy = () => {
-    this.strategy = new AuthPasswordFlowStrategy(this.injector);
+    const flow = this.environment.getEnvironment().oAuthConfig.responseType || 'password';
+    if (this.flow === flow) return;
+    if (this.strategy) this.strategy.destroy();
+    this.flow = flow;
+    if (flow === 'password') {
+      this.strategy = new AuthPasswordFlowStrategy(this.injector);
+    }
+    else {
+      this.strategy = AUTH_FLOW_STRATEGY.Code(this.injector);
+    }
+
   };
 
 
@@ -50,6 +60,10 @@ export class AuthService {
 
   private listenToSetEnvironment() {
     this.environment.createOnUpdateStream(state => state.oAuthConfig).subscribe(this.setStrategy);
+  }
+
+  async init() {
+    return await this.strategy.init();
   }
 
   logout(): Observable<any> {
@@ -67,7 +81,7 @@ export class AuthService {
       ),
     ).pipe(
       switchMap(() => {
-        return this.applicationConfigurationService.getConfiguration()
+        return this.abpApplicationConfigurationService.get()
           .pipe(tap(x => this.configStateService.setState(x)))
       }),
       tap(() => {
