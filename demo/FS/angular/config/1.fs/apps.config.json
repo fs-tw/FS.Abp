@@ -23,8 +23,19 @@
             "outputPath": "dist/apps/ng-alain-app",
             "index": "apps/ng-alain-app/src/index.html",
             "main": "apps/ng-alain-app/src/main.ts",
-            "tsConfig": "apps/ng-alain-app/tsconfig.dev.json",
             "polyfills": "apps/ng-alain-app/src/polyfills.ts",
+            "tsConfig": "apps/ng-alain-app/tsconfig.dev.json",
+            "aot": true,
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "js-sha256",
+              "file-saver",
+              "@antv/path-util/lib/is-polygons-intersect",
+              "@antv/attr/lib/factory",
+              "@antv/adjust/lib/factory",
+              "@antv/component/lib/util/event",
+              "@antv/g-canvas/lib/util/arc-params"
+            ],
             "assets": [
               {
                 "glob": "**/*",

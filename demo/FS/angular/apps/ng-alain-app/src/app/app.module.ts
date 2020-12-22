@@ -8,7 +8,7 @@ import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InspectorModule } from '@ngneat/inspector';
+// import { InspectorModule } from '@ngneat/inspector';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
 import { environment } from '../environments/environment';
@@ -18,8 +18,8 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
 import { AccountConfigModule } from '@abp/ng.account/config';
 
 const INSPECTION_TOOLS = [
-  NgxsLoggerPluginModule.forRoot({ disabled: true }),
-  InspectorModule.forRoot(),
+  // NgxsLoggerPluginModule.forRoot({ disabled: true }),
+  // InspectorModule.forRoot(),
 ];
 
 @NgModule({
