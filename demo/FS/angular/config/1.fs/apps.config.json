@@ -123,14 +123,6 @@
                   "maximumError": "10kb"
                 }
               ]
-            },
-            "hmr": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/ng-alain-app/src/environments/environment.ts",
-                  "with": "apps/ng-alain-app/src/environments/environment.hmr.ts"
-                }
-              ]
             }
           }
         },
@@ -142,10 +134,6 @@
           "configurations": {
             "production": {
               "browserTarget": "fs.ng-alain-app:build:production"
-            },
-            "hmr": {
-              "browserTarget": "fs.ng-alain-app:build:hmr",
-              "hmr": true
             }
           }
         },
