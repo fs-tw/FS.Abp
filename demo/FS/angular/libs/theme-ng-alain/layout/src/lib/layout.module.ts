@@ -7,6 +7,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { LayoutBasicComponent } from './basic/basic.component';
+import { HeaderFullScreenComponent } from './basic/widgets/fullscreen.component';
 import { HeaderI18nComponent } from './basic/widgets/i18n.component';
 import { HeaderUserComponent } from './basic/widgets/user.component';
 import { LayoutBlankComponent } from './blank/blank.component';
@@ -17,7 +18,8 @@ const LAYOUTCOMPONENTS = [LayoutBasicComponent, LayoutBlankComponent, LayoutPass
 
 const HEADERCOMPONENTS = [
   HeaderI18nComponent,
-  HeaderUserComponent
+  HeaderUserComponent,
+  HeaderFullScreenComponent
 ];
 @NgModule({
   imports: [

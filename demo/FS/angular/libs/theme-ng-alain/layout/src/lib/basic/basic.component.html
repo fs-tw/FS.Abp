@@ -1,7 +1,7 @@
 <layout-default [options]="options" [asideUser]="asideUserTpl" [content]="contentTpl">
     <ng-container *ngFor="let item of navItems$ | async; trackBy: trackByFn">
 
-        <layout-default-header-item [direction]="item.data.direction">
+        <layout-default-header-item [direction]="item?.data?.direction || 'right'">
             <ng-container [ngComponentOutlet]="item.component">
             </ng-container>
         </layout-default-header-item>
