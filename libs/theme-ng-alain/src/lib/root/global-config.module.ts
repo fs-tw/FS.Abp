@@ -1,11 +1,7 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { throwIfAlreadyLoaded } from '@fs/theme.ng-alain/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { AlainThemeModule } from '@delon/theme';
 import { AlainConfig, ALAIN_CONFIG } from '@delon/util';
 import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
-
-// Please refer to: https://ng-alain.com/docs/global-config
-// Please refer to: https://ng.ant.design/docs/global-config/en#how-to-use
 
 // #region reuse-tab
 /**
@@ -30,6 +26,9 @@ import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
 
 // #endregion
 
+//import { DelonACLModule } from '@delon/acl';
+
+// Please refer to: https://ng-alain.com/docs/global-config
 const alainConfig: AlainConfig = {
   st: { modal: { size: 'lg' } },
   pageHeader: { homeI18n: 'home' },
@@ -39,23 +38,24 @@ const alainConfig: AlainConfig = {
   },
   auth: { login_url: '/passport/login' },
 };
+// Please refer to: https://ng.ant.design/docs/global-config/en#how-to-use
 const ngZorroConfig: NzConfig = {};
 @NgModule({
   imports: [
     AlainThemeModule.forRoot(),
+    //DelonACLModule.forRoot()
   ],
 })
 export class GlobalConfigModule {
-  constructor(@Optional() @SkipSelf() parentModule: GlobalConfigModule) {
-    throwIfAlreadyLoaded(parentModule, 'GlobalConfigModule');
+  constructor() {
   }
 
   static forRoot(): ModuleWithProviders<GlobalConfigModule> {
     return {
       ngModule: GlobalConfigModule,
       providers: [
-        { provide: ALAIN_CONFIG, useValue: alainConfig },
-        { provide: NZ_CONFIG, useValue: ngZorroConfig }
+        //{ provide: ALAIN_CONFIG, useValue: alainConfig },
+        //{ provide: NZ_CONFIG, useValue: ngZorroConfig }
       ],
     };
   }
