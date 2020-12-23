@@ -1,5 +1,6 @@
 import { NavItemsService,NavItem } from '@abp/ng.theme.shared';
 import { APP_INITIALIZER } from '@angular/core';
+import { HeaderFullScreenComponent } from '@fs/theme.ng-alain/layout';
 import { CurrentUserComponent } from '../components/current-user/current-user.component';
 import { LanguagesComponent } from '../components/languages/languages.component';
 import { eThemeNgAlainComponents } from '../enums/components';
@@ -18,25 +19,28 @@ export function configureNavItems(navItems: NavItemsService) {
     navItems.addItems([
       {
         id: eThemeNgAlainComponents.Languages,
-        order: 100,
+        order: 1,
         component: LanguagesComponent,
         data:{
           direction:'right'
         }
       } as NavItem,
       {
-        id: eThemeNgAlainComponents.CurrentUser,
-        order: 100,
-        component: CurrentUserComponent,
+        id: eThemeNgAlainComponents.FullScreen,
+        order: 2,
+        component: HeaderFullScreenComponent,
         data:{
           direction:'right'
         }
       } as NavItem,
-    //   {
-    //     id: eThemeNgAlainComponents.FullScreen,
-    //     order: 100,
-    //     component: FullScreenComponent,
-    //   },
+      {
+        id: eThemeNgAlainComponents.CurrentUser,
+        order: 999,
+        component: CurrentUserComponent,
+        data:{
+          direction:'right'
+        }
+      } as NavItem
     ]);
   };
 }
