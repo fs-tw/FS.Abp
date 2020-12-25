@@ -32,6 +32,12 @@
       ],
       "@abp/ng.account/config": [
         "libs/account/config/src/public-api.ts"
+      ],
+      "@fs/ng.emailing": [
+        "libs/emailing/src/index.ts"
+      ],
+      "@fs/ng.emailing/*": [
+        "libs/emailing/*/src/index.ts"
       ]
     }
   },

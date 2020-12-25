@@ -39,6 +39,9 @@
     },
     "fs.account": {
       "tags": []
+    },
+    "fs.emailing": {
+      "tags": []
     }
   }
 }
