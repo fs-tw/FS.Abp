@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
   </ItemGroup>
 

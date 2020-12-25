@@ -29,6 +29,9 @@ namespace FS
         typeof(AbpTenantManagementDomainModule),
         typeof(AbpEmailingModule)
     )]
+    [DependsOn(
+        typeof(FS.Abp.AbpDomainModule)
+        )]
     public class FSDomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
