@@ -1,0 +1,64 @@
+{
+  "order": 2001,
+  "nx": {
+    "fs.emailing": {
+      "tags": []
+    }
+  },
+  "angular": {  
+    "fs.emailing": {
+      "projectType": "library",
+      "root": "libs/emailing",
+      "sourceRoot": "libs/emailing/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libs/emailing/tsconfig.lib.json",
+            "project": "libs/emailing/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/emailing/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/emailing/src/test.ts",
+            "tsConfig": "libs/emailing/tsconfig.spec.json",
+            "karmaConfig": "libs/emailing/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/emailing/tsconfig.lib.json",
+              "libs/emailing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs/ng.emailing": [
+      "libs/emailing/src/index.ts"
+    ],
+    "@fs/ng.emailing/*": [
+      "libs/emailing/*/src/index.ts"
+    ]
+  },
+  "tsconfigProd": { 
+    "@fs/ng.emailing": [
+      "dist/emailing"
+    ],
+    "@fs/ng.emailing/*": [
+      "dist/emailing/*"
+    ]
+  }
+}

@@ -27,6 +27,7 @@ export function configureMenus(injector: Injector) {
         return mapToMenu(r);
       });
       menuService.add(menus);
+      console.log(menus);
     })
 
     settingsService.notify.subscribe(x => {

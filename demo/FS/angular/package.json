@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@npm/dev": "file:npm/dev",
+    "@abp/ng.schematics": "~4.0.1",
     "@npm/ng-alain": "file:npm/ng-alain",
     "@angular-devkit/build-angular": "~0.1100.1",
     "@angular/cli": "~11.0.0",
