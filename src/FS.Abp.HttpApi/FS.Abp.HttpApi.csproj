@@ -12,4 +12,15 @@
     <ProjectReference Include="..\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Abp\Emailing\EmailingApi.EmailSettingsAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EmailingApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp\Emailing\EmailingApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Emailing</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
