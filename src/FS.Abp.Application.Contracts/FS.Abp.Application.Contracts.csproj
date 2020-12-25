@@ -13,4 +13,23 @@
     <ProjectReference Include="..\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\EmailSettingsDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\SmtpDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp\Emailing\IEmailingApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Emailing</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Abp\Emailing\IEmailSettingsAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Emailing</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

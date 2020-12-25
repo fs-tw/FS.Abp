@@ -273,14 +273,6 @@
                   "maximumError": "10kb"
                 }
               ]
-            },
-            "hmr": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/ng-alain-app/src/environments/environment.ts",
-                  "with": "apps/ng-alain-app/src/environments/environment.hmr.ts"
-                }
-              ]
             }
           }
         },
@@ -292,10 +284,6 @@
           "configurations": {
             "production": {
               "browserTarget": "fs.ng-alain-app:build:production"
-            },
-            "hmr": {
-              "browserTarget": "fs.ng-alain-app:build:hmr",
-              "hmr": true
             }
           }
         },
@@ -387,6 +375,46 @@
           }
         }
       }
+    },
+    "fs.emailing": {
+      "projectType": "library",
+      "root": "libs/emailing",
+      "sourceRoot": "libs/emailing/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libs/emailing/tsconfig.lib.json",
+            "project": "libs/emailing/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/emailing/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/emailing/src/test.ts",
+            "tsConfig": "libs/emailing/tsconfig.spec.json",
+            "karmaConfig": "libs/emailing/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/emailing/tsconfig.lib.json",
+              "libs/emailing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -412,5 +440,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "fs.ng-alain-app"
+  "defaultProject": "volo.dev-app"
 }

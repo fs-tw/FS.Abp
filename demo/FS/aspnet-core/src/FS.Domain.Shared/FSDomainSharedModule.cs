@@ -25,6 +25,9 @@ namespace FS
         typeof(AbpSettingManagementDomainSharedModule),
         typeof(AbpTenantManagementDomainSharedModule)
         )]
+    [DependsOn(
+        typeof(FS.Abp.AbpDomainSharedModule)
+        )]
     public class FSDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

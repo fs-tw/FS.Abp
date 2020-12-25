@@ -3,6 +3,7 @@ import { registerLocale } from '@abp/ng.core/locale';
 import { IdentityConfigModule } from '@abp/ng.identity/config';
 import { SettingManagementConfigModule } from '@abp/ng.setting-management/config';
 import { TenantManagementConfigModule } from '@abp/ng.tenant-management/config';
+import { EmailingConfigModule } from '@fs/ng.emailing/config';
 import { ThemeNgAlainModule } from '@fs/theme.ng-alain';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgModule } from '@angular/core';
@@ -38,6 +39,7 @@ const INSPECTION_TOOLS = [
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
     AccountConfigModule.forRoot(),
+    EmailingConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeNgAlainModule.forRoot(),
     ...(environment.production || environment.test ? [] : INSPECTION_TOOLS),

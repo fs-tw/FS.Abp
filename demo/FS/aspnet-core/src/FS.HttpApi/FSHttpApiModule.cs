@@ -18,6 +18,9 @@ namespace FS
         typeof(AbpTenantManagementHttpApiModule),
         typeof(AbpFeatureManagementHttpApiModule)
         )]
+    [DependsOn(
+        typeof(FS.Abp.AbpHttpApiModule)
+        )]
     public class FSHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -17,6 +17,10 @@ namespace FS
         typeof(AbpTenantManagementApplicationContractsModule),
         typeof(AbpObjectExtendingModule)
     )]
+
+    [DependsOn(
+        typeof(FS.Abp.AbpApplicationContractsModule)
+        )]
     public class FSApplicationContractsModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

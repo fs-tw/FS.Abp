@@ -1,53 +1,45 @@
-import { NgModule } from '@angular/core';
-import { NgAlainSharedModule } from '@fs/theme.ng-alain/shared';
+import { CoreModule } from '@abp/ng.core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { LayoutDefaultModule } from '@delon/theme/layout-default';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
-import { LayoutDefaultComponent } from './default/default.component';
-import { HeaderFullScreenComponent } from './default/header/components/fullscreen.component';
-import { HeaderI18nComponent } from './default/header/components/i18n.component';
-import { HeaderIconComponent } from './default/header/components/icon.component';
-import { HeaderNotifyComponent } from './default/header/components/notify.component';
-import { HeaderSearchComponent } from './default/header/components/search.component';
-import { HeaderStorageComponent } from './default/header/components/storage.component';
-import { HeaderTaskComponent } from './default/header/components/task.component';
-import { HeaderUserComponent } from './default/header/components/user.component';
-import { HeaderComponent } from './default/header/header.component';
-import { SidebarComponent } from './default/sidebar/sidebar.component';
-import { LayoutFullScreenComponent } from './fullscreen/fullscreen.component';
+import { LayoutBasicComponent } from './basic/basic.component';
+import { HeaderFullScreenComponent } from './basic/widgets/fullscreen.component';
+import { HeaderI18nComponent } from './basic/widgets/i18n.component';
+import { HeaderUserComponent } from './basic/widgets/user.component';
+import { LayoutBlankComponent } from './blank/blank.component';
+import { LayoutPassportComponent } from './passport/passport.component';
+import { LAYOUT_MENU_PROVIDERS } from './providers/menu.provider';
 
-import { SettingDrawerItemComponent } from './default/setting-drawer/setting-drawer-item.component';
-import { SettingDrawerComponent } from './default/setting-drawer/setting-drawer.component';
-import { LayoutThemeBtnComponent } from './default/theme-btn/theme-btn.component';
-
-const SETTINGDRAWER = [SettingDrawerComponent, SettingDrawerItemComponent];
-const COMPONENTS = [
-  LayoutDefaultComponent,
-  LayoutFullScreenComponent,
-  HeaderComponent,
-  SidebarComponent,
-  ...SETTINGDRAWER,
-  LayoutThemeBtnComponent,
-];
+const LAYOUTCOMPONENTS = [LayoutBasicComponent, LayoutBlankComponent, LayoutPassportComponent];
 
 const HEADERCOMPONENTS = [
-  HeaderSearchComponent,
-  HeaderNotifyComponent,
-  HeaderTaskComponent,
-  HeaderIconComponent,
-  HeaderFullScreenComponent,
   HeaderI18nComponent,
-  HeaderStorageComponent,
   HeaderUserComponent,
+  HeaderFullScreenComponent
 ];
-
-// passport
-import { LayoutPassportComponent } from './passport/passport.component';
-//import { PageBarComponent } from './page-bar/page-bar.component';
-const PASSPORT = [LayoutPassportComponent];
-
 @NgModule({
-  imports: [NgAlainSharedModule],
-  entryComponents: COMPONENTS,
-  declarations: [...COMPONENTS, ...HEADERCOMPONENTS, ...PASSPORT],//, PageBarComponent],
-  exports: [...COMPONENTS, ...PASSPORT]//, PageBarComponent],
+  imports: [
+    CoreModule,
+    FormsModule,
+    RouterModule,
+    LayoutDefaultModule,
+    NzDropDownModule,
+    NzIconModule
+  ],
+  declarations: [...LAYOUTCOMPONENTS, ...HEADERCOMPONENTS],
+  exports: [...LAYOUTCOMPONENTS, ...HEADERCOMPONENTS],
 })
-export class LayoutModule { }
+export class LayoutModule {
+  static forRoot(): ModuleWithProviders<LayoutModule> {
+    return {
+      ngModule: LayoutModule,
+      providers: [
+        LAYOUT_MENU_PROVIDERS
+      ]
+    };
+  }
+}

@@ -13,4 +13,23 @@
     <ProjectReference Include="..\FS.Abp.Domain\FS.Abp.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\EntityFrameworkCore\AbpDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\AbpDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\AbpModelBuilderConfigurationOptions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\IAbpDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
