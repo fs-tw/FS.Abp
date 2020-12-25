@@ -36,7 +36,7 @@ namespace FS.Abp.SettingManagement
 
             if (string.IsNullOrEmpty(providerName))
             {
-                value = await settingManager.GetOrNullDefaultAsync(name);
+                value = await settingManager.GetOrNullGlobalAsync(name);
             }
             else
             {

@@ -25,6 +25,7 @@ namespace FS.Abp.Emailing
         {
             return EmailSettingsAppService.GetAsync(EmailSettingsGet);
         }
+
         [HttpPut]
         [Route("email-settings")]
         [RemoteService(true)]

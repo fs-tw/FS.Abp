@@ -2,14 +2,15 @@
 using Volo.Abp.Localization;
 using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
-using Volo.Abp.Validation.Localization;
+using Volo.Abp.Emailing;
 using Volo.Abp.VirtualFileSystem;
 using FS.Abp.Localization;
 
 namespace FS.Abp
 {
     [DependsOn(
-        typeof(AbpValidationModule)
+        typeof(AbpValidationModule),
+        typeof(AbpEmailingModule)
     )]
     [DependsOn(
         typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule)
@@ -26,9 +27,12 @@ namespace FS.Abp
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
+                    .Get<Volo.Abp.Emailing.Localization.EmailingResource>()
+                    .AddVirtualJson("Localization/AbpEmailing");
+
+                options.Resources
                     .Add<AbpResource>("en")
-                    .AddBaseTypes(typeof(AbpValidationResource))
-                    .AddVirtualJson("/Localization/Abp");
+                    .AddVirtualJson("Localization/Abp");
 
                 options.DefaultResourceType = typeof(AbpResource);
             });
