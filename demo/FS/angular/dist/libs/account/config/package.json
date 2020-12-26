@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-account-config.umd.js",
+  "module": "../fesm2015/fs-tw-account-config.js",
+  "es2015": "../fesm2015/fs-tw-account-config.js",
+  "esm2015": "../esm2015/config/fs-tw-account-config.js",
+  "fesm2015": "../fesm2015/fs-tw-account-config.js",
+  "typings": "fs-tw-account-config.d.ts",
+  "metadata": "fs-tw-account-config.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/account/config"
+}

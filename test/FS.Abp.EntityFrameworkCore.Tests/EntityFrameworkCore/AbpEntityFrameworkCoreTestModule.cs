@@ -33,10 +33,10 @@ namespace FS.Abp.EntityFrameworkCore
             var connection = new SqliteConnection("Data Source=:memory:");
             connection.Open();
 
-            //new AbpDbContext(
-            //    new DbContextOptionsBuilder<AbpDbContext>().UseSqlite(connection).Options
-            //).GetService<IRelationalDatabaseCreator>().CreateTables();
-            
+            new AbpDbContext(
+                new DbContextOptionsBuilder<AbpDbContext>().UseSqlite(connection).Options
+            ).GetService<IRelationalDatabaseCreator>().CreateTables();
+
             return connection;
         }
     }
