@@ -17,7 +17,7 @@ export default function (schema: any): Rule {
       updateNx,
       updateNg,
       updateTs,
-      updateTsProd,
+      //updateTsProd,
       //updateSymLink
     ])(host, context);
   }

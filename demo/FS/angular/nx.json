@@ -28,19 +28,19 @@
     }
   },
   "projects": {
-    "volo.dev-app": {
+    "dev-app": {
       "tags": []
     },
-    "fs.ng-alain-app": {
+    "alain-app": {
       "tags": []
     },
-    "fs.theme.ng-alain": {
+    "account": {
       "tags": []
     },
-    "fs.account": {
+    "theme-alain": {
       "tags": []
     },
-    "fs.emailing": {
+    "emailing": {
       "tags": []
     }
   }

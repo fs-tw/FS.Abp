@@ -6,6 +6,8 @@
     
   },
   "dependencies": {
+    "lerna": "^3.22.1",
+    "date-fns": "^2.16.1",
     "ng-zorro-antd": "^11.0.0",
     "@ngxs/logger-plugin": "^3.7.1"
   }

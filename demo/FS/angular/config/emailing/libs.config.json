@@ -1,19 +1,19 @@
 {
   "order": 2001,
   "nx": {
-    "fs.emailing": {
+    "emailing": {
       "tags": []
     }
   },
   "angular": {  
-    "fs.emailing": {
+    "emailing": {
       "projectType": "library",
       "root": "libs/emailing",
       "sourceRoot": "libs/emailing/src",
-      "prefix": "lib",
+      "prefix": "fs",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/emailing/tsconfig.lib.json",
             "project": "libs/emailing/ng-package.json"
@@ -24,14 +24,6 @@
             }
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "libs/emailing/src/test.ts",
-            "tsConfig": "libs/emailing/tsconfig.spec.json",
-            "karmaConfig": "libs/emailing/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -39,25 +31,29 @@
               "libs/emailing/tsconfig.lib.json",
               "libs/emailing/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/emailing/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/emailing"],
+          "options": {
+            "jestConfig": "libs/emailing/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
     }
   },
   "tsconfig": {
-    "@fs/ng.emailing": [
-      "libs/emailing/src/index.ts"
-    ],
-    "@fs/ng.emailing/*": [
-      "libs/emailing/*/src/index.ts"
-    ]
+    "@fs/emailing": ["libs/emailing/src/index.ts"],
+    "@fs/emailing/*": ["libs/emailing/*/src/index.ts"]
   },
   "tsconfigProd": { 
-    "@fs/ng.emailing": [
+    "@fs/emailing": [
       "dist/emailing"
     ],
-    "@fs/ng.emailing/*": [
+    "@fs/emailing/*": [
       "dist/emailing/*"
     ]
   }
