@@ -1,6 +1,6 @@
 import { CONTENT_STRATEGY, DomInsertionService, ReplaceableComponentsService, } from '@abp/ng.core';
 import { APP_INITIALIZER, Injector } from '@angular/core';
-import { LayoutBasicComponent, LayoutBlankComponent, LayoutPassportComponent } from '@fs/theme-alain/layout';
+import { LayoutBasicComponent, LayoutBlankComponent, LayoutPassportComponent } from '@fs-tw/theme-alain/layout';
 import styles from '../constants/styles';
 export const NGALAIN_THEME_STYLES_PROVIDERS = [
     {

@@ -1,24 +1,30 @@
 {
-  "name": "@fs/theme-alain",
-  "version": "0.0.1",
+  "name": "@fs-tw/theme-alain",
+  "version": "0.402.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
   "peerDependencies": {
+    "@abp/ng.theme.shared": "4.0.2",
     "@angular/common": "^11.0.5",
-    "@angular/core": "^11.0.5"
+    "@angular/core": "^11.0.5",
+    "@delon/theme": "^11.0.1"
   },
   "dependencies": {
-    "tslib": "^2.0.0",
-    "rxjs": "~6.5.5",
-    "@angular/router": "^11.0.0",
-    "@fs/account": "0.0.1",
+    "@angular/animations": "^11.0.0",
     "@angular/forms": "^11.0.0",
-    "@angular/animations": "^11.0.0"
+    "@angular/router": "^11.0.0",
+    "@fs-tw/account": "^0.402.1",
+    "rxjs": "~6.5.5",
+    "tslib": "^2.0.0"
   },
-  "main": "bundles/fs-theme-alain.umd.js",
-  "module": "fesm2015/fs-theme-alain.js",
-  "es2015": "fesm2015/fs-theme-alain.js",
-  "esm2015": "esm2015/fs-theme-alain.js",
-  "fesm2015": "fesm2015/fs-theme-alain.js",
-  "typings": "fs-theme-alain.d.ts",
-  "metadata": "fs-theme-alain.metadata.json",
+  "main": "bundles/fs-tw-theme-alain.umd.js",
+  "module": "fesm2015/fs-tw-theme-alain.js",
+  "es2015": "fesm2015/fs-tw-theme-alain.js",
+  "esm2015": "esm2015/fs-tw-theme-alain.js",
+  "fesm2015": "fesm2015/fs-tw-theme-alain.js",
+  "typings": "fs-tw-theme-alain.d.ts",
+  "metadata": "fs-tw-theme-alain.metadata.json",
   "sideEffects": false
 }

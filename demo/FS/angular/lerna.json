@@ -2,10 +2,10 @@
   "packages": [
     "dist/libs/*"
   ],
-  "version": "0.402.0",
+  "version": "0.402.1",
   "command": {
     "publish": {
-      "registry": "http://192.168.1.7:4873/"
+      "access": "public"
     }
   }
 }

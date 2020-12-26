@@ -18,22 +18,22 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fs/account": [
+      "@fs-tw/account": [
         "libs/account/src/index.ts"
       ],
-      "@fs/account/*": [
+      "@fs-tw/account/*": [
         "libs/account/*/src/index.ts"
       ],
-      "@fs/theme-alain": [
+      "@fs-tw/theme-alain": [
         "libs/theme-alain/src/index.ts"
       ],
-      "@fs/theme-alain/*": [
+      "@fs-tw/theme-alain/*": [
         "libs/theme-alain/*/src/index.ts"
       ],
-      "@fs/emailing": [
+      "@fs-tw/emailing": [
         "libs/emailing/src/index.ts"
       ],
-      "@fs/emailing/*": [
+      "@fs-tw/emailing/*": [
         "libs/emailing/*/src/index.ts"
       ]
     }

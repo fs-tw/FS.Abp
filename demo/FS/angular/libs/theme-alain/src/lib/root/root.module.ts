@@ -6,7 +6,7 @@ import { ValidationErrorComponent } from '@abp/ng.theme.basic';
 
 import { LANG_PROVIDES } from './providers/lang.provider';
 import { STYLES_PROVIDERS } from './providers/styles.provider';
-import { LayoutModule } from '@fs/theme-alain/layout';
+import { LayoutModule } from '@fs-tw/theme-alain/layout';
 
 @NgModule({
   imports: [
