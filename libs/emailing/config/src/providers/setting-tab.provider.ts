@@ -18,7 +18,7 @@ export function configureSettingTabs(settingtabs: SettingTabsService) {
       {
         name: eEmailingSettingTabNames.Emailing,
         order: 3,
-        //requiredPolicy: 'AbpAccount.SettingManagement',
+        requiredPolicy: 'AbpEmailing.SettingManagement',
         component: EmailingSettingsComponent,
       },
     ]);
