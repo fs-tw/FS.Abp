@@ -1,0 +1,24 @@
+{
+  "name": "@fs/theme-alain",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0",
+    "rxjs": "~6.5.5",
+    "@angular/router": "^11.0.0",
+    "@fs/account": "0.0.1",
+    "@angular/forms": "^11.0.0",
+    "@angular/animations": "^11.0.0"
+  },
+  "main": "bundles/fs-theme-alain.umd.js",
+  "module": "fesm2015/fs-theme-alain.js",
+  "es2015": "fesm2015/fs-theme-alain.js",
+  "esm2015": "esm2015/fs-theme-alain.js",
+  "fesm2015": "fesm2015/fs-theme-alain.js",
+  "typings": "fs-theme-alain.d.ts",
+  "metadata": "fs-theme-alain.metadata.json",
+  "sideEffects": false
+}

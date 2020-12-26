@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/emailing/proxy/src/","sources":["lib/pages/abp/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,YAAY,MAAM,iBAAiB,CAAC;AAChD,OAAO,EAAE,YAAY,EAAE,CAAC","sourcesContent":["import * as MultiTenancy from './multi-tenancy';\r\nexport { MultiTenancy };\r\n"]}

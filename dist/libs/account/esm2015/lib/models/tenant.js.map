@@ -1,0 +1,1 @@
+{"version":3,"file":"tenant.js","sourceRoot":"../../../../libs/account/src/","sources":["lib/models/tenant.ts"],"names":[],"mappings":"","sourcesContent":["export interface TenantIdResponse {\r\n  success: boolean;\r\n  tenantId: string;\r\n  name: string;\r\n}\r\n"]}
