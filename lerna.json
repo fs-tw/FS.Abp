@@ -2,7 +2,7 @@
   "packages": [
     "dist/libs/*"
   ],
-  "version": "0.402.0",
+  "version": "0.402.1",
   "command": {
     "publish": {
       "access": "public"
