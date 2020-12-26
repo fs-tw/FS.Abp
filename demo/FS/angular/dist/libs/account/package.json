@@ -1,9 +1,14 @@
 {
-  "name": "@fs/account",
+  "name": "@fs-tw/account",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^11.0.5",
-    "@angular/core": "^11.0.5"
+    "@angular/core": "^11.0.5",
+    "@abp/ng.theme.shared": "4.0.2"
   },
   "dependencies": {
     "tslib": "^2.0.0",
@@ -12,12 +17,12 @@
     "@angular/forms": "^11.0.0",
     "@angular/animations": "^11.0.0"
   },
-  "main": "bundles/fs-account.umd.js",
-  "module": "fesm2015/fs-account.js",
-  "es2015": "fesm2015/fs-account.js",
-  "esm2015": "esm2015/fs-account.js",
-  "fesm2015": "fesm2015/fs-account.js",
-  "typings": "fs-account.d.ts",
-  "metadata": "fs-account.metadata.json",
+  "main": "bundles/fs-tw-account.umd.js",
+  "module": "fesm2015/fs-tw-account.js",
+  "es2015": "fesm2015/fs-tw-account.js",
+  "esm2015": "esm2015/fs-tw-account.js",
+  "fesm2015": "fesm2015/fs-tw-account.js",
+  "typings": "fs-tw-account.d.ts",
+  "metadata": "fs-tw-account.metadata.json",
   "sideEffects": false
 }

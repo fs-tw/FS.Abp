@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: () =>
-      import('@fs/account').then(m => m.AccountModule.forLazy({ redirectUrl: '/' })),
+      import('@fs-tw/account').then(m => m.AccountModule.forLazy({ redirectUrl: '/' })),
   }
 ];
 
