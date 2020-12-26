@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "dist/libs/*"
+  ],
+  "version": "0.402.0",
+  "command": {
+    "publish": {
+      "registry": "http://192.168.1.7:4873/"
+    }
+  }
+}

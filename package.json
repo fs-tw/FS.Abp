@@ -1,6 +1,6 @@
 {
   "name": "fs",
-  "version": "0.0.0",
+  "version": "0.402.0",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
@@ -22,11 +22,11 @@
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
-    "update": "ng update @nrwl/workspace",
-    "workspace-schematic": "nx workspace-schematic",
+    "update": "nx migrate latest",
+    "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "merge-config":"nx workspace-schematic merge-config"
+    "merge-config": "nx workspace-schematic merge-config"
   },
   "private": true,
   "dependencies": {
@@ -38,37 +38,38 @@
     "@angular/platform-browser": "^11.0.0",
     "@angular/platform-browser-dynamic": "^11.0.0",
     "@angular/router": "^11.0.0",
-    "@nrwl/angular": "11.0.15",
+    "@nrwl/angular": "11.0.18",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2",
     "@npm/root": "file:npm/root"
   },
   "devDependencies": {
-    "@npm/dev": "file:npm/dev",
     "@abp/ng.schematics": "~4.0.1",
-    "@npm/ng-alain": "file:npm/ng-alain",
     "@angular-devkit/build-angular": "~0.1100.1",
     "@angular/cli": "~11.0.0",
     "@angular/compiler-cli": "^11.0.0",
     "@angular/language-service": "^11.0.0",
-    "@nrwl/cli": "11.0.15",
-    "@nrwl/jest": "11.0.15",
-    "@nrwl/tao": "11.0.15",
-    "@nrwl/workspace": "11.0.15",
+    "@npm/dev": "file:npm/dev",
+    "@npm/ng-alain": "file:npm/ng-alain",
+    "@nrwl/cli": "11.0.18",
+    "@nrwl/cypress": "11.0.18",
+    "@nrwl/jest": "11.0.18",
+    "@nrwl/tao": "11.0.18",
+    "@nrwl/workspace": "11.0.18",
     "@types/jest": "26.0.8",
     "@types/node": "12.12.38",
     "codelyzer": "^6.0.0",
+    "cypress": "^5.5.0",
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.1",
+    "ng-packagr": "^11.0.0",
     "prettier": "2.1.2",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.3",
-    "cypress": "^5.5.0",
-    "@nrwl/cypress": "11.0.15"
+    "typescript": "~4.0.3"
   }
 }
