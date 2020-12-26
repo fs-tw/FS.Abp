@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/emailing/config/src/","sources":["enums/index.ts"],"names":[],"mappings":"AAAA,cAAc,eAAe,CAAC;AAC9B,cAAc,qBAAqB,CAAC","sourcesContent":["export * from './route-names';\r\nexport * from './setting-tab-names';\r\n"]}

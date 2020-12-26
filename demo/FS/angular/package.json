@@ -26,7 +26,8 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "merge-config": "nx workspace-schematic merge-config"
+    "merge-config": "nx workspace-schematic merge-config",
+    "build-all":"nx run-many --target=build --all --prod"
   },
   "private": true,
   "dependencies": {

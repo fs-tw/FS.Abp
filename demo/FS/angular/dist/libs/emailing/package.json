@@ -1,0 +1,20 @@
+{
+  "name": "@fs/emailing",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0",
+    "rxjs": "~6.5.5"
+  },
+  "main": "bundles/fs-emailing.umd.js",
+  "module": "fesm2015/fs-emailing.js",
+  "es2015": "fesm2015/fs-emailing.js",
+  "esm2015": "esm2015/fs-emailing.js",
+  "fesm2015": "fesm2015/fs-emailing.js",
+  "typings": "fs-emailing.d.ts",
+  "metadata": "fs-emailing.metadata.json",
+  "sideEffects": false
+}
