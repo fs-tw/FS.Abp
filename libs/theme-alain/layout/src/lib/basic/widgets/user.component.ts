@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigStateService,CurrentUserDto } from '@abp/ng.core';
-import { AuthService } from '@fs/account';
+import { AuthService } from '@fs-tw/account';
 import { Observable } from 'rxjs';
 
 @Component({

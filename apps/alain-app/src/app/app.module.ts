@@ -3,8 +3,8 @@ import { registerLocale } from '@abp/ng.core/locale';
 import { IdentityConfigModule } from '@abp/ng.identity/config';
 import { SettingManagementConfigModule } from '@abp/ng.setting-management/config';
 import { TenantManagementConfigModule } from '@abp/ng.tenant-management/config';
-import { EmailingConfigModule } from '@fs/emailing/config';
-import { ThemeAlainModule } from '@fs/theme-alain';
+import { EmailingConfigModule } from '@fs-tw/emailing/config';
+import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
-import { AccountConfigModule } from '@fs/account/config';
+import { AccountConfigModule } from '@fs-tw/account/config';
 
 const INSPECTION_TOOLS = [
   // NgxsLoggerPluginModule.forRoot({ disabled: true }),

@@ -1,7 +1,7 @@
 import { AbpApplicationConfigurationService, ConfigStateService } from '@abp/ng.core';
 import { ToasterService } from '@abp/ng.theme.shared';
 import { Component, Injector, ChangeDetectorRef } from '@angular/core';
-import { Fs } from '@fs/emailing/proxy';
+import { Fs } from '@fs-tw/emailing/proxy';
 import { finalize } from 'rxjs/operators';
 export class EmailingSettingsComponent {
     constructor(injector, cdr, toaster, configState, appConfigService) {

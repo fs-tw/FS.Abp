@@ -1,6 +1,6 @@
 import { NavItemsService } from '@abp/ng.theme.shared';
 import { APP_INITIALIZER } from '@angular/core';
-import { HeaderFullScreenComponent } from '@fs/theme-alain/layout';
+import { HeaderFullScreenComponent } from '@fs-tw/theme-alain/layout';
 import { CurrentUserComponent } from '../components/current-user/current-user.component';
 import { LanguagesComponent } from '../components/languages/languages.component';
 export const NGALAIN_THEME_NAV_ITEM_PROVIDERS = [

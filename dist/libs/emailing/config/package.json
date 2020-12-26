@@ -1,11 +1,11 @@
 {
-  "main": "../bundles/fs-emailing-config.umd.js",
-  "module": "../fesm2015/fs-emailing-config.js",
-  "es2015": "../fesm2015/fs-emailing-config.js",
-  "esm2015": "../esm2015/config/fs-emailing-config.js",
-  "fesm2015": "../fesm2015/fs-emailing-config.js",
-  "typings": "fs-emailing-config.d.ts",
-  "metadata": "fs-emailing-config.metadata.json",
+  "main": "../bundles/fs-tw-emailing-config.umd.js",
+  "module": "../fesm2015/fs-tw-emailing-config.js",
+  "es2015": "../fesm2015/fs-tw-emailing-config.js",
+  "esm2015": "../esm2015/config/fs-tw-emailing-config.js",
+  "fesm2015": "../fesm2015/fs-tw-emailing-config.js",
+  "typings": "fs-tw-emailing-config.d.ts",
+  "metadata": "fs-tw-emailing-config.metadata.json",
   "sideEffects": false,
-  "name": "@fs/emailing/config"
+  "name": "@fs-tw/emailing/config"
 }

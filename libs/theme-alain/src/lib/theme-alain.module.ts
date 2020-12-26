@@ -1,7 +1,7 @@
 // tslint:disable: no-duplicate-imports
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CoreModule} from '@abp/ng.core';
-import { LayoutModule } from '@fs/theme-alain/layout';
+import { LayoutModule } from '@fs-tw/theme-alain/layout';
 import { NGALAIN_THEME_NAV_ITEM_PROVIDERS } from './providers/nav-item.provider';
 import { NGALAIN_THEME_STYLES_PROVIDERS } from './providers/styles.provider';
 import { RootModule } from './root/root.module';

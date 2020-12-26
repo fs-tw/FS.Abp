@@ -1,7 +1,7 @@
 import { AbpApplicationConfigurationService, ConfigStateService } from '@abp/ng.core';
 import { ToasterService } from '@abp/ng.theme.shared';
 import { OnInit, Injector, ChangeDetectorRef } from '@angular/core';
-import { Fs } from '@fs/emailing/proxy';
+import { Fs } from '@fs-tw/emailing/proxy';
 import { Observable } from 'rxjs';
 export declare class EmailingSettingsComponent implements OnInit {
     protected injector: Injector;

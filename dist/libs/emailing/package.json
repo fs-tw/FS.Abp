@@ -1,20 +1,25 @@
 {
-  "name": "@fs/emailing",
+  "name": "@fs-tw/emailing",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^11.0.5",
-    "@angular/core": "^11.0.5"
+    "@angular/core": "^11.0.5",
+    "@abp/ng.theme.shared": "4.0.2"
   },
   "dependencies": {
     "tslib": "^2.0.0",
     "rxjs": "~6.5.5"
   },
-  "main": "bundles/fs-emailing.umd.js",
-  "module": "fesm2015/fs-emailing.js",
-  "es2015": "fesm2015/fs-emailing.js",
-  "esm2015": "esm2015/fs-emailing.js",
-  "fesm2015": "fesm2015/fs-emailing.js",
-  "typings": "fs-emailing.d.ts",
-  "metadata": "fs-emailing.metadata.json",
+  "main": "bundles/fs-tw-emailing.umd.js",
+  "module": "fesm2015/fs-tw-emailing.js",
+  "es2015": "fesm2015/fs-tw-emailing.js",
+  "esm2015": "esm2015/fs-tw-emailing.js",
+  "fesm2015": "fesm2015/fs-tw-emailing.js",
+  "typings": "fs-tw-emailing.d.ts",
+  "metadata": "fs-tw-emailing.metadata.json",
   "sideEffects": false
 }

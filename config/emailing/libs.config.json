@@ -46,14 +46,14 @@
     }
   },
   "tsconfig": {
-    "@fs/emailing": ["libs/emailing/src/index.ts"],
-    "@fs/emailing/*": ["libs/emailing/*/src/index.ts"]
+    "@fs-tw/emailing": ["libs/emailing/src/index.ts"],
+    "@fs-tw/emailing/*": ["libs/emailing/*/src/index.ts"]
   },
   "tsconfigProd": { 
-    "@fs/emailing": [
+    "@fs-tw/emailing": [
       "dist/emailing"
     ],
-    "@fs/emailing/*": [
+    "@fs-tw/emailing/*": [
       "dist/emailing/*"
     ]
   }

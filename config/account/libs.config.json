@@ -46,14 +46,14 @@
     }
   },
   "tsconfig": {
-    "@fs/account": ["libs/account/src/index.ts"],
-    "@fs/account/*": ["libs/account/*/src/index.ts"]
+    "@fs-tw/account": ["libs/account/src/index.ts"],
+    "@fs-tw/account/*": ["libs/account/*/src/index.ts"]
   },
   "tsconfigProd": { 
-    "@fs/account": [
+    "@fs-tw/account": [
       "dist/libs/account"
     ],
-    "@fs/account/*": [
+    "@fs-tw/account/*": [
       "dist/libs/account/*"
     ]
   }

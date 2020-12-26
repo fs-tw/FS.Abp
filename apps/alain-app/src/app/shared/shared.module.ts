@@ -3,9 +3,9 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 // import { NgxValidateCoreModule } from '@ngx-validate/core';
-// import { NgAlainSharedModule } from '@fs/theme.ng-alain/shared';
-// import { LayoutModule } from '@fs/theme.ng-alain/layout';
-import { ThemeAlainModule } from '@fs/theme-alain';
+// import { NgAlainSharedModule } from '@fs-tw/theme.ng-alain/shared';
+// import { LayoutModule } from '@fs-tw/theme.ng-alain/layout';
+import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 
 @NgModule({

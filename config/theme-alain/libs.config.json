@@ -46,18 +46,18 @@
     }
   },
   "tsconfig": {
-    "@fs/theme-alain": [
+    "@fs-tw/theme-alain": [
       "libs/theme-alain/src/index.ts"
     ],
-    "@fs/theme-alain/*": [
+    "@fs-tw/theme-alain/*": [
       "libs/theme-alain/*/src/index.ts"
     ]
   },
   "tsconfigProd": { 
-    "@fs/theme-alain": [
+    "@fs-tw/theme-alain": [
       "dist/libs/theme-ng-alain"
     ],
-    "@fs/theme-alain/*": [
+    "@fs-tw/theme-alain/*": [
       "dist/libs/theme-ng-alain/*"
     ]
   }
