@@ -1,13 +1,13 @@
 [submodule "EasyAbp.Abp.Trees"]
 	path = EasyAbp.Abp.Trees
-	url = http://bitbucket.furthersoftware.com.tw/scm/fram/abp.trees.git
+	url = https://github.com/EasyAbp/Abp.Trees.git
 	branch = develop
 [submodule "Volo.Abp"]
 	path = Volo.Abp
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/volo.abp.git
 [submodule "FS.Abp"]
 	path = FS.Abp
-	url = https://github.com/FurtherSoftware/FS.Abp.git
+	url=https://github.com/fs-tw/FS.Abp.git
 [submodule "FS.Theme"]
 	path = FS.Theme
-	url = https://github.com/FurtherSoftware/FS.Theme.git
+	url=https://github.com/fs-tw/FS.Theme.git
