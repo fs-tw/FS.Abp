@@ -15,7 +15,7 @@ namespace FS.Abp.Settings
         //T Value { get; }
         //Task UpdateAsync(T domain, string providerName, string providerKey);
 
-        Task<T> GetAsync(string providerName, string providerKey);
+        Task<T> GetAsync(string providerName = null, string providerKey = null, bool fallback = true);
         Task SetAsync(T input, string providerName, string providerKey);
     }
     //public abstract class Factory<T> : IFactory<T>
