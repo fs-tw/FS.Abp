@@ -1,21 +1,21 @@
 {
   "name": "@fs-tw/account",
-  "version": "0.0.1",
+  "version": "0.402.2",
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
   "peerDependencies": {
+    "@abp/ng.theme.shared": "4.0.2",
     "@angular/common": "^11.0.5",
-    "@angular/core": "^11.0.5",
-    "@abp/ng.theme.shared": "4.0.2"
+    "@angular/core": "^11.0.5"
   },
   "dependencies": {
-    "tslib": "^2.0.0",
+    "@angular/animations": "^11.0.0",
+    "@angular/forms": "^11.0.0",
     "@angular/router": "^11.0.0",
     "rxjs": "~6.5.5",
-    "@angular/forms": "^11.0.0",
-    "@angular/animations": "^11.0.0"
+    "tslib": "^2.0.0"
   },
   "main": "bundles/fs-tw-account.umd.js",
   "module": "fesm2015/fs-tw-account.js",
