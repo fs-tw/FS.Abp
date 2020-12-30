@@ -24,8 +24,11 @@ jobs:
           regex_flags: 'gim'
           search_string: '${{ steps.commonProps.outputs.content }}'
 
+      - name: restore package
+        run: dotnet nuget sources add -name "myget" -Source https://www.myget.org/F/blazorise/api/v3/index.json
+
       - name: dotnet restore
-        run: dotnet restore -s "https://www.myget.org/F/blazorise/api/v3/index.json"
+        run: dotnet restore
 
       - name: dotnet build
         run: dotnet build -c Release
