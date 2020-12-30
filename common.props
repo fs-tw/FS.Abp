@@ -6,8 +6,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>YinChang</Authors>
     <Company>Further Software</Company>
-    <PackageProjectUrl>https://github.com/FurtherSoftware/FS.Abp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/FurtherSoftware/FS.Abp</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/fs-tw/FS.Abp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/fs-tw/FS.Abp</RepositoryUrl>
     <PackageTags>abp module</PackageTags>
     <AbpProjectType>module</AbpProjectType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
