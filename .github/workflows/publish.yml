@@ -25,9 +25,7 @@ jobs:
           search_string: '${{ steps.commonProps.outputs.content }}'
 
       - name: dotnet restore
-        run:  |
-          dotnet nuget sources add -name "myget" -Source https://www.myget.org/F/blazorise/api/v3/index.json
-          dotnet restore
+        run: dotnet restore -s "https://api.nuget.org/v3/index.json"
 
       - name: dotnet build
         run: dotnet build -c Release
@@ -44,16 +42,5 @@ jobs:
           del *.Host.Shared*
           dir -name
 
-      - name: dotnet nuget push to NuGet
-        run: dotnet nuget push dest\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
-
-      - name: Setup .NET Core @ Latest
-        uses: actions/setup-dotnet@v1
-        with:
-            source-url: https://nuget.pkg.github.com/fs-tw/index.json
-        env:
-            NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-      - name: Push generated package to GitHub registry
-        run: dotnet nuget push dest\*.nupkg --skip-duplicate --no-symbols true
-
+      - name: Publish Nuget to GitHub registry
+        run: dotnet nuget push dest\*.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s "https://nuget.pkg.github.com/fs-tw/index.json" --skip-duplicate true --no-symbols true
