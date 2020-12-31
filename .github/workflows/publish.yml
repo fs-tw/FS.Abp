@@ -24,11 +24,10 @@ jobs:
           regex_flags: 'gim'
           search_string: '${{ steps.commonProps.outputs.content }}'
 
-      - name: restore package
-        run: dotnet nuget sources add -name "myget" -Source https://www.myget.org/F/blazorise/api/v3/index.json
-
       - name: dotnet restore
-        run: dotnet restore
+        run:  |
+          dotnet nuget sources add -name "myget" -Source https://www.myget.org/F/blazorise/api/v3/index.json
+          dotnet restore
 
       - name: dotnet build
         run: dotnet build -c Release
@@ -45,13 +44,16 @@ jobs:
           del *.Host.Shared*
           dir -name
 
-      - name: dotnet nuget push to GitHub
-        uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
-        with:
-          nupkg-path:  'dest\*.nupkg'
-          repo-owner:  'fs-tw'
-          gh-user:  'fs-tw'
-          token:  ${{ secrets.GITHUB_TOKEN }}
-
       - name: dotnet nuget push to NuGet
         run: dotnet nuget push dest\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
+        with:
+            source-url: https://nuget.pkg.github.com/fs-tw/index.json
+        env:
+            NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push dest\*.nupkg --skip-duplicate --no-symbols true
+
