@@ -12,29 +12,38 @@ namespace FS.Abp.Settings
         where T : class, new()
     {
         //Task<T> CreateAsync();
-        T Value { get; }
-    }
-    public abstract class Factory<T> : IFactory<T>
-        where T : class, new()
-    {
-        protected readonly ISettingProvider _settingProvider;
+        //T Value { get; }
+        //Task UpdateAsync(T domain, string providerName, string providerKey);
 
-        public Factory(
-            ISettingProvider settingProvider
-            )
-        {
-            _settingProvider = settingProvider;
-        }
-        public virtual T Value
-        {
-            get
-            {
-                var result = new T();
-                AsyncHelper.RunSync(() => CreateAsync(result));
-                return result;
-            }
-        }
-
-        protected abstract Task CreateAsync(T options);
+        Task<T> GetAsync(string providerName = null, string providerKey = null, bool fallback = true);
+        Task SetAsync(T input, string providerName, string providerKey);
     }
+    //public abstract class Factory<T> : IFactory<T>
+    //    where T : class, new()
+    //{
+    //    protected readonly ISettingProvider _settingProvider;
+
+    //    public Factory(
+    //        ISettingProvider settingProvider
+    //        )
+    //    {
+    //        _settingProvider = settingProvider;
+    //    }
+    //    public virtual T Value
+    //    {
+    //        get
+    //        {
+    //            var result = new T();
+    //            AsyncHelper.RunSync(() => CreateAsync(result));
+    //            return result;
+    //        }
+    //    }
+
+    //    protected abstract Task CreateAsync(T options);
+
+    //    public virtual Task UpdateAsync(T domain, string providerName, string providerKey)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 }
