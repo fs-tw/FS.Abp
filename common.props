@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+	<AbpVersion>4.0.2</AbpVersion>
     <Version>0.402.2</Version>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
