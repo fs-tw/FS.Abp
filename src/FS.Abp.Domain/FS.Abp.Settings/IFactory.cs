@@ -11,7 +11,9 @@ namespace FS.Abp.Settings
     public interface IFactory<T>
         where T : class, new()
     {
-        Task<T> GetAsync(string providerName, string providerKey);
+        public ISettingManager SettingManager { get; }
+        public ISettingProvider SettingProvider { get; }
+        Task<T> GetAsync(string providerName, string providerKey, bool fallback = true);
         Task SetAsync(T input, string providerName, string providerKey);
     }
 }

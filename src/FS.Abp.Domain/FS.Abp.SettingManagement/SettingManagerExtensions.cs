@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using FS.Abp.Settings;
+using JetBrains.Annotations;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -9,51 +10,56 @@ namespace FS.Abp.SettingManagement
 {
     public static class SettingManagerExtensions
     {
-        public static async Task<T> TryGetAsync<T>([NotNull] this ISettingManager settingManager, [NotNull] string name, string providerName, string providerKey, T defaultValue = default)
-            where T : struct
+        public static async Task<U> TryGetAsync<T,U>([NotNull] this IFactory<T> settingFactory, [NotNull] string name, string providerName, string providerKey, U defaultValue = default, bool fallback = true)
+            where T : class, new()
+            where U : struct
         {
-            Check.NotNull(settingManager, nameof(settingManager));
+            Check.NotNull(settingFactory, nameof(settingFactory));
             Check.NotNull(name, nameof(name));
 
-            string value= await getAsync(settingManager, name, providerName, providerKey);
+            string value = await getAsync(settingFactory, name, providerName, providerKey);
 
             if (string.IsNullOrEmpty(value)) return default;
-            if (typeof(T).IsEnum) return (T)Enum.Parse(typeof(T), value);
-            return value?.To<T>() ?? defaultValue;
+            if (typeof(U).IsEnum) return (U)Enum.Parse(typeof(U), value);
+            return value?.To<U>() ?? defaultValue;
         }
 
-        public static async Task<string> TryGetAsync([NotNull] this ISettingManager settingManager, [NotNull] string name, string providerName, string providerKey)
+        public static async Task<string> TryGetAsync<T>([NotNull] this IFactory<T> settingFactory, [NotNull] string name, string providerName, string providerKey, bool fallback = true)
+            where T : class, new()
         {
-            Check.NotNull(settingManager, nameof(settingManager));
+            Check.NotNull(settingFactory, nameof(settingFactory));
             Check.NotNull(name, nameof(name));
 
-            return await getAsync(settingManager, name, providerName, providerKey);
+            return await getAsync(settingFactory, name, providerName, providerKey);
         }
 
-        private static async Task<string> getAsync(ISettingManager settingManager, string name, string providerName, string providerKey)
+        private static async Task<string> getAsync<T>(this IFactory<T> settingFactory, string name, string providerName, string providerKey, bool fallback = true)
+            where T : class, new()
         {
             string value;
 
             if (string.IsNullOrEmpty(providerName))
             {
-                value = await settingManager.GetOrNullGlobalAsync(name);
+                value = await settingFactory.SettingProvider.GetOrNullAsync(name);
             }
             else
             {
-                value = await settingManager.GetOrNullAsync(name, providerName, providerKey, false);
+                value = await settingFactory.SettingManager.GetOrNullAsync(name, providerName, providerKey, fallback);
             }
             return value;
         }
 
-        public static async Task TrySetAsync([NotNull] this ISettingManager settingManager,string name, string value, string providerName, string providerKey)
+
+        public static async Task TrySetAsync<T>([NotNull] this IFactory<T> settingFactory, string name, string value, string providerName, string providerKey, bool fallback = true)
+            where T : class, new()
         {
             if (string.IsNullOrEmpty(providerName))
             {
-                await settingManager.SetGlobalAsync(name, value);
+                await settingFactory.SettingManager.SetGlobalAsync(name, value);
             }
             else
             {
-                await settingManager.SetAsync(name, value, providerName, providerKey);
+                await settingFactory.SettingManager.SetAsync(name, value, providerName, providerKey);
             }
         }
     }

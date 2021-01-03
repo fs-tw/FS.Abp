@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.Abp.EntityFrameworkCore" namespace="FS.Abp" p1:name="AbpDbContext" p1:Guid="f6d9ed5c-fb1f-4c7f-abf4-cd6fdc9c3be2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.Abp.EntityFrameworkCore" namespace="FS.Abp" p1:name="AbpDbContext" p1:Guid="f6d9ed5c-fb1f-4c7f-abf4-cd6fdc9c3be2" p1:VersionTag="402.0.2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$ComplexTypes">
     <component class="FS.Abp.Emailing.EmailSettings" p1:Guid="230021d2-9f82-430b-b068-cbe3fe5a3c1e" p1:ShapeColor="-8355648" p1:AbpEditor="YinChang" p1:GetAsync="True" p1:UpdateAsync="True" p1:GenSettingDefinitionProvider="False" p1:SettingNamesPrefix="Abp.Mailing">
       <p1:Attributes>
