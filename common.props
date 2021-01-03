@@ -1,8 +1,9 @@
 <Project>
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-	<AbpVersion>4.0.2</AbpVersion>
-    <Version>0.402.2</Version>
+    <Version>402.0.1</Version>
+    <AbpVersion>4.0.2</AbpVersion>
+    <EasyAbpTreeVersion>2.0.2</EasyAbpTreeVersion>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>YinChang</Authors>
