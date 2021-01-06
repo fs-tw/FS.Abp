@@ -1,0 +1,47 @@
+<div>
+  <div class="mb-md">
+    <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create>
+    <button nz-button [nzType]="'primary'" (click)="showDetail(null)">
+      全部
+    </button>
+  </div>
+  <nz-table #basicTable [nzData]="blogDatas" nzSize="small" nzBordered>
+    <thead>
+      <tr>
+        <th nzWidth="75px"></th>
+        <th>名稱</th>
+        <th>狀態</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let data of basicTable.data"
+        style="cursor: pointer;"
+        class="bg-white listColor"
+        [ngClass]="{ listSelected: data.codesId == selectBlogCodeId }"
+      >
+        <td nzWidth="75px" nzAlign="center">
+          <a nz-dropdown [nzDropdownMenu]="menu">
+            {{ 'AbpIdentity::Actions' | abpLocalization }}
+            <i nz-icon nzType="down"></i>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item>
+                <fs-create (onSave)="reload()" [input]="data"></fs-create>
+              </li>
+              <li nz-menu-item *ngIf="data.displayName != '不分類'">
+                <a (click)="deleteBlog(data)" class="text-red">刪除</a>
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </td>
+        <td (click)="showDetail(data)">{{ data.displayName }}</td>
+        <td (click)="showDetail(data)">
+          <span *ngIf="data.enable">啟用</span>
+          <span *ngIf="!data.enable">關閉</span>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../../libs/crm/ng-alain/config/src/","sources":["lib/index.ts"],"names":[],"mappings":"AAAA,cAAc,qBAAqB,CAAC;AACpC,cAAc,eAAe,CAAC","sourcesContent":["export * from './crm-config.module';\r\nexport * from './enums/index';"]}

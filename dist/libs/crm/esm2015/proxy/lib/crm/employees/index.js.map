@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/crm/employees/index.ts"],"names":[],"mappings":"AAAA,cAAc,QAAQ,CAAC;AACvB,cAAc,yBAAyB,CAAC","sourcesContent":["export * from './dtos';\r\nexport * from './employees-api.service';\r\n"]}

@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./lib/shared-delon.module","export":[{"name":"SHARED_DELON_MODULES","as":"ɵa"}]},{"from":"./lib/shared-zorro.module","export":[{"name":"SHARED_ZORRO_MODULES","as":"ɵb"}]}]}]

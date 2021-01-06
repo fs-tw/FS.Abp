@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"EmployeeCreateDto":{"__symbolic":"interface"},"EmployeeDto":{"__symbolic":"interface"},"EmployeeGetListDto":{"__symbolic":"interface"},"EmployeePrimaryKeyDto":{"__symbolic":"interface"},"EmployeeUpdateDto":{"__symbolic":"interface"},"EmployeeWithDetailsDto":{"__symbolic":"interface"}}}]

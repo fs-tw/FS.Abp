@@ -1,0 +1,70 @@
+<div class="alain-ms__an-trigger">
+  <i nz-icon nzType="bars"></i>
+  <nz-spin *ngIf="open && !data"></nz-spin>
+</div>
+<ng-template #menuTpl let-ls>
+  <ul class="alain-ms__an-menu">
+    <li
+      *ngFor="let i of ls"
+      class="alain-ms__an-menu-item"
+      [ngClass]="{ 'alain-ms__an-menu-item--active': i.active }"
+      (mouseenter)="mouseHandle(i, true)"
+    >
+      {{ i.text }}
+      <i nz-icon nzType="right"></i>
+    </li>
+  </ul>
+</ng-template>
+<ng-template #categoryTpl let-ls>
+  <div *ngFor="let p of ls" class="alain-ms__an-category">
+    <h3 class="alain-ms__an-category-title">{{ p.text }}</h3>
+    <div class="alain-ms__an-category-list">
+      <a *ngFor="let i of p.list" [link-to]="i" (linkToChanged)="_leave()" class="alain-ms__an-category-link">
+        {{ i.text }}
+        <span *ngIf="i.tip" class="alain-ms__an-category-tip">{{ i.tip }}</span>
+      </a>
+    </div>
+  </div>
+</ng-template>
+<div #dropdown class="alain-ms__an-dropdown">
+  <div *ngIf="data" class="alain-ms__an">
+    <div class="alain-ms__an-panel alain-ms__an-panel-active alain-ms__an-level1">
+      <div class="alain-ms__an-panel-inner">
+        <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{ $implicit: data.nav }"></ng-template>
+        <div *ngIf="data.navBottom" class="alain-ms__an-menu-bottom">
+          <a *ngFor="let i of data.navBottom" [link-to]="i" (linkToChanged)="_leave()">
+            {{ i.text }}
+            <i nz-icon nzType="share-alt"></i>
+          </a>
+        </div>
+        <div *ngIf="data.bottomText" class="alain-ms__an-bottom">{{ data.bottomText }}</div>
+      </div>
+    </div>
+    <div
+      *ngFor="let p of allL2"
+      class="alain-ms__an-panel alain-ms__an-level2"
+      [ngClass]="{ 'alain-ms__an-level2-active': p.active }"
+    >
+      <div class="alain-ms__an-panel-inner">
+        <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{ $implicit: p.children }"></ng-template>
+      </div>
+    </div>
+    <div
+      *ngFor="let i of allPanel"
+      class="alain-ms__an-content alain-ms__an-level{{ i.level }}-content alain-ms__an-left-col-{{ i.leftColumn }}"
+      [ngClass]="{ 'alain-ms__an-content-active': i.active }"
+    >
+      <div *ngIf="i._left && i._left.length > 0" class="alain-ms__an-left">
+        <div *ngFor="let col of i._left" class="alain-ms__an-left-col">
+          <ng-template
+            [ngTemplateOutlet]="categoryTpl"
+            [ngTemplateOutletContext]="{ $implicit: col.list }"
+          ></ng-template>
+        </div>
+      </div>
+      <div *ngIf="i.right && i.right.length > 0" class="alain-ms__an-right">
+        <ng-template [ngTemplateOutlet]="categoryTpl" [ngTemplateOutletContext]="{ $implicit: i.right }"></ng-template>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/ng-alain/src/","sources":["lib/index.ts"],"names":[],"mappings":"AAAA,cAAc,uBAAuB,CAAC","sourcesContent":["export * from './crm-ng-alain.module';\r\n"]}

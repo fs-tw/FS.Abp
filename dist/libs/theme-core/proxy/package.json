@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-theme-core-proxy.umd.js",
+  "module": "../fesm2015/fs-tw-theme-core-proxy.js",
+  "es2015": "../fesm2015/fs-tw-theme-core-proxy.js",
+  "esm2015": "../esm2015/proxy/fs-tw-theme-core-proxy.js",
+  "fesm2015": "../fesm2015/fs-tw-theme-core-proxy.js",
+  "typings": "fs-tw-theme-core-proxy.d.ts",
+  "metadata": "fs-tw-theme-core-proxy.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/theme-core/proxy"
+}

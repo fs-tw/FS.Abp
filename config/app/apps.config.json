@@ -1,0 +1,167 @@
+{
+  "order": 1002,
+  "nx": {
+    "gfla-admin-app": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "gfla-admin-app": {
+      "projectType": "application",
+      "root": "apps/gfla-admin-app",
+      "sourceRoot": "apps/gfla-admin-app/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/gfla-admin-app",
+            "index": "apps/gfla-admin-app/src/index.html",
+            "main": "apps/gfla-admin-app/src/main.ts",
+            "polyfills": "apps/gfla-admin-app/src/polyfills.ts",
+            "tsConfig": "apps/gfla-admin-app/tsconfig.app.json",
+            "aot": true,
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "@ant-design/colors",
+              "@antv/adjust",
+              "@antv/attr",
+              "@antv/component",
+              "@antv/g-base",
+              "@antv/g-canvas",
+              "@antv/g-math",
+              "@antv/g-svg",
+              "@antv/path-util",
+              "@antv/util",
+              "file-saver",
+              "hammerjs"
+            ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              },
+              "apps/gfla-admin-app/src/favicon.ico",
+              "apps/gfla-admin-app/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/index.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-index"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-icons"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-material"
+              },              
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-all.min"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-v4-shims.min"
+              },
+              {
+                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
+                "inject": false,
+                "bundleName": "bootstrap-rtl.min"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap-ltr.min"
+              },              
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "apps/gfla-admin-app/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/ajv/dist/ajv.bundle.js",
+              "node_modules/qrious/dist/qrious.min.js",
+              "node_modules/masonry-layout/dist/masonry.pkgd.js",
+              "node_modules/quill/dist/quill.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/gfla-admin-app/src/environments/environment.ts",
+                  "with": "apps/gfla-admin-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "gfla-admin-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "gfla-admin-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gfla-admin-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/gfla-admin-app/tsconfig.app.json",
+              "apps/gfla-admin-app/tsconfig.spec.json",
+              "apps/gfla-admin-app/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/gfla-admin-app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/gfla-admin-app"],
+          "options": {
+            "jestConfig": "apps/gfla-admin-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+  }  
+}

@@ -1,0 +1,54 @@
+<a class="text-blue" *ngIf="groupId" (click)="createTplModal(tplTitle, tplContent, tplFooter)">編輯</a>
+
+<button nz-button nzType="primary" nzGhost nzBlock *ngIf="!groupId" (click)="createTplModal(tplTitle, tplContent, tplFooter)">新增</button>
+
+<ng-template #tplTitle>
+  <span>編輯標籤群組</span>
+</ng-template>
+<ng-template #tplContent>
+  <div se-container>
+    <se label="名稱">
+      <input nz-input [(ngModel)]="tagGroupUpdateDto.name" />
+    </se>
+    <se label="短網址">
+      <input nz-input [(ngModel)]="tagGroupUpdateDto.no" />
+    </se>
+  </div>
+  <nz-table #listTable [nzData]="tagGroupEditData" nzSize="small" nzBordered 
+            nzFrontPagination="false">
+    <thead>
+      <tr>
+        <th>分類</th>
+        <th>標籤</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tagType of listTable.data; let parentIndex = index" class="bg-white">
+        <td>
+          <nz-tag
+            [nzColor]="tagType.isChekced ? 'green' : 'default'"
+            (click)="checkParent(parentIndex)"
+          >
+            <i nz-icon [nzType]="tagType.isChekced ? 'check' : 'close'"></i>
+            {{ tagType.name }}
+          </nz-tag>
+        </td>
+        <td>
+          <nz-tag
+            *ngFor="let tagItem of tagType.children; let childIndex = index"
+            class="pointer"
+            [nzColor]="tagItem.isChekced ? 'green' : 'default'"
+            (click)="checkChild(parentIndex, childIndex)"
+          >
+            <i nz-icon [nzType]="tagItem.isChekced ? 'check' : 'close'"></i>
+            {{ tagItem.name }}
+          </nz-tag>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</ng-template>
+<ng-template #tplFooter>
+  <button nz-button nzType="primary" (click)="save()">儲存</button>
+  <button nz-button (click)="close()">取消</button>
+</ng-template>

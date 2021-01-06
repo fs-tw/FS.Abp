@@ -1,0 +1,11 @@
+{
+  "main": "../../bundles/fs-tw-crm-ng-alain-shared.umd.js",
+  "module": "../../fesm2015/fs-tw-crm-ng-alain-shared.js",
+  "es2015": "../../fesm2015/fs-tw-crm-ng-alain-shared.js",
+  "esm2015": "../../esm2015/ng-alain/shared/fs-tw-crm-ng-alain-shared.js",
+  "fesm2015": "../../fesm2015/fs-tw-crm-ng-alain-shared.js",
+  "typings": "fs-tw-crm-ng-alain-shared.d.ts",
+  "metadata": "fs-tw-crm-ng-alain-shared.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/crm/ng-alain/shared"
+}

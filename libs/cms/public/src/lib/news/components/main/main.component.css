@@ -1,0 +1,52 @@
+.pointer {
+  cursor: pointer;
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.color-default {
+  color: #09afdf !important;
+}
+.text-right {
+  text-align: right;
+}
+
+
+.has-feedback .form-control-feedback {
+  width: 40px;
+  height: 40px;
+  line-height: 30px !important;
+  top: 0;
+  right: 0;
+  color: #777777;
+  position: absolute;
+  text-align: center;
+  margin-top: 0;
+}
+/* 
+.frame {  
+  height: 100px;
+  width: 150px; 
+  position: relative;
+
+}
+img {  
+  max-height: 100%;  
+  max-width: 100%; 
+  width: auto;
+  height: auto;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+} */

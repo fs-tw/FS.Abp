@@ -1,0 +1,51 @@
+<!-- footer top end -->
+<!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
+<!-- ================ -->
+<footer id="footer" class="clearfix">
+
+  <!-- .footer start -->
+  <!-- ================ -->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="footer-content" *ngIf="(data$ | async).themeSetting" style="color: #FFF">
+              <!-- <div [innerHTML]="(data$ | async).themeSetting.webInfo.footerLeft"></div> -->
+              <div *ngIf="(data$ | async).themeSetting.companyInfo.contactPerson">聯絡人：{{(data$ | async).themeSetting.companyInfo.contactPerson}}</div>
+              <div *ngIf="(data$ | async).themeSetting.companyInfo.address">地址：{{(data$ | async).themeSetting.companyInfo.address}}</div>
+              <div *ngIf="(data$ | async).themeSetting.companyInfo.email">信箱：{{(data$ | async).themeSetting.companyInfo.email}}</div>
+              <div *ngIf="(data$ | async).themeSetting.companyInfo.fax">傳真：{{(data$ | async).themeSetting.companyInfo.fax}}</div>
+              <div *ngIf="(data$ | async).themeSetting.companyInfo.phone">電話：{{(data$ | async).themeSetting.companyInfo.phone}}</div>
+         
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-content">
+              <!-- <div [innerHTML]="(data$ | async).themeSetting.webInfo.footerRight"></div>               -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .footer end -->
+
+  <!-- .subfooter start -->
+  <!-- ================ -->
+  <div class="subfooter default-bg" style="border:none;">
+    <div class="container">
+      <div class="subfooter-inner">
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center"
+              *ngIf="(data$ | async).themeSetting && (data$ | async).themeSetting.webInfo.copyright">
+              {{(data$ | async).themeSetting.webInfo.copyright}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- .subfooter end -->
+
+</footer>

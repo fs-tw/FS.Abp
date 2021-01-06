@@ -1,0 +1,120 @@
+<nz-row nzGutter="16">
+        <nz-col [nzSpan]="8" *ngIf="isopen">
+            <nz-tabset nzType='card' [nzTabBarExtraContent]="extraTemplate">
+                <nz-tab [nzTitle]="'專案'" (nzClick)="click_group(0)">
+                    <nz-col nzSpan="24" style="margin-bottom: 25px;">
+                        <nz-select nzSize='small' style="width: 100%;" nzPlaceHolder="請選擇" [(ngModel)]="selectedProject">
+                            <nz-option *ngFor="let project of projectOptions" [nzLabel]="project.title" 
+                                [nzValue]="project.id"></nz-option>
+                        </nz-select>
+                    </nz-col>
+                    <nz-table #basicTable [nzData]="customerDatas" nzSize="small" nzBordered>
+                        <thead>
+                            <tr>
+                                <th>客戶編號</th>
+                                <th>客戶名稱</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let customer of customerDatas" class="bg-white">
+                                <td>{{ customer.customer_number }}</td>
+                                <td>{{ customer.customer_name }}</td>
+                            </tr>
+                        </tbody>
+                    </nz-table>
+                </nz-tab>
+    
+                <nz-tab [nzTitle]="'客戶'" (nzClick)="click_group(1)">
+                    <nz-col nzSpan="24" style="margin-bottom: 25px;">
+                        <nz-select nzSize='small' style="width: 100%;" nzPlaceHolder="請選擇"  [(ngModel)]="selectedCustomer">
+                            <nz-option *ngFor="let s of customerOptions" [nzLabel]="s.title" [nzValue]="s.id"></nz-option>
+                        </nz-select>
+                    </nz-col>
+                    <nz-table #basicTable [nzData]="data" nzSize="small" nzBordered>
+                        <thead>
+                            <tr>
+                                <th>計畫別</th>
+                                <th>計畫備註</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let project of projectDatas" class="bg-white">
+                                <td>{{ project.plan_name }}</td>
+                                <td>{{ project.project_name }}</td>
+                            </tr>
+                        </tbody>
+                    </nz-table>
+                </nz-tab>
+            </nz-tabset>
+    
+            <ng-template #extraTemplate>
+                <button nz-button (click)="click_button()" style="float: right">
+                    <i nz-icon nzType="double-left" nzTheme="outline"></i>
+                </button>
+            </ng-template>
+    
+        </nz-col>
+    
+    
+        <nz-col [nzSpan]="span">
+                <nz-divider nzText="基本資料"></nz-divider>
+            <nz-collapse>
+                <nz-collapse-panel  nzHeader="客戶名稱: 王憶如" [nzActive]="false">
+                    <sv-container col="2">
+                        <sv label="電話/信箱" >	0933877100&nbsp;/&nbsp;wsx85299@gmail.com</sv>
+                        <sv label="年齡/來源管道">	≤20&nbsp;/&nbsp;其他(自填)</sv>
+                        <sv label="類型/性別" >個人&nbsp;/&nbsp;女</sv>
+                        <sv label="	地址">高雄市XX區</sv>
+                      </sv-container>
+                </nz-collapse-panel>
+                <nz-collapse-panel  nzHeader="專案名稱: 標案_高雄市勞工局 專案備註:政府補助案" [nzActive]="false">
+                    <sv-container col="2">
+                        <sv label="結案狀態" >	已結案_未派案</sv>
+                        <sv label="O'Star">是</sv>
+                        <sv label="計畫別備註" >政府補助案</sv>
+                        <sv label="其他說明">	完成派案及核銷</sv>
+                      </sv-container>
+                  </nz-collapse-panel>
+              </nz-collapse>
+            <!-- <div style="height: 56px;">
+                <button nz-button (click)="click_button()" *ngIf="!isopen">
+                    <i nz-icon nzType="double-right" nzTheme="outline"></i>
+                </button>
+            </div> -->
+            <nz-divider nzText="列表"></nz-divider>
+            <nz-table #nzTable [nzData]="customerDatas">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>操作</th>
+                        <th>業師資訊</th>
+                        <th>輔導日期</th>
+                        <th>其他</th>
+                        <th>輔導費用</th>
+                        <th>匯款日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let data of nzTable.data">
+                        <tr>
+                            <td [nzExpand]="expandSet.has(data.id)" (nzExpandChange)="onExpandChange(data.id, $event)"></td>
+                            <td>Actions</td>
+                            <td>業師1
+                                <br>
+                                0912345678
+                            </td>
+                            <td>2020-12-05 12:00:00</td>
+                            <td><nz-tag [nzColor]="'blue'">照片繳回:V</nz-tag><nz-tag [nzColor]="'blue'">紀錄表繳回:V</nz-tag> <br>
+                                <nz-tag [nzColor]="'red'">企業滿意度表:X</nz-tag><nz-tag [nzColor]="'blue'">領據:V</nz-tag>
+                            </td>
+                            <td>1,000</td>
+                            <td>2020-12-01</td>
+                        </tr>
+                        <tr [nzExpand]="expandSet.has(data.id)">
+                            <span>古樂有限公司，致力於開發太陽能相關軟硬韌體、產品及網頁設計、FDM 3D列印。安排顧問協助創業計畫書內容修改及申請資料準備提醒，且提供未來經營管理建議。</span>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </nz-table>
+        </nz-col>
+    </nz-row>

@@ -1,0 +1,22 @@
+{
+  "name": "@fs-tw/crm",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0",
+    "@angular/router": "^11.0.0",
+    "@angular/forms": "^11.0.0",
+    "@fs-tw/theme-alain-ms": "^0.402.4"
+  },
+  "main": "bundles/fs-tw-crm.umd.js",
+  "module": "fesm2015/fs-tw-crm.js",
+  "es2015": "fesm2015/fs-tw-crm.js",
+  "esm2015": "esm2015/fs-tw-crm.js",
+  "fesm2015": "fesm2015/fs-tw-crm.js",
+  "typings": "fs-tw-crm.d.ts",
+  "metadata": "fs-tw-crm.metadata.json",
+  "sideEffects": false
+}

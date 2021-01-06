@@ -1,0 +1,4 @@
+.page-item, .point-cursor {
+    cursor: pointer;
+    margin: unset !important;
+}
