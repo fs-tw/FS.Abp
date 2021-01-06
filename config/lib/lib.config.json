@@ -1,0 +1,54 @@
+{
+  "order": 1002,
+  "nx": {
+    "appt": {
+      "tags": []
+    }
+
+  },
+  "angular": {
+    "appt": {
+      "projectType": "library",
+      "root": "libs/appt",
+      "sourceRoot": "libs/appt/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/appt/tsconfig.lib.json",
+            "project": "libs/appt/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/appt/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/appt/tsconfig.lib.json",
+              "libs/appt/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/appt/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/appt"],
+          "options": {
+            "jestConfig": "libs/appt/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+
+  },
+  "tsconfig": {
+    "@fs-tw/appt": ["libs/appt/src/index.ts"],
+    "@fs-tw/appt/*": ["libs/appt/*/src/index.ts"]
+  }  
+}

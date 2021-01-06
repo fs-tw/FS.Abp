@@ -15,5 +15,6 @@ module.exports = {
     '<rootDir>/apps/iic-public-app',
     '<rootDir>/apps/iic-admin-app',
     '<rootDir>/apps/gfla-admin-app',
+    '<rootDir>/libs/appt',
   ],
 };

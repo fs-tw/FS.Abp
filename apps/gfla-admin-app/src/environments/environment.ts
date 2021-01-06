@@ -12,13 +12,13 @@ export const environment = {
     issuer: 'https://localhost:44368',
     redirectUri: baseUrl,
     clientId: 'GFLA_App',
-    responseType: 'code',
+    responseType: 'password',
     scope: 'offline_access GFLA',
   },
   apis: {
     default: {
       url: 'https://localhost:44368',
-      rootNamespace: 'GFLA',
+      rootNamespace: '',
     },
   },
 } as Environment;
