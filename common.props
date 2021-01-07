@@ -1,9 +1,10 @@
 <Project>
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <Version>402.0.2</Version>
-    <AbpVersion>4.0.2</AbpVersion>
-    <EasyAbpTreeVersion>2.0.2</EasyAbpTreeVersion>
+    <Version>410.0.1</Version>
+    <AbpVersion>4.1.0</AbpVersion>
+    <EasyAbpTreeVersion>2.1.0</EasyAbpTreeVersion>
+    <MicrosoftPackageVersion>5.0.*</MicrosoftPackageVersion>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>YinChang</Authors>
