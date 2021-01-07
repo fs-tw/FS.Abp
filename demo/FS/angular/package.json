@@ -1,6 +1,6 @@
 {
   "name": "fs-tw",
-  "version": "0.402.0",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -30,7 +30,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "merge-config": "nx workspace-schematic merge-config",
-    "build-all":"nx run-many --target=build --all --prod"
+    "build-all": "nx run-many --target=build --all --prod"
   },
   "dependencies": {
     "@angular/animations": "^11.0.0",

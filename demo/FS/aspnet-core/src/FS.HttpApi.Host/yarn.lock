@@ -38,9 +38,9 @@
     extend-object "^1.0.0"
     fs-extra "^9.0.1"
     glob "^7.1.6"
-    gulp "^4.0.2"
+    gulp "^$(AbpVersion)"
     merge-stream "^2.0.0"
-    micromatch "^4.0.2"
+    micromatch "^$(AbpVersion)"
     path "^0.12.7"
 
 "@abp/bootstrap-datepicker@~4.0.1":
@@ -1102,9 +1102,9 @@ gulp-cli@^2.2.0:
     v8flags "^3.0.1"
     yargs "^7.1.0"
 
-gulp@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/gulp/-/gulp-4.0.2.tgz#543651070fd0f6ab0a0650c6a3e6ff5a7cb09caa"
+gulp@^$(AbpVersion):
+  version "$(AbpVersion)"
+  resolved "https://registry.yarnpkg.com/gulp/-/gulp-$(AbpVersion).tgz#543651070fd0f6ab0a0650c6a3e6ff5a7cb09caa"
   integrity sha512-dvEs27SCZt2ibF29xYgmnwwCYZxdxhQ/+LFWlbAW8y7jt68L/65402Lz3+CKy0Ov4rOs+NERmDq7YlZaDqUIfA==
   dependencies:
     glob-watcher "^5.0.3"
@@ -1595,9 +1595,9 @@ micromatch@^3.0.4, micromatch@^3.1.10, micromatch@^3.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
 
-micromatch@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.2.tgz#4fcb0999bf9fbc2fcbdd212f6d629b9a56c39259"
+micromatch@^$(AbpVersion):
+  version "$(AbpVersion)"
+  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-$(AbpVersion).tgz#4fcb0999bf9fbc2fcbdd212f6d629b9a56c39259"
   integrity sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==
   dependencies:
     braces "^3.0.1"
@@ -1707,7 +1707,7 @@ node-pre-gyp@^0.12.0:
     needle "^2.2.1"
     nopt "^4.0.1"
     npm-packlist "^1.1.6"
-    npmlog "^4.0.2"
+    npmlog "^$(AbpVersion)"
     rc "^1.2.7"
     rimraf "^2.6.1"
     semver "^5.3.0"
@@ -1763,7 +1763,7 @@ npm-packlist@^1.1.6:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
 
-npmlog@^4.0.2:
+npmlog@^$(AbpVersion):
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
   integrity sha512-2uUqazuKlTaSI/dC8AzicUck7+IrEaOnN/e0jd3Xtt1KcGpwx30v50mL7oPyr/h9bL3E4aZccVwpwP+5W9Vjkg==

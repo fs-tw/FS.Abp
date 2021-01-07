@@ -1,6 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, Injector, Optional } from '@angular/core';
-import { Navigate } from '@ngxs/router-plugin';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { from, Observable } from 'rxjs';
 import { switchMap, take, tap } from 'rxjs/operators';
