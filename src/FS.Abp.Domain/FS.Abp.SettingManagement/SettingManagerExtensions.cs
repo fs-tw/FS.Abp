@@ -8,7 +8,7 @@ using Volo.Abp.Settings;
 
 namespace FS.Abp.SettingManagement
 {
-    public static class SettingManagerExtensions
+    public static class SettingFactoryExtensions
     {
         public static async Task<U> TryGetAsync<T,U>([NotNull] this IFactory<T> settingFactory, [NotNull] string name, string providerName, string providerKey, U defaultValue = default, bool fallback = true)
             where T : class, new()
@@ -61,6 +61,17 @@ namespace FS.Abp.SettingManagement
             {
                 await settingFactory.SettingManager.SetAsync(name, value, providerName, providerKey);
             }
+        }
+        public static T Get<T>([NotNull] this IFactory<T> settingFactory, string providerName, string providerKey, bool fallback = true)
+            where T : class, new()
+        {
+            return Volo.Abp.Threading.AsyncHelper.RunSync(() => settingFactory.GetAsync(providerName, providerKey, fallback));
+        }
+
+        public static void Set<T>([NotNull] this IFactory<T> settingFactory,T input, string providerName, string providerKey)
+            where T : class, new()
+        {
+            Volo.Abp.Threading.AsyncHelper.RunSync(() => settingFactory.SetAsync(input,providerName, providerKey));
         }
     }
 }
