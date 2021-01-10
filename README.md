@@ -21,6 +21,11 @@ We provide a angular ui(`npm install @fs-tw/emailing`),you can set smtp setting 
 4. Account  
 In current version of abp(4.0.2), abp team remove angular's 'password' flow ,we add this back in our version(`npm install @fs-tw/account`).
 
+5. JsonSubTypes  
+Usually we define a Discriminator Entity in Orm , the library integrates `JsonSubTypes`(https://github.com/manuc66/JsonSubTypes)  
+to allow Http Api receive a `Polymorphism Dto`.  
+
+
 ## Installation
 
 1. Install the following NuGet packages.
