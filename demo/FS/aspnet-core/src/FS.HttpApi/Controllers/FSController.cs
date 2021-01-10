@@ -1,7 +1,7 @@
 ﻿using FS.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace FS.Controllers
+namespace FS
 {
     /* Inherit your controllers from this class.
      */

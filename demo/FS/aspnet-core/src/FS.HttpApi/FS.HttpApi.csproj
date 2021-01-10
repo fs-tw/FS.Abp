@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -18,6 +18,17 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS\Customers\CustomersApi.CustomerCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CustomersApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\CustomersApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

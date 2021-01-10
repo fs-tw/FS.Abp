@@ -32,4 +32,39 @@
     <ProjectReference Include="..\..\..\..\..\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="DataModel\FS.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\CustomerDiscriminator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\FS.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FS.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FS.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>FS.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\FS.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FS.ModelDiagram.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>
