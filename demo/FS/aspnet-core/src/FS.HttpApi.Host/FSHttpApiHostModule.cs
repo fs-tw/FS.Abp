@@ -42,6 +42,9 @@ namespace FS
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
+    [DependsOn(
+        typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesModule)
+        )]
     public class FSHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
@@ -59,6 +62,15 @@ namespace FS
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context);
+            //context.Services.Configure<Microsoft.AspNetCore.Mvc.MvcNewtonsoftJsonOptions>(mvcNewtonsoftJsonOptions =>
+            //{
+            //    mvcNewtonsoftJsonOptions.SerializerSettings.Converters.Add(JsonSubTypes.JsonSubtypesConverterBuilder
+            //       .Of<FS.Customers.Dtos.CustomerWithDetailsDto>("Discriminator") // type property is only defined here
+            //       .RegisterSubtype<FS.Customers.Dtos.EnterpriseWithDetailsDto>(FS.Customers.CustomerDiscriminator.Enterprise)
+            //       .RegisterSubtype<FS.Customers.Dtos.PersonWithDetailsDto> (FS.Customers.CustomerDiscriminator.Personal)
+            //       .SerializeDiscriminatorProperty() // ask to serialize the type property
+            //       .Build());
+            //});
         }
 
         private void ConfigureBundles()
@@ -135,7 +147,10 @@ namespace FS
                 {
                     options.SwaggerDoc("v1", new OpenApiInfo {Title = "FS API", Version = "v1"});
                     options.DocInclusionPredicate((docName, description) => true);
+                    //options.UseOneOfForPolymorphism();
+                    options.CustomSchemaIds(o => o.FullName);
                 });
+            //context.Services.AddSwaggerGenNewtonsoftSupport();
         }
 
         private void ConfigureLocalization()

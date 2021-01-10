@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/theme-alain",
-  "version": "0.402.2",
+  "version": "410.0.1",
   "publishConfig": {
     "access": "public"
   },
@@ -16,7 +16,7 @@
     "@angular/animations": "^11.0.0",
     "@angular/forms": "^11.0.0",
     "@angular/router": "^11.0.0",
-    "@fs-tw/account": "^0.402.2",
+    "@fs-tw/account": "^410.0.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0"
   },
