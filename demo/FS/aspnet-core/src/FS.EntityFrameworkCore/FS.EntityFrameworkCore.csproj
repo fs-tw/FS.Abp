@@ -22,8 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="EntityFrameworkCore\FSDbContext.Generated.cs">
-      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    <Compile Update="EntityFrameworkCore\FSDbContext.cs">
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\FSDbContext.Generated.cs">
