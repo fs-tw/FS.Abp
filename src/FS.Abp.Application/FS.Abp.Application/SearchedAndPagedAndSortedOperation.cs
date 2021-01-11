@@ -9,6 +9,7 @@ using Volo.Abp.Linq;
 using System.Linq.Dynamic.Core;
 using Volo.Abp.Auditing;
 using FS.Abp.Application.Dtos;
+using System.Reflection;
 
 namespace FS.Abp.Application
 {
@@ -31,12 +32,12 @@ namespace FS.Abp.Application
 
             query = ApplySearching(query, input);
 
-            var totalCount = await AsyncQueryableExecuter.CountAsync(query).ConfigureAwait(false);
+            var totalCount = await AsyncQueryableExecuter.CountAsync(query);
 
             query = ApplySorting(query, input);
             query = ApplyPaging(query, input);
 
-            var entities = await AsyncQueryableExecuter.ToListAsync(query).ConfigureAwait(false);
+            var entities = await AsyncQueryableExecuter.ToListAsync(query);
 
             return (TotalCount: totalCount, Entities: entities);
         }
@@ -45,10 +46,13 @@ namespace FS.Abp.Application
         public virtual IQueryable<TEntity> ApplySearching<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
+            var discriminatorSpec = new FS.Abp.AspNetCore.Mvc.JsonSubTypes.DiscriminatorSpecification<TEntity>(input);
+            query = query.Where(discriminatorSpec);
+
             if (input is ISearchResultRequest searchInput)
             {
                 var searchSpec = new FS.Abp.Specifications.SearchSpecification<TEntity>(searchInput.Fields, searchInput.Value);
-                return query.Where(searchSpec);
+                query = query.Where(searchSpec);
             }
             return query;
         }

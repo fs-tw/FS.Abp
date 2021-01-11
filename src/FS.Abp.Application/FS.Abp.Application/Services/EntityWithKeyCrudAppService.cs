@@ -28,16 +28,13 @@ namespace FS.Abp.Application.Services
         {
             Repository = repository;
         }
-        //GetList need WithDetail
+        
         protected override IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
         {
+            //GetList need WithDetail
             var query = Repository.WithDetails();
-            if (input is ISearchResultRequest searchInput)
-            {
-                var searchSpec = new FS.Abp.Specifications.SearchSpecification<TEntity>(searchInput.Fields, searchInput.Value);
-                query = query.Where(searchSpec);
-            }
-            return query;
+
+            return SearchedAndPagedAndSortedOperation.ApplySearching(query, input);
         }
 
         protected override async Task DeleteByIdAsync(TKeyDto id)

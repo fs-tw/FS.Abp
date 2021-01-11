@@ -9,6 +9,9 @@ namespace FS.Abp
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
+    [DependsOn(
+        typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesContractsModule)
+        )]
     public class AbpApplicationContractsModule : AbpModule
     {
 
