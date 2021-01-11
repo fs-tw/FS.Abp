@@ -10,28 +10,26 @@ namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
     public class DiscriminatorSpecification<T> : Volo.Abp.Specifications.Specification<T>
     {
         public static readonly string DiscriminatorPropertyName = "Discriminator";
-        private Enum _value;
+        private int _value;
 
         public DiscriminatorSpecification(object input)
         {
             System.Reflection.PropertyInfo prop = input.GetType().GetProperty(DiscriminatorPropertyName);
             if (prop != null)
             {
-                _value = (Enum)prop.GetValue(input);
+                _value = (int)prop.GetValue(input);
             }
         }
         public override System.Linq.Expressions.Expression<Func<T, bool>> ToExpression()
         {
 
             var entityParameter = Expression.Parameter(typeof(T), "e");
-            if (_value == null || _value.ToString() == "0")
-                return Pass();
 
             var property = typeof(T)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
                 .Where(p => p.Name == DiscriminatorPropertyName).SingleOrDefault();
 
-            if (property == null)
+            if (_value == 0 || property == null)
                 return Pass();
 
             var predicate = GenerateExpression(property);
