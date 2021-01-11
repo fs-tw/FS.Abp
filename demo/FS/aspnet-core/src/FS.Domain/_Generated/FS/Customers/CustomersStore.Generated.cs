@@ -19,7 +19,7 @@ namespace FS.Customers
     }
     public partial class CustomersStore : DomainService //auto-generated
     {
-        private ICustomerRepository _Customer;
-        public ICustomerRepository Customer => this.LazyGetRequiredService(ref _Customer);
+        private ICustomerRepository _customer;
+        public ICustomerRepository Customer => this.LazyGetRequiredService(ref _customer);
     }
 }
