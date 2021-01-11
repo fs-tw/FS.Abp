@@ -6,11 +6,25 @@ namespace FS
 {
     public class FSTestDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
-        public Task SeedAsync(DataSeedContext context)
+        public FS.Customers.ICustomersStore CustomersStore { get; set; }
+        public async Task SeedAsync(DataSeedContext context)
         {
-            /* Seed additional test data... */
 
-            return Task.CompletedTask;
+            FS.Customers.Enterprise e = new Customers.Enterprise()
+            {
+                Email = "CompanyNameEmail",
+                CompanyName = "CompanyName",
+                Phone= "EnterprisePhone"
+            };
+
+            FS.Customers.Person p = new Customers.Person()
+            {
+                Email = "PersonEmail",
+                Phone = "PersonPhone"
+            };
+
+            await CustomersStore.Customer.InsertAsync(e);
+            await CustomersStore.Customer.InsertAsync(p);
         }
     }
 }

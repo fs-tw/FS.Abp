@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes\FS.Abp.AspNetCore.Mvc.JsonSubTypes.csproj" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
@@ -28,10 +31,6 @@
       <DependentUpon>Customers</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\CustomerDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

@@ -19,8 +19,7 @@
         <File Name="EnterpriseDtoValidator.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers\Dtos" />
         <File Name="PersonDtoValidator.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers\Dtos" />
         <File Name="CustomerDtoValidator.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers\Dtos" />
-        <File Name="CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers\Dtos" />
-        <File Name="CustomersStore.cs" Project="FS.Domain" ProjectFolder="FS\Customers" OverwriteMode="None" />
+        <File Name="CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" Project="FS.Application.Contracts" ProjectFolder="_Generated\FS\Customers\Dtos" />
         <File Name="CustomersStore.Generated.cs" Project="FS.Domain" ProjectFolder="_Generated\FS\Customers" />
         <File Name="IFSDbContext.Generated.cs" Project="FS.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FSDbContext.Generated.cs" Project="FS.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -120,7 +119,7 @@
         </ed:Property>
         <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.Application</Project>
+            <Project>FS.Application.Contracts</Project>
             <ProjectFolder>FS</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>

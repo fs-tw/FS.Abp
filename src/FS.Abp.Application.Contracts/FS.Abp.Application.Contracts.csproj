@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\modules\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts.csproj" />
     <ProjectReference Include="..\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 
