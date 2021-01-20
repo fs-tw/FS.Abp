@@ -1,0 +1,24 @@
+{
+  "cli": "ng",
+  "id": "theme-alain",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Project name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "cshapBacknedPort": {
+      "type": "number",
+      "description": "backend port number: 4xxxx"
+    },
+    "abpApplicationName": {
+      "type": "string",
+      "description": "abp application name"
+    }
+  },
+  "required": ["name","abpApplicationName","cshapBacknedPort"]
+}

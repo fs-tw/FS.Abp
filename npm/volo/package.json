@@ -1,6 +1,15 @@
 {
-  "name": "IIC",
-  "version": "0.0.0",
+  "name": "volo",
+  "version": "4.1.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --open",
+    "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "private": true,
   "peerDependencies": {
     "@angular/animations": "~11.0.0",
@@ -14,7 +23,7 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2",
-    "@abp/ng.schematics": "~4.0.1",
+    "@abp/ng.schematics": "~4.1.0",
     "@angular-devkit/build-angular": "~0.1100.0",
     "@angular/cli": "~11.0.0",
     "@angular/compiler-cli": "~11.0.0",
@@ -27,19 +36,19 @@
     "typescript": "~4.0.3"
   },
   "dependencies": {
-    "@abp/ng.components": "~4.0.1",
-    "@abp/ng.core": "~4.0.1",
-    "@abp/ng.setting-management": "~4.0.1",
-    "@abp/ng.theme.shared": "~4.0.1",
-    "@volo/abp.commercial.ng.ui": "~4.0.1",
-    "@volo/abp.ng.account": "~4.0.1",
-    "@volo/abp.ng.audit-logging": "~4.0.1",
-    "@volo/abp.ng.identity": "~4.0.1",
-    "@volo/abp.ng.identity-server": "~4.0.1",
-    "@volo/abp.ng.language-management": "~4.0.1",
-    "@volo/abp.ng.saas": "~4.0.1",
-    "@volo/abp.ng.text-template-management": "~4.0.1",
-    "@volo/abp.ng.theme.lepton": "~4.0.1",
+    "@abp/ng.components": "~4.1.0",
+    "@abp/ng.core": "~4.1.0",
+    "@abp/ng.setting-management": "~4.1.0",
+    "@abp/ng.theme.shared": "~4.1.0",
+    "@volo/abp.commercial.ng.ui": "~4.1.0",
+    "@volo/abp.ng.account": "~4.1.0",
+    "@volo/abp.ng.audit-logging": "~4.1.0",
+    "@volo/abp.ng.identity": "~4.1.0",
+    "@volo/abp.ng.identity-server": "~4.1.0",
+    "@volo/abp.ng.language-management": "~4.1.0",
+    "@volo/abp.ng.saas": "~4.1.0",
+    "@volo/abp.ng.text-template-management": "~4.1.0",
+    "@volo/abp.ng.theme.lepton": "~4.1.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "jasmine-core": "~3.6.0",
@@ -50,5 +59,8 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0"
+  },
+  "devDependencies": {
+
   }
 }
