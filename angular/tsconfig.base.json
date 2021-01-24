@@ -18,11 +18,29 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fs-tw/appt": [
-        "libs/appt/src/index.ts"
+      "@fs-tw/account": [
+        "libs/account/src/index.ts"
       ],
-      "@fs-tw/appt/*": [
-        "libs/appt/*/src/index.ts"
+      "@fs-tw/account/*": [
+        "libs/account/*/src/index.ts"
+      ],
+      "@fs-tw/theme.unify": [
+        "libs/theme-unify/src/index.ts"
+      ],
+      "@fs-tw/theme.unify/*": [
+        "libs/theme-unify/*/src/index.ts"
+      ],
+      "@fs-tw/theme-alain-ms": [
+        "libs/theme-alain-ms/src/index.ts"
+      ],
+      "@fs-tw/theme-alain-ms/*": [
+        "libs/theme-alain-ms/*/src/index.ts"
+      ],
+      "@fs-tw/emailing": [
+        "libs/emailing/src/index.ts"
+      ],
+      "@fs-tw/emailing/*": [
+        "libs/emailing/*/src/index.ts"
       ]
     }
   },
