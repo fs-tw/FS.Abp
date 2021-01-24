@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/crm/definitions/index.ts"],"names":[],"mappings":"AAAA,cAAc,QAAQ,CAAC;AACvB,cAAc,uBAAuB,CAAC","sourcesContent":["export * from './dtos';\r\nexport * from './definitions.service';\r\n"]}

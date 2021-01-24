@@ -1,0 +1,1 @@
+{"version":3,"file":"link-to.directive.ngfactory.js","sourceRoot":"../../../../../libs/theme-alain-ms/layout/src/","sources":["lib/ms/shared/link-to/link-to.directive.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

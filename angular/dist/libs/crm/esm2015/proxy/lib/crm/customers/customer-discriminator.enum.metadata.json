@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"CustomerDiscriminator":{"客戶":0,"個人":1,"企業":2},"customerDiscriminatorOptions":{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@abp/ng.core","name":"mapEnumToOptions","line":8,"character":44},"arguments":[{"__symbolic":"reference","name":"CustomerDiscriminator"}]}}}]

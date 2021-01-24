@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":4,"exports":[{"from":"./lib/consultation-records"},{"from":"./lib/customers"},{"from":"./lib/definitions"},{"from":"./lib/employees"},{"from":"./lib/projects"},{"from":"./lib/gender-type.enum"}],"metadata":{},"origins":{},"importAs":"@fs-tw/crm/proxy"}

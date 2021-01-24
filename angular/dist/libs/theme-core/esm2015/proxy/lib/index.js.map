@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/theme-core/proxy/src/","sources":["lib/index.ts"],"names":[],"mappings":"AAAA,cAAc,aAAa,CAAC;AAC5B,cAAc,SAAS,CAAC;AACxB,cAAc,OAAO,CAAA","sourcesContent":["export * from './microsoft';\r\nexport * from './theme';\r\nexport * from './abp'"]}

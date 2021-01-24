@@ -1,0 +1,11 @@
+{
+  "main": "../../bundles/fs-tw-crm-ng-alain-config.umd.js",
+  "module": "../../fesm2015/fs-tw-crm-ng-alain-config.js",
+  "es2015": "../../fesm2015/fs-tw-crm-ng-alain-config.js",
+  "esm2015": "../../esm2015/ng-alain/config/fs-tw-crm-ng-alain-config.js",
+  "fesm2015": "../../fesm2015/fs-tw-crm-ng-alain-config.js",
+  "typings": "fs-tw-crm-ng-alain-config.d.ts",
+  "metadata": "fs-tw-crm-ng-alain-config.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/crm/ng-alain/config"
+}

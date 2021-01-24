@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/abp/application/index.ts"],"names":[],"mappings":"AAAA,cAAc,QAAQ,CAAC","sourcesContent":["export * from './dtos';\r\n"]}

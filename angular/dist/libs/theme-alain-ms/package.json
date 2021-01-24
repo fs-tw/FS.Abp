@@ -1,0 +1,27 @@
+{
+  "name": "@fs-tw/theme-alain-ms",
+  "version": "0.402.3",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "https://github.com/fs-tw/FS.Theme.Alain",
+  "peerDependencies": {
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5"
+  },
+  "dependencies": {
+    "@angular/forms": "^11.0.0",
+    "@angular/router": "^11.0.0",
+    "rxjs": "~6.5.5",
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/fs-tw-theme-alain-ms.umd.js",
+  "module": "fesm2015/fs-tw-theme-alain-ms.js",
+  "es2015": "fesm2015/fs-tw-theme-alain-ms.js",
+  "esm2015": "esm2015/fs-tw-theme-alain-ms.js",
+  "fesm2015": "fesm2015/fs-tw-theme-alain-ms.js",
+  "typings": "fs-tw-theme-alain-ms.d.ts",
+  "metadata": "fs-tw-theme-alain-ms.metadata.json",
+  "sideEffects": false,
+  "gitHead": "ad6ebd306b24a047ddd1910e7d25e12f8861c459"
+}

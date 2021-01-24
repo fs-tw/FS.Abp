@@ -1,0 +1,1 @@
+{"version":3,"file":"layout.component.ngfactory.js","sourceRoot":"../../../../../libs/crm/ng-alain/src/","sources":["lib/counseling-record/layout/layout.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

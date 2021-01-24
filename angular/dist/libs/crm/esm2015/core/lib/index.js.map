@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/core/src/","sources":["lib/index.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAC","sourcesContent":["export * from './crm-core.module';"]}

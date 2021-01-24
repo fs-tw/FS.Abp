@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/abp/index.ts"],"names":[],"mappings":"AAAA,cAAc,eAAe,CAAC","sourcesContent":["export * from './application';\r\n"]}
