@@ -1,181 +1,21 @@
 {
   "version": 1,
   "projects": {
-    "gfla-admin-app": {
-      "projectType": "application",
-      "root": "apps/gfla-admin-app",
-      "sourceRoot": "apps/gfla-admin-app/src",
-      "prefix": "fs",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/gfla-admin-app",
-            "index": "apps/gfla-admin-app/src/index.html",
-            "main": "apps/gfla-admin-app/src/main.ts",
-            "polyfills": "apps/gfla-admin-app/src/polyfills.ts",
-            "tsConfig": "apps/gfla-admin-app/tsconfig.app.json",
-            "aot": true,
-            "allowedCommonJsDependencies": [
-              "chart.js",
-              "@ant-design/colors",
-              "@antv/adjust",
-              "@antv/attr",
-              "@antv/component",
-              "@antv/g-base",
-              "@antv/g-canvas",
-              "@antv/g-math",
-              "@antv/g-svg",
-              "@antv/path-util",
-              "@antv/util",
-              "file-saver",
-              "hammerjs"
-            ],
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-                "output": "/assets/"
-              },
-              "apps/gfla-admin-app/src/favicon.ico",
-              "apps/gfla-admin-app/src/assets"
-            ],
-            "styles": [
-              {
-                "input": "node_modules/@swimlane/ngx-datatable/index.css",
-                "inject": true,
-                "bundleName": "ngx-datatable-index"
-              },
-              {
-                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
-                "inject": true,
-                "bundleName": "ngx-datatable-icons"
-              },
-              {
-                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
-                "inject": true,
-                "bundleName": "ngx-datatable-material"
-              },
-              {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-all.min"
-              },
-              {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-v4-shims.min"
-              },
-              {
-                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
-                "inject": false,
-                "bundleName": "bootstrap-rtl.min"
-              },
-              {
-                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "inject": true,
-                "bundleName": "bootstrap-ltr.min"
-              },
-              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
-              "node_modules/quill/dist/quill.snow.css",
-              "apps/gfla-admin-app/src/styles.less"
-            ],
-            "scripts": [
-              "node_modules/ajv/dist/ajv.bundle.js",
-              "node_modules/qrious/dist/qrious.min.js",
-              "node_modules/masonry-layout/dist/masonry.pkgd.js",
-              "node_modules/quill/dist/quill.min.js",
-              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/gfla-admin-app/src/environments/environment.ts",
-                  "with": "apps/gfla-admin-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "gfla-admin-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "gfla-admin-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "gfla-admin-app:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/gfla-admin-app/tsconfig.app.json",
-              "apps/gfla-admin-app/tsconfig.spec.json",
-              "apps/gfla-admin-app/tsconfig.editor.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/gfla-admin-app/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/gfla-admin-app"
-          ],
-          "options": {
-            "jestConfig": "apps/gfla-admin-app/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "appt": {
+    "account": {
       "projectType": "library",
-      "root": "libs/appt",
-      "sourceRoot": "libs/appt/src",
+      "root": "libs/account",
+      "sourceRoot": "libs/account/src",
       "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/appt/tsconfig.lib.json",
-            "project": "libs/appt/ng-package.json"
+            "tsConfig": "libs/account/tsconfig.lib.json",
+            "project": "libs/account/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/appt/tsconfig.lib.prod.json"
+              "tsConfig": "libs/account/tsconfig.lib.prod.json"
             }
           }
         },
@@ -183,22 +23,144 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/appt/tsconfig.lib.json",
-              "libs/appt/tsconfig.spec.json"
+              "libs/account/tsconfig.lib.json",
+              "libs/account/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/appt/**/*"
+              "!libs/account/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/libs/appt"
+            "coverage/libs/account"
           ],
           "options": {
-            "jestConfig": "libs/appt/jest.config.js",
+            "jestConfig": "libs/account/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "theme-unify": {
+      "projectType": "library",
+      "root": "libs/theme-unify",
+      "sourceRoot": "libs/theme-unify/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "tsconfig.lib.json",
+            "project": "libs/theme-unify/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-unify/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/theme-unify/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "theme-alain-ms": {
+      "projectType": "library",
+      "root": "libs/theme-alain-ms",
+      "sourceRoot": "libs/theme-alain-ms/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-alain-ms/tsconfig.lib.json",
+            "project": "libs/theme-alain-ms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-alain-ms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-alain-ms/tsconfig.lib.json",
+              "libs/theme-alain-ms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/theme-alain-ms/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/theme-alain-ms"
+          ],
+          "options": {
+            "jestConfig": "libs/theme-alain-ms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "emailing": {
+      "projectType": "library",
+      "root": "libs/emailing",
+      "sourceRoot": "libs/emailing/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/emailing/tsconfig.lib.json",
+            "project": "libs/emailing/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/emailing/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/emailing/tsconfig.lib.json",
+              "libs/emailing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/emailing/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/emailing"
+          ],
+          "options": {
+            "jestConfig": "libs/emailing/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -254,5 +216,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "gfla-admin-app"
+  "defaultProject": ""
 }

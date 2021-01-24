@@ -28,10 +28,16 @@
     }
   },
   "projects": {
-    "gfla-admin-app": {
+    "account": {
       "tags": []
     },
-    "appt": {
+    "theme-unify": {
+      "tags": []
+    },
+    "theme-alain-ms": {
+      "tags": []
+    },
+    "emailing": {
       "tags": []
     }
   }
