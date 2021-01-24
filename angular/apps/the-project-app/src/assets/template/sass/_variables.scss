@@ -1,0 +1,101 @@
+// Variables
+
+// RTL support: this variable is ovveriden inside style.scss and rtl_style.scss files.
+$text-direction: ltr !default;
+
+// Colors
+// Gray and brand colors for use across The Project Template.
+$gray-dark: #333333 !default;
+$gray: #777777 !default;
+$gray-light: #999999 !default;
+$gray-lighter: #cdcdcd !default;
+$white: #ffffff !default;
+$black: #000000 !default;
+
+// Base Colors of Light Blue Skin.
+$base-color: #09afdf !default;
+$base-color-hover: #0c9ec7 !default;
+
+// Background color for `<body>`.
+$body-bg: #ffffff !default;
+
+// Global text color on `<body>`.
+$text-color: $gray !default;
+
+// Global textual link color.
+$link-color: $base-color !default;
+
+// Link hover color.
+$link-color-hover: $base-color-hover !default;
+
+// Dark Header Top and Header
+$dark-header: #394245 !default;
+$dark-header-top: #2e3537 !default;
+$dark-header-top-border: #252a2c !default;
+$dark-navigation-item-border: rgba($dark-header, 0.8) !default;
+
+// Backgrounds colors of sections
+$dark-background: #373737 !default;
+$light-gray-background: #fafafa !default;
+$light-gray-section-border-color: #f3f3f3 !default;
+$default-background: $base-color !default;
+
+// Footer and Subfooter
+$footer-background: #fafafa !default;
+$subfooter-background: #f5f5f5 !default;
+$subfooter-border-color: #eaeaea !default;
+
+// Typography
+// Font, line-height, and color for body text, headings, and more.
+$font-family-roboto: 'Roboto', sans-serif !default;
+$font-family-lato: 'Lato', sans-serif !default;
+$font-family-open-sans: 'Open Sans', sans-serif !default;
+$font-family-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-raleway: 'Raleway', sans-serif !default;
+$font-family-pt-serif: 'PT Serif', serif !default;
+$font-family-pacifico: 'Pacifico', cursive, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-roboto-slab: 'Roboto Slab', serif !default;
+$font-family-base: $font-family-roboto !default;
+
+$font-size-base: 15px !default;
+$font-size-large: floor(($font-size-base * 1.25)) !default; // 18px
+$font-size-small: floor(($font-size-base * 0.85)) !default; // 12px
+
+$font-size-h1: floor(($font-size-base * 2.22666)) !default; // 33px
+$font-size-h1-large: floor(($font-size-base * 3)) !default; // 45px
+$font-size-h2: floor(($font-size-base * 1.86667)) !default; // 28px
+$font-size-h3: ceil(($font-size-base * 1.6)) !default; // 24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default; // 19px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default; // 13px
+
+// Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.466666666667 !default;
+
+// Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // 22px
+
+// By default, this inherits from the `<body>`.
+$headings-font-family: $font-family-raleway !default;
+$headings-line-height: 1.2 !default;
+
+// Social Icons Colors
+$twitter: #55acee !default;
+$skype: #00aff0 !default;
+$facebook: #3b5998 !default;
+$linkedin: #0976b4 !default;
+$googleplus: #dd4b39 !default;
+$youtube: #b31217 !default;
+$flickr: #ff0084 !default;
+$pinterest: #cb2027 !default;
+$instagram: #517fa4 !default;
+$vimeo: #aad450 !default;
+$tumblr: #32506d !default;
+$soundcloud: #ff3a00 !default;
+$foursquare: #0072b1 !default;
+$dribbble: #ea4c89 !default;
+$behance: #053eff !default;
+$vine: #00a478 !default;
+$stumbleupon: #f74425 !default;
+$xing: #126567 !default;

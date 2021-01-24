@@ -1,0 +1,199 @@
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2014 Daniel Eden
+*/
+
+@import url(animate.css);
+
+/*
+ * Version: 2.1.2
+ * File Description: Animations */
+
+/*Custom Animations*/
+
+@-webkit-keyframes fadeInDownSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDownSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    -ms-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDownSmall {
+  -webkit-animation-name: fadeInDownSmall;
+  animation-name: fadeInDownSmall;
+}
+
+@-webkit-keyframes fadeInLeftSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeftSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    -ms-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInLeftSmall {
+  -webkit-animation-name: fadeInLeftSmall;
+  animation-name: fadeInLeftSmall;
+}
+
+@-webkit-keyframes fadeInRightSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRightSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, 0, 0);
+    -ms-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInRightSmall {
+  -webkit-animation-name: fadeInRightSmall;
+  animation-name: fadeInRightSmall;
+}
+
+@-webkit-keyframes fadeInUpSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+    -ms-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUpSmall {
+  -webkit-animation-name: fadeInUpSmall;
+  animation-name: fadeInUpSmall;
+}
+
+.hc-animation-delay-500 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.hc-animation-delay-750 {
+  -webkit-animation-delay: 0.750s;
+  animation-delay: 0.750s;
+}
+.hc-animation-delay-1000 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.hc-animation-delay-1250 {
+  -webkit-animation-delay: 1.25s;
+  animation-delay: 1.25s;
+}
+.hc-animation-delay-1500 {
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+.hc-animation-delay-1750 {
+  -webkit-animation-delay: 1.75s;
+  animation-delay: 1.75s;
+}
+.hc-animation-delay-2000 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.hc-animation-delay-2250 {
+  -webkit-animation-delay: 2.25s;
+  animation-delay: 2.25s;
+}
+.hc-animation-delay-2500 {
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+.hc-animation-delay-2750 {
+  -webkit-animation-delay: 2.75s;
+  animation-delay: 2.75s;
+}
+.hc-animation-delay-3000 {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}

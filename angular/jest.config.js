@@ -16,5 +16,7 @@ module.exports = {
     '<rootDir>/apps/iic-admin-app',
     '<rootDir>/apps/gfla-admin-app',
     '<rootDir>/libs/appt',
+    '<rootDir>/apps/unify-app',
+    '<rootDir>/libs/theme-unify',
   ],
 };

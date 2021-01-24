@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*
+ * Version: 2.1.2
+ * File Description: CSS rules for invoice print
+ */
+
+.header-top,
+.header,
+.page-intro,
+.page-title,
+.parallax,
+.call-to-action,
+.section,
+#footer,
+.scrollToTop,
+.btn-print,
+.breadcrumb-container {
+	display: none!important;
+}
+
+.offset-md-3 {
+	margin-left: 25%;
+}
+.col-md-3 {
+	width: 25%;
+	float: left;
+}
+.col-md-6 {
+	width: 50%;
+	float: left;
+}

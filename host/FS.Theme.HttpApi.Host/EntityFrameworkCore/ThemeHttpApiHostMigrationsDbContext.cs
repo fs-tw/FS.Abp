@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using FS.Theme.TheProject.EntityFrameworkCore;
 
 namespace FS.Theme.EntityFrameworkCore
 {
@@ -16,6 +17,7 @@ namespace FS.Theme.EntityFrameworkCore
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ConfigureTheme();
+            modelBuilder.ConfigureTheProject();
         }
     }
 }

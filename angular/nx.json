@@ -28,7 +28,16 @@
     }
   },
   "projects": {
+    "unify-app": {
+      "tags": []
+    },
     "account": {
+      "tags": []
+    },
+    "the-project-app": {
+      "tags": []
+    },
+    "theme-the-project": {
       "tags": []
     },
     "theme-unify": {

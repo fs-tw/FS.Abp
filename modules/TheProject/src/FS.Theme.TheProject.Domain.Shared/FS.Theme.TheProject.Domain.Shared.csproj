@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\TheProject\*.json" />
+    <Content Remove="Localization\TheProject\*.json" />
+  </ItemGroup>
+
+
+
+</Project>

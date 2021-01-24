@@ -1,0 +1,557 @@
+/* 4 Pages
+----------------------------------------------------------------------------- */
+/* Blog pages
+---------------------------------- */
+.blogpost {
+  margin: 0 0 70px;
+  header {
+    padding: 20px 10px 20px;
+  }
+  header h2 {
+    text-transform: none;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .post-info {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+  }
+  .post-info > span {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-right(5px);
+    display: inline-block;
+  }
+  .post-info a {
+    color: #aaa;
+  }
+  .blogpost-content {
+    padding: 0 10px 10px;
+  }
+  .row .blogpost-content {
+    padding-bottom: 0;
+  }
+  footer {
+    font-size: 12px;
+    padding: 10px;
+    color: #aaa;
+    border-top: 1px solid #eaeaea;
+  }
+  .row + footer {
+    padding: 10px 0;
+  }
+  &.full {
+    margin-bottom: 30px;
+  }
+  &.full header {
+    padding: 0 0 15px 0;
+  }
+  &.full .blogpost-content {
+    padding: 0 0 5px;
+  }
+  &.full footer {
+    padding: 10px 0;
+  }
+}
+.blogpost.light-gray-bg {
+  header,
+  .blogpost-content,
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  footer {
+    padding-bottom: 20px;
+  }
+}
+
+/* Medium devices (desktops, tablets, 992px and up) */
+@media (min-width: 992px) {
+  .blogpost {
+    .row header {
+      padding-top: 0;
+    }
+    .row + footer {
+      margin-top: 15px;
+    }
+  }
+}
+
+/* Comments
+---------------------------------- */
+#comments {
+  margin-top: 60px;
+}
+.comments {
+  h2.title {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  h2.title:after {
+    height: 1px;
+    background: #d1d1d1;
+    background: -moz-linear-gradient($ltr-to-rtl-left, rgba($black, 0.18) 0%, rgba($black, 0.12) 35%, rgba($black, 0.05) 70%, rgba($black, 0) 100%);
+    background: -webkit-gradient(linear, $ltr-to-rtl-left top, $ltr-to-rtl-right top, color-stop(0%, rgba($black, 0.18)), color-stop(35%, rgba($black, 0.12)), color-stop(70%, rgba($black, 0.05)), color-stop(100%, rgba($black, 0)));
+    background: -webkit-linear-gradient($ltr-to-rtl-left, rgba($black, 0.18) 0%, rgba($black, 0.12) 35%, rgba($black, 0.05) 70%, rgba($black, 0) 100%);
+    background: -o-linear-gradient($ltr-to-rtl-left, rgba($black, 0.18) 0%, rgba($black, 0.12) 35%, rgba($black, 0.05) 70%, rgba($black, 0) 100%);
+    background: -ms-linear-gradient($ltr-to-rtl-left, rgba($black, 0.18) 0%, rgba($black, 0.12) 35%, rgba($black, 0.05) 70%, rgba($black, 0) 100%);
+    background: linear-gradient(to $ltr-to-rtl-right, rgba($black, 0.18) 0%, rgba($black, 0.12) 35%, rgba($black, 0.05) 70%, rgba($black, 0) 100%);
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    content: "";
+    width: 100%;
+  }
+}
+.comment {
+  font-size: 14px;
+  .comment {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin-left(75px);
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  .btn-sm-link {
+    padding: 0;
+  }
+}
+.comment-avatar {
+  width: 50px;
+  // RTL support.
+  // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include float(left);
+  @include ltr-to-rtl-compact(margin, 0, 15px, 0, 0);
+}
+.comment-content {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 40px;
+  clear: both;
+}
+.comment-meta {
+  margin-bottom: 15px;
+  color: #aaa;
+  font-size: 12px;
+}
+.comment-meta a {
+  color: #aaa;
+}
+.comment-meta a:hover {
+  text-decoration: underline;
+}
+
+/* Blog Masonry Grid
+---------------------------------- */
+.masonry-grid-item .blogpost {
+  footer {
+    padding-top: 0px;
+    border-top: none;
+  }
+  header h2 {
+    font-size: 22px;
+  }
+}
+
+/* Blog Timeline layout
+---------------------------------- */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+  margin-top: 40px;
+  .blogpost footer {
+    padding-top: 0px;
+    border-top: none;
+  }
+  .blogpost header h2 {
+    font-size: 22px;
+  }
+  .timeline-item {
+    padding: 0 15px;
+  }
+}
+.timeline-date-label {
+  float: none;
+  clear: both;
+  display: block;
+  margin: 0px auto;
+  text-align: center;
+  margin-bottom: 80px;
+  line-height: 1;
+  width: 135px;
+  position: relative;
+  z-index: 2;
+  color: $white;
+}
+.timeline-date-label:after {
+  @include border-radius(4px);
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: -8px;
+  z-index: -1;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .timeline {
+    .blogpost {
+      margin-bottom: 0;
+    }
+    &:before {
+      background-color: #e8e8e8;
+      background: -moz-linear-gradient(top, rgba($black, 0) 0%, rgba($black, 0.09) 10%, rgba($black, 0.09) 90%, rgba($black, 0) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba($black, 0)), color-stop(10%, rgba($black, 0.09)), color-stop(90%, rgba($black, 0.09)), color-stop(100%, rgba($black, 0)));
+      background: -webkit-linear-gradient(top, rgba($black, 0) 0%, rgba($black, 0.09) 10%, rgba($black, 0.09) 90%, rgba($black, 0) 100%);
+      background: -o-linear-gradient(top, rgba($black, 0) 0%, rgba($black, 0.09) 10%, rgba($black, 0.09) 90%, rgba($black, 0) 100%);
+      background: -ms-linear-gradient(top, rgba($black, 0) 0%, rgba($black, 0.09) 10%, rgba($black, 0.09) 90%, rgba($black, 0) 100%);
+      background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, 0.09) 10%, rgba($black, 0.09) 90%, rgba($black, 0) 100%);
+      width: 1px;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 50%;
+      display: block;
+      top: 0;
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding-left: 0;
+      padding-right: 40px;
+      margin-bottom: 80px;
+      float: left;
+      clear: left;
+      z-index: 1;
+    }
+    .timeline-item.pull-right {
+      position: relative;
+      width: 50%;
+      padding-left: 40px;
+      padding-right: 0;
+      margin-top: 80px;
+      margin-bottom: 0;
+      float: right;
+      clear: right;
+    }
+    .timeline-item.pull-right + .timeline-date-label {
+      padding-top: 80px;
+    }
+    .timeline-item:after {
+      content: "";
+      font-family: "FontAwesome";
+      right: 0px;
+      background-color: #eaeaea;
+      left: auto;
+      position: absolute;
+      top: 20px;
+      z-index: -1;
+      width: 35px;
+      height: 1px;
+    }
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      background-color: $gray-lighter;
+      border: 1px solid $gray-lighter;
+      height: 7px;
+      width: 7px;
+      @include border-radius(100%);
+      top: 17px;
+      right: -4px;
+    }
+    .timeline-item.pull-right:after {
+      right: auto;
+      left: 0px;
+    }
+    .timeline-item.pull-right:before {
+      left: -3px;
+      // RTL support
+      // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+      @if $text-direction == rtl {
+        right: auto;
+      }
+    }
+  }
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 767px) {
+  .timeline .timeline-item.pull-right {
+    float: none !important;
+  }
+}
+
+/* Shop Pages
+---------------------------------- */
+/*Product Page*/
+.product {
+  &.price {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  &.price del {
+    color: $gray-lighter;
+    font-size: 14px;
+  }
+  &.element-list {
+    margin-top: 7px;
+  }
+}
+
+/*Dropdown Cart*/
+.header-dropdown-buttons {
+  .btn-group .dropdown-menu.cart {
+    padding: 0;
+    min-width: 350px;
+    font-size: 13px;
+    // RTL support
+    // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+    @if $text-direction == rtl {
+      left: 0;
+      right: auto;
+    }
+  }
+  .btn-group .dropdown-menu.cart table {
+    margin-bottom: 0;
+  }
+  .btn-group .dropdown-menu.cart .panel-body {
+    padding: 0px 10px 0px;
+  }
+}
+.cart-count {
+  position: absolute;
+  top: -2px;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include right(-3px);
+  line-height: 14px;
+  width: 14px;
+  height: 14px;
+  @include border-radius(30%);
+  font-size: 10px;
+  text-shadow: none;
+  @include transition(all 0.2s ease-in-out);
+}
+.dark .header-dropdown-buttons .cart-count {
+  background-color: rgba($black, 0.5);
+  color: $gray-lighter;
+}
+.dropdown.open .cart-count,
+.dropdown:hover .cart-count {
+  @include scale(0);
+  @include opacity(0);
+}
+.total-amount,
+.total-quantity {
+  font-size: 13px;
+}
+.cart {
+  .table > tbody > tr > td,
+  &.table > tbody > tr > td {
+    vertical-align: inherit;
+  }
+  .quantity {
+    width: 50px;
+    font-size: 11px;
+  }
+  .product {
+    width: 220px;
+    font-size: 13px;
+  }
+  .product .small {
+    display: block;
+    color: $gray-light;
+  }
+}
+
+/* Small devices (phones less than 575px) */
+@media (max-width: 575px) {
+  .header-dropdown-buttons .btn-group .dropdown-menu.cart {
+    min-width: 300px;
+  }
+}
+
+/* Cart and Checkout pages
+---------------------------------- */
+.cart.table {
+  .price {
+    width: 18%;
+    font-size: 14px;
+  }
+  .amount,
+  .remove,
+  .quantity {
+    width: 12%;
+  }
+  .quantity input {
+    width: 60px;
+    padding: 6px;
+  }
+  .product {
+    font-size: 15px;
+  }
+  .product small {
+    font-size: 12px;
+    display: block;
+    color: $gray-light;
+  }
+  .amount {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include text-align(right);
+  }
+  thead > tr > th {
+    font-size: 16px;
+  }
+  .total-quantity,
+  .total-amount {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .total-amount {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include text-align(right);
+  }
+  .btn-remove {
+    position: relative;
+    top: -5px;
+  }
+  .form-group {
+    margin: 7px 0;
+  }
+}
+.table .information {
+  width: 80%;
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 767px) {
+  .cart.table {
+    thead > tr > th {
+      font-size: 14px;
+    }
+    .amount,
+    .price {
+      width: 12%;
+    }
+    .remove,
+    .quantity {
+      width: 8%;
+    }
+    > thead > tr > th,
+    > tbody > tr > th,
+    > tfoot > tr > th,
+    > thead > tr > td,
+    > tbody > tr > td,
+    > tfoot > tr > td {
+      padding: 8px 10px;
+    }
+  }
+}
+
+/* Extra small devices (phones, less than 575px) */
+@media (max-width: 575px) {
+  .cart.table > thead > tr > th,
+  .cart.table > tbody > tr > th,
+  .cart.table > tfoot > tr > th,
+  .cart.table > thead > tr > td,
+  .cart.table > tbody > tr > td,
+  .cart.table > tfoot > tr > td {
+    padding: 8px 7px;
+  }
+}
+
+/* About Us Pages
+---------------------------------- */
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 767px) {
+  .team-member {
+    max-width: 480px;
+    margin: 20px auto 20px !important;
+  }
+}
+
+/* Coming Soon Page
+---------------------------------- */
+.countdown-section {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgba($black, 0.1);
+  background-color: rgba($black, 0.2);
+  @include border-radius(5%);
+  width: 24%;
+  margin: 10px 0.5%;
+  display: block;
+  float: left;
+}
+.countdown-amount {
+  font-size: 36px;
+  font-weight: 700;
+  display: block;
+}
+.countdown-period {
+  display: block;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-top: 15px;
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 767px) {
+  .countdown-amount {
+    font-size: 24px;
+  }
+  .countdown-period {
+    font-size: 18px;
+  }
+}
+
+/* Extra small devices (phones, less than 575px) */
+@media (max-width: 575px) {
+  .countdown-amount {
+    font-size: 18px;
+  }
+  .countdown-period {
+    font-size: 10px;
+  }
+  .countdown-section {
+    width: 31%;
+    margin: 10px 1.16%;
+  }
+  .countdown-section:last-child {
+    display: none;
+  }
+}
+
+/* Pages Misc
+---------------------------------- */
+.icons-page i {
+  font-size: 20px;
+  width: 35px;
+  text-align: center;
+}
+.grid span {
+  padding: 5px 5px;
+  background-color: #666;
+  border: 1px solid #444;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  color: $white;
+}

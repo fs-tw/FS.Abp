@@ -1,0 +1,284 @@
+The Project 2.1.2, 2019-20-04
+----------------------
+
+Updated Bootstrap framework to version 4.3.1
+Updated Charts.js to version 2.8.0
+Updated jQuery.js to version 3.4.0
+
+The Project 2.1.1, 2018-30-09
+----------------------
+
+Updated slider revolution to version 5.4.8
+Updated Bootstrap framework to version 4.1.3
+Updated animate.css to version 3.7.0
+Updated typed.js to version 2.0.9
+Improved slider animations in index-corporate-6.html page
+Improved sliders animations in index pages
+Fixed css shadow issue after bootstrap update
+Dropped fullpage.js
+
+The Project 2.1.0, 2018-30-03
+----------------------
+
+Added index agency 2 home page
+Added index corporate 6 home page
+Added new font scheme
+Added new menu style
+Added new footer
+Added new slider (fullsreen bootstrap carousel)
+Added css3 patterns, dropped jpeg patterns
+Added slick.js for content sliders and carousels, dropped owl.carousel.js
+Added typed.js for text rotators, dropped morphext.js
+Added countdown.js for countdown counters, dropped jquery.countdown.js
+Improved button animations, dropped hover since not needed
+Updated bootstrap 4 to version 4.0.0 (we highly recommend you update your bootstrap to version 4.0.0 as it is the latest stable version, see the documentation of the template for instructions)
+Updated slider revolution to version 5.4.7.2
+Updated isotope to version 3.0.5
+Updated jQuery to version 3.3.1
+Updated charts.js to version 2.7.2
+Updated jquery.fullpage.js to version 2.9.6
+Updated imagesloaded.pkgd.min.js to version 4.1.4
+Improved google.map.config.js file
+Improved documentation of the template
+Fixed minor W3C validation errors
+Removed fontello fonts (we use fontawesome fonts)
+Dropped PHP contact forms (forms has been rewritten)
+Dropped modernizr.js (not needed)
+Dropped jquery.parallax-1.1.3.js (not needed)
+Dropped jquery.slimscroll.js (not needed)
+Dropped jquery.validate.js (not needed)
+Dropped jquery.knob.min.js (not needed)
+
+For BS3 version, please see the documentation.
+
+The Project 2.0.5, 2017-16-09
+----------------------
+
+- Updated bootstrap to v4.0.0-beta
+- Updated Slider Revolution to 5.4.6
+- Improved animations initialisation
+- Improved counters implementation
+- Improved modernizr implementations
+- Improved isotope implementations
+- Fixed animation issue on safari
+- Fixed google maps trigger issue (page-contact-3.html)
+
+Affected Files/Folders:
+
+- bootstrap folder
+- css/style.css file
+- js/template.js file
+- js/google.map.config.js file
+- sass folder
+- plugins folder
+- all HTML files
+
+The Project 2.0.0, 2017-15-07
+----------------------
+
+- Updated Bootstrap to v4.0.0-alpha.6
+- Updated Slider Revolution to 5.4.5
+- Updated font awesome to 4.7.0
+- Updated jQuery to 3.2.1
+- Updated Charts.js to 2.6.0
+- Updated fullpage.js to 2.9.4
+- Updated hover.css to 2.1.1
+- Updated isotope to 3.0.4
+- Updated owl carousel to 2.2.1
+- Updated reCAPTCHA to 1.1.3
+- Updated modernizr to 3.5.0
+- Add sticky menu for mobile devices
+- Fixed cloned images issue in lightboxes
+- Improve main navigation
+- Dropped vide plugin
+- Dropped smoothscroll plugin
+- Dropped jquery.browser plugin
+
+Affected Files/Folders:
+
+- bootstrap folder
+- css/skins folder
+- css/style.css file
+- fonts/font-awesome folder
+- js/template.js file
+- sass folder
+- php folder
+- plugins folder
+- all HTML files
+
+The Project 1.4, 2017-02-01
+----------------------
+
+Important Notice: Before the update, please backup all your files and your website. It is recommended to update email-sender.php and email-sender-recaptcha.php files.
+
+- Added RTL support
+- Added index-rtl.html (RTL Home page)
+- Added index-portfolio-2.html (Portfoliio 2 Home page)
+- Updated jquery to v.2.4.4
+- Updated slider revolution to v5.3.1.6
+- Updated owl carousel to v2.2.0
+- Updated Bootstrap Notify to v3.1.3
+- Updated Charts.js to v2.4.0
+- Updated fullpage.js to v2.9.0
+- Updated hover.css to v2.1.0
+- Updated isotope to v3.0.1
+- Updated jquery.contdown.js to v2.1.0
+- Updated vide.js to v0.5.1
+- Updated waypoints to version 4.0.1
+- Updated jquery.browser.js to version 0.1.0
+- Updated jquery.validate.js to latest release v1.16.0
+- Updated animated.css to version 3.5.1
+- Removed slider revolution version 4 files from template
+- Removed owl carousel version 1 files from template
+- Fixed animations issue on FireFox browser
+- Fixed unclickable header dropdowns issue on mobile widths
+- Improved scroll to top button
+- Improvements to email-sender.php
+- Improvements to email-sender-recaptcha.php
+
+Affected Files/Folders:
+
+- bootstrap folder
+- css/skins folder
+- css/style.css file
+- fonts/font-awesome folder
+- images folder (new image placeholders added)
+- js/template.js file
+- less folder
+- php folder
+- plugins folder
+- all HTML files
+
+The Project 1.3, 2016-21-08
+----------------------
+
+Important Notice: Update your existing website only if you want to use the new pages and features. Before the update, please backup all your files and your website.
+
+- Added sass support
+- Added index-restaurant-2.html (Restaurant 2 Home page)
+- Added index-landing-2.html (Landing page 2)
+- Added index-corporate-5.html (Corporate 5 Home - Law Firm Page)
+- Added index-blog-2.html (Blog 2 Home page)
+- Added shop-product-2.html (Shop Product page 2)
+- Added google reCAPTCHA support to contact forms
+- Added 8 announcement pages components-announcement-*.html (8 variations)
+- Added components-separators.html page (2 new separators added)
+- Added new typography scheme (with Lato and Roboto Slab fonts, see index-restaurant-2.html). Important: If you are planing to update your current site, please read Typography section in documentation.
+- Added new feature: images slider with navigation thumbs (see shop-product-2.html)
+- Fixed scroll spy issue at index-resume.html page
+- Fixed conditional HTML comments in all HTML files
+- Fixed slider's caption issue in index-logistics.html home page
+- Improved email-sender.php
+- Updated Slider Revolution to 5.2.6
+- Updated FontAwesome to 4.6.3
+- Updated Bootstrap to 3.3.7
+
+Affected Files/Folders:
+
+- bootstrap folder
+- css/skins folder
+- css/style.css file
+- fonts/font-awesome folder
+- images folder (new image placeholders added)
+- js/template.js file
+- less folder
+- added new plugin fullpage to plugins folder
+- php folder
+- plugins folder
+- all HTML files
+
+The Project 1.2, 2016-04-04
+----------------------
+
+Important Notice: Update your existing website only if you want to use the new pages and features. Before the update, please backup all your files and your website.
+
+- Added index-gym.html (Gym Home Page)
+- Added index-resume.html (Resume Home Page)
+- Added index-corporate-4.html (Corporate 4 Home Page)
+- Added index-agency.html (Agency Home Page)
+- Added index-logistics.html (Logistics Home Page)
+- Added features-headers-gradient-dark.html (New Header)
+- Added features-headers-gradient-light.html (New Header)
+- Added features-headers-sticky-2.html (New Sticky Header version)
+- Added features-footers-full-width.html#footer (New footer)
+- Added features-footers-contact-form-2.html#footer (New footer)
+- Updated features-sliders-fullscreen.html (Slider Revolution 5 version)
+- Updated features-sliders-fullwidth.html (Slider Revolution 5 version)
+- Updated features-sliders-fullwidth-big-height.html (Slider Revolution 5 version)
+- Updated features-sliders-boxedwidth-light.html (Slider Revolution 5 version)
+- Updated features-sliders-boxedwidth-dark.html (Slider Revolution 5 version)
+- Updated features-sliders-boxedwidth-default.html (Slider Revolution 5 version)
+- Updated features-sliders-video-background.html (Slider Revolution 5 version)
+- Updated features-sliders-text-rotator.html (Slider Revolution 5 version)
+- Added new feature full page
+- Added new component button size "XL"
+- Added header dropdowns @mobile widths
+- Fixed text-rotator align issue
+- Updated Bootstrap to 3.3.6
+- Updated FontAwesome to 4.5
+- Updated Slider Revolution to version 5
+- Updated jQuery to v1.12.2
+- Updated Charts.js to v1.1.0
+- Updated Isotope to v2.2.2
+- Updated Magnific popup to v1.1.0
+- Updated Morphext to v2.4.4
+- Updated Vide to v0.5.0
+- Updated Waypoints to 4.0.0
+
+Affected Files/Folders:
+
+- bootstrap folder
+- css/skins folder
+- css/style.css file
+- fonts/font-awesome folder
+- images folder (new image placeholders added)
+- js/template.js file
+- less folder
+- added new plugin fullpage to plugins folder
+- plugins folder
+
+The Project 1.1, 2015-10-10
+----------------------
+
+Important Notice: Update your existing website only if you want to use the new pages and features. You can use HTML Email templates without updating your existing website. Before the update, please backup all your files and your website.
+
+- Added index-beauty.html (Beauty Center Home Page)
+- Added index-blog.html (Blog Home Page)
+- Added index-construction.html (Construction Home Page)
+- Added index-education.html (Education Home Page)
+- Added index-hotel.html (Hotel Home Page)
+- Added email_template_blue.html (HTML email template)
+- Added email_template_brown.html (HTML email template)
+- Added email_template_cool_green.html (HTML email template)
+- Added email_template_dark_cyan.html (HTML email template)
+- Added email_template_dark_red.html (HTML email template)
+- Added email_template_gold.html (HTML email template)
+- Added email_template_gray.html (HTML email template)
+- Added email_template_green.html (HTML email template)
+- Added email_template_light_blue.html (HTML email template)
+- Added email_template_orange.html (HTML email template)
+- Added email_template_pink.html (HTML email template)
+- Added email_template_purple.html (HTML email template)
+- Added email_template_red.html (HTML email template)
+- Added email_template_vivid_red.html (HTML email template)
+- Added features-footers-links.html (New Footer option)
+- Added components-page-loaders.html (New Feature)
+- Added components-page-loaders-2.html (New Feature)
+- Added components-page-loaders-3.html (New Feature)
+- Added components-page-loaders-4.html (New Feature)
+- Added components-page-loaders-5.html (New Feature)
+- Added components-page-loaders-6.html (New Feature)
+- Enabled animations to touch devices
+- Updated bootstrap to 3.3.5
+- Updated fontawesome to 4.4
+
+Affected Files/Folders:
+
+- bootstrap folder
+- css/skins folder
+- css/style.css file
+- fonts/font-awesome folder
+- images folder (55 new image placeholders added)
+- js/template.js file
+- less folder
+- added new plugin pace to plugins folder
