@@ -42,27 +42,33 @@ function clearFiles(target: string): (host: Tree) => void {
 }
 
 function addDependenciesToPackageJson(target:string):(host: Tree) => void {
-
   return (host: Tree) => {
     addPackageToPackageJson(host, [`@npm/root@file:npm/root`], 'devDependencies');
     addPackageToPackageJson(host, [`@npm/${target}@file:npm/${target}`], 'devDependencies');
+
+  };
+}
+
+function AddFiles(target:string):Rule{
+  return chain([
     mergeWith(
-      apply(url(`./npm/root`), [
+      apply(url(`./files/root`), [
         template({
           name: target
         }),
         move(`npm/root`),
       ]),
-    );
+    ),
     mergeWith(
-      apply(url(`./npm/${target}`), [
+      apply(url(`./files/${target}`), [
         template({
           name: target
         }),
         move(`npm/${target}`),
       ]),
-    );
-  };
+    )
+  ]);
+
 }
 
 
@@ -74,6 +80,7 @@ function finished(): (_host: Tree, context: SchematicContext) => void {
 
 
 export default  function (options:ApplicationOptions):Rule {
+  console.log(options);
   
   // await libraryGenerator(host, { name: schema.name });
   // await formatFiles(host);
@@ -82,6 +89,7 @@ export default  function (options:ApplicationOptions):Rule {
     return chain([
       clearFiles(options.name),
       addDependenciesToPackageJson(options.name),
+      AddFiles(options.name),
       finished()
     ])(host,context);
   };

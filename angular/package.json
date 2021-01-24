@@ -61,8 +61,6 @@
     "@angular/cli": "~11.0.0",
     "@angular/compiler-cli": "^11.0.0",
     "@angular/language-service": "^11.0.0",
-    "@npm/dev": "file:npm/dev",
-    "@npm/volo": "file:npm/volo",
     "@npm/ng-alain": "file:npm/ng-alain",
     "@npm/ng-alain-ms": "file:npm/ng-alain-ms",
     "@npm/account": "file:npm/account",
@@ -84,6 +82,11 @@
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.3"
+    "typescript": "~4.0.3",
+    "@npm/Volo": "file:npm/Volo",
+    "@npm/Dev": "file:npm/Dev",
+    "@npm/dev": "file:npm/dev",
+    "@npm/root": "file:npm/root",
+    "@npm/volo": "file:npm/volo"
   }
 }

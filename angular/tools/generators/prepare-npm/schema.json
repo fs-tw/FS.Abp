@@ -5,9 +5,8 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Add package to npm folder(Dev for public,Volo for commercial)",
-      "enum": ["Volo", "Dev"],
-      "default":"Volo"
+      "description": "Add package to npm folder(Dev for public,Volo for commercial),*warning delete and remove",
+      "enum": ["volo", "dev"]
     }
   },
   "required": ["name"]
