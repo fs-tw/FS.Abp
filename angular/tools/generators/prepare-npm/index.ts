@@ -80,10 +80,6 @@ function finished(): (_host: Tree, context: SchematicContext) => void {
 
 
 export default  function (options:ApplicationOptions):Rule {
-  console.log(options);
-  
-  // await libraryGenerator(host, { name: schema.name });
-  // await formatFiles(host);
   spinner.start(`Generating NPM scaffold...`);
   return (host: Tree, context: SchematicContext) => {
     return chain([
