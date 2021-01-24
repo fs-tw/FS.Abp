@@ -31,7 +31,6 @@ function clearFiles(target: string): (host: Tree) => void {
   };
 
   function clearbyProject(configType: string, host) {
-    console.log(configType);
     let result = [];
     switch (configType) {
       case 'base':
@@ -72,8 +71,8 @@ export default function (options: ApplicationOptions): Rule {
   spinner.start(`Generating Config scaffold...`);
   return (host: Tree, context: SchematicContext) => {
     return chain([
-      clearFiles(options.name),
-      AddFiles(options.name),
+      clearFiles(options.configName),
+      AddFiles(options.configName),
       finished()
     ])(host, context);
   };

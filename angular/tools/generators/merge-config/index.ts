@@ -1,10 +1,9 @@
 import { SchematicContext, Tree, chain, Rule } from '@angular-devkit/schematics';
 import { updateJsonInTree, readJsonInTree, NxJson } from '@nrwl/workspace';
 import { ProjectConfigFile } from './commons';
-import { symlink } from 'fs';
 
 let configs: Array<ProjectConfigFile> = [];
-export default function (schema: any): Rule {
+export default function (): Rule {
   return (host: Tree, context: SchematicContext) => {
     let files: Array<string> = [];
     host.getDir('./config').visit(f => files.push(f));

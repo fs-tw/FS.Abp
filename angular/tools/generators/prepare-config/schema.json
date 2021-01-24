@@ -3,11 +3,11 @@
   "id": "prepare-config",
   "type": "object",
   "properties": {
-    "name": {
+    "configName": {
       "type": "string",
       "description": "請選擇目標模組(初始化使用Base)",
       "enum": ["base"]
     }
   },
-  "required": ["name"]
+  "required": ["configName"]
 }

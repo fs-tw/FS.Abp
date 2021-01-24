@@ -1,0 +1,17 @@
+{
+  "cli": "ng",
+  "id": "init-flow",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library name"
+      },
+      "configName": {
+        "type": "string",
+        "description": "base config",
+        "value": "base"
+      }
+    },
+  "required": ["name","configName"]
+}
