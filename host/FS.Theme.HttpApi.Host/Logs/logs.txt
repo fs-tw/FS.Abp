@@ -1,0 +1,330 @@
+2021-01-24 11:39:52.511 +08:00 [INF] Starting web host.
+2021-01-24 11:39:56.371 +08:00 [INF] User profile is available. Using 'C:\Users\YinChang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-24 11:39:56.464 +08:00 [INF] Loaded ABP modules:
+2021-01-24 11:39:56.464 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2021-01-24 11:39:56.464 +08:00 [INF] - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2021-01-24 11:39:56.464 +08:00 [INF] - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2021-01-24 11:39:56.464 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2021-01-24 11:39:56.464 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Specifications.AbpSpecificationsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Emailing.AbpEmailingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - EasyAbp.Abp.Trees.AbpTreesDomainSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Abp.AbpDomainSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.ThemeDomainSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - EasyAbp.Abp.Trees.AbpTreesDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Abp.AbpDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.ThemeDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationContractsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesContractsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Abp.AbpApplicationContractsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.ThemeApplicationContractsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Abp.AbpApplicationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.ThemeApplicationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.EntityFrameworkCore.ThemeEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Minify.AbpMinifyModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.ThemeHttpApiModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2021-01-24 11:39:56.465 +08:00 [INF] - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2021-01-24 11:39:56.465 +08:00 [INF] - FS.Theme.ThemeHttpApiHostModule
+2021-01-24 11:39:57.449 +08:00 [INF] Initialized all ABP modules.
+2021-01-24 11:39:57.468 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-24 11:39:57.468 +08:00 [INF] Hosting environment: Development
+2021-01-24 11:39:57.468 +08:00 [INF] Content root path: C:\Works\1206\fs.works.v4-1206\framework\FS.Theme\host\FS.Theme.HttpApi.Host
+2021-01-24 11:39:57.477 +08:00 [INF] Application is shutting down...
+2021-01-24 11:39:57.547 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/ - -
+2021-01-24 11:39:58.902 +08:00 [INF] Entity Framework Core 5.0.2 initialized 'SettingManagementDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: QuerySplittingBehavior=SplitQuery 
+2021-01-24 11:39:59.441 +08:00 [INF] Executed DbCommand (43ms) [Parameters=[@__providerName_0='?' (Size = 64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name], [a].[ProviderKey], [a].[ProviderName], [a].[Value]
+FROM [AbpSettings] AS [a]
+WHERE ([a].[ProviderName] = @__providerName_0) AND [a].[ProviderKey] IS NULL
+2021-01-24 11:39:59.583 +08:00 [INF] Entity Framework Core 5.0.2 initialized 'SettingManagementDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: QuerySplittingBehavior=SplitQuery 
+2021-01-24 11:39:59.597 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__providerName_0='?' (Size = 64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name], [a].[ProviderKey], [a].[ProviderName], [a].[Value]
+FROM [AbpSettings] AS [a]
+WHERE ([a].[ProviderName] = @__providerName_0) AND [a].[ProviderKey] IS NULL
+2021-01-24 11:39:59.769 +08:00 [INF] Executing endpoint 'FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host)'
+2021-01-24 11:39:59.818 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller FS.Theme.Controllers.HomeController (FS.Theme.HttpApi.Host).
+2021-01-24 11:39:59.928 +08:00 [INF] Executing action method FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host) - Validation state: "Valid"
+2021-01-24 11:39:59.932 +08:00 [INF] Executed action method FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.2802ms.
+2021-01-24 11:39:59.937 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2021-01-24 11:39:59.941 +08:00 [INF] Executed action FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host) in 119.7148ms
+2021-01-24 11:39:59.941 +08:00 [INF] Executed endpoint 'FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host)'
+2021-01-24 11:40:00.001 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/ - - - 302 - - 2456.1333ms
+2021-01-24 11:40:34.024 +08:00 [INF] Starting web host.
+2021-01-24 11:40:37.437 +08:00 [INF] User profile is available. Using 'C:\Users\YinChang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-24 11:40:37.528 +08:00 [INF] Loaded ABP modules:
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Specifications.AbpSpecificationsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Emailing.AbpEmailingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - EasyAbp.Abp.Trees.AbpTreesDomainSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Abp.AbpDomainSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.ThemeDomainSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - EasyAbp.Abp.Trees.AbpTreesDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Abp.AbpDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.ThemeDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationContractsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesContractsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Abp.AbpApplicationContractsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.ThemeApplicationContractsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Abp.AbpApplicationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.ThemeApplicationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.EntityFrameworkCore.ThemeEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Minify.AbpMinifyModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.ThemeHttpApiModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2021-01-24 11:40:37.528 +08:00 [INF] - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2021-01-24 11:40:37.528 +08:00 [INF] - FS.Theme.ThemeHttpApiHostModule
+2021-01-24 11:40:38.178 +08:00 [INF] Initialized all ABP modules.
+2021-01-24 11:40:38.195 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-24 11:40:38.195 +08:00 [INF] Hosting environment: Development
+2021-01-24 11:40:38.195 +08:00 [INF] Content root path: C:\Works\1206\fs.works.v4-1206\framework\FS.Theme\host\FS.Theme.HttpApi.Host
+2021-01-24 11:40:38.255 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/ - -
+2021-01-24 11:40:39.090 +08:00 [INF] Executing endpoint 'FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host)'
+2021-01-24 11:40:39.139 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller FS.Theme.Controllers.HomeController (FS.Theme.HttpApi.Host).
+2021-01-24 11:40:39.243 +08:00 [INF] Executing action method FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host) - Validation state: "Valid"
+2021-01-24 11:40:39.246 +08:00 [INF] Executed action method FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.2467ms.
+2021-01-24 11:40:39.250 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2021-01-24 11:40:39.253 +08:00 [INF] Executed action FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host) in 111.1705ms
+2021-01-24 11:40:39.254 +08:00 [INF] Executed endpoint 'FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host)'
+2021-01-24 11:40:39.276 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger - -
+2021-01-24 11:40:39.309 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/ - - - 302 - - 1055.8852ms
+2021-01-24 11:40:39.309 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger - - - 301 - - 32.5643ms
+2021-01-24 11:40:39.314 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/index.html - -
+2021-01-24 11:40:39.366 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/index.html - - - 200 - text/html;charset=utf-8 52.2175ms
+2021-01-24 11:40:39.377 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/swagger-ui.css - -
+2021-01-24 11:40:39.377 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/ui/abp.swagger.js - -
+2021-01-24 11:40:39.377 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/ui/abp.js - -
+2021-01-24 11:40:39.393 +08:00 [INF] Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'N/A'
+2021-01-24 11:40:39.393 +08:00 [INF] Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'N/A'
+2021-01-24 11:40:39.393 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/ui/abp.swagger.js - - - 200 1026 application/javascript 15.9985ms
+2021-01-24 11:40:39.393 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/ui/abp.js - - - 200 3025 application/javascript 15.9877ms
+2021-01-24 11:40:39.403 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/swagger-ui-bundle.js - -
+2021-01-24 11:40:39.403 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/swagger-ui-standalone-preset.js - -
+2021-01-24 11:40:39.410 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-01-24 11:40:39.426 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-01-24 11:40:39.443 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 39.5666ms
+2021-01-24 11:40:39.443 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/swagger-ui.css - - - 200 142933 text/css 65.5266ms
+2021-01-24 11:40:39.443 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-01-24 11:40:39.453 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 51.0599ms
+2021-01-24 11:40:39.813 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/v1/swagger.json - -
+2021-01-24 11:40:39.843 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/favicon-32x32.png - -
+2021-01-24 11:40:39.844 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-01-24 11:40:39.844 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/favicon-32x32.png - - - 200 628 image/png 1.3470ms
+2021-01-24 11:40:39.908 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.1374ms
+2021-01-24 11:41:39.053 +08:00 [INF] Starting web host.
+2021-01-24 11:41:42.954 +08:00 [INF] User profile is available. Using 'C:\Users\YinChang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-24 11:41:43.047 +08:00 [INF] Loaded ABP modules:
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Specifications.AbpSpecificationsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Emailing.AbpEmailingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - EasyAbp.Abp.Trees.AbpTreesDomainSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Abp.AbpDomainSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.ThemeDomainSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - EasyAbp.Abp.Trees.AbpTreesDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Abp.AbpDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.ThemeDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationContractsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesContractsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Abp.AbpApplicationContractsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.ThemeApplicationContractsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Abp.AbpApplicationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.ThemeApplicationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.EntityFrameworkCore.ThemeEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Minify.AbpMinifyModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.ThemeHttpApiModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2021-01-24 11:41:43.047 +08:00 [INF] - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2021-01-24 11:41:43.047 +08:00 [INF] - FS.Theme.ThemeHttpApiHostModule
+2021-01-24 11:41:43.754 +08:00 [INF] Initialized all ABP modules.
+2021-01-24 11:41:43.771 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-24 11:41:43.771 +08:00 [INF] Hosting environment: Development
+2021-01-24 11:41:43.771 +08:00 [INF] Content root path: C:\Works\1206\fs.works.v4-1206\framework\FS.Theme\host\FS.Theme.HttpApi.Host
+2021-01-24 11:41:43.829 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/ - -
+2021-01-24 11:41:44.709 +08:00 [INF] Executing endpoint 'FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host)'
+2021-01-24 11:41:44.765 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller FS.Theme.Controllers.HomeController (FS.Theme.HttpApi.Host).
+2021-01-24 11:41:44.899 +08:00 [INF] Executing action method FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host) - Validation state: "Valid"
+2021-01-24 11:41:44.903 +08:00 [INF] Executed action method FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.3286ms.
+2021-01-24 11:41:44.907 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2021-01-24 11:41:44.911 +08:00 [INF] Executed action FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host) in 143.4681ms
+2021-01-24 11:41:44.911 +08:00 [INF] Executed endpoint 'FS.Theme.Controllers.HomeController.Index (FS.Theme.HttpApi.Host)'
+2021-01-24 11:41:44.930 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/index.html - -
+2021-01-24 11:41:44.973 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/ - - - 302 - - 1144.8298ms
+2021-01-24 11:41:45.041 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/index.html - - - 200 - text/html;charset=utf-8 110.3913ms
+2021-01-24 11:41:45.600 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44342/swagger/v1/swagger.json - -
+2021-01-24 11:41:45.706 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44342/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 105.6622ms

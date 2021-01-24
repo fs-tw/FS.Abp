@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+
+    <AbpVersion>4.1.0</AbpVersion>
+    <VoloVersion>410.0.1</VoloVersion>
+    <FSVersion>410.0.4</FSVersion>
+    <MicrosoftPackageVersion>5.0.*</MicrosoftPackageVersion>
+    <MicrosoftNETTestSdkPackageVersion>16.8.3</MicrosoftNETTestSdkPackageVersion>
+    <NSubstitutePackageVersion>4.2.2</NSubstitutePackageVersion>
+    <ShouldlyPackageVersion>3.0.2</ShouldlyPackageVersion>
+    <xUnitPackageVersion>2.4.1</xUnitPackageVersion>
+    <xUnitExtensibilityExecutionPackageVersion>2.4.1</xUnitExtensibilityExecutionPackageVersion>
+    <xUnitRunnerVisualstudioPackageVersion>2.4.2</xUnitRunnerVisualstudioPackageVersion>
+
+  </PropertyGroup>
+</Project>
