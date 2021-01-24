@@ -24,10 +24,10 @@
       "@fs-tw/account/*": [
         "libs/account/*/src/index.ts"
       ],
-      "@fs-tw/theme.unify": [
+      "@fs-tw/theme-unify": [
         "libs/theme-unify/src/index.ts"
       ],
-      "@fs-tw/theme.unify/*": [
+      "@fs-tw/theme-unify/*": [
         "libs/theme-unify/*/src/index.ts"
       ],
       "@fs-tw/theme-alain-ms": [

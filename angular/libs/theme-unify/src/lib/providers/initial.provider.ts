@@ -1,6 +1,5 @@
 import { ApplicationRef, APP_INITIALIZER, ElementRef, Injector } from '@angular/core';
 import { Store, Actions, ofActionDispatched } from '@ngxs/store';
-import { RouterNavigation } from '@ngxs/router-plugin';
 import { Router, NavigationEnd } from '@angular/router';
 import { LayoutStateService } from '../service/layout-state.service';
 import { of } from 'rxjs';

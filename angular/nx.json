@@ -28,6 +28,9 @@
     }
   },
   "projects": {
+    "unify-app": {
+      "tags": []
+    },
     "account": {
       "tags": []
     },
