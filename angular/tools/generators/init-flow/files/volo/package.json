@@ -39,6 +39,7 @@
     "@abp/ng.components": "~4.1.0",
     "@abp/ng.core": "~4.1.0",
     "@abp/ng.setting-management": "~4.1.0",
+    "@abp/ng.theme.basic": "~4.1.0",
     "@abp/ng.theme.shared": "~4.1.0",
     "@volo/abp.commercial.ng.ui": "~4.1.0",
     "@volo/abp.ng.account": "~4.1.0",

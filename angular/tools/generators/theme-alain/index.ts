@@ -35,7 +35,6 @@ const overwriteDataFileRoot = path.join(__dirname, 'overwrites');
 let project: Project;
 const spinner = new Spinner();
 
-import { getProjectConfig } from '@nrwl/workspace';
 
 /** 移除 config npm ,package.json 設定 */
 function clearFiles(options: ApplicationOptions): (host: Tree) => void {
@@ -135,16 +134,17 @@ function addDependenciesToPackageJson(options: ApplicationOptions): (host: Tree)
 
   return (host: Tree) => {
     //"@fs-tw/theme-alain-ms": "410.0.1"
-    addPackageToPackageJson(host, [`@fs-tw/theme-alain-ms:410.0.1`], 'dependencies');
+    addPackageToPackageJson(host, [`@fs-tw/theme-alain-ms@410.0.1`]);
+    addPackageToPackageJson(host, [`@npm/ng-alain-ms@file:npm/ng-alain-ms`],'devDependencies');
     return chain([
-      // mergeWith(
-      //   apply(url('./npm'), [
-      //     template({
-      //       name: options.name
-      //     }),
-      //     move(`npm/${options.name}`),
-      //   ]),
-      // )
+      mergeWith(
+        apply(url('./npm'), [
+          template({
+            name: options.name
+          }),
+          move(`npm`),
+        ]),
+      )
     ]);
 
   }

@@ -15,7 +15,7 @@ export default function (): Rule {
     return chain([
       updateNx,
       updateNg,
-      updateTs,
+      //updateTs,
       //updateTsProd,
       //updateSymLink
     ])(host, context);

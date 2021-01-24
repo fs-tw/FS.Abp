@@ -52,6 +52,7 @@ function clearFiles(target: string): (host: Tree) => void {
 }
 
 function AddFiles(target: string): Rule {
+  console.log(`./files/${target}`);
   return chain([
     mergeWith(
       apply(url(`./files/${target}`), [

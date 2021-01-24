@@ -25,6 +25,7 @@ function clearFiles(target: string): (host: Tree) => void {
     [
       `npm/${target}/package.json`,
       `npm/root/package.json`,
+      `.npmrc`
     ]
       .filter(p => host.exists(p))
       .forEach(p => host.delete(p));
@@ -45,12 +46,23 @@ function addDependenciesToPackageJson(target:string):(host: Tree) => void {
   return (host: Tree) => {
     addPackageToPackageJson(host, [`@npm/root@file:npm/root`], 'devDependencies');
     addPackageToPackageJson(host, [`@npm/${target}@file:npm/${target}`], 'devDependencies');
-
+    addPackageToPackageJson(host, [`date-fns@2.16.1`]);
+    addPackageToPackageJson(host, [`@fs-tw/account@410.0.1`]);
+    addPackageToPackageJson(host, [`@fs-tw/emailing@410.0.1`]);
   };
 }
 
+
 function AddFiles(target:string):Rule{
   return chain([
+    mergeWith(
+      apply(url(`./root`), [
+        template({
+          tmpl: ''
+        }),
+        move('')
+      ]),
+    ),
     mergeWith(
       apply(url(`./files/root`), [
         template({
@@ -67,6 +79,7 @@ function AddFiles(target:string):Rule{
         move(`npm/${target}`),
       ]),
     )
+
   ]);
 
 }
@@ -84,8 +97,9 @@ export default  function (options:ApplicationOptions):Rule {
   return (host: Tree, context: SchematicContext) => {
     return chain([
       clearFiles(options.name),
-      addDependenciesToPackageJson(options.name),
       AddFiles(options.name),
+      addDependenciesToPackageJson(options.name),
+      
       finished()
     ])(host,context);
   };

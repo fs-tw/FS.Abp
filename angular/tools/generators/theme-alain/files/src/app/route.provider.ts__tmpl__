@@ -1,7 +1,6 @@
 import { RoutesService, eLayoutType } from '@abp/ng.core';
 import { APP_INITIALIZER } from '@angular/core';
 import { eThemeSharedRouteNames } from '@abp/ng.theme.shared';
-import { eFileManagementRouteNames } from '@volo/abp.ng.file-management/config'
 
 
 export const APP_ROUTE_PROVIDER = [
@@ -10,7 +9,6 @@ export const APP_ROUTE_PROVIDER = [
 
 function configureRoutes(routes: RoutesService) {
   return () => {
-    routes.patch(eFileManagementRouteNames.FileManagement, { iconClass: 'fa fa-file' });
     routes.add([
       {
         parentName: eThemeSharedRouteNames.Administration,
