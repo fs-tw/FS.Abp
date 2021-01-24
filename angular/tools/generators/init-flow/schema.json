@@ -5,13 +5,14 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Library name"
-      },
-      "configName": {
-        "type": "string",
-        "description": "base config",
-        "value": "base"
-      }
+      "description": "Add package to npm folder(Dev for public,Volo for commercial),*warning delete and remove",
+      "enum": ["volo", "dev"]
     },
-  "required": ["name","configName"]
+    "configName": {
+      "type": "string",
+      "description": "請選擇目標模組(初始化使用Base)",
+      "enum": ["base"]
+    }
+  },
+  "required": ["name", "configName"]
 }
