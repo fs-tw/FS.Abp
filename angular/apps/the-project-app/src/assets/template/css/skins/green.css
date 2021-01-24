@@ -1,0 +1,551 @@
+/*
+Version: 2.1.2
+File Description: Green Skin
+*/
+/* 1- Typography
+-------------------------------------------------
+-------------------------------------------------*/
+a {
+  color: #24a828;
+}
+
+a:hover {
+  color: #1f9123;
+}
+
+a:focus,
+a:active {
+  color: #1f9123;
+}
+
+mark,
+.mark {
+  background-color: #24a828;
+  color: #ffffff;
+}
+
+.text-default {
+  color: #24a828;
+}
+
+/* Tables
+---------------------------------- */
+.table.table-colored {
+  border-bottom-color: #24a828;
+}
+
+.table-colored > thead > tr > th {
+  border-color: #24a828;
+  background-color: #24a828;
+  color: #ffffff;
+}
+
+/* 2- Layout
+-------------------------------------------------
+-------------------------------------------------*/
+.header-top.dark {
+  background-color: #303631;
+  border-bottom: 1px solid #242824;
+}
+
+.header.dark {
+  background-color: #3c433d;
+  border-top-color: #3c433d;
+}
+
+.header-top.colored {
+  background-color: #24a828;
+  border-bottom: 1px solid #24a828;
+}
+
+.default-bg {
+  background-color: #24a828;
+  color: #ffffff;
+}
+
+.default-bg-50 {
+  background-color: rgba(36, 168, 40, 0.5);
+  color: #ffffff;
+}
+
+/*Transparent Header*/
+.transparent-header header.header.dark.transparent-header-on {
+  background-color: rgba(60, 67, 61, 0.8);
+  border-top-color: rgba(36, 40, 36, 0.5);
+}
+
+/*Fixed Navigation*/
+.fixed-header-on .dark.header.fixed {
+  background-color: rgba(60, 67, 61, 0.95);
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 992px) {
+  .fixed-header-on .dark.header .dropdown-menu {
+    border: 1px solid #303631;
+  }
+}
+
+/*Translucent Backgrounds*/
+.default-translucent-bg:after {
+  background-color: rgba(36, 168, 40, 0.7);
+}
+
+.default-translucent-bg.hovered:hover:after {
+  background-color: rgba(36, 168, 40, 0.8);
+}
+
+.default-hovered:hover:after,
+.default-hovered:hover {
+  background-color: #24a828;
+}
+
+/* 4 Pages
+-------------------------------------------------
+-------------------------------------------------*/
+/* Blog Timeline layout
+---------------------------------- */
+.timeline-date-label:after {
+  background-color: #24a828;
+}
+
+/* 5 Components
+-------------------------------------------------
+-------------------------------------------------*/
+/* Buttons
+---------------------------------- */
+.btn-default {
+  background-color: #24a828;
+  border-color: #1f9123;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.show > .dropdown-toggle.btn-default {
+  background-color: #1f9123;
+  border-color: #1f9123;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default {
+  background-color: #24a828;
+  border-color: #1f9123;
+}
+
+.btn-default-transparent {
+  border-color: #24a828;
+}
+
+.btn-default-transparent:hover,
+.btn-default-transparent:focus,
+.btn-default-transparent.focus,
+.btn-default-transparent:active,
+.btn-default-transparent.active,
+.show > .dropdown-toggle.btn-default-transparent {
+  background-color: #1f9123;
+  border-color: #1f9123;
+}
+
+.default-bg .btn-default,
+.default-translucent-bg .btn-default,
+.default-bg .btn-default-transparent,
+.default-translucent-bg .btn-default-transparent {
+  color: #24a828;
+}
+
+.btn-white:hover,
+.btn-white:focus,
+.btn-white.focus,
+.btn-white:active,
+.btn-white.active,
+.show > .dropdown-toggle.btn-white {
+  color: #1f9123;
+}
+
+.btn-animation:hover:before,
+.btn-animation:focus:before {
+  background: #1f9123;
+}
+
+/* Pager
+---------------------------------- */
+ul.pagination .page-item .page-link:hover,
+ul.pagination .page-item .page-link:focus {
+  background-color: #1f9123;
+  border-color: #1f9123;
+}
+
+ul.pagination .page-item.active .page-link,
+.page-item.active .page-link:hover,
+.page-item.active .page-link:focus {
+  background-color: #24a828;
+  border-color: #24a828;
+}
+
+/* Breadcrumb
+---------------------------------- */
+.banner .breadcrumb .breadcrumb-item a:hover {
+  color: #1f9123;
+}
+
+.banner .dark.breadcrumb-container {
+  background-color: rgba(60, 67, 61, 0.6);
+}
+
+/* Nav pills
+---------------------------------- */
+.nav-pills.style-2 > li .nav-link.active,
+.nav-pills.style-2 > li .nav-link.active:hover,
+.nav-pills.style-2 > li .nav-link.active:focus,
+.nav-pills.style-2 > li .nav-link:hover,
+.nav-pills.style-2 > li .nav-link:focus {
+  color: #24a828;
+}
+
+.nav.flex-column > li .nav-link.active,
+.nav.flex-column > li .nav-link.active:hover,
+.nav.flex-column > li .nav-link.active:focus,
+.nav.flex-column > li .nav-link:hover,
+.nav.flex-column > li .nav-link:focus {
+  color: #24a828;
+}
+
+.nav-pills > li .nav-link.active:after {
+  color: #24a828;
+}
+
+.nav.flex-column:not(.list-style-icons) > li .nav-link.active:hover:after,
+.nav.flex-column:not(.list-style-icons) > li .nav-link.active:focus:after,
+.nav.flex-column:not(.list-style-icons) > li .nav-link:hover:after,
+.nav.flex-column:not(.list-style-icons) > li .nav-link:focus:after {
+  color: #1f9123;
+}
+
+.nav.flex-column.list-style-icons > li .nav-link.active > i,
+.nav.flex-column.list-style-icons > li .nav-link:hover > i,
+.nav.flex-column.list-style-icons > li .nav-link:focus > i {
+  color: #1f9123;
+}
+
+.dark .footer-content .nav.flex-column > li > a.active:hover,
+.dark .footer-content .nav.flex-column > li > a:hover {
+  color: #1f9123;
+}
+
+/* Collapse
+---------------------------------- */
+.collapse-style-2 .card-header a {
+  background-color: #24a828;
+}
+
+/* Progress bars
+---------------------------------- */
+.progress-bar-default {
+  background-color: #24a828;
+}
+
+/* Forms
+---------------------------------- */
+.default-bg .form-control {
+  border-color: #1f9123;
+}
+
+.default-bg .input-group-addon {
+  border-color: #1f9123;
+}
+
+/*Icons
+---------------------------------- */
+.icon.default-bg {
+  background-color: #24a828;
+}
+
+.icon.light-bg {
+  color: #24a828;
+}
+
+/*Listing Items
+---------------------------------- */
+.listing-item .overlay-container .badge {
+  border: 1px solid #24a828;
+  color: #24a828;
+}
+
+/*Modals
+---------------------------------- */
+.modal-content .modal-header {
+  background-color: #24a828;
+}
+
+/*Pace (Page loader)
+---------------------------------- */
+/*loader 1*/
+.page-loader-1 .pace {
+  border: 1px solid #24a828;
+}
+
+.page-loader-1 .pace .pace-progress {
+  background: #24a828;
+}
+
+.page-loader-2 .pace .pace-progress:before {
+  background: #24a828;
+}
+
+.page-loader-2 .pace .pace-activity {
+  border: 5px solid #24a828;
+}
+
+.page-loader-2 .pace .pace-activity:after {
+  border: 5px solid #24a828;
+}
+
+.page-loader-2 .pace .pace-activity:before {
+  border: 5px solid #24a828;
+}
+
+.page-loader-3 .pace .pace-progress {
+  background: #24a828;
+}
+
+.page-loader-4 .pace .pace-progress {
+  background: #24a828;
+}
+
+.page-loader-5 .pace .pace-progress:after {
+  color: #24a828;
+}
+
+.page-loader-6 .pace .pace-activity {
+  background: #24a828;
+}
+
+/* 6 Navigations
+-------------------------------------------------
+-------------------------------------------------*/
+/* 6.1 Light Version
+----------------------------------------------------------------------------- */
+.header .navbar-nav li .nav-link:focus,
+.header .navbar-nav li .nav-link:hover,
+.header .navbar-nav .show > .nav-link,
+.header .navbar-nav li .nav-link.show,
+.header .navbar-nav .active.show > .nav-link,
+.header .navbar-nav li.show .nav-link.active {
+  color: #24a828;
+}
+
+.header .navbar-nav .active > .nav-link,
+.header .navbar-nav li .nav-link.active {
+  color: #24a828;
+}
+
+.header .navbar-nav li li a:focus,
+.header .navbar-nav li li a:hover,
+.header .navbar-nav li .show > a,
+.header .navbar-nav li li a.show,
+.header .navbar-nav li .active > a,
+.header .navbar-nav li li a.active {
+  color: #1f9123;
+}
+
+header:not(.dark) .mega-menu .menu > li > a:hover i,
+header:not(.dark) .dropdown-menu > li > a:hover i,
+header:not(.dark) .mega-menu .menu > li.active > a i,
+header:not(.dark) .dropdown-menu > li.active > a i {
+  color: #24a828;
+}
+
+.navbar-light .navbar-toggler:hover,
+.navbar-light .navbar-toggler:focus {
+  border-color: #1f9123;
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 991px) {
+  .header .navbar-nav .active .nav-link,
+  .header .navbar-nav .active .nav-link:hover,
+  .header .navbar-nav .active .nav-link:focus {
+    color: #1f9123;
+  }
+  /* first level item hover and focus states */
+  .header .navbar-nav li > a:hover,
+  .header .navbar-nav li > a:focus,
+  .header .navbar-nav .active > a,
+  .header .navbar-nav .active > a:hover,
+  .header .navbar-nav .active > a:focus {
+    color: #1f9123;
+  }
+  /* second level item on hover/focus */
+  .header .navbar-nav .show .dropdown-menu > li > a:hover,
+  .header .navbar-nav .show .dropdown-menu > li > a:focus {
+    color: #1f9123;
+  }
+  /* Arrow for parent menu item */
+  .header .navbar-nav .dropdown.show > .dropdown-toggle::after {
+    color: #24a828;
+  }
+}
+
+/* 6.2 Dark Version
+----------------------------------------------------------------------------- */
+/* first level active menu item when opened */
+.dark.header .navbar-nav .show .nav-link,
+.dark.header .navbar-nav .show .nav-link:hover,
+.dark.header .navbar-nav .show .nav-link:focus,
+.dark.header .navbar-nav .dropdown .nav-link:focus {
+  border-bottom-color: #303631;
+}
+
+/* second level menu item */
+.dark.header .dropdown-menu {
+  background-color: #303631;
+}
+
+.dark.header .dropdown-menu .divider {
+  background-color: rgba(60, 67, 61, 0.8);
+}
+
+.dark.header .dropdown-menu > li > a,
+.dark.header .navbar-nav .mega-menu .menu > li > a {
+  border-bottom: 1px solid rgba(60, 67, 61, 0.8);
+}
+
+.dark.header .mega-menu .menu > li > a:hover,
+.dark.header .mega-menu .menu > li > a:focus {
+  border-color: rgba(60, 67, 61, 0.8);
+}
+
+.dark.header .dropdown-menu > li > a:hover,
+.dark.header .dropdown-menu > li > a:focus,
+.dark.header .navbar-nav .show > a,
+.dark.header .navbar-nav .show > a:hover,
+.dark.header .navbar-nav .show > a:focus,
+.dark.header .dropdown-menu > .active > a,
+.dark.header .dropdown-menu > .active > a:hover,
+.dark.header .dropdown-menu > .active > a:focus,
+.dark.header .dropdown-menu .menu > .active > a,
+.dark.header .dropdown-menu .menu > .active > a:hover,
+.dark.header .dropdown-menu .menu > .active > a:focus {
+  border-color: rgba(60, 67, 61, 0.8);
+}
+
+/* 6.3 Navigation style 2
+----------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .header.white-bg .main-navigation--style-2 .navbar-nav li .nav-link:focus,
+  .header.white-bg .main-navigation--style-2 .navbar-nav li .nav-link:hover,
+  .header.white-bg .main-navigation--style-2 .navbar-nav li.show .nav-link {
+    color: #24a828;
+  }
+}
+
+/* 7 Blocks/Widgets
+-------------------------------------------------
+-------------------------------------------------*/
+/* Social icons block
+---------------------------------- */
+.social-links li a:hover {
+  border-color: #1f9123;
+  color: #1f9123;
+}
+
+.social-links.animated-effect-1 li a:after {
+  background-color: #24a828;
+}
+
+.social-links.default li a {
+  background-color: #24a828;
+  border: 1px solid #1f9123;
+}
+
+.header-top:not(.dark) .social-links .dropdown.show > button > i:before {
+  color: #24a828;
+}
+
+/*Header Dropdowns (search, cart etc)
+---------------------------------- */
+.header-dropdown-buttons .btn-group > .btn:hover {
+  background-color: #24a828;
+  border-color: #1f9123;
+}
+
+.header-dropdown-buttons .btn-group.show > .btn {
+  background-color: #24a828;
+  border-color: #1f9123;
+}
+
+.dark.header-top .dropdown-menu {
+  border: 1px solid #242824;
+  background: #303631;
+}
+
+.colored.header-top .dropdown-menu {
+  border: 1px solid #24a828;
+  background: #24a828;
+}
+
+/* Media
+---------------------------------- */
+.media:hover .icon {
+  color: #24a828;
+  border: 1px solid #24a828;
+}
+
+/* Full Width Content
+---------------------------------- */
+/* Large and Medium devices (desktops, tablets less than 1199px) */
+@media (max-width: 1199px) {
+  .full-width-section:not(.no-image) .full-text-container.default-bg {
+    background-color: rgba(36, 168, 40, 0.6);
+  }
+}
+
+/* Pricing tables
+---------------------------------- */
+.popover-title {
+  background-color: #24a828;
+}
+
+/* Tags cloud block
+---------------------------------- */
+.tag a {
+  background-color: #24a828;
+  border: 1px solid #1f9123;
+}
+
+.tag a:hover {
+  color: #24a828;
+  border-color: #1f9123;
+}
+
+/* 8 Main Slideshow
+-------------------------------------------------
+-------------------------------------------------*/
+.tp-bannertimer {
+  background-color: rgba(36, 168, 40, 0.8);
+}
+
+/* 9 Slick Carousel
+-------------------------------------------------
+-------------------------------------------------*/
+.content-slider-with-large-controls .slick-prev:after,
+.content-slider-with-large-controls-autoplay .slick-prev:after {
+  color: #24a828;
+}
+
+.content-slider-with-large-controls .slick-next:after,
+.content-slider-with-large-controls-autoplay .slick-next:after {
+  color: #24a828;
+}
+
+/* 10 Full Page
+-------------------------------------------------
+-------------------------------------------------*/
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: rgba(36, 168, 40, 0.8);
+}

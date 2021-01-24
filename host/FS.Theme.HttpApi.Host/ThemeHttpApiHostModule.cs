@@ -49,6 +49,12 @@ namespace FS.Theme
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
         )]
+    [DependsOn(
+        typeof(FS.Theme.TheProject.TheProjectApplicationModule),
+        typeof(FS.Theme.TheProject.EntityFrameworkCore.TheProjectEntityFrameworkCoreModule),
+        typeof(FS.Theme.TheProject.TheProjectHttpApiModule)
+        )]
+
     public class ThemeHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";

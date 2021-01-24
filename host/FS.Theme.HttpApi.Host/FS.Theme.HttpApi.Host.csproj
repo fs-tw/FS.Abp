@@ -28,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\modules\TheProject\src\FS.Theme.TheProject.Application\FS.Theme.TheProject.Application.csproj" />
+    <ProjectReference Include="..\..\modules\TheProject\src\FS.Theme.TheProject.EntityFrameworkCore\FS.Theme.TheProject.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\modules\TheProject\src\FS.Theme.TheProject.HttpApi\FS.Theme.TheProject.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\FS.Theme.HttpApi\FS.Theme.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\FS.Theme.Application\FS.Theme.Application.csproj" />
     <ProjectReference Include="..\..\src\FS.Theme.EntityFrameworkCore\FS.Theme.EntityFrameworkCore.csproj" />

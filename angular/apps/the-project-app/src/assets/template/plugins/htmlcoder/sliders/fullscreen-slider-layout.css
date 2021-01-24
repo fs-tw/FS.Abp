@@ -1,0 +1,29 @@
+html,
+body,
+.page-wrapper,
+.banner,
+.hc-slideshow,
+.carousel-inner,
+.carousel-item,
+.fullscreen-slide,
+.background-image {
+  height: 100%;
+}
+.header-container {
+  position: absolute;
+  width: 100%;
+}
+.hc-slideshow--fullscreen {
+  height: 100%;
+}
+.fullscreen-slide .background-image {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}

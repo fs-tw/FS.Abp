@@ -1,0 +1,238 @@
+/* 9 Slick Carousel
+----------------------------------------------------------------------------- */
+.slick-carousel:not(.slick-initialized) > div {
+  display: none;
+}
+.slick-slide:focus {
+  outline: none;
+}
+.container .content-slider-with-large-controls,
+.container .content-slider-with-large-controls-autoplay {
+  margin-bottom: 50px;
+  border: 1px solid #f5f5f5;
+}
+
+/* Styling Next and Prev buttons */
+/*style-1*/
+.content-slider-with-controls .slick-arrow,
+.content-slider-with-controls-autoplay .slick-arrow,
+.content-slider-with-thumbs .slick-arrow {
+  top: 50%;
+  margin-top: -15px;
+  z-index: 10;
+  display: inline-block;
+  font-size: 14px;
+  position: absolute;
+  text-transform: capitalize;
+  font-weight: 300;
+  color: transparent;
+  background: rgba($black, 0.5);
+  padding: 5px 5px;
+  border: 0;
+  cursor: pointer;
+  @include transition (all 0.2s ease-in-out);
+}
+.content-slider-with-controls .slick-arrow:after,
+.content-slider-with-controls-autoplay .slick-arrow:after,
+.content-slider-with-thumbs .slick-arrow:after {
+  font-family: "FontAwesome";
+  position: absolute;
+  font-size: 16px;
+  line-height: 1;
+  top: 50%;
+  margin-top: -8px;
+}
+.content-slider-with-controls .slick-prev,
+.content-slider-with-controls-autoplay .slick-prev,
+.content-slider-with-thumbs .slick-prev {
+  left: 0;
+  padding-left: 0px;
+}
+.content-slider-with-controls .slick-prev:hover,
+.content-slider-with-controls-autoplay .slick-prev:hover,
+.content-slider-with-thumbs .slick-prev:hover {
+  padding-left: 25px;
+  padding-right: 10px;
+  color: $white;
+}
+.content-slider-with-controls .slick-prev:after,
+.content-slider-with-controls-autoplay .slick-prev:after,
+.content-slider-with-thumbs .slick-prev:after {
+  content: "\f104";
+  left: 13px;
+  color: $white;
+  @include transition (all 0.2s ease-in-out);
+}
+.content-slider-with-controls .slick-prev:hover:after,
+.content-slider-with-controls-autoplay .slick-prev:hover:after,
+.content-slider-with-thumbs .slick-prev:hover:after {
+  left: 8px;
+}
+.content-slider-with-controls .slick-next,
+.content-slider-with-controls-autoplay .slick-next,
+.content-slider-with-thumbs .slick-next {
+  right: 0px;
+  left: auto;
+  padding-right: 0px;
+}
+.content-slider-with-controls .slick-next:hover,
+.content-slider-with-controls-autoplay .slick-next:hover,
+.content-slider-with-thumbs .slick-next:hover {
+  padding-right: 25px;
+  padding-left: 10px;
+  color: $white;
+}
+.content-slider-with-controls .slick-next:after,
+.content-slider-with-controls-autoplay .slick-next:after,
+.content-slider-with-thumbs .slick-next:after {
+  content: "\f105";
+  right: 13px;
+  color: $white;
+  @include transition (all 0.2s ease-in-out);
+}
+.content-slider-with-controls .slick-next:hover:after,
+.content-slider-with-controls-autoplay .slick-next:hover:after,
+.content-slider-with-thumbs .slick-next:hover:after {
+  right: 8px;
+}
+
+/*style-2*/
+.content-slider-with-large-controls .slick-arrow,
+.content-slider-with-large-controls-autoplay .slick-arrow {
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 300;
+  color: $gray-lighter;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.container .content-slider-with-large-controls .slick-arrow,
+.container .content-slider-with-large-controls-autoplay .slick-arrow {
+  top: auto;
+  bottom: -35px;
+}
+.content-slider-with-large-controls .slick-arrow:after,
+.content-slider-with-large-controls-autoplay .slick-arrow:after {
+  font-family: "FontAwesome";
+  position: absolute;
+  font-size: 16px;
+  line-height: 1;
+  top: 50%;
+  margin-top: -10px;
+}
+.content-slider-with-large-controls .slick-prev,
+.content-slider-with-large-controls-autoplay .slick-prev {
+  z-index: 1;
+  left: 0;
+  padding-left: 30px;
+}
+.content-slider-with-large-controls .slick-prev:after,
+.content-slider-with-large-controls-autoplay .slick-prev:after {
+  content: "\f104";
+  left: 15px;
+}
+.content-slider-with-large-controls .slick-next,
+.content-slider-with-large-controls-autoplay .slick-next {
+  right: 0px;
+  left: auto;
+  padding-right: 30px;
+}
+.content-slider-with-large-controls .slick-next:after,
+.content-slider-with-large-controls-autoplay .slick-next:after {
+  content: "\f105";
+  right: 15px;
+}
+.container .content-slider-with-large-controls .slick-prev,
+.container .content-slider-with-large-controls-autoplay .slick-prev {
+  padding-left: 15px;
+}
+.container .content-slider-with-large-controls .slick-prev:after,
+.container .content-slider-with-large-controls-autoplay .slick-prev:after {
+  left: 0px;
+}
+.container .content-slider-with-large-controls .slick-next,
+.container .content-slider-with-large-controls-autoplay .slick-next {
+  padding-right: 15px;
+}
+.container .content-slider-with-large-controls .slick-next:after,
+.container .content-slider-with-large-controls-autoplay .slick-next:after {
+  right: 0px;
+}
+
+/* Large and Medium devices (desktops, tablets less than 1199px) */
+@media (max-width: 1199px) {
+  .content-slider-with-large-controls .slick-arrow,
+  .content-slider-with-large-controls-autoplay .slick-arrow {
+    top: 98%;
+  }
+}
+.buttons-hide .slick-arrow {
+  display: none;
+}
+
+/* Styling Pagination*/
+.slick-dots,
+.slick-dots {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 7px;
+}
+.slick-dots li,
+.slick-dots li {
+  display: inline-block;
+  zoom: 1;
+}
+.slick-dots li button,
+.slick-dots li button {
+  display: block;
+  padding: 0;
+  width: 9px;
+  height: 9px;
+  margin: 5px 3px;
+  @include opacity(0.5);
+  @include border-radius(20px);
+  background: $white;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
+.dark-controls .slick-dots li button,
+.dark-controls .slick-dots li button {
+  background: $gray-dark;
+}
+.slick-dots li.slick-active button,
+.slick-dots.clickable li:hover button,
+.slick-dots li.slick-active button,
+.slick-dots.clickable li:hover button {
+  @include opacity(1);
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 767px) {
+  .slick-dots li button,
+  .slick-dots li button {
+    background: $black;
+  }
+}
+
+/* Styling Navigation Thumbs*/
+.content-slider-thumbs-container {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.slick-nav-thumb {
+  margin: 0 5px;
+  cursor: pointer;
+}
