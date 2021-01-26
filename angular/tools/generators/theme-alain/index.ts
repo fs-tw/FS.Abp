@@ -28,41 +28,44 @@ import {
 } from './utils/json';
 //import { addFiles, overwriteFile } from 'ng-alain/utils/file';
 import { getProject, getProjectFromWorkspace, Project } from './utils/project';
-import { SchemaOptions as ApplicationOptions } from './options';
+import { SchemaOptions as ApplicationOptions } from './schema';
 import * as mergeGenerators from '../merge-config/index';
 import * as path from 'path';
 const overwriteDataFileRoot = path.join(__dirname, 'overwrites');
-let project: Project;
 const spinner = new Spinner();
 
 
 /** 移除 config npm ,package.json 設定 */
 function clearFiles(options: ApplicationOptions): (host: Tree) => void {
+  let projectRoot = `apps/${options.name}`;
+  let projectSourceRoot = `apps/${options.name}/src`;
   return (host: Tree) => {
     //Clear files
     [
+      `npm/package.json`,
+      `npm/ng-alain-ms/package.json`,
       `config/${options.name}/apps.config.json`,
       `npm/${options.name}/package.json`,
-      `${project.root}/tslint.json`,
-      `${project.root}/tsconfig.spec.json`,
-      `${project.root}/tsconfig.json`,
-      `${project.root}/tsconfig.editor.json`,
-      `${project.root}/tsconfig.app.json`,
-      `${project.root}/jest.json`,
-      `${project.root}/.browserslistrc`,
-      `${project.sourceRoot}/main.ts`,
-      `${project.sourceRoot}/test-setup.ts`,
-      `${project.sourceRoot}/styles.css`,
-      `${project.sourceRoot}/index.html`,
-      `${project.sourceRoot}/environments/environment.prod.ts`,
-      `${project.sourceRoot}/environments/environment.ts`,
-      `${project.sourceRoot}/favicon.ico`,
-      `${project.sourceRoot}/app/app.module.ts`,
-      `${project.sourceRoot}/app/app.component.spec.ts`,
-      `${project.sourceRoot}/app/app.component.ts`,
-      `${project.sourceRoot}/app/app.component.html`,
-      `${project.sourceRoot}/app/app.component.css`,
-      `${project.sourceRoot}/app/app-routing.module.ts`,
+      `${projectRoot}/tsconfig.spec.json`,
+      `${projectRoot}/tsconfig.json`,
+      `${projectRoot}/tsconfig.editor.json`,
+      `${projectRoot}/tsconfig.app.json`,
+      `${projectRoot}/jest.json`,
+      `${projectRoot}/.browserslistrc`,
+      `${projectSourceRoot}/main.ts`,
+      `${projectSourceRoot}/test-setup.ts`,
+      `${projectSourceRoot}/styles.scss`,
+      `${projectSourceRoot}/index.html`,
+      `${projectSourceRoot}/environments/environment.prod.ts`,
+      `${projectSourceRoot}/environments/environment.ts`,
+      `${projectSourceRoot}/favicon.ico`,
+      `${projectSourceRoot}/polyfills.ts`,
+      `${projectSourceRoot}/app/app.module.ts`,
+      `${projectSourceRoot}/app/app.component.spec.ts`,
+      `${projectSourceRoot}/app/app.component.ts`,
+      `${projectSourceRoot}/app/app.component.html`,
+      `${projectSourceRoot}/app/app.component.css`,
+      `${projectSourceRoot}/app/app-routing.module.ts`,
     ]
       .filter(p => host.exists(p))
       .forEach(p => host.delete(p));
@@ -75,40 +78,17 @@ function clearFiles(options: ApplicationOptions): (host: Tree) => void {
     }
   };
 }
-function getCurrentProject(options: ApplicationOptions): (host: Tree) => void {
-  return (host: Tree) => {
-    project = getProject(host, options.name);
-  };
 
-}
-
-// function addRunScriptToPackageJson(): (host: Tree) => void {
-//   return (host: Tree) => {
-//     const json = getPackage(host, 'scripts');
-//     if (json == null) return host;
-//     json.scripts['ng-high-memory'] = `node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng`;
-//     json.scripts.start = `ng s -o`;
-//     json.scripts.hmr = `ng s -o --hmr`;
-//     json.scripts.build = `npm run ng-high-memory build -- --prod`;
-//     json.scripts.analyze = `npm run ng-high-memory build -- --prod --source-map`;
-//     json.scripts['analyze:view'] = `source-map-explorer dist/**/*.js`;
-//     json.scripts['test-coverage'] = `ng test --code-coverage --watch=false`;
-//     json.scripts['color-less'] = `ng-alain-plugin-theme -t=colorLess`;
-//     json.scripts.theme = `ng-alain-plugin-theme -t=themeCss`;
-//     json.scripts.icon = `ng g ng-alain:plugin icon`;
-//     overwritePackage(host, json);
-//     return host;
-//   };
-// }
 
 function addFilesToRoot(host: any, options: ApplicationOptions): Rule {
-
   return chain([
     mergeWith(
       apply(url('./files'), [
         template({
           dot: '.',
           tmpl: '',
+          name:options.name,
+          title:options.title,
           port:options.cshapBacknedPort,
           applicationName:options.abpApplicationName,
         }),
@@ -169,21 +149,18 @@ function finished(): (_host: Tree, context: SchematicContext) => void {
 
 export default function (options: ApplicationOptions): Rule {
   return (host: Tree, context: SchematicContext) => {
-
+    options.title = options.title ? options.title:'豐碩資訊';
     spinner.start(`Generating NG-ALAIN scaffold...`);
     return chain([
 
 
       generateApplication(options),
-      getCurrentProject(options),
       clearFiles(options),
       addConfigFiles(options),
       addDependenciesToPackageJson(options),//
-      // ci
-      //addRunScriptToPackageJson()
       // files
       addFilesToRoot(host, options),
-      mergeGenerators.default(),
+      //mergeGenerators.default(),
       install(),
       finished(),
     ])(host, context);
