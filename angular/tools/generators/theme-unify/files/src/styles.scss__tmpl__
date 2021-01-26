@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+.yellow{
+    color: yellow !important;
+}
+
+.red{
+    color: red !important;
+}
+
+.green{
+    color: green !important;
+}
+
+.confirmation-dialog{
+    background-color:#fff !important;
+}
