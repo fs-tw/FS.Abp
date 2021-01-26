@@ -5,19 +5,19 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Project name",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
+      "description": "NG專案名稱(projectname-public-app)",
     },
     "cshapBacknedPort": {
       "type": "number",
-      "description": "backend port number: 4xxxx"
+      "description": "後台啟動Port number: 4xxxx"
     },
     "abpApplicationName": {
       "type": "string",
-      "description": "abp application name"
+      "description": "ABP WebSite名稱:NKUST,IIC..."
+    },
+    "title": {
+      "type": "string",
+      "description": "html title tag(預設:豐碩資訊)"
     }
   },
   "required": ["name","abpApplicationName","cshapBacknedPort"]

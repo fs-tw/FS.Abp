@@ -28,7 +28,7 @@ import {
 } from './utils/json';
 //import { addFiles, overwriteFile } from 'ng-alain/utils/file';
 import { getProject, getProjectFromWorkspace, Project } from './utils/project';
-import { SchemaOptions as ApplicationOptions } from './options';
+import { SchemaOptions as ApplicationOptions } from './schema';
 import * as mergeGenerators from '../merge-config/index';
 import * as path from 'path';
 const overwriteDataFileRoot = path.join(__dirname, 'overwrites');

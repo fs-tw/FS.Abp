@@ -17,7 +17,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44331',
+      url: 'https://localhost:<%= port %>',
       rootNamespace: '',
     },
   },
