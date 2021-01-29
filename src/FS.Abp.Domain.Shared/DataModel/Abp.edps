@@ -107,7 +107,7 @@
         </ed:Property>
         <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.Abp.Application</Project>
+            <Project>FS.Abp.Application.Contracts</Project>
             <ProjectFolder>FS.Abp</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>

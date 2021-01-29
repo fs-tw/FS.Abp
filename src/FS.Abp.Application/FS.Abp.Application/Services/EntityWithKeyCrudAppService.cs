@@ -1,4 +1,5 @@
 ﻿using FS.Abp.Application.Dtos;
+using Microsoft.Extensions.Localization;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,20 +20,16 @@ namespace FS.Abp.Application.Services
         where TGetListInput : ISearchResultRequest
     {
         protected new IRepository<TEntity, TKey> Repository { get; }
-
-        private ISearchedAndPagedAndSortedOperation _searchedAndpagedAndSortedOperation;
-        protected ISearchedAndPagedAndSortedOperation SearchedAndPagedAndSortedOperation => LazyGetRequiredService(ref _searchedAndpagedAndSortedOperation);
+        protected ISearchedAndPagedAndSortedOperation SearchedAndPagedAndSortedOperation => this.LazyServiceProvider.LazyGetRequiredService<ISearchedAndPagedAndSortedOperation>();
 
         protected EntityWithKeyCrudAppService(IRepository<TEntity, TKey> repository)
             : base(repository)
         {
             Repository = repository;
         }
-        
-        protected override IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
+        protected override async Task<IQueryable<TEntity>> CreateFilteredQueryAsync(TGetListInput input)
         {
-            //GetList need WithDetail
-            var query = Repository.WithDetails();
+            var query = await Repository.WithDetailsAsync();
 
             return SearchedAndPagedAndSortedOperation.ApplySearching(query, input);
         }

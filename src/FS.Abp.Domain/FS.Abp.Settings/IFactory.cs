@@ -13,7 +13,7 @@ namespace FS.Abp.Settings
     {
         public ISettingManager SettingManager { get; }
         public ISettingProvider SettingProvider { get; }
-        Task<T> GetAsync(string providerName, string providerKey, bool fallback = true);
-        Task SetAsync(T input, string providerName, string providerKey);
+        Task<T> GetAsync(string providerName = null, string providerKey = null, bool fallback = true);
+        Task SetAsync(T input, string providerName = null, string providerKey = null);
     }
 }
