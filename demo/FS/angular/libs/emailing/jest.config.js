@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'emailing',
+  displayName: 'theme-alain-ms',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/libs/emailing',
+  coverageDirectory: '../../coverage/libs/theme-alain-ms',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

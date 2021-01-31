@@ -1,0 +1,19 @@
+<div class="alain-ms__search" [ngClass]="{ 'alain-ms__search-active': show }">
+  <input
+    class="alain-ms__search-ipt"
+    #ipt
+    placeholder="{{ l.placeholder }}"
+    nz-input
+    [(ngModel)]="q"
+    (input)="search$.next($event.target?.value)"
+    [nzAutocomplete]="searchAuto"
+    (blur)="show = false"
+  />
+  <i class="alain-ms__search-icon" nz-icon nzType="search"></i>
+  <i class="alain-ms__search-outline"></i>
+  <nz-autocomplete #searchAuto class="asdlfkjlj">
+    <nz-auto-option *ngFor="let item of list" [nzValue]="item">
+      {{ item }}
+    </nz-auto-option>
+  </nz-autocomplete>
+</div>

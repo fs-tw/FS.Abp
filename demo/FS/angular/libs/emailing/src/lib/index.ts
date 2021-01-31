@@ -1,1 +1,1 @@
-export * from './emailing.module';
+export * from './theme-alain-ms.module';
