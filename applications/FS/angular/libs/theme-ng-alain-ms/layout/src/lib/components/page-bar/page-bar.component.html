@@ -1,8 +1,0 @@
-<page-bar [subTitle]="subTitleTpl" [title]="titleTpl">
-  <ng-template #subTitleTpl>
-    <button *ngIf="!isCurrentPath" nz-button nzSize="small" [routerLink]="['./']">返回</button>
-  </ng-template>
-  <ng-template #titleTpl>
-    <!-- {{((profile$| async)?.title) | abpLocalization}} -->
-  </ng-template>
-</page-bar>
