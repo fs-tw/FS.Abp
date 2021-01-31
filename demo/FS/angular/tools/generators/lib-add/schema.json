@@ -1,0 +1,26 @@
+{
+  "id": "lib-add",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Select module (current public module: account,emailing)",
+      "enum":["account","emailing"]
+    },
+    "versionNo": {
+      "type": "string",
+      "description": "Enter version No. includeSourceCode = false  will need this option (Using `npm info @fs-tw/account@latest` to checkout current latest)"
+    },
+    "abpVersion": {
+      "type": "string",
+      "description": "Write abp's current version . includeSourceCode = true will need this option. (Using `npm info @abp/ng.theme.shared` )"
+    },
+    "includeSourceCode":{
+      "type":"boolean",
+      "description":"If Set true then will  include current sourcecode",
+      "enum":[true,false],
+      "default": false
+    }
+  },
+  "required": ["name"]
+}
