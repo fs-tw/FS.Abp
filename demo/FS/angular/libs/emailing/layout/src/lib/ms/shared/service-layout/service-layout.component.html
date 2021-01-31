@@ -1,0 +1,8 @@
+<div class="alain-ms__product" [ngClass]="{ 'alain-ms__product-col-1': nav && !hideNav }">
+  <page-nav *ngIf="nav" [config]="navConfig" [list]="navList"></page-nav>
+  <div class="alain-ms__product-body scrollbar">
+    <div class="alain-ms__console">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

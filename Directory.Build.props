@@ -1,6 +1,28 @@
 <Project>
   <PropertyGroup>
     <Version>420.0.1</Version>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>YinChang</Authors>
+    <Company>Further Software</Company>
+    <PackageProjectUrl>https://github.com/fs-tw/FS.Abp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/fs-tw/FS.Abp</RepositoryUrl>
+    <PackageTags>abp module</PackageTags>
+    <AbpProjectType>module</AbpProjectType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ConfigureAwait.Fody" Version="3.3.1" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <PropertyGroup>
     <AbpVersion>4.2.0</AbpVersion>
     <EasyAbpTreeVersion>2.2.0</EasyAbpTreeVersion>
   </PropertyGroup>

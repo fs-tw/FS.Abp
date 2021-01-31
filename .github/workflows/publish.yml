@@ -10,11 +10,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: NuGet/setup-nuget@v1.0.5
 
-      - name: read common.props
-        id: commonProps
+      - name: read directoryBuild.props
+        id: directoryBuildProps
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./common.props
+          path: ./Directory.Build.props
 
       - name: get version
         id: getVersion
@@ -22,7 +22,7 @@ jobs:
         with:
           regex_pattern: '(?<=>)[^<>]+(?=</Version>)'
           regex_flags: 'gim'
-          search_string: '${{ steps.commonProps.outputs.content }}'
+          search_string: '${{ steps.directoryBuildProps.outputs.content }}'
 
       - name: dotnet restore
         run: dotnet restore
