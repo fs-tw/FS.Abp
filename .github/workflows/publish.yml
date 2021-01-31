@@ -38,7 +38,7 @@ jobs:
           cd dest
           del * -Exclude FS.*
           del * -Exclude *.${{ steps.getVersion.outputs.first_match }}.nupkg
-          del *.HttpApi.Client.ConsoleTestApp*
+          del *.ConsoleTestApp*
           del *.Host.Shared*
           dir -name
 

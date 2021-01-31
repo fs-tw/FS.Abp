@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
+    <Version>420.0.1</Version>
     <AbpVersion>4.2.0</AbpVersion>
-    <VoloVersion>420.0.1</VoloVersion>
     <EasyAbpTreeVersion>2.2.0</EasyAbpTreeVersion>
   </PropertyGroup>
   

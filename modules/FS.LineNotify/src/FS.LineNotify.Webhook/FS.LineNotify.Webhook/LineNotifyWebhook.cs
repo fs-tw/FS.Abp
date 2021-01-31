@@ -12,7 +12,7 @@ using Volo.Abp.EventBus.Distributed;
 namespace FS.LineNotify.Webhook
 {
     [RemoteService]
-    [Route("api/line-notify")]
+    [Route("webhook/line-notify")]
     public class LineNotifyWebhook : AbpController
     {
         private readonly IDistributedEventBus _distributedEventBus;
