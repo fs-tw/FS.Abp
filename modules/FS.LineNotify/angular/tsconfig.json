@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@my-company-name/line-notify": [
+        "projects/line-notify/src/public-api.ts"
+      ],
+      "@my-company-name/line-notify/config": [
+        "projects/line-notify/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/line-notify/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/line-notify/src/lib/proxy/*"]
+    }
+  }
+}

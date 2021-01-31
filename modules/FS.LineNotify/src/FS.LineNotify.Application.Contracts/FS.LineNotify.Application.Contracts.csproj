@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.LineNotify</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.2.0" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="4.2.0" />
+    <ProjectReference Include="..\FS.LineNotify.Domain.Shared\FS.LineNotify.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
