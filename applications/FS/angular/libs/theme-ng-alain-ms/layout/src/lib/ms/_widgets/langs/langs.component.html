@@ -1,9 +1,0 @@
-<span class="alain-ms__topbar-item-btn" [ngClass]="{ 'alain-ms__topbar-item-icon': isMobile }">
-  <span *ngIf="!isMobile">{{ defaultLanguage$ | async }}</span>
-  <i *ngIf="isMobile" nz-icon nzType="global"></i>
-</span>
-<ul class="alain-ms__topbar-dd-menu">
-  <li *ngFor="let lang of dropdownLanguages$ | async" (click)="onChangeLang(lang.cultureName)">
-    <a class="alain-ms__topbar-dd-item">{{ lang?.displayName }}</a>
-  </li>
-</ul>
