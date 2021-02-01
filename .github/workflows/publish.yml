@@ -25,7 +25,7 @@ jobs:
           search_string: '${{ steps.commonProps.outputs.content }}'
 
       - name: dotnet restore
-        run: dotnet restore -s "https://api.nuget.org/v3/index.json"
+        run: dotnet restore
 
       - name: dotnet build
         run: dotnet build -c Release
@@ -38,7 +38,7 @@ jobs:
           cd dest
           del * -Exclude FS.*
           del * -Exclude *.${{ steps.getVersion.outputs.first_match }}.nupkg
-          del *.HttpApi.Client.ConsoleTestApp*
+          del *.ConsoleTestApp*
           del *.Host.Shared*
           dir -name
 

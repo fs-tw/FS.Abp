@@ -1,0 +1,1 @@
+{"version":3,"file":"panel.component.ngfactory.js","sourceRoot":"../../../../../libs/theme-alain-ms/layout/src/","sources":["lib/ms/shared/panel/panel.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

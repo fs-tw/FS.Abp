@@ -1,0 +1,1 @@
+{"version":3,"file":"models.js","sourceRoot":"../../../../../libs/theme-core/proxy/src/","sources":["lib/theme/core/files/dtos/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface FilePutDto {\r\n  base64: string;\r\n}\r\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/crm/customers/index.ts"],"names":[],"mappings":"AAAA,cAAc,QAAQ,CAAC;AACvB,cAAc,+BAA+B,CAAC;AAC9C,cAAc,yBAAyB,CAAC","sourcesContent":["export * from './dtos';\r\nexport * from './customer-discriminator.enum';\r\nexport * from './customers-api.service';\r\n"]}

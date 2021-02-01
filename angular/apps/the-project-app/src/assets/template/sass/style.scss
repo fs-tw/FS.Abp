@@ -1,0 +1,30 @@
+// Core variables and mixins
+$text-direction: ltr;
+@import 'variables';
+@import "mixins";
+
+/**
+ * Version: 2.1.2
+ * File Description:Main CSS file of the template
+ *
+ * TABLE OF CONTENTS
+ * 1) Elements
+ * 2) Layout
+ * 3) Sections
+ * 4) Pages ( blog, about etc )
+ * 5) Components
+ * 6) Navigations
+ * 7) Blocks/Widgets
+ * 8) Main Slideshow
+ * 9) Slick carousel
+ * 10) Full Page
+ */
+@import '1_elements';
+@import '2_layout';
+@import '3_sections';
+@import '4_pages';
+@import '5_components';
+@import '6_navigations';
+@import '7_blocks-widgets';
+@import '8_main-slideshow';
+@import '9_slick-carousel';

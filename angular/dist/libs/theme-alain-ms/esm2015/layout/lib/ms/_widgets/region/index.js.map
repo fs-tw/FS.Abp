@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/theme-alain-ms/layout/src/","sources":["lib/ms/_widgets/region/index.ts"],"names":[],"mappings":"AAAA,cAAc,oBAAoB,CAAC;AACnC,cAAc,kBAAkB,CAAC","sourcesContent":["export * from './region.component';\r\nexport * from './region.service';"]}

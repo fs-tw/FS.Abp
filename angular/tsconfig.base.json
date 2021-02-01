@@ -1,0 +1,60 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fs-tw/account": [
+        "libs/account/src/index.ts"
+      ],
+      "@fs-tw/account/*": [
+        "libs/account/*/src/index.ts"
+      ],
+      "@fs-tw/theme-the-project": [
+        "libs/theme-the-project/src/index.ts"
+      ],
+      "@fs-tw/theme-the-project/*": [
+        "libs/theme-the-project/*/src/index.ts"
+      ],
+      "@fs-tw/theme-the-project/styles/*": [
+        "libs/theme-the-project/styles/*"
+      ],
+      "@fs-tw/theme-unify": [
+        "libs/theme-unify/src/index.ts"
+      ],
+      "@fs-tw/theme-unify/*": [
+        "libs/theme-unify/*/src/index.ts"
+      ],
+      "@fs-tw/theme-alain-ms": [
+        "libs/theme-alain-ms/src/index.ts"
+      ],
+      "@fs-tw/theme-alain-ms/*": [
+        "libs/theme-alain-ms/*/src/index.ts"
+      ],
+      "@fs-tw/emailing": [
+        "libs/emailing/src/index.ts"
+      ],
+      "@fs-tw/emailing/*": [
+        "libs/emailing/*/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

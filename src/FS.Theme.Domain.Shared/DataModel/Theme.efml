@@ -286,6 +286,9 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="ecb3a3d5-32a1-4547-9415-af1cc7ab5085" p1:GenerateDTO="False">
       <column name="" />
@@ -357,6 +360,9 @@
             <boolean>false</boolean>
           </p1:PropertyValue>
         </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="b017b91f-abc0-4c4b-ba83-fec6974c97b5" p1:GenerateDTO="False">
@@ -458,6 +464,9 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="df92f630-9b09-4831-a8e0-4d261140d81e" p1:GenerateDTO="False">
       <column name="" />
@@ -529,6 +538,9 @@
             <boolean>false</boolean>
           </p1:PropertyValue>
         </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="c9541cc0-42f3-4432-8b25-1e22686556c0" p1:GenerateDTO="False">

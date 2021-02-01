@@ -1,0 +1,100 @@
+{
+  "order": 1000,
+  "nx": {
+    "unify-app": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "unify-app": {
+      "projectType": "application",
+      "root": "apps/unify-app",
+      "sourceRoot": "apps/unify-app/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/unify-app",
+            "index": "apps/unify-app/src/index.html",
+            "main": "apps/unify-app/src/main.ts",
+            "polyfills": "apps/unify-app/src/polyfills.ts",
+            "tsConfig": "apps/unify-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/unify-app/src/favicon.ico",
+              "apps/unify-app/src/assets"
+            ],
+            "styles": ["apps/unify-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/unify-app/src/environments/environment.ts",
+                  "with": "apps/unify-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "unify-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "unify-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "unify-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/unify-app/tsconfig.app.json",
+              "apps/unify-app/tsconfig.spec.json",
+              "apps/unify-app/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/unify-app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/unify-app"],
+          "options": {
+            "jestConfig": "apps/unify-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}

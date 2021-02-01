@@ -1,0 +1,76 @@
+.brand {
+  &-color {
+    color: @brand-color !important;
+    &:hover {
+      color: @brand-hover-color !important;
+    }
+  }
+  // 加载容器
+  &-page-loading {
+    display: block;
+    min-height: 350px;
+    margin: 0 auto;
+    padding-top: 80px;
+    text-align: center;
+  }
+  // `position: absolute` 定位到右上角
+  &-top-right {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  // `position: absolute` 定位到左上角
+  &-top-left {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+  // 让 `nz-row` & `nz-col` 包含有边框效果
+  &-bordered {
+    overflow: hidden;
+    border: 1px solid @brand-bordered-color;
+
+    > [class*='ant-col-']::before,
+    > [class*='ant-col-']::after {
+      position: absolute;
+      display: block;
+      content: '';
+    }
+
+    > [class*='ant-col-']::before {
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      height: 0;
+      border-top: 1px solid @brand-bordered-color;
+    }
+
+    > [class*='ant-col-']::after {
+      top: 0;
+      bottom: 0;
+      left: -1px;
+      width: 0;
+      border-left: 1px solid @brand-bordered-color;
+    }
+  }
+  // 边框大小为 `2px`
+  &-border-width-2 {
+    border-width: 2px !important;
+  }
+  // 将 `nz-ollapse` 的 arrow 图标转化为右边
+  &-collapse-arrow-reverse {
+    .@{ant-prefix}-collapse > .@{ant-prefix}-collapse-item > .@{ant-prefix}-collapse-header {
+      padding-right: 40px;
+      padding-left: 12px;
+      .arrow {
+        right: 16px;
+        left: unset;
+      }
+    }
+  }
+  // `nz-range-picker` 日期宽度
+  &-range-picker__date {
+    display: inline-block;
+    width: 240px;
+  }
+}
