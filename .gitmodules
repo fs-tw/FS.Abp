@@ -8,18 +8,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "EasyAbp/EShop"]
 	path = EasyAbp/EShop
 	url = https://github.com/EasyAbp/EShop.git
-[submodule "EasyAbp/WeChatManagement"]
-	path = EasyAbp/WeChatManagement
-	url = https://github.com/EasyAbp/WeChatManagement.git
-[submodule "EasyAbp/FileManagement"]
-	path = EasyAbp/FileManagement
-	url = https://github.com/EasyAbp/FileManagement.git
-[submodule "EasyAbp/Abp.DynamicEntity"]
-	path = EasyAbp/Abp.DynamicEntity
-	url = https://github.com/EasyAbp/Abp.DynamicEntity.git
-[submodule "Blazorise"]
-	path = Blazorise
-	url = https://github.com/stsrki/Blazorise.git
 [submodule "framework"]
 	path = framework
 	url = http://bitbucket.furthersoftware.com.tw/scm/fram/framework.git
@@ -32,6 +20,3 @@ url=https://github.com/abpframework/abp.git
 [submodule "modules/FS.Theme"]
 	path = modules/FS.Theme
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/fs.theme.git
-[submodule "themes/theproject"]
-	path = themes/theproject
-	url = http://bitbucket.furthersoftware.com.tw/scm/them/theproject.git
