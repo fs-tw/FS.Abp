@@ -35,6 +35,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.Webhook.Clien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.Webhook.Client.ConsoleTestApp", "test\FS.LineNotify.Webhook.Client.ConsoleTestApp\FS.LineNotify.Webhook.Client.ConsoleTestApp.csproj", "{24612CBB-15CB-4AC1-98D0-24315C674A24}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.EntityFrameworkCore", "src\FS.LineNotify.EntityFrameworkCore\FS.LineNotify.EntityFrameworkCore.csproj", "{5AF7118D-286E-4D33-97CE-0DED03804C9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.Application", "src\FS.LineNotify.Application\FS.LineNotify.Application.csproj", "{C99804D3-5F87-4845-A6A3-FC5F0BB3F884}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.Application.Contracts", "src\FS.LineNotify.Application.Contracts\FS.LineNotify.Application.Contracts.csproj", "{B467E472-3E32-4EB3-B658-D83250283CC4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.HttpApi", "src\FS.LineNotify.HttpApi\FS.LineNotify.HttpApi.csproj", "{48E40C98-F192-40A3-9424-A3C66E57F809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +101,22 @@ Global
 		{24612CBB-15CB-4AC1-98D0-24315C674A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24612CBB-15CB-4AC1-98D0-24315C674A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24612CBB-15CB-4AC1-98D0-24315C674A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF7118D-286E-4D33-97CE-0DED03804C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF7118D-286E-4D33-97CE-0DED03804C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF7118D-286E-4D33-97CE-0DED03804C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF7118D-286E-4D33-97CE-0DED03804C9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99804D3-5F87-4845-A6A3-FC5F0BB3F884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99804D3-5F87-4845-A6A3-FC5F0BB3F884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99804D3-5F87-4845-A6A3-FC5F0BB3F884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99804D3-5F87-4845-A6A3-FC5F0BB3F884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B467E472-3E32-4EB3-B658-D83250283CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B467E472-3E32-4EB3-B658-D83250283CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B467E472-3E32-4EB3-B658-D83250283CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B467E472-3E32-4EB3-B658-D83250283CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E40C98-F192-40A3-9424-A3C66E57F809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E40C98-F192-40A3-9424-A3C66E57F809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E40C98-F192-40A3-9424-A3C66E57F809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E40C98-F192-40A3-9424-A3C66E57F809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +135,10 @@ Global
 		{AFAD9EBA-6B22-475F-B2FA-FAAC4204DDF2} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{3E89A227-FC9D-487E-9472-7BEA38635DB5} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{24612CBB-15CB-4AC1-98D0-24315C674A24} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
+		{5AF7118D-286E-4D33-97CE-0DED03804C9C} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{C99804D3-5F87-4845-A6A3-FC5F0BB3F884} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{B467E472-3E32-4EB3-B658-D83250283CC4} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{48E40C98-F192-40A3-9424-A3C66E57F809} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
