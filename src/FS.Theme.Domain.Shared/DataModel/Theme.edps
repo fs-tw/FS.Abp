@@ -5,20 +5,14 @@
     <Generation>
       <GeneratedFiles>
         <File Name="Theme.cs" />
-        <File Name="IRoutesApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="RoutesApi.cs" Project="FS.Theme.HttpApi" ProjectFolder="FS.Theme\Routes" OverwriteMode="None" />
-        <File Name="RoutesApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="RoutesApi.RouteDefinitionCrudAppService.cs" Project="FS.Theme.HttpApi" ProjectFolder="FS.Theme\Routes" OverwriteMode="None" />
-        <File Name="RoutesApi.RouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="RoutesApi.RouteCrudAppService.cs" Project="FS.Theme.HttpApi" ProjectFolder="FS.Theme\Routes" OverwriteMode="None" />
-        <File Name="RoutesApi.RouteCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannersApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="BannersApi.cs" Project="FS.Theme.HttpApi" ProjectFolder="FS.Theme\Banners" OverwriteMode="None" />
         <File Name="BannersApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="BannersApi.BannerDefinitionCrudAppService.cs" Project="FS.Theme.HttpApi" ProjectFolder="FS.Theme\Banners" OverwriteMode="None" />
         <File Name="BannersApi.BannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="BannersApi.BannerCrudAppService.cs" Project="FS.Theme.HttpApi" ProjectFolder="FS.Theme\Banners" OverwriteMode="None" />
         <File Name="BannersApi.BannerCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="IRoutesApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="RoutesApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="RoutesApi.RouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="RoutesApi.RouteCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
@@ -27,10 +21,6 @@
         <File Name="RouteCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="BannerCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="IRoutesAppService.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="FS.Theme\Routes" OverwriteMode="None" />
-        <File Name="RoutesAppService.cs" Project="FS.Theme.Application" ProjectFolder="FS.Theme\Routes" OverwriteMode="None" />
-        <File Name="IBannersAppService.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="FS.Theme\Banners" OverwriteMode="None" />
-        <File Name="BannersAppService.cs" Project="FS.Theme.Application" ProjectFolder="FS.Theme\Banners" OverwriteMode="None" />
         <File Name="RouteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
@@ -49,9 +39,7 @@
         <File Name="BannerDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
-        <File Name="RoutesStore.cs" Project="FS.Theme.Domain" ProjectFolder="FS.Theme\Routes" OverwriteMode="None" />
         <File Name="RoutesStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="BannersStore.cs" Project="FS.Theme.Domain" ProjectFolder="FS.Theme\Banners" OverwriteMode="None" />
         <File Name="BannersStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="IThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="ThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -103,6 +91,9 @@
       <Template Name="Application.Api" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Api.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="KebabCaseApiName" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
         </ed:Property>
         <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -158,7 +149,7 @@
         </ed:Property>
         <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.Theme.Application</Project>
+            <Project>FS.Theme.Application.Contracts</Project>
             <ProjectFolder>FS.Theme</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
@@ -247,9 +238,26 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
+        <ed:Property Name="GenSettingsApi" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
         <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.Theme.Domain</Project>
+            <ProjectFolder>FS.Theme</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>FS.Theme.Application.Contracts</Project>
+            <ProjectFolder>FS.Theme</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.9.1112.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>FS.Theme.Application</Project>
             <ProjectFolder>FS.Theme</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>

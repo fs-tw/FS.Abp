@@ -11,7 +11,6 @@
     <ProjectReference Include="..\..\..\..\src\FS.Theme.Application\FS.Theme.Application.csproj" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Theme.TheProject.Application.Contracts\FS.Theme.TheProject.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Theme.TheProject.Domain\FS.Theme.TheProject.Domain.csproj" />
   </ItemGroup>

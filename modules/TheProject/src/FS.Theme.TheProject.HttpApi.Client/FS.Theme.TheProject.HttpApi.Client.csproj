@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Http.Client" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Theme.TheProject.Application.Contracts\FS.Theme.TheProject.Application.Contracts.csproj" />
   </ItemGroup>
 

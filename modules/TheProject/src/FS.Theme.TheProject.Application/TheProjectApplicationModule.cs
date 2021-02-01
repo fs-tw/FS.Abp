@@ -10,8 +10,7 @@ namespace FS.Theme.TheProject
         typeof(TheProjectDomainModule),
         typeof(TheProjectApplicationContractsModule),
         typeof(AbpDddApplicationModule),
-        typeof(AbpAutoMapperModule),
-        typeof(AbpSettingManagementDomainModule)
+        typeof(AbpAutoMapperModule)
         )]
     [DependsOn(
         typeof(FS.Theme.ThemeApplicationModule)
