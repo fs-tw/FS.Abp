@@ -5,7 +5,7 @@ using System;
 
 namespace FS.LineNotify.ServiceDefinitions
 {
-    public class ServiceDefinitionDictionary : Dictionary<string, ServiceDefiniton>
+    public class ServiceDefinitionDictionary : Dictionary<string, ServiceDefinition>
     {
         public void AddOrReplace(
             [NotNull] string no,
@@ -13,7 +13,7 @@ namespace FS.LineNotify.ServiceDefinitions
             [CanBeNull] string description = null
             )
         {
-            this[no] = new ServiceDefiniton(no, displayName, description);
+            this[no] = new ServiceDefinition(no, displayName, description);
         }
     }
 }

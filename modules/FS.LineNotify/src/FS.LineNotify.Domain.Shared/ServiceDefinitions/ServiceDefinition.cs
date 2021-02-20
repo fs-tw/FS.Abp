@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FS.LineNotify.ServiceDefinitions
 {
-    public class ServiceDefiniton
+    public class ServiceDefinition
     {
         public string ProviderKey { get; }
         public string ClientId { get; }
@@ -14,11 +14,11 @@ namespace FS.LineNotify.ServiceDefinitions
         public string Description { get; }
         public string Redirect_uri { get;}
 
-        protected ServiceDefiniton()
+        protected ServiceDefinition()
         {
         }
 
-        public ServiceDefiniton(
+        public ServiceDefinition(
             [NotNull] string no,
             [NotNull] string clientId,
             [NotNull] string clientSecret,

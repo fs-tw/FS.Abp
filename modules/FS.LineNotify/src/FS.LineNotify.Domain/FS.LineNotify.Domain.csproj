@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="$(AbpVersion)" />
     <PackageReference Include="RestSharp" Version="106.11.4" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.LineNotify.Domain.Shared\FS.LineNotify.Domain.Shared.csproj" />

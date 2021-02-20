@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
   </ItemGroup>
 

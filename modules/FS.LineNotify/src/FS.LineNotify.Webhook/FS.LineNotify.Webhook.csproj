@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.LineNotify.Domain\FS.LineNotify.Domain.csproj" />
   </ItemGroup>
