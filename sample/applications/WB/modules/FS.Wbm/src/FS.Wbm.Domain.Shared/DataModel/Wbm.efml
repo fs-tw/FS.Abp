@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="FS.Wbm.EntityFrameworkCore" namespace="FS.Wbm" p1:name="WbmDbContext" p1:Guid="e81b2c31-6108-4764-98f9-ed3c71314251" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="$ComplexTypes">
+    <component class="FS.Wbm.CreationAuditedEntity" IsExternal="true" p1:Guid="8fd09bb1-f24f-4bee-a735-15c67e6e47a5" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="3d3f4865-0a8d-4fd1-b262-ff0b8fb6e3f3">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ddbae1d3-a67e-43e7-a1c3-00eeff21a929">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Wbm.AuditedEntity" IsExternal="true" p1:Guid="09512007-652a-4eb7-baef-42be25e4ff01" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="fe7c767b-a2b1-4879-9d6b-768006027b3a">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4e6496c0-38b0-4e5d-b648-9b8cba652a6a">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f6d30a00-cffa-4c14-815b-83b7da0b6330">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="378fa866-e3fb-43d8-8da2-33e0b80690b0">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Wbm.FullAuditedEntity" IsExternal="true" p1:Guid="96b2e119-c491-43fc-9d3f-473ebed649d6" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="134efbd9-e37b-4aa2-97c3-9b7570f63cdc">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fac126c1-76a3-4e48-9f7d-5693ff8b2c98">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2579a668-f058-411a-bd5e-a8d1ac196155">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="07d95e2d-4b5a-41cb-a089-b3f59f14264d">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="21cde12e-06c4-4d17-8947-1caa146b8f74">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bbd07d28-dea6-4b3a-85b8-b2efd0715f2d">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="971bb36b-fc5d-4106-af06-b705bbac502e">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Wbm.AggregateRoot" IsExternal="true" p1:Guid="58be4c7a-96e0-4c78-8d7f-910f27215d9a" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="316c6c47-d2c9-4e53-beb9-919d08266bc5">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b735494f-33f6-4203-95eb-79e3a85e21e2">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Wbm.CreationAuditedAggregateRoot" IsExternal="true" p1:Guid="aaee2ee8-dea5-45d1-b4b8-547eac45b1e9" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="1edd2930-3a4f-4ac1-a73d-696e6a14b3f7">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8f0c0fb7-8fc6-4c43-a274-2fba4725034f">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2bc9a942-bad3-450a-97c2-17e40193298c">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="53351633-441e-4753-a259-e14f4ab0e853">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Wbm.AuditedAggregateRoot" IsExternal="true" p1:Guid="f86cd4c5-cfa1-4984-a53f-8faabcb37298" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a2387166-21db-4061-8cdc-12d8cee366b3">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="752bccbb-d316-4dd1-a800-34cba1124341">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1ffacdf3-ffb0-4e8c-b1e1-dee1f29e2b44">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ed69ca87-ae47-46d7-910a-356f62de88fe">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7c3a29ce-5fe3-4a66-813c-d527465fcb4f">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="75e46df7-8096-4245-8973-ca6e53543d5f">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Wbm.FullAuditedAggregateRoot" IsExternal="true" p1:Guid="f0bb2e31-6381-4fc3-b7fd-fac5a18187ac" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="c6fb4fe0-f4ed-4c76-9375-d2be65afc68d">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="41389942-0832-46f8-a6d4-20231e160bf2">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0ad0462d-8745-467c-b3b6-d90372cf0436">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0afaf46e-e421-4606-9c3a-fcb079263394">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="129e3591-195f-49a4-a8b6-176d229de3f4">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bf6dc7b2-14a2-4e70-93da-e5658b9378bf">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bf8659e1-4b5a-486e-8651-1ea7d51283f9">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d90f53dd-74bc-4df7-a193-405b7dfb71bb">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e8ea542e-92cd-4eb5-a5fb-860ca34e3ed2">
+        <column name="" />
+      </property>
+    </component>
+  </class>
+  <class name="FS.Wbm.Core.過磅記錄" entity-set="過磅記錄s" table="過磅記錄" schema="dbo" p1:Guid="fad34d9b-2cb0-47c3-a0d1-b6c907cb0334" p1:ShapeColor="-2180985" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Int64&gt;" p1:GenerateRepositoryPartialClass="True">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Entity</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6ZmFsc2UsIk11bHRpVmVyc2lvbiI6ZmFsc2UsIkhhc05hdHVyYWxLZXkiOmZhbHNlfX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Core</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Int64" value-generated="OnAdd" shadow="True" p1:ValidateRequired="true" p1:Guid="d9c8e08b-d80e-4daf-9ffa-c2941085752d" p1:GenerateDTO="False">
+      <column name="識別碼" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="日期" type="DateTime" p1:ValidateRequired="true" p1:Guid="c49ffded-3797-41b0-afd5-7656db4eb7d2">
+      <column name="日期" not-null="True" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="時間" type="String" p1:ValidateMaxLength="8" p1:ValidateRequired="true" p1:Guid="3ab0b7f9-1954-44bd-8ab3-9f864cb1f632">
+      <column name="時間" not-null="True" length="8" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="車號" type="String" p1:ValidateMaxLength="8" p1:ValidateRequired="true" p1:Guid="afa96c24-77fa-41a8-b699-3cdfba0efa7a">
+      <column name="車號" not-null="True" length="8" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="磅重" type="Int32" p1:ValidateRequired="true" p1:Guid="77632225-7afe-495f-97f1-f6e48e5d1ee5">
+      <column name="磅重" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="出廠時間" type="String" p1:nullable="True" p1:ValidateMaxLength="8" p1:ValidateRequired="false" p1:Guid="2e49eaf5-9c70-4e88-9640-28218a4075b1">
+      <column name="出廠時間" not-null="False" length="8" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="出廠重" type="Int32" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e54516ec-bd87-474a-a12b-b98005ade38a">
+      <column name="出廠重" not-null="False" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="FS.Wbm.Core.過磅日誌" entity-set="過磅日誌s" table="過磅日誌" schema="dbo" p1:Guid="70099ff7-32a1-4206-8ed0-c68f8af95373" p1:ShapeColor="-2180985" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Int64&gt;" p1:GenerateRepositoryPartialClass="True">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Entity</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6ZmFsc2UsIk11bHRpVmVyc2lvbiI6ZmFsc2UsIkhhc05hdHVyYWxLZXkiOmZhbHNlfX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Core</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Int64" value-generated="OnAdd" shadow="True" p1:ValidateRequired="true" p1:Guid="42be7602-0670-4418-82c6-a48e126e7579" p1:GenerateDTO="False">
+      <column name="識別碼" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="日期" type="DateTime" p1:ValidateRequired="true" p1:Guid="5730e1a2-452d-411b-ad6e-fbcf92f213bf">
+      <column name="日期" not-null="True" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="時間" type="DateTime" p1:ValidateRequired="true" p1:Guid="55e0b65a-2d61-4824-9d42-2327a29214ab">
+      <column name="時間" not-null="True" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="內容" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="817069cf-3163-489a-bd8c-3cf88403602e">
+      <column name="內容" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="操作者" type="String" p1:ValidateMaxLength="10" p1:ValidateRequired="true" p1:Guid="b45beffd-4494-4158-83a3-6e853f6d2058">
+      <column name="操作者" not-null="True" length="10" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+  </class>
+  <class name="FS.Wbm.Core.過磅" entity-set="過磅" table="過磅" schema="dbo" p1:Guid="d1979926-ae57-46ad-a409-2ec7c180d357" p1:ShapeColor="-2180985" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Int64&gt;" p1:GenerateRepositoryPartialClass="True">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Entity</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6ZmFsc2UsIk11bHRpVmVyc2lvbiI6ZmFsc2UsIkhhc05hdHVyYWxLZXkiOmZhbHNlfX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Core</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <boolean>false</boolean>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Int64" value-generated="OnAdd" shadow="True" p1:ValidateRequired="true" p1:Guid="5c6a3d62-3a34-49ca-892b-9155f0af7f64" p1:GenerateDTO="False">
+      <column name="識別碼" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="序號" type="String" p1:ValidateMaxLength="6" p1:ValidateRequired="true" p1:Guid="29d2c8a7-a9be-4c58-bcd3-99460d3e0e04">
+      <column name="序號" not-null="True" length="6" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="區隊代號" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="b5d0c8dd-7a6f-4b49-938c-ef48cef658c4">
+      <column name="區隊代號" not-null="False" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="廠商代號" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="3356d2f9-55f8-49aa-8898-bb4132bc1d19">
+      <column name="廠商代號" not-null="False" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="磁卡號碼" type="String" p1:nullable="True" p1:ValidateMaxLength="4" p1:ValidateRequired="false" p1:Guid="e3bc6a03-02fd-4dab-b38a-86a1ec298a8e">
+      <column name="磁卡號碼" not-null="False" length="4" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="出廠磅台" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="dba377b7-ca56-4da7-8da4-fe386e6ed376">
+      <column name="出廠磅台" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="出廠時間" type="DateTime" p1:ValidateRequired="true" p1:Guid="d4f14680-180a-4919-80e8-1d6d294462a3">
+      <column name="出廠時間" not-null="True" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="過磅代號" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="e4f09b70-136e-47d5-b5bd-446e530a2d01">
+      <column name="過磅代號" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="車牌號碼" type="String" p1:ValidateMaxLength="8" p1:ValidateRequired="true" p1:Guid="54b28f9c-c039-4228-b45f-20b6e9cde34b">
+      <column name="車牌號碼" not-null="True" length="8" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="過磅空重" type="Int32" p1:ValidateRequired="true" p1:Guid="b653935b-6fc9-4aab-9a56-1af4cca2f18d">
+      <column name="過磅空重" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="過磅總重" type="Int32" p1:ValidateRequired="true" p1:Guid="fbddc6b4-f22c-4175-afcf-f41f75a81a3e">
+      <column name="過磅總重" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="過磅淨重" type="Int32" p1:ValidateRequired="true" p1:Guid="54d293d7-76e8-4686-b4eb-15aac2fede92">
+      <column name="過磅淨重" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="料品" type="String" p1:ValidateMaxLength="2" p1:ValidateRequired="true" p1:Guid="f2eda2a0-71d9-45db-b393-f771c5a64cd8">
+      <column name="料品" not-null="True" length="2" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="料品屬性" type="String" p1:nullable="True" p1:ValidateMaxLength="8" p1:ValidateRequired="false" p1:Guid="1a52d88a-68c1-41ac-ac4b-3e13d31fcc69">
+      <column name="料品屬性" not-null="False" length="8" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="金額" type="Single" p1:ValidateRequired="true" p1:Guid="10527cd9-0bfb-4b59-b336-558a3dfca864">
+      <column name="金額" not-null="True" precision="24" sql-type="real" p1:unicode="False" />
+    </property>
+    <property name="出廠日期" type="DateTime" p1:ValidateRequired="true" p1:Guid="9a426400-cf05-4ec6-ba33-078a28584ee1">
+      <column name="出廠日期" not-null="True" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="員工編號" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="ceec552c-6fd4-4b49-8299-62505199f1e9">
+      <column name="員工編號" not-null="False" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="單價" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b2a86c81-919a-4d03-8ede-4c6507a7a403">
+      <column name="單價" not-null="False" precision="19" scale="4" sql-type="money" p1:unicode="False" />
+    </property>
+    <property name="規定載重" type="Int32" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ffad1aad-6a0d-4bcc-a249-a7051fa807c9">
+      <column name="規定載重" not-null="False" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="滿載率" type="Single" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1961935a-4a41-4355-8582-4fc47fba704e">
+      <column name="滿載率" not-null="False" precision="24" sql-type="real" p1:unicode="False" />
+    </property>
+    <property name="等級" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="025da400-4250-4e0f-8452-555b8811be00">
+      <column name="等級" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="區隊往返" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="19a8cf18-8539-4791-ad3f-b7a461cca011">
+      <column name="區隊往返" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="刪除代號" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="c382fcbc-ee59-4bdd-94e0-7978ec8a0b3d">
+      <column name="刪除代號" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="高銀" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="4186933e-708b-470e-bf3d-517eaf87ef8f">
+      <column name="高銀" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="交易序號" type="String" p1:nullable="True" p1:ValidateMaxLength="10" p1:ValidateRequired="false" p1:Guid="70b155a5-60d7-4350-991d-e3deff682856">
+      <column name="交易序號" not-null="False" length="10" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="付款方式" type="String" p1:nullable="True" p1:ValidateMaxLength="3" p1:ValidateRequired="false" p1:Guid="6ab5305b-21b8-473c-85fb-df5884959405">
+      <column name="付款方式" not-null="False" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="單機過磅" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="eabf8880-dcd7-4136-a5e4-e65dc898a99a">
+      <column name="單機過磅" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="單機傳送" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="b824576c-484d-4c99-a66d-4397407194e0">
+      <column name="單機傳送" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="入廠磅台" type="String" p1:nullable="True" p1:ValidateMaxLength="1" p1:ValidateRequired="false" p1:Guid="44fa595b-2d00-4157-b717-d7b79aeea909">
+      <column name="入廠磅台" not-null="False" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="收據流水號" type="String" p1:nullable="True" p1:ValidateMaxLength="7" p1:ValidateRequired="false" p1:Guid="d1186a3b-410a-4bf2-ae37-f154d154e6da">
+      <column name="收據流水號" not-null="False" length="7" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+  </class>
+</efcore>

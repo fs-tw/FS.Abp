@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>WB</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\WB\Core\Dtos\過磅日誌DtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\Dtos\過磅日誌DtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\Dtos\過磅記錄DtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\Dtos\過磅記錄DtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\過磅日誌CrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\過磅記錄CrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\FS.Wbm\src\FS.Wbm.Application\FS.Wbm.Application.csproj" />
+    <ProjectReference Include="..\WB.Domain\WB.Domain.csproj" />
+    <ProjectReference Include="..\WB.Application.Contracts\WB.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="Volo.Abp.Account.Application" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\WB\Core\Dtos\" />
+  </ItemGroup>
+
+</Project>

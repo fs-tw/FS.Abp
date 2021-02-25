@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.Wbm</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.2.1" />
+    <ProjectReference Include="..\FS.Wbm.Application.Contracts\FS.Wbm.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Wbm\Core\CoreApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\CoreApi.過磅CrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CoreApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\CoreApi.過磅日誌CrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CoreApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\CoreApi.過磅記錄CrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CoreApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

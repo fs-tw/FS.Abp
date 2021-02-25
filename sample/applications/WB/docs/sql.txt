@@ -1,0 +1,31 @@
+/****** SSMS 中 SelectTopNRows 命令的指令碼  ******/
+SELECT [日期]
+      ,[時間]
+      ,[內容]
+      ,[操作者]
+      ,[識別碼]
+  FROM [高雄南區].[dbo].[過磅日誌]
+  where --not 內容 like '%過磅完成%' and  
+			(內容 like '%第一次磅重%' or
+			內容 like '%第一次過磅完成%') and
+		not	內容 like '%被退運%'
+  --where 日期>'2012/10/30' and 日期<'2017/01/01'
+  order by 日期 desc
+
+  SELECT  [日期]
+      ,[時間]
+      ,[內容]
+      ,[操作者]
+      ,[識別碼]
+  FROM [高雄南區].[dbo].[過磅日誌]
+  where 
+		日期='2015/9/2' and
+		內容 like '%Z2551%' 
+
+    SELECT  *
+  FROM [高雄南區].[dbo].[過磅]
+  where 
+		--識別碼=1208749
+		車牌號碼='Z2551' 
+		and 出廠日期='2015/9/2'
+order by 出廠日期

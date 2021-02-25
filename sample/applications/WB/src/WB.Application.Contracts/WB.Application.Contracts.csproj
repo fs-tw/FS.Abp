@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>WB</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\WB\Core\Dtos\過磅日誌Dto.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\Dtos\過磅記錄Dto.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\ICoreApi.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\I過磅日誌CrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\I過磅記錄CrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\FS.Wbm\src\FS.Wbm.Application.Contracts\FS.Wbm.Application.Contracts.csproj" />
+    <ProjectReference Include="..\WB.Domain.Shared\WB.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="Volo.Abp.ObjectExtending" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\WB\Core\Dtos\" />
+  </ItemGroup>
+
+</Project>

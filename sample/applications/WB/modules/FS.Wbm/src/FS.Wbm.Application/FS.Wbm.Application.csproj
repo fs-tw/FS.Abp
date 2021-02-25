@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Wbm</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Application" Version="420.0.1" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="4.2.1" />
+    <ProjectReference Include="..\FS.Wbm.Application.Contracts\FS.Wbm.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Wbm.Domain\FS.Wbm.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Wbm\Core\Dtos\過磅DtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\Dtos\過磅DtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\Dtos\過磅日誌DtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\Dtos\過磅日誌DtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\Dtos\過磅記錄DtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\Dtos\過磅記錄DtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\過磅CrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\過磅日誌CrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\過磅記錄CrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Wbm</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Domain" Version="420.0.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.2.1" />
+    <ProjectReference Include="..\FS.Wbm.Domain.Shared\FS.Wbm.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FS.Wbm\Core\I過磅Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Wbm\Core\I過磅日誌Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Wbm\Core\I過磅記錄Repository.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\CoreStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\I過磅Repository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\I過磅日誌Repository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\I過磅記錄Repository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\過磅.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\過磅日誌.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Wbm\Core\過磅記錄.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

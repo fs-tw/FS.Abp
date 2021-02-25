@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="WB.EntityFrameworkCore" namespace="WB" p1:name="WBDbContext" p1:Guid="0910d01a-3218-40d7-bde9-bf1ed4e74a6f" p1:VersionTag="4.1.2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="$ComplexTypes">
+    <component class="WB.CreationAuditedEntity" IsExternal="true" p1:Guid="d7da62ff-e4ab-4533-b27a-ea6f39d7b7c9" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="71e116e4-fe5c-47c1-9124-35d5696e4928">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f9c8a07f-3732-4e35-9500-bb547cb0463d">
+        <column name="" />
+      </property>
+    </component>
+    <component class="WB.AuditedEntity" IsExternal="true" p1:Guid="c5ee5205-b633-4d54-b46d-39fdeae786b8" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a5aa0ba9-15a8-4b75-812c-cd95d533b5e7">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9b7ef54e-0b33-4954-a6f9-dcec4642a5d6">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="96eddbfe-1e8b-4105-9afd-3d0d45bc4e0f">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ce2964a5-7839-428d-bb65-9b9e38ca192a">
+        <column name="" />
+      </property>
+    </component>
+    <component class="WB.FullAuditedEntity" IsExternal="true" p1:Guid="4c73be84-8586-4c42-ada6-d8cc19d9035f" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7c7ac491-87cb-4aa0-aebe-407ef1b1c967">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cd4af922-d9d0-40f7-b1da-79a62682e600">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="803d5684-a160-46d9-a719-27becb2d3aff">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ca971034-9d9d-43e6-9c41-ca2b0606caec">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="cb2d8bfa-0beb-4461-b5f2-9d936c3acf26">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="eff40947-b530-47db-9db4-b3ed0992c71c">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1b0d9e4e-963c-43de-990c-450721b4b848">
+        <column name="" />
+      </property>
+    </component>
+    <component class="WB.AggregateRoot" IsExternal="true" p1:Guid="74248824-5fdf-4636-8527-b7586194474a" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="75c6a811-cf45-4a12-b3c4-7be6fa52aaca">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a71cce7c-48b8-48af-b3a4-4c25fd9268e0">
+        <column name="" />
+      </property>
+    </component>
+    <component class="WB.CreationAuditedAggregateRoot" IsExternal="true" p1:Guid="13c71c8f-88ee-41a0-a197-a214758818c1" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="5e110978-8698-4697-9041-4e9248cf5f10">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="69c1eb74-03db-46ce-9d81-28884ab51bd9">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6a92fc46-3044-4a98-9b24-a6c1009d9b64">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="85e02ebe-9c61-4219-96bb-cdb50f4e87e9">
+        <column name="" />
+      </property>
+    </component>
+    <component class="WB.AuditedAggregateRoot" IsExternal="true" p1:Guid="e4383721-c7e7-46d3-a97d-2cf6b974eb77" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="1ec8513a-9157-455e-8f00-a435fe7dce35">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="764263e6-30c6-42e1-a28f-698b7b61b9bb">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="87899a05-0ccd-4691-bd8d-e6210d0b7606">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d8b87a25-6e64-4001-82a8-28309ce17cbd">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="617113d4-6a0a-4fca-9bcf-48ede245f634">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8e300181-5dba-4b1f-90f1-54e6e31d34e5">
+        <column name="" />
+      </property>
+    </component>
+    <component class="WB.FullAuditedAggregateRoot" IsExternal="true" p1:Guid="47cbd4d7-6267-4903-88a3-5a969215fb50" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="9328b8e6-6864-4d0b-b12d-b0f2d3ffd075">
+        <column name="" />
+      </property>
+      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c51a1608-9525-41b3-9d8c-68474e476865">
+        <column name="" />
+      </property>
+      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="def12125-9588-4c52-bb03-d768d5200475">
+        <column name="" />
+      </property>
+      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e27afba8-9fb9-47ab-9188-bda04fc431ed">
+        <column name="" />
+      </property>
+      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="05cbff0e-2986-4845-82e3-5af04e81278a">
+        <column name="" />
+      </property>
+      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="209e0472-9bf6-45ec-973a-73ed0ae330da">
+        <column name="" />
+      </property>
+      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="82a73075-f766-4b85-9444-f85372e58228">
+        <column name="" />
+      </property>
+      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f4588a18-3335-4a74-a9ff-c28b58807c5f">
+        <column name="" />
+      </property>
+      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4cf5d00e-51c4-4da9-9349-c6eb17803c63">
+        <column name="" />
+      </property>
+    </component>
+  </class>
+</efcore>

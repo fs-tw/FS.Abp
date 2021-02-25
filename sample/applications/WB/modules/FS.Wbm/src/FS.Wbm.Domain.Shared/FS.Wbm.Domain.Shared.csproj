@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Wbm</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Domain.Shared" Version="420.0.1" />
+    <PackageReference Include="Volo.Abp.Validation" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Wbm\*.json" />
+    <Content Remove="Localization\Wbm\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModel\Wbm.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Wbm.efml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\Wbm.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Wbm.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Wbm.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Wbm.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Wbm.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>Wbm.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\Wbm.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Wbm.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Wbm.ModelDiagram.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Wbm.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>

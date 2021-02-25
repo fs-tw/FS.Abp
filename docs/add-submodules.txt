@@ -1,0 +1,2 @@
+EShop
+git submodule add -b dev -f https://github.com/EasyAbp/EShop.git modules/EShop

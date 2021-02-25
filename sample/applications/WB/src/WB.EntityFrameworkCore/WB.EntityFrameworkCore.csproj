@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>WB</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\WB\Core\CoreQueryableExtensions.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\EfCore過磅日誌Repository.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\EfCore過磅記錄Repository.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\過磅日誌.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\WB\Core\過磅記錄.Configuration.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\modules\FS.Wbm\src\FS.Wbm.EntityFrameworkCore\FS.Wbm.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\WB.Domain\WB.Domain.csproj" />
+    
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.IdentityServer.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.EntityFrameworkCore" Version="4.2.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\EntityFrameworkCore\IWBDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\WBDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\WBDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\WBModelBuilderConfigurationOptions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\WB\Core\" />
+  </ItemGroup>
+
+</Project>

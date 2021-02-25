@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@my-company-name/wbm": [
+        "projects/wbm/src/public-api.ts"
+      ],
+      "@my-company-name/wbm/config": [
+        "projects/wbm/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/wbm/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/wbm/src/lib/proxy/*"]
+    }
+  }
+}
