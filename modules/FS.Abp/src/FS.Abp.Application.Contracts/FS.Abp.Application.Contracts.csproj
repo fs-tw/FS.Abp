@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>FS.Abp</RootNamespace>
@@ -10,7 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts.csproj" />
     <ProjectReference Include="..\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 

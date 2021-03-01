@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FS.Abp</RootNamespace>
@@ -9,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes\FS.Abp.AspNetCore.Mvc.JsonSubTypes.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes\FS.Abp.AspNetCore.Mvc.JsonSubTypes.csproj" />
     <ProjectReference Include="..\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
   </ItemGroup>
 
