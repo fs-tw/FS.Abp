@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FS.Abp\EntitySettings\Codes.cs" />
+    <Compile Remove="FS.Abp\EntitySettings\CodesAttribute.cs" />
+    <Compile Remove="FS.Abp\EntitySettings\CodesInfo.cs" />
+    <Compile Remove="FS.Abp\EntitySettings\CodingStore.cs" />
+    <Compile Remove="FS.Abp\EntitySettings\ICodesTreeRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="3.2.1" />
+  </ItemGroup>
+
+</Project>
