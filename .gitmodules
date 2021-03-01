@@ -11,3 +11,6 @@
 [submodule "FS.Theme"]
 	path = FS.Theme
 	url=https://github.com/fs-tw/FS.Theme.git
+[submodule "FS.Abp.Authentication"]
+	path = FS.Abp.Authentication
+	url = http://bitbucket.furthersoftware.com.tw/scm/fram/fs.abp.authentication.git
