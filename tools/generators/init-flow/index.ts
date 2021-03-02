@@ -43,6 +43,21 @@ function clearFiles(target: string): (host: Tree) => void {
   };
 }
 
+function clearConfigFiles(): (host: Tree) => void {
+  return (host: Tree) => {
+    //Clear files
+    let result = [`config/angular.base.json`,
+  `config/nx.base.json`,
+  `config/schema.json`,
+  `config/tsconfig.base.json`,
+  `config/tsconfig.prod.json`,
+  `config/libs/lib.config.json`,
+  `config/apps/apps.config.json`];
+  result.filter(p => host.exists(p))
+    .forEach(p => host.delete(p));
+  };
+}
+
 function addDependenciesToPackageJson(target:string):(host: Tree) => void {
   return (host: Tree) => {
     addPackageToPackageJson(host, [`@npm/fs-tw@file:npm/fs-tw`]);
@@ -53,7 +68,7 @@ function addDependenciesToPackageJson(target:string):(host: Tree) => void {
 }
 
 
-function AddFiles(target:string):Rule{
+function addNpmFiles(target:string):Rule{
   return chain([
     mergeWith(
       apply(url(`./files/root-path`), [
@@ -85,6 +100,21 @@ function AddFiles(target:string):Rule{
   ]);
 
 }
+function addConfigFiles(): Rule {
+  
+  return chain([
+    mergeWith(
+      apply(url(`./files/config`), [
+        template({
+          tmpl:'',
+          name: ''
+        }),
+        move(`config`),
+      ]),
+    )
+  ]);
+
+}
 
 
 function finished(): (_host: Tree, context: SchematicContext) => void {
@@ -99,7 +129,11 @@ export default  function (options:ApplicationOptions):Rule {
   return (host: Tree, context: SchematicContext) => {
     return chain([
       clearFiles(options.name),
-      AddFiles(options.name),
+      addNpmFiles(options.name),
+      
+      clearConfigFiles(),
+      addConfigFiles(),
+
       addDependenciesToPackageJson(options.name),
       
       finished()
