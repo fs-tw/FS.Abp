@@ -32,10 +32,10 @@ namespace FS
                 options.AddMaps<FSApplicationModule>();
             });
 
-            Configure<JsonSubtypesOptions>(options =>
-            {
-                options.AddProfiles<FSApplicationModule>();
-            });
+            //Configure<JsonSubtypesOptions>(options =>
+            //{
+            //    options.AddProfiles<FSApplicationModule>();
+            //});
         }
     }
 }

@@ -23,7 +23,7 @@ namespace FS
         )]
     public class FSApplicationContractsModule : AbpModule
     {
-        
+
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             FSDtoExtensions.Configure();

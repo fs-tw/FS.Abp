@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\src\FS.Abp.Application\FS.Abp.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes\FS.Abp.AspNetCore.Mvc.JsonSubTypes.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
   </ItemGroup>

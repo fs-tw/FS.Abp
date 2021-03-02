@@ -42,9 +42,9 @@ namespace FS
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
-    [DependsOn(
-        typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesModule)
-        )]
+    //[DependsOn(
+    //    typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesModule)
+    //    )]
     public class FSHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
@@ -145,7 +145,7 @@ namespace FS
             context.Services.AddSwaggerGen(
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "FS API", Version = "v1"});
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "FS API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     //options.UseOneOfForPolymorphism();
                     options.CustomSchemaIds(o => o.FullName);

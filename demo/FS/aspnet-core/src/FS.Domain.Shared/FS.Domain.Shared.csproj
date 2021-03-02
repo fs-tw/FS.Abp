@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
