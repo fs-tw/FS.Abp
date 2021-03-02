@@ -45,9 +45,7 @@
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2",
-    "@npm/root": "file:npm/root",
-    "@npm/emailing": "file:npm/emailing",
-    "@npm/account": "file:npm/account"
+    "@npm/root": "file:npm/root"
   },
   "devDependencies": {
     "@abp/ng.schematics": "~4.0.1",

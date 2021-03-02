@@ -4,8 +4,9 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Select module (current public module: account,emailing)",
-      "enum":["account","emailing"]
+      "description": "Select module (current public module: account)",
+      "enum":["account"],
+      "default":"account"
     },
     "versionNo": {
       "type": "string",
