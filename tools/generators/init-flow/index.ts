@@ -25,7 +25,8 @@ function clearFiles(target: string): (host: Tree) => void {
     [
       `npm/${target}/package.json`,
       `npm/root/package.json`,
-      `.npmrc`
+      `.npmrc`,
+      `package-lock.json`
     ]
       .filter(p => host.exists(p))
       .forEach(p => host.delete(p));
@@ -55,7 +56,7 @@ function addDependenciesToPackageJson(target:string):(host: Tree) => void {
 function AddFiles(target:string):Rule{
   return chain([
     mergeWith(
-      apply(url(`./files/.npmrc`), [
+      apply(url(`./files/root-path`), [
         template({
           tmpl: ''
         }),
@@ -63,8 +64,9 @@ function AddFiles(target:string):Rule{
       ]),
     ),
     mergeWith(
-      apply(url(`./files/fs-tw`), [
+      apply(url(`./files/npm/fs-tw`), [
         template({
+          tmpl: '',
           name: target
         }),
         move(`npm/fs-tw`),
@@ -73,6 +75,7 @@ function AddFiles(target:string):Rule{
     mergeWith(
       apply(url(`./files/npm/${target}`), [
         template({
+          tmpl: '',
           name: target
         }),
         move(`npm/${target}`),
