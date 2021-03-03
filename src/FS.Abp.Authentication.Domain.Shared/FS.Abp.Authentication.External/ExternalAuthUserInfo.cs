@@ -9,6 +9,7 @@ namespace FS.Abp.Authentication.External
         public string ProviderKey { get; set; }
         public string EmailAddress { get; set; }
         public string UserName { get; set; }
+        public string Name { get; set; }
         public Dictionary<string,string> ExtraProperties { get; set; }
 
         public ExternalAuthUserInfo()

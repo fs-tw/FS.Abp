@@ -77,7 +77,7 @@ namespace FS.Abp.Authentication.External
             var user = await FindOrCreateIdentityUser(userInfo);
             if (user == null) return;
             await signInManager.SignInAsync(user, true);
-            await eventService.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName, interactive: false));
+            await eventService.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.Name, interactive: false));
             context.Result = getGrantValidationResult(user);
         }
         private GrantValidationResult getGrantValidationResult(IdentityUser user)
@@ -105,10 +105,10 @@ namespace FS.Abp.Authentication.External
             {
                 result = new IdentityUser(guidGenerator.Create(),
                    userInfo.UserName, userInfo.EmailAddress, currentTenant.Id);
-                result.Name = userInfo.UserName;
-
+                result.Name = userInfo.Name;
+                result.IsExternal = true;
                 (await userManager.CreateAsync(result)).CheckErrors();
-                var defaultRoles = await this.identityRoleRepository.GetDefaultOnesAsync();
+                var defaultRoles = await this.identityRoleRepository.GetDefaultOnesAsync();                
                 await userManager.AddToRolesAsync(result, defaultRoles.Select(x => x.Name));
             }
             return result;
