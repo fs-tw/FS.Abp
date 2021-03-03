@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
-
   <!--<ItemGroup>
     <ProjectReference Include="..\..\..\..\..\framework\FS.Theme\src\FS.Theme.HttpApi.Client\FS.Theme.HttpApi.Client.csproj" />
   </ItemGroup>-->
