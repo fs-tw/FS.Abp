@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./lib/providers/menu.provider","export":[{"name":"LAYOUT_MENU_PROVIDERS","as":"ɵa"},{"name":"configureMenus","as":"ɵb"}]}]}]
