@@ -17,3 +17,7 @@ url=https://github.com/abpframework/abp.git
 [submodule "modules/FS.Cms"]
 	path = modules/FS.Cms
 	url = http://bitbucket.furthersoftware.com.tw/scm/mod/fs.cms.git
+[submodule "projects/FS.Abp"]
+	path = projects/FS.Abp
+	url = https://github.com/fs-tw/FS.Abp.git
+	branch = develop
