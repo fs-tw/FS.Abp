@@ -24,3 +24,7 @@ url=https://github.com/abpframework/abp.git
 [submodule "projects/Volo.Abp"]
 	path = projects/Volo.Abp
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/volo.abp.git
+[submodule "demo/angular"]
+	path = demo/angular
+	url = http://bitbucket.furthersoftware.com.tw/scm/tpl/nx.angular.git
+	branch = develop
