@@ -1,0 +1,122 @@
+.hc-slideshow .container {
+  position: relative;
+  height: 100%;
+}
+.hc-slideshow-caption {
+  position: absolute;
+  left: 0;
+  top: 35%;
+  color: #ffffff;
+}
+.hc-slideshow .background-image-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*caption styles*/
+.hc-slideshow .hc-slideshow-caption--large {
+  font-size: 20px;
+}
+.hc-slideshow .hc-slideshow-caption--large h1 {
+  font-size: 58px;
+  margin-bottom: 30px;
+}
+.hc-slideshow .hc-slideshow-caption--large p {
+  margin-bottom: 25px;
+}
+@media (max-width: 767px) {
+  .hc-slideshow .hc-slideshow-caption--large {
+    font-size: 16px;
+  }
+  .hc-slideshow .hc-slideshow-caption--large h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  } 
+}
+
+/*carousel controls*/
+.hc-slideshow .carousel-control {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  margin-top: -30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 767px) {
+  .hc-slideshow .carousel-control {
+    top: auto;
+    bottom: 0;
+    z-index: 1006;
+  }
+}
+.hc-slideshow .carousel-control:hover {
+  width: 100px;
+}
+.hc-slideshow .carousel-control-text {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.hc-slideshow .carousel-control:hover .carousel-control-text {
+  opacity: 1;
+}
+.hc-slideshow .carousel-control-prev-icon,
+.hc-slideshow .carousel-control-next-icon {
+  background-image: none;
+  width: 32px;
+  height: 32px;
+}
+.hc-slideshow .carousel-control-prev-icon:after {
+  font-family: "FontAwesome";
+  content: "\f104";
+  font-size: 32px;
+  line-height: 32px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.hc-slideshow .carousel-control-next-icon:after {
+  font-family: "FontAwesome";
+  content: "\f105";
+  font-size: 32px;
+  line-height: 32px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.hc-slideshow .carousel-control:hover .carousel-control-prev-icon:after,
+.hc-slideshow .carousel-control:hover .carousel-control-next-icon:after {
+  opacity: 0;
+}
+.hc-slideshow .carousel-indicators li {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: 3px;
+  margin-right: 3px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.hc-slideshow .carousel-indicators li.active {
+  background-color: #000000;
+}
+.hc-slideshow .carousel-indicators li:hover {
+  cursor: pointer;
+  background-color: #000000;
+}

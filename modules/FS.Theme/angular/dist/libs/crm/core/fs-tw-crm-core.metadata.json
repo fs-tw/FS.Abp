@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":4,"metadata":{"CrmCoreModule":{"__symbolic":"class","decorators":[{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/core","name":"NgModule","line":4,"character":1},"arguments":[{}]}],"members":{}}},"origins":{"CrmCoreModule":"./lib/crm-core.module"},"importAs":"@fs-tw/crm/core"}

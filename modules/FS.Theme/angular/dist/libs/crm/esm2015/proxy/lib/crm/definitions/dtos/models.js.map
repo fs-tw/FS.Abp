@@ -1,0 +1,1 @@
+{"version":3,"file":"models.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/crm/definitions/dtos/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface SelectOptionDto {\r\n  id: string;\r\n  no: string;\r\n  displayName: string;\r\n  options: SelectOptionDto[];\r\n}\r\n"]}

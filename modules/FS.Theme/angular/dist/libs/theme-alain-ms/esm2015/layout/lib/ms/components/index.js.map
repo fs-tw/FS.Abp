@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/theme-alain-ms/layout/src/","sources":["lib/ms/components/index.ts"],"names":[],"mappings":"AAAA,cAAc,iBAAiB,CAAC;AAChC,cAAc,gBAAgB,CAAC","sourcesContent":["export * from './sidebar/index';\r\nexport * from './topbar/index';"]}

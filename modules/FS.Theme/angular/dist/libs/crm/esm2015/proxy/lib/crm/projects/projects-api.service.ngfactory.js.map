@@ -1,0 +1,1 @@
+{"version":3,"file":"projects-api.service.ngfactory.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/crm/projects/projects-api.service.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

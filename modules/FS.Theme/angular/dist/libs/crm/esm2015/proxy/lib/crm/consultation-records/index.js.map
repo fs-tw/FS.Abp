@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["lib/crm/consultation-records/index.ts"],"names":[],"mappings":"AAAA,cAAc,QAAQ,CAAC;AACvB,cAAc,oCAAoC,CAAC","sourcesContent":["export * from './dtos';\r\nexport * from './consultation-records-api.service';\r\n"]}

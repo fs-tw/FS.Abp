@@ -1,0 +1,19 @@
+{
+  "name": "@fs-tw/theme-the-project",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/fs-tw-theme-the-project.umd.js",
+  "module": "fesm2015/fs-tw-theme-the-project.js",
+  "es2015": "fesm2015/fs-tw-theme-the-project.js",
+  "esm2015": "esm2015/fs-tw-theme-the-project.js",
+  "fesm2015": "fesm2015/fs-tw-theme-the-project.js",
+  "typings": "fs-tw-theme-the-project.d.ts",
+  "metadata": "fs-tw-theme-the-project.metadata.json",
+  "sideEffects": false
+}

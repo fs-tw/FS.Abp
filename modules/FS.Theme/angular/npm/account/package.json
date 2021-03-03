@@ -1,0 +1,11 @@
+{
+  "name": "account",
+  "version": "0.0.0",
+  "private": true,
+  "peerDependencies": {
+    
+  },
+  "dependencies": {
+    "@fs-tw/account": "^410.0.1"
+  }
+}

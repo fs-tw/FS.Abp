@@ -1,0 +1,118 @@
+/* 1 Elements
+----------------------------------------------------------------------------- */
+body.canvas-sliding,
+body.canvas-slid {
+  overflow-x: hidden;
+}
+.no-trans * {
+  @include transition(none !important);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lists
+---------------------------------- */
+ul {
+  list-style: square;
+}
+.list-icons,
+.list {
+  list-style: none;
+  padding: 0;
+}
+.list-icons li,
+.list li {
+  padding: 5px 0;
+}
+.list-icons li i {
+  min-width: 25px;
+  text-align: center;
+}
+.list-inline {
+  margin-top: 9px;
+  margin-bottom: 8px;
+  @if $text-direction == rtl {
+    padding-right: 0;
+  }
+}
+.header-top .list-inline {
+  display: inline-block;
+}
+
+/* Medium desktop devices and tablets */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-top .list-inline > li {
+    padding: 0;
+  }
+}
+
+/* Tables
+---------------------------------- */
+.table:not(.table-bordered) {
+  border-bottom: 2px solid #f3f3f3;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #eaeaea;
+  color: $gray-dark;
+  font-weight: 400;
+}
+.table-colored > thead > tr > th {
+  color: $white;
+}
+tbody {
+  background-color: $white;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px 15px;
+  border-top: 1px solid #f3f3f3;
+  @if $text-direction == rtl {
+    text-align: right;
+  }
+}
+.table-striped tbody {
+  background-color: $white;
+}
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f5f5f5;
+}
+.table-striped.table > tbody > tr > td {
+  border-color: #e8e8e8;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border-color: #f3f3f3;
+}
+.table-hover > tbody > tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.dark .table:not(.table-bordered) {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.07);
+}
+.dark .table > tbody {
+  background-color: transparent;
+}
+.dark .table > tbody > tr > td {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.dark .table > thead > tr > th {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #f1f1f1;
+  font-weight: 400;
+  border-top: none;
+}

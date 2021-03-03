@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"GenderType":{"男":0,"女":1,"不公開":3},"genderTypeOptions":{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@abp/ng.core","name":"mapEnumToOptions","line":8,"character":33},"arguments":[{"__symbolic":"reference","name":"GenderType"}]}}}]

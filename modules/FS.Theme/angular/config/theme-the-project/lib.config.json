@@ -1,0 +1,53 @@
+{
+  "order": 1001,
+  "nx": {
+    "theme-the-project": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "theme-the-project": {
+      "projectType": "library",
+      "root": "libs/theme-the-project",
+      "sourceRoot": "libs/theme-the-project/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-the-project/tsconfig.lib.json",
+            "project": "libs/theme-the-project/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-the-project/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-the-project/tsconfig.lib.json",
+              "libs/theme-the-project/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/theme-the-project/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/theme-the-project"],
+          "options": {
+            "jestConfig": "libs/theme-the-project/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/theme-the-project": ["libs/theme-the-project/src/index.ts"],
+    "@fs-tw/theme-the-project/*": ["libs/theme-the-project/*/src/index.ts"],
+    "@fs-tw/theme-the-project/styles/*": ["libs/theme-the-project/styles/*"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-crm-proxy.umd.js",
+  "module": "../fesm2015/fs-tw-crm-proxy.js",
+  "es2015": "../fesm2015/fs-tw-crm-proxy.js",
+  "esm2015": "../esm2015/proxy/fs-tw-crm-proxy.js",
+  "fesm2015": "../fesm2015/fs-tw-crm-proxy.js",
+  "typings": "fs-tw-crm-proxy.d.ts",
+  "metadata": "fs-tw-crm-proxy.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/crm/proxy"
+}

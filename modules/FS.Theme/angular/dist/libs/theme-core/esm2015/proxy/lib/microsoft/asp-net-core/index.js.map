@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/theme-core/proxy/src/","sources":["lib/microsoft/asp-net-core/index.ts"],"names":[],"mappings":"AAAA,cAAe,OAAO,CAAC","sourcesContent":["export *  from './mvc';\r\n"]}

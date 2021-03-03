@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"ProjectCreateDto":{"__symbolic":"interface"},"ProjectDto":{"__symbolic":"interface"},"ProjectGetListDto":{"__symbolic":"interface"},"ProjectPrimaryKeyDto":{"__symbolic":"interface"},"ProjectUpdateDto":{"__symbolic":"interface"},"ProjectWithDetailsDto":{"__symbolic":"interface"}}}]

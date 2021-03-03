@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>YinChang</Authors>
+    <Company>Further Software</Company>
+    <PackageProjectUrl>https://github.com/fs-tw/FS.Theme</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/fs-tw/FS.Theme</RepositoryUrl>
+    <PackageTags>abp module</PackageTags>
+    <AbpProjectType>module</AbpProjectType>
+  </PropertyGroup>
+</Project>

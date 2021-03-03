@@ -1,0 +1,831 @@
+/* 6 Navigations
+----------------------------------------------------------------------------- */
+/* 6.1 Light Version
+----------------------------------------------------------------------------- */
+/*First level*/
+.header .navbar-nav li .nav-link {
+  color: $gray-dark;
+  font-size: 16px;
+  padding: 28px 15px 27px 15px;
+  z-index: 102;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  @include transition (none);
+}
+.header .main-navigation.animated .navbar-nav li a {
+  @include transition (all 0.2s ease-in-out);
+}
+.header .navbar-nav li.dropdown .nav-link {
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include padding-right(20px);
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .header .navbar-nav li .nav-link {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding(28px, 12px, 27px, 12px);
+  }
+  .header .navbar-nav li.dropdown .nav-link {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-right(18px);
+  }
+}
+.header .navbar-nav li .nav-link:focus,
+.header .navbar-nav li .nav-link:hover,
+.header .navbar-nav .show > .nav-link,
+.header .navbar-nav li .nav-link.show,
+.header .navbar-nav .active.show > .nav-link,
+.header .navbar-nav li.show .nav-link.active {
+  background-color: $white;
+  border-bottom-color: $white;
+  border-right: 1px solid #f5f5f5;
+  border-left: 1px solid #f5f5f5;
+  z-index: 106;
+}
+.header .scrollspy .navbar-nav li .nav-link:focus,
+.header .scrollspy .navbar-nav li .nav-link:hover {
+  background-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.header .navbar-nav .active > .nav-link,
+.header .navbar-nav li .nav-link.active {
+  background-color: transparent;
+}
+.header .navbar-nav .dropdown-toggle::after {
+  font-family: 'FontAwesome';
+  content: "\f107";
+  position: absolute;
+  top: 51%;
+  @include left (auto);
+  @include right (0px);
+  line-height: 20px;
+  font-size: 14px;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  text-align: center;
+  margin-top: -10px;
+}
+@media (min-width: 992px) {
+  .header.centered .navbar-nav .nav-item a.nav-link {
+    padding-top: 15px!important;
+    padding-bottom: 15px!important;
+    border-top: 1px solid transparent;
+  }
+  .header.centered:not(.dark) .main-navigation .navbar-nav .nav-item.show a.nav-link,
+  .header.centered:not(.dark) .main-navigation .navbar-nav .nav-item.show a.nav-link:hover,
+  .header.centered:not(.dark) .main-navigation .navbar-nav .nav-item.show a.nav-link:focus,
+  .header.centered:not(.dark) .main-navigation .navbar-nav .nav-item.dropdown a.nav-link:focus {
+    border-top: 1px solid #f5f5f5;
+  }
+}
+@media (min-width: 1200px) {
+  .header .navbar-nav > li {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include margin(0px, 0px, 0px, 10px);
+  }
+  .header .navbar-nav > li:first-child {
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .header .navbar-nav li .nav-link {
+    padding: 10px 15px;
+  }  
+}
+
+/*Second level*/
+.header .navbar-nav li ul {
+  min-width: 14rem;
+  @include border-radius(0px);
+  padding: 0;
+  margin: 0;
+  margin-top: -1px;
+  background-color: $white;
+  @include box-shadow(0px 6px 24px rgba($black, 0.06));
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1f1f1;
+  border-top-color: transparent;
+  z-index: 101;
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == rtl {
+    left: auto;
+    right: 0;
+    text-align: right;
+  }
+}
+.header .navbar-nav li li a {
+  padding: 10px 20px;
+  display: block;
+  font-size: 14px;
+  color: $gray-dark;
+  border-bottom: 1px solid #f7f7f7;
+  @include transition (none);
+  position: relative;
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include text-align (left);
+}
+.header .navbar-nav li li a:focus,
+.header .navbar-nav li li a:hover,
+.header .navbar-nav li .show > a,
+.header .navbar-nav li li a.show,
+.header .navbar-nav li .active > a,
+.header .navbar-nav li li a.active {
+  background-color: #fcfcfc;
+  border-color: #f7f7f7;
+  text-decoration: none;
+}
+.header .navbar-nav ul .dropdown-toggle::after {
+  @if $text-direction == ltr {
+    content: "\f105";
+    right: 5px;
+  } @else {
+    content: "\f104";
+    right: auto;
+    left: 5px;
+  }
+}
+
+/* third level menu */
+.header .navbar-nav ul ul {
+  top: -1px;
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == ltr {
+    left: 100% !important;
+    right: auto;
+  } @else {
+    right: 100% !important;
+    left: auto;
+  }
+  border-top: 1px solid #f7f7f7;
+}
+.header .container-fluid .navbar-nav ul.to-left {
+  right: 100%!important;
+  left: auto!important;
+}
+
+/*Large Devices less than 1610px*/
+@media (max-width: 1610px) {
+  .header .navbar-nav ul.to-left {
+    right: 100%!important;
+    left: auto!important;
+  }
+}
+
+/*Mega Menu*/
+.mega-menu.dropdown {
+  position: static;
+}
+.mega-menu > a {
+  position: relative;
+}
+.header .navbar-nav li.mega-menu .dropdown-menu {
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+}
+
+/* mega menu menu item */
+@media (min-width: 992px) {
+  .header.centered .col-md-12 .navbar {
+    position: static;
+  }
+}
+.header .navbar-nav li.mega-menu .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  min-width: 0;
+  background-color: transparent;
+}
+.mega-menu .menu li {
+  position: relative;
+}
+.mega-menu h4.title {
+  margin: 5px 0;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.header .navbar-nav li.mega-menu .menu > li > a {
+  padding: 5px 0;
+  border-bottom: 1px solid #f7f7f7;
+  display: block;
+  @include transition (none);
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include text-align (left);
+}
+.mega-menu .menu > li > a i,
+.dropdown-menu > li > a i {
+  // RTL support.
+  // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include padding-left(5px);
+  font-size: 12px;
+  width: 20px;
+  position: relative;
+  top: -1px;
+  @include transition (all 0.2s ease-in-out);
+  color: $gray-lighter;
+}
+.mega-menu .menu > li > a i.fa,
+.dropdown-menu > li > a i.fa {
+  width: 32px;
+  text-align: center;
+}
+.mega-menu .menu > li > a i.fa-circle-o,
+.dropdown-menu > li > a i.fa-circle-o {
+  font-size: 7px;
+  top: -3px;
+}
+.mega-menu .menu > li > a i.fa-spin {
+  width: 11px;
+  padding: 0;
+  // RTL support.
+  // The following mixins depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+  // RTL related mixins are located in mixins/_rtl.scss file.
+  @include margin-right (13px);
+  @include margin-left (8px);
+}
+.mega-menu .menu > li:last-child > a {
+  border-bottom: none!important;
+}
+.mega-menu .menu > li > a:hover i.fa-circle-o:before,
+.dropdown-menu > li > a:hover i.fa-circle-o:before,
+.mega-menu .menu > li.active > a i.fa-circle-o:before,
+.dropdown-menu > li.active > a i.fa-circle-o:before {
+  content: "\f111";
+}
+
+/*centered logo header*/
+.col-md-12 .mega-menu--wide .dropdown-menu {
+  left: 0 !important;
+}
+
+
+/* Medium devices (desktops, tablets, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container .mega-menu--wide .dropdown-menu {
+    width: 930px!important;
+  }
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == ltr {
+    .container .col-lg-auto .mega-menu .dropdown-menu {
+      left: auto !important;
+      right: 0px !important;
+      width: 930px !important;
+    }
+  } @else {
+    .container .col-lg-auto .mega-menu .dropdown-menu {
+      right: auto !important;
+      left: 0px !important;
+      width: 930px !important;
+    }
+  }
+}
+
+/* Large devices (Large desktops 1200px and up) */
+@media (min-width: 1200px) {
+  .container .mega-menu--wide .dropdown-menu {
+    width: 1110px!important;
+  }
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == ltr {
+    .main-navigation .navbar-nav > li:first-child {
+      margin: 0;
+    }
+    .container .col-lg-auto .mega-menu .dropdown-menu {
+      left: auto !important;
+      right: 0px !important;
+      width: 1110px !important;
+    }
+  } @else {
+    .main-navigation .navbar-nav > li:last-child {
+      margin: 0;
+    }
+    .container .col-lg-auto .mega-menu .dropdown-menu {
+      right: auto !important;
+      left: 0px !important;
+      width: 1110px !important;
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  // RTL support
+  // $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+  @if $text-direction == ltr {
+    .container .col-lg-auto .mega-menu .dropdown-menu {
+      left: auto !important;
+      right: 0px !important;
+      width: 1110px !important;
+    }
+  } @else {
+    .container .col-lg-auto .mega-menu .dropdown-menu {
+      right: auto !important;
+      left: 0px !important;
+      width: 1110px !important;
+    }
+  }
+}
+
+/* Dropdown animations
+------------------------------ */
+.animated.main-navigation .navbar-nav .show .dropdown-menu,
+#offcanvas.animated .show .dropdown-menu,
+#offcanvas.animated .dropdown-menu .show .dropdown-menu {
+  @include animation-duration(0.3s);
+  @include animation-fill-mode(both);
+  @include animation-name(fadeInUpSmall);
+}
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == ltr {
+  .animated.main-navigation .dropdown-menu .show .dropdown-menu {
+    @include animation-name(fadeInLeftSmall);
+  }
+} @else {
+  .animated.main-navigation .dropdown-menu .show .dropdown-menu {
+    @include animation-name(fadeInRightSmall);
+  }
+}
+header .container-fluid .animated.main-navigation .dropdown-menu .show .dropdown-menu.to-left {
+  @include animation-name(fadeInRightSmall);
+}
+/*Large Devices less than 1610px*/
+@media (max-width: 1610px) {
+  .animated.main-navigation .dropdown-menu .show .dropdown-menu.to-left {
+    @include animation-name(fadeInRightSmall);
+  }
+}
+
+/*mobile menu*/
+.header .navbar-brand {
+  padding: 13px 0;
+  margin-right: 0;
+}
+.header .navbar-toggler {
+  top: 19px;
+  right: 0;
+}
+.navbar-light .navbar-toggler {
+  border-color: #ccc;
+}
+.navbar-light .navbar-toggler:hover,
+.navbar-light .navbar-toggler:focus {
+  background-color: #fafafa;
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 991px) {
+  .header .navbar-nav {
+    padding-bottom: 20px;
+  }
+
+  /* first level item */
+  .header .navbar-nav li .nav-link {
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px 15px;
+  }
+  .header .navbar-nav > li:last-child a.nav-link  {
+    border-bottom: 1px solid transparent;
+  }
+
+  /* first level item hover and focus states */
+  .header .navbar-nav li > a:hover,
+  .header .navbar-nav li > a:focus,
+  .header .navbar-nav .active > a,
+  .header .navbar-nav .active > a:hover,
+  .header .navbar-nav .active > a:focus {
+    background-color: $white;
+    border-bottom-color: transparent;
+  }
+
+  /* second level menu */
+  .navbar-toggleable-md .navbar-nav .dropdown-menu {
+    @include box-shadow(none);
+  }
+  .header .navbar-nav .dropdown-menu {
+    background-color: $white;
+  }
+  .header .navbar-nav .badge {
+    @include right(30px);
+  }
+
+  /* second level item */
+  .header .navbar-nav .show .dropdown-menu > li > a,
+  .header .navbar-nav .show .dropdown-menu .dropdown-header {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding (12px, 15px, 12px, 40px);
+    border-color: #f9f9f9;
+  }
+
+  /* third level item */
+  .header .navbar-nav .show .dropdown-menu .dropdown-menu > li > a {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-left (60px);
+  }
+
+  /* four level item */
+  .header .navbar-nav .show .dropdown-menu .dropdown-menu .dropdown-menu > li > a {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include padding-left (80px);
+  }
+
+  /* Arrow for parent menu item */
+  .header .navbar-nav .dropdown-toggle::after {
+    color: $gray-light;
+    top: 22px;
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right (10px);
+  }
+  .header .navbar-nav .dropdown .dropdown .dropdown-toggle::after {
+    // RTL support.
+    // The following mixin depends on the $text-direction variable in style.scss file OR in rtl_style.scss file.
+    // RTL related mixins are located in mixins/_rtl.scss file.
+    @include right (10px);
+  }
+}
+
+/* 6.2 Dark Version
+----------------------------------------------------------------------------- */
+/* first level menu item */
+.dark.header .navbar-nav li .nav-link {
+  color: #cccccc;
+  border-bottom: 1px solid transparent;
+  text-shadow: 1px 1px rgba($black, 0.6);
+}
+.transparent-header .dark.header .navbar-nav li .nav-link {
+  color: #e1e1e1;
+}
+
+/* first level menu item on hover/focus */
+.dark.header .navbar-nav li .nav-link:hover,
+.dark.header .navbar-nav li .nav-link:focus,
+.dark.header .navbar-nav .active .nav-link,
+.dark.header .navbar-nav .active .nav-link:hover,
+.dark.header .navbar-nav .active .nav-link:focus {
+  background-color: transparent;
+  color: $white;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  z-index: 106;
+}
+
+/* first level active menu item when opened */
+.dark.header .navbar-nav .show .nav-link,
+.dark.header .navbar-nav .show .nav-link:hover,
+.dark.header .navbar-nav .show .nav-link:focus,
+.dark.header .navbar-nav .dropdown .nav-link:focus {
+  background-color: rgba($black, 0.15);
+  color: $white;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  z-index: 106;
+}
+
+/* second level menu item */
+.dark.header .dropdown-menu {
+  border: none;
+}
+.dark.header .mega-menu .dropdown-menu {
+  z-index: 103;
+}
+.dark.header .dropdown-menu > li > a,
+.dark.header .navbar-nav .mega-menu .menu > li > a {
+  color: #cccccc;
+  text-shadow: 1px 1px rgba($black, 0.7);
+}
+.dark.header .mega-menu .menu > li > a:hover,
+.dark.header .mega-menu .menu > li > a:focus {
+  background-color: rgba($black, 0.2);
+  color: $white;
+}
+.dark.header .dropdown-menu > li > a:hover,
+.dark.header .dropdown-menu > li > a:focus,
+.dark.header .navbar-nav .show > a,
+.dark.header .navbar-nav .show > a:hover,
+.dark.header .navbar-nav .show > a:focus,
+.dark.header .dropdown-menu > .active > a,
+.dark.header .dropdown-menu > .active > a:hover,
+.dark.header .dropdown-menu > .active > a:focus,
+.dark.header .dropdown-menu .menu > .active > a,
+.dark.header .dropdown-menu .menu > .active > a:hover,
+.dark.header .dropdown-menu .menu > .active > a:focus {
+  background-color: rgba($black, 0.2);
+  color: $white;
+}
+.dark.header .dropdown .dropdown > a:before {
+  color: #cccccc;
+  top: 13px;
+}
+.dark.header .dropdown .dropdown.show > a:before {
+  color: $white;
+}
+  
+/* Mobile Menu
+------------------------------ */
+/*Dark mobile menu toggle button*/
+.dark .navbar .navbar-toggler {
+  border-color: rgba($white, 0.55);
+  background-color: transparent;
+}
+.dark .navbar .navbar-toggler:hover,
+.dark .navbar .navbar-toggler:focus {
+  background-color: rgba($white, 0.1);
+  border-color: rgba($white, 0.7);
+}
+.dark .navbar .navbar-toggler .navbar-toggler-icon {
+  background-image: none;
+  position: relative;
+  font-weight: 300;
+  text-align: center;
+}
+.dark .navbar .navbar-toggler .navbar-toggler-icon:after {
+  font-family: "FontAwesome";
+  width: 30px;
+  height: 30px;
+  content: "\f0c9";
+  color: rgba($white, 0.5);
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 300;
+  line-height: 30px;
+}
+.dark .navbar .navbar-collapse,
+.dark .navbar .navbar-form {
+  border-color: #121212;
+}
+
+/* Small devices (tablets, phones less than 767px) */
+@media (max-width: 991px) {
+  /*Dark Mobile menu*/
+  /* second level menu */
+  .dark .main-navigation .navbar-nav .show .dropdown-menu {
+    background-color: rgba($black, 0.5);
+    border: none;
+  }
+
+  /* second level item */
+  .dark .main-navigation .navbar-nav .show .dropdown-menu > li > a,
+  .dark .main-navigation .navbar-nav .show .dropdown-menu .dropdown-header {
+    color: #cccccc;
+    border-color: rgba($white, 0.08);
+  }
+
+  /* item on hover/focus */
+  .dark.header .navbar-nav .show .dropdown-menu > li > a:hover,
+  .dark.header .navbar-nav .show .dropdown-menu > li > a:focus,
+  .dark.header .navbar-nav .show .dropdown-menu > .active > a,
+  .dark.header .navbar-nav .show .dropdown-menu > .active > a:hover,
+  .dark.header .navbar-nav .show .dropdown-menu > .active > a:focus,
+  .dark.header .navbar-nav > li > a:hover,
+  .dark.header .navbar-nav > li > a:focus,
+  .dark.header .navbar-nav > .active > a,
+  .dark.header .navbar-nav > .active > a:hover,
+  .dark.header .navbar-nav > .active > a:focus {
+    color: $white;
+    background-color: rgba($black, 0.2);
+  }
+
+  /* Arrow for parent menu item */
+  .dark .navbar-nav .dropdown.show > .dropdown-toggle::after {
+    color: $white;
+  }
+}
+
+/* 6.3 Navigation style 2
+----------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .header:not(.dark) .main-navigation--style-2 .navbar-nav li:not(.active) .nav-link {
+    color: #333333;
+  }
+  .header .main-navigation--style-2 .navbar-nav li .nav-link:focus,
+  .header .main-navigation--style-2 .navbar-nav li .nav-link:hover,
+  .header .main-navigation--style-2 .navbar-nav .show > .nav-link,
+  .header .main-navigation--style-2 .navbar-nav li .nav-link.show,
+  .header .main-navigation--style-2 .navbar-nav .active.show > .nav-link,
+  .header .main-navigation--style-2 .navbar-nav li.show .nav-link.active {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+  }
+  .header.dark .main-navigation--style-2 .navbar-nav li .nav-link:focus,
+  .header.dark .main-navigation--style-2 .navbar-nav li .nav-link:hover,
+  .header.dark .main-navigation--style-2 .navbar-nav .show > .nav-link,
+  .header.dark .main-navigation--style-2 .navbar-nav li .nav-link.show,
+  .header.dark .main-navigation--style-2 .navbar-nav .active.show > .nav-link,
+  .header.dark .main-navigation--style-2 .navbar-nav li.show .nav-link.active {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+  }
+  .header .main-navigation--style-2 .navbar-nav li ul {
+    @include border-radius(7px);
+    margin-top: 0;
+    @include box-shadow(0px 4px 29px rgba(0, 0, 0, 0.1));
+    border-top-color: #f1f1f1;
+  }
+  .header.dark .main-navigation--style-2 .navbar-nav li ul {
+    margin-top: -2px;
+  }
+  .header .main-navigation--style-2 .navbar-nav li li a {
+    border-bottom-color: transparent;
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+  .header .main-navigation--style-2 .navbar-nav li.mega-menu .menu > li > a {
+    padding: 7px 0;
+    border-bottom: none;
+  }
+  .header .main-navigation--style-2 .navbar-nav li ul ul {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .header .main-navigation--style-2 .navbar-nav ul.dropdown-menu > li:first-child > a {
+    border-radius: 5px 5px 0 0;
+  }
+  .header .main-navigation--style-2 .navbar-nav ul.dropdown-menu > li:last-child > a {
+    border-radius: 0 0 5px 5px;
+  }
+  .header .main-navigation--style-2 .navbar-nav .dropdown-toggle.nav-link::after {
+    font-size: 10px;
+    right: 3px;
+  }  
+}
+
+/* 6.4 Offcanvas navigation
+----------------------------------------------------------------------------- */
+.offcanvas {
+  background-color: #f5f5f5;
+  border-color: #f1f1f1;
+}
+.offcanvas-toggle-left {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  left: 10px;
+  z-index: 1031;
+  text-align: center;
+  background-color: rgba($white, 0.85);
+  @include border-radius(0);
+  border: 0;
+}
+.offcanvas-toggle-left:after {
+  font-family: "FontAwesome";
+  content: "\f0c9";
+  font-size: 22px;
+  line-height: 35px;
+  text-align: center;
+  color: $black;
+}
+#offcanvas.in + .offcanvas-toggle-left:after {
+  content: "\f00d";
+}
+.offcanvas-toggle-right {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 10px;
+  z-index: 1031;
+  text-align: center;
+  background-color: rgba($white, 0.85);
+  @include border-radius(0);
+  border: 0;
+}
+.offcanvas-toggle-right:after {
+  font-family: "FontAwesome";
+  content: "\f0c9";
+  font-size: 22px;
+  line-height: 35px;
+  text-align: center;
+  color: $black;
+}
+#offcanvas.in + .offcanvas-toggle-right:after {
+  content: "\f00d";
+}
+#offcanvas {
+  .nav.flex-column {
+    padding: 15px;
+    > li .nav-link {
+      font-size: 18px;
+      font-weight: 300;
+      &:after {
+        top: 10px;
+      }
+    }
+  }
+}
+
+/* 6.5 Gradient background header
+----------------------------------------------------------------------------- */
+.transparent-header.gradient-background-header .header:not(.dark) .active.dropdown > a:after {
+  color: $black;
+}
+.transparent-header.gradient-background-header .header:not(.dark) .main-navigation .show .nav-link,
+.transparent-header.gradient-background-header .header:not(.dark) .main-navigation .show .nav-link:hover,
+.transparent-header.gradient-background-header .header:not(.dark) .main-navigation .show .nav-link:focus,
+.transparent-header.gradient-background-header .header:not(.dark) .main-navigation .nav-link:focus {
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .transparent-header.gradient-background-header .header:not(.dark) li:not(.show) .nav-link:hover,
+  .transparent-header.gradient-background-header .header:not(.dark) .active:not(.show) .nav-link,
+  .transparent-header.gradient-background-header .header:not(.dark) .active:not(.show) .nav-link:hover,
+  .transparent-header.gradient-background-header .header:not(.dark) .active:not(.show) .nav-link:focus {
+    color: $black;
+    border-bottom: 1px solid #454545;
+  }
+  .transparent-header.gradient-background-header .header:not(.dark) li:not(.show) .nav-link:focus {
+    color: $black;
+  }
+}
+.transparent-header.gradient-background-header .dark.header .main-navigation .show .nav-link,
+.transparent-header.gradient-background-header .dark.header .main-navigation .show .nav-link:hover,
+.transparent-header.gradient-background-header .dark.header .main-navigation .show .nav-link:focus,
+.transparent-header.gradient-background-header .dark.header .main-navigation .nav-link:focus {
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.transparent-header {
+  &.gradient-background-header header.header.transparent-header-on {
+    background: -moz-linear-gradient(top, $white 0%, rgba($white, 0.05) 85%, rgba($white, 0) 100%);
+    background: -webkit-linear-gradient(top, $white 0%, rgba($white, 0.05) 85%, rgba($white, 0) 100%);
+    background: linear-gradient(to bottom, $white 0%, rgba($white, 0.05) 85%, rgba($white, 0) 100%);
+    border-bottom: none;
+    border-top: none;
+  }
+  &.gradient-background-header header.header.dark.transparent-header-on {
+    background: -moz-linear-gradient(top, rgba($black, 0.5) 0%, rgba($black, 0.05) 85%, rgba($black, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba($black, 0.5) 0%, rgba($black, 0.05) 85%, rgba($black, 0) 100%);
+    background: linear-gradient(to bottom, rgba($black, 0.5) 0%, rgba($black, 0.05) 85%, rgba($black, 0) 100%);
+    border-bottom: none;
+    border-top: none;
+  }
+}
+.transparent-header.gradient-background-header.fixed-header-on .header.fixed:not(.dark) {
+  border-bottom: none;
+  background-color: rgba($white, 0.8);
+  @include transition(all linear 0.2s);
+}
+.transparent-header.gradient-background-header.fixed-header-on .dark.header.fixed {
+  background-color: rgba($black, 0.3);
+  @include transition(all linear 0.2s);
+}
+
+/* 6.7 Rtl resets
+----------------------------------------------------------------------------- */
+// RTL support
+// $text-direction variable is setted to "ltr" inside style.scss file and to "rtl" inside rtl_style.scss file.
+@if $text-direction == rtl {
+  .nav,
+  .navbar-nav {
+    padding-right: 0;
+  }
+}

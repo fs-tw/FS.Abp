@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-crm-core.umd.js",
+  "module": "../fesm2015/fs-tw-crm-core.js",
+  "es2015": "../fesm2015/fs-tw-crm-core.js",
+  "esm2015": "../esm2015/core/fs-tw-crm-core.js",
+  "fesm2015": "../fesm2015/fs-tw-crm-core.js",
+  "typings": "fs-tw-crm-core.d.ts",
+  "metadata": "fs-tw-crm-core.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/crm/core"
+}

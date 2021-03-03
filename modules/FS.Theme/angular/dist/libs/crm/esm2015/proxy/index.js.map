@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/crm/proxy/src/","sources":["index.ts"],"names":[],"mappings":"AAAA,cAAe,WAAW,CAAC;AAC3B,cAAe,WAAW,CAAC","sourcesContent":["export *  from './lib/abp';\r\nexport *  from './lib/crm';\r\n"]}

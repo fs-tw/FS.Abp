@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./lib/providers/route.provider","export":[{"name":"ROUTE_PROVIDERS","as":"ɵa"}]},{"from":"./lib/providers/styles.provider","export":[{"name":"STYLES_PROVIDERS","as":"ɵb"},{"name":"configureStyles","as":"ɵc"}]}]}]

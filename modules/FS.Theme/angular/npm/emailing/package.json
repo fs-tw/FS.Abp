@@ -1,0 +1,11 @@
+{
+  "name": "account",
+  "version": "0.0.0",
+  "private": true,
+  "peerDependencies": {
+    
+  },
+  "dependencies": {
+    "@fs-tw/emailing": "^410.0.1"
+  }
+}

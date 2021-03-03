@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/theme-core/proxy/src/","sources":["lib/abp/index.ts"],"names":[],"mappings":"AAAA,mDAAmD;AACnD,cAAc,iBAAiB,CAAC","sourcesContent":["// export * as CodeSettings from './code-settings';\r\nexport * from './code-settings';"]}
