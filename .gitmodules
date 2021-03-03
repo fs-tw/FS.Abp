@@ -5,6 +5,3 @@
 [submodule "Volo.Abp"]
 	path = Volo.Abp
 	url = http://bitbucket.furthersoftware.com.tw/scm/further/volo.abp.git
-[submodule "FS.Abp"]
-	path = FS.Abp
-	url=https://github.com/fs-tw/FS.Abp.git
