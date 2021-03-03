@@ -8,6 +8,3 @@
 [submodule "FS.Abp"]
 	path = FS.Abp
 	url=https://github.com/fs-tw/FS.Abp.git
-[submodule "FS.Theme"]
-	path = FS.Theme
-	url=https://github.com/fs-tw/FS.Theme.git
