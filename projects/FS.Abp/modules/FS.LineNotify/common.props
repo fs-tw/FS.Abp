@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
+    <AbpProjectType>module</AbpProjectType>
+  </PropertyGroup>
+</Project>

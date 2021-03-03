@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\FS\*.json" />
+    <Content Remove="Localization\FS\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModel\FS.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\CustomerDiscriminator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\FS.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FS.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FS.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>FS.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\FS.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FS.ModelDiagram.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>

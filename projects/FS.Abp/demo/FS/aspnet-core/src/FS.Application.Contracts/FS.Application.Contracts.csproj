@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.ObjectExtending" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS\Customers\Dtos\CustomerDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\Dtos\EnterpriseDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\Dtos\PersonDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\ICustomerCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\ICustomersApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

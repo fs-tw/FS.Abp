@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "dist/libs/*"
+  ],
+  "version": "410.0.1",
+  "command": {
+    "publish": {
+      "access": "public"
+    }
+  }
+}

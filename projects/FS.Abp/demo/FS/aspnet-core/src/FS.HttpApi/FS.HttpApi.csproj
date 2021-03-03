@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />
+    <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.HttpApi" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS\Customers\CustomersApi.CustomerCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CustomersApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\CustomersApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

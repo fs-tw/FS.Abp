@@ -1,0 +1,1 @@
+{"version":3,"file":"models.js","sourceRoot":"../../../../../libs/emailing/proxy/src/","sources":["lib/volo/abp/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface NameValue<T = string> {\r\n  name?: string;\r\n  value: T;\r\n}\r\n"]}

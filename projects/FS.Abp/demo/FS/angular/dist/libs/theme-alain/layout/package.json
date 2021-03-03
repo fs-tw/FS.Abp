@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-theme-alain-layout.umd.js",
+  "module": "../fesm2015/fs-tw-theme-alain-layout.js",
+  "es2015": "../fesm2015/fs-tw-theme-alain-layout.js",
+  "esm2015": "../esm2015/layout/fs-tw-theme-alain-layout.js",
+  "fesm2015": "../fesm2015/fs-tw-theme-alain-layout.js",
+  "typings": "fs-tw-theme-alain-layout.d.ts",
+  "metadata": "fs-tw-theme-alain-layout.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/theme-alain/layout"
+}

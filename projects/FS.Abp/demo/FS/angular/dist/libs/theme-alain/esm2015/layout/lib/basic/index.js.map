@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/theme-alain/layout/src/","sources":["lib/basic/index.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAC;AAClC,cAAc,iBAAiB,CAAC","sourcesContent":["export * from './basic.component';\r\nexport * from './widgets/index';\r\n"]}

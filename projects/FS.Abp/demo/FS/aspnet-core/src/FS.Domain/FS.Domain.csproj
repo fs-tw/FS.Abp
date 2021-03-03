@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
+    <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS\Customers\Customer.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\CustomersStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\Enterprise.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\ICustomerRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\Person.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
