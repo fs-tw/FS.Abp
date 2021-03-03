@@ -2,6 +2,3 @@
 	path = EasyAbp.Abp.Trees
 	url = https://github.com/EasyAbp/Abp.Trees.git
 	branch = develop
-[submodule "Volo.Abp"]
-	path = Volo.Abp
-	url = http://bitbucket.furthersoftware.com.tw/scm/further/volo.abp.git
