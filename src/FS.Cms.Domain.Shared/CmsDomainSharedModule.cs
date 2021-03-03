@@ -21,7 +21,7 @@ namespace FS.Cms
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<CmsDomainSharedModule>("FS.Cms");
+                options.FileSets.AddEmbedded<CmsDomainSharedModule>();
             });
 
             Configure<AbpLocalizationOptions>(options =>

@@ -1,14 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>FS.Cms</RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Domain.Shared" Version="$(FSVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,10 +49,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Validation" Version="4.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="DataModel\Cms.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>
@@ -66,6 +64,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="DataModel\Cms.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
     <None Update="DataModel\Cms.edps">
       <AutoGen>True</AutoGen>
       <DependentUpon>Cms.efml</DependentUpon>

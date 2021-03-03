@@ -1,7 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace></RootNamespace>
@@ -14,15 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.HtmlAgilityPack\src\FS.Abp.HtmlAgilityPack\FS.Abp.HtmlAgilityPack.csproj" />
+    <PackageReference Include="HtmlAgilityPack" Version="$(HtmlAgilityPackVersion)" />
+    <PackageReference Include="FS.Abp.Application" Version="$(FSVersion)" />
     <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain\FS.Cms.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.0.0" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="4.0.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>

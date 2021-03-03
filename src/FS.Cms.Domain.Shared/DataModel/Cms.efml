@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" p1:VersionTag="4.2.1" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$EnumTypes">
     <EnumType Name="DisplayMode" class="FS.Cms.Posts.DisplayMode" p1:Guid="0d88d79f-6b02-43d7-8775-a48ea12dd710" p1:AbpEditor="YinChang">
       <p1:Attributes>
@@ -693,6 +693,9 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="cdaf488a-6d25-4ec3-97b8-99fd162c36e8" p1:GenerateDTO="False">
       <column name="" />
@@ -829,6 +832,9 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="ef78a9bd-1c68-459b-b7ab-d90b507062e7" p1:GenerateDTO="False">
       <column name="" />
@@ -897,6 +903,9 @@
             <boolean>false</boolean>
           </p1:PropertyValue>
         </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="String" shadow="True" p1:ValidateRequired="true" p1:Guid="d4007a38-539e-4e89-9127-fe30e225fff4" p1:GenerateDTO="False">
@@ -991,6 +1000,9 @@
             <boolean>false</boolean>
           </p1:PropertyValue>
         </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="d59c57e6-bfd6-47a1-ae02-74cca3bcaaa5" p1:GenerateDTO="False">
@@ -1096,6 +1108,9 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="e32ac2f0-5fe5-4411-9b14-51b2877e75ea" p1:GenerateDTO="False">
       <column name="" />
@@ -1192,6 +1207,9 @@
             <boolean>false</boolean>
           </p1:PropertyValue>
         </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="99cf6eae-cdad-4aac-acdb-e630017e2751" p1:GenerateDTO="False">
