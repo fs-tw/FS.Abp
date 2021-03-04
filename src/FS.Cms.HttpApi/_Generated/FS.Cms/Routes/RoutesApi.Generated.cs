@@ -7,13 +7,18 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
+using Volo.Abp;
+using Microsoft.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc;
 
-namespace FS.Cms.Menu
+namespace FS.Cms.Routes
 {
-    public partial interface IMenuApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService
+    [Area("cms")]
+    [RemoteService(true)]
+    [ControllerName("FS.Cms.Routes(cms)")]
+    [Route("api/cms/routes")]
+    public partial class RoutesApi : CmsController , IRoutesApi //auto-generated
     {
+
     }
 }

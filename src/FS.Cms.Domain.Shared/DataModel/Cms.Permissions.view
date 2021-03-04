@@ -22,8 +22,7 @@
               <Width>240 px</Width>
               <Height>75 px</Height>
             </Size>
-            <Text>Menu
-</Text>
+            <Text>Routes</Text>
           </Model>
           <Model xsi:type="ComplexTypeVwModel">
             <CustomProperties>
@@ -52,7 +51,7 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>9a23b434-f23b-47e6-bdb4-c849758b84cc</Path>
+                      <Path>6ba92f93-097d-4f0c-a2f2-4eb9f8dcd469</Path>
                       <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
                     </Oid>
                   </Model>
@@ -71,36 +70,55 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>f7e3a7cf-a21a-4e13-8169-e25b971cb666</Path>
+                      <Path>929839be-7ee3-430f-aa6c-934e4bb29bb1</Path>
+                      <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
+                    </Oid>
+                  </Model>
+                  <Model xsi:type="PropertyVwModel">
+                    <CustomProperties>
+                      <OID>6</OID>
+                      <Parent>3</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Location>
+                      <X>1 px</X>
+                      <Y>37 px</Y>
+                    </Location>
+                    <Size>
+                      <Width>186 px</Width>
+                      <Height>18 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
+                      <Path>e4725929-81c2-4734-9241-c922e4a86673</Path>
                       <TypeName>EntityDeveloper.EntityFrameworkCore.EntityProperty</TypeName>
                     </Oid>
                   </Model>
                 </Children>
                 <Size>
                   <Width>188 px</Width>
-                  <Height>35 px</Height>
+                  <Height>53 px</Height>
                 </Size>
                 <MaxSize>
                   <Width>0 px</Width>
-                  <Height>37 px</Height>
+                  <Height>55 px</Height>
                 </MaxSize>
               </Model>
             </Children>
             <Location>
-              <X>-248 px</X>
+              <X>-264 px</X>
               <Y>8 px</Y>
             </Location>
             <Size>
               <Width>192 px</Width>
-              <Height>85 px</Height>
+              <Height>103 px</Height>
             </Size>
             <MinSize>
               <Width>100 px</Width>
-              <Height>85 px</Height>
+              <Height>103 px</Height>
             </MinSize>
             <MaxSize>
               <Width>800 px</Width>
-              <Height>85 px</Height>
+              <Height>103 px</Height>
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
@@ -115,7 +133,7 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>1</Scale>
           <Location>
-            <X>-817 px</X>
+            <X>-816.8 px</X>
             <Y>-412 px</Y>
           </Location>
         </ViewPort>

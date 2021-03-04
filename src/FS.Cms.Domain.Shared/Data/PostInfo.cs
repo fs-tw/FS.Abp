@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FS.Cms.Data.Posts
 {
-    public class PostJson
+    public class PostInfo
     {
         public string BlogCode { get; set; }
         public string Title { get; set; }

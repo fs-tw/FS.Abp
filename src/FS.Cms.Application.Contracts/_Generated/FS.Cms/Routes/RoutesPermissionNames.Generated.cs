@@ -9,22 +9,23 @@
 //------------------------------------------------------------------------------
 using Volo.Abp.Reflection;
 
-namespace FS.Cms.Menu
+namespace FS.Cms.Routes
 {
-    public class MenuPermissionNames
+    public class RoutesPermissionNames
     {
-        public const string GroupName = "FS.Cms.Menu";
+        public const string GroupName = "FS.Cms.Routes";
 
-        public static class 前台內容管理
+        public static class 基本設定
         {
-            public const string Default = GroupName + ".前台內容管理";
-            public const string 最新消息管理 = Default + ".最新消息管理";
-            public const string 檔案管理 = Default + ".檔案管理";
+            public const string Default = GroupName + ".基本設定";
+            public const string Blogs = Default + ".Blogs";
+            public const string Posts = Default + ".Posts";
+            public const string Tags = Default + ".Tags";
         }
 
         public static string[] GetAll()
         {
-            return ReflectionHelper.GetPublicConstantsRecursively(typeof(MenuPermissionNames));
+            return ReflectionHelper.GetPublicConstantsRecursively(typeof(RoutesPermissionNames));
         }
     }
 }

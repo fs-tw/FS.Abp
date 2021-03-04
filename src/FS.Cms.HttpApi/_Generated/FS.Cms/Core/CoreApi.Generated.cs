@@ -20,10 +20,5 @@ namespace FS.Cms.Core
     public partial class CoreApi : CmsController , ICoreApi //auto-generated
     {
 
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }

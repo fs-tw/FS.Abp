@@ -568,7 +568,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.Cms.Menu.前台內容管理Permissions" IsExternal="true" p1:Guid="c1bda3f2-2065-411f-a59a-4ca11a84c8d6" p1:ShapeColor="-4168604" p1:AbpEditor="YinChang" p1:GenerateDTO="False">
+    <component class="FS.Cms.Routes.基本設定Permissions" IsExternal="true" p1:Guid="c1bda3f2-2065-411f-a59a-4ca11a84c8d6" p1:ShapeColor="-4168604" p1:AbpEditor="YinChang" p1:GenerateDTO="False">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -582,7 +582,7 @@
           <p1:AttributeConstructor />
           <p1:Properties>
             <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Menu</string>
+              <string>Routes</string>
             </p1:PropertyValue>
           </p1:Properties>
         </p1:Attribute>
@@ -601,10 +601,13 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <property name="最新消息管理" type="String" p1:ValidateRequired="true" p1:Guid="9a23b434-f23b-47e6-bdb4-c849758b84cc">
+      <property name="Blogs" type="String" p1:ValidateRequired="true" p1:Guid="6ba92f93-097d-4f0c-a2f2-4eb9f8dcd469">
         <column name="" />
       </property>
-      <property name="檔案管理" type="String" p1:ValidateRequired="true" p1:Guid="f7e3a7cf-a21a-4e13-8169-e25b971cb666">
+      <property name="Posts" type="String" p1:ValidateRequired="true" p1:Guid="929839be-7ee3-430f-aa6c-934e4bb29bb1">
+        <column name="" />
+      </property>
+      <property name="Tags" type="String" p1:ValidateRequired="true" p1:Guid="e4725929-81c2-4734-9241-c922e4a86673">
         <column name="" />
       </property>
     </component>

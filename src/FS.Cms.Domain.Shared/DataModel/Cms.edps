@@ -38,8 +38,8 @@
         <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
         <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
         <File Name="LocalizationResourceExtensions.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Volo.Abp.Localization" />
-        <File Name="MenuPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
-        <File Name="MenuPermissionDefinitionProviders.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
+        <File Name="RoutesPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Routes" />
+        <File Name="RoutesPermissionDefinitionProviders.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Routes" />
         <File Name="ICmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsModelBuilderConfigurationOptions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -98,8 +98,8 @@
         <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="BlogsApi.BlogCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="IMenuApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Menu" />
-        <File Name="MenuApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Menu" />
+        <File Name="IRoutesApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Routes" />
+        <File Name="RoutesApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Routes" />
         <File Name="IPostsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.PostCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />

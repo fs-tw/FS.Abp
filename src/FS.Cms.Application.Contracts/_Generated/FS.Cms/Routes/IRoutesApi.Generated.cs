@@ -7,23 +7,13 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using Volo.Abp;
-using Microsoft.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
-namespace FS.Cms.Menu
+namespace FS.Cms.Routes
 {
-    [Area("cms")]
-    [RemoteService(true)]
-    [ControllerName("FS.Cms.Menu(cms)")]
-    [Route("api/cms/menu")]
-    public partial class MenuApi : CmsController , IMenuApi //auto-generated
+    public partial interface IRoutesApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService
     {
-
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }
