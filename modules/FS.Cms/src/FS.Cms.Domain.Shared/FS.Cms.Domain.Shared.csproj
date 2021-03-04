@@ -1,0 +1,101 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Domain.Shared" Version="$(FSVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Cms\*.json" />
+    <Content Remove="Localization\Cms\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\DisplayMode.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="_Generated\Localization\Blogs\BlogConfig\en.json" />
+    <None Remove="_Generated\Localization\Blogs\BlogConfig\zh-Hant.json" />
+    <None Remove="_Generated\Localization\Blogs\PostsPermissions\en.json" />
+    <None Remove="_Generated\Localization\Blogs\PostsPermissions\zh-Hant.json" />
+    <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\en.json" />
+    <None Remove="_Generated\Localization\Core\BlogDefinitionSetting\zh-Hant.json" />
+    <None Remove="_Generated\Localization\Core\StorageDefinitionSetting\en.json" />
+    <None Remove="_Generated\Localization\Core\StorageDefinitionSetting\zh-Hant.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Files\**" />
+    <EmbeddedResource Include="Files\**" />
+    
+    <EmbeddedResource Include="_Generated\Localization\Blogs\BlogConfig\en.json">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogConfig</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Generated\Localization\Blogs\BlogConfig\zh-Hant.json">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogConfig</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModel\Cms.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\DisplayMode.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\Volo.Abp.Localization\LocalizationResourceExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Volo.Abp.Localization</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\Cms.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Cms.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Cms.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>Cms.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\Cms.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Cms.Permissions.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Cms.Setting.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cms.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="_Generated\Localization\Blogs\PostsPermissions\" />
+    <Folder Include="_Generated\Localization\Core\BlogDefinitionSetting\" />
+    <Folder Include="_Generated\Localization\Core\StorageDefinitionSetting\" />
+  </ItemGroup>
+
+</Project>

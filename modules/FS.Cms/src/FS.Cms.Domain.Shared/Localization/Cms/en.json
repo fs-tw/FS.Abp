@@ -1,0 +1,13 @@
+{
+  "culture": "en",
+  "texts": {
+    "FS.Cms.Blogs": "Blogs",
+    "FS.Cms.Blogs.Posts": "Article",
+    "FS.Cms.Core": "Content Management",
+    "FS.Cms.Basic": "Management",
+    "FS.Cms.PostManagement": "Posts Management",
+    "FS.Cms.Menu": "Content Management Menu",
+    "FS.Cms.Menu.前台內容管理": "Content Management Menu ",
+    "DisplayName:前台內容管理Permissions.最新消息管理": "Posts Management Permission"
+  }
+}

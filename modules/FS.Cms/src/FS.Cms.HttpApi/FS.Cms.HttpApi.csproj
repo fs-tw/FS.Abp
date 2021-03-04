@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.Cms</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FS.Cms.Definitions\**" />
+    <EmbeddedResource Remove="FS.Cms.Definitions\**" />
+    <None Remove="FS.Cms.Definitions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsApi.Blog.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Documents\DocumentsApi.Document.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinition.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.Post.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.PostTagMap.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Tags\TagsApi.Tag.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Cms.Application.Contracts\FS.Cms.Application.Contracts.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>  
+  
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="FS.Cms\Blogs\BlogsApi.BlogCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.cs</DependentUpon>
+    </Compile>
+    <Compile Update="FS.Cms\Blogs\BlogsApi.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsApi.BlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Core\CoreApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.DocumentCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.PostCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PostsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostsApi.PostTagMapCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PostsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Routes\RoutesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsApi.TagCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TagsApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
