@@ -43,7 +43,7 @@ namespace FS.Cms.Blogs.Dtos
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
         public virtual FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
 
@@ -63,7 +63,7 @@ namespace FS.Cms.Blogs.Dtos
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
         public virtual FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
 
@@ -83,7 +83,7 @@ namespace FS.Cms.Blogs.Dtos
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
         public virtual FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
 

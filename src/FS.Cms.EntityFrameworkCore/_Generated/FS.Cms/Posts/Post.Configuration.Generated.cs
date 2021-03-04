@@ -38,7 +38,7 @@ namespace FS.Cms.Posts
             builder.Property(x => x.Subtitle).HasColumnName(@"Subtitle").ValueGeneratedNever();
             builder.Property(x => x.Url).HasColumnName(@"Url").ValueGeneratedNever();
             builder.Property(x => x.Content).HasColumnName(@"Content").ValueGeneratedNever();
-            builder.Property(x => x.Enable).HasColumnName(@"Enable").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.Disable).HasColumnName(@"Disable").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.StartTime).HasColumnName(@"StartTime").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.EndTime).HasColumnName(@"EndTime").ValueGeneratedNever();
             builder.Property(x => x.DisplayMode).HasColumnName(@"DisplayMode").IsRequired().ValueGeneratedNever();

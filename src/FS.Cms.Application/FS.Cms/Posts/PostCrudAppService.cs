@@ -25,9 +25,9 @@ namespace FS.Cms.Posts
         //private IFileManager fileManager;
         //protected IFileManager FileManager => this.LazyGetRequiredService(ref fileManager);
 
-        protected IConfiguration Configuration => this.LazyServiceProvider.LazyGetRequiredService<IConfiguration>();
+        //protected IConfiguration Configuration => this.LazyServiceProvider.LazyGetRequiredService<IConfiguration>();
 
-        protected IPostsManager PostsManager => this.LazyServiceProvider.LazyGetRequiredService<IPostsManager>();
+        //protected IPostsManager PostsManager => this.LazyServiceProvider.LazyGetRequiredService<IPostsManager>();
 
         //private ICodesTreeRepository codesTreeRepository;
         //protected ICodesTreeRepository CodesTreeRepository => this.LazyGetRequiredService(ref codesTreeRepository);

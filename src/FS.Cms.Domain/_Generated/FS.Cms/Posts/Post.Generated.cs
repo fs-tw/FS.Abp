@@ -61,7 +61,7 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual bool Enable
+        public virtual bool Disable
         {
             get;
             set;

@@ -30,7 +30,7 @@ namespace FS.Cms.Blogs.Dtos
                 ;
             RuleFor(p => p.ParentId)
                 ;
-            RuleFor(p => p.Enable)
+            RuleFor(p => p.Disable)
                 .NotNull()
                 ;
             RuleFor(p => p.BlogConfig)
@@ -57,7 +57,7 @@ namespace FS.Cms.Blogs.Dtos
                 ;
             RuleFor(p => p.ParentId)
                 ;
-            RuleFor(p => p.Enable)
+            RuleFor(p => p.Disable)
                 .NotNull()
                 ;
             RuleFor(p => p.BlogConfig)

@@ -715,7 +715,7 @@
     <property name="Content" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8">
       <column name="" />
     </property>
-    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
+    <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
       <column name="" />
     </property>
     <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="02767eea-0458-497d-ada2-6a4d5c242a3e">
@@ -1133,8 +1133,8 @@
     <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c0f3c590-fa32-4b60-bee7-493783bbfbef">
       <column name="" />
     </property>
-    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="dece8c31-4985-46b3-8537-9b402745a876">
-      <column name="" default="true" />
+    <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="dece8c31-4985-46b3-8537-9b402745a876">
+      <column name="" />
     </property>
     <component name="BlogConfig" class="FS.Cms.Blogs.BlogConfig" p1:ValidateRequired="false" p1:Guid="125b84b1-47c1-4bf0-949c-755ea6b1f8f7" p1:Shadow="True">
       <p1:Attributes>
@@ -1233,8 +1233,8 @@
     <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="94140be5-9723-40c8-b75c-cef7acd87e71">
       <column name="" />
     </property>
-    <property name="Enable" type="Boolean" p1:ValidateRequired="true" p1:Guid="b892a5a9-1c16-4dea-8419-30f43d381017">
-      <column name="" default="true" />
+    <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="b892a5a9-1c16-4dea-8419-30f43d381017">
+      <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e3d6f666-49cb-4030-b096-dea187893976" p1:GenerateDTO="False">
       <column name="" />

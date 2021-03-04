@@ -72,10 +72,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="FS.Cms\Posts\PostsAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="FS.Cms\Tags\TagsAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Tags</DependentUpon>

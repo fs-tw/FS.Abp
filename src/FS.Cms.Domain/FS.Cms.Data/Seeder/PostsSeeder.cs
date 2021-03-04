@@ -11,10 +11,10 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 
 
-namespace FS.Cms.DataSeed.Seeder
+namespace FS.Cms.Data.Seeder
 {
    
-    public class PostSeeder : ITransientDependency
+    public class PostsSeeder : ITransientDependency
     {
         private const string jsonFile = "/Files/Data/Posts/Posts.json";
         public IGuidGenerator _guidGenerator { get; set; }
@@ -25,11 +25,11 @@ namespace FS.Cms.DataSeed.Seeder
       
         public async Task SeedAsync(DataSeedContext context)
         {
-            var tenantId = context.TenantId;
-            var sourceData = this._virtualFileJsonReader.ReadJson<List<PostJson>>(jsonFile);
+            //var tenantId = context.TenantId;
+            //var sourceData = this._virtualFileJsonReader.ReadJson<List<PostJson>>(jsonFile);
 
-            var hasData = this._postRepository.Count() > 0;
-            if (hasData) return;
+            //var hasData = this._postRepository.Count() > 0;
+            //if (hasData) return;
 
 
             //for (var i = 0; i < sourceData.Count; i++)

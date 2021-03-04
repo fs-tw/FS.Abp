@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 
-namespace FS.Cms.DataSeed.Seeder
+namespace FS.Cms.Data.Seeder
 {
-    public class TagSeeder : ITransientDependency
+    public class TagsSeeder : ITransientDependency
     {
         //private readonly ICodingStore codingStore;
 
-        public TagSeeder(
+        public TagsSeeder(
             //ICodingStore codingStore
             )
         {

@@ -39,7 +39,7 @@ namespace FS.Cms.Blogs
             builder.Property(x => x.Code).HasColumnName(@"Code").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Level).HasColumnName(@"Level").ValueGeneratedNever();
             builder.Property(x => x.ParentId).HasColumnName(@"ParentId").ValueGeneratedNever();
-            builder.Property(x => x.Enable).HasColumnName(@"Enable").IsRequired().ValueGeneratedNever().HasDefaultValueSql(@"true");
+            builder.Property(x => x.Disable).HasColumnName(@"Disable").IsRequired().ValueGeneratedNever();
             builder.Ignore(x => x.BlogConfig);
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");

@@ -41,7 +41,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual string Content { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
         public virtual System.DateTime StartTime { get; set; }
 
@@ -69,7 +69,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual string Content { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
         public virtual System.DateTime StartTime { get; set; }
 
@@ -97,7 +97,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual string Content { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
         public virtual System.DateTime StartTime { get; set; }
 

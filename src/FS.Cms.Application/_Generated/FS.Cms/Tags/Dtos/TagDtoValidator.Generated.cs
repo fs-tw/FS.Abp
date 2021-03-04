@@ -30,7 +30,7 @@ namespace FS.Cms.Tags.Dtos
                 ;
             RuleFor(p => p.ParentId)
                 ;
-            RuleFor(p => p.Enable)
+            RuleFor(p => p.Disable)
                 .NotNull()
                 ;
             CustomizeConfiguration();
@@ -55,7 +55,7 @@ namespace FS.Cms.Tags.Dtos
                 ;
             RuleFor(p => p.ParentId)
                 ;
-            RuleFor(p => p.Enable)
+            RuleFor(p => p.Disable)
                 .NotNull()
                 ;
             CustomizeConfiguration();

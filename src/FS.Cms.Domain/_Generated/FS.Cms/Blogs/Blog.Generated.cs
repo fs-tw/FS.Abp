@@ -28,7 +28,6 @@ namespace FS.Cms.Blogs
 
         public Blog()
         {
-            this.Enable = true;
             this.Children = new List<Blog>();
             OnCreated();
         }
@@ -74,7 +73,7 @@ namespace FS.Cms.Blogs
             set;
         }
 
-        public virtual bool Enable
+        public virtual bool Disable
         {
             get;
             set;

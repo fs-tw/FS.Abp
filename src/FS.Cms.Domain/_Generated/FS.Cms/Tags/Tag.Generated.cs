@@ -28,7 +28,6 @@ namespace FS.Cms.Tags
 
         public Tag()
         {
-            this.Enable = true;
             this.Children = new List<Tag>();
             OnCreated();
         }
@@ -74,7 +73,7 @@ namespace FS.Cms.Tags
             set;
         }
 
-        public virtual bool Enable
+        public virtual bool Disable
         {
             get;
             set;

@@ -28,7 +28,7 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.Content)
                 ;
-            RuleFor(p => p.Enable)
+            RuleFor(p => p.Disable)
                 .NotNull()
                 ;
             RuleFor(p => p.StartTime)
@@ -67,7 +67,7 @@ namespace FS.Cms.Posts.Dtos
                 ;
             RuleFor(p => p.Content)
                 ;
-            RuleFor(p => p.Enable)
+            RuleFor(p => p.Disable)
                 .NotNull()
                 ;
             RuleFor(p => p.StartTime)

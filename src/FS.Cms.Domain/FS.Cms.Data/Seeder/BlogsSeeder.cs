@@ -11,35 +11,34 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 
 
-namespace FS.Cms.DataSeed.Seeder
+namespace FS.Cms.Data.Seeder
 {
-    public class CmsDefinitionSeeder : ITransientDependency
+    public class BlogsSeeder : ITransientDependency
     {
-        private readonly string fileRoute = "/Files/Data/Codes/Definition.json";
+        //private readonly string fileRoute = "/Files/Data/Codes/Definition.json";
         public IGuidGenerator guidGenerator { get; set; }
         public IVirtualFileJsonReader virtualFileJsonReader { get; set; }
-        //public ICodesTreeRepository codesTreeRepository { get; set; }
 
        
         public async Task SeedAsync(DataSeedContext context)
         {
-            List<BaseCodesJson> sourceData = this.virtualFileJsonReader.ReadJson<List<BaseCodesJson>>(fileRoute);
+            //List<BaseCodesJson> sourceData = this.virtualFileJsonReader.ReadJson<List<BaseCodesJson>>(fileRoute);
 
-            foreach (var item in sourceData)
-            {
-                //var definition = this.codesTreeRepository.Where(x => x.No == item.No).FirstOrDefault();
-                //if (definition != null) continue;
+            //foreach (var item in sourceData)
+            //{
+            //    var definition = this.codesTreeRepository.Where(x => x.No == item.No).FirstOrDefault();
+            //    if (definition != null) continue;
 
-                //Codes codes = new Codes();
-                //codes.No = item.No;
-                //codes.DisplayName = item.DisplayName;
-                //codes.Enable = true;
-                //codes.Description = item.Description;
-                //codes.TenantId = context.TenantId;
-                //EntityHelper.TrySetId(codes, () => this.guidGenerator.Create(), true);
-                //await this.codesTreeRepository.InsertAsync(codes, true).ConfigureAwait(false);
-                //await createChildren(context, item.Children, codes);
-            }
+            //    Codes codes = new Codes();
+            //    codes.No = item.No;
+            //    codes.DisplayName = item.DisplayName;
+            //    codes.Enable = true;
+            //    codes.Description = item.Description;
+            //    codes.TenantId = context.TenantId;
+            //    EntityHelper.TrySetId(codes, () => this.guidGenerator.Create(), true);
+            //    await this.codesTreeRepository.InsertAsync(codes, true).ConfigureAwait(false);
+            //    await createChildren(context, item.Children, codes);
+            //}
         }
 
 

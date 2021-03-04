@@ -43,7 +43,7 @@ namespace FS.Cms.Tags.Dtos
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
     }
 
@@ -61,7 +61,7 @@ namespace FS.Cms.Tags.Dtos
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
     }
 
@@ -79,7 +79,7 @@ namespace FS.Cms.Tags.Dtos
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual bool Enable { get; set; }
+        public virtual bool Disable { get; set; }
 
     }
 
