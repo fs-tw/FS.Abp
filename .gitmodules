@@ -24,3 +24,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "projects/Volo.Abp"]
 	path = projects/Volo.Abp
 	url = https://github.com/fs-tw/Volo.Abp.git
+[submodule "projects/Abp.Trees"]
+	path = projects/Abp.Trees
+	url = https://github.com/EasyAbp/Abp.Trees.git
