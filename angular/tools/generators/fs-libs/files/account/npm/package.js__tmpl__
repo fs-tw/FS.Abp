@@ -1,0 +1,15 @@
+{
+  "name": "@fs-tw/account",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/fs-tw/FS.Abp",
+  "license": "MIT",
+  "peerDependencies": {
+    
+  },
+  "dependencies": {
+    "@fs-tw/account": "<%= versionNo %>"
+  }
+}
