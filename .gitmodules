@@ -21,3 +21,6 @@ url=https://github.com/abpframework/abp.git
 	path = projects/FS.Abp
 	url = https://github.com/fs-tw/FS.Abp.git
 	branch = develop
+[submodule "projects/Volo.Abp"]
+	path = projects/Volo.Abp
+	url = https://github.com/fs-tw/Volo.Abp.git
