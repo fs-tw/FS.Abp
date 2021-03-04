@@ -24,3 +24,7 @@ url=https://github.com/abpframework/abp.git
 [submodule "projects/Abp.Trees"]
 	path = projects/Abp.Trees
 	url = https://github.com/EasyAbp/Abp.Trees.git
+[submodule "demo/angular"]
+	path = demo/angular
+	url = http://bitbucket.furthersoftware.com.tw/scm/tpl/nx.angular.git
+	branch = develop
