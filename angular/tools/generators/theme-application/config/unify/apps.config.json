@@ -1,0 +1,167 @@
+{
+  "order": 1002,
+  "nx": {
+    "<%= name %>": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "<%= name %>": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/<%= name %>",
+      "sourceRoot": "apps/<%= name %>/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "../aspnet-core/src/IWP.HttpApi.Host/wwwroot/<%= name %>",
+            "index": "apps/<%= name %>/src/index.html",
+            "main": "apps/<%= name %>/src/main.ts",
+            "polyfills": "apps/<%= name %>/src/polyfills.ts",
+            "tsConfig": "apps/<%= name %>/tsconfig.app.json",
+            "aot": true,
+            "allowedCommonJsDependencies": [
+              "@ant-design/colors",
+              "chart.js",
+              "js-sha256",
+              "@uppy/xhr-upload",
+              "@uppy/dashboard",
+              "@uppy/core"
+            ],
+            "assets": ["apps/<%= name %>/src/favicon.ico", "apps/<%= name %>/src/assets"],
+            "styles": [
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/index.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-index"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-icons"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-material"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-all.min"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-v4-shims.min"
+              },
+              {
+                "input": "node_modules/flag-icon-css/css/flag-icon.min.css",
+                "inject": true,
+                "bundleName": "flag-icon.min"
+              },
+
+              "apps/<%= name %>/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/<%= name %>/src/environments/environment.ts",
+                  "with": "apps/<%= name %>/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "100mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "<%= name %>:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "<%= name %>:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "<%= name %>:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/<%= name %>/src/test.ts",
+            "polyfills": "apps/<%= name %>/src/polyfills.ts",
+            "tsConfig": "apps/<%= name %>/tsconfig.spec.json",
+            "karmaConfig": "apps/<%= name %>/karma.conf.js",
+            "assets": ["apps/<%= name %>/src/favicon.ico", "apps/<%= name %>/src/assets"],
+            "styles": [
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap.min"
+              },
+              "apps/<%= name %>/src/styles.scss",
+              "node_modules/flag-icon-css/css/flag-icon.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/<%= name %>/tsconfig.app.json", "apps/<%= name %>/tsconfig.spec.json", "apps/<%= name %>e2e/tsconfig.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/<%= name %>/e2e/protractor.conf.js",
+            "devServerTarget": "<%= name %>:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "<%= name %>:serve:production"
+            }
+          }
+        }
+      }
+    }    
+  },
+  "tsconfig": {
+  }  
+}

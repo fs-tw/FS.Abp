@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "peerDependencies": {
+    
+  },
+  "dependencies": {
+    "@fs-tw/account":"~410.0.1",
+    "@fs-tw/emailing":"~410.0.1",
+    "@abp/ng.theme.basic":"~4.2.0",
+    "lerna": "^3.22.1",
+    "date-fns": "^2.16.1",
+    "@ngxs/logger-plugin": "^3.7.1"
+  }
+}
