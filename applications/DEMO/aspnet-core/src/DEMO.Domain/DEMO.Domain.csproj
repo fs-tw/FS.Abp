@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>DEMO</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+    <ProjectReference Include="..\DEMO.Domain.Shared\DEMO.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.Domain" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.FileManagement.Domain" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Saas.Domain" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="$(VoloVersion)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>DEMO</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DEMO.Domain\DEMO.Domain.csproj" />
+    <ProjectReference Include="..\DEMO.Application.Contracts\DEMO.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.FileManagement.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Saas.Host.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Admin.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.Application" Version="$(VoloVersion)" />
+  </ItemGroup>
+
+</Project>
