@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Domain.Shared\FS.Abp.File.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="DataModel\Theme.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Theme.efml</DependentUpon>

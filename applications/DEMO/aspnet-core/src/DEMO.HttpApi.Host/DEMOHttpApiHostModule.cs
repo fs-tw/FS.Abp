@@ -58,6 +58,11 @@ namespace DEMO
         typeof(FS.Abp.File.FileApplicationModule),
         typeof(FS.Abp.File.FileHttpApiModule)
         )]
+
+    [DependsOn(
+        typeof(FS.Theme.ThemeApplicationModule),
+        typeof(FS.Theme.ThemeHttpApiModule)
+        )]
     public class DEMOHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";

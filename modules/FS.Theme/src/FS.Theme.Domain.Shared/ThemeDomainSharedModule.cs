@@ -14,10 +14,18 @@ namespace FS.Theme
     [DependsOn(
         typeof(FS.Abp.AbpDomainSharedModule)
         )]
+    [DependsOn(typeof(FS.Abp.File.FileDomainSharedModule))]
     public class ThemeDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<FS.Abp.File.Directories.DirectoryProviderOptions>(options =>
+            {
+                options.DirectoryProviders.AddOrReplace(new Abp.File.Directories.DirectoryProviderDefinition(
+                    "FS.Theme", "Files/Banner"
+                    ));
+            });
+
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
                 options.FileSets.AddEmbedded<ThemeDomainSharedModule>();

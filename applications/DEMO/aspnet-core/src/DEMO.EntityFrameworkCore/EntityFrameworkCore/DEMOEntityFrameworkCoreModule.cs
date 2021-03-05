@@ -34,6 +34,7 @@ namespace DEMO.EntityFrameworkCore
         )]
     [DependsOn(typeof(FileManagementEntityFrameworkCoreModule))]
     [DependsOn(typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule))]
+    [DependsOn(typeof(FS.Theme.EntityFrameworkCore.ThemeEntityFrameworkCoreModule))]
     public class DEMOEntityFrameworkCoreModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

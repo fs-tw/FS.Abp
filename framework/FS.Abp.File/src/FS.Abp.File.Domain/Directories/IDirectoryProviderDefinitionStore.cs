@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FS.Abp.File.Directories
 {
-    public interface IDirectoryProviderDefinitionStore
+    public interface IDirectoryProviderDefinitionStore:Volo.Abp.DependencyInjection.ITransientDependency
     {
         Task<List<DirectoryProviderDefinition>> GetDefinitionsAsync();
 

@@ -25,9 +25,16 @@ namespace FS.Abp.File.Directories
 
         [HttpGet]
         [Route("provider/{key}")]
-        public Task<DirectoryDescriptorDto> FindByProviderAsync(string key, string group = null)
+        public Task<Dtos.DirectoryDescriptorDto> FindByProviderAsync(string key, string group = null)
         {
             return this.directoriesAppService.FindByProviderAsync(key, group);
+        }
+
+        [HttpGet]
+        [Route("definitions")]
+        public async Task<List<DirectoryProviderDefinition>> GetDefinitionsAsync()
+        {
+            return await directoriesAppService.GetDefinitionsAsync();
         }
     }
 }
