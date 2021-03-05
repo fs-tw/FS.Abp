@@ -1,0 +1,20 @@
+﻿{
+  "app": {
+    "Version": "0.19.0"
+  },
+  "mvc": {
+    "Version": "0.18.1"
+  },
+  "mvc-module": {
+    "Version": "0.18.1"
+  },
+  "module": {
+    "Version": "0.19.0"
+  },
+  "fs-app": {
+    "Version": "0.19.0"
+  },
+  "fs-module": {
+    "Version": "0.19.0"
+  }
+}

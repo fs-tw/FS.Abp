@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/tree/dev/modules/permission-management/src/Volo.Abp.PermissionManagement.Domain.Shared/Volo/Abp/PermissionManagement/Localization/Domain

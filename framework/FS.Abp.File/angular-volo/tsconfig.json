@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@my-company-name/file": [
+        "projects/file/src/public-api.ts"
+      ],
+      "@my-company-name/file/config": [
+        "projects/file/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/file/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/file/src/lib/proxy/*"]
+    }
+  }
+}

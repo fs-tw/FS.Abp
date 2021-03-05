@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/tree/dev/modules/feature-management/src/Volo.Abp.FeatureManagement.Domain.Shared/Volo/Abp/FeatureManagement/Localization/Domain

@@ -1,0 +1,12 @@
+﻿{
+  "culture": "zh-Hant",
+  "texts": {
+    "GivenTenantIsNotAvailable": "指定的租戶不可用: {0}",
+    "SwitchTenant": "切換租戶",
+    "Name": "名稱",
+    "SwitchTenantHint": "將name字段留空以切換到宿主端.",
+    "Tenant": "租戶",
+    "Switch": "切換",
+    "NotSelected": "未選中"
+  }
+}

@@ -1,0 +1,1 @@
+dotnet tool install FS.Abp.Cli -g --add-source ./nupkg

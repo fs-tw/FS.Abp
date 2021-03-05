@@ -1,0 +1,2 @@
+﻿domain https://github.com/abpframework/abp/blob/dev/modules/identity/src/Volo.Abp.Identity.Domain.Shared/Volo/Abp/Identity/Localization/en.json
+application https://github.com/abpframework/abp/tree/46f30519617ffe237f0838b44beec20c773f4574/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources

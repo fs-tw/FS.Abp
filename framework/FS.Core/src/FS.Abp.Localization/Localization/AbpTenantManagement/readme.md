@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/tree/dev/modules/tenant-management/src/Volo.Abp.TenantManagement.Domain.Shared/Volo/Abp/TenantManagement/Localization/Resources

@@ -1,0 +1,10 @@
+﻿{
+  "culture": "zh-Hant",
+  "texts": {
+    "Permissions": "權限",
+    "OnlyProviderPermissons": "只有這個提供商",
+    "All": "所有",
+    "SelectAllInAllTabs": "授權所有權限",
+    "SelectAllInThisTab": "全選"
+  }
+}
