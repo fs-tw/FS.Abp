@@ -8,6 +8,30 @@
     "FS.Cms.PostManagement": "Posts Management",
     "FS.Cms.Menu": "Content Management Menu",
     "FS.Cms.Menu.前台內容管理": "Content Management Menu ",
-    "DisplayName:前台內容管理Permissions.最新消息管理": "Posts Management Permission"
+    "DisplayName:前台內容管理Permissions.最新消息管理": "Posts Management Permission",
+
+    "FS.Blog.No": "No",
+    "FS.Blog.DisplayName": "DisplayName",
+    "FS.Blog.Description": "Description",
+    "FS.Blog.Disable": "Disable",
+    "FS.Blog.BlogConfig": "BlogConfig",
+
+    "FS.Post.BlogId": "BlogId",
+    "FS.Post.Title": "Title",
+    "FS.Post.Subtitle": "Subtitle",
+    "FS.Post.Url": "Url",
+    "FS.Post.Content": "Content",
+    "FS.Post.Disable": "Disable",
+    "FS.Post.StartTime": "StartTime",
+    "FS.Post.EndTime": "EndTime",
+    "FS.Post.DisplayMode": "DisplayMode",
+    "FS.Post.Sequence": "Sequence",
+    "FS.Post.AttachmentFileUrls": "AttachmentFileUrls",
+    "FS.Post.PostImages": "PostImages",
+
+    "FS.Tag.No": "No",
+    "FS.Tag.DisplayName": "DisplayName",
+    "FS.Tag.Description": "Description",
+    "FS.Tag.Disable": "Disable"
   }
 }
