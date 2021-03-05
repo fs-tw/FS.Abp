@@ -143,12 +143,17 @@
               "apps/demo-admin/tsconfig.spec.json",
               "apps/demo-admin/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/demo-admin/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-admin/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/demo-admin"],
+          "outputs": [
+            "coverage/apps/demo-admin"
+          ],
           "options": {
             "jestConfig": "apps/demo-admin/jest.config.js",
             "passWithNoTests": true
@@ -185,7 +190,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/cms"],
+          "outputs": [
+            "coverage/libs/cms"
+          ],
           "options": {
             "jestConfig": "libs/cms/jest.config.js",
             "passWithNoTests": true

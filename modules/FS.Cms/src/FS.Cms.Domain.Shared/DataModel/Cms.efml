@@ -652,7 +652,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True">
+  <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -1067,7 +1067,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="70f04b6a-d3ce-439f-9739-d6bc9dea15c4" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Blog&gt;" p1:AppServicePartialClass="True" p1:GetListAsync="False">
+  <class name="FS.Cms.Blogs.Blog" entity-set="Blogs" p1:Guid="70f04b6a-d3ce-439f-9739-d6bc9dea15c4" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Blog&gt;" p1:AppServicePartialClass="True" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -1167,7 +1167,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.Cms.Tags.Tag" entity-set="Tags" p1:Guid="bd92956f-92b6-4aaf-a61e-8f1a040e4436" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Tag&gt;">
+  <class name="FS.Cms.Tags.Tag" entity-set="Tags" p1:Guid="bd92956f-92b6-4aaf-a61e-8f1a040e4436" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Tag&gt;" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

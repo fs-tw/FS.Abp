@@ -12,12 +12,5 @@ namespace FS.Cms.Blogs
 {
     public partial class BlogCrudAppService : IBlogCrudAppService
     {
-        public virtual async Task<ListResultDto<Dtos.BlogDto>> GetListAllAsync()
-        {
-            var blogs = await _repository.GetListAsync(includeDetails: true);
-            var blogDtos = new List<Dtos.BlogDto>();
-            ObjectMapper.Map(blogs, blogDtos);
-            return new ListResultDto<Dtos.BlogDto>(blogDtos);
-        }
     }
 }
