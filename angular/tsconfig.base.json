@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fs-tw/cms": ["libs/cms/src/index.ts"]
+      "@fs-tw/cms": ["libs/cms/src/index.ts"],
+      "@fs-tw/themes": ["libs/themes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
