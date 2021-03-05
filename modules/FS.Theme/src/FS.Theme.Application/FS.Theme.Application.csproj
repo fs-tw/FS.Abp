@@ -78,6 +78,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\WebInfoDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\WebInfoDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\ThemeSettingsAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

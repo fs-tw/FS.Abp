@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\LogoInfo.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfo.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FS.Abp.Domain" Version="$(FSVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
@@ -59,6 +64,22 @@
     <Compile Update="_Generated\FS.Theme\Routes\RoutesStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\LogoInfo.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\ThemeSettings.AbpSetting.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\ThemeSettings.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\WebInfo.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
     </Compile>
   </ItemGroup>
 

@@ -49,6 +49,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Theme.efml</DependentUpon>
     </None>
+    <None Update="DataModel\Theme.Permissions.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Theme.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\Theme.Settings.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Theme.efml</DependentUpon>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\Core\CoreApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Core\CoreApi.ThemeSettingsAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Theme.Application.Contracts\FS.Theme.Application.Contracts.csproj" />
   </ItemGroup>
@@ -35,6 +40,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RoutesApi.Generated.cs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\TenantsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\TenantsApi.ThemeSettingsAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TenantsApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Theme\Core\" />
   </ItemGroup>
 
 </Project>

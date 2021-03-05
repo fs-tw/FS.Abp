@@ -13,6 +13,9 @@
         <File Name="RoutesApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="RoutesApi.RouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="RoutesApi.RouteCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="ITenantsApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="TenantsApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="TenantsApi.ThemeSettingsAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Tenants" />
         <File Name="IRouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
@@ -27,18 +30,32 @@
         <File Name="BannerDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerConfigDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
+        <File Name="ThemeSettingsDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="LogoInfoDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="WebInfoDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
         <File Name="RouteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
+        <File Name="ThemeSettingsDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="LogoInfoDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="WebInfoDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
         <File Name="RouteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
+        <File Name="ThemeSettingsDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="LogoInfoDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="WebInfoDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="RoutesPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="RoutesPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="ThemeSettings.AbpSetting.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="IThemeSettingsAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="ThemeSettingsAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants" />
         <File Name="RoutesStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="IThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -51,6 +68,9 @@
         <File Name="Banner.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="BannerConfig.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="RouteConfig.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="ThemeSettings.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="LogoInfo.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="WebInfo.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
         <File Name="RouteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="Route.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
@@ -85,6 +105,8 @@
     </ExtendedProperties>
     <Diagrams>
       <Diagram Name="Diagram1" DefaultDiagram="True" />
+      <Diagram Name="Permissions" />
+      <Diagram Name="Settings" />
     </Diagrams>
     <Templates>
       <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl" />
@@ -93,7 +115,7 @@
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
         <ed:Property Name="KebabCaseApiName" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>false</boolean>
+          <boolean>true</boolean>
         </ed:Property>
         <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -239,7 +261,7 @@
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
         <ed:Property Name="GenSettingsApi" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>false</boolean>
+          <boolean>true</boolean>
         </ed:Property>
         <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">

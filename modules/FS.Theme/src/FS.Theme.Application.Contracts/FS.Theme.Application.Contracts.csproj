@@ -61,6 +61,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\RoutesPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\RoutesPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\WebInfoDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\ITenantsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Tenants\IThemeSettingsAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tenants</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
