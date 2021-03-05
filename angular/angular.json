@@ -143,12 +143,17 @@
               "apps/demo-admin/tsconfig.spec.json",
               "apps/demo-admin/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/demo-admin/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-admin/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/demo-admin"],
+          "outputs": [
+            "coverage/apps/demo-admin"
+          ],
           "options": {
             "jestConfig": "apps/demo-admin/jest.config.js",
             "passWithNoTests": true
@@ -185,9 +190,54 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/cms"],
+          "outputs": [
+            "coverage/libs/cms"
+          ],
           "options": {
             "jestConfig": "libs/cms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "theme-alain-ms": {
+      "projectType": "library",
+      "root": "libs/theme-alain-ms",
+      "sourceRoot": "libs/theme-alain-ms/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-alain-ms/tsconfig.lib.json",
+            "project": "libs/theme-alain-ms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-alain-ms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-alain-ms/tsconfig.lib.json",
+              "libs/theme-alain-ms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/theme-alain-ms/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/theme-alain-ms"
+          ],
+          "options": {
+            "jestConfig": "libs/theme-alain-ms/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -262,14 +312,10 @@
       }
     },
     "@nrwl/angular:application": {
-      "style": "css",
-      "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
-      "style": "css",
-      "linter": "eslint",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {

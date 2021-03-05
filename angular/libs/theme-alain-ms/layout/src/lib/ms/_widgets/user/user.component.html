@@ -1,0 +1,42 @@
+<ng-template #loginBtnTpl>
+  <a (click)="initLogin()"  class="alain-ms__topbar-item-btn">{{'AbpAccount::Login' | abpLocalization}}</a>
+</ng-template>
+
+<div *ngIf="(currentUser$ | async) as currentUser">
+  <div *ngIf="currentUser.isAuthenticated; else loginBtnTpl">
+
+
+    <span class="alain-ms__topbar-item-btn">
+      <!-- <nz-avatar [nzSrc]="settings.user.avatar" nzSize="small"></nz-avatar> -->
+      {{ currentUser.userName }}
+    </span>
+    <div class="alain-ms__topbar-dd-menu width-md">
+      <div class="alain-ms__user-hd">
+        <div class="d-flex">
+          <!-- <nz-avatar [nzSrc]="settings.user.avatar" nzSize="small"></nz-avatar> -->
+          <span class="ml-md">{{ currentUser.userName }}</span>
+        </div>
+        <!-- <div class="mt-sm">
+          <ng-container *ngFor="let i of mainLinks; let last = last">
+            <a [link-to]="i">{{ i.text }}</a>
+            <nz-divider *ngIf="!last" nzType="vertical"></nz-divider>
+          </ng-container>
+        </div> -->
+      </div>
+      <div class="alain-ms__user-bd">
+        <!-- <a *ngFor="let i of subLinks" [link-to]="i" class="alain-ms__user-bd-item">
+          <i nz-icon nzType="safety"></i>{{ i.text }}
+        </a> -->
+        <a routerLink="/account/manage-profile" class="alain-ms__user-bd-item">
+          <i nz-icon nzType="safety"></i>{{ 'AbpAccount::ManageYourProfile' | abpLocalization }}
+        </a>
+      </div>
+      <div class="alain-ms__user-fd">
+        <a (click)="logout()" class="d-block pt-sm pb-xs text-center">{{ 'AbpUi::Logout' | abpLocalization }}</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
