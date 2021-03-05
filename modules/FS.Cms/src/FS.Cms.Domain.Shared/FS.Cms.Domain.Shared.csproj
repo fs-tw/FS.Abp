@@ -98,4 +98,10 @@
     <Folder Include="_Generated\Localization\Core\StorageDefinitionSetting\" />
   </ItemGroup>
 
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Domain.Shared\FS.Abp.File.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

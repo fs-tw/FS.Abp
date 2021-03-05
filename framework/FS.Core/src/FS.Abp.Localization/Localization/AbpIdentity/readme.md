@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/tree/dev/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources

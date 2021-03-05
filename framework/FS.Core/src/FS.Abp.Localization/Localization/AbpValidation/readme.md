@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/tree/dev/framework/src/Volo.Abp.Localization/Volo/Abp/Localization/Resources/AbpValidation

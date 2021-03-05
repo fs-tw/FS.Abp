@@ -5,9 +5,6 @@ url=https://github.com/abpframework/abp.git
 [submodule "abp/abp-samples"]
 	path = abp/abp-samples
 	url = https://github.com/abpframework/abp-samples.git
-[submodule "framework"]
-	path = framework
-	url = http://bitbucket.furthersoftware.com.tw/scm/fram/framework.git
 [submodule "tools/entitydeveloper"]
 	path = tools/entitydeveloper
 	url = http://bitbucket.furthersoftware.com.tw/scm/tool/entitydeveloper.git

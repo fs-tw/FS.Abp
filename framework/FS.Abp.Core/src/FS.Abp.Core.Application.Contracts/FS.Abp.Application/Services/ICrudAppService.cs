@@ -1,0 +1,14 @@
+﻿using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
+
+namespace FS.Abp.Application.Services
+{
+    public interface ICrudAppService<TGetOutputDto, in TKey, in TGetListInput, in TCreateInput, in TUpdateInput>
+        : IBaseCrudAppService<TGetOutputDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
+        where TGetOutputDto : IEntityDto<TKey>
+    {
+        Task<TGetOutputDto> GetAsync(TKey id);
+    }
+
+
+}

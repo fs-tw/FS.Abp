@@ -1,0 +1,56 @@
+<Project>
+  <PropertyGroup>
+    <Version>420.0.1</Version>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>YinChang</Authors>
+    <Company>Further Software</Company>
+    <PackageProjectUrl>https://github.com/fs-tw/FS.Abp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/fs-tw/FS.Abp</RepositoryUrl>
+    <PackageTags>abp module</PackageTags>
+    <AbpProjectType>module</AbpProjectType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ConfigureAwait.Fody" Version="3.3.1" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <AbpVersion>4.2.0</AbpVersion>
+    <EasyAbpTreeVersion>2.2.0</EasyAbpTreeVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- All Microsoft packages -->
+    <MicrosoftPackageVersion>5.0.*</MicrosoftPackageVersion>
+
+    <!-- Microsoft.NET.Test.Sdk https://www.nuget.org/packages/Microsoft.NET.Test.Sdk -->
+    <MicrosoftNETTestSdkPackageVersion>16.8.3</MicrosoftNETTestSdkPackageVersion>
+
+    <!-- NSubstitute  https://www.nuget.org/packages/NSubstitute -->
+    <NSubstitutePackageVersion>4.2.2</NSubstitutePackageVersion>
+
+    <!-- Shouldly https://www.nuget.org/packages/Shouldly -->
+    <ShouldlyPackageVersion>4.0.1</ShouldlyPackageVersion>
+
+    <!-- xunit https://www.nuget.org/packages/xUnit -->
+    <xUnitPackageVersion>2.4.1</xUnitPackageVersion>
+
+    <!-- xunit.extensibility.execution https://www.nuget.org/packages/xunit.extensibility.execution -->
+    <xUnitExtensibilityExecutionPackageVersion>2.4.1</xUnitExtensibilityExecutionPackageVersion>
+
+    <!-- xunit.runner.visualstudio https://www.nuget.org/packages/xunit.runner.visualstudio -->
+    <xUnitRunnerVisualstudioPackageVersion>2.4.3</xUnitRunnerVisualstudioPackageVersion>
+
+    <!-- Mongo2Go https://www.nuget.org/packages/Mongo2Go -->
+    <Mongo2GoPackageVersion>2.2.14</Mongo2GoPackageVersion>
+
+  </PropertyGroup>
+</Project>

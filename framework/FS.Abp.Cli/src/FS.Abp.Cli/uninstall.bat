@@ -1,0 +1,1 @@
+dotnet tool uninstall FS.Abp.Cli -g 

@@ -1,0 +1,1 @@
+﻿https://github.com/abpframework/abp/tree/42f37c5ff01ad853a5425d15539d4222cd0dab69/framework/src/Volo.Abp.UI.Navigation/Volo/Abp/Ui/Navigation/Localization/Resource
