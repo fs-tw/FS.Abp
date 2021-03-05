@@ -12,6 +12,5 @@ namespace FS.Cms.Blogs
 {
     public partial interface IBlogCrudAppService
     {
-        Task<ListResultDto<Dtos.BlogDto>> GetListAllAsync();
     }
 }
