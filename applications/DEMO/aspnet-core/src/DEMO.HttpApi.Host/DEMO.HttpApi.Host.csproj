@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Application\FS.Abp.File.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.HttpApi\FS.Abp.File.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Application\FS.Cms.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.HttpApi\FS.Cms.HttpApi.csproj" />
     <ProjectReference Include="..\DEMO.Application\DEMO.Application.csproj" />

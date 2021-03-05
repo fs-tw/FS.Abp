@@ -12,13 +12,27 @@ namespace FS.Cms
         typeof(AbpValidationModule)
     )]
     [DependsOn(
-        typeof(FS.Abp.AbpDomainSharedModule)//,
-        //typeof(FS.Abp.CodingManagement.CodingManagementDomainSharedModule)
+        typeof(FS.Abp.AbpDomainSharedModule)
         )]
+    [DependsOn(typeof(FS.Abp.File.FileDomainSharedModule))]
     public class CmsDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<FS.Abp.File.Directories.DirectoryProviderOptions>(options =>
+            {
+                options.DirectoryProviders.AddOrReplace(
+                    new Abp.File.Directories.DirectoryProviderDefinition(
+                    "FS.Cms.Blogs", "Files/Blogs"
+                    ));
+
+                options.DirectoryProviders.AddOrReplace(
+                    new Abp.File.Directories.DirectoryProviderDefinition(
+                    "FS.Cms.Posts", "Files/Posts"
+                    ));
+
+            });
+
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
                 options.FileSets.AddEmbedded<CmsDomainSharedModule>();
