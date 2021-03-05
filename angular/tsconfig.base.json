@@ -30,11 +30,11 @@
       "@fs-tw/theme-alain-ms/*": [
         "libs/theme-alain-ms/*/src/index.ts"
       ],
-      "@fs-tw/themes": [
-        "libs/themes/src/index.ts"
+      "@fs-tw/theme": [
+        "libs/theme/src/index.ts"
       ],
-      "@fs-tw/themes/*": [
-        "libs/themes/*/src/index.ts"
+      "@fs-tw/theme/*": [
+        "libs/theme/*/src/index.ts"
       ]
     }
   },

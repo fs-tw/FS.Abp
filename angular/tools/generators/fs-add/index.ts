@@ -17,6 +17,7 @@ import {
 } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 import { SchemaOptions as ApplicationOptions } from './schema';
+import * as mergeGenrator from '../merge-config/index';
 
 const spinner = new Spinner();
 
@@ -24,7 +25,10 @@ function clearFiles(options: ApplicationOptions): (host: Tree) => void {
   return (host: Tree) => {
     //Clear files
     host.visit(file => {
-      if (file.startsWith(`/libs/${options.name}`)) {
+      if (file.startsWith(`/libs/${options.lowerDashCamel}`)) {
+        host.delete(file);
+      }
+      if (file.startsWith(`/config/libs/${options.lowerDashCamel}.config.json`)) {
         host.delete(file);
       }
     });
@@ -55,20 +59,29 @@ function addDependenciesToPackageJson(options: ApplicationOptions): (host: Tree)
 function AddFiles(options: ApplicationOptions): Rule {
     return chain([
       mergeWith(
-        apply(url(`./files/${options.name}`), [
+        apply(url(`./files/sources`), [
           template({
             camelize: options.camelize,
             lowerDashCamel :options.lowerDashCamel,
             AllUpper : options.allUpper,
             tmpl: ''
           }),
-          move(`libs/${options.name}`)
+          move(`libs/${options.lowerDashCamel}`)
+        ]),
+      ),
+      mergeWith(
+        apply(url(`./files/config`), [
+          template({
+            camelize: options.camelize,
+            lowerDashCamel :options.lowerDashCamel,
+            AllUpper : options.allUpper,
+            tmpl: ''
+          }),
+          move(`config/libs/`)
         ]),
       )
 
     ]);
-  
-
 }
 
 
@@ -90,11 +103,10 @@ export default function (options: ApplicationOptions): Rule {
 options.camelize =camelize(options.name);
 options.lowerDashCamel = lowerDashCamel(options.name);
 options.allUpper = AllUpper(options.name);
-console.log(options.camelize,options.lowerDashCamel,options.allUpper);
-  spinner.start(`Generating NPM scaffold...`);
+  spinner.start(`Generating empty lib scaffold...`);
   return (host: Tree, context: SchematicContext) => {
     return chain([
-      //clearFiles(options),
+      clearFiles(options),
       AddFiles(options),
       //addDependenciesToPackageJson(options),
       //install(),
@@ -102,7 +114,7 @@ console.log(options.camelize,options.lowerDashCamel,options.allUpper);
     ])(host, context);
   };
 }
-///第一個字大寫  ex: themeCore-> ThemCoreModule
+///第一個字大寫  ex: themeCore-> ThemeCoreModule
 function camelize(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
     return index === 0 ? word.toUpperCase() : word;
@@ -114,7 +126,7 @@ function lowerDashCamel(str){
         return i === 0 ? v.toLowerCase() : "-" + v.toLowerCase();
     })
 }
-///全部大寫 ex:themeCore -> eTHEMEM
+///全部大寫 ex:themeCore -> THEMECORE
 function AllUpper(str){
   return str.toUpperCase();
 }
