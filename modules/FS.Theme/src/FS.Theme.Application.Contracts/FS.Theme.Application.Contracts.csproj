@@ -13,14 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Theme\Banners\IBannersAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Banners</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Routes\IRoutesAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Banners\Dtos\BannerConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>

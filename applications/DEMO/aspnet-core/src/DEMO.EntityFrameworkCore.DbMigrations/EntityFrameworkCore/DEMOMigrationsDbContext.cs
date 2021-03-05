@@ -13,6 +13,7 @@ using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.FileManagement.EntityFrameworkCore;
 using FS.Cms.EntityFrameworkCore;
+using FS.Theme.EntityFrameworkCore;
 
 namespace DEMO.EntityFrameworkCore
 {
@@ -52,6 +53,7 @@ namespace DEMO.EntityFrameworkCore
             builder.ConfigureDEMO();
             builder.ConfigureFileManagement();
             builder.ConfigureCms();
+            builder.ConfigureTheme();
         }
     }
 }

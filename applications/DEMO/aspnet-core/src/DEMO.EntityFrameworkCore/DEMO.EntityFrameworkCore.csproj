@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.EntityFrameworkCore\FS.Cms.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.EntityFrameworkCore\FS.Theme.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\DEMO.Domain\DEMO.Domain.csproj" />
     <PackageReference Include="Volo.FileManagement.EntityFrameworkCore" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />

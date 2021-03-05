@@ -18,11 +18,18 @@ namespace FS.Abp.File.Directories
         }
 
         private IDirectoryProviderDefinitionStore directoryProviderDefinitionStore => this.LazyServiceProvider.LazyGetRequiredService<IDirectoryProviderDefinitionStore>();
-        public async Task<DirectoryDescriptorDto> FindByProviderAsync(string providerKey, string group = null)
+
+        public async Task<List<DirectoryProviderDefinition>> GetDefinitionsAsync()
+        {
+            return await directoryProviderDefinitionStore.GetDefinitionsAsync();
+        }
+
+        public async Task<Dtos.DirectoryDescriptorDto> FindByProviderAsync(string providerKey, string group = null)
         {
             var directoryPath = (await directoryProviderDefinitionStore.GetDefinitionAsync(providerKey)).DirectoryPath;
 
-            System.IO.Path.Combine(directoryPath, group);
+            if (!string.IsNullOrEmpty(group))
+                directoryPath = System.IO.Path.Combine(directoryPath, group);
 
             var separators = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
 
@@ -30,26 +37,36 @@ namespace FS.Abp.File.Directories
 
             var directory = await getOrAddAsync(paths, null);
 
-            return ObjectMapper.Map<DirectoryDescriptor, DirectoryDescriptorDto>(directory);
+            var datas= ObjectMapper.Map<List<DirectoryDescriptor>, List<Dtos.DirectoryDescriptorDto>>(directory);
+            
+            datas.ForEach(x =>
+            {
+                if (x.ParentId != null)
+                    x.Parent = datas.Single(y => y.Id == x.ParentId);
+            });
+
+            return datas.Last();
         }
 
 
-        private async Task<DirectoryDescriptor> getOrAddAsync(List<string> paths, System.Guid? parentId)
+        private async Task<List<DirectoryDescriptor>> getOrAddAsync(List<string> paths, System.Guid? parentId)
         {
             var currentParentId = parentId;
-            DirectoryDescriptor target = null;
+            List<DirectoryDescriptor> result = new List<DirectoryDescriptor>();
             foreach (var path in paths)
             {
-                target = await this.DirectoryDescriptorRepository.FindAsync(path, currentParentId);
+                var target = await this.DirectoryDescriptorRepository.FindAsync(path, currentParentId);
                 if (target == null)
                 {
                     var fullPaths = paths.Skip(paths.IndexOf(path)).ToList();
-                    target = (await insertDirectoriesAsync(fullPaths, currentParentId)).Last();
-                    return target;
+                    var dirs = (await insertDirectoriesAsync(fullPaths, currentParentId));
+                    result.AddRange(dirs);
+                    return result;
                 }
                 currentParentId = target.Id;
+                result.Add(target);
             }
-            return target;
+            return result;
         }
 
         private async Task<List<DirectoryDescriptor>> insertDirectoriesAsync(List<string> paths, System.Guid? parentId)

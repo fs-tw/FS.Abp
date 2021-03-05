@@ -11,30 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Theme\Banners\BannersApi.BannerCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BannersApi.cs</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Banners\BannersApi.BannerDefinitionCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BannersApi.cs</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Banners\BannersApi.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Banners</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Routes\RoutesApi.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Routes\RoutesApi.RouteCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RoutesApi.cs</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Routes\RoutesApi.RouteDefinitionCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RoutesApi.cs</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Banners\BannersApi.BannerCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>BannersApi.Generated.cs</DependentUpon>

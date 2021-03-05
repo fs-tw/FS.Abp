@@ -14,14 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Theme\Banners\BannersAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Banners</DependentUpon>
-    </Compile>
-    <Compile Update="FS.Theme\Routes\RoutesAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Banners\BannerCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
