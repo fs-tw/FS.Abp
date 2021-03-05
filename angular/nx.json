@@ -18,7 +18,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -27,6 +32,9 @@
       "tags": []
     },
     "cms": {
+      "tags": []
+    },
+    "theme-alain-ms": {
       "tags": []
     },
     "themes": {
