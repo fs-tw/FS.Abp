@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class TagsApiService {
   apiName = 'Default';
 
-  create = (TagCreate: TagCreateDto) =>
+  createByTagCreate = (TagCreate: TagCreateDto) =>
     this.restService.request<any, TagWithDetailsDto>({
       method: 'POST',
       url: `/api/cms/tags/tag`,
@@ -17,7 +17,7 @@ export class TagsApiService {
     },
     { apiName: this.apiName });
 
-  delete = (TagPrimaryKey: TagPrimaryKeyDto) =>
+  deleteByTagPrimaryKey = (TagPrimaryKey: TagPrimaryKeyDto) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms/tags/tag/id`,
@@ -25,7 +25,7 @@ export class TagsApiService {
     },
     { apiName: this.apiName });
 
-  get = (TagPrimaryKey: TagPrimaryKeyDto) =>
+  getByTagPrimaryKey = (TagPrimaryKey: TagPrimaryKeyDto) =>
     this.restService.request<any, TagWithDetailsDto>({
       method: 'GET',
       url: `/api/cms/tags/tag/id`,
@@ -33,7 +33,7 @@ export class TagsApiService {
     },
     { apiName: this.apiName });
 
-  getList = (TagGetList: TagGetListDto) =>
+  getListByTagGetList = (TagGetList: TagGetListDto) =>
     this.restService.request<any, PagedResultDto<TagWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/tags/tag`,
@@ -48,7 +48,7 @@ export class TagsApiService {
     },
     { apiName: this.apiName });
 
-  update = (TagPrimaryKey: TagPrimaryKeyDto, TagUpdate: TagUpdateDto) =>
+  updateByTagPrimaryKeyAndTagUpdate = (TagPrimaryKey: TagPrimaryKeyDto, TagUpdate: TagUpdateDto) =>
     this.restService.request<any, TagWithDetailsDto>({
       method: 'PUT',
       url: `/api/cms/tags/tag/id`,

@@ -1,0 +1,11 @@
+.listSelected {
+  background-color: #f5f5f6 !important;
+}
+
+nz-list-item {
+  font-size: 15px;
+}
+
+.bg-white {
+  background-color: white;
+}

@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class BlogsApiService {
   apiName = 'Default';
 
-  create = (BlogCreate: BlogCreateDto) =>
+  createByBlogCreate = (BlogCreate: BlogCreateDto) =>
     this.restService.request<any, BlogWithDetailsDto>({
       method: 'POST',
       url: `/api/cms/blogs/blog`,
@@ -17,7 +17,7 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
-  delete = (BlogPrimaryKey: BlogPrimaryKeyDto) =>
+  deleteByBlogPrimaryKey = (BlogPrimaryKey: BlogPrimaryKeyDto) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms/blogs/blog/id`,
@@ -25,7 +25,7 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
-  get = (BlogPrimaryKey: BlogPrimaryKeyDto) =>
+  getByBlogPrimaryKey = (BlogPrimaryKey: BlogPrimaryKeyDto) =>
     this.restService.request<any, BlogWithDetailsDto>({
       method: 'GET',
       url: `/api/cms/blogs/blog/id`,
@@ -33,7 +33,7 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
-  getList = (BlogGetList: BlogGetListDto) =>
+  getListByBlogGetList = (BlogGetList: BlogGetListDto) =>
     this.restService.request<any, PagedResultDto<BlogWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/blogs/blog`,
@@ -48,7 +48,7 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
-  update = (BlogPrimaryKey: BlogPrimaryKeyDto, BlogUpdate: BlogUpdateDto) =>
+  updateByBlogPrimaryKeyAndBlogUpdate = (BlogPrimaryKey: BlogPrimaryKeyDto, BlogUpdate: BlogUpdateDto) =>
     this.restService.request<any, BlogWithDetailsDto>({
       method: 'PUT',
       url: `/api/cms/blogs/blog/id`,

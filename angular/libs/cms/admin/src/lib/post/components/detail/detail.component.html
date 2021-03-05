@@ -1,0 +1,143 @@
+<!-- <nz-spin nzTip="載入中..." [nzSpinning]="isSpinning">
+
+  <nz-card>
+
+    <form nz-form #f="ngForm" se-container="1" labelWidth="150" *ngIf="data">
+      <se label="公告類型">
+        <nz-select [(ngModel)]="data.blogCodeId" name="blogCodeId" required>
+          <nz-option *ngFor="let item of blogs" [nzValue]="item.codesId" [nzLabel]="item.displayName"></nz-option>
+        </nz-select>
+      </se>
+      <se label="前台顯示" required>
+        <nz-switch [(ngModel)]="data.published" name="published" nzCheckedChildren="開" nzUnCheckedChildren="關">
+        </nz-switch>
+      </se>
+      <se label="發佈時間" required>
+        <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
+          [(ngModel)]="data.published_At"></nz-date-picker>
+      </se>
+      <se label="標題" error="必填" required>
+        <input type="text" nz-input [(ngModel)]="data.title" name="title" required>
+      </se>
+      <se label="副標題">
+        <input type="text" nz-input [(ngModel)]="data.subtitle" name="Subtitle">
+      </se>
+      <se label="顯示類型" required>
+        <nz-select [(ngModel)]="data.displayMode" name="type">
+          <nz-option [nzValue]="0" nzLabel="內文"></nz-option>
+          <nz-option [nzValue]="1" nzLabel="連結"></nz-option>
+        </nz-select>
+      </se>
+
+      <se label="內文" *ngIf="data.displayMode == 0">
+
+        <quill-editor [(ngModel)]="data.content" [ngModelOptions]="{standalone: true}">
+          <div quill-editor-toolbar>
+            <span class="ql-formats">
+              <button class="ql-bold"></button>
+              <button class="ql-italic"></button>
+              <button class="ql-underline"></button>
+              <button class="ql-strike"></button>
+            </span>
+
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+            </span>
+
+            <span>
+              <button type="button" class="ql-header" value="1"></button>
+              <button type="button" class="ql-header" value="2"></button>
+            </span>
+
+            <span class="ql-formats">
+              <button class="ql-image"></button>
+            </span>
+
+          </div>
+        </quill-editor>
+      </se>
+
+
+      <se label="連結" *ngIf="data.displayMode == 1">
+        <input type="text" nz-input [(ngModel)]="data.url" name="url">
+      </se>
+
+      <se label="上傳檔案" optionalHelp="建議圖片比例：1080X608">
+        <nz-tabset>
+          <nz-tab nzTitle="圖片">
+            <se>
+              <nz-upload [nzBeforeUpload]="beforeUpload" nzType="drag" [nzMultiple]="true" nzListType="picture">
+                <p class="ant-upload-drag-icon">
+                  <i nz-icon nzType="inbox" nzTheme="outline"></i>
+                </p>
+                <p class="ant-upload-text">請將檔案拖移至此，或按下此圖示上傳檔案</p>
+              </nz-upload>
+              <div class="my-md"></div>
+
+              <nz-table #rowSelectionTable [(nzData)]="showList" *ngIf="showList.length > 0" nzSimple="false"
+                nzSize="small" [nzShowPagination]="false" nzBordered>
+                <thead>
+                  <tr>
+                    <th nzWidth="60px">封面圖</th>
+                    <th>圖片</th>
+                    <th>名稱</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of showList;let imgIndex = index">
+                    <td nzShowCheckbox [(nzChecked)]="data.isCover" (nzCheckedChange)="refreshStatus(data)">
+                    </td>
+                    <td>
+                      <img *ngIf="data.url" [src]="data.url" (click)="showModal(data.url)"
+                        style="max-height: 200px;cursor:pointer;">
+                    </td>
+                    <td>
+                      {{data.name}}
+                    </td>
+                    <td>
+                      <a (click)="delete(data,imgIndex)" class="text-red">刪除</a>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </nz-table>
+            </se>
+          </nz-tab>
+          <nz-tab nzTitle="附件">
+            <se>
+              <fs-upload-file [existFileUrls]="data.attachmentFileUrls"></fs-upload-file>
+            </se>
+          </nz-tab>
+        </nz-tabset>
+      </se>
+
+      <se label="標籤">
+        <fs-tag [postId]="data.id" [postTags]="data.postTags"></fs-tag>
+      </se>
+
+      <se>
+        <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">
+          <span *ngIf="!data.id">建立</span>
+          <span *ngIf="data.id">更新</span>
+        </button>
+      </se>
+    </form>
+  </nz-card>
+
+</nz-spin>
+
+
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" (nzOnCancel)="handleCancel()"
+  nzWidth="800">
+  <ng-template #modalTitle>
+    圖片
+  </ng-template>
+
+  <ng-template #modalContent>
+    <div style="align-items: center;" style="overflow-y:scroll;">
+      <img [src]="selectImage" style="height: 400px;">
+    </div>
+  </ng-template>
+</nz-modal> -->

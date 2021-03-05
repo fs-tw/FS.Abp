@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DocumentsApiService {
   apiName = 'Default';
 
-  getList = (DocumentDefinitionGetList: DocumentDefinitionGetListDto) =>
+  getListByDocumentDefinitionGetList = (DocumentDefinitionGetList: DocumentDefinitionGetListDto) =>
     this.restService.request<any, PagedResultDto<DocumentDefinitionWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/documents/document-definition`,
@@ -17,7 +17,7 @@ export class DocumentsApiService {
     },
     { apiName: this.apiName });
 
-  getList = (DocumentGetList: DocumentGetListDto) =>
+  getListByDocumentGetList = (DocumentGetList: DocumentGetListDto) =>
     this.restService.request<any, PagedResultDto<DocumentWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/documents/document`,

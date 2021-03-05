@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
+import { CmsConfigModule } from '@fs-tw/cms/config';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     EmailingConfigModule.forRoot(),
     ThemeAlainMsModule.forRoot(),
     
+    CmsConfigModule.forRoot()
 
     //ThemeLeptonModule.forRoot(),
   ],

@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class PostsApiService {
   apiName = 'Default';
 
-  create = (PostCreate: PostCreateDto) =>
+  createByPostCreate = (PostCreate: PostCreateDto) =>
     this.restService.request<any, PostWithDetailsDto>({
       method: 'POST',
       url: `/api/cms/posts/post`,
@@ -17,7 +17,7 @@ export class PostsApiService {
     },
     { apiName: this.apiName });
 
-  delete = (PostPrimaryKey: PostPrimaryKeyDto) =>
+  deleteByPostPrimaryKey = (PostPrimaryKey: PostPrimaryKeyDto) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms/posts/post/id`,
@@ -25,7 +25,7 @@ export class PostsApiService {
     },
     { apiName: this.apiName });
 
-  get = (PostPrimaryKey: PostPrimaryKeyDto) =>
+  getByPostPrimaryKey = (PostPrimaryKey: PostPrimaryKeyDto) =>
     this.restService.request<any, PostWithDetailsDto>({
       method: 'GET',
       url: `/api/cms/posts/post/id`,
@@ -33,19 +33,19 @@ export class PostsApiService {
     },
     { apiName: this.apiName });
 
-  getList = (PostTagMapGetList: PostTagMapGetListDto) =>
-    this.restService.request<any, PagedResultDto<PostTagMapWithDetailsDto>>({
-      method: 'GET',
-      url: `/api/cms/posts/post-tag-map`,
-      params: { fields: PostTagMapGetList.fields, value: PostTagMapGetList.value, sorting: PostTagMapGetList.sorting, skipCount: PostTagMapGetList.skipCount, maxResultCount: PostTagMapGetList.maxResultCount },
-    },
-    { apiName: this.apiName });
-
-  getList = (PostGetList: PostGetListDto) =>
+  getListByPostGetList = (PostGetList: PostGetListDto) =>
     this.restService.request<any, PagedResultDto<PostWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/posts/post`,
       params: { fields: PostGetList.fields, value: PostGetList.value, sorting: PostGetList.sorting, skipCount: PostGetList.skipCount, maxResultCount: PostGetList.maxResultCount },
+    },
+    { apiName: this.apiName });
+
+  getListByPostTagMapGetList = (PostTagMapGetList: PostTagMapGetListDto) =>
+    this.restService.request<any, PagedResultDto<PostTagMapWithDetailsDto>>({
+      method: 'GET',
+      url: `/api/cms/posts/post-tag-map`,
+      params: { fields: PostTagMapGetList.fields, value: PostTagMapGetList.value, sorting: PostTagMapGetList.sorting, skipCount: PostTagMapGetList.skipCount, maxResultCount: PostTagMapGetList.maxResultCount },
     },
     { apiName: this.apiName });
 
@@ -56,7 +56,7 @@ export class PostsApiService {
     },
     { apiName: this.apiName });
 
-  update = (PostPrimaryKey: PostPrimaryKeyDto, PostUpdate: PostUpdateDto) =>
+  updateByPostPrimaryKeyAndPostUpdate = (PostPrimaryKey: PostPrimaryKeyDto, PostUpdate: PostUpdateDto) =>
     this.restService.request<any, PostWithDetailsDto>({
       method: 'PUT',
       url: `/api/cms/posts/post/id`,

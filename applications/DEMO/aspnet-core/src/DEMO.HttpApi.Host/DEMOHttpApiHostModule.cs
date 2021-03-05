@@ -47,6 +47,8 @@ namespace DEMO
         typeof(AbpSwashbuckleModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
+
+    [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
     [DependsOn(
         typeof(FS.Cms.CmsApplicationModule),
         typeof(FS.Cms.CmsHttpApiModule)
