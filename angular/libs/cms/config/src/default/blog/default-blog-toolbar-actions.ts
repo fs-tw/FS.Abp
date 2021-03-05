@@ -1,9 +1,9 @@
 // import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
-// import { Fs } from '@fs-tw/crm/proxy'
+// // import {  } from 'libs/cms/proxy';
 // import { eCrmComponentNames } from '../../enums/components-names';
 // import { ExtensionsService } from '../../services/extensions.service';
 
-// export const DEFAULT_EMPLOYEE_TOOLBAR_ACTIONS = ToolbarAction.createMany<
+// export const DEFAULT_BLOG_TOOLBAR_ACTIONS = ToolbarAction.createMany<
 // Fs.Crm.Employees.Dtos.EmployeeDto[]>([
 //   {
 //     text: 'Crm::EmployeesCreate',

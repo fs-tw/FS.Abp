@@ -1,9 +1,9 @@
 // import { EntityAction } from '@abp/ng.theme.shared/extensions';
-// import { Fs } from '@fs-tw/crm/proxy';
+// // import {  } from 'libs/cms/proxy';
 // import { ExtensionsService } from '../../services/extensions.service';
 // import { eCrmComponentNames } from '../../enums/components-names';
 
-// export const DEFAULT_EMPLOYEE_ENTITY_ACTIONS = EntityAction.createMany<
+// export const DEFAULT_POST_ENTITY_ACTIONS = EntityAction.createMany<
 //   Fs.Crm.Employees.Dtos.EmployeeDto
 // >([
 //   {

@@ -11,6 +11,31 @@
     "Fs.Cms.Storage": "檔案管理",
     "FS.Cms.PostDetail": "文章詳細頁",
     "DisplayName:前台內容管理Permissions.最新消息管理": "消息內容管理權限",
-    "DisplayName:前台內容管理Permissions.檔案管理": "檔案管理權限"
+    "DisplayName:前台內容管理Permissions.檔案管理": "檔案管理權限",
+
+
+    "FS.Blog.No": "No",
+    "FS.Blog.DisplayName": "顯示名稱",
+    "FS.Blog.Description": "描述",
+    "FS.Blog.Disable": "禁用",
+    "FS.Blog.BlogConfig": "Blog配置",
+
+    "FS.Post.BlogId": "BlogId",
+    "FS.Post.Title": "標題",
+    "FS.Post.Subtitle": "字幕",
+    "FS.Post.Url": "連結",
+    "FS.Post.Content": "內容",
+    "FS.Post.Disable": "禁用",
+    "FS.Post.StartTime": "開始時間",
+    "FS.Post.EndTime": "結束時間",
+    "FS.Post.DisplayMode": "顯示模式",
+    "FS.Post.Sequence": "排序",
+    "FS.Post.AttachmentFileUrls": "附件/文件網址",
+    "FS.Post.PostImages": "發佈圖片",
+
+    "FS.Tag.No": "No",
+    "FS.Tag.DisplayName": "顯示名稱",
+    "FS.Tag.Description": "詳細",
+    "FS.Tag.Disable": "禁用"
   }
 }
