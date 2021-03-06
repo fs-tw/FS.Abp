@@ -32,5 +32,6 @@ namespace FS.Theme.EntityFrameworkCore
         DbSet<FS.Theme.Routes.Route> Routes { get; set; }
         DbSet<FS.Theme.Banners.BannerDefinition> BannerDefinitions { get; set; }
         DbSet<FS.Theme.Banners.Banner> Banners { get; set; }
+        DbSet<FS.Theme.Routes.MyRouteDefinition> MyRouteDefinitions { get; set; }
     }
 }

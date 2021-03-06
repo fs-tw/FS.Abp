@@ -48,11 +48,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\EfCoreMyRouteDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\EfCoreRouteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\EfCoreRouteTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\MyRouteDefinition.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>

@@ -27,6 +27,9 @@ namespace FS.Theme.Routes.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
+            RuleFor(p => p.Discriminator)
+                .NotNull()
+                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -44,6 +47,9 @@ namespace FS.Theme.Routes.Dtos
             RuleFor(p => p.Description)
                 ;
             RuleFor(p => p.Disable)
+                .NotNull()
+                ;
+            RuleFor(p => p.Discriminator)
                 .NotNull()
                 ;
             CustomizeConfiguration();

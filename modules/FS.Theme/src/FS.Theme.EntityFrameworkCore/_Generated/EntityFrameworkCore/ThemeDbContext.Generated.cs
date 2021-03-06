@@ -52,6 +52,12 @@ namespace FS.Theme.EntityFrameworkCore
             get;
             set;
         }
+
+        public virtual DbSet<FS.Theme.Routes.MyRouteDefinition> MyRouteDefinitions
+        {
+            get;
+            set;
+        }
         public ThemeDbContext(DbContextOptions<ThemeDbContext> options) :
             base(options)
         {

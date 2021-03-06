@@ -20,47 +20,15 @@ using Volo.Abp.Data;
 
 namespace FS.Theme.Routes
 {
-    public partial class RouteDefinition : 
-        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
-        Volo.Abp.MultiTenancy.IMultiTenant
+    public partial class MyRouteDefinition : RouteDefinition
     {
 
-        public RouteDefinition()
+        public MyRouteDefinition()
         {
-            this.Routes = new List<Route>();
             OnCreated();
         }
 
-        public RouteDefinition(System.Guid id) : this()
-        {
-            this.Id = id;
-        }
-
-        public virtual string No
-        {
-            get;
-            set;
-        }
-
-        public virtual string DisplayName
-        {
-            get;
-            set;
-        }
-
-        public virtual string Description
-        {
-            get;
-            set;
-        }
-
-        public virtual bool Disable
-        {
-            get;
-            set;
-        }
-
-        public virtual FS.Theme.RouteDefinitionType Discriminator
+        public virtual string Name
         {
             get;
             set;
@@ -72,12 +40,10 @@ namespace FS.Theme.Routes
             set;
         }
 
-        public virtual IList<Route> Routes
+        public override object[] GetKeys()
         {
-            get;
-            set;
+            return new object[] {  };
         }
-
 
         #region Extensibility Method Definitions
 

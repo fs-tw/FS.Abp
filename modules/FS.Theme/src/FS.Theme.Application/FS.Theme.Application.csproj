@@ -46,6 +46,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -69,6 +77,10 @@
     <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\MyRouteDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\RouteCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>

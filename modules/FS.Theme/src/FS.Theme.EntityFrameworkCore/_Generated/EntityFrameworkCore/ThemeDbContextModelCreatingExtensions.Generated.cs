@@ -37,6 +37,7 @@ namespace FS.Theme.EntityFrameworkCore
             builder.ApplyConfiguration<FS.Theme.Routes.Route>(new FS.Theme.Routes.RouteConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.BannerDefinition>(new FS.Theme.Banners.BannerDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.Banner>(new FS.Theme.Banners.BannerConfiguration(options));
+            builder.ApplyConfiguration<FS.Theme.Routes.MyRouteDefinition>(new FS.Theme.Routes.MyRouteDefinitionConfiguration(options));
         }
     }
 }

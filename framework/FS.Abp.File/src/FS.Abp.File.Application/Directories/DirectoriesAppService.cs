@@ -23,7 +23,6 @@ namespace FS.Abp.File.Directories
         {
             return await directoryProviderDefinitionStore.GetDefinitionsAsync();
         }
-
         public async Task<Dtos.DirectoryDescriptorDto> FindByProviderAsync(string providerKey, string group = null)
         {
             var directoryPath = (await directoryProviderDefinitionStore.GetDefinitionAsync(providerKey)).DirectoryPath;

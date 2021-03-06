@@ -22,25 +22,17 @@ using FS.Theme.EntityFrameworkCore;
 
 namespace FS.Theme.Routes
 {
-    public partial class RouteDefinitionConfiguration : IEntityTypeConfiguration<RouteDefinition>
+    public partial class MyRouteDefinitionConfiguration : IEntityTypeConfiguration<MyRouteDefinition>
     {
         private ThemeModelBuilderConfigurationOptions options;
-        public RouteDefinitionConfiguration(ThemeModelBuilderConfigurationOptions options)
+        public MyRouteDefinitionConfiguration(ThemeModelBuilderConfigurationOptions options)
         {
             this.options = options;
         }
-        public void Configure(EntityTypeBuilder<RouteDefinition> builder)
+        public void Configure(EntityTypeBuilder<MyRouteDefinition> builder)
         {
-            builder.ToTable(options.TablePrefix + @"RouteDefinitions", options.Schema);
-            builder.HasDiscriminator(@"Discriminator", typeof(string)).HasValue<FS.Theme.Routes.RouteDefinition>(@"0").HasValue<FS.Theme.Routes.MyRouteDefinition>(@"1");
-            builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.Description).HasColumnName(@"Description").ValueGeneratedNever();
-            builder.Property(x => x.Disable).HasColumnName(@"Disable").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.Discriminator).HasColumnName(@"Discriminator").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.Name).HasColumnName(@"Name").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
-            builder.HasKey(@"Id");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);
@@ -50,7 +42,7 @@ namespace FS.Theme.Routes
 
         #region Partial Methods
 
-        partial void CustomizeConfiguration(EntityTypeBuilder<RouteDefinition> builder);
+        partial void CustomizeConfiguration(EntityTypeBuilder<MyRouteDefinition> builder);
 
         #endregion
     }

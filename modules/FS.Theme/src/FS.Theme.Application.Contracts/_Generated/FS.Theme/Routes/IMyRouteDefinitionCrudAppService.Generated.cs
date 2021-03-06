@@ -9,14 +9,13 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Application.Services;
 
 namespace FS.Theme.Routes
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
-
+    public partial interface IMyRouteDefinitionCrudAppService : // auto-generated
+        Volo.Abp.Application.Services.ICrudAppService<FS.Theme.Routes.Dtos.MyRouteDefinitionWithDetailsDto, FS.Theme.Routes.Dtos.MyRouteDefinitionPrimaryKeyDto, FS.Theme.Routes.Dtos.MyRouteDefinitionGetListDto, FS.Theme.Routes.Dtos.MyRouteDefinitionCreateDto, FS.Theme.Routes.Dtos.MyRouteDefinitionUpdateDto>
     {
+
     }
 }

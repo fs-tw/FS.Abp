@@ -37,6 +37,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -45,9 +49,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteDefinitionDtoJsonSubtypesConverterBuilders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\IMyRouteDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\IRouteCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>

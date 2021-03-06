@@ -41,11 +41,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\IMyRouteDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\IRouteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\IRouteTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Routes\MyRouteDefinition.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>

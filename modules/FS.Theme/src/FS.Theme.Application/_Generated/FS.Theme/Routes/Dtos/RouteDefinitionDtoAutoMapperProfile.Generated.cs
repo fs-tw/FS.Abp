@@ -18,14 +18,19 @@ namespace FS.Theme.Routes.Dtos
         public RouteDefinitionAutoMapperProfile()
         {
             CreateMap<FS.Theme.Routes.RouteDefinition, RouteDefinitionDto>()
+            .Include<FS.Theme.Routes.MyRouteDefinition, FS.Theme.Routes.Dtos.MyRouteDefinitionDto>()
             .ReverseMap();
         
-            CreateMap<RouteDefinitionCreateDto, FS.Theme.Routes.RouteDefinition>();
+            CreateMap<RouteDefinitionCreateDto, FS.Theme.Routes.RouteDefinition>()
+            .Include<FS.Theme.Routes.Dtos.MyRouteDefinitionCreateDto, FS.Theme.Routes.MyRouteDefinition>();
         
-            CreateMap<RouteDefinitionUpdateDto, FS.Theme.Routes.RouteDefinition>();
+            CreateMap<RouteDefinitionUpdateDto, FS.Theme.Routes.RouteDefinition>()
+            .Include<FS.Theme.Routes.Dtos.MyRouteDefinitionUpdateDto, FS.Theme.Routes.MyRouteDefinition>();
         
-            CreateMap<FS.Theme.Routes.RouteDefinition, RouteDefinitionWithDetailsDto>();
+            CreateMap<FS.Theme.Routes.RouteDefinition, RouteDefinitionWithDetailsDto>()
+            .Include<FS.Theme.Routes.MyRouteDefinition, FS.Theme.Routes.Dtos.MyRouteDefinitionWithDetailsDto>();
         
+            
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
