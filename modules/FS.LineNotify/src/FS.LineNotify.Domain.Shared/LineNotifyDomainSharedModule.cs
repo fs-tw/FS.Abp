@@ -11,7 +11,6 @@ namespace FS.LineNotify
     [DependsOn(
         typeof(AbpValidationModule)
     )]
-    [DependsOn(typeof(Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule))]
     public class LineNotifyDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

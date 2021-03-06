@@ -12,7 +12,7 @@ namespace FS.LineNotify
 
             Configure<FS.LineNotify.ServiceDefinitions.ServiceOptions>(options =>
             {
-                var service = new FS.LineNotify.ServiceDefinitions.ServiceDefiniton(
+                var service = new FS.LineNotify.ServiceDefinitions.ServiceDefinition(
                     "fs",
                     "xxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Further Line Service", "Further Line Service",

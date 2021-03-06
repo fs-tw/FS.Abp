@@ -10,6 +10,7 @@ namespace FS.LineNotify.Webhook
     [DependsOn(
         typeof(LineNotifyDomainModule),
         typeof(AbpAspNetCoreMvcModule))]
+    [DependsOn(typeof(Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule))]
     public class LineNotifyWebhookModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

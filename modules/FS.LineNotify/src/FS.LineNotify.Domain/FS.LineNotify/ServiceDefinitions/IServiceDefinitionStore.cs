@@ -6,9 +6,9 @@ namespace FS.LineNotify.ServiceDefinitions
 {
     public interface IServiceDefinitionStore
     {
-        Task<List<ServiceDefiniton>> GetDefinitionsAsync();
+        Task<List<ServiceDefinition>> GetDefinitionsAsync();
 
-        Task<ServiceDefiniton> GetDefinitionAsync([NotNull] string providerKey);
+        Task<ServiceDefinition> GetDefinitionAsync([NotNull] string providerKey);
 
         Task<bool> IsDefinedAsync([NotNull] string providerKey);
     }

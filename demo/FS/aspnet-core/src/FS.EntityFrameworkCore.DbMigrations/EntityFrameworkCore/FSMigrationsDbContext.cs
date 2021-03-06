@@ -20,7 +20,7 @@ namespace FS.EntityFrameworkCore
      */
     public class FSMigrationsDbContext : AbpDbContext<FSMigrationsDbContext>
     {
-        public FSMigrationsDbContext(DbContextOptions<FSMigrationsDbContext> options) 
+        public FSMigrationsDbContext(DbContextOptions<FSMigrationsDbContext> options)
             : base(options)
         {
 

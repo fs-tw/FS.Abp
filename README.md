@@ -17,7 +17,7 @@ We add two fields in getAsync(Read) : `fields`:inputEntity's name,`Value`:yourse
 
 3. Emailing  
 We provide a angular ui(`npm install @fs-tw/emailing`),you can set smtp setting through angular .  
-
+![screenshot](./docs/img/emailing-setting-page.png)
 4. Account  
 In current version of abp(4.0.2), abp team remove angular's 'password' flow ,we add this back in our version(`npm install @fs-tw/account`).
 

@@ -5,12 +5,13 @@ using Volo.Abp.Collections;
 using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
-namespace FS.LineNotify
+namespace FS.LineNotify.Webhook.Client
 {
     [DependsOn(
         typeof(AbpDddDomainModule),
         typeof(LineNotifyDomainModule)
     )]
+    [DependsOn(typeof(Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule))]
     public class LineNotifyWebhookClientModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -29,13 +30,7 @@ namespace FS.LineNotify
                     {
                         o.LoginCallBackHandlers.Add(t);
                     });
-
             });
-
-            //Volo.Abp.Reflection.ReflectionHelper.GetImplementedGenericTypes
-
-            //var DefinitionProviders = new TypeList<ILoginCallBackHandler>();
-
         }
     }
 }

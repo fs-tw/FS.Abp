@@ -7,7 +7,7 @@ namespace FS.LineNotify
         typeof(LineNotifyHttpApiClientModule),
         typeof(AbpHttpClientIdentityModelModule)
         )]
-    [DependsOn(typeof(FS.LineNotify.LineNotifyWebhookClientModule))]
+    [DependsOn(typeof(FS.LineNotify.Webhook.Client.LineNotifyWebhookClientModule))]
     [DependsOn(typeof(Volo.Abp.EventBus.RabbitMq.AbpEventBusRabbitMqModule))]
     public class LineNotifyConsoleApiClientModule : AbpModule
     {

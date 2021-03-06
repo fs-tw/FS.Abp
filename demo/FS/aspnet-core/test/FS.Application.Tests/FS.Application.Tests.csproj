@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FS.Application\FS.Application.csproj" />
-    <ProjectReference Include="..\FS.Domain.Tests\FS.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <ProjectReference Include="..\..\src\FS.Application\FS.Application.csproj" />
+    <ProjectReference Include="..\FS.Domain.Tests\FS.Domain.Tests.csproj" />
   </ItemGroup>
-
+  
 </Project>

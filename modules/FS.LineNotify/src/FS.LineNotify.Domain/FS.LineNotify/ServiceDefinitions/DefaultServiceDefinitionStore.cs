@@ -17,7 +17,7 @@ namespace FS.LineNotify.ServiceDefinitions
             this.options = options.Value;
         }
 
-        public virtual Task<ServiceDefiniton> GetDefinitionAsync([NotNull] string providerKey)
+        public virtual Task<ServiceDefinition> GetDefinitionAsync([NotNull] string providerKey)
         {
             Check.NotNullOrWhiteSpace(providerKey, nameof(providerKey));
 
@@ -26,7 +26,7 @@ namespace FS.LineNotify.ServiceDefinitions
             return Task.FromResult(result);
         }
 
-        public virtual Task<List<ServiceDefiniton>> GetDefinitionsAsync()
+        public virtual Task<List<ServiceDefinition>> GetDefinitionsAsync()
         {
             return Task.FromResult(options.ServiceDefinitions.Values.ToList());
         }
