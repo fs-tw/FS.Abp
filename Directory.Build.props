@@ -1,6 +1,11 @@
 <Project>
   <PropertyGroup>
-    <Version>420.0.1</Version>
+    <Version>422.0.1</Version>
+    <AbpVersion>4.2.2</AbpVersion>
+    <EasyAbpTreeVersion>2.2.1</EasyAbpTreeVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -21,11 +26,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  
-  <PropertyGroup>
-    <AbpVersion>4.2.0</AbpVersion>
-    <EasyAbpTreeVersion>2.2.0</EasyAbpTreeVersion>
-  </PropertyGroup>
   
   <PropertyGroup>
     <!-- All Microsoft packages -->
