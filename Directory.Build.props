@@ -1,10 +1,12 @@
 <Project>
   <PropertyGroup>
-    <Version>420.2.0</Version>
-    <TMVersion>420.2.0</TMVersion>
-    <AbpVersion>4.2.1</AbpVersion>
-    <VoloVersion>420.0.1</VoloVersion>
-    <FSVersion>420.0.1</FSVersion>
+    <AbpVersion>4.2.2</AbpVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <Version>422.0.1</Version>
+    <FSVersion>422.0.1</FSVersion>
+    <VoloVersion>422.0.1</VoloVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -12,8 +14,8 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <Authors>YinChang</Authors>
     <Company>Further Software</Company>
-    <PackageProjectUrl>https://github.com/fs-tw/TM.Works</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/fs-tw/TM.Works</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/fs-tw/FS.Works</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/fs-tw/FS.Works</RepositoryUrl>
     <PackageTags>abp module</PackageTags>
     <AbpProjectType>module</AbpProjectType>
   </PropertyGroup>
