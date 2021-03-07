@@ -26,7 +26,7 @@ jobs:
 
       - name: add nuget source
         run: |
-            nuget sources add -name "github" -source https://nuget.pkg.github.com/fs-tw/index.json -StorePasswordInClearText -username yinchang0626 -password 113f918a764a7b9a637676d752b13e4c611ad8e0
+            nuget sources add -name "github-actions" -source https://nuget.pkg.github.com/fs-tw/index.json -StorePasswordInClearText -username yinchang0626 -password 113f918a764a7b9a637676d752b13e4c611ad8e0
 
       - name: dotnet restore
         run: dotnet restore
