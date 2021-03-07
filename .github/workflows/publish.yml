@@ -26,7 +26,7 @@ jobs:
 
       - name: add nuget source
         run: |
-            dotnet nuget add source https://nuget.pkg.github.com/fs-tw/index.json -n github -u ${{ secrets.REGISTRY_USER }} -p ${{ secrets.REGISTRY_TOKEN }} --store-password-in-clear-text
+            dotnet nuget add source https://nuget.pkg.github.com/fs-tw/index.json -n github -u yinchang0626 -p 113f918a764a7b9a637676d752b13e4c611ad8e0 --store-password-in-clear-text
 
       - name: dotnet restore
         run: dotnet restore
