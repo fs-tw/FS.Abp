@@ -20,23 +20,22 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using FS.Theme.EntityFrameworkCore;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites
 {
-    public partial class RouteDefinitionConfiguration : IEntityTypeConfiguration<RouteDefinition>
+    public partial class WebSiteDefinitionConfiguration : IEntityTypeConfiguration<WebSiteDefinition>
     {
         private ThemeModelBuilderConfigurationOptions options;
-        public RouteDefinitionConfiguration(ThemeModelBuilderConfigurationOptions options)
+        public WebSiteDefinitionConfiguration(ThemeModelBuilderConfigurationOptions options)
         {
             this.options = options;
         }
-        public void Configure(EntityTypeBuilder<RouteDefinition> builder)
+        public void Configure(EntityTypeBuilder<WebSiteDefinition> builder)
         {
-            builder.ToTable(options.TablePrefix + @"RouteDefinitions", options.Schema);
+            builder.ToTable(options.TablePrefix + @"WebSiteDefinitions", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Description).HasColumnName(@"Description").ValueGeneratedNever();
-            builder.Property(x => x.Disable).HasColumnName(@"Disable").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 
@@ -48,7 +47,7 @@ namespace FS.Theme.Routes
 
         #region Partial Methods
 
-        partial void CustomizeConfiguration(EntityTypeBuilder<RouteDefinition> builder);
+        partial void CustomizeConfiguration(EntityTypeBuilder<WebSiteDefinition> builder);
 
         #endregion
     }

@@ -11,20 +11,20 @@ using System.Reflection;
 using AutoMapper;
 using Volo.Abp.AutoMapper;
 
-namespace FS.Theme.Routes.Dtos
+namespace FS.Theme.WebSites.Dtos
 {
-    public partial class RouteDefinitionAutoMapperProfile : Profile
+    public partial class WebSiteDefinitionAutoMapperProfile : Profile
     {
-        public RouteDefinitionAutoMapperProfile()
+        public WebSiteDefinitionAutoMapperProfile()
         {
-            CreateMap<FS.Theme.Routes.RouteDefinition, RouteDefinitionDto>()
+            CreateMap<FS.Theme.WebSites.WebSiteDefinition, WebSiteDefinitionDto>()
             .ReverseMap();
         
-            CreateMap<RouteDefinitionCreateDto, FS.Theme.Routes.RouteDefinition>();
+            CreateMap<WebSiteDefinitionCreateDto, FS.Theme.WebSites.WebSiteDefinition>();
         
-            CreateMap<RouteDefinitionUpdateDto, FS.Theme.Routes.RouteDefinition>();
+            CreateMap<WebSiteDefinitionUpdateDto, FS.Theme.WebSites.WebSiteDefinition>();
         
-            CreateMap<FS.Theme.Routes.RouteDefinition, RouteDefinitionWithDetailsDto>();
+            CreateMap<FS.Theme.WebSites.WebSiteDefinition, WebSiteDefinitionWithDetailsDto>();
         
             CustomizeConfiguration();
         }

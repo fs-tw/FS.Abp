@@ -9,13 +9,16 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Domain.Services;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
+    public partial interface IWebSitesStore : IDomainService //auto-generated
     {
+        IWebSiteDefinitionRepository WebSiteDefinition { get; }
+    }
+    public partial class WebSitesStore : DomainService, IWebSitesStore //auto-generated
+    {
+        public IWebSiteDefinitionRepository WebSiteDefinition => this.LazyServiceProvider.LazyGetRequiredService<IWebSiteDefinitionRepository>();
     }
 }

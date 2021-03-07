@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,7 +7,16 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.Theme\LogoInfo.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\IMyRouteDefinitionRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\MyRouteDefinition.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\LogoInfo.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\ThemeSettings.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\ThemeSettings.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\WebInfo.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\WebInfo.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\IWebSiteInfoRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\WebSiteInfo.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,19 +50,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\IMyRouteDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\IRouteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\IRouteTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\MyRouteDefinition.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
@@ -73,22 +74,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\LogoInfo.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\IWebSiteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>WebSites</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\ThemeSettings.AbpSetting.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSiteConfig.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>WebSites</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\ThemeSettings.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSiteDefinition.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>WebSites</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\WebInfo.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesStore.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>WebSites</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Theme\Tenants\" />
+    <Folder Include="_Generated\FS.Theme\WebInfos\" />
   </ItemGroup>
 
 </Project>

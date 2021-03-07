@@ -7,15 +7,9 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
+using System.Reflection;
+using FluentValidation;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites.Dtos
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
-    {
-    }
 }

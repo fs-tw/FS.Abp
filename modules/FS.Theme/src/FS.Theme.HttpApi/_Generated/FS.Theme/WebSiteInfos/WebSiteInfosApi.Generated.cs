@@ -7,15 +7,18 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
+using Volo.Abp;
+using Microsoft.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSiteInfos
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
+    [Area("theme")]
+    [RemoteService(true)]
+    [ControllerName("FS.Theme.WebSiteInfos(theme)")]
+    [Route("api/theme/web-site-infos")]
+    public partial class WebSiteInfosApi : ThemeController , IWebSiteInfosApi //auto-generated
     {
+
     }
 }

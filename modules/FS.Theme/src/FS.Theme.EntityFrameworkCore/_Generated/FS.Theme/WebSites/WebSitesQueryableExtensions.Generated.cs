@@ -7,15 +7,12 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
+    public static class WebSitesQueryableExtensions //auto-generated
     {
     }
 }

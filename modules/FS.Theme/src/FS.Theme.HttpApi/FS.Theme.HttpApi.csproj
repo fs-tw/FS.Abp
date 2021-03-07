@@ -8,6 +8,10 @@
   <ItemGroup>
     <Compile Remove="_Generated\FS.Theme\Core\CoreApi.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Core\CoreApi.ThemeSettingsAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\TenantsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\TenantsApi.ThemeSettingsAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosApi.WebSiteInfoCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,18 +44,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RoutesApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\TenantsApi.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\TenantsApi.ThemeSettingsAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>TenantsApi.Generated.cs</DependentUpon>
+      <DependentUpon>WebSites</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesApi.WebSiteDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WebSitesApi.Generated.cs</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="_Generated\FS.Theme\Core\" />
+    <Folder Include="_Generated\FS.Theme\Tenants\" />
+    <Folder Include="_Generated\FS.Theme\WebInfos\" />
   </ItemGroup>
 
 </Project>

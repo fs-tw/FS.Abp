@@ -9,13 +9,13 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Application.Services;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
+    public partial interface IWebSiteDefinitionCrudAppService : // auto-generated
+        Volo.Abp.Application.Services.ICrudAppService<FS.Theme.WebSites.Dtos.WebSiteDefinitionWithDetailsDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionPrimaryKeyDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionGetListDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionCreateDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionUpdateDto>
     {
+
     }
 }

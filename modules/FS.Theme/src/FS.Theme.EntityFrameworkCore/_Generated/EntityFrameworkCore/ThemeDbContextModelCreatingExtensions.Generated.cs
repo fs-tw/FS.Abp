@@ -30,14 +30,12 @@ namespace FS.Theme.EntityFrameworkCore
 
             builder.Ignore<FS.Theme.Banners.BannerConfig>();
             builder.Ignore<FS.Theme.Routes.RouteConfig>();
-            builder.Ignore<FS.Theme.Tenants.ThemeSettings>();
-            builder.Ignore<FS.Theme.Tenants.LogoInfo>();
-            builder.Ignore<FS.Theme.Tenants.WebInfo>();
+            builder.Ignore<FS.Theme.WebSites.WebSiteConfig>();
             builder.ApplyConfiguration<FS.Theme.Routes.RouteDefinition>(new FS.Theme.Routes.RouteDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Routes.Route>(new FS.Theme.Routes.RouteConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.BannerDefinition>(new FS.Theme.Banners.BannerDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.Banner>(new FS.Theme.Banners.BannerConfiguration(options));
-            builder.ApplyConfiguration<FS.Theme.Routes.MyRouteDefinition>(new FS.Theme.Routes.MyRouteDefinitionConfiguration(options));
+            builder.ApplyConfiguration<FS.Theme.WebSites.WebSiteDefinition>(new FS.Theme.WebSites.WebSiteDefinitionConfiguration(options));
         }
     }
 }

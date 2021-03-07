@@ -1,9 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>FS.Theme</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteDefinitionDtoJsonSubtypesConverterBuilders.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\IMyRouteDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\RoutesPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\RoutesPermissionNames.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\WebInfoDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\ITenantsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Tenants\IThemeSettingsAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\Dtos\WebSiteInfoDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\IWebInfosApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\IWebSiteInfoCrudAppService.Generated.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FS.Abp.Application.Contracts" Version="$(FSVersion)" />
@@ -13,6 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="_Generated\FS.Theme\Banners\BannersPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\Banners\BannersPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Banners</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Theme\Banners\Dtos\BannerConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -37,10 +61,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -49,17 +69,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteDefinitionDtoJsonSubtypesConverterBuilders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\IMyRouteDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\IRouteCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -73,34 +85,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\RoutesPermissionDefinitionProviders.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\IWebSiteInfosApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\RoutesPermissionNames.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDto.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\Dtos\WebInfoDto.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\ITenantsApi.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Tenants\IThemeSettingsAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSites\IWebSiteDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Tenants</DependentUpon>
+      <DependentUpon>WebSites</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\WebSites\IWebSitesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WebSites</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Theme\Tenants\Dtos\" />
+    <Folder Include="_Generated\FS.Theme\WebInfos\Dtos\" />
   </ItemGroup>
 
 </Project>

@@ -53,7 +53,7 @@ namespace FS.Theme.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.Theme.Routes.MyRouteDefinition> MyRouteDefinitions
+        public virtual DbSet<FS.Theme.WebSites.WebSiteDefinition> WebSiteDefinitions
         {
             get;
             set;

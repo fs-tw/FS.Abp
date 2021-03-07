@@ -10,11 +10,11 @@
 using System.Reflection;
 using FluentValidation;
 
-namespace FS.Theme.Routes.Dtos
+namespace FS.Theme.WebSites.Dtos
 {
-    public partial class RouteDefinitionCreateDtoValidator : AbstractValidator<RouteDefinitionCreateDto>
+    public partial class WebSiteDefinitionCreateDtoValidator : AbstractValidator<WebSiteDefinitionCreateDto>
     {
-        public RouteDefinitionCreateDtoValidator()
+        public WebSiteDefinitionCreateDtoValidator()
         {
             RuleFor(p => p.No)
                 .NotNull()
@@ -23,17 +23,14 @@ namespace FS.Theme.Routes.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Description)
-                ;
-            RuleFor(p => p.Disable)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
     }
-    public partial class RouteDefinitionUpdateDtoValidator : AbstractValidator<RouteDefinitionUpdateDto>
+    public partial class WebSiteDefinitionUpdateDtoValidator : AbstractValidator<WebSiteDefinitionUpdateDto>
     {
-        public RouteDefinitionUpdateDtoValidator()
+        public WebSiteDefinitionUpdateDtoValidator()
         {
             RuleFor(p => p.No)
                 .NotNull()
@@ -42,9 +39,6 @@ namespace FS.Theme.Routes.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Description)
-                ;
-            RuleFor(p => p.Disable)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }

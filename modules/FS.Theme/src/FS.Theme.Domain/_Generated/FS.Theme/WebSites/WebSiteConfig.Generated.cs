@@ -18,55 +18,41 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites
 {
-    public partial class RouteDefinition : 
-        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
-        Volo.Abp.MultiTenancy.IMultiTenant
+    public partial class WebSiteConfig 
     {
 
-        public RouteDefinition()
+        public WebSiteConfig()
         {
-            this.Routes = new List<Route>();
             OnCreated();
         }
 
-        public RouteDefinition(System.Guid id) : this()
-        {
-            this.Id = id;
-        }
-
-        public virtual string No
+        public virtual string LogoFileId
         {
             get;
             set;
         }
 
-        public virtual string DisplayName
+        public virtual string Title
         {
             get;
             set;
         }
 
-        public virtual string Description
+        public virtual string Favicon
         {
             get;
             set;
         }
 
-        public virtual bool Disable
+        public virtual int Count
         {
             get;
             set;
         }
 
-        public virtual System.Guid? TenantId
-        {
-            get;
-            set;
-        }
-
-        public virtual IList<Route> Routes
+        public virtual string Copyright
         {
             get;
             set;

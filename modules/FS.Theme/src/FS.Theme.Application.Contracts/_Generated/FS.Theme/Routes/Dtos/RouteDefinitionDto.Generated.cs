@@ -39,8 +39,6 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual RouteDefinitionType Discriminator { get; set; }
-
     }
 
     public partial class RouteDefinitionCreateDto
@@ -52,8 +50,6 @@ namespace FS.Theme.Routes.Dtos
         public virtual string Description { get; set; }
 
         public virtual bool Disable { get; set; }
-
-        public virtual RouteDefinitionType Discriminator { get; set; }
 
     }
 
@@ -67,14 +63,10 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual RouteDefinitionType Discriminator { get; set; }
-
     }
 
     public partial class RouteDefinitionGetListDto : SearchResultRequestDto
     {
-        public virtual RouteDefinitionType Discriminator { get; set; }
-
     }
 
     public partial class RouteDefinitionWithDetailsDto : RouteDefinitionDto

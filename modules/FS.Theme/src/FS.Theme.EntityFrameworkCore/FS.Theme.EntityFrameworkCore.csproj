@@ -1,9 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>FS.Theme</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\Routes\EfCoreMyRouteDefinitionRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\MyRouteDefinition.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\EfCoreWebSiteInfoRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosQueryableExtensions.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebInfos\WebSiteInfo.Configuration.Generated.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FS.Abp.EntityFrameworkCore" Version="$(FSVersion)" />
@@ -48,19 +56,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\EfCoreMyRouteDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\EfCoreRouteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Routes\EfCoreRouteTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\MyRouteDefinition.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
@@ -76,6 +76,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Theme\WebSites\EfCoreWebSiteDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WebSites</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSiteDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WebSites</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WebSites</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Theme\WebInfos\" />
   </ItemGroup>
 
 </Project>

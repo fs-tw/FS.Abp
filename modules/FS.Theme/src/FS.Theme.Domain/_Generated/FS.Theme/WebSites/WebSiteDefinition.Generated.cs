@@ -18,22 +18,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSites
 {
-    public partial class RouteDefinition : 
+    public partial class WebSiteDefinition : 
         Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
         Volo.Abp.MultiTenancy.IMultiTenant
     {
 
-        public RouteDefinition()
+        public WebSiteDefinition()
         {
-            this.Routes = new List<Route>();
             OnCreated();
-        }
-
-        public RouteDefinition(System.Guid id) : this()
-        {
-            this.Id = id;
         }
 
         public virtual string No
@@ -54,19 +48,7 @@ namespace FS.Theme.Routes
             set;
         }
 
-        public virtual bool Disable
-        {
-            get;
-            set;
-        }
-
         public virtual System.Guid? TenantId
-        {
-            get;
-            set;
-        }
-
-        public virtual IList<Route> Routes
         {
             get;
             set;

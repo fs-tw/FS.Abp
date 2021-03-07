@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\RouteDefinitionType.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Domain.Shared\FS.Abp.File.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -28,10 +32,6 @@
     <Compile Update="DataModel\Theme.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Theme.efml</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\RouteDefinitionType.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FS.Theme</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -61,6 +61,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Theme.efml</DependentUpon>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Theme\" />
   </ItemGroup>
 
 </Project>

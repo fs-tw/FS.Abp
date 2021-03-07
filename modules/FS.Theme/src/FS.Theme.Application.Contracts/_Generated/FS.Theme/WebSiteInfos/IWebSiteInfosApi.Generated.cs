@@ -10,12 +10,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace FS.Theme.Routes
+namespace FS.Theme.WebSiteInfos
 {
-    public partial interface IRoutesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IRouteDefinitionCrudAppService,
-        IRouteCrudAppService
+    public partial interface IWebSiteInfosApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService
     {
     }
 }

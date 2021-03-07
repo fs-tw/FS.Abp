@@ -13,89 +13,82 @@
         <File Name="RoutesApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="RoutesApi.RouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="RoutesApi.RouteCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="ITenantsApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="TenantsApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="TenantsApi.ThemeSettingsAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="IWebSitesApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSitesApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSitesApi.WebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="IWebSiteInfosApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
+        <File Name="WebSiteInfosApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="IRouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="IBannerCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="IMyRouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="IWebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="RouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="RouteCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="BannerCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="MyRouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="WebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="RouteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
-        <File Name="MyRouteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
+        <File Name="WebSiteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
         <File Name="BannerConfigDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
-        <File Name="ThemeSettingsDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="LogoInfoDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="WebInfoDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="WebSiteConfigDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
         <File Name="RouteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
-        <File Name="MyRouteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
+        <File Name="WebSiteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
         <File Name="BannerConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
-        <File Name="ThemeSettingsDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="LogoInfoDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="WebInfoDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
+        <File Name="WebSiteConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
         <File Name="RouteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
-        <File Name="MyRouteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
+        <File Name="WebSiteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
         <File Name="BannerConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="RouteConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
-        <File Name="ThemeSettingsDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="LogoInfoDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="WebInfoDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants\Dtos" />
-        <File Name="RouteDefinitionDtoJsonSubtypesConverterBuilders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
-        <File Name="RoutesPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="RoutesPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="ThemeSettings.AbpSetting.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="IThemeSettingsAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="ThemeSettingsAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Tenants" />
+        <File Name="WebSiteConfigDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
+        <File Name="BannersPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="WebSiteInfosPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
+        <File Name="BannersPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="WebSiteInfosPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RoutesStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="WebSitesStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="IThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="ThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="ThemeModelBuilderConfigurationOptions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="ThemeDbContextModelCreatingExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="RouteDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="Route.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="MyRouteDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="Banner.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="WebSiteDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="BannerConfig.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="RouteConfig.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="ThemeSettings.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="LogoInfo.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="WebInfo.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Tenants" />
-        <File Name="RouteDefinitionType.Generated.cs" Project="FS.Theme.Domain.Shared" ProjectFolder="_Generated\FS.Theme" />
+        <File Name="WebSiteConfig.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="RouteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="Route.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
-        <File Name="MyRouteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="Banner.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="WebSiteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="IRouteDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteTreeRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannerDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="IBannerRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="IMyRouteDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="IWebSiteDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="EfCoreRouteDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="EfCoreRouteTreeRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="EfCoreBannerDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="EfCoreBannerRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="EfCoreMyRouteDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
+        <File Name="EfCoreWebSiteDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSites" />
         <File Name="RoutesQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
+        <File Name="WebSitesQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSites" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
