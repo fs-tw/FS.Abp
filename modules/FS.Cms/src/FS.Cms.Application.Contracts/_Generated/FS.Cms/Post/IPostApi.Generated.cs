@@ -10,9 +10,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace FS.Cms.Routes
+namespace FS.Cms.Post
 {
-    public partial interface IRoutesApi : //auto-generated
+    public partial interface IPostApi : //auto-generated
         Volo.Abp.Application.Services.IApplicationService
     {
     }

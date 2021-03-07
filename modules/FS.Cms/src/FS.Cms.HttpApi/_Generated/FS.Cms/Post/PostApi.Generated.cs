@@ -11,13 +11,13 @@ using Volo.Abp;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace FS.Cms.Routes
+namespace FS.Cms.Post
 {
     [Area("cms")]
     [RemoteService(true)]
-    [ControllerName("FS.Cms.Routes(cms)")]
-    [Route("api/cms/routes")]
-    public partial class RoutesApi : CmsController , IRoutesApi //auto-generated
+    [ControllerName("FS.Cms.Post(cms)")]
+    [Route("api/cms/post")]
+    public partial class PostApi : CmsController , IPostApi //auto-generated
     {
 
     }

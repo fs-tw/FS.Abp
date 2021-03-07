@@ -25,8 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionDefinitionProviders.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs" />
@@ -37,6 +35,9 @@
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Routes\IRoutesApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Routes\RoutesPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Routes\RoutesPermissionNames.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +48,14 @@
     <Compile Update="FS.Cms\Posts\IPostCrudAppService.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDto.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -120,17 +129,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Routes\IRoutesApi.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Post\IPostApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
+      <DependentUpon>Post</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Routes\RoutesPermissionDefinitionProviders.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Post\PostPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
+      <DependentUpon>Post</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Routes\RoutesPermissionNames.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Post\PostPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
+      <DependentUpon>Post</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -144,10 +153,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Tags</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Tags\TagsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tags</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="_Generated\FS.Cms\Menu\" />
+    <Folder Include="_Generated\FS.Cms\Routes\" />
   </ItemGroup>
 
 </Project>

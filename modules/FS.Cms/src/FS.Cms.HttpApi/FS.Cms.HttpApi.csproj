@@ -17,6 +17,7 @@
     <Compile Remove="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinition.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.Post.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.PostTagMap.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Routes\RoutesApi.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\TagsApi.Tag.Generated.cs" />
   </ItemGroup>
 
@@ -82,9 +83,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>PostsApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Routes\RoutesApi.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Post\PostApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
+      <DependentUpon>Post</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Tags\TagsApi.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -94,6 +95,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>TagsApi.Generated.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.Cms\Routes\" />
   </ItemGroup>
 
 </Project>
