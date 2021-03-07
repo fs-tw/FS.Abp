@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.FileManagement.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.FileManagement.Application.Contracts" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Abp.File.Domain.Shared\FS.Abp.File.Domain.Shared.csproj" />
