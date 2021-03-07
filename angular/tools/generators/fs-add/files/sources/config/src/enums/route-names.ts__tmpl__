@@ -1,0 +1,4 @@
+export const enum e<%=camelize%>RouteNames {
+  <%=camelize%> = '<%=camelize%>::Menu:<%=camelize%>',
+  
+}

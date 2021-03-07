@@ -13,13 +13,5 @@ namespace FS.Cms.Blogs
 {
     public partial class BlogsApi : IBlogCrudAppService //pls write here
     {
-        [HttpGet]
-        [Route("blog")]
-        [RemoteService(true)]
-
-        public async Task<ListResultDto<BlogDto>> GetListAllAsync()
-        {
-            return await this.BlogCrudAppService.GetListAllAsync();
-        }
     }
 }

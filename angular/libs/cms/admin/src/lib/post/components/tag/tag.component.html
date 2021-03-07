@@ -1,0 +1,39 @@
+<br>
+<!-- <label>搜尋標籤：</label>
+
+<nz-select nzSize='small' [(ngModel)]="select" nzAllowClear nzShowSearch style="width: 200px;">
+    <nz-option-group *ngFor="let item of tagGroups" [nzLabel]="item.tagGroupName">
+        <nz-option *ngFor="let i of item.tags" [nzLabel]="i.name" [nzValue]="i.name"></nz-option>
+    </nz-option-group>
+</nz-select>
+<button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="search"></i></button> -->
+
+<!-- 只啟用以下 table -->
+<!-- <nz-table #smallTable nzBordered nzSize="small" [nzData]="tagGroups" style="width: 500px;" nzShowPagination="false"
+    style="margin-top: 10px;">
+    <thead>
+        <tr>
+            <th nzAlign="center">分類</th>
+            <th nzAlign="center">標籤</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tagGroup of smallTable.data; let parentIndex = index" class="bg-white">
+            <td>
+                <nz-tag [nzColor]="tagGroup.check? 'green' : 'default'" (click)="checkParent(tagGroup)" class="pointer">
+                    <i nz-icon [nzType]="tagGroup.check ? 'check' : 'close'"></i>
+                    {{ tagGroup.tagGroupName }}
+                </nz-tag>
+            </td>
+            <td>               
+                <nz-tag *ngFor="let tagItem of tagGroup.tags; let childIndex = index" class="pointer"
+                    [nzColor]="tagItem.check ? 'green' : 'default'" (click)="checkChild(tagItem)">
+                    <i nz-icon [nzType]="tagItem.check ? 'check' : 'close'"></i>
+                    {{ tagItem.name }}
+                </nz-tag>
+            </td>
+        </tr>
+    </tbody>
+</nz-table> -->
+
+<!-- <button (click)="save()">check</button> -->

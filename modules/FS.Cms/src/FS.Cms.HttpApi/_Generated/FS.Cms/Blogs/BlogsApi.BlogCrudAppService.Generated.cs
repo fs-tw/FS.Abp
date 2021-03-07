@@ -19,7 +19,7 @@ namespace FS.Cms.Blogs
     {
         [HttpGet]
         [Route("blog/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<BlogWithDetailsDto> GetAsync([FromQuery] BlogPrimaryKeyDto BlogPrimaryKey)
         {
             return this.BlogCrudAppService.GetAsync(BlogPrimaryKey);
@@ -27,7 +27,7 @@ namespace FS.Cms.Blogs
 
         [HttpGet]
         [Route("blog")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<PagedResultDto<BlogWithDetailsDto>> GetListAsync(BlogGetListDto BlogGetList)
         {
             return this.BlogCrudAppService.GetListAsync(BlogGetList);
@@ -35,7 +35,7 @@ namespace FS.Cms.Blogs
 
         [HttpPost]
         [Route("blog")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<BlogWithDetailsDto> CreateAsync(BlogCreateDto BlogCreate)
         {
             return this.BlogCrudAppService.CreateAsync(BlogCreate);
@@ -43,7 +43,7 @@ namespace FS.Cms.Blogs
 
         [HttpPut]
         [Route("blog/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<BlogWithDetailsDto> UpdateAsync([FromQuery] BlogPrimaryKeyDto BlogPrimaryKey, BlogUpdateDto BlogUpdate)
         {
             return this.BlogCrudAppService.UpdateAsync(BlogPrimaryKey,BlogUpdate);
@@ -51,7 +51,7 @@ namespace FS.Cms.Blogs
 
         [HttpDelete]
         [Route("blog/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task DeleteAsync([FromQuery] BlogPrimaryKeyDto BlogPrimaryKey)
         {
             return this.BlogCrudAppService.DeleteAsync(BlogPrimaryKey);

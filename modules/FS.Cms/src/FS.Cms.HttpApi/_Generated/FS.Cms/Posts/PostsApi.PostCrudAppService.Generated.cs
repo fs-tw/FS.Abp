@@ -19,7 +19,7 @@ namespace FS.Cms.Posts
     {
         [HttpGet]
         [Route("post/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> GetAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey)
         {
             return this.PostCrudAppService.GetAsync(PostPrimaryKey);
@@ -35,7 +35,7 @@ namespace FS.Cms.Posts
 
         [HttpPost]
         [Route("post")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> CreateAsync(PostCreateDto PostCreate)
         {
             return this.PostCrudAppService.CreateAsync(PostCreate);
@@ -43,7 +43,7 @@ namespace FS.Cms.Posts
 
         [HttpPut]
         [Route("post/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<PostWithDetailsDto> UpdateAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey, PostUpdateDto PostUpdate)
         {
             return this.PostCrudAppService.UpdateAsync(PostPrimaryKey,PostUpdate);
@@ -51,7 +51,7 @@ namespace FS.Cms.Posts
 
         [HttpDelete]
         [Route("post/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task DeleteAsync([FromQuery] PostPrimaryKeyDto PostPrimaryKey)
         {
             return this.PostCrudAppService.DeleteAsync(PostPrimaryKey);

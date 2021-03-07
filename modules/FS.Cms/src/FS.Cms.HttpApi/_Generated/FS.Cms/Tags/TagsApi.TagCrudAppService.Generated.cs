@@ -19,7 +19,7 @@ namespace FS.Cms.Tags
     {
         [HttpGet]
         [Route("tag/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<TagWithDetailsDto> GetAsync([FromQuery] TagPrimaryKeyDto TagPrimaryKey)
         {
             return this.TagCrudAppService.GetAsync(TagPrimaryKey);
@@ -35,7 +35,7 @@ namespace FS.Cms.Tags
 
         [HttpPost]
         [Route("tag")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<TagWithDetailsDto> CreateAsync(TagCreateDto TagCreate)
         {
             return this.TagCrudAppService.CreateAsync(TagCreate);
@@ -43,7 +43,7 @@ namespace FS.Cms.Tags
 
         [HttpPut]
         [Route("tag/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<TagWithDetailsDto> UpdateAsync([FromQuery] TagPrimaryKeyDto TagPrimaryKey, TagUpdateDto TagUpdate)
         {
             return this.TagCrudAppService.UpdateAsync(TagPrimaryKey,TagUpdate);
@@ -51,7 +51,7 @@ namespace FS.Cms.Tags
 
         [HttpDelete]
         [Route("tag/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task DeleteAsync([FromQuery] TagPrimaryKeyDto TagPrimaryKey)
         {
             return this.TagCrudAppService.DeleteAsync(TagPrimaryKey);
