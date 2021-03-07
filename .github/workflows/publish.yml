@@ -24,12 +24,13 @@ jobs:
           regex_flags: 'gim'
           search_string: '${{ steps.directoryBuildProps.outputs.content }}'
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-            source-url: https://nuget.pkg.github.com/fs-tw/index.json
-        env:
-            NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: add nuget source
+        run: |
+            dotnet nuget add source https://nuget.pkg.github.com/fs-tw/index.json \
+            -n github \
+            -u ${{ secrets.REGISTRY_USER }} \
+            -p ${{ secrets.REGISTRY_TOKEN }} \
+            --store-password-in-clear-text
 
       - name: dotnet restore
         run: dotnet restore
