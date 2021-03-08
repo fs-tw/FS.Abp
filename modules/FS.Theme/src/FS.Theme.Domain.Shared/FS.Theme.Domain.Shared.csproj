@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -17,11 +17,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\Theme\*.json" />
+    <Compile Remove="_Generated\**" />
     <Content Remove="Localization\Theme\*.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.Theme\RouteDefinitionType.Generated.cs" />
+    <EmbeddedResource Remove="_Generated\**" />
+    <None Remove="_Generated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,10 +60,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Theme.efml</DependentUpon>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Theme\" />
   </ItemGroup>
 
 </Project>
