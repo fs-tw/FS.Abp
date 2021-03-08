@@ -1,4 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Fs } from '@fs-tw/cms/proxy';
+
+import { PageService } from '../../providers/page.service';
+
 // import { ActivatedRoute, Router } from '@angular/router';
 // import { PostWithDetailsDto } from '@fs-tw/cms/proxy';
 // import { CodesDto } from '@fs-tw/theme-core';
@@ -16,33 +21,25 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  // @Select(PostState.getPosts)
-  // posts$: Observable<PostWithDetailsDto[]>;
+  keyword: string;
 
-  // @Select(PostState.getPostsTotalCount)
-  // totalCount$: Observable<number>;
+  constructor(
+    private pageService: PageService
+  ) { }
 
-  // loading = false;
+  
 
   ngOnInit() {
     
   }
 
-  // mapOfExpandData: { [key: string]: boolean } = {};
-  // blogCode: CodesDto;
-  // blogId: string = "";
-  // keyword: string = "";
+  gotoDetail() {
 
-  // subscription: Subscription;
-  // constructor(
-  //   private store: Store,
-  //   private router: Router,
-  //   private pageService: PageService,
-  //   private activatedRoute: ActivatedRoute,
-  //   private confirmationService: ConfirmationService,
-  //   private toasterService: ToasterService,
-  //   private postsStateService: PostsStateService,
-  // ) { }
+  }
+
+  search() {
+    
+  }
 
   // ngOnDestroy(): void {
   //   if (this.subscription) {
