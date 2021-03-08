@@ -37,11 +37,10 @@
     "@angular/platform-browser": "^11.2.0",
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
-    "@fs-tw/theme-alain-ms": "410.0.1",
     "@npm/fs-tw": "file:npm/fs-tw",
     "@npm/volo": "file:npm/volo",
+    "@npm/cms": "file:npm/cms",
     "@nrwl/angular": "11.4.0",
-    "ngx-quill": "^13.2.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
