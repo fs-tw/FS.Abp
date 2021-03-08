@@ -1,0 +1,10 @@
+<ms-topbar [allNav]="hasAllNav"></ms-topbar>
+<ms-sidebar *ngIf="hasSidebar"></ms-sidebar>
+<div class="brand-page-loading" [hidden]="!isFetching">
+  <nz-spin nzSpinning></nz-spin>
+</div>
+<div class="alain-ms__body" [hidden]="isFetching">
+  <router-outlet></router-outlet>
+</div>
+<!-- <help></help>
+<theme-btn></theme-btn> -->

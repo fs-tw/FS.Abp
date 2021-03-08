@@ -28,9 +28,6 @@
     }
   },
   "projects": {
-    "demo-admin": {
-      "tags": []
-    },
     "cms": {
       "tags": []
     },
@@ -38,6 +35,9 @@
       "tags": []
     },
     "theme": {
+      "tags": []
+    },
+    "demo-admin": {
       "tags": []
     }
   }
