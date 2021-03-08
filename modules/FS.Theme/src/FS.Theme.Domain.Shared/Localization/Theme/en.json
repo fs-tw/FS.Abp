@@ -1,7 +1,41 @@
 {
   "culture": "en",
   "texts": {
-    "SamplePageMessage": "A sample page for the Theme module",
-    "Menu:Theme": "Theme"
+    "FS.Theme.WebSiteDefinition": "WebSiteDefinition",
+    "FS.Theme.BannerDefinition": "BannerDefinition",
+    "FS.Theme.Banner": "Banner",
+    "FS.Theme.RouteDefinition": "RouteDefinition",
+    "FS.Theme.Route": "Route",
+
+
+    "FS.WebSiteDefinition.No": "No",
+    "FS.WebSiteDefinition.DisplayName": "DisplayName",
+    "FS.WebSiteDefinition.Description": "Description",
+
+
+    "FS.BannerDefinition.No": "No",
+    "FS.BannerDefinition.DisplayName": "DisplayName",
+    "FS.BannerDefinition.Description": "Description",
+    "FS.BannerDefinition.Disable": "Disable",
+
+
+    "FS.Banner.No": "No",
+    "FS.Banner.DisplayName": "DisplayName",
+    "FS.Banner.Description": "Description",
+    "FS.Banner.Disable": "Disable",
+    "FS.Banner.BannerConfig": "BannerConfig",
+    "FS.Banner.BannerDefinitionId": "BannerDefinitionId",
+
+    "FS.RouteDefinition.No": "No",
+    "FS.RouteDefinition.DisplayName": "DisplayName",
+    "FS.RouteDefinition.Description": "Description",
+    "FS.RouteDefinition.Disable": "Disable",
+
+    "FS.Route.No": "No",
+    "FS.Route.DisplayName": "DisplayName",
+    "FS.Route.Description": "Description",
+    "FS.Route.Disable": "Disable",
+    "FS.Route.RouteConfig": "RouteConfig",
+    "FS.Route.RouteDefinitionId": "RouteDefinitionId"
   }
 }

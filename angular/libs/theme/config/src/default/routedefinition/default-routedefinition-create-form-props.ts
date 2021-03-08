@@ -1,41 +1,34 @@
 // import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
-// // import {  } from 'libs/cms/proxy';
+// import {  } from 'libs/theme/proxy/src';
 
-// export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany<Fs.Crm.Employees.Dtos.EmployeeDto>([
+// export const DEFAULT_ROUTEDEFINITION_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Blogs.Dtos.BlogDto>([
   
 //    {
 //     type: ePropType.String,
 //     name: 'no',
-//     displayName: 'Cms::FS.Blog.No',
+//     displayName: 'Theme::FS.RouteDefinition.No',
 //     id: 'no',
 //     defaultValue: ""
 //   },
 //   {
 //     type: ePropType.String,
 //     name: 'displayName',
-//     displayName: 'Cms::FS.Blog.DisplayName',
+//     displayName: 'Theme::FS.RouteDefinition.DisplayName',
 //     id: 'displayName',
 //     defaultValue: ""
 //   },
 //   {
 //     type: ePropType.String,
 //     name: 'description',
-//     displayName:'Cms::FS.Blog.Description',
+//     displayName:'Theme::FS.RouteDefinition.Description',
 //     id: 'description',
 //     defaultValue: "",
 //   },
 //   {
 //     type: ePropType.String,
 //     name: 'disable',
-//     displayName: 'Cms::FS.Blog.Disable',
+//     displayName:'Theme::FS.RouteDefinition.Disable',
 //     id: 'disable',
 //     defaultValue: "",
-//   },
-//   {
-//     type: ePropType.String,
-//     name: 'disable',
-//     displayName: 'Cms::FS.Blog.BlogConfig',
-//     id: 'disable',
-//     defaultValue: "",
-//   },
+//   }
 // ]);

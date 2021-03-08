@@ -7,26 +7,38 @@
 //   mergeWithDefaultProps,
 // } from '@abp/ng.theme.shared/extensions';
 // import { APP_INITIALIZER, Injector } from '@angular/core';
-// import { eCmsRouteNames } from '../enums/route-names';
+// import { eThemeRouteNames } from '../enums/route-names';
 // import { map, mapTo, tap } from 'rxjs/operators';
 
-// import { DEFAULT_BLOG_CREATE_FORM_PROPS } from '../default/blog/default-blog-create-form-props';
-// import { DEFAULT_BLOG_EDIT_FORM_PROPS } from '../default/blog/default-blog-edit-form-props';
-// import { DEFAULT_BLOG_ENTITY_PROPS } from '../default/blog/default-blog-entity-props';
-// import { DEFAULT_BLOG_ENTITY_ACTIONS } from '../default/blog/default-blog-entity-actions';
-// import { DEFAULT_BLOG_TOOLBAR_ACTIONS } from '../default/blog/default-blog-toolbar-actions';
+// import { DEFAULT_BANNER_CREATE_FORM_PROPS } from '../default/banner/default-banner-create-form-props';
+// import { DEFAULT_BANNER_EDIT_FORM_PROPS } from '../default/banner/default-banner-edit-form-props';
+// import { DEFAULT_BANNER_ENTITY_PROPS } from '../default/banner/default-banner-entity-props';
+// import { DEFAULT_BANNER_ENTITY_ACTIONS } from '../default/banner/default-banner-entity-actions';
+// import { DEFAULT_BANNER_TOOLBAR_ACTIONS } from '../default/banner/default-banner-toolbar-actions';
 
-// import { DEFAULT_POST_CREATE_FORM_PROPS } from '../default/post/default-post-create-form-props';
-// import { DEFAULT_POST_EDIT_FORM_PROPS } from '../default/post/default-post-edit-form-props';
-// import { DEFAULT_POST_ENTITY_PROPS } from '../default/post/default-post-entity-props';
-// import { DEFAULT_POST_ENTITY_ACTIONS } from '../default/post/default-post-entity-actions';
-// import { DEFAULT_POST_TOOLBAR_ACTIONS } from '../default/post/default-post-toolbar-actions';
+// import { DEFAULT_BANNERDEFINITION_CREATE_FORM_PROPS } from '../default/bannerdefinition/default-bannerdefinition-create-form-props';
+// import { DEFAULT_BANNERDEFINITION_EDIT_FORM_PROPS } from '../default/bannerdefinition/default-bannerdefinition-edit-form-props';
+// import { DEFAULT_BANNERDEFINITION_ENTITY_PROPS } from '../default/bannerdefinition/default-bannerdefinition-entity-props';
+// import { DEFAULT_BANNERDEFINITION_ENTITY_ACTIONS } from '../default/bannerdefinition/default-bannerdefinition-entity-actions';
+// import { DEFAULT_BANNERDEFINITION_TOOLBAR_ACTIONS } from '../default/bannerdefinition/default-bannerdefinition-toolbar-actions';
 
-// import { DEFAULT_TAG_CREATE_FORM_PROPS } from '../default/tag/default-tag-create-form-props';
-// import { DEFAULT_TAG_EDIT_FORM_PROPS } from '../default/tag/default-tag-edit-form-props';
-// import { DEFAULT_TAG_ENTITY_PROPS } from '../default/tag/default-tag-entity-props';
-// import { DEFAULT_TAG_ENTITY_ACTIONS } from '../default/tag/default-tag-entity-actions';
-// import { DEFAULT_TAG_TOOLBAR_ACTIONS } from '../default/tag/default-tag-toolbar-actions';
+// import { DEFAULT_ROUTE_CREATE_FORM_PROPS } from '../default/route/default-route-create-form-props';
+// import { DEFAULT_ROUTE_EDIT_FORM_PROPS } from '../default/route/default-route-edit-form-props';
+// import { DEFAULT_ROUTE_ENTITY_PROPS } from '../default/route/default-route-entity-props';
+// import { DEFAULT_ROUTE_ENTITY_ACTIONS } from '../default/route/default-route-entity-actions';
+// import { DEFAULT_ROUTE_TOOLBAR_ACTIONS } from '../default/route/default-route-toolbar-actions';
+
+// import { DEFAULT_ROUTEDEFINITION_CREATE_FORM_PROPS } from '../default/routedefinition/default-routedefinition-create-form-props';
+// import { DEFAULT_ROUTEDEFINITION_EDIT_FORM_PROPS } from '../default/routedefinition/default-routedefinition-edit-form-props';
+// import { DEFAULT_ROUTEDEFINITION_ENTITY_PROPS } from '../default/routedefinition/default-routedefinition-entity-props';
+// import { DEFAULT_ROUTEDEFINITION_ENTITY_ACTIONS } from '../default/routedefinition/default-routedefinition-entity-actions';
+// import { DEFAULT_ROUTEDEFINITION_TOOLBAR_ACTIONS } from '../default/routedefinition/default-routedefinition-toolbar-actions';
+
+// import { DEFAULT_WEBSITEDEFINITION_CREATE_FORM_PROPS } from '../default/websitedefinition/default-websitedefinition-create-form-props';
+// import { DEFAULT_WEBSITEDEFINITION_EDIT_FORM_PROPS } from '../default/websitedefinition/default-websitedefinition-edit-form-props';
+// import { DEFAULT_WEBSITEDEFINITION_ENTITY_PROPS } from '../default/websitedefinition/default-websitedefinition-entity-props';
+// import { DEFAULT_WEBSITEDEFINITION_ENTITY_ACTIONS } from '../default/websitedefinition/default-websitedefinition-entity-actions';
+// import { DEFAULT_WEBSITEDEFINITION_TOOLBAR_ACTIONS } from '../default/websitedefinition/default-websitedefinition-toolbar-actions';
 
 
 // export const EXTENSIONS_PROVIDERS = [
@@ -43,40 +55,55 @@
 //     const extensions: ExtensionsService = injector.get(ExtensionsService);
 //     const configState = injector.get(ConfigStateService);
 
-//     return getObjectExtensionEntitiesFromStore(configState, 'Cms')
+//     return getObjectExtensionEntitiesFromStore(configState, 'Theme')
 //       .pipe(
 //         map((entities) => ({})),
-//         mapEntitiesToContributors(configState, 'Cms'),
+//         mapEntitiesToContributors(configState, 'Theme'),
 //         tap((objectExtensionContributors) => {
 //           mergeWithDefaultActions(extensions.toolbarActions, {
-//             [eCmsRouteNames.Blog]: DEFAULT_BLOG_TOOLBAR_ACTIONS,
-//             [eCmsRouteNames.Post]: DEFAULT_POST_TOOLBAR_ACTIONS,
-//             [eCmsRouteNames.tag]: DEFAULT_TAG_TOOLBAR_ACTIONS,
+//             [eThemeRouteNames.Banner]: DEFAULT_BANNER_TOOLBAR_ACTIONS,
+//             [eThemeRouteNames.BannerDefinition]: DEFAULT_BANNERDEFINITION_TOOLBAR_ACTIONS,
+//             [eThemeRouteNames.Route]: DEFAULT_ROUTE_TOOLBAR_ACTIONS,
+//             [eThemeRouteNames.RouteDefinition]: DEFAULT_ROUTEDEFINITION_TOOLBAR_ACTIONS,
+//             [eThemeRouteNames.WebSiteDefinition]: DEFAULT_WEBSITEDEFINITION_TOOLBAR_ACTIONS,
+            
 //           });
 
 //           mergeWithDefaultActions(extensions.entityActions, {
-//             [eCmsRouteNames.Blog]: DEFAULT_BLOG_ENTITY_ACTIONS,
-//             [eCmsRouteNames.Post]: DEFAULT_POST_ENTITY_ACTIONS,
-//             [eCmsRouteNames.tag]: DEFAULT_TAG_ENTITY_ACTIONS,
+//             [eThemeRouteNames.Banner]: DEFAULT_BANNER_ENTITY_ACTIONS,
+//             [eThemeRouteNames.BannerDefinition]: DEFAULT_BANNERDEFINITION_ENTITY_ACTIONS,
+//             [eThemeRouteNames.Route]: DEFAULT_ROUTE_ENTITY_ACTIONS,
+//             [eThemeRouteNames.RouteDefinition]: DEFAULT_ROUTEDEFINITION_ENTITY_ACTIONS,
+//             [eThemeRouteNames.WebSiteDefinition]: DEFAULT_WEBSITEDEFINITION_ENTITY_ACTIONS,
+          
            
 //           });
 
 //           mergeWithDefaultProps(extensions.entityProps, {
-//             [eCmsRouteNames.Blog]: DEFAULT_BLOG_ENTITY_PROPS,
-//             [eCmsRouteNames.Post]: DEFAULT_POST_ENTITY_PROPS,
-//             [eCmsRouteNames.tag]: DEFAULT_TAG_ENTITY_PROPS,
+//             [eThemeRouteNames.Banner]: DEFAULT_BANNER_ENTITY_PROPS,
+//             [eThemeRouteNames.BannerDefinition]: DEFAULT_BANNERDEFINITION_ENTITY_PROPS,
+//             [eThemeRouteNames.Route]: DEFAULT_ROUTE_ENTITY_PROPS,
+//             [eThemeRouteNames.RouteDefinition]: DEFAULT_ROUTEDEFINITION_ENTITY_PROPS,
+//             [eThemeRouteNames.WebSiteDefinition]: DEFAULT_WEBSITEDEFINITION_ENTITY_PROPS,
+            
 //           });
 
 //           mergeWithDefaultProps(extensions.createFormProps, {
-//             [eCmsRouteNames.Blog]: DEFAULT_BLOG_CREATE_FORM_PROPS,
-//             [eCmsRouteNames.Post]: DEFAULT_POST_CREATE_FORM_PROPS,
-//             [eCmsRouteNames.tag]: DEFAULT_TAG_CREATE_FORM_PROPS,
+//             [eThemeRouteNames.Banner]: DEFAULT_BANNER_CREATE_FORM_PROPS,
+//             [eThemeRouteNames.BannerDefinition]: DEFAULT_BANNERDEFINITION_CREATE_FORM_PROPS,
+//             [eThemeRouteNames.Route]: DEFAULT_ROUTE_CREATE_FORM_PROPS,
+//             [eThemeRouteNames.RouteDefinition]: DEFAULT_ROUTEDEFINITION_CREATE_FORM_PROPS,
+//             [eThemeRouteNames.WebSiteDefinition]: DEFAULT_WEBSITEDEFINITION_CREATE_FORM_PROPS,
+           
 //           });
 
 //           mergeWithDefaultProps(extensions.editFormProps, {
-//             [eCmsRouteNames.Blog]: DEFAULT_BLOG_EDIT_FORM_PROPS,
-//             [eCmsRouteNames.Post]: DEFAULT_POST_EDIT_FORM_PROPS,
-//             [eCmsRouteNames.tag]: DEFAULT_TAG_EDIT_FORM_PROPS,
+//             [eThemeRouteNames.Banner]: DEFAULT_BANNER_EDIT_FORM_PROPS,
+//             [eThemeRouteNames.BannerDefinition]: DEFAULT_BANNERDEFINITION_EDIT_FORM_PROPS,
+//             [eThemeRouteNames.Route]: DEFAULT_ROUTE_EDIT_FORM_PROPS,
+//             [eThemeRouteNames.RouteDefinition]: DEFAULT_ROUTEDEFINITION_EDIT_FORM_PROPS,
+//             [eThemeRouteNames.WebSiteDefinition]: DEFAULT_WEBSITEDEFINITION_EDIT_FORM_PROPS,
+           
 //           });
 //         }),
 //         mapTo(true)

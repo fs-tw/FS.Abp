@@ -1,15 +1,15 @@
 // import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
-// // import {  } from 'libs/cms/proxy';
-// import { eCrmComponentNames } from '../../enums/components-names';
+// import { Fs } from 'libs/cms/proxy/src';
+// import { eThemeRouteNames } from '../../enums/route-names';
 // import { ExtensionsService } from '../../services/extensions.service';
 
-// export const DEFAULT_BLOG_TOOLBAR_ACTIONS = ToolbarAction.createMany<
-// Fs.Crm.Employees.Dtos.EmployeeDto[]>([
+// export const DEFAULT_BANNER_TOOLBAR_ACTIONS = ToolbarAction.createMany<
+// Fs.Cms.Blogs.Dtos.BlogDto[]>([
 //   {
-//     text: 'Crm::EmployeesCreate',
+//     text: '新增',
 //     action: data => {
 //       const service = data.getInjected(ExtensionsService);
-//       service.action(eCrmComponentNames.Employee, {
+//       service.action(eThemeRouteNames.Banner, {
 //         name: 'Add'
 //       });
 //       //const component = data.getInjected(UsersComponent);
