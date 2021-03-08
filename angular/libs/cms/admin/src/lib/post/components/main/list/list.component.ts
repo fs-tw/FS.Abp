@@ -1,4 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Fs } from '@fs-tw/cms/proxy';
+import { PageService } from '../../../providers/page.service';
+
 // import { Router } from '@angular/router';
 // import { BlogDto } from '@fs-tw/cms/proxy';
 // import { CodesDto, CodingWithSettingTreeModel } from '@fs-tw/theme-core';
@@ -19,34 +23,54 @@ export class ListComponent implements OnInit {
 
   // blogDatas: BlogDto[] = [];
 
-  // selectBlogCodeId = "";
   // news: CodingWithSettingTreeModel;
   // subscription: Subscription;
   // parentCode: CodesDto;
+  
+  blogDatas: Fs.Cms.Blogs.Dtos.BlogWithDetailsDto[] = [];
+  selectBlogCodeId = "";
 
-  // constructor(
-  //   private confirmationService: ConfirmationService,
-  //   private toasterService: ToasterService,
-  //   private postsStateService: PostsStateService,
-  //   private router: Router,
-  //   private pageService: PageService,
-  // ) {
+  loading: boolean = false;
 
-  //   this.reload();
-  //   let query = this.postsStateService.getPostQuery();
-  //   this.selectBlogCodeId = query.param.blogCodeId ? query.param.blogCodeId : "";
-  // }
+  constructor(
+    private pageService: PageService,
+  ) {
+    
+  }
 
-  // reload() {
-  //   this.pageService.blogGetList().subscribe(x => {
-  //     this.blogDatas = x;
-  //   });
-  // }
 
-  // ngOnDestroy(): void {
-  // }
+  ngOnInit() { 
+    this.reload();
+  }
 
-  ngOnInit(): void { }
+  reload() {
+    let input: Fs.Cms.Blogs.Dtos.BlogGetListDto = {
+      skipCount: 0,
+      maxResultCount: 999,
+      sorting: 'code'
+    } as Fs.Cms.Blogs.Dtos.BlogGetListDto;
+
+    this.loading = true;
+    this.pageService.getBlogs(input).subscribe((x) => {
+      this.blogDatas = x.items;
+      this.loading = false;
+    }, (error) => {
+      this.loading = false;
+    })
+  }
+
+  showDetail(blog: Fs.Cms.Blogs.Dtos.BlogWithDetailsDto) {
+    if (blog == null) {
+      this.selectBlogCodeId = null;
+      return;
+    }
+
+    this.selectBlogCodeId = blog.id;
+  }
+
+  deleteBlog(blog: Fs.Cms.Blogs.Dtos.BlogWithDetailsDto) {
+
+  }
 
   // showDetail(blog: BlogDto) {
   //   if (blog == null) {

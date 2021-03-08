@@ -41,6 +41,7 @@
     "@npm/fs-tw": "file:npm/fs-tw",
     "@npm/volo": "file:npm/volo",
     "@nrwl/angular": "11.4.0",
+    "ngx-quill": "^13.2.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"

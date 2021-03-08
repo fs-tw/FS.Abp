@@ -5,10 +5,15 @@ import { Fs } from '@fs-tw/cms/proxy';
 export class PageService {
 
   constructor(
+    private blogService: Fs.Cms.Blogs.BlogsApiService
     // private postService: PostsApiService,
     // private definitionsService: DefinitionsService,
     // private tagsApiService: TagsApiService,
   ) {
+  }
+
+  getBlogs(input: Fs.Cms.Blogs.Dtos.BlogGetListDto) {
+    return this.blogService.getListByBlogGetList(input);
   }
 
 

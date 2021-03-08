@@ -1,0 +1,20 @@
+[
+  {
+    "No": "CmsBlogNotClassified",
+    "DisplayName": "不分類",
+    "Description": "",
+    "Children": []
+  },
+  {
+    "No": "一般消息(example)",
+    "DisplayName": "一般消息(example)",
+    "Description": "",
+    "Children": []
+  },
+  {
+    "No": "企業消息(example)",
+    "DisplayName": "企業消息(example)",
+    "Description": "",
+    "Children": []
+  }
+]

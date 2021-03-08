@@ -1,11 +1,11 @@
-<!-- <div>
+<div>
   <div class="mb-md">
-    <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create>
+    <!-- <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create> -->
     <button nz-button [nzType]="'primary'" (click)="showDetail(null)">
       全部
     </button>
   </div>
-  <nz-table #basicTable [nzData]="blogDatas" nzSize="small" nzBordered>
+  <nz-table #basicTable [nzData]="blogDatas" nzSize="small" nzBordered [nzLoading]="loading">
     <thead>
       <tr>
         <th nzWidth="75px"></th>
@@ -18,7 +18,7 @@
         *ngFor="let data of basicTable.data"
         style="cursor: pointer;"
         class="bg-white listColor"
-        [ngClass]="{ listSelected: data.codesId == selectBlogCodeId }"
+        [ngClass]="{ listSelected: data.id == selectBlogCodeId }"
       >
         <td nzWidth="75px" nzAlign="center">
           <a nz-dropdown [nzDropdownMenu]="menu">
@@ -28,9 +28,9 @@
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
               <li nz-menu-item>
-                <fs-create (onSave)="reload()" [input]="data"></fs-create>
+                <!-- <fs-create (onSave)="reload()" [input]="data"></fs-create> -->
               </li>
-              <li nz-menu-item *ngIf="data.displayName != '不分類'">
+              <li nz-menu-item *ngIf="data.no != 'CmsBlogNotClassified'">
                 <a (click)="deleteBlog(data)" class="text-red">刪除</a>
               </li>
             </ul>
@@ -44,4 +44,4 @@
       </tr>
     </tbody>
   </nz-table>
-</div> -->
+</div>
