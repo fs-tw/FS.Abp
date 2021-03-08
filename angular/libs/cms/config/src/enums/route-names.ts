@@ -1,9 +1,6 @@
 export const enum eCmsRouteNames {
   // Cms = 'Cms::Menu:Cms',
-  // Blog='部落格',
-  // Post='Post',
-  // tag='標籤'
-
+  Blog='Cms::FS.Cms.Blogs',
   Cms = 'Cms::FS.Cms.Core',//前台內容管理
   Basic = 'Cms::FS.Cms.Basic',
   Post = 'Cms::FS.Cms.PostManagement',

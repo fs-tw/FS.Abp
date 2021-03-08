@@ -1,16 +1,16 @@
 // import { EntityAction } from '@abp/ng.theme.shared/extensions';
-// // import {  } from 'libs/cms/proxy';
+// import { Fs } from 'libs/cms/proxy/src';
 // import { ExtensionsService } from '../../services/extensions.service';
-// import { eCrmComponentNames } from '../../enums/components-names';
+// import { eThemeRouteNames } from '../../enums/route-names';
 
-// export const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany<
-//   Fs.Crm.Employees.Dtos.EmployeeDto
+// export const DEFAULT_BANNERDEFINITION_ENTITY_ACTIONS = EntityAction.createMany<
+//   Fs.Cms.Blogs.Dtos.BlogDto
 // >([
 //   {
 //     text: 'AbpIdentity::Edit',
 //     action: (data) => {
 //       const service = data.getInjected(ExtensionsService);
-//       service.action(eCrmComponentNames.Employee, {
+//       service.action(eThemeRouteNames.BannerDefinition, {
 //         name: 'Edit',
 //         record: data.record,
 //       });
@@ -21,7 +21,7 @@
 //     text: 'AbpIdentity::Delete',
 //     action: (data) => {
 //       const service = data.getInjected(ExtensionsService);
-//       service.action(eCrmComponentNames.Employee, {
+//       service.action(eThemeRouteNames.BannerDefinition, {
 //         name: 'Delete',
 //         record: data.record,
 //       });
