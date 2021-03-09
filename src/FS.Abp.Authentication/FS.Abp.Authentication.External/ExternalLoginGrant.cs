@@ -66,8 +66,6 @@ namespace FS.Abp.Authentication.External
 
             var userInfo = await externalAuthProvider.GetUserInfoAsync(context.Request.Raw);
 
-            //var user_name = context.Request.Raw.Get("user_name");
-            //var password = context.Request.Raw.Get("password");
             if (userInfo == null)
             {
                 context.Result = new GrantValidationResult(OidcConstants.TokenErrors.InvalidGrant, null);
