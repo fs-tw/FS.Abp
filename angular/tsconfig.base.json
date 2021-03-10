@@ -42,6 +42,12 @@
       "@fs-tw/theme/*": [
         "libs/theme/*/src/index.ts"
       ],
+      "@fs-tw/theme-unify": [
+        "libs/theme-unify/src/index.ts"
+      ],
+      "@fs-tw/theme-unify/*": [
+        "libs/theme-unify/*/src/index.ts"
+      ],
       "@fs-tw/emailing": [
         "libs/emailing/src/index.ts"
       ],
