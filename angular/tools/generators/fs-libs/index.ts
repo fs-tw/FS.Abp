@@ -126,7 +126,6 @@ export default function (options: ApplicationOptions): Rule {
       clearFiles(options),
       AddFiles(options),
       addDependenciesToPackageJson(options),
-      install(),
       finished()
     ])(host, context);
   };

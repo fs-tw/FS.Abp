@@ -328,6 +328,49 @@
           }
         }
       }
+    },
+    "emailing": {
+      "projectType": "library",
+      "root": "libs/emailing",
+      "sourceRoot": "libs/emailing/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/emailing/tsconfig.lib.json",
+            "project": "libs/emailing/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/emailing/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/emailing/tsconfig.lib.json",
+              "libs/emailing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/emailing/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/emailing"
+          ],
+          "options": {
+            "jestConfig": "libs/emailing/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

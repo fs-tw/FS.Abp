@@ -1,7 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "paths": {}
+    "paths": {
+      "@fs-tw/emailing": [
+        "dist/emailing"
+      ],
+      "@fs-tw/emailing/*": [
+        "dist/emailing/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
