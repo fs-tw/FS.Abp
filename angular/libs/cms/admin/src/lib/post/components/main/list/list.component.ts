@@ -47,7 +47,7 @@ export class ListComponent implements OnInit {
     let input: Fs.Cms.Blogs.Dtos.BlogGetListDto = {
       skipCount: 0,
       maxResultCount: 999,
-      sorting: 'code'
+      sorting: 'sequence'
     } as Fs.Cms.Blogs.Dtos.BlogGetListDto;
 
     this.loading = true;

@@ -13,7 +13,6 @@
         <File Name="TagDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="CmsFileFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="BlogConfigDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
@@ -23,7 +22,6 @@
         <File Name="TagDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="CmsFileFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="BlogConfigDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
@@ -33,11 +31,7 @@
         <File Name="TagDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
         <File Name="CmsFileFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="CmsImageFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="BlogConfigDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="PostImageDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="zh-Hant.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
-        <File Name="en.json" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Localization\Blogs\BlogConfig" />
-        <File Name="LocalizationResourceExtensions.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\Volo.Abp.Localization" />
         <File Name="BlogsPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="PostPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Post" />
         <File Name="TagsPermissionNames.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />
@@ -56,7 +50,6 @@
         <File Name="Tag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="CmsFileField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="CmsImageField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
-        <File Name="BlogConfig.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="PostImage.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="DisplayMode.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="Post.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
@@ -99,13 +92,13 @@
         <File Name="TagCrudAppService.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags" />
         <File Name="ICoreApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="CoreApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Core" />
-        <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
-        <File Name="BlogsApi.BlogCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="IPostsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.PostCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostsApi.PostTagMapCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="IBlogsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="BlogsApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
+        <File Name="BlogsApi.BlogCrudAppService.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="IPostApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Post" />
         <File Name="PostApi.Generated.cs" Project="FS.Cms.HttpApi" ProjectFolder="_Generated\FS.Cms\Post" />
         <File Name="ITagsApi.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags" />

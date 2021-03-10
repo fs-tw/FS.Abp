@@ -9,6 +9,11 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+
+import { SEModule } from '@delon/abc/se';
 
 import { PostRoutingModule } from './post-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -34,7 +39,11 @@ const NzModules = [
   NzTableModule,
   NzDropDownModule,
   NzButtonModule,
-  NzIconModule
+  NzIconModule,
+  NzModalModule,
+  NzRadioModule,
+  NzUploadModule,
+  SEModule
 ]
 
 @NgModule({

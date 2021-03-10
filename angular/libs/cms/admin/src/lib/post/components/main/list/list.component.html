@@ -1,6 +1,6 @@
 <div>
   <div class="mb-md">
-    <!-- <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create> -->
+    <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create>
     <button nz-button [nzType]="'primary'" (click)="showDetail(null)">
       全部
     </button>
@@ -28,7 +28,7 @@
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu>
               <li nz-menu-item>
-                <!-- <fs-create (onSave)="reload()" [input]="data"></fs-create> -->
+                <fs-create (onSave)="reload()" [blogId]="data.id"></fs-create>
               </li>
               <li nz-menu-item *ngIf="data.no != 'CmsBlogNotClassified'">
                 <a (click)="deleteBlog(data)" class="text-red">刪除</a>
@@ -38,8 +38,7 @@
         </td>
         <td (click)="showDetail(data)">{{ data.displayName }}</td>
         <td (click)="showDetail(data)">
-          <span *ngIf="data.enable">啟用</span>
-          <span *ngIf="!data.enable">關閉</span>
+          {{ data.disable ? '關閉' : '啟用' }}
         </td>
       </tr>
     </tbody>

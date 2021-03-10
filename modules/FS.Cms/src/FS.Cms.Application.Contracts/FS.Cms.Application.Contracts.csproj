@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionDefinitionProviders.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs" />
@@ -56,10 +57,6 @@
     <Compile Update="_Generated\FS.Cms\Blogs\BlogsPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogDto.Generated.cs">
       <AutoGen>True</AutoGen>

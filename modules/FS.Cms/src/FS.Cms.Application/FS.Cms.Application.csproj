@@ -24,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDtoAutoMapperProfile.Generated.cs" />
@@ -59,14 +61,6 @@
     <Compile Update="_Generated\FS.Cms\Blogs\BlogCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Blogs\Dtos\BlogDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
