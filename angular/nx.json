@@ -28,16 +28,19 @@
     }
   },
   "projects": {
+    "demo-admin": {
+      "tags": []
+    },
     "cms": {
+      "tags": []
+    },
+    "bcpm": {
       "tags": []
     },
     "theme-alain-ms": {
       "tags": []
     },
     "theme": {
-      "tags": []
-    },
-    "demo-admin": {
       "tags": []
     }
   }

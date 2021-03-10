@@ -1,13 +1,11 @@
 {
-  "name": "@fs-tw/cms",
+  "name": "@fs-tw/bcpm",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^11.2.4",
-    "@angular/core": "^11.2.4",
-    "ngx-quill": "^13.2.0"
+    "@angular/core": "^11.2.4"
   },
   "dependencies": {
     "tslib": "^2.0.0"
-    
   }
 }
