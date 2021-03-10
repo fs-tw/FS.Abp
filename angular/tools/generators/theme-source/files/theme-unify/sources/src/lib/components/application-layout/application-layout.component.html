@@ -1,0 +1,25 @@
+<main>
+  <fs-header *abpReplaceableTemplate="{ 
+    componentKey: 'Theme.ApplicationLayoutHeaderComponent'
+  }">
+  </fs-header>
+
+  <!-- <fs-banner *abpReplaceableTemplate="{ 
+    componentKey: 'Theme.ApplicationLayoutBannerComponent'
+  }">
+  </fs-banner> -->
+
+  <router-outlet></router-outlet>
+
+  <fs-footer *abpReplaceableTemplate="{ 
+    componentKey: 'Theme.ApplicationLayoutFooterComponent'
+  }">
+  </fs-footer>
+  <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
+     "bottom": 15,
+     "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+    <i class="hs-icon hs-icon-arrow-top"></i>
+  </a>
+</main>
+
