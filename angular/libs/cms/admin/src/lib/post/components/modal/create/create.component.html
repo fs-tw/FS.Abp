@@ -1,50 +1,48 @@
-<!-- <button nz-button [nzType]="'primary'" *ngIf="!input" (click)="showModal()"><span>+建立</span></button>
-<a (click)="showModal()" *ngIf="input">編輯</a>
+<button nz-button [nzType]="'primary'" *ngIf="!blogId" (click)="showModal()"><span>+建立</span></button>
+<a (click)="showModal()" *ngIf="blogId">編輯</a>
 
 <nz-modal [(nzVisible)]="isVisible" nzTitle="建立消息種類" (nzOnCancel)="handleCancel()" [nzFooter]="footer">
-  <form nz-form #f="ngForm" se-container="1" labelWidth="100">
+  <form nz-form #f="ngForm" se-container="1" labelWidth="100" *ngIf="data">
     <se label="是否啟用" required>
-      <nz-radio-group [(ngModel)]="i.enable" name="enable">
-        <label nz-radio [nzValue]="true">是</label>
-        <label nz-radio [nzValue]="false">否</label>
+      <nz-radio-group [(ngModel)]="data.disable" name="disable">
+        <label nz-radio [nzValue]="false">是</label>
+        <label nz-radio [nzValue]="true">否</label>
       </nz-radio-group>
     </se>
 
+    <!-- *ngIf="!isParent" -->
+    <ng-container>
+      <se label="順序" required> 
+        <input type="number" nz-input [(ngModel)]="data.sequence" name="no" required>
+      </se>
+      <se label="名稱" required>
+        <input type="text" nz-input [(ngModel)]="data.displayName" name="displayName" required>
+      </se>
+      <se label="說明">
+        <textarea nz-input type="text" nz-input [(ngModel)]="data.description" name="description"></textarea>
+      </se>
   
-      <se label="順序" required *ngIf="!isParent">
-        <input type="number" nz-input [(ngModel)]="i.sequence" name="no" required>
+      <se label="網址">
+        <input type="text" nz-input [(ngModel)]="data.url" name="url">
       </se>
-      <se label="名稱" required *ngIf="!isParent">
-        <input type="text" nz-input [(ngModel)]="i.displayName" name="displayName" required>
+  
+      <se label="列表樣式" optionalHelp="目前可設定有效設定值為 2、3、4 預設為 3">
+        <input type="text" nz-input [(ngModel)]="data.listStyle" name="listStyle">
       </se>
-      <se label="說明" *ngIf="!isParent">
-        <textarea nz-input type="text" nz-input [(ngModel)]="i.description" name="description"></textarea>
-      </se>
-
-      <se label="網址" *ngIf="!isParent">
-        <input type="text" nz-input [(ngModel)]="i.url" name="url" >
-      </se>
-
-      <se label="列表樣式" *ngIf="!isParent" optionalHelp="目前可設定有效設定值為 2、3、4 預設為 3">
-        <input type="text" nz-input [(ngModel)]="i.listStyle" name="listStyle" >
-      </se>
-
-      <se label="圖示" *ngIf="!isParent" optionalHelp="建議圖片大小為 40*30，僅能上傳 jpg, png">
-        <nz-upload
-          class="avatar-uploader"
-          nzListType="text"
-          [nzBeforeUpload]="beforeUpload" 
-          [nzMultiple]="false"
-        >
+  
+      <se label="圖示" optionalHelp="建議圖片大小為 40*30，僅能上傳 jpg, png">
+        <!-- <nz-upload class="avatar-uploader" nzListType="text" [nzBeforeUpload]="beforeUpload" [nzMultiple]="false">
           <div class="uploadImgGrid">
             <img class="point" [src]="iconUrl" style="width: 40px; height: 30px;" />
           </div>
         </nz-upload>
-        
+  
         <div *ngIf="hasImg">
           <a (click)="resetIcon()">回復預設值</a>
-        </div>
+        </div> -->
       </se>
+    </ng-container>
+    
 
   </form>
 </nz-modal>
@@ -52,5 +50,5 @@
 
 <ng-template #footer>
   <button nz-button nzType="default" (click)="handleCancel()">取消</button>
-  <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">儲存</button>
-</ng-template> -->
+  <button nz-button nzType="primary" (click)="save()" [disabled]="data.sequence == null || !data.displayName">儲存</button>
+</ng-template>

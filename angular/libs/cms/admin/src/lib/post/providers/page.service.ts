@@ -16,6 +16,17 @@ export class PageService {
     return this.blogService.getListByBlogGetList(input);
   }
 
+  getBlogById(id: string) {
+    return this.blogService.getByBlogPrimaryKey({id: id});
+  }
+
+  createBlog(input: Fs.Cms.Blogs.Dtos.BlogCreateDto) {
+    return this.blogService.createByBlogCreate(input);
+  }
+
+  updateBlog(id: string, input: Fs.Cms.Blogs.Dtos.BlogUpdateDto) {
+    return this.blogService.updateByBlogPrimaryKeyAndBlogUpdate({id: id}, input)
+  }
 
   // getAllTags() {
   //   return this.tagsApiService.tagGroupGetList();

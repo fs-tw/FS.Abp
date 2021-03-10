@@ -33,7 +33,14 @@ namespace FS.Cms.Blogs.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
-            RuleFor(p => p.BlogConfig)
+            RuleFor(p => p.ListStyle)
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.Url)
+                ;
+            RuleFor(p => p.IconUrl)
                 ;
             CustomizeConfiguration();
         }
@@ -60,7 +67,14 @@ namespace FS.Cms.Blogs.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
-            RuleFor(p => p.BlogConfig)
+            RuleFor(p => p.ListStyle)
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.Url)
+                ;
+            RuleFor(p => p.IconUrl)
                 ;
             CustomizeConfiguration();
         }

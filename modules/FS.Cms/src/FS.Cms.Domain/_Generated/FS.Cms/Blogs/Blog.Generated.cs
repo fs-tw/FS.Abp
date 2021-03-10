@@ -78,18 +78,30 @@ namespace FS.Cms.Blogs
             get;
             set;
         }
-        public virtual FS.Cms.Blogs.BlogConfig BlogConfig 
-        {
 
-            get
-            {
-                return this.GetExtraProperty<FS.Cms.Blogs.BlogConfig>(nameof(BlogConfig));
-            }
-            set
-            {
-                this.SetExtraProperty(nameof(BlogConfig), value);
-            }
-        } 
+        public virtual string ListStyle
+        {
+            get;
+            set;
+        }
+
+        public virtual int Sequence
+        {
+            get;
+            set;
+        }
+
+        public virtual string Url
+        {
+            get;
+            set;
+        }
+
+        public virtual string IconUrl
+        {
+            get;
+            set;
+        }
 
         public virtual System.Guid? TenantId
         {

@@ -45,7 +45,13 @@ namespace FS.Cms.Blogs.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
+        public virtual string ListStyle { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual string Url { get; set; }
+
+        public virtual string IconUrl { get; set; }
 
     }
 
@@ -65,7 +71,13 @@ namespace FS.Cms.Blogs.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
+        public virtual string ListStyle { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual string Url { get; set; }
+
+        public virtual string IconUrl { get; set; }
 
     }
 
@@ -85,7 +97,13 @@ namespace FS.Cms.Blogs.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Cms.Blogs.Dtos.BlogConfigDto BlogConfig { get; set; }
+        public virtual string ListStyle { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual string Url { get; set; }
+
+        public virtual string IconUrl { get; set; }
 
     }
 

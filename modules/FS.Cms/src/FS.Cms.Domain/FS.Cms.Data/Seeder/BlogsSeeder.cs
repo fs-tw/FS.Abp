@@ -27,6 +27,7 @@ namespace FS.Cms.Data.Seeder
 
             List<Blog> sourceData = this._virtualFileJsonReader.ReadJson<List<Blog>>(fileRoute);
 
+            var i = 0;
             foreach (var item in sourceData)
             {
                 var definition = this._blogsStore.Blog.Where(x => x.No == item.No).FirstOrDefault();
@@ -37,19 +38,21 @@ namespace FS.Cms.Data.Seeder
                 blog.DisplayName = item.DisplayName;
                 blog.Description = item.Description;
                 blog.Disable = false;
-                blog.BlogConfig = new BlogConfig();
+                blog.Sequence = i;
                 blog.TenantId = context.TenantId;
                 EntityHelper.TrySetId(blog, () => this._guidGenerator.Create(), true);
 
                 blog.Children = createChildren(context, blog.Id, blog.Children.ToList());
 
                 await this._blogsStore.Blog.InsertAsync(blog, true).ConfigureAwait(false);
+                i++;
             }
         }
 
         private List<Blog> createChildren(DataSeedContext context, Guid parentId, List<Blog> children)
         {
             var result = new List<Blog>();
+            var i = 0;
             foreach (var item in children)
             {
 
@@ -59,13 +62,14 @@ namespace FS.Cms.Data.Seeder
                 blog.DisplayName = item.DisplayName;
                 blog.Description = item.Description;
                 blog.Disable = false;
-                blog.BlogConfig = new BlogConfig();
+                blog.Sequence = i;
                 blog.TenantId = context.TenantId;
                 EntityHelper.TrySetId(blog, () => this._guidGenerator.Create(), true);
 
                 blog.Children = createChildren(context, blog.Id, item.Children.ToList());
 
                 result.Add(blog);
+                i++;
             }
 
             return result;

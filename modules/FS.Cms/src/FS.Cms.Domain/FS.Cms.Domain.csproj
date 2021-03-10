@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.Cms\BlogsPermissions.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Blogs\BlogConfig.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\StorageDefinitionSetting.AbpSetting.Generated.cs" />
@@ -27,10 +28,6 @@
 
   <ItemGroup>
     <Compile Update="_Generated\FS.Cms\Blogs\Blog.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Blogs\BlogConfig.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
