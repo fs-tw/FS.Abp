@@ -33,7 +33,7 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "nxbuild":"npx nx run-many --target=build --prod --projects account,cms,emailing,theme,theme-alain-ms,theme-unify"
+    "nxbuild": "npx nx run-many --target=build --prod --projects account,cms,emailing,theme,theme-alain-ms,theme-unify"
   },
   "private": true,
   "dependencies": {
@@ -45,9 +45,9 @@
     "@angular/platform-browser": "^11.2.0",
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
+    "@npm/cms": "file:npm/cms",
     "@npm/fs-tw": "file:npm/fs-tw",
     "@npm/volo": "file:npm/volo",
-    "@npm/cms": "file:npm/cms",
     "@nrwl/angular": "11.4.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
