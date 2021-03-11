@@ -30,12 +30,6 @@
       "@fs-tw/cms/*": [
         "libs/cms/*/src/index.ts"
       ],
-      "@fs-tw/bcpm": [
-        "libs/bcpm/src/index.ts"
-      ],
-      "@fs-tw/bcpm/*": [
-        "libs/bcpm/*/src/index.ts"
-      ],
       "@fs-tw/theme-alain-ms": [
         "libs/theme-alain-ms/src/index.ts"
       ],

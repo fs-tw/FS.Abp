@@ -1,0 +1,15 @@
+{
+  "packages": [
+    "dist/libs/account",
+    "dist/libs/cms",
+    "dist/libs/emailing",
+    "dist/libs/theme",
+    "dist/libs/theme-alain-ms"
+  ],
+  "version": "422.0.0",
+  "command": {
+    "publish": {
+      "access": "public"
+    }
+  }
+}

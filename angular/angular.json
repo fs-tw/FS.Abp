@@ -243,49 +243,6 @@
         }
       }
     },
-    "bcpm": {
-      "projectType": "library",
-      "root": "libs/bcpm",
-      "sourceRoot": "libs/bcpm/src",
-      "prefix": "fs",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/bcpm/tsconfig.lib.json",
-            "project": "libs/bcpm/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/bcpm/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/bcpm/tsconfig.lib.json",
-              "libs/bcpm/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/bcpm/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/bcpm"
-          ],
-          "options": {
-            "jestConfig": "libs/bcpm/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "theme-alain-ms": {
       "projectType": "library",
       "root": "libs/theme-alain-ms",
