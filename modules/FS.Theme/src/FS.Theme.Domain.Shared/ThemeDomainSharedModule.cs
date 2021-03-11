@@ -25,7 +25,7 @@ namespace FS.Theme
                     "FS.Theme.Banners", "Files/Banners"
                     ));
                 options.DirectoryProviders.AddOrReplace(new Abp.File.Directories.DirectoryProviderDefinition(
-                   "FS.Theme.WebSiteDefinition", "Files/WebSiteDefinition"
+                   "FS.Theme.WebSiteInfos", "Files/WebSiteInfos"
                    ));
                 options.DirectoryProviders.AddOrReplace(new Abp.File.Directories.DirectoryProviderDefinition(
                    "FS.Theme.Routers", "Files/Routers"

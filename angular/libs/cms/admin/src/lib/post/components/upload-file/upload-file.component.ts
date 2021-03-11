@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { ConfirmationService,ToasterService } from '@abp/ng.theme.shared';
+import { NzUploadFile } from 'ng-zorro-antd/upload';
+import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
+
 // import { Confirmation, ConfirmationService,ToasterService } from '@abp/ng.theme.shared';
 // import { Store } from '@ngxs/store';
 // import { NzModalRef } from 'ng-zorro-antd/modal';
-// import { NzUploadFile } from 'ng-zorro-antd/upload';
 // import { FileService } from '@fs-tw/theme-core';
 
 @Component({
@@ -13,12 +14,38 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UploadFileComponent implements OnInit {
 
+  @Input()
+  existFileUrls: string[] = [];
+
+  fileList: NzUploadFile[] = [];
+
+  constructor(
+    private confirmationService: ConfirmationService
+  ) {
+
+  }
+
   ngOnInit() {
 
   }
 
-  // @Input()
-  // existFileUrls: string[] = [];
+  beforeUpload = (file: NzUploadFile): boolean => {
+    let exist = this.existFileUrls.findIndex(x => x == file.name) > -1 ||
+      this.fileList.findIndex(x => x.name == file.name) > -1;
+    if (exist) return false;
+    this.fileList = this.fileList.concat(file);
+    return false;
+  };
+
+  delete(url) {
+    this.confirmationService
+    .warn('確認刪除嗎？', '系統訊息')
+    .subscribe((status: Confirmation.Status) => {
+      if (status === Confirmation.Status.confirm) {
+        this.existFileUrls = this.existFileUrls.filter(x => x != url);
+      }
+    });
+  }
 
   // fileUrl: string[] = [];
   // tplModal: NzModalRef;
@@ -46,28 +73,7 @@ export class UploadFileComponent implements OnInit {
   //   let splitStr = x.split("\\");
   //   return splitStr[splitStr.length - 1];
   // }
-
-  // delete(url) {
-  //   this.confirmationService
-  //   .warn('確認刪除嗎？', '系統訊息', {
-  //     messageLocalizationParams: [name],
-  //   })
-  //   .subscribe((status: Confirmation.Status) => {
-  //     if (status === Confirmation.Status.confirm) {
-  //       this.existFileUrls = this.existFileUrls.filter(x => x != url);
-  //     }
-  //   });
-
-  // }
-
-
-  // beforeUpload = (file: NzUploadFile): boolean => {
-  //   let exist = this.existFileUrls.findIndex(x => x == file.name) > -1 ||
-  //     this.fileList.findIndex(x => x.name == file.name) > -1;
-  //   if (exist) return false;
-  //   this.fileList = this.fileList.concat(file);
-  //   return false;
-  // };
+  
 
   // save(): string[] {
   //   this.loading = true;

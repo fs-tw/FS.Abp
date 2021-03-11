@@ -11,12 +11,16 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { UiExtensionsModule as AbpUiExtensionsModule } from '@abp/ng.theme.shared/extensions'
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
+import { NzTableRowDetailDirective } from './directives/nz-table-row-detail.directive';
+import { SVModule } from '@delon/abc/sv';
 
 const declarationsWithExports = [
   ExtensibleTableComponent,
+  NzTableRowDetailDirective,
   GridActionsComponent,
   PageToolbarComponent,
-  NzTableListDirective
+  NzTableListDirective,
+  
 ];
 
 const ZORRO_MODULES = [
@@ -29,7 +33,8 @@ const ZORRO_MODULES = [
 @NgModule({
   exports: [
     ...declarationsWithExports,
-    AbpUiExtensionsModule
+    AbpUiExtensionsModule,
+    SVModule
   ],
   declarations: [
     ...declarationsWithExports
@@ -39,6 +44,7 @@ const ZORRO_MODULES = [
     ThemeSharedModule,
     NgxValidateCoreModule,
     AbpUiExtensionsModule,
+    SVModule,
     ...ZORRO_MODULES,
   ],
 })

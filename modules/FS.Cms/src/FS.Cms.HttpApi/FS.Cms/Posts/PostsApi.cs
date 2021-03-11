@@ -7,7 +7,7 @@ using FS.Cms.Posts.Dtos;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostsApi : IPostAppService
+    public partial class PostsApi : IPostsApi
     {
         protected IPostAppService PostAppService => this.LazyServiceProvider.LazyGetRequiredService<IPostAppService>();
 

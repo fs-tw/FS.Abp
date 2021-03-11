@@ -59,9 +59,6 @@ export class ImagePickerComponent implements OnInit {
   /** 外框高度，單位 px ，預設 104px */
   @Input() borderHeight: string = '104px';
 
-  /** 上傳按鈕文字 */
-  @Input() uploadText: string = 'Upload';
-
   /** 上傳最大數量 */
   @Input() maxImageCount: number = null;
 
@@ -71,8 +68,11 @@ export class ImagePickerComponent implements OnInit {
   /** 顯示圖片 Template ，縮圖比例功能會失效 */
   @Input() imageTemplate: TemplateRef<any>;
 
-  /** 上傳圖片 Template */
+  /** 上傳圖片 Template，可完整替換成其他形式，如︰按鈕上傳 */
   @Input() uploadTemplate: TemplateRef<any>;
+  
+  /** 上傳按鈕文字 Template，若 uploadTemplate 有值則無效 */
+  @Input() uploadTextTemplate: TemplateRef<any>;
 
   /** 是否排列在同一行，同一行時行寬同 imageWidth */
   @Input() inLine: boolean = true;

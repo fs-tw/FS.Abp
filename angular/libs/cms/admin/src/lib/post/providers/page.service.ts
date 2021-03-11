@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Fs } from '@fs-tw/cms/proxy';
+import { Fs,Volo } from '@fs-tw/cms/proxy';
 
 @Injectable()
 export class PageService {
 
   constructor(
     private blogService: Fs.Cms.Blogs.BlogsApiService,
-    private postService: Fs.Cms.Posts.PostsApiService
+    private postService: Fs.Cms.Posts.PostsApiService,
+    private directoriesApiService: Fs.Abp.File.Directories.DirectoriesApiService,
+    private fileDescriptorService: Volo.FileManagement.Files.FileDescriptorService,
     // private postService: PostsApiService,
     // private definitionsService: DefinitionsService,
     // private tagsApiService: TagsApiService,
@@ -31,10 +33,33 @@ export class PageService {
   }
   //#endregion
 
+   //#region File
+   findByProviderByKeyAndGroup(key: string, group?: string) {
+    return this.directoriesApiService.findByProviderByKeyAndGroup(key, group);
+  }
+
+  deleteFile(id:string){
+    return this.fileDescriptorService.deleteById(id);
+  }
+
+  //#endregion
+
 
   //#region Post
   getPostsByBlogId(input: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput) {
     return this.postService.getPostsByBlogIdByInput(input);
+  }
+
+  getPostById(id: string) {
+    return this.postService.getByPostPrimaryKey({id: id});
+  }
+
+  createPost(input: Fs.Cms.Posts.Dtos.PostCreateDto) {
+    return this.postService.createByPostCreate(input);
+  }
+
+  updatePost(id: string, input: Fs.Cms.Posts.Dtos.PostUpdateDto) {
+    return this.postService.updateByPostPrimaryKeyAndPostUpdate({id: id}, input)
   }
   //#endregion
 
