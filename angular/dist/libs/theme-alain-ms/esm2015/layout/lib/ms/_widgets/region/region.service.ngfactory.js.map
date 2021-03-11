@@ -1,0 +1,1 @@
+{"version":3,"file":"region.service.ngfactory.js","sourceRoot":"","sources":["../../../../../../../../../libs/theme-alain-ms/layout/src/lib/ms/_widgets/region/region.service.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

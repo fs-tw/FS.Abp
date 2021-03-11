@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
+import * as _ from 'lodash';
+import { Fs } from '@fs-tw/cms/proxy';
+
+import { PageService } from '../../../providers/page.service';
+import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
+
 // import { ConfigStateService } from '@abp/ng.core';
 // import { NzUploadFile } from 'ng-zorro-antd/upload';
 // import { Observable } from 'rxjs';
@@ -10,6 +17,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 // import { PageService } from '../../../providers/page.service';
 // import { Store } from '@ngxs/store';
+
 @Component({
   selector: 'fs-create',
   templateUrl: './create.component.html',
@@ -17,11 +25,93 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
+  @ViewChild("DefaultImagePicker") defaultImagePicker : ImagePickerComponent;
+
+  @Input()
+  blogId: string;
+
+  @Output()
+  onSave = new EventEmitter();
+
+  isVisible = false;
+
+  data: Fs.Cms.Blogs.Dtos.BlogDto;
+  defaultImages: ImageFile[] = [];
+
+  constructor(
+    private pageService: PageService
+  ) {
+
+  }
+
+
   ngOnInit() {
 
   }
 
-  // isVisible = false;
+  showModal() {
+    this.data = {
+      no: "",
+      displayName: "",
+      description: "",
+      parentId: null,
+      disable: false,
+      listStyle: "",
+      sequence: 0,
+      url: "",
+      iconUrl: ""
+    } as Fs.Cms.Blogs.Dtos.BlogDto;
+
+    this.defaultImages = [];
+
+    if (this.blogId) {
+      this.pageService.getBlogById(this.blogId).subscribe((x) => {
+        this.data = x;
+
+        // 已上傳圖片
+        this.defaultImages = [new ImageFile('test', 'https://dummyimage.com/140x98/000/fff')];
+        // if (x.iconUrl) this.defaultImages.push(new ImageFile(x.iconUrl, 'http://' + x.iconUrl));
+      });
+    }
+
+    this.isVisible = true;
+  }
+
+  handleCancel() {
+    this.isVisible = false;
+  }
+
+  save() {
+    // 補上傳、刪除檔案 api
+    let uploadImageInfos = this.defaultImagePicker.getUploadFiles();
+    let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
+
+    const formData = new FormData();
+    for(let item of uploadImageInfos) {
+      if (item.isUpload) formData.append('files[]', item.file, '');
+    }
+    console.log(uploadImageInfos, deleteImageNames);
+
+
+    let input: Fs.Cms.Blogs.Dtos.BlogDto = _.cloneDeep(this.data);
+    
+    let action: Observable<any>;
+    if (!this.blogId) {
+      input.no = input.displayName;
+      action = this.pageService.createBlog(input);
+    } else {
+      action = this.pageService.updateBlog(this.blogId, input);
+    }
+
+    action.subscribe(() => {
+      this.onSave.emit();
+      this.handleCancel();
+    }, (error) => {
+      console.error(error);
+    });
+  }
+
+
   // @Input() input: BlogDto;
   // @Output() onSave = new EventEmitter();
   // @Input() isParent = false;
@@ -47,15 +137,7 @@ export class CreateComponent implements OnInit {
 
   // }
 
-  // showModal() {
-  //   if (this.input) {
-  //     this.i = _.cloneDeep(this.input);
-  //     this.hasImg = !!this.input.iconUrl;
-  //     this.iconUrl = !this.hasImg ? 'assets/img/info.png' : this.getImageUrl(this.input.iconUrl);
-  //     if (this.input.displayName == '不分類') this.isParent = true;
-  //   }
-  //   this.isVisible = true;
-  // }
+  
 
   // getImageUrl(img: string) {
   //   return this.cmsFileService.getFileByName(img);

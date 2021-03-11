@@ -22,8 +22,14 @@ namespace FS.Theme
             Configure<FS.Abp.File.Directories.DirectoryProviderOptions>(options =>
             {
                 options.DirectoryProviders.AddOrReplace(new Abp.File.Directories.DirectoryProviderDefinition(
-                    "FS.Theme", "Files/Banner"
+                    "FS.Theme.Banners", "Files/Banners"
                     ));
+                options.DirectoryProviders.AddOrReplace(new Abp.File.Directories.DirectoryProviderDefinition(
+                   "FS.Theme.WebSiteInfos", "Files/WebSiteInfos"
+                   ));
+                options.DirectoryProviders.AddOrReplace(new Abp.File.Directories.DirectoryProviderDefinition(
+                   "FS.Theme.Routers", "Files/Routers"
+                   ));
             });
 
             Configure<AbpVirtualFileSystemOptions>(options =>

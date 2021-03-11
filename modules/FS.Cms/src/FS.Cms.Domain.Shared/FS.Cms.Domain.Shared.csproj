@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.Cms\DisplayMode.Generated.cs" />
+    <Compile Remove="_Generated\Volo.Abp.Localization\LocalizationResourceExtensions.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,15 +37,6 @@
   <ItemGroup>
     <None Remove="Files\**" />
     <EmbeddedResource Include="Files\**" />
-    
-    <EmbeddedResource Include="_Generated\Localization\Blogs\BlogConfig\en.json">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BlogConfig</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_Generated\Localization\Blogs\BlogConfig\zh-Hant.json">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BlogConfig</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -55,10 +47,6 @@
     <Compile Update="_Generated\FS.Cms\Posts\DisplayMode.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\Volo.Abp.Localization\LocalizationResourceExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Volo.Abp.Localization</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -93,9 +81,11 @@
 
 
   <ItemGroup>
+    <Folder Include="_Generated\Localization\Blogs\BlogConfig\" />
     <Folder Include="_Generated\Localization\Blogs\PostsPermissions\" />
     <Folder Include="_Generated\Localization\Core\BlogDefinitionSetting\" />
     <Folder Include="_Generated\Localization\Core\StorageDefinitionSetting\" />
+    <Folder Include="_Generated\Volo.Abp.Localization\" />
   </ItemGroup>
 
 

@@ -1,0 +1,11 @@
+.pri-btn {
+    border: 1px solid #ddd;
+    color: #000;
+    background: white;
+    font-size: 8px;
+}
+
+.pri-btn:hover {
+    border: 1px solid #26D7EB;
+    color: #26D7EB;
+}

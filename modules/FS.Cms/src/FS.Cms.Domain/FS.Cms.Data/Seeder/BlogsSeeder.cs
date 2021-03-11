@@ -1,4 +1,5 @@
 ﻿using FS.Abp.VirtualFileSystem;
+using FS.Cms.Blogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,56 +15,65 @@ namespace FS.Cms.Data.Seeder
 {
     public class BlogsSeeder : ITransientDependency
     {
-        //private readonly string fileRoute = "/Files/Data/Codes/Definition.json";
-        public IGuidGenerator guidGenerator { get; set; }
-        public IVirtualFileJsonReader virtualFileJsonReader { get; set; }
+        private readonly string fileRoute = "/Files/Data/Blogs/Blogs.json";
+        public IGuidGenerator _guidGenerator { get; set; }
+        public IVirtualFileJsonReader _virtualFileJsonReader { get; set; }
+        public Blogs.IBlogsStore _blogsStore { get; set; }
 
-       
         public async Task SeedAsync(DataSeedContext context)
         {
-            //List<BaseCodesJson> sourceData = this.virtualFileJsonReader.ReadJson<List<BaseCodesJson>>(fileRoute);
+            var hasDatas = (await this._blogsStore.Blog.GetCountAsync()) > 0;
+            if (hasDatas) return;
 
-            //foreach (var item in sourceData)
-            //{
-            //    var definition = this.codesTreeRepository.Where(x => x.No == item.No).FirstOrDefault();
-            //    if (definition != null) continue;
+            List<Blog> sourceData = this._virtualFileJsonReader.ReadJson<List<Blog>>(fileRoute);
 
-            //    Codes codes = new Codes();
-            //    codes.No = item.No;
-            //    codes.DisplayName = item.DisplayName;
-            //    codes.Enable = true;
-            //    codes.Description = item.Description;
-            //    codes.TenantId = context.TenantId;
-            //    EntityHelper.TrySetId(codes, () => this.guidGenerator.Create(), true);
-            //    await this.codesTreeRepository.InsertAsync(codes, true).ConfigureAwait(false);
-            //    await createChildren(context, item.Children, codes);
-            //}
+            var i = 0;
+            foreach (var item in sourceData)
+            {
+                var definition = this._blogsStore.Blog.Where(x => x.No == item.No).FirstOrDefault();
+                if (definition != null) continue;
+
+                Blog blog = new Blog();
+                blog.No = item.No;
+                blog.DisplayName = item.DisplayName;
+                blog.Description = item.Description;
+                blog.Disable = false;
+                blog.Sequence = i;
+                blog.TenantId = context.TenantId;
+                EntityHelper.TrySetId(blog, () => this._guidGenerator.Create(), true);
+
+                blog.Children = createChildren(context, blog.Id, blog.Children.ToList());
+
+                await this._blogsStore.Blog.InsertAsync(blog, true).ConfigureAwait(false);
+                i++;
+            }
         }
 
+        private List<Blog> createChildren(DataSeedContext context, Guid parentId, List<Blog> children)
+        {
+            var result = new List<Blog>();
+            var i = 0;
+            foreach (var item in children)
+            {
 
-        //private async Task createChildren(DataSeedContext context, List<BaseCodesJson> children, Codes parent)
-        //{
-        //    foreach (var item in children)
-        //    {
+                Blog blog = new Blog();
+                blog.ParentId = parentId;
+                blog.No = item.No;
+                blog.DisplayName = item.DisplayName;
+                blog.Description = item.Description;
+                blog.Disable = false;
+                blog.Sequence = i;
+                blog.TenantId = context.TenantId;
+                EntityHelper.TrySetId(blog, () => this._guidGenerator.Create(), true);
 
-        //        Codes codes = new Codes();
-        //        codes.No = item.No;
-        //        codes.DisplayName = item.DisplayName;
-        //        codes.Enable = true;
-        //        codes.Description = item.Description;
-        //        codes.ParentId = parent.Id;
-        //        codes.DefinitionId = parent.DefinitionId == null ? parent.Id : parent.DefinitionId;
-        //        codes.TenantId = context.TenantId;
-        //        EntityHelper.TrySetId(codes, () => this.guidGenerator.Create(), true);
-        //        await this.codesTreeRepository.InsertAsync(codes, true).ConfigureAwait(false);
+                blog.Children = createChildren(context, blog.Id, item.Children.ToList());
 
-        //        if (item.Children.Count > 0)
-        //        {
-        //            await createChildren(context, item.Children, codes);
-        //        }
+                result.Add(blog);
+                i++;
+            }
 
-        //    }
-        //}
+            return result;
+        }
 
     }
 }

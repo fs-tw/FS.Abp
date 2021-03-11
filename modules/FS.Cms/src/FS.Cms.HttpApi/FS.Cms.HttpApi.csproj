@@ -7,8 +7,11 @@
 
   <ItemGroup>
     <Compile Remove="FS.Cms.Definitions\**" />
+    <Compile Remove="_Generated\FS.Cms\Routes\**" />
     <EmbeddedResource Remove="FS.Cms.Definitions\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Routes\**" />
     <None Remove="FS.Cms.Definitions\**" />
+    <None Remove="_Generated\FS.Cms\Routes\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +20,6 @@
     <Compile Remove="_Generated\FS.Cms\Documents\DocumentsApi.DocumentDefinition.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.Post.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostsApi.PostTagMap.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Routes\RoutesApi.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Tags\TagsApi.Tag.Generated.cs" />
   </ItemGroup>
 
@@ -95,10 +97,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>TagsApi.Generated.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Routes\" />
   </ItemGroup>
 
 </Project>

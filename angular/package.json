@@ -1,6 +1,13 @@
 {
-  "name": "fs",
+  "name": "fs-tw",
   "version": "0.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fs-tw/FS.Works.git"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "nx",
@@ -25,7 +32,8 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "nxbuild":"npx nx run-many --target=build --prod --projects account,cms,emailing,theme,theme-alain-ms,theme-unify"
   },
   "private": true,
   "dependencies": {
@@ -37,16 +45,15 @@
     "@angular/platform-browser": "^11.2.0",
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
-    "@fs-tw/theme-alain-ms": "410.0.1",
     "@npm/fs-tw": "file:npm/fs-tw",
     "@npm/volo": "file:npm/volo",
+    "@npm/cms": "file:npm/cms",
     "@nrwl/angular": "11.4.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
-    "@abp/ng.schematics": "^4.2.2",
     "@angular-devkit/build-angular": "~0.1102.0",
     "@angular-eslint/eslint-plugin": "~1.0.0",
     "@angular-eslint/eslint-plugin-template": "~1.0.0",
@@ -74,7 +81,7 @@
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
-    "ng-packagr": "^11.0.0",
+    "ng-packagr": "^11.0.1",
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",

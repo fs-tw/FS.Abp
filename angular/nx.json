@@ -28,6 +28,9 @@
     }
   },
   "projects": {
+    "account": {
+      "tags": []
+    },
     "demo-admin": {
       "tags": []
     },
@@ -38,6 +41,12 @@
       "tags": []
     },
     "theme": {
+      "tags": []
+    },
+    "theme-unify": {
+      "tags": []
+    },
+    "emailing": {
       "tags": []
     }
   }

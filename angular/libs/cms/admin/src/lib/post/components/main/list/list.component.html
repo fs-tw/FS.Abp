@@ -1,47 +1,37 @@
-<!-- <div>
+<div>
   <div class="mb-md">
-    <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create>
+    <!-- <fs-create (onSave)="reload()" style="margin-right: 10px;"></fs-create> -->
+    <button nz-button [nzType]="'primary'"  style="margin-right: 10px;" (click)="add()"><span>+建立</span></button>
+
     <button nz-button [nzType]="'primary'" (click)="showDetail(null)">
       全部
     </button>
   </div>
-  <nz-table #basicTable [nzData]="blogDatas" nzSize="small" nzBordered>
-    <thead>
-      <tr>
-        <th nzWidth="75px"></th>
-        <th>名稱</th>
-        <th>狀態</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        *ngFor="let data of basicTable.data"
-        style="cursor: pointer;"
-        class="bg-white listColor"
-        [ngClass]="{ listSelected: data.codesId == selectBlogCodeId }"
-      >
-        <td nzWidth="75px" nzAlign="center">
-          <a nz-dropdown [nzDropdownMenu]="menu">
-            {{ 'AbpIdentity::Actions' | abpLocalization }}
-            <i nz-icon nzType="down"></i>
-          </a>
-          <nz-dropdown-menu #menu="nzDropdownMenu">
-            <ul nz-menu>
-              <li nz-menu-item>
-                <fs-create (onSave)="reload()" [input]="data"></fs-create>
-              </li>
-              <li nz-menu-item *ngIf="data.displayName != '不分類'">
-                <a (click)="deleteBlog(data)" class="text-red">刪除</a>
-              </li>
-            </ul>
-          </nz-dropdown-menu>
-        </td>
-        <td (click)="showDetail(data)">{{ data.displayName }}</td>
-        <td (click)="showDetail(data)">
-          <span *ngIf="data.enable">啟用</span>
-          <span *ngIf="!data.enable">關閉</span>
-        </td>
-      </tr>
-    </tbody>
-  </nz-table>
-</div> -->
+
+  <nz-extensible-table [data]="datas" [recordsTotal]="count" [list]="list" [haveSelect]="true"
+    (select)="showDetail($event)">
+  </nz-extensible-table>
+
+</div>
+
+
+
+
+
+
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="blog" (nzOnCancel)="handleCancel()" [nzFooter]="footer">
+  <form [formGroup]="form" *ngIf="form" (ngSubmit)="save()" validateOnSubmit>
+    <abp-extensible-form *ngIf="form" [selectedRecord]="selected"></abp-extensible-form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">圖示(建議圖片大小為 40*30，僅能上傳 jpg, png)</label>
+      <image-picker #DefaultImagePicker [existFiles]="defaultImages" [maxImageCount]="1" imageWidth="40px"
+        imageHeight="30px" borderWidth="80px" borderHeight="60px"></image-picker>
+    </div>
+  </form>
+</nz-modal>
+
+<ng-template #footer>
+  <button nz-button nzType="default" (click)="handleCancel()">取消</button>
+  <button nz-button nzType="primary" (click)="save()">儲存</button>
+</ng-template>

@@ -44,6 +44,8 @@ namespace DEMO
         )]
     [DependsOn(typeof(FileManagementDomainModule))]
     [DependsOn(typeof(FS.Cms.CmsDomainModule))]
+    [DependsOn(typeof(FS.Theme.ThemeDomainModule))]
+    [DependsOn(typeof(FS.Abp.File.FileDomainModule))]
     public class DEMODomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

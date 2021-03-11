@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-theme-alain-ms-shared.umd.js",
+  "module": "../fesm2015/fs-tw-theme-alain-ms-shared.js",
+  "es2015": "../fesm2015/fs-tw-theme-alain-ms-shared.js",
+  "esm2015": "../esm2015/shared/fs-tw-theme-alain-ms-shared.js",
+  "fesm2015": "../fesm2015/fs-tw-theme-alain-ms-shared.js",
+  "typings": "fs-tw-theme-alain-ms-shared.d.ts",
+  "metadata": "fs-tw-theme-alain-ms-shared.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/theme-alain-ms/shared"
+}

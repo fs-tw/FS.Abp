@@ -1,0 +1,52 @@
+{
+  "order": 1002,
+  "nx": {
+    "<%=lowerDashCamel%>": {
+      "tags": []
+    }
+  },
+  "angular": {  
+    "<%=lowerDashCamel%>": {
+      "projectType": "library",
+      "root": "libs/<%=lowerDashCamel%>",
+      "sourceRoot": "libs/<%=lowerDashCamel%>/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/<%=lowerDashCamel%>/tsconfig.lib.json",
+            "project": "libs/<%=lowerDashCamel%>/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/<%=lowerDashCamel%>/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/<%=lowerDashCamel%>/tsconfig.lib.json",
+              "libs/<%=lowerDashCamel%>/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/<%=lowerDashCamel%>/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/<%=lowerDashCamel%>"],
+          "options": {
+            "jestConfig": "libs/<%=lowerDashCamel%>/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/<%=lowerDashCamel%>": ["libs/<%=lowerDashCamel%>/src/index.ts"],
+    "@fs-tw/<%=lowerDashCamel%>/*": ["libs/<%=lowerDashCamel%>/*/src/index.ts"]
+  }
+}

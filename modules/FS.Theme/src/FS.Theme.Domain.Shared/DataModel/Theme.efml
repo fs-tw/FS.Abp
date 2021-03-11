@@ -1,95 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <efcore context-namespace="FS.Theme.EntityFrameworkCore" namespace="FS.Theme" p1:name="ThemeDbContext" p1:Guid="5c40debe-9400-4979-a2b2-5faf1e23b6e9" p1:VersionTag="4.2.1" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$ComplexTypes">
-    <component class="FS.Theme.Banners.BannerConfig" p1:Guid="67da9b7a-95c6-4c90-81b7-fba6bb18a5b7" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>None</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Banners</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="FileName" type="String" p1:ValidateRequired="true" p1:Guid="e87d938e-037e-4652-9ba5-93d94a2e9936">
-        <column name="" />
-      </property>
-      <property name="FileUrl" type="String" p1:ValidateRequired="true" p1:Guid="2a8a67b0-ec90-4e92-ae53-0bf6f5e73741">
-        <column name="" />
-      </property>
-      <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="5fb1e6d3-030f-4d6d-a408-9530cb00db64">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.Theme.Routes.RouteConfig" p1:Guid="e49bf770-7714-4a27-b4f5-f536d5e9e098" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>None</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Routes</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="Icon" type="String" p1:ValidateRequired="true" p1:Guid="6a308228-444d-4850-b50a-d2905cf1c4bc">
-        <column name="" />
-      </property>
-      <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="1c46a91a-65e8-42c5-b63c-9e62ef84f2ee">
-        <column name="" />
-      </property>
-      <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="bc1bd5cc-bd54-46ad-9cb8-756979d8611e">
-        <column name="" />
-      </property>
-      <property name="OpenAnotherWindow" type="Boolean" p1:ValidateRequired="true" p1:Guid="be8fde7a-9ef0-437f-b28e-f32088641736">
-        <column name="" />
-      </property>
-    </component>
     <component class="FS.Theme.CreationAuditedEntity" IsExternal="true" p1:Guid="d92aa5e9-5b46-4cb2-b129-fd01693a4298" p1:GenerateDTO="False">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
@@ -281,55 +192,6 @@
         <column name="" />
       </property>
       <property name="Update" type="String" p1:ValidateRequired="true" p1:Guid="d50be302-218d-4b49-bfa6-4cc66c95c7d5">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.Theme.WebSites.WebSiteConfig" p1:Guid="931f5931-f233-4bfb-993f-7e2a4709593d" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>None</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>WebSites</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>false</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="LogoFileId" type="String" p1:ValidateRequired="true" p1:Guid="67cdd12f-a6eb-4120-84f9-98e362bc6850">
-        <column name="" />
-      </property>
-      <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="36a5d70b-7ac1-469e-8739-48812d70426a">
-        <column name="" />
-      </property>
-      <property name="Favicon" type="String" p1:ValidateRequired="true" p1:Guid="8f3d5264-403d-45e9-b384-4616e12010ad">
-        <column name="" />
-      </property>
-      <property name="Count" type="Int32" p1:ValidateRequired="true" p1:Guid="b2630911-da12-4793-acc1-7610fa2996b3">
-        <column name="" />
-      </property>
-      <property name="Copyright" type="String" p1:ValidateRequired="true" p1:Guid="b367f817-20eb-4337-8638-5cdb83b7350b">
         <column name="" />
       </property>
     </component>
@@ -567,22 +429,18 @@
     <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="de7b3ed5-4680-4438-9b3b-19d5b4020306">
       <column name="" />
     </property>
-    <component name="RouteConfig" class="FS.Theme.Routes.RouteConfig" p1:ValidateRequired="false" p1:Guid="512e9440-e071-4d93-935b-e6addd586b68" p1:Shadow="True">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>true</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="Icon" />
-      <property name="Url" />
-      <property name="Sequence" />
-      <property name="OpenAnotherWindow" />
-    </component>
+    <property name="IconFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ef14d9eb-868a-4ed1-8073-846b8975c213">
+      <column name="" />
+    </property>
+    <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="8f26101a-15bd-4315-b29c-0b32270293fe">
+      <column name="" />
+    </property>
+    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="32fce5c8-6cc3-4379-ad8b-d1fab39988b8">
+      <column name="" />
+    </property>
+    <property name="OpenAnotherWindow" type="Boolean" p1:ValidateRequired="true" p1:Guid="5a13f755-d765-43e8-b29f-b789cecc6a4e">
+      <column name="" />
+    </property>
     <property name="RouteDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="9fb2ebb0-5bdd-4982-b56c-a699c0eacd35">
       <column name="" not-null="False" />
     </property>
@@ -736,21 +594,15 @@
     <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="6ed16005-5aa0-4c93-add6-64c671458a39">
       <column name="" />
     </property>
-    <component name="BannerConfig" class="FS.Theme.Banners.BannerConfig" p1:ValidateRequired="false" p1:Guid="2b86f849-45e7-498a-9693-320359480772" p1:Shadow="True">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>true</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="FileName" />
-      <property name="FileUrl" />
-      <property name="Sequence" />
-    </component>
+    <property name="FileName" type="String" p1:ValidateRequired="true" p1:Guid="c33af2b0-fc97-44eb-a345-33b47adef1ba">
+      <column name="" />
+    </property>
+    <property name="ImageFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f7fbebd0-f4a5-4e83-800e-469b2d39b477">
+      <column name="" />
+    </property>
+    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="88a45519-9bc7-47f4-a4f0-fa95f337aff0">
+      <column name="" />
+    </property>
     <property name="BannerDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="e2116493-8cbd-4e78-b9c6-3e7979e33bd1">
       <column name="" not-null="False" />
     </property>
@@ -824,6 +676,21 @@
       <column name="" />
     </property>
     <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="14e05a0f-2cd9-497b-8288-9a341ec87686">
+      <column name="" />
+    </property>
+    <property name="LogoFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="646b672a-823c-4f60-82fd-afa805bb971e">
+      <column name="" />
+    </property>
+    <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="0062d4e0-42ba-44a7-a8ce-dee24b064bbe">
+      <column name="" />
+    </property>
+    <property name="FaviconFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ff0a396b-ac5a-4277-a38e-e00bbcd3198e">
+      <column name="" />
+    </property>
+    <property name="Count" type="Int32" p1:ValidateRequired="true" p1:Guid="92b2dac7-d1be-4234-a67d-d9e28c49c8be">
+      <column name="" />
+    </property>
+    <property name="Copyright" type="String" p1:ValidateRequired="true" p1:Guid="80de7b6d-7e11-49f2-80d6-2621166a57d8">
       <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2ff3724a-5783-4605-981e-cbddcdae1382" p1:GenerateDTO="False">

@@ -1,6 +1,11 @@
+import type { EntityDto, FullAuditedEntityDto, PagedResultRequestDto } from '@abp/ng.core';
 import type { DisplayMode } from '../display-mode.enum';
-import type { EntityDto, FullAuditedEntityDto } from '@abp/ng.core';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
+
+export interface GetPostByBlogIdInput extends PagedResultRequestDto {
+  blogId?: string;
+  keyword?: string;
+}
 
 export interface MetaData {
   postPrimaryKeyDto: PostPrimaryKeyDto;

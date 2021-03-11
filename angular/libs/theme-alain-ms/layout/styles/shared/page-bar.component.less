@@ -1,0 +1,28 @@
+@alain-ms-component-page-bar-prefix: ~'.ms-page-bar';
+
+@{alain-ms-component-page-bar-prefix} {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: @alain-ms-component-page-nav-scene-title-height;
+  margin: -@alain-ms-console-padding-vertical -@alain-ms-console-padding-horizontal @alain-ms-console-padding-vertical -@alain-ms-console-padding-horizontal;
+  padding: 0 @alain-ms-console-padding-horizontal;
+  border-bottom: 1px solid @grey-4;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    &-main {
+      height: 16px;
+      margin: 0;
+      padding-left: 8px;
+      font-size: 14px;
+      line-height: 16px;
+      border-left: 2px solid @brand-color;
+    }
+    &-sub {
+      margin-left: 8px;
+    }
+  }
+}

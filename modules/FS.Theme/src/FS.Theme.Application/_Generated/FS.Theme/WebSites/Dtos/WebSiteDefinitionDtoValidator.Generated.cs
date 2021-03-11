@@ -24,6 +24,19 @@ namespace FS.Theme.WebSites.Dtos
                 ;
             RuleFor(p => p.Description)
                 ;
+            RuleFor(p => p.LogoFileId)
+                ;
+            RuleFor(p => p.Title)
+                .NotNull()
+                ;
+            RuleFor(p => p.FaviconFileId)
+                ;
+            RuleFor(p => p.Count)
+                .NotNull()
+                ;
+            RuleFor(p => p.Copyright)
+                .NotNull()
+                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -39,6 +52,19 @@ namespace FS.Theme.WebSites.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Description)
+                ;
+            RuleFor(p => p.LogoFileId)
+                ;
+            RuleFor(p => p.Title)
+                .NotNull()
+                ;
+            RuleFor(p => p.FaviconFileId)
+                ;
+            RuleFor(p => p.Count)
+                .NotNull()
+                ;
+            RuleFor(p => p.Copyright)
+                .NotNull()
                 ;
             CustomizeConfiguration();
         }

@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>FS.Theme</RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\Banners\Dtos\BannerConfigDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Banners\Dtos\BannerConfigDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\MyRouteDefinitionCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDtoValidator.Generated.cs" />
@@ -19,6 +23,8 @@
     <Compile Remove="_Generated\FS.Theme\WebInfos\Dtos\WebSiteInfoDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\WebInfos\Dtos\WebSiteInfoDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\WebInfos\WebSiteInfoCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDtoValidator.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,14 +44,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Banners</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\Banners\Dtos\BannerConfigDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Banners\Dtos\BannerConfigDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\Banners\Dtos\BannerDefinitionDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -59,14 +57,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\Banners\Dtos\BannerDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -93,14 +83,6 @@
     <Compile Update="_Generated\FS.Theme\Routes\RouteDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteDefinitionDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../libs/emailing/proxy/src/lib/pages/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,GAAG,MAAM,OAAO,CAAC;AAC7B,OAAO,EAAE,GAAG,EAAE,CAAC","sourcesContent":["import * as Abp from './abp';\r\nexport { Abp };\r\n"]}

@@ -1,4 +1,0 @@
-[submodule "EasyAbp.Abp.Trees"]
-	path = EasyAbp.Abp.Trees
-	url = https://github.com/EasyAbp/Abp.Trees.git
-	branch = develop

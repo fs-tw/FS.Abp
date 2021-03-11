@@ -48,6 +48,36 @@ namespace FS.Theme.WebSites
             set;
         }
 
+        public virtual System.Guid? LogoFileId
+        {
+            get;
+            set;
+        }
+
+        public virtual string Title
+        {
+            get;
+            set;
+        }
+
+        public virtual System.Guid? FaviconFileId
+        {
+            get;
+            set;
+        }
+
+        public virtual int Count
+        {
+            get;
+            set;
+        }
+
+        public virtual string Copyright
+        {
+            get;
+            set;
+        }
+
         public virtual System.Guid? TenantId
         {
             get;

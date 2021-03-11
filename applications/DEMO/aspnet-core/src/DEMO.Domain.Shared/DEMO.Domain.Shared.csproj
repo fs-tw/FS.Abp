@@ -35,4 +35,8 @@
     <Content Remove="Localization\DEMO\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

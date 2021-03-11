@@ -37,7 +37,9 @@ namespace FS.Theme.Banners
             builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Description).HasColumnName(@"Description").ValueGeneratedNever();
             builder.Property(x => x.Disable).HasColumnName(@"Disable").IsRequired().ValueGeneratedNever();
-            builder.Ignore(x => x.BannerConfig);
+            builder.Property(x => x.FileName).HasColumnName(@"FileName").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.ImageFileId).HasColumnName(@"ImageFileId").ValueGeneratedNever();
+            builder.Property(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.BannerDefinitionId).HasColumnName(@"BannerDefinitionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");

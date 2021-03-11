@@ -18,7 +18,7 @@ namespace DEMO.Migrations
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FS.Cms.Blogs.Blog", b =>
@@ -63,6 +63,10 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
+                    b.Property<string>("IconUrl")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("IconUrl");
+
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("LastModificationTime");
@@ -75,6 +79,10 @@ namespace DEMO.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Level");
 
+                    b.Property<string>("ListStyle")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ListStyle");
+
                     b.Property<string>("No")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
@@ -84,9 +92,17 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ParentId");
 
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int")
+                        .HasColumnName("Sequence");
+
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Url");
 
                     b.HasKey("Id");
 
@@ -535,6 +551,15 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("FileName");
+
+                    b.Property<Guid?>("ImageFileId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ImageFileId");
+
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("LastModificationTime");
@@ -547,6 +572,10 @@ namespace DEMO.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("No");
+
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int")
+                        .HasColumnName("Sequence");
 
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
@@ -664,6 +693,10 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
+                    b.Property<Guid?>("IconFileId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("IconFileId");
+
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("LastModificationTime");
@@ -681,6 +714,10 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("No");
 
+                    b.Property<bool>("OpenAnotherWindow")
+                        .HasColumnType("bit")
+                        .HasColumnName("OpenAnotherWindow");
+
                     b.Property<Guid?>("ParentId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ParentId");
@@ -689,9 +726,18 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("RouteDefinitionId");
 
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int")
+                        .HasColumnName("Sequence");
+
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Url");
 
                     b.HasKey("Id");
 
@@ -763,6 +809,85 @@ namespace DEMO.Migrations
                     b.HasIndex("CreationTime");
 
                     b.ToTable("ThemeRouteDefinitions");
+                });
+
+            modelBuilder.Entity("FS.Theme.WebSites.WebSiteDefinition", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<string>("Copyright")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Copyright");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int")
+                        .HasColumnName("Count");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Description");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("DisplayName");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<Guid?>("FaviconFileId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("FaviconFileId");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("LogoFileId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LogoFileId");
+
+                    b.Property<string>("No")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("No");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.ToTable("ThemeWebSiteDefinitions");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>

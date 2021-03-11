@@ -1,4 +1,4 @@
-<!-- 
+
 
 <nz-upload nzType="drag" [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload" [nzMultiple]="true">
   <p class="ant-upload-drag-icon">
@@ -18,7 +18,8 @@
   <tbody>
     <tr *ngFor="let data of existFileUrls">
       <td>
-        <a [href]="getUrl(data)">{{getFileName(data)}}</a>
+        <!-- <a [href]="getUrl(data)">{{getFileName(data)}}</a> -->
+        <a>{{ data }}</a>
       </td>
       <td>
         <a (click)="delete(data)" class="text-red">刪除</a>
@@ -26,4 +27,4 @@
 
     </tr>
   </tbody>
-</nz-table> -->
+</nz-table>

@@ -1,0 +1,41 @@
+{
+  "culture": "zh-Hant",
+  "texts": {
+    "FS.Theme.WebSiteDefinition": "WebSiteDefinition",
+    "FS.Theme.BannerDefinition": "BannerDefinition",
+    "FS.Theme.Banner": "橫幅",
+    "FS.Theme.RouteDefinition": "RouteDefinition",
+    "FS.Theme.Route": "路由",
+
+
+    "FS.WebSiteDefinition.No": "No",
+    "FS.WebSiteDefinition.DisplayName": "顯示名稱",
+    "FS.WebSiteDefinition.Description": "描述",
+
+
+    "FS.BannerDefinition.No": "No",
+    "FS.BannerDefinition.DisplayName": "顯示名稱",
+    "FS.BannerDefinition.Description": "描述",
+    "FS.BannerDefinition.Disable": "禁用",
+
+
+    "FS.Banner.No": "No",
+    "FS.Banner.DisplayName": "顯示名稱",
+    "FS.Banner.Description": "描述",
+    "FS.Banner.Disable": "禁用",
+    "FS.Banner.BannerConfig": "橫幅配置",
+    "FS.Banner.BannerDefinitionId": "BannerDefinitionId",
+
+    "FS.RouteDefinition.No": "No",
+    "FS.RouteDefinition.DisplayName": "顯示名稱",
+    "FS.RouteDefinition.Description": "描述",
+    "FS.RouteDefinition.Disable": "禁用",
+
+    "FS.Route.No": "No",
+    "FS.Route.DisplayName": "顯示名稱",
+    "FS.Route.Description": "描述",
+    "FS.Route.Disable": "禁用",
+    "FS.Route.RouteConfig": "路由配置",
+    "FS.Route.RouteDefinitionId": "RouteDefinitionId"
+  }
+}

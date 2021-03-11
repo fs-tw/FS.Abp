@@ -39,7 +39,11 @@ namespace FS.Theme.Banners.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Theme.Banners.Dtos.BannerConfigDto BannerConfig { get; set; }
+        public virtual string FileName { get; set; }
+
+        public virtual System.Guid? ImageFileId { get; set; }
+
+        public virtual int Sequence { get; set; }
 
         public virtual System.Guid BannerDefinitionId { get; set; }
 
@@ -55,7 +59,11 @@ namespace FS.Theme.Banners.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Theme.Banners.Dtos.BannerConfigDto BannerConfig { get; set; }
+        public virtual string FileName { get; set; }
+
+        public virtual System.Guid? ImageFileId { get; set; }
+
+        public virtual int Sequence { get; set; }
 
         public virtual System.Guid BannerDefinitionId { get; set; }
 
@@ -71,7 +79,11 @@ namespace FS.Theme.Banners.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Theme.Banners.Dtos.BannerConfigDto BannerConfig { get; set; }
+        public virtual string FileName { get; set; }
+
+        public virtual System.Guid? ImageFileId { get; set; }
+
+        public virtual int Sequence { get; set; }
 
         public virtual System.Guid BannerDefinitionId { get; set; }
 

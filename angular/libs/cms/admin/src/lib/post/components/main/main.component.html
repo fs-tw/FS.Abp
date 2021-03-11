@@ -1,48 +1,25 @@
-<!-- <nz-row nzGutter="16">
+<nz-row nzGutter="16">
   <nz-col nzSpan="8">
     <fs-list></fs-list>
   </nz-col>
   <nz-col nzSpan="16">
     <div>
       <div class="mb-md">
-        <h3>類型：{{ blogName }}</h3>
-        <button
-          nz-button
-          nzType="primary"
-          (click)="gotoDetail()"
-          style="margin-right: 20px;"
-        >
+        <h5>類型：{{ blogName }}</h5>
+        <button nz-button nzType="primary" (click)="gotoDetail()" style="margin-right: 20px;">
           新增
         </button>
-        <nz-input-group
-          nzSearch
-          [nzAddOnAfter]="suffixIconButton"
-          style="width: 300px;"
-        >
-          <input
-            type="text"
-            [(ngModel)]="keyword"
-            nz-input
-            placeholder="輸入名稱"
-          />
+        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" style="width: 300px;">
+          <input type="text" [(ngModel)]="postParams.keyword" nz-input placeholder="輸入名稱" />
         </nz-input-group>
         <ng-template #suffixIconButton>
-          <button nz-button nzType="primary" (click)="search()" nzSearch>
+          <button nz-button nzType="primary" (click)="changePage(1)" nzSearch>
             <i nz-icon nzType="search"></i>
           </button>
         </ng-template>
       </div>
-      <nz-table
-        #listTable
-        [nzData]="posts$ | async"
-        nzSize="small"
-        nzPageSize="10"
-        [nzTotal]="totalCount$ | async"
-        [nzFrontPagination]="false"
-        [nzLoading]="loading"
-        (nzPageIndexChange)="changePage($event)"
-        nzBordered
-      >
+      <nz-table #listTable [nzData]="posts" nzSize="small" nzPageSize="10" [nzTotal]="totalCount"
+        [nzFrontPagination]="false" [nzLoading]="loading" (nzPageIndexChange)="changePage($event)" nzBordered>
         <thead>
           <tr>
             <th nzWidth="110px"></th>
@@ -72,12 +49,8 @@
                 </nz-dropdown-menu>
               </td>
               <td>
-                <span *ngIf="item.published"
-                  ><i nz-icon nzType="check" nzTheme="outline"></i
-                ></span>
-                <span *ngIf="!item.published"
-                  ><i nz-icon nzType="close" nzTheme="outline"></i
-                ></span>
+                <span *ngIf="item.published"><i nz-icon nzType="check" nzTheme="outline"></i></span>
+                <span *ngIf="!item.published"><i nz-icon nzType="close" nzTheme="outline"></i></span>
               </td>
               <td>
                 {{ item.title }}
@@ -109,4 +82,3 @@
     </div>
   </nz-col>
 </nz-row>
- -->

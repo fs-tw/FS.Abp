@@ -1,20 +1,29 @@
-<!-- <nz-spin nzTip="載入中..." [nzSpinning]="isSpinning">
+<nz-spin nzTip="載入中..." [nzSpinning]="isLoading">
 
   <nz-card>
 
     <form nz-form #f="ngForm" se-container="1" labelWidth="150" *ngIf="data">
       <se label="公告類型">
-        <nz-select [(ngModel)]="data.blogCodeId" name="blogCodeId" required>
-          <nz-option *ngFor="let item of blogs" [nzValue]="item.codesId" [nzLabel]="item.displayName"></nz-option>
+        <nz-select [(ngModel)]="data.blogId" name="blogId" required>
+          <nz-option *ngFor="let item of blogs" [nzValue]="item.id" [nzLabel]="item.displayName"></nz-option>
         </nz-select>
       </se>
       <se label="前台顯示" required>
-        <nz-switch [(ngModel)]="data.published" name="published" nzCheckedChildren="開" nzUnCheckedChildren="關">
-        </nz-switch>
+        <nz-radio-group [(ngModel)]="data.disable" name="disable">
+          <label nz-radio [nzValue]="false">開</label>
+          <label nz-radio [nzValue]="true">關</label>
+        </nz-radio-group>
       </se>
       <se label="發佈時間" required>
-        <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
-          [(ngModel)]="data.published_At"></nz-date-picker>
+        <!-- <nz-range-picker nzShowTime nzFormat="yyyy/MM/dd HH:mm:ss" name="dateRange" [(ngModel)]="dateRange"
+          [nzAllowClear]="false"></nz-range-picker> -->
+        <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false"
+          [(ngModel)]="dateRange[0]"></nz-date-picker>
+
+        <nz-date-picker nzShowTime name="endDate" [nzAllowClear]="true"
+          [(ngModel)]="dateRange[1]"></nz-date-picker>
+        <!-- <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
+          [(ngModel)]="data.published_At"></nz-date-picker> -->
       </se>
       <se label="標題" error="必填" required>
         <input type="text" nz-input [(ngModel)]="data.title" name="title" required>
@@ -67,42 +76,8 @@
         <nz-tabset>
           <nz-tab nzTitle="圖片">
             <se>
-              <nz-upload [nzBeforeUpload]="beforeUpload" nzType="drag" [nzMultiple]="true" nzListType="picture">
-                <p class="ant-upload-drag-icon">
-                  <i nz-icon nzType="inbox" nzTheme="outline"></i>
-                </p>
-                <p class="ant-upload-text">請將檔案拖移至此，或按下此圖示上傳檔案</p>
-              </nz-upload>
-              <div class="my-md"></div>
-
-              <nz-table #rowSelectionTable [(nzData)]="showList" *ngIf="showList.length > 0" nzSimple="false"
-                nzSize="small" [nzShowPagination]="false" nzBordered>
-                <thead>
-                  <tr>
-                    <th nzWidth="60px">封面圖</th>
-                    <th>圖片</th>
-                    <th>名稱</th>
-                    <th>操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let data of showList;let imgIndex = index">
-                    <td nzShowCheckbox [(nzChecked)]="data.isCover" (nzCheckedChange)="refreshStatus(data)">
-                    </td>
-                    <td>
-                      <img *ngIf="data.url" [src]="data.url" (click)="showModal(data.url)"
-                        style="max-height: 200px;cursor:pointer;">
-                    </td>
-                    <td>
-                      {{data.name}}
-                    </td>
-                    <td>
-                      <a (click)="delete(data,imgIndex)" class="text-red">刪除</a>
-                    </td>
-
-                  </tr>
-                </tbody>
-              </nz-table>
+              <image-picker #DefaultImagePicker [existFiles]="defaultImages" [uploadTextTemplate]="Upload"
+                [imageTemplate]="Image" [inLine]="false" borderWidth="100%" borderHeight="132px"></image-picker>
             </se>
           </nz-tab>
           <nz-tab nzTitle="附件">
@@ -113,14 +88,13 @@
         </nz-tabset>
       </se>
 
-      <se label="標籤">
+      <!-- <se label="標籤">
         <fs-tag [postId]="data.id" [postTags]="data.postTags"></fs-tag>
-      </se>
+      </se> -->
 
       <se>
         <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">
-          <span *ngIf="!data.id">建立</span>
-          <span *ngIf="data.id">更新</span>
+          {{ !data.id ? '建立' : '更新' }}
         </button>
       </se>
     </form>
@@ -129,15 +103,37 @@
 </nz-spin>
 
 
-<nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" (nzOnCancel)="handleCancel()"
-  nzWidth="800">
-  <ng-template #modalTitle>
-    圖片
-  </ng-template>
-
-  <ng-template #modalContent>
-    <div style="align-items: center;" style="overflow-y:scroll;">
-      <img [src]="selectImage" style="height: 400px;">
+<ng-template #Upload>
+  <div style="text-align: center;">
+    <div style="color: #26d7eb; font-size: 48px;">
+      <i nz-icon nzType="inbox" style="display: block;"></i>
     </div>
-  </ng-template>
-</nz-modal> -->
+    <div style="font-size: 16px;">
+      請將檔案拖移至此，或按下此圖示上傳檔案
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #Image let-item>
+  <div nz-row style="border: 1px solid #ddd; border-right: 0px; margin-top: 5px;">
+    <div nz-col nzSpan="4" class="imgItemDiv">
+      <a class="text-blue" *ngIf="coverImage != item.file.fileName" (click)="coverImage = item.file.fileName">設為封面圖</a>
+      <i nz-icon nzType="check" nzTheme="outline" style="font-size: 16px;" class="text-green"
+        *ngIf="coverImage == item.file.fileName"></i>
+    </div>
+    <div nz-col nzSpan="8" class="imgItemDiv" style="cursor: pointer;"
+      (click)="defaultImagePicker.controllModal(true, item.file)">
+      <div style="width: 100%;">
+        <img [src]="item.file.fileUrl" style="max-height: 40px;" />
+      </div>
+    </div>
+    <div nz-col nzSpan="8" class="imgItemDiv">
+      <div style="width: 100%;">{{ item.file.fileName }}</div>
+    </div>
+    <div nz-col nzSpan="4" class="imgItemDiv">
+      <div style="width: 100%;">
+        <a class="text-red" (click)="deleteFile(item.file.fileName)">刪除</a>
+      </div>
+    </div>
+  </div>
+</ng-template>

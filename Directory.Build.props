@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <HtmlAgilityPackVersion>1.11.24</HtmlAgilityPackVersion>
+    <RestSharpVersion>106.11.4</RestSharpVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <Authors>YinChang</Authors>
@@ -18,11 +23,6 @@
     <RepositoryUrl>https://github.com/fs-tw/FS.Works</RepositoryUrl>
     <PackageTags>abp module</PackageTags>
     <AbpProjectType>module</AbpProjectType>
-  </PropertyGroup>
-  
-  <PropertyGroup>
-    <HtmlAgilityPackVersion>1.11.24</HtmlAgilityPackVersion>
-    <RestSharpVersion>106.11.4</RestSharpVersion>
   </PropertyGroup>
 
   <PropertyGroup>

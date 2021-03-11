@@ -1,5 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-// import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { Fs } from '@fs-tw/cms/proxy';
+
+import { PageService } from '../../providers/page.service';
+import { PostStateService } from '../../providers/post-state.service';
+
+// 
 // import { PostWithDetailsDto } from '@fs-tw/cms/proxy';
 // import { CodesDto } from '@fs-tw/theme-core';
 // import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
@@ -16,33 +24,63 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  // @Select(PostState.getPosts)
-  // posts$: Observable<PostWithDetailsDto[]>;
+  blog$: Observable<Fs.Cms.Blogs.Dtos.BlogDto>;
+  blogId: string;
+  blogName: string;
 
-  // @Select(PostState.getPostsTotalCount)
-  // totalCount$: Observable<number>;
+  postParams: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput = {
+    skipCount: 0,
+    maxResultCount: 10,
+    keyword: "",
+    blogId: null
+  } as Fs.Cms.Posts.Dtos.GetPostByBlogIdInput;
 
-  // loading = false;
+  posts: Fs.Cms.Posts.Dtos.PostWithDetailsDto[] = [];
+  totalCount: number = 0;
+  loading: boolean = false;
+
+  constructor(
+    private router: Router,
+    private pageService: PageService,
+    private postStateService: PostStateService
+  ) { }
+
+  
 
   ngOnInit() {
-    
+    this.blog$ = this.postStateService.getBlog();
+    this.onBlogChange();
   }
 
-  // mapOfExpandData: { [key: string]: boolean } = {};
-  // blogCode: CodesDto;
-  // blogId: string = "";
-  // keyword: string = "";
+  onBlogChange() {
+    this.blog$.subscribe((blog) => {
+      this.blogId = blog == null ? null : blog.id;
+      this.blogName = blog == null ? "" : blog.displayName;
 
-  // subscription: Subscription;
-  // constructor(
-  //   private store: Store,
-  //   private router: Router,
-  //   private pageService: PageService,
-  //   private activatedRoute: ActivatedRoute,
-  //   private confirmationService: ConfirmationService,
-  //   private toasterService: ToasterService,
-  //   private postsStateService: PostsStateService,
-  // ) { }
+      this.postParams.blogId = this.blogId;
+      this.changePage(1);
+    })
+  }
+
+  gotoDetail(id?: string) {
+    if (id) this.router.navigate(["/cms/post/detail/" + id]);
+    else this.router.navigate(["/cms/post/detail"]);
+  }
+
+  changePage(page: number) {
+    this.postParams.skipCount = (page - 1) * this.postParams.maxResultCount;
+
+    this.loading = true;
+    this.pageService.getPostsByBlogId(this.postParams).subscribe((x) => {
+      this.loading = false;
+      this.posts = x.items;
+      this.totalCount = x.totalCount;
+    })
+  }
+
+  deleteItem(item: Fs.Cms.Posts.Dtos.PostWithDetailsDto) {
+
+  }
 
   // ngOnDestroy(): void {
   //   if (this.subscription) {

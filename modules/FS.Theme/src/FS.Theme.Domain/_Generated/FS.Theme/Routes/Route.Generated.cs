@@ -78,18 +78,30 @@ namespace FS.Theme.Routes
             get;
             set;
         }
-        public virtual FS.Theme.Routes.RouteConfig RouteConfig 
-        {
 
-            get
-            {
-                return this.GetExtraProperty<FS.Theme.Routes.RouteConfig>(nameof(RouteConfig));
-            }
-            set
-            {
-                this.SetExtraProperty(nameof(RouteConfig), value);
-            }
-        } 
+        public virtual System.Guid? IconFileId
+        {
+            get;
+            set;
+        }
+
+        public virtual string Url
+        {
+            get;
+            set;
+        }
+
+        public virtual int Sequence
+        {
+            get;
+            set;
+        }
+
+        public virtual bool OpenAnotherWindow
+        {
+            get;
+            set;
+        }
 
         public virtual System.Guid RouteDefinitionId
         {

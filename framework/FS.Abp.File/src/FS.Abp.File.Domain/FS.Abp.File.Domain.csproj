@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Volo.FileManagement.Domain" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Abp.File.Domain.Shared\FS.Abp.File.Domain.Shared.csproj" />
   </ItemGroup>

@@ -59,6 +59,20 @@ export function configureRoutes(routes: RoutesService) {
       order: 1,
     },
     {
+      path: '/cms/post/detail',
+      name: eCmsRouteNames.Post_Detail,
+      parentName: eCmsRouteNames.Post,
+      iconClass: 'fa fa-university',
+      order: 1
+    },
+    {
+      path: '/cms/post/detail/:postId',
+      name: eCmsRouteNames.Post_Detail_Id,
+      parentName: eCmsRouteNames.Post,
+      iconClass: 'fa fa-university',
+      order: 1
+    },
+    {
       path: '/cms/tag',
       name: eCmsRouteNames.Tag,
       parentName: eCmsRouteNames.Basic,
@@ -72,20 +86,9 @@ export function configureRoutes(routes: RoutesService) {
       iconClass: 'fa fa-university',
       order: 1
     },
-    {
-      path: '/cms/post/detail',
-      name: eCmsRouteNames.Post_Detail,
-      parentName: eCmsRouteNames.Post,
-      iconClass: 'fa fa-university',
-      order: 1,
-    },
-    {
-      path: '/cms/post/detail/:id',
-      name: eCmsRouteNames.Post_Detail_Id,
-      parentName: eCmsRouteNames.Post,
-      iconClass: 'fa fa-university',
-      order: 1,
-    },
+
+
+
     // {
     //   path: '/cms/storage',
     //   name: eCmsRouteNames.Storage,

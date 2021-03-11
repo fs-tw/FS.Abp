@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 // import { NgAlainBasicModule } from '@fs-tw/theme-ng-alain/basic';
-
-const COMPONENT = []
+import { ThemeAlainMsSharedModule } from '@fs-tw/theme-alain-ms/shared';
+import { UiExtensionsModule } from '@fs-tw/theme-alain-ms/shared/extensions'
+import { GetFileByIdPipe } from './pipe/get-file.pipe';
+const COMPONENT = [GetFileByIdPipe]
 
 @NgModule({
   declarations: [...COMPONENT],
   imports: [
     // NgAlainBasicModule,
+    ThemeAlainMsSharedModule,
+    UiExtensionsModule
   ],
   exports: [
     // NgAlainBasicModule,
-    ...COMPONENT
+    ...COMPONENT,
+    ThemeAlainMsSharedModule,
+    UiExtensionsModule
   ]
 })
 export class SharedModule { }
