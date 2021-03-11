@@ -7,6 +7,7 @@ import {
 } from '@abp/ng.core';
 import { APP_INITIALIZER, Injector } from '@angular/core';
 import { MSLayoutComponent } from '@fs-tw/theme-alain-ms/layout';
+import { AccountLayoutComponent } from '../components/account-layout/account-layout.component';
 import { ApplicationLayoutComponent } from '../components/application-layout/application-layout.component';
 import styles from '../constants/styles';
 import { eThemeNgAlainMsComponents } from '../enums/components';
@@ -37,7 +38,7 @@ function initLayouts(replaceableComponents: ReplaceableComponentsService) {
   });
   replaceableComponents.add({
     key: eThemeNgAlainMsComponents.AccountLayout,
-    component: MSLayoutComponent,
+    component: AccountLayoutComponent,
   });
   replaceableComponents.add({
     key: eThemeNgAlainMsComponents.EmptyLayout,
