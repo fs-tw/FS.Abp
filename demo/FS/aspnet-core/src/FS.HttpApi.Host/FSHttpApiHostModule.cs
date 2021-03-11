@@ -49,6 +49,14 @@ namespace FS
     {
         private const string DefaultCorsPolicyName = "Default";
 
+        public override void PreConfigureServices(ServiceConfigurationContext context)
+        {
+            PreConfigure<Volo.Abp.Json.AbpJsonOptions>(options =>
+            {
+                //options.UseHybridSerializer = false;
+            });
+        }
+
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             var configuration = context.Services.GetConfiguration();

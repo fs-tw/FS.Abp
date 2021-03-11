@@ -8,13 +8,19 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace FS.Customers
 {
-    public partial interface ICustomerRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Customers.Customer,Guid>
+    public partial class EfCorePersonRepository : 
+        EfCoreRepository<FS.EntityFrameworkCore.IFSDbContext,FS.Customers.Person>,
+        IPersonRepository
     {
-
+        public EfCorePersonRepository(IDbContextProvider<FS.EntityFrameworkCore.IFSDbContext> dbContextProvider)
+            : base(dbContextProvider) { }
     }
 }

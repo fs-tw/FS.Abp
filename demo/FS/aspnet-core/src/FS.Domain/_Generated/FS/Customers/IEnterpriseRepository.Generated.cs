@@ -12,8 +12,8 @@ using System.Collections.Generic;
 
 namespace FS.Customers
 {
-    public partial interface ICustomerRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Customers.Customer,Guid>
+    public partial interface IEnterpriseRepository : 
+        Volo.Abp.Domain.Repositories.IRepository<FS.Customers.Enterprise>
     {
 
     }
