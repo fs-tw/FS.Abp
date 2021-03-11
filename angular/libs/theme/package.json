@@ -6,11 +6,7 @@
   },
   "repository": "https://github.com/fs-tw/FS.Works",
   "peerDependencies": {
-    "@angular/common": "^11.2.4",
-    "@angular/core": "^11.2.4",
-    "@abp/ng.theme.shared": "~4.2.2"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
   }
 }
