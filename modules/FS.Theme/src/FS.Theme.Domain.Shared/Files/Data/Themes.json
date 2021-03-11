@@ -1,0 +1,90 @@
+﻿[
+  {
+    "WebSiteInfos": {
+      "No": "Unify",
+      "DisplayName": "Unify",
+      "Description": "Unify",
+      "LogoFileSource": "",
+      "Title": "",
+      "Favicon": "",
+      "Count": 0,
+      "Copyright": ""
+    },
+    "Banners": [
+      {
+        "No": "範例圖示1",
+        "DisplayName": "範例圖示1",
+        "Description": "範例圖示1",
+        "Disable": false,
+        "FileSource": "",
+        "Sequence": 1
+      },
+      {
+        "No": "範例圖示2",
+        "DisplayName": "範例圖示2",
+        "Description": "範例圖示2",
+        "Disable": false,
+        "FileSource": "",
+        "Sequence": 2
+      }
+    ],
+    "Routes": [
+      {
+        "No": "首頁",
+        "DisplayName": "首頁",
+        "Description": "首頁",
+        "Disable": false,
+        "Icon": "",
+        "Url": "/home",
+        "OpenAnotherWindow": false,
+        "Sequence": 1,
+        "Routes": []
+      },
+      {
+        "No": "外部連結",
+        "DisplayName": "外部連結",
+        "Description": "外部連結",
+        "Disable": false,
+        "Icon": "",
+        "Url": "http://furthersoftware.com.tw/",
+        "OpenAnotherWindow": true,
+        "Sequence": 2,
+        "Routes": []
+      },
+      {
+        "No": "子連結範例",
+        "DisplayName": "子連結範例",
+        "Description": "子連結範例",
+        "Disable": false,
+        "Icon": "",
+        "Url": "",
+        "OpenAnotherWindow": false,
+        "Sequence": 3,
+        "Routes": [
+          {
+            "No": "菜單A",
+            "DisplayName": "菜單A",
+            "Description": "菜單A",
+            "Disable": false,
+            "Icon": "",
+            "Url": "",
+            "OpenAnotherWindow": false,
+            "Sequence": 3,
+            "Routes": []
+          },
+          {
+            "No": "菜單B",
+            "DisplayName": "菜單B",
+            "Description": "菜單B",
+            "Disable": false,
+            "Icon": "",
+            "Url": "",
+            "OpenAnotherWindow": false,
+            "Sequence": 3,
+            "Routes": []
+          }
+        ]
+      }
+    ]
+  }
+]

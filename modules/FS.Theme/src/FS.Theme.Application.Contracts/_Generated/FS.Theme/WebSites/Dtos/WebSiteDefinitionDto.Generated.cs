@@ -37,6 +37,16 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Description { get; set; }
 
+        public virtual string LogoFileId { get; set; }
+
+        public virtual string Title { get; set; }
+
+        public virtual string Favicon { get; set; }
+
+        public virtual int Count { get; set; }
+
+        public virtual string Copyright { get; set; }
+
     }
 
     public partial class WebSiteDefinitionCreateDto
@@ -47,6 +57,16 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Description { get; set; }
 
+        public virtual string LogoFileId { get; set; }
+
+        public virtual string Title { get; set; }
+
+        public virtual string Favicon { get; set; }
+
+        public virtual int Count { get; set; }
+
+        public virtual string Copyright { get; set; }
+
     }
 
     public partial class WebSiteDefinitionUpdateDto
@@ -56,6 +76,16 @@ namespace FS.Theme.WebSites.Dtos
         public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
+
+        public virtual string LogoFileId { get; set; }
+
+        public virtual string Title { get; set; }
+
+        public virtual string Favicon { get; set; }
+
+        public virtual int Count { get; set; }
+
+        public virtual string Copyright { get; set; }
 
     }
 
