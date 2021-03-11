@@ -6,7 +6,7 @@
     "dist/libs/theme",
     "dist/libs/theme-alain-ms"
   ],
-  "version": "422.0.1-alpha.0",
+  "version": "422.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
