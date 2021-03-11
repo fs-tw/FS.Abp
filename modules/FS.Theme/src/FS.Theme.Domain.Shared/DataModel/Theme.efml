@@ -429,7 +429,7 @@
     <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="de7b3ed5-4680-4438-9b3b-19d5b4020306">
       <column name="" />
     </property>
-    <property name="IconFileId" type="String" p1:ValidateRequired="true" p1:Guid="ef14d9eb-868a-4ed1-8073-846b8975c213">
+    <property name="IconFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ef14d9eb-868a-4ed1-8073-846b8975c213">
       <column name="" />
     </property>
     <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="8f26101a-15bd-4315-b29c-0b32270293fe">
@@ -678,13 +678,13 @@
     <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="14e05a0f-2cd9-497b-8288-9a341ec87686">
       <column name="" />
     </property>
-    <property name="LogoFileId" type="String" p1:ValidateRequired="true" p1:Guid="646b672a-823c-4f60-82fd-afa805bb971e">
+    <property name="LogoFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="646b672a-823c-4f60-82fd-afa805bb971e">
       <column name="" />
     </property>
     <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="0062d4e0-42ba-44a7-a8ce-dee24b064bbe">
       <column name="" />
     </property>
-    <property name="FaviconFileId" type="String" p1:ValidateRequired="true" p1:Guid="ff0a396b-ac5a-4277-a38e-e00bbcd3198e">
+    <property name="FaviconFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ff0a396b-ac5a-4277-a38e-e00bbcd3198e">
       <column name="" />
     </property>
     <property name="Count" type="Int32" p1:ValidateRequired="true" p1:Guid="92b2dac7-d1be-4234-a67d-d9e28c49c8be">

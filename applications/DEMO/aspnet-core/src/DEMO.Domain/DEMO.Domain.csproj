@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Domain\FS.Abp.File.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain\FS.Theme.Domain.csproj" />
     <ProjectReference Include="..\DEMO.Domain.Shared\DEMO.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -28,10 +30,6 @@
     <PackageReference Include="Volo.FileManagement.Domain" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Saas.Domain" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="$(VoloVersion)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Theme\Seeder\" />
   </ItemGroup>
 
 </Project>

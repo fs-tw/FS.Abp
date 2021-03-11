@@ -48,7 +48,7 @@ namespace FS.Theme.WebSites
             set;
         }
 
-        public virtual string LogoFileId
+        public virtual System.Guid? LogoFileId
         {
             get;
             set;
@@ -60,7 +60,7 @@ namespace FS.Theme.WebSites
             set;
         }
 
-        public virtual string FaviconFileId
+        public virtual System.Guid? FaviconFileId
         {
             get;
             set;

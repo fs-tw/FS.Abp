@@ -79,7 +79,7 @@ namespace FS.Theme.Routes
             set;
         }
 
-        public virtual string IconFileId
+        public virtual System.Guid? IconFileId
         {
             get;
             set;

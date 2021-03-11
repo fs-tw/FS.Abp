@@ -25,13 +25,11 @@ namespace FS.Theme.WebSites.Dtos
             RuleFor(p => p.Description)
                 ;
             RuleFor(p => p.LogoFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Title)
                 .NotNull()
                 ;
             RuleFor(p => p.FaviconFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Count)
                 .NotNull()
@@ -56,13 +54,11 @@ namespace FS.Theme.WebSites.Dtos
             RuleFor(p => p.Description)
                 ;
             RuleFor(p => p.LogoFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Title)
                 .NotNull()
                 ;
             RuleFor(p => p.FaviconFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Count)
                 .NotNull()

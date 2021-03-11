@@ -34,7 +34,6 @@ namespace FS.Theme.Routes.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.IconFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Url)
                 .NotNull()
@@ -74,7 +73,6 @@ namespace FS.Theme.Routes.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.IconFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Url)
                 .NotNull()
