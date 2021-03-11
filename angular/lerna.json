@@ -7,7 +7,7 @@
     "dist/libs/theme-alain-ms",
     "dist/libs/theme-unify"
   ],
-  "version": "422.0.1-alpha.4",
+  "version": "422.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
