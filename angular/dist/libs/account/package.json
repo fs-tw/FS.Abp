@@ -1,19 +1,19 @@
 {
   "name": "@fs-tw/account",
-  "version": "422.0.1-alpha.1.0",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": "https://github.com/fs-tw/FS.Abp",
   "license": "MIT",
   "peerDependencies": {
-    "@abp/ng.theme.shared": "4.2.2",
-    "@angular/animations": "^11.2.0",
     "@angular/common": "^11.0.5",
     "@angular/core": "^11.0.5",
-    "@angular/forms": "^11.2.0",
+    "@abp/ng.theme.shared": "4.2.2",
     "@angular/router": "^11.2.0",
-    "rxjs": "~6.6.3"
+    "rxjs": "~6.6.3",
+    "@angular/forms": "^11.2.0",
+    "@angular/animations": "^11.2.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
@@ -25,6 +25,5 @@
   "fesm2015": "fesm2015/fs-tw-account.js",
   "typings": "fs-tw-account.d.ts",
   "metadata": "fs-tw-account.metadata.json",
-  "sideEffects": false,
-  "gitHead": "a480c928990b98c391ed26df4e2c4113c33b16ab"
+  "sideEffects": false
 }

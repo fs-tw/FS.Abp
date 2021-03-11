@@ -32,7 +32,8 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "nxbuild":"npx nx run-many --target=build --prod --projects account,emailing,theme-alain-ms,theme"
   },
   "private": true,
   "dependencies": {
