@@ -1,6 +1,13 @@
 {
   "name": "fs",
   "version": "0.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/fs-tw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fs-tw/FS.Works.git"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "nx",
