@@ -47,7 +47,7 @@ namespace DEMO.Theme
             
             if (count > 0) return;
 
-            var webSiteDefinitionDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Theme.WebSiteDefinition")).Last();
+            var webSiteDefinitionDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Theme.WebSiteInfos")).Last();
             
 
             foreach (var data in jsonData) 

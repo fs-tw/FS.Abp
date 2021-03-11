@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Fs } from '@fs-tw/cms/proxy';
+import { Fs,Volo } from '@fs-tw/cms/proxy';
 
 @Injectable()
 export class PageService {
 
   constructor(
     private blogService: Fs.Cms.Blogs.BlogsApiService,
-    private postService: Fs.Cms.Posts.PostsApiService
+    private postService: Fs.Cms.Posts.PostsApiService,
+    private directoriesApiService: Fs.Abp.File.Directories.DirectoriesApiService,
+    private fileDescriptorService: Volo.FileManagement.Files.FileDescriptorService,
     // private postService: PostsApiService,
     // private definitionsService: DefinitionsService,
     // private tagsApiService: TagsApiService,
@@ -29,6 +31,17 @@ export class PageService {
   updateBlog(id: string, input: Fs.Cms.Blogs.Dtos.BlogUpdateDto) {
     return this.blogService.updateByBlogPrimaryKeyAndBlogUpdate({id: id}, input)
   }
+  //#endregion
+
+   //#region File
+   findByProviderByKeyAndGroup(key: string, group?: string) {
+    return this.directoriesApiService.findByProviderByKeyAndGroup(key, group);
+  }
+
+  deleteFile(id:string){
+    return this.fileDescriptorService.deleteById(id);
+  }
+
   //#endregion
 
 
