@@ -32,13 +32,14 @@ import { MSPageSingleComponent } from './ms/shared/page-single/page-single.compo
 import { MSPanelComponent } from './ms/shared/panel/panel.component';
 import { MSServiceLayoutComponent } from './ms/shared/service-layout/service-layout.component';
 import { MSLinkToDirective } from './ms/shared/link-to/link-to.directive';
+import { FooterCopyrightComponent } from './ms';
 // import { default as en_US } from './ms/_i18n/en-US';
 // import { default as zh_CN } from './ms/_i18n/zh-CN';
 // import { default as zh_TW } from './ms/_i18n/zh-TW';
 
 
 export const MS_WIDGETS = [MSAllNavComponent, MSSearchComponent, MSLangsComponent, MSUserComponent, MSNoticeComponent, MSRegionComponent];
-export const MS_COMPONENTS = [MSLayoutComponent, MSSidebarComponent, MSTopbarComponent, ...MS_WIDGETS];
+export const MS_COMPONENTS = [MSLayoutComponent, MSSidebarComponent,FooterCopyrightComponent, MSTopbarComponent, ...MS_WIDGETS];
 export const MS_SHARED_COMPONENTS = [
   MSHelpComponent,
   MSPageNavComponent,

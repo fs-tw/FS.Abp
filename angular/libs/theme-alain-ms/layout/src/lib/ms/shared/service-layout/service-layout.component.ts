@@ -12,6 +12,7 @@ export class MSServiceLayoutComponent {
   @Input() @InputBoolean() nav = false;
   @Input() navConfig: MSServiceNavConfig = {};
   @Input() navList: MSMenu[] = [];
+  @Input() hasConsoleCss:boolean = true;
 
   get hideNav(): boolean {
     return this.srv.hideNav;
