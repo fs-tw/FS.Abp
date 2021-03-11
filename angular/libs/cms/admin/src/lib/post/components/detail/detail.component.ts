@@ -1,5 +1,14 @@
-import { ConfigStateService,EnvironmentService } from '@abp/ng.core';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import * as _ from 'lodash';
+
+import { Fs } from '@fs-tw/cms/proxy';
+
+import { PageService } from '../../providers/page.service';
+import { ImageFile, ImagePickerComponent } from '../image-picker/image-picker.component';
+
 // import { ActivatedRoute, Router } from '@angular/router';
 // import { BlogDto, PostImageDto } from '@fs-tw/cms/proxy';
 // import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
@@ -11,15 +20,118 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 // import { UploadFileComponent } from '../upload-file/upload-file.component';
 // import { TagComponent } from '../tag/tag.component';
 // import { finalize } from 'rxjs/operators';
+
 @Component({
   selector: 'fs-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.less']
 })
 export class DetailComponent implements OnInit {
+  @ViewChild("DefaultImagePicker") defaultImagePicker : ImagePickerComponent;
+
+  postId: string;
+  data: Fs.Cms.Posts.Dtos.PostDto;
+  dateRange: Date[] = [new Date(), new Date()];
+  defaultImages: ImageFile[] = [];
+
+  blogs: Fs.Cms.Blogs.Dtos.BlogDto[] = [];
+
+  isLoading: boolean = false;
+
+  coverImage: string = '';
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private pageService: PageService,
+    private confirmationService: ConfirmationService
+  ) {
+  }
 
   ngOnInit() {
+    this.postId = this.activatedRoute.snapshot.paramMap.get('postId');
+    console.log(this.postId);
 
+    this.getPost();
+    this.getBlogs();
+  }
+
+  getPost() {
+    this.data = {
+      blogId: null,
+      title: '',
+      subtitle: '',
+      url: '',
+      content: '',
+      disable: false,
+      startTime: '',
+      endTime: '',
+      displayMode: 0,
+      sequence: 0,
+      attachmentFileUrls: [],
+      postImages: []
+    } as Fs.Cms.Posts.Dtos.PostDto;
+
+    this.dateRange = [new Date(), new Date()];
+
+    this.defaultImages = [new ImageFile('test', 'https://dummyimage.com/200x130/000/fff')];
+    this.coverImage = 'test'
+
+    if (this.postId) {
+      this.pageService.getPostById(this.postId).subscribe((x) => {
+        this.data = x;
+
+        let st = x.startTime ? new Date(x.startTime) : new Date();
+        let ed = x.endTime ? new Date(x.endTime) : new Date();
+        this.dateRange = [st, ed];
+
+        this.defaultImages = x.postImages.map(y => new ImageFile(y.url, y.url) );
+
+        let coverImageIndex = x.postImages.findIndex(y => y.isCover);
+        if (coverImageIndex > -1) this.coverImage = x.postImages[coverImageIndex].url;
+      })
+    }
+  }
+
+  getBlogs() {
+    let input = {
+      skipCount: 0,
+      maxResultCount: 999,
+      sorting: 'sequence'
+    } as Fs.Cms.Blogs.Dtos.BlogGetListDto;
+
+    this.pageService.getBlogs(input).subscribe((x) => {
+      this.blogs = x.items;
+    })
+  }
+
+  deleteFile(fileName: string) {
+    this.confirmationService.warn(`確定刪除 ${fileName} 嗎？`, "系統訊息")
+      .subscribe((result) => {
+        if (result != Confirmation.Status.confirm) return;
+
+        this.defaultImagePicker.deleteFile(fileName);
+      })
+  }
+
+  save() {
+    let item: Fs.Cms.Posts.Dtos.PostDto = _.cloneDeep(this.data);
+    item.startTime = this.dateRange[0].toLocalISOString();
+    item.endTime = this.dateRange[1].toLocalISOString();
+
+    // TODO: 上傳檔案、上傳附件、加標籤
+
+    let action: Observable<any>;
+    if (!this.postId) {
+      action = this.pageService.createPost(item);
+    } else {
+      action = this.pageService.updatePost(this.postId, item);
+    }
+
+    action.subscribe((x) => {
+      this.router.navigate(["cms/post"]);
+    })
+    
   }
 
   // apiUrl = "";
@@ -105,47 +217,6 @@ export class DetailComponent implements OnInit {
   //       or_url: item.url
   //     }
   //   });
-  // }
-
-  // showModal(imgUrl: string): void {
-  //   this.isVisible = true;
-  //   this.selectImage = imgUrl;
-  // }
-
-  // handleCancel(): void {
-  //   this.isVisible = false;
-  // }
-
-
-  // setFileUrls(event) {
-  //   this.data.attachmentFileUrls = event;
-  // }
-
-  // beforeUpload = (file: any): boolean => {
-  //   var reader = new FileReader();
-  //   reader.readAsDataURL(file);
-  //   var vm = this;
-  //   reader.addEventListener("load", function () {
-  //     file.url = reader.result;
-  //     file.needDelete = false;
-  //     vm.fileList.push(file);
-  //     vm.showList.push(file);
-  //   }, false);
-  //   return false;
-  // };
-
-  // delete(item: any, index: number) {
-  //   this.confirmationService.warn(
-  //     '確認要刪除嗎？',
-  //     '系統訊息', {
-  //     cancelText: "關閉",
-  //     yesText: "確定"
-  //   }).subscribe((status: Confirmation.Status) => {
-  //     if (status === Confirmation.Status.confirm) {
-  //       this.showList.splice(index, 1);
-  //     }
-  //   });
-
   // }
 
   // save() {
