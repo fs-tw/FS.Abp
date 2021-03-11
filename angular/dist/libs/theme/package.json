@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/theme",
-  "version": "0.0.1",
+  "version": "422.0.1-alpha.0",
   "peerDependencies": {
     "@angular/common": "^11.2.4",
     "@angular/core": "^11.2.4",
