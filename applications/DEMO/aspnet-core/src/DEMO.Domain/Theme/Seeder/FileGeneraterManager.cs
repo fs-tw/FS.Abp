@@ -36,15 +36,6 @@ namespace DEMO.Theme
             this.fileManager = fileManager;
         }
 
-
-        public async Task<DirectoryDescriptor> CreateDirectory(string name, Guid? parentId = null, Guid? tenantId = null)
-        {
-            var directory = await this.directoryManager.CreateAsync(name, parentId, tenantId);
-            await this.directoryDescriptorRepository.InsertAsync(directory, true);
-            return directory;
-        }
-
-
         public async Task<FileDescriptor> CreateFileFromBase64(string input, Guid directoryId,string fileName, Guid? tenantId = null)
         {
             var memoryStream = new MemoryStream();
@@ -54,12 +45,40 @@ namespace DEMO.Theme
             contentType = temp.First().Replace("data:", "").Replace(";base64", "");
             var bytes = Convert.FromBase64String(base64);
             memoryStream.Write(bytes);
-            var fileDescriptor = await fileManager.CreateAsync(fileName, contentType, memoryStream.ToArray(), directoryId, tenantId);           
+            var fileDescriptor = await fileManager.CreateAsync(fileName + getFileExtension(base64), contentType, memoryStream.ToArray(), directoryId, tenantId,overrideExisting:true);           
             return fileDescriptor;
         }
 
+        private string getFileExtension(string base64String)
+        {
+            var data = base64String.Substring(0, 5);
 
-       
+            switch (data.ToUpper())
+            {
+                case "IVBOR":
+                    return ".png";
+                case "/9J/4":
+                    return ".jpg";
+                case "AAAAF":
+                    return ".mp4";
+                case "JVBER":
+                    return ".pdf";
+                case "AAABA":
+                    return ".ico";
+                case "UMFYI":
+                    return ".rar";
+                case "E1XYD":
+                    return ".rtf";
+                case "U1PKC":
+                    return ".txt";
+                case "MQOWM":
+                case "77U/M":
+                    return ".srt";
+                default:
+                    return string.Empty;
+            }
+        }
+
 
     }
 }

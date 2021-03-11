@@ -70,7 +70,7 @@ namespace DEMO.Theme
                 EntityHelper.TrySetId(webSiteDefinition, () => this.GuidGenerator.Create());
                 await this._webSitesStore.WebSiteDefinition.InsertAsync(webSiteDefinition, true);
                 await this.createBanner(data.No, data.Banners, context.TenantId);
-                //await this.createRoute(data.No, data.Routers, context.TenantId);
+                await this.createRoute(data.No, data.Routers, context.TenantId);
             }          
         }
 
@@ -83,6 +83,7 @@ namespace DEMO.Theme
 
             foreach (var banner in banners) 
             {
+                var fileName = banner.No + "_" + Guid.NewGuid().ToString();
                 var entity = new Banner()
                 {
                     No = banner.No,
@@ -90,9 +91,10 @@ namespace DEMO.Theme
                     Description = banner.Description,
                     Disable = banner.Disable,
                     Sequence = banner.Sequence,
-                    BannerDefinitionId = bannerDefinition.Id
+                    BannerDefinitionId = bannerDefinition.Id,
+                    FileName = fileName
                 };
-                var logoFile = await this.fileGeneraterManager.CreateFileFromBase64(banner.ImageFileSource, bannerDirectory.Id, banner.No +"_"+Guid.NewGuid().ToString(), tenantId);
+                var logoFile = await this.fileGeneraterManager.CreateFileFromBase64(banner.ImageFileSource, bannerDirectory.Id, fileName, tenantId);
                 entity.ImageFileId = logoFile.Id;
                 EntityHelper.TrySetId(entity, () => this.GuidGenerator.Create());
                 await this.bannersStore.Banner.InsertAsync(entity, true);
@@ -103,9 +105,46 @@ namespace DEMO.Theme
         private async Task createRoute(string no, List<RouterInfo> routers, Guid? tenantId) 
         {
             var routerDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Theme.Routers")).Last();
-            var routerDefinition = new RouteDefinition() { No = no, Description = no };
+            var routerDefinition = new RouteDefinition() { No = no, DisplayName = no };
             await this.routesStore.RouteDefinition.InsertAsync(routerDefinition, true);
+
+            foreach (var route in routers) 
+            {
+                await this.insertRoute(route, routerDirectory.Id, routerDefinition.Id, null, tenantId);
+            }
         }
+
+
+        private async Task insertRoute(RouterInfo input,Guid routerDirectoryId, Guid definitionId,Guid? parentId,Guid? tenantId) 
+        {
+            Route entity = new Route()
+            {
+                No = input.No,
+                DisplayName = input.DisplayName,
+                Description = input.Description,
+                Disable = input.Disable,
+                Url = input.Url,
+                OpenAnotherWindow = input.OpenAnotherWindow,
+                Sequence = input.Sequence,
+                RouteDefinitionId = definitionId,
+                TenantId = tenantId,
+                ParentId = parentId
+            };
+            if (input.IconSource.IsNullOrEmpty()) entity.IconFileId = null;
+            else 
+            {
+                var iconFileId = await this.fileGeneraterManager.CreateFileFromBase64(input.IconSource, routerDirectoryId, input.No+"_"+Guid.NewGuid().ToString(), tenantId);
+                entity.IconFileId = iconFileId.Id;
+            }
+            EntityHelper.TrySetId(entity, () => this.GuidGenerator.Create());
+            await this.routesStore.Route.InsertAsync(entity, true);
+
+            foreach (var child in input.Routes)
+            {
+                await this.insertRoute(child, routerDirectoryId, definitionId, entity.Id, tenantId);
+            }
+        }
+        
 
 
     }
