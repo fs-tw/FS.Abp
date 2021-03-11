@@ -7,4 +7,3 @@ export declare const LAYOUT_INIT_PROVIDERS: {
 }[];
 export declare function init(injector: Injector): () => void;
 export declare function listenRouter(injector: Injector): void;
-//# sourceMappingURL=init.provider.d.ts.map

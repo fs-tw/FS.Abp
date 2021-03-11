@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@abp/ng.theme.shared'), require('@angular/core'), require('@ng-bootstrap/ng-bootstrap'), require('@ngx-validate/core'), require('@angular/router'), require('@angular/forms'), require('rxjs'), require('rxjs/operators'), require('snq'), require('angular-oauth2-oidc'), require('@ngxs/store'), require('@angular/common/http'), require('@angular/common'), require('@angular/animations')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/account', ['exports', '@abp/ng.core', '@abp/ng.theme.shared', '@angular/core', '@ng-bootstrap/ng-bootstrap', '@ngx-validate/core', '@angular/router', '@angular/forms', 'rxjs', 'rxjs/operators', 'snq', 'angular-oauth2-oidc', '@ngxs/store', '@angular/common/http', '@angular/common', '@angular/animations'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].account = {}), global.i1, global.i3$1, global.ng.core, global.ngBootstrap, global.i9, global.ng.router, global.ng.forms, global.rxjs, global.rxjs.operators, global.snq, global.i2, global.i2$1, global.ng.common.http, global.ng.common, global.ng.animations));
-}(this, (function (exports, i1, i3$1, i0, ngBootstrap, i9, i3, i1$1, rxjs, operators, snq, i2, i2$1, http, i3$2, animations) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@abp/ng.theme.shared'), require('@angular/core'), require('@ng-bootstrap/ng-bootstrap'), require('@ngx-validate/core'), require('@angular/router'), require('@angular/common/http'), require('angular-oauth2-oidc'), require('rxjs'), require('rxjs/operators'), require('snq'), require('@angular/forms'), require('@ngxs/store'), require('@angular/animations')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/account', ['exports', '@abp/ng.core', '@abp/ng.theme.shared', '@angular/core', '@ng-bootstrap/ng-bootstrap', '@ngx-validate/core', '@angular/router', '@angular/common/http', 'angular-oauth2-oidc', 'rxjs', 'rxjs/operators', 'snq', '@angular/forms', '@ngxs/store', '@angular/animations'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].account = {}), global.i1, global.ng_theme_shared, global.ng.core, global.ngBootstrap, global.core, global.ng.router, global.ng.common.http, global.i2, global.rxjs, global.rxjs.operators, global.snq, global.ng.forms, global.store, global.ng.animations));
+}(this, (function (exports, i1, ng_theme_shared, i0, ngBootstrap, core, i3, http, i2, rxjs, operators, snq, forms, store, animations) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -419,23 +419,108 @@
         };
         return AuthService;
     }());
-    AuthService.ɵfac = function AuthService_Factory(t) { return new (t || AuthService)(i0.ɵɵinject(i0.Injector), i0.ɵɵinject(i1.EnvironmentService), i0.ɵɵinject(i2.OAuthService), i0.ɵɵinject(i1.AbpApplicationConfigurationService), i0.ɵɵinject(i3.Router), i0.ɵɵinject(i1.SessionStateService), i0.ɵɵinject(i1.ConfigStateService), i0.ɵɵinject('ACCOUNT_OPTIONS', 8)); };
-    AuthService.ɵprov = i0.ɵɵdefineInjectable({ token: AuthService, factory: AuthService.ɵfac, providedIn: 'root' });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AuthService, [{
-                type: i0.Injectable,
-                args: [{
-                        providedIn: 'root'
-                    }]
-            }], function () {
-            return [{ type: i0.Injector }, { type: i1.EnvironmentService }, { type: i2.OAuthService }, { type: i1.AbpApplicationConfigurationService }, { type: i3.Router }, { type: i1.SessionStateService }, { type: i1.ConfigStateService }, { type: undefined, decorators: [{
-                            type: i0.Optional
-                        }, {
-                            type: i0.Inject,
-                            args: ['ACCOUNT_OPTIONS']
-                        }] }];
-        }, null);
-    })();
+    AuthService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AuthService_Factory() { return new AuthService(i0.ɵɵinject(i0.INJECTOR), i0.ɵɵinject(i1.EnvironmentService), i0.ɵɵinject(i2.OAuthService), i0.ɵɵinject(i1.AbpApplicationConfigurationService), i0.ɵɵinject(i3.Router), i0.ɵɵinject(i1.SessionStateService), i0.ɵɵinject(i1.ConfigStateService), i0.ɵɵinject("ACCOUNT_OPTIONS", 8)); }, token: AuthService, providedIn: "root" });
+    AuthService.decorators = [
+        { type: i0.Injectable, args: [{
+                    providedIn: 'root'
+                },] }
+    ];
+    AuthService.ctorParameters = function () { return [
+        { type: i0.Injector },
+        { type: i1.EnvironmentService },
+        { type: i2.OAuthService },
+        { type: i1.AbpApplicationConfigurationService },
+        { type: i3.Router },
+        { type: i1.SessionStateService },
+        { type: i1.ConfigStateService },
+        { type: undefined, decorators: [{ type: i0.Optional }, { type: i0.Inject, args: ['ACCOUNT_OPTIONS',] }] }
+    ]; };
+
+    //import { AuthService, SetRemember, ConfigState } from '@abp/ng.core';
+    var maxLength = forms.Validators.maxLength, minLength = forms.Validators.minLength, required = forms.Validators.required;
+    var LoginComponent = /** @class */ (function () {
+        function LoginComponent(fb, oauthService, store, toasterService, authService, configStateService) {
+            this.fb = fb;
+            this.oauthService = oauthService;
+            this.store = store;
+            this.toasterService = toasterService;
+            this.authService = authService;
+            this.configStateService = configStateService;
+            this.isSelfRegistrationEnabled = true;
+            this.authWrapperKey = "Account.AuthWrapperComponent" /* AuthWrapper */;
+        }
+        LoginComponent.prototype.ngOnInit = function () {
+            this.isSelfRegistrationEnabled =
+                (this.configStateService.getSetting('Abp.Account.IsSelfRegistrationEnabled') || '').toLowerCase() !== 'false';
+            this.form = this.fb.group({
+                username: ['', [required, maxLength(255)]],
+                password: ['', [required, maxLength(128)]],
+                remember: [false],
+            });
+        };
+        LoginComponent.prototype.onSubmit = function () {
+            var _this = this;
+            if (this.form.invalid)
+                return;
+            this.inProgress = true;
+            this.authService
+                .login(this.form.get('username').value, this.form.get('password').value)
+                .pipe(operators.catchError(function (err) {
+                _this.toasterService.error(snq__default['default'](function () { return err.error.error_description; }) ||
+                    snq__default['default'](function () { return err.error.error.message; }, 'AbpAccount::DefaultErrorMessage'), 'Error', { life: 7000 });
+                return rxjs.throwError(err);
+            }), operators.finalize(function () { return (_this.inProgress = false); }))
+                .subscribe(function () {
+                //this.store.dispatch(new SetRemember(this.form.get('remember').value));
+            });
+        };
+        return LoginComponent;
+    }());
+    LoginComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-login',
+                    template: "<abp-auth-wrapper\r\n  *abpReplaceableTemplate=\"{\r\n    componentKey: authWrapperKey,\r\n    inputs: {\r\n      mainContentRef: { value: mainContentRef },\r\n      cancelContentRef: { value: cancelContentRef }\r\n    }\r\n  }\"\r\n  [mainContentRef]=\"mainContentRef\"\r\n  [cancelContentRef]=\"cancelContentRef\"\r\n>\r\n</abp-auth-wrapper>\r\n<ng-template #mainContentRef>\r\n  <h4>{{ 'AbpAccount::Login' | abpLocalization }}</h4>\r\n  <strong *ngIf=\"isSelfRegistrationEnabled\">\r\n    {{ 'AbpAccount::AreYouANewUser' | abpLocalization }}\r\n    <a class=\"text-decoration-none\" routerLink=\"/account/register\">{{\r\n      'AbpAccount::Register' | abpLocalization\r\n    }}</a>\r\n  </strong>\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" validateOnSubmit class=\"mt-4\">\r\n    <div class=\"form-group\">\r\n      <label for=\"login-input-user-name-or-email-address\">{{\r\n        'AbpAccount::UserNameOrEmailAddress' | abpLocalization\r\n      }}</label>\r\n      <input\r\n        class=\"form-control\"\r\n        type=\"text\"\r\n        id=\"login-input-user-name-or-email-address\"\r\n        formControlName=\"username\"\r\n        autocomplete=\"username\"\r\n        autofocus\r\n      />\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"login-input-password\">{{ 'AbpAccount::Password' | abpLocalization }}</label>\r\n      <input\r\n        class=\"form-control\"\r\n        type=\"password\"\r\n        id=\"login-input-password\"\r\n        formControlName=\"password\"\r\n        autocomplete=\"current-password\"\r\n      />\r\n    </div>\r\n    <div class=\"form-check\" validationTarget validationStyle>\r\n      <label class=\"form-check-label\" for=\"login-input-remember-me\">\r\n        <input\r\n          class=\"form-check-input\"\r\n          type=\"checkbox\"\r\n          id=\"login-input-remember-me\"\r\n          formControlName=\"remember\"\r\n        />\r\n        {{ 'AbpAccount::RememberMe' | abpLocalization }}\r\n      </label>\r\n    </div>\r\n    <abp-button\r\n      [loading]=\"inProgress\"\r\n      buttonType=\"submit\"\r\n      name=\"Action\"\r\n      buttonClass=\"btn-block btn-lg mt-3 btn btn-primary\"\r\n    >\r\n      {{ 'AbpAccount::Login' | abpLocalization }}\r\n    </abp-button>\r\n  </form>\r\n</ng-template>\r\n<ng-template #cancelContentRef>\r\n  <div class=\"card-footer text-center border-0\">\r\n    <a routerLink=\"/\">\r\n      <button type=\"button\" name=\"Action\" value=\"Cancel\" class=\"px-2 py-0 btn btn-link\">\r\n        {{ 'AbpAccount::Cancel' | abpLocalization }}\r\n      </button>\r\n    </a>\r\n  </div>\r\n</ng-template>\r\n"
+                },] }
+    ];
+    LoginComponent.ctorParameters = function () { return [
+        { type: forms.FormBuilder },
+        { type: i2.OAuthService },
+        { type: store.Store },
+        { type: ng_theme_shared.ToasterService },
+        { type: AuthService },
+        { type: i1.ConfigStateService }
+    ]; };
+
+    var ManageProfileComponent = /** @class */ (function () {
+        function ManageProfileComponent(store) {
+            this.store = store;
+            this.selectedTab = 0;
+            this.changePasswordKey = "Account.ChangePasswordComponent" /* ChangePassword */;
+            this.personalSettingsKey = "Account.PersonalSettingsComponent" /* PersonalSettings */;
+        }
+        ManageProfileComponent.prototype.ngOnInit = function () {
+            var _this = this;
+            this.store.dispatch(new i1.GetProfile()).subscribe(function () {
+                _this.isProfileLoaded = true;
+                if (_this.store.selectSnapshot(i1.ProfileState.getProfile).isExternal) {
+                    _this.hideChangePasswordTab = true;
+                    _this.selectedTab = 1;
+                }
+            });
+        };
+        return ManageProfileComponent;
+    }());
+    ManageProfileComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-manage-profile',
+                    template: "<div id=\"AbpContentToolbar\"></div>\r\n\r\n<div class=\"card border-0 shadow-sm min-h-400\" [abpLoading]=\"!isProfileLoaded\">\r\n  <div class=\"card-body\">\r\n    <div class=\"row\">\r\n      <div class=\"col-12 col-md-3\">\r\n        <ul class=\"nav flex-column nav-pills\" id=\"nav-tab\" role=\"tablist\">\r\n          <li\r\n            *ngIf=\"!hideChangePasswordTab && isProfileLoaded\"\r\n            class=\"nav-item\"\r\n            (click)=\"selectedTab = 0\"\r\n          >\r\n            <a\r\n              class=\"nav-link\"\r\n              [ngClass]=\"{ active: selectedTab === 0 }\"\r\n              role=\"tab\"\r\n              href=\"javascript:void(0)\"\r\n              >{{ 'AbpUi::ChangePassword' | abpLocalization }}</a\r\n            >\r\n          </li>\r\n          <li class=\"nav-item mb-2\" (click)=\"selectedTab = 1\">\r\n            <a\r\n              class=\"nav-link\"\r\n              [ngClass]=\"{ active: selectedTab === 1 }\"\r\n              role=\"tab\"\r\n              href=\"javascript:void(0)\"\r\n              >{{ 'AbpAccount::PersonalSettings' | abpLocalization }}</a\r\n            >\r\n          </li>\r\n        </ul>\r\n      </div>\r\n      <div *ngIf=\"isProfileLoaded\" class=\"col-12 col-md-9\">\r\n        <div class=\"tab-content\" *ngIf=\"selectedTab === 0\" [@fadeIn]>\r\n          <div class=\"tab-pane active\" role=\"tabpanel\">\r\n            <h4>\r\n              {{ 'AbpIdentity::ChangePassword' | abpLocalization }}\r\n              <hr />\r\n            </h4>\r\n            <abp-change-password-form\r\n              *abpReplaceableTemplate=\"{ componentKey: changePasswordKey }\"\r\n            ></abp-change-password-form>\r\n          </div>\r\n        </div>\r\n        <div class=\"tab-content\" *ngIf=\"selectedTab === 1\" [@fadeIn]>\r\n          <div class=\"tab-pane active\" role=\"tabpanel\">\r\n            <h4>\r\n              {{ 'AbpIdentity::PersonalSettings' | abpLocalization }}\r\n              <hr />\r\n            </h4>\r\n            <abp-personal-settings-form\r\n              *abpReplaceableTemplate=\"{ componentKey: personalSettingsKey }\"\r\n            ></abp-personal-settings-form>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n",
+                    animations: [animations.trigger('fadeIn', [animations.transition(':enter', animations.useAnimation(ng_theme_shared.fadeIn))])],
+                    styles: ["\n      .min-h-400 {\n        min-height: 400px;\n      }\n    "]
+                },] }
+    ];
+    ManageProfileComponent.ctorParameters = function () { return [
+        { type: store.Store }
+    ]; };
 
     var AccountService = /** @class */ (function () {
         function AccountService(rest) {
@@ -462,135 +547,333 @@
         };
         return AccountService;
     }());
-    AccountService.ɵfac = function AccountService_Factory(t) { return new (t || AccountService)(i0.ɵɵinject(i1.RestService)); };
-    AccountService.ɵprov = i0.ɵɵdefineInjectable({ token: AccountService, factory: AccountService.ɵfac, providedIn: 'root' });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountService, [{
-                type: i0.Injectable,
-                args: [{
-                        providedIn: 'root',
-                    }]
-            }], function () { return [{ type: i1.RestService }]; }, null);
-    })();
+    AccountService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AccountService_Factory() { return new AccountService(i0.ɵɵinject(i1.RestService)); }, token: AccountService, providedIn: "root" });
+    AccountService.decorators = [
+        { type: i0.Injectable, args: [{
+                    providedIn: 'root',
+                },] }
+    ];
+    AccountService.ctorParameters = function () { return [
+        { type: i1.RestService }
+    ]; };
 
-    function TenantBoxComponent_ng_container_0_ng_template_19_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "h5");
-            i0.ɵɵtext(1, "Switch Tenant");
-            i0.ɵɵelementEnd();
+    var maxLength$1 = forms.Validators.maxLength, required$1 = forms.Validators.required, email = forms.Validators.email;
+    var RegisterComponent = /** @class */ (function () {
+        function RegisterComponent(fb, accountService, oauthService, store, toasterService, authService, injector) {
+            this.fb = fb;
+            this.accountService = accountService;
+            this.oauthService = oauthService;
+            this.store = store;
+            this.toasterService = toasterService;
+            this.authService = authService;
+            this.injector = injector;
+            this.isSelfRegistrationEnabled = true;
+            this.authWrapperKey = "Account.AuthWrapperComponent" /* AuthWrapper */;
         }
-    }
-    function TenantBoxComponent_ng_container_0_ng_template_21_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r9_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "form", 14);
-            i0.ɵɵlistener("ngSubmit", function TenantBoxComponent_ng_container_0_ng_template_21_Template_form_ngSubmit_0_listener() { i0.ɵɵrestoreView(_r9_1); var ctx_r8 = i0.ɵɵnextContext(2); return ctx_r8.save(); });
-            i0.ɵɵelementStart(1, "div", 15);
-            i0.ɵɵelementStart(2, "div", 16);
-            i0.ɵɵelementStart(3, "label", 17);
-            i0.ɵɵtext(4);
-            i0.ɵɵpipe(5, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(6, "input", 18);
-            i0.ɵɵlistener("ngModelChange", function TenantBoxComponent_ng_container_0_ng_template_21_Template_input_ngModelChange_6_listener($event) { i0.ɵɵrestoreView(_r9_1); var ctx_r10 = i0.ɵɵnextContext(2); return ctx_r10.name = $event; });
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(7, "p");
-            i0.ɵɵtext(8);
-            i0.ɵɵpipe(9, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
+        RegisterComponent.prototype.ngOnInit = function () {
+            // this.isSelfRegistrationEnabled =
+            //   (
+            //     this.store.selectSnapshot(
+            //       ConfigState.getSetting('Abp.Account.IsSelfRegistrationEnabled'),
+            //     ) || ''
+            //   ).toLowerCase() !== 'false';
+            // if (!this.isSelfRegistrationEnabled) {
+            //   this.toasterService.warn(
+            //     {
+            //       key: 'AbpAccount::SelfRegistrationDisabledMessage',
+            //       defaultValue: 'Self registration is disabled.',
+            //     },
+            //     null,
+            //     { life: 10000 },
+            //   );
+            //   return;
+            // }
+            this.form = this.fb.group({
+                username: ['', [required$1, maxLength$1(255)]],
+                password: ['', __spread([required$1], ng_theme_shared.getPasswordValidators(this.injector))],
+                email: ['', [required$1, email]],
+            });
+        };
+        RegisterComponent.prototype.onSubmit = function () {
+            var _this = this;
+            if (this.form.invalid)
+                return;
+            this.inProgress = true;
+            var newUser = {
+                userName: this.form.get('username').value,
+                password: this.form.get('password').value,
+                emailAddress: this.form.get('email').value,
+                appName: 'Angular',
+            };
+            this.accountService
+                .register(newUser)
+                .pipe(operators.switchMap(function () { return _this.authService.login(newUser.userName, newUser.password); }), operators.catchError(function (err) {
+                _this.toasterService.error(snq__default['default'](function () { return err.error.error_description; }) ||
+                    snq__default['default'](function () { return err.error.error.message; }, 'AbpAccount::DefaultErrorMessage'), 'Error', { life: 7000 });
+                return rxjs.throwError(err);
+            }), operators.finalize(function () { return (_this.inProgress = false); }))
+                .subscribe();
+        };
+        return RegisterComponent;
+    }());
+    RegisterComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-register',
+                    template: "<abp-auth-wrapper\r\n  *abpReplaceableTemplate=\"{\r\n    componentKey: authWrapperKey,\r\n    inputs: {\r\n      mainContentRef: { value: mainContentRef }\r\n    }\r\n  }\"\r\n  [mainContentRef]=\"mainContentRef\"\r\n>\r\n</abp-auth-wrapper>\r\n<ng-template #mainContentRef>\r\n  <h4>{{ 'AbpAccount::Register' | abpLocalization }}</h4>\r\n  <strong>\r\n    {{ 'AbpAccount::AlreadyRegistered' | abpLocalization }}\r\n    <a class=\"text-decoration-none\" routerLink=\"/account/login\">{{\r\n      'AbpAccount::Login' | abpLocalization\r\n    }}</a>\r\n  </strong>\r\n  <form\r\n    *ngIf=\"isSelfRegistrationEnabled\"\r\n    [formGroup]=\"form\"\r\n    (ngSubmit)=\"onSubmit()\"\r\n    validateOnSubmit\r\n    class=\"mt-4\"\r\n  >\r\n    <div class=\"form-group\">\r\n      <label for=\"input-user-name\">{{ 'AbpAccount::UserName' | abpLocalization }}</label\r\n      ><span> * </span\r\n      ><input\r\n        autofocus\r\n        type=\"text\"\r\n        id=\"input-user-name\"\r\n        class=\"form-control\"\r\n        formControlName=\"username\"\r\n        autocomplete=\"username\"\r\n      />\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"input-email-address\">{{ 'AbpAccount::EmailAddress' | abpLocalization }}</label\r\n      ><span> * </span\r\n      ><input type=\"email\" id=\"input-email-address\" class=\"form-control\" formControlName=\"email\" />\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"input-password\">{{ 'AbpAccount::Password' | abpLocalization }}</label\r\n      ><span> * </span\r\n      ><input\r\n        type=\"password\"\r\n        id=\"input-password\"\r\n        class=\"form-control\"\r\n        formControlName=\"password\"\r\n        autocomplete=\"current-password\"\r\n      />\r\n    </div>\r\n    <abp-button\r\n      [loading]=\"inProgress\"\r\n      buttonType=\"submit\"\r\n      name=\"Action\"\r\n      buttonClass=\"btn-block btn-lg mt-3 btn btn-primary\"\r\n    >\r\n      {{ 'AbpAccount::Register' | abpLocalization }}\r\n    </abp-button>\r\n  </form>\r\n</ng-template>\r\n"
+                },] }
+    ];
+    RegisterComponent.ctorParameters = function () { return [
+        { type: forms.FormBuilder },
+        { type: AccountService },
+        { type: i2.OAuthService },
+        { type: store.Store },
+        { type: ng_theme_shared.ToasterService },
+        { type: AuthService },
+        { type: i0.Injector }
+    ]; };
+
+    //import { AuthService } from '@abp/ng.core';
+    var AuthenticationFlowGuard = /** @class */ (function () {
+        function AuthenticationFlowGuard(authService) {
+            this.authService = authService;
         }
-        if (rf & 2) {
-            var ctx_r5 = i0.ɵɵnextContext(2);
-            i0.ɵɵadvance(4);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(5, 3, "AbpUiMultiTenancy::Name"));
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("ngModel", ctx_r5.name);
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(9, 5, "AbpUiMultiTenancy::SwitchTenantHint"));
+        AuthenticationFlowGuard.prototype.canActivate = function () {
+            if (this.authService.isInternalAuth)
+                return true;
+            this.authService.initLogin();
+            return false;
+        };
+        return AuthenticationFlowGuard;
+    }());
+    AuthenticationFlowGuard.decorators = [
+        { type: i0.Injectable }
+    ];
+    AuthenticationFlowGuard.ctorParameters = function () { return [
+        { type: AuthService }
+    ]; };
+
+    var ɵ0 = {
+        replaceableComponent: {
+            key: "Account.LoginComponent" /* Login */,
+            defaultComponent: LoginComponent,
+        },
+    }, ɵ1 = {
+        replaceableComponent: {
+            key: "Account.RegisterComponent" /* Register */,
+            defaultComponent: RegisterComponent,
+        },
+    }, ɵ2 = {
+        replaceableComponent: {
+            key: "Account.ManageProfileComponent" /* ManageProfile */,
+            defaultComponent: ManageProfileComponent,
+        },
+    };
+    var routes = [
+        { path: '', pathMatch: 'full', redirectTo: 'login' },
+        {
+            path: '',
+            component: i1.DynamicLayoutComponent,
+            children: [
+                {
+                    path: 'login',
+                    component: i1.ReplaceableRouteContainerComponent,
+                    canActivate: [AuthenticationFlowGuard],
+                    data: ɵ0,
+                },
+                {
+                    path: 'register',
+                    component: i1.ReplaceableRouteContainerComponent,
+                    canActivate: [AuthenticationFlowGuard],
+                    data: ɵ1,
+                },
+                {
+                    path: 'manage-profile',
+                    component: i1.ReplaceableRouteContainerComponent,
+                    canActivate: [i1.AuthGuard],
+                    data: ɵ2,
+                },
+            ],
+        },
+    ];
+    var AccountRoutingModule = /** @class */ (function () {
+        function AccountRoutingModule() {
         }
-    }
-    function TenantBoxComponent_ng_container_0_ng_template_23_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r13_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "button", 19, 20);
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(4, "abp-button", 21);
-            i0.ɵɵlistener("click", function TenantBoxComponent_ng_container_0_ng_template_23_Template_abp_button_click_4_listener() { i0.ɵɵrestoreView(_r13_1); var ctx_r12 = i0.ɵɵnextContext(2); return ctx_r12.save(); });
-            i0.ɵɵelementStart(5, "span");
-            i0.ɵɵtext(6);
-            i0.ɵɵpipe(7, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
+        return AccountRoutingModule;
+    }());
+    AccountRoutingModule.decorators = [
+        { type: i0.NgModule, args: [{
+                    imports: [i3.RouterModule.forChild(routes)],
+                    exports: [i3.RouterModule],
+                },] }
+    ];
+
+    var AuthWrapperComponent = /** @class */ (function () {
+        function AuthWrapperComponent(multiTenancy, store, subscription, configStateService) {
+            this.multiTenancy = multiTenancy;
+            this.store = store;
+            this.subscription = subscription;
+            this.configStateService = configStateService;
+            this.enableLocalLogin = true;
+            this.tenantBoxKey = "Account.TenantBoxComponent" /* TenantBox */;
+            this.isMultiTenancyEnabled$ = this.configStateService.getDeep$('multiTenancy.isEnabled');
         }
-        if (rf & 2) {
-            var currentTenant_r1 = i0.ɵɵnextContext().ngIf;
-            var ctx_r7 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 3, "AbpTenantManagement::Cancel"), " ");
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("disabled", (currentTenant_r1 == null ? null : currentTenant_r1.name) === ctx_r7.name);
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(7, 5, "AbpTenantManagement::Save"));
+        AuthWrapperComponent.prototype.ngOnInit = function () {
+            var _this = this;
+            this.subscription.addOne(this.configStateService.getSetting$('Abp.Account.EnableLocalLogin'), function (value) {
+                if (value) {
+                    _this.enableLocalLogin = value.toLowerCase() !== 'false';
+                }
+            });
+        };
+        return AuthWrapperComponent;
+    }());
+    AuthWrapperComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-auth-wrapper',
+                    template: "<div class=\"row\">\r\n  <div class=\"mx-auto col col-md-5\">\r\n    <ng-container *ngIf=\"(isMultiTenancyEnabled$ | async) && multiTenancy.isTenantBoxVisible\">\r\n      <abp-tenant-box *abpReplaceableTemplate=\"{ componentKey: tenantBoxKey }\"></abp-tenant-box>\r\n    </ng-container>\r\n\r\n    <div class=\"abp-account-container\">\r\n      <div\r\n        *ngIf=\"enableLocalLogin; else disableLocalLoginTemplate\"\r\n        class=\"card mt-3 shadow-sm rounded\"\r\n      >\r\n        <div class=\"card-body p-5\">\r\n          <ng-content *ngTemplateOutlet=\"mainContentRef\"></ng-content>\r\n        </div>\r\n        <ng-content *ngTemplateOutlet=\"cancelContentRef\"></ng-content>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<ng-template #disableLocalLoginTemplate>\r\n  <div class=\"alert alert-warning\">\r\n    <strong>{{ 'AbpAccount::InvalidLoginRequest' | abpLocalization }}</strong>\r\n    {{ 'AbpAccount::ThereAreNoLoginSchemesConfiguredForThisClient' | abpLocalization }}\r\n  </div>\r\n</ng-template>\r\n",
+                    exportAs: 'abpAuthWrapper',
+                    providers: [i1.SubscriptionService]
+                },] }
+    ];
+    AuthWrapperComponent.ctorParameters = function () { return [
+        { type: i1.MultiTenancyService },
+        { type: store.Store },
+        { type: i1.SubscriptionService },
+        { type: i1.ConfigStateService }
+    ]; };
+    AuthWrapperComponent.propDecorators = {
+        mainContentRef: [{ type: i0.Input }],
+        cancelContentRef: [{ type: i0.Input }]
+    };
+
+    var required$2 = forms.Validators.required;
+    var PASSWORD_FIELDS = ['newPassword', 'repeatNewPassword'];
+    var ChangePasswordComponent = /** @class */ (function () {
+        function ChangePasswordComponent(fb, store, toasterService, injector) {
+            this.fb = fb;
+            this.store = store;
+            this.toasterService = toasterService;
+            this.injector = injector;
+            this.mapErrorsFn = function (errors, groupErrors, control) {
+                if (PASSWORD_FIELDS.indexOf(String(control.name)) < 0)
+                    return errors;
+                return errors.concat(groupErrors.filter(function (_a) {
+                    var key = _a.key;
+                    return key === 'passwordMismatch';
+                }));
+            };
         }
-    }
-    function TenantBoxComponent_ng_container_0_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r16_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵelement(1, "div", 1);
-            i0.ɵɵelementStart(2, "div", 2);
-            i0.ɵɵelementStart(3, "div", 3);
-            i0.ɵɵelementStart(4, "div", 4);
-            i0.ɵɵelementStart(5, "div", 5);
-            i0.ɵɵelementStart(6, "span", 6);
-            i0.ɵɵtext(7);
-            i0.ɵɵpipe(8, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(9, "br");
-            i0.ɵɵelementStart(10, "h6", 7);
-            i0.ɵɵelementStart(11, "i");
-            i0.ɵɵtext(12);
-            i0.ɵɵpipe(13, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(14, "div", 8);
-            i0.ɵɵelementStart(15, "a", 9);
-            i0.ɵɵlistener("click", function TenantBoxComponent_ng_container_0_Template_a_click_15_listener() { i0.ɵɵrestoreView(_r16_1); var ctx_r15 = i0.ɵɵnextContext(); return ctx_r15.onSwitch(); });
-            i0.ɵɵtext(16);
-            i0.ɵɵpipe(17, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(18, "abp-modal", 10);
-            i0.ɵɵlistener("visibleChange", function TenantBoxComponent_ng_container_0_Template_abp_modal_visibleChange_18_listener($event) { i0.ɵɵrestoreView(_r16_1); var ctx_r17 = i0.ɵɵnextContext(); return ctx_r17.isModalVisible = $event; });
-            i0.ɵɵtemplate(19, TenantBoxComponent_ng_container_0_ng_template_19_Template, 2, 0, "ng-template", null, 11, i0.ɵɵtemplateRefExtractor);
-            i0.ɵɵtemplate(21, TenantBoxComponent_ng_container_0_ng_template_21_Template, 10, 7, "ng-template", null, 12, i0.ɵɵtemplateRefExtractor);
-            i0.ɵɵtemplate(23, TenantBoxComponent_ng_container_0_ng_template_23_Template, 8, 7, "ng-template", null, 13, i0.ɵɵtemplateRefExtractor);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementContainerEnd();
+        ChangePasswordComponent.prototype.ngOnInit = function () {
+            this.hideCurrentPassword = !this.store.selectSnapshot(i1.ProfileState.getProfile).hasPassword;
+            var passwordValidations = ng_theme_shared.getPasswordValidators(this.injector);
+            this.form = this.fb.group({
+                password: ['', required$2],
+                newPassword: [
+                    '',
+                    {
+                        validators: __spread([required$2], passwordValidations),
+                    },
+                ],
+                repeatNewPassword: [
+                    '',
+                    {
+                        validators: __spread([required$2], passwordValidations),
+                    },
+                ],
+            }, {
+                validators: [core.comparePasswords(PASSWORD_FIELDS)],
+            });
+            if (this.hideCurrentPassword)
+                this.form.removeControl('password');
+        };
+        ChangePasswordComponent.prototype.onSubmit = function () {
+            var _this = this;
+            if (this.form.invalid)
+                return;
+            this.inProgress = true;
+            this.store
+                .dispatch(new i1.ChangePassword(Object.assign(Object.assign({}, (!this.hideCurrentPassword && { currentPassword: this.form.get('password').value })), { newPassword: this.form.get('newPassword').value })))
+                .pipe(operators.finalize(function () { return (_this.inProgress = false); }))
+                .subscribe({
+                next: function () {
+                    _this.form.reset();
+                    _this.toasterService.success('AbpAccount::PasswordChangedMessage', '', {
+                        life: 5000,
+                    });
+                    if (_this.hideCurrentPassword) {
+                        _this.hideCurrentPassword = false;
+                        _this.form.addControl('password', new forms.FormControl('', [required$2]));
+                    }
+                },
+                error: function (err) {
+                    _this.toasterService.error(snq__default['default'](function () { return err.error.error.message; }, 'AbpAccount::DefaultErrorMessage'));
+                },
+            });
+        };
+        return ChangePasswordComponent;
+    }());
+    ChangePasswordComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-change-password-form',
+                    template: "<form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" [mapErrorsFn]=\"mapErrorsFn\" validateOnSubmit>\r\n  <div *ngIf=\"!hideCurrentPassword\" class=\"form-group\">\r\n    <label for=\"current-password\">{{\r\n      'AbpIdentity::DisplayName:CurrentPassword' | abpLocalization\r\n    }}</label\r\n    ><span> * </span\r\n    ><input\r\n      type=\"password\"\r\n      id=\"current-password\"\r\n      class=\"form-control\"\r\n      formControlName=\"password\"\r\n      autofocus\r\n      autocomplete=\"current-password\"\r\n    />\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"new-password\">{{ 'AbpIdentity::DisplayName:NewPassword' | abpLocalization }}</label\r\n    ><span> * </span\r\n    ><input\r\n      type=\"password\"\r\n      id=\"new-password\"\r\n      class=\"form-control\"\r\n      formControlName=\"newPassword\"\r\n      autocomplete=\"new-password\"\r\n    />\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"confirm-new-password\">{{\r\n      'AbpIdentity::DisplayName:NewPasswordConfirm' | abpLocalization\r\n    }}</label\r\n    ><span> * </span\r\n    ><input\r\n      type=\"password\"\r\n      id=\"confirm-new-password\"\r\n      class=\"form-control\"\r\n      formControlName=\"repeatNewPassword\"\r\n      autocomplete=\"new-password\"\r\n    />\r\n  </div>\r\n  <abp-button\r\n    iconClass=\"fa fa-check\"\r\n    buttonClass=\"btn btn-primary color-white\"\r\n    buttonType=\"submit\"\r\n    [loading]=\"inProgress\"\r\n    [disabled]=\"form?.invalid\"\r\n    >{{ 'AbpIdentity::Save' | abpLocalization }}</abp-button\r\n  >\r\n</form>\r\n",
+                    exportAs: 'abpChangePasswordForm'
+                },] }
+    ];
+    ChangePasswordComponent.ctorParameters = function () { return [
+        { type: forms.FormBuilder },
+        { type: store.Store },
+        { type: ng_theme_shared.ToasterService },
+        { type: i0.Injector }
+    ]; };
+
+    var maxLength$2 = forms.Validators.maxLength, required$3 = forms.Validators.required, email$1 = forms.Validators.email;
+    var PersonalSettingsComponent = /** @class */ (function () {
+        function PersonalSettingsComponent(fb, store, toasterService) {
+            this.fb = fb;
+            this.store = store;
+            this.toasterService = toasterService;
         }
-        if (rf & 2) {
-            var currentTenant_r1 = ctx.ngIf;
-            var ctx_r0 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(7);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(8, 5, "AbpUiMultiTenancy::Tenant"));
-            i0.ɵɵadvance(5);
-            i0.ɵɵtextInterpolate(currentTenant_r1.name || i0.ɵɵpipeBind1(13, 7, "AbpUiMultiTenancy::NotSelected"));
-            i0.ɵɵadvance(4);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(17, 9, "AbpUiMultiTenancy::Switch"));
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("visible", ctx_r0.isModalVisible)("busy", ctx_r0.modalBusy);
-        }
-    }
-    var _c0 = function () { return {}; };
+        PersonalSettingsComponent.prototype.ngOnInit = function () {
+            this.buildForm();
+        };
+        PersonalSettingsComponent.prototype.buildForm = function () {
+            var profile = this.store.selectSnapshot(i1.ProfileState.getProfile);
+            this.form = this.fb.group({
+                userName: [profile.userName, [required$3, maxLength$2(256)]],
+                email: [profile.email, [required$3, email$1, maxLength$2(256)]],
+                name: [profile.name || '', [maxLength$2(64)]],
+                surname: [profile.surname || '', [maxLength$2(64)]],
+                phoneNumber: [profile.phoneNumber || '', [maxLength$2(16)]],
+            });
+        };
+        PersonalSettingsComponent.prototype.submit = function () {
+            var _this = this;
+            if (this.form.invalid)
+                return;
+            this.inProgress = true;
+            this.store
+                .dispatch(new i1.UpdateProfile(this.form.value))
+                .pipe(operators.finalize(function () { return (_this.inProgress = false); }))
+                .subscribe(function () {
+                _this.toasterService.success('AbpAccount::PersonalSettingsSaved', 'Success', { life: 5000 });
+            });
+        };
+        return PersonalSettingsComponent;
+    }());
+    PersonalSettingsComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-personal-settings-form',
+                    template: "<form validateOnSubmit *ngIf=\"form\" [formGroup]=\"form\" (ngSubmit)=\"submit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"username\">{{ 'AbpIdentity::DisplayName:UserName' | abpLocalization }}</label\r\n    ><span> * </span\r\n    ><input\r\n      type=\"text\"\r\n      id=\"username\"\r\n      class=\"form-control\"\r\n      formControlName=\"userName\"\r\n      autofocus\r\n      (keydown.space)=\"$event.preventDefault()\"\r\n    />\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col col-md-6\">\r\n      <div class=\"form-group\">\r\n        <label for=\"name\">{{ 'AbpIdentity::DisplayName:Name' | abpLocalization }}</label\r\n        ><input type=\"text\" id=\"name\" class=\"form-control\" formControlName=\"name\" />\r\n      </div>\r\n    </div>\r\n    <div class=\"col col-md-6\">\r\n      <div class=\"form-group\">\r\n        <label for=\"surname\">{{ 'AbpIdentity::DisplayName:Surname' | abpLocalization }}</label\r\n        ><input type=\"text\" id=\"surname\" class=\"form-control\" formControlName=\"surname\" />\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"email-address\">{{ 'AbpIdentity::DisplayName:Email' | abpLocalization }}</label\r\n    ><span> * </span\r\n    ><input type=\"text\" id=\"email-address\" class=\"form-control\" formControlName=\"email\" />\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"phone-number\">{{ 'AbpIdentity::DisplayName:PhoneNumber' | abpLocalization }}</label\r\n    ><input type=\"text\" id=\"phone-number\" class=\"form-control\" formControlName=\"phoneNumber\" />\r\n  </div>\r\n  <abp-button\r\n    buttonType=\"submit\"\r\n    iconClass=\"fa fa-check\"\r\n    buttonClass=\"btn btn-primary color-white\"\r\n    [loading]=\"inProgress\"\r\n    [disabled]=\"form?.invalid\"\r\n  >\r\n    {{ 'AbpIdentity::Save' | abpLocalization }}</abp-button\r\n  >\r\n</form>\r\n",
+                    exportAs: 'abpPersonalSettingsForm'
+                },] }
+    ];
+    PersonalSettingsComponent.ctorParameters = function () { return [
+        { type: forms.FormBuilder },
+        { type: store.Store },
+        { type: ng_theme_shared.ToasterService }
+    ]; };
+
+    // import { ABP, GetAppConfiguration, SessionState, SetTenant } from '@abp/ng.core';
     var TenantBoxComponent = /** @class */ (function () {
         function TenantBoxComponent(toasterService, accountService, sessionStateService, subscriptionService, abpApplicationConfigurationService, configStateService) {
             this.toasterService = toasterService;
@@ -641,1007 +924,20 @@
         };
         return TenantBoxComponent;
     }());
-    TenantBoxComponent.ɵfac = function TenantBoxComponent_Factory(t) { return new (t || TenantBoxComponent)(i0.ɵɵdirectiveInject(i3$1.ToasterService), i0.ɵɵdirectiveInject(AccountService), i0.ɵɵdirectiveInject(i1.SessionStateService), i0.ɵɵdirectiveInject(i1.SubscriptionService), i0.ɵɵdirectiveInject(i1.AbpApplicationConfigurationService), i0.ɵɵdirectiveInject(i1.ConfigStateService)); };
-    TenantBoxComponent.ɵcmp = i0.ɵɵdefineComponent({ type: TenantBoxComponent, selectors: [["abp-tenant-box"]], decls: 2, vars: 4, consts: [[4, "ngIf"], [2, "height", "1em"], [1, "card", "shadow-sm", "rounded", "mb-3"], [1, "card-body", "px-5"], [1, "row"], [1, "col"], [1, "text-uppercase", "text-muted", 2, "font-size", "0.8em"], [1, "m-0", "d-inline-block"], [1, "col-auto"], ["id", "AbpTenantSwitchLink", "href", "javascript:void(0);", 1, "btn", "btn-sm", "mt-3", "btn-outline-primary", 3, "click"], ["size", "md", 3, "visible", "busy", "visibleChange"], ["abpHeader", ""], ["abpBody", ""], ["abpFooter", ""], [3, "ngSubmit"], [1, "mt-2"], [1, "form-group"], ["for", "name"], ["type", "text", "id", "name", "name", "tenant", "autofocus", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "button", 1, "btn", "btn-secondary"], ["abpClose", ""], ["type", "abp-button", "iconClass", "fa fa-check", 3, "disabled", "click"]], template: function TenantBoxComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵtemplate(0, TenantBoxComponent_ng_container_0_Template, 25, 11, "ng-container", 0);
-                i0.ɵɵpipe(1, "async");
-            }
-            if (rf & 2) {
-                i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(1, 1, ctx.currentTenant$) || i0.ɵɵpureFunction0(3, _c0));
-            }
-        }, directives: [i3$2.NgIf, i3$1.ModalComponent, i1$1.ɵangular_packages_forms_forms_y, i1$1.NgControlStatusGroup, i1$1.NgForm, i1$1.DefaultValueAccessor, i1.AutofocusDirective, i1$1.NgControlStatus, i1$1.NgModel, i3$1.ButtonComponent], pipes: [i3$2.AsyncPipe, i1.LocalizationPipe], encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TenantBoxComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-tenant-box',
-                        templateUrl: './tenant-box.component.html',
-                    }]
-            }], function () { return [{ type: i3$1.ToasterService }, { type: AccountService }, { type: i1.SessionStateService }, { type: i1.SubscriptionService }, { type: i1.AbpApplicationConfigurationService }, { type: i1.ConfigStateService }]; }, null);
-    })();
-
-    function AuthWrapperComponent_ng_container_2_abp_tenant_box_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelement(0, "abp-tenant-box");
-        }
-    }
-    var _c0$1 = function (a0) { return { componentKey: a0 }; };
-    function AuthWrapperComponent_ng_container_2_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵtemplate(1, AuthWrapperComponent_ng_container_2_abp_tenant_box_1_Template, 1, 0, "abp-tenant-box", 6);
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var ctx_r0 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("abpReplaceableTemplate", i0.ɵɵpureFunction1(1, _c0$1, ctx_r0.tenantBoxKey));
-        }
-    }
-    function AuthWrapperComponent_div_5_ng_content_2_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵprojection(0, 0, ["*ngTemplateOutlet", "mainContentRef"]);
-        }
-    }
-    function AuthWrapperComponent_div_5_ng_content_3_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵprojection(0, 1, ["*ngTemplateOutlet", "cancelContentRef"]);
-        }
-    }
-    function AuthWrapperComponent_div_5_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 7);
-            i0.ɵɵelementStart(1, "div", 8);
-            i0.ɵɵtemplate(2, AuthWrapperComponent_div_5_ng_content_2_Template, 1, 0, "ng-content", 9);
-            i0.ɵɵelementEnd();
-            i0.ɵɵtemplate(3, AuthWrapperComponent_div_5_ng_content_3_Template, 1, 0, "ng-content", 9);
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r1 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("ngTemplateOutlet", ctx_r1.mainContentRef);
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngTemplateOutlet", ctx_r1.cancelContentRef);
-        }
-    }
-    function AuthWrapperComponent_ng_template_6_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 10);
-            i0.ɵɵelementStart(1, "strong");
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵtext(4);
-            i0.ɵɵpipe(5, "abpLocalization");
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(3, 2, "AbpAccount::InvalidLoginRequest"));
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(5, 4, "AbpAccount::ThereAreNoLoginSchemesConfiguredForThisClient"), " ");
-        }
-    }
-    var _c1 = ["*", "*"];
-    var AuthWrapperComponent = /** @class */ (function () {
-        function AuthWrapperComponent(multiTenancy, store, subscription, configStateService) {
-            this.multiTenancy = multiTenancy;
-            this.store = store;
-            this.subscription = subscription;
-            this.configStateService = configStateService;
-            this.enableLocalLogin = true;
-            this.tenantBoxKey = "Account.TenantBoxComponent" /* TenantBox */;
-            this.isMultiTenancyEnabled$ = this.configStateService.getDeep$('multiTenancy.isEnabled');
-        }
-        AuthWrapperComponent.prototype.ngOnInit = function () {
-            var _this = this;
-            this.subscription.addOne(this.configStateService.getSetting$('Abp.Account.EnableLocalLogin'), function (value) {
-                if (value) {
-                    _this.enableLocalLogin = value.toLowerCase() !== 'false';
-                }
-            });
-        };
-        return AuthWrapperComponent;
-    }());
-    AuthWrapperComponent.ɵfac = function AuthWrapperComponent_Factory(t) { return new (t || AuthWrapperComponent)(i0.ɵɵdirectiveInject(i1.MultiTenancyService), i0.ɵɵdirectiveInject(i2$1.Store), i0.ɵɵdirectiveInject(i1.SubscriptionService), i0.ɵɵdirectiveInject(i1.ConfigStateService)); };
-    AuthWrapperComponent.ɵcmp = i0.ɵɵdefineComponent({ type: AuthWrapperComponent, selectors: [["abp-auth-wrapper"]], inputs: { mainContentRef: "mainContentRef", cancelContentRef: "cancelContentRef" }, exportAs: ["abpAuthWrapper"], features: [i0.ɵɵProvidersFeature([i1.SubscriptionService])], ngContentSelectors: _c1, decls: 8, vars: 5, consts: [[1, "row"], [1, "mx-auto", "col", "col-md-5"], [4, "ngIf"], [1, "abp-account-container"], ["class", "card mt-3 shadow-sm rounded", 4, "ngIf", "ngIfElse"], ["disableLocalLoginTemplate", ""], [4, "abpReplaceableTemplate"], [1, "card", "mt-3", "shadow-sm", "rounded"], [1, "card-body", "p-5"], [4, "ngTemplateOutlet"], [1, "alert", "alert-warning"]], template: function AuthWrapperComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵprojectionDef(_c1);
-                i0.ɵɵelementStart(0, "div", 0);
-                i0.ɵɵelementStart(1, "div", 1);
-                i0.ɵɵtemplate(2, AuthWrapperComponent_ng_container_2_Template, 2, 3, "ng-container", 2);
-                i0.ɵɵpipe(3, "async");
-                i0.ɵɵelementStart(4, "div", 3);
-                i0.ɵɵtemplate(5, AuthWrapperComponent_div_5_Template, 4, 2, "div", 4);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵtemplate(6, AuthWrapperComponent_ng_template_6_Template, 6, 6, "ng-template", null, 5, i0.ɵɵtemplateRefExtractor);
-            }
-            if (rf & 2) {
-                var _r2 = i0.ɵɵreference(7);
-                i0.ɵɵadvance(2);
-                i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(3, 3, ctx.isMultiTenancyEnabled$) && ctx.multiTenancy.isTenantBoxVisible);
-                i0.ɵɵadvance(3);
-                i0.ɵɵproperty("ngIf", ctx.enableLocalLogin)("ngIfElse", _r2);
-            }
-        }, directives: [i3$2.NgIf, i1.ReplaceableTemplateDirective, TenantBoxComponent, i3$2.NgTemplateOutlet], pipes: [i3$2.AsyncPipe, i1.LocalizationPipe], encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AuthWrapperComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-auth-wrapper',
-                        templateUrl: './auth-wrapper.component.html',
-                        exportAs: 'abpAuthWrapper',
-                        providers: [i1.SubscriptionService],
-                    }]
-            }], function () { return [{ type: i1.MultiTenancyService }, { type: i2$1.Store }, { type: i1.SubscriptionService }, { type: i1.ConfigStateService }]; }, { mainContentRef: [{
-                    type: i0.Input
-                }], cancelContentRef: [{
-                    type: i0.Input
-                }] });
-    })();
-
-    function LoginComponent_abp_auth_wrapper_0_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelement(0, "abp-auth-wrapper", 3);
-        }
-        if (rf & 2) {
-            i0.ɵɵnextContext();
-            var _r1 = i0.ɵɵreference(2);
-            var _r3 = i0.ɵɵreference(4);
-            i0.ɵɵproperty("mainContentRef", _r1)("cancelContentRef", _r3);
-        }
-    }
-    function LoginComponent_ng_template_1_strong_3_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "strong");
-            i0.ɵɵtext(1);
-            i0.ɵɵpipe(2, "abpLocalization");
-            i0.ɵɵelementStart(3, "a", 15);
-            i0.ɵɵtext(4);
-            i0.ɵɵpipe(5, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(2, 2, "AbpAccount::AreYouANewUser"), " ");
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(5, 4, "AbpAccount::Register"));
-        }
-    }
-    function LoginComponent_ng_template_1_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r7_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "h4");
-            i0.ɵɵtext(1);
-            i0.ɵɵpipe(2, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵtemplate(3, LoginComponent_ng_template_1_strong_3_Template, 6, 6, "strong", 4);
-            i0.ɵɵelementStart(4, "form", 5);
-            i0.ɵɵlistener("ngSubmit", function LoginComponent_ng_template_1_Template_form_ngSubmit_4_listener() { i0.ɵɵrestoreView(_r7_1); var ctx_r6 = i0.ɵɵnextContext(); return ctx_r6.onSubmit(); });
-            i0.ɵɵelementStart(5, "div", 6);
-            i0.ɵɵelementStart(6, "label", 7);
-            i0.ɵɵtext(7);
-            i0.ɵɵpipe(8, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(9, "input", 8);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(10, "div", 6);
-            i0.ɵɵelementStart(11, "label", 9);
-            i0.ɵɵtext(12);
-            i0.ɵɵpipe(13, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(14, "input", 10);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(15, "div", 11);
-            i0.ɵɵelementStart(16, "label", 12);
-            i0.ɵɵelement(17, "input", 13);
-            i0.ɵɵtext(18);
-            i0.ɵɵpipe(19, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(20, "abp-button", 14);
-            i0.ɵɵtext(21);
-            i0.ɵɵpipe(22, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r2 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(2, 8, "AbpAccount::Login"));
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("ngIf", ctx_r2.isSelfRegistrationEnabled);
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("formGroup", ctx_r2.form);
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(8, 10, "AbpAccount::UserNameOrEmailAddress"));
-            i0.ɵɵadvance(5);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(13, 12, "AbpAccount::Password"));
-            i0.ɵɵadvance(6);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(19, 14, "AbpAccount::RememberMe"), " ");
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("loading", ctx_r2.inProgress);
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(22, 16, "AbpAccount::Login"), " ");
-        }
-    }
-    function LoginComponent_ng_template_3_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 16);
-            i0.ɵɵelementStart(1, "a", 17);
-            i0.ɵɵelementStart(2, "button", 18);
-            i0.ɵɵtext(3);
-            i0.ɵɵpipe(4, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(4, 1, "AbpAccount::Cancel"), " ");
-        }
-    }
-    var _c0$2 = function (a0) { return { value: a0 }; };
-    var _c1$1 = function (a0, a1) { return { mainContentRef: a0, cancelContentRef: a1 }; };
-    var _c2 = function (a0, a1) { return { componentKey: a0, inputs: a1 }; };
-    var maxLength = i1$1.Validators.maxLength, minLength = i1$1.Validators.minLength, required = i1$1.Validators.required;
-    var LoginComponent = /** @class */ (function () {
-        function LoginComponent(fb, oauthService, store, toasterService, authService, configStateService) {
-            this.fb = fb;
-            this.oauthService = oauthService;
-            this.store = store;
-            this.toasterService = toasterService;
-            this.authService = authService;
-            this.configStateService = configStateService;
-            this.isSelfRegistrationEnabled = true;
-            this.authWrapperKey = "Account.AuthWrapperComponent" /* AuthWrapper */;
-        }
-        LoginComponent.prototype.ngOnInit = function () {
-            this.isSelfRegistrationEnabled =
-                (this.configStateService.getSetting('Abp.Account.IsSelfRegistrationEnabled') || '').toLowerCase() !== 'false';
-            this.form = this.fb.group({
-                username: ['', [required, maxLength(255)]],
-                password: ['', [required, maxLength(128)]],
-                remember: [false],
-            });
-        };
-        LoginComponent.prototype.onSubmit = function () {
-            var _this = this;
-            if (this.form.invalid)
-                return;
-            this.inProgress = true;
-            this.authService
-                .login(this.form.get('username').value, this.form.get('password').value)
-                .pipe(operators.catchError(function (err) {
-                _this.toasterService.error(snq__default['default'](function () { return err.error.error_description; }) ||
-                    snq__default['default'](function () { return err.error.error.message; }, 'AbpAccount::DefaultErrorMessage'), 'Error', { life: 7000 });
-                return rxjs.throwError(err);
-            }), operators.finalize(function () { return (_this.inProgress = false); }))
-                .subscribe(function () {
-                //this.store.dispatch(new SetRemember(this.form.get('remember').value));
-            });
-        };
-        return LoginComponent;
-    }());
-    LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(i0.ɵɵdirectiveInject(i1$1.FormBuilder), i0.ɵɵdirectiveInject(i2.OAuthService), i0.ɵɵdirectiveInject(i2$1.Store), i0.ɵɵdirectiveInject(i3$1.ToasterService), i0.ɵɵdirectiveInject(AuthService), i0.ɵɵdirectiveInject(i1.ConfigStateService)); };
-    LoginComponent.ɵcmp = i0.ɵɵdefineComponent({ type: LoginComponent, selectors: [["abp-login"]], decls: 5, vars: 11, consts: [[3, "mainContentRef", "cancelContentRef", 4, "abpReplaceableTemplate"], ["mainContentRef", ""], ["cancelContentRef", ""], [3, "mainContentRef", "cancelContentRef"], [4, "ngIf"], ["validateOnSubmit", "", 1, "mt-4", 3, "formGroup", "ngSubmit"], [1, "form-group"], ["for", "login-input-user-name-or-email-address"], ["type", "text", "id", "login-input-user-name-or-email-address", "formControlName", "username", "autocomplete", "username", "autofocus", "", 1, "form-control"], ["for", "login-input-password"], ["type", "password", "id", "login-input-password", "formControlName", "password", "autocomplete", "current-password", 1, "form-control"], ["validationTarget", "", "validationStyle", "", 1, "form-check"], ["for", "login-input-remember-me", 1, "form-check-label"], ["type", "checkbox", "id", "login-input-remember-me", "formControlName", "remember", 1, "form-check-input"], ["buttonType", "submit", "name", "Action", "buttonClass", "btn-block btn-lg mt-3 btn btn-primary", 3, "loading"], ["routerLink", "/account/register", 1, "text-decoration-none"], [1, "card-footer", "text-center", "border-0"], ["routerLink", "/"], ["type", "button", "name", "Action", "value", "Cancel", 1, "px-2", "py-0", "btn", "btn-link"]], template: function LoginComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵtemplate(0, LoginComponent_abp_auth_wrapper_0_Template, 1, 2, "abp-auth-wrapper", 0);
-                i0.ɵɵtemplate(1, LoginComponent_ng_template_1_Template, 23, 18, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
-                i0.ɵɵtemplate(3, LoginComponent_ng_template_3_Template, 5, 3, "ng-template", null, 2, i0.ɵɵtemplateRefExtractor);
-            }
-            if (rf & 2) {
-                var _r1 = i0.ɵɵreference(2);
-                var _r3 = i0.ɵɵreference(4);
-                i0.ɵɵproperty("abpReplaceableTemplate", i0.ɵɵpureFunction2(8, _c2, ctx.authWrapperKey, i0.ɵɵpureFunction2(5, _c1$1, i0.ɵɵpureFunction1(1, _c0$2, _r1), i0.ɵɵpureFunction1(3, _c0$2, _r3))));
-            }
-        }, directives: [i1.ReplaceableTemplateDirective, AuthWrapperComponent, i3$2.NgIf, i1$1.ɵangular_packages_forms_forms_y, i1$1.NgControlStatusGroup, i1.FormSubmitDirective, i1$1.FormGroupDirective, i9.ValidationGroupDirective, i1$1.DefaultValueAccessor, i1$1.NgControlStatus, i1$1.FormControlName, i9.ValidationDirective, i1.AutofocusDirective, i9.ValidationTargetDirective, i9.ValidationStyleDirective, i1$1.CheckboxControlValueAccessor, i3$1.ButtonComponent, i3.RouterLinkWithHref], pipes: [i1.LocalizationPipe], encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(LoginComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-login',
-                        templateUrl: './login.component.html',
-                    }]
-            }], function () { return [{ type: i1$1.FormBuilder }, { type: i2.OAuthService }, { type: i2$1.Store }, { type: i3$1.ToasterService }, { type: AuthService }, { type: i1.ConfigStateService }]; }, null);
-    })();
-
-    function ChangePasswordComponent_div_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 2);
-            i0.ɵɵelementStart(1, "label", 8);
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(4, "span");
-            i0.ɵɵtext(5, " * ");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(6, "input", 9);
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(3, 1, "AbpIdentity::DisplayName:CurrentPassword"));
-        }
-    }
-    var required$1 = i1$1.Validators.required;
-    var PASSWORD_FIELDS = ['newPassword', 'repeatNewPassword'];
-    var ChangePasswordComponent = /** @class */ (function () {
-        function ChangePasswordComponent(fb, store, toasterService, injector) {
-            this.fb = fb;
-            this.store = store;
-            this.toasterService = toasterService;
-            this.injector = injector;
-            this.mapErrorsFn = function (errors, groupErrors, control) {
-                if (PASSWORD_FIELDS.indexOf(String(control.name)) < 0)
-                    return errors;
-                return errors.concat(groupErrors.filter(function (_a) {
-                    var key = _a.key;
-                    return key === 'passwordMismatch';
-                }));
-            };
-        }
-        ChangePasswordComponent.prototype.ngOnInit = function () {
-            this.hideCurrentPassword = !this.store.selectSnapshot(i1.ProfileState.getProfile).hasPassword;
-            var passwordValidations = i3$1.getPasswordValidators(this.injector);
-            this.form = this.fb.group({
-                password: ['', required$1],
-                newPassword: [
-                    '',
-                    {
-                        validators: __spread([required$1], passwordValidations),
-                    },
-                ],
-                repeatNewPassword: [
-                    '',
-                    {
-                        validators: __spread([required$1], passwordValidations),
-                    },
-                ],
-            }, {
-                validators: [i9.comparePasswords(PASSWORD_FIELDS)],
-            });
-            if (this.hideCurrentPassword)
-                this.form.removeControl('password');
-        };
-        ChangePasswordComponent.prototype.onSubmit = function () {
-            var _this = this;
-            if (this.form.invalid)
-                return;
-            this.inProgress = true;
-            this.store
-                .dispatch(new i1.ChangePassword(Object.assign(Object.assign({}, (!this.hideCurrentPassword && { currentPassword: this.form.get('password').value })), { newPassword: this.form.get('newPassword').value })))
-                .pipe(operators.finalize(function () { return (_this.inProgress = false); }))
-                .subscribe({
-                next: function () {
-                    _this.form.reset();
-                    _this.toasterService.success('AbpAccount::PasswordChangedMessage', '', {
-                        life: 5000,
-                    });
-                    if (_this.hideCurrentPassword) {
-                        _this.hideCurrentPassword = false;
-                        _this.form.addControl('password', new i1$1.FormControl('', [required$1]));
-                    }
-                },
-                error: function (err) {
-                    _this.toasterService.error(snq__default['default'](function () { return err.error.error.message; }, 'AbpAccount::DefaultErrorMessage'));
-                },
-            });
-        };
-        return ChangePasswordComponent;
-    }());
-    ChangePasswordComponent.ɵfac = function ChangePasswordComponent_Factory(t) { return new (t || ChangePasswordComponent)(i0.ɵɵdirectiveInject(i1$1.FormBuilder), i0.ɵɵdirectiveInject(i2$1.Store), i0.ɵɵdirectiveInject(i3$1.ToasterService), i0.ɵɵdirectiveInject(i0.Injector)); };
-    ChangePasswordComponent.ɵcmp = i0.ɵɵdefineComponent({ type: ChangePasswordComponent, selectors: [["abp-change-password-form"]], exportAs: ["abpChangePasswordForm"], decls: 19, vars: 14, consts: [["validateOnSubmit", "", 3, "formGroup", "mapErrorsFn", "ngSubmit"], ["class", "form-group", 4, "ngIf"], [1, "form-group"], ["for", "new-password"], ["type", "password", "id", "new-password", "formControlName", "newPassword", "autocomplete", "new-password", 1, "form-control"], ["for", "confirm-new-password"], ["type", "password", "id", "confirm-new-password", "formControlName", "repeatNewPassword", "autocomplete", "new-password", 1, "form-control"], ["iconClass", "fa fa-check", "buttonClass", "btn btn-primary color-white", "buttonType", "submit", 3, "loading", "disabled"], ["for", "current-password"], ["type", "password", "id", "current-password", "formControlName", "password", "autofocus", "", "autocomplete", "current-password", 1, "form-control"]], template: function ChangePasswordComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵelementStart(0, "form", 0);
-                i0.ɵɵlistener("ngSubmit", function ChangePasswordComponent_Template_form_ngSubmit_0_listener() { return ctx.onSubmit(); });
-                i0.ɵɵtemplate(1, ChangePasswordComponent_div_1_Template, 7, 3, "div", 1);
-                i0.ɵɵelementStart(2, "div", 2);
-                i0.ɵɵelementStart(3, "label", 3);
-                i0.ɵɵtext(4);
-                i0.ɵɵpipe(5, "abpLocalization");
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementStart(6, "span");
-                i0.ɵɵtext(7, " * ");
-                i0.ɵɵelementEnd();
-                i0.ɵɵelement(8, "input", 4);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementStart(9, "div", 2);
-                i0.ɵɵelementStart(10, "label", 5);
-                i0.ɵɵtext(11);
-                i0.ɵɵpipe(12, "abpLocalization");
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementStart(13, "span");
-                i0.ɵɵtext(14, " * ");
-                i0.ɵɵelementEnd();
-                i0.ɵɵelement(15, "input", 6);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementStart(16, "abp-button", 7);
-                i0.ɵɵtext(17);
-                i0.ɵɵpipe(18, "abpLocalization");
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-            }
-            if (rf & 2) {
-                i0.ɵɵproperty("formGroup", ctx.form)("mapErrorsFn", ctx.mapErrorsFn);
-                i0.ɵɵadvance(1);
-                i0.ɵɵproperty("ngIf", !ctx.hideCurrentPassword);
-                i0.ɵɵadvance(3);
-                i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(5, 8, "AbpIdentity::DisplayName:NewPassword"));
-                i0.ɵɵadvance(7);
-                i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(12, 10, "AbpIdentity::DisplayName:NewPasswordConfirm"));
-                i0.ɵɵadvance(5);
-                i0.ɵɵproperty("loading", ctx.inProgress)("disabled", ctx.form == null ? null : ctx.form.invalid);
-                i0.ɵɵadvance(1);
-                i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(18, 12, "AbpIdentity::Save"));
-            }
-        }, directives: [i1$1.ɵangular_packages_forms_forms_y, i1$1.NgControlStatusGroup, i1.FormSubmitDirective, i1$1.FormGroupDirective, i9.ValidationGroupDirective, i3$2.NgIf, i1$1.DefaultValueAccessor, i1$1.NgControlStatus, i1$1.FormControlName, i9.ValidationDirective, i3$1.ButtonComponent, i1.AutofocusDirective], pipes: [i1.LocalizationPipe], encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ChangePasswordComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-change-password-form',
-                        templateUrl: './change-password.component.html',
-                        exportAs: 'abpChangePasswordForm',
-                    }]
-            }], function () { return [{ type: i1$1.FormBuilder }, { type: i2$1.Store }, { type: i3$1.ToasterService }, { type: i0.Injector }]; }, null);
-    })();
-
-    function PersonalSettingsComponent_form_0_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r2_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "form", 1);
-            i0.ɵɵlistener("ngSubmit", function PersonalSettingsComponent_form_0_Template_form_ngSubmit_0_listener() { i0.ɵɵrestoreView(_r2_1); var ctx_r1 = i0.ɵɵnextContext(); return ctx_r1.submit(); });
-            i0.ɵɵelementStart(1, "div", 2);
-            i0.ɵɵelementStart(2, "label", 3);
-            i0.ɵɵtext(3);
-            i0.ɵɵpipe(4, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(5, "span");
-            i0.ɵɵtext(6, " * ");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(7, "input", 4);
-            i0.ɵɵlistener("keydown.space", function PersonalSettingsComponent_form_0_Template_input_keydown_space_7_listener($event) { return $event.preventDefault(); });
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(8, "div", 5);
-            i0.ɵɵelementStart(9, "div", 6);
-            i0.ɵɵelementStart(10, "div", 2);
-            i0.ɵɵelementStart(11, "label", 7);
-            i0.ɵɵtext(12);
-            i0.ɵɵpipe(13, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(14, "input", 8);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(15, "div", 6);
-            i0.ɵɵelementStart(16, "div", 2);
-            i0.ɵɵelementStart(17, "label", 9);
-            i0.ɵɵtext(18);
-            i0.ɵɵpipe(19, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(20, "input", 10);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(21, "div", 2);
-            i0.ɵɵelementStart(22, "label", 11);
-            i0.ɵɵtext(23);
-            i0.ɵɵpipe(24, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(25, "span");
-            i0.ɵɵtext(26, " * ");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(27, "input", 12);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(28, "div", 2);
-            i0.ɵɵelementStart(29, "label", 13);
-            i0.ɵɵtext(30);
-            i0.ɵɵpipe(31, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(32, "input", 14);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(33, "abp-button", 15);
-            i0.ɵɵtext(34);
-            i0.ɵɵpipe(35, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r0 = i0.ɵɵnextContext();
-            i0.ɵɵproperty("formGroup", ctx_r0.form);
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(4, 9, "AbpIdentity::DisplayName:UserName"));
-            i0.ɵɵadvance(9);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(13, 11, "AbpIdentity::DisplayName:Name"));
-            i0.ɵɵadvance(6);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(19, 13, "AbpIdentity::DisplayName:Surname"));
-            i0.ɵɵadvance(5);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(24, 15, "AbpIdentity::DisplayName:Email"));
-            i0.ɵɵadvance(7);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(31, 17, "AbpIdentity::DisplayName:PhoneNumber"));
-            i0.ɵɵadvance(3);
-            i0.ɵɵproperty("loading", ctx_r0.inProgress)("disabled", ctx_r0.form == null ? null : ctx_r0.form.invalid);
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(35, 19, "AbpIdentity::Save"), "");
-        }
-    }
-    var maxLength$1 = i1$1.Validators.maxLength, required$2 = i1$1.Validators.required, email = i1$1.Validators.email;
-    var PersonalSettingsComponent = /** @class */ (function () {
-        function PersonalSettingsComponent(fb, store, toasterService) {
-            this.fb = fb;
-            this.store = store;
-            this.toasterService = toasterService;
-        }
-        PersonalSettingsComponent.prototype.ngOnInit = function () {
-            this.buildForm();
-        };
-        PersonalSettingsComponent.prototype.buildForm = function () {
-            var profile = this.store.selectSnapshot(i1.ProfileState.getProfile);
-            this.form = this.fb.group({
-                userName: [profile.userName, [required$2, maxLength$1(256)]],
-                email: [profile.email, [required$2, email, maxLength$1(256)]],
-                name: [profile.name || '', [maxLength$1(64)]],
-                surname: [profile.surname || '', [maxLength$1(64)]],
-                phoneNumber: [profile.phoneNumber || '', [maxLength$1(16)]],
-            });
-        };
-        PersonalSettingsComponent.prototype.submit = function () {
-            var _this = this;
-            if (this.form.invalid)
-                return;
-            this.inProgress = true;
-            this.store
-                .dispatch(new i1.UpdateProfile(this.form.value))
-                .pipe(operators.finalize(function () { return (_this.inProgress = false); }))
-                .subscribe(function () {
-                _this.toasterService.success('AbpAccount::PersonalSettingsSaved', 'Success', { life: 5000 });
-            });
-        };
-        return PersonalSettingsComponent;
-    }());
-    PersonalSettingsComponent.ɵfac = function PersonalSettingsComponent_Factory(t) { return new (t || PersonalSettingsComponent)(i0.ɵɵdirectiveInject(i1$1.FormBuilder), i0.ɵɵdirectiveInject(i2$1.Store), i0.ɵɵdirectiveInject(i3$1.ToasterService)); };
-    PersonalSettingsComponent.ɵcmp = i0.ɵɵdefineComponent({ type: PersonalSettingsComponent, selectors: [["abp-personal-settings-form"]], exportAs: ["abpPersonalSettingsForm"], decls: 1, vars: 1, consts: [["validateOnSubmit", "", 3, "formGroup", "ngSubmit", 4, "ngIf"], ["validateOnSubmit", "", 3, "formGroup", "ngSubmit"], [1, "form-group"], ["for", "username"], ["type", "text", "id", "username", "formControlName", "userName", "autofocus", "", 1, "form-control", 3, "keydown.space"], [1, "row"], [1, "col", "col-md-6"], ["for", "name"], ["type", "text", "id", "name", "formControlName", "name", 1, "form-control"], ["for", "surname"], ["type", "text", "id", "surname", "formControlName", "surname", 1, "form-control"], ["for", "email-address"], ["type", "text", "id", "email-address", "formControlName", "email", 1, "form-control"], ["for", "phone-number"], ["type", "text", "id", "phone-number", "formControlName", "phoneNumber", 1, "form-control"], ["buttonType", "submit", "iconClass", "fa fa-check", "buttonClass", "btn btn-primary color-white", 3, "loading", "disabled"]], template: function PersonalSettingsComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵtemplate(0, PersonalSettingsComponent_form_0_Template, 36, 21, "form", 0);
-            }
-            if (rf & 2) {
-                i0.ɵɵproperty("ngIf", ctx.form);
-            }
-        }, directives: [i3$2.NgIf, i1$1.ɵangular_packages_forms_forms_y, i1$1.NgControlStatusGroup, i1.FormSubmitDirective, i1$1.FormGroupDirective, i9.ValidationGroupDirective, i1$1.DefaultValueAccessor, i1$1.NgControlStatus, i1$1.FormControlName, i9.ValidationDirective, i1.AutofocusDirective, i3$1.ButtonComponent], pipes: [i1.LocalizationPipe], encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PersonalSettingsComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-personal-settings-form',
-                        templateUrl: './personal-settings.component.html',
-                        exportAs: 'abpPersonalSettingsForm',
-                    }]
-            }], function () { return [{ type: i1$1.FormBuilder }, { type: i2$1.Store }, { type: i3$1.ToasterService }]; }, null);
-    })();
-
-    var _c0$3 = function (a0) { return { active: a0 }; };
-    function ManageProfileComponent_li_6_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r3_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "li", 10);
-            i0.ɵɵlistener("click", function ManageProfileComponent_li_6_Template_li_click_0_listener() { i0.ɵɵrestoreView(_r3_1); var ctx_r2 = i0.ɵɵnextContext(); return ctx_r2.selectedTab = 0; });
-            i0.ɵɵelementStart(1, "a", 8);
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r0 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngClass", i0.ɵɵpureFunction1(4, _c0$3, ctx_r0.selectedTab === 0));
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(3, 2, "AbpUi::ChangePassword"));
-        }
-    }
-    function ManageProfileComponent_div_11_div_1_abp_change_password_form_6_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelement(0, "abp-change-password-form");
-        }
-    }
-    var _c1$2 = function (a0) { return { componentKey: a0 }; };
-    function ManageProfileComponent_div_11_div_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 13);
-            i0.ɵɵelementStart(1, "div", 14);
-            i0.ɵɵelementStart(2, "h4");
-            i0.ɵɵtext(3);
-            i0.ɵɵpipe(4, "abpLocalization");
-            i0.ɵɵelement(5, "hr");
-            i0.ɵɵelementEnd();
-            i0.ɵɵtemplate(6, ManageProfileComponent_div_11_div_1_abp_change_password_form_6_Template, 1, 0, "abp-change-password-form", 15);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r4 = i0.ɵɵnextContext(2);
-            i0.ɵɵproperty("@fadeIn", undefined);
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(4, 3, "AbpIdentity::ChangePassword"), " ");
-            i0.ɵɵadvance(3);
-            i0.ɵɵproperty("abpReplaceableTemplate", i0.ɵɵpureFunction1(5, _c1$2, ctx_r4.changePasswordKey));
-        }
-    }
-    function ManageProfileComponent_div_11_div_2_abp_personal_settings_form_6_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelement(0, "abp-personal-settings-form");
-        }
-    }
-    function ManageProfileComponent_div_11_div_2_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 13);
-            i0.ɵɵelementStart(1, "div", 14);
-            i0.ɵɵelementStart(2, "h4");
-            i0.ɵɵtext(3);
-            i0.ɵɵpipe(4, "abpLocalization");
-            i0.ɵɵelement(5, "hr");
-            i0.ɵɵelementEnd();
-            i0.ɵɵtemplate(6, ManageProfileComponent_div_11_div_2_abp_personal_settings_form_6_Template, 1, 0, "abp-personal-settings-form", 15);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r5 = i0.ɵɵnextContext(2);
-            i0.ɵɵproperty("@fadeIn", undefined);
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(4, 3, "AbpIdentity::PersonalSettings"), " ");
-            i0.ɵɵadvance(3);
-            i0.ɵɵproperty("abpReplaceableTemplate", i0.ɵɵpureFunction1(5, _c1$2, ctx_r5.personalSettingsKey));
-        }
-    }
-    function ManageProfileComponent_div_11_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 11);
-            i0.ɵɵtemplate(1, ManageProfileComponent_div_11_div_1_Template, 7, 7, "div", 12);
-            i0.ɵɵtemplate(2, ManageProfileComponent_div_11_div_2_Template, 7, 7, "div", 12);
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r1 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngIf", ctx_r1.selectedTab === 0);
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngIf", ctx_r1.selectedTab === 1);
-        }
-    }
-    var ManageProfileComponent = /** @class */ (function () {
-        function ManageProfileComponent(store) {
-            this.store = store;
-            this.selectedTab = 0;
-            this.changePasswordKey = "Account.ChangePasswordComponent" /* ChangePassword */;
-            this.personalSettingsKey = "Account.PersonalSettingsComponent" /* PersonalSettings */;
-        }
-        ManageProfileComponent.prototype.ngOnInit = function () {
-            var _this = this;
-            this.store.dispatch(new i1.GetProfile()).subscribe(function () {
-                _this.isProfileLoaded = true;
-                if (_this.store.selectSnapshot(i1.ProfileState.getProfile).isExternal) {
-                    _this.hideChangePasswordTab = true;
-                    _this.selectedTab = 1;
-                }
-            });
-        };
-        return ManageProfileComponent;
-    }());
-    ManageProfileComponent.ɵfac = function ManageProfileComponent_Factory(t) { return new (t || ManageProfileComponent)(i0.ɵɵdirectiveInject(i2$1.Store)); };
-    ManageProfileComponent.ɵcmp = i0.ɵɵdefineComponent({ type: ManageProfileComponent, selectors: [["abp-manage-profile"]], decls: 12, vars: 9, consts: [["id", "AbpContentToolbar"], [1, "card", "border-0", "shadow-sm", "min-h-400", 3, "abpLoading"], [1, "card-body"], [1, "row"], [1, "col-12", "col-md-3"], ["id", "nav-tab", "role", "tablist", 1, "nav", "flex-column", "nav-pills"], ["class", "nav-item", 3, "click", 4, "ngIf"], [1, "nav-item", "mb-2", 3, "click"], ["role", "tab", "href", "javascript:void(0)", 1, "nav-link", 3, "ngClass"], ["class", "col-12 col-md-9", 4, "ngIf"], [1, "nav-item", 3, "click"], [1, "col-12", "col-md-9"], ["class", "tab-content", 4, "ngIf"], [1, "tab-content"], ["role", "tabpanel", 1, "tab-pane", "active"], [4, "abpReplaceableTemplate"]], template: function ManageProfileComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵelement(0, "div", 0);
-                i0.ɵɵelementStart(1, "div", 1);
-                i0.ɵɵelementStart(2, "div", 2);
-                i0.ɵɵelementStart(3, "div", 3);
-                i0.ɵɵelementStart(4, "div", 4);
-                i0.ɵɵelementStart(5, "ul", 5);
-                i0.ɵɵtemplate(6, ManageProfileComponent_li_6_Template, 4, 6, "li", 6);
-                i0.ɵɵelementStart(7, "li", 7);
-                i0.ɵɵlistener("click", function ManageProfileComponent_Template_li_click_7_listener() { return ctx.selectedTab = 1; });
-                i0.ɵɵelementStart(8, "a", 8);
-                i0.ɵɵtext(9);
-                i0.ɵɵpipe(10, "abpLocalization");
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵtemplate(11, ManageProfileComponent_div_11_Template, 3, 2, "div", 9);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-            }
-            if (rf & 2) {
-                i0.ɵɵadvance(1);
-                i0.ɵɵproperty("abpLoading", !ctx.isProfileLoaded);
-                i0.ɵɵadvance(5);
-                i0.ɵɵproperty("ngIf", !ctx.hideChangePasswordTab && ctx.isProfileLoaded);
-                i0.ɵɵadvance(2);
-                i0.ɵɵproperty("ngClass", i0.ɵɵpureFunction1(7, _c0$3, ctx.selectedTab === 1));
-                i0.ɵɵadvance(1);
-                i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(10, 5, "AbpAccount::PersonalSettings"));
-                i0.ɵɵadvance(2);
-                i0.ɵɵproperty("ngIf", ctx.isProfileLoaded);
-            }
-        }, directives: [i3$1.LoadingDirective, i3$2.NgIf, i3$2.NgClass, i1.ReplaceableTemplateDirective, ChangePasswordComponent, PersonalSettingsComponent], pipes: [i1.LocalizationPipe], styles: [".min-h-400[_ngcontent-%COMP%] {\n        min-height: 400px;\n      }"], data: { animation: [animations.trigger('fadeIn', [animations.transition(':enter', animations.useAnimation(i3$1.fadeIn))])] } });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ManageProfileComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-manage-profile',
-                        templateUrl: './manage-profile.component.html',
-                        animations: [animations.trigger('fadeIn', [animations.transition(':enter', animations.useAnimation(i3$1.fadeIn))])],
-                        styles: [
-                            "\n      .min-h-400 {\n        min-height: 400px;\n      }\n    ",
-                        ],
-                    }]
-            }], function () { return [{ type: i2$1.Store }]; }, null);
-    })();
-
-    function RegisterComponent_abp_auth_wrapper_0_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelement(0, "abp-auth-wrapper", 2);
-        }
-        if (rf & 2) {
-            i0.ɵɵnextContext();
-            var _r1 = i0.ɵɵreference(2);
-            i0.ɵɵproperty("mainContentRef", _r1);
-        }
-    }
-    function RegisterComponent_ng_template_1_form_9_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r5_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "form", 5);
-            i0.ɵɵlistener("ngSubmit", function RegisterComponent_ng_template_1_form_9_Template_form_ngSubmit_0_listener() { i0.ɵɵrestoreView(_r5_1); var ctx_r4 = i0.ɵɵnextContext(2); return ctx_r4.onSubmit(); });
-            i0.ɵɵelementStart(1, "div", 6);
-            i0.ɵɵelementStart(2, "label", 7);
-            i0.ɵɵtext(3);
-            i0.ɵɵpipe(4, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(5, "span");
-            i0.ɵɵtext(6, " * ");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(7, "input", 8);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(8, "div", 6);
-            i0.ɵɵelementStart(9, "label", 9);
-            i0.ɵɵtext(10);
-            i0.ɵɵpipe(11, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(12, "span");
-            i0.ɵɵtext(13, " * ");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(14, "input", 10);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(15, "div", 6);
-            i0.ɵɵelementStart(16, "label", 11);
-            i0.ɵɵtext(17);
-            i0.ɵɵpipe(18, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(19, "span");
-            i0.ɵɵtext(20, " * ");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(21, "input", 12);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(22, "abp-button", 13);
-            i0.ɵɵtext(23);
-            i0.ɵɵpipe(24, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var ctx_r3 = i0.ɵɵnextContext(2);
-            i0.ɵɵproperty("formGroup", ctx_r3.form);
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(4, 6, "AbpAccount::UserName"));
-            i0.ɵɵadvance(7);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(11, 8, "AbpAccount::EmailAddress"));
-            i0.ɵɵadvance(7);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(18, 10, "AbpAccount::Password"));
-            i0.ɵɵadvance(5);
-            i0.ɵɵproperty("loading", ctx_r3.inProgress);
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(24, 12, "AbpAccount::Register"), " ");
-        }
-    }
-    function RegisterComponent_ng_template_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "h4");
-            i0.ɵɵtext(1);
-            i0.ɵɵpipe(2, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(3, "strong");
-            i0.ɵɵtext(4);
-            i0.ɵɵpipe(5, "abpLocalization");
-            i0.ɵɵelementStart(6, "a", 3);
-            i0.ɵɵtext(7);
-            i0.ɵɵpipe(8, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵtemplate(9, RegisterComponent_ng_template_1_form_9_Template, 25, 14, "form", 4);
-        }
-        if (rf & 2) {
-            var ctx_r2 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(2, 4, "AbpAccount::Register"));
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(5, 6, "AbpAccount::AlreadyRegistered"), " ");
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(8, 8, "AbpAccount::Login"));
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("ngIf", ctx_r2.isSelfRegistrationEnabled);
-        }
-    }
-    var _c0$4 = function (a0) { return { value: a0 }; };
-    var _c1$3 = function (a0) { return { mainContentRef: a0 }; };
-    var _c2$1 = function (a0, a1) { return { componentKey: a0, inputs: a1 }; };
-    var maxLength$2 = i1$1.Validators.maxLength, required$3 = i1$1.Validators.required, email$1 = i1$1.Validators.email;
-    var RegisterComponent = /** @class */ (function () {
-        function RegisterComponent(fb, accountService, oauthService, store, toasterService, authService, injector) {
-            this.fb = fb;
-            this.accountService = accountService;
-            this.oauthService = oauthService;
-            this.store = store;
-            this.toasterService = toasterService;
-            this.authService = authService;
-            this.injector = injector;
-            this.isSelfRegistrationEnabled = true;
-            this.authWrapperKey = "Account.AuthWrapperComponent" /* AuthWrapper */;
-        }
-        RegisterComponent.prototype.ngOnInit = function () {
-            // this.isSelfRegistrationEnabled =
-            //   (
-            //     this.store.selectSnapshot(
-            //       ConfigState.getSetting('Abp.Account.IsSelfRegistrationEnabled'),
-            //     ) || ''
-            //   ).toLowerCase() !== 'false';
-            // if (!this.isSelfRegistrationEnabled) {
-            //   this.toasterService.warn(
-            //     {
-            //       key: 'AbpAccount::SelfRegistrationDisabledMessage',
-            //       defaultValue: 'Self registration is disabled.',
-            //     },
-            //     null,
-            //     { life: 10000 },
-            //   );
-            //   return;
-            // }
-            this.form = this.fb.group({
-                username: ['', [required$3, maxLength$2(255)]],
-                password: ['', __spread([required$3], i3$1.getPasswordValidators(this.injector))],
-                email: ['', [required$3, email$1]],
-            });
-        };
-        RegisterComponent.prototype.onSubmit = function () {
-            var _this = this;
-            if (this.form.invalid)
-                return;
-            this.inProgress = true;
-            var newUser = {
-                userName: this.form.get('username').value,
-                password: this.form.get('password').value,
-                emailAddress: this.form.get('email').value,
-                appName: 'Angular',
-            };
-            this.accountService
-                .register(newUser)
-                .pipe(operators.switchMap(function () { return _this.authService.login(newUser.userName, newUser.password); }), operators.catchError(function (err) {
-                _this.toasterService.error(snq__default['default'](function () { return err.error.error_description; }) ||
-                    snq__default['default'](function () { return err.error.error.message; }, 'AbpAccount::DefaultErrorMessage'), 'Error', { life: 7000 });
-                return rxjs.throwError(err);
-            }), operators.finalize(function () { return (_this.inProgress = false); }))
-                .subscribe();
-        };
-        return RegisterComponent;
-    }());
-    RegisterComponent.ɵfac = function RegisterComponent_Factory(t) { return new (t || RegisterComponent)(i0.ɵɵdirectiveInject(i1$1.FormBuilder), i0.ɵɵdirectiveInject(AccountService), i0.ɵɵdirectiveInject(i2.OAuthService), i0.ɵɵdirectiveInject(i2$1.Store), i0.ɵɵdirectiveInject(i3$1.ToasterService), i0.ɵɵdirectiveInject(AuthService), i0.ɵɵdirectiveInject(i0.Injector)); };
-    RegisterComponent.ɵcmp = i0.ɵɵdefineComponent({ type: RegisterComponent, selectors: [["abp-register"]], decls: 3, vars: 8, consts: [[3, "mainContentRef", 4, "abpReplaceableTemplate"], ["mainContentRef", ""], [3, "mainContentRef"], ["routerLink", "/account/login", 1, "text-decoration-none"], ["validateOnSubmit", "", "class", "mt-4", 3, "formGroup", "ngSubmit", 4, "ngIf"], ["validateOnSubmit", "", 1, "mt-4", 3, "formGroup", "ngSubmit"], [1, "form-group"], ["for", "input-user-name"], ["autofocus", "", "type", "text", "id", "input-user-name", "formControlName", "username", "autocomplete", "username", 1, "form-control"], ["for", "input-email-address"], ["type", "email", "id", "input-email-address", "formControlName", "email", 1, "form-control"], ["for", "input-password"], ["type", "password", "id", "input-password", "formControlName", "password", "autocomplete", "current-password", 1, "form-control"], ["buttonType", "submit", "name", "Action", "buttonClass", "btn-block btn-lg mt-3 btn btn-primary", 3, "loading"]], template: function RegisterComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵtemplate(0, RegisterComponent_abp_auth_wrapper_0_Template, 1, 1, "abp-auth-wrapper", 0);
-                i0.ɵɵtemplate(1, RegisterComponent_ng_template_1_Template, 10, 10, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
-            }
-            if (rf & 2) {
-                var _r1 = i0.ɵɵreference(2);
-                i0.ɵɵproperty("abpReplaceableTemplate", i0.ɵɵpureFunction2(5, _c2$1, ctx.authWrapperKey, i0.ɵɵpureFunction1(3, _c1$3, i0.ɵɵpureFunction1(1, _c0$4, _r1))));
-            }
-        }, directives: [i1.ReplaceableTemplateDirective, AuthWrapperComponent, i3.RouterLinkWithHref, i3$2.NgIf, i1$1.ɵangular_packages_forms_forms_y, i1$1.NgControlStatusGroup, i1.FormSubmitDirective, i1$1.FormGroupDirective, i9.ValidationGroupDirective, i1$1.DefaultValueAccessor, i1.AutofocusDirective, i1$1.NgControlStatus, i1$1.FormControlName, i9.ValidationDirective, i3$1.ButtonComponent], pipes: [i1.LocalizationPipe], encapsulation: 2 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(RegisterComponent, [{
-                type: i0.Component,
-                args: [{
-                        selector: 'abp-register',
-                        templateUrl: './register.component.html',
-                    }]
-            }], function () { return [{ type: i1$1.FormBuilder }, { type: AccountService }, { type: i2.OAuthService }, { type: i2$1.Store }, { type: i3$1.ToasterService }, { type: AuthService }, { type: i0.Injector }]; }, null);
-    })();
-
-    var AuthenticationFlowGuard = /** @class */ (function () {
-        function AuthenticationFlowGuard(authService) {
-            this.authService = authService;
-        }
-        AuthenticationFlowGuard.prototype.canActivate = function () {
-            if (this.authService.isInternalAuth)
-                return true;
-            this.authService.initLogin();
-            return false;
-        };
-        return AuthenticationFlowGuard;
-    }());
-    AuthenticationFlowGuard.ɵfac = function AuthenticationFlowGuard_Factory(t) { return new (t || AuthenticationFlowGuard)(i0.ɵɵinject(AuthService)); };
-    AuthenticationFlowGuard.ɵprov = i0.ɵɵdefineInjectable({ token: AuthenticationFlowGuard, factory: AuthenticationFlowGuard.ɵfac });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AuthenticationFlowGuard, [{
-                type: i0.Injectable
-            }], function () { return [{ type: AuthService }]; }, null);
-    })();
-
-    var routes = [
-        { path: '', pathMatch: 'full', redirectTo: 'login' },
-        {
-            path: '',
-            component: i1.DynamicLayoutComponent,
-            children: [
-                {
-                    path: 'login',
-                    component: i1.ReplaceableRouteContainerComponent,
-                    canActivate: [AuthenticationFlowGuard],
-                    data: {
-                        replaceableComponent: {
-                            key: "Account.LoginComponent" /* Login */,
-                            defaultComponent: LoginComponent,
-                        },
-                    },
-                },
-                {
-                    path: 'register',
-                    component: i1.ReplaceableRouteContainerComponent,
-                    canActivate: [AuthenticationFlowGuard],
-                    data: {
-                        replaceableComponent: {
-                            key: "Account.RegisterComponent" /* Register */,
-                            defaultComponent: RegisterComponent,
-                        },
-                    },
-                },
-                {
-                    path: 'manage-profile',
-                    component: i1.ReplaceableRouteContainerComponent,
-                    canActivate: [i1.AuthGuard],
-                    data: {
-                        replaceableComponent: {
-                            key: "Account.ManageProfileComponent" /* ManageProfile */,
-                            defaultComponent: ManageProfileComponent,
-                        },
-                    },
-                },
-            ],
-        },
+    TenantBoxComponent.decorators = [
+        { type: i0.Component, args: [{
+                    selector: 'abp-tenant-box',
+                    template: "<ng-container *ngIf=\"(currentTenant$ | async) || {} as currentTenant\">\r\n  <div style=\"height: 1em;\"></div>\r\n  <div class=\"card shadow-sm rounded mb-3\">\r\n    <div class=\"card-body px-5\">\r\n      <div class=\"row\">\r\n        <div class=\"col\">\r\n          <span style=\"font-size: 0.8em;\" class=\"text-uppercase text-muted\">{{\r\n            'AbpUiMultiTenancy::Tenant' | abpLocalization\r\n          }}</span\r\n          ><br />\r\n          <h6 class=\"m-0 d-inline-block\">\r\n            <i>{{ currentTenant.name || ('AbpUiMultiTenancy::NotSelected' | abpLocalization) }}</i>\r\n          </h6>\r\n        </div>\r\n        <div class=\"col-auto\">\r\n          <a\r\n            id=\"AbpTenantSwitchLink\"\r\n            href=\"javascript:void(0);\"\r\n            class=\"btn btn-sm mt-3 btn-outline-primary\"\r\n            (click)=\"onSwitch()\"\r\n            >{{ 'AbpUiMultiTenancy::Switch' | abpLocalization }}</a\r\n          >\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <abp-modal size=\"md\" [(visible)]=\"isModalVisible\" [busy]=\"modalBusy\">\r\n    <ng-template #abpHeader>\r\n      <h5>Switch Tenant</h5>\r\n    </ng-template>\r\n    <ng-template #abpBody>\r\n      <form (ngSubmit)=\"save()\">\r\n        <div class=\"mt-2\">\r\n          <div class=\"form-group\">\r\n            <label for=\"name\">{{ 'AbpUiMultiTenancy::Name' | abpLocalization }}</label>\r\n            <input\r\n              [(ngModel)]=\"name\"\r\n              type=\"text\"\r\n              id=\"name\"\r\n              name=\"tenant\"\r\n              class=\"form-control\"\r\n              autofocus\r\n            />\r\n          </div>\r\n          <p>{{ 'AbpUiMultiTenancy::SwitchTenantHint' | abpLocalization }}</p>\r\n        </div>\r\n      </form>\r\n    </ng-template>\r\n    <ng-template #abpFooter>\r\n      <button #abpClose type=\"button\" class=\"btn btn-secondary\">\r\n        {{ 'AbpTenantManagement::Cancel' | abpLocalization }}\r\n      </button>\r\n      <abp-button\r\n        type=\"abp-button\"\r\n        iconClass=\"fa fa-check\"\r\n        (click)=\"save()\"\r\n        [disabled]=\"currentTenant?.name === name\"\r\n      >\r\n        <span>{{ 'AbpTenantManagement::Save' | abpLocalization }}</span>\r\n      </abp-button>\r\n    </ng-template>\r\n  </abp-modal>\r\n</ng-container>\r\n"
+                },] }
     ];
-    var AccountRoutingModule = /** @class */ (function () {
-        function AccountRoutingModule() {
-        }
-        return AccountRoutingModule;
-    }());
-    AccountRoutingModule.ɵfac = function AccountRoutingModule_Factory(t) { return new (t || AccountRoutingModule)(); };
-    AccountRoutingModule.ɵmod = i0.ɵɵdefineNgModule({ type: AccountRoutingModule });
-    AccountRoutingModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[i3.RouterModule.forChild(routes)], i3.RouterModule] });
-    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(AccountRoutingModule, { imports: [i3.RouterModule], exports: [i3.RouterModule] }); })();
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountRoutingModule, [{
-                type: i0.NgModule,
-                args: [{
-                        imports: [i3.RouterModule.forChild(routes)],
-                        exports: [i3.RouterModule],
-                    }]
-            }], null, null);
-    })();
+    TenantBoxComponent.ctorParameters = function () { return [
+        { type: ng_theme_shared.ToasterService },
+        { type: AccountService },
+        { type: i1.SessionStateService },
+        { type: i1.SubscriptionService },
+        { type: i1.AbpApplicationConfigurationService },
+        { type: i1.ConfigStateService }
+    ]; };
 
     var ACCOUNT_OPTIONS = new i0.InjectionToken('ACCOUNT_OPTIONS');
 
@@ -1665,13 +961,12 @@
         };
         return ManageProfileGuard;
     }());
-    ManageProfileGuard.ɵfac = function ManageProfileGuard_Factory(t) { return new (t || ManageProfileGuard)(i0.ɵɵinject(i1.EnvironmentService)); };
-    ManageProfileGuard.ɵprov = i0.ɵɵdefineInjectable({ token: ManageProfileGuard, factory: ManageProfileGuard.ɵfac });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ManageProfileGuard, [{
-                type: i0.Injectable
-            }], function () { return [{ type: i1.EnvironmentService }]; }, null);
-    })();
+    ManageProfileGuard.decorators = [
+        { type: i0.Injectable }
+    ];
+    ManageProfileGuard.ctorParameters = function () { return [
+        { type: i1.EnvironmentService }
+    ]; };
 
     var AccountModule = /** @class */ (function () {
         function AccountModule() {
@@ -1696,52 +991,27 @@
         };
         return AccountModule;
     }());
-    AccountModule.ɵfac = function AccountModule_Factory(t) { return new (t || AccountModule)(); };
-    AccountModule.ɵmod = i0.ɵɵdefineNgModule({ type: AccountModule });
-    AccountModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
-                i1.CoreModule,
-                AccountRoutingModule,
-                i3$1.ThemeSharedModule,
-                ngBootstrap.NgbDropdownModule,
-                i9.NgxValidateCoreModule,
-            ]] });
-    (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(AccountModule, { declarations: [AuthWrapperComponent,
-                LoginComponent,
-                RegisterComponent,
-                TenantBoxComponent,
-                ChangePasswordComponent,
-                ManageProfileComponent,
-                PersonalSettingsComponent], imports: [i1.CoreModule,
-                AccountRoutingModule,
-                i3$1.ThemeSharedModule,
-                ngBootstrap.NgbDropdownModule,
-                i9.NgxValidateCoreModule] });
-    })();
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountModule, [{
-                type: i0.NgModule,
-                args: [{
-                        declarations: [
-                            AuthWrapperComponent,
-                            LoginComponent,
-                            RegisterComponent,
-                            TenantBoxComponent,
-                            ChangePasswordComponent,
-                            ManageProfileComponent,
-                            PersonalSettingsComponent,
-                        ],
-                        imports: [
-                            i1.CoreModule,
-                            AccountRoutingModule,
-                            i3$1.ThemeSharedModule,
-                            ngBootstrap.NgbDropdownModule,
-                            i9.NgxValidateCoreModule,
-                        ],
-                        exports: [],
-                    }]
-            }], null, null);
-    })();
+    AccountModule.decorators = [
+        { type: i0.NgModule, args: [{
+                    declarations: [
+                        AuthWrapperComponent,
+                        LoginComponent,
+                        RegisterComponent,
+                        TenantBoxComponent,
+                        ChangePasswordComponent,
+                        ManageProfileComponent,
+                        PersonalSettingsComponent,
+                    ],
+                    imports: [
+                        i1.CoreModule,
+                        AccountRoutingModule,
+                        ng_theme_shared.ThemeSharedModule,
+                        ngBootstrap.NgbDropdownModule,
+                        core.NgxValidateCoreModule,
+                    ],
+                    exports: [],
+                },] }
+    ];
 
     /**
      * Generated bundle index. Do not edit.
@@ -1759,6 +1029,20 @@
     exports.PersonalSettingsComponent = PersonalSettingsComponent;
     exports.RegisterComponent = RegisterComponent;
     exports.TenantBoxComponent = TenantBoxComponent;
+    exports.ɵa = AuthWrapperComponent;
+    exports.ɵb = LoginComponent;
+    exports.ɵc = AuthService;
+    exports.ɵd = RegisterComponent;
+    exports.ɵe = AccountService;
+    exports.ɵf = TenantBoxComponent;
+    exports.ɵg = ChangePasswordComponent;
+    exports.ɵh = ManageProfileComponent;
+    exports.ɵi = PersonalSettingsComponent;
+    exports.ɵj = AccountRoutingModule;
+    exports.ɵk = AuthenticationFlowGuard;
+    exports.ɵm = ManageProfileGuard;
+    exports.ɵn = ACCOUNT_OPTIONS;
+    exports.ɵo = accountOptionsFactory;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

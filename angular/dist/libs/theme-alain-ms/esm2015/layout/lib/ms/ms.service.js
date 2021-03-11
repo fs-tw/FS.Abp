@@ -59,10 +59,12 @@ export class BrandService {
         this.notify$.unsubscribe();
     }
 }
-BrandService.ɵfac = function BrandService_Factory(t) { return new (t || BrandService)(i0.ɵɵinject(i1.BreakpointObserver), i0.ɵɵinject(i2.SettingsService)); };
-BrandService.ɵprov = i0.ɵɵdefineInjectable({ token: BrandService, factory: BrandService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(BrandService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: i1.BreakpointObserver }, { type: i2.SettingsService }]; }, null); })();
+BrandService.ɵprov = i0.ɵɵdefineInjectable({ factory: function BrandService_Factory() { return new BrandService(i0.ɵɵinject(i1.BreakpointObserver), i0.ɵɵinject(i2.SettingsService)); }, token: BrandService, providedIn: "root" });
+BrandService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+BrandService.ctorParameters = () => [
+    { type: BreakpointObserver },
+    { type: SettingsService }
+];
 //# sourceMappingURL=ms.service.js.map

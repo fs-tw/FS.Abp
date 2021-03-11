@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { ArrayService } from '@delon/util';
 import { MSLink } from '../../../models/layout';
 import { RoutesService, LocalizationPipe } from '@abp/ng.core';
-import * as i0 from "@angular/core";
 export interface MSAllNavData {
     nav?: MSAllNav[];
     navBottom?: MSAllNavItem[];
@@ -67,7 +66,4 @@ export declare class MSAllNavService {
     private fixData;
     private getByHttp;
     refreshActive(i: MSAllNav): void;
-    static ɵfac: i0.ɵɵFactoryDef<MSAllNavService, never>;
-    static ɵprov: i0.ɵɵInjectableDef<MSAllNavService>;
 }
-//# sourceMappingURL=all-nav.service.d.ts.map

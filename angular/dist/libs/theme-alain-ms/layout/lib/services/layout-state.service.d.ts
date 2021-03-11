@@ -3,7 +3,6 @@ import { LocalizationPipe } from '@abp/ng.core';
 import { Layout, MSProduct, MSServiceNavConfig } from '../models';
 import { RouterStateSnapshot } from '@angular/router';
 import { RoutesProcessor } from './routes.processor';
-import * as i0 from "@angular/core";
 export declare class LayoutStateService {
     private injector;
     localizationPipe: LocalizationPipe;
@@ -25,7 +24,4 @@ export declare class LayoutStateService {
     setNavConfig(navConfig: MSServiceNavConfig): void;
     fetchPageNavs(routerState: RouterStateSnapshot): void;
     private listenRoutes;
-    static ɵfac: i0.ɵɵFactoryDef<LayoutStateService, never>;
-    static ɵprov: i0.ɵɵInjectableDef<LayoutStateService>;
 }
-//# sourceMappingURL=layout-state.service.d.ts.map

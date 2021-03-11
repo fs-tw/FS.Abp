@@ -32,10 +32,11 @@ export class MSTopbarService {
         }));
     }
 }
-MSTopbarService.ɵfac = function MSTopbarService_Factory(t) { return new (t || MSTopbarService)(i0.ɵɵinject(i1._HttpClient)); };
-MSTopbarService.ɵprov = i0.ɵɵdefineInjectable({ token: MSTopbarService, factory: MSTopbarService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSTopbarService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: i1._HttpClient }]; }, null); })();
+MSTopbarService.ɵprov = i0.ɵɵdefineInjectable({ factory: function MSTopbarService_Factory() { return new MSTopbarService(i0.ɵɵinject(i1._HttpClient)); }, token: MSTopbarService, providedIn: "root" });
+MSTopbarService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+MSTopbarService.ctorParameters = () => [
+    { type: _HttpClient }
+];
 //# sourceMappingURL=topbar.service.js.map

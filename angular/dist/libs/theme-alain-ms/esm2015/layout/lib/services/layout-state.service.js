@@ -103,12 +103,14 @@ export class LayoutStateService {
         });
     }
 }
-LayoutStateService.ɵfac = function LayoutStateService_Factory(t) { return new (t || LayoutStateService)(i0.ɵɵinject(i0.Injector), i0.ɵɵinject(i1.LocalizationPipe)); };
-LayoutStateService.ɵprov = i0.ɵɵdefineInjectable({ token: LayoutStateService, factory: LayoutStateService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(LayoutStateService, [{
-        type: Injectable,
-        args: [{
+LayoutStateService.ɵprov = i0.ɵɵdefineInjectable({ factory: function LayoutStateService_Factory() { return new LayoutStateService(i0.ɵɵinject(i0.INJECTOR), i0.ɵɵinject(i1.LocalizationPipe)); }, token: LayoutStateService, providedIn: "root" });
+LayoutStateService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i0.Injector }, { type: i1.LocalizationPipe }]; }, null); })();
+            },] }
+];
+LayoutStateService.ctorParameters = () => [
+    { type: Injector },
+    { type: LocalizationPipe }
+];
 //# sourceMappingURL=layout-state.service.js.map

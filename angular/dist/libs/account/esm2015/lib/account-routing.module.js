@@ -5,8 +5,22 @@ import { LoginComponent } from './components/login/login.component';
 import { ManageProfileComponent } from './components/manage-profile/manage-profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthenticationFlowGuard } from './guards/authentication-flow.guard';
-import * as i0 from "@angular/core";
-import * as i1 from "@angular/router";
+const ɵ0 = {
+    replaceableComponent: {
+        key: "Account.LoginComponent" /* Login */,
+        defaultComponent: LoginComponent,
+    },
+}, ɵ1 = {
+    replaceableComponent: {
+        key: "Account.RegisterComponent" /* Register */,
+        defaultComponent: RegisterComponent,
+    },
+}, ɵ2 = {
+    replaceableComponent: {
+        key: "Account.ManageProfileComponent" /* ManageProfile */,
+        defaultComponent: ManageProfileComponent,
+    },
+};
 const routes = [
     { path: '', pathMatch: 'full', redirectTo: 'login' },
     {
@@ -17,49 +31,30 @@ const routes = [
                 path: 'login',
                 component: ReplaceableRouteContainerComponent,
                 canActivate: [AuthenticationFlowGuard],
-                data: {
-                    replaceableComponent: {
-                        key: "Account.LoginComponent" /* Login */,
-                        defaultComponent: LoginComponent,
-                    },
-                },
+                data: ɵ0,
             },
             {
                 path: 'register',
                 component: ReplaceableRouteContainerComponent,
                 canActivate: [AuthenticationFlowGuard],
-                data: {
-                    replaceableComponent: {
-                        key: "Account.RegisterComponent" /* Register */,
-                        defaultComponent: RegisterComponent,
-                    },
-                },
+                data: ɵ1,
             },
             {
                 path: 'manage-profile',
                 component: ReplaceableRouteContainerComponent,
                 canActivate: [AuthGuard],
-                data: {
-                    replaceableComponent: {
-                        key: "Account.ManageProfileComponent" /* ManageProfile */,
-                        defaultComponent: ManageProfileComponent,
-                    },
-                },
+                data: ɵ2,
             },
         ],
     },
 ];
 export class AccountRoutingModule {
 }
-AccountRoutingModule.ɵfac = function AccountRoutingModule_Factory(t) { return new (t || AccountRoutingModule)(); };
-AccountRoutingModule.ɵmod = i0.ɵɵdefineNgModule({ type: AccountRoutingModule });
-AccountRoutingModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[RouterModule.forChild(routes)], RouterModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(AccountRoutingModule, { imports: [i1.RouterModule], exports: [RouterModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountRoutingModule, [{
-        type: NgModule,
-        args: [{
+AccountRoutingModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [RouterModule.forChild(routes)],
                 exports: [RouterModule],
-            }]
-    }], null, null); })();
+            },] }
+];
+export { ɵ0, ɵ1, ɵ2 };
 //# sourceMappingURL=account-routing.module.js.map

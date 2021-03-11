@@ -1,10 +1,10 @@
-import { ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, ɵsetClassMetadata, NgModule, ɵɵinject, ɵɵdefineInjectable, Injectable, Inject, APP_INITIALIZER, LOCALE_ID, ɵɵelementContainerStart, ɵɵelement, ɵɵelementStart, ɵɵelementEnd, ɵɵelementContainerEnd, ɵɵadvance, ɵɵproperty, ɵɵdirectiveInject, ElementRef, Renderer2, ɵɵdefineComponent, ɵɵtemplate, ɵɵpipe, ɵɵpipeBind1, Component, ɵɵnextContext, ɵɵreference, ɵɵtext, ɵɵpureFunction1, ɵɵtextInterpolate1, ɵɵtemplateRefExtractor, Injector } from '@angular/core';
-import { LocalizationPipe, ReplaceableComponentsService, DomInsertionService, CONTENT_STRATEGY, CoreModule } from '@abp/ng.core';
+import { NgModule, Injectable, Inject, APP_INITIALIZER, LOCALE_ID, Component, ElementRef, Renderer2, Injector } from '@angular/core';
+import { ReplaceableComponentsService, DomInsertionService, CONTENT_STRATEGY, CoreModule } from '@abp/ng.core';
 import { AlainThemeModule, SettingsService, TitleService, zh_TW as zh_TW$1, DELON_LOCALE } from '@delon/theme';
 import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { ValidationErrorComponent } from '@abp/ng.theme.basic';
-import { DOCUMENT, registerLocaleData, NgIf, AsyncPipe, NgTemplateOutlet } from '@angular/common';
+import { DOCUMENT, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { zip } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -13,12 +13,12 @@ import ngLang from '@angular/common/locales/zh';
 import { zhCN } from 'date-fns/locale';
 import { zh_TW, NZ_I18N, NZ_DATE_LOCALE } from 'ng-zorro-antd/i18n';
 import { AlipayCircleOutline, AppstoreOutline, BookOutline, BranchesOutline, CaretRightOutline, CustomerServiceOutline, DesktopOutline, DollarOutline, DownloadOutline, EditOutline, FacebookOutline, FileSearchOutline, FolderOutline, GiftOutline, GithubOutline, GlobalOutline, HeartFill, LockOutline, MailOutline, MenuFoldOutline, PhoneOutline, PieChartOutline, PlusCircleOutline, QrcodeOutline, QuestionCircleFill, QuestionOutline, RollbackOutline, SafetyOutline, ScanOutline, SettingOutline, ShareAltOutline, ShoppingCartOutline, StarFill, StarOutline, SyncOutline, TableOutline, TaobaoCircleOutline, ToTopOutline, ToolOutline, TrophyOutline, UserOutline, WechatOutline, WeiboCircleOutline, WeiboOutline, ZhihuOutline, InfoOutline, BulbOutline, ProfileOutline, ExceptionOutline, LinkOutline } from '@ant-design/icons-angular/icons';
-import { LayoutModule, LayoutStateService, BrandService, MSTopbarComponent, MSServiceLayoutComponent, MSSidebarComponent, MSPageBarComponent, MSLayoutComponent } from '@fs-tw/theme-alain-ms/layout';
-import { RouteConfigLoadStart, NavigationError, NavigationEnd, Router, ActivatedRoute, RouterOutlet, RouterLink } from '@angular/router';
+import { LayoutModule, LayoutStateService, BrandService, MSLayoutComponent } from '@fs-tw/theme-alain-ms/layout';
+import { RouteConfigLoadStart, NavigationError, NavigationEnd, Router, ActivatedRoute } from '@angular/router';
 import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
 import { ReuseTabService } from '@delon/abc/reuse-tab';
 import { updateHostClass } from '@delon/util';
-import { NzSpinComponent, NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 // #region reuse-tab
 /**
@@ -63,20 +63,14 @@ class GlobalConfigModule {
         };
     }
 }
-GlobalConfigModule.ɵfac = function GlobalConfigModule_Factory(t) { return new (t || GlobalConfigModule)(); };
-GlobalConfigModule.ɵmod = ɵɵdefineNgModule({ type: GlobalConfigModule });
-GlobalConfigModule.ɵinj = ɵɵdefineInjector({ imports: [[
-            AlainThemeModule.forRoot(),
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(GlobalConfigModule, { imports: [AlainThemeModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(GlobalConfigModule, [{
-        type: NgModule,
-        args: [{
+GlobalConfigModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [
                     AlainThemeModule.forRoot(),
                 ],
-            }]
-    }], function () { return []; }, null); })();
+            },] }
+];
+GlobalConfigModule.ctorParameters = () => [];
 
 // import { ICONS } from '../../../style-icons';
 // import { ICONS_AUTO } from '../../../style-icons-auto';
@@ -135,14 +129,16 @@ class StartupService {
         }
     }
 }
-StartupService.ɵfac = function StartupService_Factory(t) { return new (t || StartupService)(ɵɵinject(NzIconService), ɵɵinject(SettingsService), ɵɵinject(HttpClient), ɵɵinject(DOCUMENT), ɵɵinject(TitleService)); };
-StartupService.ɵprov = ɵɵdefineInjectable({ token: StartupService, factory: StartupService.ɵfac });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(StartupService, [{
-        type: Injectable
-    }], function () { return [{ type: NzIconService }, { type: SettingsService }, { type: HttpClient }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }, { type: TitleService }]; }, null); })();
+StartupService.decorators = [
+    { type: Injectable }
+];
+StartupService.ctorParameters = () => [
+    { type: NzIconService },
+    { type: SettingsService },
+    { type: HttpClient },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] },
+    { type: TitleService }
+];
 // #region Startup Service
 // tslint:disable-next-line: typedef
 function StartupServiceFactory(startupService) {
@@ -157,6 +153,7 @@ const APPINIT_PROVIDES = [
         multi: true,
     },
 ];
+// #endregion
 
 // #region default language
 const LANG = {
@@ -247,39 +244,8 @@ function configureStyles(iconSrv) {
 
 class RootModule {
 }
-RootModule.ɵfac = function RootModule_Factory(t) { return new (t || RootModule)(); };
-RootModule.ɵmod = ɵɵdefineNgModule({ type: RootModule });
-RootModule.ɵinj = ɵɵdefineInjector({ providers: [
-        ...APPINIT_PROVIDES,
-        ...LANG_PROVIDES,
-        STYLES_PROVIDERS
-    ], imports: [[
-            NzMessageModule,
-            LayoutModule.forRoot(),
-            GlobalConfigModule.forRoot(),
-            NgxValidateCoreModule.forRoot({
-                targetSelector: '.form-control',
-                blueprints: {
-                    creditCard: 'AbpValidation::ThisFieldIsNotAValidCreditCardNumber.',
-                    email: 'AbpValidation::ThisFieldIsNotAValidEmailAddress.',
-                    invalid: 'AbpValidation::ThisFieldIsNotValid.',
-                    max: 'AbpValidation::ThisFieldMustBeBetween{0}And{1}[{{ min }},{{ max }}]',
-                    maxlength: 'AbpValidation::ThisFieldMustBeAStringOrArrayTypeWithAMaximumLengthOf{0}[{{ requiredLength }}]',
-                    min: 'AbpValidation::ThisFieldMustBeBetween{0}And{1}[{{ min }},{{ max }}]',
-                    minlength: 'AbpValidation::ThisFieldMustBeAStringOrArrayTypeWithAMinimumLengthOf{0}[{{ requiredLength }}]',
-                    ngbDate: 'AbpValidation::ThisFieldIsNotValid.',
-                    passwordMismatch: 'AbpIdentity::Identity.PasswordConfirmationFailed',
-                    range: 'AbpValidation::ThisFieldMustBeBetween{0}And{1}[{{ min }},{{ max }}]',
-                    required: 'AbpValidation::ThisFieldIsRequired.',
-                    url: 'AbpValidation::ThisFieldIsNotAValidFullyQualifiedHttpHttpsOrFtpUrl',
-                },
-                errorTemplate: ValidationErrorComponent,
-            })
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(RootModule, { imports: [NzMessageModule, LayoutModule, GlobalConfigModule, NgxValidateCoreModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(RootModule, [{
-        type: NgModule,
-        args: [{
+RootModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [
                     NzMessageModule,
                     LayoutModule.forRoot(),
@@ -308,30 +274,9 @@ RootModule.ɵinj = ɵɵdefineInjector({ providers: [
                     ...LANG_PROVIDES,
                     STYLES_PROVIDERS
                 ],
-            }]
-    }], null, null); })();
+            },] }
+];
 
-function AccountLayoutComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵelement(1, "ms-topbar");
-    ɵɵelementStart(2, "div", 1);
-    ɵɵelement(3, "nz-spin", 2);
-    ɵɵelementEnd();
-    ɵɵelementStart(4, "div", 3);
-    ɵɵelementStart(5, "service-layout", 4);
-    ɵɵelement(6, "router-outlet");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const store_r1 = ctx.ngIf;
-    ɵɵadvance(2);
-    ɵɵproperty("hidden", !store_r1.isFetching);
-    ɵɵadvance(2);
-    ɵɵproperty("hidden", store_r1.isFetching);
-    ɵɵadvance(1);
-    ɵɵproperty("hasConsoleCss", false);
-} }
 class AccountLayoutComponent {
     constructor(layoutStateService, bm, mediaMatcher, router, route, msg, reuseTabSrv, el, renderer, srv, doc) {
         this.layoutStateService = layoutStateService;
@@ -440,112 +385,27 @@ class AccountLayoutComponent {
         this.body.classList.remove('alain-ms__has-topbar', 'alain-ms__has-sidebar', 'alain-ms__has-fixed');
     }
 }
-AccountLayoutComponent.ɵfac = function AccountLayoutComponent_Factory(t) { return new (t || AccountLayoutComponent)(ɵɵdirectiveInject(LayoutStateService), ɵɵdirectiveInject(BreakpointObserver), ɵɵdirectiveInject(MediaMatcher), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(NzMessageService), ɵɵdirectiveInject(ReuseTabService), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(DOCUMENT)); };
-AccountLayoutComponent.ɵcmp = ɵɵdefineComponent({ type: AccountLayoutComponent, selectors: [["abp-account-layout"]], decls: 2, vars: 3, consts: [[4, "ngIf"], [1, "brand-page-loading", 3, "hidden"], ["nzSpinning", ""], [1, "alain-ms__body", 3, "hidden"], [3, "hasConsoleCss"]], template: function AccountLayoutComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, AccountLayoutComponent_ng_container_0_Template, 7, 3, "ng-container", 0);
-        ɵɵpipe(1, "async");
-    } if (rf & 2) {
-        ɵɵproperty("ngIf", ɵɵpipeBind1(1, 1, ctx.store$));
-    } }, directives: [NgIf, MSTopbarComponent, NzSpinComponent, MSServiceLayoutComponent, RouterOutlet], pipes: [AsyncPipe], styles: [".pri-btn[_ngcontent-%COMP%]{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn[_ngcontent-%COMP%]:hover{border:1px solid #26d7eb;color:#26d7eb}"] });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(AccountLayoutComponent, [{
-        type: Component,
-        args: [{
+AccountLayoutComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'abp-account-layout',
-                templateUrl: './account-layout.component.html',
-                styleUrls: ['./account-layout.component.less'],
-            }]
-    }], function () { return [{ type: LayoutStateService }, { type: BreakpointObserver }, { type: MediaMatcher }, { type: Router }, { type: ActivatedRoute }, { type: NzMessageService }, { type: ReuseTabService }, { type: ElementRef }, { type: Renderer2 }, { type: BrandService }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }]; }, null); })();
+                template: "<ng-container *ngIf=\"store$ | async as store\">\r\n  <ms-topbar></ms-topbar>\r\n  <!-- <ms-sidebar *ngIf=\"store.sidebarConfig.hasSidebar\"></ms-sidebar> -->\r\n  <div class=\"brand-page-loading\" [hidden]=\"!store.isFetching\">\r\n    <nz-spin nzSpinning></nz-spin>\r\n  </div>\r\n  <div class=\"alain-ms__body\" [hidden]=\"store.isFetching\">\r\n    <service-layout [hasConsoleCss]=\"false\">\r\n      \r\n      <router-outlet></router-outlet>\r\n      \r\n    </service-layout>\r\n    </div>\r\n  \r\n\r\n\r\n\r\n</ng-container>\r\n",
+                styles: [".pri-btn{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn:hover{border:1px solid #26d7eb;color:#26d7eb}"]
+            },] }
+];
+AccountLayoutComponent.ctorParameters = () => [
+    { type: LayoutStateService },
+    { type: BreakpointObserver },
+    { type: MediaMatcher },
+    { type: Router },
+    { type: ActivatedRoute },
+    { type: NzMessageService },
+    { type: ReuseTabService },
+    { type: ElementRef },
+    { type: Renderer2 },
+    { type: BrandService },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
+];
 
-function ApplicationLayoutComponent_ng_container_0_ms_sidebar_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "ms-sidebar");
-} }
-function ApplicationLayoutComponent_ng_container_0_div_7_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "div");
-} }
-function ApplicationLayoutComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵelement(1, "ms-topbar", 2);
-    ɵɵtemplate(2, ApplicationLayoutComponent_ng_container_0_ms_sidebar_2_Template, 1, 0, "ms-sidebar", 0);
-    ɵɵelementStart(3, "div", 3);
-    ɵɵelement(4, "nz-spin", 4);
-    ɵɵelementEnd();
-    ɵɵelementStart(5, "div", 5);
-    ɵɵelementStart(6, "service-layout", 6);
-    ɵɵtemplate(7, ApplicationLayoutComponent_ng_container_0_div_7_Template, 1, 0, "div", 7);
-    ɵɵelement(8, "router-outlet");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const store_r3 = ctx.ngIf;
-    ɵɵnextContext();
-    const _r1 = ɵɵreference(3);
-    ɵɵadvance(1);
-    ɵɵproperty("allNav", store_r3.sidebarConfig.hasAllNav);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", store_r3.sidebarConfig.hasSidebar);
-    ɵɵadvance(1);
-    ɵɵproperty("hidden", !store_r3.isFetching);
-    ɵɵadvance(2);
-    ɵɵproperty("hidden", store_r3.isFetching);
-    ɵɵadvance(1);
-    ɵɵproperty("nav", store_r3.sidebarConfig.hasPageNav)("navConfig", store_r3.navConfig)("navList", store_r3.pageNavs);
-    ɵɵadvance(1);
-    ɵɵproperty("ngTemplateOutlet", _r1);
-} }
-const _c0 = function (a0) { return [a0]; };
-function ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_button_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "button", 12);
-    ɵɵtext(1, "\u8FD4\u56DE");
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r11 = ɵɵnextContext(4);
-    ɵɵproperty("routerLink", ɵɵpureFunction1(1, _c0, ctx_r11.parentPath));
-} }
-function ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "span");
-    ɵɵtemplate(1, ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_button_1_Template, 2, 3, "button", 11);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r10 = ɵɵnextContext(3);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", !ctx_r10.isCurrentPath);
-} }
-function ApplicationLayoutComponent_ng_template_2_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵtemplate(0, ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_Template, 2, 1, "span", 0);
-} if (rf & 2) {
-    const ctx_r7 = ɵɵnextContext(2);
-    ɵɵproperty("ngIf", ctx_r7.layoutStateService == null ? null : ctx_r7.layoutStateService.routesProcessor == null ? null : ctx_r7.layoutStateService.routesProcessor.RouterState);
-} }
-function ApplicationLayoutComponent_ng_template_2_ng_template_3_span_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "span");
-    ɵɵtext(1);
-    ɵɵpipe(2, "abpLocalization");
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r12 = ɵɵnextContext(3);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", ɵɵpipeBind1(2, 1, ctx_r12.layoutStateService == null ? null : ctx_r12.layoutStateService.routesProcessor == null ? null : ctx_r12.layoutStateService.routesProcessor.CurrentRoute == null ? null : ctx_r12.layoutStateService.routesProcessor.CurrentRoute.name), " ");
-} }
-function ApplicationLayoutComponent_ng_template_2_ng_template_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵtemplate(0, ApplicationLayoutComponent_ng_template_2_ng_template_3_span_0_Template, 3, 3, "span", 0);
-} if (rf & 2) {
-    const ctx_r9 = ɵɵnextContext(2);
-    ɵɵproperty("ngIf", ctx_r9.layoutStateService == null ? null : ctx_r9.layoutStateService.routesProcessor == null ? null : ctx_r9.layoutStateService.routesProcessor.RouterState);
-} }
-function ApplicationLayoutComponent_ng_template_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "page-bar", 8);
-    ɵɵtemplate(1, ApplicationLayoutComponent_ng_template_2_ng_template_1_Template, 1, 1, "ng-template", null, 9, ɵɵtemplateRefExtractor);
-    ɵɵtemplate(3, ApplicationLayoutComponent_ng_template_2_ng_template_3_Template, 1, 1, "ng-template", null, 10, ɵɵtemplateRefExtractor);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const _r6 = ɵɵreference(2);
-    const _r8 = ɵɵreference(4);
-    ɵɵproperty("subTitle", _r6)("title", _r8);
-} }
 class ApplicationLayoutComponent {
     constructor(layoutStateService, bm, mediaMatcher, router, route, msg, reuseTabSrv, el, renderer, srv, doc) {
         this.layoutStateService = layoutStateService;
@@ -654,25 +514,26 @@ class ApplicationLayoutComponent {
         this.body.classList.remove('alain-ms__has-topbar', 'alain-ms__has-sidebar', 'alain-ms__has-fixed');
     }
 }
-ApplicationLayoutComponent.ɵfac = function ApplicationLayoutComponent_Factory(t) { return new (t || ApplicationLayoutComponent)(ɵɵdirectiveInject(LayoutStateService), ɵɵdirectiveInject(BreakpointObserver), ɵɵdirectiveInject(MediaMatcher), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(NzMessageService), ɵɵdirectiveInject(ReuseTabService), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(DOCUMENT)); };
-ApplicationLayoutComponent.ɵcmp = ɵɵdefineComponent({ type: ApplicationLayoutComponent, selectors: [["abp-application-layout"]], decls: 4, vars: 3, consts: [[4, "ngIf"], ["FsPageBar", ""], [3, "allNav"], [1, "brand-page-loading", 3, "hidden"], ["nzSpinning", ""], [1, "alain-ms__body", 3, "hidden"], [3, "nav", "navConfig", "navList"], [4, "ngTemplateOutlet"], [3, "subTitle", "title"], ["subTitleTpl", ""], ["titleTpl", ""], ["type", "button", "class", "pri-btn", 3, "routerLink", 4, "ngIf"], ["type", "button", 1, "pri-btn", 3, "routerLink"]], template: function ApplicationLayoutComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, ApplicationLayoutComponent_ng_container_0_Template, 9, 8, "ng-container", 0);
-        ɵɵpipe(1, "async");
-        ɵɵtemplate(2, ApplicationLayoutComponent_ng_template_2_Template, 5, 2, "ng-template", null, 1, ɵɵtemplateRefExtractor);
-    } if (rf & 2) {
-        ɵɵproperty("ngIf", ɵɵpipeBind1(1, 1, ctx.store$));
-    } }, directives: [NgIf, MSTopbarComponent, NzSpinComponent, MSServiceLayoutComponent, NgTemplateOutlet, RouterOutlet, MSSidebarComponent, MSPageBarComponent, RouterLink], pipes: [AsyncPipe, LocalizationPipe], styles: [".pri-btn[_ngcontent-%COMP%]{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn[_ngcontent-%COMP%]:hover{border:1px solid #26d7eb;color:#26d7eb}"] });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(ApplicationLayoutComponent, [{
-        type: Component,
-        args: [{
+ApplicationLayoutComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'abp-application-layout',
-                templateUrl: './application-layout.component.html',
-                styleUrls: ['./application-layout.component.less'],
-            }]
-    }], function () { return [{ type: LayoutStateService }, { type: BreakpointObserver }, { type: MediaMatcher }, { type: Router }, { type: ActivatedRoute }, { type: NzMessageService }, { type: ReuseTabService }, { type: ElementRef }, { type: Renderer2 }, { type: BrandService }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }]; }, null); })();
+                template: "<ng-container *ngIf=\"store$ | async as store\">\r\n  <ms-topbar [allNav]=\"store.sidebarConfig.hasAllNav\"></ms-topbar>\r\n  <ms-sidebar *ngIf=\"store.sidebarConfig.hasSidebar\"></ms-sidebar>\r\n  <div class=\"brand-page-loading\" [hidden]=\"!store.isFetching\">\r\n    <nz-spin nzSpinning></nz-spin>\r\n  </div>\r\n  <div class=\"alain-ms__body\" [hidden]=\"store.isFetching\">\r\n    \r\n    <service-layout\r\n      [nav]=\"store.sidebarConfig.hasPageNav\"\r\n      [navConfig]=\"store.navConfig\"\r\n      [navList]=\"store.pageNavs\"\r\n    >\r\n      <!-- todo:move to feature module\r\n      <page-bar [subTitle]=\"subTitleTpl\" [title]=\"titleTpl\">\r\n        <ng-template #titleTpl> {{ store.navConfig.doc }} </ng-template>\r\n        <ng-template #subTitleTpl>\r\n          <div class=\"text-orange\">\r\n            \u4EE5\u4E0B\u53EA\u5C55\u793A\u90E8\u5206\u7EC4\u4EF6\uFF0C\u66F4\u591A\u7EC4\u4EF6<a\r\n              href=\"https://ng.ant.design\"\r\n              target=\"_blank\"\r\n              >ng.ant.design</a\r\n            >\r\n          </div>\r\n        </ng-template>\r\n        <button (click)=\"msg.success('clean')\" nz-button>\u6E05\u7406</button>\r\n        <button (click)=\"msg.success('remove')\" nz-button nzDanger>\u79FB\u9664</button>\r\n        <button (click)=\"msg.success('add')\" nz-button nzType=\"primary\">\r\n          \u65B0\u589E\r\n        </button>\r\n      </page-bar> -->\r\n      <div *ngTemplateOutlet=\"FsPageBar\"></div>\r\n      <router-outlet></router-outlet>\r\n    </service-layout>\r\n  </div>\r\n</ng-container>\r\n\r\n<ng-template #FsPageBar>\r\n  <page-bar [subTitle]=\"subTitleTpl\" [title]=\"titleTpl\">\r\n    <ng-template #subTitleTpl>\r\n      <span *ngIf=\"layoutStateService?.routesProcessor?.RouterState\" >\r\n        <button type=\"button\" class=\"pri-btn\" \r\n          *ngIf=\"!isCurrentPath\" \r\n          [routerLink]=\"[parentPath]\">\u8FD4\u56DE</button>\r\n      </span>\r\n    </ng-template>\r\n    <ng-template #titleTpl>\r\n      <span *ngIf=\"layoutStateService?.routesProcessor?.RouterState\">\r\n        {{layoutStateService?.routesProcessor?.CurrentRoute?.name | abpLocalization}}\r\n      </span>\r\n    </ng-template>\r\n  </page-bar>\r\n</ng-template>",
+                styles: [".pri-btn{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn:hover{border:1px solid #26d7eb;color:#26d7eb}"]
+            },] }
+];
+ApplicationLayoutComponent.ctorParameters = () => [
+    { type: LayoutStateService },
+    { type: BreakpointObserver },
+    { type: MediaMatcher },
+    { type: Router },
+    { type: ActivatedRoute },
+    { type: NzMessageService },
+    { type: ReuseTabService },
+    { type: ElementRef },
+    { type: Renderer2 },
+    { type: BrandService },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
+];
 
 var styles = `
 .content-header-title {
@@ -857,31 +718,20 @@ class ThemeAlainMsModule {
         };
     }
 }
-ThemeAlainMsModule.ɵfac = function ThemeAlainMsModule_Factory(t) { return new (t || ThemeAlainMsModule)(); };
-ThemeAlainMsModule.ɵmod = ɵɵdefineNgModule({ type: ThemeAlainMsModule });
-ThemeAlainMsModule.ɵinj = ɵɵdefineInjector({ imports: [[
-            CoreModule,
-            LayoutModule,
-            NzSpinModule
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(ThemeAlainMsModule, { declarations: [ApplicationLayoutComponent, AccountLayoutComponent], imports: [CoreModule,
-        LayoutModule,
-        NzSpinModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(ThemeAlainMsModule, [{
-        type: NgModule,
-        args: [{
+ThemeAlainMsModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [
                     CoreModule,
                     LayoutModule,
                     NzSpinModule
                 ],
                 declarations: [ApplicationLayoutComponent, AccountLayoutComponent],
-            }]
-    }], null, null); })();
+            },] }
+];
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { ThemeAlainMsModule };
+export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, StartupService as ɵe, StartupServiceFactory as ɵf, APPINIT_PROVIDES as ɵg, LANG as ɵh, LANG_PROVIDES as ɵi, STYLES_PROVIDERS as ɵj, configureStyles as ɵk, NGALAINMS_THEME_STYLES_PROVIDERS as ɵl, configureStyles$1 as ɵm };
 //# sourceMappingURL=fs-tw-theme-alain-ms.js.map

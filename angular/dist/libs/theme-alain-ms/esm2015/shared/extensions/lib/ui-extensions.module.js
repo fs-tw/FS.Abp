@@ -11,7 +11,6 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { UiExtensionsModule as AbpUiExtensionsModule } from '@abp/ng.theme.shared/extensions';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
-import * as i0 from "@angular/core";
 const declarationsWithExports = [
     ExtensibleTableComponent,
     GridActionsComponent,
@@ -26,31 +25,8 @@ const ZORRO_MODULES = [
 ];
 export class BaseUiExtensionsModule {
 }
-BaseUiExtensionsModule.ɵfac = function BaseUiExtensionsModule_Factory(t) { return new (t || BaseUiExtensionsModule)(); };
-BaseUiExtensionsModule.ɵmod = i0.ɵɵdefineNgModule({ type: BaseUiExtensionsModule });
-BaseUiExtensionsModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
-            CoreModule,
-            ThemeSharedModule,
-            NgxValidateCoreModule,
-            AbpUiExtensionsModule,
-            ...ZORRO_MODULES,
-        ], AbpUiExtensionsModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(BaseUiExtensionsModule, { declarations: [ExtensibleTableComponent,
-        GridActionsComponent,
-        PageToolbarComponent,
-        NzTableListDirective], imports: [CoreModule,
-        ThemeSharedModule,
-        NgxValidateCoreModule,
-        AbpUiExtensionsModule, NzButtonModule,
-        NzDropDownModule,
-        NzIconModule,
-        NzTableModule], exports: [ExtensibleTableComponent,
-        GridActionsComponent,
-        PageToolbarComponent,
-        NzTableListDirective, AbpUiExtensionsModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(BaseUiExtensionsModule, [{
-        type: NgModule,
-        args: [{
+BaseUiExtensionsModule.decorators = [
+    { type: NgModule, args: [{
                 exports: [
                     ...declarationsWithExports,
                     AbpUiExtensionsModule
@@ -65,19 +41,14 @@ BaseUiExtensionsModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
                     AbpUiExtensionsModule,
                     ...ZORRO_MODULES,
                 ],
-            }]
-    }], null, null); })();
+            },] }
+];
 export class UiExtensionsModule {
 }
-UiExtensionsModule.ɵfac = function UiExtensionsModule_Factory(t) { return new (t || UiExtensionsModule)(); };
-UiExtensionsModule.ɵmod = i0.ɵɵdefineNgModule({ type: UiExtensionsModule });
-UiExtensionsModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[BaseUiExtensionsModule], BaseUiExtensionsModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(UiExtensionsModule, { imports: [BaseUiExtensionsModule], exports: [BaseUiExtensionsModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UiExtensionsModule, [{
-        type: NgModule,
-        args: [{
+UiExtensionsModule.decorators = [
+    { type: NgModule, args: [{
                 exports: [BaseUiExtensionsModule],
                 imports: [BaseUiExtensionsModule],
-            }]
-    }], null, null); })();
+            },] }
+];
 //# sourceMappingURL=ui-extensions.module.js.map

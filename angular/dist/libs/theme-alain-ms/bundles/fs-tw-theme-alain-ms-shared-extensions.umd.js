@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@angular/core'), require('rxjs'), require('ng-zorro-antd/table'), require('@abp/ng.theme.shared/extensions'), require('@angular/common'), require('ng-zorro-antd/button'), require('ng-zorro-antd/core/wave'), require('ng-zorro-antd/core/transition-patch'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/icon'), require('ng-zorro-antd/menu'), require('@ngx-validate/core'), require('@abp/ng.theme.shared')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms/shared/extensions', ['exports', '@abp/ng.core', '@angular/core', 'rxjs', 'ng-zorro-antd/table', '@abp/ng.theme.shared/extensions', '@angular/common', 'ng-zorro-antd/button', 'ng-zorro-antd/core/wave', 'ng-zorro-antd/core/transition-patch', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/icon', 'ng-zorro-antd/menu', '@ngx-validate/core', '@abp/ng.theme.shared'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = global['fs-tw']['theme-alain-ms'] || {}, global['fs-tw']['theme-alain-ms'].shared = global['fs-tw']['theme-alain-ms'].shared || {}, global['fs-tw']['theme-alain-ms'].shared.extensions = {}), global.i2$1, global.ng.core, global.rxjs, global.i2, global.extensions, global.ng.common, global.i2$2, global.i3, global.i4, global.i5, global.i6, global.i7, global.core, global.ng_theme_shared));
-}(this, (function (exports, i2$1, i0, rxjs, i2, extensions, i1, i2$2, i3, i4, i5, i6, i7, core, ng_theme_shared) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@angular/core'), require('rxjs'), require('ng-zorro-antd/table'), require('@abp/ng.theme.shared/extensions'), require('ng-zorro-antd/button'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/icon'), require('@ngx-validate/core'), require('@abp/ng.theme.shared')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms/shared/extensions', ['exports', '@abp/ng.core', '@angular/core', 'rxjs', 'ng-zorro-antd/table', '@abp/ng.theme.shared/extensions', 'ng-zorro-antd/button', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/icon', '@ngx-validate/core', '@abp/ng.theme.shared'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = global['fs-tw']['theme-alain-ms'] || {}, global['fs-tw']['theme-alain-ms'].shared = global['fs-tw']['theme-alain-ms'].shared || {}, global['fs-tw']['theme-alain-ms'].shared.extensions = {}), global.ng_core, global.ng.core, global.rxjs, global.table, global.extensions, global.button, global.dropdown, global.icon, global.core$1, global.ng_theme_shared));
+}(this, (function (exports, ng_core, core, rxjs, table, extensions, button, dropdown, icon, core$1, ng_theme_shared) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -406,206 +406,22 @@
         };
         return NzTableListDirective;
     }());
-    NzTableListDirective.ɵfac = function NzTableListDirective_Factory(t) { return new (t || NzTableListDirective)(i0.ɵɵdirectiveInject(i2.NzTableComponent), i0.ɵɵdirectiveInject(i0.ChangeDetectorRef), i0.ɵɵdirectiveInject(i2$1.LocalizationService)); };
-    NzTableListDirective.ɵdir = i0.ɵɵdefineDirective({ type: NzTableListDirective, selectors: [["nz-table", "list", ""]], inputs: { list: "list" }, exportAs: ["nzTableList"], features: [i0.ɵɵNgOnChangesFeature] });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NzTableListDirective, [{
-                type: i0.Directive,
-                args: [{
-                        // tslint:disable-next-line
-                        selector: 'nz-table[list]',
-                        exportAs: 'nzTableList',
-                    }]
-            }], function () { return [{ type: i2.NzTableComponent }, { type: i0.ChangeDetectorRef }, { type: i2$1.LocalizationService }]; }, { list: [{
-                    type: i0.Input
-                }] });
-    })();
+    NzTableListDirective.decorators = [
+        { type: core.Directive, args: [{
+                    // tslint:disable-next-line
+                    selector: 'nz-table[list]',
+                    exportAs: 'nzTableList',
+                },] }
+    ];
+    NzTableListDirective.ctorParameters = function () { return [
+        { type: table.NzTableComponent },
+        { type: core.ChangeDetectorRef },
+        { type: ng_core.LocalizationService }
+    ]; };
+    NzTableListDirective.propDecorators = {
+        list: [{ type: core.Input }]
+    };
 
-    function GridActionsComponent_ng_container_0_ng_container_9_ng_container_1_li_1_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r7_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "li", 8);
-            i0.ɵɵelementStart(1, "a", 9);
-            i0.ɵɵlistener("click", function GridActionsComponent_ng_container_0_ng_container_9_ng_container_1_li_1_Template_a_click_1_listener() { i0.ɵɵrestoreView(_r7_1); var action_r3 = i0.ɵɵnextContext(2).$implicit; var ctx_r6 = i0.ɵɵnextContext(2); return action_r3.action(ctx_r6.data); });
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var action_r3 = i0.ɵɵnextContext(2).$implicit;
-            i0.ɵɵadvance(2);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(3, 1, action_r3.text));
-        }
-    }
-    function GridActionsComponent_ng_container_0_ng_container_9_ng_container_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵtemplate(1, GridActionsComponent_ng_container_0_ng_container_9_ng_container_1_li_1_Template, 4, 3, "li", 7);
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var action_r3 = i0.ɵɵnextContext().$implicit;
-            var ctx_r4 = i0.ɵɵnextContext(2);
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngIf", action_r3.visible(ctx_r4.data));
-        }
-    }
-    function GridActionsComponent_ng_container_0_ng_container_9_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵtemplate(1, GridActionsComponent_ng_container_0_ng_container_9_ng_container_1_Template, 2, 1, "ng-container", 6);
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var action_r3 = ctx.$implicit;
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("abpPermission", action_r3.permission);
-        }
-    }
-    function GridActionsComponent_ng_container_0_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵelementStart(1, "button", 1);
-            i0.ɵɵelement(2, "i", 2);
-            i0.ɵɵelementStart(3, "span");
-            i0.ɵɵtext(4);
-            i0.ɵɵpipe(5, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(6, "nz-dropdown-menu", null, 3);
-            i0.ɵɵelementStart(8, "ul", 4);
-            i0.ɵɵtemplate(9, GridActionsComponent_ng_container_0_ng_container_9_Template, 2, 1, "ng-container", 5);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var _r1 = i0.ɵɵreference(7);
-            var ctx_r0 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("nzDropdownMenu", _r1);
-            i0.ɵɵadvance(3);
-            i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(5, 4, "AbpUi::Actions"));
-            i0.ɵɵadvance(5);
-            i0.ɵɵproperty("ngForOf", ctx_r0.actionList)("ngForTrackBy", ctx_r0.trackByFn);
-        }
-    }
-    var GridActionsComponent = /** @class */ (function (_super) {
-        __extends(GridActionsComponent, _super);
-        function GridActionsComponent(injector) {
-            var _this = _super.call(this, injector) || this;
-            _this.icon = 'fa fa-cog';
-            _this.text = '';
-            _this.trackByFn = function (_, item) { return item.text; };
-            return _this;
-        }
-        return GridActionsComponent;
-    }(extensions.GridActionsComponent));
-    GridActionsComponent.ɵfac = function GridActionsComponent_Factory(t) { return new (t || GridActionsComponent)(i0.ɵɵdirectiveInject(i0.Injector)); };
-    GridActionsComponent.ɵcmp = i0.ɵɵdefineComponent({ type: GridActionsComponent, selectors: [["nz-grid-actions"]], inputs: { icon: "icon", index: "index", text: "text" }, exportAs: ["nzGridActions"], features: [i0.ɵɵProvidersFeature([
-                {
-                    provide: extensions.EXTENSIONS_ACTION_TYPE,
-                    useValue: 'entityActions',
-                },
-            ]), i0.ɵɵInheritDefinitionFeature], decls: 1, vars: 1, consts: [[4, "ngIf"], ["nz-button", "", "nzType", "default", "nz-dropdown", "", 1, "ml-md", 3, "nzDropdownMenu"], ["nz-icon", "", "nzType", "down"], ["menu", "nzDropdownMenu"], ["nz-menu", ""], [4, "ngFor", "ngForOf", "ngForTrackBy"], [4, "abpPermission"], ["nz-menu-item", "", 4, "ngIf"], ["nz-menu-item", ""], [3, "click"]], template: function GridActionsComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵtemplate(0, GridActionsComponent_ng_container_0_Template, 10, 6, "ng-container", 0);
-            }
-            if (rf & 2) {
-                i0.ɵɵproperty("ngIf", ctx.actionList.length > 0);
-            }
-        }, directives: [i1.NgIf, i2$2.NzButtonComponent, i3.NzWaveDirective, i4.ɵNzTransitionPatchDirective, i5.NzDropdownButtonDirective, i5.NzDropDownDirective, i6.NzIconDirective, i5.NzDropdownMenuComponent, i7.NzMenuDirective, i1.NgForOf, i2$1.PermissionDirective, i7.NzMenuItemDirective], pipes: [i2$1.LocalizationPipe], encapsulation: 2, changeDetection: 0 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(GridActionsComponent, [{
-                type: i0.Component,
-                args: [{
-                        exportAs: 'nzGridActions',
-                        selector: 'nz-grid-actions',
-                        templateUrl: './grid-actions.component.html',
-                        providers: [
-                            {
-                                provide: extensions.EXTENSIONS_ACTION_TYPE,
-                                useValue: 'entityActions',
-                            },
-                        ],
-                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                    }]
-            }], function () { return [{ type: i0.Injector }]; }, { icon: [{
-                    type: i0.Input
-                }], index: [{
-                    type: i0.Input
-                }], text: [{
-                    type: i0.Input
-                }] });
-    })();
-
-    var _c0 = function () { return ["ascend", "descend"]; };
-    function ExtensibleTableComponent_ng_container_4_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵelementStart(1, "th", 4);
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var prop_r2 = ctx.$implicit;
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("nzSortFn", prop_r2.sortable)("nzColumnKey", prop_r2.name)("nzSortDirections", i0.ɵɵpureFunction0(6, _c0));
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 4, prop_r2.displayName), " ");
-        }
-    }
-    function ExtensibleTableComponent_tr_6_ng_container_3_div_2_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r11_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "div", 8);
-            i0.ɵɵlistener("click", function ExtensibleTableComponent_tr_6_ng_container_3_div_2_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r11_1); var ctx_r10 = i0.ɵɵnextContext(); var prop_r6 = ctx_r10.$implicit; var i_r7 = ctx_r10.index; var row_r4 = i0.ɵɵnextContext().$implicit; var ctx_r9 = i0.ɵɵnextContext(); return prop_r6.action && prop_r6.action({ getInjected: ctx_r9.getInjected, record: row_r4, index: i_r7 }); });
-            i0.ɵɵpipe(1, "async");
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var prop_r6 = i0.ɵɵnextContext().$implicit;
-            var row_r4 = i0.ɵɵnextContext().$implicit;
-            i0.ɵɵclassProp("pointer", prop_r6.action);
-            i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(1, 3, row_r4["_" + prop_r6.name].value), i0.ɵɵsanitizeHtml);
-        }
-    }
-    function ExtensibleTableComponent_tr_6_ng_container_3_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵelementStart(1, "td");
-            i0.ɵɵtemplate(2, ExtensibleTableComponent_tr_6_ng_container_3_div_2_Template, 2, 5, "div", 7);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var prop_r6 = ctx.$implicit;
-            var row_r4 = i0.ɵɵnextContext().$implicit;
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("ngIf", row_r4["_" + prop_r6.name].visible);
-        }
-    }
-    function ExtensibleTableComponent_tr_6_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "tr", 5);
-            i0.ɵɵelementStart(1, "td");
-            i0.ɵɵelement(2, "nz-grid-actions", 6);
-            i0.ɵɵelementEnd();
-            i0.ɵɵtemplate(3, ExtensibleTableComponent_tr_6_ng_container_3_Template, 3, 1, "ng-container", 2);
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var row_r4 = ctx.$implicit;
-            var ctx_r1 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("record", row_r4);
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngForOf", ctx_r1.propList)("ngForTrackBy", ctx_r1.trackByFn);
-        }
-    }
     var DEFAULT_ACTIONS_COLUMN_WIDTH = 75;
     var ExtensibleTableComponent = /** @class */ (function (_super) {
         __extends(ExtensibleTableComponent, _super);
@@ -644,137 +460,62 @@
         };
         return ExtensibleTableComponent;
     }(extensions.ExtensibleTableComponent));
-    ExtensibleTableComponent.ɵfac = function ExtensibleTableComponent_Factory(t) { return new (t || ExtensibleTableComponent)(i0.ɵɵdirectiveInject(i0.LOCALE_ID), i0.ɵɵdirectiveInject(i2$1.ConfigStateService), i0.ɵɵdirectiveInject(i0.Injector)); };
-    ExtensibleTableComponent.ɵcmp = i0.ɵɵdefineComponent({ type: ExtensibleTableComponent, selectors: [["nz-extensible-table"]], inputs: { actionsText: "actionsText", data: "data", list: "list", recordsTotal: "recordsTotal", actionsColumnWidth: "actionsColumnWidth", actionsTemplate: "actionsTemplate" }, exportAs: ["nzExtensibleTable"], features: [i0.ɵɵInheritDefinitionFeature], decls: 7, vars: 7, consts: [[3, "nzData", "nzTotal", "list"], [3, "nzWidth"], [4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "bg-white", 4, "ngFor", "ngForOf"], [3, "nzSortFn", "nzColumnKey", "nzSortDirections"], [1, "bg-white"], [3, "record"], [3, "innerHTML", "pointer", "click", 4, "ngIf"], [3, "innerHTML", "click"]], template: function ExtensibleTableComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵelementStart(0, "nz-table", 0);
-                i0.ɵɵelementStart(1, "thead");
-                i0.ɵɵelementStart(2, "tr");
-                i0.ɵɵelement(3, "th", 1);
-                i0.ɵɵtemplate(4, ExtensibleTableComponent_ng_container_4_Template, 4, 7, "ng-container", 2);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementStart(5, "tbody");
-                i0.ɵɵtemplate(6, ExtensibleTableComponent_tr_6_Template, 4, 3, "tr", 3);
-                i0.ɵɵelementEnd();
-                i0.ɵɵelementEnd();
-            }
-            if (rf & 2) {
-                i0.ɵɵproperty("nzData", ctx.data)("nzTotal", ctx.recordsTotal)("list", ctx.list);
-                i0.ɵɵadvance(3);
-                i0.ɵɵproperty("nzWidth", ctx.columnWidths[0] + "px");
-                i0.ɵɵadvance(1);
-                i0.ɵɵproperty("ngForOf", ctx.propList)("ngForTrackBy", ctx.trackByFn);
-                i0.ɵɵadvance(2);
-                i0.ɵɵproperty("ngForOf", ctx.data);
-            }
-        }, directives: [i2.NzTableComponent, NzTableListDirective, i2.NzTheadComponent, i2.NzTrDirective, i2.NzTableCellDirective, i2.NzThMeasureDirective, i1.NgForOf, i2.NzTbodyComponent, i2.NzThAddOnComponent, GridActionsComponent, i1.NgIf], pipes: [i2$1.LocalizationPipe, i1.AsyncPipe], encapsulation: 2, changeDetection: 0 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ExtensibleTableComponent, [{
-                type: i0.Component,
-                args: [{
-                        exportAs: 'nzExtensibleTable',
-                        selector: 'nz-extensible-table',
-                        templateUrl: './extensible-table.component.html',
-                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                    }]
-            }], function () {
-            return [{ type: undefined, decorators: [{
-                            type: i0.Inject,
-                            args: [i0.LOCALE_ID]
-                        }] }, { type: i2$1.ConfigStateService }, { type: i0.Injector }];
-        }, { actionsText: [{
-                    type: i0.Input
-                }], data: [{
-                    type: i0.Input
-                }], list: [{
-                    type: i0.Input
-                }], recordsTotal: [{
-                    type: i0.Input
-                }], actionsColumnWidth: [{
-                    type: i0.Input
-                }], actionsTemplate: [{
-                    type: i0.Input
-                }] });
-    })();
+    ExtensibleTableComponent.decorators = [
+        { type: core.Component, args: [{
+                    exportAs: 'nzExtensibleTable',
+                    selector: 'nz-extensible-table',
+                    template: "<nz-table [nzData]=\"data\" [nzTotal]=\"recordsTotal\" [list]=\"list\" >\r\n  <thead>\r\n    <tr>\r\n      <th [nzWidth]=\"columnWidths[0]+'px'\"></th>\r\n      <ng-container\r\n        *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\"\r\n      >\r\n        <th\r\n          [nzSortFn]=\"prop.sortable\"\r\n          [nzColumnKey]=\"prop.name\"\r\n          [nzSortDirections]=\"['ascend', 'descend']\"\r\n        >\r\n          {{ prop.displayName | abpLocalization }}\r\n        </th>\r\n      </ng-container>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of data\" class=\"bg-white\">\r\n      <td>\r\n        <nz-grid-actions [record]=\"row\"></nz-grid-actions>\r\n      </td>\r\n      <ng-container\r\n        *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\"\r\n      >\r\n        <td>\r\n          <div\r\n            *ngIf=\"row['_' + prop.name].visible\"\r\n            [innerHTML]=\"row['_' + prop.name].value | async\"\r\n            (click)=\"\r\n              prop.action && prop.action({ getInjected: getInjected, record: row, index: i })\r\n            \"\r\n            [class.pointer]=\"prop.action\"\r\n          ></div>\r\n        </td>\r\n      </ng-container>\r\n    </tr>\r\n  </tbody>\r\n</nz-table>\r\n",
+                    changeDetection: core.ChangeDetectionStrategy.OnPush
+                },] }
+    ];
+    ExtensibleTableComponent.ctorParameters = function () { return [
+        { type: String, decorators: [{ type: core.Inject, args: [core.LOCALE_ID,] }] },
+        { type: ng_core.ConfigStateService },
+        { type: core.Injector }
+    ]; };
+    ExtensibleTableComponent.propDecorators = {
+        actionsText: [{ type: core.Input }],
+        data: [{ type: core.Input }],
+        list: [{ type: core.Input }],
+        recordsTotal: [{ type: core.Input }],
+        actionsColumnWidth: [{ type: core.Input }],
+        actionsTemplate: [{ type: core.Input }]
+    };
 
-    function PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_container_1_ng_container_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainer(0);
+    var GridActionsComponent = /** @class */ (function (_super) {
+        __extends(GridActionsComponent, _super);
+        function GridActionsComponent(injector) {
+            var _this = _super.call(this, injector) || this;
+            _this.icon = 'fa fa-cog';
+            _this.text = '';
+            _this.trackByFn = function (_, item) { return item.text; };
+            return _this;
         }
-    }
-    function PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_container_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵtemplate(1, PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_container_1_ng_container_1_Template, 1, 0, "ng-container", 7);
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var component_r7 = ctx.ngIf;
-            var action_r1 = i0.ɵɵnextContext(3).$implicit;
-            var ctx_r4 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngComponentOutlet", component_r7)("ngComponentOutletInjector", ctx_r4.createInjector(action_r1));
-        }
-    }
-    function PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_template_2_Template(rf, ctx) {
-        if (rf & 1) {
-            var _r11_1 = i0.ɵɵgetCurrentView();
-            i0.ɵɵelementStart(0, "button", 8);
-            i0.ɵɵlistener("click", function PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_template_2_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r11_1); var action_r1 = i0.ɵɵnextContext(3).$implicit; var ctx_r10 = i0.ɵɵnextContext(); return action_r1.action(ctx_r10.data); });
-            i0.ɵɵelement(1, "i", 9);
-            i0.ɵɵtext(2);
-            i0.ɵɵpipe(3, "abpLocalization");
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var action_r1 = i0.ɵɵnextContext(3).$implicit;
-            i0.ɵɵadvance(1);
-            i0.ɵɵclassProp("mr-1", action_r1.icon);
-            i0.ɵɵproperty("ngClass", action_r1.icon);
-            i0.ɵɵadvance(1);
-            i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(3, 4, action_r1.text), " ");
-        }
-    }
-    function PageToolbarComponent_div_1_ng_container_1_ng_container_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵtemplate(1, PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_container_1_Template, 2, 2, "ng-container", 5);
-            i0.ɵɵtemplate(2, PageToolbarComponent_div_1_ng_container_1_ng_container_1_ng_template_2_Template, 4, 6, "ng-template", null, 6, i0.ɵɵtemplateRefExtractor);
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var _r5 = i0.ɵɵreference(3);
-            var action_r1 = i0.ɵɵnextContext(2).$implicit;
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngIf", action_r1.component)("ngIfElse", _r5);
-        }
-    }
-    function PageToolbarComponent_div_1_ng_container_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementContainerStart(0);
-            i0.ɵɵtemplate(1, PageToolbarComponent_div_1_ng_container_1_ng_container_1_Template, 4, 2, "ng-container", 4);
-            i0.ɵɵelementContainerEnd();
-        }
-        if (rf & 2) {
-            var action_r1 = i0.ɵɵnextContext().$implicit;
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("abpPermission", action_r1.permission);
-        }
-    }
-    function PageToolbarComponent_div_1_Template(rf, ctx) {
-        if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 2);
-            i0.ɵɵtemplate(1, PageToolbarComponent_div_1_ng_container_1_Template, 2, 1, "ng-container", 3);
-            i0.ɵɵelementEnd();
-        }
-        if (rf & 2) {
-            var action_r1 = ctx.$implicit;
-            var ctx_r0 = i0.ɵɵnextContext();
-            i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngIf", action_r1.visible(ctx_r0.data));
-        }
-    }
+        return GridActionsComponent;
+    }(extensions.GridActionsComponent));
+    GridActionsComponent.decorators = [
+        { type: core.Component, args: [{
+                    exportAs: 'nzGridActions',
+                    selector: 'nz-grid-actions',
+                    template: "<ng-container *ngIf=\"actionList.length > 0\">\r\n  <button\r\n    nz-button\r\n    nzType=\"default\"\r\n    nz-dropdown\r\n    [nzDropdownMenu]=\"menu\"\r\n    class=\"ml-md\"\r\n  >\r\n    <i nz-icon nzType=\"down\"></i>\r\n    <span>{{ 'AbpUi::Actions' | abpLocalization }}</span>\r\n  </button>\r\n\r\n  <nz-dropdown-menu #menu=\"nzDropdownMenu\">\r\n    <ul nz-menu>\r\n      <ng-container *ngFor=\"let action of actionList; trackBy: trackByFn\">\r\n        <ng-container *abpPermission=\"action.permission\">\r\n          <li nz-menu-item *ngIf=\"action.visible(data)\">\r\n            <a (click)=\"action.action(data)\">{{\r\n              action.text | abpLocalization\r\n            }}</a>\r\n          </li>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n\r\n    </ul>\r\n  </nz-dropdown-menu>\r\n</ng-container>",
+                    providers: [
+                        {
+                            provide: extensions.EXTENSIONS_ACTION_TYPE,
+                            useValue: 'entityActions',
+                        },
+                    ],
+                    changeDetection: core.ChangeDetectionStrategy.OnPush
+                },] }
+    ];
+    GridActionsComponent.ctorParameters = function () { return [
+        { type: core.Injector }
+    ]; };
+    GridActionsComponent.propDecorators = {
+        icon: [{ type: core.Input }],
+        index: [{ type: core.Input }],
+        text: [{ type: core.Input }]
+    };
+
     var PageToolbarComponent = /** @class */ (function (_super) {
         __extends(PageToolbarComponent, _super);
         function PageToolbarComponent(_injector) {
@@ -785,40 +526,23 @@
         }
         return PageToolbarComponent;
     }(extensions.PageToolbarComponent));
-    PageToolbarComponent.ɵfac = function PageToolbarComponent_Factory(t) { return new (t || PageToolbarComponent)(i0.ɵɵdirectiveInject(i0.Injector)); };
-    PageToolbarComponent.ɵcmp = i0.ɵɵdefineComponent({ type: PageToolbarComponent, selectors: [["nz-page-toolbar"]], exportAs: ["nzPageToolbar"], features: [i0.ɵɵProvidersFeature([
-                {
-                    provide: extensions.EXTENSIONS_ACTION_TYPE,
-                    useValue: 'toolbarActions',
-                },
-            ]), i0.ɵɵInheritDefinitionFeature], decls: 2, vars: 2, consts: [["id", "AbpContentToolbar", 1, "row", "justify-content-end", "mx-n1"], ["class", "col-auto px-1 pt-2", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "col-auto", "px-1", "pt-2"], [4, "ngIf"], [4, "abpPermission"], [4, "ngIf", "ngIfElse"], ["button", ""], [4, "ngComponentOutlet", "ngComponentOutletInjector"], ["nz-button", "", "nzType", "primary", 3, "click"], [3, "ngClass"]], template: function PageToolbarComponent_Template(rf, ctx) {
-            if (rf & 1) {
-                i0.ɵɵelementStart(0, "div", 0);
-                i0.ɵɵtemplate(1, PageToolbarComponent_div_1_Template, 2, 1, "div", 1);
-                i0.ɵɵelementEnd();
-            }
-            if (rf & 2) {
-                i0.ɵɵadvance(1);
-                i0.ɵɵproperty("ngForOf", ctx.actionList)("ngForTrackBy", ctx.trackByFn);
-            }
-        }, directives: [i1.NgForOf, i1.NgIf, i2$1.PermissionDirective, i1.NgComponentOutlet, i2$2.NzButtonComponent, i3.NzWaveDirective, i4.ɵNzTransitionPatchDirective, i1.NgClass], pipes: [i2$1.LocalizationPipe], encapsulation: 2, changeDetection: 0 });
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PageToolbarComponent, [{
-                type: i0.Component,
-                args: [{
-                        exportAs: 'nzPageToolbar',
-                        selector: 'nz-page-toolbar',
-                        templateUrl: './page-toolbar.component.html',
-                        providers: [
-                            {
-                                provide: extensions.EXTENSIONS_ACTION_TYPE,
-                                useValue: 'toolbarActions',
-                            },
-                        ],
-                        changeDetection: i0.ChangeDetectionStrategy.OnPush,
-                    }]
-            }], function () { return [{ type: i0.Injector }]; }, null);
-    })();
+    PageToolbarComponent.decorators = [
+        { type: core.Component, args: [{
+                    exportAs: 'nzPageToolbar',
+                    selector: 'nz-page-toolbar',
+                    template: "<div class=\"row justify-content-end mx-n1\" id=\"AbpContentToolbar\">\r\n  <div class=\"col-auto px-1 pt-2\" *ngFor=\"let action of actionList; trackBy: trackByFn\">\r\n    <ng-container *ngIf=\"action.visible(data)\">\r\n      <ng-container *abpPermission=\"action.permission\">\r\n        <ng-container *ngIf=\"action.component as component; else button\">\r\n          <ng-container\r\n            *ngComponentOutlet=\"component; injector: createInjector(action)\"\r\n          ></ng-container>\r\n        </ng-container>\r\n\r\n        <ng-template #button>\r\n          <button nz-button nzType=\"primary\" (click)=\"action.action(data)\">\r\n            <i [ngClass]=\"action.icon\" [class.mr-1]=\"action.icon\"></i>\r\n            {{ action.text | abpLocalization }}\r\n          </button>\r\n        </ng-template>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</div>\r\n",
+                    providers: [
+                        {
+                            provide: extensions.EXTENSIONS_ACTION_TYPE,
+                            useValue: 'toolbarActions',
+                        },
+                    ],
+                    changeDetection: core.ChangeDetectionStrategy.OnPush
+                },] }
+    ];
+    PageToolbarComponent.ctorParameters = function () { return [
+        { type: core.Injector }
+    ]; };
 
     var declarationsWithExports = [
         ExtensibleTableComponent,
@@ -827,74 +551,41 @@
         NzTableListDirective
     ];
     var ZORRO_MODULES = [
-        i2$2.NzButtonModule,
-        i5.NzDropDownModule,
-        i6.NzIconModule,
-        i2.NzTableModule
+        button.NzButtonModule,
+        dropdown.NzDropDownModule,
+        icon.NzIconModule,
+        table.NzTableModule
     ];
     var BaseUiExtensionsModule = /** @class */ (function () {
         function BaseUiExtensionsModule() {
         }
         return BaseUiExtensionsModule;
     }());
-    BaseUiExtensionsModule.ɵfac = function BaseUiExtensionsModule_Factory(t) { return new (t || BaseUiExtensionsModule)(); };
-    BaseUiExtensionsModule.ɵmod = i0.ɵɵdefineNgModule({ type: BaseUiExtensionsModule });
-    BaseUiExtensionsModule.ɵinj = i0.ɵɵdefineInjector({ imports: [__spread([
-                i2$1.CoreModule,
-                ng_theme_shared.ThemeSharedModule,
-                core.NgxValidateCoreModule,
-                extensions.UiExtensionsModule
-            ], ZORRO_MODULES), extensions.UiExtensionsModule] });
-    (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(BaseUiExtensionsModule, { declarations: [ExtensibleTableComponent,
-                GridActionsComponent,
-                PageToolbarComponent,
-                NzTableListDirective], imports: [i2$1.CoreModule,
-                ng_theme_shared.ThemeSharedModule,
-                core.NgxValidateCoreModule,
-                extensions.UiExtensionsModule, i2$2.NzButtonModule,
-                i5.NzDropDownModule,
-                i6.NzIconModule,
-                i2.NzTableModule], exports: [ExtensibleTableComponent,
-                GridActionsComponent,
-                PageToolbarComponent,
-                NzTableListDirective, extensions.UiExtensionsModule] });
-    })();
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(BaseUiExtensionsModule, [{
-                type: i0.NgModule,
-                args: [{
-                        exports: __spread(declarationsWithExports, [
-                            extensions.UiExtensionsModule
-                        ]),
-                        declarations: __spread(declarationsWithExports),
-                        imports: __spread([
-                            i2$1.CoreModule,
-                            ng_theme_shared.ThemeSharedModule,
-                            core.NgxValidateCoreModule,
-                            extensions.UiExtensionsModule
-                        ], ZORRO_MODULES),
-                    }]
-            }], null, null);
-    })();
+    BaseUiExtensionsModule.decorators = [
+        { type: core.NgModule, args: [{
+                    exports: __spread(declarationsWithExports, [
+                        extensions.UiExtensionsModule
+                    ]),
+                    declarations: __spread(declarationsWithExports),
+                    imports: __spread([
+                        ng_core.CoreModule,
+                        ng_theme_shared.ThemeSharedModule,
+                        core$1.NgxValidateCoreModule,
+                        extensions.UiExtensionsModule
+                    ], ZORRO_MODULES),
+                },] }
+    ];
     var UiExtensionsModule = /** @class */ (function () {
         function UiExtensionsModule() {
         }
         return UiExtensionsModule;
     }());
-    UiExtensionsModule.ɵfac = function UiExtensionsModule_Factory(t) { return new (t || UiExtensionsModule)(); };
-    UiExtensionsModule.ɵmod = i0.ɵɵdefineNgModule({ type: UiExtensionsModule });
-    UiExtensionsModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[BaseUiExtensionsModule], BaseUiExtensionsModule] });
-    (function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(UiExtensionsModule, { imports: [BaseUiExtensionsModule], exports: [BaseUiExtensionsModule] }); })();
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UiExtensionsModule, [{
-                type: i0.NgModule,
-                args: [{
-                        exports: [BaseUiExtensionsModule],
-                        imports: [BaseUiExtensionsModule],
-                    }]
-            }], null, null);
-    })();
+    UiExtensionsModule.decorators = [
+        { type: core.NgModule, args: [{
+                    exports: [BaseUiExtensionsModule],
+                    imports: [BaseUiExtensionsModule],
+                },] }
+    ];
 
     /**
      * Generated bundle index. Do not edit.

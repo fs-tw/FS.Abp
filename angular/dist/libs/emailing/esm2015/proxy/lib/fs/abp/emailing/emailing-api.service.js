@@ -19,12 +19,13 @@ export class EmailingApiService {
         }, { apiName: this.apiName });
     }
 }
-EmailingApiService.ɵfac = function EmailingApiService_Factory(t) { return new (t || EmailingApiService)(i0.ɵɵinject(i1.RestService)); };
-EmailingApiService.ɵprov = i0.ɵɵdefineInjectable({ token: EmailingApiService, factory: EmailingApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(EmailingApiService, [{
-        type: Injectable,
-        args: [{
+EmailingApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function EmailingApiService_Factory() { return new EmailingApiService(i0.ɵɵinject(i1.RestService)); }, token: EmailingApiService, providedIn: "root" });
+EmailingApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+EmailingApiService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=emailing-api.service.js.map

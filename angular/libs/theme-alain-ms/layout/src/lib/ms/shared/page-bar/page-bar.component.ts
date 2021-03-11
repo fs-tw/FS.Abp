@@ -35,8 +35,8 @@ export class MSPageBarComponent implements AfterViewInit, OnDestroy {
    */
   @Input() @InputBoolean() autoTitle = true;
   @Input() @InputBoolean() recursiveBreadcrumb = true;
-  @Input() title?: string | TemplateRef<any>;
-  @Input() subTitle?: string | TemplateRef<any>;
+  @Input() title?: string; //| TemplateRef<any>;
+  @Input() subTitle?: string; //| TemplateRef<any>;
 
   // #endregion
 

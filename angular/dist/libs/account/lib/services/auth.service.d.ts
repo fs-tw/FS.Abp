@@ -3,7 +3,6 @@ import { OAuthService } from 'angular-oauth2-oidc';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { EnvironmentService, ConfigStateService, AbpApplicationConfigurationService, SessionStateService } from '@abp/ng.core';
-import * as i0 from "@angular/core";
 export declare class AuthService {
     private injector;
     private environment;
@@ -23,7 +22,4 @@ export declare class AuthService {
     init(): Promise<any>;
     logout(): Observable<any>;
     login(username: string, password: string): Observable<any>;
-    static ɵfac: i0.ɵɵFactoryDef<AuthService, [null, null, null, null, null, null, null, { optional: true; }]>;
-    static ɵprov: i0.ɵɵInjectableDef<AuthService>;
 }
-//# sourceMappingURL=auth.service.d.ts.map

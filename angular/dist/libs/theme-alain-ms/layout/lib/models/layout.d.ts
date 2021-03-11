@@ -76,4 +76,3 @@ export interface MSServiceNavConfig {
 export interface MSMenu extends DelonMenu {
     [key: string]: any;
 }
-//# sourceMappingURL=layout.d.ts.map

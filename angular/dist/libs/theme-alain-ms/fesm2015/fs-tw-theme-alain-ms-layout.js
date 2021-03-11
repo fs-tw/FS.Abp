@@ -1,30 +1,31 @@
-import { DOCUMENT, NgIf, NgForOf, NgClass, NgTemplateOutlet, AsyncPipe, CommonModule } from '@angular/common';
-import { ɵɵinject, ɵɵdefineInjectable, ɵsetClassMetadata, Injectable, EventEmitter, ɵɵdirectiveInject, ɵɵdefineDirective, ɵɵlistener, Directive, Input, Output, HostListener, ɵɵelement, ɵɵgetCurrentView, ɵɵelementStart, ɵɵrestoreView, ɵɵnextContext, ɵɵtext, ɵɵelementEnd, ɵɵproperty, ɵɵpureFunction1, ɵɵadvance, ɵɵtextInterpolate1, ɵɵtemplate, ɵɵtextInterpolate, ɵɵreference, ɵɵclassMapInterpolate2, ChangeDetectorRef, ɵɵdefineComponent, ɵɵviewQuery, ɵɵqueryRefresh, ɵɵloadQuery, ɵɵclassProp, ɵɵtemplateRefExtractor, Component, ChangeDetectionStrategy, Inject, ViewChild, ɵɵelementContainerStart, ɵɵpipe, ɵɵelementContainerEnd, ɵɵpipeBind1, ɵɵclassMapInterpolate1, ɵɵpropertyInterpolate, Injector, ɵɵpropertyInterpolate1, ɵɵsanitizeUrl, ɵɵprojectionDef, ɵɵprojection, ɵɵelementContainer, ɵɵpureFunction2, ɵɵNgOnChangesFeature, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule, ElementRef, Renderer2, APP_INITIALIZER } from '@angular/core';
+import { DOCUMENT, CommonModule } from '@angular/common';
+import { ɵɵdefineInjectable, ɵɵinject, Injectable, Component, ChangeDetectionStrategy, ChangeDetectorRef, Inject, ViewChild, HostListener, INJECTOR, Injector, Input, EventEmitter, Directive, Output, NgModule, ElementRef, Renderer2, APP_INITIALIZER } from '@angular/core';
 import { BehaviorSubject, of, Subject, merge } from 'rxjs';
 import { map, takeUntil, auditTime, tap, debounceTime, distinctUntilChanged, switchMap, filter } from 'rxjs/operators';
 import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
-import { SettingsService, _HttpClient, MenuService, TitleService, ɵa, AlainThemeModule } from '@delon/theme';
-import { ArrayService, deepCopy, InputBoolean, updateHostClass } from '@delon/util';
+import { SettingsService, _HttpClient, MenuService, TitleService, AlainThemeModule } from '@delon/theme';
+import { ArrayService as ArrayService$1, deepCopy, InputBoolean, updateHostClass } from '@delon/util';
 import { RoutesService, LocalizationPipe, ConfigStateService, SessionStateService, InternalStore, EnvironmentService, LocalizationModule, CoreModule } from '@abp/ng.core';
-import { NzIconDirective, NzIconModule } from 'ng-zorro-antd/icon';
-import { NzSpinComponent, NzSpinModule } from 'ng-zorro-antd/spin';
-import { Router, RouterLinkWithHref, NavigationEnd, RouterLinkActive, RouterLink, RouterModule, RouteConfigLoadStart, NavigationError, ActivatedRoute, RouterOutlet, ResolveEnd } from '@angular/router';
+import { ArrayService } from '@delon/util/array';
 import snq from 'snq';
+import { Router, NavigationEnd, RouterModule, RouteConfigLoadStart, NavigationError, ActivatedRoute, ResolveEnd } from '@angular/router';
 import { DA_SERVICE_TOKEN } from '@delon/auth';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzInputDirective, NzInputModule } from 'ng-zorro-antd/input';
-import { DefaultValueAccessor, NgControlStatus, NgModel, FormsModule } from '@angular/forms';
-import { NzAutocompleteTriggerDirective, NzAutocompleteComponent, NzAutocompleteOptionComponent, NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { AuthService } from '@fs-tw/account';
-import { NzAnchorComponent, NzAnchorLinkComponent, NzAnchorModule } from 'ng-zorro-antd/anchor';
-import { NzStringTemplateOutletDirective, NzOutletModule } from 'ng-zorro-antd/core/outlet';
-import { NzPopoverDirective, NzPopoverModule } from 'ng-zorro-antd/popover';
+import { FormsModule } from '@angular/forms';
+import { NzOutletModule } from 'ng-zorro-antd/core/outlet';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { __decorate, __metadata } from 'tslib';
 import { ReuseTabService } from '@delon/abc/reuse-tab';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ThemeBtnModule } from '@delon/theme/theme-btn';
+import { NzAnchorModule } from 'ng-zorro-antd/anchor';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 var Layout;
 (function (Layout) {
@@ -93,12 +94,14 @@ class BrandService {
         this.notify$.unsubscribe();
     }
 }
-BrandService.ɵfac = function BrandService_Factory(t) { return new (t || BrandService)(ɵɵinject(BreakpointObserver), ɵɵinject(SettingsService)); };
-BrandService.ɵprov = ɵɵdefineInjectable({ token: BrandService, factory: BrandService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(BrandService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: BreakpointObserver }, { type: SettingsService }]; }, null); })();
+BrandService.ɵprov = ɵɵdefineInjectable({ factory: function BrandService_Factory() { return new BrandService(ɵɵinject(BreakpointObserver), ɵɵinject(SettingsService)); }, token: BrandService, providedIn: "root" });
+BrandService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+BrandService.ctorParameters = () => [
+    { type: BreakpointObserver },
+    { type: SettingsService }
+];
 
 /**
  * 顶部菜单所有菜单数据，几个注意点：
@@ -211,248 +214,17 @@ class MSAllNavService {
         }
     }
 }
-MSAllNavService.ɵfac = function MSAllNavService_Factory(t) { return new (t || MSAllNavService)(ɵɵinject(RoutesService), ɵɵinject(LocalizationPipe), ɵɵinject(_HttpClient), ɵɵinject(ArrayService)); };
-MSAllNavService.ɵprov = ɵɵdefineInjectable({ token: MSAllNavService, factory: MSAllNavService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSAllNavService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: RoutesService }, { type: LocalizationPipe }, { type: _HttpClient }, { type: ArrayService }]; }, null); })();
+MSAllNavService.ɵprov = ɵɵdefineInjectable({ factory: function MSAllNavService_Factory() { return new MSAllNavService(ɵɵinject(RoutesService), ɵɵinject(LocalizationPipe), ɵɵinject(_HttpClient), ɵɵinject(ArrayService)); }, token: MSAllNavService, providedIn: "root" });
+MSAllNavService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+MSAllNavService.ctorParameters = () => [
+    { type: RoutesService },
+    { type: LocalizationPipe },
+    { type: _HttpClient },
+    { type: ArrayService$1 }
+];
 
-class MSLinkToDirective {
-    constructor(router) {
-        this.router = router;
-        this.linkToChanged = new EventEmitter();
-    }
-    _click(e) {
-        const { link, target } = this.i;
-        if (target != null) {
-            if (target === '_blank') {
-                window.open(link);
-            }
-            else {
-                window.location.href = link;
-            }
-            this.linkToChanged.emit(e);
-            return;
-        }
-        setTimeout(() => {
-            this.router.navigateByUrl(link).then(() => this.linkToChanged.emit(e));
-        });
-    }
-}
-MSLinkToDirective.ɵfac = function MSLinkToDirective_Factory(t) { return new (t || MSLinkToDirective)(ɵɵdirectiveInject(Router)); };
-MSLinkToDirective.ɵdir = ɵɵdefineDirective({ type: MSLinkToDirective, selectors: [["", "link-to", ""]], hostBindings: function MSLinkToDirective_HostBindings(rf, ctx) { if (rf & 1) {
-        ɵɵlistener("click", function MSLinkToDirective_click_HostBindingHandler($event) { return ctx._click($event); });
-    } }, inputs: { i: ["link-to", "i"] }, outputs: { linkToChanged: "linkToChanged" } });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSLinkToDirective, [{
-        type: Directive,
-        args: [{ selector: '[link-to]' }]
-    }], function () { return [{ type: Router }]; }, { i: [{
-            type: Input,
-            args: ['link-to']
-        }], linkToChanged: [{
-            type: Output
-        }], _click: [{
-            type: HostListener,
-            args: ['click', ['$event']]
-        }] }); })();
-
-const _c0 = ["dropdown"];
-function MSAllNavComponent_nz_spin_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "nz-spin");
-} }
-const _c1 = function (a0) { return { "alain-ms__an-menu-item--active": a0 }; };
-function MSAllNavComponent_ng_template_3_li_1_Template(rf, ctx) { if (rf & 1) {
-    const _r11 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 10);
-    ɵɵlistener("mouseenter", function MSAllNavComponent_ng_template_3_li_1_Template_li_mouseenter_0_listener() { ɵɵrestoreView(_r11); const i_r9 = ctx.$implicit; const ctx_r10 = ɵɵnextContext(2); return ctx_r10.mouseHandle(i_r9, true); });
-    ɵɵtext(1);
-    ɵɵelement(2, "i", 11);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r9 = ctx.$implicit;
-    ɵɵproperty("ngClass", ɵɵpureFunction1(2, _c1, i_r9.active));
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", i_r9.text, " ");
-} }
-function MSAllNavComponent_ng_template_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "ul", 8);
-    ɵɵtemplate(1, MSAllNavComponent_ng_template_3_li_1_Template, 3, 4, "li", 9);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ls_r7 = ctx.$implicit;
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", ls_r7);
-} }
-function MSAllNavComponent_ng_template_5_div_0_a_4_span_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "span", 19);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r16 = ɵɵnextContext().$implicit;
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(i_r16.tip);
-} }
-function MSAllNavComponent_ng_template_5_div_0_a_4_Template(rf, ctx) { if (rf & 1) {
-    const _r20 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "a", 17);
-    ɵɵlistener("linkToChanged", function MSAllNavComponent_ng_template_5_div_0_a_4_Template_a_linkToChanged_0_listener() { ɵɵrestoreView(_r20); const ctx_r19 = ɵɵnextContext(3); return ctx_r19._leave(); });
-    ɵɵtext(1);
-    ɵɵtemplate(2, MSAllNavComponent_ng_template_5_div_0_a_4_span_2_Template, 2, 1, "span", 18);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r16 = ctx.$implicit;
-    ɵɵproperty("link-to", i_r16);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", i_r16.text, " ");
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r16.tip);
-} }
-function MSAllNavComponent_ng_template_5_div_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 13);
-    ɵɵelementStart(1, "h3", 14);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 15);
-    ɵɵtemplate(4, MSAllNavComponent_ng_template_5_div_0_a_4_Template, 3, 3, "a", 16);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const p_r14 = ctx.$implicit;
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(p_r14.text);
-    ɵɵadvance(2);
-    ɵɵproperty("ngForOf", p_r14.list);
-} }
-function MSAllNavComponent_ng_template_5_Template(rf, ctx) { if (rf & 1) {
-    ɵɵtemplate(0, MSAllNavComponent_ng_template_5_div_0_Template, 5, 2, "div", 12);
-} if (rf & 2) {
-    const ls_r12 = ctx.$implicit;
-    ɵɵproperty("ngForOf", ls_r12);
-} }
-function MSAllNavComponent_div_9_ng_template_3_Template(rf, ctx) { }
-function MSAllNavComponent_div_9_div_4_a_1_Template(rf, ctx) { if (rf & 1) {
-    const _r29 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "a", 30);
-    ɵɵlistener("linkToChanged", function MSAllNavComponent_div_9_div_4_a_1_Template_a_linkToChanged_0_listener() { ɵɵrestoreView(_r29); const ctx_r28 = ɵɵnextContext(3); return ctx_r28._leave(); });
-    ɵɵtext(1);
-    ɵɵelement(2, "i", 31);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r27 = ctx.$implicit;
-    ɵɵproperty("link-to", i_r27);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", i_r27.text, " ");
-} }
-function MSAllNavComponent_div_9_div_4_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 28);
-    ɵɵtemplate(1, MSAllNavComponent_div_9_div_4_a_1_Template, 3, 2, "a", 29);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r22 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", ctx_r22.data.navBottom);
-} }
-function MSAllNavComponent_div_9_div_5_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 32);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r23 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r23.data.bottomText);
-} }
-function MSAllNavComponent_div_9_div_6_ng_template_2_Template(rf, ctx) { }
-const _c2 = function (a0) { return { "alain-ms__an-level2-active": a0 }; };
-const _c3 = function (a0) { return { $implicit: a0 }; };
-function MSAllNavComponent_div_9_div_6_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 33);
-    ɵɵelementStart(1, "div", 22);
-    ɵɵtemplate(2, MSAllNavComponent_div_9_div_6_ng_template_2_Template, 0, 0, "ng-template", 23);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const p_r30 = ctx.$implicit;
-    ɵɵnextContext(2);
-    const _r1 = ɵɵreference(4);
-    ɵɵproperty("ngClass", ɵɵpureFunction1(3, _c2, p_r30.active));
-    ɵɵadvance(2);
-    ɵɵproperty("ngTemplateOutlet", _r1)("ngTemplateOutletContext", ɵɵpureFunction1(5, _c3, p_r30.children));
-} }
-function MSAllNavComponent_div_9_div_7_div_1_div_1_ng_template_1_Template(rf, ctx) { }
-function MSAllNavComponent_div_9_div_7_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 39);
-    ɵɵtemplate(1, MSAllNavComponent_div_9_div_7_div_1_div_1_ng_template_1_Template, 0, 0, "ng-template", 23);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const col_r36 = ctx.$implicit;
-    ɵɵnextContext(4);
-    const _r3 = ɵɵreference(6);
-    ɵɵadvance(1);
-    ɵɵproperty("ngTemplateOutlet", _r3)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c3, col_r36.list));
-} }
-function MSAllNavComponent_div_9_div_7_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 37);
-    ɵɵtemplate(1, MSAllNavComponent_div_9_div_7_div_1_div_1_Template, 2, 4, "div", 38);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r32 = ɵɵnextContext().$implicit;
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", i_r32._left);
-} }
-function MSAllNavComponent_div_9_div_7_div_2_ng_template_1_Template(rf, ctx) { }
-function MSAllNavComponent_div_9_div_7_div_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 40);
-    ɵɵtemplate(1, MSAllNavComponent_div_9_div_7_div_2_ng_template_1_Template, 0, 0, "ng-template", 23);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r32 = ɵɵnextContext().$implicit;
-    ɵɵnextContext(2);
-    const _r3 = ɵɵreference(6);
-    ɵɵadvance(1);
-    ɵɵproperty("ngTemplateOutlet", _r3)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c3, i_r32.right));
-} }
-const _c4 = function (a0) { return { "alain-ms__an-content-active": a0 }; };
-function MSAllNavComponent_div_9_div_7_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 34);
-    ɵɵtemplate(1, MSAllNavComponent_div_9_div_7_div_1_Template, 2, 1, "div", 35);
-    ɵɵtemplate(2, MSAllNavComponent_div_9_div_7_div_2_Template, 2, 4, "div", 36);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r32 = ctx.$implicit;
-    ɵɵclassMapInterpolate2("alain-ms__an-content alain-ms__an-level", i_r32.level, "-content alain-ms__an-left-col-", i_r32.leftColumn, "");
-    ɵɵproperty("ngClass", ɵɵpureFunction1(7, _c4, i_r32.active));
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r32._left && i_r32._left.length > 0);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r32.right && i_r32.right.length > 0);
-} }
-function MSAllNavComponent_div_9_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 20);
-    ɵɵelementStart(1, "div", 21);
-    ɵɵelementStart(2, "div", 22);
-    ɵɵtemplate(3, MSAllNavComponent_div_9_ng_template_3_Template, 0, 0, "ng-template", 23);
-    ɵɵtemplate(4, MSAllNavComponent_div_9_div_4_Template, 2, 1, "div", 24);
-    ɵɵtemplate(5, MSAllNavComponent_div_9_div_5_Template, 2, 1, "div", 25);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵtemplate(6, MSAllNavComponent_div_9_div_6_Template, 3, 7, "div", 26);
-    ɵɵtemplate(7, MSAllNavComponent_div_9_div_7_Template, 3, 9, "div", 27);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r6 = ɵɵnextContext();
-    const _r1 = ɵɵreference(4);
-    ɵɵadvance(3);
-    ɵɵproperty("ngTemplateOutlet", _r1)("ngTemplateOutletContext", ɵɵpureFunction1(6, _c3, ctx_r6.data.nav));
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", ctx_r6.data.navBottom);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", ctx_r6.data.bottomText);
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", ctx_r6.allL2);
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", ctx_r6.allPanel);
-} }
 const ANT_TIMEOUT = 150;
 /**
  * 顶部所有菜单组件，当单页布局模式时渲染
@@ -527,89 +299,28 @@ class MSAllNavComponent {
         unsubscribe$.complete();
     }
 }
-MSAllNavComponent.ɵfac = function MSAllNavComponent_Factory(t) { return new (t || MSAllNavComponent)(ɵɵdirectiveInject(MSAllNavService), ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(DOCUMENT)); };
-MSAllNavComponent.ɵcmp = ɵɵdefineComponent({ type: MSAllNavComponent, selectors: [["ms-all-nav"]], viewQuery: function MSAllNavComponent_Query(rf, ctx) { if (rf & 1) {
-        ɵɵviewQuery(_c0, 3);
-    } if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.dropdownEl = _t.first);
-    } }, hostVars: 2, hostBindings: function MSAllNavComponent_HostBindings(rf, ctx) { if (rf & 1) {
-        ɵɵlistener("mouseenter", function MSAllNavComponent_mouseenter_HostBindingHandler() { return ctx._enter(); })("mouseleave", function MSAllNavComponent_mouseleave_HostBindingHandler() { return ctx._leave(); });
-    } if (rf & 2) {
-        ɵɵclassProp("alain-ms__an-active", ctx.validOpen);
-    } }, decls: 10, vars: 2, consts: [[1, "alain-ms__an-trigger"], ["nz-icon", "", "nzType", "bars"], [4, "ngIf"], ["menuTpl", ""], ["categoryTpl", ""], [1, "alain-ms__an-dropdown"], ["dropdown", ""], ["class", "alain-ms__an", 4, "ngIf"], [1, "alain-ms__an-menu"], ["class", "alain-ms__an-menu-item", 3, "ngClass", "mouseenter", 4, "ngFor", "ngForOf"], [1, "alain-ms__an-menu-item", 3, "ngClass", "mouseenter"], ["nz-icon", "", "nzType", "right"], ["class", "alain-ms__an-category", 4, "ngFor", "ngForOf"], [1, "alain-ms__an-category"], [1, "alain-ms__an-category-title"], [1, "alain-ms__an-category-list"], ["class", "alain-ms__an-category-link", 3, "link-to", "linkToChanged", 4, "ngFor", "ngForOf"], [1, "alain-ms__an-category-link", 3, "link-to", "linkToChanged"], ["class", "alain-ms__an-category-tip", 4, "ngIf"], [1, "alain-ms__an-category-tip"], [1, "alain-ms__an"], [1, "alain-ms__an-panel", "alain-ms__an-panel-active", "alain-ms__an-level1"], [1, "alain-ms__an-panel-inner"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "alain-ms__an-menu-bottom", 4, "ngIf"], ["class", "alain-ms__an-bottom", 4, "ngIf"], ["class", "alain-ms__an-panel alain-ms__an-level2", 3, "ngClass", 4, "ngFor", "ngForOf"], [3, "class", "ngClass", 4, "ngFor", "ngForOf"], [1, "alain-ms__an-menu-bottom"], [3, "link-to", "linkToChanged", 4, "ngFor", "ngForOf"], [3, "link-to", "linkToChanged"], ["nz-icon", "", "nzType", "share-alt"], [1, "alain-ms__an-bottom"], [1, "alain-ms__an-panel", "alain-ms__an-level2", 3, "ngClass"], [3, "ngClass"], ["class", "alain-ms__an-left", 4, "ngIf"], ["class", "alain-ms__an-right", 4, "ngIf"], [1, "alain-ms__an-left"], ["class", "alain-ms__an-left-col", 4, "ngFor", "ngForOf"], [1, "alain-ms__an-left-col"], [1, "alain-ms__an-right"]], template: function MSAllNavComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵelementStart(0, "div", 0);
-        ɵɵelement(1, "i", 1);
-        ɵɵtemplate(2, MSAllNavComponent_nz_spin_2_Template, 1, 0, "nz-spin", 2);
-        ɵɵelementEnd();
-        ɵɵtemplate(3, MSAllNavComponent_ng_template_3_Template, 2, 1, "ng-template", null, 3, ɵɵtemplateRefExtractor);
-        ɵɵtemplate(5, MSAllNavComponent_ng_template_5_Template, 1, 1, "ng-template", null, 4, ɵɵtemplateRefExtractor);
-        ɵɵelementStart(7, "div", 5, 6);
-        ɵɵtemplate(9, MSAllNavComponent_div_9_Template, 8, 8, "div", 7);
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ctx.open && !ctx.data);
-        ɵɵadvance(7);
-        ɵɵproperty("ngIf", ctx.data);
-    } }, directives: [NzIconDirective, NgIf, NzSpinComponent, NgForOf, NgClass, MSLinkToDirective, NgTemplateOutlet], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSAllNavComponent, [{
-        type: Component,
-        args: [{
+MSAllNavComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-all-nav',
-                templateUrl: './all-nav.component.html',
+                template: "<div class=\"alain-ms__an-trigger\">\r\n  <i nz-icon nzType=\"bars\"></i>\r\n  <nz-spin *ngIf=\"open && !data\"></nz-spin>\r\n</div>\r\n<ng-template #menuTpl let-ls>\r\n  <ul class=\"alain-ms__an-menu\">\r\n    <li\r\n      *ngFor=\"let i of ls\"\r\n      class=\"alain-ms__an-menu-item\"\r\n      [ngClass]=\"{ 'alain-ms__an-menu-item--active': i.active }\"\r\n      (mouseenter)=\"mouseHandle(i, true)\"\r\n    >\r\n      {{ i.text }}\r\n      <i nz-icon nzType=\"right\"></i>\r\n    </li>\r\n  </ul>\r\n</ng-template>\r\n<ng-template #categoryTpl let-ls>\r\n  <div *ngFor=\"let p of ls\" class=\"alain-ms__an-category\">\r\n    <h3 class=\"alain-ms__an-category-title\">{{ p.text }}</h3>\r\n    <div class=\"alain-ms__an-category-list\">\r\n      <a *ngFor=\"let i of p.list\" [link-to]=\"i\" (linkToChanged)=\"_leave()\" class=\"alain-ms__an-category-link\">\r\n        {{ i.text }}\r\n        <span *ngIf=\"i.tip\" class=\"alain-ms__an-category-tip\">{{ i.tip }}</span>\r\n      </a>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n<div #dropdown class=\"alain-ms__an-dropdown\">\r\n  <div *ngIf=\"data\" class=\"alain-ms__an\">\r\n    <div class=\"alain-ms__an-panel alain-ms__an-panel-active alain-ms__an-level1\">\r\n      <div class=\"alain-ms__an-panel-inner\">\r\n        <ng-template [ngTemplateOutlet]=\"menuTpl\" [ngTemplateOutletContext]=\"{ $implicit: data.nav }\"></ng-template>\r\n        <div *ngIf=\"data.navBottom\" class=\"alain-ms__an-menu-bottom\">\r\n          <a *ngFor=\"let i of data.navBottom\" [link-to]=\"i\" (linkToChanged)=\"_leave()\">\r\n            {{ i.text }}\r\n            <i nz-icon nzType=\"share-alt\"></i>\r\n          </a>\r\n        </div>\r\n        <div *ngIf=\"data.bottomText\" class=\"alain-ms__an-bottom\">{{ data.bottomText }}</div>\r\n      </div>\r\n    </div>\r\n    <div\r\n      *ngFor=\"let p of allL2\"\r\n      class=\"alain-ms__an-panel alain-ms__an-level2\"\r\n      [ngClass]=\"{ 'alain-ms__an-level2-active': p.active }\"\r\n    >\r\n      <div class=\"alain-ms__an-panel-inner\">\r\n        <ng-template [ngTemplateOutlet]=\"menuTpl\" [ngTemplateOutletContext]=\"{ $implicit: p.children }\"></ng-template>\r\n      </div>\r\n    </div>\r\n    <div\r\n      *ngFor=\"let i of allPanel\"\r\n      class=\"alain-ms__an-content alain-ms__an-level{{ i.level }}-content alain-ms__an-left-col-{{ i.leftColumn }}\"\r\n      [ngClass]=\"{ 'alain-ms__an-content-active': i.active }\"\r\n    >\r\n      <div *ngIf=\"i._left && i._left.length > 0\" class=\"alain-ms__an-left\">\r\n        <div *ngFor=\"let col of i._left\" class=\"alain-ms__an-left-col\">\r\n          <ng-template\r\n            [ngTemplateOutlet]=\"categoryTpl\"\r\n            [ngTemplateOutletContext]=\"{ $implicit: col.list }\"\r\n          ></ng-template>\r\n        </div>\r\n      </div>\r\n      <div *ngIf=\"i.right && i.right.length > 0\" class=\"alain-ms__an-right\">\r\n        <ng-template [ngTemplateOutlet]=\"categoryTpl\" [ngTemplateOutletContext]=\"{ $implicit: i.right }\"></ng-template>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n",
                 host: {
                     '[class.alain-ms__an-active]': 'validOpen',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: MSAllNavService }, { type: BrandService }, { type: ChangeDetectorRef }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }]; }, { dropdownEl: [{
-            type: ViewChild,
-            args: ['dropdown', { static: true }]
-        }], _enter: [{
-            type: HostListener,
-            args: ['mouseenter']
-        }], _leave: [{
-            type: HostListener,
-            args: ['mouseleave']
-        }] }); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSAllNavComponent.ctorParameters = () => [
+    { type: MSAllNavService },
+    { type: BrandService },
+    { type: ChangeDetectorRef },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
+];
+MSAllNavComponent.propDecorators = {
+    dropdownEl: [{ type: ViewChild, args: ['dropdown', { static: true },] }],
+    _enter: [{ type: HostListener, args: ['mouseenter',] }],
+    _leave: [{ type: HostListener, args: ['mouseleave',] }]
+};
 
-function MSLangsComponent_ng_container_0_li_5_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 4);
-    ɵɵlistener("click", function MSLangsComponent_ng_container_0_li_5_Template_li_click_0_listener() { ɵɵrestoreView(_r5); const lang_r3 = ctx.$implicit; const ctx_r4 = ɵɵnextContext(2); return ctx_r4.change(lang_r3.cultureName); });
-    ɵɵelementStart(1, "a", 5);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const lang_r3 = ctx.$implicit;
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(lang_r3 == null ? null : lang_r3.displayName);
-} }
-function MSLangsComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "span", 1);
-    ɵɵelementStart(2, "span");
-    ɵɵtext(3);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(4, "ul", 2);
-    ɵɵtemplate(5, MSLangsComponent_ng_container_0_li_5_Template, 3, 1, "li", 3);
-    ɵɵpipe(6, "async");
-    ɵɵelementEnd();
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const defaultLang_r1 = ctx.ngIf;
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(3);
-    ɵɵtextInterpolate(defaultLang_r1.displayName);
-    ɵɵadvance(2);
-    ɵɵproperty("ngForOf", ɵɵpipeBind1(6, 2, ctx_r0.dropdownLanguages$));
-} }
 class MSLangsComponent {
     constructor(configState, sessionState) {
         this.configState = configState;
@@ -635,27 +346,21 @@ class MSLangsComponent {
         this.sessionState.setLanguage(cultureName);
     }
 }
-MSLangsComponent.ɵfac = function MSLangsComponent_Factory(t) { return new (t || MSLangsComponent)(ɵɵdirectiveInject(ConfigStateService), ɵɵdirectiveInject(SessionStateService)); };
-MSLangsComponent.ɵcmp = ɵɵdefineComponent({ type: MSLangsComponent, selectors: [["ms-langs"]], hostVars: 4, hostBindings: function MSLangsComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("alain-ms__topbar-item", true)("alain-ms__topbar-dd", true);
-    } }, decls: 2, vars: 3, consts: [[4, "ngIf"], [1, "alain-ms__topbar-item-btn"], [1, "alain-ms__topbar-dd-menu"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], [1, "alain-ms__topbar-dd-item"]], template: function MSLangsComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, MSLangsComponent_ng_container_0_Template, 7, 4, "ng-container", 0);
-        ɵɵpipe(1, "async");
-    } if (rf & 2) {
-        ɵɵproperty("ngIf", ɵɵpipeBind1(1, 1, ctx.defaultLanguage$));
-    } }, directives: [NgIf, NgForOf], pipes: [AsyncPipe], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSLangsComponent, [{
-        type: Component,
-        args: [{
+MSLangsComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-langs',
-                templateUrl: './langs.component.html',
+                template: "<ng-container *ngIf=\"defaultLanguage$ | async as defaultLang\">\r\n  <span class=\"alain-ms__topbar-item-btn\" >\r\n    <span >{{ defaultLang.displayName }}</span>\r\n  </span>\r\n  <ul class=\"alain-ms__topbar-dd-menu\">\r\n    <li *ngFor=\"let lang of (dropdownLanguages$ | async)\" (click)=\"change(lang.cultureName)\">\r\n      <a class=\"alain-ms__topbar-dd-item\">{{ lang?.displayName }}</a>\r\n    </li>\r\n  </ul>\r\n</ng-container>\r\n\r\n",
                 host: {
                     '[class.alain-ms__topbar-item]': 'true',
                     '[class.alain-ms__topbar-dd]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: ConfigStateService }, { type: SessionStateService }]; }, null); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSLangsComponent.ctorParameters = () => [
+    { type: ConfigStateService },
+    { type: SessionStateService }
+];
 
 /**
  * 顶部菜单所有数据，几个注意点：
@@ -684,39 +389,14 @@ class MSTopbarService {
         }));
     }
 }
-MSTopbarService.ɵfac = function MSTopbarService_Factory(t) { return new (t || MSTopbarService)(ɵɵinject(_HttpClient)); };
-MSTopbarService.ɵprov = ɵɵdefineInjectable({ token: MSTopbarService, factory: MSTopbarService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSTopbarService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: _HttpClient }]; }, null); })();
+MSTopbarService.ɵprov = ɵɵdefineInjectable({ factory: function MSTopbarService_Factory() { return new MSTopbarService(ɵɵinject(_HttpClient)); }, token: MSTopbarService, providedIn: "root" });
+MSTopbarService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+MSTopbarService.ctorParameters = () => [
+    { type: _HttpClient }
+];
 
-function MSNoticeComponent_em_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "em", 9);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r0.list.length);
-} }
-function MSNoticeComponent_a_9_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "a", 10);
-    ɵɵelementStart(1, "div", 11);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "span", 12);
-    ɵɵtext(4);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r2 = ctx.$implicit;
-    ɵɵproperty("link-to", i_r2);
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(i_r2.title);
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(i_r2.time);
-} }
 class MSNoticeComponent {
     constructor(srv, router, tokenService, settings, msg) {
         this.srv = srv;
@@ -739,64 +419,25 @@ class MSNoticeComponent {
         this.router.navigateByUrl(this.tokenService.login_url);
     }
 }
-MSNoticeComponent.ɵfac = function MSNoticeComponent_Factory(t) { return new (t || MSNoticeComponent)(ɵɵdirectiveInject(MSTopbarService), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(DA_SERVICE_TOKEN), ɵɵdirectiveInject(SettingsService), ɵɵdirectiveInject(NzMessageService)); };
-MSNoticeComponent.ɵcmp = ɵɵdefineComponent({ type: MSNoticeComponent, selectors: [["ms-notice"]], hostVars: 6, hostBindings: function MSNoticeComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("alain-ms__topbar-item", true)("alain-ms__topbar-dd", true)("alain-ms__notice", true);
-    } }, decls: 13, vars: 8, consts: [[1, "alain-ms__topbar-item-btn"], [1, "position-relative"], ["class", "alain-ms__topbar-item-num", 4, "ngIf"], [1, "alain-ms__topbar-dd-menu"], [1, "alain-ms__notice-hd"], [1, "brand-color", 3, "link-to"], ["class", "alain-ms__notice-item", 3, "link-to", 4, "ngFor", "ngForOf"], [1, "alain-ms__notice-fd"], [1, "d-block", "pt-sm", "pb-xs", "text-center", 3, "link-to"], [1, "alain-ms__topbar-item-num"], [1, "alain-ms__notice-item", 3, "link-to"], [1, "alain-ms__notice-item--title"], [1, "alain-ms__notice-item--time"]], template: function MSNoticeComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵelementStart(0, "span", 0);
-        ɵɵelementStart(1, "span", 1);
-        ɵɵtext(2);
-        ɵɵtemplate(3, MSNoticeComponent_em_3_Template, 2, 1, "em", 2);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementStart(4, "div", 3);
-        ɵɵelementStart(5, "div", 4);
-        ɵɵtext(6);
-        ɵɵelementStart(7, "a", 5);
-        ɵɵtext(8);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵtemplate(9, MSNoticeComponent_a_9_Template, 5, 3, "a", 6);
-        ɵɵelementStart(10, "div", 7);
-        ɵɵelementStart(11, "a", 8);
-        ɵɵtext(12);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵadvance(2);
-        ɵɵtextInterpolate1(" ", ctx.l.titleText, "");
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.list.length > 0);
-        ɵɵadvance(3);
-        ɵɵtextInterpolate1(" ", ctx.l.title, " ");
-        ɵɵadvance(1);
-        ɵɵproperty("link-to", ctx.l.subscribe);
-        ɵɵadvance(1);
-        ɵɵtextInterpolate(ctx.l.subscribe.title);
-        ɵɵadvance(1);
-        ɵɵproperty("ngForOf", ctx.list);
-        ɵɵadvance(2);
-        ɵɵproperty("link-to", ctx.l);
-        ɵɵadvance(1);
-        ɵɵtextInterpolate(ctx.l.text);
-    } }, directives: [NgIf, MSLinkToDirective, NgForOf], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSNoticeComponent, [{
-        type: Component,
-        args: [{
+MSNoticeComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-notice',
-                templateUrl: './notice.component.html',
+                template: "<span class=\"alain-ms__topbar-item-btn\">\r\n  <span class=\"position-relative\">\r\n    {{ l.titleText }}<em *ngIf=\"list.length > 0\" class=\"alain-ms__topbar-item-num\">{{ list.length }}</em>\r\n  </span>\r\n</span>\r\n<div class=\"alain-ms__topbar-dd-menu\">\r\n  <div class=\"alain-ms__notice-hd\">\r\n    {{ l.title }}\r\n    <a class=\"brand-color\" [link-to]=\"l.subscribe\">{{ l.subscribe.title }}</a>\r\n  </div>\r\n  <a class=\"alain-ms__notice-item\" *ngFor=\"let i of list\" [link-to]=\"i\">\r\n    <div class=\"alain-ms__notice-item--title\">{{ i.title }}</div>\r\n    <span class=\"alain-ms__notice-item--time\">{{ i.time }}</span>\r\n  </a>\r\n  <div class=\"alain-ms__notice-fd\">\r\n    <a class=\"d-block pt-sm pb-xs text-center\" [link-to]=\"l\">{{ l.text }}</a>\r\n  </div>\r\n</div>\r\n",
                 host: {
                     '[class.alain-ms__topbar-item]': 'true',
                     '[class.alain-ms__topbar-dd]': 'true',
                     '[class.alain-ms__notice]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: MSTopbarService }, { type: Router }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DA_SERVICE_TOKEN]
-            }] }, { type: SettingsService }, { type: NzMessageService }]; }, null); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSNoticeComponent.ctorParameters = () => [
+    { type: MSTopbarService },
+    { type: Router },
+    { type: undefined, decorators: [{ type: Inject, args: [DA_SERVICE_TOKEN,] }] },
+    { type: SettingsService },
+    { type: NzMessageService }
+];
 
 class MSRegionService {
     constructor(http) {
@@ -836,68 +477,14 @@ class MSRegionService {
         item.selected = true;
     }
 }
-MSRegionService.ɵfac = function MSRegionService_Factory(t) { return new (t || MSRegionService)(ɵɵinject(_HttpClient)); };
-MSRegionService.ɵprov = ɵɵdefineInjectable({ token: MSRegionService, factory: MSRegionService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSRegionService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: _HttpClient }]; }, null); })();
+MSRegionService.ɵprov = ɵɵdefineInjectable({ factory: function MSRegionService_Factory() { return new MSRegionService(ɵɵinject(_HttpClient)); }, token: MSRegionService, providedIn: "root" });
+MSRegionService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+MSRegionService.ctorParameters = () => [
+    { type: _HttpClient }
+];
 
-const _c0$1 = function (a0) { return { "brand-color": a0 }; };
-function MSRegionComponent_ng_container_0_dl_7_dd_3_Template(rf, ctx) { if (rf & 1) {
-    const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "dd", 9);
-    ɵɵlistener("click", function MSRegionComponent_ng_container_0_dl_7_dd_3_Template_dd_click_0_listener() { ɵɵrestoreView(_r6); const i_r4 = ctx.$implicit; const ctx_r5 = ɵɵnextContext(3); return ctx_r5.selected(i_r4); });
-    ɵɵelementStart(1, "a", 10);
-    ɵɵelement(2, "i");
-    ɵɵtext(3);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r4 = ctx.$implicit;
-    ɵɵadvance(1);
-    ɵɵproperty("ngClass", ɵɵpureFunction1(5, _c0$1, i_r4.selected));
-    ɵɵadvance(1);
-    ɵɵclassMapInterpolate1("icon icon-", i_r4.country, "");
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1("", i_r4.name, " ");
-} }
-function MSRegionComponent_ng_container_0_dl_7_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "dl", 6);
-    ɵɵelementStart(1, "dt", 7);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵtemplate(3, MSRegionComponent_ng_container_0_dl_7_dd_3_Template, 4, 7, "dd", 8);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const p_r2 = ctx.$implicit;
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(p_r2.name);
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", p_r2.list);
-} }
-function MSRegionComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "span", 1);
-    ɵɵelement(2, "i");
-    ɵɵelementStart(3, "span", 2);
-    ɵɵtext(4);
-    ɵɵelementEnd();
-    ɵɵelement(5, "i", 3);
-    ɵɵelementEnd();
-    ɵɵelementStart(6, "div", 4);
-    ɵɵtemplate(7, MSRegionComponent_ng_container_0_dl_7_Template, 4, 2, "dl", 5);
-    ɵɵelementEnd();
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(2);
-    ɵɵclassMapInterpolate1("icon icon-", ctx_r0.srv.item.country, "");
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(ctx_r0.srv.item.name);
-    ɵɵadvance(3);
-    ɵɵproperty("ngForOf", ctx_r0.srv.list);
-} }
 class MSRegionComponent {
     constructor(srv, cdr) {
         this.srv = srv;
@@ -915,40 +502,23 @@ class MSRegionComponent {
         this.cdr.detectChanges();
     }
 }
-MSRegionComponent.ɵfac = function MSRegionComponent_Factory(t) { return new (t || MSRegionComponent)(ɵɵdirectiveInject(MSRegionService), ɵɵdirectiveInject(ChangeDetectorRef)); };
-MSRegionComponent.ɵcmp = ɵɵdefineComponent({ type: MSRegionComponent, selectors: [["ms-region"]], hostVars: 6, hostBindings: function MSRegionComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("alain-ms__topbar-item", true)("alain-ms__topbar-dd", true)("alain-ms__region", true);
-    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], [1, "alain-ms__topbar-item-btn"], [1, "text-xs", "px-xs"], ["nz-icon", "", "nzType", "caret-up", 1, "alain-ms__topbar-item-btn-arrow"], [1, "alain-ms__topbar-dd-menu", "alain-ms__topbar-dd-left", "alain-ms__region--wrap", "clearfix"], ["class", "alain-ms__region--list", 4, "ngFor", "ngForOf"], [1, "alain-ms__region--list"], [1, "mb-sm"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], [1, "d-block", 3, "ngClass"]], template: function MSRegionComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, MSRegionComponent_ng_container_0_Template, 8, 5, "ng-container", 0);
-    } if (rf & 2) {
-        ɵɵproperty("ngIf", ctx.inited);
-    } }, directives: [NgIf, NzIconDirective, NgForOf, NgClass], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSRegionComponent, [{
-        type: Component,
-        args: [{
+MSRegionComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-region',
-                templateUrl: './region.component.html',
+                template: "<ng-container *ngIf=\"inited\">\r\n  <span class=\"alain-ms__topbar-item-btn\">\r\n    <i class=\"icon icon-{{ srv.item.country }}\"></i>\r\n    <span class=\"text-xs px-xs\">{{ srv.item.name }}</span>\r\n    <i nz-icon nzType=\"caret-up\" class=\"alain-ms__topbar-item-btn-arrow\"></i>\r\n  </span>\r\n  <div class=\"alain-ms__topbar-dd-menu alain-ms__topbar-dd-left alain-ms__region--wrap clearfix\">\r\n    <dl *ngFor=\"let p of srv.list\" class=\"alain-ms__region--list\">\r\n      <dt class=\"mb-sm\">{{ p.name }}</dt>\r\n      <dd *ngFor=\"let i of p.list\" (click)=\"selected(i)\">\r\n        <a class=\"d-block\" [ngClass]=\"{ 'brand-color': i.selected }\">\r\n          <i class=\"icon icon-{{ i.country }}\"></i>{{ i.name }}\r\n        </a>\r\n      </dd>\r\n    </dl>\r\n  </div>\r\n</ng-container>\r\n",
                 host: {
                     '[class.alain-ms__topbar-item]': 'true',
                     '[class.alain-ms__topbar-dd]': 'true',
                     '[class.alain-ms__region]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: MSRegionService }, { type: ChangeDetectorRef }]; }, null); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSRegionComponent.ctorParameters = () => [
+    { type: MSRegionService },
+    { type: ChangeDetectorRef }
+];
 
-const _c0$2 = ["ipt"];
-function MSSearchComponent_nz_auto_option_7_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "nz-auto-option", 8);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const item_r3 = ctx.$implicit;
-    ɵɵproperty("nzValue", item_r3);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", item_r3, " ");
-} }
-const _c1$1 = function (a0) { return { "alain-ms__search-active": a0 }; };
 class MSSearchComponent {
     constructor(http, srv, cdr) {
         this.srv = srv;
@@ -975,118 +545,27 @@ class MSSearchComponent {
         this.search$.unsubscribe();
     }
 }
-MSSearchComponent.ɵfac = function MSSearchComponent_Factory(t) { return new (t || MSSearchComponent)(ɵɵdirectiveInject(_HttpClient), ɵɵdirectiveInject(MSTopbarService), ɵɵdirectiveInject(ChangeDetectorRef)); };
-MSSearchComponent.ɵcmp = ɵɵdefineComponent({ type: MSSearchComponent, selectors: [["ms-search"]], viewQuery: function MSSearchComponent_Query(rf, ctx) { if (rf & 1) {
-        ɵɵviewQuery(_c0$2, 3);
-    } if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.ipt = _t.first);
-    } }, hostVars: 4, hostBindings: function MSSearchComponent_HostBindings(rf, ctx) { if (rf & 1) {
-        ɵɵlistener("click", function MSSearchComponent_click_HostBindingHandler() { return ctx._click(); });
-    } if (rf & 2) {
-        ɵɵclassProp("alain-ms__topbar-item", true)("mr-md", true);
-    } }, decls: 8, vars: 7, consts: [[1, "alain-ms__search", 3, "ngClass"], ["nz-input", "", 1, "alain-ms__search-ipt", 3, "placeholder", "ngModel", "nzAutocomplete", "ngModelChange", "input", "blur"], ["ipt", ""], ["nz-icon", "", "nzType", "search", 1, "alain-ms__search-icon"], [1, "alain-ms__search-outline"], [1, "asdlfkjlj"], ["searchAuto", ""], [3, "nzValue", 4, "ngFor", "ngForOf"], [3, "nzValue"]], template: function MSSearchComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵelementStart(0, "div", 0);
-        ɵɵelementStart(1, "input", 1, 2);
-        ɵɵlistener("ngModelChange", function MSSearchComponent_Template_input_ngModelChange_1_listener($event) { return ctx.q = $event; })("input", function MSSearchComponent_Template_input_input_1_listener($event) { return ctx.search$.next($event.target == null ? null : $event.target.value); })("blur", function MSSearchComponent_Template_input_blur_1_listener() { return ctx.show = false; });
-        ɵɵelementEnd();
-        ɵɵelement(3, "i", 3);
-        ɵɵelement(4, "i", 4);
-        ɵɵelementStart(5, "nz-autocomplete", 5, 6);
-        ɵɵtemplate(7, MSSearchComponent_nz_auto_option_7_Template, 2, 2, "nz-auto-option", 7);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        const _r1 = ɵɵreference(6);
-        ɵɵproperty("ngClass", ɵɵpureFunction1(5, _c1$1, ctx.show));
-        ɵɵadvance(1);
-        ɵɵpropertyInterpolate("placeholder", ctx.l.placeholder);
-        ɵɵproperty("ngModel", ctx.q)("nzAutocomplete", _r1);
-        ɵɵadvance(6);
-        ɵɵproperty("ngForOf", ctx.list);
-    } }, directives: [NgClass, NzInputDirective, DefaultValueAccessor, NzAutocompleteTriggerDirective, NgControlStatus, NgModel, NzIconDirective, NzAutocompleteComponent, NgForOf, NzAutocompleteOptionComponent], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSSearchComponent, [{
-        type: Component,
-        args: [{
+MSSearchComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-search',
-                templateUrl: './search.component.html',
+                template: "<div class=\"alain-ms__search\" [ngClass]=\"{ 'alain-ms__search-active': show }\">\r\n  <input\r\n    class=\"alain-ms__search-ipt\"\r\n    #ipt\r\n    placeholder=\"{{ l.placeholder }}\"\r\n    nz-input\r\n    [(ngModel)]=\"q\"\r\n    (input)=\"search$.next($event.target?.value)\"\r\n    [nzAutocomplete]=\"searchAuto\"\r\n    (blur)=\"show = false\"\r\n  />\r\n  <i class=\"alain-ms__search-icon\" nz-icon nzType=\"search\"></i>\r\n  <i class=\"alain-ms__search-outline\"></i>\r\n  <nz-autocomplete #searchAuto class=\"asdlfkjlj\">\r\n    <nz-auto-option *ngFor=\"let item of list\" [nzValue]=\"item\">\r\n      {{ item }}\r\n    </nz-auto-option>\r\n  </nz-autocomplete>\r\n</div>\r\n",
                 host: {
                     '[class.alain-ms__topbar-item]': 'true',
                     '[class.mr-md]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: _HttpClient }, { type: MSTopbarService }, { type: ChangeDetectorRef }]; }, { ipt: [{
-            type: ViewChild,
-            args: ['ipt', { static: true }]
-        }], _click: [{
-            type: HostListener,
-            args: ['click']
-        }] }); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSSearchComponent.ctorParameters = () => [
+    { type: _HttpClient },
+    { type: MSTopbarService },
+    { type: ChangeDetectorRef }
+];
+MSSearchComponent.propDecorators = {
+    ipt: [{ type: ViewChild, args: ['ipt', { static: true },] }],
+    _click: [{ type: HostListener, args: ['click',] }]
+};
 
-function MSUserComponent_ng_template_0_Template(rf, ctx) { if (rf & 1) {
-    const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "a", 2);
-    ɵɵlistener("click", function MSUserComponent_ng_template_0_Template_a_click_0_listener() { ɵɵrestoreView(_r4); const ctx_r3 = ɵɵnextContext(); return ctx_r3.initLogin(); });
-    ɵɵtext(1);
-    ɵɵpipe(2, "abpLocalization");
-    ɵɵelementEnd();
-} if (rf & 2) {
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ɵɵpipeBind1(2, 1, "AbpAccount::Login"));
-} }
-function MSUserComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div");
-    ɵɵelementStart(1, "span", 4);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 5);
-    ɵɵelementStart(4, "div", 6);
-    ɵɵelementStart(5, "div", 7);
-    ɵɵelementStart(6, "span", 8);
-    ɵɵtext(7);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(8, "div", 9);
-    ɵɵelementStart(9, "a", 10);
-    ɵɵelement(10, "i", 11);
-    ɵɵtext(11);
-    ɵɵpipe(12, "abpLocalization");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(13, "div", 12);
-    ɵɵelementStart(14, "a", 13);
-    ɵɵlistener("click", function MSUserComponent_div_2_div_1_Template_a_click_14_listener() { ɵɵrestoreView(_r8); const ctx_r7 = ɵɵnextContext(2); return ctx_r7.logout(); });
-    ɵɵtext(15);
-    ɵɵpipe(16, "abpLocalization");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const currentUser_r5 = ɵɵnextContext().ngIf;
-    ɵɵadvance(2);
-    ɵɵtextInterpolate1(" ", currentUser_r5.userName, " ");
-    ɵɵadvance(5);
-    ɵɵtextInterpolate(currentUser_r5.userName);
-    ɵɵadvance(4);
-    ɵɵtextInterpolate1("", ɵɵpipeBind1(12, 4, "AbpAccount::ManageYourProfile"), " ");
-    ɵɵadvance(4);
-    ɵɵtextInterpolate(ɵɵpipeBind1(16, 6, "AbpUi::Logout"));
-} }
-function MSUserComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div");
-    ɵɵtemplate(1, MSUserComponent_div_2_div_1_Template, 17, 8, "div", 3);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const currentUser_r5 = ctx.ngIf;
-    ɵɵnextContext();
-    const _r0 = ɵɵreference(1);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", currentUser_r5.isAuthenticated)("ngIfElse", _r0);
-} }
 class MSUserComponent {
     constructor(authService, router, configStateService, srv, settings) {
         this.authService = authService;
@@ -1104,30 +583,25 @@ class MSUserComponent {
         });
     }
 }
-MSUserComponent.ɵfac = function MSUserComponent_Factory(t) { return new (t || MSUserComponent)(ɵɵdirectiveInject(AuthService), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(ConfigStateService), ɵɵdirectiveInject(MSTopbarService), ɵɵdirectiveInject(SettingsService)); };
-MSUserComponent.ɵcmp = ɵɵdefineComponent({ type: MSUserComponent, selectors: [["ms-user"]], hostVars: 6, hostBindings: function MSUserComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("alain-ms__topbar-item", true)("alain-ms__topbar-dd", true)("alain-ms__user", true);
-    } }, decls: 4, vars: 3, consts: [["loginBtnTpl", ""], [4, "ngIf"], [1, "alain-ms__topbar-item-btn", 3, "click"], [4, "ngIf", "ngIfElse"], [1, "alain-ms__topbar-item-btn"], [1, "alain-ms__topbar-dd-menu", "width-md"], [1, "alain-ms__user-hd"], [1, "d-flex"], [1, "ml-md"], [1, "alain-ms__user-bd"], ["routerLink", "/account/manage-profile", 1, "alain-ms__user-bd-item"], ["nz-icon", "", "nzType", "safety"], [1, "alain-ms__user-fd"], [1, "d-block", "pt-sm", "pb-xs", "text-center", 3, "click"]], template: function MSUserComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, MSUserComponent_ng_template_0_Template, 3, 3, "ng-template", null, 0, ɵɵtemplateRefExtractor);
-        ɵɵtemplate(2, MSUserComponent_div_2_Template, 2, 2, "div", 1);
-        ɵɵpipe(3, "async");
-    } if (rf & 2) {
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ɵɵpipeBind1(3, 1, ctx.currentUser$));
-    } }, directives: [NgIf, RouterLinkWithHref, NzIconDirective], pipes: [AsyncPipe, LocalizationPipe], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSUserComponent, [{
-        type: Component,
-        args: [{
+MSUserComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-user',
-                templateUrl: './user.component.html',
+                template: "<ng-template #loginBtnTpl>\r\n  <a (click)=\"initLogin()\"  class=\"alain-ms__topbar-item-btn\">{{'AbpAccount::Login' | abpLocalization}}</a>\r\n</ng-template>\r\n\r\n<div *ngIf=\"(currentUser$ | async) as currentUser\">\r\n  <div *ngIf=\"currentUser.isAuthenticated; else loginBtnTpl\">\r\n\r\n\r\n    <span class=\"alain-ms__topbar-item-btn\">\r\n      <!-- <nz-avatar [nzSrc]=\"settings.user.avatar\" nzSize=\"small\"></nz-avatar> -->\r\n      {{ currentUser.userName }}\r\n    </span>\r\n    <div class=\"alain-ms__topbar-dd-menu width-md\">\r\n      <div class=\"alain-ms__user-hd\">\r\n        <div class=\"d-flex\">\r\n          <!-- <nz-avatar [nzSrc]=\"settings.user.avatar\" nzSize=\"small\"></nz-avatar> -->\r\n          <span class=\"ml-md\">{{ currentUser.userName }}</span>\r\n        </div>\r\n        <!-- <div class=\"mt-sm\">\r\n          <ng-container *ngFor=\"let i of mainLinks; let last = last\">\r\n            <a [link-to]=\"i\">{{ i.text }}</a>\r\n            <nz-divider *ngIf=\"!last\" nzType=\"vertical\"></nz-divider>\r\n          </ng-container>\r\n        </div> -->\r\n      </div>\r\n      <div class=\"alain-ms__user-bd\">\r\n        <!-- <a *ngFor=\"let i of subLinks\" [link-to]=\"i\" class=\"alain-ms__user-bd-item\">\r\n          <i nz-icon nzType=\"safety\"></i>{{ i.text }}\r\n        </a> -->\r\n        <a routerLink=\"/account/manage-profile\" class=\"alain-ms__user-bd-item\">\r\n          <i nz-icon nzType=\"safety\"></i>{{ 'AbpAccount::ManageYourProfile' | abpLocalization }}\r\n        </a>\r\n      </div>\r\n      <div class=\"alain-ms__user-fd\">\r\n        <a (click)=\"logout()\" class=\"d-block pt-sm pb-xs text-center\">{{ 'AbpUi::Logout' | abpLocalization }}</a>\r\n      </div>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n",
                 host: {
                     '[class.alain-ms__topbar-item]': 'true',
                     '[class.alain-ms__topbar-dd]': 'true',
                     '[class.alain-ms__user]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: AuthService }, { type: Router }, { type: ConfigStateService }, { type: MSTopbarService }, { type: SettingsService }]; }, null); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSUserComponent.ctorParameters = () => [
+    { type: AuthService },
+    { type: Router },
+    { type: ConfigStateService },
+    { type: MSTopbarService },
+    { type: SettingsService }
+];
 
 class RoutesProcessor {
     constructor(injector) {
@@ -1357,14 +831,16 @@ class LayoutStateService {
         });
     }
 }
-LayoutStateService.ɵfac = function LayoutStateService_Factory(t) { return new (t || LayoutStateService)(ɵɵinject(Injector), ɵɵinject(LocalizationPipe)); };
-LayoutStateService.ɵprov = ɵɵdefineInjectable({ token: LayoutStateService, factory: LayoutStateService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(LayoutStateService, [{
-        type: Injectable,
-        args: [{
+LayoutStateService.ɵprov = ɵɵdefineInjectable({ factory: function LayoutStateService_Factory() { return new LayoutStateService(ɵɵinject(INJECTOR), ɵɵinject(LocalizationPipe)); }, token: LayoutStateService, providedIn: "root" });
+LayoutStateService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: Injector }, { type: LocalizationPipe }]; }, null); })();
+            },] }
+];
+LayoutStateService.ctorParameters = () => [
+    { type: Injector },
+    { type: LocalizationPipe }
+];
 
 class MSProductService {
     constructor(layoutSateService) {
@@ -1420,148 +896,14 @@ class MSProductService {
         return { list, categories };
     }
 }
-MSProductService.ɵfac = function MSProductService_Factory(t) { return new (t || MSProductService)(ɵɵinject(LayoutStateService)); };
-MSProductService.ɵprov = ɵɵdefineInjectable({ token: MSProductService, factory: MSProductService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSProductService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: LayoutStateService }]; }, null); })();
+MSProductService.ɵprov = ɵɵdefineInjectable({ factory: function MSProductService_Factory() { return new MSProductService(ɵɵinject(LayoutStateService)); }, token: MSProductService, providedIn: "root" });
+MSProductService.decorators = [
+    { type: Injectable, args: [{ providedIn: 'root' },] }
+];
+MSProductService.ctorParameters = () => [
+    { type: LayoutStateService }
+];
 
-const _c0$3 = ["categoryEl"];
-function MSSidebarComponent_ng_container_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 17);
-    ɵɵlistener("click", function MSSidebarComponent_ng_container_0_div_2_Template_div_click_0_listener() { ɵɵrestoreView(_r8); const ctx_r7 = ɵɵnextContext(2); return ctx_r7.showProduct = !ctx_r7.showProduct; });
-    ɵɵelementStart(1, "div", 18);
-    ɵɵelement(2, "i", 19);
-    ɵɵelementStart(3, "span", 20);
-    ɵɵtext(4);
-    ɵɵelementEnd();
-    ɵɵelementStart(5, "span", 21);
-    ɵɵelement(6, "i", 22);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance(4);
-    ɵɵtextInterpolate(ctx_r2.l.text);
-} }
-function MSSidebarComponent_ng_container_0_li_4_Template(rf, ctx) { if (rf & 1) {
-    const _r12 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 23);
-    ɵɵelementStart(1, "i", 24);
-    ɵɵlistener("linkToChanged", function MSSidebarComponent_ng_container_0_li_4_Template_i_linkToChanged_1_listener() { ɵɵrestoreView(_r12); const ctx_r11 = ɵɵnextContext(2); return ctx_r11.showProduct = false; });
-    ɵɵelementEnd();
-    ɵɵelementStart(2, "a", 25);
-    ɵɵlistener("linkToChanged", function MSSidebarComponent_ng_container_0_li_4_Template_a_linkToChanged_2_listener() { ɵɵrestoreView(_r12); const ctx_r13 = ɵɵnextContext(2); return ctx_r13.showProduct = false; });
-    ɵɵtext(3);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r9 = ctx.$implicit;
-    ɵɵadvance(1);
-    ɵɵclassMapInterpolate1("alain-ms__sidebar-product-icon ", i_r9.icon, " ");
-    ɵɵproperty("link-to", i_r9);
-    ɵɵadvance(1);
-    ɵɵproperty("link-to", i_r9);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", i_r9.name, " ");
-} }
-const _c1$2 = function (a0) { return { "alain-ms__products-category-item-active": a0 }; };
-function MSSidebarComponent_ng_container_0_div_14_div_1_li_4_Template(rf, ctx) { if (rf & 1) {
-    const _r20 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 32);
-    ɵɵelementStart(1, "a", 33);
-    ɵɵlistener("linkToChanged", function MSSidebarComponent_ng_container_0_div_14_div_1_li_4_Template_a_linkToChanged_1_listener() { ɵɵrestoreView(_r20); const ctx_r19 = ɵɵnextContext(4); return ctx_r19.showProduct = false; });
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r18 = ctx.$implicit;
-    ɵɵproperty("ngClass", ɵɵpureFunction1(3, _c1$2, i_r18.shortcut));
-    ɵɵadvance(1);
-    ɵɵproperty("link-to", i_r18);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(i_r18.name);
-} }
-function MSSidebarComponent_ng_container_0_div_14_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 28);
-    ɵɵelementStart(1, "h3", 29);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "ul", 30);
-    ɵɵtemplate(4, MSSidebarComponent_ng_container_0_div_14_div_1_li_4_Template, 3, 5, "li", 31);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const p_r16 = ctx.$implicit;
-    ɵɵadvance(1);
-    ɵɵpropertyInterpolate1("id", "product-cat-", p_r16._id, "");
-    ɵɵadvance(1);
-    ɵɵtextInterpolate1(" ", p_r16.name, " ");
-    ɵɵadvance(2);
-    ɵɵproperty("ngForOf", p_r16.products);
-} }
-function MSSidebarComponent_ng_container_0_div_14_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 26);
-    ɵɵtemplate(1, MSSidebarComponent_ng_container_0_div_14_div_1_Template, 5, 3, "div", 27);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const c_r14 = ctx.$implicit;
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", c_r14);
-} }
-function MSSidebarComponent_ng_container_0_nz_link_17_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "nz-link", 34);
-} if (rf & 2) {
-    const i_r21 = ctx.$implicit;
-    ɵɵpropertyInterpolate1("nzHref", "#product-cat-", i_r21._id, "");
-    ɵɵproperty("nzTitle", i_r21.name);
-} }
-function MSSidebarComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    const _r23 = ɵɵgetCurrentView();
-    ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "div", 1);
-    ɵɵtemplate(2, MSSidebarComponent_ng_container_0_div_2_Template, 7, 1, "div", 2);
-    ɵɵelementStart(3, "ul", 3);
-    ɵɵtemplate(4, MSSidebarComponent_ng_container_0_li_4_Template, 4, 6, "li", 4);
-    ɵɵpipe(5, "async");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(6, "div", 5);
-    ɵɵelementStart(7, "div", 6);
-    ɵɵelementStart(8, "div", 7);
-    ɵɵlistener("click", function MSSidebarComponent_ng_container_0_Template_div_click_8_listener() { ɵɵrestoreView(_r23); const ctx_r22 = ɵɵnextContext(); return ctx_r22.showProduct = false; });
-    ɵɵelement(9, "i", 8);
-    ɵɵelementEnd();
-    ɵɵelementStart(10, "div", 9);
-    ɵɵelementStart(11, "div", 10, 11);
-    ɵɵelementStart(13, "div", 12);
-    ɵɵtemplate(14, MSSidebarComponent_ng_container_0_div_14_Template, 2, 1, "div", 13);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(15, "div", 14);
-    ɵɵelementStart(16, "nz-anchor", 15);
-    ɵɵtemplate(17, MSSidebarComponent_ng_container_0_nz_link_17_Template, 1, 2, "nz-link", 16);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const store_r1 = ctx.ngIf;
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(2);
-    ɵɵproperty("ngIf", store_r1.sidebarConfig.hasProductNav);
-    ɵɵadvance(2);
-    ɵɵproperty("ngForOf", ɵɵpipeBind1(5, 4, ctx_r0.shortcuts$));
-    ɵɵadvance(10);
-    ɵɵproperty("ngForOf", ctx_r0.searchList);
-    ɵɵadvance(3);
-    ɵɵproperty("ngForOf", ctx_r0.searchCategories);
-} }
 class MSSidebarComponent {
     constructor(layoutStateService, brand, srv, cdr) {
         this.layoutStateService = layoutStateService;
@@ -1606,54 +948,27 @@ class MSSidebarComponent {
         this.brand.setSidebar(false);
     }
 }
-MSSidebarComponent.ɵfac = function MSSidebarComponent_Factory(t) { return new (t || MSSidebarComponent)(ɵɵdirectiveInject(LayoutStateService), ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(MSProductService), ɵɵdirectiveInject(ChangeDetectorRef)); };
-MSSidebarComponent.ɵcmp = ɵɵdefineComponent({ type: MSSidebarComponent, selectors: [["ms-sidebar"]], viewQuery: function MSSidebarComponent_Query(rf, ctx) { if (rf & 1) {
-        ɵɵviewQuery(_c0$3, 1);
-    } if (rf & 2) {
-        let _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.categoryEl = _t.first);
-    } }, hostVars: 4, hostBindings: function MSSidebarComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("alain-ms__sidebar", true)("alain-ms__sidebar-showproduct", ctx.showProduct);
-    } }, decls: 2, vars: 3, consts: [[4, "ngIf"], [1, "alain-ms__sidebar-wrap"], ["class", "alain-ms__sidebar-product-all", 3, "click", 4, "ngIf"], [1, "alain-ms__sidebar-product-quick"], ["class", "alain-ms__sidebar-product", 4, "ngFor", "ngForOf"], [1, "alain-ms__sidebar-products"], [1, "alain-ms__products"], [1, "alain-ms__products-close", 3, "click"], ["nz-icon", "", "nzType", "close"], [1, "alain-ms__products-left"], [1, "alain-ms__products-category-wrap"], ["categoryEl", ""], [1, "d-flex"], ["class", "alain-ms__products-category-column", 4, "ngFor", "ngForOf"], [1, "alain-ms__products-right"], ["nzAffix", "false", "nzContainer", ".alain-ms__products-category-wrap", "nzOffsetTop", "150", "nzShowInkInFixed", "false"], [3, "nzHref", "nzTitle", 4, "ngFor", "ngForOf"], [1, "alain-ms__sidebar-product-all", 3, "click"], [1, "alain-ms__sidebar-product", "alain-ms__sidebar-product-all-wrap"], ["nz-icon", "", "nzType", "appstore", 1, "alain-ms__sidebar-product-icon"], [1, "alain-ms__sidebar-product-name"], [1, "alain-ms__sidebar-product-toolbar"], ["nz-icon", "", "nzType", "right"], [1, "alain-ms__sidebar-product"], [3, "link-to", "linkToChanged"], [1, "alain-ms__sidebar-product-name", 3, "link-to", "linkToChanged"], [1, "alain-ms__products-category-column"], ["class", "alain-ms__products-category", 4, "ngFor", "ngForOf"], [1, "alain-ms__products-category"], [1, "alain-ms__products-category-title", 3, "id"], [1, "list-unstyled"], ["class", "alain-ms__products-category-item", 3, "ngClass", 4, "ngFor", "ngForOf"], [1, "alain-ms__products-category-item", 3, "ngClass"], [1, "alain-ms__products-category-item-link", 3, "link-to", "linkToChanged"], [3, "nzHref", "nzTitle"]], template: function MSSidebarComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, MSSidebarComponent_ng_container_0_Template, 18, 6, "ng-container", 0);
-        ɵɵpipe(1, "async");
-    } if (rf & 2) {
-        ɵɵproperty("ngIf", ɵɵpipeBind1(1, 1, ctx.store$));
-    } }, directives: [NgIf, NgForOf, NzIconDirective, NzAnchorComponent, MSLinkToDirective, NgClass, NzAnchorLinkComponent], pipes: [AsyncPipe], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSSidebarComponent, [{
-        type: Component,
-        args: [{
+MSSidebarComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-sidebar',
-                templateUrl: './sidebar.component.html',
+                template: "<ng-container *ngIf=\"store$ | async as store\">\r\n  <div class=\"alain-ms__sidebar-wrap\">\r\n    <div\r\n      *ngIf=\"store.sidebarConfig.hasProductNav\"\r\n      class=\"alain-ms__sidebar-product-all\"\r\n      (click)=\"showProduct = !showProduct\"\r\n    >\r\n      <div class=\"alain-ms__sidebar-product alain-ms__sidebar-product-all-wrap\">\r\n        <i class=\"alain-ms__sidebar-product-icon\" nz-icon nzType=\"appstore\"></i>\r\n        <span class=\"alain-ms__sidebar-product-name\">{{ l.text }}</span>\r\n        <span class=\"alain-ms__sidebar-product-toolbar\">\r\n          <i nz-icon nzType=\"right\"></i>\r\n        </span>\r\n      </div>\r\n    </div>\r\n    <ul class=\"alain-ms__sidebar-product-quick\">\r\n      <li\r\n        class=\"alain-ms__sidebar-product\"\r\n        *ngFor=\"let i of shortcuts$ | async; let idx = index\"\r\n      >\r\n        <i\r\n          class=\"alain-ms__sidebar-product-icon {{ i.icon }} \"\r\n          [link-to]=\"i\"\r\n          (linkToChanged)=\"showProduct = false\"\r\n        ></i>\r\n        <a\r\n          class=\"alain-ms__sidebar-product-name\"\r\n          [link-to]=\"i\"\r\n          (linkToChanged)=\"showProduct = false\"\r\n        >\r\n          {{ i.name }}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"alain-ms__sidebar-products\">\r\n    <div class=\"alain-ms__products\">\r\n      <div class=\"alain-ms__products-close\" (click)=\"showProduct = false\">\r\n        <i nz-icon nzType=\"close\"></i>\r\n      </div>\r\n      <div class=\"alain-ms__products-left\">\r\n        <div class=\"alain-ms__products-category-wrap\" #categoryEl>\r\n          <div class=\"d-flex\">\r\n            <div\r\n              *ngFor=\"let c of searchList\"\r\n              class=\"alain-ms__products-category-column\"\r\n            >\r\n              <div *ngFor=\"let p of c\" class=\"alain-ms__products-category\">\r\n                <h3\r\n                  class=\"alain-ms__products-category-title\"\r\n                  id=\"product-cat-{{ p._id }}\"\r\n                >\r\n                  {{ p.name }}\r\n                </h3>\r\n                <ul class=\"list-unstyled\">\r\n                  <li\r\n                    *ngFor=\"let i of p.products\"\r\n                    class=\"alain-ms__products-category-item\"\r\n                    [ngClass]=\"{\r\n                      'alain-ms__products-category-item-active': i.shortcut\r\n                    }\"\r\n                  >\r\n                    <a\r\n                      [link-to]=\"i\"\r\n                      (linkToChanged)=\"showProduct = false\"\r\n                      class=\"alain-ms__products-category-item-link\"\r\n                      >{{ i.name }}</a\r\n                    >\r\n                  </li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"alain-ms__products-right\">\r\n        <nz-anchor\r\n          nzAffix=\"false\"\r\n          nzContainer=\".alain-ms__products-category-wrap\"\r\n          nzOffsetTop=\"150\"\r\n          nzShowInkInFixed=\"false\"\r\n        >\r\n          <nz-link\r\n            *ngFor=\"let i of searchCategories\"\r\n            nzHref=\"#product-cat-{{ i._id }}\"\r\n            [nzTitle]=\"i.name\"\r\n          ></nz-link>\r\n        </nz-anchor>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</ng-container>\r\n",
                 host: {
                     '[class.alain-ms__sidebar]': 'true',
                     '[class.alain-ms__sidebar-showproduct]': 'showProduct',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: LayoutStateService }, { type: BrandService }, { type: MSProductService }, { type: ChangeDetectorRef }]; }, { categoryEl: [{
-            type: ViewChild,
-            args: ['categoryEl', { static: false }]
-        }] }); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSSidebarComponent.ctorParameters = () => [
+    { type: LayoutStateService },
+    { type: BrandService },
+    { type: MSProductService },
+    { type: ChangeDetectorRef }
+];
+MSSidebarComponent.propDecorators = {
+    categoryEl: [{ type: ViewChild, args: ['categoryEl', { static: false },] }]
+};
 
-function MSTopbarComponent_ng_template_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "img", 8);
-} }
-function MSTopbarComponent_ms_all_nav_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "ms-all-nav");
-} }
-function MSTopbarComponent_img_6_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "img", 9);
-} if (rf & 2) {
-    const ctx_r3 = ɵɵnextContext();
-    ɵɵproperty("src", ctx_r3.appInfo.logoUrl, ɵɵsanitizeUrl);
-} }
-function MSTopbarComponent_div_9_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 10);
-    ɵɵelement(1, "ms-langs");
-    ɵɵelement(2, "ms-user");
-    ɵɵelementEnd();
-} }
 class MSTopbarComponent {
     constructor(srv, 
     //  public userSrv: UserService,
@@ -1690,145 +1005,73 @@ class MSTopbarComponent {
         });
     }
 }
-MSTopbarComponent.ɵfac = function MSTopbarComponent_Factory(t) { return new (t || MSTopbarComponent)(ɵɵdirectiveInject(MSTopbarService), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(EnvironmentService)); };
-MSTopbarComponent.ɵcmp = ɵɵdefineComponent({ type: MSTopbarComponent, selectors: [["ms-topbar"]], hostVars: 4, hostBindings: function MSTopbarComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("alain-ms__topbar", true)("alain-ms__topbar-single", ctx.allNav);
-    } }, inputs: { allNav: "allNav" }, decls: 10, vars: 5, consts: [["defaultLogo", ""], [1, "alain-ms__topbar-main"], [4, "ngIf"], [1, "alain-ms__topbar-logo"], ["routerLink", "/", 1, "alain-ms__topbar-logo-img"], [3, "src", 4, "ngIf", "ngIfElse"], ["routerLink", "/", 1, "alain-ms__topbar-logo-link"], ["class", "alain-ms__topbar-widget", 4, "ngIf"], ["src", "./assets/logo-color.svg"], [3, "src"], [1, "alain-ms__topbar-widget"]], template: function MSTopbarComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, MSTopbarComponent_ng_template_0_Template, 1, 0, "ng-template", null, 0, ɵɵtemplateRefExtractor);
-        ɵɵelementStart(2, "div", 1);
-        ɵɵtemplate(3, MSTopbarComponent_ms_all_nav_3_Template, 1, 0, "ms-all-nav", 2);
-        ɵɵelementStart(4, "div", 3);
-        ɵɵelementStart(5, "a", 4);
-        ɵɵtemplate(6, MSTopbarComponent_img_6_Template, 1, 1, "img", 5);
-        ɵɵelementEnd();
-        ɵɵelementStart(7, "a", 6);
-        ɵɵtext(8);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵtemplate(9, MSTopbarComponent_div_9_Template, 3, 0, "div", 7);
-    } if (rf & 2) {
-        const _r0 = ɵɵreference(1);
-        ɵɵadvance(3);
-        ɵɵproperty("ngIf", ctx.allNav);
-        ɵɵadvance(3);
-        ɵɵproperty("ngIf", ctx.appInfo.logoUrl)("ngIfElse", _r0);
-        ɵɵadvance(2);
-        ɵɵtextInterpolate1(" ", ctx.appInfo.name, " ");
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.inited);
-    } }, directives: [NgIf, RouterLinkWithHref, MSAllNavComponent, MSLangsComponent, MSUserComponent], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSTopbarComponent, [{
-        type: Component,
-        args: [{
+MSTopbarComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'ms-topbar',
-                templateUrl: './topbar.component.html',
+                template: "<ng-template #defaultLogo>\r\n  <img src=\"./assets/logo-color.svg\" />\r\n</ng-template>\r\n<div class=\"alain-ms__topbar-main\">\r\n  <ms-all-nav *ngIf=\"allNav\"></ms-all-nav>\r\n  <div class=\"alain-ms__topbar-logo\">\r\n    <a routerLink=\"/\" class=\"alain-ms__topbar-logo-img\">\r\n      <img *ngIf=\"appInfo.logoUrl; else defaultLogo\" [src]=\"appInfo.logoUrl\"/>\r\n    </a>\r\n    <a routerLink=\"/\" class=\"alain-ms__topbar-logo-link\">\r\n      {{ appInfo.name }}\r\n    </a>\r\n  </div>\r\n  <!-- <ms-region *ngIf=\"userSrv?.isLogin\" class=\"hidden-md\"></ms-region> -->\r\n</div>\r\n<div class=\"alain-ms__topbar-widget\" *ngIf=\"inited\">\r\n  <!-- \u641C\u7D22 -->\r\n  <!-- <ms-search class=\"hidden-xs\"></ms-search> -->\r\n  <!-- \u6D88\u606F -->\r\n  <!-- <ms-notice></ms-notice> -->\r\n  <!-- \u83DC\u5355 -->\r\n  <!-- <div *ngFor=\"let p of links\" class=\"alain-ms__topbar-item\" [ngClass]=\"p.className\">\r\n    <a class=\"alain-ms__topbar-item-btn\" [link-to]=\"p\">{{ p.text }}</a>\r\n    <ul class=\"alain-ms__topbar-dd-menu\" *ngIf=\"p.links\">\r\n      <li *ngFor=\"let i of p.links\">\r\n        <a class=\"alain-ms__topbar-dd-item\" [link-to]=\"i\">{{ i.text }}</a>\r\n      </li>\r\n    </ul>\r\n  </div> -->\r\n  <!-- \u8D2D\u7269\u8F66 -->\r\n  <!-- <div class=\"alain-ms__topbar-item hidden-mobile\" class=\"hidden-xs\">\r\n    <a class=\"alain-ms__topbar-item-btn alain-ms__topbar-item-icon\" routerLink=\"/\">\r\n      <i nz-icon nzType=\"shopping-cart\"></i>\r\n    </a>\r\n  </div> -->\r\n  <!-- \u8BED\u8A00 -->\r\n  <ms-langs></ms-langs>\r\n  <!-- \u7528\u6237 -->\r\n  <ms-user></ms-user>\r\n</div>\r\n",
                 host: {
                     '[class.alain-ms__topbar]': 'true',
                     '[class.alain-ms__topbar-single]': 'allNav',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: MSTopbarService }, { type: ChangeDetectorRef }, { type: EnvironmentService }]; }, { allNav: [{
-            type: Input
-        }] }); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSTopbarComponent.ctorParameters = () => [
+    { type: MSTopbarService },
+    { type: ChangeDetectorRef },
+    { type: EnvironmentService }
+];
+MSTopbarComponent.propDecorators = {
+    allNav: [{ type: Input }]
+};
 
-function MSHelpComponent_ng_template_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 3);
-    ɵɵelement(1, "i", 4);
-    ɵɵelementStart(2, "a", 5);
-    ɵɵtext(3, " \u552E\u524D\u54A8\u8BE2\u7535\u8BDD ");
-    ɵɵelementStart(4, "div", 6);
-    ɵɵtext(5, "xxxx \u8F6C 1");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(6, "div", 3);
-    ɵɵelement(7, "i", 7);
-    ɵɵelementStart(8, "a", 8);
-    ɵɵtext(9, " \u667A\u80FD\u987E\u95EE ");
-    ɵɵelementStart(10, "div", 9);
-    ɵɵtext(11, "\u667A\u80FD\u8BCA\u65AD\uFF0C\u79D2\u7EA7\u89E3\u7B54");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(12, "div", 10);
-    ɵɵelement(13, "i", 11);
-    ɵɵelementStart(14, "a", 5);
-    ɵɵtext(15, " \u5EFA\u8BAE\u53CD\u9988 ");
-    ɵɵelementStart(16, "div", 9);
-    ɵɵtext(17, "XXX\u4E0D\u662F\u5B8C\u7F8E\u7684\uFF0C\u6211\u4EEC\u6E34\u671B\u60A8\u7684\u5EFA\u8BAE");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} }
 class MSHelpComponent {
 }
-MSHelpComponent.ɵfac = function MSHelpComponent_Factory(t) { return new (t || MSHelpComponent)(); };
-MSHelpComponent.ɵcmp = ɵɵdefineComponent({ type: MSHelpComponent, selectors: [["help"]], hostVars: 2, hostBindings: function MSHelpComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("ms-help", true);
-    } }, decls: 5, vars: 1, consts: [["nz-popover", "", "nzPopoverTrigger", "click", 1, "ms-help__wrap", 3, "nzPopoverContent"], [1, "ms-help__text"], ["helpTpl", ""], [1, "d-flex", "align-items-center", "mb-sm"], ["nz-icon", "", "nzType", "phone", 1, "mr-sm", "text-xl"], ["routerLink", "/"], [1, "text-orange", "text-xs"], ["nz-icon", "", "nzType", "customer-service", 1, "mr-sm", "text-xl"], ["routerLink", "/smart"], [1, "text-grey", "text-xs"], [1, "d-flex", "align-items-center"], ["nz-icon", "", "nzType", "edit", 1, "mr-sm", "text-xl"]], template: function MSHelpComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵelementStart(0, "div", 0);
-        ɵɵelementStart(1, "span", 1);
-        ɵɵtext(2, " \u54A8\u8BE2\u00B7\u5EFA\u8BAE ");
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵtemplate(3, MSHelpComponent_ng_template_3_Template, 18, 0, "ng-template", null, 2, ɵɵtemplateRefExtractor);
-    } if (rf & 2) {
-        const _r0 = ɵɵreference(4);
-        ɵɵproperty("nzPopoverContent", _r0);
-    } }, directives: [NzPopoverDirective, NzIconDirective, RouterLinkWithHref], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSHelpComponent, [{
-        type: Component,
-        args: [{
+MSHelpComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'help',
-                templateUrl: './help.component.html',
+                template: "<div class=\"ms-help__wrap\" nz-popover nzPopoverTrigger=\"click\" [nzPopoverContent]=\"helpTpl\">\r\n  <span class=\"ms-help__text\">\r\n    \u54A8\u8BE2\u00B7\u5EFA\u8BAE\r\n  </span>\r\n</div>\r\n<ng-template #helpTpl>\r\n  <div class=\"d-flex align-items-center mb-sm\">\r\n    <i nz-icon nzType=\"phone\" class=\"mr-sm text-xl\"></i>\r\n    <a routerLink=\"/\">\r\n      \u552E\u524D\u54A8\u8BE2\u7535\u8BDD\r\n      <div class=\"text-orange text-xs\">xxxx \u8F6C 1</div>\r\n    </a>\r\n  </div>\r\n  <div class=\"d-flex align-items-center mb-sm\">\r\n    <i nz-icon nzType=\"customer-service\" class=\"mr-sm text-xl\"></i>\r\n    <a routerLink=\"/smart\">\r\n      \u667A\u80FD\u987E\u95EE\r\n      <div class=\"text-grey text-xs\">\u667A\u80FD\u8BCA\u65AD\uFF0C\u79D2\u7EA7\u89E3\u7B54</div>\r\n    </a>\r\n  </div>\r\n  <div class=\"d-flex align-items-center\">\r\n    <i nz-icon nzType=\"edit\" class=\"mr-sm text-xl\"></i>\r\n    <a routerLink=\"/\">\r\n      \u5EFA\u8BAE\u53CD\u9988\r\n      <div class=\"text-grey text-xs\">XXX\u4E0D\u662F\u5B8C\u7F8E\u7684\uFF0C\u6211\u4EEC\u6E34\u671B\u60A8\u7684\u5EFA\u8BAE</div>\r\n    </a>\r\n  </div>\r\n</ng-template>\r\n",
                 host: {
                     '[class.ms-help]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], null, null); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
 
-function MSPageBarComponent_h2_1_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵpipe(2, "abpLocalization");
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ɵɵpipeBind1(2, 1, ctx_r2.title));
-} }
-function MSPageBarComponent_h2_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "h2", 4);
-    ɵɵtemplate(1, MSPageBarComponent_h2_1_ng_container_1_Template, 3, 3, "ng-container", 5);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r0.title);
-} }
-function MSPageBarComponent_div_2_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵpipe(2, "abpLocalization");
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r3 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ɵɵpipeBind1(2, 1, ctx_r3.subTitle));
-} }
-function MSPageBarComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 6);
-    ɵɵtemplate(1, MSPageBarComponent_div_2_ng_container_1_Template, 3, 3, "ng-container", 5);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r1.subTitle);
-} }
-const _c0$4 = ["*"];
+class MSLinkToDirective {
+    constructor(router) {
+        this.router = router;
+        this.linkToChanged = new EventEmitter();
+    }
+    _click(e) {
+        const { link, target } = this.i;
+        if (target != null) {
+            if (target === '_blank') {
+                window.open(link);
+            }
+            else {
+                window.location.href = link;
+            }
+            this.linkToChanged.emit(e);
+            return;
+        }
+        setTimeout(() => {
+            this.router.navigateByUrl(link).then(() => this.linkToChanged.emit(e));
+        });
+    }
+}
+MSLinkToDirective.decorators = [
+    { type: Directive, args: [{ selector: '[link-to]' },] }
+];
+MSLinkToDirective.ctorParameters = () => [
+    { type: Router }
+];
+MSLinkToDirective.propDecorators = {
+    i: [{ type: Input, args: ['link-to',] }],
+    linkToChanged: [{ type: Output }],
+    _click: [{ type: HostListener, args: ['click', ['$event'],] }]
+};
+
 class MSPageBarComponent {
     // #endregion
     constructor(router, srv, menuSrv, cdr) {
@@ -1868,24 +1111,28 @@ class MSPageBarComponent {
         this.router$.unsubscribe();
     }
 }
-MSPageBarComponent.ɵfac = function MSPageBarComponent_Factory(t) { return new (t || MSPageBarComponent)(ɵɵdirectiveInject(Router), ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(MenuService), ɵɵdirectiveInject(ChangeDetectorRef)); };
-MSPageBarComponent.ɵcmp = ɵɵdefineComponent({ type: MSPageBarComponent, selectors: [["page-bar"]], hostVars: 2, hostBindings: function MSPageBarComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("ms-page-bar", true);
-    } }, inputs: { autoTitle: "autoTitle", recursiveBreadcrumb: "recursiveBreadcrumb", title: "title", subTitle: "subTitle" }, ngContentSelectors: _c0$4, decls: 5, vars: 2, consts: [[1, "ms-page-bar__title"], ["class", "ms-page-bar__title-main", 4, "ngIf"], ["class", "ms-page-bar__title-sub", 4, "ngIf"], [1, "ms-page-bar__action"], [1, "ms-page-bar__title-main"], [4, "nzStringTemplateOutlet"], [1, "ms-page-bar__title-sub"]], template: function MSPageBarComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵprojectionDef();
-        ɵɵelementStart(0, "div", 0);
-        ɵɵtemplate(1, MSPageBarComponent_h2_1_Template, 2, 1, "h2", 1);
-        ɵɵtemplate(2, MSPageBarComponent_div_2_Template, 2, 1, "div", 2);
-        ɵɵelementEnd();
-        ɵɵelementStart(3, "div", 3);
-        ɵɵprojection(4);
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.title);
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.subTitle);
-    } }, directives: [NgIf, NzStringTemplateOutletDirective], pipes: [LocalizationPipe], encapsulation: 2, changeDetection: 0 });
+MSPageBarComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'page-bar',
+                template: "<div class=\"ms-page-bar__title\">\r\n  <h2 *ngIf=\"title\" class=\"ms-page-bar__title-main\">\r\n    <ng-container *nzStringTemplateOutlet=\"title\">{{ title | abpLocalization }}</ng-container>\r\n  </h2>\r\n  <div *ngIf=\"subTitle\" class=\"ms-page-bar__title-sub\">\r\n    <ng-container *nzStringTemplateOutlet=\"subTitle\">{{ subTitle | abpLocalization }}</ng-container>\r\n  </div>\r\n</div>\r\n<div class=\"ms-page-bar__action\">\r\n  <ng-content></ng-content>\r\n</div>\r\n",
+                host: {
+                    '[class.ms-page-bar]': 'true',
+                },
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSPageBarComponent.ctorParameters = () => [
+    { type: Router },
+    { type: BrandService },
+    { type: MenuService },
+    { type: ChangeDetectorRef }
+];
+MSPageBarComponent.propDecorators = {
+    autoTitle: [{ type: Input }],
+    recursiveBreadcrumb: [{ type: Input }],
+    title: [{ type: Input }],
+    subTitle: [{ type: Input }]
+};
 __decorate([
     InputBoolean(),
     __metadata("design:type", Object)
@@ -1894,149 +1141,7 @@ __decorate([
     InputBoolean(),
     __metadata("design:type", Object)
 ], MSPageBarComponent.prototype, "recursiveBreadcrumb", void 0);
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSPageBarComponent, [{
-        type: Component,
-        args: [{
-                selector: 'page-bar',
-                templateUrl: './page-bar.component.html',
-                host: {
-                    '[class.ms-page-bar]': 'true',
-                },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: Router }, { type: BrandService }, { type: MenuService }, { type: ChangeDetectorRef }]; }, { autoTitle: [{
-            type: Input
-        }], recursiveBreadcrumb: [{
-            type: Input
-        }], title: [{
-            type: Input
-        }], subTitle: [{
-            type: Input
-        }] }); })();
 
-function MSPageNavComponent_i_5_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "i", 14);
-} }
-function MSPageNavComponent_ng_template_9_li_0_ng_container_1_div_1_span_4_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "span", 23);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r7 = ɵɵnextContext(3).$implicit;
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(i_r7.badge);
-} }
-function MSPageNavComponent_ng_template_9_li_0_ng_container_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 19);
-    ɵɵelement(1, "span", 20);
-    ɵɵelementStart(2, "span", 21);
-    ɵɵtext(3);
-    ɵɵelementEnd();
-    ɵɵtemplate(4, MSPageNavComponent_ng_template_9_li_0_ng_container_1_div_1_span_4_Template, 2, 1, "span", 22);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r7 = ɵɵnextContext(2).$implicit;
-    ɵɵpropertyInterpolate("routerLink", i_r7.link);
-    ɵɵadvance(3);
-    ɵɵtextInterpolate(i_r7.text);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r7.badge);
-} }
-function MSPageNavComponent_ng_template_9_li_0_ng_container_1_a_2_span_4_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "span", 23);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r7 = ɵɵnextContext(3).$implicit;
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(i_r7.badge);
-} }
-function MSPageNavComponent_ng_template_9_li_0_ng_container_1_a_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "a", 24);
-    ɵɵelement(1, "span", 20);
-    ɵɵelementStart(2, "span", 21);
-    ɵɵtext(3);
-    ɵɵelementEnd();
-    ɵɵtemplate(4, MSPageNavComponent_ng_template_9_li_0_ng_container_1_a_2_span_4_Template, 2, 1, "span", 22);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r7 = ɵɵnextContext(2).$implicit;
-    ɵɵproperty("href", i_r7.externalLink, ɵɵsanitizeUrl)("target", i_r7.target);
-    ɵɵadvance(3);
-    ɵɵtextInterpolate(i_r7.text);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r7.badge);
-} }
-function MSPageNavComponent_ng_template_9_li_0_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, MSPageNavComponent_ng_template_9_li_0_ng_container_1_div_1_Template, 5, 3, "div", 17);
-    ɵɵtemplate(2, MSPageNavComponent_ng_template_9_li_0_ng_container_1_a_2_Template, 5, 4, "a", 18);
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const i_r7 = ɵɵnextContext().$implicit;
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r7.link);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", !i_r7.link);
-} }
-function MSPageNavComponent_ng_template_9_li_0_ng_container_2_ng_container_7_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainer(0);
-} }
-const _c0$5 = function (a0) { return { "d-none": a0 }; };
-const _c1$3 = function (a0, a1) { return { $implicit: a0, level: a1 }; };
-function MSPageNavComponent_ng_template_9_li_0_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    const _r22 = ɵɵgetCurrentView();
-    ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "div", 25);
-    ɵɵlistener("click", function MSPageNavComponent_ng_template_9_li_0_ng_container_2_Template_div_click_1_listener() { ɵɵrestoreView(_r22); const i_r7 = ɵɵnextContext().$implicit; return i_r7.active = !i_r7.active; });
-    ɵɵelementStart(2, "span", 20);
-    ɵɵelement(3, "i", 26);
-    ɵɵelementEnd();
-    ɵɵelementStart(4, "span", 21);
-    ɵɵtext(5);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(6, "ul", 27);
-    ɵɵtemplate(7, MSPageNavComponent_ng_template_9_li_0_ng_container_2_ng_container_7_Template, 1, 0, "ng-container", 8);
-    ɵɵelementEnd();
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const i_r7 = ɵɵnextContext().$implicit;
-    const level_r5 = ɵɵnextContext().level;
-    ɵɵnextContext();
-    const _r1 = ɵɵreference(10);
-    ɵɵadvance(3);
-    ɵɵproperty("nzType", i_r7.active ? "caret-down" : "caret-right");
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(i_r7.text);
-    ɵɵadvance(1);
-    ɵɵproperty("ngClass", ɵɵpureFunction1(5, _c0$5, !i_r7.active));
-    ɵɵadvance(1);
-    ɵɵproperty("ngTemplateOutlet", _r1)("ngTemplateOutletContext", ɵɵpureFunction2(7, _c1$3, i_r7.children, level_r5 + 1));
-} }
-function MSPageNavComponent_ng_template_9_li_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "li");
-    ɵɵtemplate(1, MSPageNavComponent_ng_template_9_li_0_ng_container_1_Template, 3, 2, "ng-container", 16);
-    ɵɵtemplate(2, MSPageNavComponent_ng_template_9_li_0_ng_container_2_Template, 8, 10, "ng-container", 16);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const i_r7 = ctx.$implicit;
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r7.children.length == 0);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", i_r7.children.length > 0);
-} }
-function MSPageNavComponent_ng_template_9_Template(rf, ctx) { if (rf & 1) {
-    ɵɵtemplate(0, MSPageNavComponent_ng_template_9_li_0_Template, 3, 2, "li", 15);
-} if (rf & 2) {
-    const ls_r4 = ctx.$implicit;
-    ɵɵproperty("ngForOf", ls_r4);
-} }
-function MSPageNavComponent_ng_container_12_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainer(0);
-} }
-const _c2$1 = function (a0) { return { "ms-page-nav__back": a0 }; };
-const _c3$1 = function (a0) { return { $implicit: a0, level: 1 }; };
 class MSPageNavComponent {
     constructor(srv, router, titSrv, menuSrv, 
     //@Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
@@ -2082,116 +1187,25 @@ class MSPageNavComponent {
         this.cdr.detectChanges();
     }
 }
-MSPageNavComponent.ɵfac = function MSPageNavComponent_Factory(t) { return new (t || MSPageNavComponent)(ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(TitleService), ɵɵdirectiveInject(MenuService), ɵɵdirectiveInject(ChangeDetectorRef)); };
-MSPageNavComponent.ɵcmp = ɵɵdefineComponent({ type: MSPageNavComponent, selectors: [["page-nav"]], inputs: { config: "config", list: "list" }, features: [ɵɵNgOnChangesFeature], decls: 18, vars: 14, consts: [[1, "ms-page-nav__body"], [1, "ms-page-nav__stage"], [1, "ms-page-nav__scene", "ms-page-nav__scene-main"], [1, "ms-page-nav__title", 3, "ngClass", "title", "click"], ["nz-icon", "", "nzType", "left", 4, "ngIf"], [1, "ms-page-nav__list", "scrollbar"], ["treeTpl", ""], ["role", "tree", 1, "list-unstyled"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "ms-page-nav__control", 3, "click"], [1, "ms-page-nav__control-wrap"], [1, "ms-page-nav__control-bg"], [1, "ms-page-nav__control-btn"], ["nz-icon", "", "nzType", "menu-fold"], ["nz-icon", "", "nzType", "left"], [4, "ngFor", "ngForOf"], [4, "ngIf"], ["class", "ms-page-nav__item", "role", "treeitem", "routerLinkActive", "ms-page-nav__item-active", 3, "routerLink", 4, "ngIf"], ["class", "ms-page-nav__item", "role", "treeitem", 3, "href", "target", 4, "ngIf"], ["role", "treeitem", "routerLinkActive", "ms-page-nav__item-active", 1, "ms-page-nav__item", 3, "routerLink"], [1, "ms-page-nav__item-icon"], [1, "ms-page-nav__item-tit"], ["class", "ms-page-nav__item-badge", 4, "ngIf"], [1, "ms-page-nav__item-badge"], ["role", "treeitem", 1, "ms-page-nav__item", 3, "href", "target"], ["role", "treeitem", 1, "ms-page-nav__item", 3, "click"], ["nz-icon", "", 3, "nzType"], ["role", "tree", 1, "list-unstyled", 3, "ngClass"]], template: function MSPageNavComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵelementStart(0, "div", 0);
-        ɵɵelementStart(1, "div", 1);
-        ɵɵelementStart(2, "div", 2);
-        ɵɵelementStart(3, "div", 3);
-        ɵɵlistener("click", function MSPageNavComponent_Template_div_click_3_listener($event) { return ctx.to(ctx.config.backHref, $event); });
-        ɵɵpipe(4, "i18n");
-        ɵɵtemplate(5, MSPageNavComponent_i_5_Template, 1, 0, "i", 4);
-        ɵɵtext(6);
-        ɵɵpipe(7, "abpLocalization");
-        ɵɵelementEnd();
-        ɵɵelementStart(8, "div", 5);
-        ɵɵtemplate(9, MSPageNavComponent_ng_template_9_Template, 1, 1, "ng-template", null, 6, ɵɵtemplateRefExtractor);
-        ɵɵelementStart(11, "ul", 7);
-        ɵɵtemplate(12, MSPageNavComponent_ng_container_12_Template, 1, 0, "ng-container", 8);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementStart(13, "div", 9);
-        ɵɵlistener("click", function MSPageNavComponent_Template_div_click_13_listener() { return ctx.toggle(); });
-        ɵɵelementStart(14, "div", 10);
-        ɵɵelement(15, "div", 11);
-        ɵɵelementStart(16, "div", 12);
-        ɵɵelement(17, "i", 13);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        const _r1 = ɵɵreference(10);
-        ɵɵadvance(3);
-        ɵɵproperty("ngClass", ɵɵpureFunction1(10, _c2$1, ctx.config.backHref))("title", ctx.config.backHref ? ɵɵpipeBind1(4, 6, "ms.page-nav.back") : "");
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ctx.config.backHref);
-        ɵɵadvance(1);
-        ɵɵtextInterpolate1(" ", ɵɵpipeBind1(7, 8, ctx.config.title), " ");
-        ɵɵadvance(6);
-        ɵɵproperty("ngTemplateOutlet", _r1)("ngTemplateOutletContext", ɵɵpureFunction1(12, _c3$1, ctx.list));
-    } }, directives: [NgClass, NgIf, NgTemplateOutlet, NzIconDirective, NgForOf, RouterLinkActive, RouterLink], pipes: [ɵa, LocalizationPipe], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSPageNavComponent, [{
-        type: Component,
-        args: [{
+MSPageNavComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'page-nav',
-                templateUrl: './page-nav.component.html',
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: BrandService }, { type: Router }, { type: TitleService }, { type: MenuService }, { type: ChangeDetectorRef }]; }, { config: [{
-            type: Input
-        }], list: [{
-            type: Input
-        }] }); })();
+                template: "<div class=\"ms-page-nav__body\">\r\n  <div class=\"ms-page-nav__stage\">\r\n    <div class=\"ms-page-nav__scene ms-page-nav__scene-main\">\r\n      <div\r\n        class=\"ms-page-nav__title\"\r\n        [ngClass]=\"{ 'ms-page-nav__back': config.backHref }\"\r\n        (click)=\"to(config.backHref!, $event)\"\r\n        [title]=\"config.backHref ? ('ms.page-nav.back' | i18n) : ''\"\r\n      >\r\n        <i *ngIf=\"config.backHref\" nz-icon nzType=\"left\"></i>\r\n        {{ config.title | abpLocalization }}\r\n      </div>\r\n      <div class=\"ms-page-nav__list scrollbar\">\r\n        <ng-template #treeTpl let-ls let-level=\"level\">\r\n          <li *ngFor=\"let i of ls\">\r\n            <ng-container *ngIf=\"i.children.length == 0\">\r\n              <div\r\n                *ngIf=\"i.link\"\r\n                class=\"ms-page-nav__item\"\r\n                role=\"treeitem\"\r\n                routerLink=\"{{ i.link }}\"\r\n                routerLinkActive=\"ms-page-nav__item-active\"\r\n              >\r\n                <span class=\"ms-page-nav__item-icon\"></span>\r\n                <span class=\"ms-page-nav__item-tit\">{{ i.text }}</span>\r\n                <span *ngIf=\"i.badge\" class=\"ms-page-nav__item-badge\">{{ i.badge }}</span>\r\n              </div>\r\n              <a *ngIf=\"!i.link\" [href]=\"i.externalLink\" [target]=\"i.target\" class=\"ms-page-nav__item\" role=\"treeitem\">\r\n                <span class=\"ms-page-nav__item-icon\"></span>\r\n                <span class=\"ms-page-nav__item-tit\">{{ i.text }}</span>\r\n                <span *ngIf=\"i.badge\" class=\"ms-page-nav__item-badge\">{{ i.badge }}</span>\r\n              </a>\r\n            </ng-container>\r\n            <ng-container *ngIf=\"i.children.length > 0\">\r\n              <div class=\"ms-page-nav__item\" role=\"treeitem\" (click)=\"i.active = !i.active\">\r\n                <span class=\"ms-page-nav__item-icon\">\r\n                  <i nz-icon [nzType]=\"i.active ? 'caret-down' : 'caret-right'\"></i>\r\n                </span>\r\n                <span class=\"ms-page-nav__item-tit\">{{ i.text }}</span>\r\n              </div>\r\n              <ul role=\"tree\" class=\"list-unstyled\" [ngClass]=\"{ 'd-none': !i.active }\">\r\n                <ng-container *ngTemplateOutlet=\"treeTpl; context: { $implicit: i.children, level: level + 1 }\"></ng-container>\r\n              </ul>\r\n            </ng-container>\r\n          </li>\r\n        </ng-template>\r\n        <ul role=\"tree\" class=\"list-unstyled\">\r\n          <ng-container *ngTemplateOutlet=\"treeTpl; context: { $implicit: list, level: 1 }\"></ng-container>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"ms-page-nav__control\" (click)=\"toggle()\">\r\n  <div class=\"ms-page-nav__control-wrap\">\r\n    <div class=\"ms-page-nav__control-bg\"></div>\r\n    <div class=\"ms-page-nav__control-btn\">\r\n      <i nz-icon nzType=\"menu-fold\"></i>\r\n    </div>\r\n  </div>\r\n</div>\r\n",
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSPageNavComponent.ctorParameters = () => [
+    { type: BrandService },
+    { type: Router },
+    { type: TitleService },
+    { type: MenuService },
+    { type: ChangeDetectorRef }
+];
+MSPageNavComponent.propDecorators = {
+    config: [{ type: Input }],
+    list: [{ type: Input }]
+};
 
-function MSPageSingleComponent_div_3_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r3 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r3.title);
-} }
-function MSPageSingleComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 7);
-    ɵɵtemplate(1, MSPageSingleComponent_div_3_ng_container_1_Template, 2, 1, "ng-container", 8);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r0.title);
-} }
-function MSPageSingleComponent_div_4_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r4 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r4.subTitle);
-} }
-function MSPageSingleComponent_div_4_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 9);
-    ɵɵtemplate(1, MSPageSingleComponent_div_4_ng_container_1_Template, 2, 1, "ng-container", 8);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r1.subTitle);
-} }
-function MSPageSingleComponent_div_5_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r5 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r5.extra);
-} }
-function MSPageSingleComponent_div_5_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 10);
-    ɵɵtemplate(1, MSPageSingleComponent_div_5_ng_container_1_Template, 2, 1, "ng-container", 8);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r2.extra);
-} }
-const _c0$6 = function (a0) { return { "ms-page-single__wide": a0 }; };
-const _c1$4 = ["*"];
 class MSPageSingleComponent {
     // #endregion
     constructor(brand) {
@@ -2208,35 +1222,26 @@ class MSPageSingleComponent {
         this.brand.setFixed(false);
     }
 }
-MSPageSingleComponent.ɵfac = function MSPageSingleComponent_Factory(t) { return new (t || MSPageSingleComponent)(ɵɵdirectiveInject(BrandService)); };
-MSPageSingleComponent.ɵcmp = ɵɵdefineComponent({ type: MSPageSingleComponent, selectors: [["page-single"]], hostVars: 2, hostBindings: function MSPageSingleComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("ms-page-single", true);
-    } }, inputs: { wide: "wide", fixed: "fixed", title: "title", subTitle: "subTitle", extra: "extra" }, features: [ɵɵNgOnChangesFeature], ngContentSelectors: _c1$4, decls: 8, vars: 9, consts: [[1, "ms-page-single__bar"], [1, "ms-page-single__wrap", 3, "ngClass"], [1, "ms-page-single__bar-desc"], ["class", "ms-page-single__bar-title", 4, "ngIf"], ["class", "ms-page-single__bar-sub-title", 4, "ngIf"], ["class", "ms-page-single__bar-extra", 4, "ngIf"], [1, "ms-page-single__wrap", "ms-page-single__body", 3, "ngClass"], [1, "ms-page-single__bar-title"], [4, "nzStringTemplateOutlet"], [1, "ms-page-single__bar-sub-title"], [1, "ms-page-single__bar-extra"]], template: function MSPageSingleComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵprojectionDef();
-        ɵɵelementStart(0, "div", 0);
-        ɵɵelementStart(1, "div", 1);
-        ɵɵelementStart(2, "div", 2);
-        ɵɵtemplate(3, MSPageSingleComponent_div_3_Template, 2, 1, "div", 3);
-        ɵɵtemplate(4, MSPageSingleComponent_div_4_Template, 2, 1, "div", 4);
-        ɵɵelementEnd();
-        ɵɵtemplate(5, MSPageSingleComponent_div_5_Template, 2, 1, "div", 5);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementStart(6, "div", 6);
-        ɵɵprojection(7);
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵadvance(1);
-        ɵɵproperty("ngClass", ɵɵpureFunction1(5, _c0$6, ctx.wide));
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ctx.title);
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.subTitle);
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.extra);
-        ɵɵadvance(1);
-        ɵɵproperty("ngClass", ɵɵpureFunction1(7, _c0$6, ctx.wide));
-    } }, directives: [NgClass, NgIf, NzStringTemplateOutletDirective], encapsulation: 2, changeDetection: 0 });
+MSPageSingleComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'page-single',
+                template: "<div class=\"ms-page-single__bar\">\r\n  <div class=\"ms-page-single__wrap\" [ngClass]=\"{ 'ms-page-single__wide': wide }\">\r\n    <div class=\"ms-page-single__bar-desc\">\r\n      <div *ngIf=\"title\" class=\"ms-page-single__bar-title\">\r\n        <ng-container *nzStringTemplateOutlet=\"title\">{{ title }}</ng-container>\r\n      </div>\r\n      <div *ngIf=\"subTitle\" class=\"ms-page-single__bar-sub-title\">\r\n        <ng-container *nzStringTemplateOutlet=\"subTitle\">{{ subTitle }}</ng-container>\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"extra\" class=\"ms-page-single__bar-extra\">\r\n      <ng-container *nzStringTemplateOutlet=\"extra\">{{ extra }}</ng-container>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"ms-page-single__wrap ms-page-single__body\" [ngClass]=\"{ 'ms-page-single__wide': wide }\">\r\n  <ng-content></ng-content>\r\n</div>\r\n",
+                host: {
+                    '[class.ms-page-single]': 'true',
+                },
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSPageSingleComponent.ctorParameters = () => [
+    { type: BrandService }
+];
+MSPageSingleComponent.propDecorators = {
+    wide: [{ type: Input }],
+    fixed: [{ type: Input }],
+    title: [{ type: Input }],
+    subTitle: [{ type: Input }],
+    extra: [{ type: Input }]
+};
 __decorate([
     InputBoolean(),
     __metadata("design:type", Object)
@@ -2245,110 +1250,24 @@ __decorate([
     InputBoolean(),
     __metadata("design:type", Object)
 ], MSPageSingleComponent.prototype, "fixed", void 0);
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSPageSingleComponent, [{
-        type: Component,
-        args: [{
-                selector: 'page-single',
-                templateUrl: './page-single.component.html',
-                host: {
-                    '[class.ms-page-single]': 'true',
-                },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], function () { return [{ type: BrandService }]; }, { wide: [{
-            type: Input
-        }], fixed: [{
-            type: Input
-        }], title: [{
-            type: Input
-        }], subTitle: [{
-            type: Input
-        }], extra: [{
-            type: Input
-        }] }); })();
 
-function MSPanelComponent_div_1_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r2 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r2.title);
-} }
-function MSPanelComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 4);
-    ɵɵtemplate(1, MSPanelComponent_div_1_ng_container_1_Template, 2, 1, "ng-container", 5);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r0.title);
-} }
-function MSPanelComponent_div_2_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementContainerStart(0);
-    ɵɵtext(1);
-    ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const ctx_r3 = ɵɵnextContext(2);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r3.extra);
-} }
-function MSPanelComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 6);
-    ɵɵtemplate(1, MSPanelComponent_div_2_ng_container_1_Template, 2, 1, "ng-container", 5);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("nzStringTemplateOutlet", ctx_r1.extra);
-} }
-const _c0$7 = ["*"];
 class MSPanelComponent {
 }
-MSPanelComponent.ɵfac = function MSPanelComponent_Factory(t) { return new (t || MSPanelComponent)(); };
-MSPanelComponent.ɵcmp = ɵɵdefineComponent({ type: MSPanelComponent, selectors: [["panel"]], hostVars: 2, hostBindings: function MSPanelComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        ɵɵclassProp("ms-panel", true);
-    } }, inputs: { title: "title", extra: "extra" }, ngContentSelectors: _c0$7, decls: 5, vars: 2, consts: [[1, "ms-panel__hd"], ["class", "ms-panel__hd-title", 4, "ngIf"], ["class", "ms-panel__hd-extra", 4, "ngIf"], [1, "ms-panel__bd"], [1, "ms-panel__hd-title"], [4, "nzStringTemplateOutlet"], [1, "ms-panel__hd-extra"]], template: function MSPanelComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵprojectionDef();
-        ɵɵelementStart(0, "div", 0);
-        ɵɵtemplate(1, MSPanelComponent_div_1_Template, 2, 1, "div", 1);
-        ɵɵtemplate(2, MSPanelComponent_div_2_Template, 2, 1, "div", 2);
-        ɵɵelementEnd();
-        ɵɵelementStart(3, "div", 3);
-        ɵɵprojection(4);
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.title);
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.extra);
-    } }, directives: [NgIf, NzStringTemplateOutletDirective], encapsulation: 2, changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSPanelComponent, [{
-        type: Component,
-        args: [{
+MSPanelComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'panel',
-                templateUrl: './panel.component.html',
+                template: "<div class=\"ms-panel__hd\">\r\n  <div *ngIf=\"title\" class=\"ms-panel__hd-title\">\r\n    <ng-container *nzStringTemplateOutlet=\"title\">{{ title }}</ng-container>\r\n  </div>\r\n  <div *ngIf=\"extra\" class=\"ms-panel__hd-extra\">\r\n    <ng-container *nzStringTemplateOutlet=\"extra\">{{ extra }}</ng-container>\r\n  </div>\r\n</div>\r\n<div class=\"ms-panel__bd\">\r\n  <ng-content></ng-content>\r\n</div>\r\n",
                 host: {
                     '[class.ms-panel]': 'true',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            }]
-    }], null, { title: [{
-            type: Input
-        }], extra: [{
-            type: Input
-        }] }); })();
+                changeDetection: ChangeDetectionStrategy.OnPush
+            },] }
+];
+MSPanelComponent.propDecorators = {
+    title: [{ type: Input }],
+    extra: [{ type: Input }]
+};
 
-function MSServiceLayoutComponent_page_nav_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "page-nav", 4);
-} if (rf & 2) {
-    const ctx_r0 = ɵɵnextContext();
-    ɵɵproperty("config", ctx_r0.navConfig)("list", ctx_r0.navList);
-} }
-const _c0$8 = function (a0) { return { "alain-ms__product-col-1": a0 }; };
-const _c1$5 = function (a0) { return { "alain-ms__console": a0 }; };
-const _c2$2 = ["*"];
 class MSServiceLayoutComponent {
     constructor(srv) {
         this.srv = srv;
@@ -2361,43 +1280,25 @@ class MSServiceLayoutComponent {
         return this.srv.hideNav;
     }
 }
-MSServiceLayoutComponent.ɵfac = function MSServiceLayoutComponent_Factory(t) { return new (t || MSServiceLayoutComponent)(ɵɵdirectiveInject(BrandService)); };
-MSServiceLayoutComponent.ɵcmp = ɵɵdefineComponent({ type: MSServiceLayoutComponent, selectors: [["service-layout"]], inputs: { nav: "nav", navConfig: "navConfig", navList: "navList", hasConsoleCss: "hasConsoleCss" }, ngContentSelectors: _c2$2, decls: 5, vars: 7, consts: [[1, "alain-ms__product", 3, "ngClass"], [3, "config", "list", 4, "ngIf"], [1, "alain-ms__product-body", "scrollbar"], [3, "ngClass"], [3, "config", "list"]], template: function MSServiceLayoutComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵprojectionDef();
-        ɵɵelementStart(0, "div", 0);
-        ɵɵtemplate(1, MSServiceLayoutComponent_page_nav_1_Template, 1, 2, "page-nav", 1);
-        ɵɵelementStart(2, "div", 2);
-        ɵɵelementStart(3, "div", 3);
-        ɵɵprojection(4);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵproperty("ngClass", ɵɵpureFunction1(3, _c0$8, ctx.nav && !ctx.hideNav));
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.nav);
-        ɵɵadvance(2);
-        ɵɵproperty("ngClass", ɵɵpureFunction1(5, _c1$5, ctx.hasConsoleCss));
-    } }, directives: [NgClass, NgIf, MSPageNavComponent], encapsulation: 2 });
+MSServiceLayoutComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'service-layout',
+                template: "<div class=\"alain-ms__product\" [ngClass]=\"{ 'alain-ms__product-col-1': nav && !hideNav }\">\r\n  <page-nav *ngIf=\"nav\" [config]=\"navConfig\" [list]=\"navList\"></page-nav>\r\n  <div class=\"alain-ms__product-body scrollbar\">\r\n    <div [ngClass]=\"{'alain-ms__console':hasConsoleCss}\">\r\n      <ng-content></ng-content>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+            },] }
+];
+MSServiceLayoutComponent.ctorParameters = () => [
+    { type: BrandService }
+];
+MSServiceLayoutComponent.propDecorators = {
+    nav: [{ type: Input }],
+    navConfig: [{ type: Input }],
+    navList: [{ type: Input }],
+    hasConsoleCss: [{ type: Input }]
+};
 __decorate([
     InputBoolean(),
     __metadata("design:type", Object)
 ], MSServiceLayoutComponent.prototype, "nav", void 0);
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSServiceLayoutComponent, [{
-        type: Component,
-        args: [{
-                selector: 'service-layout',
-                templateUrl: './service-layout.component.html',
-            }]
-    }], function () { return [{ type: BrandService }]; }, { nav: [{
-            type: Input
-        }], navConfig: [{
-            type: Input
-        }], navList: [{
-            type: Input
-        }], hasConsoleCss: [{
-            type: Input
-        }] }); })();
 
 const COMPONENTS = [
     MSHelpComponent,
@@ -2410,34 +1311,14 @@ const COMPONENTS = [
 ];
 class MSSharedModule {
 }
-MSSharedModule.ɵfac = function MSSharedModule_Factory(t) { return new (t || MSSharedModule)(); };
-MSSharedModule.ɵmod = ɵɵdefineNgModule({ type: MSSharedModule });
-MSSharedModule.ɵinj = ɵɵdefineInjector({ imports: [[CommonModule, RouterModule, FormsModule, AlainThemeModule.forChild(), NzPopoverModule, NzIconModule, NzOutletModule, LocalizationModule]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(MSSharedModule, { declarations: [MSHelpComponent,
-        MSLinkToDirective,
-        MSPageBarComponent,
-        MSPageNavComponent,
-        MSPageSingleComponent,
-        MSPanelComponent,
-        MSServiceLayoutComponent], imports: [CommonModule, RouterModule, FormsModule, AlainThemeModule, NzPopoverModule, NzIconModule, NzOutletModule, LocalizationModule], exports: [MSHelpComponent,
-        MSLinkToDirective,
-        MSPageBarComponent,
-        MSPageNavComponent,
-        MSPageSingleComponent,
-        MSPanelComponent,
-        MSServiceLayoutComponent] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSSharedModule, [{
-        type: NgModule,
-        args: [{
+MSSharedModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [CommonModule, RouterModule, FormsModule, AlainThemeModule.forChild(), NzPopoverModule, NzIconModule, NzOutletModule, LocalizationModule],
                 declarations: COMPONENTS,
                 exports: COMPONENTS,
-            }]
-    }], null, null); })();
+            },] }
+];
 
-function MSLayoutComponent_ms_sidebar_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "ms-sidebar");
-} }
 class MSLayoutComponent {
     constructor(bm, mediaMatcher, router, route, msg, reuseTabSrv, el, renderer, srv, doc) {
         this.el = el;
@@ -2531,35 +1412,24 @@ class MSLayoutComponent {
         this.body.classList.remove('alain-ms__has-topbar', 'alain-ms__has-sidebar', 'alain-ms__has-fixed');
     }
 }
-MSLayoutComponent.ɵfac = function MSLayoutComponent_Factory(t) { return new (t || MSLayoutComponent)(ɵɵdirectiveInject(BreakpointObserver), ɵɵdirectiveInject(MediaMatcher), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(NzMessageService), ɵɵdirectiveInject(ReuseTabService), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(BrandService), ɵɵdirectiveInject(DOCUMENT)); };
-MSLayoutComponent.ɵcmp = ɵɵdefineComponent({ type: MSLayoutComponent, selectors: [["layout-ms"]], decls: 6, vars: 4, consts: [[3, "allNav"], [4, "ngIf"], [1, "brand-page-loading", 3, "hidden"], ["nzSpinning", ""], [1, "alain-ms__body", 3, "hidden"]], template: function MSLayoutComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵelement(0, "ms-topbar", 0);
-        ɵɵtemplate(1, MSLayoutComponent_ms_sidebar_1_Template, 1, 0, "ms-sidebar", 1);
-        ɵɵelementStart(2, "div", 2);
-        ɵɵelement(3, "nz-spin", 3);
-        ɵɵelementEnd();
-        ɵɵelementStart(4, "div", 4);
-        ɵɵelement(5, "router-outlet");
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵproperty("allNav", ctx.hasAllNav);
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.hasSidebar);
-        ɵɵadvance(1);
-        ɵɵproperty("hidden", !ctx.isFetching);
-        ɵɵadvance(2);
-        ɵɵproperty("hidden", ctx.isFetching);
-    } }, directives: [MSTopbarComponent, NgIf, NzSpinComponent, RouterOutlet, MSSidebarComponent], encapsulation: 2 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(MSLayoutComponent, [{
-        type: Component,
-        args: [{
+MSLayoutComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'layout-ms',
-                templateUrl: './ms.component.html',
-            }]
-    }], function () { return [{ type: BreakpointObserver }, { type: MediaMatcher }, { type: Router }, { type: ActivatedRoute }, { type: NzMessageService }, { type: ReuseTabService }, { type: ElementRef }, { type: Renderer2 }, { type: BrandService }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }]; }, null); })();
+                template: "<ms-topbar [allNav]=\"hasAllNav\"></ms-topbar>\r\n<ms-sidebar *ngIf=\"hasSidebar\"></ms-sidebar>\r\n<div class=\"brand-page-loading\" [hidden]=\"!isFetching\">\r\n  <nz-spin nzSpinning></nz-spin>\r\n</div>\r\n<div class=\"alain-ms__body\" [hidden]=\"isFetching\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n<!-- <help></help>\r\n<theme-btn></theme-btn> -->\r\n"
+            },] }
+];
+MSLayoutComponent.ctorParameters = () => [
+    { type: BreakpointObserver },
+    { type: MediaMatcher },
+    { type: Router },
+    { type: ActivatedRoute },
+    { type: NzMessageService },
+    { type: ReuseTabService },
+    { type: ElementRef },
+    { type: Renderer2 },
+    { type: BrandService },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
+];
 
 const LAYOUT_INIT_PROVIDERS = [
     {
@@ -2617,45 +1487,8 @@ class LayoutModule {
         };
     }
 }
-LayoutModule.ɵfac = function LayoutModule_Factory(t) { return new (t || LayoutModule)(); };
-LayoutModule.ɵmod = ɵɵdefineNgModule({ type: LayoutModule });
-LayoutModule.ɵinj = ɵɵdefineInjector({ imports: [[
-            CoreModule,
-            RouterModule,
-            FormsModule,
-            DragDropModule,
-            MSSharedModule,
-            NzSpinModule,
-            NzAnchorModule,
-            NzAutocompleteModule,
-            NzAvatarModule,
-            NzDividerModule,
-            NzInputModule,
-            NzIconModule,
-            AlainThemeModule.forChild(),
-            ThemeBtnModule,
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(LayoutModule, { declarations: [MSLayoutComponent, MSSidebarComponent, MSTopbarComponent, MSAllNavComponent, MSSearchComponent, MSLangsComponent, MSUserComponent, MSNoticeComponent, MSRegionComponent], imports: [CoreModule,
-        RouterModule,
-        FormsModule,
-        DragDropModule,
-        MSSharedModule,
-        NzSpinModule,
-        NzAnchorModule,
-        NzAutocompleteModule,
-        NzAvatarModule,
-        NzDividerModule,
-        NzInputModule,
-        NzIconModule, AlainThemeModule, ThemeBtnModule], exports: [MSLayoutComponent, MSSidebarComponent, MSTopbarComponent, MSAllNavComponent, MSSearchComponent, MSLangsComponent, MSUserComponent, MSNoticeComponent, MSRegionComponent, MSHelpComponent,
-        MSPageNavComponent,
-        MSPageBarComponent,
-        MSPageSingleComponent,
-        MSPanelComponent,
-        MSServiceLayoutComponent,
-        MSLinkToDirective] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(LayoutModule, [{
-        type: NgModule,
-        args: [{
+LayoutModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [
                     CoreModule,
                     RouterModule,
@@ -2674,12 +1507,13 @@ LayoutModule.ɵinj = ɵɵdefineInjector({ imports: [[
                 ],
                 declarations: [...MS_COMPONENTS],
                 exports: [...MS_COMPONENTS, MS_SHARED_COMPONENTS]
-            }]
-    }], function () { return []; }, null); })();
+            },] }
+];
+LayoutModule.ctorParameters = () => [];
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { BrandService, Layout, LayoutModule, LayoutStateService, MSAllNavComponent, MSAllNavService, MSHelpComponent, MSLangsComponent, MSLayoutComponent, MSLinkToDirective, MSNoticeComponent, MSPageBarComponent, MSPageNavComponent, MSPageSingleComponent, MSPanelComponent, MSProductService, MSRegionComponent, MSRegionService, MSSearchComponent, MSServiceLayoutComponent, MSSharedModule, MSSidebarComponent, MSTopbarComponent, MSTopbarService, MSUserComponent, MS_COMPONENTS, MS_SHARED_COMPONENTS, MS_WIDGETS, RoutesProcessor };
+export { BrandService, Layout, LayoutModule, LayoutStateService, MSAllNavComponent, MSAllNavService, MSHelpComponent, MSLangsComponent, MSLayoutComponent, MSLinkToDirective, MSNoticeComponent, MSPageBarComponent, MSPageNavComponent, MSPageSingleComponent, MSPanelComponent, MSProductService, MSRegionComponent, MSRegionService, MSSearchComponent, MSServiceLayoutComponent, MSSharedModule, MSSidebarComponent, MSTopbarComponent, MSTopbarService, MSUserComponent, MS_COMPONENTS, MS_SHARED_COMPONENTS, MS_WIDGETS, RoutesProcessor, LAYOUT_INIT_PROVIDERS as ɵa, init as ɵb };
 //# sourceMappingURL=fs-tw-theme-alain-ms-layout.js.map

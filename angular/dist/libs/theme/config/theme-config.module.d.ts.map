@@ -1,1 +1,0 @@
-{"version":3,"file":"theme-config.module.d.ts","sourceRoot":"","sources":["../../../../libs/theme/config/src/theme-config.module.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,mBAAmB,EAAY,MAAM,eAAe,CAAC;;AAG9D,qBACa,iBAAiB;IAC5B,MAAM,CAAC,OAAO,IAAI,mBAAmB,CAAC,iBAAiB,CAAC;iCAD7C,iBAAiB;0CAAjB,iBAAiB;kCAAjB,iBAAiB;CAO7B"}

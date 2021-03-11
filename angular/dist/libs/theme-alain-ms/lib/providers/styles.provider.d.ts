@@ -6,4 +6,3 @@ export declare const NGALAINMS_THEME_STYLES_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureStyles(injector: Injector): () => void;
-//# sourceMappingURL=styles.provider.d.ts.map

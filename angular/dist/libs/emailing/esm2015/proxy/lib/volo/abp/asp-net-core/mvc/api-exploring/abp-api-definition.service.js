@@ -13,12 +13,13 @@ export class AbpApiDefinitionService {
         }, { apiName: this.apiName });
     }
 }
-AbpApiDefinitionService.ɵfac = function AbpApiDefinitionService_Factory(t) { return new (t || AbpApiDefinitionService)(i0.ɵɵinject(i1.RestService)); };
-AbpApiDefinitionService.ɵprov = i0.ɵɵdefineInjectable({ token: AbpApiDefinitionService, factory: AbpApiDefinitionService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AbpApiDefinitionService, [{
-        type: Injectable,
-        args: [{
+AbpApiDefinitionService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AbpApiDefinitionService_Factory() { return new AbpApiDefinitionService(i0.ɵɵinject(i1.RestService)); }, token: AbpApiDefinitionService, providedIn: "root" });
+AbpApiDefinitionService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+AbpApiDefinitionService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=abp-api-definition.service.js.map

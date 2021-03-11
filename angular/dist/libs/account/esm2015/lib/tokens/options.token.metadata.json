@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"ACCOUNT_OPTIONS":{"__symbolic":"new","expression":{"__symbolic":"reference","module":"@angular/core","name":"InjectionToken","line":3,"character":35},"arguments":["ACCOUNT_OPTIONS"]}}}]

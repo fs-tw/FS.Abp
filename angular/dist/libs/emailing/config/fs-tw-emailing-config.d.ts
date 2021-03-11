@@ -1,6 +1,6 @@
 /**
  * Generated bundle index. Do not edit.
  */
-/// <amd-module name="@fs-tw/emailing/config" />
 export * from './index';
-//# sourceMappingURL=fs-tw-emailing-config.d.ts.map
+export { EmailingSettingsComponent as ɵa } from './components/emailing-settings/emailing-settings.component';
+export { EMAILING_SETTING_TAB_PROVIDERS as ɵb, configureSettingTabs as ɵc } from './providers/setting-tab.provider';

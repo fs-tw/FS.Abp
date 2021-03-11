@@ -15,4 +15,3 @@ export declare const enum eThemeNgAlainMsComponents {
     NavItems = "Theme.NavItemsComponent",
     Sidebar = "Theme.Sidebar"
 }
-//# sourceMappingURL=components.d.ts.map
