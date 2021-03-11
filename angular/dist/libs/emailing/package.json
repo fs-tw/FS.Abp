@@ -22,5 +22,6 @@
   "fesm2015": "fesm2015/fs-tw-emailing.js",
   "typings": "fs-tw-emailing.d.ts",
   "metadata": "fs-tw-emailing.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+  "gitHead": "a480c928990b98c391ed26df4e2c4113c33b16ab"
 }

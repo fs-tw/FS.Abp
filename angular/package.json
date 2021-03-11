@@ -1,8 +1,8 @@
 {
-  "name": "fs",
+  "name": "fs-tw",
   "version": "0.0.0",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/fs-tw"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
