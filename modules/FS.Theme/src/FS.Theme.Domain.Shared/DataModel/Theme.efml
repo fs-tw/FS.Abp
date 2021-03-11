@@ -684,7 +684,7 @@
     <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="0062d4e0-42ba-44a7-a8ce-dee24b064bbe">
       <column name="" />
     </property>
-    <property name="Favicon" type="String" p1:ValidateRequired="true" p1:Guid="ff0a396b-ac5a-4277-a38e-e00bbcd3198e">
+    <property name="FaviconFileId" type="String" p1:ValidateRequired="true" p1:Guid="ff0a396b-ac5a-4277-a38e-e00bbcd3198e">
       <column name="" />
     </property>
     <property name="Count" type="Int32" p1:ValidateRequired="true" p1:Guid="92b2dac7-d1be-4234-a67d-d9e28c49c8be">

@@ -60,7 +60,7 @@ namespace FS.Theme.WebSites
             set;
         }
 
-        public virtual string Favicon
+        public virtual string FaviconFileId
         {
             get;
             set;

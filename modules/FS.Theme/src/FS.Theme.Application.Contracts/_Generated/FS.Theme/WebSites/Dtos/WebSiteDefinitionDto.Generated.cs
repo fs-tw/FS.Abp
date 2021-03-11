@@ -41,7 +41,7 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Title { get; set; }
 
-        public virtual string Favicon { get; set; }
+        public virtual string FaviconFileId { get; set; }
 
         public virtual int Count { get; set; }
 
@@ -61,7 +61,7 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Title { get; set; }
 
-        public virtual string Favicon { get; set; }
+        public virtual string FaviconFileId { get; set; }
 
         public virtual int Count { get; set; }
 
@@ -81,7 +81,7 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Title { get; set; }
 
-        public virtual string Favicon { get; set; }
+        public virtual string FaviconFileId { get; set; }
 
         public virtual int Count { get; set; }
 
