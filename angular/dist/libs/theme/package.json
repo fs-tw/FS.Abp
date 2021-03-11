@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/theme",
-  "version": "422.0.1-alpha.4",
+  "version": "0.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -8,6 +8,7 @@
   "peerDependencies": {
     "@angular/common": "^11.2.4",
     "@angular/core": "^11.2.4",
+    "@abp/ng.theme.shared": "~4.2.2",
     "@angular/router": "^11.2.0",
     "rxjs": "~6.6.3"
   },
@@ -21,6 +22,5 @@
   "fesm2015": "fesm2015/fs-tw-theme.js",
   "typings": "fs-tw-theme.d.ts",
   "metadata": "fs-tw-theme.metadata.json",
-  "sideEffects": false,
-  "gitHead": "376efc2c7ccd26a3d000b79ec25c088cbc181fea"
+  "sideEffects": false
 }
