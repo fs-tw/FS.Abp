@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../libs/cms/proxy/src/microsoft/asp-net-core/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,GAAG,MAAM,OAAO,CAAC;AAC7B,OAAO,EAAE,GAAG,EAAE,CAAC","sourcesContent":["import * as Mvc from './mvc';\r\nexport { Mvc };\r\n"]}

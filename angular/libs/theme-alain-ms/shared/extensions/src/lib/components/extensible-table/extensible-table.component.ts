@@ -17,7 +17,7 @@ import {
 } from '@angular/core';
 import { ExtensibleTableComponent as AbpExtensibleTableComponent } from '@abp/ng.theme.shared/extensions'
 const DEFAULT_ACTIONS_COLUMN_WIDTH = 100;
-import { NzTableRowDetailDirective } from '../../directives'
+import { NzTableRowDetailDirective } from '../../directives/nz-table-row-detail.directive'
 
 
 

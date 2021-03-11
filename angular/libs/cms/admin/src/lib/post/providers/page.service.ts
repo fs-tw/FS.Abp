@@ -1,18 +1,23 @@
-import { Injectable } from '@angular/core';
-import { Fs,Volo } from '@fs-tw/cms/proxy';
+import { Injector, Injectable, Type } from '@angular/core';
+import { Fs, Volo } from '@fs-tw/cms/proxy';
 
+// @dynamic
 @Injectable()
 export class PageService {
+  private blogService: Fs.Cms.Blogs.BlogsApiService;
+  private postService: Fs.Cms.Posts.PostsApiService;
+  private directoriesApiService: Fs.Abp.File.Directories.DirectoriesApiService;
+  private fileDescriptorService: Volo.FileManagement.Files.FileDescriptorService;
 
-  constructor(
-    private blogService: Fs.Cms.Blogs.BlogsApiService,
-    private postService: Fs.Cms.Posts.PostsApiService,
-    private directoriesApiService: Fs.Abp.File.Directories.DirectoriesApiService,
-    private fileDescriptorService: Volo.FileManagement.Files.FileDescriptorService,
-    // private postService: PostsApiService,
-    // private definitionsService: DefinitionsService,
-    // private tagsApiService: TagsApiService,
-  ) {
+  constructor(private injector: Injector) {
+    this.blogService = injector.get(Fs.Cms.Blogs.BlogsApiService);
+    this.postService = injector.get(Fs.Cms.Posts.PostsApiService);
+    this.directoriesApiService = injector.get(
+      Fs.Abp.File.Directories.DirectoriesApiService
+    );
+    this.fileDescriptorService = injector.get(
+      Volo.FileManagement.Files.FileDescriptorService
+    );
   }
 
   //#region  Blog
@@ -21,7 +26,7 @@ export class PageService {
   }
 
   getBlogById(id: string) {
-    return this.blogService.getByBlogPrimaryKey({id: id});
+    return this.blogService.getByBlogPrimaryKey({ id: id });
   }
 
   createBlog(input: Fs.Cms.Blogs.Dtos.BlogCreateDto) {
@@ -29,21 +34,23 @@ export class PageService {
   }
 
   updateBlog(id: string, input: Fs.Cms.Blogs.Dtos.BlogUpdateDto) {
-    return this.blogService.updateByBlogPrimaryKeyAndBlogUpdate({id: id}, input)
+    return this.blogService.updateByBlogPrimaryKeyAndBlogUpdate(
+      { id: id },
+      input
+    );
   }
   //#endregion
 
-   //#region File
-   findByProviderByKeyAndGroup(key: string, group?: string) {
+  //#region File
+  findByProviderByKeyAndGroup(key: string, group?: string) {
     return this.directoriesApiService.findByProviderByKeyAndGroup(key, group);
   }
 
-  deleteFile(id:string){
+  deleteFile(id: string) {
     return this.fileDescriptorService.deleteById(id);
   }
 
   //#endregion
-
 
   //#region Post
   getPostsByBlogId(input: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput) {
@@ -51,7 +58,7 @@ export class PageService {
   }
 
   getPostById(id: string) {
-    return this.postService.getByPostPrimaryKey({id: id});
+    return this.postService.getByPostPrimaryKey({ id: id });
   }
 
   createPost(input: Fs.Cms.Posts.Dtos.PostCreateDto) {
@@ -59,10 +66,12 @@ export class PageService {
   }
 
   updatePost(id: string, input: Fs.Cms.Posts.Dtos.PostUpdateDto) {
-    return this.postService.updateByPostPrimaryKeyAndPostUpdate({id: id}, input)
+    return this.postService.updateByPostPrimaryKeyAndPostUpdate(
+      { id: id },
+      input
+    );
   }
   //#endregion
-
 
   // getAllTags() {
   //   return this.tagsApiService.tagGroupGetList();

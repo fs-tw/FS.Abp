@@ -1,0 +1,23 @@
+{
+  "name": "@fs-tw/theme-unify",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.9",
+    "@angular/core": "^11.0.9",
+    "rxjs": "~6.6.3",
+    "@angular/platform-browser": "^11.2.0",
+    "@angular/router": "^11.2.0",
+    "@angular/forms": "^11.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/fs-tw-theme-unify.umd.js",
+  "module": "fesm2015/fs-tw-theme-unify.js",
+  "es2015": "fesm2015/fs-tw-theme-unify.js",
+  "esm2015": "esm2015/fs-tw-theme-unify.js",
+  "fesm2015": "fesm2015/fs-tw-theme-unify.js",
+  "typings": "fs-tw-theme-unify.d.ts",
+  "metadata": "fs-tw-theme-unify.metadata.json",
+  "sideEffects": false
+}

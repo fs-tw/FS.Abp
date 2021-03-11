@@ -1,5 +1,5 @@
 // import { EntityAction } from '@abp/ng.theme.shared/extensions';
-// import { Fs } from 'libs/cms/proxy/src';
+// import { Fs } from '@fs-tw/cms/proxy';
 // import { ExtensionsService } from '../../services/extensions.service';
 // import { eThemeRouteNames } from '../../enums/route-names';
 

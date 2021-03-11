@@ -1,5 +1,5 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
-import { Fs } from 'libs/cms/proxy/src';
+import { Fs } from '@fs-tw/cms/proxy';
 import { of } from 'rxjs';
 
 export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Blogs.Dtos.BlogDto>([  

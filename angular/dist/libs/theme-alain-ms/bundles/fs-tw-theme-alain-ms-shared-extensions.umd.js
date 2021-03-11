@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@angular/core'), require('rxjs'), require('ng-zorro-antd/table'), require('@abp/ng.theme.shared/extensions'), require('ng-zorro-antd/button'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/icon'), require('@ngx-validate/core'), require('@abp/ng.theme.shared')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms/shared/extensions', ['exports', '@abp/ng.core', '@angular/core', 'rxjs', 'ng-zorro-antd/table', '@abp/ng.theme.shared/extensions', 'ng-zorro-antd/button', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/icon', '@ngx-validate/core', '@abp/ng.theme.shared'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = global['fs-tw']['theme-alain-ms'] || {}, global['fs-tw']['theme-alain-ms'].shared = global['fs-tw']['theme-alain-ms'].shared || {}, global['fs-tw']['theme-alain-ms'].shared.extensions = {}), global.ng_core, global.ng.core, global.rxjs, global.table, global.extensions, global.button, global.dropdown, global.icon, global.core$1, global.ng_theme_shared));
-}(this, (function (exports, ng_core, core, rxjs, table, extensions, button, dropdown, icon, core$1, ng_theme_shared) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@angular/core'), require('rxjs'), require('ng-zorro-antd/table'), require('@abp/ng.theme.shared/extensions'), require('ng-zorro-antd/button'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/icon'), require('@ngx-validate/core'), require('@abp/ng.theme.shared'), require('@delon/abc/sv')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms/shared/extensions', ['exports', '@abp/ng.core', '@angular/core', 'rxjs', 'ng-zorro-antd/table', '@abp/ng.theme.shared/extensions', 'ng-zorro-antd/button', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/icon', '@ngx-validate/core', '@abp/ng.theme.shared', '@delon/abc/sv'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = global['fs-tw']['theme-alain-ms'] || {}, global['fs-tw']['theme-alain-ms'].shared = global['fs-tw']['theme-alain-ms'].shared || {}, global['fs-tw']['theme-alain-ms'].shared.extensions = {}), global.ng_core, global.ng.core, global.rxjs, global.table, global.extensions, global.button, global.dropdown, global.icon, global.core$1, global.ng_theme_shared, global.sv));
+}(this, (function (exports, ng_core, core, rxjs, table, extensions, button, dropdown, icon, core$1, ng_theme_shared, sv) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -422,16 +422,45 @@
         list: [{ type: core.Input }]
     };
 
-    var DEFAULT_ACTIONS_COLUMN_WIDTH = 75;
+    var NzTableRowDetailDirective = /** @class */ (function () {
+        function NzTableRowDetailDirective(template) {
+            this.template = template;
+        }
+        return NzTableRowDetailDirective;
+    }());
+    NzTableRowDetailDirective.decorators = [
+        { type: core.Directive, args: [{
+                    selector: '[row-detail-template]',
+                },] }
+    ];
+    NzTableRowDetailDirective.ctorParameters = function () { return [
+        { type: core.TemplateRef }
+    ]; };
+
+    var DEFAULT_ACTIONS_COLUMN_WIDTH = 100;
     var ExtensibleTableComponent = /** @class */ (function (_super) {
         __extends(ExtensibleTableComponent, _super);
         function ExtensibleTableComponent(_locale, _config, _injector) {
             var _this = _super.call(this, _locale, _config, _injector) || this;
             _this._locale = _locale;
             _this._config = _config;
+            _this.responsive = true;
+            _this.expandSet = new Set();
+            _this.selectId = null;
+            _this.haveRowDetail = false;
+            _this.haveSelect = false;
+            _this.svRowCount = 2;
+            _this.select = new core.EventEmitter();
             _this._setColumnWidths(DEFAULT_ACTIONS_COLUMN_WIDTH);
             return _this;
         }
+        ExtensibleTableComponent.prototype.onExpandChange = function (id, check) {
+            if (check) {
+                this.expandSet.add(id);
+            }
+            else
+                this.expandSet.delete(id);
+        };
         Object.defineProperty(ExtensibleTableComponent.prototype, "actionsText", {
             get: function () {
                 var _a;
@@ -450,6 +479,18 @@
             enumerable: false,
             configurable: true
         });
+        Object.defineProperty(ExtensibleTableComponent.prototype, "defaultSelectId", {
+            set: function (value) {
+                this.selectId = value;
+            },
+            enumerable: false,
+            configurable: true
+        });
+        ExtensibleTableComponent.prototype.ngOnInit = function () {
+            if (this.scroll) {
+                this.responsive = false;
+            }
+        };
         ExtensibleTableComponent.prototype._setColumnWidths = function (actionsColumn) {
             var widths = [actionsColumn];
             this.propList.forEach(function (_b) {
@@ -458,14 +499,24 @@
             });
             this.columnWidths = widths;
         };
+        ExtensibleTableComponent.prototype.selected = function (data) {
+            if (this.haveSelect) {
+                this.selectId = data['id'];
+                this.select.emit(data);
+            }
+        };
         return ExtensibleTableComponent;
     }(extensions.ExtensibleTableComponent));
     ExtensibleTableComponent.decorators = [
         { type: core.Component, args: [{
                     exportAs: 'nzExtensibleTable',
                     selector: 'nz-extensible-table',
-                    template: "<nz-table [nzData]=\"data\" [nzTotal]=\"recordsTotal\" [list]=\"list\" >\r\n  <thead>\r\n    <tr>\r\n      <th [nzWidth]=\"columnWidths[0]+'px'\"></th>\r\n      <ng-container\r\n        *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\"\r\n      >\r\n        <th\r\n          [nzSortFn]=\"prop.sortable\"\r\n          [nzColumnKey]=\"prop.name\"\r\n          [nzSortDirections]=\"['ascend', 'descend']\"\r\n        >\r\n          {{ prop.displayName | abpLocalization }}\r\n        </th>\r\n      </ng-container>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of data\" class=\"bg-white\">\r\n      <td>\r\n        <nz-grid-actions [record]=\"row\"></nz-grid-actions>\r\n      </td>\r\n      <ng-container\r\n        *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\"\r\n      >\r\n        <td>\r\n          <div\r\n            *ngIf=\"row['_' + prop.name].visible\"\r\n            [innerHTML]=\"row['_' + prop.name].value | async\"\r\n            (click)=\"\r\n              prop.action && prop.action({ getInjected: getInjected, record: row, index: i })\r\n            \"\r\n            [class.pointer]=\"prop.action\"\r\n          ></div>\r\n        </td>\r\n      </ng-container>\r\n    </tr>\r\n  </tbody>\r\n</nz-table>\r\n",
-                    changeDetection: core.ChangeDetectionStrategy.OnPush
+                    template: "\r\n  <nz-table [nzData]=\"data\" [nzTotal]=\"recordsTotal\" [list]=\"list\"\r\n    \r\n  [nzScroll]=\"scroll\"  [nzLoading]=\"list.isLoading$ | async\">\r\n    <thead>\r\n      <tr>\r\n        <th [nzWidth]=\"columnWidths[0]+'px'\"></th>\r\n        <th *ngIf=\"haveRowDetail\"></th>\r\n        <ng-container *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\">\r\n          <th [nzSortFn]=\"prop.sortable\" [nzColumnKey]=\"prop.name\" [nzSortDirections]=\"['ascend', 'descend']\">\r\n            {{ prop.displayName | abpLocalization }}\r\n          </th>\r\n        </ng-container>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <ng-container *ngFor=\"let row of data;let no = index\">\r\n        <tr class=\"bg-white\" [ngClass]=\"{ listSelected: row['id'] == selectId,pointer:haveSelect }\">\r\n          <td>\r\n            <nz-grid-actions [record]=\"row\"></nz-grid-actions>\r\n          </td>\r\n  \r\n          <td *ngIf=\"haveRowDetail\" [nzExpand]=\"expandSet.has(row['id'])\" (nzExpandChange)=\"onExpandChange(row['id'], $event)\"></td>\r\n  \r\n          <ng-container *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\">\r\n\r\n            <td (click)=\"selected(row)\">\r\n              <span class=\"ant-table-rep__title\" *ngIf=\"!scroll\" >\r\n                {{ prop.displayName | abpLocalization }}\r\n              </span>\r\n              <div  *ngIf=\"row['_' + prop.name].visible\" [innerHTML]=\"row['_' + prop.name].value | async\" (click)=\"\r\n                  prop.action && prop.action({ getInjected: getInjected, record: row, index: i })\r\n                \" [class.pointer]=\"prop.action\"></div>\r\n            </td>\r\n          </ng-container>\r\n        </tr>\r\n  \r\n        <tr [nzExpand]=\"expandSet.has(row['id'])\">\r\n          <ng-container *ngTemplateOutlet=\"nodeTemplate; context: { $implicit: row }\"></ng-container>\r\n        </tr>\r\n  \r\n        <ng-template #nodeTemplate row-detail-template let-node>\r\n          <ng-container *ngTemplateOutlet=\"\r\n              rowDetailTemplate ? rowDetailTemplate?.template : defaultTemplate;\r\n                context: { $implicit: node }\r\n              \"></ng-container>\r\n        </ng-template>\r\n  \r\n        <ng-template #defaultTemplate let-node>\r\n          <sv-container [col]=\"svRowCount\">\u3000\r\n            <ng-container *ngFor=\"let prop of propList; let i = index; trackBy: trackByFn\">            \r\n              <sv *ngIf=\"row['_' + prop.name].visible\" [label]=\"prop.displayName| abpLocalization\"> <span  style=\"color: black\"\r\n                  [innerHTML]=\"row['_' + prop.name].value | async\"></span></sv>\r\n            </ng-container>\r\n          </sv-container>\r\n        </ng-template>\r\n  \r\n  \r\n      </ng-container>\r\n    </tbody>\r\n  </nz-table>\r\n\r\n",
+                    changeDetection: core.ChangeDetectionStrategy.OnPush,
+                    host: {
+                        '[class.ant-table-rep]': "responsive",
+                    },
+                    styles: [".listSelected{background-color:rgba(33,33,230,.4392156862745098)!important}nz-list-item{font-size:15px}.bg-white{background-color:#fff}.pointer{cursor:pointer}"]
                 },] }
     ];
     ExtensibleTableComponent.ctorParameters = function () { return [
@@ -474,12 +525,20 @@
         { type: core.Injector }
     ]; };
     ExtensibleTableComponent.propDecorators = {
+        responsive: [{ type: core.Input }],
         actionsText: [{ type: core.Input }],
+        rowDetailTemplate: [{ type: core.ContentChild, args: [NzTableRowDetailDirective,] }],
         data: [{ type: core.Input }],
         list: [{ type: core.Input }],
         recordsTotal: [{ type: core.Input }],
         actionsColumnWidth: [{ type: core.Input }],
-        actionsTemplate: [{ type: core.Input }]
+        actionsTemplate: [{ type: core.Input }],
+        haveRowDetail: [{ type: core.Input }],
+        haveSelect: [{ type: core.Input }],
+        svRowCount: [{ type: core.Input }],
+        defaultSelectId: [{ type: core.Input }],
+        scroll: [{ type: core.Input }],
+        select: [{ type: core.Output }]
     };
 
     var GridActionsComponent = /** @class */ (function (_super) {
@@ -546,9 +605,10 @@
 
     var declarationsWithExports = [
         ExtensibleTableComponent,
+        NzTableRowDetailDirective,
         GridActionsComponent,
         PageToolbarComponent,
-        NzTableListDirective
+        NzTableListDirective,
     ];
     var ZORRO_MODULES = [
         button.NzButtonModule,
@@ -564,14 +624,16 @@
     BaseUiExtensionsModule.decorators = [
         { type: core.NgModule, args: [{
                     exports: __spread(declarationsWithExports, [
-                        extensions.UiExtensionsModule
+                        extensions.UiExtensionsModule,
+                        sv.SVModule
                     ]),
                     declarations: __spread(declarationsWithExports),
                     imports: __spread([
                         ng_core.CoreModule,
                         ng_theme_shared.ThemeSharedModule,
                         core$1.NgxValidateCoreModule,
-                        extensions.UiExtensionsModule
+                        extensions.UiExtensionsModule,
+                        sv.SVModule
                     ], ZORRO_MODULES),
                 },] }
     ];
@@ -595,6 +657,7 @@
     exports.ExtensibleTableComponent = ExtensibleTableComponent;
     exports.GridActionsComponent = GridActionsComponent;
     exports.NzTableListDirective = NzTableListDirective;
+    exports.NzTableRowDetailDirective = NzTableRowDetailDirective;
     exports.PageToolbarComponent = PageToolbarComponent;
     exports.UiExtensionsModule = UiExtensionsModule;
 

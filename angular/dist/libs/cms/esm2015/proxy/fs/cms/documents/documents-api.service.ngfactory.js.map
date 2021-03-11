@@ -1,0 +1,1 @@
+{"version":3,"file":"documents-api.service.ngfactory.js","sourceRoot":"","sources":["../../../../../../../../libs/cms/proxy/src/fs/cms/documents/documents-api.service.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

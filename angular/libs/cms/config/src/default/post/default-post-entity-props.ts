@@ -1,5 +1,5 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
-import { Fs } from 'libs/cms/proxy/src';
+import { Fs } from '@fs-tw/cms/proxy';
 import { of } from 'rxjs';
 
 export const DEFAULT_POST_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Posts.Dtos.PostDto>([

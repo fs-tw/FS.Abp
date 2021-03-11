@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { eCmsRouteNames } from '../enums/route-names';
 import { Subject } from 'rxjs';
-import { Fs } from 'libs/cms/proxy/src';
+import { Fs } from '@fs-tw/cms/proxy';
 export class ActionItem<T> {
   name: 'Edit' | 'Delete' | 'Add';
   record?: T;
