@@ -15,7 +15,13 @@
         </nz-radio-group>
       </se>
       <se label="發佈時間" required>
-        <nz-range-picker nzShowTime nzFormat="yyyy/MM/dd HH:mm:ss" name="dateRange" [(ngModel)]="dateRange" [nzAllowClear]="false"></nz-range-picker>
+        <!-- <nz-range-picker nzShowTime nzFormat="yyyy/MM/dd HH:mm:ss" name="dateRange" [(ngModel)]="dateRange"
+          [nzAllowClear]="false"></nz-range-picker> -->
+        <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false"
+          [(ngModel)]="dateRange[0]"></nz-date-picker>
+
+        <nz-date-picker nzShowTime name="endDate" [nzAllowClear]="true"
+          [(ngModel)]="dateRange[1]"></nz-date-picker>
         <!-- <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
           [(ngModel)]="data.published_At"></nz-date-picker> -->
       </se>
@@ -70,13 +76,8 @@
         <nz-tabset>
           <nz-tab nzTitle="圖片">
             <se>
-              <image-picker #DefaultImagePicker
-                [existFiles]="defaultImages"
-                [uploadTextTemplate]="Upload"
-                [imageTemplate]="Image"
-                [inLine]="false"
-                borderWidth="100%"
-                borderHeight="132px"></image-picker>
+              <image-picker #DefaultImagePicker [existFiles]="defaultImages" [uploadTextTemplate]="Upload"
+                [imageTemplate]="Image" [inLine]="false" borderWidth="100%" borderHeight="132px"></image-picker>
             </se>
           </nz-tab>
           <nz-tab nzTitle="附件">
@@ -117,9 +118,11 @@
   <div nz-row style="border: 1px solid #ddd; border-right: 0px; margin-top: 5px;">
     <div nz-col nzSpan="4" class="imgItemDiv">
       <a class="text-blue" *ngIf="coverImage != item.file.fileName" (click)="coverImage = item.file.fileName">設為封面圖</a>
-      <i nz-icon nzType="check" nzTheme="outline" style="font-size: 16px;" class="text-green" *ngIf="coverImage == item.file.fileName"></i>
+      <i nz-icon nzType="check" nzTheme="outline" style="font-size: 16px;" class="text-green"
+        *ngIf="coverImage == item.file.fileName"></i>
     </div>
-    <div nz-col nzSpan="8" class="imgItemDiv" style="cursor: pointer;" (click)="defaultImagePicker.controllModal(true, item.file)">
+    <div nz-col nzSpan="8" class="imgItemDiv" style="cursor: pointer;"
+      (click)="defaultImagePicker.controllModal(true, item.file)">
       <div style="width: 100%;">
         <img [src]="item.file.fileUrl" style="max-height: 40px;" />
       </div>
