@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/theme",
-  "version": "422.0.1-alpha.3",
+  "version": "0.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -21,6 +21,5 @@
   "fesm2015": "fesm2015/fs-tw-theme.js",
   "typings": "fs-tw-theme.d.ts",
   "metadata": "fs-tw-theme.metadata.json",
-  "sideEffects": false,
-  "gitHead": "9f91736c621e1aa45180a8b0ec32d778750702a8"
+  "sideEffects": false
 }
