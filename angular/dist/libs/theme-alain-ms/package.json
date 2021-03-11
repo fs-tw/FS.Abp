@@ -24,5 +24,6 @@
   "fesm2015": "fesm2015/fs-tw-theme-alain-ms.js",
   "typings": "fs-tw-theme-alain-ms.d.ts",
   "metadata": "fs-tw-theme-alain-ms.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+  "gitHead": "9f91736c621e1aa45180a8b0ec32d778750702a8"
 }
