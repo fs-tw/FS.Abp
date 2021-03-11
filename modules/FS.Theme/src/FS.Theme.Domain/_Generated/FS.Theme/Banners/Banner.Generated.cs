@@ -65,7 +65,7 @@ namespace FS.Theme.Banners
             set;
         }
 
-        public virtual string ImageFileId
+        public virtual System.Guid? ImageFileId
         {
             get;
             set;

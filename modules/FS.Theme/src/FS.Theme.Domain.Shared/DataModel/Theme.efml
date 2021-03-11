@@ -597,7 +597,7 @@
     <property name="FileName" type="String" p1:ValidateRequired="true" p1:Guid="c33af2b0-fc97-44eb-a345-33b47adef1ba">
       <column name="" />
     </property>
-    <property name="ImageFileId" type="String" p1:ValidateRequired="true" p1:Guid="f7fbebd0-f4a5-4e83-800e-469b2d39b477">
+    <property name="ImageFileId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f7fbebd0-f4a5-4e83-800e-469b2d39b477">
       <column name="" />
     </property>
     <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="88a45519-9bc7-47f4-a4f0-fa95f337aff0">

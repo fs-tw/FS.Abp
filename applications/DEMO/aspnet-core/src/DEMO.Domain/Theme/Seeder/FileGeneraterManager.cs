@@ -12,6 +12,10 @@ using Volo.FileManagement.Files;
 
 namespace DEMO.Theme
 {
+    public enum PathType 
+    {
+        base64,FilePath
+    }
     public class FileGeneraterManager : DomainService
     {
         private readonly IVirtualFileProvider virtualFileProvider;
@@ -41,18 +45,21 @@ namespace DEMO.Theme
         }
 
 
-        public async Task<FileDescriptor> CreateFile(string filePath, Guid directoryId, Guid? tenantId = null)
-        {           
-            var file = this.virtualFileProvider.GetFileInfo(filePath);
-            if (file.Exists == false) return null;
-            var stream = file.CreateReadStream();
-            string contentType = "";
-            new FileExtensionContentTypeProvider().TryGetContentType(file.Name, out contentType);
+        public async Task<FileDescriptor> CreateFileFromBase64(string input, Guid directoryId,string fileName, Guid? tenantId = null)
+        {
             var memoryStream = new MemoryStream();
-            stream.CopyTo(memoryStream);
-            var fileDescriptor = await fileManager.CreateAsync(file.Name, contentType, memoryStream.ToArray(), directoryId, tenantId);           
+            string contentType = "";
+            var temp = input.Split(",");
+            var base64 = temp.Last();
+            contentType = temp.First().Replace("data:", "").Replace(";base64", "");
+            var bytes = Convert.FromBase64String(base64);
+            memoryStream.Write(bytes);
+            var fileDescriptor = await fileManager.CreateAsync(fileName, contentType, memoryStream.ToArray(), directoryId, tenantId);           
             return fileDescriptor;
         }
+
+
+       
 
     }
 }

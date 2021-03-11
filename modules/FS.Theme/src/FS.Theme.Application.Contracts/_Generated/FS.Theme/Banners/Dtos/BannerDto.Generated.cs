@@ -41,7 +41,7 @@ namespace FS.Theme.Banners.Dtos
 
         public virtual string FileName { get; set; }
 
-        public virtual string ImageFileId { get; set; }
+        public virtual System.Guid? ImageFileId { get; set; }
 
         public virtual int Sequence { get; set; }
 
@@ -61,7 +61,7 @@ namespace FS.Theme.Banners.Dtos
 
         public virtual string FileName { get; set; }
 
-        public virtual string ImageFileId { get; set; }
+        public virtual System.Guid? ImageFileId { get; set; }
 
         public virtual int Sequence { get; set; }
 
@@ -81,7 +81,7 @@ namespace FS.Theme.Banners.Dtos
 
         public virtual string FileName { get; set; }
 
-        public virtual string ImageFileId { get; set; }
+        public virtual System.Guid? ImageFileId { get; set; }
 
         public virtual int Sequence { get; set; }
 

@@ -31,7 +31,6 @@ namespace FS.Theme.Banners.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.ImageFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Sequence)
                 .NotNull()
@@ -62,7 +61,6 @@ namespace FS.Theme.Banners.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.ImageFileId)
-                .NotNull()
                 ;
             RuleFor(p => p.Sequence)
                 .NotNull()
