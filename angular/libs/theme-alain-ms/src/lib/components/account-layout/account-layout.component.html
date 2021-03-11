@@ -5,45 +5,15 @@
     <nz-spin nzSpinning></nz-spin>
   </div>
   <div class="alain-ms__body" [hidden]="store.isFetching">
-    
-    <service-layout>
-      <!-- todo:move to feature module
-      <page-bar [subTitle]="subTitleTpl" [title]="titleTpl">
-        <ng-template #titleTpl> {{ store.navConfig.doc }} </ng-template>
-        <ng-template #subTitleTpl>
-          <div class="text-orange">
-            以下只展示部分组件，更多组件<a
-              href="https://ng.ant.design"
-              target="_blank"
-              >ng.ant.design</a
-            >
-          </div>
-        </ng-template>
-        <button (click)="msg.success('clean')" nz-button>清理</button>
-        <button (click)="msg.success('remove')" nz-button nzDanger>移除</button>
-        <button (click)="msg.success('add')" nz-button nzType="primary">
-          新增
-        </button>
-      </page-bar> -->
-      <!-- <div *ngTemplateOutlet="FsPageBar"></div> -->
+    <service-layout [hasConsoleCss]="false">
       <router-outlet></router-outlet>
+      <div style="height: 4em;"></div>
+      <footer-copyright></footer-copyright>
+      
     </service-layout>
-  </div>
-</ng-container>
+    </div>
+  
 
-<ng-template #FsPageBar>
-  <page-bar [subTitle]="subTitleTpl" [title]="titleTpl">
-    <ng-template #subTitleTpl>
-      <span *ngIf="layoutStateService?.routesProcessor?.RouterState" >
-        <button type="button" class="pri-btn" 
-          *ngIf="!isCurrentPath" 
-          [routerLink]="[parentPath]">返回</button>
-      </span>
-    </ng-template>
-    <ng-template #titleTpl>
-      <span *ngIf="layoutStateService?.routesProcessor?.RouterState">
-        {{layoutStateService?.routesProcessor?.CurrentRoute?.name | abpLocalization}}
-      </span>
-    </ng-template>
-  </page-bar>
-</ng-template>
+
+
+</ng-container>
