@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Fs } from '@fs-tw/cms/proxy';
@@ -6,7 +7,7 @@ import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../providers/page.service';
 import { PostStateService } from '../../providers/post-state.service';
 
-// import { ActivatedRoute, Router } from '@angular/router';
+// 
 // import { PostWithDetailsDto } from '@fs-tw/cms/proxy';
 // import { CodesDto } from '@fs-tw/theme-core';
 // import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
@@ -39,6 +40,7 @@ export class MainComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
+    private router: Router,
     private pageService: PageService,
     private postStateService: PostStateService
   ) { }
@@ -60,8 +62,9 @@ export class MainComponent implements OnInit {
     })
   }
 
-  gotoDetail() {
-
+  gotoDetail(id?: string) {
+    if (id) this.router.navigate(["/cms/post/detail/" + id]);
+    else this.router.navigate(["/cms/post/detail"]);
   }
 
   changePage(page: number) {

@@ -14,7 +14,11 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
-
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { SEModule } from '@delon/abc/se';
 
 import { PostRoutingModule } from './post-routing.module';
@@ -42,6 +46,11 @@ const NzModules = [
   NzModalModule,
   NzRadioModule,
   NzUploadModule,
+  NzSpinModule,
+  NzCardModule,
+  NzSelectModule,
+  NzDatePickerModule,
+  NzTabsModule,
   SEModule
 ]
 

@@ -59,18 +59,18 @@ export function configureRoutes(routes: RoutesService) {
       order: 1,
     },
     {
-      path: '/cms/post/:blogId/detail',
+      path: '/cms/post/detail',
       name: eCmsRouteNames.Post_Detail,
       parentName: eCmsRouteNames.Post,
       iconClass: 'fa fa-university',
-      order: 1,
+      order: 1
     },
     {
-      path: '/cms/post/:blogId/detail/:postId',
+      path: '/cms/post/detail/:postId',
       name: eCmsRouteNames.Post_Detail_Id,
       parentName: eCmsRouteNames.Post,
       iconClass: 'fa fa-university',
-      order: 1,
+      order: 1
     },
     {
       path: '/cms/tag',

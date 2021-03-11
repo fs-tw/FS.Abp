@@ -36,6 +36,18 @@ export class PageService {
   getPostsByBlogId(input: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput) {
     return this.postService.getPostsByBlogIdByInput(input);
   }
+
+  getPostById(id: string) {
+    return this.postService.getByPostPrimaryKey({id: id});
+  }
+
+  createPost(input: Fs.Cms.Posts.Dtos.PostCreateDto) {
+    return this.postService.createByPostCreate(input);
+  }
+
+  updatePost(id: string, input: Fs.Cms.Posts.Dtos.PostUpdateDto) {
+    return this.postService.updateByPostPrimaryKeyAndPostUpdate({id: id}, input)
+  }
   //#endregion
 
 
