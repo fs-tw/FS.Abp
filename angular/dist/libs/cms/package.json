@@ -26,5 +26,6 @@
   "fesm2015": "fesm2015/fs-tw-cms.js",
   "typings": "fs-tw-cms.d.ts",
   "metadata": "fs-tw-cms.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+  "gitHead": "376efc2c7ccd26a3d000b79ec25c088cbc181fea"
 }

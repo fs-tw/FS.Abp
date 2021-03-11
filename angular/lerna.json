@@ -4,7 +4,8 @@
     "dist/libs/cms",
     "dist/libs/emailing",
     "dist/libs/theme",
-    "dist/libs/theme-alain-ms"
+    "dist/libs/theme-alain-ms",
+    "dist/libs/theme-unify"
   ],
   "version": "422.0.1-alpha.4",
   "publishConfig": {
