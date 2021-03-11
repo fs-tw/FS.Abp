@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
 import { Fs } from '@fs-tw/cms/proxy';
 
 import { PageService } from '../../../providers/page.service';
+import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
 
 // import { ConfigStateService } from '@abp/ng.core';
 // import { NzUploadFile } from 'ng-zorro-antd/upload';
@@ -24,6 +25,8 @@ import { PageService } from '../../../providers/page.service';
 })
 export class CreateComponent implements OnInit {
 
+  @ViewChild("DefaultImagePicker") defaultImagePicker : ImagePickerComponent;
+
   @Input()
   blogId: string;
 
@@ -33,6 +36,7 @@ export class CreateComponent implements OnInit {
   isVisible = false;
 
   data: Fs.Cms.Blogs.Dtos.BlogDto;
+  defaultImages: ImageFile[] = [];
 
   constructor(
     private pageService: PageService
@@ -58,9 +62,15 @@ export class CreateComponent implements OnInit {
       iconUrl: ""
     } as Fs.Cms.Blogs.Dtos.BlogDto;
 
+    this.defaultImages = [];
+
     if (this.blogId) {
       this.pageService.getBlogById(this.blogId).subscribe((x) => {
         this.data = x;
+
+        // 已上傳圖片
+        this.defaultImages = [new ImageFile('test', 'https://dummyimage.com/140x98/000/fff')];
+        // if (x.iconUrl) this.defaultImages.push(new ImageFile(x.iconUrl, 'http://' + x.iconUrl));
       });
     }
 
@@ -72,6 +82,17 @@ export class CreateComponent implements OnInit {
   }
 
   save() {
+    // 補上傳、刪除檔案 api
+    let uploadImageInfos = this.defaultImagePicker.getUploadFiles();
+    let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
+
+    const formData = new FormData();
+    for(let item of uploadImageInfos) {
+      if (item.isUpload) formData.append('files[]', item.file, '');
+    }
+    console.log(uploadImageInfos, deleteImageNames);
+
+
     let input: Fs.Cms.Blogs.Dtos.BlogDto = _.cloneDeep(this.data);
     
     let action: Observable<any>;
