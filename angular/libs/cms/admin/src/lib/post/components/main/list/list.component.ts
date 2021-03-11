@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../../providers/page.service';
+import { PostStateService } from '../../../providers/post-state.service';
 
-// import { Router } from '@angular/router';
 // import { BlogDto } from '@fs-tw/cms/proxy';
 // import { CodesDto, CodingWithSettingTreeModel } from '@fs-tw/theme-core';
 // import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
@@ -12,6 +12,7 @@ import { PageService } from '../../../providers/page.service';
 // import { PageService } from '../../../providers/page.service';
 // import { PostState } from '../../../providers/post/post.state';
 // import { PostsStateService } from '../../../providers/post/poststate.service';
+
 @Component({
   selector: 'fs-list',
   templateUrl: './list.component.html',
@@ -34,6 +35,7 @@ export class ListComponent implements OnInit {
 
   constructor(
     private pageService: PageService,
+    private postStateService: PostStateService
   ) {
     
   }
@@ -66,6 +68,7 @@ export class ListComponent implements OnInit {
     }
 
     this.selectBlogCodeId = blog.id;
+    this.postStateService.setBlog(blog);
   }
 
   deleteBlog(blog: Fs.Cms.Blogs.Dtos.BlogWithDetailsDto) {

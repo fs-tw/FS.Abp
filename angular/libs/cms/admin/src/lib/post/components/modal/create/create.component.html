@@ -31,15 +31,13 @@
       </se>
   
       <se label="圖示" optionalHelp="建議圖片大小為 40*30，僅能上傳 jpg, png">
-        <!-- <nz-upload class="avatar-uploader" nzListType="text" [nzBeforeUpload]="beforeUpload" [nzMultiple]="false">
-          <div class="uploadImgGrid">
-            <img class="point" [src]="iconUrl" style="width: 40px; height: 30px;" />
-          </div>
-        </nz-upload>
-  
-        <div *ngIf="hasImg">
-          <a (click)="resetIcon()">回復預設值</a>
-        </div> -->
+        <image-picker #DefaultImagePicker
+            [existFiles]="defaultImages"
+            [maxImageCount]="1"
+            imageWidth="40px"
+            imageHeight="30px"
+            borderWidth="80px"
+            borderHeight="60px"></image-picker>
       </se>
     </ng-container>
     
