@@ -1,19 +1,19 @@
 {
   "name": "@fs-tw/account",
-  "version": "0.0.1",
+  "version": "422.0.1-alpha.3",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "repository": "https://github.com/fs-tw/FS.Abp",
   "license": "MIT",
   "peerDependencies": {
+    "@abp/ng.theme.shared": "4.2.2",
+    "@angular/animations": "^11.2.0",
     "@angular/common": "^11.0.5",
     "@angular/core": "^11.0.5",
-    "@abp/ng.theme.shared": "4.2.2",
-    "@angular/router": "^11.2.0",
-    "rxjs": "~6.6.3",
     "@angular/forms": "^11.2.0",
-    "@angular/animations": "^11.2.0"
+    "@angular/router": "^11.2.0",
+    "rxjs": "~6.6.3"
   },
   "dependencies": {
     "tslib": "^2.0.0"
