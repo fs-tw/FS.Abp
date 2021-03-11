@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/theme-alain-ms",
-  "version": "422.0.1-alpha.0",
+  "version": "422.0.1-alpha.1.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
