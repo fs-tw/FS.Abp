@@ -113,7 +113,7 @@ export class ListComponent implements OnInit {
   save() {
     if (!this.form.valid) return;
  
-    //TODO delete file and refactor
+    //TODO delete file and code refactoring
     let uploadImageInfos = this.defaultImagePicker.getUploadFiles();
     let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
     let fileId = "";
