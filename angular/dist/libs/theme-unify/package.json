@@ -1,6 +1,10 @@
 {
   "name": "@fs-tw/theme-unify",
   "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "https://github.com/fs-tw/FS.Works",
   "peerDependencies": {
     "@angular/common": "^11.0.9",
     "@angular/core": "^11.0.9",
