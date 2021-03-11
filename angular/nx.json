@@ -28,6 +28,9 @@
     }
   },
   "projects": {
+    "account": {
+      "tags": []
+    },
     "demo-admin": {
       "tags": []
     },

@@ -1,6 +1,49 @@
 {
   "version": 1,
   "projects": {
+    "account": {
+      "projectType": "library",
+      "root": "libs/account",
+      "sourceRoot": "libs/account/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/account/tsconfig.lib.json",
+            "project": "libs/account/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/account/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/tsconfig.lib.json",
+              "libs/account/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/account"
+          ],
+          "options": {
+            "jestConfig": "libs/account/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "demo-admin": {
       "projectType": "application",
       "root": "apps/demo-admin",
@@ -338,7 +381,7 @@
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/theme-unify/tsconfig.lib.json",
+            "tsConfig": "tsconfig.lib.json",
             "project": "libs/theme-unify/ng-package.json"
           },
           "configurations": {

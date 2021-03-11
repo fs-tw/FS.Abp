@@ -18,6 +18,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fs-tw/account": [
+        "libs/account/src/index.ts"
+      ],
+      "@fs-tw/account/*": [
+        "libs/account/*/src/index.ts"
+      ],
       "@fs-tw/cms": [
         "libs/cms/src/index.ts"
       ],

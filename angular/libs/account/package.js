@@ -7,9 +7,11 @@
   "repository": "https://github.com/fs-tw/FS.Abp",
   "license": "MIT",
   "peerDependencies": {
-    
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5",
+    "@abp/ng.theme.shared": "4.2.2"
   },
   "dependencies": {
-    "@fs-tw/account": "<%= versionNo %>"
+    "tslib": "^2.0.0"
   }
 }

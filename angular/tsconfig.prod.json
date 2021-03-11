@@ -2,6 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "paths": {
+      "@fs-tw/account": [
+        "dist/libs/account"
+      ],
+      "@fs-tw/account/*": [
+        "dist/libs/account/*"
+      ],
       "@fs-tw/emailing": [
         "dist/emailing"
       ],
