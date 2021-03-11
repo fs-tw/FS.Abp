@@ -6,7 +6,6 @@
     
   },
   "dependencies": {
-    "@abp/ng.theme.basic":"~4.2.2",
     "lerna": "^3.22.1",
     "date-fns": "^2.16.1",
     "@ngxs/logger-plugin": "^3.7.1"
