@@ -1,0 +1,24 @@
+.@{table-prefix-cls} {
+  border: 1px solid #e6ebef;
+  &-empty {
+    .@{table-prefix-cls}-placeholder {
+      line-height: 80px;
+    }
+  }
+}
+
+.table-even-bg-mixin(@enabled) when(@enabled=true) {
+  .@{table-prefix-cls} {
+    &-tbody {
+      > tr:nth-child(4n-1) {
+        &,
+        .ant-table-td-left-sticky,
+        .ant-table-td-right-sticky {
+          background-color: @antd-base-grey;
+        }
+      }
+    }
+  }
+}
+
+.table-even-bg-mixin(@table-even-bg-enabled);

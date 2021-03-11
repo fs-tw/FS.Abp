@@ -1,0 +1,30 @@
+{
+  "cli": "ng",
+  "id": "theme-application",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "NG專案名稱(projectname-public-app)"
+    },
+    "themeName": {
+      "type": "string",
+      "description": "樣板類型",
+      "enum":["ng-alain-ms","unify"],
+      "value":"ng-alain-ms"
+    },
+    "cshapBacknedPort": {
+      "type": "number",
+      "description": "後台啟動Port number: 4xxxx"
+    },
+    "abpApplicationName": {
+      "type": "string",
+      "description": "ABP WebSite名稱:NKUST,IIC..."
+    },
+    "title": {
+      "type": "string",
+      "description": "html title tag(預設:豐碩資訊)"
+    }
+  },
+  "required": ["name", "abpApplicationName", "cshapBacknedPort","themeName"]
+}

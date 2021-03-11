@@ -1,0 +1,10 @@
+{
+  "main": "../bundles/fs-tw-theme-config.umd.js",
+  "module": "../fesm2015/fs-tw-theme-config.js",
+  "es2015": "../fesm2015/fs-tw-theme-config.js",
+  "esm2015": "../esm2015/config/fs-tw-theme-config.js",
+  "fesm2015": "../fesm2015/fs-tw-theme-config.js",
+  "typings": "fs-tw-theme-config.d.ts",
+  "sideEffects": false,
+  "name": "@fs-tw/theme/config"
+}

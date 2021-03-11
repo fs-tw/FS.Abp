@@ -1,0 +1,1 @@
+{"version":3,"file":"components-names.js","sourceRoot":"","sources":["../../../../../../libs/cms/config/src/enums/components-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eCmsComponentNames {\r\n  Cms = 'Cms.CmsComponent',\r\n  \r\n}\r\n"]}

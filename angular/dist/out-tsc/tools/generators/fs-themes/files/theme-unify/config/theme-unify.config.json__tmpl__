@@ -1,0 +1,55 @@
+{
+  "order": 1002,
+  "nx": {
+    "theme-unify": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "theme-unify": {
+      "projectType": "library",
+      "root": "libs/theme-unify",
+      "sourceRoot": "libs/theme-unify/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-unify/tsconfig.lib.json",
+            "project": "libs/theme-unify/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-unify/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/theme-unify/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/theme-unify/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
+    }
+
+  },
+  "tsconfig": {
+    "@fs-tw/theme-unify": [
+      "libs/theme-unify/src/index.ts"
+    ],
+    "@fs-tw/theme-unify/*": [
+      "libs/theme-unify/*/src/index.ts"
+    ]
+  },
+  "tsconfigProd": { 
+  }
+}

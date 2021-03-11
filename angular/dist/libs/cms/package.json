@@ -1,0 +1,25 @@
+{
+  "name": "@fs-tw/cms",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.2.4",
+    "@angular/core": "^11.2.4",
+    "ngx-quill": "^13.2.0",
+    "@angular/router": "^11.2.0",
+    "rxjs": "~6.6.3",
+    "@angular/forms": "^11.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/fs-tw-cms.umd.js",
+  "module": "fesm2015/fs-tw-cms.js",
+  "es2015": "fesm2015/fs-tw-cms.js",
+  "esm2015": "esm2015/fs-tw-cms.js",
+  "fesm2015": "fesm2015/fs-tw-cms.js",
+  "typings": "fs-tw-cms.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
+}

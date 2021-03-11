@@ -7,6 +7,9 @@
     "dist/libs/theme-alain-ms"
   ],
   "version": "422.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "command": {
     "publish": {
       "access": "public"

@@ -1,0 +1,10 @@
+{
+  "main": "../bundles/fs-tw-emailing-proxy.umd.js",
+  "module": "../fesm2015/fs-tw-emailing-proxy.js",
+  "es2015": "../fesm2015/fs-tw-emailing-proxy.js",
+  "esm2015": "../esm2015/proxy/fs-tw-emailing-proxy.js",
+  "fesm2015": "../fesm2015/fs-tw-emailing-proxy.js",
+  "typings": "fs-tw-emailing-proxy.d.ts",
+  "sideEffects": false,
+  "name": "@fs-tw/emailing/proxy"
+}

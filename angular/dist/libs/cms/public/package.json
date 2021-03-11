@@ -1,0 +1,10 @@
+{
+  "main": "../bundles/fs-tw-cms-public.umd.js",
+  "module": "../fesm2015/fs-tw-cms-public.js",
+  "es2015": "../fesm2015/fs-tw-cms-public.js",
+  "esm2015": "../esm2015/public/fs-tw-cms-public.js",
+  "fesm2015": "../fesm2015/fs-tw-cms-public.js",
+  "typings": "fs-tw-cms-public.d.ts",
+  "sideEffects": false,
+  "name": "@fs-tw/cms/public"
+}

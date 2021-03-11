@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../libs/cms/proxy/src/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,MAAM,CAAC;AAC3B,OAAO,EAAE,EAAE,EAAE,CAAC","sourcesContent":["import * as Fs from './fs';\r\nexport { Fs };\r\n"]}
