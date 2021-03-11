@@ -27,7 +27,14 @@ namespace FS.Theme.Banners.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
-            RuleFor(p => p.BannerConfig)
+            RuleFor(p => p.FileName)
+                .NotNull()
+                ;
+            RuleFor(p => p.ImageFileId)
+                .NotNull()
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
                 ;
             RuleFor(p => p.BannerDefinitionId)
                 .NotNull()
@@ -51,7 +58,14 @@ namespace FS.Theme.Banners.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
-            RuleFor(p => p.BannerConfig)
+            RuleFor(p => p.FileName)
+                .NotNull()
+                ;
+            RuleFor(p => p.ImageFileId)
+                .NotNull()
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
                 ;
             RuleFor(p => p.BannerDefinitionId)
                 .NotNull()

@@ -28,9 +28,6 @@ namespace FS.Theme.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
-            builder.Ignore<FS.Theme.Banners.BannerConfig>();
-            builder.Ignore<FS.Theme.Routes.RouteConfig>();
-            builder.Ignore<FS.Theme.WebSites.WebSiteConfig>();
             builder.ApplyConfiguration<FS.Theme.Routes.RouteDefinition>(new FS.Theme.Routes.RouteDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Routes.Route>(new FS.Theme.Routes.RouteConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.BannerDefinition>(new FS.Theme.Banners.BannerDefinitionConfiguration(options));

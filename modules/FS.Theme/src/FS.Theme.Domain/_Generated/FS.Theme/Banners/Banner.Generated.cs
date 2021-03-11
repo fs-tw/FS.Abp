@@ -58,18 +58,24 @@ namespace FS.Theme.Banners
             get;
             set;
         }
-        public virtual FS.Theme.Banners.BannerConfig BannerConfig 
-        {
 
-            get
-            {
-                return this.GetExtraProperty<FS.Theme.Banners.BannerConfig>(nameof(BannerConfig));
-            }
-            set
-            {
-                this.SetExtraProperty(nameof(BannerConfig), value);
-            }
-        } 
+        public virtual string FileName
+        {
+            get;
+            set;
+        }
+
+        public virtual string ImageFileId
+        {
+            get;
+            set;
+        }
+
+        public virtual int Sequence
+        {
+            get;
+            set;
+        }
 
         public virtual System.Guid BannerDefinitionId
         {

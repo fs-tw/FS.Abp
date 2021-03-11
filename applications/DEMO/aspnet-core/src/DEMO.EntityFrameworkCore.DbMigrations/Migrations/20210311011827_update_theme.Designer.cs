@@ -4,15 +4,17 @@ using DEMO.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace DEMO.Migrations
 {
     [DbContext(typeof(DEMOMigrationsDbContext))]
-    partial class DEMOMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210311011827_update_theme")]
+    partial class update_theme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -855,10 +857,10 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<string>("FaviconFileId")
+                    b.Property<string>("Favicon")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("FaviconFileId");
+                        .HasColumnName("Favicon");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")

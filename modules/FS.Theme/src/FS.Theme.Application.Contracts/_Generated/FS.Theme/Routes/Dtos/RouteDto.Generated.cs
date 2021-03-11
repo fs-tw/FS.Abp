@@ -45,7 +45,13 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Theme.Routes.Dtos.RouteConfigDto RouteConfig { get; set; }
+        public virtual string IconFileId { get; set; }
+
+        public virtual string Url { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual bool OpenAnotherWindow { get; set; }
 
         public virtual System.Guid RouteDefinitionId { get; set; }
 
@@ -67,7 +73,13 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Theme.Routes.Dtos.RouteConfigDto RouteConfig { get; set; }
+        public virtual string IconFileId { get; set; }
+
+        public virtual string Url { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual bool OpenAnotherWindow { get; set; }
 
         public virtual System.Guid RouteDefinitionId { get; set; }
 
@@ -89,7 +101,13 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual FS.Theme.Routes.Dtos.RouteConfigDto RouteConfig { get; set; }
+        public virtual string IconFileId { get; set; }
+
+        public virtual string Url { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual bool OpenAnotherWindow { get; set; }
 
         public virtual System.Guid RouteDefinitionId { get; set; }
 

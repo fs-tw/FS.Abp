@@ -33,7 +33,17 @@ namespace FS.Theme.Routes.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
-            RuleFor(p => p.RouteConfig)
+            RuleFor(p => p.IconFileId)
+                .NotNull()
+                ;
+            RuleFor(p => p.Url)
+                .NotNull()
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.OpenAnotherWindow)
+                .NotNull()
                 ;
             RuleFor(p => p.RouteDefinitionId)
                 .NotNull()
@@ -63,7 +73,17 @@ namespace FS.Theme.Routes.Dtos
             RuleFor(p => p.Disable)
                 .NotNull()
                 ;
-            RuleFor(p => p.RouteConfig)
+            RuleFor(p => p.IconFileId)
+                .NotNull()
+                ;
+            RuleFor(p => p.Url)
+                .NotNull()
+                ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.OpenAnotherWindow)
+                .NotNull()
                 ;
             RuleFor(p => p.RouteDefinitionId)
                 .NotNull()
