@@ -11,10 +11,10 @@ namespace DEMO.Theme
     public class ThemeDataSeedContributer : IDataSeedContributor, ITransientDependency
     {
         
-
+        public ThemeSeeder themeSeeder { get; set; }
         public async Task SeedAsync(DataSeedContext context)
         {
-            
+            await this.themeSeeder.SeedAsync(context);
         }
     }
 }

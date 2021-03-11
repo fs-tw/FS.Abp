@@ -40,7 +40,7 @@ namespace FS.Theme.Routes
             builder.Property(x => x.Level).HasColumnName(@"Level").ValueGeneratedNever();
             builder.Property(x => x.ParentId).HasColumnName(@"ParentId").ValueGeneratedNever();
             builder.Property(x => x.Disable).HasColumnName(@"Disable").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.IconFileId).HasColumnName(@"IconFileId").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.IconFileId).HasColumnName(@"IconFileId").ValueGeneratedNever();
             builder.Property(x => x.Url).HasColumnName(@"Url").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.OpenAnotherWindow).HasColumnName(@"OpenAnotherWindow").IsRequired().ValueGeneratedNever();

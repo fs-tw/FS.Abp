@@ -37,11 +37,11 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Description { get; set; }
 
-        public virtual string LogoFileId { get; set; }
+        public virtual System.Guid? LogoFileId { get; set; }
 
         public virtual string Title { get; set; }
 
-        public virtual string FaviconFileId { get; set; }
+        public virtual System.Guid? FaviconFileId { get; set; }
 
         public virtual int Count { get; set; }
 
@@ -57,11 +57,11 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Description { get; set; }
 
-        public virtual string LogoFileId { get; set; }
+        public virtual System.Guid? LogoFileId { get; set; }
 
         public virtual string Title { get; set; }
 
-        public virtual string FaviconFileId { get; set; }
+        public virtual System.Guid? FaviconFileId { get; set; }
 
         public virtual int Count { get; set; }
 
@@ -77,11 +77,11 @@ namespace FS.Theme.WebSites.Dtos
 
         public virtual string Description { get; set; }
 
-        public virtual string LogoFileId { get; set; }
+        public virtual System.Guid? LogoFileId { get; set; }
 
         public virtual string Title { get; set; }
 
-        public virtual string FaviconFileId { get; set; }
+        public virtual System.Guid? FaviconFileId { get; set; }
 
         public virtual int Count { get; set; }
 

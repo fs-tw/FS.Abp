@@ -1,4 +1,6 @@
-﻿using Data;
+﻿
+using Data;
+using FS.Abp.File.Directories;
 using FS.Abp.VirtualFileSystem;
 using FS.Theme.WebSites;
 using System;
@@ -8,14 +10,15 @@ using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 
-namespace FS.Theme.Seeder
+namespace DEMO.Theme
 {
     public class ThemeSeeder : ITransientDependency
     {
-        private const string SourceData = "/Files/Data/資料匯入格式_0225.xlsx";
+        private const string SourceData = "/Files/Data/Themes.json";
         private readonly IVirtualFileJsonReader _virtualFileJsonReader;
         private readonly IWebSitesStore _webSitesStore;
-
+        public IDirectoriesManager directoriesManager { get; set; }  
+        public FileGeneraterManager fileGeneraterManager { get; set; }
         public ThemeSeeder(
             IVirtualFileJsonReader virtualFileJsonReader,
             IWebSitesStore webSitesStore
@@ -32,14 +35,18 @@ namespace FS.Theme.Seeder
             
             if (count > 0) return;
 
+            var webSiteDefinitionDirectory = await this.directoriesManager.FindByProviderAsync("FS.Theme.WebSiteDefinition");
+            var bannerDirectory = await this.directoriesManager.FindByProviderAsync("FS.Theme.Banners");
+            var routerDirectory = await this.directoriesManager.FindByProviderAsync("FS.Theme.Routers");
+
             foreach (var data in jsonData) 
             {
-                //WebSiteDefinition webSiteDefinition = new WebSiteDefinition() 
-                //{
-                //    No = "",
-                //    DisplayName ="",
-                //    Description = ""                    
-                //}
+                WebSiteDefinition webSiteDefinition = new WebSiteDefinition()
+                {
+                    No = "",
+                    DisplayName = "",
+                    Description = ""
+                };
             }
 
 

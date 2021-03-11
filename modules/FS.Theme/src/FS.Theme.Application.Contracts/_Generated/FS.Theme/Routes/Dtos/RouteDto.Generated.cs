@@ -45,7 +45,7 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual string IconFileId { get; set; }
+        public virtual System.Guid? IconFileId { get; set; }
 
         public virtual string Url { get; set; }
 
@@ -73,7 +73,7 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual string IconFileId { get; set; }
+        public virtual System.Guid? IconFileId { get; set; }
 
         public virtual string Url { get; set; }
 
@@ -101,7 +101,7 @@ namespace FS.Theme.Routes.Dtos
 
         public virtual bool Disable { get; set; }
 
-        public virtual string IconFileId { get; set; }
+        public virtual System.Guid? IconFileId { get; set; }
 
         public virtual string Url { get; set; }
 

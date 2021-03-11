@@ -36,9 +36,9 @@ namespace FS.Theme.WebSites
             builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Description).HasColumnName(@"Description").ValueGeneratedNever();
-            builder.Property(x => x.LogoFileId).HasColumnName(@"LogoFileId").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.LogoFileId).HasColumnName(@"LogoFileId").ValueGeneratedNever();
             builder.Property(x => x.Title).HasColumnName(@"Title").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.FaviconFileId).HasColumnName(@"FaviconFileId").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.FaviconFileId).HasColumnName(@"FaviconFileId").ValueGeneratedNever();
             builder.Property(x => x.Count).HasColumnName(@"Count").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Copyright).HasColumnName(@"Copyright").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
