@@ -18,10 +18,16 @@
   <ItemGroup>
     <Compile Remove="DataModel\**" />
     <Compile Remove="FS.Cms.Definitions\**" />
+    <Compile Remove="_Generated\FS.Cms\Menu\**" />
+    <Compile Remove="_Generated\FS.Cms\Routes\**" />
     <EmbeddedResource Remove="DataModel\**" />
     <EmbeddedResource Remove="FS.Cms.Definitions\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Menu\**" />
+    <EmbeddedResource Remove="_Generated\FS.Cms\Routes\**" />
     <None Remove="DataModel\**" />
     <None Remove="FS.Cms.Definitions\**" />
+    <None Remove="_Generated\FS.Cms\Menu\**" />
+    <None Remove="_Generated\FS.Cms\Routes\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,15 +36,9 @@
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Menu\IMenuApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Menu\MenuPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Menu\MenuPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Routes\IRoutesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Routes\RoutesPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Routes\RoutesPermissionNames.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -158,11 +158,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Tags</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Cms\Menu\" />
-    <Folder Include="_Generated\FS.Cms\Routes\" />
   </ItemGroup>
 
 </Project>

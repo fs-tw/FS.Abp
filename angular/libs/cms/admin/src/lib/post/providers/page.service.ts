@@ -5,13 +5,15 @@ import { Fs } from '@fs-tw/cms/proxy';
 export class PageService {
 
   constructor(
-    private blogService: Fs.Cms.Blogs.BlogsApiService
+    private blogService: Fs.Cms.Blogs.BlogsApiService,
+    private postService: Fs.Cms.Posts.PostsApiService
     // private postService: PostsApiService,
     // private definitionsService: DefinitionsService,
     // private tagsApiService: TagsApiService,
   ) {
   }
 
+  //#region  Blog
   getBlogs(input: Fs.Cms.Blogs.Dtos.BlogGetListDto) {
     return this.blogService.getListByBlogGetList(input);
   }
@@ -27,6 +29,15 @@ export class PageService {
   updateBlog(id: string, input: Fs.Cms.Blogs.Dtos.BlogUpdateDto) {
     return this.blogService.updateByBlogPrimaryKeyAndBlogUpdate({id: id}, input)
   }
+  //#endregion
+
+
+  //#region Post
+  getPostsByBlogId(input: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput) {
+    return this.postService.getPostsByBlogIdByInput(input);
+  }
+  //#endregion
+
 
   // getAllTags() {
   //   return this.tagsApiService.tagGroupGetList();

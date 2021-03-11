@@ -5,7 +5,7 @@
   <nz-col nzSpan="16">
     <div>
       <div class="mb-md">
-        <!-- <h3>類型：{{ blogName }}</h3> -->
+        <h5>類型：{{ blogName }}</h5>
         <button
           nz-button
           nzType="primary"
@@ -21,23 +21,23 @@
         >
           <input
             type="text"
-            [(ngModel)]="keyword"
+            [(ngModel)]="postParams.keyword"
             nz-input
             placeholder="輸入名稱"
           />
         </nz-input-group>
         <ng-template #suffixIconButton>
-          <button nz-button nzType="primary" (click)="search()" nzSearch>
+          <button nz-button nzType="primary" (click)="changePage(1)" nzSearch>
             <i nz-icon nzType="search"></i>
           </button>
         </ng-template>
       </div>
-      <!-- <nz-table
+      <nz-table
         #listTable
-        [nzData]="posts$ | async"
+        [nzData]="posts"
         nzSize="small"
         nzPageSize="10"
-        [nzTotal]="totalCount$ | async"
+        [nzTotal]="totalCount"
         [nzFrontPagination]="false"
         [nzLoading]="loading"
         (nzPageIndexChange)="changePage($event)"
@@ -105,7 +105,7 @@
             </tr>
           </ng-container>
         </tbody>
-      </nz-table> -->
+      </nz-table>
     </div>
   </nz-col>
 </nz-row>

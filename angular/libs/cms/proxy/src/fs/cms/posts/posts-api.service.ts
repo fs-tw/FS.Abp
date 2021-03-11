@@ -1,4 +1,4 @@
-import type { MetaData, PostCreateDto, PostGetListDto, PostPrimaryKeyDto, PostTagMapGetListDto, PostTagMapWithDetailsDto, PostUpdateDto, PostWithDetailsDto } from './dtos/models';
+import type { GetPostByBlogIdInput, MetaData, PostCreateDto, PostGetListDto, PostPrimaryKeyDto, PostTagMapGetListDto, PostTagMapWithDetailsDto, PostUpdateDto, PostWithDetailsDto } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -46,6 +46,14 @@ export class PostsApiService {
       method: 'GET',
       url: `/api/cms/posts/post-tag-map`,
       params: { fields: PostTagMapGetList.fields, value: PostTagMapGetList.value, sorting: PostTagMapGetList.sorting, skipCount: PostTagMapGetList.skipCount, maxResultCount: PostTagMapGetList.maxResultCount },
+    },
+    { apiName: this.apiName });
+
+  getPostsByBlogIdByInput = (input: GetPostByBlogIdInput) =>
+    this.restService.request<any, PagedResultDto<PostWithDetailsDto>>({
+      method: 'GET',
+      url: `/api/cms/posts/get-posts-by-blog-id`,
+      params: { blogId: input.blogId, keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
 
