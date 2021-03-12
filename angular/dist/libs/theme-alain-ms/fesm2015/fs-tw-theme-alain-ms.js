@@ -19,6 +19,7 @@ import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
 import { ReuseTabService } from '@delon/abc/reuse-tab';
 import { updateHostClass } from '@delon/util';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NavItemsService } from '@abp/ng.theme.shared';
 
 // #region reuse-tab
 /**
@@ -677,7 +678,7 @@ background-color: rgba(0, 0, 0, 0.6);
 }
 `;
 
-const NGALAINMS_THEME_STYLES_PROVIDERS = [
+const NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
     {
         provide: APP_INITIALIZER,
         useFactory: configureStyles$1,
@@ -708,12 +709,52 @@ function initLayouts(replaceableComponents) {
     });
 }
 
+const NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS = [
+    {
+        provide: APP_INITIALIZER,
+        useFactory: configureNavItems,
+        deps: [NavItemsService],
+        multi: true,
+    },
+];
+function configureNavItems(navItems) {
+    return () => {
+        //   navItems.addItems([
+        //     {
+        //       id: eThemeNgAlainMsComponents.Languages,
+        //       order: 1,
+        //       component: LanguagesComponent,
+        //       data:{
+        //         direction:'right'
+        //       }
+        //     } as NavItem,
+        //     {
+        //       id: eThemeNgAlainMsComponents.FullScreen,
+        //       order: 2,
+        //       component: HeaderFullScreenComponent,
+        //       data:{
+        //         direction:'right'
+        //       }
+        //     } as NavItem,
+        //     {
+        //       id: eThemeNgAlainMsComponents.CurrentUser,
+        //       order: 999,
+        //       component: CurrentUserComponent,
+        //       data:{
+        //         direction:'right'
+        //       }
+        //     } as NavItem
+        //   ]);
+    };
+}
+
 class ThemeAlainMsModule {
     static forRoot() {
         return {
             ngModule: RootModule,
             providers: [
-                NGALAINMS_THEME_STYLES_PROVIDERS,
+                NG_ALAIN_MS_THEME_STYLES_PROVIDERS,
+                NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS
             ]
         };
     }
@@ -733,5 +774,5 @@ ThemeAlainMsModule.decorators = [
  * Generated bundle index. Do not edit.
  */
 
-export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, StartupService as ɵe, StartupServiceFactory as ɵf, APPINIT_PROVIDES as ɵg, LANG as ɵh, LANG_PROVIDES as ɵi, STYLES_PROVIDERS as ɵj, configureStyles as ɵk, NGALAINMS_THEME_STYLES_PROVIDERS as ɵl, configureStyles$1 as ɵm };
+export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, StartupService as ɵe, StartupServiceFactory as ɵf, APPINIT_PROVIDES as ɵg, LANG as ɵh, LANG_PROVIDES as ɵi, STYLES_PROVIDERS as ɵj, configureStyles as ɵk, NG_ALAIN_MS_THEME_STYLES_PROVIDERS as ɵl, configureStyles$1 as ɵm, NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS as ɵn, configureNavItems as ɵo };
 //# sourceMappingURL=fs-tw-theme-alain-ms.js.map

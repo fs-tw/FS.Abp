@@ -12,7 +12,7 @@ import { ApplicationLayoutComponent } from '../components/application-layout/app
 import styles from '../constants/styles';
 import { eThemeNgAlainMsComponents } from '../enums/components';
 
-export const NGALAINMS_THEME_STYLES_PROVIDERS = [
+export const NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
   {
     provide: APP_INITIALIZER,
     useFactory: configureStyles,

@@ -4,7 +4,7 @@ import { MSLayoutComponent } from '@fs-tw/theme-alain-ms/layout';
 import { AccountLayoutComponent } from '../components/account-layout/account-layout.component';
 import { ApplicationLayoutComponent } from '../components/application-layout/application-layout.component';
 import styles from '../constants/styles';
-export const NGALAINMS_THEME_STYLES_PROVIDERS = [
+export const NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
     {
         provide: APP_INITIALIZER,
         useFactory: configureStyles,
