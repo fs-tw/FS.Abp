@@ -31,6 +31,7 @@ namespace FS.Abp.File.Files
         [Route("file-content")]
         public virtual async Task<IActionResult> GetContentAsync(Guid id)
         {
+           
             try
             {
                 var file = await this.FileDescriptorAppService.GetAsync(id);

@@ -1,1 +1,1 @@
-// k
+export * from './extensions.service';
