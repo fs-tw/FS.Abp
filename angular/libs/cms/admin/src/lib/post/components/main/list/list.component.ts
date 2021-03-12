@@ -18,7 +18,7 @@ import {
   ConfirmationService,
   ToasterService,
 } from '@abp/ng.theme.shared';
-
+import { Router,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'fs-list',
   templateUrl: './list.component.html',
@@ -40,17 +40,24 @@ export class ListComponent implements OnInit {
   form: FormGroup;
   selected: Fs.Cms.Blogs.Dtos.BlogDto = {} as Fs.Cms.Blogs.Dtos.BlogDto
   directory;
+  defaultSelectId = null;
   constructor(
+    private router:Router,
     private extensionsService: ExtensionsService,
     private pageService: PageService,
     protected injector: Injector,
     public readonly list: ListService,
     private fileService: FileService,
     private toasterService: ToasterService,
+    private activatedRoute:ActivatedRoute,
     private postStateService: PostStateService
   ) {
     this.pageService.findByProviderByKeyAndGroup("FS.Cms.Blogs").subscribe(x => {
       this.directory = x;
+    })
+
+    this.activatedRoute.queryParamMap.subscribe(x=>{
+      this.defaultSelectId = x.get("blogId");    
     })
   }
 
@@ -75,28 +82,34 @@ export class ListComponent implements OnInit {
   }
 
   reload() {
-    console.log("reload...")
+    
     let input: Fs.Cms.Blogs.Dtos.BlogGetListDto = {
       skipCount: 0,
       maxResultCount: 10,
       sorting: 'sequence'
     } as Fs.Cms.Blogs.Dtos.BlogGetListDto;
 
-
-
     const customerStreamCreator = (query) => {
-      query = input;
       return this.pageService.getBlogs(input)
     };
 
     this.list.hookToQuery(customerStreamCreator).subscribe((res) => {
       this.datas = res.items;
       this.count = res.totalCount;
+      if(this.defaultSelectId){
+        let select = this.datas.find(x=>x.id == this.defaultSelectId);
+        this.showDetail(select)
+      }
     });
   }
 
-  showDetail(blog: Fs.Cms.Blogs.Dtos.BlogWithDetailsDto) {
-    if (blog == null) return;
+  showDetail(blog: Fs.Cms.Blogs.Dtos.BlogDto) {
+    if (blog == null){           
+      this.router.navigate(['./cms/post']) 
+      this.postStateService.setBlog(null);
+      return;
+    }
+    this.router.navigate(['./cms/post'],{queryParams:{'blogId':blog.id}})
     this.postStateService.setBlog(blog);
   }
 
@@ -112,20 +125,17 @@ export class ListComponent implements OnInit {
   }
 
   save() {
-    if (!this.form.valid) return;
- 
+    if (!this.form.valid) return; 
     //TODO delete file and code refactoring
     let uploadImageInfos = this.defaultImagePicker.getUploadFiles();
     let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
-    let fileId = "";
-    console.log("ddd",uploadImageInfos[0],this.selected.iconUrl)
+    let fileId = "";    
     if ((uploadImageInfos.length > 0)) {
       if (this.selected.iconUrl == uploadImageInfos[0].fileName) {
         this.saveBlog(this.selected.iconUrl);
         return;
       }
-      this.fileService.uploadFile(uploadImageInfos[0].file, this.directory.id).subscribe(x => {
-        console.log(x)
+      this.fileService.uploadFile(uploadImageInfos[0].file, this.directory.id).subscribe(x => {        
         fileId = x.id;
         this.saveBlog(fileId);
       })
@@ -158,7 +168,7 @@ export class ListComponent implements OnInit {
     this.pageService.getBlogById(id).subscribe(x => {
       this.selected = x;
       this.defaultImages = []
-      if (x.iconUrl) this.defaultImages.push(new ImageFile(x.iconUrl, this.fileService.getFileUrl(x.iconUrl)))
+      if (x.iconUrl) this.defaultImages.push(new ImageFile(x.iconUrl, x.iconUrl))
       this.openModal();
     })
   }

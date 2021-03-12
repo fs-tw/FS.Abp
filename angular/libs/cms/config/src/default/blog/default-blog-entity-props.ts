@@ -31,6 +31,12 @@ export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Blogs.Dtos
         displayName: 'Cms::FS.Blog.Disable',
         sortable: true,
         columnWidth: 50,
+        valueResolver: (data) => {           
+            let text = "";
+            if(data.record.disable) text = "是"
+            else text ="否"
+            return of(text)
+        },
     },
     // {
     //     type: ePropType.String,

@@ -1,19 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ListService } from '@abp/ng.core';
+import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
+import {
+  EXTENSIONS_IDENTIFIER
+} from '@abp/ng.theme.shared/extensions';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-
+import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { Fs } from '@fs-tw/cms/proxy';
-
+import { Observable, Subscription } from 'rxjs';
 import { PageService } from '../../providers/page.service';
 import { PostStateService } from '../../providers/post-state.service';
-import { ListService } from '@abp/ng.core';
-import {
-  EXTENSIONS_IDENTIFIER,
-  FormPropData,
-  generateFormFromProps,
-} from '@abp/ng.theme.shared/extensions';
-import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
-import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
+
+
 @Component({
   selector: 'fs-main',
   templateUrl: './main.component.html',
@@ -27,7 +25,7 @@ import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme
   ],
 })
 export class MainComponent implements OnInit {
-
+  sub: Subscription;
   blog$: Observable<Fs.Cms.Blogs.Dtos.BlogDto>;
   blogId: string;
   blogName: string;
@@ -46,11 +44,14 @@ export class MainComponent implements OnInit {
     private extensionsService: ExtensionsService,
     private router: Router,
     private toasterService: ToasterService,
-    private confirmationService:ConfirmationService,
+    private confirmationService: ConfirmationService,
     private pageService: PageService,
     public readonly list: ListService,
+    private activatedRoute: ActivatedRoute,
     private postStateService: PostStateService
-  ) { }
+  ) {
+
+  }
 
 
 
@@ -63,7 +64,7 @@ export class MainComponent implements OnInit {
             break;
           case 'Delete':
             this.deleteItem(x.record)
-            break;          
+            break;
         }
       });
 
@@ -72,9 +73,9 @@ export class MainComponent implements OnInit {
   }
 
   onBlogChange() {
-    this.blog$.subscribe((blog) => {
+    this.sub = this.blog$.subscribe((blog) => {
       this.blogId = blog == null ? null : blog.id;
-      this.blogName = blog == null ? "" : blog.displayName;
+      this.blogName = blog == null ? "全部" : blog.displayName;
 
       this.postParams.blogId = this.blogId;
       this.hookToQuery();
@@ -83,14 +84,19 @@ export class MainComponent implements OnInit {
 
   gotoDetail(id?: string) {
     if (id) this.router.navigate(["/cms/post/detail/" + id]);
-    else this.router.navigate(["/cms/post/detail"]);
-  }  
+    else this.router.navigate(["/cms/post/detail"], {
+      queryParams: {
+        blogId: this.postParams.blogId
+      }
+    });
+  }
 
   hookToQuery() {
 
     if (this.hookToQueryScribe) this.hookToQueryScribe.unsubscribe();
     const query = (query) => {
-      query = this.postParams;
+      query.keyword = this.postParams.keyword;
+      query.blogId = this.postParams.blogId;
       return this.pageService.getPostsByBlogId(query)
     };
 
@@ -102,22 +108,23 @@ export class MainComponent implements OnInit {
 
   deleteItem(item: Fs.Cms.Posts.Dtos.PostDto) {
     this.confirmationService
-    .warn('確認要刪除嗎？', '系統訊息', {
-      cancelText: "取消",
-      yesText: "確定"
-    })
-    .subscribe((status: Confirmation.Status) => {
-      if (status === Confirmation.Status.confirm) {
-        this.pageService.deletePost(item.id).subscribe(x=>{
-          this.toasterService.success("刪除成功！")
-          this.list.get();
-        })
-      }
-    });
+      .warn('確認要刪除嗎？', '系統訊息', {
+        cancelText: "取消",
+        yesText: "確定"
+      })
+      .subscribe((status: Confirmation.Status) => {
+        if (status === Confirmation.Status.confirm) {
+          this.pageService.deletePost(item.id).subscribe(x => {
+            this.toasterService.success("刪除成功！")
+            this.list.get();
+          })
+        }
+      });
   }
 
   ngOnDestroy(): void {
     if (this.hookToQueryScribe) this.hookToQueryScribe.unsubscribe();
+    if (this.sub) this.sub.unsubscribe();
   }
 
 }

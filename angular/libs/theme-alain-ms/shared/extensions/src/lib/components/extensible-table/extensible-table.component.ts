@@ -68,7 +68,7 @@ export class ExtensibleTableComponent<R = any> extends AbpExtensibleTableCompone
     y?: string | null;
   };
 
-
+  
 
   @Output() select = new EventEmitter<R>();
   constructor(
