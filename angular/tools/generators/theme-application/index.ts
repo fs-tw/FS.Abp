@@ -133,14 +133,14 @@ function install(): (_host: Tree, context: SchematicContext) => void {
 
 function finished(): (_host: Tree, context: SchematicContext) => void {
   return (_host: Tree, _context: SchematicContext) => {
-    spinner.succeed(`Congratulations, NG-ALAIN scaffold generation complete.`);
+    spinner.succeed(`Congratulations ,scaffold generation complete.`);
   };
 }
 
 export default function (options: ApplicationOptions): Rule {
   return (host: Tree, context: SchematicContext) => {
     options.title = options.title ? options.title : '豐碩資訊';
-    spinner.start(`Generating NG-ALAIN scaffold...`);
+    spinner.start(`Generating ${options.themeName} scaffold...`);
     return chain([
       generateApplication(options),
       clearFiles(options),

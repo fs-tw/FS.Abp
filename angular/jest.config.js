@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/demo',
     '<rootDir>/apps/demo-admin',
     '<rootDir>/libs/cms',
+    '<rootDir>/apps/unify-public',
   ],
 };

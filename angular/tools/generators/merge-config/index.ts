@@ -56,10 +56,10 @@ const updateTsProd = (host: Tree, context: SchematicContext) => {
   return updateJsonInTree('/tsconfig.prod.json', json => tsProdJson);
 }
 
-const updateSymLink = (host: Tree, context: SchematicContext) => {
-  let symLinks = configs
-    .map(j => j.symlink)
+const updateBuild = (host: Tree, context: SchematicContext) => {
+  let builds = configs
+    .map(j => j.build)
     .reduce((a, b) => { return !b ? a : a.concat(b) });
-  return updateJsonInTree('/symlink.json', json => symLinks);
+  return updateJsonInTree('/build.json', json => builds);
 }
 

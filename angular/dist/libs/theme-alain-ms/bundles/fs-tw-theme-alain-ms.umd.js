@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@delon/theme'), require('ng-zorro-antd/message'), require('@ngx-validate/core'), require('@abp/ng.theme.basic'), require('@angular/common'), require('@angular/common/http'), require('rxjs'), require('rxjs/operators'), require('ng-zorro-antd/icon'), require('@angular/common/locales/zh'), require('date-fns/locale'), require('ng-zorro-antd/i18n'), require('@ant-design/icons-angular/icons'), require('@fs-tw/theme-alain-ms/layout'), require('@angular/router'), require('@angular/cdk/layout'), require('@delon/abc/reuse-tab'), require('@delon/util'), require('ng-zorro-antd/spin')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms', ['exports', '@angular/core', '@abp/ng.core', '@delon/theme', 'ng-zorro-antd/message', '@ngx-validate/core', '@abp/ng.theme.basic', '@angular/common', '@angular/common/http', 'rxjs', 'rxjs/operators', 'ng-zorro-antd/icon', '@angular/common/locales/zh', 'date-fns/locale', 'ng-zorro-antd/i18n', '@ant-design/icons-angular/icons', '@fs-tw/theme-alain-ms/layout', '@angular/router', '@angular/cdk/layout', '@delon/abc/reuse-tab', '@delon/util', 'ng-zorro-antd/spin'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = {}), global.ng.core, global.ng_core, global.theme, global.message, global.core$1, global.ng_theme_basic, global.ng.common, global.ng.common.http, global.rxjs, global.rxjs.operators, global.icon, global.ng.common.locales.zh, global.locale, global.i18n, global.icons, global['fs-tw']['theme-alain-ms'].layout, global.ng.router, global.ng.cdk.layout, global.reuseTab, global.util, global.spin));
-}(this, (function (exports, core, ng_core, theme, message, core$1, ng_theme_basic, common, http, rxjs, operators, icon, ngLang, locale, i18n, icons, layout, router, layout$1, reuseTab, util, spin) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@delon/theme'), require('ng-zorro-antd/message'), require('@ngx-validate/core'), require('@abp/ng.theme.basic'), require('@angular/common'), require('@angular/common/http'), require('rxjs'), require('rxjs/operators'), require('ng-zorro-antd/icon'), require('@angular/common/locales/zh'), require('date-fns/locale'), require('ng-zorro-antd/i18n'), require('@ant-design/icons-angular/icons'), require('@fs-tw/theme-alain-ms/layout'), require('@angular/router'), require('@angular/cdk/layout'), require('@delon/abc/reuse-tab'), require('@delon/util'), require('ng-zorro-antd/spin'), require('@abp/ng.theme.shared')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms', ['exports', '@angular/core', '@abp/ng.core', '@delon/theme', 'ng-zorro-antd/message', '@ngx-validate/core', '@abp/ng.theme.basic', '@angular/common', '@angular/common/http', 'rxjs', 'rxjs/operators', 'ng-zorro-antd/icon', '@angular/common/locales/zh', 'date-fns/locale', 'ng-zorro-antd/i18n', '@ant-design/icons-angular/icons', '@fs-tw/theme-alain-ms/layout', '@angular/router', '@angular/cdk/layout', '@delon/abc/reuse-tab', '@delon/util', 'ng-zorro-antd/spin', '@abp/ng.theme.shared'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = {}), global.ng.core, global.ng_core, global.theme, global.message, global.core$1, global.ng_theme_basic, global.ng.common, global.ng.common.http, global.rxjs, global.rxjs.operators, global.icon, global.ng.common.locales.zh, global.locale, global.i18n, global.icons, global['fs-tw']['theme-alain-ms'].layout, global.ng.router, global.ng.cdk.layout, global.reuseTab, global.util, global.spin, global.ng_theme_shared));
+}(this, (function (exports, core, ng_core, theme, message, core$1, ng_theme_basic, common, http, rxjs, operators, icon, ngLang, locale, i18n, icons, layout, router, layout$1, reuseTab, util, spin, ng_theme_shared) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -884,7 +884,7 @@
 
     var styles = "\n.content-header-title {\n    font-size: 24px;\n}\n.entry-row {\n    margin-bottom: 15px;\n}\n#main-navbar-tools a.dropdown-toggle {\n    text-decoration: none;\n    color: #fff;\n}\n.navbar .dropdown-submenu {\n    position: relative;\n}\n.navbar .dropdown-menu {\n    margin: 0;\n    padding: 0;\n}\n.navbar .dropdown-menu a {\n    font-size: .9em;\n    padding: 10px 15px;\n    display: block;\n    min-width: 210px;\n    text-align: left;\n    border-radius: 0.25rem;\n    min-height: 44px;\n}\n[dir=rtl] .navbar .dropdown-menu a {\n    text-align: right!important;\n}\n.navbar .dropdown-submenu a::after {\n    transform: rotate(-90deg);\n    position: absolute;\n    right: 16px;\n    top: 18px;\n}\n[dir=rtl] .navbar .dropdown-submenu a::after {\n    transform: rotate(90deg);\n    left: 16px;\n    right: auto;\n    top: 20px;\n}\n.navbar .dropdown-submenu .dropdown-menu {\n    top: 0;\n    left: 100%;\n}\n.card-header .btn {\n    padding: 2px 6px;\n}\n.card-header h5 {\n    margin: 0;\n}\n.container > .card {\n    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;\n}\n@media screen and (min-width: 992px) {\n    .navbar .dropdown:hover > .dropdown-menu {\n        display: block;\n    }\n\n    .navbar .dropdown-submenu:hover > .dropdown-menu {\n        display: block;\n    }\n}\n.input-validation-error {\n    border-color: #dc3545;\n}\n.field-validation-error {\n    font-size: 0.8em;\n}\n.ui-table .ui-table-tbody > tr.empty-row > div.empty-row-content {\n    border: 1px solid #c8c8c8;\n  }\n.abp-loading {\n    background: rgba(0, 0, 0, 0.05);\n}\n.modal-backdrop {\nbackground-color: rgba(0, 0, 0, 0.6);\n}\n\n.confirmation .confirmation-backdrop {\n\t background: rgba(0, 0, 0, 0.7) !important;\n}\n .confirmation .confirmation-dialog {\n\t border: none;\n\t border-radius: 10px;\n\t background-color: #fff;\n\t box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.5);\n}\n .confirmation .confirmation-dialog .icon-container .icon {\n\t stroke: #fff;\n\t color: #fff;\n}\n .confirmation .confirmation-dialog .icon-container.info .icon {\n\t stroke: #2f96b4;\n\t color: #2f96b4;\n}\n .confirmation .confirmation-dialog .icon-container.success .icon {\n\t stroke: #51a351;\n\t color: #51a351;\n}\n .confirmation .confirmation-dialog .icon-container.warning .icon {\n\t stroke: #f89406;\n\t color: #f89406;\n}\n .confirmation .confirmation-dialog .icon-container.error .icon {\n\t stroke: #bd362f;\n\t color: #bd362f;\n}\n .confirmation .confirmation-dialog .content .title {\n\t color: #222;\n}\n .confirmation .confirmation-dialog .content .message {\n\t color: #777;\n}\n .confirmation .confirmation-dialog .footer {\n\t background: transparent;\n}\n .confirmation .confirmation-dialog .footer .confirmation-button {\n\t background-color: #eee;\n\t color: #777;\n}\n .confirmation .confirmation-dialog .footer .confirmation-button:hover, .confirmation .confirmation-dialog .footer .confirmation-button:focus, .confirmation .confirmation-dialog .footer .confirmation-button:active {\n\t background-color: #bbb;\n}\n .confirmation .confirmation-dialog .footer .confirmation-button--confirm {\n\t background-color: #2f96b4;\n\t color: #fff;\n}\n .confirmation .confirmation-dialog .footer .confirmation-button--confirm:hover {\n\t background-color: #2e819b;\n}\n.ui-table .pagination-wrapper {\n    background-color: #f4f4f4;\n    border: 1px solid #c8c8c8;\n}\n.bordered .datatable-body-row {\n    border-top: 1px solid #eee;\n    margin-top: -1px;\n}\n";
 
-    var NGALAINMS_THEME_STYLES_PROVIDERS = [
+    var NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
         {
             provide: core.APP_INITIALIZER,
             useFactory: configureStyles$1,
@@ -915,6 +915,45 @@
         });
     }
 
+    var NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS = [
+        {
+            provide: core.APP_INITIALIZER,
+            useFactory: configureNavItems,
+            deps: [ng_theme_shared.NavItemsService],
+            multi: true,
+        },
+    ];
+    function configureNavItems(navItems) {
+        return function () {
+            //   navItems.addItems([
+            //     {
+            //       id: eThemeNgAlainMsComponents.Languages,
+            //       order: 1,
+            //       component: LanguagesComponent,
+            //       data:{
+            //         direction:'right'
+            //       }
+            //     } as NavItem,
+            //     {
+            //       id: eThemeNgAlainMsComponents.FullScreen,
+            //       order: 2,
+            //       component: HeaderFullScreenComponent,
+            //       data:{
+            //         direction:'right'
+            //       }
+            //     } as NavItem,
+            //     {
+            //       id: eThemeNgAlainMsComponents.CurrentUser,
+            //       order: 999,
+            //       component: CurrentUserComponent,
+            //       data:{
+            //         direction:'right'
+            //       }
+            //     } as NavItem
+            //   ]);
+        };
+    }
+
     var ThemeAlainMsModule = /** @class */ (function () {
         function ThemeAlainMsModule() {
         }
@@ -922,7 +961,8 @@
             return {
                 ngModule: RootModule,
                 providers: [
-                    NGALAINMS_THEME_STYLES_PROVIDERS,
+                    NG_ALAIN_MS_THEME_STYLES_PROVIDERS,
+                    NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS
                 ]
             };
         };
@@ -955,8 +995,10 @@
     exports.ɵi = LANG_PROVIDES;
     exports.ɵj = STYLES_PROVIDERS;
     exports.ɵk = configureStyles;
-    exports.ɵl = NGALAINMS_THEME_STYLES_PROVIDERS;
+    exports.ɵl = NG_ALAIN_MS_THEME_STYLES_PROVIDERS;
     exports.ɵm = configureStyles$1;
+    exports.ɵn = NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS;
+    exports.ɵo = configureNavItems;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
