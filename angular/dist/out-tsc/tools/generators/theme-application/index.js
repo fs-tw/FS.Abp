@@ -87,13 +87,13 @@ function install() {
 }
 function finished() {
     return function (_host, _context) {
-        spinner.succeed("Congratulations, NG-ALAIN scaffold generation complete.");
+        spinner.succeed("Congratulations ,scaffold generation complete.");
     };
 }
 function default_1(options) {
     return function (host, context) {
         options.title = options.title ? options.title : '豐碩資訊';
-        spinner.start("Generating NG-ALAIN scaffold...");
+        spinner.start("Generating " + options.themeName + " scaffold...");
         return schematics_1.chain([
             generateApplication(options),
             clearFiles(options),

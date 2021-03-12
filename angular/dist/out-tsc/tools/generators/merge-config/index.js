@@ -63,10 +63,10 @@ var updateTsProd = function (host, context) {
     tsProdJson.compilerOptions.paths = __assign(__assign({}, tsProdJson.compilerOptions.paths), tsProds);
     return workspace_1.updateJsonInTree('/tsconfig.prod.json', function (json) { return tsProdJson; });
 };
-var updateSymLink = function (host, context) {
-    var symLinks = configs
-        .map(function (j) { return j.symlink; })
+var updateBuild = function (host, context) {
+    var builds = configs
+        .map(function (j) { return j.build; })
         .reduce(function (a, b) { return !b ? a : a.concat(b); });
-    return workspace_1.updateJsonInTree('/symlink.json', function (json) { return symLinks; });
+    return workspace_1.updateJsonInTree('/build.json', function (json) { return builds; });
 };
 //# sourceMappingURL=index.js.map

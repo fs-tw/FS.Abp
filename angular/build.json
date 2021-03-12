@@ -1,0 +1,12 @@
+[
+  {
+    "name": "fs_works_theme",
+    "sync": true,
+    "packages": ["theme-alain-ms", "theme-unify"]
+  },
+  {
+    "name": "fs_works_lib",
+    "sync": true,
+    "packages": ["theme", "account", "cms", "emailing"]
+  }
+]
