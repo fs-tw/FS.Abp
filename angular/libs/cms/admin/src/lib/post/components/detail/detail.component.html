@@ -41,7 +41,7 @@
       <se label="內文" *ngIf="data.displayMode == 0">
 
         <quill-editor [(ngModel)]="data.content" [ngModelOptions]="{standalone: true}">
-          <div quill-editor-toolbar>
+          <!-- <div quill-editor-toolbar>
             <span class="ql-formats">
               <button class="ql-bold"></button>
               <button class="ql-italic"></button>
@@ -63,7 +63,7 @@
               <button class="ql-image"></button>
             </span>
 
-          </div>
+          </div> -->
         </quill-editor>
       </se>
 
@@ -82,7 +82,7 @@
           </nz-tab>
           <nz-tab nzTitle="附件">
             <se>
-              <fs-upload-file [existFileUrls]="data.attachmentFileUrls"></fs-upload-file>
+              <fs-upload-file  #DefaultUploadFile [existFiles]="defaultFiles"></fs-upload-file>
             </se>
           </nz-tab>
         </nz-tabset>
@@ -124,7 +124,7 @@
     <div nz-col nzSpan="8" class="imgItemDiv" style="cursor: pointer;"
       (click)="defaultImagePicker.controllModal(true, item.file)">
       <div style="width: 100%;">
-        <img [src]="item.file.fileUrl" style="max-height: 40px;" />
+        <img [src]="item.file.fileUrl" style="max-height: 40px;" />     
       </div>
     </div>
     <div nz-col nzSpan="8" class="imgItemDiv">

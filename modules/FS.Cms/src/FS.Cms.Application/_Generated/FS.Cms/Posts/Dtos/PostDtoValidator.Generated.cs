@@ -42,8 +42,7 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
-            RuleFor(p => p.AttachmentFileUrls)
-                .NotNull()
+            RuleFor(p => p.AttachmentFileInfos)
                 ;
             RuleFor(p => p.PostImages)
                 ;
@@ -81,8 +80,7 @@ namespace FS.Cms.Posts.Dtos
             RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
-            RuleFor(p => p.AttachmentFileUrls)
-                .NotNull()
+            RuleFor(p => p.AttachmentFileInfos)
                 ;
             RuleFor(p => p.PostImages)
                 ;
