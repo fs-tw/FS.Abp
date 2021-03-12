@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../aspnet-core/src/IWP.HttpApi.Host/wwwroot/unify-public",
+            "outputPath": "dist/apps/demo-admin/unify-public",
             "index": "apps/unify-public/src/index.html",
             "main": "apps/unify-public/src/main.ts",
             "polyfills": "apps/unify-public/src/polyfills.ts",
