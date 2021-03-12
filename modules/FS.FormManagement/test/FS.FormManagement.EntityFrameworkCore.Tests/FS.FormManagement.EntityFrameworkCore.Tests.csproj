@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.FormManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="$(MicrosoftPackageVersion)" />
+    <ProjectReference Include="..\..\src\FS.FormManagement.EntityFrameworkCore\FS.FormManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.FormManagement.TestBase\FS.FormManagement.TestBase.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+</Project>

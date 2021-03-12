@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@my-company-name/form-management": [
+        "projects/form-management/src/public-api.ts"
+      ],
+      "@my-company-name/form-management/config": [
+        "projects/form-management/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/form-management/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/form-management/src/lib/proxy/*"]
+    }
+  }
+}

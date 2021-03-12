@@ -1,0 +1,106 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>FS.FormManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.EntityFrameworkCore" Version="$(FSVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.FormManagement.Domain\FS.FormManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\EntityFrameworkCore\FormManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\FormManagementDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\FormManagementModelBuilderConfigurationOptions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\IFormManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\EfCoreDocumentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\EfCoreVersionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\Version.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreFormalRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreGroupTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreItemRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Formal.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Group.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Item.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\EfCoreRecordItemRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\EfCoreRecordRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\Record.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordItem.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

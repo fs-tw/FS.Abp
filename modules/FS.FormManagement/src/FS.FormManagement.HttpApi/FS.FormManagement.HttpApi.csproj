@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.FormManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.FormManagement.Application.Contracts\FS.FormManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsApi.VersionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.FormalCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.GroupCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.ItemCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.RecordCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.RecordItemCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
