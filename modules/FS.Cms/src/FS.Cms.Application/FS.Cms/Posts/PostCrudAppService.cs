@@ -3,12 +3,30 @@
 // 4.2.1
 //
 //------------------------------------------------------------------------------
+using FS.Cms.Posts.Dtos;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace FS.Cms.Posts
 {
     public partial class PostCrudAppService : IPostCrudAppService
     {
+        
+
+
+        public override Task<PostWithDetailsDto> CreateAsync(PostCreateDto input)
+        {           
+            return base.CreateAsync(input);
+        }
+
+        public override Task<PostWithDetailsDto> UpdateAsync(PostPrimaryKeyDto id, PostUpdateDto input)
+        {
+            return base.UpdateAsync(id, input);
+        }
+
+
+
     }
 }
