@@ -26,5 +26,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual bool IsCover { get; set; }
 
+        public virtual string Name { get; set; }
+
     }
 }

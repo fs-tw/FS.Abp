@@ -40,6 +40,12 @@ namespace FS.Cms.Posts
             set;
         }
 
+        public virtual string Name
+        {
+            get;
+            set;
+        }
+
 
         #region Extensibility Method Definitions
 

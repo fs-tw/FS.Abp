@@ -34,7 +34,7 @@ namespace FS.Cms.Posts
             set;
         }
 
-        public virtual bool Name
+        public virtual string Name
         {
             get;
             set;

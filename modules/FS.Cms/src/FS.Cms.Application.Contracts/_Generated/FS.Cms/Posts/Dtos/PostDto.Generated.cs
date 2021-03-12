@@ -51,7 +51,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual int Sequence { get; set; }
 
-        public virtual List<FS.Cms.Posts.Dtos.AttachmentFileInfoDto> AttachmentFileUrls { get; set; }
+        public virtual List<FS.Cms.Posts.Dtos.AttachmentFileInfoDto> AttachmentFileInfos { get; set; }
 
         public virtual List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 
@@ -79,7 +79,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual int Sequence { get; set; }
 
-        public virtual List<FS.Cms.Posts.Dtos.AttachmentFileInfoDto> AttachmentFileUrls { get; set; }
+        public virtual List<FS.Cms.Posts.Dtos.AttachmentFileInfoDto> AttachmentFileInfos { get; set; }
 
         public virtual List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 
@@ -107,7 +107,7 @@ namespace FS.Cms.Posts.Dtos
 
         public virtual int Sequence { get; set; }
 
-        public virtual List<FS.Cms.Posts.Dtos.AttachmentFileInfoDto> AttachmentFileUrls { get; set; }
+        public virtual List<FS.Cms.Posts.Dtos.AttachmentFileInfoDto> AttachmentFileInfos { get; set; }
 
         public virtual List<FS.Cms.Posts.Dtos.PostImageDto> PostImages { get; set; }
 

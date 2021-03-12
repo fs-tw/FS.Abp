@@ -24,7 +24,7 @@ namespace FS.Cms.Posts.Dtos
     {
         public virtual string FileId { get; set; }
 
-        public virtual bool Name { get; set; }
+        public virtual string Name { get; set; }
 
     }
 }
