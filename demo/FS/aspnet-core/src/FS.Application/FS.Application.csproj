@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\EnterpriseCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\PersonCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>

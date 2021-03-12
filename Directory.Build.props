@@ -1,8 +1,11 @@
 <Project>
   <PropertyGroup>
-    <Version>422.0.1</Version>
     <AbpVersion>4.2.2</AbpVersion>
-    <EasyAbpTreeVersion>2.2.1</EasyAbpTreeVersion>
+    <EasyAbpTreeVersion>2.2.2</EasyAbpTreeVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>422.0.1</Version>
   </PropertyGroup>
   
   <PropertyGroup>

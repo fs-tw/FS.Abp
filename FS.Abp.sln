@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29001.49
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AspNetCore", "FS.Abp.AspNetCore", "{E2D733F6-9953-4929-B6B7-044CD0372DE2}"
 EndProject
@@ -36,6 +36,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.Webhook", "modules\FS.LineNotify\src\FS.LineNotify.Webhook\FS.LineNotify.Webhook.csproj", "{AFAD9EBA-6B22-475F-B2FA-FAAC4204DDF2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.LineNotify.Webhook.Client", "modules\FS.LineNotify\src\FS.LineNotify.Webhook.Client\FS.LineNotify.Webhook.Client.csproj", "{3E89A227-FC9D-487E-9472-7BEA38635DB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Npoi.Mapper", "FS.Abp.Npoi.Mapper", "{2656FB2F-5A01-47D2-92B5-3FBE4941D857}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7C89BED-EC2F-4383-9FF8-555611AAB2CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{649B1578-993B-4EB2-9E63-F8CC57B20888}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Npoi.Mapper", "framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper\FS.Abp.Npoi.Mapper.csproj", "{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +99,10 @@ Global
 		{3E89A227-FC9D-487E-9472-7BEA38635DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E89A227-FC9D-487E-9472-7BEA38635DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E89A227-FC9D-487E-9472-7BEA38635DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,8 +123,12 @@ Global
 		{F2840BC7-0188-4606-9126-DADD0F5ABF7A} = {EA74BCFA-57B1-411F-90F6-02E9210BE36E}
 		{AFAD9EBA-6B22-475F-B2FA-FAAC4204DDF2} = {EA74BCFA-57B1-411F-90F6-02E9210BE36E}
 		{3E89A227-FC9D-487E-9472-7BEA38635DB5} = {EA74BCFA-57B1-411F-90F6-02E9210BE36E}
+		{2656FB2F-5A01-47D2-92B5-3FBE4941D857} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
+		{F7C89BED-EC2F-4383-9FF8-555611AAB2CA} = {2656FB2F-5A01-47D2-92B5-3FBE4941D857}
+		{649B1578-993B-4EB2-9E63-F8CC57B20888} = {2656FB2F-5A01-47D2-92B5-3FBE4941D857}
+		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2} = {F7C89BED-EC2F-4383-9FF8-555611AAB2CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
+		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
 	EndGlobalSection
 EndGlobal

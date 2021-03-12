@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\IEnterpriseCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\IPersonCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
   </ItemGroup>
