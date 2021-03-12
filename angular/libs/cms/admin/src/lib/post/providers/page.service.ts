@@ -71,6 +71,10 @@ export class PageService {
       input
     );
   }
+
+  deletePost(id: string) {
+    return this.postService.deleteByPostPrimaryKey({ id });
+  }
   //#endregion
 
   // getAllTags() {

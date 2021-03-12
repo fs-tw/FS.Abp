@@ -34,7 +34,7 @@ export interface PostCreateDto {
   endTime?: string;
   displayMode: DisplayMode;
   sequence: number;
-  attachmentFileUrls: string[];
+  attachmentFileInfos: AttachmentFileInfo[];
   postImages: PostImageDto[];
 }
 
@@ -49,7 +49,7 @@ export interface PostDto extends FullAuditedEntityDto<string> {
   endTime?: string;
   displayMode: DisplayMode;
   sequence: number;
-  attachmentFileUrls: string[];
+  attachmentFileInfos: AttachmentFileInfo[];
   postImages: PostImageDto[];
 }
 
@@ -57,8 +57,14 @@ export interface PostGetListDto extends SearchResultRequestDto {
 }
 
 export interface PostImageDto {
-  url?: string;
+  imageId: string;
   isCover: boolean;
+  name: string;
+}
+
+export interface AttachmentFileInfo {
+  fileId: string;
+  name: string;
 }
 
 export interface PostPrimaryKeyDto extends EntityDto<string> {
@@ -99,7 +105,7 @@ export interface PostUpdateDto {
   endTime?: string;
   displayMode: DisplayMode;
   sequence: number;
-  attachmentFileUrls: string[];
+  attachmentFileInfos: AttachmentFileInfo[];
   postImages: PostImageDto[];
 }
 

@@ -20,21 +20,15 @@ using Volo.Abp.Data;
 
 namespace FS.Cms.Posts
 {
-    public partial class PostImage 
+    public partial class AttachmentFileInfo 
     {
 
-        public PostImage()
+        public AttachmentFileInfo()
         {
             OnCreated();
         }
 
-        public virtual string ImageId
-        {
-            get;
-            set;
-        }
-
-        public virtual bool IsCover
+        public virtual string FileId
         {
             get;
             set;

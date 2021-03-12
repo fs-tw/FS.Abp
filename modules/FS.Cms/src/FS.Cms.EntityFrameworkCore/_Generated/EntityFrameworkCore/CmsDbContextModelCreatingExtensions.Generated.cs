@@ -31,6 +31,7 @@ namespace FS.Cms.EntityFrameworkCore
             builder.Ignore<FS.Cms.Core.CmsFileField>();
             builder.Ignore<FS.Cms.Core.CmsImageField>();
             builder.Ignore<FS.Cms.Posts.PostImage>();
+            builder.Ignore<FS.Cms.Posts.AttachmentFileInfo>();
             builder.ApplyConfiguration<FS.Cms.Posts.Post>(new FS.Cms.Posts.PostConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Posts.PostTagMap>(new FS.Cms.Posts.PostTagMapConfiguration(options));
             builder.ApplyConfiguration<FS.Cms.Documents.DocumentDefinition>(new FS.Cms.Documents.DocumentDefinitionConfiguration(options));

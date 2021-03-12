@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, TemplateRef, Output, EventEmitter } from '@angular/core';
 
 import { NzUploadFile } from 'ng-zorro-antd/upload';
-
+import { FileService } from '../../../shared'
 import { ToasterService } from '@abp/ng.theme.shared';
 import { ConfigStateService,EnvironmentService } from '@abp/ng.core';
 
@@ -103,7 +103,7 @@ export class ImagePickerComponent implements OnInit {
   constructor(
     private toasterService: ToasterService,
     private environmentService:EnvironmentService,
-    private configStateService: ConfigStateService
+    private fileService: FileService
   ) { }
 
   ngOnInit(): void {
@@ -112,7 +112,7 @@ export class ImagePickerComponent implements OnInit {
   ngOnChanges() {
     this.existFiles = this.existFiles
       .filter(x => x.fileUrl)
-      .map(x => new ImageFile(x.fileName, this.getHttpUrl(x.fileUrl)));
+      .map(x => new ImageFile(x.fileName, this.fileService.getFileUrl(x.fileUrl)));
 
     this.uploadFiles = [];
     this.showFiles = [];
@@ -125,12 +125,12 @@ export class ImagePickerComponent implements OnInit {
     this.showFiles = [];
   }
 
-  private getHttpUrl(url: string): string {
-    let result = url;
-    if (url.includes("http")) return result;
+  // private getHttpUrl(url: string): string {
+  //   let result = url;
+  //   if (url.includes("http")) return result;
 
-    return this.environmentService.getApiUrl() + url;
-  }
+  //   return this.environmentService.getApiUrl() + url;
+  // }
 
   beforeUpload = (file: NzUploadFile): boolean => {
     let isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
@@ -185,13 +185,19 @@ export class ImagePickerComponent implements OnInit {
 
   }
 
-  controllModal(state: boolean, image: ImageFile = new ImageFile()) {
+  controllModal(state: boolean, image: ImageFile = new ImageFile()) {  
     this.viewImage.image = image;
     this.viewImage.isVisabled = state;
   }
 
   getDeleteFileNames(): string[] {
     return this.deleteFiles;
+  }
+
+
+  getNewUploadFiles():SaveFile[]{
+    let updateFiles: SaveFile[] = this.uploadFiles.map((x: any) => new SaveFile(x.name, '', x));
+    return updateFiles;
   }
 
   getUploadFiles(): SaveFile[] {

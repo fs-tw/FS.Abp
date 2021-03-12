@@ -110,6 +110,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>

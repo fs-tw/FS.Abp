@@ -7,26 +7,22 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
+using System.Reflection;
+using AutoMapper;
+using Volo.Abp.AutoMapper;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public partial class MetaData
+    public partial class AttachmentFileInfoAutoMapperProfile : Profile
     {
-        public PostImageDto PostImageDto => new PostImageDto();
+        public AttachmentFileInfoAutoMapperProfile()
+        {
+            CreateMap<FS.Cms.Posts.AttachmentFileInfo, AttachmentFileInfoDto>()
+            .ReverseMap();
+        
+            CustomizeConfiguration();
+        }
+        partial void CustomizeConfiguration();
     }
 
-    public partial class PostImageDto
-    {
-        public virtual string ImageId { get; set; }
-
-        public virtual bool IsCover { get; set; }
-
-        public virtual string Name { get; set; }
-
-    }
 }
