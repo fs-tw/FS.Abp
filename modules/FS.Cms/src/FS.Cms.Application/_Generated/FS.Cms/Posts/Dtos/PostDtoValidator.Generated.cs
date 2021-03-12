@@ -43,7 +43,6 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.AttachmentFileUrls)
-                .NotNull()
                 ;
             RuleFor(p => p.PostImages)
                 ;
@@ -82,7 +81,6 @@ namespace FS.Cms.Posts.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.AttachmentFileUrls)
-                .NotNull()
                 ;
             RuleFor(p => p.PostImages)
                 ;

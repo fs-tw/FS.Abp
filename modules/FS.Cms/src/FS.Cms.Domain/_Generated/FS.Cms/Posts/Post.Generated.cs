@@ -90,12 +90,12 @@ namespace FS.Cms.Posts
             get;
             set;
         }
-        public virtual List<String> AttachmentFileUrls 
+        public virtual List<FS.Cms.Posts.AttachmentFileInfo> AttachmentFileUrls 
         {
 
             get
             {
-                return this.GetExtraProperty<List<String>>(nameof(AttachmentFileUrls));
+                return this.GetExtraProperty<List<FS.Cms.Posts.AttachmentFileInfo>>(nameof(AttachmentFileUrls));
             }
             set
             {

@@ -17,14 +17,14 @@ namespace FS.Cms.Posts.Dtos
 {
     public partial class MetaData
     {
-        public PostImageDto PostImageDto => new PostImageDto();
+        public AttachmentFileInfoDto AttachmentFileInfoDto => new AttachmentFileInfoDto();
     }
 
-    public partial class PostImageDto
+    public partial class AttachmentFileInfoDto
     {
-        public virtual string ImageId { get; set; }
+        public virtual string FileId { get; set; }
 
-        public virtual bool IsCover { get; set; }
+        public virtual bool Name { get; set; }
 
     }
 }
