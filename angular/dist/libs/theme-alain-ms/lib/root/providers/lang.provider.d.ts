@@ -1,6 +1,6 @@
 export declare const LANG: {
     abbr: string;
-    ng: (string | number | string[] | number[] | ((n: number) => number) | string[][] | {
+    ng: (string | number | number[] | string[] | ((n: number) => number) | string[][] | {
         AUD: string[];
         CNY: string[];
         ILR: string[];
@@ -309,3 +309,4 @@ export declare const LANG_PROVIDES: ({
     provide: import("@angular/core").InjectionToken<string>;
     useValue: import("@delon/theme").FullLocaleData;
 })[];
+//# sourceMappingURL=lang.provider.d.ts.map

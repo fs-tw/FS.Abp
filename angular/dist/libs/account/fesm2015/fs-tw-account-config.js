@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ɵɵdefineNgModule, ɵɵdefineInjector, ɵsetClassMetadata, NgModule } from '@angular/core';
 import { RoutesService } from '@abp/ng.core';
 
 const ACCOUNT_ROUTE_PROVIDERS = [
@@ -45,13 +45,16 @@ class AccountConfigModule {
         };
     }
 }
-AccountConfigModule.decorators = [
-    { type: NgModule }
-];
+AccountConfigModule.ɵfac = function AccountConfigModule_Factory(t) { return new (t || AccountConfigModule)(); };
+AccountConfigModule.ɵmod = ɵɵdefineNgModule({ type: AccountConfigModule });
+AccountConfigModule.ɵinj = ɵɵdefineInjector({});
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(AccountConfigModule, [{
+        type: NgModule
+    }], null, null); })();
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { ACCOUNT_ROUTE_PROVIDERS, AccountConfigModule, configureRoutes, ACCOUNT_ROUTE_PROVIDERS as ɵa, configureRoutes as ɵb };
+export { ACCOUNT_ROUTE_PROVIDERS, AccountConfigModule, configureRoutes };
 //# sourceMappingURL=fs-tw-account-config.js.map

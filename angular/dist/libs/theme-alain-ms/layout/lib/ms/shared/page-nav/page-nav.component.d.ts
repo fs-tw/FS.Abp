@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuService, TitleService } from '@delon/theme';
 import { MSMenu, MSServiceNavConfig } from '../../../models/layout';
 import { BrandService } from '../../ms.service';
+import * as i0 from "@angular/core";
 export declare class MSPageNavComponent implements OnChanges {
     private srv;
     private router;
@@ -19,4 +20,7 @@ export declare class MSPageNavComponent implements OnChanges {
     to(url: string, e: MouseEvent): void;
     toggle(): void;
     ngOnChanges(): void;
+    static ɵfac: i0.ɵɵFactoryDef<MSPageNavComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<MSPageNavComponent, "page-nav", never, { "config": "config"; "list": "list"; }, {}, never, never>;
 }
+//# sourceMappingURL=page-nav.component.d.ts.map

@@ -31,22 +31,22 @@
     "account": {
       "tags": []
     },
-    "unify-public": {
-      "tags": []
-    },
     "demo-admin": {
       "tags": []
     },
     "cms": {
       "tags": []
     },
+    "unify-public": {
+      "tags": []
+    },
     "theme-alain-ms": {
       "tags": []
     },
-    "theme": {
+    "theme-unify": {
       "tags": []
     },
-    "theme-unify": {
+    "theme": {
       "tags": []
     },
     "emailing": {

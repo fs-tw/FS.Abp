@@ -91,3 +91,4 @@ export interface PostUpdateDto {
 export interface PostWithDetailsDto extends PostDto {
     postTags: PostTagMapDto[];
 }
+//# sourceMappingURL=models.d.ts.map

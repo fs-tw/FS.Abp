@@ -22,13 +22,12 @@ export class DocumentsApiService {
         }, { apiName: this.apiName });
     }
 }
-DocumentsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function DocumentsApiService_Factory() { return new DocumentsApiService(i0.ɵɵinject(i1.RestService)); }, token: DocumentsApiService, providedIn: "root" });
-DocumentsApiService.decorators = [
-    { type: Injectable, args: [{
+DocumentsApiService.ɵfac = function DocumentsApiService_Factory(t) { return new (t || DocumentsApiService)(i0.ɵɵinject(i1.RestService)); };
+DocumentsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: DocumentsApiService, factory: DocumentsApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DocumentsApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-DocumentsApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: i1.RestService }]; }, null); })();
 //# sourceMappingURL=documents-api.service.js.map

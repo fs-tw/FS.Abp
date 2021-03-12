@@ -6,3 +6,4 @@ export declare const THEME_ROUTE_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureRoutes(routes: RoutesService): () => void;
+//# sourceMappingURL=route.provider.d.ts.map

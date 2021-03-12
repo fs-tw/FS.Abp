@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./change-password/change-password.component"},{"from":"./login/login.component"},{"from":"./manage-profile/manage-profile.component"},{"from":"./register/register.component"},{"from":"./personal-settings/personal-settings.component"},{"from":"./tenant-box/tenant-box.component"}]}]

@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"BlogCreateDto":{"__symbolic":"interface"},"BlogDto":{"__symbolic":"interface"},"BlogGetListDto":{"__symbolic":"interface"},"BlogPrimaryKeyDto":{"__symbolic":"interface"},"BlogUpdateDto":{"__symbolic":"interface"},"BlogWithDetailsDto":{"__symbolic":"interface"},"MetaData":{"__symbolic":"interface"}}}]

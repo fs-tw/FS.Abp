@@ -17,13 +17,12 @@ export class DirectoriesApiService {
         }, { apiName: this.apiName });
     }
 }
-DirectoriesApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function DirectoriesApiService_Factory() { return new DirectoriesApiService(i0.ɵɵinject(i1.RestService)); }, token: DirectoriesApiService, providedIn: "root" });
-DirectoriesApiService.decorators = [
-    { type: Injectable, args: [{
+DirectoriesApiService.ɵfac = function DirectoriesApiService_Factory(t) { return new (t || DirectoriesApiService)(i0.ɵɵinject(i1.RestService)); };
+DirectoriesApiService.ɵprov = i0.ɵɵdefineInjectable({ token: DirectoriesApiService, factory: DirectoriesApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DirectoriesApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-DirectoriesApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: i1.RestService }]; }, null); })();
 //# sourceMappingURL=directories-api.service.js.map

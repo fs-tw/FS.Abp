@@ -1,5 +1,6 @@
 /**
  * Generated bundle index. Do not edit.
  */
+/// <amd-module name="@fs-tw/account/config" />
 export * from './index';
-export { ACCOUNT_ROUTE_PROVIDERS as ɵa, configureRoutes as ɵb } from './providers/route.provider';
+//# sourceMappingURL=fs-tw-account-config.d.ts.map

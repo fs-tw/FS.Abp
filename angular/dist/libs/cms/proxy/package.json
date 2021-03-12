@@ -5,7 +5,6 @@
   "esm2015": "../esm2015/proxy/fs-tw-cms-proxy.js",
   "fesm2015": "../fesm2015/fs-tw-cms-proxy.js",
   "typings": "fs-tw-cms-proxy.d.ts",
-  "metadata": "fs-tw-cms-proxy.metadata.json",
   "sideEffects": false,
   "name": "@fs-tw/cms/proxy"
 }

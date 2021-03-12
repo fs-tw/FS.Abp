@@ -19,3 +19,4 @@ export declare namespace Account {
     interface ChangePasswordComponentOutputs {
     }
 }
+//# sourceMappingURL=account.d.ts.map

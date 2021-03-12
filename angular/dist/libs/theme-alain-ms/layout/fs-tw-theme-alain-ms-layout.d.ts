@@ -1,5 +1,6 @@
 /**
  * Generated bundle index. Do not edit.
  */
+/// <amd-module name="@fs-tw/theme-alain-ms/layout" />
 export * from './index';
-export { LAYOUT_INIT_PROVIDERS as ɵa, init as ɵb } from './lib/providers/init.provider';
+//# sourceMappingURL=fs-tw-theme-alain-ms-layout.d.ts.map

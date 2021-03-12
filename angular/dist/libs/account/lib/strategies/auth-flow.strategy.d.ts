@@ -7,3 +7,4 @@ export declare class AuthPasswordFlowStrategy extends AuthFlowStrategy {
     logout(): import("rxjs").Observable<import("@abp/ng.core").ApplicationConfigurationDto>;
     destroy(): void;
 }
+//# sourceMappingURL=auth-flow.strategy.d.ts.map

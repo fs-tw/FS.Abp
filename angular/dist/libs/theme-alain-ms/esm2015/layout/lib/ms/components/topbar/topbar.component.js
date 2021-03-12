@@ -1,6 +1,32 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, } from '@angular/core';
 import { MSTopbarService, } from '../../services/topbar.service';
 import { EnvironmentService } from '@abp/ng.core';
+import * as i0 from "@angular/core";
+import * as i1 from "../../services/topbar.service";
+import * as i2 from "@abp/ng.core";
+import * as i3 from "@angular/common";
+import * as i4 from "@angular/router";
+import * as i5 from "../../_widgets/all-nav/all-nav.component";
+import * as i6 from "../../_widgets/langs/langs.component";
+import * as i7 from "../../_widgets/user/user.component";
+function MSTopbarComponent_ng_template_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "img", 8);
+} }
+function MSTopbarComponent_ms_all_nav_3_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "ms-all-nav");
+} }
+function MSTopbarComponent_img_6_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "img", 9);
+} if (rf & 2) {
+    const ctx_r3 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("src", ctx_r3.appInfo.logoUrl, i0.ɵɵsanitizeUrl);
+} }
+function MSTopbarComponent_div_9_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 10);
+    i0.ɵɵelement(1, "ms-langs");
+    i0.ɵɵelement(2, "ms-user");
+    i0.ɵɵelementEnd();
+} }
 export class MSTopbarComponent {
     constructor(srv, 
     //  public userSrv: UserService,
@@ -37,23 +63,46 @@ export class MSTopbarComponent {
         });
     }
 }
-MSTopbarComponent.decorators = [
-    { type: Component, args: [{
+MSTopbarComponent.ɵfac = function MSTopbarComponent_Factory(t) { return new (t || MSTopbarComponent)(i0.ɵɵdirectiveInject(i1.MSTopbarService), i0.ɵɵdirectiveInject(i0.ChangeDetectorRef), i0.ɵɵdirectiveInject(i2.EnvironmentService)); };
+MSTopbarComponent.ɵcmp = i0.ɵɵdefineComponent({ type: MSTopbarComponent, selectors: [["ms-topbar"]], hostVars: 4, hostBindings: function MSTopbarComponent_HostBindings(rf, ctx) { if (rf & 2) {
+        i0.ɵɵclassProp("alain-ms__topbar", true)("alain-ms__topbar-single", ctx.allNav);
+    } }, inputs: { allNav: "allNav" }, decls: 10, vars: 5, consts: [["defaultLogo", ""], [1, "alain-ms__topbar-main"], [4, "ngIf"], [1, "alain-ms__topbar-logo"], ["routerLink", "/", 1, "alain-ms__topbar-logo-img"], [3, "src", 4, "ngIf", "ngIfElse"], ["routerLink", "/", 1, "alain-ms__topbar-logo-link"], ["class", "alain-ms__topbar-widget", 4, "ngIf"], ["src", "./assets/logo-color.svg"], [3, "src"], [1, "alain-ms__topbar-widget"]], template: function MSTopbarComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵtemplate(0, MSTopbarComponent_ng_template_0_Template, 1, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵelementStart(2, "div", 1);
+        i0.ɵɵtemplate(3, MSTopbarComponent_ms_all_nav_3_Template, 1, 0, "ms-all-nav", 2);
+        i0.ɵɵelementStart(4, "div", 3);
+        i0.ɵɵelementStart(5, "a", 4);
+        i0.ɵɵtemplate(6, MSTopbarComponent_img_6_Template, 1, 1, "img", 5);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(7, "a", 6);
+        i0.ɵɵtext(8);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵtemplate(9, MSTopbarComponent_div_9_Template, 3, 0, "div", 7);
+    } if (rf & 2) {
+        const _r0 = i0.ɵɵreference(1);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("ngIf", ctx.allNav);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("ngIf", ctx.appInfo.logoUrl)("ngIfElse", _r0);
+        i0.ɵɵadvance(2);
+        i0.ɵɵtextInterpolate1(" ", ctx.appInfo.name, " ");
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ctx.inited);
+    } }, directives: [i3.NgIf, i4.RouterLinkWithHref, i5.MSAllNavComponent, i6.MSLangsComponent, i7.MSUserComponent], encapsulation: 2, changeDetection: 0 });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSTopbarComponent, [{
+        type: Component,
+        args: [{
                 selector: 'ms-topbar',
-                template: "<ng-template #defaultLogo>\r\n  <img src=\"./assets/logo-color.svg\" />\r\n</ng-template>\r\n<div class=\"alain-ms__topbar-main\">\r\n  <ms-all-nav *ngIf=\"allNav\"></ms-all-nav>\r\n  <div class=\"alain-ms__topbar-logo\">\r\n    <a routerLink=\"/\" class=\"alain-ms__topbar-logo-img\">\r\n      <img *ngIf=\"appInfo.logoUrl; else defaultLogo\" [src]=\"appInfo.logoUrl\"/>\r\n    </a>\r\n    <a routerLink=\"/\" class=\"alain-ms__topbar-logo-link\">\r\n      {{ appInfo.name }}\r\n    </a>\r\n  </div>\r\n  <!-- <ms-region *ngIf=\"userSrv?.isLogin\" class=\"hidden-md\"></ms-region> -->\r\n</div>\r\n<div class=\"alain-ms__topbar-widget\" *ngIf=\"inited\">\r\n  <!-- \u641C\u7D22 -->\r\n  <!-- <ms-search class=\"hidden-xs\"></ms-search> -->\r\n  <!-- \u6D88\u606F -->\r\n  <!-- <ms-notice></ms-notice> -->\r\n  <!-- \u83DC\u5355 -->\r\n  <!-- <div *ngFor=\"let p of links\" class=\"alain-ms__topbar-item\" [ngClass]=\"p.className\">\r\n    <a class=\"alain-ms__topbar-item-btn\" [link-to]=\"p\">{{ p.text }}</a>\r\n    <ul class=\"alain-ms__topbar-dd-menu\" *ngIf=\"p.links\">\r\n      <li *ngFor=\"let i of p.links\">\r\n        <a class=\"alain-ms__topbar-dd-item\" [link-to]=\"i\">{{ i.text }}</a>\r\n      </li>\r\n    </ul>\r\n  </div> -->\r\n  <!-- \u8D2D\u7269\u8F66 -->\r\n  <!-- <div class=\"alain-ms__topbar-item hidden-mobile\" class=\"hidden-xs\">\r\n    <a class=\"alain-ms__topbar-item-btn alain-ms__topbar-item-icon\" routerLink=\"/\">\r\n      <i nz-icon nzType=\"shopping-cart\"></i>\r\n    </a>\r\n  </div> -->\r\n  <!-- \u8BED\u8A00 -->\r\n  <ms-langs></ms-langs>\r\n  <!-- \u7528\u6237 -->\r\n  <ms-user></ms-user>\r\n</div>\r\n",
+                templateUrl: './topbar.component.html',
                 host: {
                     '[class.alain-ms__topbar]': 'true',
                     '[class.alain-ms__topbar-single]': 'allNav',
                 },
-                changeDetection: ChangeDetectionStrategy.OnPush
-            },] }
-];
-MSTopbarComponent.ctorParameters = () => [
-    { type: MSTopbarService },
-    { type: ChangeDetectorRef },
-    { type: EnvironmentService }
-];
-MSTopbarComponent.propDecorators = {
-    allNav: [{ type: Input }]
-};
+                changeDetection: ChangeDetectionStrategy.OnPush,
+            }]
+    }], function () { return [{ type: i1.MSTopbarService }, { type: i0.ChangeDetectorRef }, { type: i2.EnvironmentService }]; }, { allNav: [{
+            type: Input
+        }] }); })();
 //# sourceMappingURL=topbar.component.js.map

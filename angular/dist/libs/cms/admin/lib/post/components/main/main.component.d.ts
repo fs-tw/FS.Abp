@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../providers/page.service';
 import { PostStateService } from '../../providers/post-state.service';
+import * as i0 from "@angular/core";
 export declare class MainComponent implements OnInit {
     private router;
     private pageService;
@@ -21,4 +22,7 @@ export declare class MainComponent implements OnInit {
     gotoDetail(id?: string): void;
     changePage(page: number): void;
     deleteItem(item: Fs.Cms.Posts.Dtos.PostWithDetailsDto): void;
+    static ɵfac: i0.ɵɵFactoryDef<MainComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<MainComponent, "fs-main", never, {}, {}, never, never>;
 }
+//# sourceMappingURL=main.component.d.ts.map

@@ -1,5 +1,5 @@
 import { RestService, mapEnumToOptions } from '@abp/ng.core';
-import { ɵɵdefineInjectable, ɵɵinject, Injectable } from '@angular/core';
+import { ɵɵinject, ɵɵdefineInjectable, ɵsetClassMetadata, Injectable } from '@angular/core';
 
 var index = /*#__PURE__*/Object.freeze({
     __proto__: null
@@ -31,15 +31,14 @@ class DirectoriesApiService {
         }, { apiName: this.apiName });
     }
 }
-DirectoriesApiService.ɵprov = ɵɵdefineInjectable({ factory: function DirectoriesApiService_Factory() { return new DirectoriesApiService(ɵɵinject(RestService)); }, token: DirectoriesApiService, providedIn: "root" });
-DirectoriesApiService.decorators = [
-    { type: Injectable, args: [{
+DirectoriesApiService.ɵfac = function DirectoriesApiService_Factory(t) { return new (t || DirectoriesApiService)(ɵɵinject(RestService)); };
+DirectoriesApiService.ɵprov = ɵɵdefineInjectable({ token: DirectoriesApiService, factory: DirectoriesApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(DirectoriesApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-DirectoriesApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$3 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -59,15 +58,14 @@ class FilesApiService {
         }, { apiName: this.apiName });
     }
 }
-FilesApiService.ɵprov = ɵɵdefineInjectable({ factory: function FilesApiService_Factory() { return new FilesApiService(ɵɵinject(RestService)); }, token: FilesApiService, providedIn: "root" });
-FilesApiService.decorators = [
-    { type: Injectable, args: [{
+FilesApiService.ɵfac = function FilesApiService_Factory(t) { return new (t || FilesApiService)(ɵɵinject(RestService)); };
+FilesApiService.ɵprov = ɵɵdefineInjectable({ token: FilesApiService, factory: FilesApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(FilesApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-FilesApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$4 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -126,15 +124,14 @@ class BlogsApiService {
         }, { apiName: this.apiName });
     }
 }
-BlogsApiService.ɵprov = ɵɵdefineInjectable({ factory: function BlogsApiService_Factory() { return new BlogsApiService(ɵɵinject(RestService)); }, token: BlogsApiService, providedIn: "root" });
-BlogsApiService.decorators = [
-    { type: Injectable, args: [{
+BlogsApiService.ɵfac = function BlogsApiService_Factory(t) { return new (t || BlogsApiService)(ɵɵinject(RestService)); };
+BlogsApiService.ɵprov = ɵɵdefineInjectable({ token: BlogsApiService, factory: BlogsApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(BlogsApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-BlogsApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$8 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -175,15 +172,14 @@ class DocumentsApiService {
         }, { apiName: this.apiName });
     }
 }
-DocumentsApiService.ɵprov = ɵɵdefineInjectable({ factory: function DocumentsApiService_Factory() { return new DocumentsApiService(ɵɵinject(RestService)); }, token: DocumentsApiService, providedIn: "root" });
-DocumentsApiService.decorators = [
-    { type: Injectable, args: [{
+DocumentsApiService.ɵfac = function DocumentsApiService_Factory(t) { return new (t || DocumentsApiService)(ɵɵinject(RestService)); };
+DocumentsApiService.ɵprov = ɵɵdefineInjectable({ token: DocumentsApiService, factory: DocumentsApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(DocumentsApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-DocumentsApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$c = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -248,15 +244,14 @@ class PostsApiService {
         }, { apiName: this.apiName });
     }
 }
-PostsApiService.ɵprov = ɵɵdefineInjectable({ factory: function PostsApiService_Factory() { return new PostsApiService(ɵɵinject(RestService)); }, token: PostsApiService, providedIn: "root" });
-PostsApiService.decorators = [
-    { type: Injectable, args: [{
+PostsApiService.ɵfac = function PostsApiService_Factory(t) { return new (t || PostsApiService)(ɵɵinject(RestService)); };
+PostsApiService.ɵprov = ɵɵdefineInjectable({ token: PostsApiService, factory: PostsApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(PostsApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-PostsApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$e = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -306,15 +301,14 @@ class TagsApiService {
         }, { apiName: this.apiName });
     }
 }
-TagsApiService.ɵprov = ɵɵdefineInjectable({ factory: function TagsApiService_Factory() { return new TagsApiService(ɵɵinject(RestService)); }, token: TagsApiService, providedIn: "root" });
-TagsApiService.decorators = [
-    { type: Injectable, args: [{
+TagsApiService.ɵfac = function TagsApiService_Factory(t) { return new (t || TagsApiService)(ɵɵinject(RestService)); };
+TagsApiService.ɵprov = ɵɵdefineInjectable({ token: TagsApiService, factory: TagsApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(TagsApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-TagsApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$g = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -399,15 +393,14 @@ class DirectoryDescriptorService {
         }, { apiName: this.apiName });
     }
 }
-DirectoryDescriptorService.ɵprov = ɵɵdefineInjectable({ factory: function DirectoryDescriptorService_Factory() { return new DirectoryDescriptorService(ɵɵinject(RestService)); }, token: DirectoryDescriptorService, providedIn: "root" });
-DirectoryDescriptorService.decorators = [
-    { type: Injectable, args: [{
+DirectoryDescriptorService.ɵfac = function DirectoryDescriptorService_Factory(t) { return new (t || DirectoryDescriptorService)(ɵɵinject(RestService)); };
+DirectoryDescriptorService.ɵprov = ɵɵdefineInjectable({ token: DirectoryDescriptorService, factory: DirectoryDescriptorService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(DirectoryDescriptorService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-DirectoryDescriptorService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var index$o = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -462,15 +455,14 @@ class FileDescriptorService {
         }, { apiName: this.apiName });
     }
 }
-FileDescriptorService.ɵprov = ɵɵdefineInjectable({ factory: function FileDescriptorService_Factory() { return new FileDescriptorService(ɵɵinject(RestService)); }, token: FileDescriptorService, providedIn: "root" });
-FileDescriptorService.decorators = [
-    { type: Injectable, args: [{
+FileDescriptorService.ɵfac = function FileDescriptorService_Factory(t) { return new (t || FileDescriptorService)(ɵɵinject(RestService)); };
+FileDescriptorService.ɵprov = ɵɵdefineInjectable({ token: FileDescriptorService, factory: FileDescriptorService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(FileDescriptorService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-FileDescriptorService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: RestService }]; }, null); })();
 
 var FileIconType;
 (function (FileIconType) {

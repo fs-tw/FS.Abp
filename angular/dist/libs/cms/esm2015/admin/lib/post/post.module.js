@@ -30,6 +30,8 @@ import { PageService } from './providers/page.service';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { TagComponent } from './components/tag/tag.component';
 import { ImagePickerComponent } from './components/image-picker/image-picker.component';
+import * as i0 from "@angular/core";
+import * as i1 from "ngx-quill";
 const NzModules = [
     NzGridModule,
     NzInputModule,
@@ -61,8 +63,52 @@ export class PostModule {
         return new LazyModuleFactory(PostModule.forChild());
     }
 }
-PostModule.decorators = [
-    { type: NgModule, args: [{
+PostModule.ɵfac = function PostModule_Factory(t) { return new (t || PostModule)(); };
+PostModule.ɵmod = i0.ɵɵdefineNgModule({ type: PostModule });
+PostModule.ɵinj = i0.ɵɵdefineInjector({ providers: [
+        // PostsStateService,
+        PageService
+    ], imports: [[
+            SharedModule,
+            CoreModule,
+            ReactiveFormsModule,
+            FormsModule,
+            CommonModule,
+            PostRoutingModule,
+            ...NzModules,
+            // NgxsModule.forFeature([PostState]),
+            QuillModule.forRoot()
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(PostModule, { declarations: [LayoutComponent,
+        MainComponent,
+        DetailComponent,
+        ListComponent,
+        CreateComponent,
+        UploadFileComponent,
+        TagComponent,
+        ImagePickerComponent], imports: [SharedModule,
+        CoreModule,
+        ReactiveFormsModule,
+        FormsModule,
+        CommonModule,
+        PostRoutingModule, NzGridModule,
+        NzInputModule,
+        NzTableModule,
+        NzDropDownModule,
+        NzButtonModule,
+        NzIconModule,
+        NzModalModule,
+        NzRadioModule,
+        NzUploadModule,
+        NzSpinModule,
+        NzCardModule,
+        NzSelectModule,
+        NzDatePickerModule,
+        NzTabsModule,
+        SEModule, i1.QuillModule] }); })();
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PostModule, [{
+        type: NgModule,
+        args: [{
                 declarations: [
                     LayoutComponent,
                     MainComponent,
@@ -88,6 +134,6 @@ PostModule.decorators = [
                     // PostsStateService,
                     PageService
                 ]
-            },] }
-];
+            }]
+    }], null, null); })();
 //# sourceMappingURL=post.module.js.map

@@ -6,3 +6,4 @@ export declare const UNIFY_THEME_SETTING_TAB_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureSettingTabs(settingtabs: SettingTabsService): () => void;
+//# sourceMappingURL=setting-tab.provider.d.ts.map

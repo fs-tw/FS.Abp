@@ -4,6 +4,7 @@ import { Layout, MSProduct, MSProductCategory, MSProductI18n } from '../../../mo
 import { LayoutStateService } from '../../../services/layout-state.service';
 import { BrandService } from '../../ms.service';
 import { MSProductService } from '../../services/product.service';
+import * as i0 from "@angular/core";
 export declare class MSSidebarComponent implements AfterViewInit, OnDestroy {
     private layoutStateService;
     private brand;
@@ -22,4 +23,7 @@ export declare class MSSidebarComponent implements AfterViewInit, OnDestroy {
     search(scroll?: boolean): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDef<MSSidebarComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<MSSidebarComponent, "ms-sidebar", never, {}, {}, never, never>;
 }
+//# sourceMappingURL=sidebar.component.d.ts.map

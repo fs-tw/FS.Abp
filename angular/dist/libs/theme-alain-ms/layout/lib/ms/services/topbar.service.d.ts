@@ -1,6 +1,7 @@
 import { _HttpClient } from '@delon/theme';
 import { Observable } from 'rxjs';
 import { MSLink } from '../../models/layout';
+import * as i0 from "@angular/core";
 export interface MSTopbar {
     [key: string]: any;
     messagess?: MSTopbarMessage[];
@@ -36,4 +37,7 @@ export declare class MSTopbarService {
     getNav(key: string): MSTopbarNavLink;
     constructor(http: _HttpClient);
     private getByHttp;
+    static ɵfac: i0.ɵɵFactoryDef<MSTopbarService, never>;
+    static ɵprov: i0.ɵɵInjectableDef<MSTopbarService>;
 }
+//# sourceMappingURL=topbar.service.d.ts.map

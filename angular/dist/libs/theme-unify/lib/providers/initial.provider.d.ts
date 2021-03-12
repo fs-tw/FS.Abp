@@ -6,3 +6,4 @@ export declare const UNIFY_THEME_INITIAL_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureInitial(injector: Injector): () => void;
+//# sourceMappingURL=initial.provider.d.ts.map

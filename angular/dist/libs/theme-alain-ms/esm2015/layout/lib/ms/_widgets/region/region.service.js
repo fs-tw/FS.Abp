@@ -43,11 +43,10 @@ export class MSRegionService {
         item.selected = true;
     }
 }
-MSRegionService.ɵprov = i0.ɵɵdefineInjectable({ factory: function MSRegionService_Factory() { return new MSRegionService(i0.ɵɵinject(i1._HttpClient)); }, token: MSRegionService, providedIn: "root" });
-MSRegionService.decorators = [
-    { type: Injectable, args: [{ providedIn: 'root' },] }
-];
-MSRegionService.ctorParameters = () => [
-    { type: _HttpClient }
-];
+MSRegionService.ɵfac = function MSRegionService_Factory(t) { return new (t || MSRegionService)(i0.ɵɵinject(i1._HttpClient)); };
+MSRegionService.ɵprov = i0.ɵɵdefineInjectable({ token: MSRegionService, factory: MSRegionService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSRegionService, [{
+        type: Injectable,
+        args: [{ providedIn: 'root' }]
+    }], function () { return [{ type: i1._HttpClient }]; }, null); })();
 //# sourceMappingURL=region.service.js.map

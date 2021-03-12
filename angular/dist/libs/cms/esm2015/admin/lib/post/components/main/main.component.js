@@ -2,6 +2,164 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PageService } from '../../providers/page.service';
 import { PostStateService } from '../../providers/post-state.service';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/router";
+import * as i2 from "../../providers/page.service";
+import * as i3 from "../../providers/post-state.service";
+import * as i4 from "ng-zorro-antd/grid";
+import * as i5 from "./list/list.component";
+import * as i6 from "ng-zorro-antd/button";
+import * as i7 from "ng-zorro-antd/core/wave";
+import * as i8 from "ng-zorro-antd/core/transition-patch";
+import * as i9 from "ng-zorro-antd/input";
+import * as i10 from "@angular/forms";
+import * as i11 from "ng-zorro-antd/table";
+import * as i12 from "@angular/common";
+import * as i13 from "ng-zorro-antd/icon";
+import * as i14 from "ng-zorro-antd/dropdown";
+import * as i15 from "ng-zorro-antd/menu";
+import * as i16 from "ngx-quill";
+import * as i17 from "@abp/ng.core";
+function MainComponent_ng_template_12_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 12);
+    i0.ɵɵlistener("click", function MainComponent_ng_template_12_Template_button_click_0_listener() { i0.ɵɵrestoreView(_r5); const ctx_r4 = i0.ɵɵnextContext(); return ctx_r4.changePage(1); });
+    i0.ɵɵelement(1, "i", 13);
+    i0.ɵɵelementEnd();
+} }
+function MainComponent_ng_container_28_span_17_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵelement(1, "i", 24);
+    i0.ɵɵelementEnd();
+} }
+function MainComponent_ng_container_28_span_18_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵelement(1, "i", 25);
+    i0.ɵɵelementEnd();
+} }
+function MainComponent_ng_container_28_span_22_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1, "\u5167\u5BB9");
+    i0.ɵɵelementEnd();
+} }
+function MainComponent_ng_container_28_span_23_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1, "\u9023\u7D50");
+    i0.ɵɵelementEnd();
+} }
+function MainComponent_ng_container_28_div_33_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
+    i0.ɵɵelementStart(1, "h3");
+    i0.ɵɵtext(2, "\u5167\u5BB9\uFF1A");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelement(3, "quill-view", 26);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const item_r6 = i0.ɵɵnextContext().$implicit;
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("content", item_r6.content);
+} }
+function MainComponent_ng_container_28_div_34_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
+    i0.ɵɵelementStart(1, "h3");
+    i0.ɵɵtext(2, "\u9023\u7D50");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "p");
+    i0.ɵɵtext(4);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const item_r6 = i0.ɵɵnextContext().$implicit;
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate(item_r6.url);
+} }
+function MainComponent_ng_container_28_Template(rf, ctx) { if (rf & 1) {
+    const _r18 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵelementStart(1, "tr", 14);
+    i0.ɵɵelementStart(2, "td", 15);
+    i0.ɵɵlistener("nzExpandChange", function MainComponent_ng_container_28_Template_td_nzExpandChange_2_listener($event) { const item_r6 = ctx.$implicit; return item_r6.expand = $event; });
+    i0.ɵɵelementStart(3, "a", 16);
+    i0.ɵɵtext(4);
+    i0.ɵɵpipe(5, "abpLocalization");
+    i0.ɵɵelement(6, "i", 17);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(7, "nz-dropdown-menu", null, 18);
+    i0.ɵɵelementStart(9, "ul", 19);
+    i0.ɵɵelementStart(10, "li", 20);
+    i0.ɵɵlistener("click", function MainComponent_ng_container_28_Template_li_click_10_listener() { i0.ɵɵrestoreView(_r18); const item_r6 = ctx.$implicit; const ctx_r17 = i0.ɵɵnextContext(); return ctx_r17.gotoDetail(item_r6.id); });
+    i0.ɵɵelementStart(11, "a");
+    i0.ɵɵtext(12, "\u7DE8\u8F2F");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(13, "li", 20);
+    i0.ɵɵlistener("click", function MainComponent_ng_container_28_Template_li_click_13_listener() { i0.ɵɵrestoreView(_r18); const item_r6 = ctx.$implicit; const ctx_r19 = i0.ɵɵnextContext(); return ctx_r19.deleteItem(item_r6); });
+    i0.ɵɵelementStart(14, "a", 21);
+    i0.ɵɵtext(15, "\u522A\u9664");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(16, "td");
+    i0.ɵɵtemplate(17, MainComponent_ng_container_28_span_17_Template, 2, 0, "span", 22);
+    i0.ɵɵtemplate(18, MainComponent_ng_container_28_span_18_Template, 2, 0, "span", 22);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(19, "td");
+    i0.ɵɵtext(20);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(21, "td");
+    i0.ɵɵtemplate(22, MainComponent_ng_container_28_span_22_Template, 2, 0, "span", 22);
+    i0.ɵɵtemplate(23, MainComponent_ng_container_28_span_23_Template, 2, 0, "span", 22);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(24, "td");
+    i0.ɵɵtext(25);
+    i0.ɵɵpipe(26, "date");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(27, "tr", 23);
+    i0.ɵɵelementStart(28, "div");
+    i0.ɵɵelementStart(29, "h3");
+    i0.ɵɵtext(30, "\u526F\u6A19\u984C");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(31, "p");
+    i0.ɵɵtext(32);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(33, MainComponent_ng_container_28_div_33_Template, 4, 1, "div", 22);
+    i0.ɵɵtemplate(34, MainComponent_ng_container_28_div_34_Template, 5, 1, "div", 22);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const item_r6 = ctx.$implicit;
+    const _r7 = i0.ɵɵreference(8);
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("nzExpand", item_r6.expand);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("nzDropdownMenu", _r7);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(5, 13, "AbpIdentity::Actions"), " ");
+    i0.ɵɵadvance(13);
+    i0.ɵɵproperty("ngIf", item_r6.published);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", !item_r6.published);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", item_r6.title, " ");
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngIf", item_r6.displayMode == 0);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", item_r6.displayMode == 1);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(26, 15, item_r6.published_At, "yyyy-MM-dd HH:mm:ss"));
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("nzExpand", item_r6.expand);
+    i0.ɵɵadvance(5);
+    i0.ɵɵtextInterpolate(item_r6.subtitle || "-");
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", item_r6.displayMode == 0);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", item_r6.displayMode == 1);
+} }
 // 
 // import { PostWithDetailsDto } from '@fs-tw/cms/proxy';
 // import { CodesDto } from '@fs-tw/theme-core';
@@ -57,16 +215,75 @@ export class MainComponent {
     deleteItem(item) {
     }
 }
-MainComponent.decorators = [
-    { type: Component, args: [{
+MainComponent.ɵfac = function MainComponent_Factory(t) { return new (t || MainComponent)(i0.ɵɵdirectiveInject(i1.Router), i0.ɵɵdirectiveInject(i2.PageService), i0.ɵɵdirectiveInject(i3.PostStateService)); };
+MainComponent.ɵcmp = i0.ɵɵdefineComponent({ type: MainComponent, selectors: [["fs-main"]], decls: 29, vars: 8, consts: [["nzGutter", "16"], ["nzSpan", "8"], ["nzSpan", "16"], [1, "mb-md"], ["nz-button", "", "nzType", "primary", 2, "margin-right", "20px", 3, "click"], ["nzSearch", "", 2, "width", "300px", 3, "nzAddOnAfter"], ["type", "text", "nz-input", "", "placeholder", "\u8F38\u5165\u540D\u7A31", 3, "ngModel", "ngModelChange"], ["suffixIconButton", ""], ["nzSize", "small", "nzPageSize", "10", "nzBordered", "", 3, "nzData", "nzTotal", "nzFrontPagination", "nzLoading", "nzPageIndexChange"], ["listTable", ""], ["nzWidth", "110px"], [4, "ngFor", "ngForOf"], ["nz-button", "", "nzType", "primary", "nzSearch", "", 3, "click"], ["nz-icon", "", "nzType", "search"], [1, "bg-white"], ["nzShowExpand", "", "nzWidth", "110px", 3, "nzExpand", "nzExpandChange"], ["nz-dropdown", "", 3, "nzDropdownMenu"], ["nz-icon", "", "nzType", "down"], ["menu", "nzDropdownMenu"], ["nz-menu", ""], ["nz-menu-item", "", 3, "click"], [1, "text-red"], [4, "ngIf"], [3, "nzExpand"], ["nz-icon", "", "nzType", "check", "nzTheme", "outline"], ["nz-icon", "", "nzType", "close", "nzTheme", "outline"], [3, "content"]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "nz-row", 0);
+        i0.ɵɵelementStart(1, "nz-col", 1);
+        i0.ɵɵelement(2, "fs-list");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(3, "nz-col", 2);
+        i0.ɵɵelementStart(4, "div");
+        i0.ɵɵelementStart(5, "div", 3);
+        i0.ɵɵelementStart(6, "h5");
+        i0.ɵɵtext(7);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(8, "button", 4);
+        i0.ɵɵlistener("click", function MainComponent_Template_button_click_8_listener() { return ctx.gotoDetail(); });
+        i0.ɵɵtext(9, " \u65B0\u589E ");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(10, "nz-input-group", 5);
+        i0.ɵɵelementStart(11, "input", 6);
+        i0.ɵɵlistener("ngModelChange", function MainComponent_Template_input_ngModelChange_11_listener($event) { return ctx.postParams.keyword = $event; });
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵtemplate(12, MainComponent_ng_template_12_Template, 2, 0, "ng-template", null, 7, i0.ɵɵtemplateRefExtractor);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(14, "nz-table", 8, 9);
+        i0.ɵɵlistener("nzPageIndexChange", function MainComponent_Template_nz_table_nzPageIndexChange_14_listener($event) { return ctx.changePage($event); });
+        i0.ɵɵelementStart(16, "thead");
+        i0.ɵɵelementStart(17, "tr");
+        i0.ɵɵelement(18, "th", 10);
+        i0.ɵɵelementStart(19, "th");
+        i0.ɵɵtext(20, "\u555F\u7528");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(21, "th");
+        i0.ɵɵtext(22, "\u6A19\u984C");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(23, "th");
+        i0.ɵɵtext(24, "\u986F\u793A\u6A21\u5F0F");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(25, "th");
+        i0.ɵɵtext(26, "\u767C\u4F48\u65E5\u671F");
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(27, "tbody");
+        i0.ɵɵtemplate(28, MainComponent_ng_container_28_Template, 35, 18, "ng-container", 11);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        const _r0 = i0.ɵɵreference(13);
+        const _r2 = i0.ɵɵreference(15);
+        i0.ɵɵadvance(7);
+        i0.ɵɵtextInterpolate1("\u985E\u578B\uFF1A", ctx.blogName, "");
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("nzAddOnAfter", _r0);
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngModel", ctx.postParams.keyword);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("nzData", ctx.posts)("nzTotal", ctx.totalCount)("nzFrontPagination", false)("nzLoading", ctx.loading);
+        i0.ɵɵadvance(14);
+        i0.ɵɵproperty("ngForOf", _r2.data);
+    } }, directives: [i4.NzRowDirective, i4.NzColDirective, i5.ListComponent, i6.NzButtonComponent, i7.NzWaveDirective, i8.ɵNzTransitionPatchDirective, i9.NzInputGroupComponent, i9.NzInputDirective, i10.DefaultValueAccessor, i10.NgControlStatus, i10.NgModel, i11.NzTableComponent, i11.NzTheadComponent, i11.NzTrDirective, i11.NzTableCellDirective, i11.NzThMeasureDirective, i11.NzTbodyComponent, i12.NgForOf, i13.NzIconDirective, i11.NzTdAddOnComponent, i14.NzDropDownADirective, i14.NzDropDownDirective, i14.NzDropdownMenuComponent, i15.NzMenuDirective, i15.NzMenuItemDirective, i12.NgIf, i11.NzTrExpandDirective, i11.NzTableFixedRowComponent, i16.QuillViewComponent], pipes: [i17.LocalizationPipe, i12.DatePipe], styles: ["nz-select[_ngcontent-%COMP%]{margin-right:8px;width:220px}.bg-white[_ngcontent-%COMP%]{background-color:#fff}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MainComponent, [{
+        type: Component,
+        args: [{
                 selector: 'fs-main',
-                template: "<nz-row nzGutter=\"16\">\r\n  <nz-col nzSpan=\"8\">\r\n    <fs-list></fs-list>\r\n  </nz-col>\r\n  <nz-col nzSpan=\"16\">\r\n    <div>\r\n      <div class=\"mb-md\">\r\n        <h5>\u985E\u578B\uFF1A{{ blogName }}</h5>\r\n        <button nz-button nzType=\"primary\" (click)=\"gotoDetail()\" style=\"margin-right: 20px;\">\r\n          \u65B0\u589E\r\n        </button>\r\n        <nz-input-group nzSearch [nzAddOnAfter]=\"suffixIconButton\" style=\"width: 300px;\">\r\n          <input type=\"text\" [(ngModel)]=\"postParams.keyword\" nz-input placeholder=\"\u8F38\u5165\u540D\u7A31\" />\r\n        </nz-input-group>\r\n        <ng-template #suffixIconButton>\r\n          <button nz-button nzType=\"primary\" (click)=\"changePage(1)\" nzSearch>\r\n            <i nz-icon nzType=\"search\"></i>\r\n          </button>\r\n        </ng-template>\r\n      </div>\r\n      <nz-table #listTable [nzData]=\"posts\" nzSize=\"small\" nzPageSize=\"10\" [nzTotal]=\"totalCount\"\r\n        [nzFrontPagination]=\"false\" [nzLoading]=\"loading\" (nzPageIndexChange)=\"changePage($event)\" nzBordered>\r\n        <thead>\r\n          <tr>\r\n            <th nzWidth=\"110px\"></th>\r\n            <th>\u555F\u7528</th>\r\n            <th>\u6A19\u984C</th>\r\n            <th>\u986F\u793A\u6A21\u5F0F</th>\r\n            <th>\u767C\u4F48\u65E5\u671F</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <ng-container *ngFor=\"let item of listTable.data\">\r\n            <tr class=\"bg-white\">\r\n              <td nzShowExpand [(nzExpand)]=\"item.expand\" nzWidth=\"110px\">\r\n                <a nz-dropdown [nzDropdownMenu]=\"menu\">\r\n                  {{ 'AbpIdentity::Actions' | abpLocalization }}\r\n                  <i nz-icon nzType=\"down\"></i>\r\n                </a>\r\n                <nz-dropdown-menu #menu=\"nzDropdownMenu\">\r\n                  <ul nz-menu>\r\n                    <li nz-menu-item (click)=\"gotoDetail(item.id)\">\r\n                      <a>\u7DE8\u8F2F</a>\r\n                    </li>\r\n                    <li nz-menu-item (click)=\"deleteItem(item)\">\r\n                      <a class=\"text-red\">\u522A\u9664</a>\r\n                    </li>\r\n                  </ul>\r\n                </nz-dropdown-menu>\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.published\"><i nz-icon nzType=\"check\" nzTheme=\"outline\"></i></span>\r\n                <span *ngIf=\"!item.published\"><i nz-icon nzType=\"close\" nzTheme=\"outline\"></i></span>\r\n              </td>\r\n              <td>\r\n                {{ item.title }}\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.displayMode == 0\">\u5167\u5BB9</span>\r\n                <span *ngIf=\"item.displayMode == 1\">\u9023\u7D50</span>\r\n              </td>\r\n              <td>{{ item.published_At | date: 'yyyy-MM-dd HH:mm:ss' }}</td>\r\n            </tr>\r\n\r\n            <tr [nzExpand]=\"item.expand\">\r\n              <div>\r\n                <h3>\u526F\u6A19\u984C</h3>\r\n                <p>{{ item.subtitle || '-' }}</p>\r\n                <div *ngIf=\"item.displayMode == 0\">\r\n                  <h3>\u5167\u5BB9\uFF1A</h3>\r\n                  <quill-view [content]=\"item.content\"></quill-view>\r\n                </div>\r\n                <div *ngIf=\"item.displayMode == 1\">\r\n                  <h3>\u9023\u7D50</h3>\r\n                  <p>{{ item.url }}</p>\r\n                </div>\r\n              </div>\r\n            </tr>\r\n          </ng-container>\r\n        </tbody>\r\n      </nz-table>\r\n    </div>\r\n  </nz-col>\r\n</nz-row>",
-                styles: ["nz-select{margin-right:8px;width:220px}.bg-white{background-color:#fff}"]
-            },] }
-];
-MainComponent.ctorParameters = () => [
-    { type: Router },
-    { type: PageService },
-    { type: PostStateService }
-];
+                templateUrl: './main.component.html',
+                styleUrls: ['./main.component.less']
+            }]
+    }], function () { return [{ type: i1.Router }, { type: i2.PageService }, { type: i3.PostStateService }]; }, null); })();
 //# sourceMappingURL=main.component.js.map

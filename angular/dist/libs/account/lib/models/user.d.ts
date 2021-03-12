@@ -25,3 +25,4 @@ export interface RegisterResponse {
     creatorId: string;
     id: string;
 }
+//# sourceMappingURL=user.d.ts.map

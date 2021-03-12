@@ -5,6 +5,10 @@ import { zip } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SettingsService, TitleService } from '@delon/theme';
 import { NzIconService } from 'ng-zorro-antd/icon';
+import * as i0 from "@angular/core";
+import * as i1 from "ng-zorro-antd/icon";
+import * as i2 from "@delon/theme";
+import * as i3 from "@angular/common/http";
 // import { ICONS } from '../../../style-icons';
 // import { ICONS_AUTO } from '../../../style-icons-auto';
 // import { I18NService } from '../i18n/i18n.service';
@@ -62,16 +66,14 @@ export class StartupService {
         }
     }
 }
-StartupService.decorators = [
-    { type: Injectable }
-];
-StartupService.ctorParameters = () => [
-    { type: NzIconService },
-    { type: SettingsService },
-    { type: HttpClient },
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] },
-    { type: TitleService }
-];
+StartupService.ɵfac = function StartupService_Factory(t) { return new (t || StartupService)(i0.ɵɵinject(i1.NzIconService), i0.ɵɵinject(i2.SettingsService), i0.ɵɵinject(i3.HttpClient), i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(i2.TitleService)); };
+StartupService.ɵprov = i0.ɵɵdefineInjectable({ token: StartupService, factory: StartupService.ɵfac });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(StartupService, [{
+        type: Injectable
+    }], function () { return [{ type: i1.NzIconService }, { type: i2.SettingsService }, { type: i3.HttpClient }, { type: undefined, decorators: [{
+                type: Inject,
+                args: [DOCUMENT]
+            }] }, { type: i2.TitleService }]; }, null); })();
 // #region Startup Service
 // tslint:disable-next-line: typedef
 export function StartupServiceFactory(startupService) {
@@ -86,5 +88,4 @@ export const APPINIT_PROVIDES = [
         multi: true,
     },
 ];
-// #endregion
 //# sourceMappingURL=startup.service.js.map

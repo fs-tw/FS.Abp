@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngxs/store';
 import { Account } from '../../models/account';
+import * as i0 from "@angular/core";
 export declare class PersonalSettingsComponent implements OnInit, Account.PersonalSettingsComponentInputs, Account.PersonalSettingsComponentOutputs {
     private fb;
     private store;
@@ -13,4 +14,7 @@ export declare class PersonalSettingsComponent implements OnInit, Account.Person
     ngOnInit(): void;
     buildForm(): void;
     submit(): void;
+    static ɵfac: i0.ɵɵFactoryDef<PersonalSettingsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<PersonalSettingsComponent, "abp-personal-settings-form", ["abpPersonalSettingsForm"], {}, {}, never, never>;
 }
+//# sourceMappingURL=personal-settings.component.d.ts.map

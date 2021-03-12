@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../providers/page.service';
 import { ImageFile, ImagePickerComponent } from '../image-picker/image-picker.component';
+import * as i0 from "@angular/core";
 export declare class DetailComponent implements OnInit {
     private router;
     private activatedRoute;
@@ -23,4 +24,7 @@ export declare class DetailComponent implements OnInit {
     getBlogs(): void;
     deleteFile(fileName: string): void;
     save(): void;
+    static ɵfac: i0.ɵɵFactoryDef<DetailComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<DetailComponent, "fs-detail", never, {}, {}, never, never>;
 }
+//# sourceMappingURL=detail.component.d.ts.map

@@ -16,3 +16,4 @@ export interface SmtpDto {
     enableSsl: boolean;
     useDefaultCredentials: boolean;
 }
+//# sourceMappingURL=models.d.ts.map

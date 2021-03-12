@@ -7,3 +7,4 @@ export declare const EXTENSIONS_PROVIDERS: {
 }[];
 declare function configure(injector: Injector): () => Promise<boolean>;
 export {};
+//# sourceMappingURL=extensions.provider.d.ts.map

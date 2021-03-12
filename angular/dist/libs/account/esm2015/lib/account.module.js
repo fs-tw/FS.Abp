@@ -15,6 +15,7 @@ import { ACCOUNT_OPTIONS } from './tokens/options.token';
 import { accountOptionsFactory } from './utils/factory-utils';
 import { AuthenticationFlowGuard } from './guards/authentication-flow.guard';
 import { ManageProfileGuard } from './guards/manage-profile.guard';
+import * as i0 from "@angular/core";
 export class AccountModule {
     static forChild(options) {
         return {
@@ -35,8 +36,29 @@ export class AccountModule {
         return new LazyModuleFactory(AccountModule.forChild(options));
     }
 }
-AccountModule.decorators = [
-    { type: NgModule, args: [{
+AccountModule.ɵfac = function AccountModule_Factory(t) { return new (t || AccountModule)(); };
+AccountModule.ɵmod = i0.ɵɵdefineNgModule({ type: AccountModule });
+AccountModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
+            CoreModule,
+            AccountRoutingModule,
+            ThemeSharedModule,
+            NgbDropdownModule,
+            NgxValidateCoreModule,
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(AccountModule, { declarations: [AuthWrapperComponent,
+        LoginComponent,
+        RegisterComponent,
+        TenantBoxComponent,
+        ChangePasswordComponent,
+        ManageProfileComponent,
+        PersonalSettingsComponent], imports: [CoreModule,
+        AccountRoutingModule,
+        ThemeSharedModule,
+        NgbDropdownModule,
+        NgxValidateCoreModule] }); })();
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountModule, [{
+        type: NgModule,
+        args: [{
                 declarations: [
                     AuthWrapperComponent,
                     LoginComponent,
@@ -54,6 +76,6 @@ AccountModule.decorators = [
                     NgxValidateCoreModule,
                 ],
                 exports: [],
-            },] }
-];
+            }]
+    }], null, null); })();
 //# sourceMappingURL=account.module.js.map

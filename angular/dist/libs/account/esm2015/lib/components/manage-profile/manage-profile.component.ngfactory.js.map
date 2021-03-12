@@ -1,1 +1,0 @@
-{"version":3,"file":"manage-profile.component.ngfactory.js","sourceRoot":"","sources":["../../../../../../../libs/account/src/lib/components/manage-profile/manage-profile.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

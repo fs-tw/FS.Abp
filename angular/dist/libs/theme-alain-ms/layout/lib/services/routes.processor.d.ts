@@ -18,3 +18,4 @@ export declare class RoutesProcessor {
     formatParams(text: string, router?: ActivatedRouteSnapshot): string;
     private findRouter;
 }
+//# sourceMappingURL=routes.processor.d.ts.map

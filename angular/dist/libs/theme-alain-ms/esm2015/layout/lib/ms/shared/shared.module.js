@@ -14,6 +14,8 @@ import { MSPageSingleComponent } from './page-single/page-single.component';
 import { MSPanelComponent } from './panel/panel.component';
 import { MSServiceLayoutComponent } from './service-layout/service-layout.component';
 import { LocalizationModule } from '@abp/ng.core';
+import * as i0 from "@angular/core";
+import * as i1 from "@delon/theme";
 const COMPONENTS = [
     MSHelpComponent,
     MSLinkToDirective,
@@ -25,11 +27,28 @@ const COMPONENTS = [
 ];
 export class MSSharedModule {
 }
-MSSharedModule.decorators = [
-    { type: NgModule, args: [{
+MSSharedModule.ɵfac = function MSSharedModule_Factory(t) { return new (t || MSSharedModule)(); };
+MSSharedModule.ɵmod = i0.ɵɵdefineNgModule({ type: MSSharedModule });
+MSSharedModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[CommonModule, RouterModule, FormsModule, AlainThemeModule.forChild(), NzPopoverModule, NzIconModule, NzOutletModule, LocalizationModule]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(MSSharedModule, { declarations: [MSHelpComponent,
+        MSLinkToDirective,
+        MSPageBarComponent,
+        MSPageNavComponent,
+        MSPageSingleComponent,
+        MSPanelComponent,
+        MSServiceLayoutComponent], imports: [CommonModule, RouterModule, FormsModule, i1.AlainThemeModule, NzPopoverModule, NzIconModule, NzOutletModule, LocalizationModule], exports: [MSHelpComponent,
+        MSLinkToDirective,
+        MSPageBarComponent,
+        MSPageNavComponent,
+        MSPageSingleComponent,
+        MSPanelComponent,
+        MSServiceLayoutComponent] }); })();
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSSharedModule, [{
+        type: NgModule,
+        args: [{
                 imports: [CommonModule, RouterModule, FormsModule, AlainThemeModule.forChild(), NzPopoverModule, NzIconModule, NzOutletModule, LocalizationModule],
                 declarations: COMPONENTS,
                 exports: COMPONENTS,
-            },] }
-];
+            }]
+    }], null, null); })();
 //# sourceMappingURL=shared.module.js.map

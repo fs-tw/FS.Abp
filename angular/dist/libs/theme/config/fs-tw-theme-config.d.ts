@@ -1,5 +1,6 @@
 /**
  * Generated bundle index. Do not edit.
  */
+/// <amd-module name="@fs-tw/theme/config" />
 export * from './index';
-export { THEME_ROUTE_PROVIDERS as ɵa, configureRoutes as ɵb } from './providers/route.provider';
+//# sourceMappingURL=fs-tw-theme-config.d.ts.map

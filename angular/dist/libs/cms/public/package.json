@@ -5,7 +5,6 @@
   "esm2015": "../esm2015/public/fs-tw-cms-public.js",
   "fesm2015": "../fesm2015/fs-tw-cms-public.js",
   "typings": "fs-tw-cms-public.d.ts",
-  "metadata": "fs-tw-cms-public.metadata.json",
   "sideEffects": false,
   "name": "@fs-tw/cms/public"
 }

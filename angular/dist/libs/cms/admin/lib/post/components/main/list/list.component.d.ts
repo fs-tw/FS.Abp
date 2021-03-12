@@ -8,6 +8,7 @@ import { ExtensionsService } from '@fs-tw/cms/config';
 import { FormGroup } from '@angular/forms';
 import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
 import { ToasterService } from '@abp/ng.theme.shared';
+import * as i0 from "@angular/core";
 export declare class ListComponent implements OnInit {
     private extensionsService;
     private pageService;
@@ -36,4 +37,7 @@ export declare class ListComponent implements OnInit {
     edit(id: string): void;
     buildForm(): void;
     openModal(): void;
+    static ɵfac: i0.ɵɵFactoryDef<ListComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<ListComponent, "fs-list", never, {}, {}, never, never>;
 }
+//# sourceMappingURL=list.component.d.ts.map

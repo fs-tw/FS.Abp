@@ -1,4 +1,4 @@
-import { ɵɵdefineInjectable, Injectable, APP_INITIALIZER, Injector, NgModule } from '@angular/core';
+import { ɵɵdefineInjectable, ɵsetClassMetadata, Injectable, APP_INITIALIZER, Injector, ɵɵdefineNgModule, ɵɵdefineInjector, NgModule } from '@angular/core';
 import { ConfigStateService, RoutesService } from '@abp/ng.core';
 import { FormProp, EntityProp, EntityAction, ToolbarAction, ExtensionsService as ExtensionsService$1, getObjectExtensionEntitiesFromStore, mapEntitiesToContributors, mergeWithDefaultActions, mergeWithDefaultProps } from '@abp/ng.theme.shared/extensions';
 import { map, tap, mapTo } from 'rxjs/operators';
@@ -103,50 +103,49 @@ class ExtensionsService {
         this.Actions$[type].next(data);
     }
 }
-ExtensionsService.ɵprov = ɵɵdefineInjectable({ factory: function ExtensionsService_Factory() { return new ExtensionsService(); }, token: ExtensionsService, providedIn: "root" });
-ExtensionsService.decorators = [
-    { type: Injectable, args: [{
+ExtensionsService.ɵfac = function ExtensionsService_Factory(t) { return new (t || ExtensionsService)(); };
+ExtensionsService.ɵprov = ɵɵdefineInjectable({ token: ExtensionsService, factory: ExtensionsService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(ExtensionsService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-ExtensionsService.ctorParameters = () => [];
+            }]
+    }], function () { return []; }, null); })();
 
-const ɵ0 = (data) => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("Cms::FS.Cms.Blogs" /* Blog */, {
-        name: 'Edit',
-        record: data.record,
-    });
-}, ɵ1 = (data) => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("Cms::FS.Cms.Blogs" /* Blog */, {
-        name: 'Delete',
-        record: data.record,
-    });
-};
 const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0,
+        action: (data) => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("Cms::FS.Cms.Blogs" /* Blog */, {
+                name: 'Edit',
+                record: data.record,
+            });
+        },
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1,
+        action: (data) => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("Cms::FS.Cms.Blogs" /* Blog */, {
+                name: 'Delete',
+                record: data.record,
+            });
+        },
     },
 ]);
 
-const ɵ0$1 = data => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("Cms::FS.Cms.Blogs" /* Blog */, {
-        name: 'Add'
-    });
-    //const component = data.getInjected(UsersComponent);
-    //component.add();
-};
 const DEFAULT_BLOG_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$1,
+        action: data => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("Cms::FS.Cms.Blogs" /* Blog */, {
+                name: 'Add'
+            });
+            //const component = data.getInjected(UsersComponent);
+            //component.add();
+        },
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -328,42 +327,40 @@ const DEFAULT_POST_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$2 = (data) => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("Cms::FS.Cms.PostManagement" /* Post */, {
-        name: 'Edit',
-        record: data.record,
-    });
-}, ɵ1$1 = (data) => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("Cms::FS.Cms.PostManagement" /* Post */, {
-        name: 'Delete',
-        record: data.record,
-    });
-};
 const DEFAULT_POST_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$2,
+        action: (data) => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("Cms::FS.Cms.PostManagement" /* Post */, {
+                name: 'Edit',
+                record: data.record,
+            });
+        },
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1$1,
+        action: (data) => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("Cms::FS.Cms.PostManagement" /* Post */, {
+                name: 'Delete',
+                record: data.record,
+            });
+        },
     },
 ]);
 
-const ɵ0$3 = data => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("Cms::FS.Cms.PostManagement" /* Post */, {
-        name: 'Add'
-    });
-    //const component = data.getInjected(UsersComponent);
-    //component.add();
-};
 const DEFAULT_POST_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$3,
+        action: data => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("Cms::FS.Cms.PostManagement" /* Post */, {
+                name: 'Add'
+            });
+            //const component = data.getInjected(UsersComponent);
+            //component.add();
+        },
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -433,42 +430,40 @@ const DEFAULT_TAG_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$4 = (data) => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
-        name: 'Edit',
-        record: data.record,
-    });
-}, ɵ1$2 = (data) => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
-        name: 'Delete',
-        record: data.record,
-    });
-};
 const DEFAULT_TAG_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$4,
+        action: (data) => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+                name: 'Edit',
+                record: data.record,
+            });
+        },
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1$2,
+        action: (data) => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+                name: 'Delete',
+                record: data.record,
+            });
+        },
     },
 ]);
 
-const ɵ0$5 = data => {
-    const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
-        name: 'Add'
-    });
-    //const component = data.getInjected(UsersComponent);
-    //component.add();
-};
 const DEFAULT_TAG_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$5,
+        action: data => {
+            const service = data.getInjected(ExtensionsService);
+            service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+                name: 'Add'
+            });
+            //const component = data.getInjected(UsersComponent);
+            //component.add();
+        },
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -614,13 +609,16 @@ class CmsConfigModule {
         };
     }
 }
-CmsConfigModule.decorators = [
-    { type: NgModule }
-];
+CmsConfigModule.ɵfac = function CmsConfigModule_Factory(t) { return new (t || CmsConfigModule)(); };
+CmsConfigModule.ɵmod = ɵɵdefineNgModule({ type: CmsConfigModule });
+CmsConfigModule.ɵinj = ɵɵdefineInjector({});
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(CmsConfigModule, [{
+        type: NgModule
+    }], null, null); })();
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { ActionItem, CMS_ROUTE_PROVIDERS, CmsConfigModule, ExtensionsService, configureRoutes, CMS_ROUTE_PROVIDERS as ɵa, configureRoutes as ɵb, EXTENSIONS_PROVIDERS as ɵc };
+export { ActionItem, CMS_ROUTE_PROVIDERS, CmsConfigModule, ExtensionsService, configureRoutes };
 //# sourceMappingURL=fs-tw-cms-config.js.map

@@ -3,3 +3,4 @@ export interface TenantIdResponse {
     tenantId: string;
     name: string;
 }
+//# sourceMappingURL=tenant.d.ts.map

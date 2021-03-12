@@ -58,11 +58,10 @@ export class MSProductService {
         return { list, categories };
     }
 }
-MSProductService.ɵprov = i0.ɵɵdefineInjectable({ factory: function MSProductService_Factory() { return new MSProductService(i0.ɵɵinject(i1.LayoutStateService)); }, token: MSProductService, providedIn: "root" });
-MSProductService.decorators = [
-    { type: Injectable, args: [{ providedIn: 'root' },] }
-];
-MSProductService.ctorParameters = () => [
-    { type: LayoutStateService }
-];
+MSProductService.ɵfac = function MSProductService_Factory(t) { return new (t || MSProductService)(i0.ɵɵinject(i1.LayoutStateService)); };
+MSProductService.ɵprov = i0.ɵɵdefineInjectable({ token: MSProductService, factory: MSProductService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSProductService, [{
+        type: Injectable,
+        args: [{ providedIn: 'root' }]
+    }], function () { return [{ type: i1.LayoutStateService }]; }, null); })();
 //# sourceMappingURL=product.service.js.map

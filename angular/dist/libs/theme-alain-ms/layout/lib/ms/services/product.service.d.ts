@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { MSProductCategory, MSProductI18n } from '../../models';
 import { LayoutStateService } from '../../services/layout-state.service';
+import * as i0 from "@angular/core";
 export declare class MSProductService {
     private layoutSateService;
     private _data;
@@ -12,4 +13,7 @@ export declare class MSProductService {
         list: MSProductCategory[][];
         categories: MSProductCategory[];
     };
+    static ɵfac: i0.ɵɵFactoryDef<MSProductService, never>;
+    static ɵprov: i0.ɵɵInjectableDef<MSProductService>;
 }
+//# sourceMappingURL=product.service.d.ts.map

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AlainThemeModule } from '@delon/theme';
+import * as i0 from "@angular/core";
+import * as i1 from "@delon/theme";
 // #region reuse-tab
 /**
  * 若需要[路由复用](https://ng-alain.com/components/reuse-tab)需要：
@@ -43,12 +45,18 @@ export class GlobalConfigModule {
         };
     }
 }
-GlobalConfigModule.decorators = [
-    { type: NgModule, args: [{
+GlobalConfigModule.ɵfac = function GlobalConfigModule_Factory(t) { return new (t || GlobalConfigModule)(); };
+GlobalConfigModule.ɵmod = i0.ɵɵdefineNgModule({ type: GlobalConfigModule });
+GlobalConfigModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
+            AlainThemeModule.forRoot(),
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(GlobalConfigModule, { imports: [i1.AlainThemeModule] }); })();
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(GlobalConfigModule, [{
+        type: NgModule,
+        args: [{
                 imports: [
                     AlainThemeModule.forRoot(),
                 ],
-            },] }
-];
-GlobalConfigModule.ctorParameters = () => [];
+            }]
+    }], function () { return []; }, null); })();
 //# sourceMappingURL=global-config.module.js.map

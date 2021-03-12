@@ -4,3 +4,4 @@ export declare const enum eAccountRouteNames {
     Register = "AbpAccount::Register",
     ManageProfile = "AbpAccount::ManageYourProfile"
 }
+//# sourceMappingURL=route-names.d.ts.map

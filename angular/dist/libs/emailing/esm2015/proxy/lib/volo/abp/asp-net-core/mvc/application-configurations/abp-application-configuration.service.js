@@ -12,13 +12,12 @@ export class AbpApplicationConfigurationService {
         }, { apiName: this.apiName });
     }
 }
-AbpApplicationConfigurationService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AbpApplicationConfigurationService_Factory() { return new AbpApplicationConfigurationService(i0.ɵɵinject(i1.RestService)); }, token: AbpApplicationConfigurationService, providedIn: "root" });
-AbpApplicationConfigurationService.decorators = [
-    { type: Injectable, args: [{
+AbpApplicationConfigurationService.ɵfac = function AbpApplicationConfigurationService_Factory(t) { return new (t || AbpApplicationConfigurationService)(i0.ɵɵinject(i1.RestService)); };
+AbpApplicationConfigurationService.ɵprov = i0.ɵɵdefineInjectable({ token: AbpApplicationConfigurationService, factory: AbpApplicationConfigurationService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AbpApplicationConfigurationService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-AbpApplicationConfigurationService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: i1.RestService }]; }, null); })();
 //# sourceMappingURL=abp-application-configuration.service.js.map

@@ -5,7 +5,6 @@
   "esm2015": "../esm2015/config/fs-tw-theme-config.js",
   "fesm2015": "../fesm2015/fs-tw-theme-config.js",
   "typings": "fs-tw-theme-config.d.ts",
-  "metadata": "fs-tw-theme-config.metadata.json",
   "sideEffects": false,
   "name": "@fs-tw/theme/config"
 }

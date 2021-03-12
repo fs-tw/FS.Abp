@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"MetaData":{"__symbolic":"interface"},"TagCreateDto":{"__symbolic":"interface"},"TagDto":{"__symbolic":"interface"},"TagGetListDto":{"__symbolic":"interface"},"TagPrimaryKeyDto":{"__symbolic":"interface"},"TagUpdateDto":{"__symbolic":"interface"},"TagWithDetailsDto":{"__symbolic":"interface"}}}]

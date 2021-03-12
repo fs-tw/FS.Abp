@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@abp/ng.core'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/cms/proxy', ['exports', '@abp/ng.core', '@angular/core'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].cms = global['fs-tw'].cms || {}, global['fs-tw'].cms.proxy = {}), global.i1, global.ng.core));
-}(this, (function (exports, i1, i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/cms/proxy', ['exports', '@angular/core', '@abp/ng.core'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].cms = global['fs-tw'].cms || {}, global['fs-tw'].cms.proxy = {}), global.ng.core, global.i1));
+}(this, (function (exports, i0, i1) { 'use strict';
 
     var index = /*#__PURE__*/Object.freeze({
         __proto__: null
@@ -34,15 +34,16 @@
         }
         return DirectoriesApiService;
     }());
-    DirectoriesApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function DirectoriesApiService_Factory() { return new DirectoriesApiService(i0.ɵɵinject(i1.RestService)); }, token: DirectoriesApiService, providedIn: "root" });
-    DirectoriesApiService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    DirectoriesApiService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    DirectoriesApiService.ɵfac = function DirectoriesApiService_Factory(t) { return new (t || DirectoriesApiService)(i0.ɵɵinject(i1.RestService)); };
+    DirectoriesApiService.ɵprov = i0.ɵɵdefineInjectable({ token: DirectoriesApiService, factory: DirectoriesApiService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DirectoriesApiService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$3 = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -64,15 +65,16 @@
         }
         return FilesApiService;
     }());
-    FilesApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FilesApiService_Factory() { return new FilesApiService(i0.ɵɵinject(i1.RestService)); }, token: FilesApiService, providedIn: "root" });
-    FilesApiService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    FilesApiService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    FilesApiService.ɵfac = function FilesApiService_Factory(t) { return new (t || FilesApiService)(i0.ɵɵinject(i1.RestService)); };
+    FilesApiService.ɵprov = i0.ɵɵdefineInjectable({ token: FilesApiService, factory: FilesApiService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FilesApiService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$4 = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -133,15 +135,16 @@
         }
         return BlogsApiService;
     }());
-    BlogsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function BlogsApiService_Factory() { return new BlogsApiService(i0.ɵɵinject(i1.RestService)); }, token: BlogsApiService, providedIn: "root" });
-    BlogsApiService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    BlogsApiService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    BlogsApiService.ɵfac = function BlogsApiService_Factory(t) { return new (t || BlogsApiService)(i0.ɵɵinject(i1.RestService)); };
+    BlogsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: BlogsApiService, factory: BlogsApiService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(BlogsApiService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$8 = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -184,15 +187,16 @@
         }
         return DocumentsApiService;
     }());
-    DocumentsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function DocumentsApiService_Factory() { return new DocumentsApiService(i0.ɵɵinject(i1.RestService)); }, token: DocumentsApiService, providedIn: "root" });
-    DocumentsApiService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    DocumentsApiService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    DocumentsApiService.ɵfac = function DocumentsApiService_Factory(t) { return new (t || DocumentsApiService)(i0.ɵɵinject(i1.RestService)); };
+    DocumentsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: DocumentsApiService, factory: DocumentsApiService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DocumentsApiService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$c = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -259,15 +263,16 @@
         }
         return PostsApiService;
     }());
-    PostsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function PostsApiService_Factory() { return new PostsApiService(i0.ɵɵinject(i1.RestService)); }, token: PostsApiService, providedIn: "root" });
-    PostsApiService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    PostsApiService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    PostsApiService.ɵfac = function PostsApiService_Factory(t) { return new (t || PostsApiService)(i0.ɵɵinject(i1.RestService)); };
+    PostsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: PostsApiService, factory: PostsApiService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PostsApiService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$e = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -319,15 +324,16 @@
         }
         return TagsApiService;
     }());
-    TagsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function TagsApiService_Factory() { return new TagsApiService(i0.ɵɵinject(i1.RestService)); }, token: TagsApiService, providedIn: "root" });
-    TagsApiService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    TagsApiService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    TagsApiService.ɵfac = function TagsApiService_Factory(t) { return new (t || TagsApiService)(i0.ɵɵinject(i1.RestService)); };
+    TagsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: TagsApiService, factory: TagsApiService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TagsApiService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$g = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -414,15 +420,16 @@
         }
         return DirectoryDescriptorService;
     }());
-    DirectoryDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ factory: function DirectoryDescriptorService_Factory() { return new DirectoryDescriptorService(i0.ɵɵinject(i1.RestService)); }, token: DirectoryDescriptorService, providedIn: "root" });
-    DirectoryDescriptorService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    DirectoryDescriptorService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    DirectoryDescriptorService.ɵfac = function DirectoryDescriptorService_Factory(t) { return new (t || DirectoryDescriptorService)(i0.ɵɵinject(i1.RestService)); };
+    DirectoryDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ token: DirectoryDescriptorService, factory: DirectoryDescriptorService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DirectoryDescriptorService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var index$o = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -479,15 +486,16 @@
         }
         return FileDescriptorService;
     }());
-    FileDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FileDescriptorService_Factory() { return new FileDescriptorService(i0.ɵɵinject(i1.RestService)); }, token: FileDescriptorService, providedIn: "root" });
-    FileDescriptorService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    FileDescriptorService.ctorParameters = function () { return [
-        { type: i1.RestService }
-    ]; };
+    FileDescriptorService.ɵfac = function FileDescriptorService_Factory(t) { return new (t || FileDescriptorService)(i0.ɵɵinject(i1.RestService)); };
+    FileDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ token: FileDescriptorService, factory: FileDescriptorService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FileDescriptorService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return [{ type: i1.RestService }]; }, null);
+    })();
 
     var FileIconType;
     (function (FileIconType) {

@@ -6,3 +6,4 @@ export declare const STYLES_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureStyles(iconSrv: NzIconService): () => void;
+//# sourceMappingURL=styles.provider.d.ts.map

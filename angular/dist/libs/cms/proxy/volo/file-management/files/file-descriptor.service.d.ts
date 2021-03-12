@@ -2,6 +2,7 @@ import type { CreateFileInput, FileDescriptorDto, FileUploadPreInfoDto, FileUplo
 import { RestService } from '@abp/ng.core';
 import type { ListResultDto } from '@abp/ng.core';
 import type { RemoteStreamContent } from '../../abp/content/models';
+import * as i0 from "@angular/core";
 export declare class FileDescriptorService {
     private restService;
     apiName: string;
@@ -15,4 +16,7 @@ export declare class FileDescriptorService {
     moveByInput: (input: MoveFileInput) => import("rxjs").Observable<FileDescriptorDto>;
     renameByIdAndInput: (id: string, input: RenameFileInput) => import("rxjs").Observable<FileDescriptorDto>;
     constructor(restService: RestService);
+    static ɵfac: i0.ɵɵFactoryDef<FileDescriptorService, never>;
+    static ɵprov: i0.ɵɵInjectableDef<FileDescriptorService>;
 }
+//# sourceMappingURL=file-descriptor.service.d.ts.map

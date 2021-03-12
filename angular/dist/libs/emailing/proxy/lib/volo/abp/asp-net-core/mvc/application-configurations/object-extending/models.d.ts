@@ -69,3 +69,4 @@ export interface ObjectExtensionsDto {
     modules: Record<string, ModuleExtensionDto>;
     enums: Record<string, ExtensionEnumDto>;
 }
+//# sourceMappingURL=models.d.ts.map

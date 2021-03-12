@@ -2,6 +2,7 @@ import { OnInit, TemplateRef } from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { ToasterService } from '@abp/ng.theme.shared';
 import { ConfigStateService, EnvironmentService } from '@abp/ng.core';
+import * as i0 from "@angular/core";
 export declare class ImageFile {
     fileName: string;
     fileUrl: string;
@@ -67,5 +68,8 @@ export declare class ImagePickerComponent implements OnInit {
     controllModal(state: boolean, image?: ImageFile): void;
     getDeleteFileNames(): string[];
     getUploadFiles(): SaveFile[];
+    static ɵfac: i0.ɵɵFactoryDef<ImagePickerComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<ImagePickerComponent, "image-picker", never, { "imageWidth": "imageWidth"; "imageHeight": "imageHeight"; "borderWidth": "borderWidth"; "borderHeight": "borderHeight"; "maxImageCount": "maxImageCount"; "isMultiple": "isMultiple"; "imageTemplate": "imageTemplate"; "uploadTemplate": "uploadTemplate"; "uploadTextTemplate": "uploadTextTemplate"; "inLine": "inLine"; "showFrontButton": "showFrontButton"; "existFiles": "existFiles"; }, {}, never, never>;
 }
 export {};
+//# sourceMappingURL=image-picker.component.d.ts.map

@@ -108,50 +108,51 @@
         };
         return ExtensionsService;
     }());
-    ExtensionsService.ɵprov = i0.ɵɵdefineInjectable({ factory: function ExtensionsService_Factory() { return new ExtensionsService(); }, token: ExtensionsService, providedIn: "root" });
-    ExtensionsService.decorators = [
-        { type: i0.Injectable, args: [{
-                    providedIn: 'root',
-                },] }
-    ];
-    ExtensionsService.ctorParameters = function () { return []; };
+    ExtensionsService.ɵfac = function ExtensionsService_Factory(t) { return new (t || ExtensionsService)(); };
+    ExtensionsService.ɵprov = i0.ɵɵdefineInjectable({ token: ExtensionsService, factory: ExtensionsService.ɵfac, providedIn: 'root' });
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ExtensionsService, [{
+                type: i0.Injectable,
+                args: [{
+                        providedIn: 'root',
+                    }]
+            }], function () { return []; }, null);
+    })();
 
-    var ɵ0 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("Cms::FS.Cms.Blogs" /* Blog */, {
-            name: 'Edit',
-            record: data.record,
-        });
-    }, ɵ1 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("Cms::FS.Cms.Blogs" /* Blog */, {
-            name: 'Delete',
-            record: data.record,
-        });
-    };
     var DEFAULT_BLOG_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("Cms::FS.Cms.Blogs" /* Blog */, {
+                    name: 'Edit',
+                    record: data.record,
+                });
+            },
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("Cms::FS.Cms.Blogs" /* Blog */, {
+                    name: 'Delete',
+                    record: data.record,
+                });
+            },
         },
     ]);
 
-    var ɵ0$1 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("Cms::FS.Cms.Blogs" /* Blog */, {
-            name: 'Add'
-        });
-        //const component = data.getInjected(UsersComponent);
-        //component.add();
-    };
     var DEFAULT_BLOG_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$1,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("Cms::FS.Cms.Blogs" /* Blog */, {
+                    name: 'Add'
+                });
+                //const component = data.getInjected(UsersComponent);
+                //component.add();
+            },
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -333,42 +334,40 @@
         }
     ]);
 
-    var ɵ0$2 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("Cms::FS.Cms.PostManagement" /* Post */, {
-            name: 'Edit',
-            record: data.record,
-        });
-    }, ɵ1$1 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("Cms::FS.Cms.PostManagement" /* Post */, {
-            name: 'Delete',
-            record: data.record,
-        });
-    };
     var DEFAULT_POST_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$2,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("Cms::FS.Cms.PostManagement" /* Post */, {
+                    name: 'Edit',
+                    record: data.record,
+                });
+            },
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1$1,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("Cms::FS.Cms.PostManagement" /* Post */, {
+                    name: 'Delete',
+                    record: data.record,
+                });
+            },
         },
     ]);
 
-    var ɵ0$3 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("Cms::FS.Cms.PostManagement" /* Post */, {
-            name: 'Add'
-        });
-        //const component = data.getInjected(UsersComponent);
-        //component.add();
-    };
     var DEFAULT_POST_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$3,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("Cms::FS.Cms.PostManagement" /* Post */, {
+                    name: 'Add'
+                });
+                //const component = data.getInjected(UsersComponent);
+                //component.add();
+            },
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -438,42 +437,40 @@
         }
     ]);
 
-    var ɵ0$4 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
-            name: 'Edit',
-            record: data.record,
-        });
-    }, ɵ1$2 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
-            name: 'Delete',
-            record: data.record,
-        });
-    };
     var DEFAULT_TAG_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$4,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+                    name: 'Edit',
+                    record: data.record,
+                });
+            },
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1$2,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+                    name: 'Delete',
+                    record: data.record,
+                });
+            },
         },
     ]);
 
-    var ɵ0$5 = function (data) {
-        var service = data.getInjected(ExtensionsService);
-        service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
-            name: 'Add'
-        });
-        //const component = data.getInjected(UsersComponent);
-        //component.add();
-    };
     var DEFAULT_TAG_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$5,
+            action: function (data) {
+                var service = data.getInjected(ExtensionsService);
+                service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+                    name: 'Add'
+                });
+                //const component = data.getInjected(UsersComponent);
+                //component.add();
+            },
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -929,9 +926,14 @@
         };
         return CmsConfigModule;
     }());
-    CmsConfigModule.decorators = [
-        { type: i0.NgModule }
-    ];
+    CmsConfigModule.ɵfac = function CmsConfigModule_Factory(t) { return new (t || CmsConfigModule)(); };
+    CmsConfigModule.ɵmod = i0.ɵɵdefineNgModule({ type: CmsConfigModule });
+    CmsConfigModule.ɵinj = i0.ɵɵdefineInjector({});
+    (function () {
+        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(CmsConfigModule, [{
+                type: i0.NgModule
+            }], null, null);
+    })();
 
     /**
      * Generated bundle index. Do not edit.
@@ -942,9 +944,6 @@
     exports.CmsConfigModule = CmsConfigModule;
     exports.ExtensionsService = ExtensionsService;
     exports.configureRoutes = configureRoutes;
-    exports.ɵa = CMS_ROUTE_PROVIDERS;
-    exports.ɵb = configureRoutes;
-    exports.ɵc = EXTENSIONS_PROVIDERS;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

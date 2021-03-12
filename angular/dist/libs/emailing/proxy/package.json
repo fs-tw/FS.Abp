@@ -5,7 +5,6 @@
   "esm2015": "../esm2015/proxy/fs-tw-emailing-proxy.js",
   "fesm2015": "../fesm2015/fs-tw-emailing-proxy.js",
   "typings": "fs-tw-emailing-proxy.d.ts",
-  "metadata": "fs-tw-emailing-proxy.metadata.json",
   "sideEffects": false,
   "name": "@fs-tw/emailing/proxy"
 }

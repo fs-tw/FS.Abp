@@ -8,7 +8,7 @@ import { RoutesService, LocalizationPipe } from '@abp/ng.core';
 import * as i0 from "@angular/core";
 import * as i1 from "@abp/ng.core";
 import * as i2 from "@delon/theme";
-import * as i3 from "@delon/util/array";
+import * as i3 from "@delon/util";
 /**
  * 顶部菜单所有菜单数据，几个注意点：
  * - 当前处理的数据源格式为 `./assets/tmp/all-nav-en-US.json`
@@ -120,14 +120,10 @@ export class MSAllNavService {
         }
     }
 }
-MSAllNavService.ɵprov = i0.ɵɵdefineInjectable({ factory: function MSAllNavService_Factory() { return new MSAllNavService(i0.ɵɵinject(i1.RoutesService), i0.ɵɵinject(i1.LocalizationPipe), i0.ɵɵinject(i2._HttpClient), i0.ɵɵinject(i3.ArrayService)); }, token: MSAllNavService, providedIn: "root" });
-MSAllNavService.decorators = [
-    { type: Injectable, args: [{ providedIn: 'root' },] }
-];
-MSAllNavService.ctorParameters = () => [
-    { type: RoutesService },
-    { type: LocalizationPipe },
-    { type: _HttpClient },
-    { type: ArrayService }
-];
+MSAllNavService.ɵfac = function MSAllNavService_Factory(t) { return new (t || MSAllNavService)(i0.ɵɵinject(i1.RoutesService), i0.ɵɵinject(i1.LocalizationPipe), i0.ɵɵinject(i2._HttpClient), i0.ɵɵinject(i3.ArrayService)); };
+MSAllNavService.ɵprov = i0.ɵɵdefineInjectable({ token: MSAllNavService, factory: MSAllNavService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSAllNavService, [{
+        type: Injectable,
+        args: [{ providedIn: 'root' }]
+    }], function () { return [{ type: i1.RoutesService }, { type: i1.LocalizationPipe }, { type: i2._HttpClient }, { type: i3.ArrayService }]; }, null); })();
 //# sourceMappingURL=all-nav.service.js.map

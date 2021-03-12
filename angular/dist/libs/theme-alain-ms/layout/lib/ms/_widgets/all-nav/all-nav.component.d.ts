@@ -2,6 +2,7 @@ import { ChangeDetectorRef, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { BrandService } from '../../ms.service';
 import { MSAllNav, MSAllNavData, MSAllNavService } from './all-nav.service';
+import * as i0 from "@angular/core";
 /**
  * 顶部所有菜单组件，当单页布局模式时渲染
  */
@@ -32,4 +33,7 @@ export declare class MSAllNavComponent implements OnInit, OnDestroy {
     private handleMouse;
     ngOnInit(): void;
     ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDef<MSAllNavComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<MSAllNavComponent, "ms-all-nav", never, {}, {}, never, never>;
 }
+//# sourceMappingURL=all-nav.component.d.ts.map

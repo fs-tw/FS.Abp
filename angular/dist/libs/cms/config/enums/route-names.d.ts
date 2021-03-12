@@ -10,3 +10,4 @@ export declare const enum eCmsRouteNames {
     Tag = "\u6A19\u7C64\u7DAD\u8B77",
     Tag_detail = "\u6A19\u7C64\u8A73\u7D30"
 }
+//# sourceMappingURL=route-names.d.ts.map

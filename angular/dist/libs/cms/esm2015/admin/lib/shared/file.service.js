@@ -26,12 +26,10 @@ export class FileService {
         });
     }
 }
-FileService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FileService_Factory() { return new FileService(i0.ɵɵinject(i1.RestService), i0.ɵɵinject(i1.EnvironmentService)); }, token: FileService, providedIn: "root" });
-FileService.decorators = [
-    { type: Injectable, args: [{ providedIn: 'root' },] }
-];
-FileService.ctorParameters = () => [
-    { type: RestService },
-    { type: EnvironmentService }
-];
+FileService.ɵfac = function FileService_Factory(t) { return new (t || FileService)(i0.ɵɵinject(i1.RestService), i0.ɵɵinject(i1.EnvironmentService)); };
+FileService.ɵprov = i0.ɵɵdefineInjectable({ token: FileService, factory: FileService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FileService, [{
+        type: Injectable,
+        args: [{ providedIn: 'root' }]
+    }], function () { return [{ type: i1.RestService }, { type: i1.EnvironmentService }]; }, null); })();
 //# sourceMappingURL=file.service.js.map

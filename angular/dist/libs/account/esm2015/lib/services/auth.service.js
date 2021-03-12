@@ -67,20 +67,17 @@ export class AuthService {
         }), take(1));
     }
 }
-AuthService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AuthService_Factory() { return new AuthService(i0.ɵɵinject(i0.INJECTOR), i0.ɵɵinject(i1.EnvironmentService), i0.ɵɵinject(i2.OAuthService), i0.ɵɵinject(i1.AbpApplicationConfigurationService), i0.ɵɵinject(i3.Router), i0.ɵɵinject(i1.SessionStateService), i0.ɵɵinject(i1.ConfigStateService), i0.ɵɵinject("ACCOUNT_OPTIONS", 8)); }, token: AuthService, providedIn: "root" });
-AuthService.decorators = [
-    { type: Injectable, args: [{
+AuthService.ɵfac = function AuthService_Factory(t) { return new (t || AuthService)(i0.ɵɵinject(i0.Injector), i0.ɵɵinject(i1.EnvironmentService), i0.ɵɵinject(i2.OAuthService), i0.ɵɵinject(i1.AbpApplicationConfigurationService), i0.ɵɵinject(i3.Router), i0.ɵɵinject(i1.SessionStateService), i0.ɵɵinject(i1.ConfigStateService), i0.ɵɵinject('ACCOUNT_OPTIONS', 8)); };
+AuthService.ɵprov = i0.ɵɵdefineInjectable({ token: AuthService, factory: AuthService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AuthService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root'
-            },] }
-];
-AuthService.ctorParameters = () => [
-    { type: Injector },
-    { type: EnvironmentService },
-    { type: OAuthService },
-    { type: AbpApplicationConfigurationService },
-    { type: Router },
-    { type: SessionStateService },
-    { type: ConfigStateService },
-    { type: undefined, decorators: [{ type: Optional }, { type: Inject, args: ['ACCOUNT_OPTIONS',] }] }
-];
+            }]
+    }], function () { return [{ type: i0.Injector }, { type: i1.EnvironmentService }, { type: i2.OAuthService }, { type: i1.AbpApplicationConfigurationService }, { type: i3.Router }, { type: i1.SessionStateService }, { type: i1.ConfigStateService }, { type: undefined, decorators: [{
+                type: Optional
+            }, {
+                type: Inject,
+                args: ['ACCOUNT_OPTIONS']
+            }] }]; }, null); })();
 //# sourceMappingURL=auth.service.js.map

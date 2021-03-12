@@ -12,11 +12,12 @@ export class PostStateService {
         this.store.patch({ Blog: blog });
     }
 }
-PostStateService.ɵprov = i0.ɵɵdefineInjectable({ factory: function PostStateService_Factory() { return new PostStateService(); }, token: PostStateService, providedIn: "root" });
-PostStateService.decorators = [
-    { type: Injectable, args: [{
+PostStateService.ɵfac = function PostStateService_Factory(t) { return new (t || PostStateService)(); };
+PostStateService.ɵprov = i0.ɵɵdefineInjectable({ token: PostStateService, factory: PostStateService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PostStateService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-PostStateService.ctorParameters = () => [];
+            }]
+    }], function () { return []; }, null); })();
 //# sourceMappingURL=post-state.service.js.map

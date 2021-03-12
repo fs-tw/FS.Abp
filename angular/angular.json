@@ -44,172 +44,6 @@
         }
       }
     },
-    "unify-public": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "apps/unify-public",
-      "sourceRoot": "apps/unify-public/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "../aspnet-core/src/IWP.HttpApi.Host/wwwroot/unify-public",
-            "index": "apps/unify-public/src/index.html",
-            "main": "apps/unify-public/src/main.ts",
-            "polyfills": "apps/unify-public/src/polyfills.ts",
-            "tsConfig": "apps/unify-public/tsconfig.app.json",
-            "aot": true,
-            "allowedCommonJsDependencies": [
-              "@ant-design/colors",
-              "chart.js",
-              "js-sha256",
-              "@uppy/xhr-upload",
-              "@uppy/dashboard",
-              "@uppy/core"
-            ],
-            "assets": [
-              "apps/unify-public/src/favicon.ico",
-              "apps/unify-public/src/assets"
-            ],
-            "styles": [
-              {
-                "input": "node_modules/@swimlane/ngx-datatable/index.css",
-                "inject": true,
-                "bundleName": "ngx-datatable-index"
-              },
-              {
-                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
-                "inject": true,
-                "bundleName": "ngx-datatable-icons"
-              },
-              {
-                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
-                "inject": true,
-                "bundleName": "ngx-datatable-material"
-              },
-              {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-all.min"
-              },
-              {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-v4-shims.min"
-              },
-              {
-                "input": "node_modules/flag-icon-css/css/flag-icon.min.css",
-                "inject": true,
-                "bundleName": "flag-icon.min"
-              },
-              "apps/unify-public/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/unify-public/src/environments/environment.ts",
-                  "with": "apps/unify-public/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "100mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "unify-public:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "unify-public:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "unify-public:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/unify-public/src/test.ts",
-            "polyfills": "apps/unify-public/src/polyfills.ts",
-            "tsConfig": "apps/unify-public/tsconfig.spec.json",
-            "karmaConfig": "apps/unify-public/karma.conf.js",
-            "assets": [
-              "apps/unify-public/src/favicon.ico",
-              "apps/unify-public/src/assets"
-            ],
-            "styles": [
-              {
-                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "inject": true,
-                "bundleName": "bootstrap.min"
-              },
-              "apps/unify-public/src/styles.scss",
-              "node_modules/flag-icon-css/css/flag-icon.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/unify-public/tsconfig.app.json",
-              "apps/unify-public/tsconfig.spec.json",
-              "apps/unify-publice2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/unify-public/e2e/protractor.conf.js",
-            "devServerTarget": "unify-public:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "unify-public:serve:production"
-            }
-          }
-        }
-      }
-    },
     "demo-admin": {
       "projectType": "application",
       "root": "apps/demo-admin",
@@ -409,6 +243,172 @@
         }
       }
     },
+    "unify-public": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/unify-public",
+      "sourceRoot": "apps/unify-public/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/demo-admin/unify-public",
+            "index": "apps/unify-public/src/index.html",
+            "main": "apps/unify-public/src/main.ts",
+            "polyfills": "apps/unify-public/src/polyfills.ts",
+            "tsConfig": "apps/unify-public/tsconfig.app.json",
+            "aot": true,
+            "allowedCommonJsDependencies": [
+              "@ant-design/colors",
+              "chart.js",
+              "js-sha256",
+              "@uppy/xhr-upload",
+              "@uppy/dashboard",
+              "@uppy/core"
+            ],
+            "assets": [
+              "apps/unify-public/src/favicon.ico",
+              "apps/unify-public/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/index.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-index"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-icons"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-material"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-all.min"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-v4-shims.min"
+              },
+              {
+                "input": "node_modules/flag-icon-css/css/flag-icon.min.css",
+                "inject": true,
+                "bundleName": "flag-icon.min"
+              },
+              "apps/unify-public/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/unify-public/src/environments/environment.ts",
+                  "with": "apps/unify-public/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "100mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "unify-public:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "unify-public:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "unify-public:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/unify-public/src/test.ts",
+            "polyfills": "apps/unify-public/src/polyfills.ts",
+            "tsConfig": "apps/unify-public/tsconfig.spec.json",
+            "karmaConfig": "apps/unify-public/karma.conf.js",
+            "assets": [
+              "apps/unify-public/src/favicon.ico",
+              "apps/unify-public/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap.min"
+              },
+              "apps/unify-public/src/styles.scss",
+              "node_modules/flag-icon-css/css/flag-icon.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/unify-public/tsconfig.app.json",
+              "apps/unify-public/tsconfig.spec.json",
+              "apps/unify-publice2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/unify-public/e2e/protractor.conf.js",
+            "devServerTarget": "unify-public:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "unify-public:serve:production"
+            }
+          }
+        }
+      }
+    },
     "theme-alain-ms": {
       "projectType": "library",
       "root": "libs/theme-alain-ms",
@@ -452,6 +452,47 @@
         }
       }
     },
+    "theme-unify": {
+      "projectType": "library",
+      "root": "libs/theme-unify",
+      "sourceRoot": "libs/theme-unify/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-unify/tsconfig.lib.json",
+            "project": "libs/theme-unify/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-unify/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-unify/tsconfig.lib.json",
+              "libs/theme-unify/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/theme-unify/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/theme-unify/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
+    },
     "theme": {
       "projectType": "library",
       "root": "libs/theme",
@@ -494,47 +535,6 @@
           }
         }
       }
-    },
-    "theme-unify": {
-      "projectType": "library",
-      "root": "libs/theme-unify",
-      "sourceRoot": "libs/theme-unify/src",
-      "prefix": "fs",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "tsconfig.lib.json",
-            "project": "libs/theme-unify/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/theme-unify/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/theme-unify/tsconfig.lib.json",
-              "libs/theme-unify/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/theme-unify/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/theme-unify/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {}
     },
     "emailing": {
       "projectType": "library",

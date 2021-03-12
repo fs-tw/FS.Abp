@@ -1,5 +1,6 @@
 import { Injector, Injectable } from '@angular/core';
 import { Fs, Volo } from '@fs-tw/cms/proxy';
+import * as i0 from "@angular/core";
 // @dynamic
 export class PageService {
     constructor(injector) {
@@ -45,10 +46,9 @@ export class PageService {
         return this.postService.updateByPostPrimaryKeyAndPostUpdate({ id: id }, input);
     }
 }
-PageService.decorators = [
-    { type: Injectable }
-];
-PageService.ctorParameters = () => [
-    { type: Injector }
-];
+PageService.ɵfac = function PageService_Factory(t) { return new (t || PageService)(i0.ɵɵinject(i0.Injector)); };
+PageService.ɵprov = i0.ɵɵdefineInjectable({ token: PageService, factory: PageService.ɵfac });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PageService, [{
+        type: Injectable
+    }], function () { return [{ type: i0.Injector }]; }, null); })();
 //# sourceMappingURL=page.service.js.map

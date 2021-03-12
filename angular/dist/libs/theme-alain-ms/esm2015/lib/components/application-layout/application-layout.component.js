@@ -7,6 +7,102 @@ import { ReuseTabService } from '@delon/abc/reuse-tab';
 import { updateHostClass } from '@delon/util';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { BrandService } from '@fs-tw/theme-alain-ms/layout';
+import * as i0 from "@angular/core";
+import * as i1 from "@fs-tw/theme-alain-ms/layout";
+import * as i2 from "@angular/cdk/layout";
+import * as i3 from "@angular/router";
+import * as i4 from "ng-zorro-antd/message";
+import * as i5 from "@delon/abc/reuse-tab";
+import * as i6 from "@angular/common";
+import * as i7 from "ng-zorro-antd/spin";
+import * as i8 from "@abp/ng.core";
+function ApplicationLayoutComponent_ng_container_0_ms_sidebar_2_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "ms-sidebar");
+} }
+function ApplicationLayoutComponent_ng_container_0_div_7_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelement(0, "div");
+} }
+function ApplicationLayoutComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵelement(1, "ms-topbar", 2);
+    i0.ɵɵtemplate(2, ApplicationLayoutComponent_ng_container_0_ms_sidebar_2_Template, 1, 0, "ms-sidebar", 0);
+    i0.ɵɵelementStart(3, "div", 3);
+    i0.ɵɵelement(4, "nz-spin", 4);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 5);
+    i0.ɵɵelementStart(6, "service-layout", 6);
+    i0.ɵɵtemplate(7, ApplicationLayoutComponent_ng_container_0_div_7_Template, 1, 0, "div", 7);
+    i0.ɵɵelement(8, "router-outlet");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const store_r3 = ctx.ngIf;
+    i0.ɵɵnextContext();
+    const _r1 = i0.ɵɵreference(3);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("allNav", store_r3.sidebarConfig.hasAllNav);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", store_r3.sidebarConfig.hasSidebar);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("hidden", !store_r3.isFetching);
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("hidden", store_r3.isFetching);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("nav", store_r3.sidebarConfig.hasPageNav)("navConfig", store_r3.navConfig)("navList", store_r3.pageNavs);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngTemplateOutlet", _r1);
+} }
+const _c0 = function (a0) { return [a0]; };
+function ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_button_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "button", 12);
+    i0.ɵɵtext(1, "\u8FD4\u56DE");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r11 = i0.ɵɵnextContext(4);
+    i0.ɵɵproperty("routerLink", i0.ɵɵpureFunction1(1, _c0, ctx_r11.parentPath));
+} }
+function ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtemplate(1, ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_button_1_Template, 2, 3, "button", 11);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r10 = i0.ɵɵnextContext(3);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", !ctx_r10.isCurrentPath);
+} }
+function ApplicationLayoutComponent_ng_template_2_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵtemplate(0, ApplicationLayoutComponent_ng_template_2_ng_template_1_span_0_Template, 2, 1, "span", 0);
+} if (rf & 2) {
+    const ctx_r7 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("ngIf", ctx_r7.layoutStateService == null ? null : ctx_r7.layoutStateService.routesProcessor == null ? null : ctx_r7.layoutStateService.routesProcessor.RouterState);
+} }
+function ApplicationLayoutComponent_ng_template_2_ng_template_3_span_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1);
+    i0.ɵɵpipe(2, "abpLocalization");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r12 = i0.ɵɵnextContext(3);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind1(2, 1, ctx_r12.layoutStateService == null ? null : ctx_r12.layoutStateService.routesProcessor == null ? null : ctx_r12.layoutStateService.routesProcessor.CurrentRoute == null ? null : ctx_r12.layoutStateService.routesProcessor.CurrentRoute.name), " ");
+} }
+function ApplicationLayoutComponent_ng_template_2_ng_template_3_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵtemplate(0, ApplicationLayoutComponent_ng_template_2_ng_template_3_span_0_Template, 3, 3, "span", 0);
+} if (rf & 2) {
+    const ctx_r9 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("ngIf", ctx_r9.layoutStateService == null ? null : ctx_r9.layoutStateService.routesProcessor == null ? null : ctx_r9.layoutStateService.routesProcessor.RouterState);
+} }
+function ApplicationLayoutComponent_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "page-bar", 8);
+    i0.ɵɵtemplate(1, ApplicationLayoutComponent_ng_template_2_ng_template_1_Template, 1, 1, "ng-template", null, 9, i0.ɵɵtemplateRefExtractor);
+    i0.ɵɵtemplate(3, ApplicationLayoutComponent_ng_template_2_ng_template_3_Template, 1, 1, "ng-template", null, 10, i0.ɵɵtemplateRefExtractor);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const _r6 = i0.ɵɵreference(2);
+    const _r8 = i0.ɵɵreference(4);
+    i0.ɵɵproperty("subTitle", _r6)("title", _r8);
+} }
 export class ApplicationLayoutComponent {
     constructor(layoutStateService, bm, mediaMatcher, router, route, msg, reuseTabSrv, el, renderer, srv, doc) {
         this.layoutStateService = layoutStateService;
@@ -115,24 +211,23 @@ export class ApplicationLayoutComponent {
         this.body.classList.remove('alain-ms__has-topbar', 'alain-ms__has-sidebar', 'alain-ms__has-fixed');
     }
 }
-ApplicationLayoutComponent.decorators = [
-    { type: Component, args: [{
+ApplicationLayoutComponent.ɵfac = function ApplicationLayoutComponent_Factory(t) { return new (t || ApplicationLayoutComponent)(i0.ɵɵdirectiveInject(i1.LayoutStateService), i0.ɵɵdirectiveInject(i2.BreakpointObserver), i0.ɵɵdirectiveInject(i2.MediaMatcher), i0.ɵɵdirectiveInject(i3.Router), i0.ɵɵdirectiveInject(i3.ActivatedRoute), i0.ɵɵdirectiveInject(i4.NzMessageService), i0.ɵɵdirectiveInject(i5.ReuseTabService), i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(i0.Renderer2), i0.ɵɵdirectiveInject(i1.BrandService), i0.ɵɵdirectiveInject(DOCUMENT)); };
+ApplicationLayoutComponent.ɵcmp = i0.ɵɵdefineComponent({ type: ApplicationLayoutComponent, selectors: [["abp-application-layout"]], decls: 4, vars: 3, consts: [[4, "ngIf"], ["FsPageBar", ""], [3, "allNav"], [1, "brand-page-loading", 3, "hidden"], ["nzSpinning", ""], [1, "alain-ms__body", 3, "hidden"], [3, "nav", "navConfig", "navList"], [4, "ngTemplateOutlet"], [3, "subTitle", "title"], ["subTitleTpl", ""], ["titleTpl", ""], ["type", "button", "class", "pri-btn", 3, "routerLink", 4, "ngIf"], ["type", "button", 1, "pri-btn", 3, "routerLink"]], template: function ApplicationLayoutComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵtemplate(0, ApplicationLayoutComponent_ng_container_0_Template, 9, 8, "ng-container", 0);
+        i0.ɵɵpipe(1, "async");
+        i0.ɵɵtemplate(2, ApplicationLayoutComponent_ng_template_2_Template, 5, 2, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
+    } if (rf & 2) {
+        i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(1, 1, ctx.store$));
+    } }, directives: [i6.NgIf, i1.MSTopbarComponent, i7.NzSpinComponent, i1.MSServiceLayoutComponent, i6.NgTemplateOutlet, i3.RouterOutlet, i1.MSSidebarComponent, i1.MSPageBarComponent, i3.RouterLink], pipes: [i6.AsyncPipe, i8.LocalizationPipe], styles: [".pri-btn[_ngcontent-%COMP%]{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn[_ngcontent-%COMP%]:hover{border:1px solid #26d7eb;color:#26d7eb}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ApplicationLayoutComponent, [{
+        type: Component,
+        args: [{
                 selector: 'abp-application-layout',
-                template: "<ng-container *ngIf=\"store$ | async as store\">\r\n  <ms-topbar [allNav]=\"store.sidebarConfig.hasAllNav\"></ms-topbar>\r\n  <ms-sidebar *ngIf=\"store.sidebarConfig.hasSidebar\"></ms-sidebar>\r\n  <div class=\"brand-page-loading\" [hidden]=\"!store.isFetching\">\r\n    <nz-spin nzSpinning></nz-spin>\r\n  </div>\r\n  <div class=\"alain-ms__body\" [hidden]=\"store.isFetching\">\r\n    \r\n    <service-layout\r\n      [nav]=\"store.sidebarConfig.hasPageNav\"\r\n      [navConfig]=\"store.navConfig\"\r\n      [navList]=\"store.pageNavs\"\r\n    >\r\n      <!-- todo:move to feature module\r\n      <page-bar [subTitle]=\"subTitleTpl\" [title]=\"titleTpl\">\r\n        <ng-template #titleTpl> {{ store.navConfig.doc }} </ng-template>\r\n        <ng-template #subTitleTpl>\r\n          <div class=\"text-orange\">\r\n            \u4EE5\u4E0B\u53EA\u5C55\u793A\u90E8\u5206\u7EC4\u4EF6\uFF0C\u66F4\u591A\u7EC4\u4EF6<a\r\n              href=\"https://ng.ant.design\"\r\n              target=\"_blank\"\r\n              >ng.ant.design</a\r\n            >\r\n          </div>\r\n        </ng-template>\r\n        <button (click)=\"msg.success('clean')\" nz-button>\u6E05\u7406</button>\r\n        <button (click)=\"msg.success('remove')\" nz-button nzDanger>\u79FB\u9664</button>\r\n        <button (click)=\"msg.success('add')\" nz-button nzType=\"primary\">\r\n          \u65B0\u589E\r\n        </button>\r\n      </page-bar> -->\r\n      <div *ngTemplateOutlet=\"FsPageBar\"></div>\r\n      <router-outlet></router-outlet>\r\n    </service-layout>\r\n  </div>\r\n</ng-container>\r\n\r\n<ng-template #FsPageBar>\r\n  <page-bar [subTitle]=\"subTitleTpl\" [title]=\"titleTpl\">\r\n    <ng-template #subTitleTpl>\r\n      <span *ngIf=\"layoutStateService?.routesProcessor?.RouterState\" >\r\n        <button type=\"button\" class=\"pri-btn\" \r\n          *ngIf=\"!isCurrentPath\" \r\n          [routerLink]=\"[parentPath]\">\u8FD4\u56DE</button>\r\n      </span>\r\n    </ng-template>\r\n    <ng-template #titleTpl>\r\n      <span *ngIf=\"layoutStateService?.routesProcessor?.RouterState\">\r\n        {{layoutStateService?.routesProcessor?.CurrentRoute?.name | abpLocalization}}\r\n      </span>\r\n    </ng-template>\r\n  </page-bar>\r\n</ng-template>",
-                styles: [".pri-btn{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn:hover{border:1px solid #26d7eb;color:#26d7eb}"]
-            },] }
-];
-ApplicationLayoutComponent.ctorParameters = () => [
-    { type: LayoutStateService },
-    { type: BreakpointObserver },
-    { type: MediaMatcher },
-    { type: Router },
-    { type: ActivatedRoute },
-    { type: NzMessageService },
-    { type: ReuseTabService },
-    { type: ElementRef },
-    { type: Renderer2 },
-    { type: BrandService },
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
-];
+                templateUrl: './application-layout.component.html',
+                styleUrls: ['./application-layout.component.less'],
+            }]
+    }], function () { return [{ type: i1.LayoutStateService }, { type: i2.BreakpointObserver }, { type: i2.MediaMatcher }, { type: i3.Router }, { type: i3.ActivatedRoute }, { type: i4.NzMessageService }, { type: i5.ReuseTabService }, { type: i0.ElementRef }, { type: i0.Renderer2 }, { type: i1.BrandService }, { type: undefined, decorators: [{
+                type: Inject,
+                args: [DOCUMENT]
+            }] }]; }, null); })();
 //# sourceMappingURL=application-layout.component.js.map

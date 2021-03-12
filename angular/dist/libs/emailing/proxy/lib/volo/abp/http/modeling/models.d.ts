@@ -66,3 +66,4 @@ export interface TypeApiDescriptionModel {
     genericArguments: string[];
     properties: PropertyApiDescriptionModel[];
 }
+//# sourceMappingURL=models.d.ts.map

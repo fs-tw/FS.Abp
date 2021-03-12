@@ -16,13 +16,12 @@ export class AbpTenantService {
         }, { apiName: this.apiName });
     }
 }
-AbpTenantService.ɵprov = i0.ɵɵdefineInjectable({ factory: function AbpTenantService_Factory() { return new AbpTenantService(i0.ɵɵinject(i1.RestService)); }, token: AbpTenantService, providedIn: "root" });
-AbpTenantService.decorators = [
-    { type: Injectable, args: [{
+AbpTenantService.ɵfac = function AbpTenantService_Factory(t) { return new (t || AbpTenantService)(i0.ɵɵinject(i1.RestService)); };
+AbpTenantService.ɵprov = i0.ɵɵdefineInjectable({ token: AbpTenantService, factory: AbpTenantService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AbpTenantService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-AbpTenantService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: i1.RestService }]; }, null); })();
 //# sourceMappingURL=abp-tenant.service.js.map

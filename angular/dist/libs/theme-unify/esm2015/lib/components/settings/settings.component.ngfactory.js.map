@@ -1,1 +1,0 @@
-{"version":3,"file":"settings.component.ngfactory.js","sourceRoot":"","sources":["../../../../../../../libs/theme-unify/src/lib/components/settings/settings.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

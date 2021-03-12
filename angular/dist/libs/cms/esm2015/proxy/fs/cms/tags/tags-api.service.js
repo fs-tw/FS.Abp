@@ -38,13 +38,12 @@ export class TagsApiService {
         }, { apiName: this.apiName });
     }
 }
-TagsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function TagsApiService_Factory() { return new TagsApiService(i0.ɵɵinject(i1.RestService)); }, token: TagsApiService, providedIn: "root" });
-TagsApiService.decorators = [
-    { type: Injectable, args: [{
+TagsApiService.ɵfac = function TagsApiService_Factory(t) { return new (t || TagsApiService)(i0.ɵɵinject(i1.RestService)); };
+TagsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: TagsApiService, factory: TagsApiService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TagsApiService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-TagsApiService.ctorParameters = () => [
-    { type: RestService }
-];
+            }]
+    }], function () { return [{ type: i1.RestService }]; }, null); })();
 //# sourceMappingURL=tags-api.service.js.map

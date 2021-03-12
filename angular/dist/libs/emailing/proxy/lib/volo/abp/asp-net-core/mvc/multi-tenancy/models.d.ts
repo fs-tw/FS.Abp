@@ -11,3 +11,4 @@ export interface CurrentTenantDto {
 export interface MultiTenancyInfoDto {
     isEnabled: boolean;
 }
+//# sourceMappingURL=models.d.ts.map

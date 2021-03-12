@@ -2,6 +2,9 @@ import { ListService, LocalizationService } from '@abp/ng.core';
 import { ChangeDetectorRef, Directive, Input, } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NzTableComponent } from 'ng-zorro-antd/table';
+import * as i0 from "@angular/core";
+import * as i1 from "ng-zorro-antd/table";
+import * as i2 from "@abp/ng.core";
 export class NzTableListDirective {
     constructor(
     //private body:NzTbodyComponent,
@@ -90,19 +93,16 @@ export class NzTableListDirective {
         this.subscribeToLoading();
     }
 }
-NzTableListDirective.decorators = [
-    { type: Directive, args: [{
+NzTableListDirective.ɵfac = function NzTableListDirective_Factory(t) { return new (t || NzTableListDirective)(i0.ɵɵdirectiveInject(i1.NzTableComponent), i0.ɵɵdirectiveInject(i0.ChangeDetectorRef), i0.ɵɵdirectiveInject(i2.LocalizationService)); };
+NzTableListDirective.ɵdir = i0.ɵɵdefineDirective({ type: NzTableListDirective, selectors: [["nz-table", "list", ""]], inputs: { list: "list" }, exportAs: ["nzTableList"], features: [i0.ɵɵNgOnChangesFeature] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NzTableListDirective, [{
+        type: Directive,
+        args: [{
                 // tslint:disable-next-line
                 selector: 'nz-table[list]',
                 exportAs: 'nzTableList',
-            },] }
-];
-NzTableListDirective.ctorParameters = () => [
-    { type: NzTableComponent },
-    { type: ChangeDetectorRef },
-    { type: LocalizationService }
-];
-NzTableListDirective.propDecorators = {
-    list: [{ type: Input }]
-};
+            }]
+    }], function () { return [{ type: i1.NzTableComponent }, { type: i0.ChangeDetectorRef }, { type: i2.LocalizationService }]; }, { list: [{
+            type: Input
+        }] }); })();
 //# sourceMappingURL=nz-table-list.directive.js.map

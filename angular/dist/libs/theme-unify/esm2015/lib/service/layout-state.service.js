@@ -21,13 +21,12 @@ export class LayoutStateService {
         return this.store.sliceState(state => state.themeSettings);
     }
 }
-LayoutStateService.ɵprov = i0.ɵɵdefineInjectable({ factory: function LayoutStateService_Factory() { return new LayoutStateService(i0.ɵɵinject(i1.DomInsertionService)); }, token: LayoutStateService, providedIn: "root" });
-LayoutStateService.decorators = [
-    { type: Injectable, args: [{
+LayoutStateService.ɵfac = function LayoutStateService_Factory(t) { return new (t || LayoutStateService)(i0.ɵɵinject(i1.DomInsertionService)); };
+LayoutStateService.ɵprov = i0.ɵɵdefineInjectable({ token: LayoutStateService, factory: LayoutStateService.ɵfac, providedIn: 'root' });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(LayoutStateService, [{
+        type: Injectable,
+        args: [{
                 providedIn: 'root',
-            },] }
-];
-LayoutStateService.ctorParameters = () => [
-    { type: DomInsertionService }
-];
+            }]
+    }], function () { return [{ type: i1.DomInsertionService }]; }, null); })();
 //# sourceMappingURL=layout-state.service.js.map

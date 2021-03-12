@@ -1,6 +1,7 @@
 import type { BlogCreateDto, BlogGetListDto, BlogPrimaryKeyDto, BlogUpdateDto, BlogWithDetailsDto, MetaData } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
+import * as i0 from "@angular/core";
 export declare class BlogsApiService {
     private restService;
     apiName: string;
@@ -11,4 +12,7 @@ export declare class BlogsApiService {
     options: () => import("rxjs").Observable<MetaData>;
     updateByBlogPrimaryKeyAndBlogUpdate: (BlogPrimaryKey: BlogPrimaryKeyDto, BlogUpdate: BlogUpdateDto) => import("rxjs").Observable<BlogWithDetailsDto>;
     constructor(restService: RestService);
+    static ɵfac: i0.ɵɵFactoryDef<BlogsApiService, never>;
+    static ɵprov: i0.ɵɵInjectableDef<BlogsApiService>;
 }
+//# sourceMappingURL=blogs-api.service.d.ts.map
