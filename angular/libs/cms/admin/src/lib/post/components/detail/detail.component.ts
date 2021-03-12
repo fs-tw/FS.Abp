@@ -37,7 +37,7 @@ export class DetailComponent implements OnInit {
   blogs: Fs.Cms.Blogs.Dtos.BlogDto[] = [];
 
   isLoading: boolean = false;
-
+  directory
   coverImage: string = '';
 
   constructor(
@@ -46,6 +46,9 @@ export class DetailComponent implements OnInit {
     private pageService: PageService,
     private confirmationService: ConfirmationService
   ) {
+    this.pageService.findByProviderByKeyAndGroup("FS.Cms.Posts").subscribe(x => {
+      this.directory = x;
+    })
   }
 
   ngOnInit() {
@@ -119,6 +122,15 @@ export class DetailComponent implements OnInit {
     item.startTime = this.dateRange[0].toLocalISOString();
     item.endTime = this.dateRange[1].toLocalISOString();
 
+    let images = this.defaultImagePicker.getUploadFiles();
+    let deleteImages = this.defaultImagePicker.getDeleteFileNames();
+    let exist = this.defaultImagePicker.existFiles;
+    
+    console.log("getUploadFiles",images)
+    console.log("deleteImages",deleteImages)
+    console.log("exist",exist)
+    console.log("cover",this.coverImage)
+    console.log(item);
     // TODO: 上傳檔案、上傳附件、加標籤
 
     let action: Observable<any>;
@@ -128,9 +140,9 @@ export class DetailComponent implements OnInit {
       action = this.pageService.updatePost(this.postId, item);
     }
 
-    action.subscribe((x) => {
-      this.router.navigate(["cms/post"]);
-    })
+    // action.subscribe((x) => {
+    //   this.router.navigate(["cms/post"]);
+    // })
     
   }
 

@@ -28,7 +28,6 @@ import { SharedModule } from '../shared/shared.module'
 
 import { DetailComponent } from './components/detail/detail.component';
 import { ListComponent } from './components/main/list/list.component';
-import { CreateComponent } from './components/modal/create/create.component';
 import { PageService } from './providers/page.service';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 
@@ -60,7 +59,6 @@ const NzModules = [
     MainComponent,
     DetailComponent,
     ListComponent,
-    CreateComponent,
     UploadFileComponent,
     TagComponent,
     ImagePickerComponent
