@@ -34,10 +34,10 @@ namespace FS.FormManagement.Records
             builder.ToTable(options.TablePrefix + @"RecordItems", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Asnwer).HasColumnName(@"Asnwer").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.RecordId).HasColumnName(@"RecordId").ValueGeneratedNever();
+            builder.Property(x => x.ItemId).HasColumnName(@"ItemId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
-            builder.HasOne(x => x.Record).WithMany(op => op.RecordItems).IsRequired(true).HasForeignKey(@"RecordId");
+            builder.HasOne(x => x.Record).WithMany(op => op.RecordItems).IsRequired(true).HasForeignKey(@"ItemId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);

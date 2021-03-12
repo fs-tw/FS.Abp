@@ -33,9 +33,9 @@ namespace FS.FormManagement.Documents.Dtos
     {
         public virtual string No { get; set; }
 
-        public virtual System.Guid PrevVersionId { get; set; }
+        public virtual System.Guid? PrevVersionId { get; set; }
 
-        public virtual System.Guid NextVersionId { get; set; }
+        public virtual System.Guid? NextVersionId { get; set; }
 
         public virtual System.Guid DocumentDefinitionId { get; set; }
 
@@ -45,9 +45,9 @@ namespace FS.FormManagement.Documents.Dtos
     {
         public virtual string No { get; set; }
 
-        public virtual System.Guid PrevVersionId { get; set; }
+        public virtual System.Guid? PrevVersionId { get; set; }
 
-        public virtual System.Guid NextVersionId { get; set; }
+        public virtual System.Guid? NextVersionId { get; set; }
 
         public virtual System.Guid DocumentDefinitionId { get; set; }
 
@@ -57,9 +57,9 @@ namespace FS.FormManagement.Documents.Dtos
     {
         public virtual string No { get; set; }
 
-        public virtual System.Guid PrevVersionId { get; set; }
+        public virtual System.Guid? PrevVersionId { get; set; }
 
-        public virtual System.Guid NextVersionId { get; set; }
+        public virtual System.Guid? NextVersionId { get; set; }
 
         public virtual System.Guid DocumentDefinitionId { get; set; }
 

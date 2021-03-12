@@ -19,7 +19,7 @@ namespace FS.FormManagement.Records.Dtos
             RuleFor(p => p.Asnwer)
                 .NotNull()
                 ;
-            RuleFor(p => p.RecordId)
+            RuleFor(p => p.ItemId)
                 .NotNull()
                 ;
             CustomizeConfiguration();
@@ -33,7 +33,7 @@ namespace FS.FormManagement.Records.Dtos
             RuleFor(p => p.Asnwer)
                 .NotNull()
                 ;
-            RuleFor(p => p.RecordId)
+            RuleFor(p => p.ItemId)
                 .NotNull()
                 ;
             CustomizeConfiguration();

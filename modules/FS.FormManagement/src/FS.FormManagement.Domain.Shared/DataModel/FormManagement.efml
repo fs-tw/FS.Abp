@@ -429,10 +429,10 @@
     <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="f924d30a-e123-4cbd-94d4-cbfc965b592a">
       <column name="" />
     </property>
-    <property name="PrevVersionId" type="Guid" p1:ValidateRequired="true" p1:Guid="15161faf-5886-4390-80cb-390deeddb7fd">
+    <property name="PrevVersionId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="15161faf-5886-4390-80cb-390deeddb7fd">
       <column name="" />
     </property>
-    <property name="NextVersionId" type="Guid" p1:ValidateRequired="true" p1:Guid="d712b886-6a4c-4d4a-afb5-7ca5b6cc981c">
+    <property name="NextVersionId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d712b886-6a4c-4d4a-afb5-7ca5b6cc981c">
       <column name="" />
     </property>
     <property name="DocumentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="954b0fe7-d9f1-484b-89d4-ed02ca70a817">
@@ -570,7 +570,7 @@
     <property name="Asnwer" type="String" p1:ValidateRequired="true" p1:Guid="21a8752c-6c54-4fac-8efb-d8c0d5d1baee">
       <column name="" />
     </property>
-    <property name="RecordId" type="Guid" p1:ValidateRequired="true" p1:Guid="128b471e-35fd-4f7a-9c42-0afe5d5fb39e">
+    <property name="ItemId" type="Guid" p1:ValidateRequired="true" p1:Guid="128b471e-35fd-4f7a-9c42-0afe5d5fb39e">
       <column name="" not-null="False" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27782ce2-c00f-4274-8351-78ea5082e19a" p1:GenerateDTO="False">
@@ -687,7 +687,7 @@
         <property name="Id" />
       </end1>
       <end2 multiplicity="Many" name="RecordItems" class="Record" relation-class="RecordItem" lazy="False" p1:Guid="91e06374-caf7-4a4b-babb-50a9bca7d05e">
-        <property name="RecordId" />
+        <property name="ItemId" />
       </end2>
     </association>
     <association name="Version_VersionDefinition" cardinality="OneToMany" p1:Guid="21449d00-b8ec-49fa-9219-09e55e8d85ad">

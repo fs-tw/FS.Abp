@@ -20,10 +20,8 @@ namespace FS.FormManagement.Documents.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.PrevVersionId)
-                .NotNull()
                 ;
             RuleFor(p => p.NextVersionId)
-                .NotNull()
                 ;
             RuleFor(p => p.DocumentDefinitionId)
                 .NotNull()
@@ -40,10 +38,8 @@ namespace FS.FormManagement.Documents.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.PrevVersionId)
-                .NotNull()
                 ;
             RuleFor(p => p.NextVersionId)
-                .NotNull()
                 ;
             RuleFor(p => p.DocumentDefinitionId)
                 .NotNull()

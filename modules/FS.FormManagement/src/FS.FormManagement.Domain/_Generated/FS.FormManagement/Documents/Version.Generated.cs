@@ -36,13 +36,13 @@ namespace FS.FormManagement.Documents
             set;
         }
 
-        public virtual System.Guid PrevVersionId
+        public virtual System.Guid? PrevVersionId
         {
             get;
             set;
         }
 
-        public virtual System.Guid NextVersionId
+        public virtual System.Guid? NextVersionId
         {
             get;
             set;

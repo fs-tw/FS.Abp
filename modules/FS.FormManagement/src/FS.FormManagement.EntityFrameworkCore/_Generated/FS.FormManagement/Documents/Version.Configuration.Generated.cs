@@ -34,8 +34,8 @@ namespace FS.FormManagement.Documents
             builder.ToTable(options.TablePrefix + @"Versions", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.PrevVersionId).HasColumnName(@"PrevVersionId").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.NextVersionId).HasColumnName(@"NextVersionId").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.PrevVersionId).HasColumnName(@"PrevVersionId").ValueGeneratedNever();
+            builder.Property(x => x.NextVersionId).HasColumnName(@"NextVersionId").ValueGeneratedNever();
             builder.Property(x => x.DocumentDefinitionId).HasColumnName(@"DocumentDefinitionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
