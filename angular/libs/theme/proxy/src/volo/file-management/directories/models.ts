@@ -1,6 +1,11 @@
 import type { FileIconInfo } from '../files/models';
 import type { AuditedEntityDto } from '@abp/ng.core';
 
+export interface DirectoryDescriptorDto{
+  
+}
+
+
 export interface CreateDirectoryInput {
   parentId?: string;
   name: string;

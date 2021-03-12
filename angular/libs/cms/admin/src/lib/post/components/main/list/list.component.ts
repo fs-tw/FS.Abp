@@ -75,6 +75,7 @@ export class ListComponent implements OnInit {
   }
 
   reload() {
+    console.log("reload...")
     let input: Fs.Cms.Blogs.Dtos.BlogGetListDto = {
       skipCount: 0,
       maxResultCount: 10,
@@ -117,12 +118,14 @@ export class ListComponent implements OnInit {
     let uploadImageInfos = this.defaultImagePicker.getUploadFiles();
     let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
     let fileId = "";
+    console.log("ddd",uploadImageInfos[0],this.selected.iconUrl)
     if ((uploadImageInfos.length > 0)) {
       if (this.selected.iconUrl == uploadImageInfos[0].fileName) {
         this.saveBlog(this.selected.iconUrl);
         return;
       }
       this.fileService.uploadFile(uploadImageInfos[0].file, this.directory.id).subscribe(x => {
+        console.log(x)
         fileId = x.id;
         this.saveBlog(fileId);
       })
