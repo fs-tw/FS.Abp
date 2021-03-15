@@ -23,6 +23,9 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Blogs.D
     displayName: 'Cms::FS.Blog.DisplayName',
     id: 'displayName',
     defaultValue: "" ,  
+    disabled:(data)=>{
+      return data.record.no == "CmsBlogNotClassified"
+    }
   },
   {
     type: ePropType.Text,

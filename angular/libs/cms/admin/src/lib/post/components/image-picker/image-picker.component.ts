@@ -116,6 +116,7 @@ export class ImagePickerComponent implements OnInit {
 
     this.uploadFiles = [];
     this.showFiles = [];
+    this.deleteFiles = [];
   }
 
   clear() {

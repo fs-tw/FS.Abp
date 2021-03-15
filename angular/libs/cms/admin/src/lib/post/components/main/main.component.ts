@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { Fs } from '@fs-tw/cms/proxy';
-import { Observable, Subscription } from 'rxjs';
+import { forkJoin, Observable, Subscription } from 'rxjs';
 import { PageService } from '../../providers/page.service';
 import { PostStateService } from '../../providers/post-state.service';
 
@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
   postParams: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput = {
     skipCount: 0,
     maxResultCount: 10,
-    keyword: "",
+    keyword: "",  
     blogId: null
   } as Fs.Cms.Posts.Dtos.GetPostByBlogIdInput;
 
@@ -114,6 +114,11 @@ export class MainComponent implements OnInit {
       })
       .subscribe((status: Confirmation.Status) => {
         if (status === Confirmation.Status.confirm) {
+          let files = item.attachmentFileInfos.map(x => x.fileId)
+          let images = item.postImages.map(x => x.imageId);
+          let deleteFileActions = files.concat(images).map(x => this.pageService.deleteFile(x));
+          forkJoin(deleteFileActions).subscribe();
+
           this.pageService.deletePost(item.id).subscribe(x => {
             this.toasterService.success("刪除成功！")
             this.list.get();
