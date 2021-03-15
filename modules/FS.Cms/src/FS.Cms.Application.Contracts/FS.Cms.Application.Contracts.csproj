@@ -39,6 +39,8 @@
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Post\PostPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Post\PostPermissionNames.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +83,14 @@
     <Compile Update="_Generated\FS.Cms\Core\ICoreApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\Dtos\DocumentDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -130,15 +140,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Posts\PostsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Posts</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Post\IPostApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Post</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Post\PostPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Post</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Post\PostPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Post</DependentUpon>
     </Compile>

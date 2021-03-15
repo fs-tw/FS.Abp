@@ -4,7 +4,7 @@ namespace FS.Theme.Permissions
 {
     public class ThemePermissions
     {
-        public const string GroupName = "Theme";
+        public const string GroupName = "FS.Theme";
 
         public static string[] GetAll()
         {

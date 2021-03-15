@@ -1610,10 +1610,10 @@
         <GridSize>8 px</GridSize>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>1.71</Scale>
+          <Scale>1.29</Scale>
           <Location>
-            <X>-719.298229567807 px</X>
-            <Y>32.7485372811359 px</Y>
+            <X>-576.124048044487 px</X>
+            <Y>-22.9457371126437 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

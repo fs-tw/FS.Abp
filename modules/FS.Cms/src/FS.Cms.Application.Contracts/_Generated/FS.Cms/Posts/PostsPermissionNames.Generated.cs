@@ -9,23 +9,28 @@
 //------------------------------------------------------------------------------
 using Volo.Abp.Reflection;
 
-namespace FS.Cms.Post
+namespace FS.Cms.Posts
 {
-    public class PostPermissionNames
+    public class PostsPermissionNames
     {
-        public const string GroupName = "FS.Cms.Post";
-
+        public const string ModuleName = "FS.Cms.Posts";
         public static class Post
         {
-            public const string Default = GroupName + ".Post";
+            public const string Default = ModuleName + ".Post";
             public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
             public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
         }
-
+        public static class PostTagMap
+        {
+            public const string Default = ModuleName + ".PostTagMap";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
         public static string[] GetAll()
         {
-            return ReflectionHelper.GetPublicConstantsRecursively(typeof(PostPermissionNames));
+            return ReflectionHelper.GetPublicConstantsRecursively(typeof(PostsPermissionNames));
         }
     }
 }

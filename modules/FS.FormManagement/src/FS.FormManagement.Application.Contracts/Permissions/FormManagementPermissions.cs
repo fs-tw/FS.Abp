@@ -4,7 +4,7 @@ namespace FS.FormManagement.Permissions
 {
     public class FormManagementPermissions
     {
-        public const string GroupName = "FormManagement";
+        public const string GroupName = "FS.FormManagement";
 
         public static string[] GetAll()
         {

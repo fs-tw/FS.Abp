@@ -9,21 +9,21 @@
 //------------------------------------------------------------------------------
 using Volo.Abp.Reflection;
 
-namespace FS.Cms.Tags
+namespace FS.Theme.WebSites
 {
-    public class TagsPermissionNames
+    public class WebSitesPermissionNames
     {
-        public const string ModuleName = "FS.Cms.Tags";
-        public static class Tag
+        public const string ModuleName = "FS.Theme.WebSites";
+        public static class WebSiteDefinition
         {
-            public const string Default = ModuleName + ".Tag";
+            public const string Default = ModuleName + ".WebSiteDefinition";
             public const string Create = Default + ".Create";
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";
         }
         public static string[] GetAll()
         {
-            return ReflectionHelper.GetPublicConstantsRecursively(typeof(TagsPermissionNames));
+            return ReflectionHelper.GetPublicConstantsRecursively(typeof(WebSitesPermissionNames));
         }
     }
 }
