@@ -1,7 +1,45 @@
 {
   "culture": "en",
   "texts": {
-    "ManageYourProfile":  "Manage your profile",
-    "SamplePageMessage": "A sample page for the FormManagement module"
+    "ManageYourProfile": "Manage your profile",
+    "SamplePageMessage": "A sample page for the FormManagement module",
+
+    "FS.FormManagement": "FormManagement",
+    "FS.Formal": "Formal",
+    "FS.Group": "Group",
+    "FS.Item": "Item",
+    "FS.DocumentDefinition": "DocumentDefinition",
+    "FS.Version": "Version",
+    "FS.Record": "Record",
+    "FS.RecordItem": "RecordItem",
+
+    "FS.Formal.No": "No",
+    "FS.Formal.DisplayName": "DisplayName",
+    "FS.Formal.VersionId": "VersionId",
+
+    "FS.Group.Code": "Code",
+    "FS.Group.ParentId": "ParentId",
+    "FS.Group.Level": "Level",
+    "FS.Group.DisplayName": "DisplayName",
+    "FS.Group.FormalId": "FormalId",
+
+    "FS.Item.No": "No",
+    "FS.Item.Question": "Question",
+    "FS.Item.GroupId": "GroupId",
+
+    "FS.DocumentDefinition.No": "No",
+    "FS.DocumentDefinition.DisplayName": "DisplayName",
+    "FS.DocumentDefinition.CurrentVersionId": "CurrentVersionId",
+
+
+    "FS.Version.No": "No",
+    "FS.Version.PrevVersionId": "PrevVersionId",
+    "FS.Version.NextVersionId": "NextVersionId",
+    "FS.Version.DocumentDefinitionId": "DocumentDefinitionId",
+
+    "FS.Record.FormalId": "FormalId",
+
+    "FS.RecordItem.Asnwer": "Asnwer",
+    "FS.RecordItem.ItemId": "ItemId"
   }
 }

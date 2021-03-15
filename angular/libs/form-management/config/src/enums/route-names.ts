@@ -1,10 +1,11 @@
 export const enum eFormmanagementRouteNames {
-  Theme = 'Theme::Menu:Theme',
-
-  WebSiteDefinition='Theme::FS.Theme.WebSiteDefinition',
-  BannerDefinition='Theme::FS.Theme.BannerDefinition',
-  Banner='Theme::FS.Theme.Banner',
-  RouteDefinition='Theme::FS.Theme.RouteDefinition',
-  Route='Theme::FS.Theme.Route'
+  Form_management = 'FormManagement::FS.FormManagement',
+  Formal="FormManagement::FS.Formal",
+  Group="FormManagement::FS.Group",
+  Item="FormManagement::FS.Item",
+  DocumentDefinition="FormManagement::FS.DocumentDefinition",
+  Version="FormManagement::FS.Version",
+  Record="FormManagement::FS.Record",
+  RecordItem="FormManagement::FS.RecordItem",
 
 }
