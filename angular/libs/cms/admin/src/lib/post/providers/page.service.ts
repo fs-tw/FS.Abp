@@ -39,6 +39,10 @@ export class PageService {
       input
     );
   }
+
+  deleteBlog(id:string){
+    return this.blogService.deleteByBlogPrimaryKey({id});
+  }
   //#endregion
 
   //#region File

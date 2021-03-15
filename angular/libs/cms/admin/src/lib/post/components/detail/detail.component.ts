@@ -38,14 +38,15 @@ export class DetailComponent implements OnInit {
     private pageService: PageService,
     private confirmationService: ConfirmationService
   ) {
-    this.pageService.findByProviderByKeyAndGroup("FS.Cms.Posts").subscribe(x => {
+    this.postId = this.activatedRoute.snapshot.paramMap.get('postId');
+    this.pageService.findByProviderByKeyAndGroup("FS.Cms.Posts", this.postId ? this.postId : this.getRand()).subscribe(x => {
       this.directory = x;
     })
   }
 
   ngOnInit() {
-    this.postId = this.activatedRoute.snapshot.paramMap.get('postId');
-  
+
+
     this.getPost();
     this.getBlogs();
   }
@@ -86,7 +87,7 @@ export class DetailComponent implements OnInit {
 
         if (x.content) {
           this.pageService.getFileDescriptor(x.content).subscribe(x => {
-            this.contentFileName = x.name;            
+            this.contentFileName = x.name;
           })
 
           this.fileService.getFileBlobById(x.content).subscribe(data => {
@@ -112,7 +113,7 @@ export class DetailComponent implements OnInit {
 
     this.pageService.getBlogs(input).subscribe((x) => {
       this.blogs = x.items;
-      if(!this.postId) this.data.blogId = this.activatedRoute.snapshot.queryParamMap.get('blogId');          
+      if (!this.postId) this.data.blogId = this.activatedRoute.snapshot.queryParamMap.get('blogId');
     })
   }
 
@@ -168,7 +169,7 @@ export class DetailComponent implements OnInit {
 
 
   private blobToFile = (theBlob: Blob, fileName: string): File => {
-    return new File([theBlob], fileName,{type:"text/plain;charset=utf-8"})
+    return new File([theBlob], fileName, { type: "text/plain;charset=utf-8" })
   }
 
 
