@@ -1,1 +1,9 @@
-﻿Model code generation succeeded.
+﻿// Custom tool 'DevartEFCoreGenerator' failed.
+// - An error occurred during an attempt to compile the template 'Domain.Definitions'.
+//Error List:
+//error : 命名空間 'FS.ED' 中沒有類型或命名空間名稱 'Definitions' (您是否遺漏了組件參考?)
+//error : 命名空間 'FS.ED' 中沒有類型或命名空間名稱 'Definitions' (您是否遺漏了組件參考?)
+//error : 找不到類型或命名空間名稱 'ProjectModel' (您是否遺漏 using 指示詞或組件參考?)
+//error : 找不到類型或命名空間名稱 'DefinitionsCodes' (您是否遺漏 using 指示詞或組件參考?)
+//
+//
