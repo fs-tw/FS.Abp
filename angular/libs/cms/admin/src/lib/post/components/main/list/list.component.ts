@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit, ViewChild } from '@angular/core';
+import { Component, Injector, OnInit, ViewChild,OnDestroy } from '@angular/core';
 import { FileService } from '../../../../shared'
 import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../../providers/page.service';
@@ -12,13 +12,13 @@ import {
 import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { FormGroup } from '@angular/forms';
 import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
-import { Observable } from 'rxjs';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 import {
   Confirmation,
   ConfirmationService,
   ToasterService,
 } from '@abp/ng.theme.shared';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'fs-list',
   templateUrl: './list.component.html',
@@ -31,7 +31,7 @@ import { Router,ActivatedRoute } from '@angular/router';
     },
   ],
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit,OnDestroy {
   @ViewChild("DefaultImagePicker") defaultImagePicker: ImagePickerComponent;
   datas: Fs.Cms.Blogs.Dtos.BlogDto[] = [];
   count = 0;
@@ -41,28 +41,39 @@ export class ListComponent implements OnInit {
   selected: Fs.Cms.Blogs.Dtos.BlogDto = {} as Fs.Cms.Blogs.Dtos.BlogDto
   directory;
   defaultSelectId = null;
+  sub: Subscription;
   constructor(
-    private router:Router,
+    private router: Router,
     private extensionsService: ExtensionsService,
     private pageService: PageService,
     protected injector: Injector,
     public readonly list: ListService,
     private fileService: FileService,
     private toasterService: ToasterService,
-    private activatedRoute:ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
+    private confirmationService: ConfirmationService,
     private postStateService: PostStateService
   ) {
-    this.pageService.findByProviderByKeyAndGroup("FS.Cms.Blogs").subscribe(x => {
-      this.directory = x;
-    })
+    
 
-    this.activatedRoute.queryParamMap.subscribe(x=>{
-      this.defaultSelectId = x.get("blogId");    
+    this.activatedRoute.queryParamMap.subscribe(x => {
+      this.defaultSelectId = x.get("blogId");
+
+      this.pageService.findByProviderByKeyAndGroup("FS.Cms.Blogs",this.defaultSelectId?this.defaultSelectId:this.getRand()).subscribe(x => {
+        this.directory = x;
+      })
     })
+  }
+  ngOnDestroy(): void {
+    if(this.sub) this.sub.unsubscribe();
+  }
+
+  getRand() {
+    return (Math.floor(Math.random() * 100) + 1).toString();
   }
 
   ngOnInit() {
-    this.extensionsService.Actions$[eCmsRouteNames.Blog].subscribe(
+    this.sub = this.extensionsService.Actions$[eCmsRouteNames.Blog].subscribe(
       (x) => {
         switch (x.name) {
           case 'Edit':
@@ -82,7 +93,7 @@ export class ListComponent implements OnInit {
   }
 
   reload() {
-    
+
     let input: Fs.Cms.Blogs.Dtos.BlogGetListDto = {
       skipCount: 0,
       maxResultCount: 10,
@@ -96,26 +107,38 @@ export class ListComponent implements OnInit {
     this.list.hookToQuery(customerStreamCreator).subscribe((res) => {
       this.datas = res.items;
       this.count = res.totalCount;
-      if(this.defaultSelectId){
-        let select = this.datas.find(x=>x.id == this.defaultSelectId);
+      if (this.defaultSelectId) {
+        let select = this.datas.find(x => x.id == this.defaultSelectId);
         this.showDetail(select)
       }
     });
   }
 
   showDetail(blog: Fs.Cms.Blogs.Dtos.BlogDto) {
-    if (blog == null){           
-      this.router.navigate(['./cms/post']) 
+    if (blog == null) {
+      this.router.navigate(['./cms/post'])
       this.postStateService.setBlog(null);
       return;
     }
-    this.router.navigate(['./cms/post'],{queryParams:{'blogId':blog.id}})
+    this.router.navigate(['./cms/post'], { queryParams: { 'blogId': blog.id } })
     this.postStateService.setBlog(blog);
   }
 
   deleteBlog(blog: Fs.Cms.Blogs.Dtos.BlogDto) {
-    console.log(blog)
-    alert("開發中…")
+    this.confirmationService
+      .warn('確認要刪除嗎？(此Blog下的文章將移至不分類)', '系統訊息', {
+        cancelText: "取消",
+        yesText: "確定"
+      })
+      .subscribe((status: Confirmation.Status) => {
+        if (status === Confirmation.Status.confirm) {
+          this.pageService.deleteBlog(blog.id).subscribe(x => {
+            this.toasterService.success("刪除成功！")
+            this.list.get();
+            this.router.navigate(["./cms/post"])
+          })
+        }
+      });
   }
 
 
@@ -125,17 +148,26 @@ export class ListComponent implements OnInit {
   }
 
   save() {
-    if (!this.form.valid) return; 
-    //TODO delete file and code refactoring
+    if (!this.form.valid) return;
+    let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();    
+    if(deleteImageNames.length>0){
+      this.pageService.deleteFile(deleteImageNames[0]).subscribe(()=>{
+        this.uploadFile();
+      });
+    } else this.uploadFile();
+    
+  }
+
+
+  uploadFile(){
     let uploadImageInfos = this.defaultImagePicker.getUploadFiles();
-    let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
-    let fileId = "";    
+    let fileId = "";
     if ((uploadImageInfos.length > 0)) {
       if (this.selected.iconUrl == uploadImageInfos[0].fileName) {
         this.saveBlog(this.selected.iconUrl);
         return;
       }
-      this.fileService.uploadFile(uploadImageInfos[0].file, this.directory.id).subscribe(x => {        
+      this.fileService.uploadFile(uploadImageInfos[0].file, this.directory.id).subscribe(x => {
         fileId = x.id;
         this.saveBlog(fileId);
       })
@@ -147,9 +179,9 @@ export class ListComponent implements OnInit {
     input.iconUrl = fileId;
     let action: Observable<any>;
     if (input.id) action = this.pageService.updateBlog(input.id, input);
-    else { 
+    else {
       input.no = input.displayName;
-      action = this.pageService.createBlog(input); 
+      action = this.pageService.createBlog(input);
     }
     action.subscribe((x) => {
       this.toasterService.success('修改成功！');

@@ -20,12 +20,15 @@ export const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany<
   {
     text: 'AbpIdentity::Delete',
     action: (data) => {
-      const service = data.getInjected(ExtensionsService);
+      const service = data.getInjected(ExtensionsService);      
       service.action(eCmsRouteNames.Blog, {
         name: 'Delete',
         record: data.record,
       });
     },
+    visible:(data)=>{
+      return data.record.no != "CmsBlogNotClassified"
+    }
     //permission: 'AbpIdentity.Users.Delete',
   },
 ]);
