@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/cms",
-  "version": "0.0.1",
+  "version": "422.0.3",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
