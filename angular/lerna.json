@@ -1,8 +1,8 @@
 {
   "packages": [
-    "dist/libs/account",
+
     "dist/libs/cms",
-    "dist/libs/emailing",
+    
     "dist/libs/theme",
     "dist/libs/theme-alain-ms",
     "dist/libs/theme-unify"
