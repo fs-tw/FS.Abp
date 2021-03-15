@@ -6,11 +6,11 @@ $rootFolder = (Get-Item -Path "./" -Verbose).FullName
 
 # List of solutions used only in development mode
 $solutionPaths = @(
-		"../framework/FS.Abp.File"
+		"../framework/FS.Abp.File",
 		#"../modules/FS.Abp",
-		#"../modules/FS.Cms",
-		#"../modules/FS.FormManagement",
-		#"../modules/FS.Theme"
+		"../modules/FS.Cms",
+		"../modules/FS.FormManagement",
+		"../modules/FS.Theme"
 	)
 
 if ($full -eq "-f")
