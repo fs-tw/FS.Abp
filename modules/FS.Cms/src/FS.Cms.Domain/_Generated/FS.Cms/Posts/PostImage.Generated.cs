@@ -28,13 +28,19 @@ namespace FS.Cms.Posts
             OnCreated();
         }
 
-        public virtual string Url
+        public virtual string ImageId
         {
             get;
             set;
         }
 
         public virtual bool IsCover
+        {
+            get;
+            set;
+        }
+
+        public virtual string Name
         {
             get;
             set;

@@ -647,7 +647,6 @@
                         HeaderComponent,
                         FooterComponent,
                         BannerComponent,
-                        ValidationErrorComponent,
                         SettingsComponent
                     ]),
                     exports: __spread(LAYOUTS, [
@@ -672,6 +671,7 @@
     RootUnifyModule.decorators = [
         { type: i0.NgModule, args: [{
                     imports: [
+                        i1.CoreModule,
                         core.NgxValidateCoreModule.forRoot({
                             targetSelector: '.form-control',
                             invalidClasses: 'input-validation-error',
@@ -692,6 +692,12 @@
                             errorTemplate: ValidationErrorComponent,
                         })
                     ],
+                    declarations: [
+                        ValidationErrorComponent
+                    ],
+                    exports: [
+                        ValidationErrorComponent
+                    ]
                 },] }
     ];
 

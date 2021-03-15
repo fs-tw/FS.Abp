@@ -1,9 +1,12 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@abp/ng.theme.shared/extensions'), require('rxjs/operators'), require('rxjs')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/cms/config', ['exports', '@angular/core', '@abp/ng.core', '@abp/ng.theme.shared/extensions', 'rxjs/operators', 'rxjs'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].cms = global['fs-tw'].cms || {}, global['fs-tw'].cms.config = {}), global.ng.core, global.ng_core, global.extensions, global.rxjs.operators, global.rxjs));
-}(this, (function (exports, i0, ng_core, extensions, operators, rxjs) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@abp/ng.theme.shared/extensions'), require('rxjs/operators'), require('rxjs'), require('@fs-tw/cms/proxy'), require('date-fns')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/cms/config', ['exports', '@angular/core', '@abp/ng.core', '@abp/ng.theme.shared/extensions', 'rxjs/operators', 'rxjs', '@fs-tw/cms/proxy', 'date-fns'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].cms = global['fs-tw'].cms || {}, global['fs-tw'].cms.config = {}), global.ng.core, global.ng_core, global.extensions, global.rxjs.operators, global.rxjs, global['fs-tw'].cms.proxy, global.fns));
+}(this, (function (exports, i0, ng_core, extensions, operators, rxjs, proxy, fns) { 'use strict';
 
+    var ɵ0$8 = function (data) {
+        return data.record.no == "CmsBlogNotClassified";
+    };
     var DEFAULT_BLOG_CREATE_FORM_PROPS = extensions.FormProp.createMany([
         {
             type: "number" /* Number */,
@@ -25,6 +28,7 @@
             displayName: 'Cms::FS.Blog.DisplayName',
             id: 'displayName',
             defaultValue: "",
+            disabled: ɵ0$8
         },
         {
             type: "text" /* Text */,
@@ -58,6 +62,14 @@
 
     var DEFAULT_BLOG_EDIT_FORM_PROPS = DEFAULT_BLOG_CREATE_FORM_PROPS;
 
+    var ɵ0$7 = function (data) {
+        var text = "";
+        if (data.record.disable)
+            text = "是";
+        else
+            text = "否";
+        return rxjs.of(text);
+    };
     var DEFAULT_BLOG_ENTITY_PROPS = extensions.EntityProp.createMany([
         // {
         //     type: ePropType.String,
@@ -86,6 +98,7 @@
             displayName: 'Cms::FS.Blog.Disable',
             sortable: true,
             columnWidth: 50,
+            valueResolver: ɵ0$7,
         },
     ]);
 
@@ -116,31 +129,35 @@
     ];
     ExtensionsService.ctorParameters = function () { return []; };
 
-    var ɵ0 = function (data) {
+    var ɵ0$6 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Cms::FS.Cms.Blogs" /* Blog */, {
             name: 'Edit',
             record: data.record,
         });
-    }, ɵ1 = function (data) {
+    }, ɵ1$3 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Cms::FS.Cms.Blogs" /* Blog */, {
             name: 'Delete',
             record: data.record,
         });
+    }, ɵ2$1 = function (data) {
+        return data.record.no != "CmsBlogNotClassified";
     };
     var DEFAULT_BLOG_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0,
+            action: ɵ0$6,
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1,
+            action: ɵ1$3,
+            visible: ɵ2$1
+            //permission: 'AbpIdentity.Users.Delete',
         },
     ]);
 
-    var ɵ0$1 = function (data) {
+    var ɵ0$5 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Cms::FS.Cms.Blogs" /* Blog */, {
             name: 'Add'
@@ -151,7 +168,7 @@
     var DEFAULT_BLOG_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$1,
+            action: ɵ0$5,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -246,13 +263,46 @@
 
     var DEFAULT_POST_EDIT_FORM_PROPS = DEFAULT_POST_CREATE_FORM_PROPS;
 
+    var ɵ0$4 = function (data) {
+        var text = "";
+        if (data.record.disable)
+            text = "是";
+        else
+            text = "否";
+        return rxjs.of(text);
+    }, ɵ1$2 = function (data) {
+        var text = "";
+        if (data.record.displayMode == proxy.Fs.Cms.Posts.DisplayMode.內文)
+            text = "內文";
+        else
+            text = "連結";
+        return rxjs.of(text);
+    }, ɵ2 = function (data) {
+        var date = "";
+        if (data.record.startTime)
+            date = fns.format(new Date(data.record.startTime), 'yyyy-MM-dd');
+        return rxjs.of(date);
+    }, ɵ3 = function (data) {
+        var date = "";
+        if (data.record.endTime)
+            date = fns.format(new Date(data.record.endTime), 'yyyy-MM-dd');
+        return rxjs.of(date);
+    };
     var DEFAULT_POST_ENTITY_PROPS = extensions.EntityProp.createMany([
+        // {
+        //     type: ePropType.String,
+        //     name: 'blogid',
+        //     displayName: 'Cms::FS.Post.BlogId',
+        //     sortable: true,
+        //     columnWidth: 100,
+        // },
         {
             type: "string" /* String */,
-            name: 'blogid',
-            displayName: 'Cms::FS.Post.BlogId',
+            name: 'disable',
+            displayName: 'Cms::FS.Post.Disable',
             sortable: true,
-            columnWidth: 100,
+            columnWidth: 50,
+            valueResolver: ɵ0$4,
         },
         {
             type: "string" /* String */,
@@ -261,79 +311,54 @@
             sortable: true,
             columnWidth: 100,
         },
+        // {
+        //     type: ePropType.String,
+        //     name: 'subtitle',
+        //     displayName: 'Cms::FS.Post.Subtitle',
+        //     sortable: true,
+        //     columnWidth: 150,
+        // },
+        // {
+        //     type: ePropType.String,
+        //     name: 'url',
+        //     displayName: 'Cms::FS.Post.Url',
+        //     sortable: true,
+        //     columnWidth: 150,
+        // },
+        // {
+        //     type: ePropType.String,
+        //     name: 'content',
+        //     displayName: 'Cms::FS.Post.Content',
+        //     sortable: true,
+        //     columnWidth: 150,
+        // },
         {
             type: "string" /* String */,
-            name: 'subtitle',
-            displayName: 'Cms::FS.Post.Subtitle',
+            name: 'displaymode',
+            displayName: 'Cms::FS.Post.DisplayMode',
             sortable: true,
-            columnWidth: 150,
-        },
-        {
-            type: "string" /* String */,
-            name: 'url',
-            displayName: 'Cms::FS.Post.Url',
-            sortable: true,
-            columnWidth: 150,
-        },
-        {
-            type: "string" /* String */,
-            name: 'content',
-            displayName: 'Cms::FS.Post.Content',
-            sortable: true,
-            columnWidth: 150,
-        },
-        {
-            type: "string" /* String */,
-            name: 'disable',
-            displayName: 'Cms::FS.Post.Disable',
-            sortable: true,
-            columnWidth: 150,
+            columnWidth: 50,
+            valueResolver: ɵ1$2,
         },
         {
             type: "string" /* String */,
             name: 'starttime',
             displayName: 'Cms::FS.Post.StartTime',
             sortable: true,
-            columnWidth: 150,
+            columnWidth: 50,
+            valueResolver: ɵ2,
         },
         {
             type: "string" /* String */,
             name: 'endtime',
             displayName: 'Cms::FS.Post.EndTime',
             sortable: true,
-            columnWidth: 150,
+            columnWidth: 50,
+            valueResolver: ɵ3,
         },
-        {
-            type: "string" /* String */,
-            name: 'displaymode',
-            displayName: 'Cms::FS.Post.DisplayMode',
-            sortable: true,
-            columnWidth: 150,
-        },
-        {
-            type: "string" /* String */,
-            name: 'sequence',
-            displayName: 'Cms::FS.Post.Sequence',
-            sortable: true,
-            columnWidth: 150,
-        },
-        {
-            type: "string" /* String */,
-            name: 'attachmentfileurls',
-            displayName: 'Cms::FS.Post.AttachmentFileUrls',
-            sortable: true,
-            columnWidth: 150,
-        },
-        {
-            type: "string" /* String */,
-            name: 'postimages',
-            displayName: 'Cms::FS.Post.PostImages',
-            sortable: true,
-            columnWidth: 150,
-        }
     ]);
 
-    var ɵ0$2 = function (data) {
+    var ɵ0$3 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Cms::FS.Cms.PostManagement" /* Post */, {
             name: 'Edit',
@@ -349,7 +374,7 @@
     var DEFAULT_POST_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$2,
+            action: ɵ0$3,
         },
         {
             text: 'AbpIdentity::Delete',
@@ -357,7 +382,7 @@
         },
     ]);
 
-    var ɵ0$3 = function (data) {
+    var ɵ0$2 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Cms::FS.Cms.PostManagement" /* Post */, {
             name: 'Add'
@@ -368,7 +393,7 @@
     var DEFAULT_POST_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$3,
+            action: ɵ0$2,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -438,13 +463,13 @@
         }
     ]);
 
-    var ɵ0$4 = function (data) {
+    var ɵ0$1 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
             name: 'Edit',
             record: data.record,
         });
-    }, ɵ1$2 = function (data) {
+    }, ɵ1 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
             name: 'Delete',
@@ -454,15 +479,15 @@
     var DEFAULT_TAG_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$4,
+            action: ɵ0$1,
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1$2,
+            action: ɵ1,
         },
     ]);
 
-    var ɵ0$5 = function (data) {
+    var ɵ0 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
             name: 'Add'
@@ -473,7 +498,7 @@
     var DEFAULT_TAG_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$5,
+            action: ɵ0,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -895,20 +920,6 @@
                 path: '/cms/post/detail/:postId',
                 name: "Cms::FS.Cms.PostDetail.Id" /* Post_Detail_Id */,
                 parentName: "Cms::FS.Cms.PostManagement" /* Post */,
-                iconClass: 'fa fa-university',
-                order: 1
-            },
-            {
-                path: '/cms/tag',
-                name: "\u6A19\u7C64\u7DAD\u8B77" /* Tag */,
-                parentName: "Cms::FS.Cms.Basic" /* Basic */,
-                iconClass: 'fa fa-university',
-                order: 1,
-            },
-            {
-                path: '/cms/tag/:tagId',
-                name: "\u6A19\u7C64\u8A73\u7D30" /* Tag_detail */,
-                parentName: "\u6A19\u7C64\u7DAD\u8B77" /* Tag */,
                 iconClass: 'fa fa-university',
                 order: 1
             },

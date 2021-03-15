@@ -1,13 +1,14 @@
 {
-  "name": "root",
+  "name": "fs-tw",
   "version": "0.0.0",
   "private": true,
   "peerDependencies": {
     
   },
   "dependencies": {
-    "lerna": "^3.22.1",
-    "date-fns": "^2.16.1",
-    "@ngxs/logger-plugin": "^3.7.1"
+    "@fs-tw/theme-alain-ms": "422.0.1",
+    "@fs-tw/account": "422.0.1",
+    "@fs-tw/emailing": "422.0.1",
+    "@fs-tw/cms": "422.0.1"
   }
 }

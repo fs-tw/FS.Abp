@@ -40,6 +40,7 @@ import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { UiExtensionsModule } from '@fs-tw/theme-alain-ms/shared/extensions';
@@ -82,10 +83,11 @@ const SHARED_ZORRO_MODULES = [
     NzSkeletonModule,
     NzOutletModule,
     NzTreeModule,
+    NzTagModule
 ];
 
-const declarationsWithExports = [];
-const ABPMODULES = [
+const declarationsWithExports$1 = [];
+const ABPMODULES$1 = [
     CoreModule,
     ThemeSharedModule,
     NgxValidateCoreModule
@@ -94,17 +96,17 @@ class BaseThemeSharedModule {
 }
 BaseThemeSharedModule.decorators = [
     { type: NgModule, args: [{
-                declarations: [...declarationsWithExports],
+                declarations: [...declarationsWithExports$1],
                 imports: [
                     ...SHARED_DELON_MODULES,
                     ...SHARED_ZORRO_MODULES,
-                    ...ABPMODULES,
+                    ...ABPMODULES$1,
                 ],
                 exports: [
                     ...SHARED_DELON_MODULES,
                     ...SHARED_ZORRO_MODULES,
-                    ...declarationsWithExports,
-                    ...ABPMODULES,
+                    ...declarationsWithExports$1,
+                    ...ABPMODULES$1,
                 ],
             },] }
 ];
@@ -123,9 +125,9 @@ ThemeAlainMsSharedModule.decorators = [
             },] }
 ];
 
-const declarationsWithExports$1 = [];
+const declarationsWithExports = [];
 // #region third libs
-const ABPMODULES$1 = [
+const ABPMODULES = [
     CoreModule,
     UiExtensionsModule
 ];
@@ -138,13 +140,13 @@ SharedModule.decorators = [
                 imports: [
                     ...SHARED_DELON_MODULES,
                     ...SHARED_ZORRO_MODULES,
-                    ...ABPMODULES$1,
+                    ...ABPMODULES,
                 ],
                 exports: [
                     ...SHARED_DELON_MODULES,
                     ...SHARED_ZORRO_MODULES,
                     //...declarationsWithExports,
-                    ...ABPMODULES$1,
+                    ...ABPMODULES,
                 ],
             },] }
 ];

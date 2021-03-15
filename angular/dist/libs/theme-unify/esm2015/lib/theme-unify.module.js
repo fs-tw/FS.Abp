@@ -34,7 +34,6 @@ ThemeUnifyModule.decorators = [
                     HeaderComponent,
                     FooterComponent,
                     BannerComponent,
-                    ValidationErrorComponent,
                     SettingsComponent
                 ],
                 exports: [
@@ -59,6 +58,7 @@ export class RootUnifyModule {
 RootUnifyModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    CoreModule,
                     NgxValidateCoreModule.forRoot({
                         targetSelector: '.form-control',
                         invalidClasses: 'input-validation-error',
@@ -79,6 +79,12 @@ RootUnifyModule.decorators = [
                         errorTemplate: ValidationErrorComponent,
                     })
                 ],
+                declarations: [
+                    ValidationErrorComponent
+                ],
+                exports: [
+                    ValidationErrorComponent
+                ]
             },] }
 ];
 //# sourceMappingURL=theme-unify.module.js.map

@@ -72,20 +72,20 @@ export function configureRoutes(routes: RoutesService) {
       iconClass: 'fa fa-university',
       order: 1
     },
-    {
-      path: '/cms/tag',
-      name: eCmsRouteNames.Tag,
-      parentName: eCmsRouteNames.Basic,
-      iconClass: 'fa fa-university',
-      order: 1,
-    },
-    {
-      path: '/cms/tag/:tagId',
-      name: eCmsRouteNames.Tag_detail,
-      parentName: eCmsRouteNames.Tag,
-      iconClass: 'fa fa-university',
-      order: 1
-    },
+    // {
+    //   path: '/cms/tag',
+    //   name: eCmsRouteNames.Tag,
+    //   parentName: eCmsRouteNames.Basic,
+    //   iconClass: 'fa fa-university',
+    //   order: 1,
+    // },
+    // {
+    //   path: '/cms/tag/:tagId',
+    //   name: eCmsRouteNames.Tag_detail,
+    //   parentName: eCmsRouteNames.Tag,
+    //   iconClass: 'fa fa-university',
+    //   order: 1
+    // },
 
 
 

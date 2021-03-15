@@ -2,8 +2,13 @@ import { ɵɵdefineInjectable, Injectable, APP_INITIALIZER, Injector, NgModule }
 import { ConfigStateService, RoutesService } from '@abp/ng.core';
 import { FormProp, EntityProp, EntityAction, ToolbarAction, ExtensionsService as ExtensionsService$1, getObjectExtensionEntitiesFromStore, mapEntitiesToContributors, mergeWithDefaultActions, mergeWithDefaultProps } from '@abp/ng.theme.shared/extensions';
 import { map, tap, mapTo } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { of, Subject } from 'rxjs';
+import { Fs } from '@fs-tw/cms/proxy';
+import { format } from 'date-fns';
 
+const ɵ0$8 = (data) => {
+    return data.record.no == "CmsBlogNotClassified";
+};
 const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
     {
         type: "number" /* Number */,
@@ -25,6 +30,7 @@ const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
         displayName: 'Cms::FS.Blog.DisplayName',
         id: 'displayName',
         defaultValue: "",
+        disabled: ɵ0$8
     },
     {
         type: "text" /* Text */,
@@ -58,6 +64,14 @@ const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
 
 const DEFAULT_BLOG_EDIT_FORM_PROPS = DEFAULT_BLOG_CREATE_FORM_PROPS;
 
+const ɵ0$7 = (data) => {
+    let text = "";
+    if (data.record.disable)
+        text = "是";
+    else
+        text = "否";
+    return of(text);
+};
 const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany([
     // {
     //     type: ePropType.String,
@@ -86,6 +100,7 @@ const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany([
         displayName: 'Cms::FS.Blog.Disable',
         sortable: true,
         columnWidth: 50,
+        valueResolver: ɵ0$7,
     },
 ]);
 
@@ -111,31 +126,35 @@ ExtensionsService.decorators = [
 ];
 ExtensionsService.ctorParameters = () => [];
 
-const ɵ0 = (data) => {
+const ɵ0$6 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Cms::FS.Cms.Blogs" /* Blog */, {
         name: 'Edit',
         record: data.record,
     });
-}, ɵ1 = (data) => {
+}, ɵ1$3 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Cms::FS.Cms.Blogs" /* Blog */, {
         name: 'Delete',
         record: data.record,
     });
+}, ɵ2$1 = (data) => {
+    return data.record.no != "CmsBlogNotClassified";
 };
 const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0,
+        action: ɵ0$6,
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1,
+        action: ɵ1$3,
+        visible: ɵ2$1
+        //permission: 'AbpIdentity.Users.Delete',
     },
 ]);
 
-const ɵ0$1 = data => {
+const ɵ0$5 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Cms::FS.Cms.Blogs" /* Blog */, {
         name: 'Add'
@@ -146,7 +165,7 @@ const ɵ0$1 = data => {
 const DEFAULT_BLOG_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$1,
+        action: ɵ0$5,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -241,13 +260,46 @@ const DEFAULT_POST_CREATE_FORM_PROPS = FormProp.createMany([
 
 const DEFAULT_POST_EDIT_FORM_PROPS = DEFAULT_POST_CREATE_FORM_PROPS;
 
+const ɵ0$4 = (data) => {
+    let text = "";
+    if (data.record.disable)
+        text = "是";
+    else
+        text = "否";
+    return of(text);
+}, ɵ1$2 = (data) => {
+    let text = "";
+    if (data.record.displayMode == Fs.Cms.Posts.DisplayMode.內文)
+        text = "內文";
+    else
+        text = "連結";
+    return of(text);
+}, ɵ2 = (data) => {
+    let date = "";
+    if (data.record.startTime)
+        date = format(new Date(data.record.startTime), 'yyyy-MM-dd');
+    return of(date);
+}, ɵ3 = (data) => {
+    let date = "";
+    if (data.record.endTime)
+        date = format(new Date(data.record.endTime), 'yyyy-MM-dd');
+    return of(date);
+};
 const DEFAULT_POST_ENTITY_PROPS = EntityProp.createMany([
+    // {
+    //     type: ePropType.String,
+    //     name: 'blogid',
+    //     displayName: 'Cms::FS.Post.BlogId',
+    //     sortable: true,
+    //     columnWidth: 100,
+    // },
     {
         type: "string" /* String */,
-        name: 'blogid',
-        displayName: 'Cms::FS.Post.BlogId',
+        name: 'disable',
+        displayName: 'Cms::FS.Post.Disable',
         sortable: true,
-        columnWidth: 100,
+        columnWidth: 50,
+        valueResolver: ɵ0$4,
     },
     {
         type: "string" /* String */,
@@ -256,79 +308,54 @@ const DEFAULT_POST_ENTITY_PROPS = EntityProp.createMany([
         sortable: true,
         columnWidth: 100,
     },
+    // {
+    //     type: ePropType.String,
+    //     name: 'subtitle',
+    //     displayName: 'Cms::FS.Post.Subtitle',
+    //     sortable: true,
+    //     columnWidth: 150,
+    // },
+    // {
+    //     type: ePropType.String,
+    //     name: 'url',
+    //     displayName: 'Cms::FS.Post.Url',
+    //     sortable: true,
+    //     columnWidth: 150,
+    // },
+    // {
+    //     type: ePropType.String,
+    //     name: 'content',
+    //     displayName: 'Cms::FS.Post.Content',
+    //     sortable: true,
+    //     columnWidth: 150,
+    // },
     {
         type: "string" /* String */,
-        name: 'subtitle',
-        displayName: 'Cms::FS.Post.Subtitle',
+        name: 'displaymode',
+        displayName: 'Cms::FS.Post.DisplayMode',
         sortable: true,
-        columnWidth: 150,
-    },
-    {
-        type: "string" /* String */,
-        name: 'url',
-        displayName: 'Cms::FS.Post.Url',
-        sortable: true,
-        columnWidth: 150,
-    },
-    {
-        type: "string" /* String */,
-        name: 'content',
-        displayName: 'Cms::FS.Post.Content',
-        sortable: true,
-        columnWidth: 150,
-    },
-    {
-        type: "string" /* String */,
-        name: 'disable',
-        displayName: 'Cms::FS.Post.Disable',
-        sortable: true,
-        columnWidth: 150,
+        columnWidth: 50,
+        valueResolver: ɵ1$2,
     },
     {
         type: "string" /* String */,
         name: 'starttime',
         displayName: 'Cms::FS.Post.StartTime',
         sortable: true,
-        columnWidth: 150,
+        columnWidth: 50,
+        valueResolver: ɵ2,
     },
     {
         type: "string" /* String */,
         name: 'endtime',
         displayName: 'Cms::FS.Post.EndTime',
         sortable: true,
-        columnWidth: 150,
+        columnWidth: 50,
+        valueResolver: ɵ3,
     },
-    {
-        type: "string" /* String */,
-        name: 'displaymode',
-        displayName: 'Cms::FS.Post.DisplayMode',
-        sortable: true,
-        columnWidth: 150,
-    },
-    {
-        type: "string" /* String */,
-        name: 'sequence',
-        displayName: 'Cms::FS.Post.Sequence',
-        sortable: true,
-        columnWidth: 150,
-    },
-    {
-        type: "string" /* String */,
-        name: 'attachmentfileurls',
-        displayName: 'Cms::FS.Post.AttachmentFileUrls',
-        sortable: true,
-        columnWidth: 150,
-    },
-    {
-        type: "string" /* String */,
-        name: 'postimages',
-        displayName: 'Cms::FS.Post.PostImages',
-        sortable: true,
-        columnWidth: 150,
-    }
 ]);
 
-const ɵ0$2 = (data) => {
+const ɵ0$3 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Cms::FS.Cms.PostManagement" /* Post */, {
         name: 'Edit',
@@ -344,7 +371,7 @@ const ɵ0$2 = (data) => {
 const DEFAULT_POST_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$2,
+        action: ɵ0$3,
     },
     {
         text: 'AbpIdentity::Delete',
@@ -352,7 +379,7 @@ const DEFAULT_POST_ENTITY_ACTIONS = EntityAction.createMany([
     },
 ]);
 
-const ɵ0$3 = data => {
+const ɵ0$2 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Cms::FS.Cms.PostManagement" /* Post */, {
         name: 'Add'
@@ -363,7 +390,7 @@ const ɵ0$3 = data => {
 const DEFAULT_POST_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$3,
+        action: ɵ0$2,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -433,13 +460,13 @@ const DEFAULT_TAG_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$4 = (data) => {
+const ɵ0$1 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
         name: 'Edit',
         record: data.record,
     });
-}, ɵ1$2 = (data) => {
+}, ɵ1 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
         name: 'Delete',
@@ -449,15 +476,15 @@ const ɵ0$4 = (data) => {
 const DEFAULT_TAG_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$4,
+        action: ɵ0$1,
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1$2,
+        action: ɵ1,
     },
 ]);
 
-const ɵ0$5 = data => {
+const ɵ0 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
         name: 'Add'
@@ -468,7 +495,7 @@ const ɵ0$5 = data => {
 const DEFAULT_TAG_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$5,
+        action: ɵ0,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -580,20 +607,6 @@ function configureRoutes(routes) {
             path: '/cms/post/detail/:postId',
             name: "Cms::FS.Cms.PostDetail.Id" /* Post_Detail_Id */,
             parentName: "Cms::FS.Cms.PostManagement" /* Post */,
-            iconClass: 'fa fa-university',
-            order: 1
-        },
-        {
-            path: '/cms/tag',
-            name: "\u6A19\u7C64\u7DAD\u8B77" /* Tag */,
-            parentName: "Cms::FS.Cms.Basic" /* Basic */,
-            iconClass: 'fa fa-university',
-            order: 1,
-        },
-        {
-            path: '/cms/tag/:tagId',
-            name: "\u6A19\u7C64\u8A73\u7D30" /* Tag_detail */,
-            parentName: "\u6A19\u7C64\u7DAD\u8B77" /* Tag */,
             iconClass: 'fa fa-university',
             order: 1
         },

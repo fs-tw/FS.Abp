@@ -25,7 +25,7 @@ ThemeAlainMsModule.decorators = [
                     LayoutModule,
                     NzSpinModule
                 ],
-                declarations: [ApplicationLayoutComponent, AccountLayoutComponent],
+                declarations: [ApplicationLayoutComponent, AccountLayoutComponent]
             },] }
 ];
 //# sourceMappingURL=theme-alain-ms.module.js.map

@@ -12,6 +12,8 @@ const ɵ0 = (data) => {
         name: 'Delete',
         record: data.record,
     });
+}, ɵ2 = (data) => {
+    return data.record.no != "CmsBlogNotClassified";
 };
 export const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany([
     {
@@ -21,7 +23,9 @@ export const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Delete',
         action: ɵ1,
+        visible: ɵ2
+        //permission: 'AbpIdentity.Users.Delete',
     },
 ]);
-export { ɵ0, ɵ1 };
+export { ɵ0, ɵ1, ɵ2 };
 //# sourceMappingURL=default-blog-entity-actions.js.map

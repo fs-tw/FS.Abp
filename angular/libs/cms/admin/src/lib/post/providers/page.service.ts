@@ -8,7 +8,7 @@ export class PageService {
   private postService: Fs.Cms.Posts.PostsApiService;
   private directoriesApiService: Fs.Abp.File.Directories.DirectoriesApiService;
   private fileDescriptorService: Volo.FileManagement.Files.FileDescriptorService;
-
+  
   constructor(private injector: Injector) {
     this.blogService = injector.get(Fs.Cms.Blogs.BlogsApiService);
     this.postService = injector.get(Fs.Cms.Posts.PostsApiService);
@@ -39,6 +39,10 @@ export class PageService {
       input
     );
   }
+
+  deleteBlog(id:string){
+    return this.blogService.deleteByBlogPrimaryKey({id});
+  }
   //#endregion
 
   //#region File
@@ -48,6 +52,10 @@ export class PageService {
 
   deleteFile(id: string) {
     return this.fileDescriptorService.deleteById(id);
+  }
+
+  getFileDescriptor(id:string){
+    return this.fileDescriptorService.getById(id);
   }
 
   //#endregion
@@ -70,6 +78,10 @@ export class PageService {
       { id: id },
       input
     );
+  }
+
+  deletePost(id: string) {
+    return this.postService.deleteByPostPrimaryKey({ id });
   }
   //#endregion
 

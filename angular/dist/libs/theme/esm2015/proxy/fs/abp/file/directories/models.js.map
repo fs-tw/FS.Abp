@@ -1,0 +1,1 @@
+{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../../libs/theme/proxy/src/fs/abp/file/directories/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface DirectoryProviderDefinition {\r\n  providerKey?: string;\r\n  directoryPath?: string;\r\n}\r\n"]}

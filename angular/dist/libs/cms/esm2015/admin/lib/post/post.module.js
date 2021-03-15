@@ -25,7 +25,6 @@ import { MainComponent } from './components/main/main.component';
 import { SharedModule } from '../shared/shared.module';
 import { DetailComponent } from './components/detail/detail.component';
 import { ListComponent } from './components/main/list/list.component';
-import { CreateComponent } from './components/modal/create/create.component';
 import { PageService } from './providers/page.service';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { TagComponent } from './components/tag/tag.component';
@@ -68,7 +67,6 @@ PostModule.decorators = [
                     MainComponent,
                     DetailComponent,
                     ListComponent,
-                    CreateComponent,
                     UploadFileComponent,
                     TagComponent,
                     ImagePickerComponent

@@ -14,7 +14,7 @@ import { NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS } from './providers/nav-item.provi
     LayoutModule,
     NzSpinModule
   ],
-  declarations: [ApplicationLayoutComponent,AccountLayoutComponent],
+  declarations: [ApplicationLayoutComponent,AccountLayoutComponent]
 })
 export class ThemeAlainMsModule {
   static forRoot(): ModuleWithProviders<ThemeAlainMsModule> {

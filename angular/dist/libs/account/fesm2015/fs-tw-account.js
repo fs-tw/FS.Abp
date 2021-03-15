@@ -118,7 +118,7 @@ AuthService.ctorParameters = () => [
 ];
 
 //import { AuthService, SetRemember, ConfigState } from '@abp/ng.core';
-const { maxLength, minLength, required } = Validators;
+const { maxLength: maxLength$2, minLength, required: required$3 } = Validators;
 class LoginComponent {
     constructor(fb, oauthService, store, toasterService, authService, configStateService) {
         this.fb = fb;
@@ -134,8 +134,8 @@ class LoginComponent {
         this.isSelfRegistrationEnabled =
             (this.configStateService.getSetting('Abp.Account.IsSelfRegistrationEnabled') || '').toLowerCase() !== 'false';
         this.form = this.fb.group({
-            username: ['', [required, maxLength(255)]],
-            password: ['', [required, maxLength(128)]],
+            username: ['', [required$3, maxLength$2(255)]],
+            password: ['', [required$3, maxLength$2(128)]],
             remember: [false],
         });
     }
@@ -238,7 +238,7 @@ AccountService.ctorParameters = () => [
 ];
 
 //import { AuthService, ConfigState } from '@abp/ng.core';
-const { maxLength: maxLength$1, required: required$1, email } = Validators;
+const { maxLength: maxLength$1, required: required$2, email: email$1 } = Validators;
 class RegisterComponent {
     constructor(fb, accountService, oauthService, store, toasterService, authService, injector) {
         this.fb = fb;
@@ -270,9 +270,9 @@ class RegisterComponent {
         //   return;
         // }
         this.form = this.fb.group({
-            username: ['', [required$1, maxLength$1(255)]],
-            password: ['', [required$1, ...getPasswordValidators(this.injector)]],
-            email: ['', [required$1, email]],
+            username: ['', [required$2, maxLength$1(255)]],
+            password: ['', [required$2, ...getPasswordValidators(this.injector)]],
+            email: ['', [required$2, email$1]],
         });
     }
     onSubmit() {
@@ -419,7 +419,7 @@ AuthWrapperComponent.propDecorators = {
     cancelContentRef: [{ type: Input }]
 };
 
-const { required: required$2 } = Validators;
+const { required: required$1 } = Validators;
 const PASSWORD_FIELDS = ['newPassword', 'repeatNewPassword'];
 class ChangePasswordComponent {
     constructor(fb, store, toasterService, injector) {
@@ -437,17 +437,17 @@ class ChangePasswordComponent {
         this.hideCurrentPassword = !this.store.selectSnapshot(ProfileState.getProfile).hasPassword;
         const passwordValidations = getPasswordValidators(this.injector);
         this.form = this.fb.group({
-            password: ['', required$2],
+            password: ['', required$1],
             newPassword: [
                 '',
                 {
-                    validators: [required$2, ...passwordValidations],
+                    validators: [required$1, ...passwordValidations],
                 },
             ],
             repeatNewPassword: [
                 '',
                 {
-                    validators: [required$2, ...passwordValidations],
+                    validators: [required$1, ...passwordValidations],
                 },
             ],
         }, {
@@ -471,7 +471,7 @@ class ChangePasswordComponent {
                 });
                 if (this.hideCurrentPassword) {
                     this.hideCurrentPassword = false;
-                    this.form.addControl('password', new FormControl('', [required$2]));
+                    this.form.addControl('password', new FormControl('', [required$1]));
                 }
             },
             error: err => {
@@ -494,7 +494,7 @@ ChangePasswordComponent.ctorParameters = () => [
     { type: Injector }
 ];
 
-const { maxLength: maxLength$2, required: required$3, email: email$1 } = Validators;
+const { maxLength, required, email } = Validators;
 class PersonalSettingsComponent {
     constructor(fb, store, toasterService) {
         this.fb = fb;
@@ -507,11 +507,11 @@ class PersonalSettingsComponent {
     buildForm() {
         const profile = this.store.selectSnapshot(ProfileState.getProfile);
         this.form = this.fb.group({
-            userName: [profile.userName, [required$3, maxLength$2(256)]],
-            email: [profile.email, [required$3, email$1, maxLength$2(256)]],
-            name: [profile.name || '', [maxLength$2(64)]],
-            surname: [profile.surname || '', [maxLength$2(64)]],
-            phoneNumber: [profile.phoneNumber || '', [maxLength$2(16)]],
+            userName: [profile.userName, [required, maxLength(256)]],
+            email: [profile.email, [required, email, maxLength(256)]],
+            name: [profile.name || '', [maxLength(64)]],
+            surname: [profile.surname || '', [maxLength(64)]],
+            phoneNumber: [profile.phoneNumber || '', [maxLength(16)]],
         });
     }
     submit() {

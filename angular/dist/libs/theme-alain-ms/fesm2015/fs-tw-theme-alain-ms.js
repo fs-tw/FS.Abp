@@ -1,9 +1,8 @@
-import { NgModule, Injectable, Inject, APP_INITIALIZER, LOCALE_ID, Component, ElementRef, Renderer2, Injector } from '@angular/core';
-import { ReplaceableComponentsService, DomInsertionService, CONTENT_STRATEGY, CoreModule } from '@abp/ng.core';
+import { NgModule, Injectable, Inject, APP_INITIALIZER, LOCALE_ID, Component, ChangeDetectionStrategy, ViewEncapsulation, ElementRef, Renderer2, Injector } from '@angular/core';
+import { CoreModule, ReplaceableComponentsService, DomInsertionService, CONTENT_STRATEGY } from '@abp/ng.core';
 import { AlainThemeModule, SettingsService, TitleService, zh_TW as zh_TW$1, DELON_LOCALE } from '@delon/theme';
 import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
-import { NgxValidateCoreModule } from '@ngx-validate/core';
-import { ValidationErrorComponent } from '@abp/ng.theme.basic';
+import { ValidationErrorComponent as ValidationErrorComponent$1, NgxValidateCoreModule } from '@ngx-validate/core';
 import { DOCUMENT, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { zip } from 'rxjs';
@@ -232,22 +231,51 @@ const ICONS = [InfoOutline, BulbOutline, ProfileOutline, ExceptionOutline, LinkO
 const STYLES_PROVIDERS = [
     {
         provide: APP_INITIALIZER,
-        useFactory: configureStyles,
+        useFactory: configureStyles$1,
         deps: [NzIconService],
         multi: true,
     },
 ];
-function configureStyles(iconSrv) {
+function configureStyles$1(iconSrv) {
     return () => {
         iconSrv.addIcon(...ICONS_AUTO, ...ICONS);
     };
 }
+
+class ValidationErrorComponent extends ValidationErrorComponent$1 {
+    get abpErrors() {
+        if (!this.errors || !this.errors.length)
+            return [];
+        return this.errors.map(error => {
+            if (!error.message)
+                return error;
+            const index = error.message.indexOf('[');
+            if (index > -1) {
+                return Object.assign(Object.assign({}, error), { message: error.message.slice(0, index), interpoliteParams: error.message.slice(index + 1, error.message.length - 1).split(',') });
+            }
+            return error;
+        });
+    }
+}
+ValidationErrorComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'fs-validation-error',
+                template: `
+    <div class="invalid-feedback" *ngFor="let error of abpErrors; trackBy: trackByFn">
+      {{ error.message | abpLocalization: error.interpoliteParams }}
+    </div>
+  `,
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                encapsulation: ViewEncapsulation.None
+            },] }
+];
 
 class RootModule {
 }
 RootModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    CoreModule,
                     NzMessageModule,
                     LayoutModule.forRoot(),
                     GlobalConfigModule.forRoot(),
@@ -275,6 +303,12 @@ RootModule.decorators = [
                     ...LANG_PROVIDES,
                     STYLES_PROVIDERS
                 ],
+                declarations: [
+                    ValidationErrorComponent
+                ],
+                exports: [
+                    ValidationErrorComponent
+                ]
             },] }
 ];
 
@@ -681,12 +715,12 @@ background-color: rgba(0, 0, 0, 0.6);
 const NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
     {
         provide: APP_INITIALIZER,
-        useFactory: configureStyles$1,
+        useFactory: configureStyles,
         deps: [Injector],
         multi: true,
     },
 ];
-function configureStyles$1(injector) {
+function configureStyles(injector) {
     return () => {
         const replaceableComponents = injector.get(ReplaceableComponentsService);
         const domInsertion = injector.get(DomInsertionService);
@@ -766,7 +800,7 @@ ThemeAlainMsModule.decorators = [
                     LayoutModule,
                     NzSpinModule
                 ],
-                declarations: [ApplicationLayoutComponent, AccountLayoutComponent],
+                declarations: [ApplicationLayoutComponent, AccountLayoutComponent]
             },] }
 ];
 
@@ -774,5 +808,5 @@ ThemeAlainMsModule.decorators = [
  * Generated bundle index. Do not edit.
  */
 
-export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, StartupService as ɵe, StartupServiceFactory as ɵf, APPINIT_PROVIDES as ɵg, LANG as ɵh, LANG_PROVIDES as ɵi, STYLES_PROVIDERS as ɵj, configureStyles as ɵk, NG_ALAIN_MS_THEME_STYLES_PROVIDERS as ɵl, configureStyles$1 as ɵm, NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS as ɵn, configureNavItems as ɵo };
+export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, ValidationErrorComponent as ɵe, StartupService as ɵf, StartupServiceFactory as ɵg, APPINIT_PROVIDES as ɵh, LANG as ɵi, LANG_PROVIDES as ɵj, STYLES_PROVIDERS as ɵk, configureStyles$1 as ɵl, NG_ALAIN_MS_THEME_STYLES_PROVIDERS as ɵm, configureStyles as ɵn, NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS as ɵo, configureNavItems as ɵp };
 //# sourceMappingURL=fs-tw-theme-alain-ms.js.map

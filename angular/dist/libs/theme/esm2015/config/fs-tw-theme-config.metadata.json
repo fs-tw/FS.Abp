@@ -1,1 +1,1 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./providers/route.provider","export":[{"name":"THEME_ROUTE_PROVIDERS","as":"ɵa"},{"name":"configureRoutes","as":"ɵb"}]}]}]
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./providers/extensions.provider","export":[{"name":"EXTENSIONS_PROVIDERS","as":"ɵc"}]},{"from":"./providers/route.provider","export":[{"name":"THEME_ROUTE_PROVIDERS","as":"ɵa"},{"name":"configureRoutes","as":"ɵb"}]}]}]

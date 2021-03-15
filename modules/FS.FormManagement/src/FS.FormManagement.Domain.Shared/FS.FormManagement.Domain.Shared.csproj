@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FS.Abp.Domain.Shared" Version="$(FSVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\FormManagement\*.json" />
+    <Content Remove="Localization\FormManagement\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModel\FormManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormManagement.efml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\FormManagement.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormManagement.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FormManagement.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormManagement.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\FormManagement.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>FormManagement.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\FormManagement.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormManagement.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>

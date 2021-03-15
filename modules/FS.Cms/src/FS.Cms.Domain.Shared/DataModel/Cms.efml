@@ -293,10 +293,13 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="021c22dd-9f07-421d-ac4f-518ce9e1edc1">
+      <property name="ImageId" type="String" p1:ValidateRequired="true" p1:Guid="021c22dd-9f07-421d-ac4f-518ce9e1edc1">
         <column name="" />
       </property>
       <property name="IsCover" type="Boolean" p1:ValidateRequired="true" p1:Guid="708eb5d4-1dc0-4004-b1cf-d263648137fd">
+        <column name="" />
+      </property>
+      <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="42205283-e81f-48e3-9cdb-46e348ff8c61">
         <column name="" />
       </property>
     </component>
@@ -429,6 +432,46 @@
         <column name="" />
       </property>
     </component>
+    <component class="FS.Cms.Posts.AttachmentFileInfo" p1:Guid="578035fa-102b-45d5-8a08-deb5a25b342c" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>None</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Posts</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>false</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="FileId" type="String" p1:ValidateRequired="true" p1:Guid="5d4415da-a5b2-431e-bde6-0a4e499ef583">
+        <column name="" />
+      </property>
+      <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="daec17f2-5081-4205-8268-6d56e47e95c2">
+        <column name="" />
+      </property>
+    </component>
   </class>
   <class name="FS.Cms.Posts.Post" entity-set="Posts" p1:Guid="46991b29-7309-481a-9973-a0f8bfda365e" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:AppServicePartialClass="True" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
@@ -511,7 +554,7 @@
     <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="b2fe0afb-6965-4c75-bf2a-eef6c8365a7b">
       <column name="" />
     </property>
-    <property name="AttachmentFileUrls" type="String" p1:ValidateRequired="true" p1:Guid="3e54adea-7257-4ae5-a17e-4ce7e0048951" p1:Shadow="True">
+    <component name="AttachmentFileInfos" class="FS.Cms.Posts.AttachmentFileInfo" p1:ValidateRequired="false" p1:Guid="3e54adea-7257-4ae5-a17e-4ce7e0048951" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -530,8 +573,9 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <column name="" />
-    </property>
+      <property name="FileId" />
+      <property name="Name" />
+    </component>
     <component name="PostImages" class="FS.Cms.Posts.PostImage" p1:ValidateRequired="false" p1:Guid="db1577b4-6d87-4365-8332-e4555db65c18" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
@@ -551,8 +595,9 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <property name="Url" />
+      <property name="ImageId" />
       <property name="IsCover" />
+      <property name="Name" />
     </component>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cca2825d-0e3a-446d-9020-dab36bb0aab4" p1:GenerateDTO="False">
       <column name="" />

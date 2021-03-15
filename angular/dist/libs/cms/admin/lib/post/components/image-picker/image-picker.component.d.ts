@@ -1,7 +1,8 @@
 import { OnInit, TemplateRef } from '@angular/core';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
+import { FileService } from '../../../shared';
 import { ToasterService } from '@abp/ng.theme.shared';
-import { ConfigStateService, EnvironmentService } from '@abp/ng.core';
+import { EnvironmentService } from '@abp/ng.core';
 export declare class ImageFile {
     fileName: string;
     fileUrl: string;
@@ -22,7 +23,7 @@ declare class ViewImage {
 export declare class ImagePickerComponent implements OnInit {
     private toasterService;
     private environmentService;
-    private configStateService;
+    private fileService;
     /** 縮圖寬度，單位 px，預設 104px */
     imageWidth: string;
     /** 縮圖高度，單位 px ，預設 104px */
@@ -56,16 +57,16 @@ export declare class ImagePickerComponent implements OnInit {
     /** 顯示預覽圖 modal */
     viewImage: ViewImage;
     get canUpload(): boolean;
-    constructor(toasterService: ToasterService, environmentService: EnvironmentService, configStateService: ConfigStateService);
+    constructor(toasterService: ToasterService, environmentService: EnvironmentService, fileService: FileService);
     ngOnInit(): void;
     ngOnChanges(): void;
     clear(): void;
-    private getHttpUrl;
     beforeUpload: (file: NzUploadFile) => boolean;
     private getBase64;
     deleteFile(fileName: string): void;
     controllModal(state: boolean, image?: ImageFile): void;
     getDeleteFileNames(): string[];
+    getNewUploadFiles(): SaveFile[];
     getUploadFiles(): SaveFile[];
 }
 export {};

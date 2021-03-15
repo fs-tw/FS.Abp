@@ -20,10 +20,12 @@ namespace FS.Abp.File.Files
     {
 
         protected IFileDescriptorAppService FileDescriptorAppService;
+        private readonly IFilesAppService filesAppService;
 
-        public FilesApi(IFileDescriptorAppService fileDescriptorAppService)
+        public FilesApi(IFileDescriptorAppService fileDescriptorAppService, IFilesAppService filesAppService)
         {
             FileDescriptorAppService = fileDescriptorAppService;
+            this.filesAppService = filesAppService;
         }
 
         [AllowAnonymous]
@@ -31,10 +33,10 @@ namespace FS.Abp.File.Files
         [Route("file-content")]
         public virtual async Task<IActionResult> GetContentAsync(Guid id)
         {
+            var file = await this.filesAppService.GetAsync(id);
             try
-            {
-                var file = await this.FileDescriptorAppService.GetAsync(id);
-                var bytes = await FileDescriptorAppService.GetContentAsync(id);
+            {                
+                var bytes = await filesAppService.GetContentAsync(id);
                 string contentType;
                 new FileExtensionContentTypeProvider().TryGetContentType(file.Name, out contentType);
                 contentType = contentType ?? "application/octet-stream";

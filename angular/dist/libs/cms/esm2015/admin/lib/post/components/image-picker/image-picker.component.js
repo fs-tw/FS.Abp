@@ -1,6 +1,7 @@
 import { Component, Input, TemplateRef } from '@angular/core';
+import { FileService } from '../../../shared';
 import { ToasterService } from '@abp/ng.theme.shared';
-import { ConfigStateService, EnvironmentService } from '@abp/ng.core';
+import { EnvironmentService } from '@abp/ng.core';
 export class ImageFile {
     constructor(fileName = '', fileUrl = '') {
         this.fileName = fileName;
@@ -22,10 +23,10 @@ class ViewImage {
     }
 }
 export class ImagePickerComponent {
-    constructor(toasterService, environmentService, configStateService) {
+    constructor(toasterService, environmentService, fileService) {
         this.toasterService = toasterService;
         this.environmentService = environmentService;
-        this.configStateService = configStateService;
+        this.fileService = fileService;
         /** 縮圖寬度，單位 px，預設 104px */
         this.imageWidth = '104px';
         /** 縮圖高度，單位 px ，預設 104px */
@@ -52,6 +53,11 @@ export class ImagePickerComponent {
         this.uploadFiles = [];
         /** 顯示預覽圖 modal */
         this.viewImage = new ViewImage();
+        // private getHttpUrl(url: string): string {
+        //   let result = url;
+        //   if (url.includes("http")) return result;
+        //   return this.environmentService.getApiUrl() + url;
+        // }
         this.beforeUpload = (file) => {
             let isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
             if (!isJpgOrPng) {
@@ -84,21 +90,16 @@ export class ImagePickerComponent {
     ngOnChanges() {
         this.existFiles = this.existFiles
             .filter(x => x.fileUrl)
-            .map(x => new ImageFile(x.fileName, this.getHttpUrl(x.fileUrl)));
+            .map(x => new ImageFile(x.fileName, this.fileService.getFileUrl(x.fileUrl)));
         this.uploadFiles = [];
         this.showFiles = [];
+        this.deleteFiles = [];
     }
     clear() {
         this.existFiles = [];
         this.deleteFiles = [];
         this.uploadFiles = [];
         this.showFiles = [];
-    }
-    getHttpUrl(url) {
-        let result = url;
-        if (url.includes("http"))
-            return result;
-        return this.environmentService.getApiUrl() + url;
     }
     getBase64(img, callback) {
         const reader = new FileReader();
@@ -127,6 +128,10 @@ export class ImagePickerComponent {
     getDeleteFileNames() {
         return this.deleteFiles;
     }
+    getNewUploadFiles() {
+        let updateFiles = this.uploadFiles.map((x) => new SaveFile(x.name, '', x));
+        return updateFiles;
+    }
     getUploadFiles() {
         let existFiles = this.existFiles.filter(x => !this.deleteFiles.includes(x.fileName)).map(x => new SaveFile(x.fileName, x.fileUrl, null));
         let updateFiles = this.uploadFiles.map((x) => new SaveFile(x.name, '', x));
@@ -143,7 +148,7 @@ ImagePickerComponent.decorators = [
 ImagePickerComponent.ctorParameters = () => [
     { type: ToasterService },
     { type: EnvironmentService },
-    { type: ConfigStateService }
+    { type: FileService }
 ];
 ImagePickerComponent.propDecorators = {
     imageWidth: [{ type: Input }],

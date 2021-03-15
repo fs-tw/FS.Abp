@@ -22,6 +22,9 @@ export class PageService {
     updateBlog(id, input) {
         return this.blogService.updateByBlogPrimaryKeyAndBlogUpdate({ id: id }, input);
     }
+    deleteBlog(id) {
+        return this.blogService.deleteByBlogPrimaryKey({ id });
+    }
     //#endregion
     //#region File
     findByProviderByKeyAndGroup(key, group) {
@@ -29,6 +32,9 @@ export class PageService {
     }
     deleteFile(id) {
         return this.fileDescriptorService.deleteById(id);
+    }
+    getFileDescriptor(id) {
+        return this.fileDescriptorService.getById(id);
     }
     //#endregion
     //#region Post
@@ -43,6 +49,9 @@ export class PageService {
     }
     updatePost(id, input) {
         return this.postService.updateByPostPrimaryKeyAndPostUpdate({ id: id }, input);
+    }
+    deletePost(id) {
+        return this.postService.deleteByPostPrimaryKey({ id });
     }
 }
 PageService.decorators = [

@@ -11,4 +11,5 @@ export declare class FileService {
     constructor(restService: RestService, environmentService: EnvironmentService);
     getFileUrl(id: any): string;
     uploadFile(file: File, directoryId: string): import("rxjs").Observable<FileDescriptorDto>;
+    getFileBlobById(id: string): import("rxjs").Observable<Blob>;
 }

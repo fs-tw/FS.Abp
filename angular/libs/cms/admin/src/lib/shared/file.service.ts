@@ -20,21 +20,31 @@ export class FileService {
   }
 
   getFileUrl(id) {
-    if(!id) return "";
+    if (!id) return "";
     return this.environmentService.getApiUrl() + "/api/file-management/file-descriptor/file-content?id=" + id
   }
 
-  uploadFile(file: File, directoryId: string) {
+  uploadFile(file: File, directoryId: string) {    
     const formData = new FormData();
     formData.append("relativePath", null);
     formData.append("file", file);
-    formData.append("name", file.name);
+    formData.append("name", file.name);   
     formData.append("type", file.type);
     return this.restService.request<any, FileDescriptorDto>({
       method: 'POST',
       url: `/api/file-management/file-descriptor/upload`,
       body: formData,
       params: { directoryId: directoryId }
+    });
+  }
+
+
+  getFileBlobById(id: string) {
+    return this.restService.request<any, Blob>({
+      method: 'GET',
+      url: `/api/file-management/file-descriptor/file-content`,
+      params: { id },
+      responseType: 'blob'
     });
   }
 

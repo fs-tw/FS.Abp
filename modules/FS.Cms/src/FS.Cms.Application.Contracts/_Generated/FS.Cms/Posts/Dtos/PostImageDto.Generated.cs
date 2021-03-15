@@ -22,9 +22,11 @@ namespace FS.Cms.Posts.Dtos
 
     public partial class PostImageDto
     {
-        public virtual string Url { get; set; }
+        public virtual string ImageId { get; set; }
 
         public virtual bool IsCover { get; set; }
+
+        public virtual string Name { get; set; }
 
     }
 }

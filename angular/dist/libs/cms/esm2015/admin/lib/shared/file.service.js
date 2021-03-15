@@ -25,6 +25,14 @@ export class FileService {
             params: { directoryId: directoryId }
         });
     }
+    getFileBlobById(id) {
+        return this.restService.request({
+            method: 'GET',
+            url: `/api/file-management/file-descriptor/file-content`,
+            params: { id },
+            responseType: 'blob'
+        });
+    }
 }
 FileService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FileService_Factory() { return new FileService(i0.ɵɵinject(i1.RestService), i0.ɵɵinject(i1.EnvironmentService)); }, token: FileService, providedIn: "root" });
 FileService.decorators = [

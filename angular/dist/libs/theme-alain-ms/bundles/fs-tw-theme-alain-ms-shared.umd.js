@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@delon/abc/page-header'), require('@delon/abc/se'), require('@delon/abc/st'), require('@delon/abc/sv'), require('@delon/chart/custom'), require('ng-zorro-antd/affix'), require('ng-zorro-antd/alert'), require('ng-zorro-antd/anchor'), require('ng-zorro-antd/avatar'), require('ng-zorro-antd/breadcrumb'), require('ng-zorro-antd/button'), require('ng-zorro-antd/card'), require('ng-zorro-antd/checkbox'), require('ng-zorro-antd/core/outlet'), require('ng-zorro-antd/date-picker'), require('ng-zorro-antd/divider'), require('ng-zorro-antd/drawer'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/form'), require('ng-zorro-antd/grid'), require('ng-zorro-antd/icon'), require('ng-zorro-antd/input'), require('ng-zorro-antd/input-number'), require('ng-zorro-antd/list'), require('ng-zorro-antd/message'), require('ng-zorro-antd/modal'), require('ng-zorro-antd/popconfirm'), require('ng-zorro-antd/popover'), require('ng-zorro-antd/progress'), require('ng-zorro-antd/radio'), require('ng-zorro-antd/select'), require('ng-zorro-antd/skeleton'), require('ng-zorro-antd/spin'), require('ng-zorro-antd/switch'), require('ng-zorro-antd/table'), require('ng-zorro-antd/tabs'), require('ng-zorro-antd/time-picker'), require('ng-zorro-antd/tooltip'), require('ng-zorro-antd/tree'), require('ng-zorro-antd/upload'), require('@abp/ng.theme.shared'), require('@ngx-validate/core'), require('@fs-tw/theme-alain-ms/shared/extensions')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms/shared', ['exports', '@angular/core', '@abp/ng.core', '@delon/abc/page-header', '@delon/abc/se', '@delon/abc/st', '@delon/abc/sv', '@delon/chart/custom', 'ng-zorro-antd/affix', 'ng-zorro-antd/alert', 'ng-zorro-antd/anchor', 'ng-zorro-antd/avatar', 'ng-zorro-antd/breadcrumb', 'ng-zorro-antd/button', 'ng-zorro-antd/card', 'ng-zorro-antd/checkbox', 'ng-zorro-antd/core/outlet', 'ng-zorro-antd/date-picker', 'ng-zorro-antd/divider', 'ng-zorro-antd/drawer', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/form', 'ng-zorro-antd/grid', 'ng-zorro-antd/icon', 'ng-zorro-antd/input', 'ng-zorro-antd/input-number', 'ng-zorro-antd/list', 'ng-zorro-antd/message', 'ng-zorro-antd/modal', 'ng-zorro-antd/popconfirm', 'ng-zorro-antd/popover', 'ng-zorro-antd/progress', 'ng-zorro-antd/radio', 'ng-zorro-antd/select', 'ng-zorro-antd/skeleton', 'ng-zorro-antd/spin', 'ng-zorro-antd/switch', 'ng-zorro-antd/table', 'ng-zorro-antd/tabs', 'ng-zorro-antd/time-picker', 'ng-zorro-antd/tooltip', 'ng-zorro-antd/tree', 'ng-zorro-antd/upload', '@abp/ng.theme.shared', '@ngx-validate/core', '@fs-tw/theme-alain-ms/shared/extensions'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = global['fs-tw']['theme-alain-ms'] || {}, global['fs-tw']['theme-alain-ms'].shared = {}), global.ng.core, global.ng_core, global.pageHeader, global.se, global.st, global.sv, global.custom, global.affix, global.alert, global.anchor, global.avatar, global.breadcrumb, global.button, global.card, global.checkbox, global.outlet, global.datePicker, global.divider, global.drawer, global.dropdown, global.form, global.grid, global.icon, global.input, global.inputNumber, global.list, global.message, global.modal, global.popconfirm, global.popover, global.progress, global.radio, global.select, global.skeleton, global.spin, global._switch, global.table, global.tabs, global.timePicker, global.tooltip, global.tree, global.upload, global.ng_theme_shared, global.core, global['fs-tw']['theme-alain-ms'].shared.extensions));
-}(this, (function (exports, core$1, ng_core, pageHeader, se, st, sv, custom, affix, alert, anchor, avatar, breadcrumb, button, card, checkbox, outlet, datePicker, divider, drawer, dropdown, form, grid, icon, input, inputNumber, list, message, modal, popconfirm, popover, progress, radio, select, skeleton, spin, _switch, table, tabs, timePicker, tooltip, tree, upload, ng_theme_shared, core, extensions) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@delon/abc/page-header'), require('@delon/abc/se'), require('@delon/abc/st'), require('@delon/abc/sv'), require('@delon/chart/custom'), require('ng-zorro-antd/affix'), require('ng-zorro-antd/alert'), require('ng-zorro-antd/anchor'), require('ng-zorro-antd/avatar'), require('ng-zorro-antd/breadcrumb'), require('ng-zorro-antd/button'), require('ng-zorro-antd/card'), require('ng-zorro-antd/checkbox'), require('ng-zorro-antd/core/outlet'), require('ng-zorro-antd/date-picker'), require('ng-zorro-antd/divider'), require('ng-zorro-antd/drawer'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/form'), require('ng-zorro-antd/grid'), require('ng-zorro-antd/icon'), require('ng-zorro-antd/input'), require('ng-zorro-antd/input-number'), require('ng-zorro-antd/list'), require('ng-zorro-antd/message'), require('ng-zorro-antd/modal'), require('ng-zorro-antd/popconfirm'), require('ng-zorro-antd/popover'), require('ng-zorro-antd/progress'), require('ng-zorro-antd/radio'), require('ng-zorro-antd/select'), require('ng-zorro-antd/skeleton'), require('ng-zorro-antd/spin'), require('ng-zorro-antd/switch'), require('ng-zorro-antd/table'), require('ng-zorro-antd/tabs'), require('ng-zorro-antd/time-picker'), require('ng-zorro-antd/tooltip'), require('ng-zorro-antd/tree'), require('ng-zorro-antd/upload'), require('ng-zorro-antd/tag'), require('@abp/ng.theme.shared'), require('@ngx-validate/core'), require('@fs-tw/theme-alain-ms/shared/extensions')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms/shared', ['exports', '@angular/core', '@abp/ng.core', '@delon/abc/page-header', '@delon/abc/se', '@delon/abc/st', '@delon/abc/sv', '@delon/chart/custom', 'ng-zorro-antd/affix', 'ng-zorro-antd/alert', 'ng-zorro-antd/anchor', 'ng-zorro-antd/avatar', 'ng-zorro-antd/breadcrumb', 'ng-zorro-antd/button', 'ng-zorro-antd/card', 'ng-zorro-antd/checkbox', 'ng-zorro-antd/core/outlet', 'ng-zorro-antd/date-picker', 'ng-zorro-antd/divider', 'ng-zorro-antd/drawer', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/form', 'ng-zorro-antd/grid', 'ng-zorro-antd/icon', 'ng-zorro-antd/input', 'ng-zorro-antd/input-number', 'ng-zorro-antd/list', 'ng-zorro-antd/message', 'ng-zorro-antd/modal', 'ng-zorro-antd/popconfirm', 'ng-zorro-antd/popover', 'ng-zorro-antd/progress', 'ng-zorro-antd/radio', 'ng-zorro-antd/select', 'ng-zorro-antd/skeleton', 'ng-zorro-antd/spin', 'ng-zorro-antd/switch', 'ng-zorro-antd/table', 'ng-zorro-antd/tabs', 'ng-zorro-antd/time-picker', 'ng-zorro-antd/tooltip', 'ng-zorro-antd/tree', 'ng-zorro-antd/upload', 'ng-zorro-antd/tag', '@abp/ng.theme.shared', '@ngx-validate/core', '@fs-tw/theme-alain-ms/shared/extensions'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = global['fs-tw']['theme-alain-ms'] || {}, global['fs-tw']['theme-alain-ms'].shared = {}), global.ng.core, global.ng_core, global.pageHeader, global.se, global.st, global.sv, global.custom, global.affix, global.alert, global.anchor, global.avatar, global.breadcrumb, global.button, global.card, global.checkbox, global.outlet, global.datePicker, global.divider, global.drawer, global.dropdown, global.form, global.grid, global.icon, global.input, global.inputNumber, global.list, global.message, global.modal, global.popconfirm, global.popover, global.progress, global.radio, global.select, global.skeleton, global.spin, global._switch, global.table, global.tabs, global.timePicker, global.tooltip, global.tree, global.upload, global.tag, global.ng_theme_shared, global.core, global['fs-tw']['theme-alain-ms'].shared.extensions));
+}(this, (function (exports, core$1, ng_core, pageHeader, se, st, sv, custom, affix, alert, anchor, avatar, breadcrumb, button, card, checkbox, outlet, datePicker, divider, drawer, dropdown, form, grid, icon, input, inputNumber, list, message, modal, popconfirm, popover, progress, radio, select, skeleton, spin, _switch, table, tabs, timePicker, tooltip, tree, upload, tag, ng_theme_shared, core, extensions) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -351,10 +351,11 @@
         skeleton.NzSkeletonModule,
         outlet.NzOutletModule,
         tree.NzTreeModule,
+        tag.NzTagModule
     ];
 
-    var declarationsWithExports = [];
-    var ABPMODULES = [
+    var declarationsWithExports$1 = [];
+    var ABPMODULES$1 = [
         ng_core.CoreModule,
         ng_theme_shared.ThemeSharedModule,
         core.NgxValidateCoreModule
@@ -366,9 +367,9 @@
     }());
     BaseThemeSharedModule.decorators = [
         { type: core$1.NgModule, args: [{
-                    declarations: __spread(declarationsWithExports),
-                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES),
-                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, declarationsWithExports, ABPMODULES),
+                    declarations: __spread(declarationsWithExports$1),
+                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES$1),
+                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, declarationsWithExports$1, ABPMODULES$1),
                 },] }
     ];
     var ThemeAlainMsSharedModule = /** @class */ (function () {
@@ -389,9 +390,9 @@
                 },] }
     ];
 
-    var declarationsWithExports$1 = [];
+    var declarationsWithExports = [];
     // #region third libs
-    var ABPMODULES$1 = [
+    var ABPMODULES = [
         ng_core.CoreModule,
         extensions.UiExtensionsModule
     ];
@@ -404,8 +405,8 @@
     SharedModule.decorators = [
         { type: core$1.NgModule, args: [{
                     //declarations: [...declarationsWithExports],
-                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES$1),
-                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES$1),
+                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES),
+                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES),
                 },] }
     ];
 

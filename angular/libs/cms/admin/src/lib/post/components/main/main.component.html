@@ -13,12 +13,31 @@
           <input type="text" [(ngModel)]="postParams.keyword" nz-input placeholder="輸入名稱" />
         </nz-input-group>
         <ng-template #suffixIconButton>
-          <button nz-button nzType="primary" (click)="changePage(1)" nzSearch>
+          <button nz-button nzType="primary" (click)="hookToQuery()" nzSearch>
             <i nz-icon nzType="search"></i>
           </button>
         </ng-template>
       </div>
-      <nz-table #listTable [nzData]="posts" nzSize="small" nzPageSize="10" [nzTotal]="totalCount"
+      <nz-extensible-table [data]="posts" [scroll]="{x:'600px'}" [recordsTotal]="totalCount" [list]="list"
+        [haveRowDetail]="false">
+     
+        <ng-template row-detail-template let-node>
+          <div>
+            <h3>副標題</h3>
+            <p>{{ node.subtitle || '-' }}</p>
+            <div *ngIf="node.displayMode == 0">
+              <h3>內容：</h3>
+              <quill-view [content]="node.content"></quill-view>
+            </div>
+            <div *ngIf="node.displayMode == 1">
+              <h3>連結</h3>
+              <p>{{ node.url }}</p>
+            </div>
+          </div>
+        </ng-template>
+        
+      </nz-extensible-table>
+      <!-- <nz-table #listTable [nzData]="posts" nzSize="small" nzPageSize="10" [nzTotal]="totalCount"
         [nzFrontPagination]="false" [nzLoading]="loading" (nzPageIndexChange)="changePage($event)" nzBordered>
         <thead>
           <tr>
@@ -78,7 +97,7 @@
             </tr>
           </ng-container>
         </tbody>
-      </nz-table>
+      </nz-table> -->
     </div>
   </nz-col>
 </nz-row>

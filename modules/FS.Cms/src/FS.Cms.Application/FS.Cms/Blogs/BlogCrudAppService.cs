@@ -3,8 +3,11 @@
 // 4.0.0
 //
 //------------------------------------------------------------------------------
+using FS.Cms.Blogs.Dtos;
+using FS.Cms.Posts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
@@ -12,5 +15,24 @@ namespace FS.Cms.Blogs
 {
     public partial class BlogCrudAppService : IBlogCrudAppService
     {
+
+        private IPostsStore _postsStore => this.LazyServiceProvider.LazyGetRequiredService<IPostsStore>();
+        
+        public async override Task DeleteAsync(BlogPrimaryKeyDto id)
+        {
+            var query = await this._repository.GetQueryableAsync();
+            var blogNotClassified = query.Where(x => x.No == "CmsBlogNotClassified").FirstOrDefault();
+            
+            var postQuery = await _postsStore.Post.GetQueryableAsync();
+            var posts = postQuery.Where(x => x.BlogId == id.Id).ToList();
+            
+            foreach (var post in posts)
+            {
+                post.BlogId = blogNotClassified.Id;
+                await this._postsStore.Post.UpdateAsync(post).ConfigureAwait(false);
+            }
+
+            await base.DeleteAsync(id);
+        }
     }
 }

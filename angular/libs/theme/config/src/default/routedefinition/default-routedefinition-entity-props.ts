@@ -1,8 +1,8 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
-import {  } from 'libs/theme/proxy/src';
+import { Fs } from '@fs-tw/theme/proxy';
 import { of } from 'rxjs';
 
-export const DEFAULT_ROUTEDEFINITION_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Blogs.Dtos.BlogDto>([
+export const DEFAULT_ROUTEDEFINITION_ENTITY_PROPS = EntityProp.createMany<Fs.Theme.Routes.Dtos.RouteDefinitionDto>([
    
     {
         type: ePropType.String,

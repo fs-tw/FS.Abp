@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { GlobalConfigModule } from './global-config.module';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
-import { ValidationErrorComponent } from '@abp/ng.theme.basic';
 import { APPINIT_PROVIDES } from './providers/startup.service';
 import { LANG_PROVIDES } from './providers/lang.provider';
 import { STYLES_PROVIDERS } from './providers/styles.provider';
 import { LayoutModule } from '@fs-tw/theme-alain-ms/layout';
+import { ValidationErrorComponent } from './components/validation-error-component/validation-error.component';
+import { CoreModule } from '@abp/ng.core';
 export class RootModule {
 }
 RootModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    CoreModule,
                     NzMessageModule,
                     LayoutModule.forRoot(),
                     GlobalConfigModule.forRoot(),
@@ -39,6 +41,12 @@ RootModule.decorators = [
                     ...LANG_PROVIDES,
                     STYLES_PROVIDERS
                 ],
+                declarations: [
+                    ValidationErrorComponent
+                ],
+                exports: [
+                    ValidationErrorComponent
+                ]
             },] }
 ];
 //# sourceMappingURL=root.module.js.map

@@ -22,7 +22,6 @@ export const LAYOUTS = [ApplicationLayoutComponent, AccountLayoutComponent, Empt
     HeaderComponent,
     FooterComponent,
     BannerComponent,
-    ValidationErrorComponent,
     SettingsComponent
 
   ],
@@ -58,6 +57,7 @@ export class ThemeUnifyModule {
 
 @NgModule({
   imports: [
+    CoreModule,
     NgxValidateCoreModule.forRoot({
       targetSelector: '.form-control',
       invalidClasses: 'input-validation-error',
@@ -80,5 +80,11 @@ export class ThemeUnifyModule {
       errorTemplate: ValidationErrorComponent,
     })
   ],
+  declarations:[
+    ValidationErrorComponent
+  ],
+  exports:[
+    ValidationErrorComponent
+  ]
 })
 export class RootUnifyModule { }

@@ -1,3 +1,4 @@
 import * as Abp from './abp';
 import * as Cms from './cms';
-export { Abp, Cms };
+import * as Theme from './theme';
+export { Abp, Cms, Theme };

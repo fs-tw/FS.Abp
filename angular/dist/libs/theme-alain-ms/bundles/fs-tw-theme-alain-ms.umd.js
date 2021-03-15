@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@delon/theme'), require('ng-zorro-antd/message'), require('@ngx-validate/core'), require('@abp/ng.theme.basic'), require('@angular/common'), require('@angular/common/http'), require('rxjs'), require('rxjs/operators'), require('ng-zorro-antd/icon'), require('@angular/common/locales/zh'), require('date-fns/locale'), require('ng-zorro-antd/i18n'), require('@ant-design/icons-angular/icons'), require('@fs-tw/theme-alain-ms/layout'), require('@angular/router'), require('@angular/cdk/layout'), require('@delon/abc/reuse-tab'), require('@delon/util'), require('ng-zorro-antd/spin'), require('@abp/ng.theme.shared')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms', ['exports', '@angular/core', '@abp/ng.core', '@delon/theme', 'ng-zorro-antd/message', '@ngx-validate/core', '@abp/ng.theme.basic', '@angular/common', '@angular/common/http', 'rxjs', 'rxjs/operators', 'ng-zorro-antd/icon', '@angular/common/locales/zh', 'date-fns/locale', 'ng-zorro-antd/i18n', '@ant-design/icons-angular/icons', '@fs-tw/theme-alain-ms/layout', '@angular/router', '@angular/cdk/layout', '@delon/abc/reuse-tab', '@delon/util', 'ng-zorro-antd/spin', '@abp/ng.theme.shared'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = {}), global.ng.core, global.ng_core, global.theme, global.message, global.core$1, global.ng_theme_basic, global.ng.common, global.ng.common.http, global.rxjs, global.rxjs.operators, global.icon, global.ng.common.locales.zh, global.locale, global.i18n, global.icons, global['fs-tw']['theme-alain-ms'].layout, global.ng.router, global.ng.cdk.layout, global.reuseTab, global.util, global.spin, global.ng_theme_shared));
-}(this, (function (exports, core, ng_core, theme, message, core$1, ng_theme_basic, common, http, rxjs, operators, icon, ngLang, locale, i18n, icons, layout, router, layout$1, reuseTab, util, spin, ng_theme_shared) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@delon/theme'), require('ng-zorro-antd/message'), require('@ngx-validate/core'), require('@angular/common'), require('@angular/common/http'), require('rxjs'), require('rxjs/operators'), require('ng-zorro-antd/icon'), require('@angular/common/locales/zh'), require('date-fns/locale'), require('ng-zorro-antd/i18n'), require('@ant-design/icons-angular/icons'), require('@fs-tw/theme-alain-ms/layout'), require('@angular/router'), require('@angular/cdk/layout'), require('@delon/abc/reuse-tab'), require('@delon/util'), require('ng-zorro-antd/spin'), require('@abp/ng.theme.shared')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/theme-alain-ms', ['exports', '@angular/core', '@abp/ng.core', '@delon/theme', 'ng-zorro-antd/message', '@ngx-validate/core', '@angular/common', '@angular/common/http', 'rxjs', 'rxjs/operators', 'ng-zorro-antd/icon', '@angular/common/locales/zh', 'date-fns/locale', 'ng-zorro-antd/i18n', '@ant-design/icons-angular/icons', '@fs-tw/theme-alain-ms/layout', '@angular/router', '@angular/cdk/layout', '@delon/abc/reuse-tab', '@delon/util', 'ng-zorro-antd/spin', '@abp/ng.theme.shared'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw']['theme-alain-ms'] = {}), global.ng.core, global.ng_core, global.theme, global.message, global.core$1, global.ng.common, global.ng.common.http, global.rxjs, global.rxjs.operators, global.icon, global.ng.common.locales.zh, global.locale, global.i18n, global.icons, global['fs-tw']['theme-alain-ms'].layout, global.ng.router, global.ng.cdk.layout, global.reuseTab, global.util, global.spin, global.ng_theme_shared));
+}(this, (function (exports, core, ng_core, theme, message, core$1, common, http, rxjs, operators, icon, ngLang, locale, i18n, icons, layout, router, layout$1, reuseTab, util, spin, ng_theme_shared) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -533,16 +533,49 @@
     var STYLES_PROVIDERS = [
         {
             provide: core.APP_INITIALIZER,
-            useFactory: configureStyles,
+            useFactory: configureStyles$1,
             deps: [icon.NzIconService],
             multi: true,
         },
     ];
-    function configureStyles(iconSrv) {
+    function configureStyles$1(iconSrv) {
         return function () {
             iconSrv.addIcon.apply(iconSrv, __spread(ICONS_AUTO, ICONS));
         };
     }
+
+    var ValidationErrorComponent = /** @class */ (function (_super) {
+        __extends(ValidationErrorComponent, _super);
+        function ValidationErrorComponent() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(ValidationErrorComponent.prototype, "abpErrors", {
+            get: function () {
+                if (!this.errors || !this.errors.length)
+                    return [];
+                return this.errors.map(function (error) {
+                    if (!error.message)
+                        return error;
+                    var index = error.message.indexOf('[');
+                    if (index > -1) {
+                        return Object.assign(Object.assign({}, error), { message: error.message.slice(0, index), interpoliteParams: error.message.slice(index + 1, error.message.length - 1).split(',') });
+                    }
+                    return error;
+                });
+            },
+            enumerable: false,
+            configurable: true
+        });
+        return ValidationErrorComponent;
+    }(core$1.ValidationErrorComponent));
+    ValidationErrorComponent.decorators = [
+        { type: core.Component, args: [{
+                    selector: 'fs-validation-error',
+                    template: "\n    <div class=\"invalid-feedback\" *ngFor=\"let error of abpErrors; trackBy: trackByFn\">\n      {{ error.message | abpLocalization: error.interpoliteParams }}\n    </div>\n  ",
+                    changeDetection: core.ChangeDetectionStrategy.OnPush,
+                    encapsulation: core.ViewEncapsulation.None
+                },] }
+    ];
 
     var RootModule = /** @class */ (function () {
         function RootModule() {
@@ -552,6 +585,7 @@
     RootModule.decorators = [
         { type: core.NgModule, args: [{
                     imports: [
+                        ng_core.CoreModule,
                         message.NzMessageModule,
                         layout.LayoutModule.forRoot(),
                         GlobalConfigModule.forRoot(),
@@ -571,12 +605,18 @@
                                 required: 'AbpValidation::ThisFieldIsRequired.',
                                 url: 'AbpValidation::ThisFieldIsNotAValidFullyQualifiedHttpHttpsOrFtpUrl',
                             },
-                            errorTemplate: ng_theme_basic.ValidationErrorComponent,
+                            errorTemplate: ValidationErrorComponent,
                         })
                     ],
                     providers: __spread(APPINIT_PROVIDES, LANG_PROVIDES, [
                         STYLES_PROVIDERS
                     ]),
+                    declarations: [
+                        ValidationErrorComponent
+                    ],
+                    exports: [
+                        ValidationErrorComponent
+                    ]
                 },] }
     ];
 
@@ -887,12 +927,12 @@
     var NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
         {
             provide: core.APP_INITIALIZER,
-            useFactory: configureStyles$1,
+            useFactory: configureStyles,
             deps: [core.Injector],
             multi: true,
         },
     ];
-    function configureStyles$1(injector) {
+    function configureStyles(injector) {
         return function () {
             var replaceableComponents = injector.get(ng_core.ReplaceableComponentsService);
             var domInsertion = injector.get(ng_core.DomInsertionService);
@@ -975,7 +1015,7 @@
                         layout.LayoutModule,
                         spin.NzSpinModule
                     ],
-                    declarations: [ApplicationLayoutComponent, AccountLayoutComponent],
+                    declarations: [ApplicationLayoutComponent, AccountLayoutComponent]
                 },] }
     ];
 
@@ -988,17 +1028,18 @@
     exports.ɵb = AccountLayoutComponent;
     exports.ɵc = RootModule;
     exports.ɵd = GlobalConfigModule;
-    exports.ɵe = StartupService;
-    exports.ɵf = StartupServiceFactory;
-    exports.ɵg = APPINIT_PROVIDES;
-    exports.ɵh = LANG;
-    exports.ɵi = LANG_PROVIDES;
-    exports.ɵj = STYLES_PROVIDERS;
-    exports.ɵk = configureStyles;
-    exports.ɵl = NG_ALAIN_MS_THEME_STYLES_PROVIDERS;
-    exports.ɵm = configureStyles$1;
-    exports.ɵn = NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS;
-    exports.ɵo = configureNavItems;
+    exports.ɵe = ValidationErrorComponent;
+    exports.ɵf = StartupService;
+    exports.ɵg = StartupServiceFactory;
+    exports.ɵh = APPINIT_PROVIDES;
+    exports.ɵi = LANG;
+    exports.ɵj = LANG_PROVIDES;
+    exports.ɵk = STYLES_PROVIDERS;
+    exports.ɵl = configureStyles$1;
+    exports.ɵm = NG_ALAIN_MS_THEME_STYLES_PROVIDERS;
+    exports.ɵn = configureStyles;
+    exports.ɵo = NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS;
+    exports.ɵp = configureNavItems;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

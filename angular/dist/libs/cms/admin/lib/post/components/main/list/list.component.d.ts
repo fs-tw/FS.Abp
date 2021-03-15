@@ -1,4 +1,4 @@
-import { Injector, OnInit } from '@angular/core';
+import { Injector, OnInit, OnDestroy } from '@angular/core';
 import { FileService } from '../../../../shared';
 import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../../providers/page.service';
@@ -7,14 +7,19 @@ import { ListService } from '@abp/ng.core';
 import { ExtensionsService } from '@fs-tw/cms/config';
 import { FormGroup } from '@angular/forms';
 import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
-import { ToasterService } from '@abp/ng.theme.shared';
-export declare class ListComponent implements OnInit {
+import { Subscription } from 'rxjs';
+import { ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
+import { Router, ActivatedRoute } from '@angular/router';
+export declare class ListComponent implements OnInit, OnDestroy {
+    private router;
     private extensionsService;
     private pageService;
     protected injector: Injector;
     readonly list: ListService;
     private fileService;
     private toasterService;
+    private activatedRoute;
+    private confirmationService;
     private postStateService;
     defaultImagePicker: ImagePickerComponent;
     datas: Fs.Cms.Blogs.Dtos.BlogDto[];
@@ -24,13 +29,18 @@ export declare class ListComponent implements OnInit {
     form: FormGroup;
     selected: Fs.Cms.Blogs.Dtos.BlogDto;
     directory: any;
-    constructor(extensionsService: ExtensionsService, pageService: PageService, injector: Injector, list: ListService, fileService: FileService, toasterService: ToasterService, postStateService: PostStateService);
+    defaultSelectId: any;
+    sub: Subscription;
+    constructor(router: Router, extensionsService: ExtensionsService, pageService: PageService, injector: Injector, list: ListService, fileService: FileService, toasterService: ToasterService, activatedRoute: ActivatedRoute, confirmationService: ConfirmationService, postStateService: PostStateService);
+    ngOnDestroy(): void;
+    getRand(): string;
     ngOnInit(): void;
     reload(): void;
-    showDetail(blog: Fs.Cms.Blogs.Dtos.BlogWithDetailsDto): void;
+    showDetail(blog: Fs.Cms.Blogs.Dtos.BlogDto): void;
     deleteBlog(blog: Fs.Cms.Blogs.Dtos.BlogDto): void;
     handleCancel(): void;
     save(): void;
+    uploadFile(): void;
     saveBlog(fileId?: any): void;
     add(): void;
     edit(id: string): void;

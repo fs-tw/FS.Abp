@@ -20,8 +20,6 @@ const DEFAULT_ACTIONS_COLUMN_WIDTH = 100;
 import { NzTableRowDetailDirective } from '../../directives/nz-table-row-detail.directive'
 
 
-
-
 @Component({
   exportAs: 'nzExtensibleTable',
   selector: 'nz-extensible-table',
@@ -70,7 +68,7 @@ export class ExtensibleTableComponent<R = any> extends AbpExtensibleTableCompone
     y?: string | null;
   };
 
-
+  
 
   @Output() select = new EventEmitter<R>();
   constructor(

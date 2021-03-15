@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "peerDependencies": {
+    
+  },
+  "dependencies": {
+    "lerna": "^3.22.1",
+    "date-fns": "^2.16.1",
+    "@ngxs/logger-plugin": "^3.7.1"
+  }
+}

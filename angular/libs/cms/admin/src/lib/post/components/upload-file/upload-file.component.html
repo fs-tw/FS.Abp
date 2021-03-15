@@ -8,7 +8,7 @@
 </nz-upload>
 
 <div class="my-md"></div>
-<nz-table #basicTable [nzData]="existFileUrls"  nzSimple="false" nzSize="small" [nzShowPagination]="false">
+<nz-table #basicTable [nzData]="existFiles"  nzSimple="false" nzSize="small" [nzShowPagination]="false">
   <thead>
     <tr>
       <th>檔名</th>
@@ -16,10 +16,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of existFileUrls">
+    <tr *ngFor="let data of existFiles">
       <td>
-        <!-- <a [href]="getUrl(data)">{{getFileName(data)}}</a> -->
-        <a>{{ data }}</a>
+        <a [href]="data.fileUrl">{{data.fileName}}</a>
+        <!-- <a>{{ data }}</a> -->
       </td>
       <td>
         <a (click)="delete(data)" class="text-red">刪除</a>

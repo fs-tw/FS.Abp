@@ -1,4 +1,7 @@
 import { FormProp } from '@abp/ng.theme.shared/extensions';
+const ɵ0 = (data) => {
+    return data.record.no == "CmsBlogNotClassified";
+};
 export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
     {
         type: "number" /* Number */,
@@ -20,6 +23,7 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
         displayName: 'Cms::FS.Blog.DisplayName',
         id: 'displayName',
         defaultValue: "",
+        disabled: ɵ0
     },
     {
         type: "text" /* Text */,
@@ -50,4 +54,5 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
         defaultValue: "",
     },
 ]);
+export { ɵ0 };
 //# sourceMappingURL=default-blog-create-form-props.js.map

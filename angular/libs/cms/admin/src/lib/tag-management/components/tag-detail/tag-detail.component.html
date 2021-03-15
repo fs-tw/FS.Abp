@@ -1,0 +1,41 @@
+<nz-card>
+  <form nz-form #f="ngForm" se-container="1">
+    <!-- <se label="名稱">
+      <input type="text" nz-input name="Createname" required [(ngModel)]="data.tagGroupName"  *ngIf="isCreate==false"/>
+      <input type="text" nz-input name="name" required [(ngModel)]="data.tagGroupName"   *ngIf="isCreate==true"/>
+    </se>
+
+    <se [label]="addItem" col="1">
+      <ng-template #addItem>
+        <button nz-button (click)="addOption()">新增項目</button>
+      </ng-template>
+      <div style="display: grid;grid-template-columns: repeat(auto-fill,200px);gap:8px" *ngIf="isCreate==false">
+        <div *ngFor="let inputItem of data.tags;let i = index">
+          <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+            <input nz-input [(ngModel)]="inputItem.name" [ngModelOptions]="{standalone: true}"/>
+          </nz-input-group>
+          <ng-template #addOnBeforeTemplate>
+            <i nz-icon nzType="close" class="pointer text-red" (click)="removeOldOption(inputItem.id)"></i>
+          </ng-template>
+        </div>
+      </div>
+
+      <div  style="display: grid;grid-template-columns: repeat(auto-fill,200px);gap:8px" >
+        <div *ngFor="let i of inputList">
+          <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+            <input nz-input [(ngModel)]="i.name"  [ngModelOptions]="{standalone: true}" />
+          </nz-input-group>
+
+          <ng-template #addOnBeforeTemplate>
+            <i nz-icon nzType="close" class="pointer text-red" (click)="removeOption(i)"></i>
+          </ng-template>
+        </div>
+      </div>
+    </se> -->
+
+
+    <se>
+      <button nz-button nzType="primary" (click)="save()">存檔</button>
+    </se>
+  </form>
+</nz-card>
