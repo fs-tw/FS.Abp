@@ -8,11 +8,13 @@ import { SharedModule } from '../shared/shared.module';
 import { TagDetailComponent } from './components/tag-detail/tag-detail.component';
 import { NgxsModule } from '@ngxs/store';
 import { PageService } from './providers/page.service';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 @NgModule({
   declarations: [MainComponent, LayoutComponent, TagDetailComponent],
   imports: [
     SharedModule,
+    NzTagModule,
     TagManagementRoutingModule
   ],
   providers: [PageService]

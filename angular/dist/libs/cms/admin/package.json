@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/fs-tw-cms-admin.umd.js",
+  "module": "../fesm2015/fs-tw-cms-admin.js",
+  "es2015": "../fesm2015/fs-tw-cms-admin.js",
+  "esm2015": "../esm2015/admin/fs-tw-cms-admin.js",
+  "fesm2015": "../fesm2015/fs-tw-cms-admin.js",
+  "typings": "fs-tw-cms-admin.d.ts",
+  "metadata": "fs-tw-cms-admin.metadata.json",
+  "sideEffects": false,
+  "name": "@fs-tw/cms/admin"
+}

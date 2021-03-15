@@ -7,7 +7,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { Observable } from 'rxjs';
 import { BrandService } from '@fs-tw/theme-alain-ms/layout';
 import { Layout } from '@fs-tw/theme-alain-ms/layout';
-import * as i0 from "@angular/core";
 export declare class ApplicationLayoutComponent implements OnInit, OnDestroy {
     layoutStateService: LayoutStateService;
     private router;
@@ -31,7 +30,4 @@ export declare class ApplicationLayoutComponent implements OnInit, OnDestroy {
     private setBodyClass;
     ngOnInit(): void;
     ngOnDestroy(): void;
-    static ɵfac: i0.ɵɵFactoryDef<ApplicationLayoutComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<ApplicationLayoutComponent, "abp-application-layout", never, {}, {}, never, never>;
 }
-//# sourceMappingURL=application-layout.component.d.ts.map

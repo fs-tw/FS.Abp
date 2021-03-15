@@ -2,7 +2,6 @@ import { ListService, ConfigStateService } from '@abp/ng.core';
 import { Injector, TemplateRef, EventEmitter, OnInit } from '@angular/core';
 import { ExtensibleTableComponent as AbpExtensibleTableComponent } from '@abp/ng.theme.shared/extensions';
 import { NzTableRowDetailDirective } from '../../directives/nz-table-row-detail.directive';
-import * as i0 from "@angular/core";
 export declare class ExtensibleTableComponent<R = any> extends AbpExtensibleTableComponent<R> implements OnInit {
     private _locale;
     private _config;
@@ -32,7 +31,4 @@ export declare class ExtensibleTableComponent<R = any> extends AbpExtensibleTabl
     ngOnInit(): void;
     private _setColumnWidths;
     selected(data: R): void;
-    static ɵfac: i0.ɵɵFactoryDef<ExtensibleTableComponent<any>, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<ExtensibleTableComponent<any>, "nz-extensible-table", ["nzExtensibleTable"], { "responsive": "responsive"; "actionsText": "actionsText"; "data": "data"; "list": "list"; "recordsTotal": "recordsTotal"; "actionsColumnWidth": "actionsColumnWidth"; "actionsTemplate": "actionsTemplate"; "haveRowDetail": "haveRowDetail"; "haveSelect": "haveSelect"; "svRowCount": "svRowCount"; "defaultSelectId": "defaultSelectId"; "scroll": "scroll"; }, { "select": "select"; }, ["rowDetailTemplate"], never>;
 }
-//# sourceMappingURL=extensible-table.component.d.ts.map

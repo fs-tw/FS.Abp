@@ -6,19 +6,6 @@ import { ReuseTabService } from '@delon/abc/reuse-tab';
 import { updateHostClass } from '@delon/util';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { BrandService } from './ms.service';
-import * as i0 from "@angular/core";
-import * as i1 from "@angular/cdk/layout";
-import * as i2 from "@angular/router";
-import * as i3 from "ng-zorro-antd/message";
-import * as i4 from "@delon/abc/reuse-tab";
-import * as i5 from "./ms.service";
-import * as i6 from "./components/topbar/topbar.component";
-import * as i7 from "@angular/common";
-import * as i8 from "ng-zorro-antd/spin";
-import * as i9 from "./components/sidebar/sidebar.component";
-function MSLayoutComponent_ms_sidebar_1_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵelement(0, "ms-sidebar");
-} }
 export class MSLayoutComponent {
     constructor(bm, mediaMatcher, router, route, msg, reuseTabSrv, el, renderer, srv, doc) {
         this.el = el;
@@ -112,33 +99,22 @@ export class MSLayoutComponent {
         this.body.classList.remove('alain-ms__has-topbar', 'alain-ms__has-sidebar', 'alain-ms__has-fixed');
     }
 }
-MSLayoutComponent.ɵfac = function MSLayoutComponent_Factory(t) { return new (t || MSLayoutComponent)(i0.ɵɵdirectiveInject(i1.BreakpointObserver), i0.ɵɵdirectiveInject(i1.MediaMatcher), i0.ɵɵdirectiveInject(i2.Router), i0.ɵɵdirectiveInject(i2.ActivatedRoute), i0.ɵɵdirectiveInject(i3.NzMessageService), i0.ɵɵdirectiveInject(i4.ReuseTabService), i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(i0.Renderer2), i0.ɵɵdirectiveInject(i5.BrandService), i0.ɵɵdirectiveInject(DOCUMENT)); };
-MSLayoutComponent.ɵcmp = i0.ɵɵdefineComponent({ type: MSLayoutComponent, selectors: [["layout-ms"]], decls: 6, vars: 4, consts: [[3, "allNav"], [4, "ngIf"], [1, "brand-page-loading", 3, "hidden"], ["nzSpinning", ""], [1, "alain-ms__body", 3, "hidden"]], template: function MSLayoutComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelement(0, "ms-topbar", 0);
-        i0.ɵɵtemplate(1, MSLayoutComponent_ms_sidebar_1_Template, 1, 0, "ms-sidebar", 1);
-        i0.ɵɵelementStart(2, "div", 2);
-        i0.ɵɵelement(3, "nz-spin", 3);
-        i0.ɵɵelementEnd();
-        i0.ɵɵelementStart(4, "div", 4);
-        i0.ɵɵelement(5, "router-outlet");
-        i0.ɵɵelementEnd();
-    } if (rf & 2) {
-        i0.ɵɵproperty("allNav", ctx.hasAllNav);
-        i0.ɵɵadvance(1);
-        i0.ɵɵproperty("ngIf", ctx.hasSidebar);
-        i0.ɵɵadvance(1);
-        i0.ɵɵproperty("hidden", !ctx.isFetching);
-        i0.ɵɵadvance(2);
-        i0.ɵɵproperty("hidden", ctx.isFetching);
-    } }, directives: [i6.MSTopbarComponent, i7.NgIf, i8.NzSpinComponent, i2.RouterOutlet, i9.MSSidebarComponent], encapsulation: 2 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MSLayoutComponent, [{
-        type: Component,
-        args: [{
+MSLayoutComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'layout-ms',
-                templateUrl: './ms.component.html',
-            }]
-    }], function () { return [{ type: i1.BreakpointObserver }, { type: i1.MediaMatcher }, { type: i2.Router }, { type: i2.ActivatedRoute }, { type: i3.NzMessageService }, { type: i4.ReuseTabService }, { type: i0.ElementRef }, { type: i0.Renderer2 }, { type: i5.BrandService }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }]; }, null); })();
+                template: "<ms-topbar [allNav]=\"hasAllNav\"></ms-topbar>\r\n<ms-sidebar *ngIf=\"hasSidebar\"></ms-sidebar>\r\n<div class=\"brand-page-loading\" [hidden]=\"!isFetching\">\r\n  <nz-spin nzSpinning></nz-spin>\r\n</div>\r\n<div class=\"alain-ms__body\" [hidden]=\"isFetching\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n<!-- <help></help>\r\n<theme-btn></theme-btn> -->\r\n"
+            },] }
+];
+MSLayoutComponent.ctorParameters = () => [
+    { type: BreakpointObserver },
+    { type: MediaMatcher },
+    { type: Router },
+    { type: ActivatedRoute },
+    { type: NzMessageService },
+    { type: ReuseTabService },
+    { type: ElementRef },
+    { type: Renderer2 },
+    { type: BrandService },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
+];
 //# sourceMappingURL=ms.component.js.map

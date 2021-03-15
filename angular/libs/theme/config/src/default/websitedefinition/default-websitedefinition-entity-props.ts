@@ -1,5 +1,5 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
-import { Fs } from 'libs/theme/proxy/src';
+import { Fs } from '@fs-tw/theme/proxy';
 import { of } from 'rxjs';
 
 export const DEFAULT_WEBSITEDEFINITION_ENTITY_PROPS = EntityProp.createMany<Fs.Theme.WebSites.Dtos.WebSiteDefinitionDto>([

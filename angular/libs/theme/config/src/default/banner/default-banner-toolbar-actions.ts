@@ -1,5 +1,5 @@
 import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
-import {Fs } from 'libs/theme/proxy/src';
+import {Fs } from '@fs-tw/theme/proxy';
 import { eThemeRouteNames } from '../../enums/route-names';
 import { ExtensionsService } from '../../services/extensions.service';
 

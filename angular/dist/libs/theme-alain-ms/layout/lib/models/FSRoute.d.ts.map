@@ -1,1 +1,0 @@
-{"version":3,"file":"FSRoute.d.ts","sourceRoot":"","sources":["../../../../../../libs/theme-alain-ms/layout/src/lib/models/FSRoute.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,GAAG,EAAE,MAAM,cAAc,CAAC;AACnC,OAAO,EAAE,kBAAkB,EAAE,aAAa,EAAE,MAAM,UAAU,CAAC;AAG7D,MAAM,WAAW,OAAQ,SAAQ,GAAG,CAAC,KAAK;IACxC,SAAS,CAAC,EAAE,kBAAkB,CAAC;IAC/B,aAAa,CAAC,EAAE,aAAa,CAAC;CAC/B"}

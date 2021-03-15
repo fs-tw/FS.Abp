@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../libs/theme/config/src/services/index.ts"],"names":[],"mappings":"AAAA,cAAc,sBAAsB,CAAC","sourcesContent":["export * from './extensions.service';"]}

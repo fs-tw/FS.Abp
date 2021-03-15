@@ -7,35 +7,6 @@ import { ReuseTabService } from '@delon/abc/reuse-tab';
 import { updateHostClass } from '@delon/util';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { BrandService } from '@fs-tw/theme-alain-ms/layout';
-import * as i0 from "@angular/core";
-import * as i1 from "@fs-tw/theme-alain-ms/layout";
-import * as i2 from "@angular/cdk/layout";
-import * as i3 from "@angular/router";
-import * as i4 from "ng-zorro-antd/message";
-import * as i5 from "@delon/abc/reuse-tab";
-import * as i6 from "@angular/common";
-import * as i7 from "ng-zorro-antd/spin";
-function AccountLayoutComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelement(1, "ms-topbar");
-    i0.ɵɵelementStart(2, "div", 1);
-    i0.ɵɵelement(3, "nz-spin", 2);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(4, "div", 3);
-    i0.ɵɵelementStart(5, "service-layout", 4);
-    i0.ɵɵelement(6, "router-outlet");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementContainerEnd();
-} if (rf & 2) {
-    const store_r1 = ctx.ngIf;
-    i0.ɵɵadvance(2);
-    i0.ɵɵproperty("hidden", !store_r1.isFetching);
-    i0.ɵɵadvance(2);
-    i0.ɵɵproperty("hidden", store_r1.isFetching);
-    i0.ɵɵadvance(1);
-    i0.ɵɵproperty("hasConsoleCss", false);
-} }
 export class AccountLayoutComponent {
     constructor(layoutStateService, bm, mediaMatcher, router, route, msg, reuseTabSrv, el, renderer, srv, doc) {
         this.layoutStateService = layoutStateService;
@@ -144,22 +115,24 @@ export class AccountLayoutComponent {
         this.body.classList.remove('alain-ms__has-topbar', 'alain-ms__has-sidebar', 'alain-ms__has-fixed');
     }
 }
-AccountLayoutComponent.ɵfac = function AccountLayoutComponent_Factory(t) { return new (t || AccountLayoutComponent)(i0.ɵɵdirectiveInject(i1.LayoutStateService), i0.ɵɵdirectiveInject(i2.BreakpointObserver), i0.ɵɵdirectiveInject(i2.MediaMatcher), i0.ɵɵdirectiveInject(i3.Router), i0.ɵɵdirectiveInject(i3.ActivatedRoute), i0.ɵɵdirectiveInject(i4.NzMessageService), i0.ɵɵdirectiveInject(i5.ReuseTabService), i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(i0.Renderer2), i0.ɵɵdirectiveInject(i1.BrandService), i0.ɵɵdirectiveInject(DOCUMENT)); };
-AccountLayoutComponent.ɵcmp = i0.ɵɵdefineComponent({ type: AccountLayoutComponent, selectors: [["abp-account-layout"]], decls: 2, vars: 3, consts: [[4, "ngIf"], [1, "brand-page-loading", 3, "hidden"], ["nzSpinning", ""], [1, "alain-ms__body", 3, "hidden"], [3, "hasConsoleCss"]], template: function AccountLayoutComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵtemplate(0, AccountLayoutComponent_ng_container_0_Template, 7, 3, "ng-container", 0);
-        i0.ɵɵpipe(1, "async");
-    } if (rf & 2) {
-        i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(1, 1, ctx.store$));
-    } }, directives: [i6.NgIf, i1.MSTopbarComponent, i7.NzSpinComponent, i1.MSServiceLayoutComponent, i3.RouterOutlet], pipes: [i6.AsyncPipe], styles: [".pri-btn[_ngcontent-%COMP%]{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn[_ngcontent-%COMP%]:hover{border:1px solid #26d7eb;color:#26d7eb}"] });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountLayoutComponent, [{
-        type: Component,
-        args: [{
+AccountLayoutComponent.decorators = [
+    { type: Component, args: [{
                 selector: 'abp-account-layout',
-                templateUrl: './account-layout.component.html',
-                styleUrls: ['./account-layout.component.less'],
-            }]
-    }], function () { return [{ type: i1.LayoutStateService }, { type: i2.BreakpointObserver }, { type: i2.MediaMatcher }, { type: i3.Router }, { type: i3.ActivatedRoute }, { type: i4.NzMessageService }, { type: i5.ReuseTabService }, { type: i0.ElementRef }, { type: i0.Renderer2 }, { type: i1.BrandService }, { type: undefined, decorators: [{
-                type: Inject,
-                args: [DOCUMENT]
-            }] }]; }, null); })();
+                template: "<ng-container *ngIf=\"store$ | async as store\">\r\n  <ms-topbar></ms-topbar>\r\n  <!-- <ms-sidebar *ngIf=\"store.sidebarConfig.hasSidebar\"></ms-sidebar> -->\r\n  <div class=\"brand-page-loading\" [hidden]=\"!store.isFetching\">\r\n    <nz-spin nzSpinning></nz-spin>\r\n  </div>\r\n  <div class=\"alain-ms__body\" [hidden]=\"store.isFetching\">\r\n    <service-layout [hasConsoleCss]=\"false\">\r\n      \r\n      <router-outlet></router-outlet>\r\n      \r\n    </service-layout>\r\n    </div>\r\n  \r\n\r\n\r\n\r\n</ng-container>\r\n",
+                styles: [".pri-btn{border:1px solid #ddd;color:#000;background:#fff;font-size:8px}.pri-btn:hover{border:1px solid #26d7eb;color:#26d7eb}"]
+            },] }
+];
+AccountLayoutComponent.ctorParameters = () => [
+    { type: LayoutStateService },
+    { type: BreakpointObserver },
+    { type: MediaMatcher },
+    { type: Router },
+    { type: ActivatedRoute },
+    { type: NzMessageService },
+    { type: ReuseTabService },
+    { type: ElementRef },
+    { type: Renderer2 },
+    { type: BrandService },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
+];
 //# sourceMappingURL=account-layout.component.js.map

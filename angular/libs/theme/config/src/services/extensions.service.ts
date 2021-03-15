@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Fs } from 'libs/theme/proxy/src';
+import { Fs } from '@fs-tw/theme/proxy';
 import { eThemeRouteNames } from '../enums/route-names';
 import { Subject } from 'rxjs';
 export class ActionItem<T> {

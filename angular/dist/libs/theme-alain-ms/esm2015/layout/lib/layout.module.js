@@ -32,8 +32,6 @@ import { MSPageSingleComponent } from './ms/shared/page-single/page-single.compo
 import { MSPanelComponent } from './ms/shared/panel/panel.component';
 import { MSServiceLayoutComponent } from './ms/shared/service-layout/service-layout.component';
 import { MSLinkToDirective } from './ms/shared/link-to/link-to.directive';
-import * as i0 from "@angular/core";
-import * as i1 from "@delon/theme";
 // import { default as en_US } from './ms/_i18n/en-US';
 // import { default as zh_CN } from './ms/_i18n/zh-CN';
 // import { default as zh_TW } from './ms/_i18n/zh-TW';
@@ -65,45 +63,8 @@ export class LayoutModule {
         };
     }
 }
-LayoutModule.ɵfac = function LayoutModule_Factory(t) { return new (t || LayoutModule)(); };
-LayoutModule.ɵmod = i0.ɵɵdefineNgModule({ type: LayoutModule });
-LayoutModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
-            CoreModule,
-            RouterModule,
-            FormsModule,
-            DragDropModule,
-            MSSharedModule,
-            NzSpinModule,
-            NzAnchorModule,
-            NzAutocompleteModule,
-            NzAvatarModule,
-            NzDividerModule,
-            NzInputModule,
-            NzIconModule,
-            AlainThemeModule.forChild(),
-            ThemeBtnModule,
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(LayoutModule, { declarations: [MSLayoutComponent, MSSidebarComponent, MSTopbarComponent, MSAllNavComponent, MSSearchComponent, MSLangsComponent, MSUserComponent, MSNoticeComponent, MSRegionComponent], imports: [CoreModule,
-        RouterModule,
-        FormsModule,
-        DragDropModule,
-        MSSharedModule,
-        NzSpinModule,
-        NzAnchorModule,
-        NzAutocompleteModule,
-        NzAvatarModule,
-        NzDividerModule,
-        NzInputModule,
-        NzIconModule, i1.AlainThemeModule, ThemeBtnModule], exports: [MSLayoutComponent, MSSidebarComponent, MSTopbarComponent, MSAllNavComponent, MSSearchComponent, MSLangsComponent, MSUserComponent, MSNoticeComponent, MSRegionComponent, MSHelpComponent,
-        MSPageNavComponent,
-        MSPageBarComponent,
-        MSPageSingleComponent,
-        MSPanelComponent,
-        MSServiceLayoutComponent,
-        MSLinkToDirective] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(LayoutModule, [{
-        type: NgModule,
-        args: [{
+LayoutModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [
                     CoreModule,
                     RouterModule,
@@ -122,6 +83,7 @@ LayoutModule.ɵinj = i0.ɵɵdefineInjector({ imports: [[
                 ],
                 declarations: [...MS_COMPONENTS],
                 exports: [...MS_COMPONENTS, MS_SHARED_COMPONENTS]
-            }]
-    }], function () { return []; }, null); })();
+            },] }
+];
+LayoutModule.ctorParameters = () => [];
 //# sourceMappingURL=layout.module.js.map

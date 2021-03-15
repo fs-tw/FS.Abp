@@ -1,5 +1,5 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
-import { Fs } from 'libs/theme/proxy/src';
+import { Fs } from '@fs-tw/theme/proxy';
 
 export const DEFAULT_ROUTEDEFINITION_CREATE_FORM_PROPS = FormProp.createMany<Fs.Theme.Routes.Dtos.RouteDefinitionDto>([
   

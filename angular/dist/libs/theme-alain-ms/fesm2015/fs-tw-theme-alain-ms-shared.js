@@ -1,4 +1,4 @@
-import { ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, ɵsetClassMetadata, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CoreModule } from '@abp/ng.core';
 import { PageHeaderModule } from '@delon/abc/page-header';
 import { SEModule } from '@delon/abc/se';
@@ -40,6 +40,7 @@ import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { UiExtensionsModule } from '@fs-tw/theme-alain-ms/shared/extensions';
@@ -82,6 +83,7 @@ const SHARED_ZORRO_MODULES = [
     NzSkeletonModule,
     NzOutletModule,
     NzTreeModule,
+    NzTagModule
 ];
 
 const declarationsWithExports = [];
@@ -92,23 +94,8 @@ const ABPMODULES = [
 ];
 class BaseThemeSharedModule {
 }
-BaseThemeSharedModule.ɵfac = function BaseThemeSharedModule_Factory(t) { return new (t || BaseThemeSharedModule)(); };
-BaseThemeSharedModule.ɵmod = ɵɵdefineNgModule({ type: BaseThemeSharedModule });
-BaseThemeSharedModule.ɵinj = ɵɵdefineInjector({ imports: [[
-            ...SHARED_DELON_MODULES,
-            ...SHARED_ZORRO_MODULES,
-            ...ABPMODULES,
-        ], STModule, SVModule, SEModule, PageHeaderModule, G2CustomModule, NzButtonModule, NzMessageModule, NzDropDownModule, NzGridModule, NzCheckboxModule, NzToolTipModule, NzPopoverModule, NzSelectModule, NzIconModule, NzAffixModule, NzAlertModule, NzModalModule, NzTableModule, NzDrawerModule, NzTabsModule, NzInputModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzBreadCrumbModule, NzListModule, NzSwitchModule, NzRadioModule, NzFormModule, NzAvatarModule, NzSpinModule, NzCardModule, NzDividerModule, NzProgressModule, NzPopconfirmModule, NzUploadModule, NzAnchorModule, NzSkeletonModule, NzOutletModule, NzTreeModule, CoreModule,
-        ThemeSharedModule,
-        NgxValidateCoreModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(BaseThemeSharedModule, { imports: [STModule, SVModule, SEModule, PageHeaderModule, G2CustomModule, NzButtonModule, NzMessageModule, NzDropDownModule, NzGridModule, NzCheckboxModule, NzToolTipModule, NzPopoverModule, NzSelectModule, NzIconModule, NzAffixModule, NzAlertModule, NzModalModule, NzTableModule, NzDrawerModule, NzTabsModule, NzInputModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzBreadCrumbModule, NzListModule, NzSwitchModule, NzRadioModule, NzFormModule, NzAvatarModule, NzSpinModule, NzCardModule, NzDividerModule, NzProgressModule, NzPopconfirmModule, NzUploadModule, NzAnchorModule, NzSkeletonModule, NzOutletModule, NzTreeModule, CoreModule,
-        ThemeSharedModule,
-        NgxValidateCoreModule], exports: [STModule, SVModule, SEModule, PageHeaderModule, G2CustomModule, NzButtonModule, NzMessageModule, NzDropDownModule, NzGridModule, NzCheckboxModule, NzToolTipModule, NzPopoverModule, NzSelectModule, NzIconModule, NzAffixModule, NzAlertModule, NzModalModule, NzTableModule, NzDrawerModule, NzTabsModule, NzInputModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzBreadCrumbModule, NzListModule, NzSwitchModule, NzRadioModule, NzFormModule, NzAvatarModule, NzSpinModule, NzCardModule, NzDividerModule, NzProgressModule, NzPopconfirmModule, NzUploadModule, NzAnchorModule, NzSkeletonModule, NzOutletModule, NzTreeModule, CoreModule,
-        ThemeSharedModule,
-        NgxValidateCoreModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(BaseThemeSharedModule, [{
-        type: NgModule,
-        args: [{
+BaseThemeSharedModule.decorators = [
+    { type: NgModule, args: [{
                 declarations: [...declarationsWithExports],
                 imports: [
                     ...SHARED_DELON_MODULES,
@@ -121,8 +108,8 @@ BaseThemeSharedModule.ɵinj = ɵɵdefineInjector({ imports: [[
                     ...declarationsWithExports,
                     ...ABPMODULES,
                 ],
-            }]
-    }], null, null); })();
+            },] }
+];
 class ThemeAlainMsSharedModule {
     static forRoot() {
         return {
@@ -131,17 +118,12 @@ class ThemeAlainMsSharedModule {
         };
     }
 }
-ThemeAlainMsSharedModule.ɵfac = function ThemeAlainMsSharedModule_Factory(t) { return new (t || ThemeAlainMsSharedModule)(); };
-ThemeAlainMsSharedModule.ɵmod = ɵɵdefineNgModule({ type: ThemeAlainMsSharedModule });
-ThemeAlainMsSharedModule.ɵinj = ɵɵdefineInjector({ imports: [[BaseThemeSharedModule], BaseThemeSharedModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(ThemeAlainMsSharedModule, { imports: [BaseThemeSharedModule], exports: [BaseThemeSharedModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(ThemeAlainMsSharedModule, [{
-        type: NgModule,
-        args: [{
+ThemeAlainMsSharedModule.decorators = [
+    { type: NgModule, args: [{
                 imports: [BaseThemeSharedModule],
                 exports: [BaseThemeSharedModule],
-            }]
-    }], null, null); })();
+            },] }
+];
 
 const declarationsWithExports$1 = [];
 // #region third libs
@@ -152,20 +134,8 @@ const ABPMODULES$1 = [
 // #endregion
 class SharedModule {
 }
-SharedModule.ɵfac = function SharedModule_Factory(t) { return new (t || SharedModule)(); };
-SharedModule.ɵmod = ɵɵdefineNgModule({ type: SharedModule });
-SharedModule.ɵinj = ɵɵdefineInjector({ imports: [[
-            ...SHARED_DELON_MODULES,
-            ...SHARED_ZORRO_MODULES,
-            ...ABPMODULES$1,
-        ], STModule, SVModule, SEModule, PageHeaderModule, G2CustomModule, NzButtonModule, NzMessageModule, NzDropDownModule, NzGridModule, NzCheckboxModule, NzToolTipModule, NzPopoverModule, NzSelectModule, NzIconModule, NzAffixModule, NzAlertModule, NzModalModule, NzTableModule, NzDrawerModule, NzTabsModule, NzInputModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzBreadCrumbModule, NzListModule, NzSwitchModule, NzRadioModule, NzFormModule, NzAvatarModule, NzSpinModule, NzCardModule, NzDividerModule, NzProgressModule, NzPopconfirmModule, NzUploadModule, NzAnchorModule, NzSkeletonModule, NzOutletModule, NzTreeModule, CoreModule,
-        UiExtensionsModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(SharedModule, { imports: [STModule, SVModule, SEModule, PageHeaderModule, G2CustomModule, NzButtonModule, NzMessageModule, NzDropDownModule, NzGridModule, NzCheckboxModule, NzToolTipModule, NzPopoverModule, NzSelectModule, NzIconModule, NzAffixModule, NzAlertModule, NzModalModule, NzTableModule, NzDrawerModule, NzTabsModule, NzInputModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzBreadCrumbModule, NzListModule, NzSwitchModule, NzRadioModule, NzFormModule, NzAvatarModule, NzSpinModule, NzCardModule, NzDividerModule, NzProgressModule, NzPopconfirmModule, NzUploadModule, NzAnchorModule, NzSkeletonModule, NzOutletModule, NzTreeModule, CoreModule,
-        UiExtensionsModule], exports: [STModule, SVModule, SEModule, PageHeaderModule, G2CustomModule, NzButtonModule, NzMessageModule, NzDropDownModule, NzGridModule, NzCheckboxModule, NzToolTipModule, NzPopoverModule, NzSelectModule, NzIconModule, NzAffixModule, NzAlertModule, NzModalModule, NzTableModule, NzDrawerModule, NzTabsModule, NzInputModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzBreadCrumbModule, NzListModule, NzSwitchModule, NzRadioModule, NzFormModule, NzAvatarModule, NzSpinModule, NzCardModule, NzDividerModule, NzProgressModule, NzPopconfirmModule, NzUploadModule, NzAnchorModule, NzSkeletonModule, NzOutletModule, NzTreeModule, CoreModule,
-        UiExtensionsModule] }); })();
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(SharedModule, [{
-        type: NgModule,
-        args: [{
+SharedModule.decorators = [
+    { type: NgModule, args: [{
                 //declarations: [...declarationsWithExports],
                 imports: [
                     ...SHARED_DELON_MODULES,
@@ -178,8 +148,8 @@ SharedModule.ɵinj = ɵɵdefineInjector({ imports: [[
                     //...declarationsWithExports,
                     ...ABPMODULES$1,
                 ],
-            }]
-    }], null, null); })();
+            },] }
+];
 
 /**
  * Generated bundle index. Do not edit.

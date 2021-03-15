@@ -6,4 +6,3 @@ export declare const NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureNavItems(navItems: NavItemsService): () => void;
-//# sourceMappingURL=nav-item.provider.d.ts.map
