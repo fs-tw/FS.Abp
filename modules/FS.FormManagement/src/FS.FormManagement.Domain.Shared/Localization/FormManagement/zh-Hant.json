@@ -1,6 +1,43 @@
 {
   "culture": "zh-Hant",
   "texts": {
-    "ManageYourProfile":  "管理個人資料" 
+    "FS.FormManagement": "表單管理",
+    "FS.Formal": "正式",
+    "FS.Group": "群組",
+    "FS.Item": "項目",
+    "FS.DocumentDefinition": "文件定義",
+    "FS.Version": "版本",
+    "FS.Record": "紀錄",
+    "FS.RecordItem": "紀錄項目",
+
+    "FS.Formal.No": "No",
+    "FS.Formal.DisplayName": "顯示名稱",
+    "FS.Formal.VersionId": "版本編號",
+
+    "FS.Group.Code": "代碼",
+    "FS.Group.ParentId": "ParentId",
+    "FS.Group.Level": "等級",
+    "FS.Group.DisplayName": "顯示名稱",
+    "FS.Group.FormalId": "正式編號",
+
+    "FS.Item.No": "No",
+    "FS.Item.Question": "問題",
+    "FS.Item.GroupId": "群組編號",
+
+    "FS.DocumentDefinition.No": "No",
+    "FS.DocumentDefinition.DisplayName": "顯示名稱",
+    "FS.DocumentDefinition.CurrentVersionId": "當前版本編號",
+
+
+    "FS.Version.No": "No",
+    "FS.Version.PrevVersionId": "上一版本Id",
+    "FS.Version.NextVersionId": "下一版本",
+    "FS.Version.DocumentDefinitionId": "文件定義編號",
+
+    "FS.Record.FormalId": "正式編號",
+
+    "FS.RecordItem.Asnwer": "答案",
+    "FS.RecordItem.ItemId": "項目編號"
+
   }
 }

@@ -16,7 +16,7 @@ export const FORMMANAGEMENT_ROUTE_PROVIDERS = [
 export function configureRoutes(routes: RoutesService) {
   let shortcut = {
     path: '/form-management',
-    name: eFormmanagementRouteNames.Theme,
+    name: eFormmanagementRouteNames.Form_management,
     layout: eLayoutType.application,
     parentName: eThemeSharedRouteNames.Administration,
     iconClass: 'fa fa-folder-open',
