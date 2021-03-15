@@ -354,8 +354,8 @@
         tag.NzTagModule
     ];
 
-    var declarationsWithExports = [];
-    var ABPMODULES = [
+    var declarationsWithExports$1 = [];
+    var ABPMODULES$1 = [
         ng_core.CoreModule,
         ng_theme_shared.ThemeSharedModule,
         core.NgxValidateCoreModule
@@ -367,9 +367,9 @@
     }());
     BaseThemeSharedModule.decorators = [
         { type: core$1.NgModule, args: [{
-                    declarations: __spread(declarationsWithExports),
-                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES),
-                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, declarationsWithExports, ABPMODULES),
+                    declarations: __spread(declarationsWithExports$1),
+                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES$1),
+                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, declarationsWithExports$1, ABPMODULES$1),
                 },] }
     ];
     var ThemeAlainMsSharedModule = /** @class */ (function () {
@@ -390,9 +390,9 @@
                 },] }
     ];
 
-    var declarationsWithExports$1 = [];
+    var declarationsWithExports = [];
     // #region third libs
-    var ABPMODULES$1 = [
+    var ABPMODULES = [
         ng_core.CoreModule,
         extensions.UiExtensionsModule
     ];
@@ -405,8 +405,8 @@
     SharedModule.decorators = [
         { type: core$1.NgModule, args: [{
                     //declarations: [...declarationsWithExports],
-                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES$1),
-                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES$1),
+                    imports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES),
+                    exports: __spread(SHARED_DELON_MODULES, SHARED_ZORRO_MODULES, ABPMODULES),
                 },] }
     ];
 

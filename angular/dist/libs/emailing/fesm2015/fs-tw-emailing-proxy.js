@@ -1,7 +1,7 @@
 import { RestService } from '@abp/ng.core';
 import { ɵɵdefineInjectable, ɵɵinject, Injectable } from '@angular/core';
 
-var index = /*#__PURE__*/Object.freeze({
+var index$h = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -32,20 +32,20 @@ EmailingApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$1 = /*#__PURE__*/Object.freeze({
+var index$g = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index,
+    Dtos: index$h,
     EmailingApiService: EmailingApiService
 });
 
-var index$2 = /*#__PURE__*/Object.freeze({
+var index$f = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Emailing: index$1
+    Emailing: index$g
 });
 
-var index$3 = /*#__PURE__*/Object.freeze({
+var index$e = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Abp: index$2
+    Abp: index$f
 });
 
 class AbpTenantService {
@@ -72,19 +72,19 @@ AbpTenantService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$4 = /*#__PURE__*/Object.freeze({
+var index$d = /*#__PURE__*/Object.freeze({
     __proto__: null,
     AbpTenantService: AbpTenantService
 });
 
-var index$5 = /*#__PURE__*/Object.freeze({
+var index$c = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    MultiTenancy: index$4
+    MultiTenancy: index$d
 });
 
-var index$6 = /*#__PURE__*/Object.freeze({
+var index$b = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Abp: index$5
+    Abp: index$c
 });
 
 class AbpApiDefinitionService {
@@ -108,12 +108,12 @@ AbpApiDefinitionService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$7 = /*#__PURE__*/Object.freeze({
+var index$a = /*#__PURE__*/Object.freeze({
     __proto__: null,
     AbpApiDefinitionService: AbpApiDefinitionService
 });
 
-var index$8 = /*#__PURE__*/Object.freeze({
+var index$9 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -137,56 +137,56 @@ AbpApplicationConfigurationService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$9 = /*#__PURE__*/Object.freeze({
+var index$8 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    ObjectExtending: index$8,
+    ObjectExtending: index$9,
     AbpApplicationConfigurationService: AbpApplicationConfigurationService
 });
 
-var index$a = /*#__PURE__*/Object.freeze({
+var index$7 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$b = /*#__PURE__*/Object.freeze({
+var index$6 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    ApiExploring: index$7,
-    ApplicationConfigurations: index$9,
-    MultiTenancy: index$a
+    ApiExploring: index$a,
+    ApplicationConfigurations: index$8,
+    MultiTenancy: index$7
 });
 
-var index$c = /*#__PURE__*/Object.freeze({
+var index$5 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Mvc: index$b
+    Mvc: index$6
 });
 
-var index$d = /*#__PURE__*/Object.freeze({
+var index$4 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$e = /*#__PURE__*/Object.freeze({
+var index$3 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Modeling: index$d
+    Modeling: index$4
 });
 
-var index$f = /*#__PURE__*/Object.freeze({
+var index$2 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$g = /*#__PURE__*/Object.freeze({
+var index$1 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    AspNetCore: index$c,
-    Http: index$e,
-    Localization: index$f
+    AspNetCore: index$5,
+    Http: index$3,
+    Localization: index$2
 });
 
-var index$h = /*#__PURE__*/Object.freeze({
+var index = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Abp: index$g
+    Abp: index$1
 });
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { index$3 as Fs, index$6 as Pages, index$h as Volo };
+export { index$e as Fs, index$b as Pages, index as Volo };
 //# sourceMappingURL=fs-tw-emailing-proxy.js.map

@@ -1,16 +1,16 @@
 import { RestService, mapEnumToOptions } from '@abp/ng.core';
 import { ɵɵdefineInjectable, ɵɵinject, Injectable } from '@angular/core';
 
-var index = /*#__PURE__*/Object.freeze({
+var index$n = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$1 = /*#__PURE__*/Object.freeze({
+var index$m = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index
+    Dtos: index$n
 });
 
-var index$2 = /*#__PURE__*/Object.freeze({
+var index$l = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -39,9 +39,9 @@ DirectoriesApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$3 = /*#__PURE__*/Object.freeze({
+var index$k = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$2,
+    Dtos: index$l,
     DirectoriesApiService: DirectoriesApiService
 });
 
@@ -66,24 +66,24 @@ FilesApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$4 = /*#__PURE__*/Object.freeze({
+var index$j = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FilesApiService: FilesApiService
 });
 
-var index$5 = /*#__PURE__*/Object.freeze({
+var index$i = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Directories: index$3,
-    Files: index$4
+    Directories: index$k,
+    Files: index$j
 });
 
-var index$6 = /*#__PURE__*/Object.freeze({
+var index$h = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Application: index$1,
-    File: index$5
+    Application: index$m,
+    File: index$i
 });
 
-var index$7 = /*#__PURE__*/Object.freeze({
+var index$g = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -117,13 +117,13 @@ BannersApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$8 = /*#__PURE__*/Object.freeze({
+var index$f = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$7,
+    Dtos: index$g,
     BannersApiService: BannersApiService
 });
 
-var index$9 = /*#__PURE__*/Object.freeze({
+var index$e = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -157,13 +157,13 @@ RoutesApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$a = /*#__PURE__*/Object.freeze({
+var index$d = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$9,
+    Dtos: index$e,
     RoutesApiService: RoutesApiService
 });
 
-var index$b = /*#__PURE__*/Object.freeze({
+var index$c = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -192,46 +192,46 @@ WebSitesApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$c = /*#__PURE__*/Object.freeze({
+var index$b = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$b,
+    Dtos: index$c,
     WebSitesApiService: WebSitesApiService
 });
 
-var index$d = /*#__PURE__*/Object.freeze({
+var index$a = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Banners: index$8,
-    Routes: index$a,
-    WebSites: index$c
+    Banners: index$f,
+    Routes: index$d,
+    WebSites: index$b
 });
 
-var index$e = /*#__PURE__*/Object.freeze({
+var index$9 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Abp: index$6,
-    Theme: index$d
+    Abp: index$h,
+    Theme: index$a
 });
 
-var index$f = /*#__PURE__*/Object.freeze({
+var index$8 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$g = /*#__PURE__*/Object.freeze({
+var index$7 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Mvc: index$f
+    Mvc: index$8
 });
 
-var index$h = /*#__PURE__*/Object.freeze({
+var index$6 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    AspNetCore: index$g
+    AspNetCore: index$7
 });
 
-var index$i = /*#__PURE__*/Object.freeze({
+var index$5 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$j = /*#__PURE__*/Object.freeze({
+var index$4 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Content: index$i
+    Content: index$5
 });
 
 class DirectoryDescriptorService {
@@ -283,7 +283,7 @@ DirectoryDescriptorService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$k = /*#__PURE__*/Object.freeze({
+var index$3 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     DirectoryDescriptorService: DirectoryDescriptorService
 });
@@ -353,28 +353,28 @@ var FileIconType;
 })(FileIconType || (FileIconType = {}));
 const fileIconTypeOptions = mapEnumToOptions(FileIconType);
 
-var index$l = /*#__PURE__*/Object.freeze({
+var index$2 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FileDescriptorService: FileDescriptorService,
     get FileIconType () { return FileIconType; },
     fileIconTypeOptions: fileIconTypeOptions
 });
 
-var index$m = /*#__PURE__*/Object.freeze({
+var index$1 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Directories: index$k,
-    Files: index$l
+    Directories: index$3,
+    Files: index$2
 });
 
-var index$n = /*#__PURE__*/Object.freeze({
+var index = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Abp: index$j,
-    FileManagement: index$m
+    Abp: index$4,
+    FileManagement: index$1
 });
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { index$e as Fs, index$h as Microsoft, index$n as Volo };
+export { index$9 as Fs, index$6 as Microsoft, index as Volo };
 //# sourceMappingURL=fs-tw-theme-proxy.js.map

@@ -8,6 +8,7 @@
 
     var snq__default = /*#__PURE__*/_interopDefaultLegacy(snq);
 
+    exports.Layout = void 0;
     (function (Layout) {
         Layout.defaultNavConfig = {
             title: '系統管理',

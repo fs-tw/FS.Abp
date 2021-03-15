@@ -150,13 +150,13 @@
     ];
     ExtensionsService.ctorParameters = function () { return []; };
 
-    var ɵ0 = function (data) {
+    var ɵ0$9 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.Banner" /* Banner */, {
             name: 'Edit',
             record: data.record,
         });
-    }, ɵ1 = function (data) {
+    }, ɵ1$4 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.Banner" /* Banner */, {
             name: 'Delete',
@@ -166,15 +166,15 @@
     var DEFAULT_BANNER_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0,
+            action: ɵ0$9,
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1,
+            action: ɵ1$4,
         },
     ]);
 
-    var ɵ0$1 = function (data) {
+    var ɵ0$8 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.Banner" /* Banner */, {
             name: 'Add'
@@ -185,7 +185,7 @@
     var DEFAULT_BANNER_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$1,
+            action: ɵ0$8,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -255,13 +255,13 @@
         }
     ]);
 
-    var ɵ0$2 = function (data) {
+    var ɵ0$7 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.BannerDefinition" /* BannerDefinition */, {
             name: 'Edit',
             record: data.record,
         });
-    }, ɵ1$1 = function (data) {
+    }, ɵ1$3 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.BannerDefinition" /* BannerDefinition */, {
             name: 'Delete',
@@ -271,15 +271,15 @@
     var DEFAULT_BANNERDEFINITION_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$2,
+            action: ɵ0$7,
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1$1,
+            action: ɵ1$3,
         },
     ]);
 
-    var ɵ0$3 = function (data) {
+    var ɵ0$6 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.BannerDefinition" /* BannerDefinition */, {
             name: 'Add'
@@ -290,7 +290,7 @@
     var DEFAULT_BANNERDEFINITION_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$3,
+            action: ɵ0$6,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -388,7 +388,7 @@
         }
     ]);
 
-    var ɵ0$4 = function (data) {
+    var ɵ0$5 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.Route" /* Route */, {
             name: 'Edit',
@@ -404,7 +404,7 @@
     var DEFAULT_ROUTE_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$4,
+            action: ɵ0$5,
         },
         {
             text: 'AbpIdentity::Delete',
@@ -412,7 +412,7 @@
         },
     ]);
 
-    var ɵ0$5 = function (data) {
+    var ɵ0$4 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.Route" /* Route */, {
             name: 'Add'
@@ -423,7 +423,7 @@
     var DEFAULT_ROUTE_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$5,
+            action: ɵ0$4,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -493,13 +493,13 @@
         }
     ]);
 
-    var ɵ0$6 = function (data) {
+    var ɵ0$3 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.RouteDefinition" /* RouteDefinition */, {
             name: 'Edit',
             record: data.record,
         });
-    }, ɵ1$3 = function (data) {
+    }, ɵ1$1 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.RouteDefinition" /* RouteDefinition */, {
             name: 'Delete',
@@ -509,15 +509,15 @@
     var DEFAULT_ROUTEDEFINITION_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$6,
+            action: ɵ0$3,
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1$3,
+            action: ɵ1$1,
         },
     ]);
 
-    var ɵ0$7 = function (data) {
+    var ɵ0$2 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.RouteDefinition" /* RouteDefinition */, {
             name: 'Add'
@@ -528,7 +528,7 @@
     var DEFAULT_ROUTEDEFINITION_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$7,
+            action: ɵ0$2,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },
@@ -584,13 +584,13 @@
         }
     ]);
 
-    var ɵ0$8 = function (data) {
+    var ɵ0$1 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.WebSiteDefinition" /* WebSiteDefinition */, {
             name: 'Edit',
             record: data.record,
         });
-    }, ɵ1$4 = function (data) {
+    }, ɵ1 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.WebSiteDefinition" /* WebSiteDefinition */, {
             name: 'Delete',
@@ -600,15 +600,15 @@
     var DEFAULT_WEBSITEDEFINITION_ENTITY_ACTIONS = extensions.EntityAction.createMany([
         {
             text: 'AbpIdentity::Edit',
-            action: ɵ0$8,
+            action: ɵ0$1,
         },
         {
             text: 'AbpIdentity::Delete',
-            action: ɵ1$4,
+            action: ɵ1,
         },
     ]);
 
-    var ɵ0$9 = function (data) {
+    var ɵ0 = function (data) {
         var service = data.getInjected(ExtensionsService);
         service.action("Theme::FS.Theme.WebSiteDefinition" /* WebSiteDefinition */, {
             name: 'Add'
@@ -619,7 +619,7 @@
     var DEFAULT_WEBSITEDEFINITION_TOOLBAR_ACTIONS = extensions.ToolbarAction.createMany([
         {
             text: '新增',
-            action: ɵ0$9,
+            action: ɵ0,
             //permission: 'AbpIdentity.Users.Create',
             icon: 'fa fa-plus',
         },

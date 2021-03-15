@@ -437,7 +437,7 @@
     ]; };
 
     //import { AuthService, SetRemember, ConfigState } from '@abp/ng.core';
-    var maxLength = forms.Validators.maxLength, minLength = forms.Validators.minLength, required = forms.Validators.required;
+    var maxLength$2 = forms.Validators.maxLength, minLength = forms.Validators.minLength, required$3 = forms.Validators.required;
     var LoginComponent = /** @class */ (function () {
         function LoginComponent(fb, oauthService, store, toasterService, authService, configStateService) {
             this.fb = fb;
@@ -453,8 +453,8 @@
             this.isSelfRegistrationEnabled =
                 (this.configStateService.getSetting('Abp.Account.IsSelfRegistrationEnabled') || '').toLowerCase() !== 'false';
             this.form = this.fb.group({
-                username: ['', [required, maxLength(255)]],
-                password: ['', [required, maxLength(128)]],
+                username: ['', [required$3, maxLength$2(255)]],
+                password: ['', [required$3, maxLength$2(128)]],
                 remember: [false],
             });
         };
@@ -557,7 +557,7 @@
         { type: i1.RestService }
     ]; };
 
-    var maxLength$1 = forms.Validators.maxLength, required$1 = forms.Validators.required, email = forms.Validators.email;
+    var maxLength$1 = forms.Validators.maxLength, required$2 = forms.Validators.required, email$1 = forms.Validators.email;
     var RegisterComponent = /** @class */ (function () {
         function RegisterComponent(fb, accountService, oauthService, store, toasterService, authService, injector) {
             this.fb = fb;
@@ -589,9 +589,9 @@
             //   return;
             // }
             this.form = this.fb.group({
-                username: ['', [required$1, maxLength$1(255)]],
-                password: ['', __spread([required$1], ng_theme_shared.getPasswordValidators(this.injector))],
-                email: ['', [required$1, email]],
+                username: ['', [required$2, maxLength$1(255)]],
+                password: ['', __spread([required$2], ng_theme_shared.getPasswordValidators(this.injector))],
+                email: ['', [required$2, email$1]],
             });
         };
         RegisterComponent.prototype.onSubmit = function () {
@@ -746,7 +746,7 @@
         cancelContentRef: [{ type: i0.Input }]
     };
 
-    var required$2 = forms.Validators.required;
+    var required$1 = forms.Validators.required;
     var PASSWORD_FIELDS = ['newPassword', 'repeatNewPassword'];
     var ChangePasswordComponent = /** @class */ (function () {
         function ChangePasswordComponent(fb, store, toasterService, injector) {
@@ -767,17 +767,17 @@
             this.hideCurrentPassword = !this.store.selectSnapshot(i1.ProfileState.getProfile).hasPassword;
             var passwordValidations = ng_theme_shared.getPasswordValidators(this.injector);
             this.form = this.fb.group({
-                password: ['', required$2],
+                password: ['', required$1],
                 newPassword: [
                     '',
                     {
-                        validators: __spread([required$2], passwordValidations),
+                        validators: __spread([required$1], passwordValidations),
                     },
                 ],
                 repeatNewPassword: [
                     '',
                     {
-                        validators: __spread([required$2], passwordValidations),
+                        validators: __spread([required$1], passwordValidations),
                     },
                 ],
             }, {
@@ -802,7 +802,7 @@
                     });
                     if (_this.hideCurrentPassword) {
                         _this.hideCurrentPassword = false;
-                        _this.form.addControl('password', new forms.FormControl('', [required$2]));
+                        _this.form.addControl('password', new forms.FormControl('', [required$1]));
                     }
                 },
                 error: function (err) {
@@ -826,7 +826,7 @@
         { type: i0.Injector }
     ]; };
 
-    var maxLength$2 = forms.Validators.maxLength, required$3 = forms.Validators.required, email$1 = forms.Validators.email;
+    var maxLength = forms.Validators.maxLength, required = forms.Validators.required, email = forms.Validators.email;
     var PersonalSettingsComponent = /** @class */ (function () {
         function PersonalSettingsComponent(fb, store, toasterService) {
             this.fb = fb;
@@ -839,11 +839,11 @@
         PersonalSettingsComponent.prototype.buildForm = function () {
             var profile = this.store.selectSnapshot(i1.ProfileState.getProfile);
             this.form = this.fb.group({
-                userName: [profile.userName, [required$3, maxLength$2(256)]],
-                email: [profile.email, [required$3, email$1, maxLength$2(256)]],
-                name: [profile.name || '', [maxLength$2(64)]],
-                surname: [profile.surname || '', [maxLength$2(64)]],
-                phoneNumber: [profile.phoneNumber || '', [maxLength$2(16)]],
+                userName: [profile.userName, [required, maxLength(256)]],
+                email: [profile.email, [required, email, maxLength(256)]],
+                name: [profile.name || '', [maxLength(64)]],
+                surname: [profile.surname || '', [maxLength(64)]],
+                phoneNumber: [profile.phoneNumber || '', [maxLength(16)]],
             });
         };
         PersonalSettingsComponent.prototype.submit = function () {

@@ -231,12 +231,12 @@ const ICONS = [InfoOutline, BulbOutline, ProfileOutline, ExceptionOutline, LinkO
 const STYLES_PROVIDERS = [
     {
         provide: APP_INITIALIZER,
-        useFactory: configureStyles,
+        useFactory: configureStyles$1,
         deps: [NzIconService],
         multi: true,
     },
 ];
-function configureStyles(iconSrv) {
+function configureStyles$1(iconSrv) {
     return () => {
         iconSrv.addIcon(...ICONS_AUTO, ...ICONS);
     };
@@ -715,12 +715,12 @@ background-color: rgba(0, 0, 0, 0.6);
 const NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
     {
         provide: APP_INITIALIZER,
-        useFactory: configureStyles$1,
+        useFactory: configureStyles,
         deps: [Injector],
         multi: true,
     },
 ];
-function configureStyles$1(injector) {
+function configureStyles(injector) {
     return () => {
         const replaceableComponents = injector.get(ReplaceableComponentsService);
         const domInsertion = injector.get(DomInsertionService);
@@ -808,5 +808,5 @@ ThemeAlainMsModule.decorators = [
  * Generated bundle index. Do not edit.
  */
 
-export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, ValidationErrorComponent as ɵe, StartupService as ɵf, StartupServiceFactory as ɵg, APPINIT_PROVIDES as ɵh, LANG as ɵi, LANG_PROVIDES as ɵj, STYLES_PROVIDERS as ɵk, configureStyles as ɵl, NG_ALAIN_MS_THEME_STYLES_PROVIDERS as ɵm, configureStyles$1 as ɵn, NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS as ɵo, configureNavItems as ɵp };
+export { ThemeAlainMsModule, ApplicationLayoutComponent as ɵa, AccountLayoutComponent as ɵb, RootModule as ɵc, GlobalConfigModule as ɵd, ValidationErrorComponent as ɵe, StartupService as ɵf, StartupServiceFactory as ɵg, APPINIT_PROVIDES as ɵh, LANG as ɵi, LANG_PROVIDES as ɵj, STYLES_PROVIDERS as ɵk, configureStyles$1 as ɵl, NG_ALAIN_MS_THEME_STYLES_PROVIDERS as ɵm, configureStyles as ɵn, NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS as ɵo, configureNavItems as ɵp };
 //# sourceMappingURL=fs-tw-theme-alain-ms.js.map

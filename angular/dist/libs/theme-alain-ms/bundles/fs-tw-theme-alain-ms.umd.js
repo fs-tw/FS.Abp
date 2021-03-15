@@ -533,12 +533,12 @@
     var STYLES_PROVIDERS = [
         {
             provide: core.APP_INITIALIZER,
-            useFactory: configureStyles,
+            useFactory: configureStyles$1,
             deps: [icon.NzIconService],
             multi: true,
         },
     ];
-    function configureStyles(iconSrv) {
+    function configureStyles$1(iconSrv) {
         return function () {
             iconSrv.addIcon.apply(iconSrv, __spread(ICONS_AUTO, ICONS));
         };
@@ -927,12 +927,12 @@
     var NG_ALAIN_MS_THEME_STYLES_PROVIDERS = [
         {
             provide: core.APP_INITIALIZER,
-            useFactory: configureStyles$1,
+            useFactory: configureStyles,
             deps: [core.Injector],
             multi: true,
         },
     ];
-    function configureStyles$1(injector) {
+    function configureStyles(injector) {
         return function () {
             var replaceableComponents = injector.get(ng_core.ReplaceableComponentsService);
             var domInsertion = injector.get(ng_core.DomInsertionService);
@@ -1035,9 +1035,9 @@
     exports.ɵi = LANG;
     exports.ɵj = LANG_PROVIDES;
     exports.ɵk = STYLES_PROVIDERS;
-    exports.ɵl = configureStyles;
+    exports.ɵl = configureStyles$1;
     exports.ɵm = NG_ALAIN_MS_THEME_STYLES_PROVIDERS;
-    exports.ɵn = configureStyles$1;
+    exports.ɵn = configureStyles;
     exports.ɵo = NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS;
     exports.ɵp = configureNavItems;
 
