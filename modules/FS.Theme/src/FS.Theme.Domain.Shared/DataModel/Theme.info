@@ -1,1 +1,6 @@
-﻿Model code generation succeeded.
+﻿// Custom tool 'DevartEFCoreGenerator' failed.
+// - An error occurred during an attempt to compile the template 'Application.Api'.
+//Error List:
+//error : 命名空間 'FS.ED' 中沒有類型或命名空間名稱 'Settings' (您是否遺漏了組件參考?)
+//
+//
