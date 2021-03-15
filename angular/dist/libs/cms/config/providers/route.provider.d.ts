@@ -6,4 +6,3 @@ export declare const CMS_ROUTE_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureRoutes(routes: RoutesService): () => void;
-//# sourceMappingURL=route.provider.d.ts.map

@@ -6,4 +6,3 @@ export declare const EMAILING_ROUTE_PROVIDERS: {
     multi: boolean;
 }[];
 export declare function configureRoutes(routesService: RoutesService): () => void;
-//# sourceMappingURL=route.provider.d.ts.map

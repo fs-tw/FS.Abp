@@ -1,7 +1,6 @@
 import { eCmsRouteNames } from '../enums/route-names';
 import { Subject } from 'rxjs';
 import { Fs } from '@fs-tw/cms/proxy';
-import * as i0 from "@angular/core";
 export declare class ActionItem<T> {
     name: 'Edit' | 'Delete' | 'Add';
     record?: T;
@@ -14,7 +13,4 @@ export declare class ExtensionsService {
     };
     constructor();
     action<T>(type: eCmsRouteNames, data?: ActionItem<T>): void;
-    static ɵfac: i0.ɵɵFactoryDef<ExtensionsService, never>;
-    static ɵprov: i0.ɵɵInjectableDef<ExtensionsService>;
 }
-//# sourceMappingURL=extensions.service.d.ts.map

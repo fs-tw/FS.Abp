@@ -55,4 +55,3 @@ export interface MetaData {
     blogGetListDto: BlogGetListDto;
     blogWithDetailsDto: BlogWithDetailsDto;
 }
-//# sourceMappingURL=models.d.ts.map

@@ -15,12 +15,11 @@ export class ExtensionsService {
         this.Actions$[type].next(data);
     }
 }
-ExtensionsService.ɵfac = function ExtensionsService_Factory(t) { return new (t || ExtensionsService)(); };
-ExtensionsService.ɵprov = i0.ɵɵdefineInjectable({ token: ExtensionsService, factory: ExtensionsService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ExtensionsService, [{
-        type: Injectable,
-        args: [{
+ExtensionsService.ɵprov = i0.ɵɵdefineInjectable({ factory: function ExtensionsService_Factory() { return new ExtensionsService(); }, token: ExtensionsService, providedIn: "root" });
+ExtensionsService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return []; }, null); })();
+            },] }
+];
+ExtensionsService.ctorParameters = () => [];
 //# sourceMappingURL=extensions.service.js.map

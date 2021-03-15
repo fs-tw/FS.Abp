@@ -73,4 +73,3 @@ export interface MetaData {
     documentGetListDto: DocumentGetListDto;
     documentWithDetailsDto: DocumentWithDetailsDto;
 }
-//# sourceMappingURL=models.d.ts.map

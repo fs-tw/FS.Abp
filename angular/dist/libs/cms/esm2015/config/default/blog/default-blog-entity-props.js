@@ -1,4 +1,13 @@
 import { EntityProp } from '@abp/ng.theme.shared/extensions';
+import { of } from 'rxjs';
+const ɵ0 = (data) => {
+    let text = "";
+    if (data.record.disable)
+        text = "是";
+    else
+        text = "否";
+    return of(text);
+};
 export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany([
     // {
     //     type: ePropType.String,
@@ -27,6 +36,8 @@ export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany([
         displayName: 'Cms::FS.Blog.Disable',
         sortable: true,
         columnWidth: 50,
+        valueResolver: ɵ0,
     },
 ]);
+export { ɵ0 };
 //# sourceMappingURL=default-blog-entity-props.js.map

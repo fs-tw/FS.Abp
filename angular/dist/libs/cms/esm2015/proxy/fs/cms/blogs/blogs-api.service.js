@@ -38,12 +38,13 @@ export class BlogsApiService {
         }, { apiName: this.apiName });
     }
 }
-BlogsApiService.ɵfac = function BlogsApiService_Factory(t) { return new (t || BlogsApiService)(i0.ɵɵinject(i1.RestService)); };
-BlogsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: BlogsApiService, factory: BlogsApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(BlogsApiService, [{
-        type: Injectable,
-        args: [{
+BlogsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function BlogsApiService_Factory() { return new BlogsApiService(i0.ɵɵinject(i1.RestService)); }, token: BlogsApiService, providedIn: "root" });
+BlogsApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+BlogsApiService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=blogs-api.service.js.map

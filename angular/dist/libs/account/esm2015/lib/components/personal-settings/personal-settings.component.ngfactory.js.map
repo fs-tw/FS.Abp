@@ -1,0 +1,1 @@
+{"version":3,"file":"personal-settings.component.ngfactory.js","sourceRoot":"","sources":["../../../../../../../libs/account/src/lib/components/personal-settings/personal-settings.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

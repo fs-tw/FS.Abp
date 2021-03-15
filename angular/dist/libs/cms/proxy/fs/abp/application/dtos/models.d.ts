@@ -3,4 +3,3 @@ export interface SearchResultRequestDto extends PagedAndSortedResultRequestDto {
     fields?: string;
     value?: string;
 }
-//# sourceMappingURL=models.d.ts.map

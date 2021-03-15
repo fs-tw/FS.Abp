@@ -41,12 +41,13 @@ export class DirectoryDescriptorService {
         }, { apiName: this.apiName });
     }
 }
-DirectoryDescriptorService.ɵfac = function DirectoryDescriptorService_Factory(t) { return new (t || DirectoryDescriptorService)(i0.ɵɵinject(i1.RestService)); };
-DirectoryDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ token: DirectoryDescriptorService, factory: DirectoryDescriptorService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(DirectoryDescriptorService, [{
-        type: Injectable,
-        args: [{
+DirectoryDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ factory: function DirectoryDescriptorService_Factory() { return new DirectoryDescriptorService(i0.ɵɵinject(i1.RestService)); }, token: DirectoryDescriptorService, providedIn: "root" });
+DirectoryDescriptorService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+DirectoryDescriptorService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=directory-descriptor.service.js.map

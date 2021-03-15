@@ -10,4 +10,3 @@ export interface CmsImageFieldDto {
     height: number;
     isCover: boolean;
 }
-//# sourceMappingURL=models.d.ts.map

@@ -65,20 +65,6 @@ export function configureRoutes(routes) {
             iconClass: 'fa fa-university',
             order: 1
         },
-        {
-            path: '/cms/tag',
-            name: "\u6A19\u7C64\u7DAD\u8B77" /* Tag */,
-            parentName: "Cms::FS.Cms.Basic" /* Basic */,
-            iconClass: 'fa fa-university',
-            order: 1,
-        },
-        {
-            path: '/cms/tag/:tagId',
-            name: "\u6A19\u7C64\u8A73\u7D30" /* Tag_detail */,
-            parentName: "\u6A19\u7C64\u7DAD\u8B77" /* Tag */,
-            iconClass: 'fa fa-university',
-            order: 1
-        },
     ];
     return () => {
         routes.add([

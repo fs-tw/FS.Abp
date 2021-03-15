@@ -48,12 +48,13 @@ export class PostsApiService {
         }, { apiName: this.apiName });
     }
 }
-PostsApiService.ɵfac = function PostsApiService_Factory(t) { return new (t || PostsApiService)(i0.ɵɵinject(i1.RestService)); };
-PostsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: PostsApiService, factory: PostsApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PostsApiService, [{
-        type: Injectable,
-        args: [{
+PostsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function PostsApiService_Factory() { return new PostsApiService(i0.ɵɵinject(i1.RestService)); }, token: PostsApiService, providedIn: "root" });
+PostsApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+PostsApiService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=posts-api.service.js.map

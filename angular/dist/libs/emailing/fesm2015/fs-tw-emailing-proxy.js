@@ -1,5 +1,5 @@
 import { RestService } from '@abp/ng.core';
-import { ɵɵinject, ɵɵdefineInjectable, ɵsetClassMetadata, Injectable } from '@angular/core';
+import { ɵɵdefineInjectable, ɵɵinject, Injectable } from '@angular/core';
 
 var index = /*#__PURE__*/Object.freeze({
     __proto__: null
@@ -22,14 +22,15 @@ class EmailingApiService {
         }, { apiName: this.apiName });
     }
 }
-EmailingApiService.ɵfac = function EmailingApiService_Factory(t) { return new (t || EmailingApiService)(ɵɵinject(RestService)); };
-EmailingApiService.ɵprov = ɵɵdefineInjectable({ token: EmailingApiService, factory: EmailingApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(EmailingApiService, [{
-        type: Injectable,
-        args: [{
+EmailingApiService.ɵprov = ɵɵdefineInjectable({ factory: function EmailingApiService_Factory() { return new EmailingApiService(ɵɵinject(RestService)); }, token: EmailingApiService, providedIn: "root" });
+EmailingApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: RestService }]; }, null); })();
+            },] }
+];
+EmailingApiService.ctorParameters = () => [
+    { type: RestService }
+];
 
 var index$1 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -61,14 +62,15 @@ class AbpTenantService {
         }, { apiName: this.apiName });
     }
 }
-AbpTenantService.ɵfac = function AbpTenantService_Factory(t) { return new (t || AbpTenantService)(ɵɵinject(RestService)); };
-AbpTenantService.ɵprov = ɵɵdefineInjectable({ token: AbpTenantService, factory: AbpTenantService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(AbpTenantService, [{
-        type: Injectable,
-        args: [{
+AbpTenantService.ɵprov = ɵɵdefineInjectable({ factory: function AbpTenantService_Factory() { return new AbpTenantService(ɵɵinject(RestService)); }, token: AbpTenantService, providedIn: "root" });
+AbpTenantService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: RestService }]; }, null); })();
+            },] }
+];
+AbpTenantService.ctorParameters = () => [
+    { type: RestService }
+];
 
 var index$4 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -96,14 +98,15 @@ class AbpApiDefinitionService {
         }, { apiName: this.apiName });
     }
 }
-AbpApiDefinitionService.ɵfac = function AbpApiDefinitionService_Factory(t) { return new (t || AbpApiDefinitionService)(ɵɵinject(RestService)); };
-AbpApiDefinitionService.ɵprov = ɵɵdefineInjectable({ token: AbpApiDefinitionService, factory: AbpApiDefinitionService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(AbpApiDefinitionService, [{
-        type: Injectable,
-        args: [{
+AbpApiDefinitionService.ɵprov = ɵɵdefineInjectable({ factory: function AbpApiDefinitionService_Factory() { return new AbpApiDefinitionService(ɵɵinject(RestService)); }, token: AbpApiDefinitionService, providedIn: "root" });
+AbpApiDefinitionService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: RestService }]; }, null); })();
+            },] }
+];
+AbpApiDefinitionService.ctorParameters = () => [
+    { type: RestService }
+];
 
 var index$7 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -124,14 +127,15 @@ class AbpApplicationConfigurationService {
         }, { apiName: this.apiName });
     }
 }
-AbpApplicationConfigurationService.ɵfac = function AbpApplicationConfigurationService_Factory(t) { return new (t || AbpApplicationConfigurationService)(ɵɵinject(RestService)); };
-AbpApplicationConfigurationService.ɵprov = ɵɵdefineInjectable({ token: AbpApplicationConfigurationService, factory: AbpApplicationConfigurationService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(AbpApplicationConfigurationService, [{
-        type: Injectable,
-        args: [{
+AbpApplicationConfigurationService.ɵprov = ɵɵdefineInjectable({ factory: function AbpApplicationConfigurationService_Factory() { return new AbpApplicationConfigurationService(ɵɵinject(RestService)); }, token: AbpApplicationConfigurationService, providedIn: "root" });
+AbpApplicationConfigurationService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: RestService }]; }, null); })();
+            },] }
+];
+AbpApplicationConfigurationService.ctorParameters = () => [
+    { type: RestService }
+];
 
 var index$9 = /*#__PURE__*/Object.freeze({
     __proto__: null,

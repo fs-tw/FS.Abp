@@ -26,7 +26,7 @@ export class PageService {
 
 
   constructor(
-    private tagsApiService: Fs.Cms.Tags.TagsApiService
+    //private tagsApiService: Fs.Cms.Tags.TagsApiService
   ) { }
 
 

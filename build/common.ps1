@@ -9,7 +9,7 @@ $solutionPaths = @(
 		"../framework/FS.Abp.File",
 		#"../modules/FS.Abp",
 		"../modules/FS.Cms",
-		"../modules/FS.FormManagement",
+		#"../modules/FS.FormManagement",
 		"../modules/FS.Theme"
 	)
 

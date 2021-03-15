@@ -14,12 +14,13 @@ export class FilesApiService {
         }, { apiName: this.apiName });
     }
 }
-FilesApiService.ɵfac = function FilesApiService_Factory(t) { return new (t || FilesApiService)(i0.ɵɵinject(i1.RestService)); };
-FilesApiService.ɵprov = i0.ɵɵdefineInjectable({ token: FilesApiService, factory: FilesApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FilesApiService, [{
-        type: Injectable,
-        args: [{
+FilesApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FilesApiService_Factory() { return new FilesApiService(i0.ɵɵinject(i1.RestService)); }, token: FilesApiService, providedIn: "root" });
+FilesApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+FilesApiService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=files-api.service.js.map

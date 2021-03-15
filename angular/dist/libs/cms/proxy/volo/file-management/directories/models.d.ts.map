@@ -1,1 +1,0 @@
-{"version":3,"file":"models.d.ts","sourceRoot":"","sources":["../../../../../../../libs/cms/proxy/src/volo/file-management/directories/models.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,gBAAgB,EAAE,MAAM,cAAc,CAAC;AAErD,MAAM,WAAW,sBAAuB,SAAQ,gBAAgB,CAAC,MAAM,CAAC;IACtE,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,QAAQ,CAAC,EAAE,MAAM,CAAC;CACnB"}

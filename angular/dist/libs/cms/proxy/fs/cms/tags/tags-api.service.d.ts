@@ -1,7 +1,6 @@
 import type { MetaData, TagCreateDto, TagGetListDto, TagPrimaryKeyDto, TagUpdateDto, TagWithDetailsDto } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
-import * as i0 from "@angular/core";
 export declare class TagsApiService {
     private restService;
     apiName: string;
@@ -12,7 +11,4 @@ export declare class TagsApiService {
     options: () => import("rxjs").Observable<MetaData>;
     updateByTagPrimaryKeyAndTagUpdate: (TagPrimaryKey: TagPrimaryKeyDto, TagUpdate: TagUpdateDto) => import("rxjs").Observable<TagWithDetailsDto>;
     constructor(restService: RestService);
-    static ɵfac: i0.ɵɵFactoryDef<TagsApiService, never>;
-    static ɵprov: i0.ɵɵInjectableDef<TagsApiService>;
 }
-//# sourceMappingURL=tags-api.service.d.ts.map

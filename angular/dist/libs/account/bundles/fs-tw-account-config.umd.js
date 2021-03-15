@@ -2,10 +2,10 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core')) :
     typeof define === 'function' && define.amd ? define('@fs-tw/account/config', ['exports', '@angular/core', '@abp/ng.core'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].account = global['fs-tw'].account || {}, global['fs-tw'].account.config = {}), global.ng.core, global.ng_core));
-}(this, (function (exports, i0, ng_core) { 'use strict';
+}(this, (function (exports, core, ng_core) { 'use strict';
 
     var ACCOUNT_ROUTE_PROVIDERS = [
-        { provide: i0.APP_INITIALIZER, useFactory: configureRoutes, deps: [ng_core.RoutesService], multi: true },
+        { provide: core.APP_INITIALIZER, useFactory: configureRoutes, deps: [ng_core.RoutesService], multi: true },
     ];
     function configureRoutes(routes) {
         return function () {
@@ -51,14 +51,9 @@
         };
         return AccountConfigModule;
     }());
-    AccountConfigModule.ɵfac = function AccountConfigModule_Factory(t) { return new (t || AccountConfigModule)(); };
-    AccountConfigModule.ɵmod = i0.ɵɵdefineNgModule({ type: AccountConfigModule });
-    AccountConfigModule.ɵinj = i0.ɵɵdefineInjector({});
-    (function () {
-        (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AccountConfigModule, [{
-                type: i0.NgModule
-            }], null, null);
-    })();
+    AccountConfigModule.decorators = [
+        { type: core.NgModule }
+    ];
 
     /**
      * Generated bundle index. Do not edit.
@@ -67,6 +62,8 @@
     exports.ACCOUNT_ROUTE_PROVIDERS = ACCOUNT_ROUTE_PROVIDERS;
     exports.AccountConfigModule = AccountConfigModule;
     exports.configureRoutes = configureRoutes;
+    exports.ɵa = ACCOUNT_ROUTE_PROVIDERS;
+    exports.ɵb = configureRoutes;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
