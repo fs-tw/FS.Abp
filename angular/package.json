@@ -38,6 +38,7 @@
   "private": true,
   "dependencies": {
     "@abp/ng.schematics": "^4.2.2",
+    "@abp/ng.theme.basic": "^4.2.2",
     "@angular/animations": "^11.2.0",
     "@angular/common": "^11.2.0",
     "@angular/compiler": "^11.2.0",
@@ -55,7 +56,7 @@
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
-    "@abp/ng.schematics":"^4.2.2",
+    "@abp/ng.schematics": "^4.2.2",
     "@angular-devkit/build-angular": "~0.1102.0",
     "@angular-eslint/eslint-plugin": "~1.0.0",
     "@angular-eslint/eslint-plugin-template": "~1.0.0",
@@ -87,6 +88,6 @@
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
-    "typescript": "~4.0.3"
+    "typescript": "4.1.3"
   }
 }
