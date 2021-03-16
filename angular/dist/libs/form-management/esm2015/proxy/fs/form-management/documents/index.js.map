@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../libs/form-management/proxy/src/fs/form-management/documents/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,IAAI,MAAM,QAAQ,CAAC;AAC/B,cAAc,yBAAyB,CAAC;AACxC,OAAO,EAAE,IAAI,EAAE,CAAC","sourcesContent":["import * as Dtos from './dtos';\nexport * from './documents-api.service';\nexport { Dtos };\n"]}
