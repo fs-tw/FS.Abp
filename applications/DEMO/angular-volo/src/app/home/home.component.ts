@@ -10,8 +10,13 @@ export class HomeComponent {
   get hasLoggedIn(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
+  currentDate:Date = new Date();
 
-  constructor(private oAuthService: OAuthService, private authService: AuthService) {}
+  constructor(private oAuthService: OAuthService, private authService: AuthService) {
+    setInterval(()=>{
+      this.currentDate = new Date();
+    },500)
+  }
 
   login() {
     this.authService.initLogin();
