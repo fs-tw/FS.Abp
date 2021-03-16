@@ -15,6 +15,9 @@
     "FS.Blog.Description": "Description",
     "FS.Blog.Disable": "Disable",
     "FS.Blog.BlogConfig": "BlogConfig",
+    "FS.Blog.Sequence": "Sequence",
+    "FS.Blog.Url": "Url",
+    "FS.Blog.ListStyle": "ListStyle",
 
     "FS.Post.BlogId": "BlogId",
     "FS.Post.Title": "Title",
