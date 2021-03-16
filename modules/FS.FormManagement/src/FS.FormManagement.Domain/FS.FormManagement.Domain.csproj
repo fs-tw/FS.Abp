@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.FormManagement\Documents\DocumentsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.FormManagement\Documents\DocumentDefinition.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
