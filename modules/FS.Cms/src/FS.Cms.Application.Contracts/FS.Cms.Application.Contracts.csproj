@@ -39,8 +39,6 @@
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Post\PostPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.Cms\Post\PostPermissionNames.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -147,10 +145,6 @@
     <Compile Update="_Generated\FS.Cms\Posts\PostsPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Post\IPostApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Post</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs">
       <AutoGen>True</AutoGen>

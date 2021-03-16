@@ -137,7 +137,6 @@
     <Diagrams>
       <Diagram Name="Diagram1" DefaultDiagram="True" />
       <Diagram Name="Setting" />
-      <Diagram Name="Permissions" />
     </Diagrams>
     <Templates>
       <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl" />

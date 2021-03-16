@@ -97,7 +97,6 @@
     </ExtendedProperties>
     <Diagrams>
       <Diagram Name="Diagram1" DefaultDiagram="True" />
-      <Diagram Name="Permissions" />
       <Diagram Name="Settings" />
     </Diagrams>
     <Templates>
