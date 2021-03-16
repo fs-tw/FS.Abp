@@ -33,7 +33,9 @@ namespace FS.FormManagement.Records.Dtos
     {
         public virtual string Asnwer { get; set; }
 
-        public virtual System.Guid ItemId { get; set; }
+        public virtual System.Guid RecordId { get; set; }
+
+        public virtual string ItemId { get; set; }
 
     }
 
@@ -41,7 +43,9 @@ namespace FS.FormManagement.Records.Dtos
     {
         public virtual string Asnwer { get; set; }
 
-        public virtual System.Guid ItemId { get; set; }
+        public virtual System.Guid RecordId { get; set; }
+
+        public virtual string ItemId { get; set; }
 
     }
 
@@ -49,7 +53,9 @@ namespace FS.FormManagement.Records.Dtos
     {
         public virtual string Asnwer { get; set; }
 
-        public virtual System.Guid ItemId { get; set; }
+        public virtual System.Guid RecordId { get; set; }
+
+        public virtual string ItemId { get; set; }
 
     }
 

@@ -19,6 +19,9 @@ namespace FS.FormManagement.Records.Dtos
             RuleFor(p => p.Asnwer)
                 .NotNull()
                 ;
+            RuleFor(p => p.RecordId)
+                .NotNull()
+                ;
             RuleFor(p => p.ItemId)
                 .NotNull()
                 ;
@@ -31,6 +34,9 @@ namespace FS.FormManagement.Records.Dtos
         public RecordItemUpdateDtoValidator()
         {
             RuleFor(p => p.Asnwer)
+                .NotNull()
+                ;
+            RuleFor(p => p.RecordId)
                 .NotNull()
                 ;
             RuleFor(p => p.ItemId)

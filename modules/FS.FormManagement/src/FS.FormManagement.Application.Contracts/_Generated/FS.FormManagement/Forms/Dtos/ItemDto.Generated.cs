@@ -37,6 +37,8 @@ namespace FS.FormManagement.Forms.Dtos
 
         public virtual System.Guid GroupId { get; set; }
 
+        public virtual int Sequence { get; set; }
+
     }
 
     public partial class ItemCreateDto
@@ -47,6 +49,8 @@ namespace FS.FormManagement.Forms.Dtos
 
         public virtual System.Guid GroupId { get; set; }
 
+        public virtual int Sequence { get; set; }
+
     }
 
     public partial class ItemUpdateDto
@@ -56,6 +60,8 @@ namespace FS.FormManagement.Forms.Dtos
         public virtual string Question { get; set; }
 
         public virtual System.Guid GroupId { get; set; }
+
+        public virtual int Sequence { get; set; }
 
     }
 

@@ -36,7 +36,13 @@ namespace FS.FormManagement.Records
             set;
         }
 
-        public virtual System.Guid ItemId
+        public virtual System.Guid RecordId
+        {
+            get;
+            set;
+        }
+
+        public virtual string ItemId
         {
             get;
             set;
