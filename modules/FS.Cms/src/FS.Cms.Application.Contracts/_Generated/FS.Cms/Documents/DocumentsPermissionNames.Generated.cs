@@ -9,23 +9,28 @@
 //------------------------------------------------------------------------------
 using Volo.Abp.Reflection;
 
-namespace FS.Theme.WebSiteInfos
+namespace FS.Cms.Documents
 {
-    public class WebSiteInfosPermissionNames
+    public class DocumentsPermissionNames
     {
-        public const string GroupName = "FS.Theme.WebSiteInfos";
-
-        public static class WebSiteDefinition
+        public const string ModuleName = "FS.Cms.Documents";
+        public static class DocumentDefinition
         {
-            public const string Default = GroupName + ".WebSiteDefinition";
+            public const string Default = ModuleName + ".DocumentDefinition";
             public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
             public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
         }
-
+        public static class Document
+        {
+            public const string Default = ModuleName + ".Document";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
         public static string[] GetAll()
         {
-            return ReflectionHelper.GetPublicConstantsRecursively(typeof(WebSiteInfosPermissionNames));
+            return ReflectionHelper.GetPublicConstantsRecursively(typeof(DocumentsPermissionNames));
         }
     }
 }

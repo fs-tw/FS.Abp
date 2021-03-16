@@ -82,6 +82,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Cms\Documents\DocumentsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.Cms\Documents\Dtos\DocumentDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -130,17 +138,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Post\IPostApi.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\PostsPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Post</DependentUpon>
+      <DependentUpon>Posts</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Post\PostPermissionDefinitionProviders.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Posts\PostsPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Post</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Post\PostPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Post</DependentUpon>
+      <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Tags\Dtos\TagDto.Generated.cs">
       <AutoGen>True</AutoGen>

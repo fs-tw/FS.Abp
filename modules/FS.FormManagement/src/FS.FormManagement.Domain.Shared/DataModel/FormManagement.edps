@@ -91,6 +91,12 @@
         <File Name="FormsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="DocumentsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Documents" />
         <File Name="RecordsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
+        <File Name="FormsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="DocumentsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="RecordsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
+        <File Name="FormsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="DocumentsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="RecordsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -244,18 +250,6 @@
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-      </Template>
-      <Template Name="Domain.AbpPermissions" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpPermissions.tmpl">
-        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="AbpPermissionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.FormManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
@@ -467,9 +461,34 @@
           <boolean>false</boolean>
         </ed:Property>
       </Template>
+      <Template Name="Application.AbpPermissions" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AbpPermissions.tmpl">
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="ApplicationContractsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Project>FS.FormManagement.Application.Contracts</Project>
+            <ProjectFolder>FS.FormManagement</ProjectFolder>
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+      </Template>
     </Templates>
     <AttributeAssemblies>
       <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
+        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
         <AttributeType Name="EntityEnumTypeAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
@@ -489,24 +508,6 @@
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Attributes.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="PartialAttribute" AttributeNamespace="FS.ED.Attributes.Partial" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
         <AttributeType Name="ModuleAttribute" AttributeNamespace="FS.ED.Attributes.Module" AttributeAllowMultiple="False" AttributeValidOn="All">
@@ -534,19 +535,6 @@
             <ed:Property Name="Prefixs" Type="System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
-        <AttributeType Name="NavigationAttribute" AttributeNamespace="FS.ED.Attributes.Navigation" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="RelationClassNameStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="EntityDeleteBehaviorStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="HasNaturalKeyPropertyAttribute" AttributeNamespace="FS.ED.Attributes.ExtraProperty" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="HasNaturalKey" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
         <AttributeType Name="SettingsPropertyAttribute" AttributeNamespace="FS.ED.Attributes.ExtraProperty" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
@@ -564,6 +552,13 @@
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="NavigationAttribute" AttributeNamespace="FS.ED.Attributes.Navigation" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="RelationClassNameStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="EntityDeleteBehaviorStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
         <AttributeType Name="EntityAttribute" AttributeNamespace="FS.ED.Attributes.Entities" AttributeAllowMultiple="False" AttributeValidOn="All">
