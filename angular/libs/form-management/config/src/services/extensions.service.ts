@@ -11,7 +11,25 @@ export class ActionItem<T> {
 })
 export class ExtensionsService {
   public Actions$ = {
-    [eFormmanagementRouteNames.Form_management]: new Subject<
+    [eFormmanagementRouteNames.DocumentDefinition]: new Subject<
+      ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
+    >(),
+    [eFormmanagementRouteNames.Formal]: new Subject<
+      ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
+    >(),
+    [eFormmanagementRouteNames.Group]: new Subject<
+      ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
+    >(),
+    [eFormmanagementRouteNames.Item]: new Subject<
+      ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
+    >(),
+    [eFormmanagementRouteNames.Record]: new Subject<
+      ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
+    >(),
+    [eFormmanagementRouteNames.RecordItem]: new Subject<
+      ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
+    >(),
+    [eFormmanagementRouteNames.Version]: new Subject<
       ActionItem<Fs.Theme.Banners.Dtos.BannerDto>
     >(),
   };
