@@ -2,12 +2,18 @@ import type { EntityDto, FullAuditedEntityDto, PagedResultRequestDto } from '@ab
 import type { DisplayMode } from '../display-mode.enum';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
 
+export interface AttachmentFileInfoDto {
+  fileId?: string;
+  name?: string;
+}
+
 export interface GetPostByBlogIdInput extends PagedResultRequestDto {
   blogId?: string;
   keyword?: string;
 }
 
 export interface MetaData {
+  attachmentFileInfoDto: AttachmentFileInfoDto;
   postPrimaryKeyDto: PostPrimaryKeyDto;
   postDto: PostDto;
   postCreateDto: PostCreateDto;
@@ -34,7 +40,7 @@ export interface PostCreateDto {
   endTime?: string;
   displayMode: DisplayMode;
   sequence: number;
-  attachmentFileUrls: string[];
+  attachmentFileInfos: AttachmentFileInfoDto[];
   postImages: PostImageDto[];
 }
 
@@ -49,7 +55,7 @@ export interface PostDto extends FullAuditedEntityDto<string> {
   endTime?: string;
   displayMode: DisplayMode;
   sequence: number;
-  attachmentFileUrls: string[];
+  attachmentFileInfos: AttachmentFileInfoDto[];
   postImages: PostImageDto[];
 }
 
@@ -57,8 +63,9 @@ export interface PostGetListDto extends SearchResultRequestDto {
 }
 
 export interface PostImageDto {
-  url?: string;
+  imageId?: string;
   isCover: boolean;
+  name?: string;
 }
 
 export interface PostPrimaryKeyDto extends EntityDto<string> {
@@ -99,7 +106,7 @@ export interface PostUpdateDto {
   endTime?: string;
   displayMode: DisplayMode;
   sequence: number;
-  attachmentFileUrls: string[];
+  attachmentFileInfos: AttachmentFileInfoDto[];
   postImages: PostImageDto[];
 }
 

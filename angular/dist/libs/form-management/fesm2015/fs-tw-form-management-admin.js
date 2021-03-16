@@ -1,13 +1,18 @@
 import { CoreModule } from '@abp/ng.core';
-import { NgModule } from '@angular/core';
+import { ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, ɵsetClassMetadata, NgModule } from '@angular/core';
 
 class FormmanagementAdminModule {
 }
-FormmanagementAdminModule.decorators = [
-    { type: NgModule, args: [{
+FormmanagementAdminModule.ɵfac = function FormmanagementAdminModule_Factory(t) { return new (t || FormmanagementAdminModule)(); };
+FormmanagementAdminModule.ɵmod = ɵɵdefineNgModule({ type: FormmanagementAdminModule });
+FormmanagementAdminModule.ɵinj = ɵɵdefineInjector({ imports: [[CoreModule]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(FormmanagementAdminModule, { imports: [CoreModule] }); })();
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(FormmanagementAdminModule, [{
+        type: NgModule,
+        args: [{
                 imports: [CoreModule],
-            },] }
-];
+            }]
+    }], null, null); })();
 
 /**
  * Generated bundle index. Do not edit.

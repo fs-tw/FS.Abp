@@ -1,3 +1,3 @@
 import * as Abp from './abp';
-import * as Theme from './theme';
-export { Abp, Theme };
+import * as FormManagement from './form-management';
+export { Abp, FormManagement };
