@@ -1,10 +1,10 @@
 import { EntityAction } from '@abp/ng.theme.shared/extensions';
-import {} from '@fs-tw/form-management/proxy';
+import {Fs} from '@fs-tw/form-management/proxy';
 import { ExtensionsService } from '../../services/extensions.service';
 import { eFormmanagementRouteNames } from '../../enums/route-names';
 
 export const DEFAULT_DOCUMENTDEFINITION_ENTITY_ACTIONS = EntityAction.createMany<
-  Fs.Theme.Banners.Dtos.BannerDto
+Fs.FormManagement.Documents.Dtos.DocumentDefinitionDto
 >([
   {
     text: 'AbpIdentity::Edit',

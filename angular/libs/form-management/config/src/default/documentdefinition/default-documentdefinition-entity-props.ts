@@ -1,8 +1,8 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
-import {} from '@fs-tw/form-management/proxy';
+import {Fs} from '@fs-tw/form-management/proxy';
 import { of } from 'rxjs';
 
-export const DEFAULT_DOCUMENTDEFINITION_ENTITY_PROPS = EntityProp.createMany<Fs.Theme.Banners.Dtos.BannerDto>([
+export const DEFAULT_DOCUMENTDEFINITION_ENTITY_PROPS = EntityProp.createMany<Fs.FormManagement.Documents.Dtos.DocumentDefinitionDto>([
 
       {
         type: ePropType.String,

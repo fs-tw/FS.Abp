@@ -1,7 +1,7 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
-import {} from '@fs-tw/form-management/proxy';
+import {Fs} from '@fs-tw/form-management/proxy';
 
-export const DEFAULT_DOCUMENTDEFINITION_CREATE_FORM_PROPS = FormProp.createMany<Fs.Theme.Banners.Dtos.BannerDto>([
+export const DEFAULT_DOCUMENTDEFINITION_CREATE_FORM_PROPS = FormProp.createMany<Fs.FormManagement.Documents.Dtos.DocumentDefinitionDto>([
   
    {
     type: ePropType.String,
