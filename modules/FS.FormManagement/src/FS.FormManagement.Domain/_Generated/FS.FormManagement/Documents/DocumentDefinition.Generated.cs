@@ -30,6 +30,12 @@ namespace FS.FormManagement.Documents
             OnCreated();
         }
 
+        public DocumentDefinition(System.Guid id, System.Guid? tenantId) : this()
+        {
+            this.Id = id;
+            this.TenantId = tenantId;
+        }
+
         public virtual string No
         {
             get;

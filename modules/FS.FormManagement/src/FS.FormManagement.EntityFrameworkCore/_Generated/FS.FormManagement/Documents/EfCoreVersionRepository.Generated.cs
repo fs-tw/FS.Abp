@@ -22,9 +22,5 @@ namespace FS.FormManagement.Documents
     {
         public EfCoreVersionRepository(IDbContextProvider<FS.FormManagement.EntityFrameworkCore.IFormManagementDbContext> dbContextProvider)
             : base(dbContextProvider) { }
-        public override async Task<IQueryable<FS.FormManagement.Documents.Version>> WithDetailsAsync()
-        {
-            return (await GetQueryableAsync()).IncludeDetails();
-        }
     }
 }

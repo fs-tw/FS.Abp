@@ -71,7 +71,5 @@ namespace FS.FormManagement.Documents.Dtos
 
     public partial class VersionWithDetailsDto : VersionDto
     {
-        public DocumentDefinitionDto DocumentDefinition { get; set; }
-
     }
 }

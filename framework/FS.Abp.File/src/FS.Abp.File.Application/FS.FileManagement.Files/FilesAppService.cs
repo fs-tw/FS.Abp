@@ -16,10 +16,13 @@ using Volo.FileManagement.Files;
 
 namespace FS.FileManagement.Files
 {
-    [Authorize(null)]
+    //[Authorize(null)]
     //[Dependency(ReplaceServices =true)]
     //[ExposeServices(typeof(IFileDescriptorAppService))]
+    
+    [Authorize(policy: null)]
     public class FileDescriptorAppService :
+        //Volo.Abp.Application.Services.ApplicationService,
         Volo.FileManagement.Files.FileDescriptorAppService,
         Volo.FileManagement.Files.IFileDescriptorAppService
     {
@@ -30,6 +33,53 @@ namespace FS.FileManagement.Files
             : base(fileManager, fileDescriptorRepository, blobContainer)
         {
         }
+        public override Task<FileDescriptorDto> GetAsync(Guid id)
+        {
+            return base.GetAsync(id);
+        }
+        //public Task<FileDescriptorDto> CreateAsync(CreateFileInput input)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
+        //public Task DeleteAsync(Guid id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<RemoteStreamContent> DownloadAsync(Guid id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<FileDescriptorDto> GetAsync(Guid id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<byte[]> GetContentAsync(Guid id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<ListResultDto<FileDescriptorDto>> GetListAsync(Guid? directoryId)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<List<FileUploadPreInfoDto>> GetPreInfoAsync(List<FileUploadPreInfoRequest> input)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<FileDescriptorDto> MoveAsync(MoveFileInput input)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Task<FileDescriptorDto> RenameAsync(Guid id, RenameFileInput input)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

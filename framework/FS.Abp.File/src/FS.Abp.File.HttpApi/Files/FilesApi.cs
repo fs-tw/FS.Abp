@@ -14,11 +14,11 @@ namespace FS.Abp.File.Files
 {
 
     [RemoteService]
-    [Route("api/file-management/file-descriptor")]
-    [ControllerName("FileDescriptors")]
+    [Route("api/file/files")]
+    [Area("file")]
+    [ControllerName("FS.Abp.File.Files(file)")]
     public class FilesApi : FileController
     {
-
         protected IFileDescriptorAppService FileDescriptorAppService;
 
         public FilesApi(IFileDescriptorAppService fileDescriptorAppService)
