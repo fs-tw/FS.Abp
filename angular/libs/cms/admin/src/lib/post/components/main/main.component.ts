@@ -13,7 +13,6 @@ import { PostStateService } from '../../providers/post-state.service';
 
 
 @Component({
-  selector: 'fs-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less'],
   providers: [
@@ -47,7 +46,6 @@ export class MainComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private pageService: PageService,
     public readonly list: ListService,
-    private activatedRoute: ActivatedRoute,
     private postStateService: PostStateService
   ) {
 

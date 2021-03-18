@@ -111,7 +111,7 @@ class ExtensionsService {
         this.Actions$ = {
             ["Cms::FS.Cms.Blogs" /* Blog */]: new Subject(),
             ["Cms::FS.Cms.PostManagement" /* Post */]: new Subject(),
-            ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: new Subject(),
+            ["Cms::FS.Tag.Management" /* Tag */]: new Subject(),
         };
     }
     action(type, data) {
@@ -462,13 +462,13 @@ const DEFAULT_TAG_ENTITY_PROPS = EntityProp.createMany([
 
 const ɵ0$7 = (data) => {
     const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+    service.action("Cms::FS.Tag.Management" /* Tag */, {
         name: 'Edit',
         record: data.record,
     });
 }, ɵ1$3 = (data) => {
     const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+    service.action("Cms::FS.Tag.Management" /* Tag */, {
         name: 'Delete',
         record: data.record,
     });
@@ -486,7 +486,7 @@ const DEFAULT_TAG_ENTITY_ACTIONS = EntityAction.createMany([
 
 const ɵ0$8 = data => {
     const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+    service.action("Cms::FS.Tag.Management" /* Tag */, {
         name: 'Add'
     });
     //const component = data.getInjected(UsersComponent);
@@ -518,27 +518,27 @@ function configure(injector) {
             mergeWithDefaultActions(extensions.toolbarActions, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_TOOLBAR_ACTIONS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_TOOLBAR_ACTIONS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_TOOLBAR_ACTIONS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_TOOLBAR_ACTIONS,
             });
             mergeWithDefaultActions(extensions.entityActions, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_ENTITY_ACTIONS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_ENTITY_ACTIONS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_ENTITY_ACTIONS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_ENTITY_ACTIONS,
             });
             mergeWithDefaultProps(extensions.entityProps, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_ENTITY_PROPS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_ENTITY_PROPS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_ENTITY_PROPS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_ENTITY_PROPS,
             });
             mergeWithDefaultProps(extensions.createFormProps, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_CREATE_FORM_PROPS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_CREATE_FORM_PROPS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_CREATE_FORM_PROPS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_CREATE_FORM_PROPS,
             });
             mergeWithDefaultProps(extensions.editFormProps, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_EDIT_FORM_PROPS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_EDIT_FORM_PROPS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_EDIT_FORM_PROPS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_EDIT_FORM_PROPS,
             });
         }), mapTo(true))
             .toPromise();
@@ -571,7 +571,7 @@ function configureRoutes(routes) {
             iconClass: 'fa fa-bookmark',
             layout: "application" /* application */,
             order: 2,
-            // requiredPolicy: 'FS.Cms.Menu.前台內容管理',
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             navConfig: {
                 name: "Cms::FS.Cms.Core" /* Cms */,
                 title: "Cms::FS.Cms.Core" /* Cms */,
@@ -592,7 +592,7 @@ function configureRoutes(routes) {
             path: '/cms/post',
             name: "Cms::FS.Cms.PostManagement" /* Post */,
             parentName: "Cms::FS.Cms.Basic" /* Basic */,
-            // requiredPolicy: 'FS.Cms.Menu.前台內容管理.最新消息管理',
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             iconClass: 'fa fa-university',
             order: 1,
         },
@@ -600,13 +600,31 @@ function configureRoutes(routes) {
             path: '/cms/post/detail',
             name: "Cms::FS.Cms.PostDetail" /* Post_Detail */,
             parentName: "Cms::FS.Cms.PostManagement" /* Post */,
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             iconClass: 'fa fa-university',
             order: 1
         },
         {
             path: '/cms/post/detail/:postId',
             name: "Cms::FS.Cms.PostDetail.Id" /* Post_Detail_Id */,
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             parentName: "Cms::FS.Cms.PostManagement" /* Post */,
+            iconClass: 'fa fa-university',
+            order: 1
+        },
+        {
+            path: '/cms/tag',
+            name: "Cms::FS.Tag.Management" /* Tag */,
+            parentName: "Cms::FS.Cms.Basic" /* Basic */,
+            iconClass: 'fa fa-university',
+            requiredPolicy: "FS.Cms.Tags.Tag" /* TagManagement */,
+            order: 1,
+        },
+        {
+            path: '/cms/tag/:tagId',
+            name: "FS.Tag.Management.Detail" /* Tag_detail */,
+            parentName: "Cms::FS.Tag.Management" /* Tag */,
+            requiredPolicy: "FS.Cms.Tags.Tag" /* TagManagement */,
             iconClass: 'fa fa-university',
             order: 1
         },

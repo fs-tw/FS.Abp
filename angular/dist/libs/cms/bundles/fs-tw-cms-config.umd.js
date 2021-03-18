@@ -113,7 +113,7 @@
             this.Actions$ = (_a = {},
                 _a["Cms::FS.Cms.Blogs" /* Blog */] = new rxjs.Subject(),
                 _a["Cms::FS.Cms.PostManagement" /* Post */] = new rxjs.Subject(),
-                _a["\u6A19\u7C64\u7DAD\u8B77" /* Tag */] = new rxjs.Subject(),
+                _a["Cms::FS.Tag.Management" /* Tag */] = new rxjs.Subject(),
                 _a);
         }
         ExtensionsService.prototype.action = function (type, data) {
@@ -465,13 +465,13 @@
 
     var ɵ0$7 = function (data) {
         var service = data.getInjected(ExtensionsService);
-        service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+        service.action("Cms::FS.Tag.Management" /* Tag */, {
             name: 'Edit',
             record: data.record,
         });
     }, ɵ1$3 = function (data) {
         var service = data.getInjected(ExtensionsService);
-        service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+        service.action("Cms::FS.Tag.Management" /* Tag */, {
             name: 'Delete',
             record: data.record,
         });
@@ -489,7 +489,7 @@
 
     var ɵ0$8 = function (data) {
         var service = data.getInjected(ExtensionsService);
-        service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+        service.action("Cms::FS.Tag.Management" /* Tag */, {
             name: 'Add'
         });
         //const component = data.getInjected(UsersComponent);
@@ -522,27 +522,27 @@
                 extensions.mergeWithDefaultActions(extensions$1.toolbarActions, (_a = {},
                     _a["Cms::FS.Cms.Blogs" /* Blog */] = DEFAULT_BLOG_TOOLBAR_ACTIONS,
                     _a["Cms::FS.Cms.PostManagement" /* Post */] = DEFAULT_POST_TOOLBAR_ACTIONS,
-                    _a["\u6A19\u7C64\u7DAD\u8B77" /* Tag */] = DEFAULT_TAG_TOOLBAR_ACTIONS,
+                    _a["Cms::FS.Tag.Management" /* Tag */] = DEFAULT_TAG_TOOLBAR_ACTIONS,
                     _a));
                 extensions.mergeWithDefaultActions(extensions$1.entityActions, (_b = {},
                     _b["Cms::FS.Cms.Blogs" /* Blog */] = DEFAULT_BLOG_ENTITY_ACTIONS,
                     _b["Cms::FS.Cms.PostManagement" /* Post */] = DEFAULT_POST_ENTITY_ACTIONS,
-                    _b["\u6A19\u7C64\u7DAD\u8B77" /* Tag */] = DEFAULT_TAG_ENTITY_ACTIONS,
+                    _b["Cms::FS.Tag.Management" /* Tag */] = DEFAULT_TAG_ENTITY_ACTIONS,
                     _b));
                 extensions.mergeWithDefaultProps(extensions$1.entityProps, (_c = {},
                     _c["Cms::FS.Cms.Blogs" /* Blog */] = DEFAULT_BLOG_ENTITY_PROPS,
                     _c["Cms::FS.Cms.PostManagement" /* Post */] = DEFAULT_POST_ENTITY_PROPS,
-                    _c["\u6A19\u7C64\u7DAD\u8B77" /* Tag */] = DEFAULT_TAG_ENTITY_PROPS,
+                    _c["Cms::FS.Tag.Management" /* Tag */] = DEFAULT_TAG_ENTITY_PROPS,
                     _c));
                 extensions.mergeWithDefaultProps(extensions$1.createFormProps, (_d = {},
                     _d["Cms::FS.Cms.Blogs" /* Blog */] = DEFAULT_BLOG_CREATE_FORM_PROPS,
                     _d["Cms::FS.Cms.PostManagement" /* Post */] = DEFAULT_POST_CREATE_FORM_PROPS,
-                    _d["\u6A19\u7C64\u7DAD\u8B77" /* Tag */] = DEFAULT_TAG_CREATE_FORM_PROPS,
+                    _d["Cms::FS.Tag.Management" /* Tag */] = DEFAULT_TAG_CREATE_FORM_PROPS,
                     _d));
                 extensions.mergeWithDefaultProps(extensions$1.editFormProps, (_e = {},
                     _e["Cms::FS.Cms.Blogs" /* Blog */] = DEFAULT_BLOG_EDIT_FORM_PROPS,
                     _e["Cms::FS.Cms.PostManagement" /* Post */] = DEFAULT_POST_EDIT_FORM_PROPS,
-                    _e["\u6A19\u7C64\u7DAD\u8B77" /* Tag */] = DEFAULT_TAG_EDIT_FORM_PROPS,
+                    _e["Cms::FS.Tag.Management" /* Tag */] = DEFAULT_TAG_EDIT_FORM_PROPS,
                     _e));
             }), operators.mapTo(true))
                 .toPromise();
@@ -884,7 +884,7 @@
                 iconClass: 'fa fa-bookmark',
                 layout: "application" /* application */,
                 order: 2,
-                // requiredPolicy: 'FS.Cms.Menu.前台內容管理',
+                requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
                 navConfig: {
                     name: "Cms::FS.Cms.Core" /* Cms */,
                     title: "Cms::FS.Cms.Core" /* Cms */,
@@ -905,7 +905,7 @@
                 path: '/cms/post',
                 name: "Cms::FS.Cms.PostManagement" /* Post */,
                 parentName: "Cms::FS.Cms.Basic" /* Basic */,
-                // requiredPolicy: 'FS.Cms.Menu.前台內容管理.最新消息管理',
+                requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
                 iconClass: 'fa fa-university',
                 order: 1,
             },
@@ -913,13 +913,31 @@
                 path: '/cms/post/detail',
                 name: "Cms::FS.Cms.PostDetail" /* Post_Detail */,
                 parentName: "Cms::FS.Cms.PostManagement" /* Post */,
+                requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
                 iconClass: 'fa fa-university',
                 order: 1
             },
             {
                 path: '/cms/post/detail/:postId',
                 name: "Cms::FS.Cms.PostDetail.Id" /* Post_Detail_Id */,
+                requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
                 parentName: "Cms::FS.Cms.PostManagement" /* Post */,
+                iconClass: 'fa fa-university',
+                order: 1
+            },
+            {
+                path: '/cms/tag',
+                name: "Cms::FS.Tag.Management" /* Tag */,
+                parentName: "Cms::FS.Cms.Basic" /* Basic */,
+                iconClass: 'fa fa-university',
+                requiredPolicy: "FS.Cms.Tags.Tag" /* TagManagement */,
+                order: 1,
+            },
+            {
+                path: '/cms/tag/:tagId',
+                name: "FS.Tag.Management.Detail" /* Tag_detail */,
+                parentName: "Cms::FS.Tag.Management" /* Tag */,
+                requiredPolicy: "FS.Cms.Tags.Tag" /* TagManagement */,
                 iconClass: 'fa fa-university',
                 order: 1
             },

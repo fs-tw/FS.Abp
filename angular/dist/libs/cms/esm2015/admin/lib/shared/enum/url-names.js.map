@@ -1,0 +1,1 @@
+{"version":3,"file":"url-names.js","sourceRoot":"","sources":["../../../../../../../../libs/cms/admin/src/lib/shared/enum/url-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eCmsUrlNames {\r\n    //TODO:if api change  this will broke;\r\n    FileContentPath = '/api/file/files/file-content'\r\n    \r\n  }\r\n  "]}

@@ -1,28 +1,27 @@
 import { Component, Injector, OnInit, ViewChild,OnDestroy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable, Subscriber, Subscription } from 'rxjs';
+
+import { ListService } from '@abp/ng.core';
+import {EXTENSIONS_IDENTIFIER,FormPropData,generateFormFromProps} from '@abp/ng.theme.shared/extensions';
+import {Confirmation,ConfirmationService,ToasterService,} from '@abp/ng.theme.shared';
+
 import { FileService } from '../../../../shared'
-import { Fs } from '@fs-tw/cms/proxy';
 import { PageService } from '../../../providers/page.service';
 import { PostStateService } from '../../../providers/post-state.service';
-import { ListService } from '@abp/ng.core';
-import {
-  EXTENSIONS_IDENTIFIER,
-  FormPropData,
-  generateFormFromProps,
-} from '@abp/ng.theme.shared/extensions';
+
 import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
-import { FormGroup } from '@angular/forms';
+import { Fs } from '@fs-tw/cms/proxy';
+
 import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
-import { Observable, Subscriber, Subscription } from 'rxjs';
-import {
-  Confirmation,
-  ConfirmationService,
-  ToasterService,
-} from '@abp/ng.theme.shared';
-import { Router, ActivatedRoute } from '@angular/router';
+
+
+
 @Component({
-  selector: 'fs-list',
+  selector:'cms-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  styleUrls: ['./list.component.less'],
   providers: [
     ListService,
     {
@@ -93,7 +92,6 @@ export class ListComponent implements OnInit,OnDestroy {
   }
 
   reload() {
-
     let input: Fs.Cms.Blogs.Dtos.BlogGetListDto = {
       skipCount: 0,
       maxResultCount: 10,

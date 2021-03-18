@@ -8,7 +8,7 @@ export class ExtensionsService {
         this.Actions$ = {
             ["Cms::FS.Cms.Blogs" /* Blog */]: new Subject(),
             ["Cms::FS.Cms.PostManagement" /* Post */]: new Subject(),
-            ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: new Subject(),
+            ["Cms::FS.Tag.Management" /* Tag */]: new Subject(),
         };
     }
     action(type, data) {

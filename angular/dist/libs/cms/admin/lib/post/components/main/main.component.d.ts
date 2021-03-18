@@ -1,7 +1,7 @@
 import { ListService } from '@abp/ng.core';
 import { ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
 import { OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ExtensionsService } from '@fs-tw/cms/config';
 import { Fs } from '@fs-tw/cms/proxy';
 import { Observable, Subscription } from 'rxjs';
@@ -14,7 +14,6 @@ export declare class MainComponent implements OnInit {
     private confirmationService;
     private pageService;
     readonly list: ListService;
-    private activatedRoute;
     private postStateService;
     sub: Subscription;
     blog$: Observable<Fs.Cms.Blogs.Dtos.BlogDto>;
@@ -24,7 +23,7 @@ export declare class MainComponent implements OnInit {
     postParams: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput;
     posts: Fs.Cms.Posts.Dtos.PostWithDetailsDto[];
     totalCount: number;
-    constructor(extensionsService: ExtensionsService, router: Router, toasterService: ToasterService, confirmationService: ConfirmationService, pageService: PageService, list: ListService, activatedRoute: ActivatedRoute, postStateService: PostStateService);
+    constructor(extensionsService: ExtensionsService, router: Router, toasterService: ToasterService, confirmationService: ConfirmationService, pageService: PageService, list: ListService, postStateService: PostStateService);
     ngOnInit(): void;
     onBlogChange(): void;
     gotoDetail(id?: string): void;

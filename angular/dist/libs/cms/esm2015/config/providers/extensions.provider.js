@@ -34,27 +34,27 @@ function configure(injector) {
             mergeWithDefaultActions(extensions.toolbarActions, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_TOOLBAR_ACTIONS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_TOOLBAR_ACTIONS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_TOOLBAR_ACTIONS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_TOOLBAR_ACTIONS,
             });
             mergeWithDefaultActions(extensions.entityActions, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_ENTITY_ACTIONS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_ENTITY_ACTIONS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_ENTITY_ACTIONS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_ENTITY_ACTIONS,
             });
             mergeWithDefaultProps(extensions.entityProps, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_ENTITY_PROPS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_ENTITY_PROPS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_ENTITY_PROPS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_ENTITY_PROPS,
             });
             mergeWithDefaultProps(extensions.createFormProps, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_CREATE_FORM_PROPS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_CREATE_FORM_PROPS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_CREATE_FORM_PROPS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_CREATE_FORM_PROPS,
             });
             mergeWithDefaultProps(extensions.editFormProps, {
                 ["Cms::FS.Cms.Blogs" /* Blog */]: DEFAULT_BLOG_EDIT_FORM_PROPS,
                 ["Cms::FS.Cms.PostManagement" /* Post */]: DEFAULT_POST_EDIT_FORM_PROPS,
-                ["\u6A19\u7C64\u7DAD\u8B77" /* Tag */]: DEFAULT_TAG_EDIT_FORM_PROPS,
+                ["Cms::FS.Tag.Management" /* Tag */]: DEFAULT_TAG_EDIT_FORM_PROPS,
             });
         }), mapTo(true))
             .toPromise();

@@ -18,5 +18,4 @@ PostStateService.decorators = [
                 providedIn: 'root',
             },] }
 ];
-PostStateService.ctorParameters = () => [];
 //# sourceMappingURL=post-state.service.js.map

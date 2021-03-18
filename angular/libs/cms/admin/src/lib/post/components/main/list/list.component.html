@@ -11,18 +11,11 @@
   </nz-extensible-table>
 
 </div>
-
-
-
-
-
-
-
 <nz-modal [(nzVisible)]="isVisible" nzTitle="blog" (nzOnCancel)="handleCancel()" [nzFooter]="footer">
   <form [formGroup]="form" *ngIf="form" (ngSubmit)="save()" validateOnSubmit>
     <abp-extensible-form *ngIf="form" [selectedRecord]="selected"></abp-extensible-form>
     <div class="form-group">
-      <label for="exampleInputEmail1">圖示</label>
+      <label for="exampleInputEmail1">{{'Cms::FS.Message:Image'|abpLocalization}}</label>
       <image-picker #DefaultImagePicker [existFiles]="defaultImages" [maxImageCount]="1" imageWidth="40px"
         imageHeight="30px" borderWidth="80px" borderHeight="60px"></image-picker>
     </div>

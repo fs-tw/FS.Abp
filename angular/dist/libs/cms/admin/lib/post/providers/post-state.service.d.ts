@@ -8,6 +8,5 @@ export declare namespace Post {
 export declare class PostStateService {
     private store;
     getBlog(): Observable<Fs.Cms.Blogs.Dtos.BlogDto>;
-    constructor();
     setBlog(blog: Fs.Cms.Blogs.Dtos.BlogDto): void;
 }

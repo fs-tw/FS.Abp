@@ -10,10 +10,10 @@ export class FileService {
     getFileUrl(id) {
         if (!id)
             return "";
-        return this.environmentService.getApiUrl() + "/api/file/files/file-content?id=" + id;
+        return this.environmentService.getApiUrl() + `${"/api/file/files/file-content" /* FileContentPath */}?id=${id}`;
     }
     uploadFile(file, directoryId) {
-        const formData = new FormData();
+        let formData = new FormData();
         formData.append("relativePath", null);
         formData.append("file", file);
         formData.append("name", file.name);
@@ -28,7 +28,7 @@ export class FileService {
     getFileBlobById(id) {
         return this.restService.request({
             method: 'GET',
-            url: `/api/file/files/file-content`,
+            url: `${"/api/file/files/file-content" /* FileContentPath */}`,
             params: { id },
             responseType: 'blob'
         });

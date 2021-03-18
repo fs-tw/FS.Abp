@@ -26,7 +26,7 @@ export function configureRoutes(routes) {
             iconClass: 'fa fa-bookmark',
             layout: "application" /* application */,
             order: 2,
-            // requiredPolicy: 'FS.Cms.Menu.前台內容管理',
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             navConfig: {
                 name: "Cms::FS.Cms.Core" /* Cms */,
                 title: "Cms::FS.Cms.Core" /* Cms */,
@@ -47,7 +47,7 @@ export function configureRoutes(routes) {
             path: '/cms/post',
             name: "Cms::FS.Cms.PostManagement" /* Post */,
             parentName: "Cms::FS.Cms.Basic" /* Basic */,
-            // requiredPolicy: 'FS.Cms.Menu.前台內容管理.最新消息管理',
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             iconClass: 'fa fa-university',
             order: 1,
         },
@@ -55,13 +55,31 @@ export function configureRoutes(routes) {
             path: '/cms/post/detail',
             name: "Cms::FS.Cms.PostDetail" /* Post_Detail */,
             parentName: "Cms::FS.Cms.PostManagement" /* Post */,
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             iconClass: 'fa fa-university',
             order: 1
         },
         {
             path: '/cms/post/detail/:postId',
             name: "Cms::FS.Cms.PostDetail.Id" /* Post_Detail_Id */,
+            requiredPolicy: "FS.Cms.Posts.Post" /* PostManagement */,
             parentName: "Cms::FS.Cms.PostManagement" /* Post */,
+            iconClass: 'fa fa-university',
+            order: 1
+        },
+        {
+            path: '/cms/tag',
+            name: "Cms::FS.Tag.Management" /* Tag */,
+            parentName: "Cms::FS.Cms.Basic" /* Basic */,
+            iconClass: 'fa fa-university',
+            requiredPolicy: "FS.Cms.Tags.Tag" /* TagManagement */,
+            order: 1,
+        },
+        {
+            path: '/cms/tag/:tagId',
+            name: "FS.Tag.Management.Detail" /* Tag_detail */,
+            parentName: "Cms::FS.Tag.Management" /* Tag */,
+            requiredPolicy: "FS.Cms.Tags.Tag" /* TagManagement */,
             iconClass: 'fa fa-university',
             order: 1
         },

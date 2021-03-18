@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { EnvironmentService } from '@abp/ng.core'
+import { EnvironmentService } from '@abp/ng.core';
+import {eCmsUrlNames} from '../enum/url-names';
 
 
 @Pipe({
@@ -11,8 +12,9 @@ export class GetFileByIdPipe implements PipeTransform {
         private environmentService: EnvironmentService,
     ) { }
 
+    //TODO:if api route  this will broke;
     transform(value: string): any {
-        return this.environmentService.getApiUrl() + "/api/file-management/file-descriptor/file-content?id=" + value
+        return this.environmentService.getApiUrl() +`${eCmsUrlNames.FileContentPath}?id=${value}`;
     }
 
 }

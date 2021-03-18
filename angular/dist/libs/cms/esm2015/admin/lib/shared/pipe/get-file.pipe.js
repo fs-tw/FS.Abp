@@ -4,8 +4,9 @@ export class GetFileByIdPipe {
     constructor(environmentService) {
         this.environmentService = environmentService;
     }
+    //TODO:if api route  this will broke;
     transform(value) {
-        return this.environmentService.getApiUrl() + "/api/file-management/file-descriptor/file-content?id=" + value;
+        return this.environmentService.getApiUrl() + `${"/api/file/files/file-content" /* FileContentPath */}?id=${value}`;
     }
 }
 GetFileByIdPipe.decorators = [

@@ -1,1 +1,1 @@
-{"version":3,"file":"policy-names.js","sourceRoot":"","sources":["../../../../../../libs/cms/config/src/enums/policy-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eCmsPolicyNames {\r\n  //DirectoryDescriptor = 'Cms.DirectoryDescriptor',\r\n}\r\n"]}
+{"version":3,"file":"policy-names.js","sourceRoot":"","sources":["../../../../../../libs/cms/config/src/enums/policy-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eCmsPolicyNames {\r\n  PostManagement = 'FS.Cms.Posts.Post',\r\n  TagManagement = 'FS.Cms.Tags.Tag'\r\n}\r\n"]}

@@ -2,7 +2,7 @@ import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
 import { ExtensionsService } from '../../services/extensions.service';
 const ɵ0 = data => {
     const service = data.getInjected(ExtensionsService);
-    service.action("\u6A19\u7C64\u7DAD\u8B77" /* Tag */, {
+    service.action("Cms::FS.Tag.Management" /* Tag */, {
         name: 'Add'
     });
     //const component = data.getInjected(UsersComponent);
