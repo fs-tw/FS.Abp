@@ -3,6 +3,7 @@ import { APP_INITIALIZER } from '@angular/core';
 import { eThemeSharedRouteNames } from '@abp/ng.theme.shared';
 import { eCmsRouteNames } from '../enums/route-names';
 import { eCmsPolicyNames } from '../enums/policy-names';
+import { eCmsComponentNames } from '../enums';
 
 export const CMS_ROUTE_PROVIDERS = [
   {
@@ -32,7 +33,7 @@ export function configureRoutes(routes: RoutesService) {
       iconClass: 'fa fa-bookmark',
       layout: eLayoutType.application,  
       order: 2,
-      // requiredPolicy: 'FS.Cms.Menu.前台內容管理',
+      requiredPolicy: eCmsPolicyNames.PostManagement,
       navConfig:{
         name: eCmsRouteNames.Cms,
         title: eCmsRouteNames.Cms,
@@ -54,7 +55,7 @@ export function configureRoutes(routes: RoutesService) {
       path: '/cms/post',
       name: eCmsRouteNames.Post,
       parentName: eCmsRouteNames.Basic,
-      // requiredPolicy: 'FS.Cms.Menu.前台內容管理.最新消息管理',
+      requiredPolicy: eCmsPolicyNames.PostManagement,
       iconClass: 'fa fa-university',
       order: 1,
     },
@@ -62,30 +63,34 @@ export function configureRoutes(routes: RoutesService) {
       path: '/cms/post/detail',
       name: eCmsRouteNames.Post_Detail,
       parentName: eCmsRouteNames.Post,
+      requiredPolicy: eCmsPolicyNames.PostManagement,
       iconClass: 'fa fa-university',
       order: 1
     },
     {
       path: '/cms/post/detail/:postId',
       name: eCmsRouteNames.Post_Detail_Id,
+      requiredPolicy: eCmsPolicyNames.PostManagement,
       parentName: eCmsRouteNames.Post,
       iconClass: 'fa fa-university',
       order: 1
     },
-    // {
-    //   path: '/cms/tag',
-    //   name: eCmsRouteNames.Tag,
-    //   parentName: eCmsRouteNames.Basic,
-    //   iconClass: 'fa fa-university',
-    //   order: 1,
-    // },
-    // {
-    //   path: '/cms/tag/:tagId',
-    //   name: eCmsRouteNames.Tag_detail,
-    //   parentName: eCmsRouteNames.Tag,
-    //   iconClass: 'fa fa-university',
-    //   order: 1
-    // },
+    {
+      path: '/cms/tag',
+      name: eCmsRouteNames.Tag,
+      parentName: eCmsRouteNames.Basic,
+      iconClass: 'fa fa-university',
+      requiredPolicy: eCmsPolicyNames.TagManagement,
+      order: 1,
+    },
+    {
+      path: '/cms/tag/:tagId',
+      name: eCmsRouteNames.Tag_detail,
+      parentName: eCmsRouteNames.Tag,
+      requiredPolicy: eCmsPolicyNames.TagManagement,
+      iconClass: 'fa fa-university',
+      order: 1
+    },
 
 
 
