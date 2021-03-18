@@ -5,7 +5,12 @@
     "registry": "https://npm.pkg.github.com"
   },
   "repository": "https://github.com/fs-tw/FS.Works",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^11.2.0",
+    "@angular/router": "^11.2.0",
+    "rxjs": "~6.6.3",
+    "@angular/common": "^11.2.0"
+  },
   "dependencies": {
     "tslib": "^2.0.0"
   },
@@ -15,8 +20,6 @@
   "esm2015": "esm2015/fs-tw-form-management.js",
   "fesm2015": "fesm2015/fs-tw-form-management.js",
   "typings": "fs-tw-form-management.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
-  }
+  "metadata": "fs-tw-form-management.metadata.json",
+  "sideEffects": false
 }

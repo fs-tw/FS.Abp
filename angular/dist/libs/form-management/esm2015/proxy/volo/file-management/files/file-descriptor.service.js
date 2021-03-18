@@ -50,12 +50,13 @@ export class FileDescriptorService {
         }, { apiName: this.apiName });
     }
 }
-FileDescriptorService.ɵfac = function FileDescriptorService_Factory(t) { return new (t || FileDescriptorService)(i0.ɵɵinject(i1.RestService)); };
-FileDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ token: FileDescriptorService, factory: FileDescriptorService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FileDescriptorService, [{
-        type: Injectable,
-        args: [{
+FileDescriptorService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FileDescriptorService_Factory() { return new FileDescriptorService(i0.ɵɵinject(i1.RestService)); }, token: FileDescriptorService, providedIn: "root" });
+FileDescriptorService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+FileDescriptorService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=file-descriptor.service.js.map

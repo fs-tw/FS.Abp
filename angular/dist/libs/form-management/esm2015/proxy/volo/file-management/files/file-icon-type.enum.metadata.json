@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"FileIconType":{"FontAwesome":0,"Url":1},"fileIconTypeOptions":{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@abp/ng.core","name":"mapEnumToOptions","line":7,"character":35},"arguments":[{"__symbolic":"reference","name":"FileIconType"}]}}}]

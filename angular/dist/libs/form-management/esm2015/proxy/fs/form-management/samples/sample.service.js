@@ -16,12 +16,13 @@ export class SampleService {
         }, { apiName: this.apiName });
     }
 }
-SampleService.ɵfac = function SampleService_Factory(t) { return new (t || SampleService)(i0.ɵɵinject(i1.RestService)); };
-SampleService.ɵprov = i0.ɵɵdefineInjectable({ token: SampleService, factory: SampleService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SampleService, [{
-        type: Injectable,
-        args: [{
+SampleService.ɵprov = i0.ɵɵdefineInjectable({ factory: function SampleService_Factory() { return new SampleService(i0.ɵɵinject(i1.RestService)); }, token: SampleService, providedIn: "root" });
+SampleService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+SampleService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=sample.service.js.map

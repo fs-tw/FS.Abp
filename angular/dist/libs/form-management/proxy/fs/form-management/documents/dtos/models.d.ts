@@ -61,4 +61,3 @@ export interface VersionUpdateDto {
 export interface VersionWithDetailsDto extends VersionDto {
     documentDefinition: DocumentDefinitionDto;
 }
-//# sourceMappingURL=models.d.ts.map

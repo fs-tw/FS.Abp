@@ -52,4 +52,3 @@ export interface RecordUpdateDto {
 export interface RecordWithDetailsDto extends RecordDto {
     recordItems: RecordItemDto[];
 }
-//# sourceMappingURL=models.d.ts.map

@@ -22,12 +22,13 @@ export class RecordsApiService {
         }, { apiName: this.apiName });
     }
 }
-RecordsApiService.ɵfac = function RecordsApiService_Factory(t) { return new (t || RecordsApiService)(i0.ɵɵinject(i1.RestService)); };
-RecordsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: RecordsApiService, factory: RecordsApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(RecordsApiService, [{
-        type: Injectable,
-        args: [{
+RecordsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function RecordsApiService_Factory() { return new RecordsApiService(i0.ɵɵinject(i1.RestService)); }, token: RecordsApiService, providedIn: "root" });
+RecordsApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+RecordsApiService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=records-api.service.js.map

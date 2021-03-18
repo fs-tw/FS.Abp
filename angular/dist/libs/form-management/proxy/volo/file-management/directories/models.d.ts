@@ -33,4 +33,3 @@ export interface MoveDirectoryInput {
 export interface RenameDirectoryInput {
     name: string;
 }
-//# sourceMappingURL=models.d.ts.map

@@ -33,4 +33,3 @@ export interface MoveFileInput {
 export interface RenameFileInput {
     name: string;
 }
-//# sourceMappingURL=models.d.ts.map

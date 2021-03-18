@@ -1,1 +1,1 @@
-{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../libs/form-management/proxy/src/fs/form-management/samples/models.ts"],"names":[],"mappings":"","sourcesContent":["\nexport interface SampleDto {\n  value: number;\n}\n"]}
+{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../libs/form-management/proxy/src/fs/form-management/samples/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface SampleDto {\r\n  value: number;\r\n}\r\n"]}

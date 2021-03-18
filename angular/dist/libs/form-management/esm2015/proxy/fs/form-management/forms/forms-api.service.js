@@ -27,12 +27,13 @@ export class FormsApiService {
         }, { apiName: this.apiName });
     }
 }
-FormsApiService.ɵfac = function FormsApiService_Factory(t) { return new (t || FormsApiService)(i0.ɵɵinject(i1.RestService)); };
-FormsApiService.ɵprov = i0.ɵɵdefineInjectable({ token: FormsApiService, factory: FormsApiService.ɵfac, providedIn: 'root' });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FormsApiService, [{
-        type: Injectable,
-        args: [{
+FormsApiService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FormsApiService_Factory() { return new FormsApiService(i0.ɵɵinject(i1.RestService)); }, token: FormsApiService, providedIn: "root" });
+FormsApiService.decorators = [
+    { type: Injectable, args: [{
                 providedIn: 'root',
-            }]
-    }], function () { return [{ type: i1.RestService }]; }, null); })();
+            },] }
+];
+FormsApiService.ctorParameters = () => [
+    { type: RestService }
+];
 //# sourceMappingURL=forms-api.service.js.map

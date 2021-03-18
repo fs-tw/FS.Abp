@@ -98,4 +98,3 @@ export interface MetaData {
     itemGetListDto: ItemGetListDto;
     itemWithDetailsDto: ItemWithDetailsDto;
 }
-//# sourceMappingURL=models.d.ts.map
