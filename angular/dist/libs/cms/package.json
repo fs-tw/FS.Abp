@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/cms",
-  "version": "422.0.3",
+  "version": "0.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -11,7 +11,7 @@
     "rxjs": "~6.6.3",
     "@angular/forms": "^11.2.0",
     "@angular/common": "^11.2.0",
-    "@fs-tw/theme-alain-ms": "0.0.1",
+    "@fs-tw/theme-alain-ms": "422.0.3",
     "@fs-tw/account": "0.0.1",
     "@angular/animations": "^11.2.0"
   },

@@ -72,5 +72,4 @@ export interface VersionUpdateDto {
 }
 
 export interface VersionWithDetailsDto extends VersionDto {
-  documentDefinition: DocumentDefinitionDto;
 }

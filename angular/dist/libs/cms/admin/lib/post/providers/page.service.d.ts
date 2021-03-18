@@ -12,7 +12,7 @@ export declare class PageService {
     createBlog(input: Fs.Cms.Blogs.Dtos.BlogCreateDto): import("rxjs").Observable<Fs.Cms.Blogs.Dtos.BlogWithDetailsDto>;
     updateBlog(id: string, input: Fs.Cms.Blogs.Dtos.BlogUpdateDto): import("rxjs").Observable<Fs.Cms.Blogs.Dtos.BlogWithDetailsDto>;
     deleteBlog(id: string): import("rxjs").Observable<void>;
-    findByProviderByKeyAndGroup(key: string, group?: string): import("rxjs").Observable<any>;
+    findByProviderByKeyAndGroup(key: string, group?: string): import("rxjs").Observable<Fs.Abp.File.Directories.Dtos.DirectoryDescriptorDto>;
     deleteFile(id: string): import("rxjs").Observable<void>;
     getFileDescriptor(id: string): import("rxjs").Observable<Volo.FileManagement.Files.FileDescriptorDto>;
     getPostsByBlogId(input: Fs.Cms.Posts.Dtos.GetPostByBlogIdInput): import("rxjs").Observable<import("@abp/ng.core").PagedResultDto<Fs.Cms.Posts.Dtos.PostWithDetailsDto>>;

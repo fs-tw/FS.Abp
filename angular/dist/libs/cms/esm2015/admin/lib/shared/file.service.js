@@ -10,7 +10,7 @@ export class FileService {
     getFileUrl(id) {
         if (!id)
             return "";
-        return this.environmentService.getApiUrl() + "/api/file-management/file-descriptor/file-content?id=" + id;
+        return this.environmentService.getApiUrl() + "/api/file/files/file-content?id=" + id;
     }
     uploadFile(file, directoryId) {
         const formData = new FormData();
@@ -28,7 +28,7 @@ export class FileService {
     getFileBlobById(id) {
         return this.restService.request({
             method: 'GET',
-            url: `/api/file-management/file-descriptor/file-content`,
+            url: `/api/file/files/file-content`,
             params: { id },
             responseType: 'blob'
         });

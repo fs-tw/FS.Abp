@@ -21,7 +21,7 @@ export class FileService {
 
   getFileUrl(id) {
     if (!id) return "";
-    return this.environmentService.getApiUrl() + "/api/file-management/file-descriptor/file-content?id=" + id
+    return this.environmentService.getApiUrl() + "/api/file/files/file-content?id=" + id
   }
 
   uploadFile(file: File, directoryId: string) {    
@@ -42,7 +42,7 @@ export class FileService {
   getFileBlobById(id: string) {
     return this.restService.request<any, Blob>({
       method: 'GET',
-      url: `/api/file-management/file-descriptor/file-content`,
+      url: `/api/file/files/file-content`,
       params: { id },
       responseType: 'blob'
     });

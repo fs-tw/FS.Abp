@@ -145,13 +145,13 @@ ExtensionsService.decorators = [
 ];
 ExtensionsService.ctorParameters = () => [];
 
-const ɵ0$9 = (data) => {
+const ɵ0 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.Banner" /* Banner */, {
         name: 'Edit',
         record: data.record,
     });
-}, ɵ1$4 = (data) => {
+}, ɵ1 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.Banner" /* Banner */, {
         name: 'Delete',
@@ -161,15 +161,15 @@ const ɵ0$9 = (data) => {
 const DEFAULT_BANNER_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$9,
+        action: ɵ0,
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1$4,
+        action: ɵ1,
     },
 ]);
 
-const ɵ0$8 = data => {
+const ɵ0$1 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.Banner" /* Banner */, {
         name: 'Add'
@@ -180,7 +180,7 @@ const ɵ0$8 = data => {
 const DEFAULT_BANNER_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$8,
+        action: ɵ0$1,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -250,13 +250,13 @@ const DEFAULT_BANNERDEFINITION_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$7 = (data) => {
+const ɵ0$2 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.BannerDefinition" /* BannerDefinition */, {
         name: 'Edit',
         record: data.record,
     });
-}, ɵ1$3 = (data) => {
+}, ɵ1$1 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.BannerDefinition" /* BannerDefinition */, {
         name: 'Delete',
@@ -266,15 +266,15 @@ const ɵ0$7 = (data) => {
 const DEFAULT_BANNERDEFINITION_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$7,
+        action: ɵ0$2,
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1$3,
+        action: ɵ1$1,
     },
 ]);
 
-const ɵ0$6 = data => {
+const ɵ0$3 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.BannerDefinition" /* BannerDefinition */, {
         name: 'Add'
@@ -285,7 +285,7 @@ const ɵ0$6 = data => {
 const DEFAULT_BANNERDEFINITION_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$6,
+        action: ɵ0$3,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -383,7 +383,7 @@ const DEFAULT_ROUTE_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$5 = (data) => {
+const ɵ0$4 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.Route" /* Route */, {
         name: 'Edit',
@@ -399,7 +399,7 @@ const ɵ0$5 = (data) => {
 const DEFAULT_ROUTE_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$5,
+        action: ɵ0$4,
     },
     {
         text: 'AbpIdentity::Delete',
@@ -407,7 +407,7 @@ const DEFAULT_ROUTE_ENTITY_ACTIONS = EntityAction.createMany([
     },
 ]);
 
-const ɵ0$4 = data => {
+const ɵ0$5 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.Route" /* Route */, {
         name: 'Add'
@@ -418,7 +418,7 @@ const ɵ0$4 = data => {
 const DEFAULT_ROUTE_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$4,
+        action: ɵ0$5,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -488,13 +488,13 @@ const DEFAULT_ROUTEDEFINITION_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$3 = (data) => {
+const ɵ0$6 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.RouteDefinition" /* RouteDefinition */, {
         name: 'Edit',
         record: data.record,
     });
-}, ɵ1$1 = (data) => {
+}, ɵ1$3 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.RouteDefinition" /* RouteDefinition */, {
         name: 'Delete',
@@ -504,15 +504,15 @@ const ɵ0$3 = (data) => {
 const DEFAULT_ROUTEDEFINITION_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$3,
+        action: ɵ0$6,
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1$1,
+        action: ɵ1$3,
     },
 ]);
 
-const ɵ0$2 = data => {
+const ɵ0$7 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.RouteDefinition" /* RouteDefinition */, {
         name: 'Add'
@@ -523,7 +523,7 @@ const ɵ0$2 = data => {
 const DEFAULT_ROUTEDEFINITION_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0$2,
+        action: ɵ0$7,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },
@@ -579,13 +579,13 @@ const DEFAULT_WEBSITEDEFINITION_ENTITY_PROPS = EntityProp.createMany([
     }
 ]);
 
-const ɵ0$1 = (data) => {
+const ɵ0$8 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.WebSiteDefinition" /* WebSiteDefinition */, {
         name: 'Edit',
         record: data.record,
     });
-}, ɵ1 = (data) => {
+}, ɵ1$4 = (data) => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.WebSiteDefinition" /* WebSiteDefinition */, {
         name: 'Delete',
@@ -595,15 +595,15 @@ const ɵ0$1 = (data) => {
 const DEFAULT_WEBSITEDEFINITION_ENTITY_ACTIONS = EntityAction.createMany([
     {
         text: 'AbpIdentity::Edit',
-        action: ɵ0$1,
+        action: ɵ0$8,
     },
     {
         text: 'AbpIdentity::Delete',
-        action: ɵ1,
+        action: ɵ1$4,
     },
 ]);
 
-const ɵ0 = data => {
+const ɵ0$9 = data => {
     const service = data.getInjected(ExtensionsService);
     service.action("Theme::FS.Theme.WebSiteDefinition" /* WebSiteDefinition */, {
         name: 'Add'
@@ -614,7 +614,7 @@ const ɵ0 = data => {
 const DEFAULT_WEBSITEDEFINITION_TOOLBAR_ACTIONS = ToolbarAction.createMany([
     {
         text: '新增',
-        action: ɵ0,
+        action: ɵ0$9,
         //permission: 'AbpIdentity.Users.Create',
         icon: 'fa fa-plus',
     },

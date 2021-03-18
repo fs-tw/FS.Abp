@@ -1,4 +1,4 @@
-import type {  DirectoryDescriptorDto  } from './models';
+import type { CreateDirectoryInput, DirectoryContentDto, DirectoryContentRequestInput, DirectoryDescriptorDto, DirectoryDescriptorInfoDto, MoveDirectoryInput, RenameDirectoryInput } from './models';
 import { RestService } from '@abp/ng.core';
 import type { ListResultDto, PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DirectoryDescriptorService {
   apiName = 'FileManagement';
 
-  createByInput = (input: any) =>
+  createByInput = (input: CreateDirectoryInput) =>
     this.restService.request<any, DirectoryDescriptorDto>({
       method: 'POST',
       url: `/api/file-management/directory-descriptor`,
@@ -31,8 +31,8 @@ export class DirectoryDescriptorService {
     },
     { apiName: this.apiName });
 
-  getContentByInput = (input: any) =>
-    this.restService.request<any, PagedResultDto<any>>({
+  getContentByInput = (input: DirectoryContentRequestInput) =>
+    this.restService.request<any, PagedResultDto<DirectoryContentDto>>({
       method: 'GET',
       url: `/api/file-management/directory-descriptor`,
       params: { filter: input.filter, sorting: input.sorting, id: input.id },
@@ -40,14 +40,14 @@ export class DirectoryDescriptorService {
     { apiName: this.apiName });
 
   getListByParentId = (parentId: string) =>
-    this.restService.request<any, ListResultDto<any>>({
+    this.restService.request<any, ListResultDto<DirectoryDescriptorInfoDto>>({
       method: 'GET',
       url: `/api/file-management/directory-descriptor/sub-directories`,
       params: { parentId: parentId },
     },
     { apiName: this.apiName });
 
-  moveByInput = (input: any) =>
+  moveByInput = (input: MoveDirectoryInput) =>
     this.restService.request<any, DirectoryDescriptorDto>({
       method: 'POST',
       url: `/api/file-management/directory-descriptor/move`,
@@ -55,7 +55,7 @@ export class DirectoryDescriptorService {
     },
     { apiName: this.apiName });
 
-  renameByIdAndInput = (id: string, input: any) =>
+  renameByIdAndInput = (id: string, input: RenameDirectoryInput) =>
     this.restService.request<any, DirectoryDescriptorDto>({
       method: 'POST',
       url: `/api/file-management/directory-descriptor/${id}`,

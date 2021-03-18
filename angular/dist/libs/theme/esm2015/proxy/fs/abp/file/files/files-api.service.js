@@ -8,7 +8,7 @@ export class FilesApiService {
         this.apiName = 'Default';
         this.getContentById = (id) => this.restService.request({
             method: 'GET',
-            url: `/api/file-management/file-descriptor/file-content`,
+            url: `/api/file/files/file-content`,
             params: { id: id },
         }, { apiName: this.apiName });
     }
