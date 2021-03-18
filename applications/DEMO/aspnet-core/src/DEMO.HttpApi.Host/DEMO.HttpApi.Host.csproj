@@ -7,6 +7,8 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>DEMO</RootNamespace>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <UserSecretsId>8a31da30-fda5-4314-a209-b76df56fbcd0</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,12 +42,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot/appsettings.json" CopyToPublishDirectory="Always"></Content>
+    <ResolvedFileToPublish Include="wwwroot/appsettings.$(EnvironmentName).json">
+      <RelativePath>wwwroot/%(RecursiveDir)appsettings%(Extension)</RelativePath>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </ResolvedFileToPublish>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Logs\**" />
     <Content Remove="Logs\**" />
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="$(MicrosoftPackageVersion)" />
+  </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
 
 </Project>

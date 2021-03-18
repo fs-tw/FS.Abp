@@ -32,6 +32,7 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Swashbuckle;
+using Microsoft.Extensions.FileProviders;
 
 namespace DEMO
 {
@@ -85,6 +86,16 @@ namespace DEMO
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureExternalProviders(context);
+            //FS : Disable AntiForgery for line browser 
+            Configure<Volo.Abp.AspNetCore.Mvc.AntiForgery.AbpAntiForgeryOptions>(options =>
+            {
+                options.AutoValidate = false;
+            });
+            //FS : Enable SpaService
+            context.Services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "wwwroot";
+            });
         }
 
         private void ConfigureUrls(IConfiguration configuration)
@@ -164,7 +175,7 @@ namespace DEMO
                 options =>
                 {
                     options.CustomSchemaIds(y => y.FullName);
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "DEMO API", Version = "v1"});
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "DEMO API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                 });
         }
@@ -173,13 +184,8 @@ namespace DEMO
         {
             Configure<AbpLocalizationOptions>(options =>
             {
-                options.Languages.Add(new LanguageInfo("cs", "cs", "Čeština"));
                 options.Languages.Add(new LanguageInfo("en", "en", "English"));
-                options.Languages.Add(new LanguageInfo("sl", "sl", "Slovenščina"));
-                options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
-                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
-                options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsche", "de"));
-                options.Languages.Add(new LanguageInfo("es", "es", "Español", "es"));
+                options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文"));
             });
         }
 
@@ -286,6 +292,45 @@ namespace DEMO
             app.UseAuditing();
             app.UseAbpSerilogEnrichers();
             app.UseConfiguredEndpoints();
+            //FS: Enable Spa Service
+            if (!env.IsDevelopment())
+            {
+                app.UseFSAbpSpaService();
+            }
+        }
+    }
+}
+namespace Microsoft.AspNetCore.Builder
+{
+    public static class AbpSpaServiceExtensions
+    {
+
+        public static IApplicationBuilder UseFSAbpSpaService(this IApplicationBuilder app)
+        {
+            app.UseSpaStaticFiles();
+            app.Map("/demo-admin", application =>
+            {
+                application.UseSpa(spa =>
+                {
+                    spa.Options.SourcePath = string.Format("wwwroot/{0}", "demo-admin");
+                    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
+                    {
+                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "demo-admin"))
+                    };
+                });
+            });
+            app.Map("/admin", application =>
+            {
+                application.UseSpa(spa =>
+                {
+                    spa.Options.SourcePath = string.Format("wwwroot/{0}", "demo-admin");
+                    spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
+                    {
+                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "demo-admin"))
+                    };
+                });
+            });
+            return app;
         }
     }
 }
