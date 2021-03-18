@@ -7,7 +7,7 @@
       <div class="mb-md">
         <h5>類型：{{ blogName }}</h5>
         <button nz-button nzType="primary" (click)="gotoDetail()" style="margin-right: 20px;">
-          新增
+          {{'AbpIdentityServer::Add'|abpLocalization}}
         </button>
         <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" style="width: 300px;">
           <input type="text" [(ngModel)]="postParams.keyword" nz-input placeholder="輸入名稱" />
