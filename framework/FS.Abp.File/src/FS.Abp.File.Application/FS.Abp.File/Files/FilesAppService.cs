@@ -1,37 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
+using FS.Abp.File;
+using Microsoft.AspNetCore.Authorization;
+using Volo.Abp;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.BlobStoring;
+using Volo.Abp.Content;
+using Volo.Abp.DependencyInjection;
+using Volo.Abp.Features;
 using Volo.FileManagement;
+using Volo.FileManagement.Authorization;
 using Volo.FileManagement.Files;
 
 namespace FS.Abp.File.Files
 {
-    public class FilesAppService : FileAppService, IFilesAppService
+    //[Dependency(ReplaceServices =true)]
+    //[ExposeServices(typeof(IFileDescriptorAppService))]
+    public class FileDescriptorAppService :
+        Volo.FileManagement.Files.FileDescriptorAppService,
+        Volo.FileManagement.Files.IFileDescriptorAppService
     {
-        private readonly IBlobContainer<FileManagementContainer> blobContainer;
-        public IFileDescriptorRepository fileDescriptorRepository;
-        public FilesAppService(
+        public FileDescriptorAppService(
+            IFileManager fileManager,
             IFileDescriptorRepository fileDescriptorRepository,
-            IBlobContainer<FileManagementContainer> blobContainer
-            )
+            IBlobContainer<FileManagementContainer> blobContainer)
+            : base(fileManager, fileDescriptorRepository, blobContainer)
         {
-            this.fileDescriptorRepository = fileDescriptorRepository;
-            this.blobContainer = blobContainer;
         }
 
-
-
-        public async Task<FileDescriptorDto> GetAsync(Guid id)
+        [AllowAnonymous]
+        public async override Task<FileDescriptorDto> GetAsync(Guid id)
         {
-            var entity = await this.fileDescriptorRepository.GetAsync(id);
-            return ObjectMapper.Map<FileDescriptor, FileDescriptorDto>(entity);
-        }
-
-        public virtual async Task<byte[]> GetContentAsync(Guid id)
-        {
-            return await blobContainer.GetAllBytesAsync(id.ToString());
+            return await base.GetAsync(id);
         }
     }
 }
