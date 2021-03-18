@@ -1,20 +1,20 @@
-<nz-spin nzTip="載入中..." [nzSpinning]="isLoading">
+<nz-spin nzTip="{{'Cms::FS.Message:Loading' |abpLocalization }}" [nzSpinning]="isLoading">
 
   <nz-card>
 
     <form nz-form #f="ngForm" se-container="1" labelWidth="150" *ngIf="data">
-      <se label="公告類型">
+      <se label="{{'Cms::FS.Cms.BlogType'|abpLocalization}}">
         <nz-select [(ngModel)]="data.blogId" name="blogId" required>
           <nz-option *ngFor="let item of blogs" [nzValue]="item.id" [nzLabel]="item.displayName"></nz-option>
         </nz-select>
       </se>
-      <se label="前台顯示" required>
+      <se label="{{'Cms::FS.Blog.Enable' |abpLocalization }}" required>
         <nz-radio-group [(ngModel)]="data.disable" name="disable">
-          <label nz-radio [nzValue]="false">開</label>
-          <label nz-radio [nzValue]="true">關</label>
+          <label nz-radio [nzValue]="false">{{'Cms::FS.Blog.Enable' |abpLocalization }}</label>
+          <label nz-radio [nzValue]="true">{{'Cms::FS.Blog.Disable' |abpLocalization }}</label>
         </nz-radio-group>
       </se>
-      <se label="發佈時間" required>
+      <se label="{{'Cms::FS.Post.PublishDate'  |abpLocalization}}" required>
         <!-- <nz-range-picker nzShowTime nzFormat="yyyy/MM/dd HH:mm:ss" name="dateRange" [(ngModel)]="dateRange"
           [nzAllowClear]="false"></nz-range-picker> -->
         <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false"
@@ -25,62 +25,39 @@
         <!-- <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
           [(ngModel)]="data.published_At"></nz-date-picker> -->
       </se>
-      <se label="標題" error="必填" required>
+      <se label="{{'Cms::FS.Post.Title'  |abpLocalization}}" error="" required>
         <input type="text" nz-input [(ngModel)]="data.title" name="title" required>
       </se>
-      <se label="副標題">
+      <se label="{{'Cms::FS.Post.Subtitle'  |abpLocalization}}">
         <input type="text" nz-input [(ngModel)]="data.subtitle" name="Subtitle">
       </se>
-      <se label="顯示類型" required>
+      <se label="{{'Cms::FS.Post.DisplayMode'  |abpLocalization}}" required>
         <nz-select [(ngModel)]="data.displayMode" name="type">
-          <nz-option [nzValue]="0" nzLabel="內文"></nz-option>
-          <nz-option [nzValue]="1" nzLabel="連結"></nz-option>
+          <nz-option [nzValue]="0" nzLabel="{{'Cms::FS.Post.Content'  |abpLocalization}}"></nz-option>
+          <nz-option [nzValue]="1" nzLabel="{{'Cms::FS.Post.Url'  |abpLocalization}}"></nz-option>
         </nz-select>
       </se>
 
-      <se label="內文" *ngIf="data.displayMode == 0">
+      <se label="{{'Cms::FS.Post.Content'  |abpLocalization}}" *ngIf="data.displayMode == 0">
 
         <quill-editor [(ngModel)]="data.content" [ngModelOptions]="{standalone: true}">
-          <!-- <div quill-editor-toolbar>
-            <span class="ql-formats">
-              <button class="ql-bold"></button>
-              <button class="ql-italic"></button>
-              <button class="ql-underline"></button>
-              <button class="ql-strike"></button>
-            </span>
-
-            <span class="ql-formats">
-              <button class="ql-list" value="ordered"></button>
-              <button class="ql-list" value="bullet"></button>
-            </span>
-
-            <span>
-              <button type="button" class="ql-header" value="1"></button>
-              <button type="button" class="ql-header" value="2"></button>
-            </span>
-
-            <span class="ql-formats">
-              <button class="ql-image"></button>
-            </span>
-
-          </div> -->
         </quill-editor>
       </se>
 
 
-      <se label="連結" *ngIf="data.displayMode == 1">
+      <se label="{{'Cms::FS.Post.Url'  |abpLocalization}}" *ngIf="data.displayMode == 1">
         <input type="text" nz-input [(ngModel)]="data.url" name="url">
       </se>
 
-      <se label="上傳檔案" optionalHelp="建議圖片比例：1080X608">
+      <se label="{{'Cms::FS.Post.AttachmentFileUrls'  |abpLocalization}}" optionalHelp="  {{'Cms::FS.Message:SuggestionImageSize'| abpLocalization}}：1080X608">
         <nz-tabset>
-          <nz-tab nzTitle="圖片">
+          <nz-tab nzTitle="{{'Cms::FS.Post.AttachmentImage'  |abpLocalization}}">
             <se>
               <image-picker #DefaultImagePicker [existFiles]="defaultImages" [uploadTextTemplate]="Upload"
                 [imageTemplate]="Image" [inLine]="false" borderWidth="100%" borderHeight="132px"></image-picker>
             </se>
           </nz-tab>
-          <nz-tab nzTitle="附件">
+          <nz-tab nzTitle="{{'Cms::FS.Post.AttachmentFile'  |abpLocalization}}">
             <se>
               <fs-upload-file  #DefaultUploadFile [existFiles]="defaultFiles"></fs-upload-file>
             </se>
@@ -94,7 +71,7 @@
 
       <se>
         <button nz-button nzType="primary" (click)="save()" [disabled]="f.invalid">
-          {{ !data.id ? '建立' : '更新' }}
+          {{ !data.id ? ('AbpUi::Create'  |abpLocalization) : ('AbpUi::Save'  |abpLocalization) }}
         </button>
       </se>
     </form>
@@ -109,7 +86,7 @@
       <i nz-icon nzType="inbox" style="display: block;"></i>
     </div>
     <div style="font-size: 16px;">
-      請將檔案拖移至此，或按下此圖示上傳檔案
+     {{'Cms::FS.Message:DragOrClickHere'| abpLocalization}}
     </div>
   </div>
 </ng-template>
@@ -117,7 +94,7 @@
 <ng-template #Image let-item>
   <div nz-row style="border: 1px solid #ddd; border-right: 0px; margin-top: 5px;">
     <div nz-col nzSpan="4" class="imgItemDiv">
-      <a class="text-blue" *ngIf="coverImage != item.file.fileName" (click)="coverImage = item.file.fileName">設為封面圖</a>
+      <a class="text-blue" *ngIf="coverImage != item.file.fileName" (click)="coverImage = item.file.fileName">{{'Cms::FS.Post.SetAsCover'  |abpLocalization}}</a>
       <i nz-icon nzType="check" nzTheme="outline" style="font-size: 16px;" class="text-green"
         *ngIf="coverImage == item.file.fileName"></i>
     </div>
@@ -132,7 +109,7 @@
     </div>
     <div nz-col nzSpan="4" class="imgItemDiv">
       <div style="width: 100%;">
-        <a class="text-red" (click)="deleteFile(item.file.fileName)">刪除</a>
+        <a class="text-red" (click)="deleteFile(item.file.fileName)">{{'AbpUi::Delete'  |abpLocalization}}</a>
       </div>
     </div>
   </div>

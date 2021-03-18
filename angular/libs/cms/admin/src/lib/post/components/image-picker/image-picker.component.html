@@ -15,7 +15,7 @@
 
         <ng-template #UploadText>
             <div style="font-size: 16px; text-align: center;">
-                <div class="ant-upload-text">Upload</div>
+                <div class="ant-upload-text">{{'Cms::FS.Message:Upload'|abpLocalization}}</div>
             </div>
         </ng-template>
     </nz-upload>
@@ -57,8 +57,8 @@
     
 </div>
 
-<nz-modal [nzOkText]="null" nzCancelText="關閉" [nzWidth]="1000"
-        [nzTitle]="'預覽圖'" 
+<nz-modal [nzOkText]="null" nzCancelText="{{'AbpUi::Cancel'|abpLocalization}}" [nzWidth]="1000"
+        nzTitle="{{'Cms::FS.Message:Preview'|abpLocalization}}" 
         [(nzVisible)]="viewImage.isVisabled" 
         (nzOnCancel)="controllModal(false, viewImage.image)">
     <div class="divGridCenter">
