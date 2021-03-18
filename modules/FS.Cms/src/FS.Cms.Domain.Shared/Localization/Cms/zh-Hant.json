@@ -1,7 +1,7 @@
 {
   "culture": "zh-Hant",
   "texts": {
-    "FS.Cms.Blogs": "部落格",
+
     "FS.Cms.Blogs.Posts": "文章",
     "FS.Cms.Core": "網站內容管理",
     "FS.Cms.Basic": "管理",
@@ -45,7 +45,6 @@
     "FS.Post.PostImages": "發佈圖片",
     "FS.Post.SetAsCover": "設為封面圖",
 
-
     "FS.Tag": "標籤",
     "FS.Tag.Management": "標籤管理",
     "FS.Tag.Management.Detail": "標籤詳細",
@@ -57,6 +56,42 @@
     "FS.Message:SuggestionImageSize": " 建議圖片比例",
     "FS.Message:Loading": " 載入中...",
     "FS.Message:Upload": " 上傳",
-    "FS.Message:Preview": " 預覽"
+    "FS.Message:Preview": " 預覽",
+
+
+    "FS.Cms.Tags": "CMS-標籤",
+    "FS.Cms.Tags.Tag": "標籤",
+    "DisplayName:Tag.Create": "新增",
+    "DisplayName:Tag.Update": "編輯",
+    "DisplayName:Tag.Delete": "刪除",
+
+    "FS.Cms.Documents": "CMS-頁面文件",
+    "FS.Cms.Documents.DocumentDefinition": "文件定義",
+    "DisplayName:DocumentDefinition.Create": "新增",
+    "DisplayName:DocumentDefinition.Update": "編輯",
+    "DisplayName:DocumentDefinition.Delete": "刪除",
+
+    "FS.Cms.Documents.Document": "頁面文件",
+    "DisplayName:Document.Create": "新增",
+    "DisplayName:Document.Update": "編輯",
+    "DisplayName:Document.Delete": "刪除",
+
+    "FS.Cms.Posts": "CMS-貼文",
+    "FS.Cms.Posts.Post": "貼文",
+    "DisplayName:Post.Create": "新增",
+    "DisplayName:Post.Update": "編輯",
+    "DisplayName:Post.Delete": "刪除",
+
+    "FS.Cms.Posts.PostTagMap": "貼文標籤關聯",
+    "DisplayName:PostTagMap.Create": "新增",
+    "DisplayName:PostTagMap.Update": "編輯",
+    "DisplayName:PostTagMap.Delete": "刪除",
+
+    "FS.Cms.Blogs": "CMS-部落格",
+    "FS.Cms.Blogs.Blog": "部落格",
+    "DisplayName:Blog.Create": "新增",
+    "DisplayName:Blog.Update": "新增",
+    "DisplayName:Blog.Delete": "新增"
+
   }
 }
