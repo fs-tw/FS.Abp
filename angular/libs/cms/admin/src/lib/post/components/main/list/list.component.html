@@ -22,7 +22,7 @@
   <form [formGroup]="form" *ngIf="form" (ngSubmit)="save()" validateOnSubmit>
     <abp-extensible-form *ngIf="form" [selectedRecord]="selected"></abp-extensible-form>
     <div class="form-group">
-      <label for="exampleInputEmail1">圖示(建議圖片大小為 40*30，僅能上傳 jpg, png)</label>
+      <label for="exampleInputEmail1">圖示</label>
       <image-picker #DefaultImagePicker [existFiles]="defaultImages" [maxImageCount]="1" imageWidth="40px"
         imageHeight="30px" borderWidth="80px" borderHeight="60px"></image-picker>
     </div>
@@ -30,6 +30,6 @@
 </nz-modal>
 
 <ng-template #footer>
-  <button nz-button nzType="default" (click)="handleCancel()">取消</button>
-  <button nz-button nzType="primary" (click)="save()">儲存</button>
+  <button nz-button nzType="default" (click)="handleCancel()">{{'AbpUi::Cancel' | abpLocalization}}</button>
+  <button nz-button nzType="primary" (click)="save()">{{'AbpUi::Save' | abpLocalization}}</button>
 </ng-template>
