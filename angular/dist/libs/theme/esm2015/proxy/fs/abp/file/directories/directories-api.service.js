@@ -8,12 +8,12 @@ export class DirectoriesApiService {
         this.apiName = 'Default';
         this.findByProviderByKeyAndGroup = (key, group) => this.restService.request({
             method: 'GET',
-            url: `/api/file-management/directory-descriptor/provider/${key}`,
+            url: `/api/file/directories/provider/${key}`,
             params: { group: group },
         }, { apiName: this.apiName });
         this.getDefinitions = () => this.restService.request({
             method: 'GET',
-            url: `/api/file-management/directory-descriptor/definitions`,
+            url: `/api/file/directories/definitions`,
         }, { apiName: this.apiName });
     }
 }

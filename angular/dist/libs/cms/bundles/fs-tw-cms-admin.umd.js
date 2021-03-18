@@ -333,24 +333,24 @@
     ];
     PostStateService.ctorParameters = function () { return []; };
 
-    var LayoutComponent$1 = /** @class */ (function () {
+    var LayoutComponent = /** @class */ (function () {
         function LayoutComponent() {
         }
         LayoutComponent.prototype.ngOnInit = function () {
         };
         return LayoutComponent;
     }());
-    LayoutComponent$1.decorators = [
+    LayoutComponent.decorators = [
         { type: i0.Component, args: [{
                     selector: 'fs-layout',
                     template: "<router-outlet></router-outlet>\r\n",
                     styles: [""]
                 },] }
     ];
-    LayoutComponent$1.ctorParameters = function () { return []; };
+    LayoutComponent.ctorParameters = function () { return []; };
 
     // @dynamic
-    var PageService$1 = /** @class */ (function () {
+    var PageService = /** @class */ (function () {
         function PageService(injector) {
             this.injector = injector;
             this.blogService = injector.get(proxy.Fs.Cms.Blogs.BlogsApiService);
@@ -404,15 +404,15 @@
         };
         return PageService;
     }());
-    PageService$1.decorators = [
+    PageService.decorators = [
         { type: i0.Injectable }
     ];
-    PageService$1.ctorParameters = function () { return [
+    PageService.ctorParameters = function () { return [
         { type: i0.Injector }
     ]; };
 
-    var ɵ0$2 = "Cms::FS.Cms.PostManagement" /* Post */;
-    var MainComponent$1 = /** @class */ (function () {
+    var ɵ0 = "Cms::FS.Cms.PostManagement" /* Post */;
+    var MainComponent = /** @class */ (function () {
         function MainComponent(extensionsService, router, toasterService, confirmationService, pageService, list, activatedRoute, postStateService) {
             this.extensionsService = extensionsService;
             this.router = router;
@@ -507,26 +507,26 @@
         };
         return MainComponent;
     }());
-    MainComponent$1.decorators = [
+    MainComponent.decorators = [
         { type: i0.Component, args: [{
                     selector: 'fs-main',
-                    template: "<nz-row nzGutter=\"16\">\r\n  <nz-col nzSpan=\"8\">\r\n    <fs-list></fs-list>\r\n  </nz-col>\r\n  <nz-col nzSpan=\"16\">\r\n    <div>\r\n      <div class=\"mb-md\">\r\n        <h5>\u985E\u578B\uFF1A{{ blogName }}</h5>\r\n        <button nz-button nzType=\"primary\" (click)=\"gotoDetail()\" style=\"margin-right: 20px;\">\r\n          \u65B0\u589E\r\n        </button>\r\n        <nz-input-group nzSearch [nzAddOnAfter]=\"suffixIconButton\" style=\"width: 300px;\">\r\n          <input type=\"text\" [(ngModel)]=\"postParams.keyword\" nz-input placeholder=\"\u8F38\u5165\u540D\u7A31\" />\r\n        </nz-input-group>\r\n        <ng-template #suffixIconButton>\r\n          <button nz-button nzType=\"primary\" (click)=\"hookToQuery()\" nzSearch>\r\n            <i nz-icon nzType=\"search\"></i>\r\n          </button>\r\n        </ng-template>\r\n      </div>\r\n      <nz-extensible-table [data]=\"posts\" [scroll]=\"{x:'600px'}\" [recordsTotal]=\"totalCount\" [list]=\"list\"\r\n        [haveRowDetail]=\"false\">\r\n     \r\n        <ng-template row-detail-template let-node>\r\n          <div>\r\n            <h3>\u526F\u6A19\u984C</h3>\r\n            <p>{{ node.subtitle || '-' }}</p>\r\n            <div *ngIf=\"node.displayMode == 0\">\r\n              <h3>\u5167\u5BB9\uFF1A</h3>\r\n              <quill-view [content]=\"node.content\"></quill-view>\r\n            </div>\r\n            <div *ngIf=\"node.displayMode == 1\">\r\n              <h3>\u9023\u7D50</h3>\r\n              <p>{{ node.url }}</p>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n        \r\n      </nz-extensible-table>\r\n      <!-- <nz-table #listTable [nzData]=\"posts\" nzSize=\"small\" nzPageSize=\"10\" [nzTotal]=\"totalCount\"\r\n        [nzFrontPagination]=\"false\" [nzLoading]=\"loading\" (nzPageIndexChange)=\"changePage($event)\" nzBordered>\r\n        <thead>\r\n          <tr>\r\n            <th nzWidth=\"110px\"></th>\r\n            <th>\u555F\u7528</th>\r\n            <th>\u6A19\u984C</th>\r\n            <th>\u986F\u793A\u6A21\u5F0F</th>\r\n            <th>\u767C\u4F48\u65E5\u671F</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <ng-container *ngFor=\"let item of listTable.data\">\r\n            <tr class=\"bg-white\">\r\n              <td nzShowExpand [(nzExpand)]=\"item.expand\" nzWidth=\"110px\">\r\n                <a nz-dropdown [nzDropdownMenu]=\"menu\">\r\n                  {{ 'AbpIdentity::Actions' | abpLocalization }}\r\n                  <i nz-icon nzType=\"down\"></i>\r\n                </a>\r\n                <nz-dropdown-menu #menu=\"nzDropdownMenu\">\r\n                  <ul nz-menu>\r\n                    <li nz-menu-item (click)=\"gotoDetail(item.id)\">\r\n                      <a>\u7DE8\u8F2F</a>\r\n                    </li>\r\n                    <li nz-menu-item (click)=\"deleteItem(item)\">\r\n                      <a class=\"text-red\">\u522A\u9664</a>\r\n                    </li>\r\n                  </ul>\r\n                </nz-dropdown-menu>\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.published\"><i nz-icon nzType=\"check\" nzTheme=\"outline\"></i></span>\r\n                <span *ngIf=\"!item.published\"><i nz-icon nzType=\"close\" nzTheme=\"outline\"></i></span>\r\n              </td>\r\n              <td>\r\n                {{ item.title }}\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.displayMode == 0\">\u5167\u5BB9</span>\r\n                <span *ngIf=\"item.displayMode == 1\">\u9023\u7D50</span>\r\n              </td>\r\n              <td>{{ item.published_At | date: 'yyyy-MM-dd HH:mm:ss' }}</td>\r\n            </tr>\r\n\r\n            <tr [nzExpand]=\"item.expand\">\r\n              <div>\r\n                <h3>\u526F\u6A19\u984C</h3>\r\n                <p>{{ item.subtitle || '-' }}</p>\r\n                <div *ngIf=\"item.displayMode == 0\">\r\n                  <h3>\u5167\u5BB9\uFF1A</h3>\r\n                  <quill-view [content]=\"item.content\"></quill-view>\r\n                </div>\r\n                <div *ngIf=\"item.displayMode == 1\">\r\n                  <h3>\u9023\u7D50</h3>\r\n                  <p>{{ item.url }}</p>\r\n                </div>\r\n              </div>\r\n            </tr>\r\n          </ng-container>\r\n        </tbody>\r\n      </nz-table> -->\r\n    </div>\r\n  </nz-col>\r\n</nz-row>",
+                    template: "<nz-row nzGutter=\"16\">\r\n  <nz-col nzSpan=\"8\">\r\n    <fs-list></fs-list>\r\n  </nz-col>\r\n  <nz-col nzSpan=\"16\">\r\n    <div>\r\n      <div class=\"mb-md\">\r\n        <h5>\u985E\u578B\uFF1A{{ blogName }}</h5>\r\n        <button nz-button nzType=\"primary\" (click)=\"gotoDetail()\" style=\"margin-right: 20px;\">\r\n          {{'AbpIdentityServer::Add'|abpLocalization}}\r\n        </button>\r\n        <nz-input-group nzSearch [nzAddOnAfter]=\"suffixIconButton\" style=\"width: 300px;\">\r\n          <input type=\"text\" [(ngModel)]=\"postParams.keyword\" nz-input placeholder=\"\u8F38\u5165\u540D\u7A31\" />\r\n        </nz-input-group>\r\n        <ng-template #suffixIconButton>\r\n          <button nz-button nzType=\"primary\" (click)=\"hookToQuery()\" nzSearch>\r\n            <i nz-icon nzType=\"search\"></i>\r\n          </button>\r\n        </ng-template>\r\n      </div>\r\n      <nz-extensible-table [data]=\"posts\" [scroll]=\"{x:'600px'}\" [recordsTotal]=\"totalCount\" [list]=\"list\"\r\n        [haveRowDetail]=\"false\">\r\n     \r\n        <ng-template row-detail-template let-node>\r\n          <div>\r\n            <h3>\u526F\u6A19\u984C</h3>\r\n            <p>{{ node.subtitle || '-' }}</p>\r\n            <div *ngIf=\"node.displayMode == 0\">\r\n              <h3>\u5167\u5BB9\uFF1A</h3>\r\n              <quill-view [content]=\"node.content\"></quill-view>\r\n            </div>\r\n            <div *ngIf=\"node.displayMode == 1\">\r\n              <h3>\u9023\u7D50</h3>\r\n              <p>{{ node.url }}</p>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n        \r\n      </nz-extensible-table>\r\n      <!-- <nz-table #listTable [nzData]=\"posts\" nzSize=\"small\" nzPageSize=\"10\" [nzTotal]=\"totalCount\"\r\n        [nzFrontPagination]=\"false\" [nzLoading]=\"loading\" (nzPageIndexChange)=\"changePage($event)\" nzBordered>\r\n        <thead>\r\n          <tr>\r\n            <th nzWidth=\"110px\"></th>\r\n            <th>\u555F\u7528</th>\r\n            <th>\u6A19\u984C</th>\r\n            <th>\u986F\u793A\u6A21\u5F0F</th>\r\n            <th>\u767C\u4F48\u65E5\u671F</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <ng-container *ngFor=\"let item of listTable.data\">\r\n            <tr class=\"bg-white\">\r\n              <td nzShowExpand [(nzExpand)]=\"item.expand\" nzWidth=\"110px\">\r\n                <a nz-dropdown [nzDropdownMenu]=\"menu\">\r\n                  {{ 'AbpIdentity::Actions' | abpLocalization }}\r\n                  <i nz-icon nzType=\"down\"></i>\r\n                </a>\r\n                <nz-dropdown-menu #menu=\"nzDropdownMenu\">\r\n                  <ul nz-menu>\r\n                    <li nz-menu-item (click)=\"gotoDetail(item.id)\">\r\n                      <a>\u7DE8\u8F2F</a>\r\n                    </li>\r\n                    <li nz-menu-item (click)=\"deleteItem(item)\">\r\n                      <a class=\"text-red\">\u522A\u9664</a>\r\n                    </li>\r\n                  </ul>\r\n                </nz-dropdown-menu>\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.published\"><i nz-icon nzType=\"check\" nzTheme=\"outline\"></i></span>\r\n                <span *ngIf=\"!item.published\"><i nz-icon nzType=\"close\" nzTheme=\"outline\"></i></span>\r\n              </td>\r\n              <td>\r\n                {{ item.title }}\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.displayMode == 0\">\u5167\u5BB9</span>\r\n                <span *ngIf=\"item.displayMode == 1\">\u9023\u7D50</span>\r\n              </td>\r\n              <td>{{ item.published_At | date: 'yyyy-MM-dd HH:mm:ss' }}</td>\r\n            </tr>\r\n\r\n            <tr [nzExpand]=\"item.expand\">\r\n              <div>\r\n                <h3>\u526F\u6A19\u984C</h3>\r\n                <p>{{ item.subtitle || '-' }}</p>\r\n                <div *ngIf=\"item.displayMode == 0\">\r\n                  <h3>\u5167\u5BB9\uFF1A</h3>\r\n                  <quill-view [content]=\"item.content\"></quill-view>\r\n                </div>\r\n                <div *ngIf=\"item.displayMode == 1\">\r\n                  <h3>\u9023\u7D50</h3>\r\n                  <p>{{ item.url }}</p>\r\n                </div>\r\n              </div>\r\n            </tr>\r\n          </ng-container>\r\n        </tbody>\r\n      </nz-table> -->\r\n    </div>\r\n  </nz-col>\r\n</nz-row>",
                     providers: [
                         i1.ListService,
                         {
                             provide: extensions.EXTENSIONS_IDENTIFIER,
-                            useValue: ɵ0$2,
+                            useValue: ɵ0,
                         },
                     ],
                     styles: ["nz-select{margin-right:8px;width:220px}.bg-white{background-color:#fff}"]
                 },] }
     ];
-    MainComponent$1.ctorParameters = function () { return [
+    MainComponent.ctorParameters = function () { return [
         { type: config.ExtensionsService },
         { type: router.Router },
         { type: ng_theme_shared.ToasterService },
         { type: ng_theme_shared.ConfirmationService },
-        { type: PageService$1 },
+        { type: PageService },
         { type: i1.ListService },
         { type: router.ActivatedRoute },
         { type: PostStateService }
@@ -579,7 +579,7 @@
         FileService.prototype.getFileUrl = function (id) {
             if (!id)
                 return "";
-            return this.environmentService.getApiUrl() + "/api/file-management/file-descriptor/file-content?id=" + id;
+            return this.environmentService.getApiUrl() + "/api/file/files/file-content?id=" + id;
         };
         FileService.prototype.uploadFile = function (file, directoryId) {
             var formData = new FormData();
@@ -597,7 +597,7 @@
         FileService.prototype.getFileBlobById = function (id) {
             return this.restService.request({
                 method: 'GET',
-                url: "/api/file-management/file-descriptor/file-content",
+                url: "/api/file/files/file-content",
                 params: { id: id },
                 responseType: 'blob'
             });
@@ -1058,7 +1058,7 @@
         { type: router.Router },
         { type: FileService },
         { type: router.ActivatedRoute },
-        { type: PageService$1 },
+        { type: PageService },
         { type: ng_theme_shared.ConfirmationService }
     ]; };
     DetailComponent.propDecorators = {
@@ -1066,7 +1066,7 @@
         defaultUploadFile: [{ type: i0.ViewChild, args: ["DefaultUploadFile",] }]
     };
 
-    var RouteConfig$1 = /** @class */ (function () {
+    var RouteConfig = /** @class */ (function () {
         function RouteConfig(postStateService) {
             this.postStateService = postStateService;
         }
@@ -1075,21 +1075,21 @@
         };
         return RouteConfig;
     }());
-    RouteConfig$1.decorators = [
+    RouteConfig.decorators = [
         { type: i0.Injectable }
     ];
-    RouteConfig$1.ctorParameters = function () { return [
+    RouteConfig.ctorParameters = function () { return [
         { type: PostStateService }
     ]; };
-    var routes$2 = [
+    var routes = [
         {
             path: '',
-            component: LayoutComponent$1,
-            resolve: { 'RouteConfig': RouteConfig$1 },
+            component: LayoutComponent,
+            resolve: { 'RouteConfig': RouteConfig },
             children: [
                 {
                     path: '',
-                    component: MainComponent$1
+                    component: MainComponent
                 },
                 {
                     path: 'detail',
@@ -1109,10 +1109,10 @@
     }());
     PostRoutingModule.decorators = [
         { type: i0.NgModule, args: [{
-                    imports: [router.RouterModule.forChild(routes$2)],
+                    imports: [router.RouterModule.forChild(routes)],
                     exports: [router.RouterModule],
                     providers: [
-                        RouteConfig$1
+                        RouteConfig
                     ]
                 },] }
     ];
@@ -1292,7 +1292,7 @@
     ListComponent.decorators = [
         { type: i0.Component, args: [{
                     selector: 'fs-list',
-                    template: "<div>\r\n  <div class=\"mb-md\">   \r\n    <button nz-button [nzType]=\"'primary'\"  style=\"margin-right: 10px;\" (click)=\"add()\"><span>+\u5EFA\u7ACB</span></button>\r\n    <button nz-button [nzType]=\"'primary'\" (click)=\"showDetail(null)\">\r\n      \u5168\u90E8\r\n    </button>\r\n  </div>\r\n\r\n  <nz-extensible-table [data]=\"datas\" [defaultSelectId]=\"defaultSelectId\" [recordsTotal]=\"count\" [list]=\"list\" [haveSelect]=\"true\"\r\n    (select)=\"showDetail($event)\">\r\n  </nz-extensible-table>\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<nz-modal [(nzVisible)]=\"isVisible\" nzTitle=\"blog\" (nzOnCancel)=\"handleCancel()\" [nzFooter]=\"footer\">\r\n  <form [formGroup]=\"form\" *ngIf=\"form\" (ngSubmit)=\"save()\" validateOnSubmit>\r\n    <abp-extensible-form *ngIf=\"form\" [selectedRecord]=\"selected\"></abp-extensible-form>\r\n    <div class=\"form-group\">\r\n      <label for=\"exampleInputEmail1\">\u5716\u793A(\u5EFA\u8B70\u5716\u7247\u5927\u5C0F\u70BA 40*30\uFF0C\u50C5\u80FD\u4E0A\u50B3 jpg, png)</label>\r\n      <image-picker #DefaultImagePicker [existFiles]=\"defaultImages\" [maxImageCount]=\"1\" imageWidth=\"40px\"\r\n        imageHeight=\"30px\" borderWidth=\"80px\" borderHeight=\"60px\"></image-picker>\r\n    </div>\r\n  </form>\r\n</nz-modal>\r\n\r\n<ng-template #footer>\r\n  <button nz-button nzType=\"default\" (click)=\"handleCancel()\">\u53D6\u6D88</button>\r\n  <button nz-button nzType=\"primary\" (click)=\"save()\">\u5132\u5B58</button>\r\n</ng-template>",
+                    template: "<div>\r\n  <div class=\"mb-md\">   \r\n    <button nz-button [nzType]=\"'primary'\"  style=\"margin-right: 10px;\" (click)=\"add()\"><span>+ {{'AbpIdentityServer::Add'|abpLocalization}}</span></button>\r\n    <button nz-button [nzType]=\"'primary'\" (click)=\"showDetail(null)\">\r\n      {{'AbpPermissionManagement::All'|abpLocalization}}\r\n    </button>\r\n  </div>\r\n\r\n  <nz-extensible-table [data]=\"datas\" [defaultSelectId]=\"defaultSelectId\" [recordsTotal]=\"count\" [list]=\"list\" [haveSelect]=\"true\"\r\n    (select)=\"showDetail($event)\">\r\n  </nz-extensible-table>\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<nz-modal [(nzVisible)]=\"isVisible\" nzTitle=\"blog\" (nzOnCancel)=\"handleCancel()\" [nzFooter]=\"footer\">\r\n  <form [formGroup]=\"form\" *ngIf=\"form\" (ngSubmit)=\"save()\" validateOnSubmit>\r\n    <abp-extensible-form *ngIf=\"form\" [selectedRecord]=\"selected\"></abp-extensible-form>\r\n    <div class=\"form-group\">\r\n      <label for=\"exampleInputEmail1\">\u5716\u793A(\u5EFA\u8B70\u5716\u7247\u5927\u5C0F\u70BA 40*30\uFF0C\u50C5\u80FD\u4E0A\u50B3 jpg, png)</label>\r\n      <image-picker #DefaultImagePicker [existFiles]=\"defaultImages\" [maxImageCount]=\"1\" imageWidth=\"40px\"\r\n        imageHeight=\"30px\" borderWidth=\"80px\" borderHeight=\"60px\"></image-picker>\r\n    </div>\r\n  </form>\r\n</nz-modal>\r\n\r\n<ng-template #footer>\r\n  <button nz-button nzType=\"default\" (click)=\"handleCancel()\">\u53D6\u6D88</button>\r\n  <button nz-button nzType=\"primary\" (click)=\"save()\">\u5132\u5B58</button>\r\n</ng-template>",
                     providers: [
                         i1.ListService,
                         {
@@ -1306,7 +1306,7 @@
     ListComponent.ctorParameters = function () { return [
         { type: router.Router },
         { type: config.ExtensionsService },
-        { type: PageService$1 },
+        { type: PageService },
         { type: i0.Injector },
         { type: i1.ListService },
         { type: FileService },
@@ -1377,8 +1377,8 @@
     PostModule.decorators = [
         { type: i0.NgModule, args: [{
                     declarations: [
-                        LayoutComponent$1,
-                        MainComponent$1,
+                        LayoutComponent,
+                        MainComponent,
                         DetailComponent,
                         ListComponent,
                         UploadFileComponent,
@@ -1398,12 +1398,12 @@
                     ]),
                     providers: [
                         // PostsStateService,
-                        PageService$1
+                        PageService
                     ]
                 },] }
     ];
 
-    var PageService = /** @class */ (function () {
+    var PageService$1 = /** @class */ (function () {
         function PageService() {
             this.allTagData = new rxjs.Subject();
             this.tagData = new rxjs.Subject();
@@ -1423,12 +1423,12 @@
         };
         return PageService;
     }());
-    PageService.decorators = [
+    PageService$1.decorators = [
         { type: i0.Injectable }
     ];
-    PageService.ctorParameters = function () { return []; };
+    PageService$1.ctorParameters = function () { return []; };
 
-    var MainComponent = /** @class */ (function () {
+    var MainComponent$1 = /** @class */ (function () {
         function MainComponent(PageService, confirmation) {
             this.PageService = PageService;
             this.confirmation = confirmation;
@@ -1459,31 +1459,31 @@
         };
         return MainComponent;
     }());
-    MainComponent.decorators = [
+    MainComponent$1.decorators = [
         { type: i0.Component, args: [{
                     template: "\r\n<nz-tabset nzType=\"card\">\r\n  <nz-tab nzTitle=\"\u5217\u8868\">\r\n    <nz-table #basicTable [nzData]=\"tagGroupList\" nzSize=\"small\" nzBordered>\r\n      <thead>\r\n        <tr>\r\n          <th nzWidth=\"75px\"></th>\r\n          <th>\u540D\u7A31</th>\r\n          <th>\u9805\u76EE</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let tagGroup of basicTable.data\" class=\"bg-white\">\r\n          <td nzWidth=\"75px\" nzAlign=\"center\">\r\n            <a nz-dropdown [nzDropdownMenu]=\"menu\">\r\n              \u64CD\u4F5C\r\n              <i nz-icon nzType=\"down\"></i>\r\n            </a>\r\n            <nz-dropdown-menu #menu=\"nzDropdownMenu\">\r\n              <ul nz-menu nzSelectable>\r\n                <li nz-menu-item>\r\n                  <a class=\"text-blue\" [routerLink]=\"tagGroup.id\">\u7DE8\u8F2F</a>\r\n                </li>\r\n                <li nz-menu-item><a class=\"text-red\" (click)=\"deleteGroup(tagGroup.id)\">\u522A\u9664</a></li>\r\n              </ul>\r\n            </nz-dropdown-menu>\r\n          </td>\r\n          <td>{{ tagGroup.tagGroupName }}</td>\r\n          <td>\r\n            <nz-tag *ngFor=\"let tagItem of tagGroup.tags\">\r\n              {{ tagItem.name }}\r\n            </nz-tag>\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </nz-table>\r\n  </nz-tab>\r\n  <nz-tab nzTitle=\"\u65B0\u589E\">\r\n    <fs-tag-detail [isCreate]=\"true\"></fs-tag-detail>\r\n  </nz-tab>\r\n</nz-tabset>",
                     styles: [".bg-white{background-color:#fff}"]
                 },] }
     ];
-    MainComponent.ctorParameters = function () { return [
-        { type: PageService },
+    MainComponent$1.ctorParameters = function () { return [
+        { type: PageService$1 },
         { type: ng_theme_shared.ConfirmationService }
     ]; };
 
-    var LayoutComponent = /** @class */ (function () {
+    var LayoutComponent$1 = /** @class */ (function () {
         function LayoutComponent() {
         }
         LayoutComponent.prototype.ngOnInit = function () {
         };
         return LayoutComponent;
     }());
-    LayoutComponent.decorators = [
+    LayoutComponent$1.decorators = [
         { type: i0.Component, args: [{
                     template: "<!-- <fs-page-bar></fs-page-bar> -->\r\n<router-outlet></router-outlet>",
                     styles: [""]
                 },] }
     ];
-    LayoutComponent.ctorParameters = function () { return []; };
+    LayoutComponent$1.ctorParameters = function () { return []; };
 
     var TagDetailComponent = /** @class */ (function () {
         function TagDetailComponent(pageService, location, toasterService) {
@@ -1589,7 +1589,7 @@
                 },] }
     ];
     TagDetailComponent.ctorParameters = function () { return [
-        { type: PageService },
+        { type: PageService$1 },
         { type: common.Location },
         { type: ng_theme_shared.ToasterService }
     ]; };
@@ -1597,7 +1597,7 @@
         isCreate: [{ type: i0.Input }]
     };
 
-    var RouteConfig = /** @class */ (function () {
+    var RouteConfig$1 = /** @class */ (function () {
         function RouteConfig(pageService) {
             this.pageService = pageService;
         }
@@ -1606,11 +1606,11 @@
         };
         return RouteConfig;
     }());
-    RouteConfig.decorators = [
+    RouteConfig$1.decorators = [
         { type: i0.Injectable }
     ];
-    RouteConfig.ctorParameters = function () { return [
-        { type: PageService }
+    RouteConfig$1.ctorParameters = function () { return [
+        { type: PageService$1 }
     ]; };
     var DetailRouteConfig = /** @class */ (function () {
         function DetailRouteConfig(pageService) {
@@ -1627,17 +1627,17 @@
         { type: i0.Injectable }
     ];
     DetailRouteConfig.ctorParameters = function () { return [
-        { type: PageService }
+        { type: PageService$1 }
     ]; };
     var routes$1 = [
         {
             path: '',
-            component: LayoutComponent,
+            component: LayoutComponent$1,
             children: [
                 {
                     path: '',
-                    component: MainComponent,
-                    resolve: { RouteConfig: RouteConfig },
+                    component: MainComponent$1,
+                    resolve: { RouteConfig: RouteConfig$1 },
                 },
                 {
                     path: ':tagId',
@@ -1657,7 +1657,7 @@
                     imports: [router.RouterModule.forChild(routes$1)],
                     exports: [router.RouterModule],
                     providers: [
-                        RouteConfig,
+                        RouteConfig$1,
                         DetailRouteConfig
                     ]
                 },] }
@@ -1682,18 +1682,18 @@
     }());
     TagManagementModule.decorators = [
         { type: i0.NgModule, args: [{
-                    declarations: [MainComponent, LayoutComponent, TagDetailComponent],
+                    declarations: [MainComponent$1, LayoutComponent$1, TagDetailComponent],
                     imports: [
                         SharedModule,
                         tag.NzTagModule,
                         TagManagementRoutingModule
                     ],
-                    providers: [PageService]
+                    providers: [PageService$1]
                 },] }
     ];
 
-    var ɵ0 = PostModule.forEarly, ɵ1 = TagManagementModule.forEarly;
-    var routes = [
+    var ɵ0$2 = PostModule.forEarly, ɵ1 = TagManagementModule.forEarly;
+    var routes$2 = [
         { path: '', pathMatch: 'full', redirectTo: 'post' },
         {
             path: '',
@@ -1701,7 +1701,7 @@
             children: [
                 {
                     path: 'post',
-                    loadChildren: ɵ0
+                    loadChildren: ɵ0$2
                 },
                 {
                     path: 'tag',
@@ -1717,7 +1717,7 @@
     }());
     CmsAdminRoutingModule.decorators = [
         { type: i0.NgModule, args: [{
-                    imports: [router.RouterModule.forChild(routes)],
+                    imports: [router.RouterModule.forChild(routes$2)],
                     exports: [router.RouterModule],
                 },] }
     ];
@@ -1759,9 +1759,9 @@
     exports.SharedModule = SharedModule;
     exports.ɵa = CmsAdminRoutingModule;
     exports.ɵb = PostModule;
-    exports.ɵc = LayoutComponent$1;
-    exports.ɵd = MainComponent$1;
-    exports.ɵe = PageService$1;
+    exports.ɵc = LayoutComponent;
+    exports.ɵd = MainComponent;
+    exports.ɵe = PageService;
     exports.ɵf = PostStateService;
     exports.ɵg = DetailComponent;
     exports.ɵh = FileService;
@@ -1769,14 +1769,14 @@
     exports.ɵj = UploadFileComponent;
     exports.ɵk = TagComponent;
     exports.ɵl = ImagePickerComponent;
-    exports.ɵm = RouteConfig$1;
+    exports.ɵm = RouteConfig;
     exports.ɵn = PostRoutingModule;
     exports.ɵo = TagManagementModule;
-    exports.ɵp = MainComponent;
-    exports.ɵq = PageService;
-    exports.ɵr = LayoutComponent;
+    exports.ɵp = MainComponent$1;
+    exports.ɵq = PageService$1;
+    exports.ɵr = LayoutComponent$1;
     exports.ɵs = TagDetailComponent;
-    exports.ɵt = RouteConfig;
+    exports.ɵt = RouteConfig$1;
     exports.ɵu = DetailRouteConfig;
     exports.ɵv = TagManagementRoutingModule;
 

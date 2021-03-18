@@ -6,7 +6,7 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
     {
         type: "number" /* Number */,
         name: 'sequence',
-        displayName: 'Cms::FS.Blog.sequence',
+        displayName: 'Cms::FS.Blog.Sequence',
         id: 'sequence',
         defaultValue: "",
     },
@@ -42,14 +42,14 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany([
     {
         type: "string" /* String */,
         name: 'url',
-        displayName: 'Cms::FS.Blog.url',
+        displayName: 'Cms::FS.Blog.Url',
         id: 'url',
         defaultValue: "",
     },
     {
         type: "string" /* String */,
         name: 'listStyle',
-        displayName: 'Cms::FS.Blog.listStyle',
+        displayName: 'Cms::FS.Blog.ListStyle',
         id: 'listStyle',
         defaultValue: "",
     },

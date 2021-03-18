@@ -34,7 +34,7 @@ export declare class DetailComponent implements OnInit {
     getRand(): string;
     save(): void;
     private blobToFile;
-    uploadFiles$(item: Fs.Cms.Posts.Dtos.PostDto): Observable<Fs.Cms.Posts.Dtos.AttachmentFileInfo[]>;
+    uploadFiles$(item: Fs.Cms.Posts.Dtos.PostDto): Observable<Fs.Cms.Posts.Dtos.AttachmentFileInfoDto[]>;
     uploadImage$(item: Fs.Cms.Posts.Dtos.PostDto): Observable<Fs.Cms.Posts.Dtos.PostImageDto[]>;
     savePost(item: Fs.Cms.Posts.Dtos.PostDto): void;
 }

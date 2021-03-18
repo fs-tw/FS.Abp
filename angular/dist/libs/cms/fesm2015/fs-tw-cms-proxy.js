@@ -1,18 +1,16 @@
 import { RestService, mapEnumToOptions } from '@abp/ng.core';
 import { ɵɵdefineInjectable, ɵɵinject, Injectable } from '@angular/core';
 
-var index$r = /*#__PURE__*/Object.freeze({
+var index = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$q = /*#__PURE__*/Object.freeze({
+var index$1 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$r
+    Dtos: index
 });
 
-// import type { DirectoryDescriptorDto } from '../../../../../volo/file-management/directories/models';
-
-var index$p = /*#__PURE__*/Object.freeze({
+var index$2 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -22,12 +20,12 @@ class DirectoriesApiService {
         this.apiName = 'Default';
         this.findByProviderByKeyAndGroup = (key, group) => this.restService.request({
             method: 'GET',
-            url: `/api/file-management/directory-descriptor/provider/${key}`,
+            url: `/api/file/directories/provider/${key}`,
             params: { group: group },
         }, { apiName: this.apiName });
         this.getDefinitions = () => this.restService.request({
             method: 'GET',
-            url: `/api/file-management/directory-descriptor/definitions`,
+            url: `/api/file/directories/definitions`,
         }, { apiName: this.apiName });
     }
 }
@@ -41,20 +39,19 @@ DirectoriesApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$o = /*#__PURE__*/Object.freeze({
+var index$3 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$p,
+    Dtos: index$2,
     DirectoriesApiService: DirectoriesApiService
 });
 
-// import type { IActionResult } from '../../../../microsoft/asp-net-core/mvc/models';
 class FilesApiService {
     constructor(restService) {
         this.restService = restService;
         this.apiName = 'Default';
         this.getContentById = (id) => this.restService.request({
             method: 'GET',
-            url: `/api/file-management/file-descriptor/file-content`,
+            url: `/api/file/files/file-content`,
             params: { id: id },
         }, { apiName: this.apiName });
     }
@@ -69,24 +66,24 @@ FilesApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$n = /*#__PURE__*/Object.freeze({
+var index$4 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FilesApiService: FilesApiService
 });
 
-var index$m = /*#__PURE__*/Object.freeze({
+var index$5 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Directories: index$o,
-    Files: index$n
+    Directories: index$3,
+    Files: index$4
 });
 
-var index$l = /*#__PURE__*/Object.freeze({
+var index$6 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Application: index$q,
-    File: index$m
+    Application: index$1,
+    File: index$5
 });
 
-var index$k = /*#__PURE__*/Object.freeze({
+var index$7 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -136,22 +133,22 @@ BlogsApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$j = /*#__PURE__*/Object.freeze({
+var index$8 = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$k,
+    Dtos: index$7,
     BlogsApiService: BlogsApiService
 });
 
-var index$i = /*#__PURE__*/Object.freeze({
+var index$9 = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$h = /*#__PURE__*/Object.freeze({
+var index$a = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$i
+    Dtos: index$9
 });
 
-var index$g = /*#__PURE__*/Object.freeze({
+var index$b = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -185,13 +182,13 @@ DocumentsApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$f = /*#__PURE__*/Object.freeze({
+var index$c = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$g,
+    Dtos: index$b,
     DocumentsApiService: DocumentsApiService
 });
 
-var index$e = /*#__PURE__*/Object.freeze({
+var index$d = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -258,15 +255,15 @@ PostsApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$d = /*#__PURE__*/Object.freeze({
+var index$e = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$e,
+    Dtos: index$d,
     get DisplayMode () { return DisplayMode; },
     displayModeOptions: displayModeOptions,
     PostsApiService: PostsApiService
 });
 
-var index$c = /*#__PURE__*/Object.freeze({
+var index$f = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
@@ -316,48 +313,334 @@ TagsApiService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$b = /*#__PURE__*/Object.freeze({
+var index$g = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Dtos: index$c,
+    Dtos: index$f,
     TagsApiService: TagsApiService
 });
 
-var index$a = /*#__PURE__*/Object.freeze({
+var index$h = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Blogs: index$j,
-    Core: index$h,
-    Documents: index$f,
-    Posts: index$d,
-    Tags: index$b
+    Blogs: index$8,
+    Core: index$a,
+    Documents: index$c,
+    Posts: index$e,
+    Tags: index$g
 });
 
-var index$9 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    Abp: index$l,
-    Cms: index$a
-});
-
-var index$8 = /*#__PURE__*/Object.freeze({
+var index$i = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$7 = /*#__PURE__*/Object.freeze({
+class DocumentsApiService$1 {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.getListByDocumentDefinitionGetList = (DocumentDefinitionGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/documents/document-definition`,
+            params: { fields: DocumentDefinitionGetList.fields, value: DocumentDefinitionGetList.value, sorting: DocumentDefinitionGetList.sorting, skipCount: DocumentDefinitionGetList.skipCount, maxResultCount: DocumentDefinitionGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.getListByVersionGetList = (VersionGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/documents/version`,
+            params: { fields: VersionGetList.fields, value: VersionGetList.value, sorting: VersionGetList.sorting, skipCount: VersionGetList.skipCount, maxResultCount: VersionGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.options = () => this.restService.request({
+            method: 'OPTIONS',
+            url: `/api/form-management/documents`,
+        }, { apiName: this.apiName });
+    }
+}
+DocumentsApiService$1.ɵprov = ɵɵdefineInjectable({ factory: function DocumentsApiService_Factory() { return new DocumentsApiService$1(ɵɵinject(RestService)); }, token: DocumentsApiService$1, providedIn: "root" });
+DocumentsApiService$1.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+DocumentsApiService$1.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$j = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Mvc: index$8
+    Dtos: index$i,
+    DocumentsApiService: DocumentsApiService$1
 });
 
-var index$6 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    AspNetCore: index$7
-});
-
-var index$5 = /*#__PURE__*/Object.freeze({
+var index$k = /*#__PURE__*/Object.freeze({
     __proto__: null
 });
 
-var index$4 = /*#__PURE__*/Object.freeze({
+class FormsApiService {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.getListByFormalGetList = (FormalGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/forms/formal`,
+            params: { fields: FormalGetList.fields, value: FormalGetList.value, sorting: FormalGetList.sorting, skipCount: FormalGetList.skipCount, maxResultCount: FormalGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.getListByGroupGetList = (GroupGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/forms/group`,
+            params: { fields: GroupGetList.fields, value: GroupGetList.value, sorting: GroupGetList.sorting, skipCount: GroupGetList.skipCount, maxResultCount: GroupGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.getListByItemGetList = (ItemGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/forms/item`,
+            params: { fields: ItemGetList.fields, value: ItemGetList.value, sorting: ItemGetList.sorting, skipCount: ItemGetList.skipCount, maxResultCount: ItemGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.options = () => this.restService.request({
+            method: 'OPTIONS',
+            url: `/api/form-management/forms`,
+        }, { apiName: this.apiName });
+    }
+}
+FormsApiService.ɵprov = ɵɵdefineInjectable({ factory: function FormsApiService_Factory() { return new FormsApiService(ɵɵinject(RestService)); }, token: FormsApiService, providedIn: "root" });
+FormsApiService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+FormsApiService.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$l = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Content: index$5
+    Dtos: index$k,
+    FormsApiService: FormsApiService
+});
+
+var index$m = /*#__PURE__*/Object.freeze({
+    __proto__: null
+});
+
+class RecordsApiService {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.getListByRecordGetList = (RecordGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/records/record`,
+            params: { fields: RecordGetList.fields, value: RecordGetList.value, sorting: RecordGetList.sorting, skipCount: RecordGetList.skipCount, maxResultCount: RecordGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.getListByRecordItemGetList = (RecordItemGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/form-management/records/record-item`,
+            params: { fields: RecordItemGetList.fields, value: RecordItemGetList.value, sorting: RecordItemGetList.sorting, skipCount: RecordItemGetList.skipCount, maxResultCount: RecordItemGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.options = () => this.restService.request({
+            method: 'OPTIONS',
+            url: `/api/form-management/records`,
+        }, { apiName: this.apiName });
+    }
+}
+RecordsApiService.ɵprov = ɵɵdefineInjectable({ factory: function RecordsApiService_Factory() { return new RecordsApiService(ɵɵinject(RestService)); }, token: RecordsApiService, providedIn: "root" });
+RecordsApiService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+RecordsApiService.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$n = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Dtos: index$m,
+    RecordsApiService: RecordsApiService
+});
+
+class SampleService {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.get = () => this.restService.request({
+            method: 'GET',
+            url: `/api/FormManagement/sample`,
+        }, { apiName: this.apiName });
+        this.getAuthorized = () => this.restService.request({
+            method: 'GET',
+            url: `/api/FormManagement/sample/authorized`,
+        }, { apiName: this.apiName });
+    }
+}
+SampleService.ɵprov = ɵɵdefineInjectable({ factory: function SampleService_Factory() { return new SampleService(ɵɵinject(RestService)); }, token: SampleService, providedIn: "root" });
+SampleService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+SampleService.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$o = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    SampleService: SampleService
+});
+
+var index$p = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Documents: index$j,
+    Forms: index$l,
+    Records: index$n,
+    Samples: index$o
+});
+
+var index$q = /*#__PURE__*/Object.freeze({
+    __proto__: null
+});
+
+class BannersApiService {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.getListByBannerDefinitionGetList = (BannerDefinitionGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/theme/banners/banner-definition`,
+            params: { fields: BannerDefinitionGetList.fields, value: BannerDefinitionGetList.value, sorting: BannerDefinitionGetList.sorting, skipCount: BannerDefinitionGetList.skipCount, maxResultCount: BannerDefinitionGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.getListByBannerGetList = (BannerGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/theme/banners/banner`,
+            params: { fields: BannerGetList.fields, value: BannerGetList.value, sorting: BannerGetList.sorting, skipCount: BannerGetList.skipCount, maxResultCount: BannerGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.options = () => this.restService.request({
+            method: 'OPTIONS',
+            url: `/api/theme/banners`,
+        }, { apiName: this.apiName });
+    }
+}
+BannersApiService.ɵprov = ɵɵdefineInjectable({ factory: function BannersApiService_Factory() { return new BannersApiService(ɵɵinject(RestService)); }, token: BannersApiService, providedIn: "root" });
+BannersApiService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+BannersApiService.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$r = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Dtos: index$q,
+    BannersApiService: BannersApiService
+});
+
+var index$s = /*#__PURE__*/Object.freeze({
+    __proto__: null
+});
+
+class RoutesApiService {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.getListByRouteDefinitionGetList = (RouteDefinitionGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/theme/routes/route-definition`,
+            params: { fields: RouteDefinitionGetList.fields, value: RouteDefinitionGetList.value, sorting: RouteDefinitionGetList.sorting, skipCount: RouteDefinitionGetList.skipCount, maxResultCount: RouteDefinitionGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.getListByRouteGetList = (RouteGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/theme/routes/route`,
+            params: { fields: RouteGetList.fields, value: RouteGetList.value, sorting: RouteGetList.sorting, skipCount: RouteGetList.skipCount, maxResultCount: RouteGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.options = () => this.restService.request({
+            method: 'OPTIONS',
+            url: `/api/theme/routes`,
+        }, { apiName: this.apiName });
+    }
+}
+RoutesApiService.ɵprov = ɵɵdefineInjectable({ factory: function RoutesApiService_Factory() { return new RoutesApiService(ɵɵinject(RestService)); }, token: RoutesApiService, providedIn: "root" });
+RoutesApiService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+RoutesApiService.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$t = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Dtos: index$s,
+    RoutesApiService: RoutesApiService
+});
+
+var index$u = /*#__PURE__*/Object.freeze({
+    __proto__: null
+});
+
+class WebSitesApiService {
+    constructor(restService) {
+        this.restService = restService;
+        this.apiName = 'Default';
+        this.getListByWebSiteDefinitionGetList = (WebSiteDefinitionGetList) => this.restService.request({
+            method: 'GET',
+            url: `/api/theme/web-sites/web-site-definition`,
+            params: { fields: WebSiteDefinitionGetList.fields, value: WebSiteDefinitionGetList.value, sorting: WebSiteDefinitionGetList.sorting, skipCount: WebSiteDefinitionGetList.skipCount, maxResultCount: WebSiteDefinitionGetList.maxResultCount },
+        }, { apiName: this.apiName });
+        this.options = () => this.restService.request({
+            method: 'OPTIONS',
+            url: `/api/theme/web-sites`,
+        }, { apiName: this.apiName });
+    }
+}
+WebSitesApiService.ɵprov = ɵɵdefineInjectable({ factory: function WebSitesApiService_Factory() { return new WebSitesApiService(ɵɵinject(RestService)); }, token: WebSitesApiService, providedIn: "root" });
+WebSitesApiService.decorators = [
+    { type: Injectable, args: [{
+                providedIn: 'root',
+            },] }
+];
+WebSitesApiService.ctorParameters = () => [
+    { type: RestService }
+];
+
+var index$v = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Dtos: index$u,
+    WebSitesApiService: WebSitesApiService
+});
+
+var index$w = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Banners: index$r,
+    Routes: index$t,
+    WebSites: index$v
+});
+
+var index$x = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Abp: index$6,
+    Cms: index$h,
+    FormManagement: index$p,
+    Theme: index$w
+});
+
+var index$y = /*#__PURE__*/Object.freeze({
+    __proto__: null
+});
+
+var index$z = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Mvc: index$y
+});
+
+var index$A = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    AspNetCore: index$z
+});
+
+var index$B = /*#__PURE__*/Object.freeze({
+    __proto__: null
+});
+
+var index$C = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    Content: index$B
 });
 
 class DirectoryDescriptorService {
@@ -409,7 +692,7 @@ DirectoryDescriptorService.ctorParameters = () => [
     { type: RestService }
 ];
 
-var index$3 = /*#__PURE__*/Object.freeze({
+var index$D = /*#__PURE__*/Object.freeze({
     __proto__: null,
     DirectoryDescriptorService: DirectoryDescriptorService
 });
@@ -479,28 +762,28 @@ var FileIconType;
 })(FileIconType || (FileIconType = {}));
 const fileIconTypeOptions = mapEnumToOptions(FileIconType);
 
-var index$2 = /*#__PURE__*/Object.freeze({
+var index$E = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FileDescriptorService: FileDescriptorService,
     get FileIconType () { return FileIconType; },
     fileIconTypeOptions: fileIconTypeOptions
 });
 
-var index$1 = /*#__PURE__*/Object.freeze({
+var index$F = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Directories: index$3,
-    Files: index$2
+    Directories: index$D,
+    Files: index$E
 });
 
-var index = /*#__PURE__*/Object.freeze({
+var index$G = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    Abp: index$4,
-    FileManagement: index$1
+    Abp: index$C,
+    FileManagement: index$F
 });
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { index$9 as Fs, index$6 as Microsoft, index as Volo };
+export { index$x as Fs, index$A as Microsoft, index$G as Volo };
 //# sourceMappingURL=fs-tw-cms-proxy.js.map

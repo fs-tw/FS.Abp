@@ -20,20 +20,24 @@ namespace FS.Abp.File.Files
     public class FilesApi : FileController
     {
         protected IFileDescriptorAppService FileDescriptorAppService;
+        private readonly IFilesAppService filesAppService;
 
-        public FilesApi(IFileDescriptorAppService fileDescriptorAppService)
+        public FilesApi(
+            IFileDescriptorAppService fileDescriptorAppService,
+            IFilesAppService filesAppService)
         {
             FileDescriptorAppService = fileDescriptorAppService;
+            this.filesAppService = filesAppService;
         }
 
         [HttpGet]
         [Route("file-content")]
         public virtual async Task<IActionResult> GetContentAsync(Guid id)
-        {
-            var file = await this.FileDescriptorAppService.GetAsync(id);
+        {          
             try
-            {                
-                var bytes = await FileDescriptorAppService.GetContentAsync(id);
+            {
+                var file = await this.filesAppService.GetAsync(id);
+                var bytes = await filesAppService.GetContentAsync(id);
                 string contentType;
                 new FileExtensionContentTypeProvider().TryGetContentType(file.Name, out contentType);
                 contentType = contentType ?? "application/octet-stream";
