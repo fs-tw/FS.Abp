@@ -19,6 +19,10 @@
     "FS.Blog.Description": "描述",
     "FS.Blog.Disable": "禁用",
     "FS.Blog.BlogConfig": "Blog配置",
+    "FS.Blog.Sequence": "排序",
+    "FS.Blog.Url": "連結",
+    "FS.Blog.ListStyle": "列表樣式",
+
 
     "FS.Post.BlogId": "BlogId",
     "FS.Post.Title": "標題",
