@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../libs/theme/proxy/src/microsoft/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,UAAU,MAAM,gBAAgB,CAAC;AAC7C,OAAO,EAAE,UAAU,EAAE,CAAC","sourcesContent":["import * as AspNetCore from './asp-net-core';\nexport { AspNetCore };\n"]}

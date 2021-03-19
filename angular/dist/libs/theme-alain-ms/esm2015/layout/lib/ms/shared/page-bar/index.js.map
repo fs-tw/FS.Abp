@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../libs/theme-alain-ms/layout/src/lib/ms/shared/page-bar/index.ts"],"names":[],"mappings":"AAAA,cAAc,sBAAsB,CAAC","sourcesContent":["export * from './page-bar.component';"]}

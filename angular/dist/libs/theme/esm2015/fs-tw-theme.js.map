@@ -1,1 +1,0 @@
-{"version":3,"file":"fs-tw-theme.js","sourceRoot":"","sources":["../../../../libs/theme/src/fs-tw-theme.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,cAAc,SAAS,CAAC","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\n\nexport * from './index';\n"]}

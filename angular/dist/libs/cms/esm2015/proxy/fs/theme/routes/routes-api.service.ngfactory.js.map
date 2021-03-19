@@ -1,1 +1,0 @@
-{"version":3,"file":"routes-api.service.ngfactory.js","sourceRoot":"","sources":["../../../../../../../../libs/cms/proxy/src/fs/theme/routes/routes-api.service.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

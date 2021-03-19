@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../libs/theme-alain-ms/layout/src/lib/ms/_widgets/search/index.ts"],"names":[],"mappings":"AAAA,cAAc,oBAAoB,CAAC","sourcesContent":["export * from './search.component';"]}

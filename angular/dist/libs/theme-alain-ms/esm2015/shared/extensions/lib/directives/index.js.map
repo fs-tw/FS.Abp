@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../libs/theme-alain-ms/shared/extensions/src/lib/directives/index.ts"],"names":[],"mappings":"AAAA,cAAc,2BAA2B,CAAC;AAC1C,cAAc,iCAAiC,CAAC","sourcesContent":["export * from './nz-table-list.directive';\r\nexport * from './nz-table-row-detail.directive';"]}

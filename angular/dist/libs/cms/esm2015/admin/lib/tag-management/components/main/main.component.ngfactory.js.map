@@ -1,1 +1,0 @@
-{"version":3,"file":"main.component.ngfactory.js","sourceRoot":"","sources":["../../../../../../../../../libs/cms/admin/src/lib/tag-management/components/main/main.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

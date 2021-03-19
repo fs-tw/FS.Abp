@@ -1,1 +1,0 @@
-{"version":3,"file":"policy-names.js","sourceRoot":"","sources":["../../../../../../libs/form-management/config/src/enums/policy-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eFormmanagementPolicyNames {\r\n  //DirectoryDescriptor = 'Cms.DirectoryDescriptor',\r\n}\r\n"]}

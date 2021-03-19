@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../libs/theme-alain-ms/layout/src/lib/ms/_widgets/all-nav/index.ts"],"names":[],"mappings":"AAAA,cAAc,qBAAqB,CAAC;AACpC,cAAc,mBAAmB,CAAC","sourcesContent":["export * from './all-nav.component';\r\nexport * from './all-nav.service';"]}

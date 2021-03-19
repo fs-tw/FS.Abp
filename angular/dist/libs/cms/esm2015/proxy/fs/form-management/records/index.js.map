@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../libs/cms/proxy/src/fs/form-management/records/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,IAAI,MAAM,QAAQ,CAAC;AAC/B,cAAc,uBAAuB,CAAC;AACtC,OAAO,EAAE,IAAI,EAAE,CAAC","sourcesContent":["import * as Dtos from './dtos';\r\nexport * from './records-api.service';\r\nexport { Dtos };\r\n"]}

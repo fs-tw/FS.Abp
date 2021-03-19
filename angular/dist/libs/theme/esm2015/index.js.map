@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../libs/theme/src/index.ts"],"names":[],"mappings":"AAAA,cAAc,oBAAoB,CAAC","sourcesContent":["export * from './lib/theme.module';\r\n"]}

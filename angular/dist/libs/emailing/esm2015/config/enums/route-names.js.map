@@ -1,1 +1,0 @@
-{"version":3,"file":"route-names.js","sourceRoot":"","sources":["../../../../../../libs/emailing/config/src/enums/route-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eEmailingRouteNames {\r\n  Emailing = 'Emailing',\r\n}\r\n"]}

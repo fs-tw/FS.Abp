@@ -1,1 +1,0 @@
-{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../libs/theme/proxy/src/fs/form-management/samples/models.ts"],"names":[],"mappings":"","sourcesContent":["\nexport interface SampleDto {\n  value: number;\n}\n"]}

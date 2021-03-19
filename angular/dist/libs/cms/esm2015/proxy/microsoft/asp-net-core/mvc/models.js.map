@@ -1,1 +1,0 @@
-{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../libs/cms/proxy/src/microsoft/asp-net-core/mvc/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface IActionResult {\r\n}\r\n"]}

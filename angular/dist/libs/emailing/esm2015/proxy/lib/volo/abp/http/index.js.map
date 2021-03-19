@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../libs/emailing/proxy/src/lib/volo/abp/http/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,QAAQ,MAAM,YAAY,CAAC;AACvC,OAAO,EAAE,QAAQ,EAAE,CAAC","sourcesContent":["import * as Modeling from './modeling';\r\nexport { Modeling };\r\n"]}

@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./lib/providers/init.provider","export":[{"name":"LAYOUT_INIT_PROVIDERS","as":"ɵa"},{"name":"init","as":"ɵb"}]}]}]
