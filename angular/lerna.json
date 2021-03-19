@@ -1,13 +1,13 @@
 {
   "packages": [
-	"dist/libs/account"
-    "dist/libs/cms",
-    "dist/libs/emailing",
-    "dist/libs/theme",
-    "dist/libs/theme-alain-ms",
-    "dist/libs/theme-unify"
+	  "libs/account",
+    "libs/cms",
+    "libs/emailing",
+    "libs/theme",
+    "libs/theme-alain-ms",
+    "libs/theme-unify"
   ],
-  "version": "422.0.2",
+  "version": "422.0.3",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
