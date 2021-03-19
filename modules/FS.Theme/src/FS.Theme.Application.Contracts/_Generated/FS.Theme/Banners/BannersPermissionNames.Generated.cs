@@ -13,23 +13,21 @@ namespace FS.Theme.Banners
 {
     public class BannersPermissionNames
     {
-        public const string GroupName = "FS.Theme.Banners";
-
-        public static class Banner
-        {
-            public const string Default = GroupName + ".Banner";
-            public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
-            public const string Update = Default + ".Update";
-        }
+        public const string ModuleName = "FS.Theme.Banners";
         public static class BannerDefinition
         {
-            public const string Default = GroupName + ".BannerDefinition";
+            public const string Default = ModuleName + ".BannerDefinition";
             public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
             public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
         }
-
+        public static class Banner
+        {
+            public const string Default = ModuleName + ".Banner";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
         public static string[] GetAll()
         {
             return ReflectionHelper.GetPublicConstantsRecursively(typeof(BannersPermissionNames));

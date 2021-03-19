@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../libs/account/src/lib/tokens/index.ts"],"names":[],"mappings":"AAAA,cAAc,iBAAiB,CAAC","sourcesContent":["export * from './options.token';\r\n"]}

@@ -1,1 +1,0 @@
-{"version":3,"file":"layout.component.scss.shim.ngstyle.js","sourceRoot":"","sources":["../../../../../../../../../libs/cms/admin/src/lib/tag-management/components/layout/layout.component.scss.shim.ngstyle.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

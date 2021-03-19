@@ -13,9 +13,10 @@ using Volo.FileManagement.Directories;
 namespace FS.Abp.File.Directories
 {
 
-    [RemoteService]
-    [Route("api/file-management/directory-descriptor")]
-    [ControllerName("DirectoryDescriptors")]
+    [RemoteService(true)]
+    [Route("api/file/directories")]
+    [Area("file")]
+    [ControllerName("FS.Abp.File.Directories(file)")]
     //[ExposeServices(
     //    typeof(DirectoryDescriptorController)
     //)]

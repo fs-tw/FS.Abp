@@ -36,6 +36,7 @@ namespace FS.FormManagement.Forms
             builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Question).HasColumnName(@"Question").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.GroupId).HasColumnName(@"GroupId").ValueGeneratedNever();
+            builder.Property(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
             builder.HasOne(x => x.Group).WithMany(op => op.Items).IsRequired(true).HasForeignKey(@"GroupId");

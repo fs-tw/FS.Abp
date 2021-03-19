@@ -1,1 +1,0 @@
-{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../libs/cms/proxy/src/volo/abp/content/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface RemoteStreamContent {\r\n  contentType?: string;\r\n  contentLength?: number;\r\n}\r\n"]}

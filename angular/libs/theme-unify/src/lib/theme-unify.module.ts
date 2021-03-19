@@ -15,6 +15,8 @@ import { ValidationErrorComponent } from './components/validation-error/validati
 import { SettingsComponent } from './components/settings/settings.component';
 import { UNIFY_THEME_SETTING_TAB_PROVIDERS } from './providers/setting-tab.provider';
 
+import { LANG_PROVIDES } from './providers/lang.provider';
+
 export const LAYOUTS = [ApplicationLayoutComponent, AccountLayoutComponent, EmptyLayoutComponent];
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ export class ThemeUnifyModule {
       providers: [
         UNIFY_THEME_STYLES_PROVIDERS,
         UNIFY_THEME_INITIAL_PROVIDERS,
-        UNIFY_THEME_SETTING_TAB_PROVIDERS
+        UNIFY_THEME_SETTING_TAB_PROVIDERS,
+        ...LANG_PROVIDES
       ],
     };
   }

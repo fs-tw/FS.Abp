@@ -14,15 +14,6 @@ namespace FS.FormManagement.Documents
 {
     public static class DocumentsQueryableExtensions //auto-generated
     {
-        public static IQueryable<Version> IncludeDetails(this IQueryable<Version> queryable, bool include = true)
-        {
-            if (!include)
-            {
-                return queryable;
-            }
-            return queryable
-                .Include(x => x.DocumentDefinition);
-        }
         public static IQueryable<DocumentDefinition> IncludeDetails(this IQueryable<DocumentDefinition> queryable, bool include = true)
         {
             if (!include)

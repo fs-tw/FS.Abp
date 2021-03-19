@@ -30,6 +30,13 @@ namespace FS.FormManagement.Documents
             OnCreated();
         }
 
+        public Version(System.Guid id, System.Guid documentDefinitionId, System.Guid? tenantId) : this()
+        {
+            this.Id = id;
+            this.DocumentDefinitionId = documentDefinitionId;
+            this.TenantId = tenantId;
+        }
+
         public virtual string No
         {
             get;
@@ -55,12 +62,6 @@ namespace FS.FormManagement.Documents
         }
 
         public virtual System.Guid? TenantId
-        {
-            get;
-            set;
-        }
-
-        public virtual DocumentDefinition DocumentDefinition
         {
             get;
             set;

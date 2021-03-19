@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, NgModuleFactory } from '@angular/core';
 import { LazyModuleFactory, CoreModule } from '@abp/ng.core';
 import { CmsAdminRoutingModule } from './cms-admin-routing.module';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '@fs-tw/cms/admin/shared';
 
 @NgModule({
   imports: [

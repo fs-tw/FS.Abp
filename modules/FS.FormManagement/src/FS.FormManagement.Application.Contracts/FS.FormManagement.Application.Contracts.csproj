@@ -18,6 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documents</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -49,6 +57,14 @@
     <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ItemDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Forms\IFormalCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +99,14 @@
       <DependentUpon>Records</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Records\IRecordsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Records\RecordsPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Records</DependentUpon>
     </Compile>

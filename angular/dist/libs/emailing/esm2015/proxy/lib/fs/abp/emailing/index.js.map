@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../libs/emailing/proxy/src/lib/fs/abp/emailing/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,IAAI,MAAM,QAAQ,CAAC;AAC/B,cAAc,wBAAwB,CAAC;AACvC,OAAO,EAAE,IAAI,EAAE,CAAC","sourcesContent":["import * as Dtos from './dtos';\r\nexport * from './emailing-api.service';\r\nexport { Dtos };\r\n"]}

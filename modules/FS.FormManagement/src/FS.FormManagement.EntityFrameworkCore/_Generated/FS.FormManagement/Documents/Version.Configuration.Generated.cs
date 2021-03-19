@@ -39,7 +39,6 @@ namespace FS.FormManagement.Documents
             builder.Property(x => x.DocumentDefinitionId).HasColumnName(@"DocumentDefinitionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
-            builder.HasOne(x => x.DocumentDefinition).WithMany().IsRequired(true).HasForeignKey(@"DocumentDefinitionId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);

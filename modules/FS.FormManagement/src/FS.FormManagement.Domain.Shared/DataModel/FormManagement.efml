@@ -174,31 +174,16 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="7c7dc85a-b54e-49f9-b846-1ed51b941663" p1:GenerateDTO="False">
@@ -246,31 +231,16 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="311f145b-1a8f-44d6-ad96-52d35dc058b1" p1:GenerateDTO="False">
@@ -324,31 +294,16 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="e0eceba3-7fd9-40a3-b009-d247382ecaf6" p1:GenerateDTO="False">
@@ -362,6 +317,9 @@
     </property>
     <property name="GroupId" type="Guid" p1:ValidateRequired="true" p1:Guid="e411f260-0c0a-4ac6-b657-9e4b365327b3">
       <column name="" not-null="False" />
+    </property>
+    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="f2ba0a0c-39cb-4a55-942e-2cae5e31a43a">
+      <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8487fd40-a4e3-4782-ac3f-81b79a4848ae" p1:GenerateDTO="False">
       <column name="" />
@@ -396,34 +354,19 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="498720bf-64d0-4d45-90ad-a0b011a88621" p1:GenerateDTO="False">
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="498720bf-64d0-4d45-90ad-a0b011a88621" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="f924d30a-e123-4cbd-94d4-cbfc965b592a">
@@ -435,10 +378,10 @@
     <property name="NextVersionId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d712b886-6a4c-4d4a-afb5-7ca5b6cc981c">
       <column name="" />
     </property>
-    <property name="DocumentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="954b0fe7-d9f1-484b-89d4-ed02ca70a817">
+    <property name="DocumentDefinitionId" type="Guid" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="0278326f-12b0-40c5-a129-65623d017090">
       <column name="" not-null="False" />
     </property>
-    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3cb9889a-b17d-4c7b-888f-afb883ee142f" p1:GenerateDTO="False">
+    <property name="TenantId" type="Guid" p1:nullable="True" constructor-parameter="True" p1:ValidateRequired="false" p1:Guid="3cb9889a-b17d-4c7b-888f-afb883ee142f" p1:GenerateDTO="False">
       <column name="" />
     </property>
     <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="e4030155-a83e-4235-8f89-5985491f19b0" p1:Shadow="True">
@@ -471,31 +414,16 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="134eadee-fd6b-4c57-98e1-dd8a951fabb9" p1:GenerateDTO="False">
@@ -537,31 +465,16 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="a446b023-ccae-4c8f-bfdb-4a1fa54b3bc0" p1:GenerateDTO="False">
@@ -570,8 +483,11 @@
     <property name="Asnwer" type="String" p1:ValidateRequired="true" p1:Guid="21a8752c-6c54-4fac-8efb-d8c0d5d1baee">
       <column name="" />
     </property>
-    <property name="ItemId" type="Guid" p1:ValidateRequired="true" p1:Guid="128b471e-35fd-4f7a-9c42-0afe5d5fb39e">
+    <property name="RecordId" type="Guid" p1:ValidateRequired="true" p1:Guid="128b471e-35fd-4f7a-9c42-0afe5d5fb39e">
       <column name="" not-null="False" />
+    </property>
+    <property name="ItemId" type="String" p1:ValidateRequired="true" p1:Guid="e9fb63a2-5cca-4589-bbb7-4c84cab04f86">
+      <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27782ce2-c00f-4274-8351-78ea5082e19a" p1:GenerateDTO="False">
       <column name="" />
@@ -606,34 +522,19 @@
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Partial.PartialAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="EntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Entity" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Repository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AppService" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="Dto" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-          <p1:PropertyValue Name="AutoMapperProfile" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <boolean>false</boolean>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
       </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="5af6e9a0-8070-42dc-93ea-ef31cebece54" p1:GenerateDTO="False">
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="5af6e9a0-8070-42dc-93ea-ef31cebece54" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="13b1f2ea-42da-44ab-aec2-aaff6227a331">
@@ -645,7 +546,7 @@
     <property name="CurrentVersionId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3fa3a8f3-034c-42ac-a490-53f5243716af">
       <column name="" not-null="False" />
     </property>
-    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="41d93ea4-0913-486e-b9f4-ebdf267d09a1" p1:GenerateDTO="False">
+    <property name="TenantId" type="Guid" p1:nullable="True" constructor-parameter="True" p1:ValidateRequired="false" p1:Guid="41d93ea4-0913-486e-b9f4-ebdf267d09a1" p1:GenerateDTO="False">
       <column name="" />
     </property>
     <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="117a2a6c-3c22-4d27-9c76-1d9d8b5b874b" p1:Shadow="True">
@@ -687,7 +588,7 @@
         <property name="Id" />
       </end1>
       <end2 multiplicity="Many" name="RecordItems" class="Record" relation-class="RecordItem" lazy="False" p1:Guid="91e06374-caf7-4a4b-babb-50a9bca7d05e">
-        <property name="ItemId" />
+        <property name="RecordId" />
       </end2>
     </association>
     <association name="Version_VersionDefinition" cardinality="OneToMany" p1:Guid="21449d00-b8ec-49fa-9219-09e55e8d85ad">
@@ -696,14 +597,6 @@
       </end1>
       <end2 multiplicity="Many" name="VersionDefinitions" class="Version" relation-class="DocumentDefinition" generate="False" lazy="False" p1:Guid="bac6c148-6ce1-4cad-b3d2-6a1d7d3c9ff6">
         <property name="CurrentVersionId" />
-      </end2>
-    </association>
-    <association name="VersionDefinition_Version" cardinality="OneToMany" p1:Guid="bd0e1f70-db1e-4592-a54e-360a53413b0b">
-      <end1 multiplicity="One" name="DocumentDefinition" class="Version" relation-class="DocumentDefinition" constrained="True" lazy="False" p1:Guid="a84cf6e4-f426-42ea-bb6a-852b4b210204">
-        <property name="Id" />
-      </end1>
-      <end2 multiplicity="Many" name="Versions" class="DocumentDefinition" relation-class="Version" generate="False" lazy="False" p1:Guid="63ff1166-454f-4e3f-b23e-9f53d7113a3b">
-        <property name="DocumentDefinitionId" />
       </end2>
     </association>
   </associations>

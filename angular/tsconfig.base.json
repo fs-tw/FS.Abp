@@ -53,6 +53,12 @@
       ],
       "@fs-tw/emailing/*": [
         "libs/emailing/*/src/index.ts"
+      ],
+      "@fs-tw/form-management": [
+        "libs/form-management/src/index.ts"
+      ],
+      "@fs-tw/form-management/*": [
+        "libs/form-management/*/src/index.ts"
       ]
     }
   },

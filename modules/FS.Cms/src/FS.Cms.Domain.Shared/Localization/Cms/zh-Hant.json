@@ -1,41 +1,100 @@
 {
   "culture": "zh-Hant",
   "texts": {
-    "FS.Cms.Blogs": "部落格",
+
     "FS.Cms.Blogs.Posts": "文章",
     "FS.Cms.Core": "網站內容管理",
     "FS.Cms.Basic": "管理",
-    "FS.Cms.PostManagement": "消息內容管理",
+    "FS.Cms.PostManagement": "文章管理",
     "FS.Cms.Menu": "網站內容管理選單 ",
     "FS.Cms.Menu.前台內容管理": "網站內容管理頁面",
-    "Fs.Cms.Storage": "檔案管理",
+    "FS.Cms.Storage": "檔案管理",
     "FS.Cms.PostDetail": "文章詳細頁",
-    "DisplayName:前台內容管理Permissions.最新消息管理": "消息內容管理權限",
+    "DisplayName:前台內容管理Permissions.最新消息管理": "文章管理權限",
     "DisplayName:前台內容管理Permissions.檔案管理": "檔案管理權限",
+    "FS.Cms.BlogType": "類型",
+
+
 
 
     "FS.Blog.No": "No",
     "FS.Blog.DisplayName": "顯示名稱",
     "FS.Blog.Description": "描述",
+    "FS.Blog.Enable": "啟用",
     "FS.Blog.Disable": "禁用",
     "FS.Blog.BlogConfig": "Blog配置",
+    "FS.Blog.Sequence": "排序",
+    "FS.Blog.Url": "連結",
+    "FS.Blog.ListStyle": "列表樣式",
+
 
     "FS.Post.BlogId": "BlogId",
+    "FS.Cms.PostDetail.Id": "文章詳細",
+
     "FS.Post.Title": "標題",
-    "FS.Post.Subtitle": "字幕",
+    "FS.Post.Subtitle": "副標題",
     "FS.Post.Url": "連結",
     "FS.Post.Content": "內容",
     "FS.Post.Disable": "禁用",
+    "FS.Post.PublishDate": "發佈時間",
     "FS.Post.StartTime": "開始時間",
     "FS.Post.EndTime": "結束時間",
     "FS.Post.DisplayMode": "顯示模式",
     "FS.Post.Sequence": "排序",
+    "FS.Post.AttachmentFile": "上傳附件",
+    "FS.Post.AttachmentImage": "上傳圖片",
     "FS.Post.AttachmentFileUrls": "附件/文件網址",
     "FS.Post.PostImages": "發佈圖片",
+    "FS.Post.SetAsCover": "設為封面圖",
 
+    "FS.Tag": "標籤",
+    "FS.Tag.Management": "標籤管理",
+    "FS.Tag.Management.Detail": "標籤詳細",
     "FS.Tag.No": "No",
     "FS.Tag.DisplayName": "顯示名稱",
     "FS.Tag.Description": "詳細",
-    "FS.Tag.Disable": "禁用"
+    "FS.Tag.Disable": "禁用",
+
+    "FS.Message:DragOrClickHere": " 請將檔案拖移至此，或按下此圖示上傳檔案",
+    "FS.Message:SuggestionImageSize": " 建議圖片比例",
+    "FS.Message:Loading": " 載入中...",
+    "FS.Message:Upload": " 上傳",
+    "FS.Message:Preview": "預覽",
+    "FS.Message:Image": "圖示",
+
+    "FS.Cms.Tags": "CMS-標籤",
+    "FS.Cms.Tags.Tag": "標籤",
+    "DisplayName:Tag.Create": "新增",
+    "DisplayName:Tag.Update": "編輯",
+    "DisplayName:Tag.Delete": "刪除",
+
+    "FS.Cms.Documents": "CMS-頁面文件",
+    "FS.Cms.Documents.DocumentDefinition": "文件定義",
+    "DisplayName:DocumentDefinition.Create": "新增",
+    "DisplayName:DocumentDefinition.Update": "編輯",
+    "DisplayName:DocumentDefinition.Delete": "刪除",
+
+    "FS.Cms.Documents.Document": "頁面文件",
+    "DisplayName:Document.Create": "新增",
+    "DisplayName:Document.Update": "編輯",
+    "DisplayName:Document.Delete": "刪除",
+
+    "FS.Cms.Posts": "CMS-文章",
+    "FS.Cms.Posts.Post": "文章",
+    "DisplayName:Post.Create": "新增",
+    "DisplayName:Post.Update": "編輯",
+    "DisplayName:Post.Delete": "刪除",
+
+    "FS.Cms.Posts.PostTagMap": "文章標籤關聯",
+    "DisplayName:PostTagMap.Create": "新增",
+    "DisplayName:PostTagMap.Update": "編輯",
+    "DisplayName:PostTagMap.Delete": "刪除",
+
+    "FS.Cms.Blogs": "CMS-部落格",
+    "FS.Cms.Blogs.Blog": "部落格",
+    "DisplayName:Blog.Create": "新增",
+    "DisplayName:Blog.Update": "新增",
+    "DisplayName:Blog.Delete": "新增"
+
   }
 }

@@ -5,7 +5,7 @@ import { Validation, ValidationErrorComponent as ErrorComponent } from '@ngx-val
 @Component({
   selector: 'fs-validation-error',
   template: `
-    <div class="invalid-feedback" *ngFor="let error of abpErrors; trackBy: trackByFn">
+    <div class="ant-form-item-explain ant-form-item-explain-error" *ngFor="let error of abpErrors; trackBy: trackByFn">
       {{ error.message | abpLocalization: error.interpoliteParams }}
     </div>
   `,

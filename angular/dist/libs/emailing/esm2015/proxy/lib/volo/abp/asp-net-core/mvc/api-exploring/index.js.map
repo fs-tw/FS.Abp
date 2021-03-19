@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../../../libs/emailing/proxy/src/lib/volo/abp/asp-net-core/mvc/api-exploring/index.ts"],"names":[],"mappings":"AAAA,cAAc,8BAA8B,CAAC","sourcesContent":["export * from './abp-api-definition.service';\r\n"]}

@@ -22,7 +22,7 @@ export class ThemeAlainMsModule {
       ngModule: RootModule,
       providers: [
         NG_ALAIN_MS_THEME_STYLES_PROVIDERS,
-        NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS
+        NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
       ]
     };
   }

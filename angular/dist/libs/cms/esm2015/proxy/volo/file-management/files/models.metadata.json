@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"CreateFileInput":{"__symbolic":"interface"},"FileDescriptorDto":{"__symbolic":"interface"},"FileIconInfo":{"__symbolic":"interface"},"FileUploadPreInfoDto":{"__symbolic":"interface"},"FileUploadPreInfoRequest":{"__symbolic":"interface"},"MoveFileInput":{"__symbolic":"interface"},"RenameFileInput":{"__symbolic":"interface"}}}]

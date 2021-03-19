@@ -18,15 +18,9 @@ export namespace Post
 })
 export class PostStateService {
     private store = new InternalStore({} as Post.State);
-
     getBlog(): Observable<Fs.Cms.Blogs.Dtos.BlogDto> {
         return this.store.sliceState(state => state.Blog);
     }
-
-    constructor() {
-
-    }
-
     setBlog(blog: Fs.Cms.Blogs.Dtos.BlogDto) {
         this.store.patch({ Blog: blog })
     }

@@ -1,1 +1,0 @@
-{"version":3,"file":"setting-tab-names.js","sourceRoot":"","sources":["../../../../../../libs/emailing/config/src/enums/setting-tab-names.ts"],"names":[],"mappings":"","sourcesContent":["export const enum eEmailingSettingTabNames {\r\n  Emailing = 'AbpEmailing::Menu:Emailing',\r\n}\r\n"]}

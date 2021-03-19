@@ -10,9 +10,9 @@ export class DirectoriesApiService {
   apiName = 'Default';
 
   findByProviderByKeyAndGroup = (key: string, group?: string) =>
-    this.restService.request<any, any>({
+    this.restService.request<any, DirectoryDescriptorDto>({
       method: 'GET',
-      url: `/api/file-management/directory-descriptor/provider/${key}`,
+      url: `/api/file/directories/provider/${key}`,
       params: { group: group },
     },
     { apiName: this.apiName });
@@ -20,7 +20,7 @@ export class DirectoriesApiService {
   getDefinitions = () =>
     this.restService.request<any, DirectoryProviderDefinition[]>({
       method: 'GET',
-      url: `/api/file-management/directory-descriptor/definitions`,
+      url: `/api/file/directories/definitions`,
     },
     { apiName: this.apiName });
 

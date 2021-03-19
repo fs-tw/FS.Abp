@@ -1,1 +1,0 @@
-{"version":3,"file":"models.js","sourceRoot":"","sources":["../../../../../../../../../libs/emailing/proxy/src/lib/volo/abp/localization/models.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface LanguageInfo {\r\n  cultureName?: string;\r\n  uiCultureName?: string;\r\n  displayName?: string;\r\n  flagIcon?: string;\r\n}\r\n"]}

@@ -1,1 +1,0 @@
-{"version":3,"file":"service-layout.component.ngfactory.js","sourceRoot":"","sources":["../../../../../../../../../libs/theme-alain-ms/layout/src/lib/ms/shared/service-layout/service-layout.component.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

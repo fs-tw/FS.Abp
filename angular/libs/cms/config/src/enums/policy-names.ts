@@ -1,3 +1,4 @@
 export const enum eCmsPolicyNames {
-  //DirectoryDescriptor = 'Cms.DirectoryDescriptor',
+  PostManagement = 'FS.Cms.Posts.Post',
+  TagManagement = 'FS.Cms.Tags.Tag'
 }

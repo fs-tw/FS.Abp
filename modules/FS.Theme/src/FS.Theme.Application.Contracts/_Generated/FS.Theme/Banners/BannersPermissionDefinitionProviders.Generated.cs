@@ -16,17 +16,18 @@ namespace FS.Theme.Banners
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var BannersGroup = context.AddGroup(BannersPermissionNames.GroupName,L(BannersPermissionNames.GroupName));
-
-            var Banner = BannersGroup.AddPermission(BannersPermissionNames.Banner.Default,L(BannersPermissionNames.Banner.Default));
-            Banner.AddChild(BannersPermissionNames.Banner.Create , L("DisplayName:BannerPermissions.Create"));
-            Banner.AddChild(BannersPermissionNames.Banner.Delete , L("DisplayName:BannerPermissions.Delete"));
-            Banner.AddChild(BannersPermissionNames.Banner.Update , L("DisplayName:BannerPermissions.Update"));
+            var BannersGroup = context.AddGroup(BannersPermissionNames.ModuleName,L(BannersPermissionNames.ModuleName));
 
             var BannerDefinition = BannersGroup.AddPermission(BannersPermissionNames.BannerDefinition.Default,L(BannersPermissionNames.BannerDefinition.Default));
-            BannerDefinition.AddChild(BannersPermissionNames.BannerDefinition.Create , L("DisplayName:BannerDefinitionPermissions.Create"));
-            BannerDefinition.AddChild(BannersPermissionNames.BannerDefinition.Delete , L("DisplayName:BannerDefinitionPermissions.Delete"));
-            BannerDefinition.AddChild(BannersPermissionNames.BannerDefinition.Update , L("DisplayName:BannerDefinitionPermissions.Update"));
+            BannerDefinition.AddChild(BannersPermissionNames.BannerDefinition.Create , L("DisplayName:BannerDefinition.Create"));
+            BannerDefinition.AddChild(BannersPermissionNames.BannerDefinition.Update , L("DisplayName:BannerDefinition.Update"));
+            BannerDefinition.AddChild(BannersPermissionNames.BannerDefinition.Delete , L("DisplayName:BannerDefinition.Delete"));
+
+            var Banner = BannersGroup.AddPermission(BannersPermissionNames.Banner.Default,L(BannersPermissionNames.Banner.Default));
+            Banner.AddChild(BannersPermissionNames.Banner.Create , L("DisplayName:Banner.Create"));
+            Banner.AddChild(BannersPermissionNames.Banner.Update , L("DisplayName:Banner.Update"));
+            Banner.AddChild(BannersPermissionNames.Banner.Delete , L("DisplayName:Banner.Delete"));
+
         }
 
         private static LocalizableString L(string name)

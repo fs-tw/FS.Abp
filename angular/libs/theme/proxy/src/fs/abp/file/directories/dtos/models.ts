@@ -1,6 +1,7 @@
-import type { DirectoryDescriptorDto as ParentDirectoryDescriptorDto } from '../../../../../volo/file-management/directories/models';
+import type { AuditedEntityDto } from '@abp/ng.core';
 
-
-export interface DirectoryDescriptorDto extends ParentDirectoryDescriptorDto {
+export interface DirectoryDescriptorDto extends AuditedEntityDto<string> {
+  name?: string;
+  parentId?: string;
   parent: DirectoryDescriptorDto;
 }

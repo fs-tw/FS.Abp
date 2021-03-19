@@ -1,1 +1,0 @@
-{"version":3,"file":"extensions.service.ngfactory.js","sourceRoot":"","sources":["../../../../../../libs/cms/config/src/services/extensions.service.ngfactory.ts"],"names":[],"mappings":"","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n"]}

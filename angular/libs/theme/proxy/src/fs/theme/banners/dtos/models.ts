@@ -1,5 +1,6 @@
 import type { AuditedEntityDto, EntityDto } from '@abp/ng.core';
-import type { SearchResultRequestDto } from '../../../abp/application/dtos/index'
+import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
+
 export interface BannerCreateDto {
   no?: string;
   displayName?: string;

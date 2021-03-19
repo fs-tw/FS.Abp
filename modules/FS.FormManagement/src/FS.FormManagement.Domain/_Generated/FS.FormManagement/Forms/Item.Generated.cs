@@ -48,6 +48,12 @@ namespace FS.FormManagement.Forms
             set;
         }
 
+        public virtual int Sequence
+        {
+            get;
+            set;
+        }
+
         public virtual System.Guid? TenantId
         {
             get;

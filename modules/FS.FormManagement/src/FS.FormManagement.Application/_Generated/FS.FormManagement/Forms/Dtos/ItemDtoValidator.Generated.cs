@@ -25,6 +25,9 @@ namespace FS.FormManagement.Forms.Dtos
             RuleFor(p => p.GroupId)
                 .NotNull()
                 ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -40,6 +43,9 @@ namespace FS.FormManagement.Forms.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.GroupId)
+                .NotNull()
+                ;
+            RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
             CustomizeConfiguration();

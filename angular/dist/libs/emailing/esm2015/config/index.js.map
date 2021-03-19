@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../libs/emailing/config/src/index.ts"],"names":[],"mappings":"AAAA,cAAc,SAAS,CAAC;AACxB,cAAc,0BAA0B,CAAC;AACzC,cAAc,aAAa,CAAC","sourcesContent":["export * from './enums';\r\nexport * from './emailing-config.module';\r\nexport * from './providers';\r\n"]}

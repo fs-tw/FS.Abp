@@ -12,6 +12,7 @@
     <Compile Remove="_Generated\FS.Theme\Tenants\TenantsApi.ThemeSettingsAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosApi.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosApi.WebSiteInfoCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosApi.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,10 +45,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RoutesApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>WebSiteInfos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Theme\WebSites\WebSitesApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>WebSites</DependentUpon>
@@ -62,6 +59,7 @@
     <Folder Include="_Generated\FS.Theme\Core\" />
     <Folder Include="_Generated\FS.Theme\Tenants\" />
     <Folder Include="_Generated\FS.Theme\WebInfos\" />
+    <Folder Include="_Generated\FS.Theme\WebSiteInfos\" />
   </ItemGroup>
 
 </Project>

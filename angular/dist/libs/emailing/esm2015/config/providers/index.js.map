@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../libs/emailing/config/src/providers/index.ts"],"names":[],"mappings":"AAAA,cAAc,kBAAkB,CAAC;AACjC,cAAc,wBAAwB,CAAC","sourcesContent":["export * from './route.provider';\r\nexport * from './setting-tab.provider';\r\n"]}

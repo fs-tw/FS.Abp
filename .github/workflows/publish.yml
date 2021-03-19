@@ -45,7 +45,7 @@ jobs:
         uses: mukunku/tag-exists-action@v1.0.0
         id: checkTag
         with:
-          tag: v${{ steps.getVersion.outputs.first_match }}
+          tag: ${{ steps.getVersion.outputs.first_match }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -54,4 +54,4 @@ jobs:
         uses: tvdias/github-tagger@v0.0.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          tag: v${{ steps.getVersion.outputs.first_match }}
+          tag: ${{ steps.getVersion.outputs.first_match }}

@@ -13,16 +13,14 @@ namespace FS.Cms.Blogs
 {
     public class BlogsPermissionNames
     {
-        public const string GroupName = "FS.Cms.Blogs";
-
+        public const string ModuleName = "FS.Cms.Blogs";
         public static class Blog
         {
-            public const string Default = GroupName + ".Blog";
+            public const string Default = ModuleName + ".Blog";
             public const string Create = Default + ".Create";
-            public const string Delete = Default + ".Delete";
             public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
         }
-
         public static string[] GetAll()
         {
             return ReflectionHelper.GetPublicConstantsRecursively(typeof(BlogsPermissionNames));

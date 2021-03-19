@@ -14,7 +14,6 @@ namespace FS.Cms
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-
         }
     }
 }

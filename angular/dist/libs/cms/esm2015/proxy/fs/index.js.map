@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../libs/cms/proxy/src/fs/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,GAAG,MAAM,OAAO,CAAC;AAC7B,OAAO,KAAK,GAAG,MAAM,OAAO,CAAC;AAC7B,OAAO,EAAE,GAAG,EAAE,GAAG,EAAE,CAAC","sourcesContent":["import * as Abp from './abp';\r\nimport * as Cms from './cms';\r\nexport { Abp, Cms };\r\n"]}

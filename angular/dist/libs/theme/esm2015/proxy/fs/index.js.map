@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../libs/theme/proxy/src/fs/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,GAAG,MAAM,OAAO,CAAC;AAC7B,OAAO,KAAK,KAAK,MAAM,SAAS,CAAC;AACjC,OAAO,EAAE,GAAG,EAAE,KAAK,EAAE,CAAC","sourcesContent":["import * as Abp from './abp';\r\nimport * as Theme from './theme';\r\nexport { Abp, Theme };\r\n"]}

@@ -9,8 +9,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { NzTableComponent, NzTableQueryParams,NzTbodyComponent } from 'ng-zorro-antd/table';
-import { tap } from 'rxjs/operators';
+import { NzTableComponent, NzTableQueryParams } from 'ng-zorro-antd/table';
 
 @Directive({
   // tslint:disable-next-line
@@ -27,8 +26,7 @@ export class NzTableListDirective implements OnChanges, OnDestroy, OnInit {
   constructor(
     //private body:NzTbodyComponent,
     private table: NzTableComponent,
-    private cdRef: ChangeDetectorRef,
-    private localizationService: LocalizationService
+    private cdRef: ChangeDetectorRef
   ) {
     this.setInitialValues();
   }
@@ -96,11 +94,9 @@ export class NzTableListDirective implements OnChanges, OnDestroy, OnInit {
   }
 
   ngOnChanges({ list }: SimpleChanges) {
-    //console.log(list.currentValue);
     this.subscribeToQuery();
     if (!list.firstChange) return;
     const { maxResultCount, page } = list.currentValue;
-    //this.table.nzPageSize = maxResultCount;
     this.table.onPageSizeChange(maxResultCount);
     this.table.onPageIndexChange(page + 1);
   }
