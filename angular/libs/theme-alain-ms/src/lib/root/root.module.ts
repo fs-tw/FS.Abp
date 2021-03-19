@@ -38,7 +38,7 @@ import { CoreModule } from '@abp/ng.core';
   ],
   providers: [
     ...APPINIT_PROVIDES,
-    ...LANG_PROVIDES,
+    // ...LANG_PROVIDES,
     STYLES_PROVIDERS
   ],
   declarations:[

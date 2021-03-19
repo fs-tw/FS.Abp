@@ -1,13 +1,14 @@
 // #region default language
 // 参考：https://ng-alain.com/docs/i18n
 import { LOCALE_ID } from '@angular/core';
-import { default as ngLang } from '@angular/common/locales/zh';
+// import { default as ngLang } from '@angular/common/locales/zh';
+import { default as ngLang } from '@angular/common/locales/zh-Hant';
 import { DELON_LOCALE, zh_TW as delonLang } from '@delon/theme';
-import { zhCN as dateLang } from 'date-fns/locale';
+import { zhTW as dateLang } from 'date-fns/locale';
 import { NZ_DATE_LOCALE, NZ_I18N, zh_TW as zorroLang } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 export const LANG = {
-  abbr: 'zh',
+  abbr: 'zh-Hant',
   ng: ngLang,
   zorro: zorroLang,
   date: dateLang,
