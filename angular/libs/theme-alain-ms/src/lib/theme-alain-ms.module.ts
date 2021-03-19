@@ -8,6 +8,8 @@ import { LayoutModule } from '@fs-tw/theme-alain-ms/layout';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS } from './providers/nav-item.provider';
 
+import { LANG_PROVIDES } from './root/providers/lang.provider';
+
 @NgModule({
   imports: [
     CoreModule,
@@ -22,7 +24,8 @@ export class ThemeAlainMsModule {
       ngModule: RootModule,
       providers: [
         NG_ALAIN_MS_THEME_STYLES_PROVIDERS,
-        NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS
+        NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
+        ...LANG_PROVIDES
       ]
     };
   }
