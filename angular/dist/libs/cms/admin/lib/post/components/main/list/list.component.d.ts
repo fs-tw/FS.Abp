@@ -4,12 +4,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ListService } from '@abp/ng.core';
 import { ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
-import { FileService } from '../../../../shared';
+import { FileService } from '@fs-tw/cms/admin/shared';
 import { PageService } from '../../../providers/page.service';
 import { PostStateService } from '../../../providers/post-state.service';
 import { ExtensionsService } from '@fs-tw/cms/config';
 import { Fs } from '@fs-tw/cms/proxy';
-import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
+import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 export declare class ListComponent implements OnInit, OnDestroy {
     private router;
     private extensionsService;

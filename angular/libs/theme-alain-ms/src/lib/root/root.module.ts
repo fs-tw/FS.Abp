@@ -3,7 +3,6 @@ import { GlobalConfigModule } from './global-config.module';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { APPINIT_PROVIDES } from './providers/startup.service';
-import { LANG_PROVIDES } from './providers/lang.provider';
 import { STYLES_PROVIDERS } from './providers/styles.provider';
 import { LayoutModule } from '@fs-tw/theme-alain-ms/layout';
 import { ValidationErrorComponent } from './components/validation-error-component/validation-error.component';
@@ -38,7 +37,6 @@ import { CoreModule } from '@abp/ng.core';
   ],
   providers: [
     ...APPINIT_PROVIDES,
-    // ...LANG_PROVIDES,
     STYLES_PROVIDERS
   ],
   declarations:[

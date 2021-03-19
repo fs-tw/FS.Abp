@@ -3,11 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ListService } from '@abp/ng.core';
 import { EXTENSIONS_IDENTIFIER, FormPropData, generateFormFromProps } from '@abp/ng.theme.shared/extensions';
 import { Confirmation, ConfirmationService, ToasterService, } from '@abp/ng.theme.shared';
-import { FileService } from '../../../../shared';
+import { FileService } from '@fs-tw/cms/admin/shared';
 import { PageService } from '../../../providers/page.service';
 import { PostStateService } from '../../../providers/post-state.service';
 import { ExtensionsService } from '@fs-tw/cms/config';
-import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
+import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 const ɵ0 = "Cms::FS.Cms.Blogs" /* Blog */;
 export class ListComponent {
     constructor(router, extensionsService, pageService, injector, list, fileService, toasterService, activatedRoute, confirmationService, postStateService) {

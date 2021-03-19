@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@angular/router'), require('@angular/common'), require('@angular/forms'), require('ngx-quill'), require('ng-zorro-antd/grid'), require('ng-zorro-antd/input'), require('ng-zorro-antd/table'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/button'), require('ng-zorro-antd/icon'), require('ng-zorro-antd/modal'), require('ng-zorro-antd/radio'), require('ng-zorro-antd/upload'), require('ng-zorro-antd/spin'), require('ng-zorro-antd/card'), require('ng-zorro-antd/select'), require('ng-zorro-antd/date-picker'), require('ng-zorro-antd/tabs'), require('@delon/abc/se'), require('@abp/ng.theme.shared'), require('@abp/ng.theme.shared/extensions'), require('@fs-tw/cms/config'), require('rxjs'), require('@fs-tw/cms/proxy'), require('lodash'), require('date-fns'), require('@fs-tw/theme-alain-ms/shared'), require('@fs-tw/theme-alain-ms/shared/extensions'), require('rxjs/operators'), require('ng-zorro-antd/tag')) :
-    typeof define === 'function' && define.amd ? define('@fs-tw/cms/admin', ['exports', '@angular/core', '@abp/ng.core', '@angular/router', '@angular/common', '@angular/forms', 'ngx-quill', 'ng-zorro-antd/grid', 'ng-zorro-antd/input', 'ng-zorro-antd/table', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/button', 'ng-zorro-antd/icon', 'ng-zorro-antd/modal', 'ng-zorro-antd/radio', 'ng-zorro-antd/upload', 'ng-zorro-antd/spin', 'ng-zorro-antd/card', 'ng-zorro-antd/select', 'ng-zorro-antd/date-picker', 'ng-zorro-antd/tabs', '@delon/abc/se', '@abp/ng.theme.shared', '@abp/ng.theme.shared/extensions', '@fs-tw/cms/config', 'rxjs', '@fs-tw/cms/proxy', 'lodash', 'date-fns', '@fs-tw/theme-alain-ms/shared', '@fs-tw/theme-alain-ms/shared/extensions', 'rxjs/operators', 'ng-zorro-antd/tag'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].cms = global['fs-tw'].cms || {}, global['fs-tw'].cms.admin = {}), global.ng.core, global.i1, global.ng.router, global.ng.common, global.ng.forms, global.ngxQuill, global.grid, global.input, global.table, global.dropdown, global.button, global.icon, global.modal, global.radio, global.upload, global.spin, global.card, global.select, global.datePicker, global.tabs, global.se, global.ng_theme_shared, global.extensions, global['fs-tw'].cms.config, global.rxjs, global['fs-tw'].cms.proxy, global._, global.dns, global.shared, global.extensions$1, global.rxjs.operators, global.tag));
-}(this, (function (exports, i0, i1, router, common, forms, ngxQuill, grid, input, table, dropdown, button, icon, modal, radio, upload, spin, card, select, datePicker, tabs, se, ng_theme_shared, extensions, config, rxjs, proxy, _, dns, shared, extensions$1, operators, tag) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@abp/ng.core'), require('@angular/router'), require('@angular/common'), require('@angular/forms'), require('ngx-quill'), require('ng-zorro-antd/grid'), require('ng-zorro-antd/input'), require('ng-zorro-antd/table'), require('ng-zorro-antd/dropdown'), require('ng-zorro-antd/button'), require('ng-zorro-antd/icon'), require('ng-zorro-antd/modal'), require('ng-zorro-antd/radio'), require('ng-zorro-antd/upload'), require('ng-zorro-antd/spin'), require('ng-zorro-antd/card'), require('ng-zorro-antd/select'), require('ng-zorro-antd/date-picker'), require('ng-zorro-antd/tabs'), require('@delon/abc/se'), require('@abp/ng.theme.shared'), require('@abp/ng.theme.shared/extensions'), require('@fs-tw/cms/config'), require('rxjs'), require('@fs-tw/cms/proxy'), require('lodash'), require('date-fns'), require('@fs-tw/cms/admin/shared'), require('rxjs/operators'), require('ng-zorro-antd/tag')) :
+    typeof define === 'function' && define.amd ? define('@fs-tw/cms/admin', ['exports', '@angular/core', '@abp/ng.core', '@angular/router', '@angular/common', '@angular/forms', 'ngx-quill', 'ng-zorro-antd/grid', 'ng-zorro-antd/input', 'ng-zorro-antd/table', 'ng-zorro-antd/dropdown', 'ng-zorro-antd/button', 'ng-zorro-antd/icon', 'ng-zorro-antd/modal', 'ng-zorro-antd/radio', 'ng-zorro-antd/upload', 'ng-zorro-antd/spin', 'ng-zorro-antd/card', 'ng-zorro-antd/select', 'ng-zorro-antd/date-picker', 'ng-zorro-antd/tabs', '@delon/abc/se', '@abp/ng.theme.shared', '@abp/ng.theme.shared/extensions', '@fs-tw/cms/config', 'rxjs', '@fs-tw/cms/proxy', 'lodash', 'date-fns', '@fs-tw/cms/admin/shared', 'rxjs/operators', 'ng-zorro-antd/tag'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['fs-tw'] = global['fs-tw'] || {}, global['fs-tw'].cms = global['fs-tw'].cms || {}, global['fs-tw'].cms.admin = {}), global.ng.core, global.ng_core, global.ng.router, global.ng.common, global.ng.forms, global.ngxQuill, global.grid, global.input, global.table, global.dropdown, global.button, global.icon, global.modal, global.radio, global.upload, global.spin, global.card, global.select, global.datePicker, global.tabs, global.se, global.ng_theme_shared, global.extensions, global['fs-tw'].cms.config, global.rxjs, global['fs-tw'].cms.proxy, global._, global.dns, global['fs-tw'].cms.admin.shared, global.rxjs.operators, global.tag));
+}(this, (function (exports, i0, ng_core, router, common, forms, ngxQuill, grid, input, table, dropdown, button, icon, modal, radio, upload, spin, card, select, datePicker, tabs, se, ng_theme_shared, extensions, config, rxjs, proxy, _, dns, shared, operators, tag) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -315,7 +315,7 @@
 
     var PostStateService = /** @class */ (function () {
         function PostStateService() {
-            this.store = new i1.InternalStore({});
+            this.store = new ng_core.InternalStore({});
         }
         PostStateService.prototype.getBlog = function () {
             return this.store.sliceState(function (state) { return state.Blog; });
@@ -509,7 +509,7 @@
         { type: i0.Component, args: [{
                     template: "<nz-row nzGutter=\"16\">\r\n  <nz-col nzSpan=\"8\">\r\n    <cms-list></cms-list>\r\n  </nz-col>\r\n  <nz-col nzSpan=\"16\">\r\n    <div>\r\n      <div class=\"mb-md\">\r\n        <h5>{{'Cms::FS.Cms.BlogType' | abpLocalization}}:{{ blogName }}</h5>\r\n        <button nz-button nzType=\"primary\" (click)=\"gotoDetail()\" style=\"margin-right: 20px;\">\r\n          {{'AbpIdentityServer::Add'|abpLocalization}}\r\n        </button>\r\n        <nz-input-group nzSearch [nzAddOnAfter]=\"suffixIconButton\" style=\"width: 300px;\">\r\n          <input type=\"text\" [(ngModel)]=\"postParams.keyword\" nz-input placeholder=\"\u8F38\u5165\u540D\u7A31\" />\r\n        </nz-input-group>\r\n        <ng-template #suffixIconButton>\r\n          <button nz-button nzType=\"primary\" (click)=\"hookToQuery()\" nzSearch>\r\n            <i nz-icon nzType=\"search\"></i>\r\n          </button>\r\n        </ng-template>\r\n      </div>\r\n      <nz-extensible-table [data]=\"posts\" [scroll]=\"{x:'600px'}\" [recordsTotal]=\"totalCount\" [list]=\"list\"\r\n        [haveRowDetail]=\"false\">\r\n     \r\n        <ng-template row-detail-template let-node>\r\n          <div>\r\n            <h3>{{'Cms::FS.Post.Subtitle' | abpLocalization}}</h3>\r\n            <p>{{ node.subtitle || '-' }}</p>\r\n            <div *ngIf=\"node.displayMode == 0\">\r\n              <h3>{{'Cms::FS.Post.Content' | abpLocalization}}</h3>\r\n              <quill-view [content]=\"node.content\"></quill-view>\r\n            </div>\r\n            <div *ngIf=\"node.displayMode == 1\">\r\n              <h3>{{'Cms::FS.Post.Url' | abpLocalization}}</h3>\r\n              <p>{{ node.url }}</p>\r\n            </div>\r\n          </div>\r\n        </ng-template>\r\n        \r\n      </nz-extensible-table>\r\n    </div>\r\n  </nz-col>\r\n</nz-row>",
                     providers: [
-                        i1.ListService,
+                        ng_core.ListService,
                         {
                             provide: extensions.EXTENSIONS_IDENTIFIER,
                             useValue: ɵ0,
@@ -524,267 +524,9 @@
         { type: ng_theme_shared.ToasterService },
         { type: ng_theme_shared.ConfirmationService },
         { type: PageService },
-        { type: i1.ListService },
+        { type: ng_core.ListService },
         { type: PostStateService }
     ]; };
-
-    var GetFileByIdPipe = /** @class */ (function () {
-        function GetFileByIdPipe(environmentService) {
-            this.environmentService = environmentService;
-        }
-        //TODO:if api route  this will broke;
-        GetFileByIdPipe.prototype.transform = function (value) {
-            return this.environmentService.getApiUrl() + ("/api/file/files/file-content" /* FileContentPath */ + "?id=" + value);
-        };
-        return GetFileByIdPipe;
-    }());
-    GetFileByIdPipe.decorators = [
-        { type: i0.Pipe, args: [{
-                    name: 'getFileById'
-                },] }
-    ];
-    GetFileByIdPipe.ctorParameters = function () { return [
-        { type: i1.EnvironmentService }
-    ]; };
-
-    var COMPONENT = [GetFileByIdPipe];
-    var SharedModule = /** @class */ (function () {
-        function SharedModule() {
-        }
-        return SharedModule;
-    }());
-    SharedModule.decorators = [
-        { type: i0.NgModule, args: [{
-                    declarations: __spread(COMPONENT),
-                    imports: [
-                        shared.ThemeAlainMsSharedModule,
-                        extensions$1.UiExtensionsModule
-                    ],
-                    exports: __spread(COMPONENT, [
-                        shared.ThemeAlainMsSharedModule,
-                        extensions$1.UiExtensionsModule
-                    ])
-                },] }
-    ];
-
-    var FileService = /** @class */ (function () {
-        function FileService(restService, environmentService) {
-            this.restService = restService;
-            this.environmentService = environmentService;
-        }
-        FileService.prototype.getFileUrl = function (id) {
-            if (!id)
-                return "";
-            return this.environmentService.getApiUrl() + ("/api/file/files/file-content" /* FileContentPath */ + "?id=" + id);
-        };
-        FileService.prototype.uploadFile = function (file, directoryId) {
-            var formData = new FormData();
-            formData.append("relativePath", null);
-            formData.append("file", file);
-            formData.append("name", file.name);
-            formData.append("type", file.type);
-            return this.restService.request({
-                method: 'POST',
-                url: "/api/file-management/file-descriptor/upload",
-                body: formData,
-                params: { directoryId: directoryId }
-            });
-        };
-        FileService.prototype.getFileBlobById = function (id) {
-            return this.restService.request({
-                method: 'GET',
-                url: "" + "/api/file/files/file-content" /* FileContentPath */,
-                params: { id: id },
-                responseType: 'blob'
-            });
-        };
-        return FileService;
-    }());
-    FileService.ɵprov = i0.ɵɵdefineInjectable({ factory: function FileService_Factory() { return new FileService(i0.ɵɵinject(i1.RestService), i0.ɵɵinject(i1.EnvironmentService)); }, token: FileService, providedIn: "root" });
-    FileService.decorators = [
-        { type: i0.Injectable, args: [{ providedIn: 'root' },] }
-    ];
-    FileService.ctorParameters = function () { return [
-        { type: i1.RestService },
-        { type: i1.EnvironmentService }
-    ]; };
-
-    var ImageFile = /** @class */ (function () {
-        function ImageFile(fileName, fileUrl) {
-            if (fileName === void 0) { fileName = ''; }
-            if (fileUrl === void 0) { fileUrl = ''; }
-            this.fileName = fileName;
-            this.fileUrl = fileUrl;
-        }
-        return ImageFile;
-    }());
-    var SaveFile = /** @class */ (function () {
-        function SaveFile(fileName, fileUrl, file) {
-            this.fileName = fileName;
-            this.fileUrl = fileUrl;
-            this.file = file;
-            this.isUpload = this.file != null;
-        }
-        return SaveFile;
-    }());
-    var ViewImage = /** @class */ (function () {
-        function ViewImage() {
-            this.image = new ImageFile();
-            this.isVisabled = false;
-        }
-        return ViewImage;
-    }());
-    var ImagePickerComponent = /** @class */ (function () {
-        function ImagePickerComponent(toasterService, environmentService, fileService) {
-            var _this = this;
-            this.toasterService = toasterService;
-            this.environmentService = environmentService;
-            this.fileService = fileService;
-            /** 縮圖寬度，單位 px，預設 104px */
-            this.imageWidth = '104px';
-            /** 縮圖高度，單位 px ，預設 104px */
-            this.imageHeight = '104px';
-            /** 外框寬度，單位 px ，預設 104px */
-            this.borderWidth = '104px';
-            /** 外框高度，單位 px ，預設 104px */
-            this.borderHeight = '104px';
-            /** 上傳最大數量 */
-            this.maxImageCount = null;
-            /** 是否可同時選多張圖片 */
-            this.isMultiple = true;
-            /** 是否排列在同一行，同一行時行寬同 imageWidth */
-            this.inLine = true;
-            /** 上傳按鈕顯示於前面 */
-            this.showFrontButton = true;
-            /** 原已上傳圖片 */
-            this.existFiles = [];
-            /** 原已上傳圖片被刪除的檔名 */
-            this.deleteFiles = [];
-            /** 本次上傳所顯示圖片 */
-            this.showFiles = [];
-            /** 本次上傳圖片 */
-            this.uploadFiles = [];
-            /** 顯示預覽圖 modal */
-            this.viewImage = new ViewImage();
-            // private getHttpUrl(url: string): string {
-            //   let result = url;
-            //   if (url.includes("http")) return result;
-            //   return this.environmentService.getApiUrl() + url;
-            // }
-            this.beforeUpload = function (file) {
-                var isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-                if (!isJpgOrPng) {
-                    _this.toasterService.error("圖片格式須為 jpg 或 png");
-                    return false;
-                }
-                var fileName = file.name;
-                var hasExistImage = _this.existFiles.findIndex(function (x) { return x.fileName == fileName; }) > -1;
-                var hasShowImage = _this.showFiles.findIndex(function (x) { return x.fileName == fileName; }) > -1;
-                if (hasExistImage || hasShowImage)
-                    return false;
-                var imgFile = file;
-                _this.getBase64(imgFile, function (img) {
-                    if (!_this.canUpload) {
-                        _this.toasterService.error("圖片數已達上限");
-                        return;
-                    }
-                    _this.uploadFiles.push(imgFile);
-                    _this.showFiles.push(new ImageFile(fileName, img));
-                });
-                return false;
-            };
-        }
-        Object.defineProperty(ImagePickerComponent.prototype, "canUpload", {
-            get: function () {
-                var imageNumber = this.existFiles.length + this.uploadFiles.length;
-                return this.maxImageCount == null || imageNumber < this.maxImageCount;
-            },
-            enumerable: false,
-            configurable: true
-        });
-        ImagePickerComponent.prototype.ngOnInit = function () {
-        };
-        ImagePickerComponent.prototype.ngOnChanges = function () {
-            var _this = this;
-            this.existFiles = this.existFiles
-                .filter(function (x) { return x.fileUrl; })
-                .map(function (x) { return new ImageFile(x.fileName, _this.fileService.getFileUrl(x.fileUrl)); });
-            this.uploadFiles = [];
-            this.showFiles = [];
-            this.deleteFiles = [];
-        };
-        ImagePickerComponent.prototype.clear = function () {
-            this.existFiles = [];
-            this.deleteFiles = [];
-            this.uploadFiles = [];
-            this.showFiles = [];
-        };
-        ImagePickerComponent.prototype.getBase64 = function (img, callback) {
-            var reader = new FileReader();
-            reader.addEventListener('load', function () { return callback(reader.result.toString()); });
-            reader.readAsDataURL(img);
-        };
-        ImagePickerComponent.prototype.deleteFile = function (fileName) {
-            var inExistImage = this.existFiles.findIndex(function (x) { return x.fileName == fileName; }) > -1;
-            var inShowImage = this.showFiles.findIndex(function (x) { return x.fileName == fileName; }) > -1;
-            // 現有圖片刪除
-            if (inExistImage) {
-                this.existFiles = this.existFiles.filter(function (x) { return x.fileName != fileName; });
-                this.deleteFiles.push(fileName);
-                return;
-            }
-            // 上傳圖片刪除
-            if (inShowImage) {
-                this.showFiles = this.showFiles.filter(function (x) { return x.fileName != fileName; });
-                this.uploadFiles = this.uploadFiles.filter(function (x) { return x.name != fileName; });
-            }
-        };
-        ImagePickerComponent.prototype.controllModal = function (state, image) {
-            if (image === void 0) { image = new ImageFile(); }
-            this.viewImage.image = image;
-            this.viewImage.isVisabled = state;
-        };
-        ImagePickerComponent.prototype.getDeleteFileNames = function () {
-            return this.deleteFiles;
-        };
-        ImagePickerComponent.prototype.getNewUploadFiles = function () {
-            var updateFiles = this.uploadFiles.map(function (x) { return new SaveFile(x.name, '', x); });
-            return updateFiles;
-        };
-        ImagePickerComponent.prototype.getUploadFiles = function () {
-            var _this = this;
-            var existFiles = this.existFiles.filter(function (x) { return !_this.deleteFiles.includes(x.fileName); }).map(function (x) { return new SaveFile(x.fileName, x.fileUrl, null); });
-            var updateFiles = this.uploadFiles.map(function (x) { return new SaveFile(x.name, '', x); });
-            return existFiles.concat(updateFiles);
-        };
-        return ImagePickerComponent;
-    }());
-    ImagePickerComponent.decorators = [
-        { type: i0.Component, args: [{
-                    selector: 'image-picker',
-                    template: "<ng-template #Upload>\r\n    <nz-upload\r\n        class=\"avatar-uploader\" style=\"display: grid;\"\r\n        [nzListType]=\"uploadTemplate ? 'text' : 'picture'\"\r\n        [nzBeforeUpload]=\"beforeUpload\" \r\n        [nzMultiple]=\"isMultiple\"\r\n        >\r\n\r\n        <div *ngTemplateOutlet=\"uploadTemplate || UploadImage\"></div>\r\n        <ng-template #UploadImage>\r\n            <div class=\"divBorder divGridCenter\" [ngStyle]=\"{ 'width': borderWidth, 'height': borderHeight }\">\r\n                <div *ngTemplateOutlet=\"uploadTextTemplate || UploadText\"></div>\r\n            </div>\r\n        </ng-template>\r\n\r\n        <ng-template #UploadText>\r\n            <div style=\"font-size: 16px; text-align: center;\">\r\n                <div class=\"ant-upload-text\">{{'Cms::FS.Message:Upload'|abpLocalization}}</div>\r\n            </div>\r\n        </ng-template>\r\n    </nz-upload>\r\n</ng-template>\r\n\r\n<ng-template #Image let-item>\r\n    <div class=\"divBorder imgGrid divGridCenter\" \r\n        [ngStyle]=\"{ 'width': borderWidth, 'height': borderHeight }\"\r\n        (click)=\"controllModal(true, item.file)\">\r\n\r\n        <div class=\"imgGridClose\">\r\n            <i (click)=\"deleteFile(item.file.fileName)\" nz-icon nzType=\"close\" nzTheme=\"outline\"></i>\r\n        </div>\r\n\r\n        <img [src]=\"item.file.fileUrl\" style=\"max-width: 100%;\" [ngStyle]=\"{ 'max-height': imageHeight }\" />\r\n    </div>\r\n</ng-template>\r\n\r\n<div [ngClass]=\"{ 'divGrid': inLine }\" [ngStyle]=\"{ 'grid-template-columns': inLine ? 'repeat(auto-fit, ' + borderWidth + ')' : 'unset' }\">\r\n    <!-- \u4E0A\u50B3\u6309\u9215(\u524D) -->\r\n    <ng-container *ngIf=\"canUpload && showFrontButton\">\r\n        <div *ngTemplateOutlet=\"Upload\"></div>\r\n    </ng-container>\r\n\r\n    <!-- \u50B3\u5165\u7684\u5716\u7247 -->\r\n    <ng-container *ngFor=\"let item of existFiles; let i = index\">\r\n        <div *ngTemplateOutlet=\"imageTemplate || Image; context: {$implicit: { file: item, i: i }}\"></div>\r\n    </ng-container>\r\n\r\n    <!-- \u4E0A\u50B3\u7684\u5716\u7247 -->\r\n    <ng-container *ngFor=\"let item of showFiles; let i = index\">\r\n        <div *ngTemplateOutlet=\"imageTemplate || Image; context: {$implicit: { file: item, i: i }}\"></div>\r\n    </ng-container>\r\n\r\n    <!-- \u4E0A\u50B3\u6309\u9215(\u5F8C) -->\r\n    <ng-container *ngIf=\"canUpload && !showFrontButton\">\r\n        <div *ngTemplateOutlet=\"Upload\"></div>\r\n    </ng-container>\r\n    \r\n</div>\r\n\r\n<nz-modal [nzOkText]=\"null\" nzCancelText=\"{{'AbpUi::Cancel'|abpLocalization}}\" [nzWidth]=\"1000\"\r\n        nzTitle=\"{{'Cms::FS.Message:Preview'|abpLocalization}}\" \r\n        [(nzVisible)]=\"viewImage.isVisabled\" \r\n        (nzOnCancel)=\"controllModal(false, viewImage.image)\">\r\n    <div class=\"divGridCenter\">\r\n        <img [src]=\"viewImage.image.fileUrl\" style=\"max-width: 100%; max-height: 500px;\" />\r\n    </div>\r\n</nz-modal>",
-                    styles: [".divBorder{display:block;border:1px dashed #d9d9d9;background:#fafafa}.divGridCenter{display:grid!important;place-items:center}.divGrid{display:grid;grid-gap:1rem}.imgGrid{border:1px solid #ddd;background-color:#f9f9f9;position:relative;cursor:pointer}.imgGridClose{top:-7px;position:absolute;text-align:right;font-size:18px;color:rgba(0,0,0,.55);width:100%}.imgGridClose i{padding:3px;border-radius:2px;opacity:.8;z-index:10;background-color:#ddd}::ng-deep .ant-upload.ant-upload-select-picture-card{margin:unset!important}::ng-deep .ant-upload.ant-upload-select-picture-card>.ant-upload{padding:unset!important}"]
-                },] }
-    ];
-    ImagePickerComponent.ctorParameters = function () { return [
-        { type: ng_theme_shared.ToasterService },
-        { type: i1.EnvironmentService },
-        { type: FileService }
-    ]; };
-    ImagePickerComponent.propDecorators = {
-        imageWidth: [{ type: i0.Input }],
-        imageHeight: [{ type: i0.Input }],
-        borderWidth: [{ type: i0.Input }],
-        borderHeight: [{ type: i0.Input }],
-        maxImageCount: [{ type: i0.Input }],
-        isMultiple: [{ type: i0.Input }],
-        imageTemplate: [{ type: i0.Input }],
-        uploadTemplate: [{ type: i0.Input }],
-        uploadTextTemplate: [{ type: i0.Input }],
-        inLine: [{ type: i0.Input }],
-        showFrontButton: [{ type: i0.Input }],
-        existFiles: [{ type: i0.Input }]
-    };
 
     var FileInfo = /** @class */ (function () {
         function FileInfo(fileName, fileUrl) {
@@ -905,7 +647,7 @@
                     var st = x.startTime ? new Date(x.startTime) : new Date();
                     var ed = x.endTime ? new Date(x.endTime) : new Date();
                     _this.dateRange = [st, ed];
-                    _this.defaultImages = x.postImages.map(function (y) { return new ImageFile(y.name, y.imageId); });
+                    _this.defaultImages = x.postImages.map(function (y) { return new shared.ImageFile(y.name, y.imageId); });
                     _this.defaultFiles = x.attachmentFileInfos.map(function (y) { return new FileInfo(y.name, _this.fileService.getFileUrl(y.fileId)); });
                     var coverImageIndex = x.postImages.findIndex(function (y) { return y.isCover; });
                     if (coverImageIndex > -1)
@@ -1052,7 +794,7 @@
     ];
     DetailComponent.ctorParameters = function () { return [
         { type: router.Router },
-        { type: FileService },
+        { type: shared.FileService },
         { type: router.ActivatedRoute },
         { type: PageService },
         { type: ng_theme_shared.ConfirmationService }
@@ -1270,7 +1012,7 @@
                 _this.selected = x;
                 _this.defaultImages = [];
                 if (x.iconUrl)
-                    _this.defaultImages.push(new ImageFile(x.iconUrl, x.iconUrl));
+                    _this.defaultImages.push(new shared.ImageFile(x.iconUrl, x.iconUrl));
                 _this.openModal();
             });
         };
@@ -1290,7 +1032,7 @@
                     selector: 'cms-list',
                     template: "<div>\r\n  <div class=\"mb-md\">   \r\n    <button nz-button [nzType]=\"'primary'\"  style=\"margin-right: 10px;\" (click)=\"add()\"><span>+ {{'AbpIdentityServer::Add'|abpLocalization}}</span></button>\r\n    <button nz-button [nzType]=\"'primary'\" (click)=\"showDetail(null)\">\r\n      {{'AbpPermissionManagement::All'|abpLocalization}}\r\n    </button>\r\n  </div>\r\n\r\n  <nz-extensible-table [data]=\"datas\" [defaultSelectId]=\"defaultSelectId\" [recordsTotal]=\"count\" [list]=\"list\" [haveSelect]=\"true\"\r\n    (select)=\"showDetail($event)\">\r\n  </nz-extensible-table>\r\n\r\n</div>\r\n<nz-modal [(nzVisible)]=\"isVisible\" nzTitle=\"blog\" (nzOnCancel)=\"handleCancel()\" [nzFooter]=\"footer\">\r\n  <form [formGroup]=\"form\" *ngIf=\"form\" (ngSubmit)=\"save()\" validateOnSubmit>\r\n    <abp-extensible-form *ngIf=\"form\" [selectedRecord]=\"selected\"></abp-extensible-form>\r\n    <div class=\"form-group\">\r\n      <label for=\"exampleInputEmail1\">{{'Cms::FS.Message:Image'|abpLocalization}}</label>\r\n      <image-picker #DefaultImagePicker [existFiles]=\"defaultImages\" [maxImageCount]=\"1\" imageWidth=\"40px\"\r\n        imageHeight=\"30px\" borderWidth=\"80px\" borderHeight=\"60px\"></image-picker>\r\n    </div>\r\n  </form>\r\n</nz-modal>\r\n\r\n<ng-template #footer>\r\n  <button nz-button nzType=\"default\" (click)=\"handleCancel()\">{{'AbpUi::Cancel' | abpLocalization}}</button>\r\n  <button nz-button nzType=\"primary\" (click)=\"save()\">{{'AbpUi::Save' | abpLocalization}}</button>\r\n</ng-template>",
                     providers: [
-                        i1.ListService,
+                        ng_core.ListService,
                         {
                             provide: extensions.EXTENSIONS_IDENTIFIER,
                             useValue: ɵ0$1,
@@ -1304,8 +1046,8 @@
         { type: config.ExtensionsService },
         { type: PageService },
         { type: i0.Injector },
-        { type: i1.ListService },
-        { type: FileService },
+        { type: ng_core.ListService },
+        { type: shared.FileService },
         { type: ng_theme_shared.ToasterService },
         { type: router.ActivatedRoute },
         { type: ng_theme_shared.ConfirmationService },
@@ -1363,10 +1105,10 @@
             };
         };
         PostModule.forLazy = function () {
-            return new i1.LazyModuleFactory(PostModule.forChild());
+            return new ng_core.LazyModuleFactory(PostModule.forChild());
         };
         PostModule.forEarly = function () {
-            return new i1.LazyModuleFactory(PostModule.forChild());
+            return new ng_core.LazyModuleFactory(PostModule.forChild());
         };
         return PostModule;
     }());
@@ -1378,12 +1120,11 @@
                         DetailComponent,
                         ListComponent,
                         UploadFileComponent,
-                        TagComponent,
-                        ImagePickerComponent
+                        TagComponent
                     ],
                     imports: __spread([
-                        SharedModule,
-                        i1.CoreModule,
+                        shared.SharedModule,
+                        ng_core.CoreModule,
                         forms.ReactiveFormsModule,
                         forms.FormsModule,
                         common.CommonModule,
@@ -1669,10 +1410,10 @@
             };
         };
         TagManagementModule.forLazy = function () {
-            return new i1.LazyModuleFactory(TagManagementModule.forChild());
+            return new ng_core.LazyModuleFactory(TagManagementModule.forChild());
         };
         TagManagementModule.forEarly = function () {
-            return new i1.LazyModuleFactory(TagManagementModule.forChild());
+            return new ng_core.LazyModuleFactory(TagManagementModule.forChild());
         };
         return TagManagementModule;
     }());
@@ -1680,7 +1421,7 @@
         { type: i0.NgModule, args: [{
                     declarations: [MainComponent$1, LayoutComponent$1, TagDetailComponent],
                     imports: [
-                        SharedModule,
+                        shared.SharedModule,
                         tag.NzTagModule,
                         TagManagementRoutingModule
                     ],
@@ -1693,7 +1434,7 @@
         { path: '', pathMatch: 'full', redirectTo: 'post' },
         {
             path: '',
-            canActivate: [i1.AuthGuard, i1.PermissionGuard],
+            canActivate: [ng_core.AuthGuard, ng_core.PermissionGuard],
             children: [
                 {
                     path: 'post',
@@ -1728,19 +1469,19 @@
             };
         };
         CmsAdminModule.forLazy = function () {
-            return new i1.LazyModuleFactory(CmsAdminModule.forChild());
+            return new ng_core.LazyModuleFactory(CmsAdminModule.forChild());
         };
         return CmsAdminModule;
     }());
     CmsAdminModule.decorators = [
         { type: i0.NgModule, args: [{
                     imports: [
-                        SharedModule,
-                        i1.CoreModule,
+                        shared.SharedModule,
+                        ng_core.CoreModule,
                         CmsAdminRoutingModule,
                     ],
                     exports: [
-                        SharedModule,
+                        shared.SharedModule,
                     ],
                 },] }
     ];
@@ -1750,9 +1491,6 @@
      */
 
     exports.CmsAdminModule = CmsAdminModule;
-    exports.FileService = FileService;
-    exports.GetFileByIdPipe = GetFileByIdPipe;
-    exports.SharedModule = SharedModule;
     exports.ɵa = CmsAdminRoutingModule;
     exports.ɵb = PostModule;
     exports.ɵc = LayoutComponent;
@@ -1760,21 +1498,19 @@
     exports.ɵe = PageService;
     exports.ɵf = PostStateService;
     exports.ɵg = DetailComponent;
-    exports.ɵh = FileService;
-    exports.ɵi = ListComponent;
-    exports.ɵj = UploadFileComponent;
-    exports.ɵk = TagComponent;
-    exports.ɵl = ImagePickerComponent;
-    exports.ɵm = RouteConfig;
-    exports.ɵn = PostRoutingModule;
-    exports.ɵo = TagManagementModule;
-    exports.ɵp = MainComponent$1;
-    exports.ɵq = PageService$1;
-    exports.ɵr = LayoutComponent$1;
-    exports.ɵs = TagDetailComponent;
-    exports.ɵt = RouteConfig$1;
-    exports.ɵu = DetailRouteConfig;
-    exports.ɵv = TagManagementRoutingModule;
+    exports.ɵh = ListComponent;
+    exports.ɵi = UploadFileComponent;
+    exports.ɵj = TagComponent;
+    exports.ɵk = RouteConfig;
+    exports.ɵl = PostRoutingModule;
+    exports.ɵm = TagManagementModule;
+    exports.ɵn = MainComponent$1;
+    exports.ɵo = PageService$1;
+    exports.ɵp = LayoutComponent$1;
+    exports.ɵq = TagDetailComponent;
+    exports.ɵr = RouteConfig$1;
+    exports.ɵs = DetailRouteConfig;
+    exports.ɵt = TagManagementRoutingModule;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

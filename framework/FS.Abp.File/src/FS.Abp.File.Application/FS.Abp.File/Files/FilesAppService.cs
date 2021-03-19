@@ -35,5 +35,11 @@ namespace FS.Abp.File.Files
         {
             return await base.GetAsync(id);
         }
+
+        [AllowAnonymous]
+        public override Task<byte[]> GetContentAsync(Guid id)
+        {
+            return base.GetContentAsync(id);
+        }
     }
 }

@@ -3,7 +3,7 @@ import { TagManagementRoutingModule } from './tag-management-routing.module';
 import { MainComponent } from './components/main/main.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { LazyModuleFactory } from '@abp/ng.core';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@fs-tw/cms/admin/shared';
 import { TagDetailComponent } from './components/tag-detail/tag-detail.component';
 import { PageService } from './providers/page.service';
 import { NzTagModule } from 'ng-zorro-antd/tag';

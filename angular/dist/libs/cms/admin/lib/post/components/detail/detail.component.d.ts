@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { Fs } from '@fs-tw/cms/proxy';
 import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { PageService } from '../../providers/page.service';
-import { ImageFile, ImagePickerComponent } from '../image-picker/image-picker.component';
-import { FileService } from '../../../shared';
+import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
+import { FileService } from '@fs-tw/cms/admin/shared';
 import { FileInfo } from '../upload-file/upload-file.component';
 export declare class DetailComponent implements OnInit {
     private router;

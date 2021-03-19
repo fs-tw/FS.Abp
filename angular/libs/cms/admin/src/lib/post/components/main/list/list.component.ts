@@ -7,14 +7,14 @@ import { ListService } from '@abp/ng.core';
 import {EXTENSIONS_IDENTIFIER,FormPropData,generateFormFromProps} from '@abp/ng.theme.shared/extensions';
 import {Confirmation,ConfirmationService,ToasterService,} from '@abp/ng.theme.shared';
 
-import { FileService } from '../../../../shared'
+import { FileService } from '@fs-tw/cms/admin/shared';
 import { PageService } from '../../../providers/page.service';
 import { PostStateService } from '../../../providers/post-state.service';
 
 import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { Fs } from '@fs-tw/cms/proxy';
 
-import { ImageFile, ImagePickerComponent } from '../../image-picker/image-picker.component';
+import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 
 
 

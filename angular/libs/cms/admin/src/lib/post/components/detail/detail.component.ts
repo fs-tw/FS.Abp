@@ -7,8 +7,8 @@ import * as dns from 'date-fns'
 import { Fs } from '@fs-tw/cms/proxy';
 import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { PageService } from '../../providers/page.service';
-import { ImageFile, ImagePickerComponent } from '../image-picker/image-picker.component';
-import { FileService, FileDescriptorDto } from '../../../shared'
+import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
+import { FileService, FileDescriptorDto } from '@fs-tw/cms/admin/shared';
 import { map } from 'rxjs/operators';
 import { FileInfo } from '../upload-file/upload-file.component';
 
