@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.StaticFiles;
+﻿
+using FS.Abp.File.Tool;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,33 +11,31 @@ using Volo.Abp.VirtualFileSystem;
 using Volo.FileManagement.Directories;
 using Volo.FileManagement.Files;
 
-namespace DEMO.Theme
+namespace FS.Abp.Files
 {
-    public enum PathType 
+    public class FileGeneraterManager : DomainService, IFileGeneraterManager
     {
-        base64,FilePath
-    }
-    public class FileGeneraterManager : DomainService
-    {
-        private readonly IVirtualFileProvider virtualFileProvider;
-        private readonly IDirectoryDescriptorRepository directoryDescriptorRepository;
-        private readonly IDirectoryManager directoryManager;
+
         private readonly IFileManager fileManager;
 
         public FileGeneraterManager(
-            IVirtualFileProvider virtualFileProvider,
-             IDirectoryDescriptorRepository directoryDescriptorRepository,
-            IDirectoryManager directoryManager,
             IFileManager fileManager
             )
         {
-            this.virtualFileProvider = virtualFileProvider;
-            this.directoryDescriptorRepository = directoryDescriptorRepository;
-            this.directoryManager = directoryManager;
             this.fileManager = fileManager;
         }
 
-        public async Task<FileDescriptor> CreateFileFromBase64(string input, Guid directoryId,string fileName, Guid? tenantId = null)
+        public async Task<FileDescriptor> CreateFile(Stream stream, Guid directoryId, string fileName, Guid? tenantId = null)
+        {
+            var extension = Path.GetExtension(fileName);
+            string contentType = FileExtensionContentTypeUtils.GetMimeType(extension);
+            var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
+            var fileDescriptor = await fileManager.CreateAsync(fileName, contentType, memoryStream.ToArray(), directoryId, tenantId);
+            return fileDescriptor;
+        }
+
+        public async Task<FileDescriptor> CreateFileFromBase64(string input, Guid directoryId, string fileName, Guid? tenantId = null)
         {
             var memoryStream = new MemoryStream();
             string contentType = "";
@@ -44,8 +43,8 @@ namespace DEMO.Theme
             var base64 = temp.Last();
             contentType = temp.First().Replace("data:", "").Replace(";base64", "");
             var bytes = Convert.FromBase64String(base64);
-            memoryStream.Write(bytes);
-            var fileDescriptor = await fileManager.CreateAsync(fileName + getFileExtension(base64), contentType, memoryStream.ToArray(), directoryId, tenantId,overrideExisting:true);           
+            memoryStream.Write(bytes, 0, bytes.Length);
+            var fileDescriptor = await fileManager.CreateAsync(fileName + getFileExtension(base64), contentType, memoryStream.ToArray(), directoryId, tenantId, overrideExisting: true);
             return fileDescriptor;
         }
 
