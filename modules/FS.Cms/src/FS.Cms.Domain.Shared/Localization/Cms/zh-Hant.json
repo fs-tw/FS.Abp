@@ -37,6 +37,7 @@
     "FS.Post.Content": "內容",
     "FS.Post.Disable": "禁用",
     "FS.Post.PublishDate": "發佈時間",
+    "FS.Post:PublishEndDate": "結束時間",
     "FS.Post.StartTime": "開始時間",
     "FS.Post.EndTime": "結束時間",
     "FS.Post.DisplayMode": "顯示模式",
@@ -61,6 +62,7 @@
     "FS.Message:Upload": " 上傳",
     "FS.Message:Preview": "預覽",
     "FS.Message:Image": "圖示",
+
 
     "FS.Cms.Tags": "CMS-標籤",
     "FS.Cms.Tags.Tag": "標籤",
