@@ -1,0 +1,53 @@
+<div class="mb-md">
+  <h5>
+    {{ 'Cms::FS.Cms.BlogType' | abpLocalization }}:{{
+      (blog$ | async) == null ? '全部' : (blog$ | async).displayName
+    }}
+  </h5>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="gotoDetail()"
+    style="margin-right: 20px"
+  >
+    {{ 'AbpIdentityServer::Add' | abpLocalization }}
+  </button>
+  <nz-input-group
+    nzSearch
+    [nzAddOnAfter]="suffixIconButton"
+    style="width: 300px"
+  >
+    <input
+      type="text"
+      [(ngModel)]="postParams.keyword"
+      nz-input
+      placeholder="輸入名稱"
+    />
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" (click)="hookToQuery()" nzSearch>
+      <i nz-icon nzType="search"></i>
+    </button>
+  </ng-template>
+</div>
+<nz-extensible-table
+  [data]="posts"
+  [recordsTotal]="totalCount"
+  [list]="list"
+  [haveRowDetail]="false"
+>
+  <ng-template row-detail-template let-node>
+    <div>
+      <h3>{{ 'Cms::FS.Post.Subtitle' | abpLocalization }}</h3>
+      <p>{{ node.subtitle || '-' }}</p>
+      <div *ngIf="node.displayMode == 0">
+        <h3>{{ 'Cms::FS.Post.Content' | abpLocalization }}</h3>
+        <quill-view [content]="node.content"></quill-view>
+      </div>
+      <div *ngIf="node.displayMode == 1">
+        <h3>{{ 'Cms::FS.Post.Url' | abpLocalization }}</h3>
+        <p>{{ node.url }}</p>
+      </div>
+    </div>
+  </ng-template>
+</nz-extensible-table>

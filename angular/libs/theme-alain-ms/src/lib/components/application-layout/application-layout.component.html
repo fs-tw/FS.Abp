@@ -41,7 +41,7 @@
       <span *ngIf="layoutStateService?.routesProcessor?.RouterState" >
         <button type="button" class="pri-btn" 
           *ngIf="!isCurrentPath" 
-          [routerLink]="[parentPath]">返回</button>
+          [routerLink]="[parentPath]" queryParamsHandling="merge">返回</button>
       </span>
     </ng-template>
     <ng-template #titleTpl>

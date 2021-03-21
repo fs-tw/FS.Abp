@@ -2,7 +2,9 @@ import { Injector, Injectable, Type } from '@angular/core';
 import { Fs, Volo } from '@fs-tw/cms/proxy';
 
 // @dynamic
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class PageService {
   private blogService: Fs.Cms.Blogs.BlogsApiService;
   private postService: Fs.Cms.Posts.PostsApiService;

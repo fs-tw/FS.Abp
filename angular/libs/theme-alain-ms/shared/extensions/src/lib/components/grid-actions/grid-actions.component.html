@@ -1,14 +1,8 @@
 <ng-container *ngIf="actionList.length > 0">
-  <button
-    nz-button
-    nzType="default"
-    nz-dropdown
-    [nzDropdownMenu]="menu"
-    class="ml-md"
-  >
-    <i nz-icon nzType="down"></i>
+  <a nz-dropdown [nzDropdownMenu]="menu">
     <span>{{ 'AbpUi::Actions' | abpLocalization }}</span>
-  </button>
+    <i nz-icon nzType="down"></i>
+  </a>
 
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>

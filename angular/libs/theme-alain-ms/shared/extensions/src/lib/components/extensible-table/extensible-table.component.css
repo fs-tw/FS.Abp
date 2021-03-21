@@ -1,6 +1,5 @@
-
 .listSelected {
-  background-color: #2121e670 !important;
+  background-color: #e6f2ff !important;
 }
 
 nz-list-item {
@@ -15,7 +14,6 @@ nz-list-item {
   background-color: #2121e670 !important;
 } */
 
-
-.pointer{
+.pointer {
   cursor: pointer;
 }
