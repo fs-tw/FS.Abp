@@ -161,57 +161,41 @@ export class BlogListComponent implements OnInit, OnDestroy {
   }
 
 
-  uploadFileAction(): Observable<string[]> {
-    let actions: Observable<string>[] = [of(null)];
 
-    // 保留原有圖片action
-    let existFiles = this.defaultImagePicker.existFiles.map(x => of(x.fileName))
-    actions = actions.concat(existFiles)
-
-    // 刪除圖片action
-    let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
-    let deleteFileActions = deleteImageNames.map(x => this.pageService.deleteFile(x).pipe(map(() => '')));
-    actions = actions.concat(deleteFileActions);
-
-    // 新圖片上傳action
-    let uploadImageInfos = this.defaultImagePicker.getNewUploadFiles();
-    let uploadNewImageActions = uploadImageInfos.map(x => this.fileService.uploadFile(x.file, this.Modal.Directory?.id).pipe(map(y => y.id)));
-    actions = actions.concat(uploadNewImageActions);
-
-    return combineLatest(actions).pipe(map(x => x.filter(y => y != "" && y != null)));
-  }
 
   save() {
     var self = this;
     if (!this.Modal.form.valid) return;
 
-    this.uploadFileAction().subscribe(fileIds => {
+    uploadFileAction().subscribe(fileIds => {
       saveBlogDto(fileIds[0]);
     })
 
-    // let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
-    // if (deleteImageNames.length > 0) {
-    //   this.pageService.deleteFile(deleteImageNames[0]).subscribe(() => {
-    //     uploadFile();
-    //   });
-    // } else uploadFile();
 
-    // function uploadFile() {
-    //   let uploadImageInfos = self.defaultImagePicker.getUploadFiles();
-    //   let fileId = '';
-    //   if (uploadImageInfos.length > 0) {
-    //     if (self.Modal.Data.iconUrl == uploadImageInfos[0].fileName) {
-    //       saveBlogDto(self.Modal.Data.iconUrl);
-    //       return;
-    //     }
-    //     self.fileService
-    //       .uploadFile(uploadImageInfos[0].file, self.Modal.Directory?.id)
-    //       .subscribe((f) => {
-    //         fileId = f.id;
-    //         saveBlogDto(fileId);
-    //       });
-    //   } else saveBlogDto('');
-    // }
+    function uploadFileAction(): Observable<string[]> {
+      let actions: Observable<string>[] = [of(null)];
+
+      // 保留原有圖片action
+      let existFiles = self.defaultImagePicker.existFiles.map(x => of(x.fileName))
+      actions = actions.concat(existFiles)
+
+      // 刪除圖片action
+      let deleteImageNames = self.defaultImagePicker.getDeleteFileNames();
+      let deleteFileActions = deleteImageNames.map(x => self.pageService.deleteFile(x).pipe(map(() => '')));
+      actions = actions.concat(deleteFileActions);
+
+      // 新圖片上傳action
+      let uploadImageInfos = self.defaultImagePicker.getNewUploadFiles();
+      let uploadNewImageActions = uploadImageInfos
+          .map(x => self.fileService.uploadFile(x.file, self.Modal.Directory?.id)
+          .pipe(map(file => file.id)));
+
+      actions = actions.concat(uploadNewImageActions);
+
+      return combineLatest(actions).pipe(map(x => x.filter(y => y != "" && y != null)));
+    }
+
+
     function saveBlogDto(fileId?) {
       let input = {
         ...self.Modal.Data,
