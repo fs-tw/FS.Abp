@@ -1,7 +1,5 @@
 import { ReplaceableComponentsService,ConfigStateService } from '@abp/ng.core';
-//import { Settings } from '@fs/theme.the-project/proxy'
 import { APP_INITIALIZER, Injector } from '@angular/core';
-//import { eThemeBasicComponents } from '@abp/ng.theme.basic';
 import { ApplicationLayoutComponent } from '../components/application-layout/application-layout.component';
 import { eThemeUnifyComponents } from '../enums/components';
 import { LayoutStateService } from '../service/layout-state.service';

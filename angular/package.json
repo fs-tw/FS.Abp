@@ -38,7 +38,6 @@
   "private": true,
   "dependencies": {
     "@abp/ng.schematics": "^4.2.2",
-    "@abp/ng.theme.basic": "^4.2.2",
     "@angular/animations": "^11.2.0",
     "@angular/common": "^11.2.0",
     "@angular/compiler": "^11.2.0",
@@ -47,16 +46,15 @@
     "@angular/platform-browser": "^11.2.0",
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
-    "@npm/cms": "file:npm/cms",
-    "@npm/fs-tw": "file:npm/fs-tw",
-    "@npm/volo": "file:npm/volo",
     "@nrwl/angular": "11.4.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
-    "zone.js": "^0.10.2"
+    "zone.js": "^0.10.2",
+    "@npm/cms": "file:npm/cms",
+    "@npm/volo": "file:npm/volo",
+    "@npm/ng-alain-ms": "file:npm/ng-alain-ms"
   },
   "devDependencies": {
-    "@abp/ng.schematics": "^4.2.2",
     "@angular-devkit/build-angular": "~0.1102.0",
     "@angular-eslint/eslint-plugin": "~1.0.0",
     "@angular-eslint/eslint-plugin-template": "~1.0.0",
@@ -64,7 +62,6 @@
     "@angular/cli": "~11.0.0",
     "@angular/compiler-cli": "^11.2.0",
     "@angular/language-service": "^11.2.0",
-    "@npm/ng-alain-ms": "file:npm/ng-alain-ms",
     "@nrwl/cli": "11.4.0",
     "@nrwl/cypress": "11.4.0",
     "@nrwl/devkit": "11.4.0",
