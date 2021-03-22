@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Observable, of, Subscription } from 'rxjs';
+import { combineLatest, Observable, of, Subscription } from 'rxjs';
 
 import { ListService } from '@abp/ng.core';
 import {
@@ -28,7 +28,7 @@ import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { Fs, Volo } from '@fs-tw/cms/proxy';
 import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 import { QueryValueType } from '@angular/compiler/src/core';
-import { mergeMap } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { AttachmentFileInfoDto } from 'libs/cms/proxy/src/fs/cms/posts/dtos';
 
 @Component({
@@ -60,7 +60,7 @@ export class BlogListComponent implements OnInit, OnDestroy {
     Images: ImageFile[];
   };
 
-  
+
 
   constructor(
     private router: Router,
@@ -160,32 +160,42 @@ export class BlogListComponent implements OnInit, OnDestroy {
     this.Modal.isVisible = false;
   }
 
+
+
+
   save() {
     var self = this;
     if (!this.Modal.form.valid) return;
-    let deleteImageNames = this.defaultImagePicker.getDeleteFileNames();
-    if (deleteImageNames.length > 0) {
-      this.pageService.deleteFile(deleteImageNames[0]).subscribe(() => {
-        uploadFile();
-      });
-    } else uploadFile();
 
-    function uploadFile() {
-      let uploadImageInfos = self.defaultImagePicker.getUploadFiles();
-      let fileId = '';
-      if (uploadImageInfos.length > 0) {
-        if (self.Modal.Data.iconUrl == uploadImageInfos[0].fileName) {
-          saveBlogDto(self.Modal.Data.iconUrl);
-          return;
-        }
-        self.fileService
-          .uploadFile(uploadImageInfos[0].file, self.Modal.Directory?.id)
-          .subscribe((f) => {
-            fileId = f.id;
-            saveBlogDto(fileId);
-          });
-      } else saveBlogDto('');
+    uploadFileAction().subscribe(fileIds => {
+      saveBlogDto(fileIds[0]);
+    })
+
+
+    function uploadFileAction(): Observable<string[]> {
+      let actions: Observable<string>[] = [of(null)];
+
+      // 保留原有圖片action
+      let existFiles = self.defaultImagePicker.existFiles.map(x => of(x.fileName))
+      actions = actions.concat(existFiles)
+
+      // 刪除圖片action
+      let deleteImageNames = self.defaultImagePicker.getDeleteFileNames();
+      let deleteFileActions = deleteImageNames.map(x => self.pageService.deleteFile(x).pipe(map(() => '')));
+      actions = actions.concat(deleteFileActions);
+
+      // 新圖片上傳action
+      let uploadImageInfos = self.defaultImagePicker.getNewUploadFiles();
+      let uploadNewImageActions = uploadImageInfos
+          .map(x => self.fileService.uploadFile(x.file, self.Modal.Directory?.id)
+          .pipe(map(file => file.id)));
+
+      actions = actions.concat(uploadNewImageActions);
+
+      return combineLatest(actions).pipe(map(x => x.filter(y => y != "" && y != null)));
     }
+
+
     function saveBlogDto(fileId?) {
       let input = {
         ...self.Modal.Data,
@@ -198,7 +208,7 @@ export class BlogListComponent implements OnInit, OnDestroy {
         input.no = input.displayName;
         action = self.pageService.createBlog(input);
       } else {
-        
+
         action = self.pageService.updateBlog(input.id, input);
       }
       action.subscribe((x) => {
