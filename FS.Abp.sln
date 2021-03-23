@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AspNetCore", "FS.Abp.AspNetCore", "{E2D733F6-9953-4929-B6B7-044CD0372DE2}"
 EndProject
@@ -44,6 +44,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{649B1578-993B-4EB2-9E63-F8CC57B20888}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Npoi.Mapper", "framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper\FS.Abp.Npoi.Mapper.csproj", "{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Authentication", "FS.Abp.Authentication", "{7312E2DF-92E9-4C2A-A978-A6BC579F3CDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Authentication.Domain.Shared", "framework\FS.Abp.Authentication\src\FS.Abp.Authentication.Domain.Shared\FS.Abp.Authentication.Domain.Shared.csproj", "{FFA1390B-7D90-41AD-9433-6AEF9DB45FB0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Authentication.Domain", "framework\FS.Abp.Authentication\src\FS.Abp.Authentication.Domain\FS.Abp.Authentication.Domain.csproj", "{44009D0D-4FAB-40A8-97F4-A6919F4F38BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Authentication", "framework\FS.Abp.Authentication\src\FS.Abp.Authentication\FS.Abp.Authentication.csproj", "{1CFA3E8E-BA81-4A40-B771-034433CC8A8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{3B51E533-77B3-4608-A4BE-7080D51323BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Authentication.External.Google", "framework\FS.Abp.Authentication\src\FS.Abp.Authentication.External.Google\FS.Abp.Authentication.External.Google.csproj", "{A3636E2B-D335-42CC-ACA1-5B4F282F04D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +115,22 @@ Global
 		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA1390B-7D90-41AD-9433-6AEF9DB45FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA1390B-7D90-41AD-9433-6AEF9DB45FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA1390B-7D90-41AD-9433-6AEF9DB45FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA1390B-7D90-41AD-9433-6AEF9DB45FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44009D0D-4FAB-40A8-97F4-A6919F4F38BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44009D0D-4FAB-40A8-97F4-A6919F4F38BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44009D0D-4FAB-40A8-97F4-A6919F4F38BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44009D0D-4FAB-40A8-97F4-A6919F4F38BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CFA3E8E-BA81-4A40-B771-034433CC8A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CFA3E8E-BA81-4A40-B771-034433CC8A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CFA3E8E-BA81-4A40-B771-034433CC8A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CFA3E8E-BA81-4A40-B771-034433CC8A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3636E2B-D335-42CC-ACA1-5B4F282F04D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3636E2B-D335-42CC-ACA1-5B4F282F04D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3636E2B-D335-42CC-ACA1-5B4F282F04D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3636E2B-D335-42CC-ACA1-5B4F282F04D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,8 +155,14 @@ Global
 		{F7C89BED-EC2F-4383-9FF8-555611AAB2CA} = {2656FB2F-5A01-47D2-92B5-3FBE4941D857}
 		{649B1578-993B-4EB2-9E63-F8CC57B20888} = {2656FB2F-5A01-47D2-92B5-3FBE4941D857}
 		{26505F9F-7EB6-44CB-A821-95AC7D1C5CF2} = {F7C89BED-EC2F-4383-9FF8-555611AAB2CA}
+		{7312E2DF-92E9-4C2A-A978-A6BC579F3CDF} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
+		{FFA1390B-7D90-41AD-9433-6AEF9DB45FB0} = {3B51E533-77B3-4608-A4BE-7080D51323BA}
+		{44009D0D-4FAB-40A8-97F4-A6919F4F38BC} = {3B51E533-77B3-4608-A4BE-7080D51323BA}
+		{1CFA3E8E-BA81-4A40-B771-034433CC8A8A} = {3B51E533-77B3-4608-A4BE-7080D51323BA}
+		{3B51E533-77B3-4608-A4BE-7080D51323BA} = {7312E2DF-92E9-4C2A-A978-A6BC579F3CDF}
+		{A3636E2B-D335-42CC-ACA1-5B4F282F04D3} = {7312E2DF-92E9-4C2A-A978-A6BC579F3CDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
+		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
 	EndGlobalSection
 EndGlobal
