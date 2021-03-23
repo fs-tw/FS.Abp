@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@my-company-name/authentication": [
+        "projects/authentication/src/public-api.ts"
+      ],
+      "@my-company-name/authentication/config": [
+        "projects/authentication/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/authentication/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/authentication/src/lib/proxy/*"]
+    }
+  }
+}
