@@ -43,10 +43,10 @@ jobs:
           dir -name
 
       - name: Publish Nuget to GitHub registry
-        run: dotnet nuget push dest\*.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s "https://nuget.pkg.github.com/fs-tw/index.json"
+        run: dotnet nuget push dest\*.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s "https://nuget.pkg.github.com/fs-tw/index.json" --skip-duplicate
 
       - name: dotnet nuget push to NuGet
-        run: dotnet nuget push dest\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s "https://api.nuget.org/v3/index.json"
+        run: dotnet nuget push dest\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s "https://api.nuget.org/v3/index.json" --skip-duplicate
 
       - name: determine if the tag exists
         uses: mukunku/tag-exists-action@v1.0.0
