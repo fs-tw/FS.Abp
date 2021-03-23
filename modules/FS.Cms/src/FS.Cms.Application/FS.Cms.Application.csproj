@@ -28,10 +28,26 @@
     <Compile Remove="_Generated\FS.Cms\Blogs\Dtos\BlogConfigDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\PropertiesDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\PropertiesDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\ResourcePropertyDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\ResourcePropertyDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\AttachmentDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\AttachmentDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\ImageDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\ImageDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImageDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImageDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFilesCrudAppService.Generated.cs" />
@@ -70,19 +86,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\ResourceDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\ResourceDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -110,27 +118,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostImageDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostImageDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
