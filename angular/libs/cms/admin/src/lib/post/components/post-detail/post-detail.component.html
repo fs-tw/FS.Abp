@@ -15,16 +15,14 @@
         </nz-radio-group>
       </se>
       <se label="{{'Cms::FS.Post.PublishDate'  |abpLocalization}}" required>
-        <!-- <nz-range-picker nzShowTime nzFormat="yyyy/MM/dd HH:mm:ss" name="dateRange" [(ngModel)]="dateRange"
-          [nzAllowClear]="false"></nz-range-picker> -->
         <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false"
           [(ngModel)]="dateRange[0]"></nz-date-picker>
-
+      </se>
+      <se label="{{'Cms::FS.Post.PublishEndDate'  |abpLocalization}}" extra="{{'Cms::FS.Message:NullIsUnlimit'  |abpLocalization}}">
         <nz-date-picker nzShowTime name="endDate" [nzAllowClear]="true"
           [(ngModel)]="dateRange[1]"></nz-date-picker>
-        <!-- <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
-          [(ngModel)]="data.published_At"></nz-date-picker> -->
       </se>
+      
       <se label="{{'Cms::FS.Post.Title'  |abpLocalization}}" error="" required>
         <input type="text" nz-input [(ngModel)]="data.title" name="title" required>
       </se>

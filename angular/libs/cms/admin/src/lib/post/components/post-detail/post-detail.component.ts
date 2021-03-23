@@ -66,7 +66,7 @@ export class PostDetailComponent implements OnInit {
       postImages: []
     } as Fs.Cms.Posts.Dtos.PostDto;
     this.contentFileName = "";
-    this.dateRange = [new Date(), new Date()];
+    this.dateRange = [new Date(), null];
 
     this.defaultImages = [];
     this.defaultFiles = [];
@@ -76,7 +76,7 @@ export class PostDetailComponent implements OnInit {
       this.pageService.getPostById(this.postId).subscribe((x) => {
         this.data = x;
         let st = x.startTime ? new Date(x.startTime) : new Date();
-        let ed = x.endTime ? new Date(x.endTime) : new Date();
+        let ed = x.endTime ? new Date(x.endTime) : null;
         this.dateRange = [st, ed];
 
         this.defaultImages = x.postImages.map(y => new ImageFile(y.name, y.imageId));
