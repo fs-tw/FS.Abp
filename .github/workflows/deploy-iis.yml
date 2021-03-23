@@ -1,0 +1,20 @@
+name: deploy
+
+on: 
+  push:
+    branches: [ deploy ]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.100
+  
+
+    - name: dotnet publish 
+      run: |
+        dotnet publish applications/DEMO/aspnet-core/src/DEMO.HttpApi.Host/DEMO.HttpApi.Host.csproj -c Release /p:PublishProfile=further-server /p:AllowUntrustedCertificate=True /p:password=Server@073807983
