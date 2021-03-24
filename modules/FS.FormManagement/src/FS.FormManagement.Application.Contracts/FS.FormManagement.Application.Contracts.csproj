@@ -8,13 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsPermissionNames.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\VersionDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\IDocumentDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\IDocumentsApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\IVersionCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDto.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\IVersionsDefinitionCrudAppService.Generated.cs" />
   </ItemGroup>
@@ -122,10 +115,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Versions</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.FormManagement\Documents\Dtos\" />
   </ItemGroup>
 
 </Project>

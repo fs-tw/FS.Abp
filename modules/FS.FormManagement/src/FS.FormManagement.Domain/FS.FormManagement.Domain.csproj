@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.FormManagement\Versions\IVersionDefinitionRepository.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
     <Compile Update="FS.FormManagement\Versions\VersionsStore.cs">
       <AutoGen>True</AutoGen>
     </Compile>

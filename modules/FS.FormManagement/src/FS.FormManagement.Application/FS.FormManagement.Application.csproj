@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\VersionDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\VersionDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\VersionCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsDefinitionCrudAppService.Generated.cs" />
@@ -115,10 +109,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Versions</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.FormManagement\Documents\Dtos\" />
   </ItemGroup>
 
 </Project>
