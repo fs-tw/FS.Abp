@@ -31,10 +31,10 @@ namespace FS.FormManagement.EntityFrameworkCore
             builder.ApplyConfiguration<FS.FormManagement.Forms.Formal>(new FS.FormManagement.Forms.FormalConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Forms.Group>(new FS.FormManagement.Forms.GroupConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Forms.Item>(new FS.FormManagement.Forms.ItemConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Documents.Version>(new FS.FormManagement.Documents.VersionConfiguration(options));
+            builder.ApplyConfiguration<FS.FormManagement.Versions.Version>(new FS.FormManagement.Versions.VersionConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Records.Record>(new FS.FormManagement.Records.RecordConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Records.RecordItem>(new FS.FormManagement.Records.RecordItemConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Documents.DocumentDefinition>(new FS.FormManagement.Documents.DocumentDefinitionConfiguration(options));
+            builder.ApplyConfiguration<FS.FormManagement.Versions.VersionDefinition>(new FS.FormManagement.Versions.VersionDefinitionConfiguration(options));
         }
     }
 }

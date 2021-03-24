@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\VersionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\Dtos\VersionDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\VersionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsDefinitionCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FS.Abp.Application" Version="$(FSVersion)" />
   </ItemGroup>
 
@@ -19,30 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\VersionDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\VersionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\VersionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\FormalDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -103,6 +91,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Records</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDefinitionDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.FormManagement\Documents\Dtos\" />
   </ItemGroup>
 
 </Project>

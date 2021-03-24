@@ -31,31 +31,31 @@ namespace FS.FormManagement.Forms.Dtos
 
     public partial class FormalDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual string No { get; set; }
+        public virtual String No { get; set; }
 
-        public virtual string DisplayName { get; set; }
+        public virtual String DisplayName { get; set; }
 
-        public virtual System.Guid VersionId { get; set; }
+        public virtual Guid VersionId { get; set; }
 
     }
 
     public partial class FormalCreateDto
     {
-        public virtual string No { get; set; }
+        public virtual String No { get; set; }
 
-        public virtual string DisplayName { get; set; }
+        public virtual String DisplayName { get; set; }
 
-        public virtual System.Guid VersionId { get; set; }
+        public virtual Guid VersionId { get; set; }
 
     }
 
     public partial class FormalUpdateDto
     {
-        public virtual string No { get; set; }
+        public virtual String No { get; set; }
 
-        public virtual string DisplayName { get; set; }
+        public virtual String DisplayName { get; set; }
 
-        public virtual System.Guid VersionId { get; set; }
+        public virtual Guid VersionId { get; set; }
 
     }
 

@@ -333,7 +333,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.FormManagement.Documents.Version" entity-set="Versions" p1:Guid="74afe886-622b-4766-9c63-b47739bc120a" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.FormManagement.Versions.Version" entity-set="Versions" p1:Guid="74afe886-622b-4766-9c63-b47739bc120a" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -342,7 +342,7 @@
             <string>AuditedAggregateRoot</string>
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -350,7 +350,7 @@
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>Documents</string>
+            <string>Versions</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -501,7 +501,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.FormManagement.Documents.DocumentDefinition" entity-set="DocumentDefinitions" p1:Guid="5453696f-5000-4f77-9985-ab06c7fbe6ef" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.FormManagement.Versions.VersionDefinition" entity-set="VersionDefinitions" p1:Guid="5453696f-5000-4f77-9985-ab06c7fbe6ef" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GenerateRepositoryPartialClass="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -510,7 +510,7 @@
             <string>AuditedAggregateRoot</string>
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -518,7 +518,7 @@
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>Documents</string>
+            <string>Versions</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -537,7 +537,10 @@
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="5af6e9a0-8070-42dc-93ea-ef31cebece54" p1:GenerateDTO="False">
       <column name="" />
     </id>
-    <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="13b1f2ea-42da-44ab-aec2-aaff6227a331">
+    <property name="EntityType" type="String" p1:ValidateRequired="true" p1:Guid="13b1f2ea-42da-44ab-aec2-aaff6227a331">
+      <column name="" />
+    </property>
+    <property name="EntityKey" type="String" p1:ValidateRequired="true" p1:Guid="319f4717-0b86-4433-84ae-0ed0b4f45ef1">
       <column name="" />
     </property>
     <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="d9a16e55-30bd-45ad-ae05-7ec80d6c9538">
@@ -592,10 +595,10 @@
       </end2>
     </association>
     <association name="Version_VersionDefinition" cardinality="OneToMany" p1:Guid="21449d00-b8ec-49fa-9219-09e55e8d85ad">
-      <end1 multiplicity="ZeroOrOne" name="CurrentVersion" class="DocumentDefinition" relation-class="Version" constrained="True" lazy="False" p1:Guid="5e9ec44a-bb1e-4f44-b175-fe41333cbd5a">
+      <end1 multiplicity="ZeroOrOne" name="CurrentVersion" class="VersionDefinition" relation-class="Version" constrained="True" lazy="False" p1:Guid="5e9ec44a-bb1e-4f44-b175-fe41333cbd5a">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="VersionDefinitions" class="Version" relation-class="DocumentDefinition" generate="False" lazy="False" p1:Guid="bac6c148-6ce1-4cad-b3d2-6a1d7d3c9ff6">
+      <end2 multiplicity="Many" name="VersionDefinitions" class="Version" relation-class="VersionDefinition" generate="False" lazy="False" p1:Guid="bac6c148-6ce1-4cad-b3d2-6a1d7d3c9ff6">
         <property name="CurrentVersionId" />
       </end2>
     </association>

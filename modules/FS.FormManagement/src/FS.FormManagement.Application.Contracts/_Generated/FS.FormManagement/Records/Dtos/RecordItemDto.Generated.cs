@@ -31,31 +31,31 @@ namespace FS.FormManagement.Records.Dtos
 
     public partial class RecordItemDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual string Asnwer { get; set; }
+        public virtual String Asnwer { get; set; }
 
-        public virtual System.Guid RecordId { get; set; }
+        public virtual Guid RecordId { get; set; }
 
-        public virtual string ItemId { get; set; }
+        public virtual String ItemId { get; set; }
 
     }
 
     public partial class RecordItemCreateDto
     {
-        public virtual string Asnwer { get; set; }
+        public virtual String Asnwer { get; set; }
 
-        public virtual System.Guid RecordId { get; set; }
+        public virtual Guid RecordId { get; set; }
 
-        public virtual string ItemId { get; set; }
+        public virtual String ItemId { get; set; }
 
     }
 
     public partial class RecordItemUpdateDto
     {
-        public virtual string Asnwer { get; set; }
+        public virtual String Asnwer { get; set; }
 
-        public virtual System.Guid RecordId { get; set; }
+        public virtual Guid RecordId { get; set; }
 
-        public virtual string ItemId { get; set; }
+        public virtual String ItemId { get; set; }
 
     }
 
