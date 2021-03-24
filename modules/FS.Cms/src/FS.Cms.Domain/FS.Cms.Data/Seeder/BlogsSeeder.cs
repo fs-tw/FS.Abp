@@ -39,6 +39,8 @@ namespace FS.Cms.Data.Seeder
                 blog.Description = item.Description;
                 blog.Disable = false;
                 blog.Sequence = i;
+                blog.Static = item.Static;
+                blog.Images = new List<Core.Resource>();
                 blog.TenantId = context.TenantId;
                 EntityHelper.TrySetId(blog, () => this._guidGenerator.Create(), true);
 
@@ -63,6 +65,8 @@ namespace FS.Cms.Data.Seeder
                 blog.Description = item.Description;
                 blog.Disable = false;
                 blog.Sequence = i;
+                blog.Static = item.Static;
+                blog.Images = new List<Core.Resource>();
                 blog.TenantId = context.TenantId;
                 EntityHelper.TrySetId(blog, () => this._guidGenerator.Create(), true);
 

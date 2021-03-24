@@ -3,12 +3,29 @@
 // 2.0.1
 //
 //------------------------------------------------------------------------------
+using FS.Cms.Blogs.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Blogs
 {
     public partial class BlogsApi : IBlogsApi // pls write here
     {
+        [HttpGet]
+        [Route("get-blogs")]
+        public async Task<PagedResultDto<BlogWithDetailsDto>> GetBlogs(GetBlogsInput input)
+        {
+            return await this.BlogCrudAppService.GetBlogs(input);
+        }
+
+        [HttpGet]
+        [Route("get-front-blogs")]
+        public async Task<PagedResultDto<BlogWithDetailsDto>> GetFrontBlogs(GetBlogsInput input)
+        {
+            return await this.BlogCrudAppService.GetBlogs(input, true);
+        }
     }
 }

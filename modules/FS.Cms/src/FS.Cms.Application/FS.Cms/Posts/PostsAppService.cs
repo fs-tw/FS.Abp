@@ -8,13 +8,18 @@ using Volo.Abp.Application.Dtos;
 
 namespace FS.Cms.Posts
 {
-    public class PostAppService : CmsAppService, IPostAppService
+    public class PostsAppService : CmsAppService, IPostsAppService
     {
         private IPostsStore _postsStore => this.LazyServiceProvider.LazyGetRequiredService<IPostsStore>();
 
-        public async Task<PagedResultDto<PostWithDetailsDto>> GetPostsByBlogId(GetPostByBlogIdInput input)
+        public async Task<PagedResultDto<PostWithDetailsDto>> GetPostsByBlogId(GetPostByBlogIdInput input, bool isFront = false)
         {
             var query = (await this._postsStore.Post.WithDetailsAsync())
+                .WhereIf(isFront, x => !x.Disable)
+                .WhereIf(isFront, x => 
+                    x.StartTime.Date <= DateTime.Now.Date && 
+                    (!x.EndTime.HasValue || DateTime.Now.Date <= x.EndTime.Value.Date)
+                )
                 .WhereIf(input.BlogId.HasValue, x => x.BlogId == input.BlogId)
                 .WhereIf(!String.IsNullOrEmpty(input.Keyword), x => x.Title.ToLower().Contains(input.Keyword.Trim().ToLower()));
 

@@ -5,7 +5,7 @@ import {
   Input,
   TrackByFunction,
 } from '@angular/core';
-import { EntityAction, EntityActionList,GridActionsComponent as AbpGridActionsComponent } from '@abp/ng.theme.shared/extensions';
+import { EntityAction, EntityActionList, GridActionsComponent as AbpGridActionsComponent } from '@abp/ng.theme.shared/extensions';
 import { EXTENSIONS_ACTION_TYPE } from '@abp/ng.theme.shared/extensions';
 
 @Component({
@@ -31,5 +31,11 @@ export class GridActionsComponent<R = any> extends AbpGridActionsComponent<R> {
 
   constructor(injector: Injector) {
     super(injector);
+  }
+
+  get showActionList() {
+    return this.actionList.findIndex(x => {
+      return x.value.visible(this.data);
+    }) > -1;
   }
 }

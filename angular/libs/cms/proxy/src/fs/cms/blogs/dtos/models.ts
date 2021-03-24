@@ -1,5 +1,5 @@
 import type { ResourceDto } from '../../core/dtos/models';
-import type { AuditedEntityDto, EntityDto } from '@abp/ng.core';
+import type { AuditedEntityDto, EntityDto, PagedResultRequestDto } from '@abp/ng.core';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
 
 export interface BlogCreateDto {
@@ -50,6 +50,10 @@ export interface BlogUpdateDto {
 export interface BlogWithDetailsDto extends BlogDto {
   children: BlogDto[];
   parent: BlogDto;
+}
+
+export interface GetBlogsInput extends PagedResultRequestDto {
+  keyword?: string;
 }
 
 export interface MetaData {
