@@ -29,10 +29,30 @@ namespace FS.Cms.Blogs
             foreach (var post in posts)
             {
                 post.BlogId = blogNotClassified.Id;
-                await this._postsStore.Post.UpdateAsync(post).ConfigureAwait(false);
+                await this._postsStore.Post.UpdateAsync(post);
             }
 
             await base.DeleteAsync(id);
+        }
+
+        public async Task<PagedResultDto<BlogWithDetailsDto>> GetBlogs(GetBlogsInput input, bool isFront = false)
+        {
+            var query = (await this._repository.WithDetailsAsync())
+                .WhereIf(isFront, x => !x.Disable)
+                .WhereIf(!String.IsNullOrEmpty(input.Keyword), x => x.DisplayName.Trim().ToLower().Contains(input.Keyword.Trim().ToLower()));
+
+            var totalCount = await this.AsyncExecuter.CountAsync(query);
+
+            var items = await this.AsyncExecuter.ToListAsync(query
+                .OrderBy(x => x.Sequence)
+                .Skip(input.SkipCount)
+                .Take(input.MaxResultCount));
+
+            return new PagedResultDto<BlogWithDetailsDto>()
+            {
+                TotalCount = totalCount,
+                Items = ObjectMapper.Map<List<Blog>, List<BlogWithDetailsDto>>(items)
+            };
         }
     }
 }

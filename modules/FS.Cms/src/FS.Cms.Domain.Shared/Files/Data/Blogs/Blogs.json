@@ -3,18 +3,21 @@
     "No": "CmsBlogNotClassified",
     "DisplayName": "不分類",
     "Description": "",
+    "Static": true,
     "Children": []
   },
   {
     "No": "一般消息(example)",
     "DisplayName": "一般消息(example)",
     "Description": "",
+    "Static": false,
     "Children": []
   },
   {
     "No": "企業消息(example)",
     "DisplayName": "企業消息(example)",
     "Description": "",
+    "Static": false,
     "Children": []
   }
 ]

@@ -15,6 +15,9 @@ export const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany<
         record: data.record,
       });
     },
+    visible:(data)=>{
+      return !data.record.static
+    }
     //permission: 'AbpIdentity.Users.Update',
   },
   {
@@ -27,7 +30,7 @@ export const DEFAULT_BLOG_ENTITY_ACTIONS = EntityAction.createMany<
       });
     },
     visible:(data)=>{
-      return data.record.no != "CmsBlogNotClassified"
+      return !data.record.static
     }
     //permission: 'AbpIdentity.Users.Delete',
   },

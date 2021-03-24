@@ -45,7 +45,7 @@ export class RoutesProcessor {
 
     let targetRoutes = [];
     let route = this.CurrentRoute;
-    if (!route) return [];
+    if (!route) return result;
     pushNode(route);
     while (!!route.parent) {
       route = route.parent;

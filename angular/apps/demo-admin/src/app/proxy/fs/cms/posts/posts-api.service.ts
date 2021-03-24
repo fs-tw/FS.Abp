@@ -33,6 +33,14 @@ export class PostsApiService {
     },
     { apiName: this.apiName });
 
+  getFrontPostsByBlogIdByInput = (input: GetPostByBlogIdInput) =>
+    this.restService.request<any, PagedResultDto<PostWithDetailsDto>>({
+      method: 'GET',
+      url: `/api/cms/posts/get-front-posts-by-blog-id`,
+      params: { blogId: input.blogId, keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+    },
+    { apiName: this.apiName });
+
   getListByPostGetList = (PostGetList: PostGetListDto) =>
     this.restService.request<any, PagedResultDto<PostWithDetailsDto>>({
       method: 'GET',

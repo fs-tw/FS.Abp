@@ -1,6 +1,7 @@
 ﻿
 using Data;
 using FS.Abp.File.Directories;
+using FS.Abp.Files;
 using FS.Abp.VirtualFileSystem;
 using FS.Theme.Banners;
 using FS.Theme.Routes;
@@ -26,7 +27,7 @@ namespace DEMO.Theme
         private readonly IRoutesStore routesStore;
 
         public IDirectoriesManager directoriesManager { get; set; }  
-        public FileGeneraterManager fileGeneraterManager { get; set; }
+        public IFileGeneraterManager fileGeneraterManager { get; set; }
         public ThemeSeeder(
             IVirtualFileJsonReader virtualFileJsonReader,
             IWebSitesStore webSitesStore,

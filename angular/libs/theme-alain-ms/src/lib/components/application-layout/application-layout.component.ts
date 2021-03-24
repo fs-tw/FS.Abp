@@ -36,7 +36,6 @@ export class ApplicationLayoutComponent implements OnInit, OnDestroy {
   private notify$!: Subscription;
   private queryCls?: string;
   //nav = false;
-  
 
   store$: Observable<Layout.State>;
 
@@ -53,17 +52,23 @@ export class ApplicationLayoutComponent implements OnInit, OnDestroy {
   }
 
   get isCurrentPath() {
-    return this.router.createUrlTree(['./'], { relativeTo: this.route }).toString() === this.router.routerState.snapshot.url.toString();
+    return (
+      this.router
+        .createUrlTree(['./'], { relativeTo: this.route })
+        .toString() === this.router.routerState.snapshot.url.toString()
+    );
   }
 
   get parentPath() {
-    var parentPath = this.layoutStateService?.routesProcessor?.CurrentRoute?.parent?.path ?? "/";
-    var parentPathLength = parentPath.split("/").length;
+    var parentPath =
+      this.layoutStateService?.routesProcessor?.CurrentRoute?.parent?.path ??
+      '/';
+    var parentPathLength = parentPath.split('/').length;
 
-    var url = this.layoutStateService?.routesProcessor?.CurrentUrl ?? "/";
-    var urlArray = url.split("/").filter((x, i) => i < parentPathLength);
-    
-    return urlArray.toString().replace(/,/g, "/");
+    var url = this.layoutStateService?.routesProcessor?.CurrentUrl ?? '/';
+    var urlArray = url.split('/').filter((x, i) => i < parentPathLength);
+
+    return urlArray.toString().replace(/,/g, '/');
   }
 
   constructor(

@@ -3,10 +3,12 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { Confirmation, ConfirmationService, ToasterService } from '@abp/ng.theme.shared';
 
 export class FileInfo {
+  fileId: string;
   fileName: string;
   fileUrl: string;
 
-  constructor(fileName: string = '', fileUrl: string = '') {
+  constructor(fileId: string = '', fileName: string = '', fileUrl: string = '') {
+    this.fileId = fileId;
     this.fileName = fileName;
     this.fileUrl = fileUrl;
   }
@@ -51,7 +53,7 @@ export class UploadFileComponent implements OnInit {
   }
 
   beforeUpload = (file: NzUploadFile): boolean => {
-    let exist = this.existFiles.findIndex(x => x.fileName == file.name) > -1 ||
+    let exist = this.existFiles.findIndex(x => x.fileId == file.name) > -1 ||
       this.fileList.findIndex(x => x.name == file.name) > -1;
     if (exist) return false;
     this.fileList = this.fileList.concat(file);

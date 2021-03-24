@@ -4,7 +4,7 @@
   [nzScroll]="scroll"  [nzLoading]="list.isLoading$ | async">
     <thead>
       <tr>
-        <th [nzWidth]="columnWidths[0]+'px'"></th>
+        <th [nzWidth]="'50px'"></th>
         <th *ngIf="haveRowDetail" [nzWidth]="'50px'"></th>
         <ng-container *ngFor="let prop of propList; let i = index; trackBy: trackByFn">
           <th [nzSortFn]="prop.sortable" [nzWidth]="prop.columnWidth+'px'" [nzColumnKey]="prop.name" [nzSortDirections]="['ascend', 'descend']">

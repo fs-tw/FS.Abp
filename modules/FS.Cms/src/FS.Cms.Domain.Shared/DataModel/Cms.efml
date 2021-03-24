@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" p1:VersionTag="4.2.1" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.Cms.EntityFrameworkCore" namespace="FS.Cms" p1:name="CmsDbContext" p1:Guid="b264262a-4472-447a-8326-082ee3b7badb" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$EnumTypes">
     <EnumType Name="DisplayMode" class="FS.Cms.Posts.DisplayMode" p1:Guid="0d88d79f-6b02-43d7-8775-a48ea12dd710" p1:AbpEditor="YinChang">
       <p1:Attributes>
@@ -12,8 +12,8 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <Member Name="內文" Value="0" p1:Guid="d12d25ca-cb71-4427-b5ec-0c46414cb904" />
-      <Member Name="連結" Value="1" p1:Guid="9373e10f-5c3d-41d8-bcc6-a3334654e74b" />
+      <Member Name="Content" Value="0" p1:Guid="d12d25ca-cb71-4427-b5ec-0c46414cb904" />
+      <Member Name="Link" Value="1" p1:Guid="9373e10f-5c3d-41d8-bcc6-a3334654e74b" />
     </EnumType>
   </class>
   <class name="$ComplexTypes">
@@ -168,71 +168,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.Cms.Core.CmsFileField" p1:Guid="5264d83b-97ab-4156-8a8f-8f01f270f14b" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string />
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Core</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="7d8812e3-72e8-4b0b-ab37-856172287344">
-        <column name="" />
-      </property>
-      <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="7c4fe671-23f8-46f6-8046-e197ec87352b">
-        <column name="" />
-      </property>
-      <property name="Size" type="String" p1:ValidateRequired="true" p1:Guid="caa7871f-1b38-4eb0-8d10-ad90af39daf6">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.Cms.Core.CmsImageField" p1:Guid="da573535-0254-43d8-8ca5-8bf1fe92483a" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string />
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Core</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="42709e0d-c528-4a16-9b49-e5d9f5957069">
-        <column name="" />
-      </property>
-      <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="001c101b-a1b5-498b-8cc2-cbbc55cea281">
-        <column name="" />
-      </property>
-      <property name="Width" type="Decimal" p1:ValidateRequired="true" p1:Guid="893d3ad4-f645-4b86-bde8-f8844ff294cd">
-        <column name="" />
-      </property>
-      <property name="Height" type="Decimal" p1:ValidateRequired="true" p1:Guid="e7faea75-b71e-495e-a82b-274f7c740bc5">
-        <column name="" />
-      </property>
-      <property name="IsCover" type="Boolean" p1:ValidateRequired="true" p1:Guid="3d7586e8-2460-4cff-ae68-1c78cddb89a5">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.Cms.Posts.PostImage" p1:Guid="a144aba2-90f1-46f6-9c60-1d60108752ad" p1:AbpEditor="YinChang">
+    <component class="FS.Cms.Core.Resource" p1:Guid="a144aba2-90f1-46f6-9c60-1d60108752ad" p1:AbpEditor="YinChang">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -246,44 +182,34 @@
           <p1:AttributeConstructor />
           <p1:Properties>
             <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Posts</string>
+              <string>Core</string>
             </p1:PropertyValue>
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <property name="ImageId" type="String" p1:ValidateRequired="true" p1:Guid="021c22dd-9f07-421d-ac4f-518ce9e1edc1">
+      <property name="FileId" type="String" p1:ValidateRequired="true" p1:Guid="021c22dd-9f07-421d-ac4f-518ce9e1edc1">
         <column name="" />
       </property>
-      <property name="IsCover" type="Boolean" p1:ValidateRequired="true" p1:Guid="708eb5d4-1dc0-4004-b1cf-d263648137fd">
+      <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="0b5420e7-b989-43da-91c1-bcd166ea7a31">
         <column name="" />
       </property>
-      <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="42205283-e81f-48e3-9cdb-46e348ff8c61">
+      <property name="Default" type="Boolean" p1:ValidateRequired="true" p1:Guid="708eb5d4-1dc0-4004-b1cf-d263648137fd">
         <column name="" />
       </property>
-    </component>
-    <component class="FS.Cms.Posts.AttachmentFileInfo" p1:Guid="578035fa-102b-45d5-8a08-deb5a25b342c" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>None</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Posts</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="FileId" type="String" p1:ValidateRequired="true" p1:Guid="5d4415da-a5b2-431e-bde6-0a4e499ef583">
+      <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="dc717255-65a8-4f8f-b3c3-db6483a6d2e7">
         <column name="" />
       </property>
-      <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="daec17f2-5081-4205-8268-6d56e47e95c2">
+      <property name="Properties" type="Dictionary&lt;string, string&gt;" p1:ValidateRequired="true" p1:Guid="e6fb9a9d-8e3d-44aa-9e64-ff5915dd0e84" p1:Shadow="True">
+        <p1:Attributes>
+          <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <boolean>false</boolean>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+        </p1:Attributes>
         <column name="" />
       </property>
     </component>
@@ -297,7 +223,7 @@
             <string>FullAuditedAggregateRoot</string>
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -333,10 +259,10 @@
     <property name="Subtitle" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b97a60ed-0448-41c3-b229-38c9afd1d4af">
       <column name="" />
     </property>
-    <property name="Url" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="21511bac-6007-4975-b13e-7a1533f8fa1e">
+    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="b2fe0afb-6965-4c75-bf2a-eef6c8365a7b">
       <column name="" />
     </property>
-    <property name="Content" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8">
+    <property name="LinkUrl" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="21511bac-6007-4975-b13e-7a1533f8fa1e">
       <column name="" />
     </property>
     <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="b06c05b2-9363-4f27-9b9c-7d100c93de7b">
@@ -351,10 +277,7 @@
     <property name="DisplayMode" type="FS.Cms.Posts.DisplayMode" p1:ValidateRequired="true" p1:Guid="33031f81-f91a-4459-8956-4b8d032abb47">
       <column name="" />
     </property>
-    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="b2fe0afb-6965-4c75-bf2a-eef6c8365a7b">
-      <column name="" />
-    </property>
-    <component name="AttachmentFileInfos" class="FS.Cms.Posts.AttachmentFileInfo" p1:ValidateRequired="false" p1:Guid="3e54adea-7257-4ae5-a17e-4ce7e0048951" p1:Shadow="True">
+    <component name="Contents" class="FS.Cms.Core.Resource" p1:ValidateRequired="false" p1:Guid="13d8bb35-8e19-4d75-a0f4-ed82ad71c2c8" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -374,9 +297,12 @@
         </p1:Attribute>
       </p1:Attributes>
       <property name="FileId" />
-      <property name="Name" />
+      <property name="No" />
+      <property name="Default" />
+      <property name="Sequence" />
+      <property name="Properties" />
     </component>
-    <component name="PostImages" class="FS.Cms.Posts.PostImage" p1:ValidateRequired="false" p1:Guid="db1577b4-6d87-4365-8332-e4555db65c18" p1:Shadow="True">
+    <component name="Attachments" class="FS.Cms.Core.Resource" p1:ValidateRequired="false" p1:Guid="3e54adea-7257-4ae5-a17e-4ce7e0048951" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -395,9 +321,36 @@
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <property name="ImageId" />
-      <property name="IsCover" />
-      <property name="Name" />
+      <property name="FileId" />
+      <property name="No" />
+      <property name="Default" />
+      <property name="Sequence" />
+      <property name="Properties" />
+    </component>
+    <component name="Images" class="FS.Cms.Core.Resource" p1:ValidateRequired="false" p1:Guid="db1577b4-6d87-4365-8332-e4555db65c18" p1:Shadow="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="FileId" />
+      <property name="No" />
+      <property name="Default" />
+      <property name="Sequence" />
+      <property name="Properties" />
     </component>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cca2825d-0e3a-446d-9020-dab36bb0aab4" p1:GenerateDTO="False">
       <column name="" />
@@ -507,31 +460,6 @@
     <id name="Id" type="String" shadow="True" p1:ValidateRequired="true" p1:Guid="d4007a38-539e-4e89-9127-fe30e225fff4" p1:GenerateDTO="False">
       <column name="" />
     </id>
-    <component name="Images" class="FS.Cms.Core.CmsImageField" p1:ValidateRequired="false" p1:Guid="303ed340-d2b1-49f1-9a46-3b2d80ccdd2b" p1:Shadow="True">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>true</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>true</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="Title" />
-      <property name="Url" />
-      <property name="Width" />
-      <property name="Height" />
-      <property name="IsCover" />
-    </component>
     <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="82dfb1ae-f710-4b45-9d86-a8bfb0c6adba">
       <column name="" />
     </property>
@@ -592,29 +520,6 @@
     <property name="Content" type="String" p1:ValidateRequired="true" p1:Guid="a5914676-5e62-4061-889c-b78739371d77">
       <column name="" />
     </property>
-    <component name="Files" class="FS.Cms.Core.CmsFileField" p1:ValidateRequired="false" p1:Guid="2bf01f29-8c1b-43ae-b7f2-891b13de091a" p1:Shadow="True">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>true</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <boolean>true</boolean>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="Title" />
-      <property name="Url" />
-      <property name="Size" />
-    </component>
     <property name="DocumentDefinitionId" type="String" p1:ValidateRequired="true" p1:Guid="2cb0403f-c679-4e5f-a573-80bce0f810b8">
       <column name="" not-null="False" />
     </property>
@@ -654,7 +559,7 @@
             <string>AuditedAggregateRoot</string>
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOnRydWUsIk11bHRpVGVuYW50Ijp0cnVlLCJNdWx0aVZlcnNpb24iOmZhbHNlLCJIYXNOYXR1cmFsS2V5IjpmYWxzZX19</string>
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOnRydWUsIk11bHRpVGVuYW50Ijp0cnVlLCJVc2VyIjpmYWxzZX19</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -688,83 +593,6 @@
       <column name="" />
     </property>
     <property name="Description" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3e489f4c-a00f-49e5-aafb-998381f252b9">
-      <column name="" />
-    </property>
-    <property name="Code" type="String" p1:ValidateRequired="false" p1:Guid="e4ad9335-9178-4bdd-bf58-1de905860627">
-      <column name="" />
-    </property>
-    <property name="Level" type="int" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="87ad1aca-0399-4963-9ed4-d76dad43d66d">
-      <column name="" />
-    </property>
-    <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c0f3c590-fa32-4b60-bee7-493783bbfbef">
-      <column name="" />
-    </property>
-    <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="dece8c31-4985-46b3-8537-9b402745a876">
-      <column name="" />
-    </property>
-    <property name="ListStyle" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="db74226d-f021-4adb-9bed-e99dd664f75e">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>zh-Hant</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>zh-Hant</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>DisplayName</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>zh-Hant</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Description</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>en</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>en</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>DisplayName</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>en</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Description</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
       <column name="" />
     </property>
     <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="1ddfc94c-960c-4cf6-add9-55fb583fe038">
@@ -832,7 +660,22 @@
       </p1:Attributes>
       <column name="" />
     </property>
-    <property name="Url" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ca3ac685-b4ce-41ca-965c-6d6b79dfcbc3">
+    <property name="Code" type="String" p1:ValidateRequired="false" p1:Guid="e4ad9335-9178-4bdd-bf58-1de905860627">
+      <column name="" />
+    </property>
+    <property name="Level" type="int" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="87ad1aca-0399-4963-9ed4-d76dad43d66d">
+      <column name="" />
+    </property>
+    <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c0f3c590-fa32-4b60-bee7-493783bbfbef">
+      <column name="" />
+    </property>
+    <property name="Disable" type="Boolean" p1:ValidateRequired="true" p1:Guid="dece8c31-4985-46b3-8537-9b402745a876">
+      <column name="" />
+    </property>
+    <property name="Static" type="Boolean" p1:ValidateRequired="true" p1:Guid="de88eb44-bc67-4a29-a072-2119e4433909">
+      <column name="" />
+    </property>
+    <component name="Images" class="FS.Cms.Core.Resource" p1:ValidateRequired="false" p1:Guid="ac367468-6f7d-4b0f-9224-9beeede33d60" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
@@ -894,74 +737,29 @@
             </p1:PropertyValue>
           </p1:Properties>
         </p1:Attribute>
-      </p1:Attributes>
-      <column name="" />
-    </property>
-    <property name="IconUrl" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ac367468-6f7d-4b0f-9224-9beeede33d60">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
           <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>zh-Hant</string>
+            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
             </p1:PropertyValue>
           </p1:Properties>
         </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />
           <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>zh-Hant</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>DisplayName</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>zh-Hant</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Description</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>en</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>en</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>DisplayName</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Localizations.LocalizationTextAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Culture" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>en</string>
-            </p1:PropertyValue>
-            <p1:PropertyValue Name="Prefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>Description</string>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
             </p1:PropertyValue>
           </p1:Properties>
         </p1:Attribute>
       </p1:Attributes>
-      <column name="" />
-    </property>
+      <property name="FileId" />
+      <property name="No" />
+      <property name="Default" />
+      <property name="Sequence" />
+      <property name="Properties" />
+    </component>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4c537566-4b46-45dd-9090-9be3b5a91d48" p1:GenerateDTO="False">
       <column name="" />
     </property>

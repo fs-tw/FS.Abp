@@ -63,10 +63,6 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<string>("IconUrl")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("IconUrl");
-
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("LastModificationTime");
@@ -78,10 +74,6 @@ namespace DEMO.Migrations
                     b.Property<int>("Level")
                         .HasColumnType("int")
                         .HasColumnName("Level");
-
-                    b.Property<string>("ListStyle")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ListStyle");
 
                     b.Property<string>("No")
                         .IsRequired()
@@ -96,13 +88,13 @@ namespace DEMO.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Sequence");
 
+                    b.Property<bool>("Static")
+                        .HasColumnType("bit")
+                        .HasColumnName("Static");
+
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Url");
 
                     b.HasKey("Id");
 
@@ -285,10 +277,6 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
 
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Content");
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreationTime");
@@ -335,6 +323,10 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
 
+                    b.Property<string>("LinkUrl")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LinkUrl");
+
                     b.Property<int>("Sequence")
                         .HasColumnType("int")
                         .HasColumnName("Sequence");
@@ -355,10 +347,6 @@ namespace DEMO.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Url");
 
                     b.HasKey("Id");
 
@@ -605,7 +593,7 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<Guid>("NextVersionId")
+                    b.Property<Guid?>("NextVersionId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("NextVersionId");
 
@@ -614,7 +602,7 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("No");
 
-                    b.Property<Guid>("PrevVersionId")
+                    b.Property<Guid?>("PrevVersionId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("PrevVersionId");
 
@@ -625,8 +613,6 @@ namespace DEMO.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreationTime");
-
-                    b.HasIndex("DocumentDefinitionId");
 
                     b.ToTable("FormManagementVersions");
                 });
@@ -803,6 +789,10 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Question");
 
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int")
+                        .HasColumnName("Sequence");
+
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
@@ -891,6 +881,11 @@ namespace DEMO.Migrations
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("ItemId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ItemId");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
@@ -3721,17 +3716,6 @@ namespace DEMO.Migrations
                         .HasForeignKey("CurrentVersionId");
 
                     b.Navigation("CurrentVersion");
-                });
-
-            modelBuilder.Entity("FS.FormManagement.Documents.Version", b =>
-                {
-                    b.HasOne("FS.FormManagement.Documents.DocumentDefinition", "DocumentDefinition")
-                        .WithMany()
-                        .HasForeignKey("DocumentDefinitionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DocumentDefinition");
                 });
 
             modelBuilder.Entity("FS.FormManagement.Forms.Group", b =>
