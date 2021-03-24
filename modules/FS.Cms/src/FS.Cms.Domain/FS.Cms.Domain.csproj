@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <PackageReference Include="FS.Abp.Domain" Version="$(FSVersion)" />
+    <PackageReference Include="FS.Abp.Npoi.Mapper" Version="422.0.1" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,6 @@
-﻿using FS.Abp.VirtualFileSystem;
-using FS.Cms.Data.Posts;
+﻿using FS.Abp.Npoi.Mapper;
+using FS.Cms.Blogs;
+using FS.Cms.Data.Model;
 using FS.Cms.Posts;
 using System;
 using System.Collections.Generic;
@@ -10,57 +11,74 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 
-
 namespace FS.Cms.Data.Seeder
 {
-   
     public class PostsSeeder : ITransientDependency
     {
-        private const string jsonFile = "/Files/Data/Posts/Posts.json";
         public IGuidGenerator _guidGenerator { get; set; }
-        public IVirtualFileJsonReader _virtualFileJsonReader { get; set; }
+        public IVirtualFileNpoiReader _virtualFileNpoiReader { get; set; }
         public IPostRepository _postRepository { get; set; }
-        //public ICodesTreeRepository _codesTreeRepository { get; set; }
+        public IBlogsStore _blogsStore { get; set; }
 
-      
-        public async Task SeedAsync(DataSeedContext context)
+        public async Task SeedAsync(DataSeedContext context, string virtualFilePath)
         {
-            //var tenantId = context.TenantId;
-            //var sourceData = this._virtualFileJsonReader.ReadJson<List<PostJson>>(jsonFile);
+            if (_postRepository.Any()) return;
 
-            //var hasData = this._postRepository.Count() > 0;
-            //if (hasData) return;
+            try
+            {
+                var posts = _virtualFileNpoiReader.Read<PostImportModel>(virtualFilePath, "Post");
 
+                await createPosts(context, posts).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("[CmsPost]匯入Post失敗:", ex);
+            }
+        }
 
-            //for (var i = 0; i < sourceData.Count; i++)
-            //{
-            //    var postJson = sourceData[i];
+        private async Task createPosts(DataSeedContext context, List<PostImportModel> sourceData)
+        {
+            if (!sourceData.Any()) return;
 
-            //    var codes = this._codesTreeRepository.ToList();
-            //    var blogCode = this._codesTreeRepository.Where(x => x.No == postJson.BlogCode).FirstOrDefault();
-            //    if (blogCode == null) throw new Exception($"coding沒有{postJson.BlogCode}的No。");
+            var blogNos = sourceData.Select(x => x.BlogNo.Trim()).Distinct().ToList();
 
-            //    var time = DateTime.Now;
+            var noBlogIdDictionary = (await _blogsStore.Blog.GetQueryableAsync()).Where(x => blogNos.Contains(x.No)).ToDictionary(x => x.No, x => x.Id);
 
+            validateAllBlogNoExists(blogNos, noBlogIdDictionary);
 
-            //    var domain = new Post()
-            //    {
-            //        BlogCodeId = blogCode.Id,
-            //        Title = postJson.Title,
-            //        Content = "",
-            //        Published = true,
-            //        Published_At = postJson.IsExpiryDate ? time.AddDays(-1) : time.AddDays(1),
-            //        DisplayMode = DisplayMode.內文,
-            //        PostImages = new List<PostImage>(),
-            //        AttachmentFileUrls = new List<string>(),
-            //        TenantId = context.TenantId,
-            //        Sequence = i
-            //    };
+            await createPosts(context, sourceData, noBlogIdDictionary);
+        }
 
-            //    EntityHelper.TrySetId(domain, _guidGenerator.Create, true);
+        private static void validateAllBlogNoExists(List<string> blogNos, Dictionary<string, Guid> noBlogIdDictionary)
+        {
+            var nonExistNoList = new List<string>();
+            foreach (var no in blogNos)
+            {
+                if (!noBlogIdDictionary.ContainsKey(no)) nonExistNoList.Add(no);
+            }
+            if (nonExistNoList.Any())
+            {
+                throw new Exception($"[CmsPost]錯誤:查無下列BlogNo，無法匯入Post\r\n{string.Join("\r\n", nonExistNoList)}");
+            }
+        }
 
-            //    await this._postRepository.InsertAsync(domain);
-            //}
+        private async Task createPosts(DataSeedContext context, List<PostImportModel> sourceData, Dictionary<string, Guid> noBlogIdDictionary)
+        {
+            foreach (var data in sourceData)
+            {
+                var post = new Post();
+                post.Title = data.Title;
+                post.StartTime = DateTime.Parse(data.StartTime);
+                if (!string.IsNullOrEmpty(data.EndTime)) post.EndTime = DateTime.Parse(data.EndTime);
+
+                post.BlogId = noBlogIdDictionary[data.BlogNo.Trim()];
+
+                post.TenantId = context.TenantId;
+
+                EntityHelper.TrySetId(post, () => this._guidGenerator.Create(), true);
+
+                await _postRepository.InsertAsync(post);
+            }
         }
     }
 }

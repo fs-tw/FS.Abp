@@ -1,5 +1,4 @@
-﻿
-using Volo.Abp.Modularity;
+﻿using Volo.Abp.Modularity;
 
 namespace FS.Cms
 {
@@ -7,7 +6,8 @@ namespace FS.Cms
         typeof(CmsDomainSharedModule)
         )]
     [DependsOn(
-        typeof(FS.Abp.AbpDomainModule)//,
+        typeof(FS.Abp.AbpDomainModule),
+        typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule)
         //typeof(FS.Abp.CodingManagement.CodingManagementDomainModule)
         )]
     public class CmsDomainModule : AbpModule
