@@ -10,5 +10,7 @@ namespace FS.Cms.Posts
     public partial interface IPostsApi
     {
         Task<PagedResultDto<PostWithDetailsDto>> GetPostsByBlogId(GetPostByBlogIdInput input);
+
+        Task<PagedResultDto<PostWithDetailsDto>> GetFrontPostsByBlogId(GetPostByBlogIdInput input);
     }
 }

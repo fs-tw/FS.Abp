@@ -41,20 +41,22 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Blogs.D
     id: 'disable',
     defaultValue: false,    
   },
-  {
-    type: ePropType.String,
-    name: 'url',
-    displayName: 'Cms::FS.Blog.Url',
-    id: 'url',
-    defaultValue: "",
-  },
-  {
-    type: ePropType.String,    
-    name: 'listStyle',
-    displayName: 'Cms::FS.Blog.ListStyle',
-    id: 'listStyle',
-    defaultValue: "",  
-  },
+
+  // 欄位已移除
+  // {
+  //   type: ePropType.String,
+  //   name: 'url',
+  //   displayName: 'Cms::FS.Blog.Url',
+  //   id: 'url',
+  //   defaultValue: "",
+  // },
+  // {
+  //   type: ePropType.String,    
+  //   name: 'listStyle',
+  //   displayName: 'Cms::FS.Blog.ListStyle',
+  //   id: 'listStyle',
+  //   defaultValue: "",  
+  // },
 
 
   
