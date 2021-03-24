@@ -112,7 +112,7 @@ export class BlogListComponent implements OnInit, OnDestroy {
 
   hookToQuery() {
     const customerStreamCreator = (query) => {
-      if (!query.sorting) query.sorting = 'sequence';
+      // if (!query.sorting) query.sorting = 'sequence';
       return this.pageService.getBlogs(query);
     };
 

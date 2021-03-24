@@ -23,8 +23,8 @@ export class PageService {
   }
 
   //#region  Blog
-  getBlogs(input: Fs.Cms.Blogs.Dtos.BlogGetListDto) {
-    return this.blogService.getListByBlogGetList(input);
+  getBlogs(input: Fs.Cms.Blogs.Dtos.GetBlogsInput) {
+    return this.blogService.getBlogsByInput(input);
   }
 
   getBlogById(id: string) {

@@ -1,4 +1,4 @@
-import type { BlogCreateDto, BlogGetListDto, BlogPrimaryKeyDto, BlogUpdateDto, BlogWithDetailsDto, MetaData } from './dtos/models';
+import type { BlogCreateDto, BlogGetListDto, BlogPrimaryKeyDto, BlogUpdateDto, BlogWithDetailsDto, GetBlogsInput, MetaData } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -25,11 +25,27 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
+  getBlogsByInput = (input: GetBlogsInput) =>
+    this.restService.request<any, PagedResultDto<BlogWithDetailsDto>>({
+      method: 'GET',
+      url: `/api/cms/blogs/get-blogs`,
+      params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+    },
+    { apiName: this.apiName });
+
   getByBlogPrimaryKey = (BlogPrimaryKey: BlogPrimaryKeyDto) =>
     this.restService.request<any, BlogWithDetailsDto>({
       method: 'GET',
       url: `/api/cms/blogs/blog/id`,
       params: { id: BlogPrimaryKey.id },
+    },
+    { apiName: this.apiName });
+
+  getFrontBlogsByInput = (input: GetBlogsInput) =>
+    this.restService.request<any, PagedResultDto<BlogWithDetailsDto>>({
+      method: 'GET',
+      url: `/api/cms/blogs/get-front-blogs`,
+      params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
 

@@ -3,6 +3,7 @@
 // 4.0.0
 //
 //------------------------------------------------------------------------------
+using FS.Cms.Blogs.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,5 +13,6 @@ namespace FS.Cms.Blogs
 {
     public partial interface IBlogCrudAppService
     {
+        Task<PagedResultDto<BlogWithDetailsDto>> GetBlogs(GetBlogsInput input, bool isFront = false);
     }
 }
