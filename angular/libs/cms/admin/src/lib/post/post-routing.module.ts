@@ -1,17 +1,17 @@
 import { NgModule, Injectable } from '@angular/core';
 import { Routes, RouterModule, Resolve } from '@angular/router';
 
-import { PostStateService } from './providers/post-state.service';
+import { PageStateService } from './providers/page-state.service';
 
 import { MainComponent } from './components/main/main.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 @Injectable()
 export class RouteConfig implements Resolve<any> {
-  constructor(private postStateService: PostStateService) {}
+  constructor(private pageStateService: PageStateService) {}
 
   resolve() {
-    return (this.postStateService.Blog = null);
+    return (this.pageStateService.Blog = null);
   }
 }
 

@@ -1,3 +1,4 @@
+import type { ResourceDto } from '../../core/dtos/models';
 import type { AuditedEntityDto, EntityDto } from '@abp/ng.core';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
 
@@ -5,28 +6,26 @@ export interface BlogCreateDto {
   no?: string;
   displayName?: string;
   description?: string;
+  sequence: number;
   code?: string;
   level: number;
   parentId?: string;
   disable: boolean;
-  listStyle?: string;
-  sequence: number;
-  url?: string;
-  iconUrl?: string;
+  static: boolean;
+  images: ResourceDto[];
 }
 
 export interface BlogDto extends AuditedEntityDto<string> {
   no?: string;
   displayName?: string;
   description?: string;
+  sequence: number;
   code?: string;
   level: number;
   parentId?: string;
   disable: boolean;
-  listStyle?: string;
-  sequence: number;
-  url?: string;
-  iconUrl?: string;
+  static: boolean;
+  images: ResourceDto[];
 }
 
 export interface BlogGetListDto extends SearchResultRequestDto {
@@ -39,14 +38,13 @@ export interface BlogUpdateDto {
   no?: string;
   displayName?: string;
   description?: string;
+  sequence: number;
   code?: string;
   level: number;
   parentId?: string;
   disable: boolean;
-  listStyle?: string;
-  sequence: number;
-  url?: string;
-  iconUrl?: string;
+  static: boolean;
+  images: ResourceDto[];
 }
 
 export interface BlogWithDetailsDto extends BlogDto {

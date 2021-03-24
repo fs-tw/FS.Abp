@@ -38,13 +38,13 @@
 
       <se label="{{'Cms::FS.Post.Content'  |abpLocalization}}" *ngIf="data.displayMode == 0">
 
-        <quill-editor [(ngModel)]="data.content" [ngModelOptions]="{standalone: true}">
-        </quill-editor>
+        <!-- <quill-editor [(ngModel)]="data.contents[0].fileId" [ngModelOptions]="{standalone: true}">
+        </quill-editor> -->
       </se>
 
 
       <se label="{{'Cms::FS.Post.Url'  |abpLocalization}}" *ngIf="data.displayMode == 1">
-        <input type="text" nz-input [(ngModel)]="data.url" name="url">
+        <input type="text" nz-input [(ngModel)]="data.linkUrl" name="url">
       </se>
 
       <se label="{{'Cms::FS.Post.AttachmentFileUrls'  |abpLocalization}}" optionalHelp="  {{'Cms::FS.Message:SuggestionImageSize'| abpLocalization}}：1080X608">

@@ -23,13 +23,12 @@ import {
 
 import { FileService } from '@fs-tw/cms/admin/shared';
 import { PageService } from '../../providers/page.service';
-import { PostStateService } from '../../providers/post-state.service';
+import { PageStateService } from '../../providers/page-state.service';
 import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { Fs, Volo } from '@fs-tw/cms/proxy';
 import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 import { QueryValueType } from '@angular/compiler/src/core';
 import { map, mergeMap } from 'rxjs/operators';
-import { AttachmentFileInfoDto } from 'libs/cms/proxy/src/fs/cms/posts/dtos';
 
 @Component({
   selector: 'blog-list',
@@ -72,9 +71,9 @@ export class BlogListComponent implements OnInit, OnDestroy {
     private fileService: FileService,
     private toasterService: ToasterService,
     private confirmationService: ConfirmationService,
-    private postStateService: PostStateService
+    private pageStateService: PageStateService
   ) {
-    this.selectedBlog$ = this.postStateService.Blog$;
+    this.selectedBlog$ = this.pageStateService.Blog$;
     this.Modal = {
       create: false,
       isVisible: false,
@@ -249,8 +248,9 @@ export class BlogListComponent implements OnInit, OnDestroy {
     this.pageService.getBlogById(id).subscribe((x) => {
       this.Modal.Data = x;
       this.Modal.Images = [];
-      if (x.iconUrl)
-        this.Modal.Images.push(new ImageFile(x.iconUrl, x.iconUrl));
+      let firstImage=x.images[0]
+      if (firstImage)
+        this.Modal.Images.push(new ImageFile(firstImage.fileId, firstImage.fileId));
       this.openModal();
     });
   }

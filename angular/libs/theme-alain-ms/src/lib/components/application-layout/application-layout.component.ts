@@ -90,9 +90,6 @@ export class ApplicationLayoutComponent implements OnInit, OnDestroy {
       hasSidebar: true,
       ...route.snapshot.data,
     };
-    this.store$.subscribe((x) => {
-      console.log(x);
-    });
     //this.hasAllNav = routerData.hasAllNav === true;
     //this.hasSidebar = routerData.hasSidebar === true;
 
