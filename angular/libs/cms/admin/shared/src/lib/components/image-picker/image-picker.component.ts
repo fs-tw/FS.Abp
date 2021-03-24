@@ -7,9 +7,11 @@ import { ToasterService } from '@abp/ng.theme.shared';
 export class ImageFile {
   fileName: string;
   fileUrl: string;
+  fileId: string;
 
-  constructor(fileName: string = '', fileUrl: string = '') {
+  constructor(fileName: string = '', fileId: string = '', fileUrl: string = '') {
     this.fileName = fileName;
+    this.fileId = fileId;
     this.fileUrl = fileUrl;
   }
 }
@@ -19,8 +21,10 @@ export class SaveFile {
   file: File;
   fileName: string;
   fileUrl: string;
+  fileId: string;
 
-  constructor(fileName: string, fileUrl: string, file: File) {
+  constructor(fileId: string, fileName: string, fileUrl: string, file: File) {
+    this.fileId = fileId;
     this.fileName = fileName;
     this.fileUrl = fileUrl;
     this.file = file;
@@ -108,9 +112,9 @@ export class ImagePickerComponent implements OnInit {
   }
 
   ngOnChanges() {
-    this.existFiles = this.existFiles
-      .filter(x => x.fileUrl)
-      .map(x => new ImageFile(x.fileName, this.fileService.getFileUrl(x.fileUrl)));
+    this.existFiles.forEach(x => {
+      x.fileUrl = this.fileService.getFileUrl(x.fileUrl)
+    });
 
     this.uploadFiles = [];
     this.showFiles = [];
@@ -146,7 +150,7 @@ export class ImagePickerComponent implements OnInit {
       }
 
       this.uploadFiles.push(imgFile);
-      this.showFiles.push(new ImageFile(fileName, img));
+      this.showFiles.push(new ImageFile(fileName, fileName, img));
     });
 
     return false;
@@ -164,8 +168,9 @@ export class ImagePickerComponent implements OnInit {
 
     // 現有圖片刪除
     if (inExistImage) {
+      let fileId = this.existFiles.find(x => x.fileName = fileName).fileId;
       this.existFiles = this.existFiles.filter(x => x.fileName != fileName);
-      this.deleteFiles.push(fileName);
+      this.deleteFiles.push(fileId);
       return;
     }
 
@@ -182,21 +187,19 @@ export class ImagePickerComponent implements OnInit {
     this.viewImage.isVisabled = state;
   }
 
-  getDeleteFileNames(): string[] {
+  getDeleteFileIds(): string[] {
     return this.deleteFiles;
   }
 
 
-  getNewUploadFiles():SaveFile[]{
-    let updateFiles: SaveFile[] = this.uploadFiles.map((x: any) => new SaveFile(x.name, '', x));
+  getUploadFiles():SaveFile[]{
+    let updateFiles: SaveFile[] = this.uploadFiles.map((x: any) => new SaveFile('', x.name, '', x));
     return updateFiles;
   }
 
-  getUploadFiles(): SaveFile[] {
-    let existFiles = this.existFiles.filter(x => !this.deleteFiles.includes(x.fileName)).map(x => new SaveFile(x.fileName, x.fileUrl, null));
-    let updateFiles: SaveFile[] = this.uploadFiles.map((x: any) => new SaveFile(x.name, '', x));
-    
-    return existFiles.concat(updateFiles);
+  getUpdateFiles(): SaveFile[] {
+    let existFiles = this.existFiles.filter(x => !this.deleteFiles.includes(x.fileName)).map(x => new SaveFile(x.fileId, x.fileName, x.fileUrl, null));
+    return existFiles;
   }
 
 }

@@ -13,7 +13,7 @@ import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { PageService } from '../../providers/page.service';
 import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 import { FileService, FileDescriptorDto } from '@fs-tw/cms/admin/shared';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { FileInfo } from '../upload-file/upload-file.component';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
@@ -34,7 +34,10 @@ export class PostDetailComponent implements OnInit {
   isLoading: boolean = false;
   directory;
   coverImage: string = '';
-  contentFileName = '';
+
+  contentFileName: string = '';
+  content: string = '';
+
   constructor(
     private router: Router,
     private fileService: FileService,
@@ -74,52 +77,55 @@ export class PostDetailComponent implements OnInit {
       images: [],
       contents: [],
     } as Fs.Cms.Posts.Dtos.PostDto;
+    
     this.contentFileName = '';
     this.dateRange = [new Date(), null];
 
     this.defaultImages = [];
     this.defaultFiles = [];
     this.coverImage = '';
+    this.contentFileName = '';
+    this.content = '';
 
-    if (this.postId) {
-      this.pageService.getPostById(this.postId).subscribe((x) => {
-        this.data = x;
-        let st = x.startTime ? new Date(x.startTime) : new Date();
-        let ed = x.endTime ? new Date(x.endTime) : null;
-        this.dateRange = [st, ed];
+    if (!this.postId) return;
 
-        this.defaultImages = x.images.map(
-          (y) => new ImageFile(y.fileId, y.fileId)
-        );
-        this.defaultFiles = x.attachments.map(
-          (y) => new FileInfo(y.fileId, this.fileService.getFileUrl(y.fileId))
-        );
-        let coverImageIndex = x.images.findIndex((y) => y.default);
-        if (coverImageIndex > -1)
-          this.coverImage = x.images[coverImageIndex].fileId;
+    this.pageService.getPostById(this.postId)
+      .pipe(
+        switchMap(x => {
+          this.data = x;
+          let st = x.startTime ? new Date(x.startTime) : new Date();
+          let ed = x.endTime ? new Date(x.endTime) : null;
+          this.dateRange = [st, ed];
 
-        if (x.contents[0]) {
-          this.pageService
-            .getFileDescriptor(x.contents[0].fileId)
-            .subscribe((x) => {
-              this.contentFileName = x.name;
-            });
+          this.defaultImages = x.images.map(
+            (y) => new ImageFile(y.no, y.fileId, y.fileId)
+          );
+          this.defaultFiles = x.attachments.map(
+            (y) => new FileInfo(y.fileId, y.no, this.fileService.getFileUrl(y.fileId))
+          );
+          let coverImageIndex = x.images.findIndex((y) => y.default);
+          if (coverImageIndex > -1)
+            this.coverImage = x.images[coverImageIndex].no;
 
-          this.fileService
-            .getFileBlobById(x.contents[0].fileId)
-            .subscribe((data) => {
-              const blob = new Blob([data], {
-                type: 'text/plain;charset=utf-8',
-              });
-              let reader = new FileReader();
-              reader.onload = () => {
-                this.data.contents[0].fileId = reader.result.toString();
-              };
-              reader.readAsText(blob);
-            });
-        }
+          return x.contents.length > 0 ? forkJoin([
+            this.pageService.getFileDescriptor(x.contents[0].fileId),
+            this.fileService.getFileBlobById(x.contents[0].fileId)
+          ]) : of(null)
+        })
+      ).subscribe((x) => {
+        if(x == null) return;
+
+        this.contentFileName = x[0].name;
+
+        const blob = new Blob([x[1]], {
+          type: 'text/plain;charset=utf-8',
+        });
+        let reader = new FileReader();
+        reader.onload = () => {
+          this.content = reader.result.toString();
+        };
+        reader.readAsText(blob);
       });
-    }
   }
 
   getBlogs() {
@@ -165,30 +171,26 @@ export class PostDetailComponent implements OnInit {
     item.startTime = this.dateRange[0].toLocalISOString();
     item.endTime = this.dateRange[1]?.toLocalISOString();
 
-    let contentAction$ = of('');
-    if (item.displayMode == Fs.Cms.Posts.DisplayMode.Content) {
-      // let now = new Date();
-      const blob = new Blob([item.contents[0].fileId], {
-        type: 'text/plain;charset=utf-8',
-      });
-      let useContentFileName =
-        dns.format(new Date(), 'yyyyMMddHHmmss') +
-        '-' +
-        this.getRand() +
-        '.txt'; //now.toLocaleDateString() + "_" + now.toLocaleTimeString() + "_" + (Math.floor(Math.random() * 100) + 1) + ".txt";
-      if (this.contentFileName) useContentFileName = this.contentFileName;
-      let file = this.blobToFile(blob, useContentFileName);
-      contentAction$ = this.fileService
-        .uploadFile(file, this.directory.id)
-        .pipe(map((x) => x.id));
-    }
+    let contentAction$ = this.uploadContent$(item);    
 
-    let imagesAction = this.uploadImage$(item);
+    let imagesAction = this.uploadImage$();
     let filesAction = this.uploadFiles$(item);
     forkJoin([imagesAction, filesAction, contentAction$]).subscribe((x) => {
       item.images = x[0];
       item.attachments = x[1];
-      item.contents[0].fileId = x[2];
+
+      if (x[2] != '') {
+        item.contents = [
+          {
+            fileId: x[2],
+            no: 'content',
+            default: true,
+            sequence: 0,
+            properties: {},
+          } as Fs.Cms.Core.Dtos.ResourceDto
+        ]
+      }
+
       this.savePost(item);
     });
   }
@@ -197,6 +199,34 @@ export class PostDetailComponent implements OnInit {
     return new File([theBlob], fileName, { type: 'text/plain;charset=utf-8' });
   };
 
+  uploadContent$(
+    item: Fs.Cms.Posts.Dtos.PostDto
+  ): Observable<string> {
+    let contentAction$ = of('');
+    if (item.displayMode == Fs.Cms.Posts.DisplayMode.Content) {
+      const blob = new Blob([this.content], {
+        type: 'text/plain;charset=utf-8',
+      });
+
+      let useContentFileName =
+        dns.format(new Date(), 'yyyyMMddHHmmss') +
+        '-' +
+        this.getRand() +
+        '.txt';
+      
+      if (this.contentFileName) 
+        useContentFileName = this.contentFileName;
+      
+      let file = this.blobToFile(blob, useContentFileName);
+
+      contentAction$ = this.fileService
+        .uploadFile(file, this.directory.id)
+        .pipe(map((x) => x.id));
+    }
+
+    return contentAction$;
+  }
+
   uploadFiles$(
     item: Fs.Cms.Posts.Dtos.PostDto
   ): Observable<Fs.Cms.Core.Dtos.ResourceDto[]> {
@@ -204,7 +234,7 @@ export class PostDetailComponent implements OnInit {
     let newUploadFiles = this.defaultUploadFile.getNewUploadFiles();
 
     let existFileNames = this.defaultUploadFile.existFiles.map(
-      (x) => x.fileName
+      (x) => x.fileId
     );
     domainItem.attachments = domainItem.attachments.filter((x) =>
       existFileNames.some((y) => y == x.fileId)
@@ -222,33 +252,35 @@ export class PostDetailComponent implements OnInit {
       map((x) => {
         let result: Fs.Cms.Core.Dtos.ResourceDto[] = x.map((y) => {
           return {
-            name: y.name,
             fileId: y.id,
-          } as any;
+            no: y.name,
+            default: false,
+            sequence: 0,
+            properties: {},
+          } as Fs.Cms.Core.Dtos.ResourceDto
         });
         return result.concat(domainItem.attachments);
       })
     );
   }
 
-  uploadImage$(
-    item: Fs.Cms.Posts.Dtos.PostDto
-  ): Observable<Fs.Cms.Core.Dtos.ResourceDto[]> {
-    let domainItem: Fs.Cms.Posts.Dtos.PostDto = _.cloneDeep(item);
-    let newUploadImages = this.defaultImagePicker.getNewUploadFiles();
+  uploadImage$(): Observable<Fs.Cms.Core.Dtos.ResourceDto[]> {
+    let updateImages = this.defaultImagePicker.getUpdateFiles().map(x => {
+      return {
+        fileId: x.fileId,
+        no: x.fileName,
+        default: this.coverImage == x.fileName,
+        sequence: 0,
+        properties: {},
+      } as Fs.Cms.Core.Dtos.ResourceDto
+    });
+    let uploadImages = this.defaultImagePicker.getUploadFiles();
 
-    let existFileNames = this.defaultImagePicker.existFiles.map(
-      (x) => x.fileName
-    );
-    domainItem.images = domainItem.images.filter((x) =>
-      existFileNames.some((y) => y == x.fileId)
-    );
-
-    if (newUploadImages.length == 0) {
-      return of(domainItem.images);
+    if (uploadImages.length == 0) {
+      return of(updateImages);
     }
 
-    let fileActions = newUploadImages.map((savefile) => {
+    let fileActions = uploadImages.map((savefile) => {
       return this.fileService.uploadFile(savefile.file, this.directory.id);
     });
 
@@ -256,12 +288,14 @@ export class PostDetailComponent implements OnInit {
       map((x) => {
         let result: Fs.Cms.Core.Dtos.ResourceDto[] = x.map((y) => {
           return {
-            name: y.name,
-            isCover: this.coverImage == y.name,
-            imageId: y.id,
-          } as any;
+            fileId: y.id,
+            no: y.name,
+            default: this.coverImage == y.name,
+            sequence: 0,
+            properties: {},
+          } as Fs.Cms.Core.Dtos.ResourceDto
         });
-        return result.concat(domainItem.images);
+        return updateImages.concat(result);
       })
     );
   }

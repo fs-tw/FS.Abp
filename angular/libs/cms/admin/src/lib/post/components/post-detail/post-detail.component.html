@@ -29,6 +29,11 @@
       <se label="{{'Cms::FS.Post.Subtitle'  |abpLocalization}}">
         <input type="text" nz-input [(ngModel)]="data.subtitle" name="Subtitle">
       </se>
+
+      <se label="{{'Cms::FS.Post.Sequence'  |abpLocalization}}" required>
+        <nz-input-number [(ngModel)]="data.sequence" [nzMin]="0" name="sequence"></nz-input-number>
+      </se>
+
       <se label="{{'Cms::FS.Post.DisplayMode'  |abpLocalization}}" required>
         <nz-select [(ngModel)]="data.displayMode" name="type">
           <nz-option [nzValue]="0" nzLabel="{{'Cms::FS.Post.Content'  |abpLocalization}}"></nz-option>
@@ -37,9 +42,8 @@
       </se>
 
       <se label="{{'Cms::FS.Post.Content'  |abpLocalization}}" *ngIf="data.displayMode == 0">
-
-        <!-- <quill-editor [(ngModel)]="data.contents[0].fileId" [ngModelOptions]="{standalone: true}">
-        </quill-editor> -->
+        <quill-editor [(ngModel)]="content" [ngModelOptions]="{standalone: true}">
+        </quill-editor>
       </se>
 
 

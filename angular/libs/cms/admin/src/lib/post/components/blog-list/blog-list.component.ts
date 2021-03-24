@@ -175,18 +175,18 @@ export class BlogListComponent implements OnInit, OnDestroy {
       let actions: Observable<string>[] = [of(null)];
 
       // 保留原有圖片action
-      let existFiles = self.defaultImagePicker.existFiles.map(x => of(x.fileName))
+      let existFiles = self.defaultImagePicker.getUpdateFiles().map(x => of(x.fileId));
       actions = actions.concat(existFiles)
 
       // 刪除圖片action
-      let deleteImageNames = self.defaultImagePicker.getDeleteFileNames();
+      let deleteImageNames = self.defaultImagePicker.getDeleteFileIds();
       let deleteFileActions = deleteImageNames.map(x => self.pageService.deleteFile(x).pipe(map(() => '')));
       actions = actions.concat(deleteFileActions);
 
       // 新圖片上傳action
-      let uploadImageInfos = self.defaultImagePicker.getNewUploadFiles();
+      let uploadImageInfos = self.defaultImagePicker.getUploadFiles();
       let uploadNewImageActions = uploadImageInfos
-          .map(x => self.fileService.uploadFile(x.file, self.Modal.Directory?.id)
+        .map(x => self.fileService.uploadFile(x.file, self.Modal.Directory?.id)
           .pipe(map(file => file.id)));
 
       actions = actions.concat(uploadNewImageActions);
@@ -196,12 +196,22 @@ export class BlogListComponent implements OnInit, OnDestroy {
 
 
     function saveBlogDto(fileId?) {
-      let input = {
+      let input: Fs.Cms.Blogs.Dtos.BlogDto = {
         ...self.Modal.Data,
         ...self.Modal.form.value,
         id: self.Modal.Data.id,
       };
-      input.iconUrl = fileId;
+      input.images = fileId == null ? [] :
+        [
+          {
+            fileId: fileId,
+            no: 'thumbnail',
+            default: true,
+            sequence: 0,
+            properties: {},
+          } as Fs.Cms.Core.Dtos.ResourceDto
+        ];
+
       let action: Observable<any>;
       if (self.Modal.create) {
         input.no = input.displayName;
@@ -248,9 +258,9 @@ export class BlogListComponent implements OnInit, OnDestroy {
     this.pageService.getBlogById(id).subscribe((x) => {
       this.Modal.Data = x;
       this.Modal.Images = [];
-      let firstImage=x.images[0]
+      let firstImage = x.images[0];
       if (firstImage)
-        this.Modal.Images.push(new ImageFile(firstImage.fileId, firstImage.fileId));
+        this.Modal.Images.push(new ImageFile(firstImage.no, firstImage.fileId, firstImage.fileId));
       this.openModal();
     });
   }
