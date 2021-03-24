@@ -5,17 +5,21 @@ import {
   ToasterService,
 } from '@abp/ng.theme.shared';
 import { ActivatedRoute, Router } from '@angular/router';
-import { forkJoin, Observable, of } from 'rxjs';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { forkJoin, Observable, of, Subscription } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import * as dns from 'date-fns';
+
 import { Fs } from '@fs-tw/cms/proxy';
-import { UploadFileComponent } from '../upload-file/upload-file.component';
-import { PageService } from '../../providers/page.service';
 import { ImageFile, ImagePickerComponent } from '@fs-tw/cms/admin/shared';
 import { FileService, FileDescriptorDto } from '@fs-tw/cms/admin/shared';
-import { map, switchMap } from 'rxjs/operators';
+
+
 import { FileInfo } from '../upload-file/upload-file.component';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { UploadFileComponent } from '../upload-file/upload-file.component';
+import { PageService } from '../../providers/page.service';
+import { PageStateService } from '../../providers/page-state.service';
 
 @Component({
   templateUrl: './post-detail.component.html',
@@ -24,6 +28,10 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class PostDetailComponent implements OnInit {
   @ViewChild('DefaultImagePicker') defaultImagePicker: ImagePickerComponent;
   @ViewChild('DefaultUploadFile') defaultUploadFile: UploadFileComponent;
+
+  subs: Subscription[] = [];
+  post$: Observable<Fs.Cms.Posts.Dtos.PostDto>;
+
   postId: string;
   data: Fs.Cms.Posts.Dtos.PostDto;
   dateRange: Date[] = [new Date(), new Date()];
@@ -43,17 +51,10 @@ export class PostDetailComponent implements OnInit {
     private fileService: FileService,
     private activatedRoute: ActivatedRoute,
     private pageService: PageService,
+    private pageStateService: PageStateService,
     private confirmationService: ConfirmationService
   ) {
-    this.postId = this.activatedRoute.snapshot.paramMap.get('postId');
-    this.pageService
-      .findByProviderByKeyAndGroup(
-        'FS.Cms.Posts',
-        this.postId ? this.postId : this.getRand()
-      )
-      .subscribe((x) => {
-        this.directory = x;
-      });
+    this.post$ = this.pageStateService.Post$;
   }
 
   ngOnInit() {
@@ -61,71 +62,86 @@ export class PostDetailComponent implements OnInit {
     this.getBlogs();
   }
 
+  ngOnDestroy(): void {
+    this.subs.forEach((s) => {
+      s.unsubscribe();
+    });
+  }
+
   getPost() {
-    this.data = {
-      blogId: null,
-      title: '',
-      subtitle: '',
-      url: '',
-      content: '',
-      disable: false,
-      startTime: '',
-      endTime: '',
-      displayMode: 0,
-      sequence: 0,
-      attachments: [],
-      images: [],
-      contents: [],
-    } as Fs.Cms.Posts.Dtos.PostDto;
-    
-    this.contentFileName = '';
-    this.dateRange = [new Date(), null];
+    let self = this;
 
-    this.defaultImages = [];
-    this.defaultFiles = [];
-    this.coverImage = '';
-    this.contentFileName = '';
-    this.content = '';
+    this.subs.push(
+      this.post$
+        .pipe(
+          switchMap(post => {
+            this.postId = post.id;
+            this.data = post;
 
-    if (!this.postId) return;
+            initData();
 
-    this.pageService.getPostById(this.postId)
-      .pipe(
-        switchMap(x => {
-          this.data = x;
-          let st = x.startTime ? new Date(x.startTime) : new Date();
-          let ed = x.endTime ? new Date(x.endTime) : null;
-          this.dateRange = [st, ed];
+            let findDirectory$ = this.pageService
+              .findByProviderByKeyAndGroup(
+                'FS.Cms.Posts',
+                this.postId ? this.postId : this.getRand()
+              );
 
-          this.defaultImages = x.images.map(
-            (y) => new ImageFile(y.no, y.fileId, y.fileId)
-          );
-          this.defaultFiles = x.attachments.map(
-            (y) => new FileInfo(y.fileId, y.no, this.fileService.getFileUrl(y.fileId))
-          );
-          let coverImageIndex = x.images.findIndex((y) => y.default);
-          if (coverImageIndex > -1)
-            this.coverImage = x.images[coverImageIndex].no;
+            if (post == null) return of([findDirectory$, null, null]);
 
-          return x.contents.length > 0 ? forkJoin([
-            this.pageService.getFileDescriptor(x.contents[0].fileId),
-            this.fileService.getFileBlobById(x.contents[0].fileId)
-          ]) : of(null)
+            initPostFile(post);
+
+            return post.contents.length > 0 ? forkJoin([
+              findDirectory$,
+              this.pageService.getFileDescriptor(post.contents[0].fileId),
+              this.fileService.getFileBlobById(post.contents[0].fileId)
+            ]) : of([findDirectory$, null, null]);
+          })
+        )
+        .subscribe((x: [Fs.Abp.File.Directories.Dtos.DirectoryDescriptorDto, FileDescriptorDto, Blob]) => {
+          this.directory = x[0];
+          if(x[1] != null) this.contentFileName = x[1].name;
+          if(x[2] != null) readContent(x[2]);
         })
-      ).subscribe((x) => {
-        if(x == null) return;
+    );
 
-        this.contentFileName = x[0].name;
+    function initData() {
+      self.contentFileName = '';
+      self.dateRange = [new Date(), null];
 
-        const blob = new Blob([x[1]], {
-          type: 'text/plain;charset=utf-8',
-        });
-        let reader = new FileReader();
-        reader.onload = () => {
-          this.content = reader.result.toString();
-        };
-        reader.readAsText(blob);
+      self.defaultImages = [];
+      self.defaultFiles = [];
+      self.coverImage = '';
+      self.contentFileName = '';
+      self.content = '';
+    }
+
+    function initPostFile(post: Fs.Cms.Posts.Dtos.PostDto) {
+      let st = post.startTime ? new Date(post.startTime) : new Date();
+      let ed = post.endTime ? new Date(post.endTime) : null;
+      self.dateRange = [st, ed];
+
+      self.defaultImages = post.images.map(
+        (y) => new ImageFile(y.no, y.fileId, y.fileId)
+      );
+      self.defaultFiles = post.attachments.map(
+        (y) => new FileInfo(y.fileId, y.no, self.fileService.getFileUrl(y.fileId))
+      );
+      let coverImageIndex = post.images.findIndex((y) => y.default);
+      if (coverImageIndex > -1)
+        self.coverImage = post.images[coverImageIndex].no;
+    }
+
+    function readContent(blog: Blob) {
+      const blob = new Blob([blog], {
+        type: 'text/plain;charset=utf-8',
       });
+      let reader = new FileReader();
+      reader.onload = () => {
+        self.content = reader.result.toString();
+      };
+      reader.readAsText(blob);
+    }
+
   }
 
   getBlogs() {
@@ -171,7 +187,7 @@ export class PostDetailComponent implements OnInit {
     item.startTime = this.dateRange[0].toLocalISOString();
     item.endTime = this.dateRange[1]?.toLocalISOString();
 
-    let contentAction$ = this.uploadContent$(item);    
+    let contentAction$ = this.uploadContent$(item);
 
     let imagesAction = this.uploadImage$();
     let filesAction = this.uploadFiles$(item);
@@ -183,7 +199,7 @@ export class PostDetailComponent implements OnInit {
         item.contents = [
           {
             fileId: x[2],
-            no: 'content',
+            no: 'main',
             default: true,
             sequence: 0,
             properties: {},
@@ -213,10 +229,10 @@ export class PostDetailComponent implements OnInit {
         '-' +
         this.getRand() +
         '.txt';
-      
-      if (this.contentFileName) 
+
+      if (this.contentFileName)
         useContentFileName = this.contentFileName;
-      
+
       let file = this.blobToFile(blob, useContentFileName);
 
       contentAction$ = this.fileService
