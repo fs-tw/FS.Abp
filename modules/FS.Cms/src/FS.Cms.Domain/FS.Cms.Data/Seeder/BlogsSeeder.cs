@@ -29,10 +29,14 @@ namespace FS.Cms.Data.Seeder
 
 
         /// <summary>
-        /// 匯入Excel，需有表格名稱為Blog
+        /// <para> 匯入Blog和圖片，詳細請參考DEMO範例Excel</para>
+        /// <para>檔案放法:</para>
+        /// <para>1.根據BlogNo產生資料夾，BlogNo有多層資料夾也要開多層，例如BlogNo是  校園公告.A => 資料夾路徑為 校園公告/A</para>
+        /// <para>2.在剛剛產生的資料夾放圖檔，如此就會在產生的時候匯入這些檔案了</para>
         /// </summary>
         /// <param name="context"></param>
-        /// <param name="virtualFilePath"></param>
+        /// <param name="virtualFilePath">Excel檔案路徑(virtual file)</param>
+        /// <param name="virtualImageContentPath">匯入檔案的目錄(virtual file)，圖檔副檔名目前支援 jpg|jpeg|png|gif </param>
         /// <returns></returns>
         public async Task SeedAsync(DataSeedContext context, string virtualFilePath, string virtualImageContentPath)
         {

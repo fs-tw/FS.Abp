@@ -31,6 +31,16 @@ namespace FS.Cms.Data.Seeder
 
         public IDirectoriesManager directoriesManager { get; set; }
 
+        /// <summary>
+        /// <para>匯入Post和圖片以及Content，詳細請參考DEMO範例Excel</para>
+        /// <para>檔案放法:</para>
+        /// <para>1.根據BlogNo和Post.Title產生資料夾，BlogNo有多層資料夾也要開多層，例如BlogNo是 校園公告.A ，Post.Title是 廠商徵才公告 => 資料夾路徑為 校園公告/A/廠商徵才公告</para>
+        /// <para>2.在剛剛產生的資料夾放html和圖檔，如此就會在產生的時候匯入這些檔案了</para>
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="virtualFilePath">Excel檔案路徑(virtual file)</param>
+        /// <param name="virtualContentFolderPath">">匯入檔案的目錄(virtual file)，Content格式副檔名須為html。圖檔副檔名目前支援 jpg|jpeg|png|gif </param>
+        /// <returns></returns>
         public async Task SeedAsync(DataSeedContext context, string virtualFilePath, string virtualContentFolderPath)
         {
             if (_postRepository.Any()) return;
@@ -99,7 +109,7 @@ namespace FS.Cms.Data.Seeder
 
                 //content file
                 {
-                    var contentPath = $"{virtualContentFolderPath}/{data.BlogNo.Replace('.', '/') }/{data.Title}.html";
+                    var contentPath = $"{virtualContentFolderPath}/{data.BlogNo.Replace('.', '/') }/{data.Title}/{data.Title}.html";
                     var contentFile = await createContentFileIdIfExists(contentPath, data);
                     if (contentFile != null)
                     {
