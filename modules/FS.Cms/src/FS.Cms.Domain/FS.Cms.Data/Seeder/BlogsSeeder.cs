@@ -107,6 +107,7 @@ namespace FS.Cms.Data.Seeder
                     blog.Description = item.Description;
                     blog.Disable = false;
                     blog.Sequence = sequence;
+                    blog.Static = item.Static;
                     blog.TenantId = context.TenantId;
                     if (data.depth != 1)
                     {
