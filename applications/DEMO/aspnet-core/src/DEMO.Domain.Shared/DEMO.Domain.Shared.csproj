@@ -32,7 +32,36 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\DEMO\*.json" />
+    <Compile Remove="Files\Img\**" />
     <Content Remove="Localization\DEMO\*.json" />
+    <EmbeddedResource Remove="Files\Img\**" />
+    <None Remove="Files\Img\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Files\CMS範例格式.xlsx" />
+    <None Remove="Files\Content\校園公告\A\B\B_Blog.jpg" />
+    <None Remove="Files\Content\校園公告\A\B\【職發組公告】樹仔咖徵才公告.html" />
+    <None Remove="Files\Content\校園公告\校園公告_blog.jpg" />
+    <None Remove="Files\Content\校園公告\高雄市政府109年度暑期提供本市大學院校學生市政學習名額.html" />
+    <None Remove="Files\Content\校園公告\高雄市政府109年度暑期提供本市大學院校學生市政學習名額\市政學習_Post.jpeg" />
+    <None Remove="Files\Content\校園公告\高雄市政府109年度暑期提供本市大學院校學生市政學習名額\高雄市政府109年度暑期提供本市大學院校學生市政學習名額.html" />
+    <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜.html" />
+    <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_Post.jpg" />
+    <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_post2.jpg" />
+    <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\高雄市立美術館109年暑假暨秋季實習申請事宜.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Files\CMS範例格式.xlsx" />
+    <EmbeddedResource Include="Files\Content\校園公告\A\B\B_Blog.jpg" />
+    <EmbeddedResource Include="Files\Content\校園公告\A\B\【職發組公告】樹仔咖徵才公告\【職發組公告】樹仔咖徵才公告.html" />
+    <EmbeddedResource Include="Files\Content\校園公告\校園公告_blog.jpg" />
+    <EmbeddedResource Include="Files\Content\校園公告\高雄市政府109年度暑期提供本市大學院校學生市政學習名額\市政學習_Post.jpeg" />
+    <EmbeddedResource Include="Files\Content\校園公告\高雄市政府109年度暑期提供本市大學院校學生市政學習名額\高雄市政府109年度暑期提供本市大學院校學生市政學習名額.html" />
+    <EmbeddedResource Include="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\高雄市立美術館109年暑假暨秋季實習申請事宜.html" />
+    <EmbeddedResource Include="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_Post.jpg" />
+    <EmbeddedResource Include="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_post2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
