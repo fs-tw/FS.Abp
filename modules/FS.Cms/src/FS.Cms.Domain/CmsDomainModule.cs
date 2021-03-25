@@ -7,8 +7,8 @@ namespace FS.Cms
         )]
     [DependsOn(
         typeof(FS.Abp.AbpDomainModule),
-        typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule)
-        //typeof(FS.Abp.CodingManagement.CodingManagementDomainModule)
+        typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule),
+        typeof(Abp.File.FileDomainModule)
         )]
     public class CmsDomainModule : AbpModule
     {

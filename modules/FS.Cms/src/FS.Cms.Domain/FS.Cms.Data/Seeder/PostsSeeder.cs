@@ -1,4 +1,6 @@
-﻿using FS.Abp.Npoi.Mapper;
+﻿using FS.Abp.File.Directories;
+using FS.Abp.Files;
+using FS.Abp.Npoi.Mapper;
 using FS.Cms.Blogs;
 using FS.Cms.Data.Model;
 using FS.Cms.Posts;
@@ -10,6 +12,7 @@ using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
+using Volo.Abp.VirtualFileSystem;
 
 namespace FS.Cms.Data.Seeder
 {
@@ -20,15 +23,24 @@ namespace FS.Cms.Data.Seeder
         public IPostRepository _postRepository { get; set; }
         public IBlogsStore _blogsStore { get; set; }
 
-        public async Task SeedAsync(DataSeedContext context, string virtualFilePath)
+        public IVirtualFileProvider _virtualFileProvider { get; set; }
+
+        public IFileGeneraterManager _fileGeneraterManager { get; set; }
+
+        public IDirectoriesManager directoriesManager { get; set; }
+
+        public async Task SeedAsync(DataSeedContext context, string virtualFilePath, string virtualContentFolderPath)
         {
             if (_postRepository.Any()) return;
+
+            //結尾不能有"/"否則讀不到
+            if (virtualContentFolderPath.Last() == '/') virtualContentFolderPath = virtualContentFolderPath.Substring(0, virtualContentFolderPath.Length - 1);
 
             try
             {
                 var posts = _virtualFileNpoiReader.Read<PostImportModel>(virtualFilePath, "Post");
 
-                await createPosts(context, posts).ConfigureAwait(false);
+                await createPosts(context, posts, virtualContentFolderPath).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -36,7 +48,7 @@ namespace FS.Cms.Data.Seeder
             }
         }
 
-        private async Task createPosts(DataSeedContext context, List<PostImportModel> sourceData)
+        private async Task createPosts(DataSeedContext context, List<PostImportModel> sourceData, string virtualContentFolderPath)
         {
             if (!sourceData.Any()) return;
 
@@ -46,7 +58,7 @@ namespace FS.Cms.Data.Seeder
 
             validateAllBlogNoExists(blogNos, noBlogIdDictionary);
 
-            await createPosts(context, sourceData, noBlogIdDictionary);
+            await createPosts(context, sourceData, noBlogIdDictionary, virtualContentFolderPath);
         }
 
         private static void validateAllBlogNoExists(List<string> blogNos, Dictionary<string, Guid> noBlogIdDictionary)
@@ -62,7 +74,10 @@ namespace FS.Cms.Data.Seeder
             }
         }
 
-        private async Task createPosts(DataSeedContext context, List<PostImportModel> sourceData, Dictionary<string, Guid> noBlogIdDictionary)
+        private async Task createPosts(DataSeedContext context,
+                                       List<PostImportModel> sourceData,
+                                       Dictionary<string, Guid> noBlogIdDictionary,
+                                       string virtualContentFolderPath)
         {
             foreach (var data in sourceData)
             {
@@ -77,7 +92,39 @@ namespace FS.Cms.Data.Seeder
 
                 EntityHelper.TrySetId(post, () => this._guidGenerator.Create(), true);
 
+                //read and create file id
+                var file = await createContentFileIdIfExists(virtualContentFolderPath, data);
+
+                if (file != null)
+                {
+                    post.Contents = new List<Core.Resource>() {
+                        new Core.Resource()
+                        {
+                            FileId=file.Id.ToString(),
+                            No=data.BlogNo,
+                            Default=true,
+                        }
+                    };
+                }
+
                 await _postRepository.InsertAsync(post);
+            }
+
+            async Task<Volo.FileManagement.Files.FileDescriptor> createContentFileIdIfExists(string virtualContentFolderPath, PostImportModel data)
+            {
+                var contentPath = $"{data.BlogNo.Replace('.', '/') }/{data.Title}.html";
+                var contentFullPath = $"{virtualContentFolderPath}/{contentPath}";
+                var fileInfo = _virtualFileProvider.GetFileInfo(contentFullPath);
+
+                if (!fileInfo.Exists)
+                {
+                    Console.WriteLine($"[CmsPost]警告:找不到Post({data.BlogNo} {data.Title})的Content檔案(路徑:{contentFullPath})");
+                    return null;
+                }
+
+                var webSiteDefinitionDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Cms.Posts")).Last();
+
+                return await _fileGeneraterManager.CreateFile(fileInfo.CreateReadStream(), webSiteDefinitionDirectory.Id, data.BlogNo + "." + data.Title, context.TenantId);
             }
         }
     }
