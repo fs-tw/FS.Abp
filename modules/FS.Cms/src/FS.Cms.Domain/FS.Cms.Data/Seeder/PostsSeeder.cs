@@ -7,12 +7,14 @@ using FS.Cms.Posts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
 using Volo.Abp.VirtualFileSystem;
+using Volo.FileManagement.Files;
 
 namespace FS.Cms.Data.Seeder
 {
@@ -39,6 +41,8 @@ namespace FS.Cms.Data.Seeder
             try
             {
                 var posts = _virtualFileNpoiReader.Read<PostImportModel>(virtualFilePath, "Post");
+
+                posts.ForEach(x => x.BlogNo = x.BlogNo.Trim());
 
                 await createPosts(context, posts, virtualContentFolderPath).ConfigureAwait(false);
             }
@@ -82,43 +86,67 @@ namespace FS.Cms.Data.Seeder
             foreach (var data in sourceData)
             {
                 var post = new Post();
-                post.Title = data.Title;
-                post.StartTime = DateTime.Parse(data.StartTime);
-                if (!string.IsNullOrEmpty(data.EndTime)) post.EndTime = DateTime.Parse(data.EndTime);
 
-                post.BlogId = noBlogIdDictionary[data.BlogNo.Trim()];
+                //basic properties
+                {
+                    post.Title = data.Title;
+                    post.StartTime = DateTime.Parse(data.StartTime);
+                    if (!string.IsNullOrEmpty(data.EndTime)) post.EndTime = DateTime.Parse(data.EndTime);
+                    post.BlogId = noBlogIdDictionary[data.BlogNo.Trim()];
+                    post.TenantId = context.TenantId;
+                }
+                
 
-                post.TenantId = context.TenantId;
+                //content file
+                {
+                    var contentPath = $"{virtualContentFolderPath}/{data.BlogNo.Replace('.', '/') }/{data.Title}.html";
+                    var contentFile = await createContentFileIdIfExists(contentPath, data);
+                    if (contentFile != null)
+                    {
+                        post.Contents = new List<Core.Resource>() {
+                            new Core.Resource()
+                            {
+                                FileId=contentFile.Id.ToString(),
+                                No=data.BlogNo,
+                                Default=true,
+                            }
+                        };
+                    }
+                }
+
+
+                //image files
+                {
+                    var directoryPath = $"{virtualContentFolderPath}/{data.BlogNo.Replace('.', '/')}/{data.Title}";
+                    var imageFiles = await createImagesFromDirectory(directoryPath, data);
+                    var imageLists = new List<Core.Resource>();
+                    foreach (var imagefile in imageFiles)
+                    {
+                        var resource = new Core.Resource()
+                        {
+                            FileId = imagefile.Id.ToString(),
+                            No = data.BlogNo,
+                            Default = true,
+                        };
+
+                        imageLists.Add(resource);
+                    }
+                    post.Images = imageLists;
+                }
 
                 EntityHelper.TrySetId(post, () => this._guidGenerator.Create(), true);
-
-                //read and create file id
-                var file = await createContentFileIdIfExists(virtualContentFolderPath, data);
-
-                if (file != null)
-                {
-                    post.Contents = new List<Core.Resource>() {
-                        new Core.Resource()
-                        {
-                            FileId=file.Id.ToString(),
-                            No=data.BlogNo,
-                            Default=true,
-                        }
-                    };
-                }
 
                 await _postRepository.InsertAsync(post);
             }
 
-            async Task<Volo.FileManagement.Files.FileDescriptor> createContentFileIdIfExists(string virtualContentFolderPath, PostImportModel data)
+            //TODO:重構，這裡和blog很像
+            async Task<FileDescriptor> createContentFileIdIfExists(string contentPath, PostImportModel data)
             {
-                var contentPath = $"{data.BlogNo.Replace('.', '/') }/{data.Title}.html";
-                var contentFullPath = $"{virtualContentFolderPath}/{contentPath}";
-                var fileInfo = _virtualFileProvider.GetFileInfo(contentFullPath);
+                var fileInfo = _virtualFileProvider.GetFileInfo(contentPath);
 
                 if (!fileInfo.Exists)
                 {
-                    Console.WriteLine($"[CmsPost]警告:找不到Post({data.BlogNo} {data.Title})的Content檔案(路徑:{contentFullPath})");
+                    Console.WriteLine($"[CmsPost]警告:找不到Post({data.BlogNo} {data.Title})的Content檔案(路徑:{contentPath})");
                     return null;
                 }
 
@@ -126,6 +154,34 @@ namespace FS.Cms.Data.Seeder
 
                 return await _fileGeneraterManager.CreateFile(fileInfo.CreateReadStream(), webSiteDefinitionDirectory.Id, data.BlogNo + "." + data.Title, context.TenantId);
             }
+
+            //TODO:重構，這裡和blog很像
+            async Task<List<FileDescriptor>> createImagesFromDirectory(string directoryPath, PostImportModel data)
+            {
+                var directoryContent = _virtualFileProvider.GetDirectoryContents(directoryPath);
+                
+                if (!directoryContent.Exists) return new List<FileDescriptor>();
+
+                var files = directoryContent.Where(x => !x.IsDirectory && isImg(x.Name)).ToList();
+
+                var results = new List<FileDescriptor>();
+                foreach(var file in files)
+                {
+                    Console.WriteLine($"[CmsPost]Post({data.BlogNo} {data.Title})找到圖片{file.Name}");
+                    var webSiteDefinitionDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Cms.Posts")).Last();
+                    var descriptor = await _fileGeneraterManager.CreateFile(file.CreateReadStream(), webSiteDefinitionDirectory.Id, data.BlogNo + "." + file.Name, context.TenantId);
+                    results.Add(descriptor);
+                }
+
+                return results;
+            }
+        }
+
+        //TODO:重構，這邊和blog重複了
+        private static bool isImg(string filename)
+        {
+            var type = new Regex(@"^.*\.(jpg|jpeg|png|gif)$", RegexOptions.IgnoreCase);
+            return type.IsMatch(filename);
         }
     }
 }
