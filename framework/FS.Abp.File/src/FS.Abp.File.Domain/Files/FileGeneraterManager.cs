@@ -1,21 +1,15 @@
-﻿
-using FS.Abp.File.Tool;
+﻿using FS.Abp.File.Tool;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Services;
-using Volo.Abp.VirtualFileSystem;
-using Volo.FileManagement.Directories;
 using Volo.FileManagement.Files;
 
 namespace FS.Abp.Files
 {
     public class FileGeneraterManager : DomainService, IFileGeneraterManager
     {
-
         private readonly IFileManager fileManager;
 
         public FileGeneraterManager(
@@ -35,11 +29,11 @@ namespace FS.Abp.Files
             return fileDescriptor;
         }
 
-        public async Task<FileDescriptor> CreateFileFromBase64(string input, Guid directoryId, string fileName, Guid? tenantId = null)
+        public async Task<FileDescriptor> CreateFile(string base64input, Guid directoryId, string fileName, Guid? tenantId = null)
         {
             var memoryStream = new MemoryStream();
             string contentType = "";
-            var temp = input.Split(",");
+            var temp = base64input.Split(",");
             var base64 = temp.Last();
             contentType = temp.First().Replace("data:", "").Replace(";base64", "");
             var bytes = Convert.FromBase64String(base64);
@@ -56,28 +50,35 @@ namespace FS.Abp.Files
             {
                 case "IVBOR":
                     return ".png";
+
                 case "/9J/4":
                     return ".jpg";
+
                 case "AAAAF":
                     return ".mp4";
+
                 case "JVBER":
                     return ".pdf";
+
                 case "AAABA":
                     return ".ico";
+
                 case "UMFYI":
                     return ".rar";
+
                 case "E1XYD":
                     return ".rtf";
+
                 case "U1PKC":
                     return ".txt";
+
                 case "MQOWM":
                 case "77U/M":
                     return ".srt";
+
                 default:
                     return string.Empty;
             }
         }
-
-
     }
 }
