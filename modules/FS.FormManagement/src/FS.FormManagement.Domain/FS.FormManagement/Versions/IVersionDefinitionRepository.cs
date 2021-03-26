@@ -11,6 +11,8 @@ namespace FS.FormManagement.Versions
 {
     public partial interface IVersionDefinitionRepository
     {
+        Task<VersionDefinition> FindAsync<TEntity>(string entityKey = null)
+            where TEntity : IVersion;
         Task<VersionDefinition> FindOrInsertAsync<TEntity>(
             string entityKey = null,
             Action<VersionDefinition> action = null)

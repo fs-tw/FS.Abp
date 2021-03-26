@@ -14,7 +14,7 @@ namespace FS.FormManagement.Versions
 {
     public partial class EfCoreVersionDefinitionRepository : IVersionDefinitionRepository
     {
-        public async Task<VersionDefinition> Find<TEntity>(string entityKey = null)
+        public async Task<VersionDefinition> FindAsync<TEntity>(string entityKey = null)
             where TEntity : IVersion
         {
             var entityType = typeof(TEntity).Name;
@@ -30,7 +30,7 @@ namespace FS.FormManagement.Versions
             where TEntity : IVersion
         {
             var entityType = typeof(TEntity).Name;
-            var definition = await Find<TEntity>(entityKey);
+            var definition = await FindAsync<TEntity>(entityKey);
 
             if (definition != null)
                 return definition;

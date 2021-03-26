@@ -9,11 +9,23 @@ namespace FS.FormManagement.Versions
 {
     public partial interface IVersionsStore
     {
+        Task<VersionDefinition> GetAsync<TEntity>(string entityKey = null)
+            where TEntity : IVersion;
         Task<VersionDefinition> Commit<TEntity>(string entityKey = null)
+            where TEntity : IVersion;
+        Task<VersionDefinition> ResetAsync<TEntity>(Guid versionId, string entityKey = null)
             where TEntity : IVersion;
     }
     public partial class VersionsStore
     {
+        public async Task<VersionDefinition> GetAsync<TEntity>(string entityKey = null)
+            where TEntity : IVersion
+        {
+            var entityType = typeof(TEntity).Name;
+            var definition = await this.VersionDefinition.FindAsync<TEntity>(entityKey);
+            return definition;
+        }
+
         public async Task<VersionDefinition> Commit<TEntity>(string entityKey = null)
             where TEntity : IVersion
         {
@@ -35,7 +47,7 @@ namespace FS.FormManagement.Versions
                 No = nextNo
             };
 
-            if (version != null) 
+            if (version != null)
             {
                 version.NextVersionId = newVersion.Id;
                 newVersion.PrevVersionId = version.Id;
@@ -45,9 +57,25 @@ namespace FS.FormManagement.Versions
 
             definition.CurrentVersionId = newVersion.Id;
             await this.VersionDefinition.UpdateAsync(definition, true);
-            
-            
+
+
             return definition;
         }
+
+        public async Task<VersionDefinition> ResetAsync<TEntity>(Guid versionId, string entityKey = null)
+            where TEntity : IVersion
+        {
+            var definition = await this.VersionDefinition.FindAsync<TEntity>(entityKey);
+            if (definition == null)
+                throw new Volo.Abp.UserFriendlyException("無此版本定義");
+
+            if (definition.Versions.Count(x => x.Id == versionId) != 1)
+                throw new Volo.Abp.UserFriendlyException("無此版本");
+
+            definition.CurrentVersionId = versionId;
+            await this.VersionDefinition.UpdateAsync(definition);
+            return definition;
+        }
+
     }
 }
