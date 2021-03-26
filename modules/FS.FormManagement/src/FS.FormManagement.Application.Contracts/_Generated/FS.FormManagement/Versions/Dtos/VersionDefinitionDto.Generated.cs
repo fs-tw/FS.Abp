@@ -35,7 +35,7 @@ namespace FS.FormManagement.Versions.Dtos
 
         public virtual String EntityKey { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual System.Guid? CurrentVersionId { get; set; }
 
@@ -47,7 +47,7 @@ namespace FS.FormManagement.Versions.Dtos
 
         public virtual String EntityKey { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual System.Guid? CurrentVersionId { get; set; }
 
@@ -59,7 +59,7 @@ namespace FS.FormManagement.Versions.Dtos
 
         public virtual String EntityKey { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual System.Guid? CurrentVersionId { get; set; }
 
@@ -72,6 +72,8 @@ namespace FS.FormManagement.Versions.Dtos
     public partial class VersionDefinitionWithDetailsDto : VersionDefinitionDto
     {
         public VersionDto CurrentVersion { get; set; }
+
+        public List<VersionDto> Versions { get; set; }
 
     }
 }

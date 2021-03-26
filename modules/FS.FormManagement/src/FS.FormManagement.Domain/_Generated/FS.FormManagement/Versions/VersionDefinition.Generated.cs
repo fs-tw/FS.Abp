@@ -27,6 +27,7 @@ namespace FS.FormManagement.Versions
 
         public VersionDefinition()
         {
+            this.Versions = new List<Version>();
             OnCreated();
         }
 
@@ -67,6 +68,12 @@ namespace FS.FormManagement.Versions
         }
 
         public virtual Version CurrentVersion
+        {
+            get;
+            set;
+        }
+
+        public virtual IList<Version> Versions
         {
             get;
             set;

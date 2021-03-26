@@ -36,9 +36,10 @@ namespace FS.FormManagement.Versions
             builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.PrevVersionId).HasColumnName(@"PrevVersionId").ValueGeneratedNever();
             builder.Property(x => x.NextVersionId).HasColumnName(@"NextVersionId").ValueGeneratedNever();
-            builder.Property(x => x.DocumentDefinitionId).HasColumnName(@"DocumentDefinitionId").ValueGeneratedNever();
+            builder.Property(x => x.VersionDefinitionId).HasColumnName(@"VersionDefinitionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
+            builder.HasOne(x => x.VersionDefinition).WithMany(op => op.Versions).IsRequired(true).HasForeignKey(@"VersionDefinitionId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);

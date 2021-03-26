@@ -23,7 +23,6 @@ namespace FS.FormManagement.Versions.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayName)
-                .NotNull()
                 ;
             RuleFor(p => p.CurrentVersionId)
                 ;
@@ -42,7 +41,6 @@ namespace FS.FormManagement.Versions.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayName)
-                .NotNull()
                 ;
             RuleFor(p => p.CurrentVersionId)
                 ;

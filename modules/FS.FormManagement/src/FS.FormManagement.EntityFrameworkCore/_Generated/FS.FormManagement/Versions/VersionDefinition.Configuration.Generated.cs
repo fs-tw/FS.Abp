@@ -35,7 +35,7 @@ namespace FS.FormManagement.Versions
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.EntityType).HasColumnName(@"EntityType").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.EntityKey).HasColumnName(@"EntityKey").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").ValueGeneratedNever();
             builder.Property(x => x.CurrentVersionId).HasColumnName(@"CurrentVersionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");

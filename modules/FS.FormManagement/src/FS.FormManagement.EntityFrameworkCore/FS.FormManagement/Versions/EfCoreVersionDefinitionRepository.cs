@@ -15,7 +15,7 @@ namespace FS.FormManagement.Versions
     public partial class EfCoreVersionDefinitionRepository : IVersionDefinitionRepository
     {
         public async Task<VersionDefinition> Find<TEntity>(string entityKey = null)
-            where TEntity : Volo.Abp.Domain.Entities.Entity
+            where TEntity : IVersion
         {
             var entityType = typeof(TEntity).Name;
             var query = (await this.GetQueryableAsync()).IncludeDetails(true);
@@ -27,7 +27,7 @@ namespace FS.FormManagement.Versions
         public async Task<VersionDefinition> FindOrInsertAsync<TEntity>(
             string entityKey = null,
             Action<VersionDefinition> action = null)
-            where TEntity : Volo.Abp.Domain.Entities.Entity
+            where TEntity : IVersion
         {
             var entityType = typeof(TEntity).Name;
             var definition = await Find<TEntity>(entityKey);
@@ -42,10 +42,6 @@ namespace FS.FormManagement.Versions
             {
                 EntityType = entityType,
                 EntityKey = entityKey,
-                CurrentVersion = new Version(versionId, definitionId, CurrentTenant.Id)
-                {
-                    No = "0001"
-                }
             };
             action?.Invoke(definition);
 
@@ -54,17 +50,5 @@ namespace FS.FormManagement.Versions
         }
 
 
-        public async Task<VersionDefinition> Commit<TEntity>(string entityKey = null)
-            where TEntity : Volo.Abp.Domain.Entities.Entity
-        {
-            var entityType = typeof(TEntity).Name;
-            var definition = await Find<TEntity>(entityKey);
-
-            var version = definition.CurrentVersion;
-
-
-            return null;
-
-        }
     }
 }

@@ -14,6 +14,6 @@ namespace FS.FormManagement.Versions
         Task<VersionDefinition> FindOrInsertAsync<TEntity>(
             string entityKey = null,
             Action<VersionDefinition> action = null)
-            where TEntity : Volo.Abp.Domain.Entities.Entity;
+            where TEntity : IVersion;
     }
 }

@@ -43,7 +43,7 @@ namespace FS.FormManagement.Forms
             set;
         }
 
-        public virtual System.Guid VersionId
+        public virtual System.Guid? VersionId
         {
             get;
             set;

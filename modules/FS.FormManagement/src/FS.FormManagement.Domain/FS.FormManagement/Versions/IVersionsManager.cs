@@ -6,8 +6,7 @@ namespace FS.FormManagement.Versions
 {
     public interface IVersionsManager
     {
-        Task AcceptAsync(string versionDefinitionKey);
-        Task NewVersionAsync(string documentDefinitionId, Guid? sourceVersionId = null, string Description = null);
-        Task RejectAsync(string versionDefinitionKey);
+        Task<VersionDefinition> Commit<TEntity>(string entityKey = null)
+           where TEntity : IVersion;
     }
 }

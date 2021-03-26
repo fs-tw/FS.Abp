@@ -31,37 +31,37 @@ namespace FS.FormManagement.Versions.Dtos
 
     public partial class VersionDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String No { get; set; }
+        public virtual Int32 No { get; set; }
 
         public virtual System.Guid? PrevVersionId { get; set; }
 
         public virtual System.Guid? NextVersionId { get; set; }
 
-        public virtual Guid DocumentDefinitionId { get; set; }
+        public virtual Guid VersionDefinitionId { get; set; }
 
     }
 
     public partial class VersionCreateDto
     {
-        public virtual String No { get; set; }
+        public virtual Int32 No { get; set; }
 
         public virtual System.Guid? PrevVersionId { get; set; }
 
         public virtual System.Guid? NextVersionId { get; set; }
 
-        public virtual Guid DocumentDefinitionId { get; set; }
+        public virtual Guid VersionDefinitionId { get; set; }
 
     }
 
     public partial class VersionUpdateDto
     {
-        public virtual String No { get; set; }
+        public virtual Int32 No { get; set; }
 
         public virtual System.Guid? PrevVersionId { get; set; }
 
         public virtual System.Guid? NextVersionId { get; set; }
 
-        public virtual Guid DocumentDefinitionId { get; set; }
+        public virtual Guid VersionDefinitionId { get; set; }
 
     }
 
@@ -71,5 +71,7 @@ namespace FS.FormManagement.Versions.Dtos
 
     public partial class VersionWithDetailsDto : VersionDto
     {
+        public VersionDefinitionDto VersionDefinition { get; set; }
+
     }
 }

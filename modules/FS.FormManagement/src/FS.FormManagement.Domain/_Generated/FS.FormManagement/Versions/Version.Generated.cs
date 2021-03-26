@@ -30,14 +30,14 @@ namespace FS.FormManagement.Versions
             OnCreated();
         }
 
-        public Version(System.Guid id, System.Guid documentDefinitionId, System.Guid? tenantId) : this()
+        public Version(System.Guid id, System.Guid versionDefinitionId, System.Guid? tenantId) : this()
         {
             this.Id = id;
-            this.DocumentDefinitionId = documentDefinitionId;
+            this.VersionDefinitionId = versionDefinitionId;
             this.TenantId = tenantId;
         }
 
-        public virtual string No
+        public virtual int No
         {
             get;
             set;
@@ -55,13 +55,19 @@ namespace FS.FormManagement.Versions
             set;
         }
 
-        public virtual System.Guid DocumentDefinitionId
+        public virtual System.Guid VersionDefinitionId
         {
             get;
             set;
         }
 
         public virtual System.Guid? TenantId
+        {
+            get;
+            set;
+        }
+
+        public virtual VersionDefinition VersionDefinition
         {
             get;
             set;

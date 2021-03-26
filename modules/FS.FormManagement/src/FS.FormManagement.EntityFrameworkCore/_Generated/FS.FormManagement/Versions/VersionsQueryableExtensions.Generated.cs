@@ -14,6 +14,15 @@ namespace FS.FormManagement.Versions
 {
     public static class VersionsQueryableExtensions //auto-generated
     {
+        public static IQueryable<Version> IncludeDetails(this IQueryable<Version> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
+            return queryable
+                .Include(x => x.VersionDefinition);
+        }
         public static IQueryable<VersionDefinition> IncludeDetails(this IQueryable<VersionDefinition> queryable, bool include = true)
         {
             if (!include)
@@ -21,7 +30,8 @@ namespace FS.FormManagement.Versions
                 return queryable;
             }
             return queryable
-                .Include(x => x.CurrentVersion);
+                .Include(x => x.CurrentVersion)
+                .Include(x => x.Versions);
         }
     }
 }

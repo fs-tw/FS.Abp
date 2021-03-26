@@ -23,7 +23,7 @@ namespace FS.FormManagement.Versions.Dtos
                 ;
             RuleFor(p => p.NextVersionId)
                 ;
-            RuleFor(p => p.DocumentDefinitionId)
+            RuleFor(p => p.VersionDefinitionId)
                 .NotNull()
                 ;
             CustomizeConfiguration();
@@ -41,7 +41,7 @@ namespace FS.FormManagement.Versions.Dtos
                 ;
             RuleFor(p => p.NextVersionId)
                 ;
-            RuleFor(p => p.DocumentDefinitionId)
+            RuleFor(p => p.VersionDefinitionId)
                 .NotNull()
                 ;
             CustomizeConfiguration();

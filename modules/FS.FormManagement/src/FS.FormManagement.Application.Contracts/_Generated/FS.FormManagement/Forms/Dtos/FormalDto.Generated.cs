@@ -33,9 +33,9 @@ namespace FS.FormManagement.Forms.Dtos
     {
         public virtual String No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
-        public virtual Guid VersionId { get; set; }
+        public virtual System.Guid? VersionId { get; set; }
 
     }
 
@@ -43,9 +43,9 @@ namespace FS.FormManagement.Forms.Dtos
     {
         public virtual String No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
-        public virtual Guid VersionId { get; set; }
+        public virtual System.Guid? VersionId { get; set; }
 
     }
 
@@ -53,9 +53,9 @@ namespace FS.FormManagement.Forms.Dtos
     {
         public virtual String No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
-        public virtual Guid VersionId { get; set; }
+        public virtual System.Guid? VersionId { get; set; }
 
     }
 

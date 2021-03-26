@@ -60,6 +60,7 @@
         <File Name="FormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
+        <File Name="Formal.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Forms" OverwriteMode="None" />
         <File Name="Formal.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="Group.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="Item.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
