@@ -31,37 +31,37 @@ namespace FS.FormManagement.Forms.Dtos
 
     public partial class ItemDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String Question { get; set; }
+        public virtual string Question { get; set; }
 
-        public virtual Guid GroupId { get; set; }
+        public virtual System.Guid GroupId { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
     }
 
     public partial class ItemCreateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String Question { get; set; }
+        public virtual string Question { get; set; }
 
-        public virtual Guid GroupId { get; set; }
+        public virtual System.Guid GroupId { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
     }
 
     public partial class ItemUpdateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String Question { get; set; }
+        public virtual string Question { get; set; }
 
-        public virtual Guid GroupId { get; set; }
+        public virtual System.Guid GroupId { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
     }
 

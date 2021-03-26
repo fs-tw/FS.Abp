@@ -31,23 +31,23 @@ namespace FS.Cms.Blogs.Dtos
 
     public partial class BlogDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual int Level { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
-        public virtual Boolean Static { get; set; }
+        public virtual bool Static { get; set; }
 
         public virtual List<FS.Cms.Core.Dtos.ResourceDto> Images { get; set; }
 
@@ -55,23 +55,23 @@ namespace FS.Cms.Blogs.Dtos
 
     public partial class BlogCreateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual int Level { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
-        public virtual Boolean Static { get; set; }
+        public virtual bool Static { get; set; }
 
         public virtual List<FS.Cms.Core.Dtos.ResourceDto> Images { get; set; }
 
@@ -79,23 +79,23 @@ namespace FS.Cms.Blogs.Dtos
 
     public partial class BlogUpdateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual int Level { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
-        public virtual Boolean Static { get; set; }
+        public virtual bool Static { get; set; }
 
         public virtual List<FS.Cms.Core.Dtos.ResourceDto> Images { get; set; }
 

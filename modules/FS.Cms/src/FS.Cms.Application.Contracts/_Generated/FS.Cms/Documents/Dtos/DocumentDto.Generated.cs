@@ -31,15 +31,15 @@ namespace FS.Cms.Documents.Dtos
 
     public partial class DocumentDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
-        public virtual String Content { get; set; }
+        public virtual string Content { get; set; }
 
-        public virtual String DocumentDefinitionId { get; set; }
+        public virtual string DocumentDefinitionId { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual int Level { get; set; }
 
@@ -47,15 +47,15 @@ namespace FS.Cms.Documents.Dtos
 
     public partial class DocumentCreateDto
     {
-        public virtual String Content { get; set; }
+        public virtual string Content { get; set; }
 
-        public virtual String DocumentDefinitionId { get; set; }
+        public virtual string DocumentDefinitionId { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual int Level { get; set; }
 
@@ -63,15 +63,15 @@ namespace FS.Cms.Documents.Dtos
 
     public partial class DocumentUpdateDto
     {
-        public virtual String Content { get; set; }
+        public virtual string Content { get; set; }
 
-        public virtual String DocumentDefinitionId { get; set; }
+        public virtual string DocumentDefinitionId { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual int Level { get; set; }
 

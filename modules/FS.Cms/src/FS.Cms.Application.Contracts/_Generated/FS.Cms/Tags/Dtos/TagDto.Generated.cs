@@ -31,55 +31,55 @@ namespace FS.Cms.Tags.Dtos
 
     public partial class TagDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual int Level { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
     }
 
     public partial class TagCreateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual int Level { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
     }
 
     public partial class TagUpdateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
         public virtual string Description { get; set; }
 
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual int Level { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
     }
 

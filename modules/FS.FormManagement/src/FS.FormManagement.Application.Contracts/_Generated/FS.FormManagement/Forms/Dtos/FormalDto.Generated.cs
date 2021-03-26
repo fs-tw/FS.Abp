@@ -31,7 +31,7 @@ namespace FS.FormManagement.Forms.Dtos
 
     public partial class FormalDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
         public virtual string DisplayName { get; set; }
 
@@ -41,7 +41,7 @@ namespace FS.FormManagement.Forms.Dtos
 
     public partial class FormalCreateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
         public virtual string DisplayName { get; set; }
 
@@ -51,7 +51,7 @@ namespace FS.FormManagement.Forms.Dtos
 
     public partial class FormalUpdateDto
     {
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
         public virtual string DisplayName { get; set; }
 

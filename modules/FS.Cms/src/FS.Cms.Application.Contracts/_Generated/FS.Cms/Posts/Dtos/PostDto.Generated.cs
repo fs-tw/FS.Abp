@@ -31,19 +31,19 @@ namespace FS.Cms.Posts.Dtos
 
     public partial class PostDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
-        public virtual Guid BlogId { get; set; }
+        public virtual System.Guid BlogId { get; set; }
 
-        public virtual String Title { get; set; }
+        public virtual string Title { get; set; }
 
         public virtual string Subtitle { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
         public virtual string LinkUrl { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
-        public virtual DateTime StartTime { get; set; }
+        public virtual System.DateTime StartTime { get; set; }
 
         public virtual System.DateTime? EndTime { get; set; }
 
@@ -59,19 +59,19 @@ namespace FS.Cms.Posts.Dtos
 
     public partial class PostCreateDto
     {
-        public virtual Guid BlogId { get; set; }
+        public virtual System.Guid BlogId { get; set; }
 
-        public virtual String Title { get; set; }
+        public virtual string Title { get; set; }
 
         public virtual string Subtitle { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
         public virtual string LinkUrl { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
-        public virtual DateTime StartTime { get; set; }
+        public virtual System.DateTime StartTime { get; set; }
 
         public virtual System.DateTime? EndTime { get; set; }
 
@@ -87,19 +87,19 @@ namespace FS.Cms.Posts.Dtos
 
     public partial class PostUpdateDto
     {
-        public virtual Guid BlogId { get; set; }
+        public virtual System.Guid BlogId { get; set; }
 
-        public virtual String Title { get; set; }
+        public virtual string Title { get; set; }
 
         public virtual string Subtitle { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
         public virtual string LinkUrl { get; set; }
 
-        public virtual Boolean Disable { get; set; }
+        public virtual bool Disable { get; set; }
 
-        public virtual DateTime StartTime { get; set; }
+        public virtual System.DateTime StartTime { get; set; }
 
         public virtual System.DateTime? EndTime { get; set; }
 

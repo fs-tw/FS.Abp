@@ -31,19 +31,19 @@ namespace FS.FormManagement.Records.Dtos
 
     public partial class RecordDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual Guid FormalId { get; set; }
+        public virtual System.Guid FormalId { get; set; }
 
     }
 
     public partial class RecordCreateDto
     {
-        public virtual Guid FormalId { get; set; }
+        public virtual System.Guid FormalId { get; set; }
 
     }
 
     public partial class RecordUpdateDto
     {
-        public virtual Guid FormalId { get; set; }
+        public virtual System.Guid FormalId { get; set; }
 
     }
 
