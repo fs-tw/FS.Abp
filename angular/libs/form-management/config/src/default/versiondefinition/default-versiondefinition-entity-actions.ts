@@ -3,14 +3,14 @@ import {Fs} from '@fs-tw/form-management/proxy';
 import { ExtensionsService } from '../../services/extensions.service';
 import { eFormmanagementRouteNames } from '../../enums/route-names';
 
-export const DEFAULT_DOCUMENTDEFINITION_ENTITY_ACTIONS = EntityAction.createMany<
-Fs.FormManagement.Documents.Dtos.DocumentDefinitionDto
+export const DEFAULT_VERSIONDEFINITION_ENTITY_ACTIONS = EntityAction.createMany<
+Fs.FormManagement.Versions.Dtos.VersionDefinitionDto
 >([
   {
     text: 'AbpIdentity::Edit',
     action: (data) => {
       const service = data.getInjected(ExtensionsService);
-      service.action(eFormmanagementRouteNames.DocumentDefinition, {
+      service.action(eFormmanagementRouteNames.VersionDefinition, {
         name: 'Edit',
         record: data.record,
       });
@@ -21,7 +21,7 @@ Fs.FormManagement.Documents.Dtos.DocumentDefinitionDto
     text: 'AbpIdentity::Delete',
     action: (data) => {
       const service = data.getInjected(ExtensionsService);
-      service.action(eFormmanagementRouteNames.DocumentDefinition, {
+      service.action(eFormmanagementRouteNames.VersionDefinition, {
         name: 'Delete',
         record: data.record,
       });

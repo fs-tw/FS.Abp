@@ -4,7 +4,7 @@ import { eFormmanagementRouteNames } from '../../enums/route-names';
 import { ExtensionsService } from '../../services/extensions.service';
 
 export const DEFAULT_VERSION_TOOLBAR_ACTIONS = ToolbarAction.createMany<
-Fs.FormManagement.Documents.Dtos.VersionDto[]>([
+Fs.FormManagement.Versions.Dtos.VersionDto[]>([
   {
     text: '新增',
     action: data => {

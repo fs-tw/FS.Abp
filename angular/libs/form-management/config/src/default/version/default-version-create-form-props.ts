@@ -1,7 +1,7 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
 import {Fs} from '@fs-tw/form-management/proxy';
 
-export const DEFAULT_VERSION_CREATE_FORM_PROPS = FormProp.createMany<Fs.FormManagement.Documents.Dtos.VersionDto>([
+export const DEFAULT_VERSION_CREATE_FORM_PROPS = FormProp.createMany<Fs.FormManagement.Versions.Dtos.VersionDto>([
   
    {
     type: ePropType.String,

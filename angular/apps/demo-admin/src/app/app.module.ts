@@ -21,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { CmsConfigModule } from '@fs-tw/cms/config';
-
+import {FormmanagementConfigModule} from '@fs-tw/form-management/config'
+import {EXTENSIONS_PROVIDERS} from '@fs-tw/form-management/config'
 
 @NgModule({
   declarations: [AppComponent],
@@ -54,11 +55,11 @@ import { CmsConfigModule } from '@fs-tw/cms/config';
     EmailingConfigModule.forRoot(),
     ThemeAlainMsModule.forRoot(),
     
-    CmsConfigModule.forRoot()
-
+    CmsConfigModule.forRoot(),
+    FormmanagementConfigModule.forRoot()
     //ThemeLeptonModule.forRoot(),
   ],
-  providers: [APP_ROUTE_PROVIDER],
+  providers: [APP_ROUTE_PROVIDER,EXTENSIONS_PROVIDERS],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

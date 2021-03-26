@@ -4,7 +4,7 @@ import { ExtensionsService } from '../../services/extensions.service';
 import { eFormmanagementRouteNames } from '../../enums/route-names';
 
 export const DEFAULT_VERSION_ENTITY_ACTIONS = EntityAction.createMany<
-Fs.FormManagement.Documents.Dtos.VersionDto
+Fs.FormManagement.Versions.Dtos.VersionDto
 >([
   {
     text: 'AbpIdentity::Edit',

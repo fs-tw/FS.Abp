@@ -2,7 +2,7 @@ import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
 import {Fs} from '@fs-tw/form-management/proxy';
 import { of } from 'rxjs';
 
-export const DEFAULT_VERSION_ENTITY_PROPS = EntityProp.createMany<Fs.FormManagement.Documents.Dtos.VersionDto>([
+export const DEFAULT_VERSION_ENTITY_PROPS = EntityProp.createMany<Fs.FormManagement.Versions.Dtos.VersionDto>([
       {
         type: ePropType.String,
         name: 'no',

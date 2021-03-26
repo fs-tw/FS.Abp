@@ -11,9 +11,6 @@ export class ActionItem<T> {
 })
 export class ExtensionsService {
   public Actions$ = {
-    [eFormmanagementRouteNames.DocumentDefinition]: new Subject<
-      ActionItem<Fs.FormManagement.Documents.Dtos.DocumentDefinitionDto>
-    >(),
     [eFormmanagementRouteNames.Formal]: new Subject<
       ActionItem<Fs.FormManagement.Forms.Dtos.FormalDto>
     >(),
@@ -30,7 +27,10 @@ export class ExtensionsService {
       ActionItem<Fs.FormManagement.Records.Dtos.RecordItemDto>
     >(),
     [eFormmanagementRouteNames.Version]: new Subject<
-      ActionItem<Fs.FormManagement.Documents.Dtos.VersionDto>
+      ActionItem<Fs.FormManagement.Versions.Dtos.VersionDto>
+    >(),
+    [eFormmanagementRouteNames.VersionDefinition]: new Subject<
+      ActionItem<Fs.FormManagement.Versions.Dtos.VersionDefinitionDto>
     >(),
   };
 
