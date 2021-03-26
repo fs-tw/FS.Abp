@@ -31,25 +31,25 @@ namespace FS.Cms.Posts.Dtos
 
     public partial class PostTagMapDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
     {
-        public virtual Guid PostId { get; set; }
+        public virtual System.Guid PostId { get; set; }
 
-        public virtual Guid TagId { get; set; }
+        public virtual System.Guid TagId { get; set; }
 
     }
 
     public partial class PostTagMapCreateDto
     {
-        public virtual Guid PostId { get; set; }
+        public virtual System.Guid PostId { get; set; }
 
-        public virtual Guid TagId { get; set; }
+        public virtual System.Guid TagId { get; set; }
 
     }
 
     public partial class PostTagMapUpdateDto
     {
-        public virtual Guid PostId { get; set; }
+        public virtual System.Guid PostId { get; set; }
 
-        public virtual Guid TagId { get; set; }
+        public virtual System.Guid TagId { get; set; }
 
     }
 

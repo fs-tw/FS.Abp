@@ -31,9 +31,9 @@ namespace FS.FormManagement.Versions.Dtos
 
     public partial class VersionDefinitionDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String EntityType { get; set; }
+        public virtual string EntityType { get; set; }
 
-        public virtual String EntityKey { get; set; }
+        public virtual string EntityKey { get; set; }
 
         public virtual string DisplayName { get; set; }
 
@@ -43,9 +43,9 @@ namespace FS.FormManagement.Versions.Dtos
 
     public partial class VersionDefinitionCreateDto
     {
-        public virtual String EntityType { get; set; }
+        public virtual string EntityType { get; set; }
 
-        public virtual String EntityKey { get; set; }
+        public virtual string EntityKey { get; set; }
 
         public virtual string DisplayName { get; set; }
 
@@ -55,9 +55,9 @@ namespace FS.FormManagement.Versions.Dtos
 
     public partial class VersionDefinitionUpdateDto
     {
-        public virtual String EntityType { get; set; }
+        public virtual string EntityType { get; set; }
 
-        public virtual String EntityKey { get; set; }
+        public virtual string EntityKey { get; set; }
 
         public virtual string DisplayName { get; set; }
 

@@ -31,43 +31,43 @@ namespace FS.FormManagement.Forms.Dtos
 
     public partial class GroupDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
     {
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
         public virtual int Level { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
-        public virtual Guid FormalId { get; set; }
+        public virtual System.Guid FormalId { get; set; }
 
     }
 
     public partial class GroupCreateDto
     {
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
         public virtual int Level { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
-        public virtual Guid FormalId { get; set; }
+        public virtual System.Guid FormalId { get; set; }
 
     }
 
     public partial class GroupUpdateDto
     {
-        public virtual String Code { get; set; }
+        public virtual string Code { get; set; }
 
         public virtual System.Guid? ParentId { get; set; }
 
         public virtual int Level { get; set; }
 
-        public virtual String DisplayName { get; set; }
+        public virtual string DisplayName { get; set; }
 
-        public virtual Guid FormalId { get; set; }
+        public virtual System.Guid FormalId { get; set; }
 
     }
 
