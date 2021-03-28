@@ -14,10 +14,10 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
     public partial class WebSiteDefinitionCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.Theme.WebSites.WebSiteDefinition, FS.Theme.WebSites.Dtos.WebSiteDefinitionWithDetailsDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionPrimaryKeyDto, Guid, FS.Theme.WebSites.Dtos.WebSiteDefinitionGetListDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionCreateDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionUpdateDto>,
+        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.Theme.WebSiteInfos.WebSiteDefinition, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionWithDetailsDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionPrimaryKeyDto, Guid, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionGetListDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionCreateDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionUpdateDto>,
         IWebSiteDefinitionCrudAppService
     {
         private readonly IWebSiteDefinitionRepository _repository;

@@ -6,6 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\Tenants\**" />
+    <Compile Remove="_Generated\FS.Theme\WebSites\**" />
+    <EmbeddedResource Remove="_Generated\FS.Theme\Tenants\**" />
+    <EmbeddedResource Remove="_Generated\FS.Theme\WebSites\**" />
+    <None Remove="_Generated\FS.Theme\Tenants\**" />
+    <None Remove="_Generated\FS.Theme\WebSites\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="_Generated\FS.Theme\Banners\Dtos\BannerConfigDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Banners\Dtos\BannerConfigDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\MyRouteDefinitionDtoAutoMapperProfile.Generated.cs" />
@@ -13,18 +22,6 @@
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteConfigDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\MyRouteDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\LogoInfoDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\ThemeSettingsDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\WebInfoDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\Dtos\WebInfoDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\Tenants\ThemeSettingsAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\Dtos\WebSiteInfoDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\Dtos\WebSiteInfoDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\WebSiteInfoCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDtoValidator.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -84,23 +81,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteDefinitionDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\Dtos\WebSiteDefinitionDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteDefinitionDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\Dtos\WebSiteDefinitionDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSiteDefinitionCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Theme\Tenants\Dtos\" />
-    <Folder Include="_Generated\FS.Theme\WebInfos\Dtos\" />
   </ItemGroup>
 
 </Project>

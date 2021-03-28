@@ -11,13 +11,13 @@ using Volo.Abp;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
     [Area("theme")]
     [RemoteService(true)]
-    [ControllerName("FS.Theme.WebSites(theme)")]
-    [Route("api/theme/web-sites")]
-    public partial class WebSitesApi : ThemeController , IWebSitesApi //auto-generated
+    [ControllerName("FS.Theme.WebSiteInfos(theme)")]
+    [Route("api/theme/web-site-infos")]
+    public partial class WebSiteInfosApi : ThemeController , IWebSiteInfosApi //auto-generated
     {
 
         protected IWebSiteDefinitionCrudAppService WebSiteDefinitionCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IWebSiteDefinitionCrudAppService>();

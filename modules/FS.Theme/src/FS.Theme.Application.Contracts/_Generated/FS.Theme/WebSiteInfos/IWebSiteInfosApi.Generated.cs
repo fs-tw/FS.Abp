@@ -7,12 +7,14 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using System;
+using System.Collections.Generic;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
-    public static class WebSitesQueryableExtensions //auto-generated
+    public partial interface IWebSiteInfosApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService,
+        IWebSiteDefinitionCrudAppService
     {
     }
 }

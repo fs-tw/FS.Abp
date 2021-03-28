@@ -53,7 +53,7 @@ namespace FS.Theme.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.Theme.WebSites.WebSiteDefinition> WebSiteDefinitions
+        public virtual DbSet<FS.Theme.WebSiteInfos.WebSiteDefinition> WebSiteDefinitions
         {
             get;
             set;

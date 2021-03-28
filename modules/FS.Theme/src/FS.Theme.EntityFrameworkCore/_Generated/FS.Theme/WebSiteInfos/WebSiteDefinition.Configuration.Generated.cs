@@ -20,7 +20,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 using FS.Theme.EntityFrameworkCore;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
     public partial class WebSiteDefinitionConfiguration : IEntityTypeConfiguration<WebSiteDefinition>
     {

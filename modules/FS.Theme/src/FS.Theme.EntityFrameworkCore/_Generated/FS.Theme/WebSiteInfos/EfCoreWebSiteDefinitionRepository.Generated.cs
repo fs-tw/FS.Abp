@@ -8,13 +8,19 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using System.Threading.Tasks;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
-    public partial interface IWebSiteDefinitionRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Theme.WebSites.WebSiteDefinition,Guid>
+    public partial class EfCoreWebSiteDefinitionRepository : 
+        EfCoreRepository<FS.Theme.EntityFrameworkCore.IThemeDbContext,FS.Theme.WebSiteInfos.WebSiteDefinition,Guid>,
+        IWebSiteDefinitionRepository
     {
-
+        public EfCoreWebSiteDefinitionRepository(IDbContextProvider<FS.Theme.EntityFrameworkCore.IThemeDbContext> dbContextProvider)
+            : base(dbContextProvider) { }
     }
 }

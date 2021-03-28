@@ -9,11 +9,11 @@
 //------------------------------------------------------------------------------
 using Volo.Abp.Reflection;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
-    public class WebSitesPermissionNames
+    public class WebSiteInfosPermissionNames
     {
-        public const string ModuleName = "FS.Theme.WebSites";
+        public const string ModuleName = "FS.Theme.WebSiteInfos";
         public static class WebSiteDefinition
         {
             public const string Default = ModuleName + ".WebSiteDefinition";
@@ -23,7 +23,7 @@ namespace FS.Theme.WebSites
         }
         public static string[] GetAll()
         {
-            return ReflectionHelper.GetPublicConstantsRecursively(typeof(WebSitesPermissionNames));
+            return ReflectionHelper.GetPublicConstantsRecursively(typeof(WebSiteInfosPermissionNames));
         }
     }
 }

@@ -11,10 +11,10 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Services;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
     public partial interface IWebSiteDefinitionCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.Theme.WebSites.Dtos.WebSiteDefinitionWithDetailsDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionPrimaryKeyDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionGetListDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionCreateDto, FS.Theme.WebSites.Dtos.WebSiteDefinitionUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionWithDetailsDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionPrimaryKeyDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionGetListDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionCreateDto, FS.Theme.WebSiteInfos.Dtos.WebSiteDefinitionUpdateDto>
     {
 
     }

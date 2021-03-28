@@ -11,13 +11,13 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Domain.Services;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
-    public partial interface IWebSitesStore : IDomainService //auto-generated
+    public partial interface IWebSiteInfosStore : IDomainService //auto-generated
     {
         IWebSiteDefinitionRepository WebSiteDefinition { get; }
     }
-    public partial class WebSitesStore : DomainService, IWebSitesStore //auto-generated
+    public partial class WebSiteInfosStore : DomainService, IWebSiteInfosStore //auto-generated
     {
         public IWebSiteDefinitionRepository WebSiteDefinition => this.LazyServiceProvider.LazyGetRequiredService<IWebSiteDefinitionRepository>();
     }

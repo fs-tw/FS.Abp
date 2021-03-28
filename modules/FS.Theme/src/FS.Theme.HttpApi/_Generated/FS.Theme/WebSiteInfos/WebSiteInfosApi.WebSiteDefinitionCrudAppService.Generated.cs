@@ -7,15 +7,15 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using FS.Theme.WebSites.Dtos;
+using FS.Theme.WebSiteInfos.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
-    public partial class WebSitesApi //: IWebSiteDefinitionCrudAppService //auto-generated 
+    public partial class WebSiteInfosApi //: IWebSiteDefinitionCrudAppService //auto-generated 
     {
         [HttpGet]
         [Route("web-site-definition/id")]

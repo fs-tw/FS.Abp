@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 using FS.Abp.Application.Dtos;
 
-namespace FS.Theme.WebSites.Dtos
+namespace FS.Theme.WebSiteInfos.Dtos
 {
     public partial class MetaData
     {

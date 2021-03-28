@@ -10,7 +10,7 @@
 using System.Reflection;
 using FluentValidation;
 
-namespace FS.Theme.WebSites.Dtos
+namespace FS.Theme.WebSiteInfos.Dtos
 {
     public partial class WebSiteDefinitionCreateDtoValidator : AbstractValidator<WebSiteDefinitionCreateDto>
     {

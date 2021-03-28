@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Theme.WebSites
+namespace FS.Theme.WebSiteInfos
 {
     public partial class WebSiteDefinition : 
         Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
