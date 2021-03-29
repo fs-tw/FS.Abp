@@ -4,7 +4,7 @@ using FS.Abp.Files;
 using FS.Abp.VirtualFileSystem;
 using FS.Theme.Banners;
 using FS.Theme.Routes;
-using FS.Theme.WebSites;
+//using FS.Theme.WebSites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace DEMO.Theme
     {
         private const string SourceData = "/Files/Data/Themes.json";
         private readonly IVirtualFileJsonReader _virtualFileJsonReader;
-        private readonly IWebSitesStore _webSitesStore;
+        //private readonly IWebSitesStore _webSitesStore;
         private readonly IBannersStore bannersStore;
         private readonly IRoutesStore routesStore;
 
@@ -28,48 +28,48 @@ namespace DEMO.Theme
 
         public ThemeSeeder(
             IVirtualFileJsonReader virtualFileJsonReader,
-            IWebSitesStore webSitesStore,
+            //IWebSitesStore webSitesStore,
             IBannersStore bannersStore,
             IRoutesStore routesStore
             )
         {
             this._virtualFileJsonReader = virtualFileJsonReader;
-            this._webSitesStore = webSitesStore;
+            //this._webSitesStore = webSitesStore;
             this.bannersStore = bannersStore;
             this.routesStore = routesStore;
         }
 
         public async Task SeedAsync(DataSeedContext context)
         {
-            List<ThemeInfo> jsonData = this._virtualFileJsonReader.ReadJson<List<ThemeInfo>>(SourceData);
-            var count = await this._webSitesStore.WebSiteDefinition.GetCountAsync();
+            //List<ThemeInfo> jsonData = this._virtualFileJsonReader.ReadJson<List<ThemeInfo>>(SourceData);
+            //var count = await this._webSitesStore.WebSiteDefinition.GetCountAsync();
 
-            if (count > 0) return;
+            //if (count > 0) return;
 
-            var webSiteDefinitionDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Theme.WebSiteInfos")).Last();
+            //var webSiteDefinitionDirectory = (await this.directoriesManager.FindByProviderAsync("FS.Theme.WebSiteInfos")).Last();
 
-            foreach (var data in jsonData)
-            {
-                WebSiteDefinition webSiteDefinition = new WebSiteDefinition()
-                {
-                    No = data.No,
-                    DisplayName = data.No,
-                    Description = "",
-                    Title = data.WebSiteInfo.Title,
-                    Count = data.WebSiteInfo.Count,
-                    Copyright = data.WebSiteInfo.Copyright,
-                    TenantId = context.TenantId
-                };
+            //foreach (var data in jsonData)
+            //{
+            //    WebSiteDefinition webSiteDefinition = new WebSiteDefinition()
+            //    {
+            //        No = data.No,
+            //        DisplayName = data.No,
+            //        Description = "",
+            //        Title = data.WebSiteInfo.Title,
+            //        Count = data.WebSiteInfo.Count,
+            //        Copyright = data.WebSiteInfo.Copyright,
+            //        TenantId = context.TenantId
+            //    };
 
-                var logoFile = await this.fileGeneraterManager.CreateFile(data.WebSiteInfo.LogoSource, webSiteDefinitionDirectory.Id, data.No + "_Logo", context.TenantId);
-                var faviconFile = await this.fileGeneraterManager.CreateFile(data.WebSiteInfo.FaviconSource, webSiteDefinitionDirectory.Id, data.No + "_favicon", context.TenantId);
-                webSiteDefinition.LogoFileId = logoFile.Id;
-                webSiteDefinition.FaviconFileId = faviconFile.Id;
-                EntityHelper.TrySetId(webSiteDefinition, () => this.GuidGenerator.Create());
-                await this._webSitesStore.WebSiteDefinition.InsertAsync(webSiteDefinition, true);
-                await this.createBanner(data.No, data.Banners, context.TenantId);
-                await this.createRoute(data.No, data.Routers, context.TenantId);
-            }
+            //    var logoFile = await this.fileGeneraterManager.CreateFile(data.WebSiteInfo.LogoSource, webSiteDefinitionDirectory.Id, data.No + "_Logo", context.TenantId);
+            //    var faviconFile = await this.fileGeneraterManager.CreateFile(data.WebSiteInfo.FaviconSource, webSiteDefinitionDirectory.Id, data.No + "_favicon", context.TenantId);
+            //    webSiteDefinition.LogoFileId = logoFile.Id;
+            //    webSiteDefinition.FaviconFileId = faviconFile.Id;
+            //    EntityHelper.TrySetId(webSiteDefinition, () => this.GuidGenerator.Create());
+            //    await this._webSitesStore.WebSiteDefinition.InsertAsync(webSiteDefinition, true);
+            //    await this.createBanner(data.No, data.Banners, context.TenantId);
+            //    await this.createRoute(data.No, data.Routers, context.TenantId);
+            //}
         }
 
         private async Task createBanner(string no, List<BannerInfo> banners, Guid? tenantId)
