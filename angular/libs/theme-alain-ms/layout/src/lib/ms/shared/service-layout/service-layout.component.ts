@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { InputBoolean } from '@delon/util';
+import { BooleanInput, InputBoolean } from '@delon/util/decorator';
 
 import { MSMenu, MSServiceNavConfig } from './../../../models/layout';
 import { BrandService } from '../../ms.service';
@@ -9,6 +9,8 @@ import { BrandService } from '../../ms.service';
   templateUrl: './service-layout.component.html',
 })
 export class MSServiceLayoutComponent {
+  static ngAcceptInputType_nav: BooleanInput;
+  
   @Input() @InputBoolean() nav = false;
   @Input() navConfig: MSServiceNavConfig = {};
   @Input() navList: MSMenu[] = [];
