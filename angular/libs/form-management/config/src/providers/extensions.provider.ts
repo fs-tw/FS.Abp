@@ -68,10 +68,10 @@ function configure(injector: Injector) {
     const extensions: ExtensionsService = injector.get(ExtensionsService);
     const configState = injector.get(ConfigStateService);
 
-    return getObjectExtensionEntitiesFromStore(configState, 'Formmanagement')
+    return getObjectExtensionEntitiesFromStore(configState, 'Form-management')
       .pipe(
         map((entities) => ({})),
-        mapEntitiesToContributors(configState, 'Formmanagement'),
+        mapEntitiesToContributors(configState, 'Form-management'),
         tap((objectExtensionContributors) => {
           mergeWithDefaultActions(extensions.toolbarActions, {
             [eFormmanagementRouteNames.VersionDefinition]: DEFAULT_VERSIONDEFINITION_TOOLBAR_ACTIONS,
