@@ -5,30 +5,37 @@ import { PostStateService } from './providers/post-state.service';
 
 import {MainComponent} from './component/main/main.component';
 
-@Injectable()
-export class RouteConfig implements Resolve<any> {
-  constructor(private postStateService: PostStateService) {}
+// @Injectable()
+// export class RouteConfig implements Resolve<any> {
+//   constructor(private postStateService: PostStateService) {}
 
-  resolve() {
-    return (this.postStateService.VersionDefinition = null);
-  }
-}
+//   resolve() {
+//     return (this.postStateService.VersionDefinition = null);
+//   }
+// }
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   resolve: { RouteConfig: RouteConfig },
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: MainComponent,
+  //     }
+  //   ],
+  // }
   {
-    path: '',
-    resolve: { RouteConfig: RouteConfig },
-    children: [
-      {
+   
         path: '',
         component: MainComponent,
-      }
-    ],
+      
+    
   }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [RouteConfig],
+  // providers: [RouteConfig],
 })
 export class VersionsRoutingModule { }

@@ -98,7 +98,7 @@ export class VersionComponent implements OnInit {
     if (this.hookToQueryScribe) this.hookToQueryScribe.unsubscribe();
     
     const query = (query) => {
-      if (!query.sorting) query.sorting = 'no,prevversionid,nextversionid,documentdefinitionid';
+      //if (!query.sorting) query.sorting = 'no,prevversionid,nextversionid,versionDefinitionid';
       return this.pageService.getVersion({
         ...query,
         ...this.VersionParams,

@@ -79,7 +79,7 @@ export class VersiondefinitionComponent implements OnInit {
    hookToQuery(){
     
     const VersionDefinitionStreamCreator = (query) => {
-      // if (!query.sorting) query.sorting = 'departmentName,departmentUrl';
+      //if (!query.sorting) query.sorting = 'currentVersionId,entityType,entityKey,displayName';
       return this.pageService.getVersionDefinition(query);
     };
 
@@ -143,18 +143,18 @@ export class VersiondefinitionComponent implements OnInit {
   }
 
   selectGovernment(versionsList: Fs.FormManagement.Versions.Dtos.VersionDefinitionDto) {
-    if (versionsList == null) {
-      return;
-    }
-    this.router.navigate(['./'], {
-      queryParams: { versionsListId: versionsList.id },
-      relativeTo: this.route,
-    });
+    // if (versionsList == null) {
+    //   return;
+    // }
+    // this.router.navigate(['./'], {
+    //   queryParams: { versionsListId: versionsList.id },
+    //   relativeTo: this.route,
+    // });
   }
 
   deselectGovernment() {
-    this.router.navigate(['./'], {
-      relativeTo: this.route,
-    });
+    // this.router.navigate(['./'], {
+    //   relativeTo: this.route,
+    // });
   }
 }
