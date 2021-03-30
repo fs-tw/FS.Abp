@@ -34,8 +34,8 @@ namespace FS.FormManagement.Forms
             builder.ToTable(options.TablePrefix + @"Formals", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.No).HasColumnName(@"No").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.VersionId).HasColumnName(@"VersionId").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").ValueGeneratedNever();
+            builder.Property(x => x.VersionId).HasColumnName(@"VersionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 

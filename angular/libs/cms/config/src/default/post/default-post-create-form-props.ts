@@ -60,6 +60,13 @@ export const DEFAULT_POST_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Posts.D
     defaultValue: "",
   },
   {
+    type: ePropType.Number,
+    name: 'Sequence',
+    displayName: 'Cms::FS.Post.Sequence',
+    id: 'Sequence',
+    defaultValue: "",
+  },
+  {
     type: ePropType.String,
     name: 'DisplayMode',
     displayName: 'Cms::FS.Post.DisplayMode',

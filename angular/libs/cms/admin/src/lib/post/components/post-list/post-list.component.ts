@@ -11,7 +11,7 @@ import { eCmsRouteNames, ExtensionsService } from '@fs-tw/cms/config';
 import { Fs } from '@fs-tw/cms/proxy';
 import { forkJoin, Observable, Subscription } from 'rxjs';
 import { PageService } from '../../providers/page.service';
-import { PostStateService } from '../../providers/post-state.service';
+import { PageStateService } from '../../providers/page-state.service';
 
 @Component({
   selector: 'post-list',
@@ -44,11 +44,11 @@ export class PostListComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private pageService: PageService,
     public readonly list: ListService,
-    private postStateService: PostStateService
+    private pageStateService: PageStateService
   ) {}
 
   ngOnInit() {
-    this.blog$ = this.postStateService.Blog$;
+    this.blog$ = this.pageStateService.Blog$;
     this.subs.push(
       this.extensionsService.Actions$[eCmsRouteNames.Post].subscribe((x) => {
         switch (x.name) {
@@ -88,11 +88,11 @@ export class PostListComponent implements OnInit {
   gotoDetail(id?: string) {
     if (id)
       this.router.navigate(['/cms/post/detail/' + id], {
-        queryParams: { blogId: this.postStateService.Blog?.id },
+        queryParams: { blogId: this.pageStateService.Blog?.id },
       });
     else
       this.router.navigate(['/cms/post/detail'], {
-        queryParams: { blogId: this.postStateService.Blog?.id },
+        queryParams: { blogId: this.pageStateService.Blog?.id },
       });
   }
 
@@ -104,8 +104,8 @@ export class PostListComponent implements OnInit {
       })
       .subscribe((status: Confirmation.Status) => {
         if (status === Confirmation.Status.confirm) {
-          let files = item.attachmentFileInfos.map((x) => x.fileId);
-          let images = item.postImages.map((x) => x.imageId);
+          let files = item.attachments.map((x) => x.fileId);
+          let images = item.images.map((x) => x.fileId);
           let deleteFileActions = files
             .concat(images)
             .map((x) => this.pageService.deleteFile(x));

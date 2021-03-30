@@ -20,10 +20,8 @@ namespace FS.FormManagement.Forms.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayName)
-                .NotNull()
                 ;
             RuleFor(p => p.VersionId)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }
@@ -37,10 +35,8 @@ namespace FS.FormManagement.Forms.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayName)
-                .NotNull()
                 ;
             RuleFor(p => p.VersionId)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }

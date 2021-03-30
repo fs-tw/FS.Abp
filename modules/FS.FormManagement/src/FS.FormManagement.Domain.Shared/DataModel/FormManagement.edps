@@ -10,10 +10,10 @@
         <File Name="FormsApi.FormalCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="FormsApi.GroupCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="FormsApi.ItemCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IDocumentsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
-        <File Name="DocumentsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Documents" />
-        <File Name="DocumentsApi.VersionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Documents" />
-        <File Name="DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="IVersionsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
+        <File Name="VersionsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
+        <File Name="VersionsApi.VersionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
+        <File Name="VersionsApi.VersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="IRecordsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="RecordsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="RecordsApi.RecordCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Records" />
@@ -21,81 +21,84 @@
         <File Name="IFormalCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="IGroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="IItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IVersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="IVersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="IRecordCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IRecordItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="IDocumentDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="IVersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="FormalCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="GroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="ItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="VersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="VersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="RecordCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="RecordItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="DocumentDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="VersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="FormalDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
         <File Name="GroupDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
         <File Name="ItemDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="VersionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents\Dtos" />
+        <File Name="VersionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
         <File Name="RecordDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
         <File Name="RecordItemDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
-        <File Name="DocumentDefinitionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents\Dtos" />
+        <File Name="VersionDefinitionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
         <File Name="FormalDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
         <File Name="GroupDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
         <File Name="ItemDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="VersionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Documents\Dtos" />
+        <File Name="VersionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
         <File Name="RecordDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
         <File Name="RecordItemDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
-        <File Name="DocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Documents\Dtos" />
+        <File Name="VersionDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
         <File Name="FormalDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
         <File Name="GroupDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
         <File Name="ItemDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="VersionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Documents\Dtos" />
+        <File Name="VersionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
         <File Name="RecordDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
         <File Name="RecordItemDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
-        <File Name="DocumentDefinitionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Documents\Dtos" />
+        <File Name="VersionDefinitionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
         <File Name="FormsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="DocumentsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="VersionsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="RecordsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IFormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
+        <File Name="Formal.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Forms" OverwriteMode="None" />
         <File Name="Formal.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="Group.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="Item.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Version.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Documents" />
-        <File Name="DocumentDefinition.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="Version.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
+        <File Name="VersionDefinition.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="Record.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="RecordItem.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="Formal.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="Group.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="Item.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Version.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Documents" />
-        <File Name="DocumentDefinition.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="Version.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
+        <File Name="VersionDefinition.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="Record.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="RecordItem.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IFormalRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="IGroupTreeRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="IItemRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IVersionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="IVersionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="IRecordRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IRecordItemRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="IDocumentDefinitionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="IVersionDefinitionRepository.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Versions" OverwriteMode="None" />
+        <File Name="IVersionDefinitionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="EfCoreFormalRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="EfCoreGroupTreeRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
         <File Name="EfCoreItemRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreVersionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="EfCoreVersionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="EfCoreRecordRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="EfCoreRecordItemRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="EfCoreDocumentDefinitionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="EfCoreVersionDefinitionRepository.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="FS.FormManagement\Versions" OverwriteMode="None" />
+        <File Name="EfCoreVersionDefinitionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="FormsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="DocumentsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="VersionsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="RecordsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="FormsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="DocumentsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="VersionsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="RecordsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="FormsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="DocumentsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Documents" />
+        <File Name="VersionsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="RecordsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
       </GeneratedFiles>
     </Generation>

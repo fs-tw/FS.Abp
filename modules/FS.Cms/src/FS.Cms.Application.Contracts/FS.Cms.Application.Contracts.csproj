@@ -35,8 +35,16 @@
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionDefinitionProviders.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\CorePermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\BlogDefinitionSettingDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\PropertiesDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\Dtos\ResourcePropertyDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\Dtos\StorageDefinitionSettingDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\AttachmentDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\ImageDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostAttachmentFilesDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImageDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\Dtos\PostImagePrototypeDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesCrudAppService.Generated.cs" />
   </ItemGroup>
@@ -70,11 +78,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsFileFieldDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\Dtos\CmsImageFieldDto.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Dtos\ResourceDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -110,15 +114,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\AttachmentFileInfoDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\Dtos\PostImageDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

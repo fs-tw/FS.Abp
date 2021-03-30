@@ -6,11 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.Theme\WebSites\**" />
+    <EmbeddedResource Remove="_Generated\FS.Theme\WebSites\**" />
+    <None Remove="_Generated\FS.Theme\WebSites\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="_Generated\FS.Theme\Routes\EfCoreMyRouteDefinitionRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\MyRouteDefinition.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\EfCoreWebSiteInfoRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\WebInfosQueryableExtensions.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\WebSiteInfo.Configuration.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,22 +79,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\EfCoreWebSiteDefinitionRepository.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\EfCoreWebSiteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSiteDefinition.Configuration.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteDefinition.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesQueryableExtensions.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosQueryableExtensions.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Theme\WebInfos\" />
   </ItemGroup>
 
 </Project>

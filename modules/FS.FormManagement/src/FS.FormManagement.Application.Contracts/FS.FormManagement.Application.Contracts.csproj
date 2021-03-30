@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Versions\IVersionsDefinitionCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FS.Abp.Application.Contracts" Version="$(FSVersion)" />
   </ItemGroup>
 
@@ -18,34 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\DocumentDefinitionDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\Dtos\VersionDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\IDocumentDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\IDocumentsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\IVersionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\FormalDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -109,6 +86,34 @@
     <Compile Update="_Generated\FS.FormManagement\Records\RecordsPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Records</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\IVersionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\IVersionDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\IVersionsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
     </Compile>
   </ItemGroup>
 

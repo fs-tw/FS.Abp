@@ -21,7 +21,6 @@
     <Compile Remove="_Generated\FS.Theme\Routes\MyRouteDefinition.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\RouteConfig.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\WebInfo.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSites\WebSiteConfig.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,17 +70,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\IWebSiteDefinitionRepository.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\IWebSiteDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSiteDefinition.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteDefinition.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesStore.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosStore.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
   </ItemGroup>
 

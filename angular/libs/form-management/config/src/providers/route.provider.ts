@@ -23,9 +23,10 @@ export function configureRoutes(routes: RoutesService) {
     order: 6,
     //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
   };
+
   return () => {
     routes.add([
-      shortcut
+      shortcut,
     ]);
   };
 }

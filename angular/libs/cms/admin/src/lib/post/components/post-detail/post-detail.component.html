@@ -15,22 +15,25 @@
         </nz-radio-group>
       </se>
       <se label="{{'Cms::FS.Post.PublishDate'  |abpLocalization}}" required>
-        <!-- <nz-range-picker nzShowTime nzFormat="yyyy/MM/dd HH:mm:ss" name="dateRange" [(ngModel)]="dateRange"
-          [nzAllowClear]="false"></nz-range-picker> -->
         <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false"
           [(ngModel)]="dateRange[0]"></nz-date-picker>
-
+      </se>
+      <se label="{{'Cms::FS.Post.PublishEndDate'  |abpLocalization}}" extra="{{'Cms::FS.Message:NullIsUnlimit'  |abpLocalization}}">
         <nz-date-picker nzShowTime name="endDate" [nzAllowClear]="true"
           [(ngModel)]="dateRange[1]"></nz-date-picker>
-        <!-- <nz-date-picker nzShowTime name="published_At" nzPlaceHolder="Select Time" [nzAllowClear]="false"
-          [(ngModel)]="data.published_At"></nz-date-picker> -->
       </se>
+      
       <se label="{{'Cms::FS.Post.Title'  |abpLocalization}}" error="" required>
         <input type="text" nz-input [(ngModel)]="data.title" name="title" required>
       </se>
       <se label="{{'Cms::FS.Post.Subtitle'  |abpLocalization}}">
         <input type="text" nz-input [(ngModel)]="data.subtitle" name="Subtitle">
       </se>
+
+      <se label="{{'Cms::FS.Post.Sequence'  |abpLocalization}}" required>
+        <nz-input-number [(ngModel)]="data.sequence" [nzMin]="0" name="sequence"></nz-input-number>
+      </se>
+
       <se label="{{'Cms::FS.Post.DisplayMode'  |abpLocalization}}" required>
         <nz-select [(ngModel)]="data.displayMode" name="type">
           <nz-option [nzValue]="0" nzLabel="{{'Cms::FS.Post.Content'  |abpLocalization}}"></nz-option>
@@ -39,14 +42,13 @@
       </se>
 
       <se label="{{'Cms::FS.Post.Content'  |abpLocalization}}" *ngIf="data.displayMode == 0">
-
-        <quill-editor [(ngModel)]="data.content" [ngModelOptions]="{standalone: true}">
+        <quill-editor [(ngModel)]="content" [ngModelOptions]="{standalone: true}">
         </quill-editor>
       </se>
 
 
       <se label="{{'Cms::FS.Post.Url'  |abpLocalization}}" *ngIf="data.displayMode == 1">
-        <input type="text" nz-input [(ngModel)]="data.url" name="url">
+        <input type="text" nz-input [(ngModel)]="data.linkUrl" name="url">
       </se>
 
       <se label="{{'Cms::FS.Post.AttachmentFileUrls'  |abpLocalization}}" optionalHelp="  {{'Cms::FS.Message:SuggestionImageSize'| abpLocalization}}：1080X608">

@@ -22,6 +22,7 @@ import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared'
     CommercialUiModule,
     NgbDropdownModule,
     NgxValidateCoreModule,
+    ThemeAlainSharedModule
   ],
   providers: []
 })

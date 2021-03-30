@@ -7,8 +7,11 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.Theme\Tenants\**" />
+    <Compile Remove="_Generated\FS.Theme\WebSites\**" />
     <EmbeddedResource Remove="_Generated\FS.Theme\Tenants\**" />
+    <EmbeddedResource Remove="_Generated\FS.Theme\WebSites\**" />
     <None Remove="_Generated\FS.Theme\Tenants\**" />
+    <None Remove="_Generated\FS.Theme\WebSites\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,13 +20,6 @@
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteConfigDto.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\Dtos\RouteDefinitionDtoJsonSubtypesConverterBuilders.Generated.cs" />
     <Compile Remove="_Generated\FS.Theme\Routes\IMyRouteDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\Dtos\WebSiteInfoDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\IWebInfosApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebInfos\IWebSiteInfoCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSiteInfos\IWebSiteInfosApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosPermissionNames.Generated.cs" />
-    <Compile Remove="_Generated\FS.Theme\WebSites\Dtos\WebSiteConfigDto.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -90,31 +86,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\Dtos\WebSiteDefinitionDto.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\Dtos\WebSiteDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\IWebSiteDefinitionCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\IWebSiteDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\IWebSitesApi.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\IWebSiteInfosApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesPermissionDefinitionProviders.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Theme\WebSites\WebSitesPermissionNames.Generated.cs">
+    <Compile Update="_Generated\FS.Theme\WebSiteInfos\WebSiteInfosPermissionNames.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>WebSites</DependentUpon>
+      <DependentUpon>WebSiteInfos</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.Theme\WebInfos\Dtos\" />
-    <Folder Include="_Generated\FS.Theme\WebSiteInfos\" />
   </ItemGroup>
 
 </Project>

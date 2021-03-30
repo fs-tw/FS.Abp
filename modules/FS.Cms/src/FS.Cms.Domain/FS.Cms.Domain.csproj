@@ -10,15 +10,24 @@
     <Compile Remove="_Generated\FS.Cms\Blogs\BlogConfig.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.AbpSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\BlogDefinitionSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\CmsFileField.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\CmsImageField.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Core\ResourceProperty.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\StorageDefinitionSetting.AbpSetting.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Core\StorageDefinitionSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Attachment.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\AttachmentFileInfo.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\Image.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\IPostAttachmentFilesRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostAttachmentFiles.Generated.cs" />
+    <Compile Remove="_Generated\FS.Cms\Posts\PostImage.Generated.cs" />
     <Compile Remove="_Generated\FS.Cms\Posts\PostImagePrototype.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FS.Abp.Domain" Version="$(FSVersion)" />
+    <PackageReference Include="FS.Abp.Npoi.Mapper" Version="422.0.1" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Domain\FS.Abp.File.Domain.csproj" />
     <ProjectReference Include="..\FS.Cms.Domain.Shared\FS.Cms.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -39,11 +48,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\CmsFileField.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Core</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Core\CmsImageField.Generated.cs">
+    <Compile Update="_Generated\FS.Cms\Core\Resource.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Core</DependentUpon>
     </Compile>
@@ -67,10 +72,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Documents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\AttachmentFileInfo.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\IPostRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
@@ -80,10 +81,6 @@
       <DependentUpon>Posts</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.Cms\Posts\Post.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Posts</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Cms\Posts\PostImage.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Posts</DependentUpon>
     </Compile>

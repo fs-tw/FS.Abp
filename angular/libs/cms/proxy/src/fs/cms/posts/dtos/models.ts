@@ -1,11 +1,7 @@
 import type { EntityDto, FullAuditedEntityDto, PagedResultRequestDto } from '@abp/ng.core';
 import type { DisplayMode } from '../display-mode.enum';
+import type { ResourceDto } from '../../core/dtos/models';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
-
-export interface AttachmentFileInfoDto {
-  fileId?: string;
-  name?: string;
-}
 
 export interface GetPostByBlogIdInput extends PagedResultRequestDto {
   blogId?: string;
@@ -13,14 +9,12 @@ export interface GetPostByBlogIdInput extends PagedResultRequestDto {
 }
 
 export interface MetaData {
-  attachmentFileInfoDto: AttachmentFileInfoDto;
   postPrimaryKeyDto: PostPrimaryKeyDto;
   postDto: PostDto;
   postCreateDto: PostCreateDto;
   postUpdateDto: PostUpdateDto;
   postGetListDto: PostGetListDto;
   postWithDetailsDto: PostWithDetailsDto;
-  postImageDto: PostImageDto;
   postTagMapPrimaryKeyDto: PostTagMapPrimaryKeyDto;
   postTagMapDto: PostTagMapDto;
   postTagMapCreateDto: PostTagMapCreateDto;
@@ -33,39 +27,33 @@ export interface PostCreateDto {
   blogId?: string;
   title?: string;
   subtitle?: string;
-  url?: string;
-  content?: string;
+  sequence: number;
+  linkUrl?: string;
   disable: boolean;
   startTime?: string;
   endTime?: string;
   displayMode: DisplayMode;
-  sequence: number;
-  attachmentFileInfos: AttachmentFileInfoDto[];
-  postImages: PostImageDto[];
+  contents: ResourceDto[];
+  attachments: ResourceDto[];
+  images: ResourceDto[];
 }
 
 export interface PostDto extends FullAuditedEntityDto<string> {
   blogId?: string;
   title?: string;
   subtitle?: string;
-  url?: string;
-  content?: string;
+  sequence: number;
+  linkUrl?: string;
   disable: boolean;
   startTime?: string;
   endTime?: string;
   displayMode: DisplayMode;
-  sequence: number;
-  attachmentFileInfos: AttachmentFileInfoDto[];
-  postImages: PostImageDto[];
+  contents: ResourceDto[];
+  attachments: ResourceDto[];
+  images: ResourceDto[];
 }
 
 export interface PostGetListDto extends SearchResultRequestDto {
-}
-
-export interface PostImageDto {
-  imageId?: string;
-  isCover: boolean;
-  name?: string;
 }
 
 export interface PostPrimaryKeyDto extends EntityDto<string> {
@@ -99,15 +87,15 @@ export interface PostUpdateDto {
   blogId?: string;
   title?: string;
   subtitle?: string;
-  url?: string;
-  content?: string;
+  sequence: number;
+  linkUrl?: string;
   disable: boolean;
   startTime?: string;
   endTime?: string;
   displayMode: DisplayMode;
-  sequence: number;
-  attachmentFileInfos: AttachmentFileInfoDto[];
-  postImages: PostImageDto[];
+  contents: ResourceDto[];
+  attachments: ResourceDto[];
+  images: ResourceDto[];
 }
 
 export interface PostWithDetailsDto extends PostDto {

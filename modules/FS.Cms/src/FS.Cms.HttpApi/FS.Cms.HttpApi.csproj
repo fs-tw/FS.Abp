@@ -42,10 +42,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Cms\Blogs\BlogsApi.BlogCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BlogsApi.cs</DependentUpon>
-    </Compile>
     <Compile Update="FS.Cms\Blogs\BlogsApi.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>

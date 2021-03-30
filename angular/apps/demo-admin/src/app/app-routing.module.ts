@@ -79,7 +79,14 @@ const routes: Routes = [
       import('@fs-tw/cms/admin').then((m) => 
         m.CmsAdminModule.forLazy()
       )
-  }
+  },
+  {
+    path: 'form-management',
+    loadChildren: () => 
+      import('@fs-tw/form-management/admin').then((m) => 
+        m.FormManagementAdminModule.forLazy()
+      )
+  },
 ];
 
 @NgModule({

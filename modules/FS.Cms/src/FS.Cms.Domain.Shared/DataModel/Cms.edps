@@ -11,30 +11,21 @@
         <File Name="DocumentDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="BlogDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="TagDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
-        <File Name="CmsFileFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="CmsImageFieldDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="PostImageDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="AttachmentFileInfoDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
+        <File Name="ResourceDto.Generated.cs" Project="FS.Cms.Application.Contracts" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="PostDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="BlogDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="TagDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
-        <File Name="CmsFileFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="CmsImageFieldDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="PostImageDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="AttachmentFileInfoDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
+        <File Name="ResourceDtoAutoMapperProfile.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="PostDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="PostTagMapDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
         <File Name="DocumentDefinitionDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="DocumentDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Documents\Dtos" />
         <File Name="BlogDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Blogs\Dtos" />
         <File Name="TagDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Tags\Dtos" />
-        <File Name="CmsFileFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="CmsImageFieldDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
-        <File Name="PostImageDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
-        <File Name="AttachmentFileInfoDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Posts\Dtos" />
+        <File Name="ResourceDtoValidator.Generated.cs" Project="FS.Cms.Application" ProjectFolder="_Generated\FS.Cms\Core\Dtos" />
         <File Name="ICmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsDbContext.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsModelBuilderConfigurationOptions.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -45,10 +36,7 @@
         <File Name="Document.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Documents" />
         <File Name="Blog.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Blogs" />
         <File Name="Tag.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Tags" />
-        <File Name="CmsFileField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
-        <File Name="CmsImageField.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
-        <File Name="PostImage.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
-        <File Name="AttachmentFileInfo.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Posts" />
+        <File Name="Resource.Generated.cs" Project="FS.Cms.Domain" ProjectFolder="_Generated\FS.Cms\Core" />
         <File Name="DisplayMode.Generated.cs" Project="FS.Cms.Domain.Shared" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="Post.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
         <File Name="PostTagMap.Configuration.Generated.cs" Project="FS.Cms.EntityFrameworkCore" ProjectFolder="_Generated\FS.Cms\Posts" />
@@ -471,20 +459,24 @@
       </Template>
     </Templates>
     <AttributeAssemblies>
-      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
-        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+      <AttributeAssembly Name="FS.ED.Core, Version=422.0.6.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.Core.dll">
+        <AttributeType Name="AbpAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+        </AttributeType>
+        <AttributeType Name="AbpStoreAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
-        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+        <AttributeType Name="ModuleAttribute" AttributeNamespace="FS.ED.Attributes.Module" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
-            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
+      </AttributeAssembly>
+      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
         <AttributeType Name="EntityEnumTypeAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
@@ -589,6 +581,31 @@
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ObjectExtendingCmtAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ObjectExtendingProAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
       </AttributeAssembly>

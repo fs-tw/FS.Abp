@@ -13,5 +13,11 @@ namespace FS.Cms.Blogs
 {
     public partial class BlogsApi : IBlogCrudAppService //pls write here
     {
+        [NonAction]
+        [RemoteService(false)]
+        public async Task<PagedResultDto<BlogWithDetailsDto>> GetBlogs(GetBlogsInput input, bool isFront = false)
+        {
+            return await this.BlogCrudAppService.GetBlogs(input);
+        }
     }
 }

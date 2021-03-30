@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard, PermissionGuard } from '@abp/ng.core';
-
+import {VersionsModule} from './versions/versions.module';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'sample' },
+  { path: '', pathMatch: 'full', redirectTo: 'versions' },
   {
     path: '',
     //canActivate: [AuthGuard, PermissionGuard],
     children: [
       {
-        //path: 'sample',
-        //loadChildren: Sample.forEarly
+        path: 'versions',
+        loadChildren: VersionsModule.forEarly
       },
     ]
   }
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class FormmanagementAdminRoutingModule { }
+export class FormManagementAdminRoutingModule { }

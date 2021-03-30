@@ -13,37 +13,37 @@
         <File Name="BannersApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="BannersApi.BannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="BannersApi.BannerCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="IWebSitesApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites" />
-        <File Name="WebSitesApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSites" />
-        <File Name="WebSitesApi.WebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="IWebSiteInfosApi.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
+        <File Name="WebSiteInfosApi.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
+        <File Name="WebSiteInfosApi.WebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.HttpApi" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="IRouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="IBannerCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="IWebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="IWebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RouteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="RouteCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="BannerCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteDefinitionCrudAppService.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RouteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
-        <File Name="WebSiteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
+        <File Name="WebSiteDefinitionDto.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos\Dtos" />
         <File Name="RouteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
-        <File Name="WebSiteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
+        <File Name="WebSiteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSiteInfos\Dtos" />
         <File Name="RouteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="RouteDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Routes\Dtos" />
         <File Name="BannerDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
         <File Name="BannerDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\Banners\Dtos" />
-        <File Name="WebSiteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSites\Dtos" />
+        <File Name="WebSiteDefinitionDtoValidator.Generated.cs" Project="FS.Theme.Application" ProjectFolder="_Generated\FS.Theme\WebSiteInfos\Dtos" />
         <File Name="RoutesStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSitesStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteInfosStore.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="IThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="ThemeDbContext.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="ThemeModelBuilderConfigurationOptions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -52,31 +52,31 @@
         <File Name="Route.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="Banner.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSiteDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteDefinition.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RouteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="Route.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannerDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="Banner.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSiteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteDefinition.Configuration.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="IRouteDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IRouteTreeRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="IBannerDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="IBannerRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="IWebSiteDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="IWebSiteDefinitionRepository.Generated.cs" Project="FS.Theme.Domain" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="EfCoreRouteDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="EfCoreRouteTreeRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="EfCoreBannerDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
         <File Name="EfCoreBannerRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="EfCoreWebSiteDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="EfCoreWebSiteDefinitionRepository.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RoutesQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSitesQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteInfosQueryableExtensions.Generated.cs" Project="FS.Theme.EntityFrameworkCore" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RoutesPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSitesPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteInfosPermissionNames.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
         <File Name="RoutesPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Routes" />
         <File Name="BannersPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\Banners" />
-        <File Name="WebSitesPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSites" />
+        <File Name="WebSiteInfosPermissionDefinitionProviders.Generated.cs" Project="FS.Theme.Application.Contracts" ProjectFolder="_Generated\FS.Theme\WebSiteInfos" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -283,18 +283,6 @@
           </OutputInfo>
         </ed:Property>
       </Template>
-      <Template Name="Domain.Definitions" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.Definitions.tmpl">
-        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.Theme.Domain.Shared</Project>
-            <ProjectFolder>FS.Theme</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-      </Template>
       <Template Name="Domain.Store" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.Store.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
@@ -442,7 +430,6 @@
           <boolean>false</boolean>
         </ed:Property>
       </Template>
-      <Template Name="Template.Common" Enabled="False" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Template.Common.tmpl" />
       <Template Name="Application.AbpPermissions" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AbpPermissions.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
@@ -458,19 +445,6 @@
     </Templates>
     <AttributeAssemblies>
       <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
-        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
         <AttributeType Name="EntityEnumTypeAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
@@ -575,6 +549,31 @@
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ObjectExtendingCmtAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ObjectExtendingProAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
       </AttributeAssembly>
