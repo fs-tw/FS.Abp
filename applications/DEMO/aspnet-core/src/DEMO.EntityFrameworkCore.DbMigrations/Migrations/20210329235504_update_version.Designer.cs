@@ -4,15 +4,17 @@ using DEMO.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace DEMO.Migrations
 {
     [DbContext(typeof(DEMOMigrationsDbContext))]
-    partial class DEMOMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210329235504_update_version")]
+    partial class update_version
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
