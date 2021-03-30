@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/apps/demo-admin',
     '<rootDir>/libs/cms',
     '<rootDir>/apps/unify-public',
+    '<rootDir>/apps/demo-alain-admin',
   ],
 };

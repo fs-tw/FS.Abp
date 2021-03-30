@@ -1,0 +1,163 @@
+{
+    "order": 1002,
+    "nx": {
+      "demo-alain-admin": {
+        "tags": []
+      }
+    },
+    "angular": {
+      "demo-alain-admin": {
+        "projectType": "application",
+        "root": "apps/demo-alain-admin",
+        "sourceRoot": "apps/demo-alain-admin/src",
+        "prefix": "fs",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist/apps/demo-alain-admin",
+              "index": "apps/demo-alain-admin/src/index.html",
+              "main": "apps/demo-alain-admin/src/main.ts",
+              "polyfills": "apps/demo-alain-admin/src/polyfills.ts",
+              "tsConfig": "apps/demo-alain-admin/tsconfig.app.json",
+              "aot": true,
+              "allowedCommonJsDependencies": [
+                "@ant-design/colors",
+                "@antv/adjust",
+                "@antv/attr",
+                "@antv/component",
+                "@antv/g-base",
+                "@antv/g-canvas",
+                "@antv/g-math",
+                "@antv/g-svg",
+                "@antv/path-util",
+                "@antv/util",
+                "file-saver",
+                "hammerjs",
+                "ajv"
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                  "output": "/assets/"
+                },
+                "apps/demo-alain-admin/src/favicon.ico",
+                "apps/demo-alain-admin/src/assets"
+              ],
+              "styles": [
+                {
+                  "input": "node_modules/@swimlane/ngx-datatable/index.css",
+                  "inject": true,
+                  "bundleName": "ngx-datatable-index"
+                },
+                {
+                  "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+                  "inject": true,
+                  "bundleName": "ngx-datatable-icons"
+                },
+                {
+                  "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
+                  "inject": true,
+                  "bundleName": "ngx-datatable-material"
+                },              
+                {
+                  "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                  "inject": true,
+                  "bundleName": "fontawesome-all.min"
+                },
+                {
+                  "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                  "inject": true,
+                  "bundleName": "fontawesome-v4-shims.min"
+                },
+                {
+                  "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
+                  "inject": false,
+                  "bundleName": "bootstrap-rtl.min"
+                },
+                {
+                  "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                  "inject": true,
+                  "bundleName": "bootstrap-ltr.min"
+                },              
+                "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+                "node_modules/quill/dist/quill.snow.css",
+                "apps/demo-alain-admin/src/styles.less"
+              ],
+              "scripts": [
+                "node_modules/masonry-layout/dist/masonry.pkgd.js",
+                "node_modules/quill/dist/quill.min.js",
+                "node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
+              ]
+            },
+            "configurations": {
+              "production": {
+                "fileReplacements": [
+                  {
+                    "replace": "apps/demo-alain-admin/src/environments/environment.ts",
+                    "with": "apps/demo-alain-admin/src/environments/environment.prod.ts"
+                  }
+                ],
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "namedChunks": false,
+                "extractLicenses": true,
+                "vendorChunk": false,
+                "buildOptimizer": true,
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "2mb",
+                    "maximumError": "5mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "6kb",
+                    "maximumError": "10kb"
+                  }
+                ]
+              }
+            }
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "browserTarget": "demo-alain-admin:build"
+            },
+            "configurations": {
+              "production": {
+                "browserTarget": "demo-alain-admin:build:production"
+              }
+            }
+          },
+          "extract-i18n": {
+            "builder": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "browserTarget": "demo-alain-admin:build"
+            }
+          },
+          "lint": {
+            "builder": "@angular-devkit/build-angular:tslint",
+            "options": {
+              "tsConfig": [
+                "apps/demo-alain-admin/tsconfig.app.json",
+                "apps/demo-alain-admin/tsconfig.spec.json",
+                "apps/demo-alain-admin/tsconfig.editor.json"
+              ],
+              "exclude": ["**/node_modules/**", "!apps/demo-alain-admin/**/*"]
+            }
+          },
+          "test": {
+            "builder": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/demo-alain-admin"],
+            "options": {
+              "jestConfig": "apps/demo-alain-admin/jest.config.js",
+              "passWithNoTests": true
+            }
+          }
+        }
+      }
+    }
+  }
