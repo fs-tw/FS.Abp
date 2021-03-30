@@ -88,7 +88,7 @@ function addConfigFiles(options: ApplicationOptions): Rule {
           tmpl: '',
           name: options.name
         }),
-        move(`config/${options.name}`),
+        move(`config/apps`),
       ]),
     )
   ]);
