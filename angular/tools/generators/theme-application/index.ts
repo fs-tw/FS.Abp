@@ -47,20 +47,17 @@ function clearFiles(options: ApplicationOptions): (host: Tree) => void {
       }
     });
     [
-      `npm/${options.themeName}/package.json`,
-      `npm/${options.themeName}/package.json`,
-      `config/${options.themeName}/${options.name}/apps.config.json`,
-      `npm/${options.themeName}/${options.name}/package.json`,
+      `config/apps/${options.name}.config.json`
     ]
       .filter(p => host.exists(p))
       .forEach(p => host.delete(p));
 
     //Clear package.json node
-    const json = getPackage(host);
-    if (json.devDependencies[`@npm/${options.name}`]) {
-      delete json.devDependencies[`@npm/${options.name}`];
-      overwritePackage(host, json);
-    }
+    // const json = getPackage(host);
+    // if (json.devDependencies[`@npm/${options.name}`]) {
+    //   delete json.devDependencies[`@npm/${options.name}`];
+    //   overwritePackage(host, json);
+    // }
   };
 }
 
@@ -99,22 +96,22 @@ function addConfigFiles(options: ApplicationOptions): Rule {
 function addDependenciesToPackageJson(options: ApplicationOptions): (host: Tree) => void {
 
   return (host: Tree) => {
-    //"@fs-tw/theme-alain-ms": "410.0.1"
-    if (options.themeName == 'ng-alain-ms') {
-      addPackageToPackageJson(host, [`@fs-tw/theme-alain-ms@410.0.1`]);
-      //add dependencies
-      addPackageToPackageJson(host, [`@npm/ng-alain-ms@file:npm/ng-alain-ms`], 'devDependencies');
-    }
+    // //"@fs-tw/theme-alain-ms": "410.0.1"
+    // if (options.themeName == 'ng-alain-ms') {
+    //   addPackageToPackageJson(host, [`@fs-tw/theme-alain-ms@410.0.1`]);
+    //   //add dependencies
+    //   addPackageToPackageJson(host, [`@npm/ng-alain-ms@file:npm/ng-alain-ms`], 'devDependencies');
+    // }
     return chain([
-      mergeWith(
-        apply(url(`./npm/${options.themeName}`), [
-          template({
-            tmpl: '',
-            name: options.name
-          }),
-          move(`npm/${options.themeName}`),
-        ]),
-      )
+      // mergeWith(
+      //   apply(url(`./npm/${options.themeName}`), [
+      //     template({
+      //       tmpl: '',
+      //       name: options.name
+      //     }),
+      //     move(`npm/${options.themeName}`),
+      //   ]),
+      // )
     ]);
 
   }
@@ -149,7 +146,7 @@ export default function (options: ApplicationOptions): Rule {
       // files
       addFilesToRoot(host, options),
       mergeGenerators.default(),
-      install(),
+      //install(),
       finished(),
     ])(host, context);
   };
@@ -160,7 +157,7 @@ function generateApplication(options: ApplicationOptions): Rule {
   return externalSchematic('@nrwl/angular', 'application', {
     name: options.name,
     e2eTestRunner: 'none',
-    style: 'css',
+    style: 'less',
     routing: false
   });
 }

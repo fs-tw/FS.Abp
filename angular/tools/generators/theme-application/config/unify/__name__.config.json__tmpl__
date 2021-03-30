@@ -27,12 +27,7 @@
             "tsConfig": "apps/<%= name %>/tsconfig.app.json",
             "aot": true,
             "allowedCommonJsDependencies": [
-              "@ant-design/colors",
-              "chart.js",
-              "js-sha256",
-              "@uppy/xhr-upload",
-              "@uppy/dashboard",
-              "@uppy/core"
+
             ],
             "assets": ["apps/<%= name %>/src/favicon.ico", "apps/<%= name %>/src/assets"],
             "styles": [
