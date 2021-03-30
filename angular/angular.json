@@ -269,7 +269,8 @@
               "@antv/util",
               "file-saver",
               "hammerjs",
-              "ajv"
+              "ajv",
+              "date-fns"
             ],
             "assets": [
               {
@@ -316,15 +317,9 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },
-              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
-              "node_modules/quill/dist/quill.snow.css",
               "apps/demo-alain-admin/src/styles.less"
             ],
-            "scripts": [
-              "node_modules/masonry-layout/dist/masonry.pkgd.js",
-              "node_modules/quill/dist/quill.min.js",
-              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

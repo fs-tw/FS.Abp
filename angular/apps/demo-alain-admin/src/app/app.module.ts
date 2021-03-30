@@ -14,13 +14,12 @@ import { registerLocale } from '@volo/abp.ng.language-management/locale';
 import { SaasConfigModule } from '@volo/abp.ng.saas/config';
 import { TextTemplateManagementConfigModule } from '@volo/abp.ng.text-template-management/config';
 import { EmailingConfigModule } from '@fs-tw/emailing/config';
-import { ThemeAlainMsModule } from '@fs-tw/theme-alain-ms';
-import {HttpErrorComponent} from '@volo/abp.ng.theme.lepton';
+import { ThemeAlainModule } from '@fs-tw/theme-alain';
+import { HttpErrorComponent } from '@volo/abp.ng.theme.lepton';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -51,8 +50,7 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     TextTemplateManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
     EmailingConfigModule.forRoot(),
-    ThemeAlainMsModule.forRoot(),
-    
+    ThemeAlainModule.forRoot(),
 
     //ThemeLeptonModule.forRoot(),
   ],
