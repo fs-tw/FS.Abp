@@ -450,6 +450,35 @@
         }
       }
     },
+    "theme-alain": {
+      "projectType": "library",
+      "root": "libs/theme-alain",
+      "sourceRoot": "libs/theme-alain/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-alain/tsconfig.lib.json",
+            "project": "libs/theme-alain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-alain/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-alain/src/**/*.ts",
+              "libs/theme-alain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "theme-unify": {
       "projectType": "library",
       "root": "libs/theme-unify",

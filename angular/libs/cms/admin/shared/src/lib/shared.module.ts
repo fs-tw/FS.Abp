@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ThemeAlainMsSharedModule } from '@fs-tw/theme-alain-ms/shared';
-import { UiExtensionsModule } from '@fs-tw/theme-alain-ms/shared/extensions'
+import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 import { ImagePickerComponent } from './components/image-picker/image-picker.component';
 import { GetFileByIdPipe } from './pipe/get-file.pipe';
 const COMPONENT = [
@@ -11,13 +10,11 @@ const COMPONENT = [
 @NgModule({
   declarations: [...COMPONENT],
   imports: [
-    ThemeAlainMsSharedModule,
-    UiExtensionsModule
+    ThemeAlainSharedModule
   ],
   exports: [
     ...COMPONENT,
-    ThemeAlainMsSharedModule,
-    UiExtensionsModule
+    ThemeAlainSharedModule
   ]
 })
 export class SharedModule { }

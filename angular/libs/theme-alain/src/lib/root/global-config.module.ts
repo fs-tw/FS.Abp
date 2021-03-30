@@ -30,13 +30,14 @@ import { LANG_PROVIDES } from './providers/lang.provider';
 //import { DelonACLModule } from '@delon/acl';
 
 // Please refer to: https://ng-alain.com/docs/global-config
-const alainConfig: AlainConfig = {
-  st: { modal: { paramsName: 'i', size: 'lg' }, page: { toTop: true, toTopOffset: 0 } },
-  pageHeader: { homeI18n: 'home', recursiveBreadcrumb: true },
-  auth: { login_url: '/account/login' },
-};
+// const alainConfig: AlainConfig = {
+//   st: { modal: { paramsName: 'i', size: 'lg' }, page: { toTop: true, toTopOffset: 0 } },
+//   pageHeader: { homeI18n: 'home', recursiveBreadcrumb: true },
+//   auth: { login_url: '/account/login' },
+// };
 // Please refer to: https://ng.ant.design/docs/global-config/en#how-to-use
-const ngZorroConfig: NzConfig = {};
+//const ngZorroConfig: NzConfig = {};
+
 @NgModule({
   imports: [
     AlainThemeModule.forRoot(),
@@ -51,7 +52,7 @@ export class GlobalConfigModule {
     return {
       ngModule: GlobalConfigModule,
       providers: [
-        ...LANG_PROVIDES,
+        ...LANG_PROVIDES
         //{ provide: ALAIN_CONFIG, useValue: alainConfig },
         //{ provide: NZ_CONFIG, useValue: ngZorroConfig }
       ],

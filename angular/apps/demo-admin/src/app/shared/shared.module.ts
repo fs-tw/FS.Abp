@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { CommercialUiModule } from '@volo/abp.commercial.ng.ui';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
+import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared'
+
 @NgModule({
   declarations: [],
   imports: [
@@ -16,7 +18,7 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
   exports: [
     CoreModule,
     ThemeSharedModule,
-    //ThemeLeptonModule,
+    ThemeAlainSharedModule,
     CommercialUiModule,
     NgbDropdownModule,
     NgxValidateCoreModule,

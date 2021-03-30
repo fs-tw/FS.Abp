@@ -36,6 +36,12 @@
       "@fs-tw/theme-alain-ms/*": [
         "libs/theme-alain-ms/*/src/index.ts"
       ],
+      "@fs-tw/theme-alain": [
+        "libs/theme-alain/src/index.ts"
+      ],
+      "@fs-tw/theme-alain/*": [
+        "libs/theme-alain/*/src/index.ts"
+      ],
       "@fs-tw/theme-unify": [
         "libs/theme-unify/src/index.ts"
       ],
