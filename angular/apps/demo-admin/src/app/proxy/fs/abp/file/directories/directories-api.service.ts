@@ -1,0 +1,28 @@
+import type { DirectoryDescriptorDto } from './dtos/models';
+import type { DirectoryProviderDefinition } from './models';
+import { RestService } from '@abp/ng.core';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class DirectoriesApiService {
+  apiName = 'Default';
+
+  findByProviderByKeyAndGroup = (key: string, group?: string) =>
+    this.restService.request<any, DirectoryDescriptorDto>({
+      method: 'GET',
+      url: `/api/file/directories/provider/${key}`,
+      params: { group: group },
+    },
+    { apiName: this.apiName });
+
+  getDefinitions = () =>
+    this.restService.request<any, DirectoryProviderDefinition[]>({
+      method: 'GET',
+      url: `/api/file/directories/definitions`,
+    },
+    { apiName: this.apiName });
+
+  constructor(private restService: RestService) {}
+}
