@@ -35,8 +35,8 @@ export class MSUserComponent {
 
   logout() {
     this.authService.logout().subscribe(() => {
-      console.log( this.router.url);
-      this.router.navigate(['/'], { state: { redirectUrl: this.router.url } });
+      //TODO: Should Read PROVIDER's OPTION
+      this.router.navigate(['/account/login'], { state: { redirectUrl: this.router.url } });
     });
   }
 }
