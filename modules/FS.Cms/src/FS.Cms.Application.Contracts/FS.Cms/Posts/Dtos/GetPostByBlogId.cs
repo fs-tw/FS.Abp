@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FS.Cms.Posts.Dtos
 {
-    public class GetPostByBlogIdInput : Volo.Abp.Application.Dtos.PagedResultRequestDto
+    public class GetPostByBlogIdInput : Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto
     {
         public Guid? BlogId { get; set; }
 
