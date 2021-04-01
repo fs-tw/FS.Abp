@@ -18,17 +18,17 @@ namespace FS.Cms.Posts
         public async Task<PagedResultDto<PostWithDetailsDto>> GetPostsByBlogId(GetPostByBlogIdInput input, bool isFront = false)
         {
             var enableBlogIdsQuery = this._blogsStore.Blog
-                .Where(x => x.Disable)
+                .Where(x => x.Disable == false)
                 .Select(x => x.Id);
 
             var query = (await this._postsStore.Post.WithDetailsAsync())
-                .WhereIf(isFront, x => enableBlogIdsQuery.Contains(x.BlogId))
+                .WhereIf(input.BlogId.HasValue, x => x.BlogId == input.BlogId)
+                .WhereIf(isFront && input.BlogId.HasValue, x => enableBlogIdsQuery.Contains(x.BlogId))
                 .WhereIf(isFront, x => !x.Disable)
-                .WhereIf(isFront, x => 
-                    x.StartTime.Date <= DateTime.Now.Date && 
+                .WhereIf(isFront, x =>
+                    x.StartTime.Date <= DateTime.Now.Date &&
                     (!x.EndTime.HasValue || DateTime.Now.Date <= x.EndTime.Value.Date)
                 )
-                .WhereIf(input.BlogId.HasValue, x => x.BlogId == input.BlogId)
                 .WhereIf(!String.IsNullOrEmpty(input.Keyword), x => x.Title.ToLower().Contains(input.Keyword.Trim().ToLower()));
 
             var totalCount = await this.AsyncExecuter.CountAsync(query);
@@ -49,7 +49,7 @@ namespace FS.Cms.Posts
         }
 
 
-        
+
 
     }
 }
