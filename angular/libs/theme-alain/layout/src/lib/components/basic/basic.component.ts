@@ -52,11 +52,11 @@ import { LayoutDefaultOptions } from '@delon/theme/layout-default';
           <div nz-menu style="width: 120px;">
             <!-- <div nz-menu-item>
               <header-rtl></header-rtl>
-            </div>-->
+            </div>
             <div nz-menu-item>
               <header-fullscreen></header-fullscreen>
             </div>
-            <!--<div nz-menu-item>
+            <div nz-menu-item>
               <header-clear-storage></header-clear-storage>
             </div> -->
             <div nz-menu-item>
