@@ -1,0 +1,113 @@
+[
+  {
+    "No": "個人會員入會申請",
+    "DisplayName": "個人會員入會申請",
+    "Groups": [
+      {
+        "DisplayName": "個人資料",
+        "Children": [],
+        "Items": [
+          {
+            "No": "姓名",
+            "Question": "姓名"
+          },
+          {
+            "No": "姓別",
+            "Question": "性別"
+          },
+          {
+            "No": "出生年月日",
+            "Question": "出生年月日"
+          },
+          {
+            "No": "出生地",
+            "Question": "出生地"
+          },
+          {
+            "No": "學歷",
+            "Question": "學歷"
+          },
+          {
+            "No": "經歷",
+            "Question": "經歷"
+          },
+          {
+            "No": "現職",
+            "Question": "現職"
+          },
+          {
+            "No": "戶籍地址",
+            "Question": "戶籍地址"
+          },
+          {
+            "No": "通訊地址",
+            "Question": "通訊地址"
+          },
+          {
+            "No": "通訊電話",
+            "Question": "通訊電話"
+          },
+          {
+            "No": "電子信箱",
+            "Question": "電子信箱"
+          },
+          {
+            "No": "審查結果",
+            "Question": "審查結果"
+          },
+          {
+            "No": "推薦人",
+            "Question": "推薦人"
+          },
+          {
+            "No": "會員證號碼",
+            "Question": "會員證號碼"
+          },
+          {
+            "No": "申請人",
+            "Question": "申請人"
+          }
+
+        ]
+      },
+      {
+        "DisplayName": "測試群組小孩",
+        "Children": [
+          {
+            "DisplayName": "小孩1",
+            "Children": [
+              {
+                "DisplayName": "小孩1-1",
+                "Children": [],
+                "Items": []
+              }
+            ],
+            "Items": []
+          },
+          {
+            "DisplayName": "小孩2",
+            "Children": [
+              {
+                "DisplayName": "小孩2-1",
+                "Children": [],
+                "Items": [
+                  {
+                    "No": "小孩2-1-項目1",
+                    "Question": "小孩2-1-項目1"
+                  }
+                ]
+              }
+            ],
+            "Items": [
+              {
+                "No": "小孩2-項目1",
+                "Question": "小孩2-項目1"
+              }
+            ]
+          }
+        ],
+        "Items": []
+      }
+    ]
+  }
+]

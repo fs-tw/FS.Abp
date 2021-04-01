@@ -1,3 +1,4 @@
 import * as Abp from './abp';
+import * as Cms from './cms';
 import * as FormManagement from './form-management';
-export { Abp, FormManagement };
+export { Abp, Cms, FormManagement };

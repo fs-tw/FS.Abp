@@ -1,2 +1,3 @@
 import * as Application from './application';
-export { Application };
+import * as File from './file';
+export { Application, File };

@@ -8,33 +8,44 @@
   "angular": {
     "<%= name %>": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
       "root": "apps/<%= name %>",
       "sourceRoot": "apps/<%= name %>/src",
-      "prefix": "app",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../aspnet-core/src/IWP.HttpApi.Host/wwwroot/<%= name %>",
+            "outputPath": "dist/apps/<%= name %>",
             "index": "apps/<%= name %>/src/index.html",
             "main": "apps/<%= name %>/src/main.ts",
             "polyfills": "apps/<%= name %>/src/polyfills.ts",
             "tsConfig": "apps/<%= name %>/tsconfig.app.json",
             "aot": true,
             "allowedCommonJsDependencies": [
-              "@ant-design/colors",
               "chart.js",
-              "js-sha256",
-              "@uppy/xhr-upload",
-              "@uppy/dashboard",
-              "@uppy/core"
+              "@ant-design/colors",
+              "@antv/adjust",
+              "@antv/attr",
+              "@antv/component",
+              "@antv/g-base",
+              "@antv/g-canvas",
+              "@antv/g-math",
+              "@antv/g-svg",
+              "@antv/path-util",
+              "@antv/util",
+              "file-saver",
+              "hammerjs",
+              "ajv"
             ],
-            "assets": ["apps/<%= name %>/src/favicon.ico", "apps/<%= name %>/src/assets"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              },
+              "apps/<%= name %>/src/favicon.ico",
+              "apps/<%= name %>/src/assets"
+            ],
             "styles": [
               {
                 "input": "node_modules/@swimlane/ngx-datatable/index.css",
@@ -50,7 +61,7 @@
                 "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
                 "inject": true,
                 "bundleName": "ngx-datatable-material"
-              },
+              },              
               {
                 "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
                 "inject": true,
@@ -62,14 +73,22 @@
                 "bundleName": "fontawesome-v4-shims.min"
               },
               {
-                "input": "node_modules/flag-icon-css/css/flag-icon.min.css",
-                "inject": true,
-                "bundleName": "flag-icon.min"
+                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
+                "inject": false,
+                "bundleName": "bootstrap-rtl.min"
               },
-
-              "apps/<%= name %>/src/styles.scss"
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap-ltr.min"
+              },              
+              "apps/<%= name %>/src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/masonry-layout/dist/masonry.pkgd.js",
+              "node_modules/quill/dist/quill.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -90,7 +109,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
-                  "maximumError": "100mb"
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -118,50 +137,26 @@
             "browserTarget": "<%= name %>:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/<%= name %>/src/test.ts",
-            "polyfills": "apps/<%= name %>/src/polyfills.ts",
-            "tsConfig": "apps/<%= name %>/tsconfig.spec.json",
-            "karmaConfig": "apps/<%= name %>/karma.conf.js",
-            "assets": ["apps/<%= name %>/src/favicon.ico", "apps/<%= name %>/src/assets"],
-            "styles": [
-              {
-                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "inject": true,
-                "bundleName": "bootstrap.min"
-              },
-              "apps/<%= name %>/src/styles.scss",
-              "node_modules/flag-icon-css/css/flag-icon.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css"
-            ],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/<%= name %>/tsconfig.app.json", "apps/<%= name %>/tsconfig.spec.json", "apps/<%= name %>e2e/tsconfig.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "apps/<%= name %>/tsconfig.app.json",
+              "apps/<%= name %>/tsconfig.spec.json",
+              "apps/<%= name %>/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/<%= name %>/**/*"]
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/<%= name %>"],
           "options": {
-            "protractorConfig": "apps/<%= name %>/e2e/protractor.conf.js",
-            "devServerTarget": "<%= name %>:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "<%= name %>:serve:production"
-            }
+            "jestConfig": "apps/<%= name %>/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
-    }    
-  },
-  "tsconfig": {
-  }  
+    }
+  }
 }
