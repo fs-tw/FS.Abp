@@ -8,23 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.VersionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsApi.VersionsDefinitionCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Application.Contracts\FS.FormManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Documents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Documents\DocumentsApi.VersionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DocumentsApi.Generated.cs</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.FormalCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>FormsApi.Generated.cs</DependentUpon>
@@ -53,6 +48,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Versions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionsApi.VersionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VersionsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Versions\VersionsApi.VersionDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VersionsApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.FormManagement\Documents\" />
   </ItemGroup>
 
 </Project>

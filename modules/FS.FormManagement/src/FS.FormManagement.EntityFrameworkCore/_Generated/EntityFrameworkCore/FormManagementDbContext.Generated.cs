@@ -47,7 +47,7 @@ namespace FS.FormManagement.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.FormManagement.Documents.Version> Versions
+        public virtual DbSet<FS.FormManagement.Versions.Version> Versions
         {
             get;
             set;
@@ -65,7 +65,7 @@ namespace FS.FormManagement.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.FormManagement.Documents.DocumentDefinition> DocumentDefinitions
+        public virtual DbSet<FS.FormManagement.Versions.VersionDefinition> VersionDefinitions
         {
             get;
             set;

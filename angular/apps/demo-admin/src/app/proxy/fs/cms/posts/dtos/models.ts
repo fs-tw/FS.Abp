@@ -1,9 +1,9 @@
-import type { EntityDto, FullAuditedEntityDto, PagedResultRequestDto } from '@abp/ng.core';
+import type { EntityDto, FullAuditedEntityDto, PagedAndSortedResultRequestDto } from '@abp/ng.core';
 import type { DisplayMode } from '../display-mode.enum';
 import type { ResourceDto } from '../../core/dtos/models';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
 
-export interface GetPostByBlogIdInput extends PagedResultRequestDto {
+export interface GetPostByBlogIdInput extends PagedAndSortedResultRequestDto {
   blogId?: string;
   keyword?: string;
 }

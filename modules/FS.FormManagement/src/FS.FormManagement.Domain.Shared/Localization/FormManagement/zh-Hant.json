@@ -1,11 +1,15 @@
 {
   "culture": "zh-Hant",
   "texts": {
+    "Forms": "表單",
+    "Versions": "版本",
+    "Records": "紀錄",
+
     "FS.FormManagement": "表單管理",
     "FS.Formal": "正式",
     "FS.Group": "群組",
     "FS.Item": "項目",
-    "FS.DocumentDefinition": "文件定義",
+    "FS.VersionDefinition": "版本定義",
     "FS.Version": "版本",
     "FS.Record": "紀錄",
     "FS.RecordItem": "紀錄項目",
@@ -24,9 +28,10 @@
     "FS.Item.Question": "問題",
     "FS.Item.GroupId": "群組編號",
 
-    "FS.DocumentDefinition.No": "No",
-    "FS.DocumentDefinition.DisplayName": "顯示名稱",
-    "FS.DocumentDefinition.CurrentVersionId": "當前版本編號",
+    "FS.VersionDefinition.EntityType": "實體類型",
+    "FS.VersionDefinition.EntityKey": "實體鍵",
+    "FS.VersionDefinition.DisplayName": "顯示名稱",
+    "FS.VersionDefinition.CurrentVersionId": "當前版本編號",
 
 
     "FS.Version.No": "No",

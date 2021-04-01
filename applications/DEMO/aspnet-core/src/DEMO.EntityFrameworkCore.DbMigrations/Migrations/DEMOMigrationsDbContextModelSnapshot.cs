@@ -498,125 +498,6 @@ namespace DEMO.Migrations
                     b.ToTable("CmsTags");
                 });
 
-            modelBuilder.Entity("FS.FormManagement.Documents.DocumentDefinition", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CreatorId");
-
-                    b.Property<Guid?>("CurrentVersionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CurrentVersionId");
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("DisplayName");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastModificationTime");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("LastModifierId");
-
-                    b.Property<string>("No")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("No");
-
-                    b.Property<Guid?>("TenantId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreationTime");
-
-                    b.HasIndex("CurrentVersionId");
-
-                    b.ToTable("FormManagementDocumentDefinitions");
-                });
-
-            modelBuilder.Entity("FS.FormManagement.Documents.Version", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CreatorId");
-
-                    b.Property<Guid>("DocumentDefinitionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("DocumentDefinitionId");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastModificationTime");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("LastModifierId");
-
-                    b.Property<Guid?>("NextVersionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("NextVersionId");
-
-                    b.Property<string>("No")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("No");
-
-                    b.Property<Guid?>("PrevVersionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("PrevVersionId");
-
-                    b.Property<Guid?>("TenantId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreationTime");
-
-                    b.ToTable("FormManagementVersions");
-                });
-
             modelBuilder.Entity("FS.FormManagement.Forms.Formal", b =>
                 {
                     b.Property<Guid>("Id")
@@ -638,7 +519,6 @@ namespace DEMO.Migrations
                         .HasColumnName("CreatorId");
 
                     b.Property<string>("DisplayName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("DisplayName");
 
@@ -663,7 +543,7 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
 
-                    b.Property<Guid>("VersionId")
+                    b.Property<Guid?>("VersionId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("VersionId");
 
@@ -910,6 +790,130 @@ namespace DEMO.Migrations
                     b.HasIndex("RecordId");
 
                     b.ToTable("FormManagementRecordItems");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Versions.Version", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("NextVersionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("NextVersionId");
+
+                    b.Property<int>("No")
+                        .HasColumnType("int")
+                        .HasColumnName("No");
+
+                    b.Property<Guid?>("PrevVersionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("PrevVersionId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<Guid>("VersionDefinitionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("VersionDefinitionId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.HasIndex("VersionDefinitionId");
+
+                    b.ToTable("FormManagementVersions");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Versions.VersionDefinition", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("CurrentVersionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CurrentVersionId");
+
+                    b.Property<string>("DisplayName")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("DisplayName");
+
+                    b.Property<string>("EntityKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("EntityKey");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("EntityType");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.HasIndex("CurrentVersionId");
+
+                    b.ToTable("FormManagementVersionDefinitions");
                 });
 
             modelBuilder.Entity("FS.Theme.Banners.Banner", b =>
@@ -1213,7 +1217,7 @@ namespace DEMO.Migrations
                     b.ToTable("ThemeRouteDefinitions");
                 });
 
-            modelBuilder.Entity("FS.Theme.WebSites.WebSiteDefinition", b =>
+            modelBuilder.Entity("FS.Theme.WebSiteInfos.WebSiteDefinition", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier")
@@ -3709,15 +3713,6 @@ namespace DEMO.Migrations
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("FS.FormManagement.Documents.DocumentDefinition", b =>
-                {
-                    b.HasOne("FS.FormManagement.Documents.Version", "CurrentVersion")
-                        .WithMany()
-                        .HasForeignKey("CurrentVersionId");
-
-                    b.Navigation("CurrentVersion");
-                });
-
             modelBuilder.Entity("FS.FormManagement.Forms.Group", b =>
                 {
                     b.HasOne("FS.FormManagement.Forms.Formal", "Formal")
@@ -3755,6 +3750,26 @@ namespace DEMO.Migrations
                         .IsRequired();
 
                     b.Navigation("Record");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Versions.Version", b =>
+                {
+                    b.HasOne("FS.FormManagement.Versions.VersionDefinition", "VersionDefinition")
+                        .WithMany("Versions")
+                        .HasForeignKey("VersionDefinitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("VersionDefinition");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Versions.VersionDefinition", b =>
+                {
+                    b.HasOne("FS.FormManagement.Versions.Version", "CurrentVersion")
+                        .WithMany()
+                        .HasForeignKey("CurrentVersionId");
+
+                    b.Navigation("CurrentVersion");
                 });
 
             modelBuilder.Entity("FS.Theme.Banners.Banner", b =>
@@ -4125,6 +4140,11 @@ namespace DEMO.Migrations
             modelBuilder.Entity("FS.FormManagement.Records.Record", b =>
                 {
                     b.Navigation("RecordItems");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Versions.VersionDefinition", b =>
+                {
+                    b.Navigation("Versions");
                 });
 
             modelBuilder.Entity("FS.Theme.Banners.BannerDefinition", b =>

@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/account",
-  "version": "422.0.4",
+  "version": "422.0.6",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },

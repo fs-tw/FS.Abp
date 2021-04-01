@@ -22,13 +22,13 @@ namespace FS.Cms.Core.Dtos
 
     public partial class ResourceDto
     {
-        public virtual String FileId { get; set; }
+        public virtual string FileId { get; set; }
 
-        public virtual String No { get; set; }
+        public virtual string No { get; set; }
 
-        public virtual Boolean Default { get; set; }
+        public virtual bool Default { get; set; }
 
-        public virtual Int32 Sequence { get; set; }
+        public virtual int Sequence { get; set; }
 
         public virtual Dictionary<string, string> Properties { get; set; }
 

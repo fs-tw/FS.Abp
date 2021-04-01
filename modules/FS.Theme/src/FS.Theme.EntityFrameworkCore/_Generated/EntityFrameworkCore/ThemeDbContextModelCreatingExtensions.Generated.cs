@@ -32,7 +32,7 @@ namespace FS.Theme.EntityFrameworkCore
             builder.ApplyConfiguration<FS.Theme.Routes.Route>(new FS.Theme.Routes.RouteConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.BannerDefinition>(new FS.Theme.Banners.BannerDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.Theme.Banners.Banner>(new FS.Theme.Banners.BannerConfiguration(options));
-            builder.ApplyConfiguration<FS.Theme.WebSites.WebSiteDefinition>(new FS.Theme.WebSites.WebSiteDefinitionConfiguration(options));
+            builder.ApplyConfiguration<FS.Theme.WebSiteInfos.WebSiteDefinition>(new FS.Theme.WebSiteInfos.WebSiteDefinitionConfiguration(options));
         }
     }
 }

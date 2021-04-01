@@ -1,7 +1,28 @@
-import { CoreModule } from '@abp/ng.core';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders, NgModuleFactory } from '@angular/core';
+import { LazyModuleFactory, CoreModule } from '@abp/ng.core';
+import { FormManagementAdminRoutingModule } from './form-management-admin-routing.module';
+import { SharedModule } from '@fs-tw/cms/admin/shared';
 
 @NgModule({
-  imports: [CoreModule],
+  imports: [
+    SharedModule,
+    CoreModule,
+    FormManagementAdminRoutingModule,
+  ],
+  exports: [
+    SharedModule,
+  ],
 })
-export class FormmanagementAdminModule {}
+export class FormManagementAdminModule {
+  static forChild(): ModuleWithProviders<FormManagementAdminModule> {
+    return {
+      ngModule: FormManagementAdminModule,
+      providers: [],
+    };
+  }
+
+  static forLazy(): NgModuleFactory<FormManagementAdminModule> {
+    return new LazyModuleFactory(FormManagementAdminModule.forChild());
+  }
+
+}

@@ -31,25 +31,25 @@ namespace FS.Cms.Documents.Dtos
 
     public partial class DocumentDefinitionDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<String>
     {
-        public virtual String Title { get; set; }
+        public virtual string Title { get; set; }
 
-        public virtual String Url { get; set; }
+        public virtual string Url { get; set; }
 
     }
 
     public partial class DocumentDefinitionCreateDto
     {
-        public virtual String Title { get; set; }
+        public virtual string Title { get; set; }
 
-        public virtual String Url { get; set; }
+        public virtual string Url { get; set; }
 
     }
 
     public partial class DocumentDefinitionUpdateDto
     {
-        public virtual String Title { get; set; }
+        public virtual string Title { get; set; }
 
-        public virtual String Url { get; set; }
+        public virtual string Url { get; set; }
 
     }
 

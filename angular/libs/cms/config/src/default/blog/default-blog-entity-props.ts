@@ -15,7 +15,7 @@ export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Blogs.Dtos
         type: ePropType.String,
         name: 'displayName',
         displayName: 'Cms::FS.Blog.DisplayName',
-        sortable: true,
+        sortable: false,
         //columnWidth: 50,
     },
     // {
@@ -29,7 +29,7 @@ export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Blogs.Dtos
         type: ePropType.String,
         name: 'disable',
         displayName: 'Cms::FS.Blog.Disable',
-        sortable: true,
+        sortable: false,
         columnWidth: 60,
         valueResolver: (data) => {           
             let text = "";

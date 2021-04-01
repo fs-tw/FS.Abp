@@ -4,6 +4,10 @@
     "ManageYourProfile": "Manage your profile",
     "SamplePageMessage": "A sample page for the FormManagement module",
 
+    "Forms": "Forms",
+    "Versions": "Versions",
+    "Records": "Records",
+
     "FS.FormManagement": "FormManagement",
     "FS.Formal": "Formal",
     "FS.Group": "Group",
@@ -27,9 +31,10 @@
     "FS.Item.Question": "Question",
     "FS.Item.GroupId": "GroupId",
 
-    "FS.DocumentDefinition.No": "No",
-    "FS.DocumentDefinition.DisplayName": "DisplayName",
-    "FS.DocumentDefinition.CurrentVersionId": "CurrentVersionId",
+    "FS.VersionDefinition.EntityType": "EntityType",
+    "FS.VersionDefinition.EntityKey": "EntityKey",
+    "FS.VersionDefinition.DisplayName": "DisplayName",
+    "FS.VersionDefinition.CurrentVersionId": "CurrentVersionId",
 
 
     "FS.Version.No": "No",

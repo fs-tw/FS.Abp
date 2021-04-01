@@ -8,6 +8,7 @@ namespace FS.Abp.Files
     public interface IFileGeneraterManager
     {
         Task<FileDescriptor> CreateFile(Stream stream, Guid directoryId, string fileName, Guid? tenantId = null);
-        Task<FileDescriptor> CreateFileFromBase64(string input, Guid directoryId, string fileName, Guid? tenantId = null);
+
+        Task<FileDescriptor> CreateFile(string base64Input, Guid directoryId, string fileName, Guid? tenantId = null);
     }
 }

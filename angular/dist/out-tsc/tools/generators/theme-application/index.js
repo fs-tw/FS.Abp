@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var spinner_1 = require("@angular-devkit/build-angular/src/utils/spinner");
 var schematics_1 = require("@angular-devkit/schematics");
 var tasks_1 = require("@angular-devkit/schematics/tasks");
-var json_1 = require("./utils/json");
 var mergeGenerators = require("../merge-config/index");
 var path = require("path");
 var overwriteDataFileRoot = path.join(__dirname, 'overwrites');
@@ -20,19 +19,16 @@ function clearFiles(options) {
             }
         });
         [
-            "npm/" + options.themeName + "/package.json",
-            "npm/" + options.themeName + "/package.json",
-            "config/" + options.themeName + "/" + options.name + "/apps.config.json",
-            "npm/" + options.themeName + "/" + options.name + "/package.json",
+            "config/apps/" + options.name + ".config.json"
         ]
             .filter(function (p) { return host.exists(p); })
             .forEach(function (p) { return host.delete(p); });
         //Clear package.json node
-        var json = json_1.getPackage(host);
-        if (json.devDependencies["@npm/" + options.name]) {
-            delete json.devDependencies["@npm/" + options.name];
-            json_1.overwritePackage(host, json);
-        }
+        // const json = getPackage(host);
+        // if (json.devDependencies[`@npm/${options.name}`]) {
+        //   delete json.devDependencies[`@npm/${options.name}`];
+        //   overwritePackage(host, json);
+        // }
     };
 }
 function addFilesToRoot(host, options) {
@@ -57,26 +53,28 @@ function addConfigFiles(options) {
                 tmpl: '',
                 name: options.name
             }),
-            schematics_1.move("config/" + options.name),
+            schematics_1.move("config/apps"),
         ]))
     ]);
 }
 function addDependenciesToPackageJson(options) {
     return function (host) {
-        //"@fs-tw/theme-alain-ms": "410.0.1"
-        if (options.themeName == 'ng-alain-ms') {
-            json_1.addPackageToPackageJson(host, ["@fs-tw/theme-alain-ms@410.0.1"]);
-            //add dependencies
-            json_1.addPackageToPackageJson(host, ["@npm/ng-alain-ms@file:npm/ng-alain-ms"], 'devDependencies');
-        }
+        // //"@fs-tw/theme-alain-ms": "410.0.1"
+        // if (options.themeName == 'ng-alain-ms') {
+        //   addPackageToPackageJson(host, [`@fs-tw/theme-alain-ms@410.0.1`]);
+        //   //add dependencies
+        //   addPackageToPackageJson(host, [`@npm/ng-alain-ms@file:npm/ng-alain-ms`], 'devDependencies');
+        // }
         return schematics_1.chain([
-            schematics_1.mergeWith(schematics_1.apply(schematics_1.url("./npm/" + options.themeName), [
-                schematics_1.template({
-                    tmpl: '',
-                    name: options.name
-                }),
-                schematics_1.move("npm/" + options.themeName),
-            ]))
+        // mergeWith(
+        //   apply(url(`./npm/${options.themeName}`), [
+        //     template({
+        //       tmpl: '',
+        //       name: options.name
+        //     }),
+        //     move(`npm/${options.themeName}`),
+        //   ]),
+        // )
         ]);
     };
 }
@@ -102,7 +100,7 @@ function default_1(options) {
             // files
             addFilesToRoot(host, options),
             mergeGenerators.default(),
-            install(),
+            //install(),
             finished(),
         ])(host, context);
     };
@@ -112,7 +110,7 @@ function generateApplication(options) {
     return schematics_1.externalSchematic('@nrwl/angular', 'application', {
         name: options.name,
         e2eTestRunner: 'none',
-        style: 'css',
+        style: 'less',
         routing: false
     });
 }

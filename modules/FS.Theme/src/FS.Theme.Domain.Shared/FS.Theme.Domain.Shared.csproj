@@ -17,10 +17,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\Theme\*.json" />
-    <Compile Remove="_Generated\**" />
     <Content Remove="Localization\Theme\*.json" />
-    <EmbeddedResource Remove="_Generated\**" />
-    <None Remove="_Generated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +34,15 @@
   <ItemGroup>
     <None Remove="Files\**\*.*" />
     <EmbeddedResource Include="Files\**\*.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\Volo.Abp.Localization\LocalizationResourceExtensions.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="_Generated\Localization\Type1\en.json" />
+    <None Remove="_Generated\Localization\Type1\zh-Hant.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +67,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Theme.efml</DependentUpon>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\Localization\Type1\" />
+    <Folder Include="_Generated\Volo.Abp.Localization\" />
   </ItemGroup>
 
 </Project>

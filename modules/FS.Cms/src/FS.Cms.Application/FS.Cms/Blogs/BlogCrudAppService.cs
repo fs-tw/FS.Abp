@@ -8,6 +8,7 @@ using FS.Cms.Posts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
@@ -43,8 +44,11 @@ namespace FS.Cms.Blogs
 
             var totalCount = await this.AsyncExecuter.CountAsync(query);
 
+            if (String.IsNullOrEmpty(input.Sorting)) input.Sorting = "sequence";
+
             var items = await this.AsyncExecuter.ToListAsync(query
-                .OrderBy(x => x.Sequence)
+                .OrderBy(input.Sorting)
+                    .ThenBy(x => x.Sequence)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount));
 

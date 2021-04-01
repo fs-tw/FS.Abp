@@ -37,7 +37,7 @@ export class PostsApiService {
     this.restService.request<any, PagedResultDto<PostWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/posts/get-front-posts-by-blog-id`,
-      params: { blogId: input.blogId, keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { blogId: input.blogId, keyword: input.keyword, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
 
@@ -61,7 +61,7 @@ export class PostsApiService {
     this.restService.request<any, PagedResultDto<PostWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/posts/get-posts-by-blog-id`,
-      params: { blogId: input.blogId, keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { blogId: input.blogId, keyword: input.keyword, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
 

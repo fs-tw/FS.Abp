@@ -29,7 +29,7 @@ export class BlogsApiService {
     this.restService.request<any, PagedResultDto<BlogWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/blogs/get-blogs`,
-      params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { keyword: input.keyword, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
 
@@ -45,7 +45,7 @@ export class BlogsApiService {
     this.restService.request<any, PagedResultDto<BlogWithDetailsDto>>({
       method: 'GET',
       url: `/api/cms/blogs/get-front-blogs`,
-      params: { keyword: input.keyword, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
+      params: { keyword: input.keyword, sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName });
 

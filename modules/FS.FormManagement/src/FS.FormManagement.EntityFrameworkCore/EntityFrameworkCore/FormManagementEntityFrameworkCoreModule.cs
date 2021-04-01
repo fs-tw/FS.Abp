@@ -13,6 +13,8 @@ namespace FS.FormManagement.EntityFrameworkCore
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            context.Services.AddTreeRepository<FormManagementDbContext>();
+
             context.Services.AddAbpDbContext<FormManagementDbContext>(options =>
             {
                 /* Add custom repositories here. Example:
