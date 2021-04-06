@@ -4,6 +4,7 @@ using FS.Cms.Definitions;
 using FS.Cms.Posts.Dtos;
 using Shouldly;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -27,16 +28,16 @@ namespace FS.Cms.Posts
         public async Task ValdateGetPostsByBlogId()
         {
 
+            // 測試資料︰兩個部落格(disable 開啟關閉各一)
             #region DummyData
-            var privateBlog = new Blogs.Dtos.BlogCreateDto()
+            var privateBlog = await this._blogCrudAppService.CreateAsync(new Blogs.Dtos.BlogCreateDto()
             {
                 Code = "00009",
                 Description = "內部公告",
                 Disable = true,
                 No = "內部公告",
                 DisplayName = "內部公告"
-            };
-            var blog = await this._blogCrudAppService.CreateAsync(privateBlog);
+            });
             var publicBlog = await this._blogCrudAppService.CreateAsync(new Blogs.Dtos.BlogCreateDto()
             {
                 Code = "00010",
@@ -46,35 +47,82 @@ namespace FS.Cms.Posts
                 DisplayName = "外部公告"
             });
 
-            var privatePost = new PostCreateDto()
+            await this._postCrudAppService.CreateAsync(new PostCreateDto()
             {
-                BlogId = blog.Id,
+                BlogId = privateBlog.Id,
                 Disable = false,
                 StartTime = DateTime.Now,
                 Title = "內部公告"
-            };
-            var post = await this._postCrudAppService.CreateAsync(privatePost);
+            });
             await this._postCrudAppService.CreateAsync(new PostCreateDto()
             {
                 BlogId = publicBlog.Id,
                 Disable = false,
                 StartTime = DateTime.Now,
-                Title = "外部公告"
+                Title = "外部公告1"
+            });
+            await this._postCrudAppService.CreateAsync(new PostCreateDto()
+            {
+                BlogId = publicBlog.Id,
+                Disable = false,
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now,
+                Title = "外部公告2"
+            });
+            await this._postCrudAppService.CreateAsync(new PostCreateDto()
+            {
+                BlogId = publicBlog.Id,
+                Disable = false,
+                StartTime = DateTime.Now.AddDays(-3),
+                EndTime = DateTime.Now.AddDays(-1),
+                Title = "過期公告"
+            });
+            await this._postCrudAppService.CreateAsync(new PostCreateDto()
+            {
+                BlogId = publicBlog.Id,
+                Disable = true,
+                StartTime = DateTime.Now,
+                Title = "未開放公告"
             });
             #endregion
-            //測試資料:兩個部落格(disable 開啟關閉各一)，每個Blog含一則貼文
 
             //驗證API: Blog 關閉則Post不能被查出 : 查詢特定Blog(已關閉的不能被列出)
-            var queryParams = new GetPostByBlogIdInput()
+            var queryParams1 = new GetPostByBlogIdInput()
             {
-                BlogId = blog.Id
+                BlogId = privateBlog.Id
             };
-            var allpost = this._postsAppService.GetPostsByBlogId(queryParams, true);
-            allpost.Result.Items.Count.ShouldBe(0);
-            //驗證API: Blog 關閉則Post不能被查出 : 列出所有貼文(只有公開貼文被列出)
-            var queryParams1 = new GetPostByBlogIdInput();
-            var allpost1 = this._postsAppService.GetPostsByBlogId(queryParams1, true);
-            allpost1.Result.Items.Count.ShouldBe(1);
+            var allpost1 = await this._postsAppService.GetPostsByBlogId(queryParams1, true);
+            allpost1.Items.Count.ShouldBe(0);
+
+            //驗證API: Blog 關閉則Post不能被查出 : 查詢特定Blog(未關閉的需被列出)
+            var queryParams2 = new GetPostByBlogIdInput()
+            {
+                BlogId = publicBlog.Id
+            };
+            var allpost2 = await this._postsAppService.GetPostsByBlogId(queryParams2, true);
+            allpost2.Items.Count.ShouldBe(2);
+
+            //驗證API: Blog 關閉則Post不能被查出 : 列出所有貼文(外部公告 1, 2 被列出)
+            var queryParams3 = new GetPostByBlogIdInput();
+            var allpost3 = await this._postsAppService.GetPostsByBlogId(queryParams3, true);
+            allpost3.Items.Count.ShouldBe(2);
+
+            //驗證API: Blog 關閉則Post不能被查出 : 查詢所有貼文(只有 外部公告1 被列出)
+            var queryParams4 = new GetPostByBlogIdInput()
+            {
+                Keyword = "外部公告1"
+            };
+            var allpost4 = await this._postsAppService.GetPostsByBlogId(queryParams4, true);
+            allpost4.Items.Count.ShouldBe(1);
+
+            //驗證API: Blog 關閉則Post不能被查出 : 貼文依建立時間反序，第一筆應為外部公告2
+            var queryParams5 = new GetPostByBlogIdInput()
+            {
+                Sorting = "creationTime desc"
+            };
+            var allpost5 = await this._postsAppService.GetPostsByBlogId(queryParams5, true);
+            allpost5.Items.Count.ShouldBe(2);
+            allpost5.Items.First().Title.ShouldBe("外部公告2");
         }
     }
 }
