@@ -23,7 +23,7 @@ namespace FS.Cms.Posts
 
             var query = (await this._postsStore.Post.WithDetailsAsync())
                 .WhereIf(input.BlogId.HasValue, x => x.BlogId == input.BlogId)
-                .WhereIf(isFront && input.BlogId.HasValue, x => enableBlogIdsQuery.Contains(x.BlogId))
+                .WhereIf(isFront, x => enableBlogIdsQuery.Contains(x.BlogId))
                 .WhereIf(isFront, x => !x.Disable)
                 .WhereIf(isFront, x =>
                     x.StartTime.Date <= DateTime.Now.Date &&
