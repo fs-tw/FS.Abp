@@ -13,6 +13,7 @@ import {
   MSTopbarService,
 } from '../../services/topbar.service';
 import { ApplicationInfo, EnvironmentService } from '@abp/ng.core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ms-topbar',
@@ -21,11 +22,11 @@ import { ApplicationInfo, EnvironmentService } from '@abp/ng.core';
     '[class.alain-ms__topbar]': 'true',
     '[class.alain-ms__topbar-single]': 'allNav',
   },
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MSTopbarComponent implements OnInit {
-  get appInfo(): ApplicationInfo {
-    return this.environment.getEnvironment().application;
+  get appInfo(): Observable<any> {
+    return this.environment.getEnvironment$();
   }
   inited = false;
 
@@ -37,8 +38,8 @@ export class MSTopbarComponent implements OnInit {
     private srv: MSTopbarService,
     //  public userSrv: UserService,
     private cdr: ChangeDetectorRef,
-    private environment: EnvironmentService
-  ) {}
+    private environment: EnvironmentService,
+  ) { }
 
   ngOnInit(): void {
     this.srv.getData().subscribe(() => {
