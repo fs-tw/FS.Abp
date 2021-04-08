@@ -5,10 +5,10 @@
   <ms-all-nav *ngIf="allNav"></ms-all-nav>
   <div class="alain-ms__topbar-logo">
     <a routerLink="/" class="alain-ms__topbar-logo-img">
-      <img *ngIf="appInfo.logoUrl; else defaultLogo" [src]="appInfo.logoUrl"/>
+      <img *ngIf="(appInfo | async).application?.logoUrl; else defaultLogo" [src]="(appInfo | async).application?.logoUrl"/>
     </a>
     <a routerLink="/" class="alain-ms__topbar-logo-link">
-      {{ appInfo.name }}
+      {{ (appInfo | async ).application?.name }}
     </a>
   </div>
   <!-- <ms-region *ngIf="userSrv?.isLogin" class="hidden-md"></ms-region> -->
