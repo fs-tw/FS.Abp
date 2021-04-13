@@ -23,6 +23,7 @@ namespace FS.Cms.Posts
     public enum DisplayMode : int
     {
         Content = 0,
-        Link = 1
+        Link = 1,
+        HtmlRaw = 2
     }
 }

@@ -6,6 +6,26 @@ import * as fns from 'date-fns';
 export const DEFAULT_POST_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Posts.Dtos.PostDto>(
   [
     {
+      type: ePropType.Number,
+      name: 'sequence',
+      displayName: 'Cms::FS.Post.Sequence',
+      sortable: false,
+      columnWidth: 40
+    },
+    {
+      type: ePropType.String,
+      name: 'disable',
+      displayName: 'Cms::FS.Post.Disable',
+      sortable: false,
+      columnWidth: 40,
+      valueResolver: (data) => {
+        let text = '';
+        if (data.record.disable) text = '是';
+        else text = '否';
+        return of(text);
+      },
+    },
+    {
       type: ePropType.String,
       name: 'title',
       displayName: 'Cms::FS.Post.Title',
@@ -20,49 +40,39 @@ export const DEFAULT_POST_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Posts.Dtos
       columnWidth: 60,
       valueResolver: (data) => {
         let text = '';
-        if (data.record.displayMode == Fs.Cms.Posts.DisplayMode.Content)
-          text = '內文';
-        else text = '連結';
+        switch (data.record.displayMode) {
+          case Fs.Cms.Posts.DisplayMode.Content:
+            text = '內文';
+            break;
+          case Fs.Cms.Posts.DisplayMode.Link:
+            text = '連結';
+            break;
+          case Fs.Cms.Posts.DisplayMode.HtmlRaw:
+            text = 'Html標籤';
+            break;
+          default:
+            text = '未知';
+            break;
+
+        }
         return of(text);
       },
     },
     {
       type: ePropType.String,
-      name: 'starttime',
-      displayName: 'Cms::FS.Post.StartTime',
+      name: '_starttime+endtime',
+      displayName: 'Cms::FS.Message:StartEndDate',
       sortable: false,
       columnWidth: 100,
       valueResolver: (data) => {
-        let date = '';
+        let result = '';let start = '';let end = '';
+        
         if (data.record.startTime)
-          date = fns.format(new Date(data.record.startTime), 'yyyy-MM-dd');
-        return of(date);
-      },
-    },
-    {
-      type: ePropType.String,
-      name: 'endtime',
-      displayName: 'Cms::FS.Post.EndTime',
-      sortable: false,
-      columnWidth: 100,
-      valueResolver: (data) => {
-        let date = '';
+          start = fns.format(new Date(data.record.startTime), 'yyyy-MM-dd');
         if (data.record.endTime)
-          date = fns.format(new Date(data.record.endTime), 'yyyy-MM-dd');
-        return of(date);
-      },
-    },
-    {
-      type: ePropType.String,
-      name: 'disable',
-      displayName: 'Cms::FS.Post.Disable',
-      sortable: false,
-      columnWidth: 60,
-      valueResolver: (data) => {
-        let text = '';
-        if (data.record.disable) text = '是';
-        else text = '否';
-        return of(text);
+          end = fns.format(new Date(data.record.endTime), 'yyyy-MM-dd');
+        result = `${start}<br>${end}`
+        return of(result);
       },
     }
   ]

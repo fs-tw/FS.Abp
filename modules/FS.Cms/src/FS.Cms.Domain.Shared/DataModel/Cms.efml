@@ -14,6 +14,7 @@
       </p1:Attributes>
       <Member Name="Content" Value="0" p1:Guid="d12d25ca-cb71-4427-b5ec-0c46414cb904" />
       <Member Name="Link" Value="1" p1:Guid="9373e10f-5c3d-41d8-bcc6-a3334654e74b" />
+      <Member Name="HtmlRaw" Value="2" p1:Guid="4a2bce32-6897-4def-b73b-021ae0d182e2" />
     </EnumType>
   </class>
   <class name="$ComplexTypes">
