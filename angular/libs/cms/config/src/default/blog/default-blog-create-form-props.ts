@@ -4,19 +4,19 @@ import { of } from 'rxjs';
 
 export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Blogs.Dtos.BlogDto>([  
   {
+    type: ePropType.Boolean,
+    name: 'static',
+    displayName: 'Cms::FS.Blog.Static:Description',
+    id: 'static',
+    defaultValue: false,
+  },
+  {
     type: ePropType.Number,
     name: 'sequence',
     displayName: 'Cms::FS.Blog.Sequence',
     id: 'sequence',
     defaultValue: "",
   },
-  //  {
-  //   type: ePropType.String,
-  //   name: 'no',
-  //   displayName: 'Cms::FS.Blog.No',
-  //   id: 'no',
-  //   defaultValue: ""
-  // },
   {
     type: ePropType.String,
     name: 'displayName',
@@ -41,23 +41,4 @@ export const DEFAULT_BLOG_CREATE_FORM_PROPS = FormProp.createMany<Fs.Cms.Blogs.D
     id: 'disable',
     defaultValue: false,    
   },
-
-  // 欄位已移除
-  // {
-  //   type: ePropType.String,
-  //   name: 'url',
-  //   displayName: 'Cms::FS.Blog.Url',
-  //   id: 'url',
-  //   defaultValue: "",
-  // },
-  // {
-  //   type: ePropType.String,    
-  //   name: 'listStyle',
-  //   displayName: 'Cms::FS.Blog.ListStyle',
-  //   id: 'listStyle',
-  //   defaultValue: "",  
-  // },
-
-
-  
 ]);
