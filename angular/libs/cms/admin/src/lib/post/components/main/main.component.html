@@ -1,8 +1,8 @@
-<nz-row nzGutter="16">
-  <nz-col nzSpan="8">
+<nz-row nzGutter="16"  [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <nz-col nzSpan="8" [nzXs]="24">
     <blog-list></blog-list>
   </nz-col>
-  <nz-col nzSpan="16">
+  <nz-col nzSpan="16" [nzXs]="24">
     <div>
       <post-list></post-list>
     </div>
