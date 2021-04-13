@@ -47,6 +47,7 @@
     "FS.Post.AttachmentFileUrls": "附件/文件網址",
     "FS.Post.PostImages": "發佈圖片",
     "FS.Post.SetAsCover": "設為封面圖",
+    "FS.Post.HtmlRaw": "HTML 標籤",
 
     "FS.Tag": "標籤",
     "FS.Tag.Management": "標籤管理",
@@ -63,6 +64,7 @@
     "FS.Message:Preview": "預覽",
     "FS.Message:Image": "圖示",
     "FS.Message:NullIsUnlimit": "'空'表示不限制",
+    "FS.Message:StartEndDate": "起訖日",
 
 
     "FS.Cms.Tags": "CMS-標籤",
