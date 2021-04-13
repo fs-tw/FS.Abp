@@ -8,6 +8,7 @@
     <FSVersion>422.0.1</FSVersion>
     <VoloVersion>422.0.1</VoloVersion>
     <EasyAbpVersion>2.1.2</EasyAbpVersion>
+	<TMVersion>422.0.3</TMVersion>
   </PropertyGroup>
 
   <PropertyGroup>
