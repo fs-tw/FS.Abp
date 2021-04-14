@@ -1,8 +1,46 @@
 {
   "culture": "en",
   "texts": {
-    "ManageYourProfile": "Manage your profile",
-    "SamplePageMessage": "A sample page for the FormManagement module",
+    "FS.FormManagement.Versions": "表單版本管理",
+
+    "FS.FormManagement.Versions.Version": "表單版本管理",
+    "DisplayName:Version.Create": "新增",
+    "DisplayName:Version.Update": "編輯",
+    "DisplayName:Version.Delete": "刪除",
+
+    "FS.FormManagement.Versions.VersionDefinition": "表單版本定義管理",
+    "DisplayName:VersionDefinition.Create": "新增",
+    "DisplayName:VersionDefinition.Update": "編輯",
+    "DisplayName:VersionDefinition.Delete": "刪除",
+
+    "FS.FormManagement.Records": "表單紀錄管理",
+
+    "FS.FormManagement.Records.Record": "表單紀錄管理",
+    "DisplayName:Records.Create": "新增",
+    "DisplayName:Records.Update": "編輯",
+    "DisplayName:Records.Delete": "刪除",
+
+    "FS.FormManagement.Records.RecordItem": "表單紀錄物件",
+    "DisplayName:RecordItem.Create": "新增",
+    "DisplayName:RecordItem.Update": "編輯",
+    "DisplayName:RecordItem.Delete": "刪除",
+
+    "FS.FormManagement.Forms": "表單管理",
+
+    "FS.FormManagement.Forms.Formal": "表單管理",
+    "DisplayName:Formal.Create": "新增",
+    "DisplayName:Formal.Update": "編輯",
+    "DisplayName:Formal.Delete": "刪除",
+
+    "FS.FormManagement.Forms.Group": "表單群組管理",
+    "DisplayName:Group.Create": "新增",
+    "DisplayName:Group.Update": "編輯",
+    "DisplayName:Group.Delete": "刪除",
+
+    "FS.FormManagement.Forms.Item": "表單物件管理",
+    "DisplayName:Item.Create": "新增",
+    "DisplayName:Item.Update": "編輯",
+    "DisplayName:Item.Delete": "刪除",
 
     "Forms": "Forms",
     "Versions": "Versions",

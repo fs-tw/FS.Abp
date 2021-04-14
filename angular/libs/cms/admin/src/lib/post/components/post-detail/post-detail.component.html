@@ -15,14 +15,13 @@
         </nz-radio-group>
       </se>
       <se label="{{'Cms::FS.Post.PublishDate'  |abpLocalization}}" required>
-        <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false"
-          [(ngModel)]="dateRange[0]"></nz-date-picker>
+        <nz-date-picker nzShowTime name="startDate" [nzAllowClear]="false" [(ngModel)]="dateRange[0]"></nz-date-picker>
       </se>
-      <se label="{{'Cms::FS.Post.PublishEndDate'  |abpLocalization}}" extra="{{'Cms::FS.Message:NullIsUnlimit'  |abpLocalization}}">
-        <nz-date-picker nzShowTime name="endDate" [nzAllowClear]="true"
-          [(ngModel)]="dateRange[1]"></nz-date-picker>
+      <se label="{{'Cms::FS.Post.PublishEndDate'  |abpLocalization}}"
+        extra="{{'Cms::FS.Message:NullIsUnlimit'  |abpLocalization}}">
+        <nz-date-picker nzShowTime name="endDate" [nzAllowClear]="true" [(ngModel)]="dateRange[1]"></nz-date-picker>
       </se>
-      
+
       <se label="{{'Cms::FS.Post.Title'  |abpLocalization}}" error="" required>
         <input type="text" nz-input [(ngModel)]="data.title" name="title" required>
       </se>
@@ -38,18 +37,26 @@
         <nz-select [(ngModel)]="data.displayMode" name="type">
           <nz-option [nzValue]="0" nzLabel="{{'Cms::FS.Post.Content'  |abpLocalization}}"></nz-option>
           <nz-option [nzValue]="1" nzLabel="{{'Cms::FS.Post.Url'  |abpLocalization}}"></nz-option>
+          <nz-option [nzValue]="2" nzLabel="{{'Cms::FS.Post.HtmlRaw'  |abpLocalization}}"></nz-option>
         </nz-select>
       </se>
+      <ng-container [ngSwitch]="data.displayMode">
+        <se label="{{'Cms::FS.Post.Content'  |abpLocalization}}" *ngSwitchCase="0">
+          <quill-editor [(ngModel)]="content" [ngModelOptions]="{standalone: true}">
+          </quill-editor>
+        </se>
 
-      <se label="{{'Cms::FS.Post.Content'  |abpLocalization}}" *ngIf="data.displayMode == 0">
-        <quill-editor [(ngModel)]="content" [ngModelOptions]="{standalone: true}">
-        </quill-editor>
-      </se>
+
+        <se label="{{'Cms::FS.Post.Url'  |abpLocalization}}" *ngSwitchCase="1">
+          <input type="text" nz-input [(ngModel)]="data.linkUrl" name="url" />
+        </se>
+        <se label="{{'Cms::FS.Post.Url'  |abpLocalization}}" *ngSwitchDefault>
+          <textarea type="text"  nz-input [(ngModel)]="content" name="url" rows="10"></textarea>
+        </se>
+
+      </ng-container>
 
 
-      <se label="{{'Cms::FS.Post.Url'  |abpLocalization}}" *ngIf="data.displayMode == 1">
-        <input type="text" nz-input [(ngModel)]="data.linkUrl" name="url">
-      </se>
 
       <se label="{{'Cms::FS.Post.AttachmentFileUrls'  |abpLocalization}}" optionalHelp="  {{'Cms::FS.Message:SuggestionImageSize'| abpLocalization}}：1080X608">
         <nz-tabset>

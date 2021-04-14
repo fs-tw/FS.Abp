@@ -16,7 +16,12 @@ export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Blogs.Dtos
         name: 'displayName',
         displayName: 'Cms::FS.Blog.DisplayName',
         sortable: false,
-        //columnWidth: 50,
+        valueResolver:(data)=>{
+
+            let displayName = data.record.displayName;
+            let result = `${displayName}<br><small>排序：${data.record.sequence}</small>`
+            return of(result)
+        }
     },
     // {
     //     type: ePropType.String,
@@ -32,9 +37,11 @@ export const DEFAULT_BLOG_ENTITY_PROPS = EntityProp.createMany<Fs.Cms.Blogs.Dtos
         sortable: false,
         columnWidth: 60,
         valueResolver: (data) => {           
-            let text = "";
-            if(data.record.disable) text = "是"
-            else text ="否"
+            let text = "禁用:";
+            if(data.record.disable) text = "禁用:是"
+            else text ="禁用:否";
+            
+            
             return of(text)
         },
     },
