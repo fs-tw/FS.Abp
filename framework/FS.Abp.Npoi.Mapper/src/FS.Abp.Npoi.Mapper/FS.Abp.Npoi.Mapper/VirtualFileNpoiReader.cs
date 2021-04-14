@@ -1,13 +1,10 @@
-﻿using NPOI.SS.UserModel;
+﻿using Microsoft.Extensions.Options;
 using Npoi.Mapper;
+using NPOI.SS.UserModel;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 using System.Data;
-using System.IO;
-using NPOI.XSSF.UserModel;
-using Microsoft.Extensions.Options;
+using System.Linq;
 
 namespace FS.Abp.Npoi.Mapper
 {
@@ -16,6 +13,7 @@ namespace FS.Abp.Npoi.Mapper
         private readonly Volo.Abp.VirtualFileSystem.IVirtualFileProvider _virtualFileProvider;
         private readonly IErrorHandler errorHandler;
         private readonly DataSeedOptions dataSeedOptions;
+
         public VirtualFileNpoiReader(
             Volo.Abp.VirtualFileSystem.IVirtualFileProvider virtualFileProvider,
             IErrorHandler errorHandler,
@@ -34,8 +32,33 @@ namespace FS.Abp.Npoi.Mapper
             if (!file.Exists)
                 return null;
             global::Npoi.Mapper.Mapper mapper = new global::Npoi.Mapper.Mapper(file.CreateReadStream());
+            filterEmptyRows(mapper, sheetName);
             List<T> sheet = mapper.Take<T>(sheetName).Select(x => x.Value).ToList();
             return sheet;
+
+            static void filterEmptyRows(global::Npoi.Mapper.Mapper mapper, string sheetName)
+            {
+                var sheet = mapper.Workbook.GetSheet(sheetName);
+                var emptyRows = getEmpryRows(sheet);
+                foreach (var row in emptyRows) sheet.RemoveRow(row);
+            }
+            static List<IRow> getEmpryRows(ISheet sheet)
+            {
+                var emptyRows = new List<IRow>();
+                var rowEnumerator = sheet.GetRowEnumerator();
+
+                while (rowEnumerator.MoveNext())
+                {
+                    var row = rowEnumerator.Current as IRow;
+
+                    if (row.All(cell => cell.CellType == CellType.Blank))
+                    {
+                        emptyRows.Add(row);
+                    }
+                }
+
+                return emptyRows;
+            }
         }
     }
 
@@ -44,7 +67,6 @@ namespace FS.Abp.Npoi.Mapper
         public List<T> ReadToTreeNode<T>(string filePath, string sheetName)
             where T : ITreeNode<T>, new()
         {
-
             var attribute = Volo.Abp.Reflection.ReflectionHelper.GetSingleAttributeOrDefault<Npoi.Mapper.Attributes.LevelStartAtAttribute>(typeof(T));
             if (attribute == null) throw new Exception($"{typeof(T).Name} should has LevelStartAtAttribute");
             var levelIndex = attribute.Index;
@@ -125,9 +147,7 @@ namespace FS.Abp.Npoi.Mapper
                 {
                     list.Single(t => t.Code == parentCode).Children.Add(n);
                 }
-
             });
-
 
             return result;
         }
@@ -153,5 +173,4 @@ namespace FS.Abp.Npoi.Mapper
             return availableParents.Count() == 1;
         }
     }
-
 }
