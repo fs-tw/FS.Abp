@@ -319,6 +319,8 @@ MIT
 @fs-tw/emailing
 MIT
 
+@fs-tw/form-management
+
 @fs-tw/theme-alain-ms
 
 @ng-bootstrap/ng-bootstrap
