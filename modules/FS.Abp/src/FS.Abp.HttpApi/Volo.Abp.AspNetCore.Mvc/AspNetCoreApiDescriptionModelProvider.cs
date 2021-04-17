@@ -334,7 +334,8 @@ namespace FS.Abp.AspNetCore.Mvc
                 return setting.RootPath;
             }
 
-            var areaAttr = controllerType.GetCustomAttributes().OfType<AreaAttribute>().FirstOrDefault();
+
+            var areaAttr = System.ComponentModel.TypeDescriptor.GetAttributes(controllerType).OfType<AreaAttribute>().FirstOrDefault();
             if (areaAttr != null)
             {
                 return areaAttr.RouteValue;
@@ -351,7 +352,7 @@ namespace FS.Abp.AspNetCore.Mvc
             }
 
             var remoteServiceAttr =
-                controllerType.GetCustomAttributes().OfType<RemoteServiceAttribute>().FirstOrDefault();
+                System.ComponentModel.TypeDescriptor.GetAttributes(controllerType).OfType<RemoteServiceAttribute>().FirstOrDefault();
             if (remoteServiceAttr?.Name != null)
             {
                 return remoteServiceAttr.Name;
