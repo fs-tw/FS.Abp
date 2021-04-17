@@ -12,9 +12,9 @@ namespace FS.Abp.Cli
     public class RenameService : ITransientDependency
     {
 
-        private readonly string sourceZipPath = @"D:\Works\11003\ec.works-0129\modules\FS.EShop\FS.EShop.zip";
-        private readonly string oldSolutionName = "FS.EShop";
-        private readonly string newSolutionName = "FS.EShopManagement";
+        private readonly string sourceZipPath = @"D:\Works\11003\fs.works.v4-1206\projects\FS.Abp\modules\FS.LineNotify\FS.LineNotify.zip";
+        private readonly string oldSolutionName = "FS.LineNotify";
+        private readonly string newSolutionName = "FS.Social.LineNotify";
         private readonly string destPath = @$"C:\";
         public void Execute()
         {
