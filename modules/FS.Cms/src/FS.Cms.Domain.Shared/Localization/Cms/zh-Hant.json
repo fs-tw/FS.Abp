@@ -17,6 +17,7 @@
 
 
 
+    "FS.Blog.Static": "不可刪除",
     "FS.Blog.No": "No",
     "FS.Blog.DisplayName": "顯示名稱",
     "FS.Blog.Description": "描述",
@@ -26,6 +27,7 @@
     "FS.Blog.Sequence": "排序",
     "FS.Blog.Url": "連結",
     "FS.Blog.ListStyle": "列表樣式",
+    "FS.Blog.Static:Description": "不可刪除(此選項請勿變更)",
 
 
     "FS.Post.BlogId": "BlogId",
@@ -40,13 +42,14 @@
     "FS.Post.PublishEndDate": "結束時間",
     "FS.Post.StartTime": "開始時間",
     "FS.Post.EndTime": "結束時間",
-    "FS.Post.DisplayMode": "顯示模式",
+    "FS.Post.DisplayMode": "模式",
     "FS.Post.Sequence": "排序",
     "FS.Post.AttachmentFile": "上傳附件",
     "FS.Post.AttachmentImage": "上傳圖片",
     "FS.Post.AttachmentFileUrls": "附件/文件網址",
     "FS.Post.PostImages": "發佈圖片",
     "FS.Post.SetAsCover": "設為封面圖",
+    "FS.Post.HtmlRaw": "HTML 標籤",
 
     "FS.Tag": "標籤",
     "FS.Tag.Management": "標籤管理",
@@ -63,6 +66,7 @@
     "FS.Message:Preview": "預覽",
     "FS.Message:Image": "圖示",
     "FS.Message:NullIsUnlimit": "'空'表示不限制",
+    "FS.Message:StartEndDate": "起訖日",
 
 
     "FS.Cms.Tags": "CMS-標籤",

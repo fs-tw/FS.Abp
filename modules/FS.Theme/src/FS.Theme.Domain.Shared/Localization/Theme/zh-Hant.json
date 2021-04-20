@@ -1,6 +1,35 @@
 {
   "culture": "zh-Hant",
   "texts": {
+    "FS.Theme.WebSiteInfos": "網站設定管理",
+    "FS.Theme.WebSiteInfos.WebSiteDefinition": "網站設定管理",
+    "DisplayName:WebSiteDefinition.Create": "新增",
+    "DisplayName:WebSiteDefinition.Update": "編輯",
+    "DisplayName:WebSiteDefinition.Delete": "刪除",
+
+    "FS.Theme.Routes": "網站選單管理",
+    "FS.Theme.Routes.RouteDefinition": "網站選單定義管理",
+    "DisplayName:RouteDefinition.Create": "新增",
+    "DisplayName:RouteDefinition.Update": "編輯",
+    "DisplayName:RouteDefinition.Delete": "刪除",
+
+    "FS.Theme.Routes.Route": "網站選單管理",
+    "DisplayName:Route.Create": "新增",
+    "DisplayName:Route.Update": "編輯",
+    "DisplayName:Route.Delete": "刪除",
+
+    "FS.Theme.Banners": "網站橫幅管理",
+    "FS.Theme.Banners.BannerDefinition": "網站橫幅定義管理",
+    "DisplayName:BannerDefinition.Create": "新增",
+    "DisplayName:BannerDefinition.Update": "編輯",
+    "DisplayName:BannerDefinition.Delete": "刪除",
+
+    "FS.Theme.Banners.Banner": "網站橫幅管理",
+    "DisplayName:Banner.Create": "新增",
+    "DisplayName:Banner.Update": "編輯",
+    "DisplayName:Banner.Delete": "刪除",
+
+
     "FS.Theme.WebSiteDefinition": "WebSiteDefinition",
     "FS.Theme.BannerDefinition": "BannerDefinition",
     "FS.Theme.Banner": "橫幅",

@@ -4,11 +4,12 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <Version>422.0.8</Version>
-    <FSVersion>422.0.1</FSVersion>
+    <Version>422.1.0</Version>
+    <FSVersion>422.0.3</FSVersion>
     <FSWorksVersion>422.0.5</FSWorksVersion>
     <VoloVersion>422.0.1</VoloVersion>
     <EasyAbpVersion>2.1.2</EasyAbpVersion>
+	<TMVersion>422.0.3</TMVersion>
   </PropertyGroup>
 
   <PropertyGroup>

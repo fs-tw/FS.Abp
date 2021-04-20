@@ -1,10 +1,10 @@
-# Step 1
-¨Ï¥Î nx generators "fs-add" Â×ºÓ²£¥Í½d¥»
+ï»¿# Step 1
+ä½¿ç”¨ nx generators "fs-add" è±ç¢©ç”¢ç”Ÿç¯„æœ¬
 
 # Step 2
-«Ø¥ß«á ng build {themename} --prod
+å»ºç«‹å¾Œ ng build {themename} --prod
 
-# lib.prod ¥Ø«eª©¥»
+# lib.prod ç›®å‰ç‰ˆæœ¬
 ```json 
 
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
@@ -23,7 +23,7 @@
 }
 ```
 
-# angular.json build ¨Ï¥Î nrwl package
+# angular.json build ä½¿ç”¨ nrwl package
 ```json
       "architect": {
         "build": {
