@@ -9,7 +9,6 @@ using Volo.Abp.IdentityServer.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
-using FS.Abp.EntityFrameworkCore;
 
 namespace FS.EntityFrameworkCore
 {
@@ -43,7 +42,6 @@ namespace FS.EntityFrameworkCore
 
             /* Configure your own tables/entities inside the ConfigureFS method */
 
-            builder.ConfigureAbp();
             builder.ConfigureFS();
         }
     }

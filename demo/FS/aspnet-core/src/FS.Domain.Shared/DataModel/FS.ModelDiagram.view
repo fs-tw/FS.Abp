@@ -563,7 +563,7 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
-                      <Path>98ddbaee-bee8-4cdb-86fb-a5b933149c65</Path>
+                      <Path>e3f3e6bd-ba05-48c6-a23b-1b8a40d877a1</Path>
                       <TypeName>EntityDeveloper.EnumTypeMember</TypeName>
                     </Oid>
                   </Model>
@@ -582,6 +582,25 @@
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
+                      <Path>98ddbaee-bee8-4cdb-86fb-a5b933149c65</Path>
+                      <TypeName>EntityDeveloper.EnumTypeMember</TypeName>
+                    </Oid>
+                  </Model>
+                  <Model xsi:type="EnumTypeMemberVwModel">
+                    <CustomProperties>
+                      <OID>32</OID>
+                      <Parent>29</Parent>
+                    </CustomProperties>
+                    <Children />
+                    <Location>
+                      <X>1 px</X>
+                      <Y>37 px</Y>
+                    </Location>
+                    <Size>
+                      <Width>144 px</Width>
+                      <Height>18 px</Height>
+                    </Size>
+                    <Oid xsi:type="SchemaModelOID">
                       <Path>75595928-d13f-4a59-8cc9-89e22ad1464b</Path>
                       <TypeName>EntityDeveloper.EnumTypeMember</TypeName>
                     </Oid>
@@ -589,11 +608,11 @@
                 </Children>
                 <Size>
                   <Width>146 px</Width>
-                  <Height>35 px</Height>
+                  <Height>53 px</Height>
                 </Size>
                 <MaxSize>
                   <Width>0 px</Width>
-                  <Height>37 px</Height>
+                  <Height>55 px</Height>
                 </MaxSize>
               </Model>
             </Children>
@@ -603,15 +622,15 @@
             </Location>
             <Size>
               <Width>150 px</Width>
-              <Height>85 px</Height>
+              <Height>103 px</Height>
             </Size>
             <MinSize>
               <Width>100 px</Width>
-              <Height>85 px</Height>
+              <Height>103 px</Height>
             </MinSize>
             <MaxSize>
               <Width>800 px</Width>
-              <Height>85 px</Height>
+              <Height>103 px</Height>
             </MaxSize>
             <Ports />
             <Oid xsi:type="SchemaModelOID">
@@ -624,10 +643,10 @@
         <GridSize>8 px</GridSize>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>1</Scale>
+          <Scale>0.74</Scale>
           <Location>
-            <X>-966.4 px</X>
-            <Y>-324 px</Y>
+            <X>-1317.93917110303 px</X>
+            <Y>-411.283780862016 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

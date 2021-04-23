@@ -28,17 +28,20 @@ namespace FS.Abp.AspNetCore.Mvc
     {
         public ILogger<AspNetCoreApiDescriptionModelProvider> Logger { get; set; }
 
+        private readonly AspNetCoreApiDescriptionModelProviderOptions _options;
         private readonly IApiDescriptionGroupCollectionProvider _descriptionProvider;
-        private readonly AbpAspNetCoreMvcOptions _options;
+        private readonly AbpAspNetCoreMvcOptions _abpAspNetCoreMvcOptions;
         private readonly AbpApiDescriptionModelOptions _modelOptions;
 
         public AspNetCoreApiDescriptionModelProvider(
+            IOptions<AspNetCoreApiDescriptionModelProviderOptions> options,
             IApiDescriptionGroupCollectionProvider descriptionProvider,
-            IOptions<AbpAspNetCoreMvcOptions> options,
+            IOptions<AbpAspNetCoreMvcOptions> abpAspNetCoreMvcOptions,
             IOptions<AbpApiDescriptionModelOptions> modelOptions)
         {
-            _descriptionProvider = descriptionProvider;
             _options = options.Value;
+            _descriptionProvider = descriptionProvider;
+            _abpAspNetCoreMvcOptions = abpAspNetCoreMvcOptions.Value;
             _modelOptions = modelOptions.Value;
 
             Logger = NullLogger<AspNetCoreApiDescriptionModelProvider>.Instance;
@@ -84,15 +87,14 @@ namespace FS.Abp.AspNetCore.Mvc
             );
 
             var controllerModel = moduleModel.GetOrAddController(
-                controllerType.FullName,
-                CalculateControllerName(controllerType, setting),
+                _options.ControllerNameGenerator(controllerType, setting),
                 controllerType,
                 _modelOptions.IgnoredInterfaces
             );
 
             var method = apiDescription.ActionDescriptor.GetMethodInfo();
 
-            var uniqueMethodName = GetUniqueActionName(method);
+            var uniqueMethodName = _options.ActionNameGenerator(method);
             if (controllerModel.Actions.ContainsKey(uniqueMethodName))
             {
                 Logger.LogWarning(
@@ -120,43 +122,6 @@ namespace FS.Abp.AspNetCore.Mvc
             }
 
             AddParameterDescriptionsToModel(actionModel, method, apiDescription);
-        }
-
-        private static string CalculateControllerName(Type controllerType, ConventionalControllerSetting setting)
-        {
-            var controllerName = controllerType.Name.RemovePostFix("Controller")
-                .RemovePostFix(ApplicationService.CommonPostfixes);
-
-            if (setting?.UrlControllerNameNormalizer != null)
-            {
-                controllerName =
-                    setting.UrlControllerNameNormalizer(
-                        new UrlControllerNameNormalizerContext(setting.RootPath, controllerName));
-            }
-
-            return controllerName;
-        }
-
-        private static string GetUniqueActionName(MethodInfo method)
-        {
-            var methodNameBuilder = new StringBuilder(method.Name).Replace("Async", "");
-            var parameters = method.GetParameters();
-            if (parameters.Any())
-            {
-                methodNameBuilder.Append("By");
-
-                for (var i = 0; i < parameters.Length; i++)
-                {
-                    if (i > 0)
-                    {
-                        methodNameBuilder.Append("And");
-                    }
-
-                    methodNameBuilder.Append(parameters[i].Name.ToPascalCase());
-                }
-            }
-
-            return methodNameBuilder.ToString();
         }
 
         private static List<string> GetSupportedVersions(Type controllerType, MethodInfo method,
@@ -284,9 +249,20 @@ namespace FS.Abp.AspNetCore.Mvc
                 return;
             }
 
+            var parameterDescriptionNames = apiDescription
+                .ParameterDescriptions
+                .Select(p => p.Name)
+                .ToArray();
+
+            var methodParameterNames = method
+                .GetParameters()
+                .Where(IsNotFromServicesParameter)
+                .Select(GetMethodParamName)
+                .ToArray();
+
             var matchedMethodParamNames = ArrayMatcher.Match(
-                apiDescription.ParameterDescriptions.Select(p => p.Name).ToArray(),
-                method.GetParameters().Select(GetMethodParamName).ToArray()
+                parameterDescriptionNames,
+                methodParameterNames
             );
 
             for (var i = 0; i < apiDescription.ParameterDescriptions.Count; i++)
@@ -298,6 +274,7 @@ namespace FS.Abp.AspNetCore.Mvc
 
                 actionModel.AddParameter(ParameterApiDescriptionModel.Create(
                         parameterDescription.Name,
+                        _options.ApiParameterNameGenerator?.Invoke(parameterDescription),
                         matchedMethodParamName,
                         parameterDescription.Type,
                         parameterDescription.RouteInfo?.IsOptional ?? false,
@@ -310,6 +287,11 @@ namespace FS.Abp.AspNetCore.Mvc
                     )
                 );
             }
+        }
+
+        private static bool IsNotFromServicesParameter(ParameterInfo parameterInfo)
+        {
+            return !parameterInfo.IsDefined(typeof(FromServicesAttribute), true);
         }
 
         public string GetMethodParamName(ParameterInfo parameterInfo)
@@ -333,7 +315,6 @@ namespace FS.Abp.AspNetCore.Mvc
             {
                 return setting.RootPath;
             }
-
 
             var areaAttr = System.ComponentModel.TypeDescriptor.GetAttributes(controllerType).OfType<AreaAttribute>().FirstOrDefault();
             if (areaAttr != null)
@@ -364,7 +345,7 @@ namespace FS.Abp.AspNetCore.Mvc
         [CanBeNull]
         private ConventionalControllerSetting FindSetting(Type controllerType)
         {
-            foreach (var controllerSetting in _options.ConventionalControllers.ConventionalControllerSettings)
+            foreach (var controllerSetting in _abpAspNetCoreMvcOptions.ConventionalControllers.ConventionalControllerSettings)
             {
                 if (controllerSetting.ControllerTypes.Contains(controllerType))
                 {

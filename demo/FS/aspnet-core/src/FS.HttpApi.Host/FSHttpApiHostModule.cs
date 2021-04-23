@@ -13,6 +13,7 @@ using FS.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
+using Volo.Abp.Account;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
 using Volo.Abp.AspNetCore.MultiTenancy;
@@ -66,7 +67,7 @@ namespace FS
             ConfigureLocalization();
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
-            ConfigureSwaggerServices(context);
+            ConfigureSwaggerServices(context, configuration);
         }
 
         private void ConfigureBundles()
@@ -85,6 +86,10 @@ namespace FS
             Configure<AppUrlOptions>(options =>
             {
                 options.Applications["MVC"].RootUrl = configuration["App:SelfUrl"];
+                options.RedirectAllowedUrls.AddRange(configuration["App:RedirectAllowedUrls"].Split(','));
+
+                options.Applications["Angular"].RootUrl = configuration["App:ClientUrl"];
+                options.Applications["Angular"].Urls[AccountUrlNames.PasswordReset] = "account/reset-password";
             });
         }
 
@@ -116,7 +121,7 @@ namespace FS
         {
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConventionalControllers.Create(typeof(FSApplicationModule).Assembly);
+                //options.ConventionalControllers.Create(typeof(FSApplicationModule).Assembly);
             });
         }
 
@@ -136,16 +141,28 @@ namespace FS
                 });
         }
 
-        private static void ConfigureSwaggerServices(ServiceConfigurationContext context)
+        private static void ConfigureSwaggerServices(ServiceConfigurationContext context, IConfiguration configuration)
         {
-            context.Services.AddSwaggerGen(
+            context.Services.AddAbpSwaggerGenWithOAuth(
+                configuration["AuthServer:Authority"],
+                new Dictionary<string, string>
+                {
+                    {"FS", "FS API"}
+                },
                 options =>
                 {
                     options.SwaggerDoc("v1", new OpenApiInfo { Title = "FS API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
-                    //options.UseOneOfForPolymorphism();
-                    options.CustomSchemaIds(o => o.FullName);
+                    options.CustomSchemaIds(type => type.FullName);
                 });
+            //context.Services.AddSwaggerGen(
+            //    options =>
+            //    {
+            //        options.SwaggerDoc("v1", new OpenApiInfo { Title = "FS API", Version = "v1" });
+            //        options.DocInclusionPredicate((docName, description) => true);
+            //        //options.UseOneOfForPolymorphism();
+            //        options.CustomSchemaIds(o => o.FullName);
+            //    });
             //context.Services.AddSwaggerGenNewtonsoftSupport();
         }
 
@@ -226,6 +243,10 @@ namespace FS
             app.UseAbpSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "FS API");
+                var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
+                c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+                c.OAuthClientSecret(configuration["AuthServer:SwaggerClientSecret"]);
+                c.OAuthScopes("FS");
             });
 
             app.UseAuditing();

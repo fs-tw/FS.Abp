@@ -18,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DataModel\Abp.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Abp.efml</DependentUpon>
-    </Compile>
+    <Compile Remove="DataModel\Abp.cs" />
   </ItemGroup>
 
   <ItemGroup>
