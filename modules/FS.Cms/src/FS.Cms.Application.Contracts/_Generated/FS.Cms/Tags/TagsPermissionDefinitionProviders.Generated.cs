@@ -16,9 +16,9 @@ namespace FS.Cms.Tags
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var TagsGroup = context.AddGroup(TagsPermissionNames.ModuleName,L(TagsPermissionNames.ModuleName));
+            var _TagsGroup = context.AddGroup(TagsPermissionNames.ModuleName,L(TagsPermissionNames.ModuleName));
 
-            var Tag = TagsGroup.AddPermission(TagsPermissionNames.Tag.Default,L(TagsPermissionNames.Tag.Default));
+            var Tag = _TagsGroup.AddPermission(TagsPermissionNames.Tag.Default,L(TagsPermissionNames.Tag.Default));
             Tag.AddChild(TagsPermissionNames.Tag.Create , L("DisplayName:Tag.Create"));
             Tag.AddChild(TagsPermissionNames.Tag.Update , L("DisplayName:Tag.Update"));
             Tag.AddChild(TagsPermissionNames.Tag.Delete , L("DisplayName:Tag.Delete"));

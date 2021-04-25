@@ -29,7 +29,7 @@ namespace FS.Cms.Posts.Dtos
     {
     }
 
-    public partial class PostDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
+    public partial class PostDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual System.Guid BlogId { get; set; }
 
@@ -57,7 +57,7 @@ namespace FS.Cms.Posts.Dtos
 
     }
 
-    public partial class PostCreateDto
+    public partial class PostCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual System.Guid BlogId { get; set; }
 
@@ -85,7 +85,7 @@ namespace FS.Cms.Posts.Dtos
 
     }
 
-    public partial class PostUpdateDto
+    public partial class PostUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual System.Guid BlogId { get; set; }
 
