@@ -34,7 +34,7 @@ namespace FS.Abp.EntityFrameworkCore
             connection.Open();
 
             new AbpDbContext(
-                new DbContextOptionsBuilder<AbpDbContext>().UseSqlite(connection).Options
+                new DbContextOptionsBuilder<Abp>().UseSqlite(connection).Options
             ).GetService<IRelationalDatabaseCreator>().CreateTables();
 
             return connection;

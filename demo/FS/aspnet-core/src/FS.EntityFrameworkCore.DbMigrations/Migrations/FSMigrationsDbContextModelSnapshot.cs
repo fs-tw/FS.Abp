@@ -16,16 +16,16 @@ namespace FS.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FS.Customers.Customer", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -41,8 +41,9 @@ namespace FS.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CreatorId");
 
-                    b.Property<int>("Discriminator")
-                        .HasColumnType("int")
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Discriminator");
 
                     b.Property<string>("Email")
@@ -71,13 +72,16 @@ namespace FS.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
 
+                    b.Property<string>("test")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CreationTime");
 
-                    b.ToTable("AppCustomers");
+                    b.ToTable("FSCustomers");
 
-                    b.HasDiscriminator<int>("Discriminator").HasValue(0);
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Customer");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
@@ -1996,7 +2000,7 @@ namespace FS.Migrations
                     b.ToTable("AbpTenantConnectionStrings");
                 });
 
-            modelBuilder.Entity("FS.Customers.Enterprise", b =>
+            modelBuilder.Entity("FS.Customers.Company", b =>
                 {
                     b.HasBaseType("FS.Customers.Customer");
 
@@ -2005,22 +2009,7 @@ namespace FS.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Address");
 
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("CompanyName");
-
-                    b.Property<string>("Industry")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Industry");
-
-                    b.Property<string>("Product")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Product");
-
-                    b.HasDiscriminator().HasValue(2);
+                    b.HasDiscriminator().HasValue("Company");
                 });
 
             modelBuilder.Entity("FS.Customers.Person", b =>
@@ -2032,7 +2021,7 @@ namespace FS.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
-                    b.HasDiscriminator().HasValue(1);
+                    b.HasDiscriminator().HasValue("Person");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>

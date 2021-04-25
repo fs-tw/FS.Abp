@@ -10,21 +10,21 @@ namespace FS
         public async Task SeedAsync(DataSeedContext context)
         {
 
-            FS.Customers.Enterprise e = new Customers.Enterprise()
-            {
-                Email = "CompanyNameEmail",
-                CompanyName = "CompanyName",
-                Phone= "EnterprisePhone"
-            };
+            //FS.Customers.Enterprise e = new Customers.Enterprise()
+            //{
+            //    Email = "CompanyNameEmail",
+            //    CompanyName = "CompanyName",
+            //    Phone= "EnterprisePhone"
+            //};
 
-            FS.Customers.Person p = new Customers.Person()
-            {
-                Email = "PersonEmail",
-                Phone = "PersonPhone"
-            };
+            //FS.Customers.Person p = new Customers.Person()
+            //{
+            //    Email = "PersonEmail",
+            //    Phone = "PersonPhone"
+            //};
 
-            await CustomersStore.Customer.InsertAsync(e);
-            await CustomersStore.Customer.InsertAsync(p);
+            //await CustomersStore.Customer.InsertAsync(e);
+            //await CustomersStore.Customer.InsertAsync(p);
         }
     }
 }

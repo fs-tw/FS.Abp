@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\Emplyee.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Enterprise.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\IEmplyeeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\IEnterpriseRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS\IPersonRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS\Person.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
     <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
   </ItemGroup>
@@ -26,6 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="_Generated\FS\Customers\Company.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS\Customers\Customer.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
@@ -34,15 +47,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS\Customers\Enterprise.Generated.cs">
+    <Compile Update="_Generated\FS\Customers\ICompanyRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\ICustomerRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\IEnterpriseRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>

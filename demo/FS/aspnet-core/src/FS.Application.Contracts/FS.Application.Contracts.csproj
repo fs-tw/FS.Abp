@@ -8,8 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\Dtos\ContactDto.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDto.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\EnterpriseDto.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\ICompanyCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\IEmplyeeCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IEnterpriseCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IPersonCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\IPersonCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,18 +30,19 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="_Generated\FS\Customers\Dtos\CompanyDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\CustomerDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\Dtos\EnterpriseDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
