@@ -258,3 +258,5 @@ src/FS.IdentityServer/Logs/*
 src/FS.HttpApi.Host/Logs/*
 src/FS.HttpApi.Host/Logs/*
 src/FS.DbMigrator/Logs/*
+src/FS.Blazor.Server/Logs/*
+src/FS.Blazor.Server.Tiered/Logs/*

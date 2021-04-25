@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\EfCoreEmplyeeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\EfCoreEnterpriseRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Emplyee.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Enterprise.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS\EfCorePersonRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS\Person.Configuration.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
@@ -41,6 +50,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS\Customers\Company.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS\Customers\Customer.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
@@ -49,19 +62,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS\Customers\EfCoreCompanyRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS\Customers\EfCoreCustomerRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS\Customers\EfCoreEnterpriseRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS\Customers\EfCorePersonRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\Enterprise.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>

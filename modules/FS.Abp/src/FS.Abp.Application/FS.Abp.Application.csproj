@@ -13,27 +13,4 @@
     <ProjectReference Include="..\FS.Abp.Domain\FS.Abp.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\EmailSettingsDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\EmailSettingsDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\SmtpDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\SmtpDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\EmailSettingsAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Emailing</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
 </Project>

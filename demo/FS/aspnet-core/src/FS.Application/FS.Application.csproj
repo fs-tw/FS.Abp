@@ -8,13 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\CompanyCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\ContactDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\ContactDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\EnterpriseDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\EnterpriseDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\EmplyeeCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\EnterpriseCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\PersonCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\PersonCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes\FS.Abp.AspNetCore.Mvc.JsonSubTypes.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
@@ -27,6 +35,7 @@
     <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,19 +43,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS\Customers\Dtos\CompanyDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\Dtos\CompanyDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\CustomerDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\CustomerDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\Dtos\EnterpriseDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\Dtos\EnterpriseDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

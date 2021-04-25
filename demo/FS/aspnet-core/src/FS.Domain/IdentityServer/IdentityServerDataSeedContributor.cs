@@ -142,26 +142,6 @@ namespace FS.IdentityServer
 
             var configurationSection = _configuration.GetSection("IdentityServer:Clients");
 
-            //Web Client
-            var webClientId = configurationSection["FS_Web:ClientId"];
-            if (!webClientId.IsNullOrWhiteSpace())
-            {
-                var webClientRootUrl = configurationSection["FS_Web:RootUrl"].EnsureEndsWith('/');
-
-                /* FS_Web client is only needed if you created a tiered
-                 * solution. Otherwise, you can delete this client. */
-
-                await CreateClientAsync(
-                    name: webClientId,
-                    scopes: commonScopes,
-                    grantTypes: new[] { "hybrid" },
-                    secret: (configurationSection["FS_Web:ClientSecret"] ?? "1q2w3e*").Sha256(),
-                    redirectUri: $"{webClientRootUrl}signin-oidc",
-                    postLogoutRedirectUri: $"{webClientRootUrl}signout-callback-oidc",
-                    frontChannelLogoutUri: $"{webClientRootUrl}Account/FrontChannelLogout",
-                    corsOrigins: new[] { webClientRootUrl.RemovePostFix("/") }
-                );
-            }
 
             //Console Test / Angular Client
             var consoleAndAngularClientId = configurationSection["FS_App:ClientId"];
@@ -181,23 +161,7 @@ namespace FS.IdentityServer
                 );
             }
 
-            // Blazor Client
-            var blazorClientId = configurationSection["FS_Blazor:ClientId"];
-            if (!blazorClientId.IsNullOrWhiteSpace())
-            {
-                var blazorRootUrl = configurationSection["FS_Blazor:RootUrl"].TrimEnd('/');
 
-                await CreateClientAsync(
-                    name: blazorClientId,
-                    scopes: commonScopes,
-                    grantTypes: new[] { "authorization_code" },
-                    secret: configurationSection["FS_Blazor:ClientSecret"]?.Sha256(),
-                    requireClientSecret: false,
-                    redirectUri: $"{blazorRootUrl}/authentication/login-callback",
-                    postLogoutRedirectUri: $"{blazorRootUrl}/authentication/logout-callback",
-                    corsOrigins: new[] { blazorRootUrl.RemovePostFix("/") }
-                );
-            }
 
             // Swagger Client
             var swaggerClientId = configurationSection["FS_Swagger:ClientId"];

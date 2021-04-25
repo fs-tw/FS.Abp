@@ -2,9 +2,9 @@
 {
     public static class FSDbProperties
     {
-        public const string DbTablePrefix = "App";
+        public const string DbTablePrefix = "FS";
 
         public const string DbSchema = null;
-        public const string ConnectionStringName = "Crm";
+        public const string ConnectionStringName = "FS";
     }
 }

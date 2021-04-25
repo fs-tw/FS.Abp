@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,27 +8,8 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions.csproj" />
     <ProjectReference Include="..\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\EmailSettingsDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\Dtos\SmtpDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\IEmailingApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Emailing</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.Abp\Emailing\IEmailSettingsAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Emailing</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>

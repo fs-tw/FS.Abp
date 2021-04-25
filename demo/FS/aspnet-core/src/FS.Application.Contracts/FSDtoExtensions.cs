@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Identity;
+﻿using System.Collections.Generic;
+using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
 
@@ -12,6 +13,17 @@ namespace FS
         {
             OneTimeRunner.Run(() =>
             {
+                ObjectExtensionManager.Instance
+                    .AddOrUpdateProperty<List<FS.Contact>>(
+                        new[]
+                        {
+                            typeof(Customers.Dtos.CustomerDto),
+                            typeof(Customers.Dtos.CustomerCreateDto),
+                            typeof(Customers.Dtos.CustomerUpdateDto)
+                        },
+                        nameof(FS.CustomerExtension.Contacts));
+                //ObjectExtensionManager.Instance
+                //   .AddOrUpdateProperty<Customers.Dtos.CustomerDto, string>("test");
                 /* You can add extension properties to DTOs
                  * defined in the depended modules.
                  *
