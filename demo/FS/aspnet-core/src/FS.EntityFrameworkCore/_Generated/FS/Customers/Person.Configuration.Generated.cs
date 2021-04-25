@@ -32,6 +32,10 @@ namespace FS.Customers
         public void Configure(EntityTypeBuilder<Person> builder)
         {
             builder.Property(x => x.Name).HasColumnName(@"Name").IsRequired().ValueGeneratedNever();
+            builder.Property<Guid?>(@"TenantId").HasColumnName(@"TenantId").ValueGeneratedNever();
+
+            builder.ConfigureAuditedAggregateRoot();
+            builder.HasIndex(x => x.CreationTime);
 
             CustomizeConfiguration(builder);
         }

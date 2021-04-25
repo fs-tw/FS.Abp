@@ -28,6 +28,8 @@ namespace FS.EntityFrameworkCore
     [ConnectionStringName(FSDbProperties.ConnectionStringName)]
     public partial interface IFSDbContext : IEfCoreDbContext
     {
+        DbSet<FS.Customers.Person> People { get; set; }
+        DbSet<FS.Customers.Company> Companies { get; set; }
         DbSet<FS.Customers.Customer> Customers { get; set; }
     }
 }

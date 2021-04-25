@@ -28,6 +28,13 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using FS.Customers.Dtos;
+using Newtonsoft.Json;
+using Volo.Abp.Json;
+using Volo.Abp.Json.Newtonsoft;
+using Volo.Abp.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Volo.Abp.Json.SystemTextJson;
 
 namespace FS
 {
@@ -49,12 +56,11 @@ namespace FS
 
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
-            PreConfigure<Volo.Abp.Json.AbpJsonOptions>(options =>
+            Configure<Volo.Abp.Json.AbpJsonOptions>(o =>
             {
-                //options.UseHybridSerializer = false;
+                o.UseHybridSerializer = false;
             });
         }
-
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             var configuration = context.Services.GetConfiguration();
@@ -68,6 +74,8 @@ namespace FS
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context, configuration);
+
+
         }
 
         private void ConfigureBundles()
@@ -154,6 +162,7 @@ namespace FS
                     options.SwaggerDoc("v1", new OpenApiInfo { Title = "FS API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
+                    options.UseOneOfForPolymorphism();
                 });
             //context.Services.AddSwaggerGen(
             //    options =>
@@ -163,7 +172,7 @@ namespace FS
             //        //options.UseOneOfForPolymorphism();
             //        options.CustomSchemaIds(o => o.FullName);
             //    });
-            //context.Services.AddSwaggerGenNewtonsoftSupport();
+            context.Services.AddSwaggerGenNewtonsoftSupport();
         }
 
         private void ConfigureLocalization()

@@ -18,21 +18,21 @@ namespace FS.Customers.Dtos
         public CustomerAutoMapperProfile()
         {
             CreateMap<FS.Customers.Customer, CustomerDto>()
-            .Include<FS.Customers.Enterprise, FS.Customers.Dtos.EnterpriseDto>()
             .Include<FS.Customers.Person, FS.Customers.Dtos.PersonDto>()
+            .Include<FS.Customers.Company, FS.Customers.Dtos.CompanyDto>()
             .ReverseMap();
         
             CreateMap<CustomerCreateDto, FS.Customers.Customer>()
-            .Include<FS.Customers.Dtos.EnterpriseCreateDto, FS.Customers.Enterprise>()
-            .Include<FS.Customers.Dtos.PersonCreateDto, FS.Customers.Person>();
+            .Include<FS.Customers.Dtos.PersonCreateDto, FS.Customers.Person>()
+            .Include<FS.Customers.Dtos.CompanyCreateDto, FS.Customers.Company>();
         
             CreateMap<CustomerUpdateDto, FS.Customers.Customer>()
-            .Include<FS.Customers.Dtos.EnterpriseUpdateDto, FS.Customers.Enterprise>()
-            .Include<FS.Customers.Dtos.PersonUpdateDto, FS.Customers.Person>();
+            .Include<FS.Customers.Dtos.PersonUpdateDto, FS.Customers.Person>()
+            .Include<FS.Customers.Dtos.CompanyUpdateDto, FS.Customers.Company>();
         
             CreateMap<FS.Customers.Customer, CustomerWithDetailsDto>()
-            .Include<FS.Customers.Enterprise, FS.Customers.Dtos.EnterpriseWithDetailsDto>()
-            .Include<FS.Customers.Person, FS.Customers.Dtos.PersonWithDetailsDto>();
+            .Include<FS.Customers.Person, FS.Customers.Dtos.PersonWithDetailsDto>()
+            .Include<FS.Customers.Company, FS.Customers.Dtos.CompanyWithDetailsDto>();
         
             CustomizeConfiguration();
         }

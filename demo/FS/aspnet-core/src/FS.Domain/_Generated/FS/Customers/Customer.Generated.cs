@@ -42,13 +42,7 @@ namespace FS.Customers
             set;
         }
 
-        public virtual CustomerDiscriminator Discriminator
-        {
-            get;
-            set;
-        }
-
-        public virtual System.TimeSpan TimeSpan
+        public virtual string Discriminator
         {
             get;
             set;

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="EasyAbp.Abp.Trees.Domain.Shared" Version="$(EasyAbpTreeVersion)" />
-    <PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
   </ItemGroup>
 
@@ -19,6 +18,10 @@
 
   <ItemGroup>
     <Compile Remove="DataModel\Abp.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Json\src\FS.Abp.Json\FS.Abp.Json.csproj" />
   </ItemGroup>
 
   <ItemGroup>

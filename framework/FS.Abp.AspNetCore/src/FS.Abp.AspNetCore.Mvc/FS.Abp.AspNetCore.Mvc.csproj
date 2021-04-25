@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="..\..\..\..\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Abp.Json\src\FS.Abp.Json\FS.Abp.Json.csproj" />
+    <ProjectReference Include="..\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

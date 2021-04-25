@@ -34,6 +34,10 @@ namespace FS
         )]
     public class FSDomainModule : AbpModule
     {
+        public override void PreConfigureServices(ServiceConfigurationContext context)
+        {
+            FSEntityExtensionConfigurator.Configure();
+        }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             Configure<AbpMultiTenancyOptions>(options =>

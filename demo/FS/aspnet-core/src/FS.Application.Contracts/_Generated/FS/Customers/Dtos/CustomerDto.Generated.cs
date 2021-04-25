@@ -29,45 +29,39 @@ namespace FS.Customers.Dtos
     {
     }
 
-    public partial class CustomerDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
+    public partial class CustomerDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string Phone { get; set; }
 
         public virtual string Email { get; set; }
 
-        public virtual FS.Customers.CustomerDiscriminator Discriminator { get; set; }
-
-        public virtual System.TimeSpan TimeSpan { get; set; }
+        public virtual string Discriminator { get; set; }
 
     }
 
-    public partial class CustomerCreateDto
+    public partial class CustomerCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Phone { get; set; }
 
         public virtual string Email { get; set; }
 
-        public virtual FS.Customers.CustomerDiscriminator Discriminator { get; set; }
-
-        public virtual System.TimeSpan TimeSpan { get; set; }
+        public virtual string Discriminator { get; set; }
 
     }
 
-    public partial class CustomerUpdateDto
+    public partial class CustomerUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Phone { get; set; }
 
         public virtual string Email { get; set; }
 
-        public virtual FS.Customers.CustomerDiscriminator Discriminator { get; set; }
-
-        public virtual System.TimeSpan TimeSpan { get; set; }
+        public virtual string Discriminator { get; set; }
 
     }
 
-    public partial class CustomerGetListDto : SearchResultRequestDto
+    public partial class CustomerGetListDto : SearchResultRequestDto,IDiscriminatorResultRequest
     {
-        public virtual FS.Customers.CustomerDiscriminator Discriminator { get; set; }
+        public virtual string Discriminator { get; set; }
 
     }
 

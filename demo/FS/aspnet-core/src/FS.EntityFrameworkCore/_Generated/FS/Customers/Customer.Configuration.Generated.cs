@@ -32,13 +32,11 @@ namespace FS.Customers
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.ToTable(options.TablePrefix + @"Customers", options.Schema);
-            builder.HasDiscriminator<CustomerDiscriminator>(x=>x.Discriminator).HasValue<FS.Customers.Customer>(CustomerDiscriminator.None).HasValue<FS.Customers.Enterprise>(CustomerDiscriminator.Enterprise).HasValue<FS.Customers.Person>(CustomerDiscriminator.Personal);
-            //builder.HasDiscriminator(@"Discriminator", typeof(int)).HasValue<FS.Customers.Customer>(@"0").HasValue<FS.Customers.Enterprise>(@"2").HasValue<FS.Customers.Person>(@"1");
+            builder.HasDiscriminator(@"Discriminator", typeof(string)).HasValue<FS.Customers.Customer>(@"Customer").HasValue<FS.Customers.Person>(@"Person").HasValue<FS.Customers.Company>(@"Company");
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Phone).HasColumnName(@"Phone").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Email).HasColumnName(@"Email").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Discriminator).HasColumnName(@"Discriminator").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.TimeSpan).HasColumnName(@"TimeSpan").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 

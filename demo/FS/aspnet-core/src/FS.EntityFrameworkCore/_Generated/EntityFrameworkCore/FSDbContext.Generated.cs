@@ -29,7 +29,17 @@ namespace FS.EntityFrameworkCore
     public partial class FSDbContext : AbpDbContext<FSDbContext>, IFSDbContext
     {
 
+        public virtual DbSet<FS.Customers.Person> People
+        {
+            get;
+            set;
+        }
 
+        public virtual DbSet<FS.Customers.Company> Companies
+        {
+            get;
+            set;
+        }
 
         public virtual DbSet<FS.Customers.Customer> Customers
         {

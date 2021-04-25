@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace FS.Customers
 {
     public partial interface IPersonRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.Customers.Person>
+        Volo.Abp.Domain.Repositories.IRepository<FS.Customers.Person,Guid>
     {
 
     }

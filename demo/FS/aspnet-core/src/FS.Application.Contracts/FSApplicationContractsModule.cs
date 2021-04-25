@@ -25,7 +25,13 @@ namespace FS
         )]
     public class FSApplicationContractsModule : AbpModule
     {
-
+        public override void ConfigureServices(ServiceConfigurationContext context)
+        {
+                Configure<FS.Abp.AspNetCore.Mvc.JsonSubTypes.JsonSubtypesOptions>(o =>
+                {
+                    o.AddProfiles<FSApplicationContractsModule>();
+                });
+        }
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             FSDtoExtensions.Configure();

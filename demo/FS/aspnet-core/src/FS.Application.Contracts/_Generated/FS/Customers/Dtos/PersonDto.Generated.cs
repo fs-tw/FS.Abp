@@ -28,32 +28,27 @@ namespace FS.Customers.Dtos
     {
         public virtual string Name { get; set; }
 
-        public override CustomerDiscriminator Discriminator => (CustomerDiscriminator)1;
     }
 
     public partial class PersonCreateDto : FS.Customers.Dtos.CustomerCreateDto
     {
         public virtual string Name { get; set; }
 
-        public override CustomerDiscriminator Discriminator => (CustomerDiscriminator)1;
     }
 
     public partial class PersonUpdateDto : FS.Customers.Dtos.CustomerUpdateDto
     {
         public virtual string Name { get; set; }
 
-        public override CustomerDiscriminator Discriminator => (CustomerDiscriminator)1;
     }
 
     public partial class PersonGetListDto : FS.Customers.Dtos.CustomerGetListDto
     {
-        public override CustomerDiscriminator Discriminator => (CustomerDiscriminator)1;
     }
 
     public partial class PersonWithDetailsDto : FS.Customers.Dtos.CustomerWithDetailsDto
     {
         public virtual string Name { get; set; }
 
-        public override CustomerDiscriminator Discriminator => (CustomerDiscriminator)1;
     }
 }

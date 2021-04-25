@@ -24,7 +24,6 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpApplicationModule)
         )]
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesContractsModule))]
     public class FSApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

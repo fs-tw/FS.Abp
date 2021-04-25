@@ -46,8 +46,11 @@ namespace FS.Abp.Application
         public virtual IQueryable<TEntity> ApplySearching<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
-            var discriminatorSpec = new FS.Abp.AspNetCore.Mvc.JsonSubTypes.DiscriminatorSpecification<TEntity>(input);
-            query = query.Where(discriminatorSpec);
+            if (input is IDiscriminatorResultRequest discriminatorInput)
+            {
+                var discriminatorSpec = new FS.Abp.AspNetCore.Mvc.JsonSubTypes.DiscriminatorSpecification<TEntity>(input);
+                query = query.Where(discriminatorSpec);
+            }
 
             if (input is ISearchResultRequest searchInput)
             {

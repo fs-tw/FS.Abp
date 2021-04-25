@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace FS.Customers
 {
     public partial class EfCorePersonRepository : 
-        EfCoreRepository<FS.EntityFrameworkCore.IFSDbContext,FS.Customers.Person>,
+        EfCoreRepository<FS.EntityFrameworkCore.IFSDbContext,FS.Customers.Person,Guid>,
         IPersonRepository
     {
         public EfCorePersonRepository(IDbContextProvider<FS.EntityFrameworkCore.IFSDbContext> dbContextProvider)

@@ -12,9 +12,7 @@ namespace FS.Abp
     [DependsOn(
         typeof(AbpApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    [DependsOn(
-        typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesModule)
-        )]
+    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
     public class AbpHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -22,35 +20,6 @@ namespace FS.Abp
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
                 mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpHttpApiModule).Assembly);
-            });
-        }
-
-        public override void ConfigureServices(ServiceConfigurationContext context)
-        {
-            Configure<AspNetCoreApiDescriptionModelProviderOptions>(o =>
-            {
-                o.ActionNameGenerator= (method) =>
-                {
-                    var methodNameBuilder = new StringBuilder(method.Name).Replace("Async", "");
-
-                    var parameters = method.GetParameters();
-                    if (parameters.Any())
-                    {
-                        methodNameBuilder.Append("By");
-
-                        for (var i = 0; i < parameters.Length; i++)
-                        {
-                            if (i > 0)
-                            {
-                                methodNameBuilder.Append("And");
-                            }
-
-                            methodNameBuilder.Append(parameters[i].Name.ToPascalCase());
-                        }
-                    }
-
-                    return methodNameBuilder.ToString();
-                };
             });
         }
     }

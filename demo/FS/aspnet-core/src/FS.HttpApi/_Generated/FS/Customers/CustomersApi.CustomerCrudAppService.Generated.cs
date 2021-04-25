@@ -19,7 +19,7 @@ namespace FS.Customers
     {
         [HttpGet]
         [Route("customer/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<CustomerWithDetailsDto> GetAsync([FromQuery] CustomerPrimaryKeyDto CustomerPrimaryKey)
         {
             return this.CustomerCrudAppService.GetAsync(CustomerPrimaryKey);
@@ -35,7 +35,7 @@ namespace FS.Customers
 
         [HttpPost]
         [Route("customer")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<CustomerWithDetailsDto> CreateAsync(CustomerCreateDto CustomerCreate)
         {
             return this.CustomerCrudAppService.CreateAsync(CustomerCreate);
@@ -43,7 +43,7 @@ namespace FS.Customers
 
         [HttpPut]
         [Route("customer/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task<CustomerWithDetailsDto> UpdateAsync([FromQuery] CustomerPrimaryKeyDto CustomerPrimaryKey, CustomerUpdateDto CustomerUpdate)
         {
             return this.CustomerCrudAppService.UpdateAsync(CustomerPrimaryKey,CustomerUpdate);
@@ -51,7 +51,7 @@ namespace FS.Customers
 
         [HttpDelete]
         [Route("customer/id")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task DeleteAsync([FromQuery] CustomerPrimaryKeyDto CustomerPrimaryKey)
         {
             return this.CustomerCrudAppService.DeleteAsync(CustomerPrimaryKey);

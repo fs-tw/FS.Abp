@@ -25,9 +25,6 @@ namespace FS.Customers.Dtos
             RuleFor(p => p.Discriminator)
                 .NotNull()
                 ;
-            RuleFor(p => p.TimeSpan)
-                .NotNull()
-                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -43,9 +40,6 @@ namespace FS.Customers.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.Discriminator)
-                .NotNull()
-                ;
-            RuleFor(p => p.TimeSpan)
                 .NotNull()
                 ;
             CustomizeConfiguration();

@@ -21,7 +21,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\FS\*.json" />
+    <Compile Remove="_Generated\**" />
     <Content Remove="Localization\FS\*.json" />
+    <EmbeddedResource Remove="_Generated\**" />
+    <None Remove="_Generated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,17 +33,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="DataModel\FS.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FS.efml</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\CustomerDiscriminator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -65,6 +57,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FS.efml</DependentUpon>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModel\FS.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FS.efml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
