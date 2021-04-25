@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS\Customers\CompanyCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\ContactDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\Dtos\ContactDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDtoValidator.Generated.cs" />

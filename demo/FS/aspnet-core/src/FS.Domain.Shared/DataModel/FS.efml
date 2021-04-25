@@ -152,6 +152,70 @@
         <column name="" />
       </property>
     </component>
+    <component class="FS.Customers.CustomerExtension" IsExternal="true" p1:Guid="30645b9e-0940-458f-95b0-f2b0492ed63a" p1:AbpEditor="YinChang" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>None</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Customers</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="FirstName" type="String" p1:ValidateRequired="true" p1:Guid="33723956-0529-417a-904f-e6820f974d0e">
+        <column name="" />
+      </property>
+      <property name="LastName" type="String" p1:ValidateRequired="true" p1:Guid="8fd5a1de-338b-479b-aa77-137431a9fe48">
+        <column name="" />
+      </property>
+      <component name="Contacts" class="FS.Customers.Contact" p1:ValidateRequired="false" p1:Guid="5ffe82df-3b64-4d19-a1b6-c2b431c7027e" p1:Shadow="True">
+        <p1:Attributes>
+          <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+            <p1:AttributeConstructor />
+            <p1:Properties>
+              <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <boolean>true</boolean>
+              </p1:PropertyValue>
+            </p1:Properties>
+          </p1:Attribute>
+        </p1:Attributes>
+      </component>
+    </component>
+    <component class="FS.Customers.Contact" IsExternal="true" p1:Guid="beb66ff0-ca90-42f2-b795-62939d977a45" p1:GenerateDTO="False">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string />
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Customers</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Phone" type="String" p1:ValidateRequired="true" p1:Guid="d66d8cc8-0e30-4f64-8d67-ea453555b39e">
+        <column name="" />
+      </property>
+      <property name="Address" type="String" p1:ValidateRequired="true" p1:Guid="c015b61a-3728-47c9-a5fc-3755b73e8a59">
+        <column name="" />
+      </property>
+    </component>
   </class>
   <class name="FS.Customers.Customer" entity-set="Customers" discriminator-value="Customer" p1:Guid="fec8008a-3bfe-4ea3-8a51-48c2a2eda06b" p1:AbpEditor="YinChang" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>

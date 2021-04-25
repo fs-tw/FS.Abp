@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FS
 {
-    public class CustomerExtensionType
+    public class CustomerExtension
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

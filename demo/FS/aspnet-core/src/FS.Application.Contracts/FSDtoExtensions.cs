@@ -21,7 +21,7 @@ namespace FS
                             typeof(Customers.Dtos.CustomerCreateDto),
                             typeof(Customers.Dtos.CustomerUpdateDto)
                         },
-                        nameof(FS.CustomerExtensionType.Contacts));
+                        nameof(FS.CustomerExtension.Contacts));
                 //ObjectExtensionManager.Instance
                 //   .AddOrUpdateProperty<Customers.Dtos.CustomerDto, string>("test");
                 /* You can add extension properties to DTOs

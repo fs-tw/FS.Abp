@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\Dtos\ContactDto.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDto.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\EnterpriseDto.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\ICompanyCrudAppService.Generated.cs" />
