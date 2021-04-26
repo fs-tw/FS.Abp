@@ -1,9 +1,9 @@
+using DEMO.MultiTenancy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using DEMO.Localization;
-using DEMO.MultiTenancy;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
+using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.Commercial.SuiteTemplates;
 using Volo.Abp.Emailing;
 using Volo.Abp.FeatureManagement;
@@ -18,9 +18,8 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
-using Volo.Saas;
-using Volo.Abp.BlobStoring.Database;
 using Volo.FileManagement;
+using Volo.Saas;
 
 namespace DEMO
 {
@@ -29,7 +28,7 @@ namespace DEMO
         typeof(AbpAuditLoggingDomainModule),
         typeof(AbpBackgroundJobsDomainModule),
         typeof(AbpFeatureManagementDomainModule),
-        typeof(AbpIdentityDomainModule),
+        typeof(AbpIdentityProDomainModule),
         typeof(AbpPermissionManagementDomainIdentityModule),
         typeof(AbpIdentityServerDomainModule),
         typeof(AbpPermissionManagementDomainIdentityServerModule),
@@ -64,7 +63,6 @@ namespace DEMO
                 options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsche", "de"));
                 options.Languages.Add(new LanguageInfo("es", "es", "Español", "es"));
             });
-
 
 #if DEBUG
             context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());
