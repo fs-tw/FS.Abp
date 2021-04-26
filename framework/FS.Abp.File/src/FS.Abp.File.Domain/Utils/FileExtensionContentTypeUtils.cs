@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FS.Abp.File.Tool
+namespace FS.Abp.File.Utils
 {
     public static class FileExtensionContentTypeUtils
     {

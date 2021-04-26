@@ -13,7 +13,7 @@ namespace FS.Abp.File.Directories
     {
         public DirectoriesManager(
             IDirectoryDescriptorRepository directoryDescriptorRepository, IFileManager fileManager)
-       : base(directoryDescriptorRepository, fileManager)
+            : base(directoryDescriptorRepository, fileManager)
         {
         }
         private IDirectoryProviderDefinitionStore directoryProviderDefinitionStore => this.LazyServiceProvider.LazyGetRequiredService<IDirectoryProviderDefinitionStore>();
@@ -35,42 +35,40 @@ namespace FS.Abp.File.Directories
             var directory = await getOrAddAsync(paths, null);
 
             return directory;
-        }
 
-
-        private async Task<List<DirectoryDescriptor>> getOrAddAsync(List<string> paths, System.Guid? parentId)
-        {
-            var currentParentId = parentId;
-            List<DirectoryDescriptor> result = new List<DirectoryDescriptor>();
-            foreach (var path in paths)
+            async Task<List<DirectoryDescriptor>> getOrAddAsync(List<string> paths, System.Guid? parentId)
             {
-                var target = await this.DirectoryDescriptorRepository.FindAsync(path, currentParentId);
-                if (target == null)
+                var currentParentId = parentId;
+                List<DirectoryDescriptor> result = new List<DirectoryDescriptor>();
+                foreach (var path in paths)
                 {
-                    var fullPaths = paths.Skip(paths.IndexOf(path)).ToList();
-                    var dirs = (await insertDirectoriesAsync(fullPaths, currentParentId));
-                    result.AddRange(dirs);
-                    return result;
+                    var target = await this.DirectoryDescriptorRepository.FindAsync(path, currentParentId);
+                    if (target == null)
+                    {
+                        var fullPaths = paths.Skip(paths.IndexOf(path)).ToList();
+                        var dirs = (await insertDirectoriesAsync(fullPaths, currentParentId));
+                        result.AddRange(dirs);
+                        return result;
+                    }
+                    currentParentId = target.Id;
+                    result.Add(target);
                 }
-                currentParentId = target.Id;
-                result.Add(target);
+                return result;
             }
-            return result;
-        }
-
-        private async Task<List<DirectoryDescriptor>> insertDirectoriesAsync(List<string> paths, System.Guid? parentId)
-        {
-            var result = new List<DirectoryDescriptor>();
-            var currentParentId = parentId;
-            foreach (var path in paths)
+            async Task<List<DirectoryDescriptor>> insertDirectoriesAsync(List<string> paths, System.Guid? parentId)
             {
-                var directory = new DirectoryDescriptor(GuidGenerator.Create(), path, currentParentId, CurrentTenant.Id);
-                result.Add(directory);
-                currentParentId = directory.Id;
-            }
-            await this.DirectoryDescriptorRepository.InsertManyAsync(result, true);
-            return result;
+                var result = new List<DirectoryDescriptor>();
+                var currentParentId = parentId;
+                foreach (var path in paths)
+                {
+                    var directory = new DirectoryDescriptor(GuidGenerator.Create(), path, currentParentId, CurrentTenant.Id);
+                    result.Add(directory);
+                    currentParentId = directory.Id;
+                }
+                await this.DirectoryDescriptorRepository.InsertManyAsync(result, true);
+                return result;
 
+            }
         }
     }
 }
