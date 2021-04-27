@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Identity.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Domain" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="$(AbpVersion)" />
