@@ -153,7 +153,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.FormManagement.Forms.Formal" entity-set="Formals" p1:Guid="b7517025-38bf-47bf-878a-6b930fed30a5" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GenerateEntityPartialClass="True">
+  <class name="FS.FormManagement.Forms.Form" entity-set="Forms" p1:Guid="b7517025-38bf-47bf-878a-6b930fed30a5" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GenerateEntityPartialClass="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -258,7 +258,7 @@
     <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="f7fe78b3-3799-4463-bef1-0d079f31529f">
       <column name="" />
     </property>
-    <property name="FormalId" type="Guid" p1:ValidateRequired="true" p1:Guid="1c0ee8ea-f665-483e-a6fe-abe60d5f925e">
+    <property name="FormId" type="Guid" p1:ValidateRequired="true" p1:Guid="1c0ee8ea-f665-483e-a6fe-abe60d5f925e">
       <column name="" not-null="False" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="98b80dcd-0f6f-4145-a6a9-7258b74c8b6d" p1:GenerateDTO="False">
@@ -273,7 +273,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.FormManagement.Forms.Item" entity-set="Items" p1:Guid="c18ed7e5-45ba-4d19-ac94-f758a0f8f9db" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.FormManagement.Forms.Question" entity-set="Questions" discriminator-value="Question" p1:Guid="c18ed7e5-45ba-4d19-ac94-f758a0f8f9db" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -309,16 +309,28 @@
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="e0eceba3-7fd9-40a3-b009-d247382ecaf6" p1:GenerateDTO="False">
       <column name="" />
     </id>
+    <discriminator type="String">
+      <column name="Discriminator" not-null="True" />
+    </discriminator>
     <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="11dd1b37-1333-4e13-9003-f864e83de39e">
       <column name="" />
     </property>
-    <property name="Question" type="String" p1:ValidateRequired="true" p1:Guid="e18826f6-7ad1-475a-be79-7661742e2837">
+    <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="e18826f6-7ad1-475a-be79-7661742e2837">
       <column name="" />
     </property>
     <property name="GroupId" type="Guid" p1:ValidateRequired="true" p1:Guid="e411f260-0c0a-4ac6-b657-9e4b365327b3">
       <column name="" not-null="False" />
     </property>
     <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="f2ba0a0c-39cb-4a55-942e-2cae5e31a43a">
+      <column name="" />
+    </property>
+    <property name="HasOtherOption" type="Boolean" p1:ValidateRequired="true" p1:Guid="bc7c9071-d31a-430e-974d-b109cc2ff428">
+      <column name="" />
+    </property>
+    <property name="IsRequired" type="Boolean" p1:ValidateRequired="true" p1:Guid="e7028b29-9b4a-4b4a-a9c4-80a2f9a584ff">
+      <column name="" />
+    </property>
+    <property name="Discriminator" type="String" p1:ValidateRequired="true" p1:Guid="d3b9b3b3-b45c-4235-b39f-c573b5227687">
       <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8487fd40-a4e3-4782-ac3f-81b79a4848ae" p1:GenerateDTO="False">
@@ -332,6 +344,186 @@
       <property name="ExtraProperties" />
       <property name="ConcurrencyStamp" />
     </component>
+    <subclass name="FS.FormManagement.Forms.Checkbox" entity-set="Checkboxes" discriminator-value="Checkbox" p1:InheritanceGuid="d15e7691-790f-48d4-91e0-2081e94261ea" p1:Guid="bca1c895-bc5b-4d1b-b74e-0d21fe76484b" p1:AbpEditor="YinChang" p1:AppServiceClass="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Forms</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>AuditedAggregateRoot</string>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5d27a2af-2efd-4162-acce-98704e2e4f58" p1:GenerateDTO="False">
+        <column name="" />
+      </property>
+      <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="9b4959ef-0ad0-4aa6-b2a2-eaff209c3e11" p1:Shadow="True">
+        <property name="CreationTime" />
+        <property name="CreatorId" />
+        <property name="LastModificationTime" />
+        <property name="LastModifierId" />
+        <property name="ExtraProperties" />
+        <property name="ConcurrencyStamp" />
+      </component>
+    </subclass>
+    <subclass name="FS.FormManagement.Forms.ChoiceMultiple" entity-set="ChoiceMultiples" discriminator-value="ChoiceMultiple" p1:InheritanceGuid="67e2f1ff-40ef-4dca-a683-84ac49d01cb3" p1:Guid="c94db492-b1fa-4e66-b722-118397eb121f" p1:AbpEditor="YinChang" p1:AppServiceClass="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Forms</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>AuditedAggregateRoot</string>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba67843b-9977-4e0c-9de5-e92fbd7110f1" p1:GenerateDTO="False">
+        <column name="" />
+      </property>
+      <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="fbe77933-c17c-4e21-8fe8-98a2226edaf8" p1:Shadow="True">
+        <property name="CreationTime" />
+        <property name="CreatorId" />
+        <property name="LastModificationTime" />
+        <property name="LastModifierId" />
+        <property name="ExtraProperties" />
+        <property name="ConcurrencyStamp" />
+      </component>
+    </subclass>
+    <subclass name="FS.FormManagement.Forms.DropdownList" entity-set="DropdownLists" discriminator-value="DropdownList" p1:InheritanceGuid="88b5b726-d4c9-4509-8702-7fc5c9e60421" p1:Guid="e3265203-8abe-495d-b3c2-adf5806dea39" p1:AbpEditor="YinChang" p1:AppServiceClass="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Forms</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>AuditedAggregateRoot</string>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1b576792-798a-487f-8035-d0db1a8bfd4b" p1:GenerateDTO="False">
+        <column name="" />
+      </property>
+      <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="614339b3-aa4a-4479-af4d-3835de867493" p1:Shadow="True">
+        <property name="CreationTime" />
+        <property name="CreatorId" />
+        <property name="LastModificationTime" />
+        <property name="LastModifierId" />
+        <property name="ExtraProperties" />
+        <property name="ConcurrencyStamp" />
+      </component>
+    </subclass>
+    <subclass name="FS.FormManagement.Forms.ShortText" entity-set="ShortTexts" discriminator-value="ShortText" p1:InheritanceGuid="5cfacc02-cfeb-4f75-9f5f-09133752afef" p1:Guid="452a5c38-7284-46ab-8105-1b439a16c029" p1:AbpEditor="YinChang" p1:AppServiceClass="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Forms</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>AuditedAggregateRoot</string>
+            </p1:PropertyValue>
+            <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2977671a-335f-49b5-b884-65e111da5679" p1:GenerateDTO="False">
+        <column name="" />
+      </property>
+      <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="3bf72c2e-d850-4769-bd08-8ffe893c0f25" p1:Shadow="True">
+        <property name="CreationTime" />
+        <property name="CreatorId" />
+        <property name="LastModificationTime" />
+        <property name="LastModifierId" />
+        <property name="ExtraProperties" />
+        <property name="ConcurrencyStamp" />
+      </component>
+    </subclass>
   </class>
   <class name="FS.FormManagement.Versions.Version" entity-set="Versions" p1:Guid="74afe886-622b-4766-9c63-b47739bc120a" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
@@ -393,7 +585,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.FormManagement.Records.Record" entity-set="Records" p1:Guid="efe325be-05fa-4b58-9d20-5d51a03ef642" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.FormManagement.FormResponses.FormResponse" entity-set="FormResponses" p1:Guid="efe325be-05fa-4b58-9d20-5d51a03ef642" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -402,7 +594,7 @@
             <string>AuditedAggregateRoot</string>
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -410,7 +602,7 @@
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>Records</string>
+            <string>FormResponses</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -429,7 +621,13 @@
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="134eadee-fd6b-4c57-98e1-dd8a951fabb9" p1:GenerateDTO="False">
       <column name="" />
     </id>
-    <property name="FormalId" type="Guid" p1:ValidateRequired="true" p1:Guid="985e78c0-f393-418e-838d-0fcaf50d1059">
+    <property name="FormId" type="Guid" p1:ValidateRequired="true" p1:Guid="985e78c0-f393-418e-838d-0fcaf50d1059">
+      <column name="" />
+    </property>
+    <property name="UserId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a755a6ec-4bdd-42dd-9984-6fedd6148e04">
+      <column name="" />
+    </property>
+    <property name="Email" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="05e0dbbb-e973-4f73-970a-4346251ab166">
       <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3c93df24-d50f-4efc-90c7-cdece4b0d66c" p1:GenerateDTO="False">
@@ -444,7 +642,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.FormManagement.Records.RecordItem" entity-set="RecordItems" p1:Guid="1ded43f6-b6ab-460f-93a6-7fb88b1853e8" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.FormManagement.FormResponses.Answer" entity-set="Answers" p1:Guid="1ded43f6-b6ab-460f-93a6-7fb88b1853e8" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -453,7 +651,7 @@
             <string>AuditedAggregateRoot</string>
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiTXVsdGlWZXJzaW9uIjpmYWxzZSwiSGFzTmF0dXJhbEtleSI6ZmFsc2V9fQ==</string>
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -461,7 +659,7 @@
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>Records</string>
+            <string>FormResponses</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -480,13 +678,19 @@
     <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="a446b023-ccae-4c8f-bfdb-4a1fa54b3bc0" p1:GenerateDTO="False">
       <column name="" />
     </id>
-    <property name="Asnwer" type="String" p1:ValidateRequired="true" p1:Guid="21a8752c-6c54-4fac-8efb-d8c0d5d1baee">
+    <property name="Value" type="String" p1:ValidateRequired="true" p1:Guid="21a8752c-6c54-4fac-8efb-d8c0d5d1baee">
       <column name="" />
     </property>
-    <property name="RecordId" type="Guid" p1:ValidateRequired="true" p1:Guid="128b471e-35fd-4f7a-9c42-0afe5d5fb39e">
+    <property name="FormResponseId" type="Guid" p1:ValidateRequired="true" p1:Guid="128b471e-35fd-4f7a-9c42-0afe5d5fb39e">
       <column name="" not-null="False" />
     </property>
-    <property name="ItemId" type="String" p1:ValidateRequired="true" p1:Guid="e9fb63a2-5cca-4589-bbb7-4c84cab04f86">
+    <property name="QuestionId" type="Guid" p1:ValidateRequired="true" p1:Guid="e9fb63a2-5cca-4589-bbb7-4c84cab04f86">
+      <column name="" />
+    </property>
+    <property name="ChoiceId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2e873d2b-ef33-4dfa-8bff-6a24f6fa2068">
+      <column name="" />
+    </property>
+    <property name="AnswerDate" type="Date" p1:ValidateRequired="true" p1:Guid="6124a5e1-7f89-4344-844a-6eed401f231f">
       <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="27782ce2-c00f-4274-8351-78ea5082e19a" p1:GenerateDTO="False">
@@ -561,6 +765,66 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
+  <class name="FS.FormManagement.Forms.Choice" entity-set="Choices" p1:Guid="5c8123c6-8de6-4b38-b97a-c2df8a93b599" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Forms</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="5b15b671-e667-430e-8a81-e29ffb208e70" p1:GenerateDTO="False">
+      <column name="" />
+    </id>
+    <property name="No" type="String" p1:ValidateRequired="true" p1:Guid="211ce5c4-0bd2-4433-9b16-3c1479cd8c15">
+      <column name="" />
+    </property>
+    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="48dc3642-a7bf-464f-8319-ea7966520896">
+      <column name="" />
+    </property>
+    <property name="QuestionId" type="Guid" p1:ValidateRequired="true" p1:Guid="e6491e68-84dc-4f39-86e9-f49b4ee9c827">
+      <column name="" not-null="False" />
+    </property>
+    <property name="IsCorrect" type="Boolean" p1:ValidateRequired="true" p1:Guid="bea1e269-d6b9-49a0-ba44-b99404b6f7bc">
+      <column name="" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="02653895-8b47-4f3c-b6df-6deebc481f3c" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.FormManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="be55670d-d90a-4ab7-8bd3-5d762fb93871" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
   <associations>
     <association name="Group_Groups" cardinality="OneToMany" p1:Guid="0198c3a5-3376-4ab6-9bf0-068ba2470f50">
       <end1 multiplicity="ZeroOrOne" name="Parent" class="Group" relation-class="Group" constrained="True" lazy="False" p1:Guid="7ddfff98-6667-46e4-9652-609fed52c0d2">
@@ -571,27 +835,27 @@
       </end2>
     </association>
     <association name="Formal_Group" cardinality="OneToMany" p1:Guid="37b8db93-7566-4434-827e-1bdfcfada30f">
-      <end1 multiplicity="One" name="Formal" class="Group" relation-class="Formal" constrained="True" lazy="False" p1:Guid="822aa9af-dea3-4837-ac53-d60ec4f504da">
+      <end1 multiplicity="One" name="Form" class="Group" relation-class="Form" constrained="True" lazy="False" p1:Guid="822aa9af-dea3-4837-ac53-d60ec4f504da">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="Groups" class="Formal" relation-class="Group" lazy="False" p1:Guid="f00649fd-fbc2-41f9-a5b4-1a0b74019683">
-        <property name="FormalId" />
+      <end2 multiplicity="Many" name="Groups" class="Form" relation-class="Group" lazy="False" p1:Guid="f00649fd-fbc2-41f9-a5b4-1a0b74019683">
+        <property name="FormId" />
       </end2>
     </association>
     <association name="Group_Item" cardinality="OneToMany" p1:Guid="bac8f3b6-438f-4a44-8f13-46865ca41a06">
-      <end1 multiplicity="One" name="Group" class="Item" relation-class="Group" constrained="True" lazy="False" p1:Guid="716d4c87-2bc2-416e-aed4-dd69ebfc5114">
+      <end1 multiplicity="One" name="Group" class="Question" relation-class="Group" constrained="True" lazy="False" p1:Guid="716d4c87-2bc2-416e-aed4-dd69ebfc5114">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="Items" class="Group" relation-class="Item" lazy="False" p1:Guid="0af886af-c262-412a-83f6-b0d0a8e3eb76">
+      <end2 multiplicity="Many" name="Items" class="Group" relation-class="Question" lazy="False" p1:Guid="0af886af-c262-412a-83f6-b0d0a8e3eb76">
         <property name="GroupId" />
       </end2>
     </association>
     <association name="Record_RecordItem" cardinality="OneToMany" p1:Guid="cfa87cbf-d200-46fe-8709-6913a42c6e6b">
-      <end1 multiplicity="One" name="Record" class="RecordItem" relation-class="Record" constrained="True" lazy="False" p1:Guid="ddd6f32a-08de-427a-893c-7e57187ea607">
+      <end1 multiplicity="One" name="Record" class="Answer" relation-class="FormResponse" constrained="True" lazy="False" p1:Guid="ddd6f32a-08de-427a-893c-7e57187ea607">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="RecordItems" class="Record" relation-class="RecordItem" lazy="False" p1:Guid="91e06374-caf7-4a4b-babb-50a9bca7d05e">
-        <property name="RecordId" />
+      <end2 multiplicity="Many" name="Answers" class="FormResponse" relation-class="Answer" lazy="False" p1:Guid="91e06374-caf7-4a4b-babb-50a9bca7d05e">
+        <property name="FormResponseId" />
       </end2>
     </association>
     <association name="Version_VersionDefinition" cardinality="OneToMany" p1:Guid="21449d00-b8ec-49fa-9219-09e55e8d85ad">
@@ -608,6 +872,30 @@
       </end1>
       <end2 multiplicity="Many" name="Versions" class="VersionDefinition" relation-class="Version" lazy="False" p1:Guid="1035ae9a-0656-494c-90d9-c97abbe3ab59">
         <property name="VersionDefinitionId" />
+      </end2>
+    </association>
+    <association name="ChoiceMultiple_Choice" cardinality="OneToMany" p1:Guid="dd49f3c3-b1c2-407d-a927-fd5aaf57bf3c">
+      <end1 multiplicity="One" name="ChoiceMultiple" class="Choice" relation-class="ChoiceMultiple" generate="False" constrained="True" lazy="False" p1:Guid="40fac87a-e5aa-48eb-9d2b-17a2cee0cc10">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Choices" class="ChoiceMultiple" relation-class="Choice" lazy="False" p1:Guid="74d3eece-07a2-4538-9894-de8290e411fb">
+        <property name="QuestionId" />
+      </end2>
+    </association>
+    <association name="DropdownList_Choice" cardinality="OneToMany" p1:Guid="5974e7c1-9c95-4b05-984b-a7d211df12d8">
+      <end1 multiplicity="One" name="DropdownList" class="Choice" relation-class="DropdownList" generate="False" constrained="True" lazy="False" p1:Guid="127ddd61-fd09-4cef-b8a9-91cd4f4d04da">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Choices" class="DropdownList" relation-class="Choice" lazy="False" p1:Guid="eb292f09-6dab-477e-8975-25092a8ff361">
+        <property name="QuestionId" />
+      </end2>
+    </association>
+    <association name="Checkbox_Choice" cardinality="OneToMany" p1:Guid="da86c4b5-3200-43bc-b0c5-6ad15f2a0434">
+      <end1 multiplicity="One" name="Checkbox" class="Choice" relation-class="Checkbox" generate="False" constrained="True" lazy="False" p1:Guid="72ceb4af-dfb7-48e9-b418-326d8e957880">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Choices" class="Checkbox" relation-class="Choice" lazy="False" p1:Guid="86bb36e4-34aa-4d20-9e78-ce3667867433">
+        <property name="QuestionId" />
       </end2>
     </association>
   </associations>

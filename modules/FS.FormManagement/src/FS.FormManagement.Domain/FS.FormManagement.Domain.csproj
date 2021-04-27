@@ -6,6 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\Checkbox.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\ChoiceMultiple.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\DropdownList.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\Formal.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\IFormalRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\IItemRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\Item.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\ICheckboxRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IChoiceMultipleRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IDropdownListRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IShortTextRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\ShortText.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\IVersionsDefinitionRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsDefinition.Generated.cs" />
   </ItemGroup>
@@ -20,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.FormManagement\Forms\Formal.cs">
+    <Compile Update="FS.FormManagement\Forms\Form.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
@@ -31,7 +43,43 @@
     <Compile Update="FS.FormManagement\Versions\VersionsStore.cs">
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Formal.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\Answer.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponse.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\IAnswerRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\IFormResponseRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Checkbox.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Choice.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\ChoiceMultiple.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\DropdownList.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Form.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
@@ -43,7 +91,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IFormalRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\ICheckboxRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\IChoiceMultipleRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\IChoiceRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\IDropdownListRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\IFormRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
@@ -51,33 +115,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IItemRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\IQuestionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Item.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\IShortTextRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordItemRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\Question.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
+      <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\ShortText.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Record.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordItem.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
+      <DependentUpon>Forms</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\IVersionDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>

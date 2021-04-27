@@ -20,11 +20,13 @@ namespace FS.FormManagement.Forms
     public partial class FormsApi : FormManagementController , IFormsApi //auto-generated
     {
 
-        protected IFormalCrudAppService FormalCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IFormalCrudAppService>();
+        protected IFormCrudAppService FormCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IFormCrudAppService>();
 
         protected IGroupCrudAppService GroupCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IGroupCrudAppService>();
 
-        protected IItemCrudAppService ItemCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IItemCrudAppService>();
+        protected IQuestionCrudAppService QuestionCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IQuestionCrudAppService>();
+
+        protected IChoiceCrudAppService ChoiceCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IChoiceCrudAppService>();
 
         [HttpOptions]
         public Dtos.MetaData Options()

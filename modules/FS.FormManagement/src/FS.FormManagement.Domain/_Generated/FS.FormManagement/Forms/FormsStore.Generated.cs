@@ -15,14 +15,16 @@ namespace FS.FormManagement.Forms
 {
     public partial interface IFormsStore : IDomainService //auto-generated
     {
-        IFormalRepository Formal { get; }
+        IFormRepository Form { get; }
         IGroupTreeRepository Group { get; }
-        IItemRepository Item { get; }
+        IQuestionRepository Question { get; }
+        IChoiceRepository Choice { get; }
     }
     public partial class FormsStore : DomainService, IFormsStore //auto-generated
     {
-        public IFormalRepository Formal => this.LazyServiceProvider.LazyGetRequiredService<IFormalRepository>();
+        public IFormRepository Form => this.LazyServiceProvider.LazyGetRequiredService<IFormRepository>();
         public IGroupTreeRepository Group => this.LazyServiceProvider.LazyGetRequiredService<IGroupTreeRepository>();
-        public IItemRepository Item => this.LazyServiceProvider.LazyGetRequiredService<IItemRepository>();
+        public IQuestionRepository Question => this.LazyServiceProvider.LazyGetRequiredService<IQuestionRepository>();
+        public IChoiceRepository Choice => this.LazyServiceProvider.LazyGetRequiredService<IChoiceRepository>();
     }
 }

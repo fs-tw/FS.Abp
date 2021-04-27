@@ -37,11 +37,11 @@ namespace FS.FormManagement.Forms
             builder.Property(x => x.ParentId).HasColumnName(@"ParentId").ValueGeneratedNever();
             builder.Property(x => x.Level).HasColumnName(@"Level").ValueGeneratedNever();
             builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.FormalId).HasColumnName(@"FormalId").ValueGeneratedNever();
+            builder.Property(x => x.FormId).HasColumnName(@"FormId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
             builder.HasOne(x => x.Parent).WithMany(op => op.Children).IsRequired(false).HasForeignKey(@"ParentId");
-            builder.HasOne(x => x.Formal).WithMany(op => op.Groups).IsRequired(true).HasForeignKey(@"FormalId");
+            builder.HasOne(x => x.Form).WithMany(op => op.Groups).IsRequired(true).HasForeignKey(@"FormId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);

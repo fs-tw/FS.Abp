@@ -6,9 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.VersionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\FormsApi.FormalCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\FormsApi.ItemCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsApi.VersionsDefinitionCrudAppService.Generated.cs" />
   </ItemGroup>
 
@@ -18,7 +17,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.FormalCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesApi.AnswerCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponsesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesApi.FormResponseCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponsesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.ChoiceCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.FormCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>FormsApi.Generated.cs</DependentUpon>
     </Compile>
@@ -30,21 +45,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FormsApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.ItemCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.QuestionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>FormsApi.Generated.cs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.RecordCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.RecordItemCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\VersionsApi.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -58,10 +61,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>VersionsApi.Generated.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.FormManagement\Documents\" />
   </ItemGroup>
 
 </Project>

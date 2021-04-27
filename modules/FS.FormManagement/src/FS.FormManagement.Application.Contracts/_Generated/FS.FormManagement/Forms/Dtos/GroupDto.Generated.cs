@@ -29,7 +29,7 @@ namespace FS.FormManagement.Forms.Dtos
     {
     }
 
-    public partial class GroupDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
+    public partial class GroupDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string Code { get; set; }
 
@@ -39,11 +39,11 @@ namespace FS.FormManagement.Forms.Dtos
 
         public virtual string DisplayName { get; set; }
 
-        public virtual System.Guid FormalId { get; set; }
+        public virtual System.Guid FormId { get; set; }
 
     }
 
-    public partial class GroupCreateDto
+    public partial class GroupCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Code { get; set; }
 
@@ -53,11 +53,11 @@ namespace FS.FormManagement.Forms.Dtos
 
         public virtual string DisplayName { get; set; }
 
-        public virtual System.Guid FormalId { get; set; }
+        public virtual System.Guid FormId { get; set; }
 
     }
 
-    public partial class GroupUpdateDto
+    public partial class GroupUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Code { get; set; }
 
@@ -67,7 +67,7 @@ namespace FS.FormManagement.Forms.Dtos
 
         public virtual string DisplayName { get; set; }
 
-        public virtual System.Guid FormalId { get; set; }
+        public virtual System.Guid FormId { get; set; }
 
     }
 
@@ -81,9 +81,9 @@ namespace FS.FormManagement.Forms.Dtos
 
         public GroupDto Parent { get; set; }
 
-        public FormalDto Formal { get; set; }
+        public FormDto Form { get; set; }
 
-        public List<ItemDto> Items { get; set; }
+        public List<QuestionDto> Items { get; set; }
 
     }
 }
