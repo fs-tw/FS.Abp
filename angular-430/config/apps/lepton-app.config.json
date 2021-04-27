@@ -1,0 +1,150 @@
+{
+  "order": 1002,
+  "nx": {
+    "lepton-app": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "lepton-app": {
+      "projectType": "application",
+      "root": "apps/lepton-app",
+      "sourceRoot": "apps/lepton-app/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/lepton-app",
+            "index": "apps/lepton-app/src/index.html",
+            "main": "apps/lepton-app/src/main.ts",
+            "polyfills": "apps/lepton-app/src/polyfills.ts",
+            "tsConfig": "apps/lepton-app/tsconfig.app.json",
+            "aot": true,
+            "allowedCommonJsDependencies": [
+              "@ant-design/colors",
+              "chart.js",
+              "js-sha256",
+              "@uppy/xhr-upload",
+              "@uppy/dashboard",
+              "@uppy/core"
+            ],
+            "assets": [
+              "apps/lepton-app/src/favicon.ico",
+              "apps/lepton-app/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/index.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-index"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-icons"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-material"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-all.min"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-v4-shims.min"
+              },
+              {
+                "input": "node_modules/flag-icon-css/css/flag-icon.min.css",
+                "inject": true,
+                "bundleName": "flag-icon.min"
+              },
+              {
+                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
+                "inject": false,
+                "bundleName": "bootstrap-rtl.min"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap-ltr.min"
+              },
+              "apps/lepton-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/lepton-app/src/environments/environment.ts",
+                  "with": "apps/lepton-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "lepton-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "lepton-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "lepton-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/lepton-app/src/**/*.ts",
+              "apps/lepton-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/lepton-app"],
+          "options": {
+            "jestConfig": "apps/lepton-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+  }
+}
