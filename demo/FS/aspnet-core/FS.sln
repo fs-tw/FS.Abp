@@ -83,6 +83,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AspNetCore.Mvc", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions", "..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions.csproj", "{BA2EB7AA-BB9A-4262-9443-E5466A9878D7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Web", "src\FS.Web\FS.Web.csproj", "{4AD588ED-3E57-4251-8476-1FC20B944B8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{BA2EB7AA-BB9A-4262-9443-E5466A9878D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA2EB7AA-BB9A-4262-9443-E5466A9878D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA2EB7AA-BB9A-4262-9443-E5466A9878D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD588ED-3E57-4251-8476-1FC20B944B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD588ED-3E57-4251-8476-1FC20B944B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD588ED-3E57-4251-8476-1FC20B944B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD588ED-3E57-4251-8476-1FC20B944B8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -243,6 +249,7 @@ Global
 		{B9225024-ED8B-4D4D-9FAE-3DC7CE6A5D23} = {9A0BF118-7875-4A0F-B40C-EDBB30ED07CE}
 		{096E3B90-4EE1-43D3-AC82-F5D7CBD1F94C} = {F7C89BED-EC2F-4383-9FF8-555611AAB2CA}
 		{BA2EB7AA-BB9A-4262-9443-E5466A9878D7} = {F7C89BED-EC2F-4383-9FF8-555611AAB2CA}
+		{4AD588ED-3E57-4251-8476-1FC20B944B8A} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}

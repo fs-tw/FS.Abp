@@ -13,6 +13,8 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Volo.Abp.BlobStoring;
+using Volo.Abp.BlobStoring.FileSystem;
 
 namespace FS
 {
@@ -32,6 +34,7 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpDomainModule)
         )]
+    [DependsOn(typeof(Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule))]
     public class FSDomainModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -40,6 +43,16 @@ namespace FS
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<AbpBlobStoringOptions>(options =>
+            {
+                options.Containers.ConfigureDefault(container =>
+                {
+                    container.UseFileSystem(fileSystem =>
+                    {
+                        fileSystem.BasePath = "C:\\cms-kit";
+                    });
+                });
+            });
             Configure<AbpMultiTenancyOptions>(options =>
             {
                 options.IsEnabled = MultiTenancyConsts.IsEnabled;

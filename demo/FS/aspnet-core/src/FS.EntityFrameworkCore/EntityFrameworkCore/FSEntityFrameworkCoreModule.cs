@@ -28,6 +28,7 @@ namespace FS.EntityFrameworkCore
     [DependsOn(
         typeof(FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule)
         )]
+    [DependsOn(typeof(Volo.CmsKit.EntityFrameworkCore.CmsKitEntityFrameworkCoreModule))]
     public class FSEntityFrameworkCoreModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

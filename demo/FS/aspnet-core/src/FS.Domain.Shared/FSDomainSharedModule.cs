@@ -28,6 +28,7 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpDomainSharedModule)
         )]
+    [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
     public class FSDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

@@ -23,6 +23,9 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpHttpApiModule)
         )]
+    [DependsOn(
+        typeof(Volo.CmsKit.CmsKitHttpApiModule)
+        )]
     public class FSHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

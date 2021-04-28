@@ -24,6 +24,9 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpApplicationModule)
         )]
+    [DependsOn(
+        typeof(Volo.CmsKit.CmsKitApplicationModule)
+        )]
     public class FSApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
