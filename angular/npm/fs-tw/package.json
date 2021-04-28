@@ -1,0 +1,11 @@
+{
+  "name": "fs-tw",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+  },
+  "dependencies": {
+    "@fs-tw/theme-alain": "^430.0.0-1"
+  }
+}

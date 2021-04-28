@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"../../../../../libs/emailing/proxy/src/","sources":["lib/fs/abp/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,QAAQ,MAAM,YAAY,CAAC;AACvC,OAAO,EAAE,QAAQ,EAAE,CAAC","sourcesContent":["import * as Emailing from './emailing';\r\nexport { Emailing };\r\n"]}
