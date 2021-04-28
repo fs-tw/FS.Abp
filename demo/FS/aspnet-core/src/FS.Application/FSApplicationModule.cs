@@ -25,7 +25,7 @@ namespace FS
         typeof(FS.Abp.AbpApplicationModule)
         )]
     [DependsOn(
-        typeof(Volo.CmsKit.CmsKitApplicationModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
         )]
     public class FSApplicationModule : AbpModule
     {
@@ -35,11 +35,6 @@ namespace FS
             {
                 options.AddMaps<FSApplicationModule>();
             });
-
-            //Configure<JsonSubtypesOptions>(options =>
-            //{
-            //    options.AddProfiles<FSApplicationModule>();
-            //});
         }
     }
 }

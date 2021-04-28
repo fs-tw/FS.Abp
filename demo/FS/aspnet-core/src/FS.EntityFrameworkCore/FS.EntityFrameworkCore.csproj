@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.EntityFrameworkCore\FS.CmsKitManagement.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="$(AbpVersion)" />

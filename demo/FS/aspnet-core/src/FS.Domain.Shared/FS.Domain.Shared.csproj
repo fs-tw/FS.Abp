@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

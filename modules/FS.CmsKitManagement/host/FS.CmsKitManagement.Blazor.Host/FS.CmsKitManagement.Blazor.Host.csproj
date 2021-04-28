@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3.5" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.3.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(MicrosoftPackageVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(MicrosoftPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Blazor.WebAssembly" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Account.Blazor" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.CmsKitManagement.Host.Shared\FS.CmsKitManagement.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\src\FS.CmsKitManagement.Blazor\FS.CmsKitManagement.Blazor.csproj" />
+  </ItemGroup>
+
+</Project>

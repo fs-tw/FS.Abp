@@ -51,6 +51,8 @@
     "@angular/cli": "~11.2.0",
     "@angular/compiler-cli": "^11.2.0",
     "@angular/language-service": "^11.2.0",
+    "@npm/abp": "file:npm/abp",
+    "@npm/fs-tw": "file:npm/fs-tw",
     "@nrwl/cli": "12.0.8",
     "@nrwl/cypress": "12.0.8",
     "@nrwl/eslint-plugin-nx": "12.0.8",
@@ -73,8 +75,6 @@
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
-    "typescript": "~4.1.4",
-    "@npm/abp": "file:npm/abp",
-    "@npm/fs-tw": "file:npm/fs-tw"
+    "typescript": "~4.1.4"
   }
 }

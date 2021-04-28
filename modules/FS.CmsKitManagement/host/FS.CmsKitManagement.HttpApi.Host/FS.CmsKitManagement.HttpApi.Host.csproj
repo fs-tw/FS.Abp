@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.CmsKitManagement</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>FS.CmsKitManagement-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
+    <PackageReference Include="IdentityModel" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftPackageVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="$(MicrosoftPackageVersion)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="$(MicrosoftPackageVersion)" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FS.CmsKitManagement.HttpApi\FS.CmsKitManagement.HttpApi.csproj" />
+    <ProjectReference Include="..\..\src\FS.CmsKitManagement.Application\FS.CmsKitManagement.Application.csproj" />
+    <ProjectReference Include="..\..\src\FS.CmsKitManagement.EntityFrameworkCore\FS.CmsKitManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.Host.Shared\FS.CmsKitManagement.Host.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+</Project>

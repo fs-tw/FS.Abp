@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>FS.CmsKitManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.CmsKit.EntityFrameworkCore" Version="4.3.0" />
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

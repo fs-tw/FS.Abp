@@ -24,7 +24,7 @@ namespace FS
         typeof(FS.Abp.AbpHttpApiModule)
         )]
     [DependsOn(
-        typeof(Volo.CmsKit.CmsKitHttpApiModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule)
         )]
     public class FSHttpApiModule : AbpModule
     {

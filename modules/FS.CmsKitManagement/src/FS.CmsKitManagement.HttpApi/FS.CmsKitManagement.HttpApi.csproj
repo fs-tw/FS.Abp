@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.CmsKitManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.CmsKit.HttpApi" Version="4.3.0" />
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -15,6 +15,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.BlobStoring;
 using Volo.Abp.BlobStoring.FileSystem;
+using Volo.CmsKit;
 
 namespace FS
 {
@@ -34,6 +35,7 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpDomainModule)
         )]
+    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementDomainModule))]
     [DependsOn(typeof(Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule))]
     public class FSDomainModule : AbpModule
     {

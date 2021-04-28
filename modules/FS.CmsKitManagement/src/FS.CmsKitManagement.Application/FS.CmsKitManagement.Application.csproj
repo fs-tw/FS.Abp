@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.CmsKitManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.CmsKit.Application" Version="4.3.0" />
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

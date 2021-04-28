@@ -18,11 +18,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
     <ProjectReference Include="..\FS.Domain.Shared\FS.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.BlobStoring.FileSystem" Version="4.3.0" />
+    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.BlobStoring.FileSystem" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Identity.Domain" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="$(AbpVersion)" />
