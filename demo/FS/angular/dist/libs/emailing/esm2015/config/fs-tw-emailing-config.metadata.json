@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./index"},{"from":"./components/emailing-settings/emailing-settings.component","export":[{"name":"EmailingSettingsComponent","as":"ɵa"}]},{"from":"./providers/setting-tab.provider","export":[{"name":"EMAILING_SETTING_TAB_PROVIDERS","as":"ɵb"},{"name":"configureSettingTabs","as":"ɵc"}]}]}]
