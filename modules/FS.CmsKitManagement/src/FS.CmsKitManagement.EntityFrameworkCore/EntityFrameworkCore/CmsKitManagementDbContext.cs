@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.CmsKit.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.EntityFrameworkCore
 {
@@ -22,7 +21,6 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
         {
             base.OnModelCreating(builder);
 
-            builder.ConfigureCmsKit();
             builder.ConfigureCmsKitManagement();
         }
     }

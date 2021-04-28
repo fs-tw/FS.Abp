@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.CmsKit.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.EntityFrameworkCore
 {
@@ -18,7 +19,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             );
 
             optionsAction?.Invoke(options);
-
+            builder.ConfigureCmsKit();
             /* Configure all entities here. Example:
 
             builder.Entity<Question>(b =>
