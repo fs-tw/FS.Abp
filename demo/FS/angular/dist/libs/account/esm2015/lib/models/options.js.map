@@ -1,1 +1,0 @@
-{"version":3,"file":"options.js","sourceRoot":"../../../../libs/account/src/","sources":["lib/models/options.ts"],"names":[],"mappings":"","sourcesContent":["export interface Options {\r\n  redirectUrl?: string;\r\n}\r\n"]}
