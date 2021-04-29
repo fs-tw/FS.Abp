@@ -12,6 +12,7 @@ namespace FS.FormManagement
         typeof(AbpAutoMapperModule)
         )]
     [DependsOn(typeof(FS.Abp.AbpApplicationModule))]
+    [DependsOn(typeof(Volo.Forms.FormsApplicationModule))]
     public class FormManagementApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

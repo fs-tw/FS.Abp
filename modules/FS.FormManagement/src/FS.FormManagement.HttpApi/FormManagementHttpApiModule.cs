@@ -10,6 +10,7 @@ namespace FS.FormManagement
     [DependsOn(
         typeof(FormManagementApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
+    [DependsOn(typeof(Volo.Forms.FormsHttpApiModule))]
     public class FormManagementHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

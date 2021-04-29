@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.HttpApi" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Application.Contracts\FS.FormManagement.Application.Contracts.csproj" />
   </ItemGroup>
 

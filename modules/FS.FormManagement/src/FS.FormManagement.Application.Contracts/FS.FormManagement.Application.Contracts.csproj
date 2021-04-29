@@ -23,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.Application.Contracts" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Domain.Shared\FS.FormManagement.Domain.Shared.csproj" />
   </ItemGroup>
 

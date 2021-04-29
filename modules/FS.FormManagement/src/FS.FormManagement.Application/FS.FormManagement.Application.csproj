@@ -26,6 +26,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.Application" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Application.Contracts\FS.FormManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.FormManagement.Domain\FS.FormManagement.Domain.csproj" />
   </ItemGroup>

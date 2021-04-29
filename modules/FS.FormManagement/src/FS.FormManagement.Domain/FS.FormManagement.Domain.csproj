@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.Domain" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Domain.Shared\FS.FormManagement.Domain.Shared.csproj" />
   </ItemGroup>
 

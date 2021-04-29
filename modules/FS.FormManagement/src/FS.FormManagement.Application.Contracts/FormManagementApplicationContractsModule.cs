@@ -10,6 +10,7 @@ namespace FS.FormManagement
         typeof(AbpAuthorizationModule)
         )]
     [DependsOn(typeof(FS.Abp.AbpApplicationContractsModule))]
+    [DependsOn(typeof(Volo.Forms.FormsApplicationContractsModule))]
     public class FormManagementApplicationContractsModule : AbpModule
     {
 

@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 namespace FS.FormManagement.EntityFrameworkCore
 {
-    public static class FormManagementDbContextModelCreatingExtensions
+    public static partial class FormManagementDbContextModelCreatingExtensions
     {
         public static void ConfigureFormManagement(
             this ModelBuilder builder,
@@ -28,6 +28,8 @@ namespace FS.FormManagement.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
+            CustomizeMapping(ref builder);
+
             builder.ApplyConfiguration<FS.FormManagement.Forms.Form>(new FS.FormManagement.Forms.FormConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Forms.Group>(new FS.FormManagement.Forms.GroupConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Forms.Checkbox>(new FS.FormManagement.Forms.CheckboxConfiguration(options));
@@ -41,5 +43,6 @@ namespace FS.FormManagement.EntityFrameworkCore
             builder.ApplyConfiguration<FS.FormManagement.Versions.VersionDefinition>(new FS.FormManagement.Versions.VersionDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Forms.Choice>(new FS.FormManagement.Forms.ChoiceConfiguration(options));
         }
+        static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }
 }
