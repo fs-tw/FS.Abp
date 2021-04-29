@@ -11,7 +11,7 @@ namespace DEMO.Data
 
         public async Task SeedAsync(DataSeedContext context)
         {
-            await formSeeder.SeedAsync(context, "/Files/FormManagement/test.json");
+            //await formSeeder.SeedAsync(context, "/Files/FormManagement/test.json");
         }
     }
 }
