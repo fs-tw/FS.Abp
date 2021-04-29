@@ -6,19 +6,19 @@ export const environment = {
   production: false,
   application: {
     baseUrl,
-    name: 'FS',
+    name: 'DEMO',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44314',
+    issuer: 'https://localhost:44372',
     redirectUri: baseUrl,
-    clientId: 'FS_App',
+    clientId: 'DEMO_App',
     responseType: 'password',
-    scope: 'offline_access openid profile role email phone FS',
+    scope: 'offline_access openid profile role email phone DEMO',
   },
   apis: {
     default: {
-      url: 'https://localhost:44314',
-      rootNamespace: 'FS',
+      url: 'https://localhost:44372',
+      rootNamespace: '',
     },
   },
 } as Environment;

@@ -96,7 +96,7 @@ export class AccountLayoutComponent implements OnInit, OnDestroy {
       }
       if (evt instanceof NavigationError) {
         this.isFetching = false;
-        msg.error(`无法加载${evt.url}路由`, { nzDuration: 1000 * 3 });
+        msg.error(`Can not load ${evt.url} route`, { nzDuration: 1000 * 3 });
         return;
       }
       if (!(evt instanceof NavigationEnd)) {

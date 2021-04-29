@@ -3,5 +3,6 @@
   "dest": "../../dist/libs/theme-alain-ms",
   "lib": {
     "entryFile": "src/index.ts"
-  }
+  },
+  "allowedNonPeerDependencies":["."]
 }

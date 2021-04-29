@@ -4,10 +4,10 @@
 <div class="alain-ms__topbar-main">
   <ms-all-nav *ngIf="allNav"></ms-all-nav>
   <div class="alain-ms__topbar-logo">
-    <a routerLink="/" class="alain-ms__topbar-logo-img">
+    <a routerLink="/" class="alain-ms__topbar-logo-img" [class.disabled]="!(this.configService.getOne$('currentUser')| async).isAuthenticated">
       <img *ngIf="(appInfo | async).application?.logoUrl; else defaultLogo" [src]="(appInfo | async).application?.logoUrl"/>
     </a>
-    <a routerLink="/" class="alain-ms__topbar-logo-link">
+    <a routerLink="/" class="alain-ms__topbar-logo-link" [class.disabled]="!(this.configService.getOne$('currentUser')| async).isAuthenticated">
       {{ (appInfo | async ).application?.name }}
     </a>
   </div>
