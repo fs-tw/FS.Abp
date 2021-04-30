@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDeveloper Version="6.11.1213.0">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="Net50" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version5" DetectFunctionBasedColumnDefault="True">
+    <Connection ConnectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=FS_CMS;Integrated Security=True;Persist Security Info=True" Provider="System.Data.SqlClient" />
+    <Generation />
+    <DatabaseFirstNamingRules>
+      <EntitySet PluralizationName="Pluralize" />
+      <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="True" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
+      <Property RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+    </DatabaseFirstNamingRules>
+    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="dbo" TargetProviderName="System.Data.SqlClient">
+      <TargetServer Server="SQL Server" ServerVersion="2016" />
+      <ModelFirstNamingRules>
+        <Table RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />
+        <Column RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
+      </ModelFirstNamingRules>
+    </ModelFirst>
+    <Diagrams>
+      <Diagram Name="Diagram1" DefaultDiagram="True" />
+    </Diagrams>
+    <Templates />
+    <AttributeAssemblies />
+  </ModelSettings>
+</EntityDeveloper>

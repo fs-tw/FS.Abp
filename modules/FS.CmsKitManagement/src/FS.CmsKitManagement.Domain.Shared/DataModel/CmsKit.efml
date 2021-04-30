@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore namespace="FS_CmsKitManagement" p1:name="Model" p1:Guid="74f06c7c-5c87-4a16-9cfd-4c9f2bd17501" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="CmsUser" entity-set="CmsUsers" table="CmsUsers" schema="dbo" p1:Guid="b7a1be7f-b040-481e-bcf0-15b65160aac2">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="52aa4e1b-d1eb-4ffa-9995-4c6de9bac41b">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="909b42ac-3990-411a-a617-d2ed15287b66">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="UserName" type="String" p1:ValidateMaxLength="256" p1:ValidateRequired="true" p1:Guid="8ab50ef8-bb52-4942-9243-1a44547c1390">
+      <column name="UserName" not-null="True" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Email" type="String" p1:ValidateMaxLength="256" p1:ValidateRequired="true" p1:Guid="449a35b0-ec60-4f2e-a62d-47bade03fe3c">
+      <column name="Email" not-null="True" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Name" type="String" p1:nullable="True" p1:ValidateMaxLength="64" p1:ValidateRequired="false" p1:Guid="6172f50e-616d-4481-ae73-2bf88af94fb7">
+      <column name="Name" not-null="False" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Surname" type="String" p1:nullable="True" p1:ValidateMaxLength="64" p1:ValidateRequired="false" p1:Guid="b4fcef7c-167c-4d09-b440-8e8ad8b2a49a">
+      <column name="Surname" not-null="False" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EmailConfirmed" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b1232f3d-093a-4ca1-92a7-91e135b89387">
+      <column name="EmailConfirmed" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="PhoneNumber" type="String" p1:nullable="True" p1:ValidateMaxLength="16" p1:ValidateRequired="false" p1:Guid="b3faab07-a5f2-4537-a218-419cf00f449b">
+      <column name="PhoneNumber" not-null="False" length="16" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="PhoneNumberConfirmed" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b92c3f76-0c5a-4e5e-9389-156fc3cf33e6">
+      <column name="PhoneNumberConfirmed" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b0a2fc77-24c2-424f-a378-c77234277deb">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="56d24cfa-64ef-4c82-a08a-cc5ac5535449">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+  </class>
+  <class name="UserReaction" entity-set="UserReactions" table="CmsUserReactions" schema="dbo" p1:Guid="69aa1826-9ccb-4727-9cd3-a28038c071e3">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="d04239cd-b2e0-4f8c-bfa4-56b61a1a7811">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7ed0feb6-a6a6-4349-81ee-2626b08d43a6">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="2da2b9ed-4658-425d-9198-84616c7ac6d8">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="d5dcc6e9-9b35-401b-8977-279ca0353a4f">
+      <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ReactionName" type="String" p1:ValidateMaxLength="32" p1:ValidateRequired="true" p1:Guid="66a346b9-dde3-4772-bf81-d3a5cbb43be1">
+      <column name="ReactionName" not-null="True" length="32" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:ValidateRequired="true" p1:Guid="1470b4e1-b193-4ee3-ae95-22250a0882d3">
+      <column name="CreatorId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="477df8cc-22ad-4953-9ae5-f0e8f70a2960">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Tag" entity-set="Tags" table="CmsTags" schema="dbo" p1:Guid="0d610b21-7f7b-4dde-b91d-44e95645eac1">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="c8186711-cc75-4823-b867-ee82ad8db50b">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0ae4ccc7-93d7-4472-a5b1-e6f36aace2e3">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="82f822a4-ed2d-4cad-938f-2e6587c18069">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Name" type="String" p1:ValidateMaxLength="32" p1:ValidateRequired="true" p1:Guid="065ab3eb-d063-47d0-bad8-0c9b2e26a64c">
+      <column name="Name" not-null="True" length="32" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4458e47d-0028-4b66-9954-a3432419d768">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="45092375-ab76-4aa4-8f22-5825bae526fa">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="ccf17308-642c-494e-a330-bc206dd78859">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="52cf254b-50e1-41e8-85a7-574a8f58e692">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4f92e510-dc8d-4083-8c8d-355b6d670347">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="48004115-9586-49ec-9cf1-44da8b2f8388">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="0a4ed726-b422-4f22-85b1-df7adb8ceb9b">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ec793f36-b852-4c46-92f9-87ba2e63f08b">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d83a1e8a-a284-4682-af3a-324b98ab7dac">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Rating" entity-set="Ratings" table="CmsRatings" schema="dbo" p1:Guid="65cda448-ceab-44ca-b38d-6edbf3b4662d">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="c3311633-355f-4689-91d1-955dff536bd6">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b86535cc-b716-44d7-90ab-8bf775a87255">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="59c160b5-629d-4472-b507-58f73a60eeb8">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="63d8774f-e7da-49a4-baf5-6bdde84da716">
+      <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="StarCount" type="Int16" p1:ValidateRequired="true" p1:Guid="7a2f73b9-0472-4055-aa2d-e27bf3148f9d">
+      <column name="StarCount" not-null="True" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:ValidateRequired="true" p1:Guid="54c63504-0925-4e02-bab8-e597563e0eec">
+      <column name="CreatorId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="64251dd3-12f8-44a1-8850-55cd69f71587">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Page" entity-set="Pages" table="CmsPages" schema="dbo" p1:Guid="30b5b3c3-c465-452e-abf8-8134d062c107">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="10571c16-6a28-489f-af02-355be2133f5a">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7e153021-946b-4bd2-9ef2-e57e97d02a06">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="Title" type="String" p1:ValidateMaxLength="256" p1:ValidateRequired="true" p1:Guid="22704d3b-ad74-4cc7-9206-a67c29a4baa6">
+      <column name="Title" not-null="True" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Slug" type="String" p1:ValidateMaxLength="256" p1:ValidateRequired="true" p1:Guid="16aef5c9-8488-43dd-bdd0-5571d540d60c">
+      <column name="Slug" not-null="True" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Content" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="24223290-a027-48dd-ad34-fd5f42459ad5">
+      <column name="Content" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Script" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9d625a30-f754-4ce2-a80a-094c8d298dbf">
+      <column name="Script" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="Style" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="92a94608-ed84-4862-a842-8e8e0084f517">
+      <column name="Style" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dad97f48-49cc-436a-9a61-01da081d84af">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="bfe1f0b2-3f51-456a-bbf6-14c4a5e01c94">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="2600a2f9-5efa-44e6-9bd8-477baad90394">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="600f5315-7e4e-4328-a01e-3ef945dade30">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a20b6396-aaa2-4a5a-bbf7-38166f29e938">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="69f56950-7ed8-4bf3-9340-017c44a2eaa6">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f631f818-7720-4680-baf5-6c7dd6bd798f">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3ada2e3c-2a0c-42a6-b6b5-d361b4186e88">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba05dfef-08f7-469a-b238-3e50e7d64286">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="MediaDescriptor" entity-set="MediaDescriptors" table="CmsMediaDescriptors" schema="dbo" p1:Guid="42afe666-4833-4c3d-87c8-f3f04e56d06b">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="6103f333-72b5-41d4-b6f2-230496bfe10a">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2544cb8d-07b0-4ffb-9300-654c4f276b45">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="eec90578-d4cb-4033-87ba-17ddcbd10b9c">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Name" type="String" p1:ValidateMaxLength="255" p1:ValidateRequired="true" p1:Guid="350b1b4e-8735-47e9-bc66-b207cda4b8f9">
+      <column name="Name" not-null="True" length="255" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MimeType" type="String" p1:ValidateMaxLength="128" p1:ValidateRequired="true" p1:Guid="a9aa18d5-010e-4f0b-8f6c-77fcda6afd5b">
+      <column name="MimeType" not-null="True" length="128" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Size" type="Int64" p1:ValidateRequired="true" p1:Guid="b5b951a3-9d6c-45d9-9758-46b23de0acc4">
+      <column name="Size" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="34295da4-464c-4c5c-a7ab-410d7f0249b4">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="8d4e884b-b397-4ada-936b-df738b7de057">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="8440bae3-3dd1-4b83-84ea-e049948db841">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="399a88ad-025b-4bb8-ab4e-14111a79cd34">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f58dc83f-43a0-4692-a3d8-87679b5d8def">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="60347377-4ef7-400f-a305-e6cf63ab7181">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="153d5fe6-6fb2-4d27-b47b-cdc3391f3391">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba99ff0a-9aba-4952-a5aa-fa3ae88788d1">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a459c3a0-c770-484e-b67d-053c83956601">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="EntityTag" entity-set="EntityTags" table="CmsEntityTags" schema="dbo" p1:Guid="28346635-df0f-4b9a-b158-873cca252aaf">
+    <composite-id>
+      <key-property name="TagId" type="Guid" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="8b7a0288-c391-40e8-9a33-8dcd532a93fb">
+        <column name="TagId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+      </key-property>
+      <key-property name="EntityId" type="String" p1:ValidateMaxLength="450" p1:ValidateRequired="true" p1:Guid="2c34a657-5a53-4e83-997e-c508407ac1bb">
+        <column name="EntityId" not-null="True" length="450" sql-type="nvarchar" p1:unicode="True" />
+      </key-property>
+    </composite-id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c3614bc0-d8a0-477f-92e8-be2c06cb4519">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Comment" entity-set="Comments" table="CmsComments" schema="dbo" p1:Guid="91fb7c66-3aaf-451e-b673-ce7a4f0f5f28">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="ea4b7a80-edc3-41bb-b9fd-c44a92b3e61e">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3e770115-5ac0-4e47-af10-58ffb857b127">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="2530670f-c429-4c64-95ab-b140e6282bcd">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="ce70cb02-d8c8-4f4c-a8de-10fb64075ee1">
+      <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Text" type="String" p1:ValidateMaxLength="512" p1:ValidateRequired="true" p1:Guid="e53d19c1-bfa8-4a5c-a49a-49bdd817a558">
+      <column name="Text" not-null="True" length="512" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="RepliedCommentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="110fe4bf-8dbb-4bf5-9ea1-fb43000495c6">
+      <column name="RepliedCommentId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:ValidateRequired="true" p1:Guid="7106fd71-835d-49eb-a315-bc6c2bf050bf">
+      <column name="CreatorId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="cfddb9df-76e5-44fa-ae5c-4910f39eb91f">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Blog" entity-set="Blogs" table="CmsBlogs" schema="dbo" p1:Guid="a4cbf41e-2f34-42ef-8642-e2868e6d606d">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="385ff840-505b-4f9d-b9c4-b6ef15e3eb7c">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="Name" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="3e2f99bd-80eb-4d07-b6a1-90e6eb361275">
+      <column name="Name" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Slug" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="84b2a23b-bbdd-4ef6-b33e-e2bb0d0858c0">
+      <column name="Slug" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4f107f25-a8fa-445e-bb0c-838c654a5bc0">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9c24295d-f64c-4b46-952f-da435d40a279">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="dfa50960-8857-41d3-b059-59071f944910">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="84e08f52-7075-43c2-8176-433720ca1835">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="abcb3f8a-d798-4fd1-b966-495ad3e02d3d">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="69e94c2c-c839-43f5-914f-11ee56798bc1">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b817da13-ce44-4394-a720-68aa9b599391">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="31e20768-5819-4575-b2d4-2f32a4ad8ab9">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1462a0cc-6e9a-4695-bbd2-b9e3d3f4f740">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ef7f306f-fe14-4f06-8200-4ae53fcce6ef">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="BlogPost" entity-set="BlogPosts" table="CmsBlogPosts" schema="dbo" p1:Guid="f20aa8b5-9869-49c7-9766-a0f1de09193a">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="5a42574f-cb02-4788-96fb-a438e9dc5454">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="BlogId" type="Guid" p1:ValidateRequired="true" p1:Guid="02e73683-a3ab-45a2-a470-8c761193980f">
+      <column name="BlogId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="Title" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="b02e71e3-9be2-46a2-b1cf-86dd63bba781">
+      <column name="Title" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Slug" type="String" p1:ValidateMaxLength="256" p1:ValidateRequired="true" p1:Guid="8eb386c7-e545-451d-bb3c-14fb4ad81566">
+      <column name="Slug" not-null="True" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ShortDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="256" p1:ValidateRequired="false" p1:Guid="2e407442-0d1e-4a50-84b9-621ecd48a6ff">
+      <column name="ShortDescription" not-null="False" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Content" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e1d5dc85-59dd-4c09-9746-0b6ecc9a0c66">
+      <column name="Content" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="CoverImageMediaId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4b71ed96-0c8f-4bc7-a2e4-b045377d6843">
+      <column name="CoverImageMediaId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cdb20fdd-f2e2-4ec6-b9ea-aa23476c5bc4">
+      <column name="TenantId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="AuthorId" type="Guid" p1:ValidateRequired="true" p1:Guid="b3effa49-6a76-48bb-949b-13533009afab">
+      <column name="AuthorId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9035d13b-cd83-4e37-8fe9-00457719af24">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="8d34a15e-96df-4de3-be55-c7f20a389bdc">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="018284ad-b469-4821-b651-c9a43a2a6978">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="19521021-a3ba-4291-b613-ac7008d89a75">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="98b74a7a-87a8-4cef-b260-f775d43a332e">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b6899702-e44e-499e-b50d-93407fcc39b6">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b033c788-bf57-4f4f-b006-b94fecfb22e3">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="865887cc-0a14-4120-a7f0-8aed9c3470da">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d427c9ef-e6fc-4c9d-a5b7-694c98ce4194">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="BlogFeature" entity-set="BlogFeatures" table="CmsBlogFeatures" schema="dbo" p1:Guid="63474242-8743-4b67-b28c-55a79d97b558">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="9eaeb3c8-8b8c-421b-b668-c47218b3adc4">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="BlogId" type="Guid" p1:ValidateRequired="true" p1:Guid="e472a142-df15-4389-beff-17769c6d2b4f">
+      <column name="BlogId" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="FeatureName" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="fd7b3b24-0f06-4df5-8550-f18953ad326c">
+      <column name="FeatureName" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsEnabled" type="Boolean" p1:ValidateRequired="true" p1:Guid="c4522588-bbcd-4c27-b28d-64d5a48aa485">
+      <column name="IsEnabled" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ce6bb023-c4f4-4d0a-85fe-c6f1108320ba">
+      <column name="ExtraProperties" not-null="False" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateMaxLength="40" p1:ValidateRequired="false" p1:Guid="48707f94-1e3b-4197-8bb2-e39a73994bc4">
+      <column name="ConcurrencyStamp" not-null="False" length="40" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="228e9c6a-a8f8-4189-820b-3e8c6b6b6211">
+      <column name="CreationTime" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b9d58371-670b-4fb2-b49f-22309619e028">
+      <column name="CreatorId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="48962239-6853-4677-834b-0717b80fa5ea">
+      <column name="LastModificationTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="733e5bb7-9178-4697-bbdc-4c3eaccbabe3">
+      <column name="LastModifierId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="IsDeleted" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b52bac42-c8c7-48e4-8f11-58d1c9d33ca8">
+      <column name="IsDeleted" default="CONVERT([bit],(0))" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3c124c89-a255-4aec-ab31-dbc84eb8e756">
+      <column name="DeleterId" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="601f808b-e04a-4074-997e-bf9f8f28100c">
+      <column name="DeletionTime" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <associations>
+    <association name="CmsUser_CmsBlogPost" cardinality="OneToMany" on-delete="Cascade" p1:Guid="673ecc50-777f-4b56-a839-dc3e2c625944">
+      <end1 multiplicity="One" name="CmsUser" class="BlogPost" relation-class="CmsUser" constrained="True" lazy="False" p1:Guid="5150fb53-ad00-4d42-84e3-cb9dc3b5f48e">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="CmsBlogPosts" class="CmsUser" relation-class="BlogPost" lazy="False" p1:Guid="d5b88dbd-84ad-4a3b-9731-0ab2f61f70a6">
+        <property name="AuthorId" />
+      </end2>
+    </association>
+  </associations>
+</efcore>

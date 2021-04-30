@@ -26,4 +26,24 @@
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DataModel\CmsKit.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKit.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\CmsKit.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKit.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\CmsKit.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>CmsKit.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\CmsKit.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKit.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>
