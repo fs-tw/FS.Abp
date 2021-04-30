@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
+using DEMO.EntityFrameworkCore;
+using DEMO.MultiTenancy;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Authentication.Twitter;
@@ -10,29 +7,32 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using DEMO.EntityFrameworkCore;
-using DEMO.MultiTenancy;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
 using Volo.Abp;
+using Volo.Abp.Account;
+using Volo.Abp.Account.Public.Web.ExternalProviders;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.Autofac;
-using Volo.Abp.Localization;
-using Volo.Abp.Modularity;
-using Volo.Abp.UI.Navigation.Urls;
-using Volo.Abp.VirtualFileSystem;
-using Volo.Abp.Account;
-using Volo.Abp.Account.Public.Web.ExternalProviders;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Autofac;
+using Volo.Abp.Localization;
+using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
-using Microsoft.Extensions.FileProviders;
+using Volo.Abp.UI.Navigation.Urls;
+using Volo.Abp.VirtualFileSystem;
 
 namespace DEMO
 {
@@ -48,18 +48,15 @@ namespace DEMO
         typeof(AbpSwashbuckleModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-
     [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
     [DependsOn(
         typeof(FS.Cms.CmsApplicationModule),
         typeof(FS.Cms.CmsHttpApiModule)
         )]
-
     [DependsOn(
         typeof(FS.Abp.File.FileApplicationModule),
         typeof(FS.Abp.File.FileHttpApiModule)
         )]
-
     [DependsOn(
         typeof(FS.Theme.ThemeApplicationModule),
         typeof(FS.Theme.ThemeHttpApiModule)
@@ -86,7 +83,7 @@ namespace DEMO
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureExternalProviders(context);
-            //FS : Disable AntiForgery for line browser 
+            //FS : Disable AntiForgery for line browser
             Configure<Volo.Abp.AspNetCore.Mvc.AntiForgery.AbpAntiForgeryOptions>(options =>
             {
                 options.AutoValidate = false;
@@ -123,7 +120,6 @@ namespace DEMO
                 );
             });
         }
-
 
         private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
         {
@@ -267,7 +263,7 @@ namespace DEMO
 
             app.UseCors(DefaultCorsPolicyName);
 
-            app.UseVirtualFiles();
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
@@ -300,11 +296,11 @@ namespace DEMO
         }
     }
 }
+
 namespace Microsoft.AspNetCore.Builder
 {
     public static class AbpSpaServiceExtensions
     {
-
         public static IApplicationBuilder UseFSAbpSpaService(this IApplicationBuilder app)
         {
             app.UseSpaStaticFiles();

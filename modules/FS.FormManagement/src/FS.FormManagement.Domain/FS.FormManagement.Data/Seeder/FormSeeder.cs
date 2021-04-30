@@ -28,7 +28,7 @@ namespace FS.FormManagement.Data.Seeder
         {
             try
             {
-                List<Formal> formals = readFormalAndGroupAndItem(virtualFileJsonPath);
+                List<Form> formals = readFormalAndGroupAndItem(virtualFileJsonPath);
 
                 setupFormalAndGroupAndItem(context, formals);
 
@@ -41,11 +41,11 @@ namespace FS.FormManagement.Data.Seeder
             }
         }
 
-        private List<Formal> readFormalAndGroupAndItem(string virtualFilePath)
+        private List<Form> readFormalAndGroupAndItem(string virtualFilePath)
         {
             try
             {
-                var formals = virtualJsonReader.ReadJson<List<Formal>>(virtualFilePath);
+                var formals = virtualJsonReader.ReadJson<List<Form>>(virtualFilePath);
                 return formals;
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace FS.FormManagement.Data.Seeder
             }
         }
 
-        private void setupFormalAndGroupAndItem(DataSeedContext context, List<Formal> formals)
+        private void setupFormalAndGroupAndItem(DataSeedContext context, List<Form> formals)
         {
             foreach (var formal in formals)
             {
@@ -65,11 +65,11 @@ namespace FS.FormManagement.Data.Seeder
             }
         }
 
-        private void setupGroupAndItemRecursively(DataSeedContext context, Formal formal, Group parentGroup, ICollection<Group> ChildGroups)
+        private void setupGroupAndItemRecursively(DataSeedContext context, Form formal, Group parentGroup, ICollection<Group> ChildGroups)
         {
             foreach (var childGroup in ChildGroups)
             {
-                childGroup.Formal = formal;
+                childGroup.Form = formal;
                 childGroup.TenantId = context.TenantId;
 
                 childGroup.Parent = parentGroup;
@@ -89,7 +89,7 @@ namespace FS.FormManagement.Data.Seeder
             }
         }
 
-        private async Task insertAllDataAsync(List<Formal> formals)
+        private async Task insertAllDataAsync(List<Form> formals)
         {
             var roots = formals.SelectMany(x => x.Groups).Where(x => x.ParentId == null).ToList();
 

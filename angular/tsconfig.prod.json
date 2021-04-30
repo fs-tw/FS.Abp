@@ -1,26 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "paths": {
-      "@fs-tw/account": [
-        "dist/libs/account"
-      ],
-      "@fs-tw/account/*": [
-        "dist/libs/account/*"
-      ],
-      "@fs-tw/emailing": [
-        "dist/emailing"
-      ],
-      "@fs-tw/emailing/*": [
-        "dist/emailing/*"
-      ],
-      "@fs-tw/form-management": [
-        "dist/form-management"
-      ],
-      "@fs-tw/form-management/*": [
-        "dist/form-management/*"
-      ]
-    }
+    "paths": {}
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,

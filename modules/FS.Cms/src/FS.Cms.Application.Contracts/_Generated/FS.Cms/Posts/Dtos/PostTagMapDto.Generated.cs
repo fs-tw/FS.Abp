@@ -29,7 +29,7 @@ namespace FS.Cms.Posts.Dtos
     {
     }
 
-    public partial class PostTagMapDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<Guid>
+    public partial class PostTagMapDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual System.Guid PostId { get; set; }
 
@@ -37,7 +37,7 @@ namespace FS.Cms.Posts.Dtos
 
     }
 
-    public partial class PostTagMapCreateDto
+    public partial class PostTagMapCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual System.Guid PostId { get; set; }
 
@@ -45,7 +45,7 @@ namespace FS.Cms.Posts.Dtos
 
     }
 
-    public partial class PostTagMapUpdateDto
+    public partial class PostTagMapUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual System.Guid PostId { get; set; }
 

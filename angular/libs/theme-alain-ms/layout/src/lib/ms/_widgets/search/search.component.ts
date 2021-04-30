@@ -37,6 +37,10 @@ export class MSSearchComponent implements OnDestroy {
       });
   }
 
+  onSearch(): void {
+    this.search$.next(this.ipt.nativeElement.value);
+  }
+
   @HostListener('click')
   _click(): void {
     this.ipt.nativeElement.focus();

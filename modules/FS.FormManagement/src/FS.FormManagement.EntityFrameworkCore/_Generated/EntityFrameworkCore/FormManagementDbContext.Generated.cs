@@ -29,7 +29,7 @@ namespace FS.FormManagement.EntityFrameworkCore
     public partial class FormManagementDbContext : AbpDbContext<FormManagementDbContext>, IFormManagementDbContext
     {
 
-        public virtual DbSet<FS.FormManagement.Forms.Formal> Formals
+        public virtual DbSet<FS.FormManagement.Forms.Form> Forms
         {
             get;
             set;
@@ -41,7 +41,31 @@ namespace FS.FormManagement.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.FormManagement.Forms.Item> Items
+        public virtual DbSet<FS.FormManagement.Forms.Checkbox> Checkboxes
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.FormManagement.Forms.ChoiceMultiple> ChoiceMultiples
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.FormManagement.Forms.DropdownList> DropdownLists
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.FormManagement.Forms.ShortText> ShortTexts
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.FormManagement.Forms.Question> Questions
         {
             get;
             set;
@@ -53,19 +77,25 @@ namespace FS.FormManagement.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.FormManagement.Records.Record> Records
+        public virtual DbSet<FS.FormManagement.FormResponses.FormResponse> FormResponses
         {
             get;
             set;
         }
 
-        public virtual DbSet<FS.FormManagement.Records.RecordItem> RecordItems
+        public virtual DbSet<FS.FormManagement.FormResponses.Answer> Answers
         {
             get;
             set;
         }
 
         public virtual DbSet<FS.FormManagement.Versions.VersionDefinition> VersionDefinitions
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.FormManagement.Forms.Choice> Choices
         {
             get;
             set;

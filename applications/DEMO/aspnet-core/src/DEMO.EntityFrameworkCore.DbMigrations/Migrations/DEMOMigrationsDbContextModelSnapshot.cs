@@ -18,7 +18,7 @@ namespace DEMO.Migrations
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FS.Cms.Blogs.Blog", b =>
@@ -498,7 +498,203 @@ namespace DEMO.Migrations
                     b.ToTable("CmsTags");
                 });
 
-            modelBuilder.Entity("FS.FormManagement.Forms.Formal", b =>
+            modelBuilder.Entity("FS.FormManagement.FormResponses.Answer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTime>("AnswerDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("AnswerDate");
+
+                    b.Property<Guid?>("ChoiceId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ChoiceId");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<Guid>("FormResponseId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("FormResponseId");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid>("QuestionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("QuestionId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Value");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.HasIndex("FormResponseId");
+
+                    b.ToTable("FormManagementAnswers");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.FormResponses.FormResponse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Email");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<Guid>("FormId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("FormId");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.ToTable("FormManagementFormResponses");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.Choice", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<Guid?>("CheckboxId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ChoiceMultipleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DropdownListId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsCorrect");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("No")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("No");
+
+                    b.Property<Guid>("QuestionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("QuestionId");
+
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int")
+                        .HasColumnName("Sequence");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CheckboxId");
+
+                    b.HasIndex("ChoiceMultipleId");
+
+                    b.HasIndex("CreationTime");
+
+                    b.HasIndex("DropdownListId");
+
+                    b.ToTable("FormManagementChoices");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.Form", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier")
@@ -551,7 +747,7 @@ namespace DEMO.Migrations
 
                     b.HasIndex("CreationTime");
 
-                    b.ToTable("FormManagementFormals");
+                    b.ToTable("FormManagementForms");
                 });
 
             modelBuilder.Entity("FS.FormManagement.Forms.Group", b =>
@@ -588,9 +784,9 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<Guid>("FormalId")
+                    b.Property<Guid>("FormId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("FormalId");
+                        .HasColumnName("FormId");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
@@ -616,14 +812,14 @@ namespace DEMO.Migrations
 
                     b.HasIndex("CreationTime");
 
-                    b.HasIndex("FormalId");
+                    b.HasIndex("FormId");
 
                     b.HasIndex("ParentId");
 
                     b.ToTable("FormManagementGroups");
                 });
 
-            modelBuilder.Entity("FS.FormManagement.Forms.Item", b =>
+            modelBuilder.Entity("FS.FormManagement.Forms.Question", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier")
@@ -643,6 +839,11 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CreatorId");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Discriminator");
+
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
@@ -650,6 +851,14 @@ namespace DEMO.Migrations
                     b.Property<Guid>("GroupId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("GroupId");
+
+                    b.Property<bool>("HasOtherOption")
+                        .HasColumnType("bit")
+                        .HasColumnName("HasOtherOption");
+
+                    b.Property<bool>("IsRequired")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsRequired");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
@@ -664,11 +873,6 @@ namespace DEMO.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("No");
 
-                    b.Property<string>("Question")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Question");
-
                     b.Property<int>("Sequence")
                         .HasColumnType("int")
                         .HasColumnName("Sequence");
@@ -677,119 +881,20 @@ namespace DEMO.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Title");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CreationTime");
 
                     b.HasIndex("GroupId");
 
-                    b.ToTable("FormManagementItems");
-                });
+                    b.ToTable("FormManagementQuestions");
 
-            modelBuilder.Entity("FS.FormManagement.Records.Record", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CreatorId");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<Guid>("FormalId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("FormalId");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastModificationTime");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("LastModifierId");
-
-                    b.Property<Guid?>("TenantId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreationTime");
-
-                    b.ToTable("FormManagementRecords");
-                });
-
-            modelBuilder.Entity("FS.FormManagement.Records.RecordItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<string>("Asnwer")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Asnwer");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CreatorId");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<string>("ItemId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ItemId");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastModificationTime");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("LastModifierId");
-
-                    b.Property<Guid>("RecordId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("RecordId");
-
-                    b.Property<Guid?>("TenantId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreationTime");
-
-                    b.HasIndex("RecordId");
-
-                    b.ToTable("FormManagementRecordItems");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Question");
                 });
 
             modelBuilder.Entity("FS.FormManagement.Versions.Version", b =>
@@ -3527,6 +3632,307 @@ namespace DEMO.Migrations
                     b.ToTable("FmFileDescriptors");
                 });
 
+            modelBuilder.Entity("Volo.Forms.Answers.Answer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AnswerDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ChoiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("FormResponseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("QuestionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FormResponseId");
+
+                    b.HasIndex("Id", "QuestionId", "FormResponseId", "TenantId");
+
+                    b.ToTable("FrmAnswers");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Choices.Choice", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ChoosableQuestionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("Value");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChoosableQuestionId");
+
+                    b.HasIndex("Id", "ChoosableQuestionId", "TenantId");
+
+                    b.ToTable("FrmChoices");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Forms.Form", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("CanEditResponse")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)")
+                        .HasColumnName("Description");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("HasLimitOneResponsePerUser")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAcceptingResponses")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsCollectingEmail")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<bool>("IsQuiz")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<bool>("RequiresLogin")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id", "TenantId");
+
+                    b.ToTable("FrmForms");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.QuestionBase", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)")
+                        .HasColumnName("Description");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<Guid>("FormId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("FormId");
+
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("Title");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id", "FormId", "TenantId");
+
+                    b.ToTable("FrmQuestions");
+
+                    b.HasDiscriminator<int>("Type");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Responses.FormResponse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<Guid>("FormId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id", "FormId", "UserId", "TenantId");
+
+                    b.ToTable("FrmFormResponses");
+                });
+
             modelBuilder.Entity("Volo.Saas.Editions.Edition", b =>
                 {
                     b.Property<Guid>("Id")
@@ -3669,6 +4075,90 @@ namespace DEMO.Migrations
                     b.ToTable("SaasTenantConnectionStrings");
                 });
 
+            modelBuilder.Entity("FS.FormManagement.Forms.Checkbox", b =>
+                {
+                    b.HasBaseType("FS.FormManagement.Forms.Question");
+
+                    b.HasDiscriminator().HasValue("Checkbox");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.ChoiceMultiple", b =>
+                {
+                    b.HasBaseType("FS.FormManagement.Forms.Question");
+
+                    b.HasDiscriminator().HasValue("ChoiceMultiple");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.DropdownList", b =>
+                {
+                    b.HasBaseType("FS.FormManagement.Forms.Question");
+
+                    b.HasDiscriminator().HasValue("DropdownList");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.ShortText", b =>
+                {
+                    b.HasBaseType("FS.FormManagement.Forms.Question");
+
+                    b.HasDiscriminator().HasValue("ShortText");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.Checkbox", b =>
+                {
+                    b.HasBaseType("Volo.Forms.Questions.QuestionBase");
+
+                    b.Property<bool>("HasOtherOption")
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("HasOtherOption");
+
+                    b.Property<bool>("IsRequired")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsRequired");
+
+                    b.HasDiscriminator().HasValue(4);
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.ChoiceMultiple", b =>
+                {
+                    b.HasBaseType("Volo.Forms.Questions.QuestionBase");
+
+                    b.Property<bool>("HasOtherOption")
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("HasOtherOption");
+
+                    b.Property<bool>("IsRequired")
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsRequired");
+
+                    b.HasDiscriminator().HasValue(3);
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.DropdownList", b =>
+                {
+                    b.HasBaseType("Volo.Forms.Questions.QuestionBase");
+
+                    b.Property<bool>("IsRequired")
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsRequired");
+
+                    b.HasDiscriminator().HasValue(5);
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ShortText", b =>
+                {
+                    b.HasBaseType("Volo.Forms.Questions.QuestionBase");
+
+                    b.Property<bool>("IsRequired")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsRequired");
+
+                    b.HasDiscriminator().HasValue(1);
+                });
+
             modelBuilder.Entity("FS.Cms.Blogs.Blog", b =>
                 {
                     b.HasOne("FS.Cms.Blogs.Blog", "Parent")
@@ -3713,11 +4203,37 @@ namespace DEMO.Migrations
                     b.Navigation("Parent");
                 });
 
+            modelBuilder.Entity("FS.FormManagement.FormResponses.Answer", b =>
+                {
+                    b.HasOne("FS.FormManagement.FormResponses.FormResponse", "Record")
+                        .WithMany("Answers")
+                        .HasForeignKey("FormResponseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Record");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.Choice", b =>
+                {
+                    b.HasOne("FS.FormManagement.Forms.Checkbox", null)
+                        .WithMany("Choices")
+                        .HasForeignKey("CheckboxId");
+
+                    b.HasOne("FS.FormManagement.Forms.ChoiceMultiple", null)
+                        .WithMany("Choices")
+                        .HasForeignKey("ChoiceMultipleId");
+
+                    b.HasOne("FS.FormManagement.Forms.DropdownList", null)
+                        .WithMany("Choices")
+                        .HasForeignKey("DropdownListId");
+                });
+
             modelBuilder.Entity("FS.FormManagement.Forms.Group", b =>
                 {
-                    b.HasOne("FS.FormManagement.Forms.Formal", "Formal")
+                    b.HasOne("FS.FormManagement.Forms.Form", "Form")
                         .WithMany("Groups")
-                        .HasForeignKey("FormalId")
+                        .HasForeignKey("FormId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -3725,12 +4241,12 @@ namespace DEMO.Migrations
                         .WithMany("Children")
                         .HasForeignKey("ParentId");
 
-                    b.Navigation("Formal");
+                    b.Navigation("Form");
 
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("FS.FormManagement.Forms.Item", b =>
+            modelBuilder.Entity("FS.FormManagement.Forms.Question", b =>
                 {
                     b.HasOne("FS.FormManagement.Forms.Group", "Group")
                         .WithMany("Items")
@@ -3739,17 +4255,6 @@ namespace DEMO.Migrations
                         .IsRequired();
 
                     b.Navigation("Group");
-                });
-
-            modelBuilder.Entity("FS.FormManagement.Records.RecordItem", b =>
-                {
-                    b.HasOne("FS.FormManagement.Records.Record", "Record")
-                        .WithMany("RecordItems")
-                        .HasForeignKey("RecordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Record");
                 });
 
             modelBuilder.Entity("FS.FormManagement.Versions.Version", b =>
@@ -4091,6 +4596,36 @@ namespace DEMO.Migrations
                         .HasForeignKey("DirectoryId");
                 });
 
+            modelBuilder.Entity("Volo.Forms.Answers.Answer", b =>
+                {
+                    b.HasOne("Volo.Forms.Responses.FormResponse", null)
+                        .WithMany("Answers")
+                        .HasForeignKey("FormResponseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Volo.Forms.Choices.Choice", b =>
+                {
+                    b.HasOne("Volo.Forms.Questions.ChoosableItems.Checkbox", null)
+                        .WithMany("Choices")
+                        .HasForeignKey("ChoosableQuestionId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
+                    b.HasOne("Volo.Forms.Questions.ChoosableItems.ChoiceMultiple", null)
+                        .WithMany("Choices")
+                        .HasForeignKey("ChoosableQuestionId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
+                    b.HasOne("Volo.Forms.Questions.ChoosableItems.DropdownList", null)
+                        .WithMany("Choices")
+                        .HasForeignKey("ChoosableQuestionId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Volo.Saas.Tenants.TenantConnectionString", b =>
                 {
                     b.HasOne("Volo.Saas.Tenants.Tenant", null)
@@ -4125,7 +4660,12 @@ namespace DEMO.Migrations
                     b.Navigation("Children");
                 });
 
-            modelBuilder.Entity("FS.FormManagement.Forms.Formal", b =>
+            modelBuilder.Entity("FS.FormManagement.FormResponses.FormResponse", b =>
+                {
+                    b.Navigation("Answers");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.Form", b =>
                 {
                     b.Navigation("Groups");
                 });
@@ -4135,11 +4675,6 @@ namespace DEMO.Migrations
                     b.Navigation("Children");
 
                     b.Navigation("Items");
-                });
-
-            modelBuilder.Entity("FS.FormManagement.Records.Record", b =>
-                {
-                    b.Navigation("RecordItems");
                 });
 
             modelBuilder.Entity("FS.FormManagement.Versions.VersionDefinition", b =>
@@ -4243,9 +4778,44 @@ namespace DEMO.Migrations
                     b.Navigation("UserClaims");
                 });
 
+            modelBuilder.Entity("Volo.Forms.Responses.FormResponse", b =>
+                {
+                    b.Navigation("Answers");
+                });
+
             modelBuilder.Entity("Volo.Saas.Tenants.Tenant", b =>
                 {
                     b.Navigation("ConnectionStrings");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.Checkbox", b =>
+                {
+                    b.Navigation("Choices");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.ChoiceMultiple", b =>
+                {
+                    b.Navigation("Choices");
+                });
+
+            modelBuilder.Entity("FS.FormManagement.Forms.DropdownList", b =>
+                {
+                    b.Navigation("Choices");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.Checkbox", b =>
+                {
+                    b.Navigation("Choices");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.ChoiceMultiple", b =>
+                {
+                    b.Navigation("Choices");
+                });
+
+            modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.DropdownList", b =>
+                {
+                    b.Navigation("Choices");
                 });
 #pragma warning restore 612, 618
         }

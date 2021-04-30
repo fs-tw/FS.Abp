@@ -1,18 +1,14 @@
 {
-  "npmScope": "fs",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "npmScope": "fs-tw",
   "implicitDependencies": {
-    "angular.json": "*",
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
     },
-    "tsconfig.base.json": "*",
-    "tslint.json": "*",
-    ".eslintrc.json": "*",
-    "nx.json": "*"
+    ".eslintrc.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -28,31 +24,16 @@
     }
   },
   "projects": {
-    "account": {
+    "alain-ms-app": {
       "tags": []
     },
-    "demo-admin": {
+    "dev-app": {
       "tags": []
     },
-    "cms": {
-      "tags": []
-    },
-    "unify-public": {
+    "lepton-app": {
       "tags": []
     },
     "theme-alain-ms": {
-      "tags": []
-    },
-    "theme-unify": {
-      "tags": []
-    },
-    "theme": {
-      "tags": []
-    },
-    "emailing": {
-      "tags": []
-    },
-    "form-management": {
       "tags": []
     }
   }

@@ -29,7 +29,7 @@ namespace FS.FormManagement.Forms
         public Group()
         {
             this.Children = new List<Group>();
-            this.Items = new List<Item>();
+            this.Items = new List<Question>();
             OnCreated();
         }
 
@@ -57,7 +57,7 @@ namespace FS.FormManagement.Forms
             set;
         }
 
-        public virtual System.Guid FormalId
+        public virtual System.Guid FormId
         {
             get;
             set;
@@ -81,13 +81,13 @@ namespace FS.FormManagement.Forms
             set;
         }
 
-        public virtual Formal Formal
+        public virtual Form Form
         {
             get;
             set;
         }
 
-        public virtual IList<Item> Items
+        public virtual IList<Question> Items
         {
             get;
             set;

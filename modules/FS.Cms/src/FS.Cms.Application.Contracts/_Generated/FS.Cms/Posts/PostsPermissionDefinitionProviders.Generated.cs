@@ -16,14 +16,14 @@ namespace FS.Cms.Posts
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var PostsGroup = context.AddGroup(PostsPermissionNames.ModuleName,L(PostsPermissionNames.ModuleName));
+            var _PostsGroup = context.AddGroup(PostsPermissionNames.ModuleName,L(PostsPermissionNames.ModuleName));
 
-            var Post = PostsGroup.AddPermission(PostsPermissionNames.Post.Default,L(PostsPermissionNames.Post.Default));
+            var Post = _PostsGroup.AddPermission(PostsPermissionNames.Post.Default,L(PostsPermissionNames.Post.Default));
             Post.AddChild(PostsPermissionNames.Post.Create , L("DisplayName:Post.Create"));
             Post.AddChild(PostsPermissionNames.Post.Update , L("DisplayName:Post.Update"));
             Post.AddChild(PostsPermissionNames.Post.Delete , L("DisplayName:Post.Delete"));
 
-            var PostTagMap = PostsGroup.AddPermission(PostsPermissionNames.PostTagMap.Default,L(PostsPermissionNames.PostTagMap.Default));
+            var PostTagMap = _PostsGroup.AddPermission(PostsPermissionNames.PostTagMap.Default,L(PostsPermissionNames.PostTagMap.Default));
             PostTagMap.AddChild(PostsPermissionNames.PostTagMap.Create , L("DisplayName:PostTagMap.Create"));
             PostTagMap.AddChild(PostsPermissionNames.PostTagMap.Update , L("DisplayName:PostTagMap.Update"));
             PostTagMap.AddChild(PostsPermissionNames.PostTagMap.Delete , L("DisplayName:PostTagMap.Delete"));

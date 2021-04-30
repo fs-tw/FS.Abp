@@ -1,13 +1,84 @@
-﻿using FS.Abp.File.Tool;
+﻿using FS.Abp.File.Utils;
 using System;
+using System.Buffers.Text;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Volo.Abp.Content;
 using Volo.Abp.Domain.Services;
 using Volo.FileManagement.Files;
 
 namespace FS.Abp.Files
 {
+    public class Base64Parser
+    {
+
+        private string _base64String;
+        private string[] _base64Format;
+        public Base64Parser(string base64String)
+        {
+            _base64String = base64String;
+            _base64Format = base64String.Split(",");
+        }
+
+        public string FileExtension
+        {
+            get
+            {
+                var data = _base64String.Substring(0, 5);
+
+                switch (data.ToUpper())
+                {
+                    case "IVBOR":
+                        return ".png";
+
+                    case "/9J/4":
+                        return ".jpg";
+
+                    case "AAAAF":
+                        return ".mp4";
+
+                    case "JVBER":
+                        return ".pdf";
+
+                    case "AAABA":
+                        return ".ico";
+
+                    case "UMFYI":
+                        return ".rar";
+
+                    case "E1XYD":
+                        return ".rtf";
+
+                    case "U1PKC":
+                        return ".txt";
+
+                    case "MQOWM":
+                    case "77U/M":
+                        return ".srt";
+
+                    default:
+                        return string.Empty;
+                }
+            }
+        }
+
+        public string ContentType
+        {
+            get
+            {
+                return _base64Format.First().Replace("data:", "").Replace(";base64", "");
+            }
+        }
+        public byte[] Data
+        {
+            get
+            {
+                return Convert.FromBase64String(_base64Format.Last());
+            }
+        }
+
+    }
     public class FileGeneraterManager : DomainService, IFileGeneraterManager
     {
         private readonly IFileManager fileManager;
@@ -22,63 +93,19 @@ namespace FS.Abp.Files
         public async Task<FileDescriptor> CreateFile(Stream stream, Guid directoryId, string fileName, Guid? tenantId = null)
         {
             var extension = Path.GetExtension(fileName);
-            string contentType = FileExtensionContentTypeUtils.GetMimeType(extension);
-            var memoryStream = new MemoryStream();
-            stream.CopyTo(memoryStream);
-            var fileDescriptor = await fileManager.CreateAsync(fileName, contentType, memoryStream.ToArray(), directoryId, tenantId);
+            var remoteStreamContent = new RemoteStreamContent(stream) { ContentType = FileExtensionContentTypeUtils.GetMimeType(extension) };
+            var fileDescriptor = await fileManager.CreateAsync(fileName, remoteStreamContent.ContentType, remoteStreamContent, directoryId, tenantId);
             return fileDescriptor;
         }
 
         public async Task<FileDescriptor> CreateFile(string base64input, Guid directoryId, string fileName, Guid? tenantId = null)
         {
-            var memoryStream = new MemoryStream();
-            string contentType = "";
-            var temp = base64input.Split(",");
-            var base64 = temp.Last();
-            contentType = temp.First().Replace("data:", "").Replace(";base64", "");
-            var bytes = Convert.FromBase64String(base64);
-            memoryStream.Write(bytes, 0, bytes.Length);
-            var fileDescriptor = await fileManager.CreateAsync(fileName + getFileExtension(base64), contentType, memoryStream.ToArray(), directoryId, tenantId, overrideExisting: true);
+            var base64 = new Base64Parser(base64input);
+
+            var remoteStreamContent = new RemoteStreamContent(new MemoryStream(base64.Data)) { ContentType = base64.ContentType };
+
+            var fileDescriptor = await fileManager.CreateAsync(fileName + base64.FileExtension, base64.ContentType, remoteStreamContent, directoryId, tenantId, overrideExisting: true);
             return fileDescriptor;
-        }
-
-        private string getFileExtension(string base64String)
-        {
-            var data = base64String.Substring(0, 5);
-
-            switch (data.ToUpper())
-            {
-                case "IVBOR":
-                    return ".png";
-
-                case "/9J/4":
-                    return ".jpg";
-
-                case "AAAAF":
-                    return ".mp4";
-
-                case "JVBER":
-                    return ".pdf";
-
-                case "AAABA":
-                    return ".ico";
-
-                case "UMFYI":
-                    return ".rar";
-
-                case "E1XYD":
-                    return ".rtf";
-
-                case "U1PKC":
-                    return ".txt";
-
-                case "MQOWM":
-                case "77U/M":
-                    return ".srt";
-
-                default:
-                    return string.Empty;
-            }
         }
     }
 }

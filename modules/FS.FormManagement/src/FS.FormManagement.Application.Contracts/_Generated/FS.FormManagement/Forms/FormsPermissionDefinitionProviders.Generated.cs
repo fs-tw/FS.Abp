@@ -16,22 +16,47 @@ namespace FS.FormManagement.Forms
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var FormsGroup = context.AddGroup(FormsPermissionNames.ModuleName,L(FormsPermissionNames.ModuleName));
+            var _FormsGroup = context.AddGroup(FormsPermissionNames.ModuleName,L(FormsPermissionNames.ModuleName));
 
-            var Formal = FormsGroup.AddPermission(FormsPermissionNames.Formal.Default,L(FormsPermissionNames.Formal.Default));
-            Formal.AddChild(FormsPermissionNames.Formal.Create , L("DisplayName:Formal.Create"));
-            Formal.AddChild(FormsPermissionNames.Formal.Update , L("DisplayName:Formal.Update"));
-            Formal.AddChild(FormsPermissionNames.Formal.Delete , L("DisplayName:Formal.Delete"));
+            var Form = _FormsGroup.AddPermission(FormsPermissionNames.Form.Default,L(FormsPermissionNames.Form.Default));
+            Form.AddChild(FormsPermissionNames.Form.Create , L("DisplayName:Form.Create"));
+            Form.AddChild(FormsPermissionNames.Form.Update , L("DisplayName:Form.Update"));
+            Form.AddChild(FormsPermissionNames.Form.Delete , L("DisplayName:Form.Delete"));
 
-            var Group = FormsGroup.AddPermission(FormsPermissionNames.Group.Default,L(FormsPermissionNames.Group.Default));
+            var Group = _FormsGroup.AddPermission(FormsPermissionNames.Group.Default,L(FormsPermissionNames.Group.Default));
             Group.AddChild(FormsPermissionNames.Group.Create , L("DisplayName:Group.Create"));
             Group.AddChild(FormsPermissionNames.Group.Update , L("DisplayName:Group.Update"));
             Group.AddChild(FormsPermissionNames.Group.Delete , L("DisplayName:Group.Delete"));
 
-            var Item = FormsGroup.AddPermission(FormsPermissionNames.Item.Default,L(FormsPermissionNames.Item.Default));
-            Item.AddChild(FormsPermissionNames.Item.Create , L("DisplayName:Item.Create"));
-            Item.AddChild(FormsPermissionNames.Item.Update , L("DisplayName:Item.Update"));
-            Item.AddChild(FormsPermissionNames.Item.Delete , L("DisplayName:Item.Delete"));
+            var Checkbox = _FormsGroup.AddPermission(FormsPermissionNames.Checkbox.Default,L(FormsPermissionNames.Checkbox.Default));
+            Checkbox.AddChild(FormsPermissionNames.Checkbox.Create , L("DisplayName:Checkbox.Create"));
+            Checkbox.AddChild(FormsPermissionNames.Checkbox.Update , L("DisplayName:Checkbox.Update"));
+            Checkbox.AddChild(FormsPermissionNames.Checkbox.Delete , L("DisplayName:Checkbox.Delete"));
+
+            var ChoiceMultiple = _FormsGroup.AddPermission(FormsPermissionNames.ChoiceMultiple.Default,L(FormsPermissionNames.ChoiceMultiple.Default));
+            ChoiceMultiple.AddChild(FormsPermissionNames.ChoiceMultiple.Create , L("DisplayName:ChoiceMultiple.Create"));
+            ChoiceMultiple.AddChild(FormsPermissionNames.ChoiceMultiple.Update , L("DisplayName:ChoiceMultiple.Update"));
+            ChoiceMultiple.AddChild(FormsPermissionNames.ChoiceMultiple.Delete , L("DisplayName:ChoiceMultiple.Delete"));
+
+            var DropdownList = _FormsGroup.AddPermission(FormsPermissionNames.DropdownList.Default,L(FormsPermissionNames.DropdownList.Default));
+            DropdownList.AddChild(FormsPermissionNames.DropdownList.Create , L("DisplayName:DropdownList.Create"));
+            DropdownList.AddChild(FormsPermissionNames.DropdownList.Update , L("DisplayName:DropdownList.Update"));
+            DropdownList.AddChild(FormsPermissionNames.DropdownList.Delete , L("DisplayName:DropdownList.Delete"));
+
+            var ShortText = _FormsGroup.AddPermission(FormsPermissionNames.ShortText.Default,L(FormsPermissionNames.ShortText.Default));
+            ShortText.AddChild(FormsPermissionNames.ShortText.Create , L("DisplayName:ShortText.Create"));
+            ShortText.AddChild(FormsPermissionNames.ShortText.Update , L("DisplayName:ShortText.Update"));
+            ShortText.AddChild(FormsPermissionNames.ShortText.Delete , L("DisplayName:ShortText.Delete"));
+
+            var Question = _FormsGroup.AddPermission(FormsPermissionNames.Question.Default,L(FormsPermissionNames.Question.Default));
+            Question.AddChild(FormsPermissionNames.Question.Create , L("DisplayName:Question.Create"));
+            Question.AddChild(FormsPermissionNames.Question.Update , L("DisplayName:Question.Update"));
+            Question.AddChild(FormsPermissionNames.Question.Delete , L("DisplayName:Question.Delete"));
+
+            var Choice = _FormsGroup.AddPermission(FormsPermissionNames.Choice.Default,L(FormsPermissionNames.Choice.Default));
+            Choice.AddChild(FormsPermissionNames.Choice.Create , L("DisplayName:Choice.Create"));
+            Choice.AddChild(FormsPermissionNames.Choice.Update , L("DisplayName:Choice.Update"));
+            Choice.AddChild(FormsPermissionNames.Choice.Delete , L("DisplayName:Choice.Delete"));
 
         }
 

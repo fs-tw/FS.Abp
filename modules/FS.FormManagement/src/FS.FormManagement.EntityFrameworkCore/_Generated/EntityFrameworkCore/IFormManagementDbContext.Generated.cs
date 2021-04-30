@@ -28,12 +28,17 @@ namespace FS.FormManagement.EntityFrameworkCore
     [ConnectionStringName(FormManagementDbProperties.ConnectionStringName)]
     public partial interface IFormManagementDbContext : IEfCoreDbContext
     {
-        DbSet<FS.FormManagement.Forms.Formal> Formals { get; set; }
+        DbSet<FS.FormManagement.Forms.Form> Forms { get; set; }
         DbSet<FS.FormManagement.Forms.Group> Groups { get; set; }
-        DbSet<FS.FormManagement.Forms.Item> Items { get; set; }
+        DbSet<FS.FormManagement.Forms.Checkbox> Checkboxes { get; set; }
+        DbSet<FS.FormManagement.Forms.ChoiceMultiple> ChoiceMultiples { get; set; }
+        DbSet<FS.FormManagement.Forms.DropdownList> DropdownLists { get; set; }
+        DbSet<FS.FormManagement.Forms.ShortText> ShortTexts { get; set; }
+        DbSet<FS.FormManagement.Forms.Question> Questions { get; set; }
         DbSet<FS.FormManagement.Versions.Version> Versions { get; set; }
-        DbSet<FS.FormManagement.Records.Record> Records { get; set; }
-        DbSet<FS.FormManagement.Records.RecordItem> RecordItems { get; set; }
+        DbSet<FS.FormManagement.FormResponses.FormResponse> FormResponses { get; set; }
+        DbSet<FS.FormManagement.FormResponses.Answer> Answers { get; set; }
         DbSet<FS.FormManagement.Versions.VersionDefinition> VersionDefinitions { get; set; }
+        DbSet<FS.FormManagement.Forms.Choice> Choices { get; set; }
     }
 }

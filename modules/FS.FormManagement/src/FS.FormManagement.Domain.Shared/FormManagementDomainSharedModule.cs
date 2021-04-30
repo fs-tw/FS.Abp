@@ -12,6 +12,7 @@ namespace FS.FormManagement
         typeof(AbpValidationModule)
     )]
     [DependsOn(typeof(FS.Abp.AbpDomainSharedModule))]
+    [DependsOn(typeof(Volo.Forms.FormsDomainSharedModule))]
     public class FormManagementDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -93,7 +93,7 @@ namespace FS.Cms.Posts
             }
             set
             {
-                this.SetExtraProperty(nameof(Contents), value);
+                this.SetProperty(nameof(Contents), value);
             }
         } 
         public virtual List<FS.Cms.Core.Resource> Attachments 
@@ -105,7 +105,7 @@ namespace FS.Cms.Posts
             }
             set
             {
-                this.SetExtraProperty(nameof(Attachments), value);
+                this.SetProperty(nameof(Attachments), value);
             }
         } 
         public virtual List<FS.Cms.Core.Resource> Images 
@@ -117,7 +117,7 @@ namespace FS.Cms.Posts
             }
             set
             {
-                this.SetExtraProperty(nameof(Images), value);
+                this.SetProperty(nameof(Images), value);
             }
         } 
 

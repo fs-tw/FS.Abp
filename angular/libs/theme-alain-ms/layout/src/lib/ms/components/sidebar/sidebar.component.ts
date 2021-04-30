@@ -45,7 +45,7 @@ export class MSSidebarComponent implements AfterViewInit, OnDestroy {
   }
 
   q = '';
-  searchList?: MSProductCategory[][];
+  searchList?: MSProductCategory[][] = [];
   searchCategories: MSProductCategory[] = [];
 
   constructor(

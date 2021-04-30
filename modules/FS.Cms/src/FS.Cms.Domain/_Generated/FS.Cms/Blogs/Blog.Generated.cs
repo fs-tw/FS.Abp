@@ -99,7 +99,7 @@ namespace FS.Cms.Blogs
             }
             set
             {
-                this.SetExtraProperty(nameof(Images), value);
+                this.SetProperty(nameof(Images), value);
             }
         } 
 

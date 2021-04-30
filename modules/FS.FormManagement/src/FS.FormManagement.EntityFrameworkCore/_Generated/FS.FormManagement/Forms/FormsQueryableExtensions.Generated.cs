@@ -14,7 +14,7 @@ namespace FS.FormManagement.Forms
 {
     public static class FormsQueryableExtensions //auto-generated
     {
-        public static IQueryable<Formal> IncludeDetails(this IQueryable<Formal> queryable, bool include = true)
+        public static IQueryable<Form> IncludeDetails(this IQueryable<Form> queryable, bool include = true)
         {
             if (!include)
             {
@@ -32,10 +32,37 @@ namespace FS.FormManagement.Forms
             return queryable
                 .Include(x => x.Children)
                 .Include(x => x.Parent)
-                .Include(x => x.Formal)
+                .Include(x => x.Form)
                 .Include(x => x.Items);
         }
-        public static IQueryable<Item> IncludeDetails(this IQueryable<Item> queryable, bool include = true)
+        public static IQueryable<Checkbox> IncludeDetails(this IQueryable<Checkbox> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
+            return queryable
+                .Include(x => x.Choices);
+        }
+        public static IQueryable<ChoiceMultiple> IncludeDetails(this IQueryable<ChoiceMultiple> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
+            return queryable
+                .Include(x => x.Choices);
+        }
+        public static IQueryable<DropdownList> IncludeDetails(this IQueryable<DropdownList> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
+            return queryable
+                .Include(x => x.Choices);
+        }
+        public static IQueryable<Question> IncludeDetails(this IQueryable<Question> queryable, bool include = true)
         {
             if (!include)
             {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, TemplateRef } from '@angular/core';
-import { InputBoolean } from '@delon/util';
+import { BooleanInput,InputBoolean} from '@delon/util/decorator';
 import { BrandService } from '../../ms.service';
 
 @Component({
@@ -10,7 +10,11 @@ import { BrandService } from '../../ms.service';
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MSPageSingleComponent implements OnInit, OnChanges, OnDestroy {
+export class MSPageSingleComponent implements OnChanges, OnDestroy {
+  static ngAcceptInputType_wide: BooleanInput;
+  static ngAcceptInputType_fixed: BooleanInput;
+
+
   // #region fileds
 
   @Input() @InputBoolean() wide = true;
@@ -23,7 +27,6 @@ export class MSPageSingleComponent implements OnInit, OnChanges, OnDestroy {
 
   constructor(private brand: BrandService) {}
 
-  ngOnInit(): void {}
 
   ngOnChanges(): void {
     this.brand.setFixed(this.fixed);

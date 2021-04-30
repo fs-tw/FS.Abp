@@ -14,9 +14,9 @@ namespace FS.FormManagement.Forms
     public class FormsPermissionNames
     {
         public const string ModuleName = "FS.FormManagement.Forms";
-        public static class Formal
+        public static class Form
         {
-            public const string Default = ModuleName + ".Formal";
+            public const string Default = ModuleName + ".Form";
             public const string Create = Default + ".Create";
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";
@@ -28,9 +28,44 @@ namespace FS.FormManagement.Forms
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";
         }
-        public static class Item
+        public static class Checkbox
         {
-            public const string Default = ModuleName + ".Item";
+            public const string Default = ModuleName + ".Checkbox";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
+        public static class ChoiceMultiple
+        {
+            public const string Default = ModuleName + ".ChoiceMultiple";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
+        public static class DropdownList
+        {
+            public const string Default = ModuleName + ".DropdownList";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
+        public static class ShortText
+        {
+            public const string Default = ModuleName + ".ShortText";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
+        public static class Question
+        {
+            public const string Default = ModuleName + ".Question";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+        }
+        public static class Choice
+        {
+            public const string Default = ModuleName + ".Choice";
             public const string Create = Default + ".Create";
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";

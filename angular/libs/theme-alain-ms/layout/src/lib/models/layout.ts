@@ -41,6 +41,10 @@ export interface MSLayout extends DelonLayout {
    * 是否有侧边栏
    */
   hasSidebar: boolean;
+  /**
+   * 色弱模式
+   */
+  colorWeak: boolean;
 }
 export interface MSProductCategory {
   [key: string]: any;

@@ -1,5 +1,0 @@
-.@{card-prefix-cls} {
-  &-head {
-    background: @brand-grey;
-  }
-}

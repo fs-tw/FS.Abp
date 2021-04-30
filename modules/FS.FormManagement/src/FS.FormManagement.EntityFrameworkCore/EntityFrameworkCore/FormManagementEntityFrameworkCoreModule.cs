@@ -9,6 +9,7 @@ namespace FS.FormManagement.EntityFrameworkCore
         typeof(AbpEntityFrameworkCoreModule)
     )]
     [DependsOn(typeof(FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule))]
+    [DependsOn(typeof(Volo.Forms.EntityFrameworkCore.FormsEntityFrameworkCoreModule))]
     public class FormManagementEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

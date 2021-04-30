@@ -26,7 +26,7 @@ namespace FS.FormManagement.Forms.Dtos
             RuleFor(p => p.DisplayName)
                 .NotNull()
                 ;
-            RuleFor(p => p.FormalId)
+            RuleFor(p => p.FormId)
                 .NotNull()
                 ;
             CustomizeConfiguration();
@@ -47,7 +47,7 @@ namespace FS.FormManagement.Forms.Dtos
             RuleFor(p => p.DisplayName)
                 .NotNull()
                 ;
-            RuleFor(p => p.FormalId)
+            RuleFor(p => p.FormId)
                 .NotNull()
                 ;
             CustomizeConfiguration();

@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\Forms\Dtos\FormalDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\Dtos\ItemDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\IFormalCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\IItemCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\IShortTextCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IShortTextCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDto.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\IVersionsDefinitionCrudAppService.Generated.cs" />
   </ItemGroup>
@@ -17,11 +23,56 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.Application.Contracts" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Domain.Shared\FS.FormManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\FormalDto.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\Dtos\AnswerDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\Dtos\FormResponseDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\IAnswerCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\IFormResponseCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\FormResponses\IFormResponsesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormResponses</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\CheckboxDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ChoiceDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ChoiceMultipleDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\DropdownListDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\FormDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -29,7 +80,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ItemDto.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\QuestionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\QuestionDtoJsonSubtypesConverterBuilders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ShortTextDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -41,7 +100,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IFormalCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\IChoiceCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Forms</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.FormManagement\Forms\IFormCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
@@ -53,37 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IItemCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Forms\IQuestionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Dtos\RecordDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Dtos\RecordItemDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordItemCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDefinitionDto.Generated.cs">
       <AutoGen>True</AutoGen>

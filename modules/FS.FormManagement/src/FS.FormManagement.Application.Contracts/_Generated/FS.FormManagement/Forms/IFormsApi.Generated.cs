@@ -14,9 +14,10 @@ namespace FS.FormManagement.Forms
 {
     public partial interface IFormsApi : //auto-generated
         Volo.Abp.Application.Services.IApplicationService,
-        IFormalCrudAppService,
+        IFormCrudAppService,
         IGroupCrudAppService,
-        IItemCrudAppService
+        IQuestionCrudAppService,
+        IChoiceCrudAppService
     {
     }
 }

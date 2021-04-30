@@ -1,9 +1,5 @@
-import {
-  RoutesService,
-  LocalizationPipe,
-  PermissionService,
-} from '@abp/ng.core';
-import { APP_INITIALIZER, inject, Injector } from '@angular/core';
+
+import { APP_INITIALIZER, Injector } from '@angular/core';
 import {
   ResolveEnd,
   Router
@@ -35,6 +31,7 @@ export function listenRouter(injector: Injector) {
     .subscribe((event) => {
       //const currentUrl = decodeURI(event.state.url.split('?')[0]);
       //layoutStateService.setStore({ currentUrl });
+
       layoutStateService.fetchPageNavs(event.state);
 
     });
