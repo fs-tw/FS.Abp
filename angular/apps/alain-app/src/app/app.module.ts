@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
+import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     IdentityConfigModule.forRoot(),
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
+    CmsKitManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeAlainModule.forRoot(),
   ],

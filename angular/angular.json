@@ -139,7 +139,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/alain-app"],
+          "outputs": [
+            "coverage/apps/alain-app"
+          ],
           "options": {
             "jestConfig": "apps/alain-app/jest.config.js",
             "passWithNoTests": true
@@ -176,7 +178,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/cms-kit-management"],
+          "outputs": [
+            "coverage/libs/cms-kit-management"
+          ],
           "options": {
             "jestConfig": "libs/cms-kit-management/jest.config.js",
             "passWithNoTests": true
@@ -215,5 +219,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "alain-app"
+  "defaultProject": "dev-app"
 }
