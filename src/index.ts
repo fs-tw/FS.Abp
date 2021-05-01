@@ -1,1 +1,1 @@
-export * from './lib/cms-kit-management.module';
+export * from './lib/index';
