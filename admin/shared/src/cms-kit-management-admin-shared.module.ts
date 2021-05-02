@@ -13,6 +13,7 @@ import { CmsKitModalTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-mod
 import { CmsKitModalPagesTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-modal-info-tab/cms-kit-modal-info-tab.component';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CmsKitModalBlogFeatureTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-modal-blog-feature-tab/cms-kit-modal-blog-feature-tab.component';
+import { CmsKitModalMediaTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-modal-media-tab/cms-kit-modal-media-tab.component';
 
 let COMPONENT = [
   PagesComponent,
@@ -26,11 +27,13 @@ let MODAL_COMPONENT = [
   CmsKitModalComponent,
   CmsKitModalTabComponent,
   CmsKitModalPagesTabComponent,
+  CmsKitModalBlogFeatureTabComponent,
+  CmsKitModalMediaTabComponent
 ];
 
 @NgModule({
-  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT, CmsKitModalBlogFeatureTabComponent],
+  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT],
   imports: [CoreModule, PageModule,NgbNavModule, ThemeAlainSharedModule,],
-  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT, CmsKitModalBlogFeatureTabComponent],
+  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT],
 })
 export class CmsKitManagementAdminSharedModule {}
