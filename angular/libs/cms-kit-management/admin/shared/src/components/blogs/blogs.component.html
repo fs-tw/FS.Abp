@@ -4,3 +4,28 @@
   entityName="Blogs"
 ></fs-tw-cms-kit-entity-base>
 
+<fs-tw-cms-kit-modal
+  type="Create"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-tw-cms-kit-modal-info-tab title="NewBlog" [form]="addForm"></fs-tw-cms-kit-modal-info-tab>
+</fs-tw-cms-kit-modal>
+
+<fs-tw-cms-kit-modal
+  type="Edit"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-tw-cms-kit-modal-info-tab
+    title="Blogs"
+    [form]="editForm"
+    [selectedRecord]="editSelectedRecord"
+  ></fs-tw-cms-kit-modal-info-tab>
+
+  <fs-tw-cms-kit-modal-blog-feature-tab
+    [blogFeatures]="editBlogFeatures"
+  ></fs-tw-cms-kit-modal-blog-feature-tab>
+</fs-tw-cms-kit-modal>
