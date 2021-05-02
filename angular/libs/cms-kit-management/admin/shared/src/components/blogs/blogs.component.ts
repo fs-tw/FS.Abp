@@ -10,10 +10,10 @@ import {
   ExtensionsService,
 } from '@fs-tw/cms-kit-management/config';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { forkJoin, of, Subscription } from 'rxjs';
 
 @Component({
   selector: 'fs-tw-blogs',
@@ -39,6 +39,7 @@ export class BlogsComponent implements OnInit {
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Pages.PageDto;
   editBlogFeatures: Volo.CmsKit.Blogs.BlogFeatureDto[];
+  editBlogFeaturesForm: FormGroup;
 
   constructor(
     private readonly injector: Injector,
@@ -106,6 +107,13 @@ export class BlogsComponent implements OnInit {
           this.blogFeatureService.getListByBlogId(selected.id).pipe(
             tap((blogFeatures) => {
               this.editBlogFeatures = blogFeatures;
+              this.editBlogFeaturesForm = new FormGroup({});
+              blogFeatures.forEach((x) => {
+                this.editBlogFeaturesForm.addControl(
+                  x.featureName,
+                  new FormControl(x.isEnabled)
+                );
+              });
             })
           )
         )
@@ -118,8 +126,21 @@ export class BlogsComponent implements OnInit {
     const request: Volo.CmsKit.Admin.Blogs.UpdateBlogDto = {
       ...formValue,
     };
+    const blogFeatures: Volo.CmsKit.Admin.Blogs.BlogFeatureInputDto[] =
+      formValue.blogFeatures;
+
     this.service
       .updateByIdAndInput(this.editSelectedRecord.id, request)
+      .pipe(
+        mergeMap((x) => {
+          if (blogFeatures.length === 0) return of(null);
+          return forkJoin(
+            blogFeatures.map((a) =>
+              this.blogFeatureService.setByBlogIdAndDto(x.id, a)
+            )
+          );
+        })
+      )
       .pipe(take(1))
       .subscribe((_) => {
         this.editModalVisible = false;

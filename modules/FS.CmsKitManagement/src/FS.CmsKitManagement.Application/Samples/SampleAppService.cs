@@ -1,5 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Volo.Abp.BlobStoring;
+using Volo.CmsKit.Admin.MediaDescriptors;
+using Volo.CmsKit.MediaDescriptors;
 
 namespace FS.CmsKitManagement.Samples
 {

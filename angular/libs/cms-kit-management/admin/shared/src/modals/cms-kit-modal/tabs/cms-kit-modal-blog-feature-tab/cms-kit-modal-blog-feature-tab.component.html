@@ -1,3 +1,9 @@
 <ng-template>
-    <p>cms-kit-modal-blog-feature-tab works!</p>
+  <form [formGroup]="form">
+    <div *ngFor="let item of this.blogFeatures">
+      <label nz-checkbox [formControlName]="item.featureName">
+        <span>{{ 'CmsKit::' + item.featureName | abpLocalization }}</span>
+      </label>
+    </div>
+  </form>
 </ng-template>
