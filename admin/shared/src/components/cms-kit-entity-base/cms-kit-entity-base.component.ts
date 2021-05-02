@@ -5,11 +5,12 @@ import {
   Injector,
   EventEmitter,
   Output,
+  ComponentFactoryResolver,
 } from '@angular/core';
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
-import { ActionItem, ExtensionsService } from '@fs-tw/cms-kit-management/config';
+import { ActionEvent, ExtensionsService } from '@fs-tw/cms-kit-management/config';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 
 export type EntityService<T> = {
@@ -37,9 +38,10 @@ export class CmsKitEntityBaseComponent<T> implements OnInit {
     this.hookToQuery();
   }
 
-  private hookToQuery() {
-    this.data$ = this.list.hookToQuery((query) =>
-      this.service.getListByInput(query)
-    );
+  hookToQuery() {
+    this.data$ = this.list.hookToQuery((query) =>{
+      return this.service.getListByInput(query);
+    });
   }
+
 }

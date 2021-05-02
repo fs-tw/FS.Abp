@@ -1,40 +1,43 @@
-import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
+import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
+import { Validators } from '@angular/forms';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 
-export const DEFAULT_PAGES_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Pages.PageDto>([
+export const DEFAULT_PAGES_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Pages.PageDto>([
   {
     type: ePropType.String,
     name: 'title',
+    id:'title',
     displayName: 'CmsKit::Title',
-    sortable: true,
-    columnWidth: 90,
+    //defaultValue:''
   },
   {
     type: ePropType.String,
     name: 'slug',
+    id: 'slug',
     displayName: 'CmsKit::Slug',
-    sortable: true,
-    columnWidth: 90,
+    //defaultValue:''
   },
   {
     type: ePropType.String,
     name: 'content',
+    id: 'content',
     displayName: 'CmsKit::Content',
-    sortable: true,
-    columnWidth: 90,
+    // defaultValue:''
   },
   {
     type: ePropType.String,
     name: 'script',
+    id: 'script',
     displayName: 'CmsKit::Script',
-    sortable: true,
-    columnWidth: 90,
+    // defaultValue:''
   },
   {
     type: ePropType.String,
     name: 'style',
+    id: 'style',
     displayName: 'CmsKit::Style',
-    sortable: true,
-    columnWidth: 90,
+    // defaultValue:''
   }
 ]);
+
+export const DEFAULT_PAGES_EDIT_FORM_PROPS = DEFAULT_PAGES_CREATE_FORM_PROPS;

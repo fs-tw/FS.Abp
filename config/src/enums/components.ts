@@ -1,4 +1,4 @@
-export const enum eCmsKitComponents {
+export enum eCmsKitComponents {
   Pages = 'CmsKit.PagesComponent',
   Blogs = 'CmsKit.BlogsComponent',
   BlogPosts = 'CmsKit.BlogPostsComponent',

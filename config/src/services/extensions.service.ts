@@ -1,53 +1,28 @@
 import { Injectable, Injector } from '@angular/core';
 import { eCmsKitComponents } from '../enums/components';
 import { Subject } from 'rxjs';
-import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/cms-kit-management/proxy';
+import { ActionData } from '@abp/ng.theme.shared/extensions';
 
-export class ActionItem<T> {
+type CmsKitAction$ = {
+  [key in eCmsKitComponents]: Subject<ActionEvent>;
+};
+export class ActionEvent {
   method: string;
-  record?: T;
+  data?: ActionData<any>;
 }
 @Injectable({
   providedIn: 'root',
 })
 export class ExtensionsService {
-  public Actions$ = {
-    [eCmsKitComponents.Pages]: new Subject<ActionItem<Volo.CmsKit.Admin.Pages.PageDto[]>>(),
-  };
-  public Action$ = {
-    [eCmsKitComponents.Pages]: new Subject<ActionItem<Volo.CmsKit.Admin.Pages.PageDto>>(),
-  };
+  public Actions$: CmsKitAction$ = {} as any;
 
-  constructor(
-  ) {
+  constructor() {
+    Object.keys(eCmsKitComponents).forEach(k=>{
+      this.Actions$[eCmsKitComponents[k]] = new Subject<ActionEvent>();
+    });
   }
 
-  action<T>(type: eCmsKitComponents, data?: ActionItem<T>) {
+  Action<T>(type: eCmsKitComponents, data?: ActionEvent) {
     this.Actions$[type].next(data);
   }
-}
-
-@Injectable({
-  providedIn: 'root',
-})
-export class ExtensionsService_New<T> {
-  public CallBackAction:Subject<ActionItem<T>>=new Subject<ActionItem<T>>();
-  public CallBackManyAction:Subject<ActionItem<T[]>>=new Subject<ActionItem<T[]>>();
-
-
-  constructor(
-  ) {
-  }
-
-  action<T>(type: eCmsKitComponents, data?: ActionItem<T>) {
-    //this.Actions$[type].next(data);
-  }
-}
-
-
-@Injectable({
-  providedIn: 'root',
-})
-export class PagesExtensionsService extends ExtensionsService_New<Volo.CmsKit.Admin.Pages.PageDto> {
 }

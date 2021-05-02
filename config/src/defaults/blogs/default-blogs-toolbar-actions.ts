@@ -4,16 +4,14 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
 import { ExtensionsService } from '../../services/extensions.service';
 
-export const DEFAULT_PAGES_TOOLBAR_ACTIONS = ToolbarAction.createMany<
-  Volo.CmsKit.Admin.Pages.PageDto[]
->([
+export const DEFAULT_BLOGS_TOOLBAR_ACTIONS = ToolbarAction.createMany<Volo.CmsKit.Admin.Blogs.BlogDto[]>([
   {
-    text: 'CmsKit::NewPage',
+    text: 'CmsKit::NewBlog',
     action: (data) => {
       const service = data.getInjected(ExtensionsService);
-      service.Action(eCmsKitComponents.Pages, { method: 'Create', data });
+      service.Action(eCmsKitComponents.Blogs, { method: 'Create', data });
     },
-    permission: 'CmsKit.Pages.Create',
+    permission: 'CmsKit.Blogs.Create',
     icon: 'fa fa-plus',
   },
 ]);
