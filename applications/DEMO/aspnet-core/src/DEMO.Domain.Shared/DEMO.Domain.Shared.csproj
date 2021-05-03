@@ -56,11 +56,11 @@
     <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_Post.jpg" />
     <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_post2.jpg" />
     <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\高雄市立美術館109年暑假暨秋季實習申請事宜.html" />
-    <None Remove="Files\FormManagement\test.json" />
+    <None Remove="Files\FormManagement\Form.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Files\FormManagement\test.json" />
+    <EmbeddedResource Include="Files\FormManagement\Form.json" />
   </ItemGroup>
 
   <ItemGroup>
