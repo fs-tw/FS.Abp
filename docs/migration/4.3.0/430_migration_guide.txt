@@ -1,0 +1,26 @@
+1.你的Works根目錄底下的Directory.Build.props 要修改版本號碼，請找出下列標籤並改成下面寫的版本號
+	a.<AbpVersion>4.3.0</AbpVersion>
+	b.<VoloVersion>430.0.1</VoloVersion>
+	
+2.根據https://docs.abp.io/en/abp/latest/Migration-Guides/Abp-4_3 進行更新，請以連結裡面的內容為主，下面修改僅供參考，沒有用到的項目可以略過
+	a.app.UseVirtualFiles() 改用 app.UseStaticFiles()
+	
+3.根據https://docs.abp.io/en/commercial/latest/migration-guides/v4_3 進行更新，建議打開專案檔直接修改套件名稱和版本號變數
+  有改成Pro版的，版本變數要改成VoloVersion, ex:<PackageReference Include="Volo.Abp.Account.Pro.Public.Application.Contracts" Version="$(VoloVersion)" />
+	a.套件Volo.Abp.Identity.Domain換成Volo.Abp.Identity.Pro.Domain，DependsOn AbpIdentityDomainModule換成AbpIdentityProDomainModule
+	b.套件Volo.Abp.Identity.Domain.Shared換成Volo.Abp.Identity.Pro.Domain.Shared，DependsOn AbpIdentityDomainSharedModule換成AbpIdentityProDomainSharedModule
+	c.套件Volo.Abp.Identity.EntityFrameworkCore換成Volo.Abp.Identity.Pro.EntityFrameworkCore，DependsOn AbpIdentityEntityFrameworkCoreModule換成AbpIdentityProEntityFrameworkCoreModule
+	d.builder.ConfigureIdentity(); 改成 builder.ConfigureIdentityPro();
+
+4.appsetting裡面 App.ClientUrl 改成 App.AngularUrl，hostmodule 也要改 options.Applications["Angular"].RootUrl = configuration["App:AngularUrl"];
+
+5.Abp.Mailing從host的AppSetting移除
+	"Abp.Mailing.Smtp.Host": "127.0.0.1",
+	"Abp.Mailing.Smtp.Port": "25",
+	"Abp.Mailing.Smtp.UserName": "",
+	"Abp.Mailing.Smtp.Password": "",
+	"Abp.Mailing.Smtp.Domain": "",
+	"Abp.Mailing.Smtp.EnableSsl": "false",
+	"Abp.Mailing.Smtp.UseDefaultCredentials": "true",
+	"Abp.Mailing.DefaultFromAddress": "noreply@abp.io",
+	"Abp.Mailing.DefaultFromDisplayName": "ABP application"
