@@ -5,140 +5,64 @@
     <Generation>
       <GeneratedFiles>
         <File Name="FormManagement.cs" />
-        <File Name="IFormsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.FormCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.GroupCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.QuestionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.ChoiceCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="IGroupsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupsApi.GroupCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupsApi.GroupQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="IVersionsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionsApi.VersionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionsApi.VersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IFormResponsesApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="FormResponsesApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="FormResponsesApi.FormResponseCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="FormResponsesApi.AnswerCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="IFormCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IGroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="IGroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="IGroupQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="IVersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IFormResponseCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="IAnswerCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
         <File Name="IVersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IChoiceCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="GroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="QuestionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponseCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="AnswerCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
         <File Name="VersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="ChoiceCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="GroupDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="CheckboxDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ChoiceMultipleDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="DropdownListDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ShortTextDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="QuestionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
+        <File Name="GroupDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
+        <File Name="GroupQuestionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
         <File Name="VersionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="FormResponseDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses\Dtos" />
-        <File Name="AnswerDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses\Dtos" />
         <File Name="VersionDefinitionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="ChoiceDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="FormDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="GroupDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="CheckboxDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ChoiceMultipleDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="DropdownListDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ShortTextDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="QuestionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
+        <File Name="GroupDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
+        <File Name="GroupQuestionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
         <File Name="VersionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="FormResponseDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\FormResponses\Dtos" />
-        <File Name="AnswerDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\FormResponses\Dtos" />
         <File Name="VersionDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="ChoiceDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="FormDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="GroupDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="CheckboxDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ChoiceMultipleDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="DropdownListDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ShortTextDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="QuestionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
+        <File Name="GroupDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
+        <File Name="GroupQuestionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
         <File Name="VersionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="FormResponseDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\FormResponses\Dtos" />
-        <File Name="AnswerDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\FormResponses\Dtos" />
         <File Name="VersionDefinitionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="ChoiceDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="QuestionDtoJsonSubtypesConverterBuilders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="FormsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponsesStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
         <File Name="IFormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
-        <File Name="Form.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Forms" OverwriteMode="None" />
-        <File Name="Form.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Group.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Checkbox.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="ChoiceMultiple.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="DropdownList.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="ShortText.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Question.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Choice.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="Group.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupQuestion.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="Version.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionDefinition.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponse.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="Answer.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="Form.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Group.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Checkbox.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="ChoiceMultiple.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="DropdownList.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="ShortText.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Question.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Choice.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="Group.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupQuestion.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="Version.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionDefinition.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponse.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="Answer.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="IFormRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IGroupTreeRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="ICheckboxRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IChoiceMultipleRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IDropdownListRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IShortTextRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IQuestionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="IGroupTreeRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="IGroupQuestionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="IVersionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IFormResponseRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="IAnswerRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
         <File Name="IVersionDefinitionRepository.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Versions" OverwriteMode="None" />
         <File Name="IVersionDefinitionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IChoiceRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreFormRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreGroupTreeRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreCheckboxRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreChoiceMultipleRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreDropdownListRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreShortTextRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreQuestionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="EfCoreGroupTreeRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="EfCoreGroupQuestionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="EfCoreVersionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="EfCoreFormResponseRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="EfCoreAnswerRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
         <File Name="EfCoreVersionDefinitionRepository.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="FS.FormManagement\Versions" OverwriteMode="None" />
         <File Name="EfCoreVersionDefinitionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="EfCoreChoiceRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponsesQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="FormsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponsesPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
-        <File Name="FormsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormResponsesPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\FormResponses" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>

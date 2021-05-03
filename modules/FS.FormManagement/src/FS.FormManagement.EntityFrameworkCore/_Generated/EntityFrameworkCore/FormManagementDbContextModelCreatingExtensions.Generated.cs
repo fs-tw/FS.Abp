@@ -30,18 +30,10 @@ namespace FS.FormManagement.EntityFrameworkCore
 
             CustomizeMapping(ref builder);
 
-            builder.ApplyConfiguration<FS.FormManagement.Forms.Form>(new FS.FormManagement.Forms.FormConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.Group>(new FS.FormManagement.Forms.GroupConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.Checkbox>(new FS.FormManagement.Forms.CheckboxConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.ChoiceMultiple>(new FS.FormManagement.Forms.ChoiceMultipleConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.DropdownList>(new FS.FormManagement.Forms.DropdownListConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.ShortText>(new FS.FormManagement.Forms.ShortTextConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.Question>(new FS.FormManagement.Forms.QuestionConfiguration(options));
+            builder.ApplyConfiguration<FS.FormManagement.Groups.Group>(new FS.FormManagement.Groups.GroupConfiguration(options));
+            builder.ApplyConfiguration<FS.FormManagement.Groups.GroupQuestion>(new FS.FormManagement.Groups.GroupQuestionConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Versions.Version>(new FS.FormManagement.Versions.VersionConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.FormResponses.FormResponse>(new FS.FormManagement.FormResponses.FormResponseConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.FormResponses.Answer>(new FS.FormManagement.FormResponses.AnswerConfiguration(options));
             builder.ApplyConfiguration<FS.FormManagement.Versions.VersionDefinition>(new FS.FormManagement.Versions.VersionDefinitionConfiguration(options));
-            builder.ApplyConfiguration<FS.FormManagement.Forms.Choice>(new FS.FormManagement.Forms.ChoiceConfiguration(options));
         }
         static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }
