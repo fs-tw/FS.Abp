@@ -2,7 +2,7 @@ import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import { eCmsKitComponents } from '../../enums/components';
 import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
-import { ExtensionsService } from '../../services/extensions.service';
+import { ExtensionsService } from '../../extensions/extensions.service';
 
 export const DEFAULT_BLOG_POSTS_ENTITY_ACTIONS = ToolbarAction.createMany<Volo.CmsKit.Admin.Blogs.BlogDto>([
   {

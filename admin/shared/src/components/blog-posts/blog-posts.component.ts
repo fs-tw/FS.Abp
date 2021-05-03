@@ -81,7 +81,10 @@ export class BlogPostsComponent implements OnInit {
 
   create(formValue) {
     const request: Volo.CmsKit.Admin.Blogs.CreateBlogPostDto = formValue;
-    this.createByEntityTypeAndInputStream('blogpost', formValue.coverImageMediaFile)
+    const file =formValue.coverImageMediaFile;
+
+
+    this.createByEntityTypeAndInputStream('blogpost',file)
     .pipe(mergeMap(x=>{
       request.coverImageMediaId=x.id;
       return this.service
@@ -147,7 +150,6 @@ export class BlogPostsComponent implements OnInit {
       {
         method: 'POST',
         url: `/api/cms-kit-admin/media/${entityType}`,
-        //params: { name: inputStream.name },
         body: formdata,
       },
       { apiName: 'CmsKitAdmin' }
