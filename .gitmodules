@@ -14,3 +14,7 @@
 [submodule "tools/Templates"]
 	path = tools/Templates
 	url = http://bitbucket.furthersoftware.com.tw/scm/tool/templates.git
+[submodule "angular/libs/theme-alain"]
+	path = angular/libs/theme-alain
+	url = https://github.com/fs-tw/abp.ng.git
+	branch = support/theme-alain
