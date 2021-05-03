@@ -33,8 +33,6 @@ namespace DEMO.EntityFrameworkCore
         typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
         )]
     [DependsOn(typeof(FileManagementEntityFrameworkCoreModule))]
-    [DependsOn(typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule))]
-    [DependsOn(typeof(FS.Theme.EntityFrameworkCore.ThemeEntityFrameworkCoreModule))]
     [DependsOn(typeof(FS.FormManagement.EntityFrameworkCore.FormManagementEntityFrameworkCoreModule))]
     public class DEMOEntityFrameworkCoreModule : AbpModule
     {

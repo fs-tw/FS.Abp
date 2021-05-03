@@ -1,5 +1,4 @@
-﻿using FS.Cms.Data.Seeder;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 
@@ -7,9 +6,9 @@ namespace DEMO.Data
 {
     public class CmsDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
-        public BlogsSeeder cmsDefinitionSeeder { get; set; }
-        public PostsSeeder postSeeder { get; set; }
-        public TagsSeeder tagSeeder { get; set; }
+        //public BlogsSeeder cmsDefinitionSeeder { get; set; }
+        //public PostsSeeder postSeeder { get; set; }
+        //public TagsSeeder tagSeeder { get; set; }
 
         public async Task SeedAsync(DataSeedContext context)
         {
