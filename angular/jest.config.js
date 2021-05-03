@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/apps/lepton-app',
     '<rootDir>/libs/theme-alain-ms',
     '<rootDir>/apps/alain-ms-app',
+    '<rootDir>/libs/form-management',
   ],
 };

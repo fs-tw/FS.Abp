@@ -144,9 +144,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/alain-ms-app"
-          ],
+          "outputs": ["coverage/apps/alain-ms-app"],
           "options": {
             "jestConfig": "apps/alain-ms-app/jest.config.js",
             "passWithNoTests": true
@@ -169,10 +167,7 @@
             "polyfills": "apps/dev-app/src/polyfills.ts",
             "tsConfig": "apps/dev-app/tsconfig.app.json",
             "aot": true,
-            "allowedCommonJsDependencies": [
-              "chart.js",
-              "js-sha256"
-            ],
+            "allowedCommonJsDependencies": ["chart.js", "js-sha256"],
             "assets": [
               "apps/dev-app/src/favicon.ico",
               "apps/dev-app/src/assets"
@@ -275,9 +270,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/dev-app"
-          ],
+          "outputs": ["coverage/apps/dev-app"],
           "options": {
             "jestConfig": "apps/dev-app/jest.config.js",
             "passWithNoTests": true
@@ -415,9 +408,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/lepton-app"
-          ],
+          "outputs": ["coverage/apps/lepton-app"],
           "options": {
             "jestConfig": "apps/lepton-app/jest.config.js",
             "passWithNoTests": true
@@ -454,11 +445,46 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/theme-alain-ms"
-          ],
+          "outputs": ["coverage/libs/theme-alain-ms"],
           "options": {
             "jestConfig": "libs/theme-alain-ms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "form-management": {
+      "projectType": "library",
+      "root": "libs/form-management",
+      "sourceRoot": "libs/form-management/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/form-management/tsconfig.lib.json",
+            "project": "libs/form-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/form-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/form-management/src/**/*.ts",
+              "libs/form-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/form-management"],
+          "options": {
+            "jestConfig": "libs/form-management/jest.config.js",
             "passWithNoTests": true
           }
         }
