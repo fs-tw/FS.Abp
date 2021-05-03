@@ -1,7 +1,0 @@
-nz-dropdown {
-  .@{btn-prefix-cls} {
-    &-default {
-      background: #fff;
-    }
-  }
-}

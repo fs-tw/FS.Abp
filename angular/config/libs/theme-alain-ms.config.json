@@ -5,12 +5,12 @@
       "tags": []
     }
   },
-  "angular": {  
+  "angular": {
     "theme-alain-ms": {
       "projectType": "library",
       "root": "libs/theme-alain-ms",
       "sourceRoot": "libs/theme-alain-ms/src",
-      "prefix": "fs",
+      "prefix": "fs-tw",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -25,13 +25,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/theme-alain-ms/tsconfig.lib.json",
-              "libs/theme-alain-ms/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/theme-alain-ms/**/*"]
+            "lintFilePatterns": [
+              "libs/theme-alain-ms/src/**/*.ts",
+              "libs/theme-alain-ms/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -44,9 +43,10 @@
         }
       }
     }
+
   },
   "tsconfig": {
     "@fs-tw/theme-alain-ms": ["libs/theme-alain-ms/src/index.ts"],
     "@fs-tw/theme-alain-ms/*": ["libs/theme-alain-ms/*/src/index.ts"]
-  }
+  }  
 }
