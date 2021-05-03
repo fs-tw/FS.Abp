@@ -10,16 +10,36 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fs-tw/theme-alain-ms": ["libs/theme-alain-ms/src/index.ts"],
-      "@fs-tw/theme-alain-ms/*": ["libs/theme-alain-ms/*/src/index.ts"],
-      "@fs-tw/form-management": ["libs/form-management/src/index.ts"],
-      "@fs-tw/form-management/*": ["libs/form-management/*/src/index.ts"]
+      "@fs-tw/theme-alain-ms": [
+        "libs/theme-alain-ms/src/index.ts"
+      ],
+      "@fs-tw/theme-alain-ms/*": [
+        "libs/theme-alain-ms/*/src/index.ts"
+      ],
+      "@fs-tw/theme-alain": [
+        "libs/theme-alain/src/index.ts"
+      ],
+      "@fs-tw/theme-alain/*": [
+        "libs/theme-alain/*/src/index.ts"
+      ],
+      "@fs-tw/form-management": [
+        "libs/form-management/src/index.ts"
+      ],
+      "@fs-tw/form-management/*": [
+        "libs/form-management/*/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

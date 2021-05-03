@@ -144,7 +144,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/alain-ms-app"],
+          "outputs": [
+            "coverage/apps/alain-ms-app"
+          ],
           "options": {
             "jestConfig": "apps/alain-ms-app/jest.config.js",
             "passWithNoTests": true
@@ -167,7 +169,10 @@
             "polyfills": "apps/dev-app/src/polyfills.ts",
             "tsConfig": "apps/dev-app/tsconfig.app.json",
             "aot": true,
-            "allowedCommonJsDependencies": ["chart.js", "js-sha256"],
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "js-sha256"
+            ],
             "assets": [
               "apps/dev-app/src/favicon.ico",
               "apps/dev-app/src/assets"
@@ -270,7 +275,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/dev-app"],
+          "outputs": [
+            "coverage/apps/dev-app"
+          ],
           "options": {
             "jestConfig": "apps/dev-app/jest.config.js",
             "passWithNoTests": true
@@ -408,7 +415,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/lepton-app"],
+          "outputs": [
+            "coverage/apps/lepton-app"
+          ],
           "options": {
             "jestConfig": "apps/lepton-app/jest.config.js",
             "passWithNoTests": true
@@ -445,9 +454,50 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/theme-alain-ms"],
+          "outputs": [
+            "coverage/libs/theme-alain-ms"
+          ],
           "options": {
             "jestConfig": "libs/theme-alain-ms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "theme-alain": {
+      "projectType": "library",
+      "root": "libs/theme-alain",
+      "sourceRoot": "libs/theme-alain/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-alain/tsconfig.lib.json",
+            "project": "libs/theme-alain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-alain/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-alain/src/**/*.ts",
+              "libs/theme-alain/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/theme-alain"
+          ],
+          "options": {
+            "jestConfig": "libs/theme-alain/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -482,7 +532,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/form-management"],
+          "outputs": [
+            "coverage/libs/form-management"
+          ],
           "options": {
             "jestConfig": "libs/form-management/jest.config.js",
             "passWithNoTests": true

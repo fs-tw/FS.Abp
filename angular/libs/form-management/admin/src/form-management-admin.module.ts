@@ -1,16 +1,16 @@
 import { NgModule, ModuleWithProviders, NgModuleFactory } from '@angular/core';
 import { LazyModuleFactory, CoreModule } from '@abp/ng.core';
 import { FormManagementAdminRoutingModule } from './form-management-admin-routing.module';
-//import { SharedModule } from '@fs-tw/theme-alain';
+import { CmsKitManagementAdminSharedModule } from '@fs-tw/form-management/admin/shared';
 
 @NgModule({
   imports: [
-    //SharedModule,
+    CmsKitManagementAdminSharedModule,
     CoreModule,
     FormManagementAdminRoutingModule,
   ],
   exports: [
-    //SharedModule,
+    CmsKitManagementAdminSharedModule,
   ],
 })
 export class FormManagementAdminModule {

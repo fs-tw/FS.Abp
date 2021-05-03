@@ -14,19 +14,27 @@ export const FORM_MANAGEMENT_ROUTE_PROVIDERS = [
 ];
 
 export function configureRoutes(routes: RoutesService) {
-  let shortcut = {
-    path: '/form-management',
-    name: eFormmanagementRouteNames.Form_management,
-    layout: eLayoutType.application,
-    parentName: eThemeSharedRouteNames.Administration,
-    iconClass: 'fa fa-folder-open',
-    order: 6,
-    //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
-  };
+
 
   return () => {
     routes.add([
-      shortcut,
+      {
+        path: '/form-management',
+        name: eFormmanagementRouteNames.FormManagement,
+        parentName: eThemeSharedRouteNames.Administration,
+        layout: eLayoutType.application,
+        iconClass: 'fa fa-folder-open',
+        order: -1
+        //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
+      },
+      {
+        path: '/form-management/forms',
+        name: eFormmanagementRouteNames.Forms,
+        parentName: eFormmanagementRouteNames.FormManagement,
+        iconClass: 'fa fa-folder-open',
+        order: 1
+        //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,        
+      }
     ]);
   };
 }
