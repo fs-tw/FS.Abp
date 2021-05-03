@@ -14,12 +14,12 @@ import { CmsKitModalComponent } from '../../cms-kit-modal.component';
   providers: [
     {
       provide: CmsKitModalTabComponent,
-      useExisting: CmsKitModalPagesTabComponent,
+      useExisting: CmsKitModalInfoTabComponent,
     },
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CmsKitModalPagesTabComponent extends CmsKitModalTabComponent {
+export class CmsKitModalInfoTabComponent extends CmsKitModalTabComponent {
   //title = 'NewPage';
 
   @Input() form: FormGroup;

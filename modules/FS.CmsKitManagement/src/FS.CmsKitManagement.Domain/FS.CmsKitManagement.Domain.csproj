@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.CmsKit.Domain" Version="4.3.0" />
+    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
