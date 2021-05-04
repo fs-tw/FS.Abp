@@ -24,13 +24,13 @@
     }
   },
   "projects": {
+    "alain-ms-app": {
+      "tags": []
+    },
     "dev-app": {
       "tags": []
     },
     "lepton-app": {
-      "tags": []
-    },
-    "ms-app": {
       "tags": []
     },
     "unify-app": {
