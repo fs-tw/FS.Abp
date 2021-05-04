@@ -13,10 +13,6 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeUnifyModule } from '@fs-tw/theme-unify';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-
-
-
-
 @NgModule({
   imports: [
     BrowserModule,

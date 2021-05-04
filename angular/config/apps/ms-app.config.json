@@ -1,23 +1,23 @@
 {
   "order": 1002,
   "nx": {
-    "alain-ms-app": { "tags": [] }
+    "ms-app": { "tags": [] }
   },
   "angular": {
-    "alain-ms-app": {
+    "ms-app": {
       "projectType": "application",
-      "root": "apps/alain-ms-app",
-      "sourceRoot": "apps/alain-ms-app/src",
+      "root": "apps/ms-app",
+      "sourceRoot": "apps/ms-app/src",
       "prefix": "fs-tw",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/alain-ms-app",
-            "index": "apps/alain-ms-app/src/index.html",
-            "main": "apps/alain-ms-app/src/main.ts",
-            "polyfills": "apps/alain-ms-app/src/polyfills.ts",
-            "tsConfig": "apps/alain-ms-app/tsconfig.app.json",
+            "outputPath": "dist/apps/ms-app",
+            "index": "apps/ms-app/src/index.html",
+            "main": "apps/ms-app/src/main.ts",
+            "polyfills": "apps/ms-app/src/polyfills.ts",
+            "tsConfig": "apps/ms-app/tsconfig.app.json",
             "aot": true,
             "allowedCommonJsDependencies": [
               "@ant-design/colors",
@@ -40,8 +40,8 @@
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               },
-              "apps/alain-ms-app/src/favicon.ico",
-              "apps/alain-ms-app/src/assets"
+              "apps/ms-app/src/favicon.ico",
+              "apps/ms-app/src/assets"
             ],
             "styles": [
               {
@@ -81,7 +81,7 @@
               },              
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "node_modules/quill/dist/quill.snow.css",
-              "apps/alain-ms-app/src/styles.less"
+              "apps/ms-app/src/styles.less"
             ],
             "scripts": [
               "node_modules/masonry-layout/dist/masonry.pkgd.js",
@@ -93,8 +93,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/alain-ms-app/src/environments/environment.ts",
-                  "with": "apps/alain-ms-app/src/environments/environment.prod.ts"
+                  "replace": "apps/ms-app/src/environments/environment.ts",
+                  "with": "apps/ms-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -122,34 +122,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "alain-ms-app:build"
+            "browserTarget": "ms-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "alain-ms-app:build:production"
+              "browserTarget": "ms-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "alain-ms-app:build"
+            "browserTarget": "ms-app:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/alain-ms-app/src/**/*.ts",
-              "apps/alain-ms-app/src/**/*.html"
+              "apps/ms-app/src/**/*.ts",
+              "apps/ms-app/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/alain-ms-app"],
+          "outputs": ["coverage/apps/ms-app"],
           "options": {
-            "jestConfig": "apps/alain-ms-app/jest.config.js",
+            "jestConfig": "apps/ms-app/jest.config.js",
             "passWithNoTests": true
           }
         }
