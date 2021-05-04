@@ -30,6 +30,7 @@ export class MSPageNavComponent implements OnChanges {
   private _menus: MSMenu[] = [];
   @Input()
   set list(list: MSMenu[]) {
+    if(!list) return;
     this.menuSrv.add(list);
     this.menuSrv.visit(list, (i) => (i.active = true));
     this._menus = this.menuSrv.menus;
