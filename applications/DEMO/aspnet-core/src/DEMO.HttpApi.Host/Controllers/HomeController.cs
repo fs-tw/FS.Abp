@@ -20,7 +20,7 @@ namespace DEMO.Controllers
             }
             else
             {
-                return Redirect("~/demo-admin");
+                return Redirect("~/DEMO-admin");
             }
         }
     }

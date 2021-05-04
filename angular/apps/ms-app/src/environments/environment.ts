@@ -9,15 +9,15 @@ export const environment = {
     name: 'DEMO',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44372',
+    issuer: 'https://localhost:44399',
     redirectUri: baseUrl,
     clientId: 'DEMO_App',
-    responseType: 'password',
+    responseType: 'code',
     scope: 'offline_access openid profile role email phone DEMO',
   },
   apis: {
     default: {
-      url: 'https://localhost:44372',
+      url: 'https://localhost:44399',
       rootNamespace: '',
     },
   },

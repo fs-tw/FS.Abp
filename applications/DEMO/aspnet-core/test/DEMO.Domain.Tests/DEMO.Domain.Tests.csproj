@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
+    <ProjectReference Include="..\DEMO.EntityFrameworkCore.Tests\DEMO.EntityFrameworkCore.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DEMO.EntityFrameworkCore.Tests\DEMO.EntityFrameworkCore.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
   </ItemGroup>
 
 </Project>

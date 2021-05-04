@@ -1,5 +1,8 @@
-using DEMO.EntityFrameworkCore;
-using DEMO.MultiTenancy;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Authentication.Twitter;
@@ -7,32 +10,31 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using DEMO.EntityFrameworkCore;
+using DEMO.MultiTenancy;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
 using Volo.Abp;
-using Volo.Abp.Account;
-using Volo.Abp.Account.Public.Web.ExternalProviders;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.Autofac;
+using Volo.Abp.Localization;
+using Volo.Abp.Modularity;
+using Volo.Abp.UI.Navigation.Urls;
+using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.Account;
+using Volo.Abp.Account.Public.Web.ExternalProviders;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
+using Microsoft.AspNetCore.Hosting;
+using DEMO.HealthChecks;
 using Volo.Abp.AspNetCore.Serilog;
-using Volo.Abp.Autofac;
-using Volo.Abp.Localization;
-using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
-using Volo.Abp.UI.Navigation.Urls;
-using Volo.Abp.VirtualFileSystem;
+using Microsoft.Extensions.FileProviders;
 
 namespace DEMO
 {
@@ -48,7 +50,6 @@ namespace DEMO
         typeof(AbpSwashbuckleModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-    [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
     [DependsOn(
         typeof(FS.FormManagement.FormManagementApplicationModule),
         typeof(FS.FormManagement.FormManagementHttpApiModule)
@@ -71,7 +72,9 @@ namespace DEMO
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureExternalProviders(context);
-            //FS : Disable AntiForgery for line browser
+            ConfigureHealthChecks(context);
+
+            //FS : Disable AntiForgery for line browser 
             Configure<Volo.Abp.AspNetCore.Mvc.AntiForgery.AbpAntiForgeryOptions>(options =>
             {
                 options.AutoValidate = false;
@@ -81,6 +84,12 @@ namespace DEMO
             {
                 configuration.RootPath = "wwwroot";
             });
+
+        }
+
+        private void ConfigureHealthChecks(ServiceConfigurationContext context)
+        {
+            context.Services.AddDEMOHealthChecks();
         }
 
         private void ConfigureUrls(IConfiguration configuration)
@@ -88,7 +97,7 @@ namespace DEMO
             Configure<AppUrlOptions>(options =>
             {
                 options.Applications["MVC"].RootUrl = configuration["App:SelfUrl"];
-                options.Applications["Angular"].RootUrl = configuration["App:ClientUrl"];
+                options.Applications["Angular"].RootUrl = configuration["App:AngularUrl"];
                 options.Applications["Angular"].Urls[AccountUrlNames.PasswordReset] = "account/reset-password";
                 options.Applications["Angular"].Urls[AccountUrlNames.EmailConfirmation] = "account/email-confirmation";
                 options.RedirectAllowedUrls.AddRange(configuration["App:RedirectAllowedUrls"].Split(','));
@@ -108,6 +117,7 @@ namespace DEMO
                 );
             });
         }
+
 
         private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
         {
@@ -158,9 +168,9 @@ namespace DEMO
                 },
                 options =>
                 {
-                    options.CustomSchemaIds(y => y.FullName);
                     options.SwaggerDoc("v1", new OpenApiInfo { Title = "DEMO API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
+                    options.CustomSchemaIds(type => type.FullName);
                 });
         }
 
@@ -168,6 +178,7 @@ namespace DEMO
         {
             Configure<AbpLocalizationOptions>(options =>
             {
+                //FS Dsiable other language
                 options.Languages.Add(new LanguageInfo("en", "en", "English"));
                 options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文"));
             });
@@ -183,7 +194,7 @@ namespace DEMO
                         .WithOrigins(
                             configuration["App:CorsOrigins"]
                                 .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => o.RemovePostFix("/"))
+                                .Select(o => o.Trim().RemovePostFix("/"))
                                 .ToArray()
                         )
                         .WithAbpExposedHeaders()
@@ -276,6 +287,7 @@ namespace DEMO
             app.UseAuditing();
             app.UseAbpSerilogEnrichers();
             app.UseConfiguredEndpoints();
+
             //FS: Enable Spa Service
             if (!env.IsDevelopment())
             {
@@ -289,17 +301,18 @@ namespace Microsoft.AspNetCore.Builder
 {
     public static class AbpSpaServiceExtensions
     {
+
         public static IApplicationBuilder UseFSAbpSpaService(this IApplicationBuilder app)
         {
             app.UseSpaStaticFiles();
-            app.Map("/demo-admin", application =>
+            app.Map("/DEMO-admin", application =>
             {
                 application.UseSpa(spa =>
                 {
-                    spa.Options.SourcePath = string.Format("wwwroot/{0}", "demo-admin");
+                    spa.Options.SourcePath = string.Format("wwwroot/{0}", "DEMO-admin");
                     spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
                     {
-                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "demo-admin"))
+                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "DEMO-admin"))
                     };
                 });
             });
@@ -307,10 +320,10 @@ namespace Microsoft.AspNetCore.Builder
             {
                 application.UseSpa(spa =>
                 {
-                    spa.Options.SourcePath = string.Format("wwwroot/{0}", "demo-admin");
+                    spa.Options.SourcePath = string.Format("wwwroot/{0}", "DEMO-admin");
                     spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
                     {
-                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "demo-admin"))
+                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "DEMO-admin"))
                     };
                 });
             });

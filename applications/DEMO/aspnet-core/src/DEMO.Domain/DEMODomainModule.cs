@@ -1,9 +1,9 @@
-using DEMO.MultiTenancy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using DEMO.Localization;
+using DEMO.MultiTenancy;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
-using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.Commercial.SuiteTemplates;
 using Volo.Abp.Emailing;
 using Volo.Abp.FeatureManagement;
@@ -18,8 +18,8 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
-using Volo.FileManagement;
 using Volo.Saas;
+using Volo.Abp.BlobStoring.Database;
 
 namespace DEMO
 {
@@ -41,7 +41,7 @@ namespace DEMO
         typeof(AbpEmailingModule),
         typeof(BlobStoringDatabaseDomainModule)
         )]
-    [DependsOn(typeof(FileManagementDomainModule))]
+    [DependsOn(typeof(FS.FormManagement.FormManagementDomainModule))]
     public class DEMODomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -54,12 +54,9 @@ namespace DEMO
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Languages.Add(new LanguageInfo("en", "en", "English", "gb"));
-                options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe", "tr"));
-                options.Languages.Add(new LanguageInfo("sl", "sl", "Slovenščina", "si"));
-                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文", "cn"));
-                options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsche", "de"));
-                options.Languages.Add(new LanguageInfo("es", "es", "Español", "es"));
+                options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文", "zh-tw"));
             });
+
 
 #if DEBUG
             context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());

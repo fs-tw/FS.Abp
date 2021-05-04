@@ -14,7 +14,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.FileManagement.HttpApi.Client" Version="$(VoloVersion)" />
+	  <PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Saas.Host.HttpApi.Client" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.AuditLogging.HttpApi.Client" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.Identity.Pro.HttpApi.Client" Version="$(VoloVersion)" />

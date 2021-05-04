@@ -1,8 +1,6 @@
-using FS.FormManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
-using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -11,8 +9,9 @@ using Volo.Abp.LanguageManagement.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
-using Volo.FileManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
+using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
+using FS.FormManagement.EntityFrameworkCore;
 
 namespace DEMO.EntityFrameworkCore
 {
@@ -21,12 +20,12 @@ namespace DEMO.EntityFrameworkCore
      * It is a unified model that includes configuration for
      * all used modules and your application.
      */
-
     public class DEMOMigrationsDbContext : AbpDbContext<DEMOMigrationsDbContext>
     {
         public DEMOMigrationsDbContext(DbContextOptions<DEMOMigrationsDbContext> options)
             : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -50,10 +49,7 @@ namespace DEMO.EntityFrameworkCore
             /* Configure your own tables/entities inside the ConfigureDEMO method */
 
             builder.ConfigureDEMO();
-            builder.ConfigureFileManagement();
-            //builder.ConfigureCms();
-            //builder.ConfigureTheme();
-            builder.ConfigureFormManagement();
+            builder.ConfigureFormManagement(); 
         }
     }
 }

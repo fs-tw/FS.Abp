@@ -142,46 +142,8 @@ namespace DEMO.IdentityServer
 
             var configurationSection = _configuration.GetSection("IdentityServer:Clients");
 
-            //Web Client
-            var webClientId = configurationSection["DEMO_Web:ClientId"];
-            if (!webClientId.IsNullOrWhiteSpace())
-            {
-                var webClientRootUrl = configurationSection["DEMO_Web:RootUrl"].EnsureEndsWith('/');
 
-                /* DEMO_Web client is only needed if you created a tiered
-                 * solution. Otherwise, you can delete this client. */
 
-                await CreateClientAsync(
-                    name: webClientId,
-                    scopes: commonScopes,
-                    grantTypes: new[] { "hybrid" },
-                    secret: (configurationSection["DEMO_Web:ClientSecret"] ?? "1q2w3e*").Sha256(),
-                    redirectUri: $"{webClientRootUrl}signin-oidc",
-                    postLogoutRedirectUri: $"{webClientRootUrl}signout-callback-oidc",
-                    frontChannelLogoutUri: $"{webClientRootUrl}Account/FrontChannelLogout",
-                    corsOrigins: new[] { webClientRootUrl.RemovePostFix("/") }
-                );
-            }
-
-            //Web Public Client
-            var webPublicClientId = configurationSection["DEMO_Web_Public:ClientId"];
-            if (!webPublicClientId.IsNullOrWhiteSpace())
-            {
-                var webPublicClientRootUrl = configurationSection["DEMO_Web_Public:RootUrl"].EnsureEndsWith('/');
-
-                /* DEMO_Web client is only needed if you created a tiered
-                 * solution. Otherwise, you can delete this client. */
-
-                await CreateClientAsync(
-                    name: webPublicClientId,
-                    scopes: commonScopes,
-                    grantTypes: new[] {"hybrid"},
-                    secret: (configurationSection["DEMO_Web:ClientSecret"] ?? "1q2w3e*").Sha256(),
-                    redirectUri: $"{webPublicClientRootUrl}signin-oidc",
-                    postLogoutRedirectUri: $"{webPublicClientRootUrl}signout-callback-oidc",
-                    frontChannelLogoutUri: $"{webPublicClientRootUrl}Account/FrontChannelLogout"
-                );
-            }
 
             //Console Test / Angular Client
             var consoleAndAngularClientId = configurationSection["DEMO_App:ClientId"];
@@ -192,7 +154,7 @@ namespace DEMO.IdentityServer
                 await CreateClientAsync(
                     name: consoleAndAngularClientId,
                     scopes: commonScopes,
-                    grantTypes: new[] { "password", "client_credentials", "authorization_code" },
+                    grantTypes: new[] { "password", "client_credentials", "authorization_code", "LinkLogin" },
                     secret: (configurationSection["DEMO_App:ClientSecret"] ?? "1q2w3e*").Sha256(),
                     requireClientSecret: false,
                     redirectUri: webClientRootUrl,
@@ -201,23 +163,7 @@ namespace DEMO.IdentityServer
                 );
             }
 
-            // Blazor Client
-            var blazorClientId = configurationSection["DEMO_Blazor:ClientId"];
-            if (!blazorClientId.IsNullOrWhiteSpace())
-            {
-                var blazorRootUrl = configurationSection["DEMO_Blazor:RootUrl"].TrimEnd('/');
 
-                await CreateClientAsync(
-                    name: blazorClientId,
-                    scopes: commonScopes,
-                    grantTypes: new[] { "authorization_code" },
-                    secret: configurationSection["DEMO_Blazor:ClientSecret"]?.Sha256(),
-                    requireClientSecret: false,
-                    redirectUri: $"{blazorRootUrl}/authentication/login-callback",
-                    postLogoutRedirectUri: $"{blazorRootUrl}/authentication/logout-callback",
-                    corsOrigins: new[] { blazorRootUrl.RemovePostFix("/") }
-                );
-            }
 
             // Swagger Client
             var swaggerClientId = configurationSection["DEMO_Swagger:ClientId"];
@@ -229,7 +175,7 @@ namespace DEMO.IdentityServer
                     name: swaggerClientId,
                     scopes: commonScopes,
                     grantTypes: new[] { "authorization_code" },
-                    secret: configurationSection["DEMO_Swagger:ClientSecret"]?.Sha256(),
+                    secret: (configurationSection["DEMO_Swagger:ClientSecret"] ?? "1q2w3e*").Sha256(),
                     requireClientSecret: false,
                     redirectUri: $"{swaggerRootUrl}/swagger/oauth2-redirect.html",
                     corsOrigins: new[] { swaggerRootUrl.RemovePostFix("/") }

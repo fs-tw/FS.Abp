@@ -260,3 +260,5 @@ src/DEMO.IdentityServer/Logs/*
 src/DEMO.HttpApi.Host/Logs/*
 src/DEMO.HttpApi.Host/Logs/*
 src/DEMO.DbMigrator/Logs/*
+src/DEMO.Blazor.Server/Logs/*
+src/DEMO.Blazor.Server.Tiered/Logs/*
