@@ -9,13 +9,13 @@ namespace FS.FormManagement.Versions
     {
         //private readonly IVersionsManager _versionsManager;
         private readonly IVersionsStore _versionsStore;
-        private readonly FS.FormManagement.Forms.IFormsStore _formsStore;
+        //private readonly FS.FormManagement.Forms.IFormsStore _formsStore;
 
         public DocumentManager_Tests()
         {
             //_versionsManager = GetRequiredService<IVersionsManager>();
             _versionsStore = GetRequiredService<IVersionsStore>();
-            _formsStore = GetRequiredService<FS.FormManagement.Forms.IFormsStore>();
+            //_formsStore = GetRequiredService<FS.FormManagement.Forms.IFormsStore>();
 
         }
 

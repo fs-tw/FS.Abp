@@ -56,11 +56,11 @@
     <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_Post.jpg" />
     <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\美術館_post2.jpg" />
     <None Remove="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\高雄市立美術館109年暑假暨秋季實習申請事宜.html" />
-    <None Remove="Files\FormManagement\test.json" />
+    <None Remove="Files\FormManagement\Form.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Files\FormManagement\test.json" />
+    <EmbeddedResource Include="Files\FormManagement\Form.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,10 +74,6 @@
     <EmbeddedResource Include="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\Contents\高雄市立美術館109年暑假暨秋季實習申請事宜.html" />
     <EmbeddedResource Include="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\Images\美術館_Post.jpg" />
     <EmbeddedResource Include="Files\Content\校園公告\高雄市立美術館109年暑假暨秋季實習申請事宜\Images\美術館_post2.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain.Shared\FS.Theme.Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>

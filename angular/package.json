@@ -24,7 +24,8 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
     "@nrwl/angular": "12.0.8",
+    "ngx-quill": "^13.3.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
@@ -49,6 +51,9 @@
     "@angular/cli": "~11.2.0",
     "@angular/compiler-cli": "^11.2.0",
     "@angular/language-service": "^11.2.0",
+    "@npm/fs-tw": "file:npm/fs-tw",
+    "@npm/ng-alain-ms": "file:npm/ng-alain-ms",
+    "@npm/volo": "file:npm/volo",
     "@nrwl/cli": "12.0.8",
     "@nrwl/cypress": "12.0.8",
     "@nrwl/eslint-plugin-nx": "12.0.8",
@@ -61,6 +66,7 @@
     "@typescript-eslint/eslint-plugin": "4.19.0",
     "@typescript-eslint/parser": "4.19.0",
     "cypress": "^6.0.1",
+    "date-fns": "2.21.1",
     "dotenv": "8.2.0",
     "eslint": "7.22.0",
     "eslint-config-prettier": "8.1.0",
@@ -71,10 +77,6 @@
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
-    "typescript": "~4.1.4",
-    "date-fns": "2.21.1",
-    "@npm/fs-tw": "file:npm/fs-tw",
-    "@npm/ng-alain-ms": "file:npm/ng-alain-ms",
-    "@npm/volo": "file:npm/volo"
+    "typescript": "~4.1.4"
   }
 }

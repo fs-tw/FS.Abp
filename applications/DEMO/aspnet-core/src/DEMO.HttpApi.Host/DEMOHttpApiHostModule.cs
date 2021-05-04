@@ -50,18 +50,6 @@ namespace DEMO
         )]
     [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
     [DependsOn(
-        typeof(FS.Cms.CmsApplicationModule),
-        typeof(FS.Cms.CmsHttpApiModule)
-        )]
-    [DependsOn(
-        typeof(FS.Abp.File.FileApplicationModule),
-        typeof(FS.Abp.File.FileHttpApiModule)
-        )]
-    [DependsOn(
-        typeof(FS.Theme.ThemeApplicationModule),
-        typeof(FS.Theme.ThemeHttpApiModule)
-        )]
-    [DependsOn(
         typeof(FS.FormManagement.FormManagementApplicationModule),
         typeof(FS.FormManagement.FormManagementHttpApiModule)
         )]

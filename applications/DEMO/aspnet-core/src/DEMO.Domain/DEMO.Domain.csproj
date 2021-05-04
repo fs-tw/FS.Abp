@@ -8,10 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Domain\FS.Abp.File.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Domain\FS.Cms.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.Domain\FS.FormManagement.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Domain\FS.Theme.Domain.csproj" />
     <ProjectReference Include="..\DEMO.Domain.Shared\DEMO.Domain.Shared.csproj" />
   </ItemGroup>
 

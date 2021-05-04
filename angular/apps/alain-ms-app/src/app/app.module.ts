@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
+import { FormmanagementConfigModule } from '@fs-tw/form-management/config';
 
 @NgModule({
   declarations: [AppComponent],
@@ -50,6 +51,7 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     IdentityServerConfigModule.forRoot(),
     TextTemplateManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
+    FormmanagementConfigModule.forRoot(),
     ThemeAlainMsModule.forRoot(),
     CommercialUiConfigModule.forRoot(),
     NgxsModule.forRoot([]),

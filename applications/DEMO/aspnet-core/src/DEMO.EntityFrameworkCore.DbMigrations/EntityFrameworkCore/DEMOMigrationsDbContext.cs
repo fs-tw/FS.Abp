@@ -1,6 +1,4 @@
-using FS.Cms.EntityFrameworkCore;
 using FS.FormManagement.EntityFrameworkCore;
-using FS.Theme.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -53,8 +51,8 @@ namespace DEMO.EntityFrameworkCore
 
             builder.ConfigureDEMO();
             builder.ConfigureFileManagement();
-            builder.ConfigureCms();
-            builder.ConfigureTheme();
+            //builder.ConfigureCms();
+            //builder.ConfigureTheme();
             builder.ConfigureFormManagement();
         }
     }

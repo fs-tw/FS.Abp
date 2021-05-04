@@ -1,0 +1,52 @@
+{
+  "order": 2002,
+  "nx": {
+    "form-management": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "form-management": {
+      "projectType": "library",
+      "root": "libs/form-management",
+      "sourceRoot": "libs/form-management/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/form-management/tsconfig.lib.json",
+            "project": "libs/form-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/form-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/form-management/src/**/*.ts",
+              "libs/form-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/form-management"],
+          "options": {
+            "jestConfig": "libs/form-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+
+  },
+  "tsconfig": {
+    "@fs-tw/form-management": ["libs/form-management/src/index.ts"],
+    "@fs-tw/form-management/*": ["libs/form-management/*/src/index.ts"]
+  }  
+}

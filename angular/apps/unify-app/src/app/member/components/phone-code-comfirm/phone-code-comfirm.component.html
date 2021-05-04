@@ -1,0 +1,17 @@
+<section class="my-5">
+    <div class="container-fluid" style="min-height: 100vh;width: 300px;">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" validateOnSubmit>
+            <div class="form-group">
+                <label for="login-input-user-name-or-email-address">請輸入驗證碼</label>
+                <input class="form-control" type="text" id="login-input-user-name-or-email-address"
+                    formControlName="code" autofocus />
+            </div>        
+
+            <button type="submit" class="btn btn-primary">驗證</button>
+        </form>
+
+
+
+    </div>
+</section>

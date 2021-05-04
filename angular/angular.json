@@ -144,9 +144,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/alain-ms-app"
-          ],
+          "outputs": ["coverage/apps/alain-ms-app"],
           "options": {
             "jestConfig": "apps/alain-ms-app/jest.config.js",
             "passWithNoTests": true
@@ -169,10 +167,7 @@
             "polyfills": "apps/dev-app/src/polyfills.ts",
             "tsConfig": "apps/dev-app/tsconfig.app.json",
             "aot": true,
-            "allowedCommonJsDependencies": [
-              "chart.js",
-              "js-sha256"
-            ],
+            "allowedCommonJsDependencies": ["chart.js", "js-sha256"],
             "assets": [
               "apps/dev-app/src/favicon.ico",
               "apps/dev-app/src/assets"
@@ -275,9 +270,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/dev-app"
-          ],
+          "outputs": ["coverage/apps/dev-app"],
           "options": {
             "jestConfig": "apps/dev-app/jest.config.js",
             "passWithNoTests": true
@@ -415,9 +408,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/lepton-app"
-          ],
+          "outputs": ["coverage/apps/lepton-app"],
           "options": {
             "jestConfig": "apps/lepton-app/jest.config.js",
             "passWithNoTests": true
@@ -454,12 +445,235 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/theme-alain-ms"
-          ],
+          "outputs": ["coverage/libs/theme-alain-ms"],
           "options": {
             "jestConfig": "libs/theme-alain-ms/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "theme-alain": {
+      "projectType": "library",
+      "root": "libs/theme-alain",
+      "sourceRoot": "libs/theme-alain/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-alain/tsconfig.lib.json",
+            "project": "libs/theme-alain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-alain/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-alain/src/**/*.ts",
+              "libs/theme-alain/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/theme-alain"],
+          "options": {
+            "jestConfig": "libs/theme-alain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "theme-unify": {
+      "projectType": "library",
+      "root": "libs/theme-unify",
+      "sourceRoot": "libs/theme-unify/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-unify/tsconfig.lib.json",
+            "project": "libs/theme-unify/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-unify/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-unify/src/**/*.ts",
+              "libs/theme-unify/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/theme-unify"],
+          "options": {
+            "jestConfig": "libs/theme-unify/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "form-management": {
+      "projectType": "library",
+      "root": "libs/form-management",
+      "sourceRoot": "libs/form-management/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/form-management/tsconfig.lib.json",
+            "project": "libs/form-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/form-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/form-management/src/**/*.ts",
+              "libs/form-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/form-management"],
+          "options": {
+            "jestConfig": "libs/form-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "unify-app": {
+      "projectType": "application",
+      "root": "apps/unify-app",
+      "sourceRoot": "apps/unify-app/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/unify-app",
+            "index": "apps/unify-app/src/index.html",
+            "main": "apps/unify-app/src/main.ts",
+            "polyfills": "apps/unify-app/src/polyfills.ts",
+            "tsConfig": "apps/unify-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/unify-app/src/favicon.ico",
+              "apps/unify-app/src/assets"
+            ],
+            "styles": ["apps/unify-app/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/unify-app/src/environments/environment.ts",
+                  "with": "apps/unify-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "unify-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "unify-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "unify-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/unify-app/src/**/*.ts",
+              "apps/unify-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/unify-app"],
+          "options": {
+            "jestConfig": "apps/unify-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "unify-app-e2e": {
+      "root": "apps/unify-app-e2e",
+      "sourceRoot": "apps/unify-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/unify-app-e2e/cypress.json",
+            "tsConfig": "apps/unify-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "unify-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "unify-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/unify-app-e2e/**/*.{js,ts}"]
           }
         }
       }

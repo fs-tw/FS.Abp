@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -7,8 +7,14 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.FormManagement\Documents\**" />
+    <Compile Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\**" />
     <EmbeddedResource Remove="_Generated\FS.FormManagement\Documents\**" />
+    <EmbeddedResource Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <EmbeddedResource Remove="_Generated\FS.FormManagement\Forms\**" />
     <None Remove="_Generated\FS.FormManagement\Documents\**" />
+    <None Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <None Remove="_Generated\FS.FormManagement\Forms\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,10 +25,6 @@
     <Compile Remove="_Generated\FS.FormManagement\EfCoreChoiceMultipleRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\EfCoreDropdownListRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\EfCoreShortTextRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Forms\EfCoreFormalRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Forms\EfCoreItemRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Forms\Formal.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Forms\Item.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\ShortText.Configuration.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\EfCoreVersionsDefinitionRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsDefinition.Configuration.Generated.cs" />
@@ -63,93 +65,25 @@
       <DependentUpon>EntityFrameworkCore</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\FormResponses\Answer.Configuration.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\EfCoreGroupQuestionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormResponses</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\FormResponses\EfCoreAnswerRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\EfCoreGroupTreeRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormResponses</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\FormResponses\EfCoreFormResponseRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\Group.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormResponses</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponse.Configuration.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupQuestion.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormResponses</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\FormResponses\FormResponsesQueryableExtensions.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupsQueryableExtensions.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormResponses</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Checkbox.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Choice.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\ChoiceMultiple.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\DropdownList.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreCheckboxRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreChoiceMultipleRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreChoiceRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreDropdownListRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreFormRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreGroupTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreQuestionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\EfCoreShortTextRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Form.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Group.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Question.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\ShortText.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\EfCoreVersionDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>

@@ -28,14 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.Application\FS.Abp.File.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.File\src\FS.Abp.File.HttpApi\FS.Abp.File.HttpApi.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.Application\FS.Cms.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Cms\src\FS.Cms.HttpApi\FS.Cms.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.Application\FS.FormManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.HttpApi\FS.FormManagement.HttpApi.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.Application\FS.Theme.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.Theme\src\FS.Theme.HttpApi\FS.Theme.HttpApi.csproj" />
     <ProjectReference Include="..\DEMO.Application\DEMO.Application.csproj" />
     <ProjectReference Include="..\DEMO.EntityFrameworkCore.DbMigrations\DEMO.EntityFrameworkCore.DbMigrations.csproj" />
     <ProjectReference Include="..\DEMO.HttpApi\DEMO.HttpApi.csproj" />
