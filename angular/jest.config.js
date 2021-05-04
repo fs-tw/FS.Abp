@@ -8,5 +8,7 @@ module.exports = {
     '<rootDir>/libs/theme-alain-ms',
     '<rootDir>/apps/alain-ms-app',
     '<rootDir>/libs/form-management',
+    '<rootDir>/libs/theme-unify',
+    '<rootDir>/apps/unify-app',
   ],
 };

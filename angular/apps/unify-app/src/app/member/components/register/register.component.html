@@ -1,0 +1,39 @@
+<section class="main-container">
+
+    <div class="container">
+        <div class="row">
+            <div class="main col-lg-8">
+                <h1 class="page-title">
+                    註冊
+                </h1>
+                <div class="separator-2"></div>
+
+                <form *ngIf="isSelfRegistrationEnabled" [formGroup]="form" (ngSubmit)="onSubmit()" validateOnSubmit
+                    class="mt-4">
+                    <div class="form-group">
+                        <label for="login-input-user-name-or-email-address">
+                            帳號
+                        </label>
+                        <input class="form-control" type="text" id="login-input-user-name-or-email-address"
+                            formControlName="username" autocomplete="username" autofocus />
+                    </div>
+                    <div class="form-group">
+                        <label for="input-email-address">
+                            信箱
+                        </label>
+                        <input type="email" id="input-email-address" class="form-control" formControlName="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="login-input-password">
+                           密碼</label>
+                        <input class="form-control" type="password" id="login-input-password" formControlName="password"
+                            autocomplete="current-password" />
+                    </div>
+                    <input class="btn btn-primary" type="submit" [value]="'註冊'">
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</section>

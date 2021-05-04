@@ -1,46 +1,25 @@
 {
   "npmScope": "fs-tw",
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "alain-ms-app": {
-      "tags": []
-    },
-    "dev-app": {
-      "tags": []
-    },
-    "lepton-app": {
-      "tags": []
-    },
-    "theme-alain-ms": {
-      "tags": []
-    },
-    "theme-alain": {
-      "tags": []
-    },
-    "form-management": {
-      "tags": []
-    }
+    "alain-ms-app": { "tags": [] },
+    "dev-app": { "tags": [] },
+    "lepton-app": { "tags": [] },
+    "theme-alain-ms": { "tags": [] },
+    "theme-alain": { "tags": [] },
+    "theme-unify": { "tags": [] },
+    "form-management": { "tags": [] },
+    "unify-app": { "tags": [] },
+    "unify-app-e2e": { "tags": [], "implicitDependencies": ["unify-app"] }
   }
 }
