@@ -30,8 +30,10 @@
             "assets": [
               "apps/unify-app/src/favicon.ico",
               "apps/unify-app/src/assets"
+
             ],
             "styles": [
+              
               {
                 "input": "node_modules/@swimlane/ngx-datatable/index.css",
                 "inject": true,
@@ -62,6 +64,7 @@
                 "inject": true,
                 "bundleName": "flag-icon.min"
               },
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "apps/unify-app/src/styles.css"],
             "scripts": []
           },

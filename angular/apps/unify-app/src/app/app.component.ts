@@ -17,15 +17,14 @@ export class AppComponent {
     private layoutStateService: LayoutStateService,
     private elementRef: ElementRef
   ) {
-    this.layoutStateService.AppComponent=elementRef;
-   this.replaceableComponents.add({
-     component: HeaderComponent,
-     key: 'Theme.ApplicationLayoutHeaderComponent',
-   });
-   this.replaceableComponents.add({
-     component: FooterComponent,
-     key: 'Theme.ApplicationLayoutFooterComponent',
-   });
+    this.layoutStateService.AppComponent = elementRef;
+    // this.replaceableComponents.add({
+    //   component: HeaderComponent,
+    //   key: 'Theme.ApplicationLayoutHeaderComponent',
+    // });
+    // this.replaceableComponents.add({
+    //   component: FooterComponent,
+    //   key: 'Theme.ApplicationLayoutFooterComponent',
+    // });
   }
 }
-

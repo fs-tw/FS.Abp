@@ -5,6 +5,8 @@ import { ThemeUnifyModule } from '@fs-tw/theme-unify';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 
+import {ThemeAlainSharedModule} from '@fs-tw/theme-alain/shared';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -13,6 +15,7 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
     ThemeUnifyModule,
     NgbDropdownModule,
     NgxValidateCoreModule,
+    ThemeAlainSharedModule
   ],
   exports: [
     CoreModule,
@@ -20,6 +23,7 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
     ThemeUnifyModule,
     NgbDropdownModule,
     NgxValidateCoreModule,
+    ThemeAlainSharedModule
   ],
   providers: [],
 })

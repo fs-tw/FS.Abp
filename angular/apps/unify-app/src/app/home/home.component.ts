@@ -8,6 +8,9 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class HomeComponent {
 
+  dataSet=[
+    {name:'test',age:1,address:'123'}
+  ]
   constructor(private router: Router, private route: ActivatedRoute) {
     router.events.subscribe((event: any) => {
 

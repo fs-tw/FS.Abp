@@ -583,7 +583,9 @@
               "apps/unify-app/src/favicon.ico",
               "apps/unify-app/src/assets"
             ],
-            "styles": ["apps/unify-app/src/styles.css"],
+            "styles": [
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "apps/unify-app/src/styles.css"],
             "scripts": []
           },
           "configurations": {
