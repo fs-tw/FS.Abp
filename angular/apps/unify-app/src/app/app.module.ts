@@ -13,12 +13,6 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeUnifyModule } from '@fs-tw/theme-unify';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-
-import {ThemeAlainSharedModule} from '@fs-tw/theme-alain/shared';
-
-
-
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -36,10 +30,6 @@ import {ThemeAlainSharedModule} from '@fs-tw/theme-alain/shared';
     SettingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeUnifyModule.forRoot(),
-    ThemeAlainSharedModule
-  ],
-  exports:[
-    ThemeAlainSharedModule
   ],
   providers: [APP_ROUTE_PROVIDER],
   declarations: [AppComponent, HeaderComponent, FooterComponent],
