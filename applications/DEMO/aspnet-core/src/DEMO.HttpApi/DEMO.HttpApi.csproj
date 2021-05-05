@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DEMO.Application.Contracts\DEMO.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.HttpApi\FS.FormManagement.HttpApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

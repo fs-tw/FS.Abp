@@ -32,6 +32,9 @@ namespace DEMO
         typeof(TextTemplateManagementHttpApiModule)
         )]
     [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
+    [DependsOn(
+        typeof(FS.FormManagement.FormManagementHttpApiModule)
+        )]
     public class DEMOHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

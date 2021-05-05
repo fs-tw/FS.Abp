@@ -31,6 +31,9 @@ namespace DEMO
         typeof(LeptonThemeManagementApplicationModule),
         typeof(TextTemplateManagementApplicationModule)
         )]
+    [DependsOn(
+        typeof(FS.FormManagement.FormManagementApplicationModule)
+        )]
     public class DEMOApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
