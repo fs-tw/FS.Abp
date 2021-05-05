@@ -13,4 +13,4 @@ let MODAL_COMPONENT = [];
   imports: [CoreModule, PageModule, ThemeAlainSharedModule],
   exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT, FormsComponent],
 })
-export class CmsKitManagementAdminSharedModule {}
+export class FormManagementAdminSharedModule {}
