@@ -16,6 +16,11 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.BlobStoring;
 using Volo.Abp.BlobStoring.FileSystem;
 using Volo.CmsKit;
+using Volo.CmsKit.Tags;
+using System.Collections.Generic;
+using Volo.CmsKit.Blogs;
+using Volo.Abp.Localization;
+using Volo.CmsKit.Localization;
 
 namespace FS
 {
@@ -45,6 +50,7 @@ namespace FS
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+
             Configure<AbpBlobStoringOptions>(options =>
             {
                 options.Containers.ConfigureDefault(container =>

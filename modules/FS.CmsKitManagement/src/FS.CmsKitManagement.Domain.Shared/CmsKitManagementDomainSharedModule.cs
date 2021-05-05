@@ -8,6 +8,7 @@ using Volo.Abp.VirtualFileSystem;
 
 namespace FS.CmsKitManagement
 {
+    [DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule))]
     [DependsOn(
         typeof(AbpValidationModule)
     )]
