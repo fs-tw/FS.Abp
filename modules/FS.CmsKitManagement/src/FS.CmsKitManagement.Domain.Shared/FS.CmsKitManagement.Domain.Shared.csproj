@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FS.Abp.Npoi.Mapper" Version="$(FSVersion)" />
     <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
   </ItemGroup>
 
@@ -20,8 +21,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\CmsKitManagement\*.json" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
+    <None Remove="**\Files\*.*" />
+    <EmbeddedResource Include="**\Files\*.*" />
+    <None Remove="**\Files\BlogPostCoverImageMedia\*.*" />
+    <EmbeddedResource Include="**\Files\BlogPostCoverImageMedia\*.*" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
