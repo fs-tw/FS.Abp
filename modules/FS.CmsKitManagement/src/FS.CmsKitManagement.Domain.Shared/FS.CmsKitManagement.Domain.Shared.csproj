@@ -26,9 +26,20 @@
     <None Remove="**\Files\BlogPostCoverImageMedia\*.*" />
     <EmbeddedResource Include="**\Files\BlogPostCoverImageMedia\*.*" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Files\Vocabularies\TwZipCode.json" />
+  </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="DataModel\CmsKitManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKitManagement.efml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +59,23 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKit.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\CmsKitManagement.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKitManagement.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\CmsKitManagement.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKitManagement.efml</DependentUpon>
+    </None>
+    <None Update="DataModel\CmsKitManagement.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>CmsKitManagement.info</LastGenOutput>
+    </None>
+    <None Update="DataModel\CmsKitManagement.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </None>
   </ItemGroup>
 

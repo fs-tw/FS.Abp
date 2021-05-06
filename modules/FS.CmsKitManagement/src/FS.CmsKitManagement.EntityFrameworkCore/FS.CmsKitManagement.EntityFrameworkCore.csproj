@@ -14,4 +14,46 @@
     <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="EntityFrameworkCore\CmsKitManagementDbContextModelCreatingExtensions.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementModelBuilderConfigurationOptions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\ICmsKitManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\EfCoreVocabularyDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\EfCoreVocabularyTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Vocabulary.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

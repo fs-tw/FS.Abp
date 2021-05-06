@@ -14,4 +14,19 @@
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VocabulariesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VocabulariesApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

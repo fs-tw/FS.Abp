@@ -15,4 +15,35 @@
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

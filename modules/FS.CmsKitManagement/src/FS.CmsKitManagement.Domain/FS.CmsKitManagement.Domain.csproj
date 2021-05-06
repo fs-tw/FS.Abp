@@ -14,4 +14,27 @@
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Vocabulary.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinition.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
