@@ -13,7 +13,7 @@ namespace FS.CmsKitManagement
         typeof(AbpValidationModule)
     )]
     [DependsOn(typeof(FS.Abp.AbpDomainSharedModule))]
-    //[DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
+    [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
     public class CmsKitManagementDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
