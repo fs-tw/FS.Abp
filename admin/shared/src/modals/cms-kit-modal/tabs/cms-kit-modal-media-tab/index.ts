@@ -1,0 +1,1 @@
+export * from './cms-kit-modal-media-tab.component';
