@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <AbpVersion>4.3.0</AbpVersion>
-    <EasyAbpTreeVersion>2.2.2</EasyAbpTreeVersion>
+    <EasyAbpTreeVersion>2.3.0</EasyAbpTreeVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -52,7 +52,7 @@
 
   </PropertyGroup>
 
-    <ItemGroup>
+  <ItemGroup>
     <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>

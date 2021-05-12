@@ -25,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Application\FS.CmsKitManagement.Application.csproj" />
     <ProjectReference Include="..\FS.Domain\FS.Domain.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
   </ItemGroup>
@@ -36,6 +37,7 @@
     <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.CmsKit.Application" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>

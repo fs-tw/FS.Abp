@@ -1,0 +1,30 @@
+<fs-tw-cms-kit-entity-base
+  [list]="list"
+  [service]="service"
+  entityName="Pages"
+></fs-tw-cms-kit-entity-base>
+
+<fs-tw-cms-kit-modal
+  type="Create"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-tw-cms-kit-modal-info-tab
+    title='NewPage'
+    [form]="addForm"
+  ></fs-tw-cms-kit-modal-info-tab>
+</fs-tw-cms-kit-modal>
+
+<fs-tw-cms-kit-modal
+  type="Edit"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-tw-cms-kit-modal-info-tab
+    title='Page'
+    [form]="editForm"
+    [selectedRecord]="editSelectedRecord"
+  ></fs-tw-cms-kit-modal-info-tab>
+</fs-tw-cms-kit-modal>

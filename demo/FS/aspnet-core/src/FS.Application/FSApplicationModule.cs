@@ -24,6 +24,9 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpApplicationModule)
         )]
+    [DependsOn(
+        typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
+        )]
     public class FSApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -32,11 +35,6 @@ namespace FS
             {
                 options.AddMaps<FSApplicationModule>();
             });
-
-            //Configure<JsonSubtypesOptions>(options =>
-            //{
-            //    options.AddProfiles<FSApplicationModule>();
-            //});
         }
     }
 }

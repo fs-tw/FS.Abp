@@ -6,6 +6,10 @@ using Volo.Abp.ObjectExtending;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Volo.Abp.Threading;
+using Volo.CmsKit.GlobalFeatures;
+using Volo.Abp.GlobalFeatures;
+using Volo.CmsKit;
 
 namespace FS
 {
@@ -23,6 +27,7 @@ namespace FS
     [DependsOn(
         typeof(FS.Abp.AbpApplicationContractsModule)
         )]
+    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule))]
     public class FSApplicationContractsModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -32,6 +37,7 @@ namespace FS
                     o.AddProfiles<FSApplicationContractsModule>();
                 });
         }
+        private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             FSDtoExtensions.Configure();

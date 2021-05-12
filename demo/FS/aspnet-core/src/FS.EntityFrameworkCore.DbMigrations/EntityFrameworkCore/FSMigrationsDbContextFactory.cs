@@ -11,7 +11,7 @@ namespace FS.EntityFrameworkCore
     {
         public FSMigrationsDbContext CreateDbContext(string[] args)
         {
-            //FSEfCoreEntityExtensionMappings.Configure();
+            FSEfCoreEntityExtensionMappings.Configure();
 
             var configuration = BuildConfiguration();
 

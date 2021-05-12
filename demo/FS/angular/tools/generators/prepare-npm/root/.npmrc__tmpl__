@@ -1,4 +1,0 @@
-registry=https://registry.npmjs.org
-@fs-tw:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=feb5b5e09179cefdb9e6eed45825e5e11f89bd1f
-package-lock=false

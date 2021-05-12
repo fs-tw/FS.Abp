@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.CmsKitManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
+    <PackageReference Include="Mongo2Go" Version="$(Mongo2GoPackageVersion)" />
+    <ProjectReference Include="..\..\src\FS.CmsKitManagement.MongoDB\FS.CmsKitManagement.MongoDB.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.TestBase\FS.CmsKitManagement.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>
