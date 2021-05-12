@@ -16,14 +16,14 @@ namespace FS.FormManagement.Versions
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var VersionsGroup = context.AddGroup(VersionsPermissionNames.ModuleName,L(VersionsPermissionNames.ModuleName));
+            var _VersionsGroup = context.AddGroup(VersionsPermissionNames.ModuleName,L(VersionsPermissionNames.ModuleName));
 
-            var Version = VersionsGroup.AddPermission(VersionsPermissionNames.Version.Default,L(VersionsPermissionNames.Version.Default));
+            var Version = _VersionsGroup.AddPermission(VersionsPermissionNames.Version.Default,L(VersionsPermissionNames.Version.Default));
             Version.AddChild(VersionsPermissionNames.Version.Create , L("DisplayName:Version.Create"));
             Version.AddChild(VersionsPermissionNames.Version.Update , L("DisplayName:Version.Update"));
             Version.AddChild(VersionsPermissionNames.Version.Delete , L("DisplayName:Version.Delete"));
 
-            var VersionDefinition = VersionsGroup.AddPermission(VersionsPermissionNames.VersionDefinition.Default,L(VersionsPermissionNames.VersionDefinition.Default));
+            var VersionDefinition = _VersionsGroup.AddPermission(VersionsPermissionNames.VersionDefinition.Default,L(VersionsPermissionNames.VersionDefinition.Default));
             VersionDefinition.AddChild(VersionsPermissionNames.VersionDefinition.Create , L("DisplayName:VersionDefinition.Create"));
             VersionDefinition.AddChild(VersionsPermissionNames.VersionDefinition.Update , L("DisplayName:VersionDefinition.Update"));
             VersionDefinition.AddChild(VersionsPermissionNames.VersionDefinition.Delete , L("DisplayName:VersionDefinition.Delete"));

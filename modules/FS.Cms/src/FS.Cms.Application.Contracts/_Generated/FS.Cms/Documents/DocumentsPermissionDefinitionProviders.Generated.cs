@@ -16,14 +16,14 @@ namespace FS.Cms.Documents
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var DocumentsGroup = context.AddGroup(DocumentsPermissionNames.ModuleName,L(DocumentsPermissionNames.ModuleName));
+            var _DocumentsGroup = context.AddGroup(DocumentsPermissionNames.ModuleName,L(DocumentsPermissionNames.ModuleName));
 
-            var DocumentDefinition = DocumentsGroup.AddPermission(DocumentsPermissionNames.DocumentDefinition.Default,L(DocumentsPermissionNames.DocumentDefinition.Default));
+            var DocumentDefinition = _DocumentsGroup.AddPermission(DocumentsPermissionNames.DocumentDefinition.Default,L(DocumentsPermissionNames.DocumentDefinition.Default));
             DocumentDefinition.AddChild(DocumentsPermissionNames.DocumentDefinition.Create , L("DisplayName:DocumentDefinition.Create"));
             DocumentDefinition.AddChild(DocumentsPermissionNames.DocumentDefinition.Update , L("DisplayName:DocumentDefinition.Update"));
             DocumentDefinition.AddChild(DocumentsPermissionNames.DocumentDefinition.Delete , L("DisplayName:DocumentDefinition.Delete"));
 
-            var Document = DocumentsGroup.AddPermission(DocumentsPermissionNames.Document.Default,L(DocumentsPermissionNames.Document.Default));
+            var Document = _DocumentsGroup.AddPermission(DocumentsPermissionNames.Document.Default,L(DocumentsPermissionNames.Document.Default));
             Document.AddChild(DocumentsPermissionNames.Document.Create , L("DisplayName:Document.Create"));
             Document.AddChild(DocumentsPermissionNames.Document.Update , L("DisplayName:Document.Update"));
             Document.AddChild(DocumentsPermissionNames.Document.Delete , L("DisplayName:Document.Delete"));

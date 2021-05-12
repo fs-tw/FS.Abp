@@ -5,7 +5,7 @@
     placeholder="{{ l.placeholder }}"
     nz-input
     [(ngModel)]="q"
-    (input)="search$.next($event.target?.value)"
+    (input)="onSearch()"
     [nzAutocomplete]="searchAuto"
     (blur)="show = false"
   />

@@ -16,9 +16,9 @@ namespace FS.Cms.Blogs
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var BlogsGroup = context.AddGroup(BlogsPermissionNames.ModuleName,L(BlogsPermissionNames.ModuleName));
+            var _BlogsGroup = context.AddGroup(BlogsPermissionNames.ModuleName,L(BlogsPermissionNames.ModuleName));
 
-            var Blog = BlogsGroup.AddPermission(BlogsPermissionNames.Blog.Default,L(BlogsPermissionNames.Blog.Default));
+            var Blog = _BlogsGroup.AddPermission(BlogsPermissionNames.Blog.Default,L(BlogsPermissionNames.Blog.Default));
             Blog.AddChild(BlogsPermissionNames.Blog.Create , L("DisplayName:Blog.Create"));
             Blog.AddChild(BlogsPermissionNames.Blog.Update , L("DisplayName:Blog.Update"));
             Blog.AddChild(BlogsPermissionNames.Blog.Delete , L("DisplayName:Blog.Delete"));

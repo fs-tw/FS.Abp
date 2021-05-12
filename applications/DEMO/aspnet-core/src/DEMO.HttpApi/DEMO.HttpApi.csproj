@@ -9,10 +9,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DEMO.Application.Contracts\DEMO.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.HttpApi\FS.FormManagement.HttpApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FS.Abp.HttpApi" Version="$(FSVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.AuditLogging.HttpApi" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.Identity.Pro.HttpApi" Version="$(VoloVersion)" />
@@ -20,7 +23,6 @@
     <PackageReference Include="Volo.Abp.Account.Pro.Public.HttpApi" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.IdentityServer.HttpApi" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.LanguageManagement.HttpApi" Version="$(VoloVersion)" />
-    <PackageReference Include="Volo.FileManagement.HttpApi" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Saas.Host.HttpApi" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.LeptonTheme.Management.HttpApi" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.TextTemplateManagement.HttpApi" Version="$(VoloVersion)" />

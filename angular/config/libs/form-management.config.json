@@ -1,16 +1,16 @@
 {
-  "order": 2001,
+  "order": 2002,
   "nx": {
     "form-management": {
       "tags": []
     }
   },
-  "angular": {  
+  "angular": {
     "form-management": {
       "projectType": "library",
       "root": "libs/form-management",
       "sourceRoot": "libs/form-management/src",
-      "prefix": "fs",
+      "prefix": "fs-tw",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -25,13 +25,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/form-management/tsconfig.lib.json",
-              "libs/form-management/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/form-management/**/*"]
+            "lintFilePatterns": [
+              "libs/form-management/src/**/*.ts",
+              "libs/form-management/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -44,17 +43,10 @@
         }
       }
     }
+
   },
   "tsconfig": {
     "@fs-tw/form-management": ["libs/form-management/src/index.ts"],
     "@fs-tw/form-management/*": ["libs/form-management/*/src/index.ts"]
-  },
-  "tsconfigProd": { 
-    "@fs-tw/form-management": [
-      "dist/form-management"
-    ],
-    "@fs-tw/form-management/*": [
-      "dist/form-management/*"
-    ]
-  }
+  }  
 }

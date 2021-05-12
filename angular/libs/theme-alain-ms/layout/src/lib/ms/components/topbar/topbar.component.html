@@ -4,10 +4,10 @@
 <div class="alain-ms__topbar-main">
   <ms-all-nav *ngIf="allNav"></ms-all-nav>
   <div class="alain-ms__topbar-logo">
-    <a routerLink="/" class="alain-ms__topbar-logo-img">
+    <a routerLink="/" class="alain-ms__topbar-logo-img" [class.disabled]="!(this.configService.getOne$('currentUser')| async).isAuthenticated">
       <img *ngIf="(appInfo | async).application?.logoUrl; else defaultLogo" [src]="(appInfo | async).application?.logoUrl"/>
     </a>
-    <a routerLink="/" class="alain-ms__topbar-logo-link">
+    <a routerLink="/" class="alain-ms__topbar-logo-link" [class.disabled]="!(this.configService.getOne$('currentUser')| async).isAuthenticated">
       {{ (appInfo | async ).application?.name }}
     </a>
   </div>
@@ -19,7 +19,7 @@
   <!-- 消息 -->
   <!-- <ms-notice></ms-notice> -->
   <!-- 菜单 -->
-  <!-- <div *ngFor="let p of links" class="alain-ms__topbar-item" [ngClass]="p.className">
+  <!-- <div *ngFor="let p of links" class="alain-ms__topbar-item" [ngClass]="p.className!">
     <a class="alain-ms__topbar-item-btn" [link-to]="p">{{ p.text }}</a>
     <ul class="alain-ms__topbar-dd-menu" *ngIf="p.links">
       <li *ngFor="let i of p.links">

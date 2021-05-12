@@ -17,6 +17,7 @@ namespace FS.FormManagement.Web
         typeof(AbpAspNetCoreMvcUiThemeSharedModule),
         typeof(AbpAutoMapperModule)
         )]
+    [DependsOn(typeof(Volo.Forms.Web.FormsWebModule))]
     public class FormManagementWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

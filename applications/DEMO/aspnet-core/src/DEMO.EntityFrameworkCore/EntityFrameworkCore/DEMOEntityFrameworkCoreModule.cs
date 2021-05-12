@@ -13,13 +13,12 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
-using Volo.FileManagement.EntityFrameworkCore;
 
 namespace DEMO.EntityFrameworkCore
 {
     [DependsOn(
         typeof(DEMODomainModule),
-        typeof(AbpIdentityEntityFrameworkCoreModule),
+        typeof(AbpIdentityProEntityFrameworkCoreModule),
         typeof(AbpIdentityServerEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
@@ -32,9 +31,6 @@ namespace DEMO.EntityFrameworkCore
         typeof(TextTemplateManagementEntityFrameworkCoreModule),
         typeof(BlobStoringDatabaseEntityFrameworkCoreModule)
         )]
-    [DependsOn(typeof(FileManagementEntityFrameworkCoreModule))]
-    [DependsOn(typeof(FS.Cms.EntityFrameworkCore.CmsEntityFrameworkCoreModule))]
-    [DependsOn(typeof(FS.Theme.EntityFrameworkCore.ThemeEntityFrameworkCoreModule))]
     [DependsOn(typeof(FS.FormManagement.EntityFrameworkCore.FormManagementEntityFrameworkCoreModule))]
     public class DEMOEntityFrameworkCoreModule : AbpModule
     {

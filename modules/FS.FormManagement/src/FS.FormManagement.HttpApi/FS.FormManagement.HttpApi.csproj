@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -6,45 +6,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.DocumentDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.FormManagement\Documents\DocumentsApi.VersionCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsApi.VersionsDefinitionCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.HttpApi" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Application.Contracts\FS.FormManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.FormalCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupsApi.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupsApi.GroupCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
+      <DependentUpon>GroupsApi.Generated.cs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.GroupCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupsApi.GroupQuestionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsApi.ItemCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FormsApi.Generated.cs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.RecordCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsApi.RecordItemCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RecordsApi.Generated.cs</DependentUpon>
+      <DependentUpon>GroupsApi.Generated.cs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\VersionsApi.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -58,10 +40,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>VersionsApi.Generated.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.FormManagement\Documents\" />
   </ItemGroup>
 
 </Project>

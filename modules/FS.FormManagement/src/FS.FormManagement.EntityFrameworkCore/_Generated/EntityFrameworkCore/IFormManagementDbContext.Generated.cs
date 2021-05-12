@@ -28,12 +28,9 @@ namespace FS.FormManagement.EntityFrameworkCore
     [ConnectionStringName(FormManagementDbProperties.ConnectionStringName)]
     public partial interface IFormManagementDbContext : IEfCoreDbContext
     {
-        DbSet<FS.FormManagement.Forms.Formal> Formals { get; set; }
-        DbSet<FS.FormManagement.Forms.Group> Groups { get; set; }
-        DbSet<FS.FormManagement.Forms.Item> Items { get; set; }
+        DbSet<FS.FormManagement.Groups.Group> Groups { get; set; }
+        DbSet<FS.FormManagement.Groups.GroupQuestion> GroupQuestions { get; set; }
         DbSet<FS.FormManagement.Versions.Version> Versions { get; set; }
-        DbSet<FS.FormManagement.Records.Record> Records { get; set; }
-        DbSet<FS.FormManagement.Records.RecordItem> RecordItems { get; set; }
         DbSet<FS.FormManagement.Versions.VersionDefinition> VersionDefinitions { get; set; }
     }
 }

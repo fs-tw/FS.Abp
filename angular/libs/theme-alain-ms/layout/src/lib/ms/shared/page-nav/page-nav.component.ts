@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input, OnChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  Input,
+  OnChanges,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ALAIN_I18N_TOKEN, MenuService, TitleService } from '@delon/theme';
@@ -20,7 +27,7 @@ export class MSPageNavComponent implements OnChanges {
     const { title, titleI18n, backHref, doc, docI18n } = val;
     // this.titSrv.setTitle(docI18n ? this.i18n.fanyi(docI18n) : doc);
     // this._config.title = titleI18n ? this.i18n.fanyi(titleI18n) : title;
-    this._config.title=title;
+    this._config.title = title;
     this._config.backHref = backHref || '';
   }
   get config(): MSServiceNavConfig {
@@ -30,8 +37,10 @@ export class MSPageNavComponent implements OnChanges {
   private _menus: MSMenu[] = [];
   @Input()
   set list(list: MSMenu[]) {
-    this.menuSrv.add(list);
-    this.menuSrv.visit(list, (i) => (i.active = true));
+    if (list) {
+      this.menuSrv.add(list);
+      this.menuSrv.visit(list, (i) => (i.active = true)); 
+    }
     this._menus = this.menuSrv.menus;
   }
   get list(): MSMenu[] {
@@ -39,12 +48,12 @@ export class MSPageNavComponent implements OnChanges {
   }
 
   constructor(
-    private srv: BrandService,
+    public srv: BrandService,
     private router: Router,
     private titSrv: TitleService,
     private menuSrv: MenuService,
     //@Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
-    private cdr: ChangeDetectorRef,
+    private cdr: ChangeDetectorRef
   ) {}
 
   to(url: string, e: MouseEvent): void {
@@ -59,7 +68,6 @@ export class MSPageNavComponent implements OnChanges {
     this.srv.hideNav = !this.srv.hideNav;
     this.srv.triggerNotify('page-nav');
   }
-
   ngOnChanges(): void {
     this.cdr.detectChanges();
   }

@@ -1,4 +1,4 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.FeatureManagement;
@@ -9,8 +9,8 @@ using Volo.Abp.LeptonTheme.Management;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TextTemplateManagement;
+using Volo.Abp.SettingManagement;
 using Volo.Saas.Host;
-using Volo.FileManagement;
 
 namespace DEMO
 {
@@ -19,6 +19,7 @@ namespace DEMO
         typeof(AbpIdentityHttpApiClientModule),
         typeof(AbpPermissionManagementHttpApiClientModule),
         typeof(AbpFeatureManagementHttpApiClientModule),
+        typeof(AbpSettingManagementHttpApiClientModule),
         typeof(SaasHostHttpApiClientModule),
         typeof(AbpAuditLoggingHttpApiClientModule),
         typeof(AbpIdentityServerHttpApiClientModule),
@@ -28,7 +29,6 @@ namespace DEMO
         typeof(LeptonThemeManagementHttpApiClientModule),
         typeof(TextTemplateManagementHttpApiClientModule)
     )]
-    [DependsOn(typeof(FileManagementHttpApiClientModule))]
     public class DEMOHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "Default";

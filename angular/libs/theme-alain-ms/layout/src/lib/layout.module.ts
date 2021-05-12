@@ -1,10 +1,10 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CoreModule } from '@abp/ng.core';
-import { Inject, ModuleWithProviders, NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 // import { I18NService } from '@core';
-import { AlainThemeModule, ALAIN_I18N_TOKEN } from '@delon/theme';
+import { AlainThemeModule } from '@delon/theme';
 import { ThemeBtnModule } from '@delon/theme/theme-btn';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';

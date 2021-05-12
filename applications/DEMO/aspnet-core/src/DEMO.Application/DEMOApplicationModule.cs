@@ -1,9 +1,6 @@
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Volo.Abp.Account;
+﻿using Volo.Abp.Account;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.AutoMapper;
-using Volo.Abp.Emailing;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.IdentityServer;
@@ -11,9 +8,10 @@ using Volo.Abp.LanguageManagement;
 using Volo.Abp.LeptonTheme.Management;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas.Host;
-using Volo.FileManagement;
+
 
 namespace DEMO
 {
@@ -23,6 +21,7 @@ namespace DEMO
         typeof(AbpIdentityApplicationModule),
         typeof(AbpPermissionManagementApplicationModule),
         typeof(AbpFeatureManagementApplicationModule),
+        typeof(AbpSettingManagementApplicationModule),
         typeof(SaasHostApplicationModule),
         typeof(AbpAuditLoggingApplicationModule),
         typeof(AbpIdentityServerApplicationModule),
@@ -32,7 +31,9 @@ namespace DEMO
         typeof(LeptonThemeManagementApplicationModule),
         typeof(TextTemplateManagementApplicationModule)
         )]
-    [DependsOn(typeof(FileManagementApplicationModule))]
+    [DependsOn(
+        typeof(FS.FormManagement.FormManagementApplicationModule)
+        )]
     public class DEMOApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

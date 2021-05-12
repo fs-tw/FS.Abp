@@ -10,12 +10,13 @@
   <ItemGroup>
     <ProjectReference Include="..\DEMO.Domain\DEMO.Domain.csproj" />
     <ProjectReference Include="..\DEMO.Application.Contracts\DEMO.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.Application\FS.FormManagement.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.FileManagement.Application" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Saas.Host.Application" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.AuditLogging.Application" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="$(VoloVersion)" />

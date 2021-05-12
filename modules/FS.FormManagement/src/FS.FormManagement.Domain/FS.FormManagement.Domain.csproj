@@ -6,6 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\**" />
+    <EmbeddedResource Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <EmbeddedResource Remove="_Generated\FS.FormManagement\Forms\**" />
+    <None Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <None Remove="_Generated\FS.FormManagement\Forms\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\Checkbox.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\ChoiceMultiple.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\DropdownList.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\ICheckboxRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IChoiceMultipleRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IDropdownListRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\IShortTextRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.FormManagement\ShortText.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\IVersionsDefinitionRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsDefinition.Generated.cs" />
   </ItemGroup>
@@ -16,14 +33,11 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.Domain" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Domain.Shared\FS.FormManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.FormManagement\Forms\Formal.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
     <Compile Update="FS.FormManagement\Versions\IVersionDefinitionRepository.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Versions</DependentUpon>
@@ -31,53 +45,25 @@
     <Compile Update="FS.FormManagement\Versions\VersionsStore.cs">
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Formal.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\Group.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormsStore.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupQuestion.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Group.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupsStore.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IFormalRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\IGroupQuestionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IGroupTreeRepository.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\IGroupTreeRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\IItemRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Item.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordItemRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\IRecordRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Record.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordItem.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordsStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\IVersionDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>

@@ -8,13 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
+    <ProjectReference Include="..\..\src\DEMO.EntityFrameworkCore.DbMigrations\DEMO.EntityFrameworkCore.DbMigrations.csproj" />
+    <ProjectReference Include="..\DEMO.TestBase\DEMO.TestBase.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DEMO.EntityFrameworkCore.DbMigrations\DEMO.EntityFrameworkCore.DbMigrations.csproj" />
-    <ProjectReference Include="..\DEMO.TestBase\DEMO.TestBase.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
   </ItemGroup>
 
 </Project>

@@ -6,38 +6,15 @@
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
-    "@nrwl/workspace": {
-      "library": {
-        "linter": "tslint"
-      }
-    },
-    "@nrwl/cypress": {
-      "cypress-project": {
-        "linter": "tslint"
-      }
-    },
-    "@nrwl/node": {
+    "@nrwl/angular": {
       "application": {
-        "linter": "tslint"
+        "linter": "eslint"
       },
       "library": {
-        "linter": "tslint"
-      }
-    },
-    "@nrwl/nest": {
-      "application": {
-        "linter": "tslint"
+        "linter": "eslint"
       },
-      "library": {
-        "linter": "tslint"
-      }
-    },
-    "@nrwl/express": {
-      "application": {
-        "linter": "tslint"
-      },
-      "library": {
-        "linter": "tslint"
+      "storybook-configuration": {
+        "linter": "eslint"
       }
     },
     "@nrwl/angular:application": {
@@ -55,5 +32,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "demo-admin"
+  "defaultProject": "alain-ms-app"
 }

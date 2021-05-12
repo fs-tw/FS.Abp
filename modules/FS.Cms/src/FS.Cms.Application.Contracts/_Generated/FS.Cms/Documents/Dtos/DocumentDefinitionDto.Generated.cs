@@ -29,7 +29,7 @@ namespace FS.Cms.Documents.Dtos
     {
     }
 
-    public partial class DocumentDefinitionDto : Volo.Abp.Application.Dtos.FullAuditedEntityDto<String>
+    public partial class DocumentDefinitionDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<String>
     {
         public virtual string Title { get; set; }
 
@@ -37,7 +37,7 @@ namespace FS.Cms.Documents.Dtos
 
     }
 
-    public partial class DocumentDefinitionCreateDto
+    public partial class DocumentDefinitionCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Title { get; set; }
 
@@ -45,7 +45,7 @@ namespace FS.Cms.Documents.Dtos
 
     }
 
-    public partial class DocumentDefinitionUpdateDto
+    public partial class DocumentDefinitionUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Title { get; set; }
 

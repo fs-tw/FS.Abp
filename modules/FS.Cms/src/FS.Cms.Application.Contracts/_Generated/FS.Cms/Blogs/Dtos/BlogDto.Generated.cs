@@ -29,7 +29,7 @@ namespace FS.Cms.Blogs.Dtos
     {
     }
 
-    public partial class BlogDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
+    public partial class BlogDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string No { get; set; }
 
@@ -53,7 +53,7 @@ namespace FS.Cms.Blogs.Dtos
 
     }
 
-    public partial class BlogCreateDto
+    public partial class BlogCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string No { get; set; }
 
@@ -77,7 +77,7 @@ namespace FS.Cms.Blogs.Dtos
 
     }
 
-    public partial class BlogUpdateDto
+    public partial class BlogUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string No { get; set; }
 

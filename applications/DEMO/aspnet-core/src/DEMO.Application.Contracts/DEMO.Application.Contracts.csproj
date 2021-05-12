@@ -14,7 +14,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.FileManagement.Application.Contracts" Version="$(VoloVersion)" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Saas.Host.Application.Contracts" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.AuditLogging.Application.Contracts" Version="$(VoloVersion)" />
     <PackageReference Include="Volo.Abp.Identity.Pro.Application.Contracts" Version="$(VoloVersion)" />

@@ -8,6 +8,7 @@ namespace FS.FormManagement
         typeof(FormManagementDomainSharedModule)
     )]
     [DependsOn(typeof(FS.Abp.AbpDomainModule))]
+    [DependsOn(typeof(Volo.Forms.FormsDomainModule))]
     public class FormManagementDomainModule : AbpModule
     {
 

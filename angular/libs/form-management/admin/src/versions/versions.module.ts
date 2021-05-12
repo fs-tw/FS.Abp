@@ -28,7 +28,7 @@ import { VersiondefinitionComponent } from './component/versiondefinition/versio
 
 import { PageService } from './providers/page.service';
 import { CoreModule, LazyModuleFactory } from '@abp/ng.core';
-import { SharedModule } from '@fs-tw/cms/admin/shared';
+//import { SharedModule } from '@fs-tw/cms/admin/shared';
 
 const NzModules = [
   NzGridModule,
@@ -61,7 +61,7 @@ const NzModules = [
     UiExtensionsModule,
     ThemeSharedModule,
     CoreModule,
-    SharedModule,
+    //SharedModule,
     ...NzModules,
     QuillModule.forRoot()
   ],

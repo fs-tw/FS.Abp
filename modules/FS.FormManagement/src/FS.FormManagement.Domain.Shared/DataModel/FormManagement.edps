@@ -1,105 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityDeveloper Version="6.10.1165.0">
+<EntityDeveloper Version="6.11.1213.0">
   <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore20" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version3" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="" Provider="" />
     <Generation>
       <GeneratedFiles>
         <File Name="FormManagement.cs" />
-        <File Name="IFormsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.FormalCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.GroupCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="FormsApi.ItemCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="IGroupsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupsApi.GroupCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupsApi.GroupQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="IVersionsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionsApi.VersionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionsApi.VersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IRecordsApi.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="RecordsApi.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="RecordsApi.RecordCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="RecordsApi.RecordItemCrudAppService.Generated.cs" Project="FS.FormManagement.HttpApi" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="IFormalCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IGroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="IGroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="IGroupQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="IVersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IRecordCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="IRecordItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IVersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormalCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="GroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="ItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupQuestionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="RecordCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="RecordItemCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="VersionDefinitionCrudAppService.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormalDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="GroupDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ItemDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
+        <File Name="GroupDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
+        <File Name="GroupQuestionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
         <File Name="VersionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="RecordDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
-        <File Name="RecordItemDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
         <File Name="VersionDefinitionDto.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="FormalDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="GroupDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ItemDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
+        <File Name="GroupDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
+        <File Name="GroupQuestionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
         <File Name="VersionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="RecordDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
-        <File Name="RecordItemDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
         <File Name="VersionDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="FormalDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="GroupDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
-        <File Name="ItemDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Forms\Dtos" />
+        <File Name="GroupDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
+        <File Name="GroupQuestionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Groups\Dtos" />
         <File Name="VersionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="RecordDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
-        <File Name="RecordItemDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Records\Dtos" />
         <File Name="VersionDefinitionDtoValidator.Generated.cs" Project="FS.FormManagement.Application" ProjectFolder="_Generated\FS.FormManagement\Versions\Dtos" />
-        <File Name="FormsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="RecordsStore.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IFormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContext.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FormManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
-        <File Name="Formal.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Forms" OverwriteMode="None" />
-        <File Name="Formal.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Group.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Item.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="Group.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupQuestion.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="Version.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionDefinition.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="Record.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="RecordItem.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="Formal.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Group.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="Item.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="Group.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="GroupQuestion.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="Version.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
         <File Name="VersionDefinition.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="Record.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="RecordItem.Configuration.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="IFormalRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IGroupTreeRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="IItemRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="IGroupTreeRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="IGroupQuestionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="IVersionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="IRecordRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="IRecordItemRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="IVersionDefinitionRepository.cs" Project="FS.FormManagement.Domain" ProjectFolder="FS.FormManagement\Versions" OverwriteMode="None" />
         <File Name="IVersionDefinitionRepository.Generated.cs" Project="FS.FormManagement.Domain" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="EfCoreFormalRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreGroupTreeRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
-        <File Name="EfCoreItemRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="EfCoreGroupTreeRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
+        <File Name="EfCoreGroupQuestionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="EfCoreVersionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="EfCoreRecordRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="EfCoreRecordItemRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
         <File Name="EfCoreVersionDefinitionRepository.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="FS.FormManagement\Versions" OverwriteMode="None" />
         <File Name="EfCoreVersionDefinitionRepository.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="FormsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="RecordsQueryableExtensions.Generated.cs" Project="FS.FormManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="FormsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="RecordsPermissionNames.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
-        <File Name="FormsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Forms" />
+        <File Name="GroupsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Groups" />
         <File Name="VersionsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Versions" />
-        <File Name="RecordsPermissionDefinitionProviders.Generated.cs" Project="FS.FormManagement.Application.Contracts" ProjectFolder="_Generated\FS.FormManagement\Records" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -130,14 +93,14 @@
         <ed:Property Name="KebabCaseApiName" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.HttpApi</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -149,14 +112,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -168,28 +131,28 @@
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -216,7 +179,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -228,28 +191,28 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain.Shared</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain.Shared</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
@@ -264,28 +227,28 @@
         <ed:Property Name="GenSettingsApi" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
-        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>Microsoft.Extensions.DependencyInjection</ProjectFolder>
@@ -297,7 +260,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -309,14 +272,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -328,7 +291,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.EntityFrameworkCore</Project>
             <ProjectFolder>EntityFrameworkCore</ProjectFolder>
@@ -337,13 +300,13 @@
         </ed:Property>
       </Template>
       <Template Name="EFCore.Entities" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Entities.tmpl">
-        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationFramework>None</ValidationFramework>
         </ed:Property>
-        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
         </ed:Property>
-        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -392,7 +355,7 @@
         <ed:Property Name="JsonFileBasePath" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain.Shared</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -407,32 +370,32 @@
         <ed:Property Name="SelfContainedEntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.EntityFrameworkCore</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionPropertyType>Default</EFCoreCollectionPropertyType>
         </ed:Property>
-        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionInitializationType>Default</EFCoreCollectionInitializationType>
         </ed:Property>
-        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ReferenceTypeNullability>Default</ReferenceTypeNullability>
         </ed:Property>
       </Template>
       <Template Name="EFCore.Repository" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Repository.tmpl">
-        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Domain</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.EntityFrameworkCore</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>
@@ -456,7 +419,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ApplicationContractsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1165.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationContractsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.FormManagement.Application.Contracts</Project>
             <ProjectFolder>FS.FormManagement</ProjectFolder>

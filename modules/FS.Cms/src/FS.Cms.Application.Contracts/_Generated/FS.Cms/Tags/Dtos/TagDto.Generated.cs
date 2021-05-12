@@ -29,7 +29,7 @@ namespace FS.Cms.Tags.Dtos
     {
     }
 
-    public partial class TagDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
+    public partial class TagDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string No { get; set; }
 
@@ -47,7 +47,7 @@ namespace FS.Cms.Tags.Dtos
 
     }
 
-    public partial class TagCreateDto
+    public partial class TagCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string No { get; set; }
 
@@ -65,7 +65,7 @@ namespace FS.Cms.Tags.Dtos
 
     }
 
-    public partial class TagUpdateDto
+    public partial class TagUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string No { get; set; }
 

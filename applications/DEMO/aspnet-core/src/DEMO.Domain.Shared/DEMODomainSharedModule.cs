@@ -17,7 +17,6 @@ using Volo.Abp.VirtualFileSystem;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.GlobalFeatures;
-using Volo.FileManagement;
 
 namespace DEMO
 {
@@ -25,8 +24,8 @@ namespace DEMO
         typeof(AbpAuditLoggingDomainSharedModule),
         typeof(AbpBackgroundJobsDomainSharedModule),
         typeof(AbpFeatureManagementDomainSharedModule),
+        typeof(AbpIdentityProDomainSharedModule),
         typeof(AbpIdentityDomainSharedModule),
-        typeof(AbpIdentityServerDomainSharedModule),
         typeof(AbpPermissionManagementDomainSharedModule),
         typeof(AbpSettingManagementDomainSharedModule),
         typeof(LanguageManagementDomainSharedModule),
@@ -36,7 +35,6 @@ namespace DEMO
         typeof(AbpGlobalFeaturesModule),
         typeof(BlobStoringDatabaseDomainSharedModule)
         )]
-    [DependsOn(typeof(FileManagementDomainSharedModule))]
     public class DEMODomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

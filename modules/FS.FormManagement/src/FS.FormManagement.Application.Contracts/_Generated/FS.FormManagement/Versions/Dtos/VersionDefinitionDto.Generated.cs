@@ -29,7 +29,7 @@ namespace FS.FormManagement.Versions.Dtos
     {
     }
 
-    public partial class VersionDefinitionDto : Volo.Abp.Application.Dtos.AuditedEntityDto<Guid>
+    public partial class VersionDefinitionDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string EntityType { get; set; }
 
@@ -41,7 +41,7 @@ namespace FS.FormManagement.Versions.Dtos
 
     }
 
-    public partial class VersionDefinitionCreateDto
+    public partial class VersionDefinitionCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string EntityType { get; set; }
 
@@ -53,7 +53,7 @@ namespace FS.FormManagement.Versions.Dtos
 
     }
 
-    public partial class VersionDefinitionUpdateDto
+    public partial class VersionDefinitionUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string EntityType { get; set; }
 

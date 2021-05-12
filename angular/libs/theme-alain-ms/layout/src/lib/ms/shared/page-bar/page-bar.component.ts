@@ -4,7 +4,7 @@ import { merge, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { Menu, MenuService } from '@delon/theme';
-import { InputBoolean } from '@delon/util';
+import { BooleanInput, InputBoolean } from '@delon/util/decorator';
 
 import { BrandService } from '../../ms.service';
 
@@ -17,6 +17,9 @@ import { BrandService } from '../../ms.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MSPageBarComponent implements AfterViewInit, OnDestroy {
+  static ngAcceptInputType_autoTitle: BooleanInput;
+  static ngAcceptInputType_recursiveBreadcrumb: BooleanInput;
+  
   private router$!: Subscription;
   private _menus: Menu[] | null = null;
   private get menus(): Menu[] {

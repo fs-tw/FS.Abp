@@ -5,14 +5,13 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-// import { UserService } from '@core';
 import { _HttpClient } from '@delon/theme';
 
 import {
   MSTopbarNavLink,
   MSTopbarService,
 } from '../../services/topbar.service';
-import { ApplicationInfo, EnvironmentService } from '@abp/ng.core';
+import { EnvironmentService ,ConfigStateService} from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -39,6 +38,7 @@ export class MSTopbarComponent implements OnInit {
     //  public userSrv: UserService,
     private cdr: ChangeDetectorRef,
     private environment: EnvironmentService,
+    public configService:ConfigStateService
   ) { }
 
   ngOnInit(): void {

@@ -1,1 +1,1 @@
-export * from './extensions.service';
+export {};

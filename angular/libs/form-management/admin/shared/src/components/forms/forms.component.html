@@ -1,0 +1,28 @@
+<fs-tw-entity-base
+  [list]="list"
+  [service]="service"
+  entityName="Forms"
+></fs-tw-entity-base>
+
+<fs-tw-modal
+  type="Create"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-tw-modal-info-tab title="Menu:Forms" [form]="addForm"></fs-tw-modal-info-tab>
+</fs-tw-modal>
+
+<fs-tw-modal
+  type="Edit"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-tw-modal-info-tab
+    title="Form"
+    [form]="editForm"
+    [selectedRecord]="editSelectedRecord"
+  ></fs-tw-modal-info-tab>
+</fs-tw-modal>
+

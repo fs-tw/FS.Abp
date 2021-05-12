@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 // import { UserService } from '@core';
 import { SettingsService } from '@delon/theme';
 import { MSTopbarService } from '../../services/topbar.service';
-import { AuthService } from '@fs-tw/account';
-import { ConfigStateService,CurrentUserDto } from '@abp/ng.core';
+import { AuthService } from '@abp/ng.core';
+import { ConfigStateService,CurrentUserDto,NAVIGATE_TO_MANAGE_PROFILE } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -22,21 +22,17 @@ export class MSUserComponent {
   
   constructor(
     private authService: AuthService,
-    private router: Router,
+    @Inject(NAVIGATE_TO_MANAGE_PROFILE) public navigateToManageProfile,
     private configStateService: ConfigStateService,
-    srv: MSTopbarService,
     public settings: SettingsService
   ) {
   }
 
-  initLogin() {
-    this.authService.initLogin();
+  navigateToLogin() {
+    this.authService.navigateToLogin();
   }
 
   logout() {
-    this.authService.logout().subscribe(() => {
-      //TODO: Should Read PROVIDER's OPTION
-      this.router.navigate(['/account/login'], { state: { redirectUrl: this.router.url } });
-    });
+    this.authService.logout().subscribe();
   }
 }

@@ -11,9 +11,6 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TextTemplateManagement.EntityFrameworkCore;
 using Volo.Saas.EntityFrameworkCore;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
-using Volo.FileManagement.EntityFrameworkCore;
-using FS.Cms.EntityFrameworkCore;
-using FS.Theme.EntityFrameworkCore;
 using FS.FormManagement.EntityFrameworkCore;
 
 namespace DEMO.EntityFrameworkCore
@@ -41,7 +38,7 @@ namespace DEMO.EntityFrameworkCore
             builder.ConfigureSettingManagement();
             builder.ConfigureBackgroundJobs();
             builder.ConfigureAuditLogging();
-            builder.ConfigureIdentity();
+            builder.ConfigureIdentityPro();
             builder.ConfigureIdentityServer();
             builder.ConfigureFeatureManagement();
             builder.ConfigureLanguageManagement();
@@ -52,10 +49,7 @@ namespace DEMO.EntityFrameworkCore
             /* Configure your own tables/entities inside the ConfigureDEMO method */
 
             builder.ConfigureDEMO();
-            builder.ConfigureFileManagement();
-            builder.ConfigureCms();
-            builder.ConfigureTheme();
-            builder.ConfigureFormManagement();
+            builder.ConfigureFormManagement(); 
         }
     }
 }

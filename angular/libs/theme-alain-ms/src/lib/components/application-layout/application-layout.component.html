@@ -9,8 +9,7 @@
     <service-layout
       [nav]="store.sidebarConfig.hasPageNav"
       [navConfig]="store.navConfig"
-      [navList]="store.pageNavs"
-    >
+      [navList]="store.pageNavs">
       <!-- todo:move to feature module
       <page-bar [subTitle]="subTitleTpl" [title]="titleTpl">
         <ng-template #titleTpl> {{ store.navConfig.doc }} </ng-template>
@@ -29,13 +28,13 @@
           新增
         </button>
       </page-bar> -->
-      <div *ngTemplateOutlet="FsPageBar"></div>
+      <!-- <div *ngTemplateOutlet="FsPageBar"></div> -->
       <router-outlet></router-outlet>
     </service-layout>
   </div>
 </ng-container>
 
-<ng-template #FsPageBar>
+<!-- <ng-template #FsPageBar>
   <page-bar [subTitle]="subTitleTpl" [title]="titleTpl">
     <ng-template #subTitleTpl>
       <span *ngIf="layoutStateService?.routesProcessor?.RouterState" >
@@ -50,4 +49,4 @@
       </span>
     </ng-template>
   </page-bar>
-</ng-template>
+</ng-template> -->

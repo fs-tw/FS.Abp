@@ -20,7 +20,6 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
-using Volo.FileManagement;
 
 namespace DEMO
 {
@@ -29,7 +28,7 @@ namespace DEMO
         typeof(AbpAuditLoggingDomainModule),
         typeof(AbpBackgroundJobsDomainModule),
         typeof(AbpFeatureManagementDomainModule),
-        typeof(AbpIdentityDomainModule),
+        typeof(AbpIdentityProDomainModule),
         typeof(AbpPermissionManagementDomainIdentityModule),
         typeof(AbpIdentityServerDomainModule),
         typeof(AbpPermissionManagementDomainIdentityServerModule),
@@ -42,10 +41,7 @@ namespace DEMO
         typeof(AbpEmailingModule),
         typeof(BlobStoringDatabaseDomainModule)
         )]
-    [DependsOn(typeof(FileManagementDomainModule))]
-    [DependsOn(typeof(FS.Cms.CmsDomainModule))]
-    [DependsOn(typeof(FS.Theme.ThemeDomainModule))]
-    [DependsOn(typeof(FS.Abp.File.FileDomainModule))]
+    [DependsOn(typeof(FS.FormManagement.FormManagementDomainModule))]
     public class DEMODomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -58,11 +54,7 @@ namespace DEMO
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Languages.Add(new LanguageInfo("en", "en", "English", "gb"));
-                options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe", "tr"));
-                options.Languages.Add(new LanguageInfo("sl", "sl", "Slovenščina", "si"));
-                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文", "cn"));
-                options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsche", "de"));
-                options.Languages.Add(new LanguageInfo("es", "es", "Español", "es"));
+                options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文", "zh-tw"));
             });
 
 

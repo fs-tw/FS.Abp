@@ -1,7 +1,0 @@
-@import './_layout.less';
-@import './_body.less';
-@import './_topbar.less';
-@import './_sidebar.less';
-
-// fix
-@import './fix/index.less';

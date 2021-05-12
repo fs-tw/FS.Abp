@@ -29,37 +29,19 @@ namespace FS.FormManagement.EntityFrameworkCore
     public partial class FormManagementDbContext : AbpDbContext<FormManagementDbContext>, IFormManagementDbContext
     {
 
-        public virtual DbSet<FS.FormManagement.Forms.Formal> Formals
+        public virtual DbSet<FS.FormManagement.Groups.Group> Groups
         {
             get;
             set;
         }
 
-        public virtual DbSet<FS.FormManagement.Forms.Group> Groups
-        {
-            get;
-            set;
-        }
-
-        public virtual DbSet<FS.FormManagement.Forms.Item> Items
+        public virtual DbSet<FS.FormManagement.Groups.GroupQuestion> GroupQuestions
         {
             get;
             set;
         }
 
         public virtual DbSet<FS.FormManagement.Versions.Version> Versions
-        {
-            get;
-            set;
-        }
-
-        public virtual DbSet<FS.FormManagement.Records.Record> Records
-        {
-            get;
-            set;
-        }
-
-        public virtual DbSet<FS.FormManagement.Records.RecordItem> RecordItems
         {
             get;
             set;

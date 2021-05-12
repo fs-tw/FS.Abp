@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,6 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <Compile Remove="_Generated\FS.FormManagement\Forms\**" />
+    <EmbeddedResource Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <EmbeddedResource Remove="_Generated\FS.FormManagement\Forms\**" />
+    <None Remove="_Generated\FS.FormManagement\FormResponses\**" />
+    <None Remove="_Generated\FS.FormManagement\Forms\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.FormManagement\ShortTextCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\Dtos\VersionsDefinitionDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.FormManagement\Versions\VersionsDefinitionCrudAppService.Generated.cs" />
@@ -18,70 +28,35 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Forms.Application" Version="$(VoloVersion)" />
     <ProjectReference Include="..\FS.FormManagement.Application.Contracts\FS.FormManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.FormManagement.Domain\FS.FormManagement.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\FormalDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\Dtos\GroupDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\FormalDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\Dtos\GroupDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\GroupDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\Dtos\GroupQuestionDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\GroupDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\Dtos\GroupQuestionDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ItemDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\Dtos\ItemDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.FormManagement\Groups\GroupQuestionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\FormalCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\GroupCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Forms\ItemCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Forms</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Dtos\RecordDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Dtos\RecordDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Dtos\RecordItemDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\Dtos\RecordItemDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.FormManagement\Records\RecordItemCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Records</DependentUpon>
+      <DependentUpon>Groups</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.FormManagement\Versions\Dtos\VersionDefinitionDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>

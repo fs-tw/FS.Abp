@@ -1,9 +1,0 @@
-.btn-link {
-  color: @link-color;
-  background: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-  &:hover {
-    color: @link-hover-color;
-  }
-}

@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
+    <PackageReference Include="Volo.Forms.Domain.Shared" Version="$(VoloVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="DataModel\Form.ModelDiagram.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Form.efml</DependentUpon>
+    </None>
     <None Update="DataModel\FormManagement.Diagram1.view">
       <AutoGen>True</AutoGen>
       <DependentUpon>FormManagement.efml</DependentUpon>

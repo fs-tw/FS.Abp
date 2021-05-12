@@ -1,0 +1,41 @@
+<section class="my-5">
+    <div class="container-fluid" style="min-height: 100vh;width: 300px;">
+    
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" validateOnSubmit>
+            <div class="form-group">
+                <label for="login-input-user-name-or-email-address">帳號</label>
+                <input class="form-control" type="text" id="login-input-user-name-or-email-address" formControlName="username"
+                    autofocus />
+            </div>
+            <div class="form-group">
+                <label for="login-input-password">密碼</label>
+                <input class="form-control" type="password" id="login-input-password" formControlName="password" />
+            </div>
+        
+        
+        
+            <!-- <div class="row">
+                <div class="col">
+                    <div class="custom-checkbox custom-control mb-2">
+                        <input class="mb-4 custom-control-input" type="checkbox" id="login-input-remember-me"
+                            formControlName="remember" />
+                        <label class="custom-control-label" for="login-input-remember-me">
+                            {{ 'AbpAccount::RememberMe' | abpLocalization }}
+                        </label>
+                    </div>
+                </div>
+                <div class="text-right col">
+                    <a routerLink="/account/forgot-password">{{
+                        'AbpAccount::ForgotPassword' | abpLocalization
+                        }}</a>
+                </div>
+            </div> -->
+
+            <button type="submit" class="btn btn-primary">登入</button>            
+        </form>
+
+
+
+    </div>
+</section>
+

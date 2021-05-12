@@ -10,7 +10,7 @@
       "projectType": "library",
       "root": "libs/theme-unify",
       "sourceRoot": "libs/theme-unify/src",
-      "prefix": "fs",
+      "prefix": "fs-tw",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -25,24 +25,23 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "libs/theme-unify/tsconfig.lib.json",
-              "libs/theme-unify/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/theme-unify/**/*"]
+            "lintFilePatterns": [
+              "libs/theme-unify/src/**/*.ts",
+              "libs/theme-unify/src/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/theme-unify"],
           "options": {
             "jestConfig": "libs/theme-unify/jest.config.js",
             "passWithNoTests": true
           }
         }
-      },
-      "schematics": {}
+      }
     }
 
   },

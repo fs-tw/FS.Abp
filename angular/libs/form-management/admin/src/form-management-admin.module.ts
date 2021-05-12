@@ -1,16 +1,16 @@
 import { NgModule, ModuleWithProviders, NgModuleFactory } from '@angular/core';
 import { LazyModuleFactory, CoreModule } from '@abp/ng.core';
 import { FormManagementAdminRoutingModule } from './form-management-admin-routing.module';
-import { SharedModule } from '@fs-tw/cms/admin/shared';
+import { FormManagementAdminSharedModule } from '@fs-tw/form-management/admin/shared';
 
 @NgModule({
   imports: [
-    SharedModule,
+    FormManagementAdminSharedModule,
     CoreModule,
     FormManagementAdminRoutingModule,
   ],
   exports: [
-    SharedModule,
+    FormManagementAdminSharedModule,
   ],
 })
 export class FormManagementAdminModule {
