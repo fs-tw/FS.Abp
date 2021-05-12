@@ -2,16 +2,10 @@ import {
   Component,
   OnInit,
   Input,
-  Injector,
-  EventEmitter,
-  Output,
-  ComponentFactoryResolver,
+  Injector
 } from '@angular/core';
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
-import { Observable, of, Subject } from 'rxjs';
-import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
-import { ActionEvent, ExtensionsService } from '@fs-tw/cms-kit-management/config';
-import { Volo } from '@fs-tw/cms-kit-management/proxy';
+import { Observable } from 'rxjs';
 
 export type EntityService<T> = {
   getListByInput: (query: ABP.PageQueryParams) => Observable<PagedResultDto<T>>;
