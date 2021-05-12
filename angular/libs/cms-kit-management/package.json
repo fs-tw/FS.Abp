@@ -1,6 +1,11 @@
 {
   "name": "@fs-tw/cms-kit-management",
   "version": "430.0.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fs-tw/fs.abp.git"
+  },
   "peerDependencies": {
     "@angular/common": "^11.2.11",
     "@angular/core": "^11.2.11"

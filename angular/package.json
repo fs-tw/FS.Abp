@@ -27,7 +27,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^11.2.0",
     "@angular/common": "^11.2.0",
