@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { BlogPostsComponent, BlogsComponent, CommentsComponent, PagesComponent, TagsComponent } from '@fs-tw/cms-kit-management/admin/shared';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'cms', pathMatch: 'full' },
+  { path: '', redirectTo: 'blogs', pathMatch: 'full' },
   {
     path: '',
     component: DynamicLayoutComponent,
