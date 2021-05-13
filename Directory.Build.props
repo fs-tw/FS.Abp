@@ -4,7 +4,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>430.0.1</Version>
+    <Version>430.0.2</Version>
     <FSVersion>430.0.1</FSVersion>
     <VoloVersion>430.0.1</VoloVersion>
   </PropertyGroup>
