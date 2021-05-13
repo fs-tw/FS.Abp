@@ -30,14 +30,14 @@ namespace FS.FormManagement.Data
         public List<QuestionInfo> Questions;
     }
 
-    public class FormDataSeeder : IDataSeeder, ITransientDependency
+    public class FormSeeder : ITransientDependency
     {
         private const string SourceData = "/Files/FormManagement/Form.json";
         public IGuidGenerator guidGenerator { get; set; }
         public IVirtualFileJsonReader virtualJsonReader { get; set; }
         private IFormRepository formRepository;
         private Volo.Forms.Questions.QuestionManager questionManager;
-        public FormDataSeeder(
+        public FormSeeder(
             IGuidGenerator guidGenerator,
             IFormRepository formRepository,
             Volo.Forms.Questions.QuestionManager questionManager

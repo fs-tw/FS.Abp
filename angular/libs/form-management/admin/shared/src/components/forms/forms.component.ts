@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
@@ -34,6 +34,10 @@ export class FormsComponent implements OnInit {
   editModalVisible = false;
   editForm: FormGroup;
   editSelectedRecord: Volo.Forms.Forms.FormDto;
+
+  streamCreator=(q)=>{
+    return this.service.getListByInput(q);
+  }
 
   constructor(
     private readonly injector: Injector,
