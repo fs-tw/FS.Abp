@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityDeveloper Version="6.11.1213.0">
-  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="Net50" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version5" DetectFunctionBasedColumnDefault="True">
+<EntityDeveloper Version="6.10.1135.0">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore20" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version5" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="" Provider="" />
     <Generation>
       <GeneratedFiles>
@@ -62,7 +62,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ApplicationContractsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationContractsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -77,14 +77,14 @@
         <ed:Property Name="KebabCaseApiName" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.HttpApi</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -96,14 +96,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -115,28 +115,28 @@
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -163,7 +163,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -175,28 +175,28 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain.Shared</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain.Shared</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
@@ -208,7 +208,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpPermissionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpPermissionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -223,28 +223,28 @@
         <ed:Property Name="GenSettingsApi" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
-        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application.Contracts</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Application</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>Microsoft.Extensions.DependencyInjection</ProjectFolder>
@@ -256,7 +256,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -268,14 +268,14 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -287,7 +287,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.EntityFrameworkCore</Project>
             <ProjectFolder>EntityFrameworkCore</ProjectFolder>
@@ -296,13 +296,13 @@
         </ed:Property>
       </Template>
       <Template Name="EFCore.Entities" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Entities.tmpl">
-        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationFramework>None</ValidationFramework>
         </ed:Property>
-        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
         </ed:Property>
-        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -351,7 +351,7 @@
         <ed:Property Name="JsonFileBasePath" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain.Shared</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -366,32 +366,32 @@
         <ed:Property Name="SelfContainedEntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.EntityFrameworkCore</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionPropertyType>Default</EFCoreCollectionPropertyType>
         </ed:Property>
-        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionInitializationType>Default</EFCoreCollectionInitializationType>
         </ed:Property>
-        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ReferenceTypeNullability>Default</ReferenceTypeNullability>
         </ed:Property>
       </Template>
       <Template Name="EFCore.Repository" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Repository.tmpl">
-        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.Domain</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.10.1135.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CmsKitManagement.EntityFrameworkCore</Project>
             <ProjectFolder>FS.CmsKitManagement</ProjectFolder>
@@ -413,7 +413,7 @@
       </Template>
     </Templates>
     <AttributeAssemblies>
-      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
+      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="..\..\..\..\..\..\..\..\..\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
         <AttributeType Name="EntityEnumTypeAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
