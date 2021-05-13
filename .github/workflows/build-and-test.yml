@@ -2,8 +2,7 @@ name: "build and test"
 #only build develop branches
 on:
   push:
-    branches:
-      - develop
+    branches: [ deploy ]
 jobs:
   build-test:
     runs-on: windows-latest
