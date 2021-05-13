@@ -64,10 +64,13 @@ namespace FS.CmsKitManagement.Data
             var Imgs = new List<MediaDescriptor>();
             foreach (var file in virtualFileProvider.GetDirectoryContents("Files/BlogPostCoverImageMedia")) 
             {
+                var mimeType = Utils.FileExtensionContentTypeUtils.GetMimeType(System.IO.Path.GetExtension(file.Name));
+                
                 MediaDescriptor img = await mediaDescriptorManager.CreateAsync(
                     BlogPostConsts.EntityType,
                     System.IO.Path.GetFileNameWithoutExtension(file.Name),
-                    System.IO.Path.GetExtension(file.Name), file.Length);
+                    mimeType,
+                    file.Length);
 
                 await blobContainer.SaveAsync(img.Id.ToString(), file.CreateReadStream(), true);
 
@@ -78,20 +81,24 @@ namespace FS.CmsKitManagement.Data
 
             var blogList = await this.blogRepository.GetListAsync();
             var user = await this.cmsUserRepository.FindByUserNameAsync("admin");
+            var mediaList = await this.mediaDescriptorRepository.GetListAsync();
 
             var blogPosts = new List<BlogPost>();
             var datas = this.VirtualFileNpoiReader.Read<BlogPostInfo>(SourceData, "BlogPosts");
             datas = datas.Where(x => x.PostTitle != null).ToList();
-            foreach (var blog in blogList)
+            if (datas.Count > 0)
             {
-                foreach(var post in datas) 
-                {
-                    BlogPost blogPost = await this.BlogPostManager.CreateAsync(user, blog, post.PostTitle, blog.Slug.ToString(), content:post.PostContent.ToString());
-                    blogPosts.Add(blogPost);
-                }
-                //BlogPost blogPost = await this.BlogPostManager.CreateAsync(user, blog, "title", "slug",coverImageMediaId:t.Id);
-                
+                return;
             }
+            foreach(var post in datas) 
+            {
+                Blog blog = blogList.Where(x => x.Name == post.PostBlog).First();
+                MediaDescriptor media = mediaList.Where(x => x.Name == post.PostTitle).First();
+                BlogPost blogPost = await this.BlogPostManager.CreateAsync(user, blog, post.PostTitle, blog.Slug.ToString(), content: post.PostContent.ToString(), coverImageMediaId: media.Id);
+                blogPosts.Add(blogPost);
+            }
+            
+            
             await this.blogPostRepository.InsertManyAsync(blogPosts, true);
         }
     }

@@ -12,5 +12,8 @@ namespace FS.CmsKitManagement.Data
 
         [Column("Content")]
         public string PostContent { get; set; }
+
+        [Column("BlogName")]
+        public string PostBlog { get; set; }
     }
 }

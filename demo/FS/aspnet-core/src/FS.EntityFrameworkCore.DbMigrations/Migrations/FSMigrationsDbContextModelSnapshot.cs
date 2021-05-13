@@ -18,7 +18,7 @@ namespace FS.Migrations
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("FS.CmsKitManagement.Vocabularies.Vocabulary", b =>
@@ -66,6 +66,11 @@ namespace FS.Migrations
                     b.Property<int>("Level")
                         .HasColumnType("int")
                         .HasColumnName("Level");
+
+                    b.Property<string>("No")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("No");
 
                     b.Property<Guid?>("ParentId")
                         .HasColumnType("uniqueidentifier")
