@@ -31,6 +31,11 @@ namespace FS.CmsKitManagement.Vocabularies
             OnCreated();
         }
 
+        public VocabularyDefinition(System.Guid id) : this()
+        {
+            this.Id = id;
+        }
+
         public virtual string DisplayName
         {
             get;

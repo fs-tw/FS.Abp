@@ -186,7 +186,7 @@
         </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="e6dd132f-1e5a-46ac-aff4-91742f004c9b" p1:GenerateDTO="False">
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="e6dd132f-1e5a-46ac-aff4-91742f004c9b" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="ab3aebaa-d146-48cb-878f-c62afaa0617b">
@@ -240,7 +240,7 @@
         </p1:Properties>
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="769ef83d-50d2-49f5-b0d0-bb97dbf39990" p1:GenerateDTO="False">
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="769ef83d-50d2-49f5-b0d0-bb97dbf39990" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="VocabularyDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="54b2ea87-5091-4375-9538-ec77aad5f407">

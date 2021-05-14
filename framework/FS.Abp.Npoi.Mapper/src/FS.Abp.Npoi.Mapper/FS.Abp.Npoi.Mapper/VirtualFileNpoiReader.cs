@@ -25,6 +25,16 @@ namespace FS.Abp.Npoi.Mapper
             this.dataSeedOptions = dataSeedOptions.Value;
         }
 
+        public List<string> GetSheetNames(string filePath)
+        {
+            var file = _virtualFileProvider.GetFileInfo(filePath);
+            if (!file.Exists)
+                return null;
+            global::Npoi.Mapper.Mapper mapper = new global::Npoi.Mapper.Mapper(file.CreateReadStream());
+
+            return Enumerable.Range(0, mapper.Workbook.NumberOfSheets).Select(s => mapper.Workbook.GetSheetAt(s).SheetName).ToList();
+        }
+
         public List<T> Read<T>(string filePath, string sheetName)
             where T : class, new()
         {

@@ -13,5 +13,7 @@ namespace FS.Abp.Npoi.Mapper
         List<T> ReadToTreeNode<T>(string filePath, string sheetName)
             where T : ITreeNode<T>, new();
 
+        List<string> GetSheetNames(string filePath);
+
     }
 }
