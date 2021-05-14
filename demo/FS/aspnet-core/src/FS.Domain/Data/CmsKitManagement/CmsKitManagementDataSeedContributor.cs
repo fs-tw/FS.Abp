@@ -16,13 +16,17 @@ namespace DEMO.Data.CmsKitManagement
 
         public async Task SeedAsync(DataSeedContext context)
         {
-            await VocabulariesSeeder.SeedAsync(context,options =>
+            await TwZipCodeSeeder.SeedAsync(context);
+            await blogPostSeeder.SeedAsync(context,options=> 
+            {
+                options.FileName = "Files/Blogs.xlsx";
+                options.BlogPostCoverImageMediaDirectory = "Files/BlogPostCoverImageMedia";
+            });
+            await VocabulariesSeeder.SeedAsync(context, options =>
             {
                 options.FileNames.Add("Files/Vocabularies/Vocabularies.xlsx");
 
             });
-            //await TwZipCodeSeeder.SeedAsync(context);
-            //await blogPostSeeder.SeedAsync(context);
 
         }
     }

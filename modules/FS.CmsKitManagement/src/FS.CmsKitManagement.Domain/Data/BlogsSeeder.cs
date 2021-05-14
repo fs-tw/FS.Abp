@@ -1,50 +1,45 @@
 ﻿using FS.Abp.Npoi.Mapper;
-using Microsoft.Extensions.Options;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.Domain.Repositories;
-using Volo.Abp.Domain.Services;
 using Volo.CmsKit.Blogs;
 using Volo.CmsKit.MediaDescriptors;
 using Volo.Abp.BlobStoring;
+using Volo.CmsKit.Users;
+using Volo.Abp.VirtualFileSystem;
 
 namespace FS.CmsKitManagement.Data
 {
-    public class BlogsSeeder : DomainService, ITransientDependency
+    public class BlogsSeederOptions : FS.Abp.Data.ISeederOptions
     {
-        private const string SourceData = "/Files/Blogs.xlsx";
-        private Volo.CmsKit.Blogs.IBlogRepository blogRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogRepository>();//部落格ID
-        private readonly Volo.CmsKit.Users.ICmsUserRepository cmsUserRepository;//USER ID=作者ID
-        private IBlogPostRepository blogPostRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
+        public bool Ignore { get; set; }
+        public string FileName { get; set; }
+        public string BlogPostCoverImageMediaDirectory { get; set; }
         
+    }
+    public class BlogsSeeder : FS.Abp.Data.Seeder<BlogsSeederOptions>, ITransientDependency
+    {
         private IVirtualFileNpoiReader VirtualFileNpoiReader => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileNpoiReader>();
+        private IVirtualFileProvider VirtualFileProvider => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileProvider>();
+        private IBlogRepository BlogRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogRepository>();
+        private ICmsUserRepository CmsUserRepository=>this.LazyServiceProvider.LazyGetRequiredService<ICmsUserRepository>();
+        private IBlogPostRepository BlogPostRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
+        
         private BlogManager BlogManager => this.LazyServiceProvider.LazyGetRequiredService<BlogManager>();
         private BlogPostManager BlogPostManager => this.LazyServiceProvider.LazyGetRequiredService<BlogPostManager>();
 
-        //upload coveImg
-        private IBlobContainer<MediaContainer> blobContainer => this.LazyServiceProvider.LazyGetRequiredService<IBlobContainer<MediaContainer>>();
-        private Volo.Abp.VirtualFileSystem.IVirtualFileProvider virtualFileProvider => this.LazyServiceProvider.LazyGetRequiredService<Volo.Abp.VirtualFileSystem.IVirtualFileProvider>();
-        private MediaDescriptorManager mediaDescriptorManager => this.LazyServiceProvider.LazyGetRequiredService<MediaDescriptorManager>();
-        private IMediaDescriptorRepository mediaDescriptorRepository => this.LazyServiceProvider.LazyGetRequiredService<IMediaDescriptorRepository>();
+        private IBlobContainer<MediaContainer> BlobContainer => this.LazyServiceProvider.LazyGetRequiredService<IBlobContainer<MediaContainer>>();
 
+        private MediaDescriptorManager MediaDescriptorManager => this.LazyServiceProvider.LazyGetRequiredService<MediaDescriptorManager>();
+        private IMediaDescriptorRepository MediaDescriptorRepository => this.LazyServiceProvider.LazyGetRequiredService<IMediaDescriptorRepository>();
         
-
-        public BlogsSeeder(
-                Volo.CmsKit.Users.ICmsUserRepository cmsUserRepository
-            )
+        protected override async Task SeedAsync(DataSeedContext context)
         {
-            this.cmsUserRepository = cmsUserRepository;
-
-        }
-        
-        public async Task SeedAsync(DataSeedContext context)
-        {
-            var blogsCount = await this.blogRepository.GetCountAsync();
+            var SourceData = Options.FileName;
+            if (string.IsNullOrEmpty(SourceData)) return;
+            var blogsCount = await this.BlogRepository.GetCountAsync();
             if (blogsCount == 0)
             {
                 var blogListByExcel = this.VirtualFileNpoiReader.Read<BlogInfo>(SourceData, "Blogs");
@@ -57,31 +52,31 @@ namespace FS.CmsKitManagement.Data
                     blogs.Add(blog);
                 }
 
-                await this.blogRepository.InsertManyAsync(blogs, true);
+                await this.BlogRepository.InsertManyAsync(blogs, true);
             }
 
 
             var Imgs = new List<MediaDescriptor>();
-            foreach (var file in virtualFileProvider.GetDirectoryContents("Files/BlogPostCoverImageMedia")) 
+            foreach (var file in VirtualFileProvider.GetDirectoryContents(Options.BlogPostCoverImageMediaDirectory)) 
             {
                 var mimeType = Utils.FileExtensionContentTypeUtils.GetMimeType(System.IO.Path.GetExtension(file.Name));
                 
-                MediaDescriptor img = await mediaDescriptorManager.CreateAsync(
+                MediaDescriptor img = await MediaDescriptorManager.CreateAsync(
                     BlogPostConsts.EntityType,
                     System.IO.Path.GetFileNameWithoutExtension(file.Name),
                     mimeType,
                     file.Length);
 
-                await blobContainer.SaveAsync(img.Id.ToString(), file.CreateReadStream(), true);
+                await BlobContainer.SaveAsync(img.Id.ToString(), file.CreateReadStream(), true);
 
 
                 Imgs.Add(img);
             }
-            await mediaDescriptorRepository.InsertManyAsync(Imgs,true);
+            await MediaDescriptorRepository.InsertManyAsync(Imgs,true);
 
-            var blogList = await this.blogRepository.GetListAsync();
-            var user = await this.cmsUserRepository.FindByUserNameAsync("admin");
-            var mediaList = await this.mediaDescriptorRepository.GetListAsync();
+            var blogList = await this.BlogRepository.GetListAsync();
+            var user = await this.CmsUserRepository.FindByUserNameAsync("admin");
+            var mediaList = await this.MediaDescriptorRepository.GetListAsync();
 
             var blogPosts = new List<BlogPost>();
             var datas = this.VirtualFileNpoiReader.Read<BlogPostInfo>(SourceData, "BlogPosts");
@@ -99,7 +94,7 @@ namespace FS.CmsKitManagement.Data
             }
             
             
-            await this.blogPostRepository.InsertManyAsync(blogPosts, true);
+            await this.BlogPostRepository.InsertManyAsync(blogPosts, true);
         }
     }
 }
