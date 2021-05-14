@@ -13,35 +13,35 @@ using Volo.Abp.VirtualFileSystem;
 
 namespace FS.CmsKitManagement.Data.Vocabularies
 {
-    public class TwZipCodeSeeder : DomainService, ITransientDependency
+    public class TwZipCodeSeederOptions : FS.Abp.Data.ISeederOptions
+    {
+        public bool Ignore { get; set; }
+    }
+    public class TwZipCodeSeeder : FS.Abp.Data.Seeder<TwZipCodeSeederOptions>, ITransientDependency
     {
         protected VocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<VocabulariesStore>();
 
         protected IVirtualFileProvider virtualFileProvider => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileProvider>();
         private const string SourceData = "Files/Vocabularies/TwZipCode.json";
         
-        public async Task SeedAsync(DataSeedContext context)
+        protected override async Task SeedAsync(DataSeedContext context)
         {
-
+            var no = "TwZipCode";
             var stream = virtualFileProvider.GetFileInfo(SourceData).CreateReadStream();
 
             var jsonText = new System.IO.StreamReader(stream).ReadToEnd();
 
-            //todo: addOrReplace TwZipCode.json
-            //1:VocabularyDefinition=>No:TwZipCode
-            //2:Vocabulary=>2 Level tree data
-            var vocabularyDefinitionCount = await this.VocabulariesStore.VocabularyDefinition.GetCountAsync();
+            var isExist = this.VocabulariesStore.VocabularyDefinition.Any(x=>x.No== no);
 
-            if (vocabularyDefinitionCount < 1)
+            if (!isExist)
             {
                 VocabularyDefinition newVocabularyDefinition = new VocabularyDefinition();
-                newVocabularyDefinition.DisplayName = "TwZipCode";
-                newVocabularyDefinition.No = "0";
-                await VocabulariesStore.VocabularyDefinition.InsertAsync(newVocabularyDefinition);
+                newVocabularyDefinition.DisplayName = no;
+                newVocabularyDefinition.No = no;
+                await VocabulariesStore.VocabularyDefinition.InsertAsync(newVocabularyDefinition,true);
             }
-            
-            var vocabularyDefinitionList = await this.VocabulariesStore.VocabularyDefinition.GetListAsync();
-            VocabularyDefinition vocabularyDefinition = vocabularyDefinitionList.Where(x => x.DisplayName == "TwZipCode").First();
+
+            var vocabularyDefinition = this.VocabulariesStore.VocabularyDefinition.Single(x => x.No == no);
 
             var dataList = System.Text.Json.JsonSerializer.Deserialize<List<Dictionary<string, dynamic>>>(jsonText);
             var vocabularyAddList=new List<Vocabulary>();
