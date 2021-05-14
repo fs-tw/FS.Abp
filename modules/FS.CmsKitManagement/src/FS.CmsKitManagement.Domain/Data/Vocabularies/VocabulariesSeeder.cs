@@ -11,7 +11,7 @@ using Volo.Abp.Data;
 
 namespace FS.CmsKitManagement.Data.Vocabularies
 {
-    public class VocabulariesSeederOptions
+    public class VocabulariesSeederOptions : FS.Abp.Data.ISeederOptions
     {
         public VocabulariesSeederOptions()
         {
@@ -20,7 +20,7 @@ namespace FS.CmsKitManagement.Data.Vocabularies
         public bool Ignore { get; set; }
         public List<string> FileNames { get; set; }
     }
-    public class VocabulariesSeeder : Volo.Abp.Domain.Services.DomainService
+    public class VocabulariesSeeder : FS.Abp.Data.Seeder<VocabulariesSeederOptions>
     {
         [LevelStartAt(2)]
         public class VocabulariesInfo : ITreeNode<VocabulariesInfo>
@@ -34,15 +34,11 @@ namespace FS.CmsKitManagement.Data.Vocabularies
             public string Code { get; set; }
         }
         protected IVirtualFileNpoiReader VirtualFileNpoiReader => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileNpoiReader>();
-        protected VocabulariesSeederOptions Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<VocabulariesSeederOptions>>().Value;        
         protected VocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<VocabulariesStore>();
 
 
-        public async Task SeedAsync(DataSeedContext context,Action<VocabulariesSeederOptions> configure = null)
+        protected override async Task SeedAsync(DataSeedContext context)
         {
-            configure?.Invoke(Options);
-
-            if (Options.Ignore) return;
 
             foreach (var fileName in Options.FileNames)
             {
@@ -80,9 +76,6 @@ namespace FS.CmsKitManagement.Data.Vocabularies
                 result.Children = item.Children?.Select(c => mapTo(definitionId, result.Id, c)).ToList();
                 return result;
             }
-
-
-
         }
     }
 }
