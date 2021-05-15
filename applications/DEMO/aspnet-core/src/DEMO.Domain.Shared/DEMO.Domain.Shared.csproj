@@ -36,5 +36,9 @@
     <EmbeddedResource Include="Files\**\*.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.FormManagement\src\FS.FormManagement.Domain.Shared\FS.FormManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
 
 </Project>

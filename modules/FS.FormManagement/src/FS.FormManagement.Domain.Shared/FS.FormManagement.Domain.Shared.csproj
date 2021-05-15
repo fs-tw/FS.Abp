@@ -25,6 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Files\**\*.*" />
+    <EmbeddedResource Include="Files\**\*.*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="DataModel\FormManagement.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>FormManagement.efml</DependentUpon>

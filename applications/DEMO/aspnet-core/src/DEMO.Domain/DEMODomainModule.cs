@@ -20,6 +20,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TextTemplateManagement;
 using Volo.Saas;
 using Volo.Abp.BlobStoring.Database;
+using Volo.Abp.VirtualFileSystem;
 
 namespace DEMO
 {

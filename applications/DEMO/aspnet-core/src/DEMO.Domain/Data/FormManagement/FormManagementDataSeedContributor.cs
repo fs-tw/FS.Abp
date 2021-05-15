@@ -7,11 +7,14 @@ namespace DEMO.Data.FormManagement
 {
     public class FormManagementDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
-        public FormDataSeeder formDataSeeder { get; set; }
+        public FormSeeder formSeeder { get; set; }
 
         public async Task SeedAsync(DataSeedContext context)
         {
-            await formDataSeeder.SeedAsync(context);
+            await formSeeder.SeedAsync(context, options =>
+             {
+                 options.FileName = "/Files/FormManagement/Form.json";
+             });
         }
     }
 }
