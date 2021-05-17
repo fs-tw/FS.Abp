@@ -128,5 +128,4 @@ export class FormsComponent implements OnInit {
         this.list.get();
       });
   }
-
 }
