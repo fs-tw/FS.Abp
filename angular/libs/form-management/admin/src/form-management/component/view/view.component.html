@@ -1,0 +1,41 @@
+<nz-tabset [nzTabPosition]="'left'">
+  <nz-tab nzTitle="{{ 'Forms::Menu:Questions' | abpLocalization }}">
+    <div style="background: #ECECEC;">
+      <form [formGroup]="form" validateOnSubmit *ngIf="formData">
+        <nz-row>
+          <nz-col style="width: 100%; padding: 15px 15px 0px 15px;">
+            <nz-card [nzBordered]="true">
+                <div class="form-group">
+                  <label [for]="'title'">標題</label>
+                  <input class="form-control" [formControlName]="'title'" [id]="'title'" type="text" />
+                </div>
+                <div class="form-group">
+                  <label for="description">描述</label>
+                  <input class="form-control" [formControlName]="'description'" [id]="'description'" type="text" />
+                </div>
+            </nz-card>
+          </nz-col>
+        </nz-row>
+        <nz-row *ngFor="let item of formData?.questions; let index = index;">
+          <nz-col style="width: 100%; padding: 0px 15px 0px 15px;">
+            <nz-card [nzBordered]="true" [nzTitle]="questionTitle">
+              <div class="form-group">
+                <label [for]="item.id">{{ item.title }}</label>
+                <div [ngSwitch]="item.questionType">
+                  <input *ngSwitchCase="1" class="form-control" [formControlName]="item.id" [id]="item.id" type="text" />
+                  <input *ngSwitchCase="4" class="form-control" [formControlName]="item.id" [id]="item.id" type="text" />
+                  <input *ngSwitchCase="5" class="form-control" [formControlName]="item.id" [id]="item.id" type="text" />
+                </div>
+              </div>
+              <ng-template #questionTitle>
+                <span>{{ 'Form:Questions:QuestionIndex' | abpLocalization }}</span>
+              </ng-template>
+            </nz-card>
+          </nz-col>
+        </nz-row>
+      </form>
+    </div>
+  </nz-tab>
+  <nz-tab nzTitle="{{ 'Forms::Menu:Responses' | abpLocalization }}">
+  </nz-tab>
+</nz-tabset>

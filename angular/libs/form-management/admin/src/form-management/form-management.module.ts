@@ -4,9 +4,10 @@ import { FormManagementRoutingModule } from './form-management-routing.module';
 import { FormManagementAdminSharedModule } from '@fs-tw/form-management/admin/shared';
 import { MainComponent } from './component/main/main.component';
 import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
+import { ViewComponent } from './component/view/view.component';
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, ViewComponent],
   imports: [
     FormManagementAdminSharedModule,
     CoreModule,

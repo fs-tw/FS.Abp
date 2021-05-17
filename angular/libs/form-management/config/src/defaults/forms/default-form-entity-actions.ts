@@ -6,6 +6,15 @@ import { ExtensionsService } from '../../extensions/extensions.service';
 
 export const DEFAULT_FORM_ENTITY_ACTIONS = ToolbarAction.createMany<Volo.Forms.Forms.FormDto>([
   {
+    text: 'Forms::View',
+    action: data => {
+      const service = data.getInjected(ExtensionsService);
+      service.goToView(data.record.id)
+    },
+    permission: 'Forms.Form',
+    //icon: 'fa fa-plus',
+  },
+  {
     text: 'Forms::Edit',
     action: data => {
       const service = data.getInjected(ExtensionsService);
