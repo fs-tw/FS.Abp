@@ -6,7 +6,7 @@ export const DEFAULT_FORM_ENTITY_PROPS = EntityProp.createMany<Volo.Forms.Forms.
     type: ePropType.String,
     name: 'title',
     displayName: 'Forms::Title',
-    sortable: true,
+    sortable: false,
     columnWidth: 90,
   },
   {

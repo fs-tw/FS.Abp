@@ -1,5 +1,5 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
-import { ListService } from '@abp/ng.core';
+import { ListService,PagedResultDto } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -8,7 +8,7 @@ import {
 import { eFormsComponents,ExtensionsService } from '@fs-tw/form-management/config';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 
@@ -25,6 +25,7 @@ import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
   ],
 })
 export class FormsComponent implements OnInit {
+  data$: Observable<PagedResultDto<Volo.Forms.Forms.FormDto>>;
   service: Volo.Forms.Forms.FormService;
   subs: Subscription = new Subscription();
 
@@ -67,6 +68,8 @@ export class FormsComponent implements OnInit {
         }
       )
     );    
+
+    this.data$=this.list.hookToQuery(this.streamCreator);
   }
 
   onAdd() {

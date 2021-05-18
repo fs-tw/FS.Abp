@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard, PermissionGuard } from '@abp/ng.core';
 //import { VersionsModule } from './versions/versions.module';
 import { FormManagementModule } from './form-management/form-management.module';
+import { FormsComponent } from '@fs-tw/form-management/admin/shared';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full',redirectTo: 'forms', },
@@ -12,7 +13,8 @@ const routes: Routes = [
     children: [
       {
         path: 'forms',
-        loadChildren: FormManagementModule.forEarly,
+        component:FormsComponent
+        //loadChildren: FormManagementModule.forEarly,
       },
       // {
       //   path: 'versions',

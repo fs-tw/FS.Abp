@@ -138,4 +138,7 @@ background-color: rgba(0, 0, 0, 0.6);
     border-top: 1px solid #eee;
     margin-top: -1px;
 }
+page-header .page-header {
+    padding: 0;
+}  
 `;
