@@ -13,5 +13,5 @@ export const DEFAULT_BLOG_POSTS_TOOLBAR_ACTIONS = ToolbarAction.createMany<Volo.
     },
     permission: 'CmsKit.BlogPosts.Create',
     icon: 'fa fa-plus',
-  },
+  }
 ]);

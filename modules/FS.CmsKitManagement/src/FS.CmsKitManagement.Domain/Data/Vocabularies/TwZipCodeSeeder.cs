@@ -16,18 +16,19 @@ namespace FS.CmsKitManagement.Data.Vocabularies
     public class TwZipCodeSeederOptions : FS.Abp.Data.ISeederOptions
     {
         public bool Ignore { get; set; }
+        public string FileName { get; set; } = "Files/Vocabularies/TwZipCode.json";
     }
     public class TwZipCodeSeeder : FS.Abp.Data.Seeder<TwZipCodeSeederOptions>, ITransientDependency
     {
         protected VocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<VocabulariesStore>();
 
         protected IVirtualFileProvider virtualFileProvider => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileProvider>();
-        private const string SourceData = "Files/Vocabularies/TwZipCode.json";
 
         protected override async Task SeedAsync(DataSeedContext context)
         {
+            var sourceData = Options.FileName;
             var no = "TwZipCode";
-            var stream = virtualFileProvider.GetFileInfo(SourceData).CreateReadStream();
+            var stream = virtualFileProvider.GetFileInfo(sourceData).CreateReadStream();
 
             var jsonText = new System.IO.StreamReader(stream).ReadToEnd();
 
