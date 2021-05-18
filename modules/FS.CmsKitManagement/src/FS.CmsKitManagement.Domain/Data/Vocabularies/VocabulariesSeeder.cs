@@ -44,9 +44,9 @@ namespace FS.CmsKitManagement.Data.Vocabularies
             {
                 var sheetNames = VirtualFileNpoiReader.GetSheetNames(fileName);
 
-                var vocabularies = await this.VocabulariesStore.VocabularyDefinition.GetListAsync();//db
+                var VocabularyDefinitions = await this.VocabulariesStore.VocabularyDefinition.GetListAsync();//db
 
-                sheetNames = sheetNames.Except(vocabularies.Select(x => x.No)).ToList();
+                sheetNames = sheetNames.Except(VocabularyDefinitions.Select(x => x.No)).ToList();
 
                 foreach (var sheetName in sheetNames)
                 {
@@ -54,9 +54,9 @@ namespace FS.CmsKitManagement.Data.Vocabularies
                     definition.DisplayName = sheetName;
                     definition.No = sheetName;
 
-                    var Items = VirtualFileNpoiReader.ReadToTreeNode<VocabulariesInfo>(fileName, sheetName);
+                    var items = VirtualFileNpoiReader.ReadToTreeNode<VocabulariesInfo>(fileName, sheetName);
 
-                    var vocabularys = Items.Select(i => mapTo(definition.Id, null, i));
+                    var vocabularys = items.Select(i => mapTo(definition.Id, null, i));
 
                     await this.VocabulariesStore.VocabularyDefinition.InsertAsync(definition, true);
                     await this.VocabulariesStore.Vocabulary.InsertManyAsync(vocabularys, true);

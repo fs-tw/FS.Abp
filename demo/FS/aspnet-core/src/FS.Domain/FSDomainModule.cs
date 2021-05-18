@@ -50,7 +50,6 @@ namespace FS
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-
             Configure<AbpBlobStoringOptions>(options =>
             {
                 options.Containers.ConfigureDefault(container =>

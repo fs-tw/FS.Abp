@@ -23,7 +23,7 @@ namespace FS.CmsKitManagement.Data.Vocabularies
 
         protected IVirtualFileProvider virtualFileProvider => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileProvider>();
         private const string SourceData = "Files/Vocabularies/TwZipCode.json";
-        
+
         protected override async Task SeedAsync(DataSeedContext context)
         {
             var no = "TwZipCode";
@@ -31,20 +31,17 @@ namespace FS.CmsKitManagement.Data.Vocabularies
 
             var jsonText = new System.IO.StreamReader(stream).ReadToEnd();
 
-            var isExist = this.VocabulariesStore.VocabularyDefinition.Any(x=>x.No== no);
-
-            if (!isExist)
-            {
-                VocabularyDefinition newVocabularyDefinition = new VocabularyDefinition();
-                newVocabularyDefinition.DisplayName = no;
-                newVocabularyDefinition.No = no;
-                await VocabulariesStore.VocabularyDefinition.InsertAsync(newVocabularyDefinition,true);
-            }
+            var isExist = this.VocabulariesStore.VocabularyDefinition.Any(x => x.No == no);
+            if (isExist) return;
+            VocabularyDefinition newVocabularyDefinition = new VocabularyDefinition();
+            newVocabularyDefinition.DisplayName = no;
+            newVocabularyDefinition.No = no;
+            await VocabulariesStore.VocabularyDefinition.InsertAsync(newVocabularyDefinition, true);
 
             var vocabularyDefinition = this.VocabulariesStore.VocabularyDefinition.Single(x => x.No == no);
 
             var dataList = System.Text.Json.JsonSerializer.Deserialize<List<Dictionary<string, dynamic>>>(jsonText);
-            var vocabularyAddList=new List<Vocabulary>();
+            var vocabularyAddList = new List<Vocabulary>();
             foreach (var obj in dataList)
             {
                 Vocabulary vocabulary = new Vocabulary();
@@ -54,7 +51,7 @@ namespace FS.CmsKitManagement.Data.Vocabularies
                 vocabularyAddList.Add(vocabulary);
             }
             await VocabulariesStore.Vocabulary.InsertManyAsync(vocabularyAddList, true);
-            
+
             var vocabularyValueAddList = new List<Vocabulary>();
             foreach (var obj in dataList)
             {

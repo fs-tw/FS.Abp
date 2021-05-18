@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { ListService, RestService } from '@abp/ng.core';
+import { ListService, RestService,PagedResultDto } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -10,11 +10,11 @@ import {
   ExtensionsService,
 } from '@fs-tw/cms-kit-management/config';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
-import { catchError, filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
+import { catchError, filter, map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
-import { merge, of } from 'rxjs';
+import { merge, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'fs-tw-blog-posts',
@@ -29,7 +29,8 @@ import { merge, of } from 'rxjs';
   ],
 })
 export class BlogPostsComponent implements OnInit {
-  service: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
+  blogAdminService: Volo.CmsKit.Admin.Blogs.BlogAdminService;
+  blogPostAdminService: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
   mediaService: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorAdminService;
 
   createModalVisible = false;
@@ -39,6 +40,11 @@ export class BlogPostsComponent implements OnInit {
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogPostDto;
 
+  public tabs$: Observable<any>;
+  selectedTabId: string;
+
+  data$: Observable<PagedResultDto<Volo.CmsKit.Admin.Blogs.BlogPostListDto>>;
+
   constructor(
     private readonly extensionsService: ExtensionsService,
     private readonly injector: Injector,
@@ -46,7 +52,8 @@ export class BlogPostsComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private restService: RestService
   ) {
-    this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
+    this.blogAdminService = injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
+    this.blogPostAdminService = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
     this.mediaService = injector.get(
       Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorAdminService
     );
@@ -68,6 +75,24 @@ export class BlogPostsComponent implements OnInit {
         }
       }
     );
+    this.tabs$ = this.blogAdminService.getListByInput({} as any).pipe(
+      map((json) => {
+        return json.items.map((i) => {
+          return {
+            key: i.id,
+            tab: i.name,
+          };
+        });
+      })
+    );
+
+    let streamCreator = (q: Volo.CmsKit.Admin.Blogs.BlogPostGetListInput) => {
+      q.blogId=this.selectedTabId;
+
+      return this.blogPostAdminService.getListByInput(q as any);
+    };
+
+    this.data$ = this.list.hookToQuery(streamCreator);
   }
 
   onAdd() {
@@ -87,7 +112,7 @@ export class BlogPostsComponent implements OnInit {
     this.createByEntityTypeAndInputStream('blogpost',file)
     .pipe(mergeMap(x=>{
       request.coverImageMediaId=x.id;
-      return this.service
+      return this.blogPostAdminService
       .createByInput(request)
       .pipe(tap((x) => {
         //todo add tags
@@ -100,7 +125,7 @@ export class BlogPostsComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.service
+    this.blogPostAdminService
       .getById(id)
       .pipe(
         tap((selected) => {
@@ -127,7 +152,7 @@ export class BlogPostsComponent implements OnInit {
       )
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
-        switchMap((_) => this.service.deleteById(id)),
+        switchMap((_) => this.blogPostAdminService.deleteById(id)),
         take(1)
       )
       .subscribe((_) => {
@@ -155,4 +180,9 @@ export class BlogPostsComponent implements OnInit {
       { apiName: 'CmsKitAdmin' }
     );
   };
+
+  selectedChanged(tab) {
+    this.selectedTabId=tab?.key;
+    this.list.get();
+  }
 }

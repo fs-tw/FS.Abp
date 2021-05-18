@@ -59,7 +59,7 @@ export function configureRoutes(routes: RoutesService) {
         requiredPolicy: eCmsManagementPolicyNames.Comments,
         iconClass: 'fa fa-comments',
         order: 5
-      }       
+      }
     ]);
   };
 }

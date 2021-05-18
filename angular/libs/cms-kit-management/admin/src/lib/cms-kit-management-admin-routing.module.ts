@@ -36,7 +36,7 @@ const routes: Routes = [
       {
         path: 'comments',
         component:CommentsComponent
-      },
+      }   
     ],
   },
 ];
