@@ -39,12 +39,24 @@ export class ViewComponent implements OnInit {
   }
 
   buildForm() {
-    let formControl = { title: this.formData.title, description: this.formData.description };
-    this.form.addControl('title', new FormControl(undefined));
-    this.form.addControl('description', new FormControl(undefined));
+    let formControl = {};
     this.formData.questions.some(x => {
-      this.form.addControl(x.id, new FormControl(undefined));
+      let choiceControl = {};
+      x.choices.some(y => {
+        choiceControl[y.id] = [y.value]
+      });
+      
+      formControl[x.id] = this.fb.group({
+        title: [x.title],
+        description: [x.description],
+        questionType: [x.questionType],
+        choices: this.fb.group(choiceControl)
+      });
     });
-    this.form.patchValue(formControl);
+    this.form = this.fb.group({
+      title: [this.formData.title],
+      description: [this.formData.description],
+      ...formControl
+    });
   }
 }

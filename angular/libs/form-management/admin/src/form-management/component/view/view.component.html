@@ -11,22 +11,69 @@
                 </div>
                 <div class="form-group">
                   <label for="description">描述</label>
-                  <input class="form-control" [formControlName]="'description'" [id]="'description'" type="text" />
+                  <textarea class="form-control" [formControlName]="'description'" [id]="'description'" type="text"></textarea>
                 </div>
             </nz-card>
           </nz-col>
         </nz-row>
-        <nz-row *ngFor="let item of formData?.questions; let index = index;">
+        <nz-row *ngFor="let item of formData?.questions; let index = index;" [formGroupName]="item.id">
           <nz-col style="width: 100%; padding: 0px 15px 0px 15px;">
             <nz-card [nzBordered]="true" [nzTitle]="questionTitle">
+              <nz-row [nzGutter]="16">
+                <nz-col [nzSpan]="12">
+                  <div class="form-group">
+                    <label [for]="'title'">標題</label>
+                    <input class="form-control" [formControlName]="'title'" [id]="'title'" type="text" />
+                  </div>
+                </nz-col>
+                <nz-col [nzSpan]="12">
+                  <div class="form-group">
+                    <label [for]="'questionType'">類型</label>
+                    <nz-select style="width: 100%;" [nzSize]="'large'" [formControlName]="'questionType'" [id]="'questionType'" nzShowSearch>
+                      <nz-option style="word-wrap:break-word;" nzLabel="輸入欄" [nzValue]="1"></nz-option>
+                      <nz-option style="word-wrap:break-word;" nzLabel="輸入框" [nzValue]="2"></nz-option>
+                      <nz-option style="word-wrap:break-word;" nzLabel="多選" [nzValue]="3"></nz-option>
+                      <nz-option style="word-wrap:break-word;" nzLabel="單選" [nzValue]="4"></nz-option>
+                      <nz-option style="word-wrap:break-word;" nzLabel="下拉選單" [nzValue]="5"></nz-option>
+                    </nz-select>
+                  </div>
+                </nz-col>
+              </nz-row>
               <div class="form-group">
-                <label [for]="item.id">{{ item.title }}</label>
-                <div [ngSwitch]="item.questionType">
-                  <input *ngSwitchCase="1" class="form-control" [formControlName]="item.id" [id]="item.id" type="text" />
-                  <input *ngSwitchCase="4" class="form-control" [formControlName]="item.id" [id]="item.id" type="text" />
-                  <input *ngSwitchCase="5" class="form-control" [formControlName]="item.id" [id]="item.id" type="text" />
-                </div>
+                <label [for]="'description'">描述</label>
+                <textarea class="form-control" [formControlName]="'description'" [id]="'description'" type="text"></textarea>
               </div>
+              <div class="form-group" [formGroupName]="'choices'" *ngIf="item.questionType == 4 || item.questionType == 5">
+                <label [for]="'choices'">題項</label>
+                <nz-row [nzGutter]="16" style="padding: 5px;" *ngFor="let choices of item.choices; let i = index;">
+                  <nz-col [nzSpan]="12" [ngSwitch]="item.questionType">
+                    <nz-row [nzGutter]="16">
+                      <ng-container *ngSwitchCase="4">
+                        <nz-col [nzSpan]="2" style="margin: auto; text-align: center;">
+                          <label nz-radio [nzDisabled]="true"></label>
+                        </nz-col>
+                      </ng-container>
+                      <ng-container *ngSwitchCase="5">
+                        <nz-col [nzSpan]="3">
+                          <button nz-button nzType="default" style="height: 100%;">
+                            <span style="font-weight:bold;">{{ i + 1 }}</span>
+                          </button>
+                        </nz-col>
+                      </ng-container>
+                      
+                      <nz-col [nzSpan]="21">
+                        <input class="form-control" [formControlName]="choices.id" [id]="choices.id" type="text" />
+                      </nz-col>
+                    </nz-row>
+                  </nz-col>
+                  <nz-col [nzSpan]="2">
+                    <button nz-button nzType="default" style="height: 100%;">
+                      <span style="font-weight:bold;">X</span>
+                    </button>
+                  </nz-col>
+                </nz-row>
+              </div>
+
               <ng-template #questionTitle>
                 <span>{{ 'Form:Questions:QuestionIndex' | abpLocalization }}</span>
               </ng-template>
