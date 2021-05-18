@@ -12,7 +12,7 @@ using Volo.Forms.Forms;
 
 namespace FS.FormManagement.Data
 {
-    public class FormSeederOptions:FS.Abp.Data.ISeederOptions
+    public class FormSeederOptions : FS.Abp.Data.ISeederOptions
     {
         public bool Ignore { get; set; }
         public string FileName { get; set; }
@@ -52,27 +52,31 @@ namespace FS.FormManagement.Data
 
         protected override async Task SeedAsync(DataSeedContext context)
         {
-            if (string.IsNullOrEmpty(Options.FileName))
-                return;
+            if (string.IsNullOrEmpty(Options.FileName)) return;
             var SourceData = Options.FileName;
 
             List<InputInfo> formals = virtualJsonReader.ReadJson<List<InputInfo>>(SourceData);
-            var excludeTitle = (await formRepository.GetListAsync(x => formals.Select(y => y.Title).Contains(x.Title))).Select(x=>x.Title);
-
-            formals = formals.Where(x => !excludeTitle.Contains(x.Title)).ToList();
-
+            if (await formRepository.GetCountAsync() > 0) return;
             List<Form> inputForms = new List<Form> { };
             foreach (var data in formals)
             {
                 Form form = new Form(GuidGenerator.Create(), data.Title, isQuiz: true, tenantId: context.TenantId);
-                await formRepository.InsertAsync(form, true);
-                foreach (var item in data.Questions)
-                {
-                    List<(string value, bool isCorrect)> choices = item.Choices.Select(x => (x.Value, false)).ToList();
-                    await questionManager.CreateQuestionAsync(form, item.QuestionType, data.Questions.IndexOf(item), false, item.Title, item.Title, false, choices);
-                }
+                data.Id = form.Id;
+                inputForms.Add(form);
             }
             await formRepository.InsertManyAsync(inputForms, true);
+
+            foreach (var data in formals)
+            {
+                var index = 0;
+                foreach (var item in data.Questions)
+                {
+                    index++;
+                    var form = inputForms.Find(x => x.Id == data.Id);
+                    List<(string value, bool isCorrect)> choices = item.Choices.Select(x => (x.Value, false)).ToList();
+                    await questionManager.CreateQuestionAsync(form, item.QuestionType, index, false, item.Title, item.Title, false, choices);
+                }
+            }
         }
     }
 }

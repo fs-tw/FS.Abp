@@ -13,28 +13,55 @@ export const FORM_MANAGEMENT_ROUTE_PROVIDERS = [
   },
 ];
 
+export const FormRoutes = [
+  {
+    path: '/form-management',
+    name: eFormmanagementRouteNames.Basic,
+    parentName: eThemeSharedRouteNames.Administration,
+    layout: eLayoutType.application,
+    iconClass: 'fa fa-folder-open',
+    order: 0,
+    navConfig: {
+      name: eFormmanagementRouteNames.Basic,
+      title: eFormmanagementRouteNames.Basic,
+      doc: eFormmanagementRouteNames.Basic
+    }
+    //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
+  },
+  {
+    parentName: eFormmanagementRouteNames.Basic,
+    path: '/form-management',
+    name: eFormmanagementRouteNames.FormManagement,
+    order: 1,
+  },
+  {
+    path: '/form-management/forms',
+    name: eFormmanagementRouteNames.Forms,
+    parentName: eFormmanagementRouteNames.FormManagement,
+    layout: eLayoutType.application,
+    order: 2,
+    //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,        
+  },
+  {
+    path: '/form-management/forms/:id',
+    name: eFormmanagementRouteNames.View,
+    parentName: eFormmanagementRouteNames.Forms,
+    order: 2.1,
+    navConfig: {
+      name: eFormmanagementRouteNames.Forms,
+      title: eFormmanagementRouteNames.Forms,
+      doc: eFormmanagementRouteNames.Forms
+    }
+    //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,        
+  }
+];
+
 export function configureRoutes(routes: RoutesService) {
 
 
   return () => {
     routes.add([
-      {
-        path: '/form-management',
-        name: eFormmanagementRouteNames.FormManagement,
-        parentName: eThemeSharedRouteNames.Administration,
-        layout: eLayoutType.application,
-        iconClass: 'fa fa-folder-open',
-        order: -1
-        //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
-      },
-      {
-        path: '/form-management/forms',
-        name: eFormmanagementRouteNames.Forms,
-        parentName: eFormmanagementRouteNames.FormManagement,
-        iconClass: 'fa fa-folder-open',
-        order: 1
-        //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,        
-      }
+      ...FormRoutes
     ]);
   };
 }

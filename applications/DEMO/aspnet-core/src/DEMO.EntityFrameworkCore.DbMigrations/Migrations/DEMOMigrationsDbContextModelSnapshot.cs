@@ -2849,8 +2849,6 @@ namespace DEMO.Migrations
                     b.Property<bool>("IsRequired")
                         .HasColumnType("bit")
                         .HasColumnName("IsRequired");
-
-                    b.HasDiscriminator().HasValue(4);
                 });
 
             modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.ChoiceMultiple", b =>
@@ -2866,8 +2864,6 @@ namespace DEMO.Migrations
                         .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("IsRequired");
-
-                    b.HasDiscriminator().HasValue(3);
                 });
 
             modelBuilder.Entity("Volo.Forms.Questions.ChoosableItems.DropdownList", b =>
@@ -2878,8 +2874,6 @@ namespace DEMO.Migrations
                         .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("IsRequired");
-
-                    b.HasDiscriminator().HasValue(5);
                 });
 
             modelBuilder.Entity("Volo.Forms.Questions.ShortText", b =>
