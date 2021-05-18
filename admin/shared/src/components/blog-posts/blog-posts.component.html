@@ -1,8 +1,21 @@
-<fs-tw-cms-kit-entity-base
-  [list]="list"
-  [service]="service"
-  entityName="BlogPosts"
-></fs-tw-cms-kit-entity-base>
+<nz-card [nzBordered]="true">
+  <nz-tabset
+    nzSize="large"
+    *ngIf="tabs$ | async as tabs"
+    (nzSelectedIndexChange)="selectedChanged(tabs[$event - 1])"
+  >
+    <nz-tab nzTitle="全部"></nz-tab>
+    <nz-tab *ngFor="let i of tabs" [nzTitle]="i.tab"></nz-tab>
+  </nz-tabset>
+  <abp-page-toolbar></abp-page-toolbar><br />
+  <ng-container *ngIf="data$ | async as data">
+    <nz-extensible-table
+      [data]="data.items"
+      [recordsTotal]="data.totalCount"
+      [list]="list"
+    ></nz-extensible-table>
+  </ng-container>
+</nz-card>
 
 <fs-tw-cms-kit-modal
   type="Create"

@@ -17,7 +17,7 @@ export type EntityService<T> = {
   styleUrls: ['./cms-kit-entity-base.component.less'],
 })
 export class CmsKitEntityBaseComponent<T> implements OnInit {
-  @Input() entityName: string;
+  @Input() title: string;
   @Input() list: ListService;
   @Input() service: EntityService<T>;
 

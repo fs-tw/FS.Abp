@@ -20,7 +20,7 @@ let COMPONENT = [
   BlogsComponent,
   BlogPostsComponent,
   TagsComponent,
-  CommentsComponent,
+  CommentsComponent
 ];
 
 let MODAL_COMPONENT = [
@@ -32,8 +32,8 @@ let MODAL_COMPONENT = [
 ];
 
 @NgModule({
-  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT],
-  imports: [CoreModule, PageModule,NgbNavModule, ThemeAlainSharedModule,],
-  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT],
+  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT ],
+  imports: [CoreModule, PageModule,NgbNavModule, ThemeAlainSharedModule ],
+  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT]
 })
 export class CmsKitManagementAdminSharedModule {}
