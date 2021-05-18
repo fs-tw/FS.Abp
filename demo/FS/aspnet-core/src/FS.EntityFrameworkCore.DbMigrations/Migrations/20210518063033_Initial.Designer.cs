@@ -11,8 +11,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace FS.Migrations
 {
     [DbContext(typeof(FSMigrationsDbContext))]
-    [Migration("20210512020004_add_Vocabulary_no")]
-    partial class add_Vocabulary_no
+    [Migration("20210518063033_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
