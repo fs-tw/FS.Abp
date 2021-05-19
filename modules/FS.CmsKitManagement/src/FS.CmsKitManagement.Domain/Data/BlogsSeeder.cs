@@ -9,6 +9,7 @@ using Volo.CmsKit.MediaDescriptors;
 using Volo.Abp.BlobStoring;
 using Volo.CmsKit.Users;
 using Volo.Abp.VirtualFileSystem;
+using Npoi.Mapper.Attributes;
 
 namespace FS.CmsKitManagement.Data
 {
@@ -19,6 +20,31 @@ namespace FS.CmsKitManagement.Data
         public string BlogPostCoverImageMediaDirectory { get; set; }
         
     }
+
+    public class BlogInfo
+    {
+        [Column("Name")]
+        public string BlogName { get; set; }
+
+        [Column("Slug")]
+        public string BlogSlug { get; set; }
+
+    }
+
+    public class BlogPostInfo
+    {
+        [Column("Title")]
+        public string PostTitle { get; set; }
+
+        [Column("Content")]
+        public string PostContent { get; set; }
+
+        [Column("Slug")]
+        public string PostSlug { get; set; }
+
+        [Column("BlogName")]
+        public string PostBlog { get; set; }
+    }
     public class BlogsSeeder : FS.Abp.Data.Seeder<BlogsSeederOptions>, ITransientDependency
     {
         private IVirtualFileNpoiReader VirtualFileNpoiReader => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileNpoiReader>();
@@ -26,14 +52,13 @@ namespace FS.CmsKitManagement.Data
         private IBlogRepository BlogRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogRepository>();
         private ICmsUserRepository CmsUserRepository=>this.LazyServiceProvider.LazyGetRequiredService<ICmsUserRepository>();
         private IBlogPostRepository BlogPostRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
-        
+        private IBlobContainer<MediaContainer> BlobContainer => this.LazyServiceProvider.LazyGetRequiredService<IBlobContainer<MediaContainer>>();
+        private IMediaDescriptorRepository MediaDescriptorRepository => this.LazyServiceProvider.LazyGetRequiredService<IMediaDescriptorRepository>();
+
         private BlogManager BlogManager => this.LazyServiceProvider.LazyGetRequiredService<BlogManager>();
         private BlogPostManager BlogPostManager => this.LazyServiceProvider.LazyGetRequiredService<BlogPostManager>();
-
-        private IBlobContainer<MediaContainer> BlobContainer => this.LazyServiceProvider.LazyGetRequiredService<IBlobContainer<MediaContainer>>();
-
+        private BlogFeatureManager BlogFeatureManager => this.LazyServiceProvider.LazyGetRequiredService<BlogFeatureManager>();
         private MediaDescriptorManager MediaDescriptorManager => this.LazyServiceProvider.LazyGetRequiredService<MediaDescriptorManager>();
-        private IMediaDescriptorRepository MediaDescriptorRepository => this.LazyServiceProvider.LazyGetRequiredService<IMediaDescriptorRepository>();
         
         protected override async Task SeedAsync(DataSeedContext context)
         {
@@ -55,6 +80,11 @@ namespace FS.CmsKitManagement.Data
                 await this.BlogRepository.InsertManyAsync(blogs, true);
             }
 
+            var blogList = await this.BlogRepository.GetListAsync();
+            foreach(var blog in blogList)
+            {
+                await this.BlogFeatureManager.SetDefaultsAsync(blog.Id);
+            }
 
             var Imgs = new List<MediaDescriptor>();
             foreach (var file in VirtualFileProvider.GetDirectoryContents(Options.BlogPostCoverImageMediaDirectory)) 
@@ -74,26 +104,25 @@ namespace FS.CmsKitManagement.Data
             }
             await MediaDescriptorRepository.InsertManyAsync(Imgs,true);
 
-            var blogList = await this.BlogRepository.GetListAsync();
+            
             var user = await this.CmsUserRepository.FindByUserNameAsync("admin");
             var mediaList = await this.MediaDescriptorRepository.GetListAsync();
 
             var blogPosts = new List<BlogPost>();
             var datas = this.VirtualFileNpoiReader.Read<BlogPostInfo>(SourceData, "BlogPosts");
-            datas = datas.Where(x => x.PostTitle != null).ToList();
-            if (datas.Count > 0)
-            {
-                return;
-            }
+            var dbBlogPostDatas = this.BlogPostRepository.GetListAsync();
+            var postTitleExcept = datas.Select(x=>x.PostTitle).Except(dbBlogPostDatas.Result.Select(o=>o.Title)).ToList();
+            if (postTitleExcept.Count() == 0) return;
             foreach(var post in datas) 
             {
-                Blog blog = blogList.Where(x => x.Name == post.PostBlog).First();
-                MediaDescriptor media = mediaList.Where(x => x.Name == post.PostTitle).First();
-                BlogPost blogPost = await this.BlogPostManager.CreateAsync(user, blog, post.PostTitle, blog.Slug.ToString(), content: post.PostContent.ToString(), coverImageMediaId: media.Id);
-                blogPosts.Add(blogPost);
+                if (postTitleExcept.Contains(post.PostTitle))
+                {
+                    Blog blog = blogList.Where(x => x.Name == post.PostBlog).First();
+                    MediaDescriptor media = mediaList.Where(x => x.Name == post.PostTitle).First();
+                    BlogPost blogPost = await this.BlogPostManager.CreateAsync(user, blog, post.PostTitle, post.PostSlug, content: post.PostContent.ToString(), coverImageMediaId: media.Id);
+                    blogPosts.Add(blogPost);
+                }
             }
-            
-            
             await this.BlogPostRepository.InsertManyAsync(blogPosts, true);
         }
     }

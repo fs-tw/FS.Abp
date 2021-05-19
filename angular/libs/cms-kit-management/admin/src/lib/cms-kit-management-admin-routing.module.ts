@@ -22,6 +22,10 @@ const routes: Routes = [
         component: BlogPostsComponent,
       },
       {
+        path: 'blog-posts2',
+        component: BlogPostsComponent,
+      },
+      {
         path: 'blogs',
         component: BlogsComponent,
       },
