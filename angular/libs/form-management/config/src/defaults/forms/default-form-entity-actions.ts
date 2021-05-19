@@ -9,7 +9,7 @@ export const DEFAULT_FORM_ENTITY_ACTIONS = ToolbarAction.createMany<Volo.Forms.F
     text: 'Forms::View',
     action: data => {
       const service = data.getInjected(ExtensionsService);
-      service.goToView(data.record.id)
+      service.Action(eFormsComponents.Form, { method: 'View', data });
     },
     permission: 'Forms.Form',
     //icon: 'fa fa-plus',

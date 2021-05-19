@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: 'forms',
-        component:FormsComponent
+        loadChildren:FormManagementModule.forEarly
         //loadChildren: FormManagementModule.forEarly,
       },
       // {
