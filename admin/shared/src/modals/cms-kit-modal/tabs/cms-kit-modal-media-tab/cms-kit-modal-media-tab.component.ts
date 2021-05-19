@@ -4,7 +4,7 @@ import {
   Injector,
   OnInit,
 } from '@angular/core';
-import { CmsKitModalTabComponent } from '../cms-kit-modal-tab.component';
+import { ModalTabComponent } from '@fs-tw/theme-alain/shared';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { EnvironmentService } from '@abp/ng.core';
 
@@ -22,13 +22,13 @@ function getBase64(file: File): Promise<string | ArrayBuffer | null> {
   templateUrl: './cms-kit-modal-media-tab.component.html',
   providers: [
     {
-      provide: CmsKitModalTabComponent,
+      provide: ModalTabComponent,
       useExisting: CmsKitModalMediaTabComponent,
     },
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CmsKitModalMediaTabComponent extends CmsKitModalTabComponent {
+export class CmsKitModalMediaTabComponent extends ModalTabComponent {
 
   CoverImageMediaFiles: NzUploadFile[]=[];
 

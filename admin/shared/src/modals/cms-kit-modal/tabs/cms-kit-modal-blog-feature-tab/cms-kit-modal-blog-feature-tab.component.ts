@@ -4,23 +4,22 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { CmsKitModalTabComponent } from '../cms-kit-modal-tab.component';
+import { FormGroup } from '@angular/forms';
+import { ModalTabComponent } from '@fs-tw/theme-alain/shared';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'fs-tw-cms-kit-modal-blog-feature-tab',
   templateUrl: './cms-kit-modal-blog-feature-tab.component.html',
   providers: [
     {
-      provide: CmsKitModalTabComponent,
+      provide: ModalTabComponent,
       useExisting: CmsKitModalBlogFeatureTabComponent,
     },
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CmsKitModalBlogFeatureTabComponent extends CmsKitModalTabComponent {
+export class CmsKitModalBlogFeatureTabComponent extends ModalTabComponent {
   title = 'Features';
 
   @Input() form: FormGroup;

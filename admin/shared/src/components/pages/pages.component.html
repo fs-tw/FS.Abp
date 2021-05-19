@@ -4,27 +4,27 @@
   title="CmsKit::Pages"
 ></fs-tw-cms-kit-entity-base>
 
-<fs-tw-cms-kit-modal
-  type="Create"
+<fs-tw-modal
+  title="CmsKit::NewPages"
   *ngIf="createModalVisible"
   [(visible)]="createModalVisible"
   (save)="create($event)"
 >
-  <fs-tw-cms-kit-modal-info-tab
-    title='NewPage'
+  <fs-tw-modal-info-tab
+    title='CmsKit::Pages'
     [form]="addForm"
-  ></fs-tw-cms-kit-modal-info-tab>
-</fs-tw-cms-kit-modal>
+  ></fs-tw-modal-info-tab>
+</fs-tw-modal>
 
-<fs-tw-cms-kit-modal
-  type="Edit"
+<fs-tw-modal
+  type="AbpUi::Edit"
   *ngIf="editModalVisible"
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
-  <fs-tw-cms-kit-modal-info-tab
-    title='Page'
+  <fs-tw-modal-info-tab
+    title='CmsKit:Pages'
     [form]="editForm"
     [selectedRecord]="editSelectedRecord"
-  ></fs-tw-cms-kit-modal-info-tab>
-</fs-tw-cms-kit-modal>
+  ></fs-tw-modal-info-tab>
+</fs-tw-modal>

@@ -4,29 +4,29 @@
   title="CmsKit::Blogs"
 ></fs-tw-cms-kit-entity-base>
 
-<fs-tw-cms-kit-modal
-  type="Create"
+<fs-tw-modal
+  title="AbpUi::Edit"
   *ngIf="createModalVisible"
   [(visible)]="createModalVisible"
   (save)="create($event)"
 >
-  <fs-tw-cms-kit-modal-info-tab title="NewBlog" [form]="addForm"></fs-tw-cms-kit-modal-info-tab>
-</fs-tw-cms-kit-modal>
+  <fs-tw-modal-info-tab title="CmsKit::Blog" [form]="addForm"></fs-tw-modal-info-tab>
+</fs-tw-modal>
 
-<fs-tw-cms-kit-modal
-  type="Edit"
+<fs-tw-modal
+  title="AbpUi::Edit"
   *ngIf="editModalVisible"
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
-  <fs-tw-cms-kit-modal-info-tab
-    title="Blogs"
+  <fs-tw-modal-info-tab
+    title="CmsKit::Blogs"
     [form]="editForm"
     [selectedRecord]="editSelectedRecord"
-  ></fs-tw-cms-kit-modal-info-tab>
+  ></fs-tw-modal-info-tab>
 
   <fs-tw-cms-kit-modal-blog-feature-tab
     [blogFeatures]="editBlogFeatures"
     [form]="editBlogFeaturesForm"
   ></fs-tw-cms-kit-modal-blog-feature-tab>
-</fs-tw-cms-kit-modal>
+</fs-tw-modal>

@@ -17,29 +17,29 @@
   </ng-container>
 </nz-card>
 
-<fs-tw-cms-kit-modal
-  type="Create"
+<fs-tw-modal
+  title="CmsKit::NewBlogPost"
   *ngIf="createModalVisible"
   [(visible)]="createModalVisible"
   (save)="create($event)"
 >
-  <fs-tw-cms-kit-modal-info-tab
-    title="NewBlogPost"
+  <fs-tw-modal-info-tab
+    title="CmsKit::BlogPosts"
     [form]="addForm"
-  ></fs-tw-cms-kit-modal-info-tab>
+  ></fs-tw-modal-info-tab>
 
   <fs-tw-cms-kit-modal-media-tab title="Media"></fs-tw-cms-kit-modal-media-tab>
-</fs-tw-cms-kit-modal>
+</fs-tw-modal>
 
-<fs-tw-cms-kit-modal
-  type="Edit"
+<fs-tw-modal
+  title="AbpUi::Edit"
   *ngIf="editModalVisible"
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
-  <fs-tw-cms-kit-modal-info-tab
-    title="BlogPosts"
+  <fs-tw-modal-info-tab
+    title="CmsKit::BlogPosts"
     [form]="editForm"
-  ></fs-tw-cms-kit-modal-info-tab>
-  <fs-tw-cms-kit-modal-media-tab title="Media"></fs-tw-cms-kit-modal-media-tab>
-</fs-tw-cms-kit-modal>
+  ></fs-tw-modal-info-tab>
+  <fs-tw-cms-kit-modal-media-tab title="CmsKit::Media"></fs-tw-cms-kit-modal-media-tab>
+</fs-tw-modal>
