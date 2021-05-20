@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { eFormsComponents, ExtensionsService } from '@fs-tw/form-management/config';
 
 @Component({
@@ -6,7 +6,10 @@ import { eFormsComponents, ExtensionsService } from '@fs-tw/form-management/conf
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
- 
+  @ViewChild('formsTemplate') formsTemplate:TemplateRef<HTMLElement>;
+  @ViewChild('viewTemplate') viewTemplate:TemplateRef<HTMLElement>;
+  itemTemplate: TemplateRef<HTMLElement>;
+  formId: string;
   constructor(
     private extensionsService:ExtensionsService
   ) {
@@ -17,9 +20,14 @@ export class MainComponent implements OnInit {
     this.extensionsService.Actions$[eFormsComponents.Form].subscribe(x=>{
       switch(x.method){
         case 'View':
-          this.extensionsService.goToView(x.data.record.id);
+          this.formId = x.data.record.id;
+          this.itemTemplate = this.viewTemplate
           break;
       }
     })
+  }
+
+  ngAfterViewInit() {
+    this.itemTemplate = this.formsTemplate;
   }
 }
