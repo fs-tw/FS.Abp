@@ -8,19 +8,9 @@ import { FormsComponent } from '@fs-tw/form-management/admin/shared';
 const routes: Routes = [
   { path: '', pathMatch: 'full',redirectTo: 'forms', },
   {
-    path: '',
+    path: 'forms',
+    loadChildren: FormManagementModule.forEarly
     //canActivate: [AuthGuard, PermissionGuard],
-    children: [
-      {
-        path: 'forms',
-        loadChildren:FormManagementModule.forEarly
-        //loadChildren: FormManagementModule.forEarly,
-      },
-      // {
-      //   path: 'versions',
-      //   loadChildren: VersionsModule.forEarly,
-      // },
-    ],
   },
 ];
 // @dynamic

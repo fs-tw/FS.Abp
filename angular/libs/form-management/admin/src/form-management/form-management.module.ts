@@ -5,9 +5,19 @@ import { FormManagementAdminSharedModule } from '@fs-tw/form-management/admin/sh
 import { MainComponent } from './component/main/main.component';
 import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 import { ViewComponent } from './component/view/view.component';
+import { CheckboxComponent } from './component/view/questions/checkbox.component';
+import { DropdownListComponent } from './component/view/questions/dropdown-list.component';
+import { QuestionTypeComponent } from './component/view/questions/question-type.component';
+import { QuestionInfoComponent } from './component/view/questions/question-info.component';
+import { QuestionCardComponent } from './component/view/questions/question-card.component';
+import { QuestionsComponent } from './component/view/questions/questions.component';
 
 @NgModule({
-  declarations: [MainComponent, ViewComponent],
+  declarations: [
+    MainComponent, ViewComponent,
+    QuestionsComponent, QuestionCardComponent, QuestionInfoComponent, QuestionTypeComponent,
+    CheckboxComponent, DropdownListComponent
+  ],
   imports: [
     FormManagementAdminSharedModule,
     CoreModule,

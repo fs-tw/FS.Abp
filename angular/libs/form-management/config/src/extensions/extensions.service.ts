@@ -19,16 +19,12 @@ export class ActionEvent {
 export class ExtensionsService {
   public Actions$: CmsKitAction$ = {} as any;
 
-  constructor(private router: Router) {
+  constructor() {
     Object.keys(eFormsComponents).forEach(k=>{
       this.Actions$[eFormsComponents[k]] = new Subject<ActionEvent>();
     });
   }
   Action<T>(type: eFormsComponents, data?: ActionEvent) {
     this.Actions$[type].next(data);
-  }
-
-  goToView(id: string) {
-    this.router.navigate(["/form-management/forms/" + id]);
   }
 }

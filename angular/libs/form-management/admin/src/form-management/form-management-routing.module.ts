@@ -6,16 +6,7 @@ import { ViewComponent } from './component/view/view.component';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: '',
-        component: MainComponent
-      },
-      {
-        path: ':id',
-        component: ViewComponent
-      }
-    ]
+    component: MainComponent
   },
 ];
 // @dynamic
