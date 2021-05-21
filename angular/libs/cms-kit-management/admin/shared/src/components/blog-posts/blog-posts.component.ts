@@ -1,5 +1,9 @@
-import { Component, Injector, OnInit } from '@angular/core';
-import { ListService, RestService,PagedResultDto } from '@abp/ng.core';
+import {
+  Component,
+  Injector,
+  OnInit
+} from '@angular/core';
+import { ListService, RestService, PagedResultDto } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -10,11 +14,19 @@ import {
   ExtensionsService,
 } from '@fs-tw/cms-kit-management/config';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
-import { catchError, filter, map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
+import {
+  catchError,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+  take,
+  tap,
+} from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
-import { merge, Observable, of } from 'rxjs';
+import { BehaviorSubject, merge, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'fs-tw-blog-posts',
@@ -52,8 +64,12 @@ export class BlogPostsComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private restService: RestService
   ) {
-    this.blogAdminService = injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
-    this.blogPostAdminService = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
+    this.blogAdminService = injector.get(
+      Volo.CmsKit.Admin.Blogs.BlogAdminService
+    );
+    this.blogPostAdminService = injector.get(
+      Volo.CmsKit.Admin.Blogs.BlogPostAdminService
+    );
     this.mediaService = injector.get(
       Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorAdminService
     );
@@ -87,7 +103,7 @@ export class BlogPostsComponent implements OnInit {
     );
 
     let streamCreator = (q: Volo.CmsKit.Admin.Blogs.BlogPostGetListInput) => {
-      q.blogId=this.selectedTabId;
+      q.blogId = this.selectedTabId;
 
       return this.blogPostAdminService.getListByInput(q as any);
     };
@@ -106,22 +122,23 @@ export class BlogPostsComponent implements OnInit {
 
   create(formValue) {
     const request: Volo.CmsKit.Admin.Blogs.CreateBlogPostDto = formValue;
-    const file =formValue.coverImageMediaFile;
+    const file = formValue.coverImageMediaFile;
 
-
-    this.createByEntityTypeAndInputStream('blogpost',file)
-    .pipe(mergeMap(x=>{
-      request.coverImageMediaId=x.id;
-      return this.blogPostAdminService
-      .createByInput(request)
-      .pipe(tap((x) => {
-        //todo add tags
-      }));
-    }))
-    .subscribe(_=>{
-      this.createModalVisible = false;
-      this.list.get();
-    });
+    this.createByEntityTypeAndInputStream('blogpost', file)
+      .pipe(
+        mergeMap((x) => {
+          request.coverImageMediaId = x.id;
+          return this.blogPostAdminService.createByInput(request).pipe(
+            tap((x) => {
+              //todo add tags
+            })
+          );
+        })
+      )
+      .subscribe((_) => {
+        this.createModalVisible = false;
+        this.list.get();
+      });
   }
 
   onEdit(id) {
@@ -162,7 +179,7 @@ export class BlogPostsComponent implements OnInit {
   //todo:now proxy is not support upload file
   createByEntityTypeAndInputStream = (
     entityType: string,
-    file:NzUploadFile
+    file: NzUploadFile
   ) => {
     var formdata = new FormData();
     formdata.append('inputStream.name', file.name);
@@ -182,7 +199,7 @@ export class BlogPostsComponent implements OnInit {
   };
 
   selectedChanged(tab) {
-    this.selectedTabId=tab?.key;
+    this.selectedTabId = tab?.key;
     this.list.get();
   }
 }

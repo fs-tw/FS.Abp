@@ -11,13 +11,16 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CmsKitModalBlogFeatureTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-modal-blog-feature-tab/cms-kit-modal-blog-feature-tab.component';
 import { CmsKitModalMediaTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-modal-media-tab/cms-kit-modal-media-tab.component';
+import { NzUploadDefaultDirective } from './directives/nz-upload-default.directive';
+import { NzUploadDefaultComponent } from './directives/nz-upload-default.component';
 
 let COMPONENT = [
   PagesComponent,
   BlogsComponent,
   BlogPostsComponent,
   TagsComponent,
-  CommentsComponent
+  CommentsComponent,
+  NzUploadDefaultDirective
 ];
 
 let MODAL_COMPONENT = [
@@ -26,7 +29,7 @@ let MODAL_COMPONENT = [
 ];
 
 @NgModule({
-  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT ],
+  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT, NzUploadDefaultComponent ],
   imports: [CoreModule, PageModule,NgbNavModule, ThemeAlainSharedModule ],
   exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT]
 })
