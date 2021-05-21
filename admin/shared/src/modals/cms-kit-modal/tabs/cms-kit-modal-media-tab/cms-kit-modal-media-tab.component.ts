@@ -1,21 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Injector,
-  OnInit,
+  Injector
 } from '@angular/core';
 import { ModalTabComponent } from '@fs-tw/theme-alain/shared';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { EnvironmentService } from '@abp/ng.core';
-
-function getBase64(file: File): Promise<string | ArrayBuffer | null> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = (error) => reject(error);
-  });
-}
 
 @Component({
   selector: 'fs-tw-cms-kit-modal-media-tab',
@@ -29,15 +19,13 @@ function getBase64(file: File): Promise<string | ArrayBuffer | null> {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CmsKitModalMediaTabComponent extends ModalTabComponent {
-
-  CoverImageMediaFiles: NzUploadFile[]=[];
+  CoverImageMediaFiles: NzUploadFile[] = [];
 
   constructor(injector: Injector, environmentService: EnvironmentService) {
     super();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   isValid() {
     return true;
@@ -48,8 +36,37 @@ export class CmsKitModalMediaTabComponent extends ModalTabComponent {
     return { coverImageMediaFile };
   }
 
-  beforeUpload = (file: NzUploadFile): boolean => {
-    this.CoverImageMediaFiles = [file];
-    return false;
-  };
+  // beforeUpload = (file: NzUploadFile): Observable<boolean> => {
+  //   //file.url="https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg";
+  //   //file.thumbUrl="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png";
+
+  //   let getBase64 = new Observable<string>((observer) => {
+  //     const reader = new FileReader();
+  //     reader.onload= () => {
+  //       observer.next(reader.result.toString());
+  //       observer.complete();
+  //     };
+  //     reader.onerror=(error)=>observer.error(error);
+  //     reader.readAsDataURL(file as any);
+  //     return { unsubscribe() {} };
+  //   }).pipe(take(1));
+
+  //   return getBase64.pipe(
+  //     map((d) => {
+  //       file.thumbUrl = d;
+  //       file.url = d;
+  //       this.CoverImageMediaFiles = [file];
+  //       return false;
+  //     })
+  //   );
+  // };
+  // previewImage: string | undefined = '';
+  // previewVisible = false;
+  // handlePreview = async (file: NzUploadFile) => {
+  //   this.previewImage = file.thumbUrl;
+  //   this.previewVisible = true;
+  // };
+  addFile(data) {
+    this.CoverImageMediaFiles = [data];
+  }
 }
