@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { CheckboxComponent } from './checkbox.component';
+import { DropdownListComponent } from './dropdown-list.component';
 
 @Component({
   selector: 'fs-tw-question-card',
@@ -42,6 +43,7 @@ import { CheckboxComponent } from './checkbox.component';
 })
 export class QuestionCardComponent implements OnInit {
   @ViewChild(CheckboxComponent) checkboxComponent: CheckboxComponent;
+  @ViewChild(DropdownListComponent) dropdownListComponent: DropdownListComponent;
   @Input() questionDetail: Volo.Forms.Questions.QuestionDto;
   constructor(
   ) {
@@ -53,6 +55,11 @@ export class QuestionCardComponent implements OnInit {
   ngAfterViewInit() {
     if (this.checkboxComponent != null) {
         this.checkboxComponent.checkboxSubject$.subscribe((x) => {
+            console.log(x)
+        })
+    }
+    if (this.dropdownListComponent != null) {
+        this.dropdownListComponent.dropdownListSubject$.subscribe((x) => {
             console.log(x)
         })
     }

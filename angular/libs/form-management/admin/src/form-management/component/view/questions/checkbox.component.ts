@@ -78,7 +78,7 @@ export class CheckboxComponent implements OnInit {
   buildForm() {
     let choiceControl = {};
     this.choices.some(x => {
-        choiceControl[x.id] = [x.value]
+      choiceControl[x.id] = [x.value]
     });
     this.formGroup = this.fb.group(choiceControl);
     this.checkboxSubject = new BehaviorSubject<Dictionaryinfo>(choiceControl);
