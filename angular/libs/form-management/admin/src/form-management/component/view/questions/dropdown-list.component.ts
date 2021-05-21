@@ -1,6 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+class Dictionaryinfo {
+  [key: string]: string;
+}
 
 @Component({
   selector: 'fs-tw-dropdown-list',
@@ -48,6 +53,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class DropdownListComponent implements OnInit {
   @Input() choices: Array<Volo.Forms.Choices.ChoiceDto>;
   formGroup: FormGroup;
+  private subscribe: Subscription;
+  private dropdownListSubject: BehaviorSubject<Dictionaryinfo>;
+  public dropdownListSubject$: Observable<Dictionaryinfo>;
   constructor(
     private fb: FormBuilder
   ) {
@@ -55,10 +63,19 @@ export class DropdownListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dropdownListSubject$ = this.dropdownListSubject.asObservable();
+    this.subscribe = this.formGroup.valueChanges.subscribe();
+    this.formGroup.valueChanges.subscribe(x => {
+        this.dropdownListSubject.next(x);
+    })
   }
 
   ngOnChanges() {
     this.buildForm();
+  }
+
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
   }
 
   buildForm() {
@@ -67,5 +84,6 @@ export class DropdownListComponent implements OnInit {
       choiceControl[x.id] = [x.value]
     });
     this.formGroup = this.fb.group(choiceControl);
+    this.dropdownListSubject = new BehaviorSubject<Dictionaryinfo>(choiceControl);
   }
 }
