@@ -6,12 +6,12 @@ import { eFormsComponents, ExtensionsService } from '@fs-tw/form-management/conf
   styleUrls: ['./main.component.less']
 })
 export class MainComponent implements OnInit {
-  @ViewChild('formsTemplate') formsTemplate:TemplateRef<HTMLElement>;
-  @ViewChild('viewTemplate') viewTemplate:TemplateRef<HTMLElement>;
+  @ViewChild('formsTemplate') formsTemplate: TemplateRef<HTMLElement>;
+  @ViewChild('viewTemplate') viewTemplate: TemplateRef<HTMLElement>;
   itemTemplate: TemplateRef<HTMLElement>;
   formId: string;
   constructor(
-    private extensionsService:ExtensionsService
+    private extensionsService: ExtensionsService
   ) {
 
   }

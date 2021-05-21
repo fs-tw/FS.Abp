@@ -9,14 +9,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
         <div class="form-group">
             <label [for]="'choices'">題項</label>
             <nz-row [nzGutter]="16" style="padding: 5px;" *ngFor="let choice of choices; let i = index;">
-                <nz-col [nzSpan]="16">
+                <nz-col [nzSpan]="18">
                     <nz-row [nzGutter]="16">
-                        <nz-col [nzXl]="2" [nzSm]="24" [nzXs]="24">
-                            <button nz-button nzType="default" style="height: 100%;">
+                        <nz-col [nzLg]="2" [nzSm]="24" [nzXs]="24">
+                            <button nz-button nzType="default" style="height: 100%; width: 100%;">
                                 <span style="font-weight:bold;">{{ i + 1 }}</span>
                             </button>
                         </nz-col>
-                        <nz-col [nzXl]="20" [nzSm]="24" [nzXs]="24">
+                        <nz-col [nzLg]="20" [nzSm]="24" [nzXs]="24">
                             <input class="form-control" [formControlName]="choice.id" [id]="choice.id" type="text" />
                         </nz-col>
                         <nz-col [nzSpan]="2">
@@ -28,14 +28,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
                 </nz-col>
             </nz-row>
             <nz-row [nzGutter]="16" style="padding: 5px;">
-                <nz-col [nzSpan]="16">
+                <nz-col [nzSpan]="18">
                     <nz-row [nzGutter]="16">
-                        <nz-col [nzXl]="2" [nzSm]="24" [nzXs]="24">
-                            <button nz-button nzType="default" style="height: 100%;">
+                        <nz-col [nzLg]="2" [nzSm]="24" [nzXs]="24">
+                            <button nz-button nzType="default" style="height: 100%; width: 100%;">
                                 <span style="font-weight:bold;">{{ choices.length + 1 }}</span>
                             </button>
                         </nz-col>
-                        <nz-col [nzXl]="22" [nzSm]="24" [nzXs]="24" style="padding: 5px;">
+                        <nz-col [nzLg]="22" [nzSm]="24" [nzXs]="24" style="padding: 5px;">
                             <a style="color: blue;">{{ 'Forms::Choice:AddOption' | abpLocalization }}</a>
                         </nz-col>
                     </nz-row>
