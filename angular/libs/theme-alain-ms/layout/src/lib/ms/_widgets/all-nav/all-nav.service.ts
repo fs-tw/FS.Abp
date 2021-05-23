@@ -133,25 +133,42 @@ export class MSAllNavService {
   private getByHttp(): Observable<MSAllNavData> {
     return this.routesService.tree$.pipe(
       map((r) => {
+        console.log(r);
+
         let result: MSAllNavData = {
           navBottom: [],
           bottomText: 'Further.',
           nav: [],
         };
-        result.nav = r
-          .filter((x) => !this.routesService.hide(x))
+        let routes = r
+          .sort((x) => x.order)
+          .filter((x) => !this.routesService.hide(x));
+
+        routes
+          .filter((x) => x.children.length === 0)
+          .forEach((x) => {
+            result.navBottom.push({
+              text: this.localizationPipe.transform(x.name),
+              link: x.path,
+            });
+          });
+
+        result.nav = routes
+          .filter((x) => x.children.length > 0)
           .map((x) => {
             let allNav = {
               text: this.localizationPipe.transform(x.name),
               left: [],
-            };
+            }; //level 1
             x.children
               .filter((y) => !this.routesService.hide(y))
               .forEach((y) => {
+                //level 2
                 if (y?.children?.length > 0) {
                   allNav.left.push({
                     text: this.localizationPipe.transform(y.name),
                     list: y.children.map((z) => {
+                      //level 3
                       return {
                         text: this.localizationPipe.transform(z.name),
                         link: z.path,
@@ -159,9 +176,14 @@ export class MSAllNavService {
                     }),
                   });
                 } else {
-                  result.navBottom.push({
+                  allNav.left.push({
                     text: this.localizationPipe.transform(y.name),
-                    link: y.path,
+                    list: [
+                      {
+                        text: this.localizationPipe.transform(y.name),
+                        link: y.path,
+                      },
+                    ],
                   });
                 }
               });
