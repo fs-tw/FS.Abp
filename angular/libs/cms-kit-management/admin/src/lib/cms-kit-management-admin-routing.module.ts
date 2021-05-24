@@ -8,7 +8,7 @@ import {
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { BlogPostsComponent, BlogsComponent, CommentsComponent, PagesComponent, TagsComponent } from '@fs-tw/cms-kit-management/admin/shared';
+import { BlogPostsComponent, BlogsComponent, CommentsComponent, PagesComponent, TagsComponent,VocabulariesComponent } from '@fs-tw/cms-kit-management/admin/shared';
 
 const routes: Routes = [
   { path: '', redirectTo: 'blogs', pathMatch: 'full' },
@@ -40,6 +40,10 @@ const routes: Routes = [
       {
         path: 'comments',
         component:CommentsComponent
+      },
+      {
+        path: 'vocabularies',
+        component:VocabulariesComponent
       }   
     ],
   },
