@@ -13,6 +13,7 @@ import { CmsKitModalBlogFeatureTabComponent } from './modals/cms-kit-modal/tabs/
 import { CmsKitModalMediaTabComponent } from './modals/cms-kit-modal/tabs/cms-kit-modal-media-tab/cms-kit-modal-media-tab.component';
 import { NzUploadDefaultDirective } from './directives/nz-upload-default.directive';
 import { NzUploadDefaultComponent } from './directives/nz-upload-default.component';
+import { VocabulariesComponent } from './components/vocabularies/vocabularies.component';
 
 let COMPONENT = [
   PagesComponent,
@@ -29,8 +30,8 @@ let MODAL_COMPONENT = [
 ];
 
 @NgModule({
-  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT, NzUploadDefaultComponent ],
+  declarations: [CmsKitEntityBaseComponent, ...COMPONENT, ...MODAL_COMPONENT, NzUploadDefaultComponent, VocabulariesComponent ],
   imports: [CoreModule, PageModule,NgbNavModule, ThemeAlainSharedModule ],
-  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT]
+  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT, VocabulariesComponent]
 })
 export class CmsKitManagementAdminSharedModule {}

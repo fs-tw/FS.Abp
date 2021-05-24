@@ -59,6 +59,14 @@ export function configureRoutes(routes: RoutesService) {
         requiredPolicy: eCmsManagementPolicyNames.Comments,
         iconClass: 'fa fa-comments',
         order: 5
+      },
+      {
+        path: '/cms/vocabularies',
+        name: eCmsKitManagementRouteNames.Vocabularies,
+        parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+        //requiredPolicy: eCmsManagementPolicyNames.Comments,
+        iconClass: 'fa fa-comments',
+        order: 6
       }
     ]);
   };
