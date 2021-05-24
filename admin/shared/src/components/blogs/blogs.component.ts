@@ -12,7 +12,7 @@ import {
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
-import { filter, map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
+import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
 
 @Component({
