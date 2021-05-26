@@ -105,7 +105,22 @@ namespace FS.CmsKitManagement.Data
             await MediaDescriptorRepository.InsertManyAsync(Imgs,true);
 
             
+            
+
             var user = await this.CmsUserRepository.FindByUserNameAsync("admin");
+
+            if (user == null)
+            {
+                Volo.Abp.Users.UserEto newUser = new Volo.Abp.Users.UserEto()
+                {
+                    Id = GuidGenerator.Create(),
+                    Email = "cms_author@domain.com",
+                    Name = "cms_author",
+                    UserName = "cms_author"
+                };
+                user=await this.CmsUserRepository.InsertAsync(new CmsUser(newUser), true);
+            }
+
             var mediaList = await this.MediaDescriptorRepository.GetListAsync();
 
             var blogPosts = new List<BlogPost>();
