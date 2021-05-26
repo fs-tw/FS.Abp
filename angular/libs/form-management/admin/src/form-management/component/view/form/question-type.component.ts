@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { FormStateService } from './providers/form-state.service';
+import { FormModel } from './models/models';
 
 @Component({
   selector: 'fs-tw-question-type',
@@ -26,24 +29,50 @@ export class QuestionTypeComponent implements OnInit {
   readonly checkbox: string = "Forms::QuestionType:Checkbox";
   readonly dropdownList: string = "Forms::QuestionType:DropdownList";
 
-  @Input() questionType: Volo.Forms.QuestionTypes;
-  formGroup: FormGroup;
+  @Input() questionId: string = null;
+
+  formGroup: FormGroup = this.fb.group({});
+  subscription: Array<Subscription> = [];
+  questionType: FormModel.QuestionTypeInfo = null;
+
+  updateQuestionType = (data: FormModel.QuestionTypeInfo) => {
+    if(!data) return;
+    this.questionType = data;
+    this.buildForm(data);
+  };
+
   constructor(
+    private formStateService: FormStateService,
     private fb: FormBuilder
   ) {
-    this.formGroup = this.fb.group({});
   }
 
   ngOnInit() {
   }
 
   ngOnChanges() {
-      this.buildForm();
+    if(!this.questionId) return;
+    this.ngOnDestroy();
+    this.subscription.push(this.formStateService.getQuestionTypeByQuestionId$(this.questionId).subscribe(
+      this.updateQuestionType
+    ));
   }
 
-  buildForm() {
-    this.formGroup = this.fb.group({
-      questionType: [this.questionType]
+  ngOnDestroy() {
+    this.subscription.forEach(x => {
+      x.unsubscribe();
     });
+  }
+
+  buildForm(questionType: FormModel.QuestionTypeInfo) {
+    this.formGroup = this.fb.group({
+      questionType: [questionType.questionType],
+    });
+    this.subscription.push(
+      this.formGroup.valueChanges.subscribe((x) => {
+        let resulr = { ...this.questionType, ...x };
+        this.formStateService.setQuestionTypeOne(resulr);
+      })
+    );
   }
 }
