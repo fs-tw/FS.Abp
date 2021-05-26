@@ -1,22 +1,20 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Volo } from '@fs-tw/form-management/proxy';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-
-class Dictionaryinfo {
-  [key: string]: string;
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { FormStateService } from './providers';
+import { FormModel } from './models/models';
 
 @Component({
   selector: 'fs-tw-checkbox',
   template: `
-    <form [formGroup]="formGroup" validateOnSubmit>
-      <div class="form-group">
+    <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
+      <div class="form-group" [formArrayName]="'choices'">
         <label [for]="'choices'">題項</label>
         <nz-row
           [nzGutter]="16"
           style="padding: 5px;"
-          *ngFor="let choice of choices; let i = index"
+          *ngFor="let choice of choices.controls; let i = index"
+          [formGroupName]="i"
         >
           <nz-col [nzSpan]="18">
             <nz-row [nzGutter]="16">
@@ -25,8 +23,7 @@ class Dictionaryinfo {
                   <input
                     style="width: 100%;"
                     class="form-control"
-                    [formControlName]="choice.id"
-                    [id]="choice.id"
+                    [formControlName]="'value'"
                     type="text"
                   />
                 </label>
@@ -66,56 +63,50 @@ class Dictionaryinfo {
   ],
 })
 export class CheckboxComponent implements OnInit {
-  @Input() choices: Array<Volo.Forms.Choices.ChoiceDto> = {} as any;
-  @Output() choicesChange: EventEmitter<
-    Array<Volo.Forms.Choices.ChoiceDto>
-  > = new EventEmitter<Array<Volo.Forms.Choices.ChoiceDto>>();
+  @Input() questionId: string = null;
 
-  public formGroup: FormGroup;
-  private subscribe: Subscription;
-  //private checkboxSubject: BehaviorSubject<Dictionaryinfo>;
-  //public checkboxSubject$: Observable<Dictionaryinfo>;
+  formGroup: FormGroup = this.fb.group({});
+  subscription: Array<Subscription> = [];
+  choices: FormArray = new FormArray([]);
 
-  subs: Subscription = new Subscription();
-  constructor(private fb: FormBuilder) {
-    this.formGroup = this.fb.group({});
+  updateChoices = (data: Array<FormModel.ChoiceInfo>) => {
+    if(!data) return;
+    this.buildForm(data);
+  };
+
+  constructor(
+    private formStateService: FormStateService,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() {
-    //this.checkboxSubject$ = this.checkboxSubject.asObservable();
-    //this.subscribe = this.formGroup.valueChanges.subscribe();
-    // this.formGroup.valueChanges.subscribe((x) => {
-    //   this.checkboxSubject.next(x);
-    // });
   }
 
   ngOnChanges() {
-    this.buildForm();
+    if(!this.questionId) return;
+    this.ngOnDestroy();
+    this.subscription.push(this.formStateService.getChoicesByQuestionId$(this.questionId).subscribe(
+      this.updateChoices
+    ));
   }
 
   ngOnDestroy() {
-    this.subscribe.unsubscribe();
+    this.subscription.forEach(x => {
+      x.unsubscribe();
+    });
   }
 
-  buildForm() {
-    let choiceControl = {};
-    
-    this.choices.forEach((x) => {
-      choiceControl[x.id] = [x.value];
+  buildForm(choices: Array<FormModel.ChoiceInfo>) {
+    this.choices = this.fb.array(choices.map(((x, i) => {
+      return this.fb.group(x);
+    })));
+    this.formGroup = this.fb.group({
+      choices: this.choices
     });
-
-    this.formGroup = this.fb.group(choiceControl);
-
-    this.subs.unsubscribe();
-    
-    this.subs.add(
+    this.subscription.push(
       this.formGroup.valueChanges.subscribe((x) => {
-        Object.keys(x).forEach((p) => {
-          this.choices.find((x) => x.id === p).value = x[p];
-        });
-        this.choicesChange.emit(this.choices);
+        this.formStateService.setChoices(x.choices);
       })
     );
-    //this.checkboxSubject = new BehaviorSubject<Dictionaryinfo>(choiceControl);
   }
 }
