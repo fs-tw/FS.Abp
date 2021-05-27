@@ -24,7 +24,8 @@ import { FormModel } from './models/models';
         </nz-col>
         <nz-col [nzXs]="24" [nzSm]="12">
           <fs-tw-question-type
-            [questionId]="questionId"
+            [questionType]="question.questionType"
+            (questionTypeChange)="onQuestionTypeChange($event)"
           ></fs-tw-question-type>
         </nz-col>
       </nz-row>
@@ -85,8 +86,14 @@ export class QuestionInfoComponent implements OnInit {
     this.subscription.push(
       this.formGroup.valueChanges.subscribe((x) => {
         let resulr = { ...this.question, ...x };
+        this.question = resulr;
         this.formStateService.setQuestionOne(resulr);
       })
     );
+  }
+
+  onQuestionTypeChange(questionType: FormModel.QuestionTypes) {
+    this.question.questionType = questionType;
+    this.formStateService.setQuestionOne(this.question);
   }
 }

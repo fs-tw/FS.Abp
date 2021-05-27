@@ -8,6 +8,8 @@ import {
 import { InternalStore } from '@abp/ng.core';
 import { PageService } from '../../providers/page.service';
 import { Volo } from '@fs-tw/form-management/proxy';
+import { FormStateService } from './form/providers';
+import { FormModel } from './form/models/models';
 
 @Component({
   selector: 'fs-tw-view',
@@ -15,7 +17,7 @@ import { Volo } from '@fs-tw/form-management/proxy';
     <abp-page [title]="'Forms::Form' | abpLocalization">
       <nz-tabset>
         <nz-tab nzTitle="{{ 'Forms::Menu:Questions' | abpLocalization }}">
-          <fs-tw-form [formDetail]="formDetail"></fs-tw-form>
+          <fs-tw-form [formId]="formId"></fs-tw-form>
         </nz-tab>
         <nz-tab nzTitle="{{ 'Forms::Menu:Responses' | abpLocalization }}">
         </nz-tab>
@@ -25,12 +27,10 @@ import { Volo } from '@fs-tw/form-management/proxy';
 })
 export class ViewComponent implements OnInit {
   @Input() formId: string;
-  formDetail: Volo.Forms.Forms.FormWithDetailsDto;
-
-  public store = new InternalStore({} as Volo.Forms.Forms.FormWithDetailsDto);
 
   constructor(
     protected injector: Injector,
+    private formStateService: FormStateService,
     private pageService: PageService,
     private cdr: ChangeDetectorRef
   ) {}
@@ -44,7 +44,8 @@ export class ViewComponent implements OnInit {
 
   loadQuestionsData() {
     this.pageService.getById(this.formId).subscribe((x) => {
-      this.formDetail = x;
+      let result = new FormModel.FormInfo(x, x.questions);
+      this.formStateService.setFormOne(result);
       this.cdr.markForCheck();
     });
   }

@@ -1,14 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Volo } from '@fs-tw/form-management/proxy';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { FormStateService } from './providers/form-state.service';
 import { FormModel } from './models/models';
 
 @Component({
   selector: 'fs-tw-question-type',
   template: `
-    <form [formGroup]="formGroup" validateOnSubmit>
+    <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionType">
         <div class="form-group">
             <label [for]="'questionType'">類型</label>
             <nz-select style="width: 100%;" [nzSize]="'large'" [formControlName]="'questionType'" [id]="'questionType'" nzShowSearch>
@@ -29,20 +27,15 @@ export class QuestionTypeComponent implements OnInit {
   readonly checkbox: string = "Forms::QuestionType:Checkbox";
   readonly dropdownList: string = "Forms::QuestionType:DropdownList";
 
-  @Input() questionId: string = null;
+  @Input() questionType: FormModel.QuestionTypes = null;
+  
+  @Output()
+  questionTypeChange: EventEmitter<FormModel.QuestionTypes> = new EventEmitter<FormModel.QuestionTypes>();
 
   formGroup: FormGroup = this.fb.group({});
   subscription: Array<Subscription> = [];
-  questionType: FormModel.QuestionTypeInfo = null;
-
-  updateQuestionType = (data: FormModel.QuestionTypeInfo) => {
-    if(!data) return;
-    this.questionType = data;
-    this.buildForm(data);
-  };
 
   constructor(
-    private formStateService: FormStateService,
     private fb: FormBuilder
   ) {
   }
@@ -51,11 +44,9 @@ export class QuestionTypeComponent implements OnInit {
   }
 
   ngOnChanges() {
-    if(!this.questionId) return;
+    if(!this.questionType) return;
     this.ngOnDestroy();
-    this.subscription.push(this.formStateService.getQuestionTypeByQuestionId$(this.questionId).subscribe(
-      this.updateQuestionType
-    ));
+    this.buildForm(this.questionType);
   }
 
   ngOnDestroy() {
@@ -64,14 +55,13 @@ export class QuestionTypeComponent implements OnInit {
     });
   }
 
-  buildForm(questionType: FormModel.QuestionTypeInfo) {
+  buildForm(questionType: FormModel.QuestionTypes) {
     this.formGroup = this.fb.group({
-      questionType: [questionType.questionType],
+      questionType: [questionType],
     });
     this.subscription.push(
       this.formGroup.valueChanges.subscribe((x) => {
-        let resulr = { ...this.questionType, ...x };
-        this.formStateService.setQuestionTypeOne(resulr);
+        this.questionTypeChange.emit(x.questionType);
       })
     );
   }

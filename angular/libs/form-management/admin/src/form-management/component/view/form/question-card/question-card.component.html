@@ -2,20 +2,21 @@
   [nzBordered]="true"
   [nzTitle]="questionTitle"
   [nzExtra]="extraTemplate"
+  *ngIf="question"
 >
   <fs-tw-question-info
-    [questionId]="questionDetail.id"
+    [questionId]="question.id"
   ></fs-tw-question-info>
 
-  <div [ngSwitch]="questionDetail.questionType">
+  <div [ngSwitch]="question.questionType">
     <ng-container *ngSwitchCase="4">
       <fs-tw-checkbox
-        [questionId]="questionDetail.id"
+        [questionId]="question.id"
       ></fs-tw-checkbox>
     </ng-container>
     <ng-container *ngSwitchCase="5">
       <fs-tw-dropdown-list
-      [questionId]="questionDetail.id"
+      [questionId]="question.id"
       ></fs-tw-dropdown-list>
     </ng-container>
   </div>
@@ -23,7 +24,7 @@
   <ng-template #questionTitle>
     <span>{{
       'Forms::Form:Questions:QuestionIndex'
-        | abpLocalization: questionDetail.index
+        | abpLocalization: question.index
     }}</span>
   </ng-template>
   <ng-template #extraTemplate>

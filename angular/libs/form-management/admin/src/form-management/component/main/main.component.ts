@@ -8,7 +8,7 @@ import { eFormsComponents, ExtensionsService } from '@fs-tw/form-management/conf
 export class MainComponent implements OnInit {
   @ViewChild('formsTemplate') formsTemplate: TemplateRef<HTMLElement>;
   @ViewChild('viewTemplate') viewTemplate: TemplateRef<HTMLElement>;
-  itemTemplate: TemplateRef<HTMLElement>;
+  itemTemplate: TemplateRef<HTMLElement> = null;
   formId: string;
   constructor(
     private extensionsService: ExtensionsService
