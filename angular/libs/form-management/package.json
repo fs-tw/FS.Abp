@@ -1,6 +1,10 @@
 {
   "name": "@fs-tw/form-management",
   "version": "430.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:fs-tw/FS.Works.git"
+  },
   "peerDependencies": {
     "@angular/common": "^11.2.7",
     "@angular/core": "^11.2.7"
