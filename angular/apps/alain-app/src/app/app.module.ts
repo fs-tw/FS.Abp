@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
     CmsKitManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeAlainModule.forRoot(),
+    QuillModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],

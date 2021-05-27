@@ -39,7 +39,10 @@
     "@angular/router": "^11.2.0",
     "@fs-tw/theme-alain": "^430.0.1",
     "@nrwl/angular": "12.0.8",
+    "@types/quill": "^2.0.7",
     "date-fns": "^2.21.1",
+    "ngx-quill": "^14.0.0",
+    "quill": "^1.3.7",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
