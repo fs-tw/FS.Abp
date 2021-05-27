@@ -1,11 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FormStateService } from './providers';
 import { FormModel } from './models/models';
+export type DropdownListProvider ={
+  getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
+  setChoices(data: Array<FormModel.ChoiceInfo>);
+}
 
 @Component({
-  selector: 'fs-tw-checkbox',
+  selector: 'fs-tw-dropdown-list',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
       <div class="form-group" [formArrayName]="'choices'">
@@ -62,8 +66,9 @@ import { FormModel } from './models/models';
     '::ng-deep .ant-checkbox + span { width: 100%; padding-left: 15px; }',
   ],
 })
-export class CheckboxComponent implements OnInit {
+export class DropdownListComponent implements OnInit {
   @Input() questionId: string = null;
+  @Input() provider: DropdownListProvider;
 
   formGroup: FormGroup = this.fb.group({});
   subscription: Array<Subscription> = [];
@@ -75,7 +80,6 @@ export class CheckboxComponent implements OnInit {
   };
 
   constructor(
-    private formStateService: FormStateService,
     private fb: FormBuilder) {
   }
 
@@ -85,7 +89,7 @@ export class CheckboxComponent implements OnInit {
   ngOnChanges() {
     if(!this.questionId) return;
     this.ngOnDestroy();
-    this.subscription.push(this.formStateService.getChoicesByQuestionId$(this.questionId).subscribe(
+    this.subscription.push(this.provider.getChoicesByQuestionId$(this.questionId).subscribe(
       this.updateChoices
     ));
   }
@@ -105,7 +109,7 @@ export class CheckboxComponent implements OnInit {
     });
     this.subscription.push(
       this.formGroup.valueChanges.subscribe((x) => {
-        this.formStateService.setChoices(x.choices);
+        this.provider.setChoices(x.choices);
       })
     );
   }

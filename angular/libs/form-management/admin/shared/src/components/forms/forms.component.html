@@ -8,27 +8,27 @@
   ></nz-extensible-table>
 </ng-container>
 
-<fs-tw-modal
+<fs-modal
   title="建立"
   *ngIf="createModalVisible"
   [(visible)]="createModalVisible"
   (save)="create($event)"
 >
-  <fs-tw-modal-info-tab
+  <fs-modal-info-tab
     title="Forms::Menu:Forms"
     [form]="addForm"
-  ></fs-tw-modal-info-tab>
-</fs-tw-modal>
+  ></fs-modal-info-tab>
+</fs-modal>
 
-<fs-tw-modal
+<fs-modal
   title="AbpUi::Edit"
   *ngIf="editModalVisible"
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
-  <fs-tw-modal-info-tab
+  <fs-modal-info-tab
     title="Forms::Menu:Forms"
     [form]="editForm"
     [selectedRecord]="editSelectedRecord"
-  ></fs-tw-modal-info-tab>
-</fs-tw-modal>
+  ></fs-modal-info-tab>
+</fs-modal>

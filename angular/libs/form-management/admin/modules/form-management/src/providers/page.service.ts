@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { Volo } from '@fs-tw/form-management/proxy';
 
 // @dynamic
@@ -6,10 +6,11 @@ import { Volo } from '@fs-tw/form-management/proxy';
   providedIn: 'root',
 })
 export class PageService {
-
+  private FormService: Volo.Forms.Forms.FormService
   constructor(
-    private FormService: Volo.Forms.Forms.FormService
+    private injector:Injector
   ) {
+    this.FormService=this.injector.get(Volo.Forms.Forms.FormService);
   }
 
   getById(id: string) {

@@ -17,7 +17,7 @@ import { FormModel } from './form/models/models';
     <abp-page [title]="'Forms::Form' | abpLocalization">
       <nz-tabset>
         <nz-tab nzTitle="{{ 'Forms::Menu:Questions' | abpLocalization }}">
-          <fs-tw-form [formId]="formId"></fs-tw-form>
+          <fs-tw-form [formId]="formId" [provider]="formStateService"></fs-tw-form>
         </nz-tab>
         <nz-tab nzTitle="{{ 'Forms::Menu:Responses' | abpLocalization }}">
         </nz-tab>
@@ -30,7 +30,7 @@ export class ViewComponent implements OnInit {
 
   constructor(
     protected injector: Injector,
-    private formStateService: FormStateService,
+    public formStateService: FormStateService,
     private pageService: PageService,
     private cdr: ChangeDetectorRef
   ) {}

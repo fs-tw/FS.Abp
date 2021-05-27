@@ -15,7 +15,7 @@ export const FORM_MANAGEMENT_ROUTE_PROVIDERS = [
 
 export const FormRoutes = [
   {
-    path: '/form-management/forms',
+    path: '/form-management',
     name: eFormmanagementRouteNames.Forms,
     parentName: eThemeSharedRouteNames.Administration,
     layout: eLayoutType.application,

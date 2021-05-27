@@ -1,3 +1,4 @@
+import { EmbeddedTemplateAst } from '@angular/compiler';
 import { Volo } from '@fs-tw/form-management/proxy';
 
 export namespace FormModel {
@@ -7,7 +8,7 @@ export namespace FormModel {
     Choices: Array<ChoiceInfo>
   }
 
-  export class FormInfo {
+  export class FormInfo implements Volo.Forms.Forms.FormWithDetailsDto {
     id: string;
     title: string;
     description: string;
@@ -35,7 +36,7 @@ export namespace FormModel {
     }
   }
 
-  export class QuestionInfo {
+  export class QuestionInfo implements Volo.Forms.Questions.QuestionDto {
     id: string;
     index: number;
     title: string;
@@ -57,7 +58,7 @@ export namespace FormModel {
     }
   }
 
-  export class ChoiceInfo {
+  export class ChoiceInfo implements Volo.Forms.Choices.ChoiceDto {
     questionId: string;
     id: string;
     index: number;

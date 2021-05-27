@@ -1,11 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FormStateService } from './providers';
 import { FormModel } from './models/models';
 
+export type CheckboxProvider ={
+  getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
+  setChoices(data: Array<FormModel.ChoiceInfo>);
+}
+
 @Component({
-  selector: 'fs-tw-dropdown-list',
+  selector: 'fs-tw-checkbox',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
       <div class="form-group" [formArrayName]="'choices'">
@@ -60,52 +65,56 @@ import { FormModel } from './models/models';
   `,
   styles: [
     '::ng-deep .ant-checkbox + span { width: 100%; padding-left: 15px; }',
-  ],
+  ]
 })
-export class DropdownListComponent implements OnInit {
+export class CheckboxComponent implements OnInit {
   @Input() questionId: string = null;
+  @Input() provider: CheckboxProvider;
+
+  subscription: Subscription = new Subscription();
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Array<Subscription> = [];
+
   choices: FormArray = new FormArray([]);
 
   updateChoices = (data: Array<FormModel.ChoiceInfo>) => {
-    if(!data) return;
+    if (!data) return;
     this.buildForm(data);
   };
 
   constructor(
-    private formStateService: FormStateService,
-    private fb: FormBuilder) {
-  }
+    private fb: FormBuilder
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnChanges() {
-    if(!this.questionId) return;
+    if (!this.questionId) return;
     this.ngOnDestroy();
-    this.subscription.push(this.formStateService.getChoicesByQuestionId$(this.questionId).subscribe(
-      this.updateChoices
-    ));
+    this.subscription.add(
+      this.provider
+        .getChoicesByQuestionId$(this.questionId)
+        .subscribe(this.updateChoices)
+    );
   }
 
   ngOnDestroy() {
-    this.subscription.forEach(x => {
-      x.unsubscribe();
-    });
+    this.subscription.unsubscribe();
   }
 
   buildForm(choices: Array<FormModel.ChoiceInfo>) {
-    this.choices = this.fb.array(choices.map(((x, i) => {
-      return this.fb.group(x);
-    })));
+    this.choices = this.fb.array(
+      choices.map((x, i) => {
+        return this.fb.group(x);
+      })
+    );
     this.formGroup = this.fb.group({
-      choices: this.choices
+      choices: this.choices,
     });
-    this.subscription.push(
+
+    this.subscription.add(
       this.formGroup.valueChanges.subscribe((x) => {
-        this.formStateService.setChoices(x.choices);
+        this.provider.setChoices(x.choices);
       })
     );
   }
