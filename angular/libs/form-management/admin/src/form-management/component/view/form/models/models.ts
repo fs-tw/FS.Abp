@@ -2,10 +2,9 @@ import { Volo } from '@fs-tw/form-management/proxy';
 
 export namespace FormModel {
   export interface State {
-    Form: FormInfo,
+    Forms: Array<FormInfo>,
     Questions: Array<QuestionInfo>,
-    Choices: Array<ChoiceInfo>,
-    QuestionType: Array<QuestionTypeInfo>
+    Choices: Array<ChoiceInfo>
   }
 
   export class FormInfo {
@@ -19,9 +18,9 @@ export namespace FormModel {
     isAcceptingResponses: boolean;
     isQuiz: boolean;
     requiresLogin: boolean;
-    questions?: Array<QuestionInfo>;
+    questions: Array<QuestionInfo>;
 
-    constructor(initialValues: Partial<Volo.Forms.Forms.FormDto>, questions?: Array<Volo.Forms.Questions.QuestionDto>) {
+    constructor(initialValues: Volo.Forms.Forms.FormDto | Volo.Forms.Forms.FormWithDetailsDto, questions: Array<Volo.Forms.Questions.QuestionDto> = []) {
       this.id = initialValues.id;
       this.title = initialValues.title;
       this.description = initialValues.description;
@@ -37,56 +36,40 @@ export namespace FormModel {
   }
 
   export class QuestionInfo {
-    formId: string;
     id: string;
     index: number;
     title: string;
     description: string;
     isRequired: boolean;
     hasOtherOption: boolean;
-    questionType: QuestionTypeInfo;
+    questionType: QuestionTypes;
     choices: Array<ChoiceInfo>;
 
-    constructor(initialValues: Partial<Volo.Forms.Questions.QuestionDto>) {
-      this.formId = initialValues.formId;
+    constructor(initialValues: Volo.Forms.Questions.QuestionDto) {
       this.id = initialValues.id;
       this.index = initialValues.index;
       this.title = initialValues.title;
       this.description = initialValues.description;
       this.isRequired = initialValues.isRequired;
       this.hasOtherOption = initialValues.hasOtherOption;
-      this.questionType = new QuestionTypeInfo(initialValues.formId, initialValues.id, initialValues.questionType);
-      this.choices = initialValues.choices.map(x => new ChoiceInfo(initialValues.formId, initialValues.id, x));
+      this.questionType = initialValues.questionType;
+      this.choices = initialValues.choices ? initialValues.choices.map(x => new ChoiceInfo(initialValues.id, x)) : [];
     }
   }
 
   export class ChoiceInfo {
-    formId: string;
     questionId: string;
     id: string;
     index: number;
     isCorrect: boolean;
     value: string;
 
-    constructor(formId: string, questionId: string, choice: Volo.Forms.Choices.ChoiceDto) {
-      this.formId = formId;
+    constructor(questionId: string, choice: Volo.Forms.Choices.ChoiceDto) {
       this.questionId = questionId;
       this.id = choice.id;
       this.index = choice.index;
       this.isCorrect = choice.isCorrect;
       this.value = choice.value;
-    }
-  }
-
-  export class QuestionTypeInfo {
-    formId: string;
-    questionId: string;
-    questionType: QuestionTypes;
-
-    constructor(formId: string, questionId: string, questionType: Volo.Forms.QuestionTypes) {
-      this.formId = formId;
-      this.questionId = questionId;
-      this.questionType = questionType;
     }
   }
 

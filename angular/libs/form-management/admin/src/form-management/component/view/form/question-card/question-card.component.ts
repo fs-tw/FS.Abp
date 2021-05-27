@@ -4,6 +4,7 @@ import {
   OnInit
 } from '@angular/core';
 import { Volo } from '@fs-tw/form-management/proxy';
+import { Subscription } from 'rxjs';
 import { FormModel } from '../models/models';
 import { FormStateService } from '../providers';
 
@@ -12,7 +13,15 @@ import { FormStateService } from '../providers';
   templateUrl: 'question-card.component.html'
 })
 export class QuestionCardComponent implements OnInit {
-  @Input() questionDetail = {} as Volo.Forms.Questions.QuestionDto;
+  @Input() questionId: string = null;
+
+  subscription: Array<Subscription> = [];
+  question: FormModel.QuestionInfo = null;
+
+  updateQuestion = (data: FormModel.QuestionInfo) => {
+    if(!data) return;
+    this.question = data;
+  };
 
   constructor(
     private formStateService: FormStateService,
@@ -22,8 +31,16 @@ export class QuestionCardComponent implements OnInit {
   }
 
   ngOnChanges() {
-    if(!this.questionDetail) return;
-    let result = new FormModel.QuestionInfo(this.questionDetail);
-    this.formStateService.setQuestionOne(result);
+    if(!this.questionId) return;
+    this.ngOnDestroy();
+    this.subscription.push(this.formStateService.getQuestionsByQuestionId$(this.questionId).subscribe(
+      this.updateQuestion
+    ));
+  }
+
+  ngOnDestroy() {
+    this.subscription.forEach(x => {
+      x.unsubscribe();
+    });
   }
 }

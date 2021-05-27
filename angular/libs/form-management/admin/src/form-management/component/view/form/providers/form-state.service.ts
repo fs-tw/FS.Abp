@@ -10,10 +10,9 @@ import * as _ from 'lodash';
 })
 export class FormStateService {
   private store = new InternalStore({
-    Form: {} as FormModel.FormInfo,
+    Forms: [] as Array<FormModel.FormInfo>,
     Questions: [] as Array<FormModel.QuestionInfo>,
-    Choices: [] as Array<FormModel.ChoiceInfo>,
-    QuestionType: [] as Array<FormModel.QuestionTypeInfo>
+    Choices: [] as Array<FormModel.ChoiceInfo>
   } as FormModel.State);
 
   refresh$: BehaviorSubject<boolean>;
@@ -34,23 +33,35 @@ export class FormStateService {
     return this.store.sliceState((state) => state[key]);
   }
 
+  getFormById$(key: string): Observable<FormModel.FormInfo> {
+    return this.store.sliceState((state) => state.Forms.find(x => x.id == key));
+  }
+
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo> {
-    return this.store.sliceState((state) => state['Questions'].find(x => x.id == key));
+    return this.store.sliceState((state) => state.Questions.find(x => x.id == key));
   }
 
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>> {
-    return this.store.sliceState((state) => state['Choices'].filter(x => x.questionId == key));
+    return this.store.sliceState((state) => state.Choices.filter(x => x.questionId == key));
   }
 
-  getQuestionTypeByQuestionId$(key: string): Observable<FormModel.QuestionTypeInfo> {
-    return this.store.sliceState((state) => state['QuestionType'].find(x => x.questionId == key));
-  }
-
-  setForm(data: FormModel.FormInfo) {
-    if(!data) return;
+  setForms(data: Array<FormModel.FormInfo>) {
+    if(!data || data.length <= 0) return;
     this.store.patch({
-      Form: data
+      Forms: data
     });
+    let questions = _.flatten(data.map(x => x.questions.map(y => y)));
+    this.setQuestions(questions);
+  }
+
+  setFormOne(data: FormModel.FormInfo) {
+    if(!data) return;
+    let result = _.unionBy([data], this.store.state.Forms, 'id');
+    this.store.patch({
+      Forms: result
+    });
+    let questions = data.questions.map(y => y);
+    this.setQuestions(questions);
   }
 
   setQuestions(data: Array<FormModel.QuestionInfo>) {
@@ -60,41 +71,23 @@ export class FormStateService {
     });
     let choices = _.flatten(data.map(x => x.choices.map(y => y)));
     this.setChoices(choices);
-    let questionType = _.flatten(data.map(x => x.questionType.questionType));
-    this.setQuestionTypes(questionType);
   }
 
   setQuestionOne(data: FormModel.QuestionInfo) {
     if(!data) return;
-    let result = _.unionBy([data], this.store.state['Questions'], 'id');
+    let result = _.unionBy([data], this.store.state.Questions, 'id');
     this.store.patch({
       Questions: result
     });
     let choices = data.choices.map(y => y);
     this.setChoices(choices);
-    this.setQuestionTypeOne(data.questionType);
   }
 
   setChoices(data: Array<FormModel.ChoiceInfo>) {
     if(!data || data.length <= 0) return;
-    let result = _.unionBy(data, this.store.state['Choices'], 'id');
+    let result = _.unionBy(data, this.store.state.Choices, 'id');
     this.store.patch({
       Choices: result
-    });
-  }
-
-  setQuestionTypes(data: Array<FormModel.QuestionTypeInfo>) {
-    if(!data || data.length <= 0) return;
-    this.store.patch({
-      QuestionType: data
-    });
-  }
-
-  setQuestionTypeOne(data: FormModel.QuestionTypeInfo) {
-    if(!data) return;
-    let result = _.unionBy([data], this.store.state['QuestionType'], 'questionId');
-    this.store.patch({
-      QuestionType: result
     });
   }
 

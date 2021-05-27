@@ -1,5 +1,5 @@
 <div style="background: #ECECEC;">
-  <form [formGroup]="formGroup" validateOnSubmit *ngIf="formDetail">
+  <form [formGroup]="formGroup" validateOnSubmit *ngIf="form">
     <nz-row>
       <nz-col style="width: 100%; padding: 15px 15px 0px 15px;">
         <nz-card [nzBordered]="true">
@@ -68,9 +68,9 @@
         </nz-card>
       </nz-col>
     </nz-row>
-    <nz-row *ngFor="let item of formDetail?.questions; let index = index">
+    <nz-row *ngFor="let item of form?.questions; let index = index">
       <nz-col style="width: 100%; padding: 0px 15px 0px 15px;">
-        <fs-tw-question-card [questionDetail]="item"></fs-tw-question-card>
+        <fs-tw-question-card [questionId]="item.id"></fs-tw-question-card>
       </nz-col>
     </nz-row>
     <nz-row>
