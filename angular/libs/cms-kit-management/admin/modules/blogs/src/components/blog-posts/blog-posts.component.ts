@@ -10,9 +10,8 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import {
-  eCmsKitComponents,
-  ExtensionsService,
-} from '@fs-tw/cms-kit-management/config';
+  ePostsComponents
+} from '../../enums/component-names';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import {
   catchError,
@@ -35,7 +34,7 @@ import { BehaviorSubject, merge, Observable, of } from 'rxjs';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: eCmsKitComponents.BlogPosts,
+      useValue: ePostsComponents.BlogPosts,
     },
   ],
 })
@@ -57,7 +56,6 @@ export class BlogPostsComponent implements OnInit {
   data$: Observable<PagedResultDto<Volo.CmsKit.Admin.Blogs.BlogPostListDto>>;
 
   constructor(
-    private readonly extensionsService: ExtensionsService,
     private readonly injector: Injector,
     public readonly list: ListService,
     private confirmationService: ConfirmationService,
@@ -75,21 +73,6 @@ export class BlogPostsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.extensionsService.Actions$['CmsKit.BlogPostsComponent'].subscribe(
-      (x) => {
-        switch (x.method) {
-          case 'Create':
-            this.onAdd();
-            break;
-          case 'Edit':
-            this.onEdit(x.data.record.id);
-            break;
-          case 'Delete':
-            this.delete(x.data.record.id, x.data.record.title);
-            break;
-        }
-      }
-    );
     this.tabs$ = this.blogAdminService.getListByInput({} as any).pipe(
       map((json) => {
         return json.items.map((i) => {

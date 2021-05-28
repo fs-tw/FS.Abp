@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
-import { eCmsKitComponents } from '@fs-tw/cms-kit-management/config';
+import { eCommentsComponents } from '../../enums/component-names';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 
 @Component({
@@ -11,7 +11,7 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: eCmsKitComponents.Comments,
+      useValue: eCommentsComponents.Comments,
     },
   ]  
 })

@@ -9,9 +9,8 @@ import {
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import { Observable, Subscription } from 'rxjs';
 import {
-  ExtensionsService,
-  eCmsKitComponents,
-} from '@fs-tw/cms-kit-management/config';
+  ePagesComponents,
+} from '../../enums/component-names';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { filter, switchMap, take } from 'rxjs/operators';
 
@@ -22,7 +21,7 @@ import { filter, switchMap, take } from 'rxjs/operators';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: eCmsKitComponents.Pages,
+      useValue: ePagesComponents.Pages,
     },
   ],
 })
@@ -40,7 +39,6 @@ export class PagesComponent implements OnInit, OnDestroy {
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    private extensionsService: ExtensionsService,
     private confirmationService: ConfirmationService
   ) {
     this.service = this.injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
@@ -50,23 +48,6 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subs.add(
-      this.extensionsService.Actions$[eCmsKitComponents.Pages].subscribe(
-        (x) => {
-          switch (x.method) {
-            case 'Create':
-              this.onAdd();
-              break;
-            case 'Edit':
-              this.onEdit(x.data.record.id);
-              break;
-            case 'Delete':
-              this.delete(x.data.record.id);
-              break;
-          }
-        }
-      )
-    );
   }
 
   onAdd() {

@@ -35,6 +35,81 @@ const blogsModules=[
   }
 ]
 
+const commentsModels=[
+  {
+    path: '/cms/comments',
+    name: eCmsKitManagementRouteNames.Comments,
+    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    requiredPolicy: eCmsManagementPolicyNames.Comments,
+    iconClass: 'fa fa-comments',
+    order: 2
+  },
+  {
+    path: '/cms/comments/comment',
+    name: eCmsKitManagementRouteNames.Comments+'.comment',
+    parentName: eCmsKitManagementRouteNames.Comments,
+    requiredPolicy: eCmsManagementPolicyNames.Comments,
+    iconClass: 'fa fa-comments',
+    order: 1
+  },
+
+];
+const pagesModels=[
+  {
+    path: '/cms/pages',
+    name: eCmsKitManagementRouteNames.Pages,
+    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    requiredPolicy: eCmsManagementPolicyNames.Pages,
+    iconClass: 'fa fa-file-alt',
+    order: 3
+  },
+  {
+    path: '/cms/pages/page',
+    name: eCmsKitManagementRouteNames.Pages+".page",
+    parentName: eCmsKitManagementRouteNames.Pages,
+    requiredPolicy: eCmsManagementPolicyNames.Pages,
+    iconClass: 'fa fa-file-alt',
+    order: 3
+  },
+];
+const tagsModels=[
+  {
+    path: '/cms/tags',
+    name: eCmsKitManagementRouteNames.Tags,
+    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    requiredPolicy: eCmsManagementPolicyNames.Tags,
+    iconClass: 'fa fa-tags',
+    order: 4
+  },
+  {
+    path: '/cms/tags/tag',
+    name: eCmsKitManagementRouteNames.Tags+'.tag',
+    parentName: eCmsKitManagementRouteNames.Tags,
+    requiredPolicy: eCmsManagementPolicyNames.Tags,
+    iconClass: 'fa fa-tags',
+    order: 1
+  },
+];
+
+const vocabulariesModels=[
+  {
+    path: '/cms/vocabularies',
+    name: eCmsKitManagementRouteNames.Vocabularies,
+    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    //requiredPolicy: eCmsManagementPolicyNames.Comments,
+    iconClass: 'fa fa-comments',
+    order: 6
+  },
+  {
+    path: '/cms/vocabularies/vocabulary',
+    name: eCmsKitManagementRouteNames.Vocabularies+'vocabulary',
+    parentName: eCmsKitManagementRouteNames.Vocabularies,
+    //requiredPolicy: eCmsManagementPolicyNames.Comments,
+    iconClass: 'fa fa-comments',
+    order: 1
+  }
+]
+
 export function configureRoutes(routes: RoutesService) {
   return () => {
     routes.add([
@@ -48,47 +123,11 @@ export function configureRoutes(routes: RoutesService) {
         order: -1
       },
       ...blogsModules,
-      {
-        path: '/cms/comments',
-        name: eCmsKitManagementRouteNames.Comments,
-        parentName: eCmsKitManagementRouteNames.CmsKitManagement,
-        requiredPolicy: eCmsManagementPolicyNames.Comments,
-        iconClass: 'fa fa-comments',
-        order: 2
-      },
-      {
-        path: '/cms/pages',
-        name: eCmsKitManagementRouteNames.Pages,
-        parentName: eCmsKitManagementRouteNames.CmsKitManagement,
-        requiredPolicy: eCmsManagementPolicyNames.Pages,
-        iconClass: 'fa fa-file-alt',
-        order: 3
-      },
-      // {
-      //   path: '/cms/blog-posts',
-      //   name: eCmsKitManagementRouteNames.BlogPosts,
-      //   parentName: eCmsKitManagementRouteNames.CmsKitManagement,
-      //   requiredPolicy: eCmsManagementPolicyNames.BlogPosts,
-      //   iconClass: 'fa fa-file-signature',
-      //   order: 3
-      // },
-      {
-        path: '/cms/tags',
-        name: eCmsKitManagementRouteNames.Tags,
-        parentName: eCmsKitManagementRouteNames.CmsKitManagement,
-        requiredPolicy: eCmsManagementPolicyNames.Tags,
-        iconClass: 'fa fa-tags',
-        order: 4
-      },
-
-      {
-        path: '/cms/vocabularies',
-        name: eCmsKitManagementRouteNames.Vocabularies,
-        parentName: eCmsKitManagementRouteNames.CmsKitManagement,
-        //requiredPolicy: eCmsManagementPolicyNames.Comments,
-        iconClass: 'fa fa-comments',
-        order: 6
-      }
+      ...commentsModels,
+      ...pagesModels,
+      ...tagsModels,
+      ...vocabulariesModels
+     
     ]);
   };
 }

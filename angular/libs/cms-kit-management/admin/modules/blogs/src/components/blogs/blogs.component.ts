@@ -6,9 +6,9 @@ import {
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
 import {
-  eCmsKitComponents,
-  ExtensionsService,
-} from '@fs-tw/cms-kit-management/config';
+  ePostsComponents
+} from '../../enums/component-names';
+
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
@@ -22,7 +22,7 @@ import { forkJoin, of, Subscription } from 'rxjs';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: eCmsKitComponents.Blogs,
+      useValue: ePostsComponents.Blogs,
     },
   ],
 })
@@ -43,34 +43,15 @@ export class BlogsComponent implements OnInit {
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService,
-    private extensionsService: ExtensionsService
+    private confirmationService: ConfirmationService
   ) {
     this.service = this.injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
     this.blogFeatureService = this.injector.get(
       Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService
     );
-    console.log('start');
   }
 
   ngOnInit(): void {
-    this.subs.add(
-      this.extensionsService.Actions$[eCmsKitComponents.Blogs].subscribe(
-        (x) => {
-          switch (x.method) {
-            case 'Create':
-              this.onAdd();
-              break;
-            case 'Edit':
-              this.onEdit(x.data.record.id);
-              break;
-            case 'Delete':
-              this.delete(x.data.record.id);
-              break;
-          }
-        }
-      )
-    );
   }
 
   onAdd() {
