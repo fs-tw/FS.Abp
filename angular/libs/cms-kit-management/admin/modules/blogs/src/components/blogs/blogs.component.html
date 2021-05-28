@@ -1,0 +1,32 @@
+<fs-tw-cms-kit-entity-base
+  [list]="list"
+  [service]="service"
+  title="CmsKit::Blogs"
+></fs-tw-cms-kit-entity-base>
+
+<fs-modal
+  title="AbpUi::Edit"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab title="CmsKit::Blog" [form]="addForm"></fs-modal-info-tab>
+</fs-modal>
+
+<fs-modal
+  title="AbpUi::Edit"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-modal-info-tab
+    title="CmsKit::Blogs"
+    [form]="editForm"
+    [selectedRecord]="editSelectedRecord"
+  ></fs-modal-info-tab>
+
+  <fs-tw-cms-kit-modal-blog-feature-tab
+    [blogFeatures]="editBlogFeatures"
+    [form]="editBlogFeaturesForm"
+  ></fs-tw-cms-kit-modal-blog-feature-tab>
+</fs-modal>

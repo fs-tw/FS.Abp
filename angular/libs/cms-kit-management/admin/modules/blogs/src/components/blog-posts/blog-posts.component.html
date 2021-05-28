@@ -1,0 +1,46 @@
+<nz-card [nzBordered]="true">
+  <nz-tabset
+    nzSize="large"
+    *ngIf="tabs$ | async as tabs"
+    (nzSelectedIndexChange)="selectedChanged(tabs[$event - 1])"
+  >
+    <nz-tab nzTitle="全部"></nz-tab>
+    <nz-tab *ngFor="let i of tabs" [nzTitle]="i.tab"></nz-tab>
+  </nz-tabset>
+  <abp-page-toolbar></abp-page-toolbar><br />
+  <ng-container *ngIf="data$ | async as data">
+    <nz-extensible-table
+      [data]="data.items"
+      [recordsTotal]="data.totalCount"
+      [list]="list"
+    ></nz-extensible-table>
+  </ng-container>
+</nz-card>
+
+<fs-modal
+  title="CmsKit::NewBlogPost"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab
+    title="CmsKit::BlogPosts"
+    [form]="addForm"
+  ></fs-modal-info-tab>
+  <fs-media-tab title="Media"></fs-media-tab>
+</fs-modal>
+
+<fs-modal
+  title="AbpUi::Edit"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-modal-info-tab
+    title="CmsKit::BlogPosts"
+    [form]="editForm"
+  ></fs-modal-info-tab>
+  <fs-media-tab
+    title="CmsKit::Media"
+  ></fs-media-tab>
+</fs-modal>

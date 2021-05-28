@@ -1959,9 +1959,9 @@
   "version" "5.15.3"
 
 "@fs-tw/theme-alain@^430.0.1":
-  "integrity" "sha512-k4r0C0Gpk29gxkGHTPr32LwEiZA+buYNT1d5TyEd/XakCnrUtdoqbNUFTmaztKi6L/LvH/+eUQvNgsq+bjEL4g=="
-  "resolved" "https://registry.npmjs.org/@fs-tw/theme-alain/-/theme-alain-430.0.3.tgz"
-  "version" "430.0.3"
+  "integrity" "sha512-C2fN8jjBsX5Xpp3fJ5rWSggBPR+ru0iyvzVptoV7jH5v+B3Z02cw64ND7NAba1JnZjaLVQAGYXjPo+5rieEssw=="
+  "resolved" "https://registry.npmjs.org/@fs-tw/theme-alain/-/theme-alain-430.0.6.tgz"
+  "version" "430.0.6"
   dependencies:
     "@delon/abc" "^11.10.0"
     "@delon/acl" "^11.10.0"
@@ -7381,11 +7381,6 @@
   "integrity" "sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA=="
   "resolved" "https://registry.npmjs.org/file-saver/-/file-saver-2.0.5.tgz"
   "version" "2.0.5"
-
-"file-uri-to-path@1.0.0":
-  "integrity" "sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw=="
-  "resolved" "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz"
-  "version" "1.0.0"
 
 "filelist@^1.0.1":
   "integrity" "sha512-z7O0IS8Plc39rTCq6i6iHxk43duYOn8uFJiWSewIq0Bww1RNybVHSCjahmcC87ZqAm4OTvFzlzeGu3XAzG1ctQ=="
