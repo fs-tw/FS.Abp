@@ -1,14 +1,11 @@
 import {
   AuthGuard,
   DynamicLayoutComponent,
-  PermissionGuard,
-  ReplaceableComponents,
-  ReplaceableRouteContainerComponent,
+  PermissionGuard
 } from '@abp/ng.core';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { BlogPostsComponent, BlogsComponent, CommentsComponent, PagesComponent, TagsComponent,VocabulariesComponent } from '@fs-tw/cms-kit-management/admin/shared';
 
 const routes: Routes = [
   { path: '', redirectTo: 'blogs', pathMatch: 'full' },
@@ -18,38 +15,47 @@ const routes: Routes = [
     canActivate: [AuthGuard, PermissionGuard],
     children: [
       {
-        path: 'blog-posts',
-        component: BlogPostsComponent,
-      },
-      {
-        path: 'blog-posts2',
-        component: BlogPostsComponent,
-      },
-      {
         path: 'blogs',
-        component: BlogsComponent,
-      },
-      {
-        path: 'pages',
-        component: PagesComponent
-      },
-      {
-        path: 'tags',
-        component:TagsComponent
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/blogs').then(
+            (m) => m.BlogsModule
+          ),
       },
       {
         path: 'comments',
-        component:CommentsComponent
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/comments').then(
+            (m) => m.CommentsModule
+          ),
       },
       {
+        path: 'pages',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/pages').then(
+            (m) => m.PagesModule
+          ),
+      },
+      {
+        path: 'tags',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/tags').then(
+            (m) => m.TagsModule
+          ),
+      },
+      
+      {
         path: 'vocabularies',
-        component:VocabulariesComponent
-      }   
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/vocabularies').then(
+            (m) => m.VocabulariesModule
+          ),
+      }
+
     ],
   },
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)],
 })
 export class CmsKitManagementAdminRoutingModule {}
