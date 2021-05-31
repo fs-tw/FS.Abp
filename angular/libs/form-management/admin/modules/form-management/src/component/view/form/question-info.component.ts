@@ -7,7 +7,6 @@ import { FormModel } from './models/models';
 export type QuestionProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
   setQuestionOne(data: FormModel.QuestionInfo);
-  refresh$: BehaviorSubject<boolean>;
 }
 
 @Component({
@@ -93,7 +92,6 @@ export class QuestionInfoComponent implements OnInit {
         let resulr = { ...this.question, ...x };
         this.question = resulr;
         this.provider.setQuestionOne(resulr);
-        this.provider.refresh$.next(true);
       })
     );
   }
@@ -101,6 +99,5 @@ export class QuestionInfoComponent implements OnInit {
   onQuestionTypeChange(questionType: FormModel.QuestionTypes) {
     this.question.questionType = questionType;
     this.provider.setQuestionOne(this.question);
-    this.provider.refresh$.next(true);
   }
 }

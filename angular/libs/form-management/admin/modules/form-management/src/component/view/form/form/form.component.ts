@@ -8,7 +8,6 @@ export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;
   getFormById(key: string): FormModel.FormInfo;
   setFormOne(data: FormModel.FormInfo);
-  refresh$: BehaviorSubject<boolean>;
 };
 
 @Component({
@@ -57,7 +56,6 @@ export class FormComponent implements OnInit {
         let result = { ...this.form, ...x };
         this.form = result;
         this.provider.setFormOne(result);
-        this.provider.refresh$.next(true);
       })
     );
   }
@@ -78,6 +76,5 @@ export class FormComponent implements OnInit {
       choices: []
     } as FormModel.QuestionInfo;
     this.provider.setFormOne({ ...form, questions: questions.concat([question]) });
-    this.provider.refresh$.next(true);
   }
 }

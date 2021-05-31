@@ -7,7 +7,6 @@ import { FormModel } from './models/models';
 export type CheckboxProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
   setChoices(data: Array<FormModel.ChoiceInfo>);
-  refresh$: BehaviorSubject<boolean>;
 }
 
 @Component({
@@ -117,7 +116,6 @@ export class CheckboxComponent implements OnInit {
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         this.provider.setChoices(x.choices);
-        this.provider.refresh$.next(true);
       })
     );
   }
