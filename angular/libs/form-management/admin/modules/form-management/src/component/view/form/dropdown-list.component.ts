@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, Subscription } from 'rxjs';
-import { FormStateService } from './providers';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
+
 export type DropdownListProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
   setChoices(data: Array<FormModel.ChoiceInfo>);
+  refresh$: BehaviorSubject<boolean>;
 }
 
 @Component({
@@ -71,7 +73,7 @@ export class DropdownListComponent implements OnInit {
   @Input() provider: DropdownListProvider;
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Array<Subscription> = [];
+  subscription: Subscription = null;
   choices: FormArray = new FormArray([]);
 
   updateChoices = (data: Array<FormModel.ChoiceInfo>) => {
@@ -89,15 +91,14 @@ export class DropdownListComponent implements OnInit {
   ngOnChanges() {
     if(!this.questionId) return;
     this.ngOnDestroy();
-    this.subscription.push(this.provider.getChoicesByQuestionId$(this.questionId).subscribe(
+    this.subscription.add(this.provider.getChoicesByQuestionId$(this.questionId).subscribe(
       this.updateChoices
     ));
   }
 
   ngOnDestroy() {
-    this.subscription.forEach(x => {
-      x.unsubscribe();
-    });
+    if(!this.subscription) { this.subscription = new Subscription(); return; }
+    this.subscription.unsubscribe();
   }
 
   buildForm(choices: Array<FormModel.ChoiceInfo>) {
@@ -107,9 +108,10 @@ export class DropdownListComponent implements OnInit {
     this.formGroup = this.fb.group({
       choices: this.choices
     });
-    this.subscription.push(
-      this.formGroup.valueChanges.subscribe((x) => {
+    this.subscription.add(
+      this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         this.provider.setChoices(x.choices);
+        this.provider.refresh$.next(true);
       })
     );
   }

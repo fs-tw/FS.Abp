@@ -18,7 +18,7 @@ export class FormStateService
     DropdownListProvider,
     FormProvider,
     QuestionCardProvider {
-  private store = new InternalStore({
+  public store = new InternalStore({
     Forms: [] as Array<FormModel.FormInfo>,
     Questions: [] as Array<FormModel.QuestionInfo>,
     Choices: [] as Array<FormModel.ChoiceInfo>,
@@ -36,6 +36,7 @@ export class FormStateService
 
   set(data: FormModel.State) {
     this.store.patch(data);
+    this.refresh$.next(true);
   }
 
   getOne$(key: string) {
@@ -48,10 +49,18 @@ export class FormStateService
     );
   }
 
+  getFormById(key: string): FormModel.FormInfo {
+    return this.store.state.Forms.find((x) => x.id == key);
+  }
+
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo> {
     return this.store.sliceState((state) =>
       state.Questions.find((x) => x.id == key)
     );
+  }
+
+  getQuestionsByQuestionId(key: string): FormModel.QuestionInfo {
+    return this.store.state.Questions.find((x) => x.id == key);
   }
 
   getChoicesByQuestionId$(
@@ -60,6 +69,12 @@ export class FormStateService
     return this.store.sliceState((state) =>
       state.Choices.filter((x) => x.questionId == key)
     );
+  }
+
+  getChoicesByQuestionId(
+    key: string
+  ): Array<FormModel.ChoiceInfo> {
+    return this.store.state.Choices.filter((x) => x.questionId == key);
   }
 
   setForms(data: Array<FormModel.FormInfo>) {
@@ -100,9 +115,17 @@ export class FormStateService
     this.setChoices(choices);
   }
 
-  setChoices(data: Array<FormModel.ChoiceInfo>) {
+  setChoices(data: Array<FormModel.ChoiceInfo> = []) {
     if (!data || data.length <= 0) return;
     let result = _.unionBy(data, this.store.state.Choices, 'id');
+    this.store.patch({
+      Choices: result,
+    });
+  }
+
+  setChoiceOne(data: FormModel.ChoiceInfo = {} as FormModel.ChoiceInfo) {
+    if (!data) return;
+    let result = _.unionBy([data], this.store.state.Choices, 'id');
     this.store.patch({
       Choices: result,
     });

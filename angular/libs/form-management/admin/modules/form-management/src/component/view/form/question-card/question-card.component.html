@@ -4,7 +4,7 @@
   [nzExtra]="extraTemplate"
   *ngIf="question"
 >
-  <fs-tw-question-info [questionId]="question.id"></fs-tw-question-info>
+  <fs-tw-question-info [provider]="provider" [questionId]="question.id"></fs-tw-question-info>
 
   <div [ngSwitch]="question.questionType">
     <ng-container *ngSwitchCase="4">
@@ -22,7 +22,7 @@
   </div>
 
   <ng-template #questionTitle>
-    <span>{{ 'Forms::Form:Questions:QuestionIndex' | abpLocalization }}</span>
+    <span>{{ 'Forms::Form:Questions:QuestionIndex' | abpLocalization: question.index }}</span>
   </ng-template>
   <ng-template #extraTemplate>
     <nz-row>

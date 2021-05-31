@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, Subscription } from 'rxjs';
-import { FormStateService } from './providers';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
 
 export type CheckboxProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
   setChoices(data: Array<FormModel.ChoiceInfo>);
+  refresh$: BehaviorSubject<boolean>;
 }
 
 @Component({
@@ -71,7 +72,7 @@ export class CheckboxComponent implements OnInit {
   @Input() questionId: string = null;
   @Input() provider: CheckboxProvider;
 
-  subscription: Subscription = new Subscription();
+  subscription: Subscription = null;
 
   formGroup: FormGroup = this.fb.group({});
 
@@ -99,6 +100,7 @@ export class CheckboxComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    if(!this.subscription) { this.subscription = new Subscription(); return; }
     this.subscription.unsubscribe();
   }
 
@@ -113,8 +115,9 @@ export class CheckboxComponent implements OnInit {
     });
 
     this.subscription.add(
-      this.formGroup.valueChanges.subscribe((x) => {
+      this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         this.provider.setChoices(x.choices);
+        this.provider.refresh$.next(true);
       })
     );
   }

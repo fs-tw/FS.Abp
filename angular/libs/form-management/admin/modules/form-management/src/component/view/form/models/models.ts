@@ -37,6 +37,7 @@ export namespace FormModel {
   }
 
   export class QuestionInfo implements Volo.Forms.Questions.QuestionDto {
+    formId?: string;
     id: string;
     index: number;
     title: string;
@@ -47,6 +48,7 @@ export namespace FormModel {
     choices: Array<ChoiceInfo>;
 
     constructor(initialValues: Volo.Forms.Questions.QuestionDto) {
+      this.formId = initialValues.formId;
       this.id = initialValues.id;
       this.index = initialValues.index;
       this.title = initialValues.title;
