@@ -5,15 +5,22 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
-import {
-  ePostsComponents
-} from '../../enums/component-names';
-
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
+import {
+  setDefaults,
+  setContributors,
+} from '@fs-tw/theme-alain/shared/extensions';
+import {
+  BLOGS_CREATE_FORM_PROPS,
+  BLOGS_EDIT_FORM_PROPS,
+  BLOGS_ENTITY_ACTIONS,
+  BLOGS_ENTITY_PROPS,
+  BLOGS_TOOLBAR_ACTIONS,
+} from './defaults/index';
 
 @Component({
   selector: 'fs-tw-blogs',
@@ -22,14 +29,15 @@ import { forkJoin, of, Subscription } from 'rxjs';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: ePostsComponents.Blogs,
+      useValue: BlogsComponent.NAME,
     },
   ],
 })
 export class BlogsComponent implements OnInit {
+  public static NAME: string = 'Posts.BlogsComponent';
+  subs: Subscription = new Subscription();
   service: Volo.CmsKit.Admin.Blogs.BlogAdminService;
   blogFeatureService: Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService;
-  subs: Subscription = new Subscription();
 
   createModalVisible = false;
   addForm: FormGroup;
@@ -45,14 +53,35 @@ export class BlogsComponent implements OnInit {
     public readonly list: ListService,
     private confirmationService: ConfirmationService
   ) {
+    this.subs.add(
+      setDefaults(injector, BlogsComponent.NAME, {
+        entityAction: BLOGS_ENTITY_ACTIONS,
+        toolbarActions: BLOGS_TOOLBAR_ACTIONS,
+        entityProps: BLOGS_ENTITY_PROPS,
+        createFormProps: BLOGS_CREATE_FORM_PROPS,
+        editFormProps: BLOGS_EDIT_FORM_PROPS,
+      }).subscribe((x) => {
+        switch (x.method) {
+          case 'Create':
+            this.onAdd();
+            break;
+          case 'Edit':
+            this.onEdit(x.data.record.id);
+            break;
+          case 'Delete':
+            this.delete(x.data.record.id, x.data.record.name);
+            break;
+        }
+      })
+    );
+
     this.service = this.injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
     this.blogFeatureService = this.injector.get(
       Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService
     );
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onAdd() {
     const data = new FormPropData(
@@ -129,9 +158,11 @@ export class BlogsComponent implements OnInit {
       });
   }
 
-  delete(id: string) {
+  delete(id: string, name: string) {
     this.confirmationService
-      .warn('CmsKit::BlogDeletionConfirmationMessage', 'CmsKit::AreYouSure')
+      .warn('CmsKit::BlogDeletionConfirmationMessage', 'CmsKit::AreYouSure', {
+        messageLocalizationParams: [name],
+      })
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
         switchMap((_) => this.service.deleteById(id)),

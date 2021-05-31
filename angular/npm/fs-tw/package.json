@@ -6,6 +6,6 @@
   "peerDependencies": {
   },
   "dependencies": {
-    "@fs-tw/theme-alain": "^430.0.6"
+    "@fs-tw/theme-alain": "^430.1.0"
   }
 }

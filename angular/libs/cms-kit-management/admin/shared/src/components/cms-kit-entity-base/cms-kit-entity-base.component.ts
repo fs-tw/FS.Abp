@@ -13,8 +13,7 @@ export type EntityService<T> = {
 
 @Component({
   selector: 'fs-tw-cms-kit-entity-base',
-  templateUrl: './cms-kit-entity-base.component.html',
-  styleUrls: ['./cms-kit-entity-base.component.less'],
+  templateUrl: './cms-kit-entity-base.component.html'
 })
 export class CmsKitEntityBaseComponent<T> implements OnInit {
   @Input() title: string;
