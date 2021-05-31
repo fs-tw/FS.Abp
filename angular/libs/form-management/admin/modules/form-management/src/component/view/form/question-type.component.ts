@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
 
 @Component({
@@ -33,7 +34,7 @@ export class QuestionTypeComponent implements OnInit {
   questionTypeChange: EventEmitter<FormModel.QuestionTypes> = new EventEmitter<FormModel.QuestionTypes>();
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Array<Subscription> = [];
+  subscription: Subscription = null;
 
   constructor(
     private fb: FormBuilder
@@ -50,17 +51,16 @@ export class QuestionTypeComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.subscription.forEach(x => {
-      x.unsubscribe();
-    });
+    if(!this.subscription) { this.subscription = new Subscription(); return; }
+    this.subscription.unsubscribe();
   }
 
   buildForm(questionType: FormModel.QuestionTypes) {
     this.formGroup = this.fb.group({
       questionType: [questionType],
     });
-    this.subscription.push(
-      this.formGroup.valueChanges.subscribe((x) => {
+    this.subscription.add(
+      this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         this.questionTypeChange.emit(x.questionType);
       })
     );

@@ -1,8 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { FormStateService } from './providers/form-state.service';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
+
+export type QuestionProvider ={
+  getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
+  setQuestionOne(data: FormModel.QuestionInfo);
+  refresh$: BehaviorSubject<boolean>;
+}
 
 @Component({
   selector: 'fs-tw-question-info',
@@ -45,9 +51,10 @@ import { FormModel } from './models/models';
 })
 export class QuestionInfoComponent implements OnInit {
   @Input() questionId: string = null;
+  @Input() provider: QuestionProvider;
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Array<Subscription> = [];
+  subscription: Subscription = null;
   question: FormModel.QuestionInfo = null;
 
   updateQuestion = (data: FormModel.QuestionInfo) => {
@@ -57,7 +64,6 @@ export class QuestionInfoComponent implements OnInit {
   };
 
   constructor(
-    private formStateService: FormStateService,
     private fb: FormBuilder
   ) {
   }
@@ -67,15 +73,14 @@ export class QuestionInfoComponent implements OnInit {
   ngOnChanges() {
     if(!this.questionId) return;
     this.ngOnDestroy();
-    this.subscription.push(this.formStateService.getQuestionsByQuestionId$(this.questionId).subscribe(
+    this.subscription.add(this.provider.getQuestionsByQuestionId$(this.questionId).subscribe(
       this.updateQuestion
     ));
   }
 
   ngOnDestroy() {
-    this.subscription.forEach(x => {
-      x.unsubscribe();
-    });
+    if(!this.subscription) { this.subscription = new Subscription(); return; }
+    this.subscription.unsubscribe();
   }
 
   buildForm(question: FormModel.QuestionInfo) {
@@ -83,17 +88,19 @@ export class QuestionInfoComponent implements OnInit {
       title: [question.title],
       description: [question.description],
     });
-    this.subscription.push(
-      this.formGroup.valueChanges.subscribe((x) => {
+    this.subscription.add(
+      this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         let resulr = { ...this.question, ...x };
         this.question = resulr;
-        this.formStateService.setQuestionOne(resulr);
+        this.provider.setQuestionOne(resulr);
+        this.provider.refresh$.next(true);
       })
     );
   }
 
   onQuestionTypeChange(questionType: FormModel.QuestionTypes) {
     this.question.questionType = questionType;
-    this.formStateService.setQuestionOne(this.question);
+    this.provider.setQuestionOne(this.question);
+    this.provider.refresh$.next(true);
   }
 }
