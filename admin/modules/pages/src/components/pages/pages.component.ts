@@ -7,12 +7,20 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
-import { Observable, Subscription } from 'rxjs';
-import {
-  ePagesComponents,
-} from '../../enums/component-names';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 import { filter, switchMap, take } from 'rxjs/operators';
+import {
+  setDefaults,
+  setContributors,
+} from '@fs-tw/theme-alain/shared/extensions';
+import {
+  PAGES_CREATE_FORM_PROPS,
+  DEFAULT_PAGES_EDIT_FORM_PROPS,
+  PAGES_ENTITY_ACTIONS,
+  PAGES_ENTITY_PROPS,
+  PAGES_TOOLBAR_ACTIONS,
+} from './defaults/index';
 
 @Component({
   selector: 'fs-tw-pages',
@@ -21,11 +29,12 @@ import { filter, switchMap, take } from 'rxjs/operators';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: ePagesComponents.Pages,
+      useValue: PagesComponent.NAME,
     },
   ],
 })
 export class PagesComponent implements OnInit, OnDestroy {
+  public static NAME: string = 'Pages.CommentsComponent';
   service: Volo.CmsKit.Admin.Pages.PageAdminService;
   subs: Subscription = new Subscription();
 
@@ -41,14 +50,20 @@ export class PagesComponent implements OnInit, OnDestroy {
     public readonly list: ListService,
     private confirmationService: ConfirmationService
   ) {
+    setDefaults(injector, PagesComponent.NAME, {
+      entityAction: PAGES_ENTITY_ACTIONS,
+      toolbarActions: PAGES_TOOLBAR_ACTIONS,
+      entityProps: PAGES_ENTITY_PROPS,
+      createFormProps: PAGES_CREATE_FORM_PROPS,
+      editFormProps: DEFAULT_PAGES_EDIT_FORM_PROPS,
+    });
     this.service = this.injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onAdd() {
     const data = new FormPropData(
@@ -82,12 +97,12 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
   edit(formValue) {
     const request: Volo.CmsKit.Admin.Pages.UpdatePageInputDto = {
-      ...formValue
+      ...formValue,
     };
     this.service
       .updateByIdAndInput(this.editSelectedRecord.id, request)
       .pipe(take(1))
-      .subscribe(_ => {
+      .subscribe((_) => {
         this.editModalVisible = false;
         this.list.get();
       });
@@ -95,16 +110,13 @@ export class PagesComponent implements OnInit, OnDestroy {
 
   delete(id: string) {
     this.confirmationService
-      .warn(
-        'CmsKit::PageDeletionConfirmationMessage',
-        'CmsKit::AreYouSure'
-      )
+      .warn('CmsKit::PageDeletionConfirmationMessage', 'CmsKit::AreYouSure')
       .pipe(
-        filter(status => status === Confirmation.Status.confirm),
-        switchMap(_ => this.service.deleteById(id)),
-        take(1),
+        filter((status) => status === Confirmation.Status.confirm),
+        switchMap((_) => this.service.deleteById(id)),
+        take(1)
       )
-      .subscribe(_ => {
+      .subscribe((_) => {
         this.list.get();
       });
   }

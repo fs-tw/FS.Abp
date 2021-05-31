@@ -1,31 +1,27 @@
-import {
-  Component,
-  Injector,
-  OnInit
-} from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { ListService, RestService, PagedResultDto } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
-import {
-  ePostsComponents
-} from '../../enums/component-names';
 import { Volo } from '@fs-tw/cms-kit-management/proxy';
-import {
-  catchError,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  take,
-  tap,
-} from 'rxjs/operators';
+import { filter, map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
-import { BehaviorSubject, merge, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import {
+  setContributors,
+  setDefaults,
+} from '@fs-tw/theme-alain/shared/extensions';
+import {
+  BLOG_POSTS_CREATE_FORM_PROPS,
+  DEFAULT_BLOG_POSTS_EDIT_FORM_PROPS,
+  BLOG_POSTS_ENTITY_ACTIONS,
+  BLOG_POSTS_ENTITY_PROPS,
+  BLOG_POSTS_TOOLBAR_ACTIONS,
+} from './defaults/index';
 
 @Component({
   selector: 'fs-tw-blog-posts',
@@ -34,11 +30,12 @@ import { BehaviorSubject, merge, Observable, of } from 'rxjs';
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: ePostsComponents.BlogPosts,
+      useValue: BlogPostsComponent.NAME,
     },
   ],
 })
 export class BlogPostsComponent implements OnInit {
+  public static NAME: string = 'Posts.BlogPostsComponent';
   blogAdminService: Volo.CmsKit.Admin.Blogs.BlogAdminService;
   blogPostAdminService: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
   mediaService: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorAdminService;
@@ -61,6 +58,26 @@ export class BlogPostsComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private restService: RestService
   ) {
+    setDefaults(injector, BlogPostsComponent.NAME, {
+      entityAction: BLOG_POSTS_ENTITY_ACTIONS,
+      toolbarActions: BLOG_POSTS_TOOLBAR_ACTIONS,
+      entityProps: BLOG_POSTS_ENTITY_PROPS,
+      createFormProps: BLOG_POSTS_CREATE_FORM_PROPS,
+      editFormProps: DEFAULT_BLOG_POSTS_EDIT_FORM_PROPS,
+    }).subscribe((x) => {
+      switch (x.method) {
+        case 'Create':
+          this.onAdd();
+          break;
+        case 'Delete':
+          this.delete(x.data.record.id, x.data.record.name);
+          break;
+        case 'Edit':
+          this.onEdit(x.data.record.id);
+          break;
+      }
+    });
+
     this.blogAdminService = injector.get(
       Volo.CmsKit.Admin.Blogs.BlogAdminService
     );
