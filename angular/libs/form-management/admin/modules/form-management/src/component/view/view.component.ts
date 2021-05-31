@@ -45,7 +45,7 @@ export class ViewStateService extends FormStateService {
 export class ViewComponent implements OnInit {
   @Input() formId: string;
 
-  subscription: Subscription = new Subscription();;
+  subscription: Subscription = new Subscription();
   constructor(
     protected injector: Injector,
     public viewStateService: ViewStateService,
@@ -54,11 +54,9 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscription.add(this.viewStateService.refresh$.subscribe(x => {
-      if(x) {
-        let result = this.viewStateService.mergeForm();
-        console.log(result);
-      }
+    this.subscription.add(this.viewStateService.get$().subscribe(x => {
+      let result = this.viewStateService.mergeForm();
+      console.log(result);
     }));
   }
 
