@@ -1,7 +1,7 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/form-management/proxy';
 
-export const DEFAULT_FORM_ENTITY_PROPS = EntityProp.createMany<Volo.Forms.Forms.FormDto>([
+export const FORMS_ENTITY_PROPS = EntityProp.createMany<Volo.Forms.Forms.FormDto>([
   {
     type: ePropType.String,
     name: 'title',

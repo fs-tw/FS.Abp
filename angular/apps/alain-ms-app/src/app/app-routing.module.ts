@@ -76,8 +76,8 @@ const routes: Routes = [
   {
     path: 'form-management',
     loadChildren: () =>
-      import('@fs-tw/form-management/admin/modules/form-management').then((m) =>
-        m.FormManagementModule.forLazy()
+      import('@fs-tw/form-management/admin').then((m) =>
+        m.FormManagementAdminModule.forLazy()
       ),
     canActivate: [AuthGuard, PermissionGuard],
   },

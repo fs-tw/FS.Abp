@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full',redirectTo: 'forms', },
   {
     path: 'forms',
-    //loadChildren: FormManagementModule.forEarly
+    loadChildren: ()=>import('@fs-tw/form-management/admin/modules/form-management').then(m=>m.FormManagementModule)
     //canActivate: [AuthGuard, PermissionGuard],
   },
 ];

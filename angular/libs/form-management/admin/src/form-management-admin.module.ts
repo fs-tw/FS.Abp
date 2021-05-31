@@ -7,7 +7,7 @@ import { FormManagementAdminSharedModule } from '@fs-tw/form-management/admin/sh
   imports: [
     FormManagementAdminSharedModule,
     CoreModule,
-    //FormManagementAdminRoutingModule,
+    FormManagementAdminRoutingModule,
   ],
   exports: [
     FormManagementAdminSharedModule,
