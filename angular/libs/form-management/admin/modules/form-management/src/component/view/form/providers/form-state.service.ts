@@ -7,6 +7,7 @@ import { CheckboxProvider } from './../checkbox.component';
 import { DropdownListProvider } from './../dropdown-list.component';
 import { FormProvider } from '../form/form.component';
 import { QuestionCardProvider } from '../question-card/question-card.component';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 // @dynamic
 @Injectable({
@@ -25,6 +26,10 @@ export class FormStateService
   } as FormModel.State);
 
   refresh$: BehaviorSubject<boolean>;
+
+  getFormChangedDataOfDelayTime$(): Observable<FormModel.State> {
+    return this.store.sliceState((state) => state).pipe(debounceTime(500), distinctUntilChanged());
+  }
 
   get$() {
     return this.store.sliceState((state) => state);
@@ -115,15 +120,19 @@ export class FormStateService
     this.setChoices(choices);
   }
 
-  setChoices(data: Array<FormModel.ChoiceInfo> = []) {
+  setChoices(data: Array<FormModel.ChoiceInfo>) {
     if (!data || data.length <= 0) return;
-    let result = _.unionBy(data, this.store.state.Choices, 'id');
+    let questionIds = _.unionBy(data.map(x => x.questionId));
+    let removeChoicesByQuestionId = _.remove(this.store.state.Choices, function(o) {
+      return questionIds.filter(x => x == o.questionId).length <= 0;
+    });
+    let result = _.unionBy(data, removeChoicesByQuestionId, 'id');
     this.store.patch({
       Choices: result,
     });
   }
 
-  setChoiceOne(data: FormModel.ChoiceInfo = {} as FormModel.ChoiceInfo) {
+  setChoiceOne(data: FormModel.ChoiceInfo) {
     if (!data) return;
     let result = _.unionBy([data], this.store.state.Choices, 'id');
     this.store.patch({

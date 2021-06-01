@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
+import * as _ from 'lodash';
 
 export type QuestionProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
@@ -53,7 +54,7 @@ export class QuestionInfoComponent implements OnInit {
   @Input() provider: QuestionProvider;
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Subscription = null;
+  subscription: Subscription = new Subscription();
   question: FormModel.QuestionInfo = null;
 
   updateQuestion = (data: FormModel.QuestionInfo) => {
@@ -71,14 +72,12 @@ export class QuestionInfoComponent implements OnInit {
 
   ngOnChanges() {
     if(!this.questionId) return;
-    this.ngOnDestroy();
     this.subscription.add(this.provider.getQuestionsByQuestionId$(this.questionId).subscribe(
       this.updateQuestion
     ));
   }
 
   ngOnDestroy() {
-    if(!this.subscription) { this.subscription = new Subscription(); return; }
     this.subscription.unsubscribe();
   }
 
@@ -89,15 +88,17 @@ export class QuestionInfoComponent implements OnInit {
     });
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
-        let resulr = { ...this.question, ...x };
-        this.question = resulr;
-        this.provider.setQuestionOne(resulr);
+        let result = { ...this.question, ...x };
+        this.question = result;
+        this.provider.setQuestionOne(result);
       })
     );
   }
 
   onQuestionTypeChange(questionType: FormModel.QuestionTypes) {
-    this.question.questionType = questionType;
-    this.provider.setQuestionOne(this.question);
+    // this.question.questionType = questionType;
+    let question = _.cloneDeep(this.question);
+    question.questionType = questionType;
+    this.provider.setQuestionOne(question);
   }
 }

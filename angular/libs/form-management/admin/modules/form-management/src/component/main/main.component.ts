@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component,
   Injector,
   OnInit,
@@ -17,9 +18,13 @@ export class MainComponent implements OnInit {
   subs: Subscription = new Subscription();
   @ViewChild('formsTemplate') formsTemplate: TemplateRef<HTMLElement>;
   @ViewChild('viewTemplate') viewTemplate: TemplateRef<HTMLElement>;
-  itemTemplate: TemplateRef<HTMLElement> = null;
+  itemTemplate: TemplateRef<HTMLElement>;
   formId: string;
-  constructor(private injector: Injector) {
+
+  constructor(
+    private injector: Injector,
+    private cdr: ChangeDetectorRef
+  ) {
     this.subs.add(
       setContributors(this.injector, FormsComponent.NAME, {
         actionContributors: FORMS_ENTITY_ACTIONS,
@@ -36,8 +41,12 @@ export class MainComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    this.itemTemplate = this.formsTemplate;
+    if(this.formsTemplate != null) {
+      this.itemTemplate = this.formsTemplate;
+      this.cdr.detectChanges();
+    }
   }
+
   onView(id: string) {
     this.formId = id;
     this.itemTemplate = this.viewTemplate;

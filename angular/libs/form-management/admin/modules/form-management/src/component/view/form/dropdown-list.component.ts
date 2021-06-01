@@ -1,12 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
+import { Volo } from '@fs-tw/form-management/proxy';
+import * as _ from 'lodash';
 
 export type DropdownListProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
   setChoices(data: Array<FormModel.ChoiceInfo>);
+  setChoiceOne(data: FormModel.ChoiceInfo);
 }
 
 @Component({
@@ -18,23 +21,30 @@ export type DropdownListProvider ={
         <nz-row
           [nzGutter]="16"
           style="padding: 5px;"
-          *ngFor="let choice of choices.controls; let i = index"
+          *ngFor="let choice of choicesControls.controls; let i = index"
           [formGroupName]="i"
         >
           <nz-col [nzSpan]="18">
             <nz-row [nzGutter]="16">
-              <nz-col [nzSpan]="22">
-                <label nz-checkbox nzDisabled style="width: 100%;">
-                  <input
-                    style="width: 100%;"
-                    class="form-control"
-                    [formControlName]="'value'"
-                    type="text"
-                  />
-                </label>
+              <nz-col [nzLg]="2" [nzSm]="24" [nzXs]="24">
+                <button
+                  nz-button
+                  nzType="default"
+                  style="height: 100%; width: 100%;"
+                >
+                  <span style="font-weight:bold;">{{ i + 1 }}</span>
+                </button>
               </nz-col>
-              <nz-col [nzSpan]="2">
-                <button nz-button nzType="default" style="height: 100%;">
+              <nz-col [nzLg]="20" [nzSm]="24" [nzXs]="24">
+                <input
+                  style="width: 100%;"
+                  class="form-control"
+                  [formControlName]="'value'"
+                  type="text"
+                />
+              </nz-col>
+              <nz-col [nzSpan]="2"  >
+                <button nz-button nzType="default" style="height: 100%;" (click)="removeChoice(choicesControls.controls[i].value.id)">
                   <span style="font-weight:bold;">X</span>
                 </button>
               </nz-col>
@@ -44,18 +54,21 @@ export type DropdownListProvider ={
         <nz-row [nzGutter]="16" style="padding: 5px;">
           <nz-col [nzSpan]="18">
             <nz-row [nzGutter]="16">
-              <nz-col [nzSpan]="24">
-                <label nz-checkbox nzDisabled>
-                  <a style="color: blue;">{{
-                    'Forms::Choice:AddOption' | abpLocalization
-                  }}</a>
-                  <span style="padding: 5px;">{{
-                    'Forms::Choice:Or' | abpLocalization
-                  }}</span>
-                  <a style="color: blue;">{{
-                    'Forms::Choice:AddOther' | abpLocalization
-                  }}</a>
-                </label>
+              <nz-col [nzLg]="2" [nzSm]="24" [nzXs]="24">
+                <button
+                  nz-button
+                  nzType="default"
+                  style="height: 100%; width: 100%;"
+                >
+                  <span style="font-weight:bold;">
+                    {{ choices.length + 1 }}
+                  </span>
+                </button>
+              </nz-col>
+              <nz-col [nzLg]="22" [nzSm]="24" [nzXs]="24" style="padding: 5px;">
+                <a style="color: blue;" (click)="addNewChoice()">
+                  {{ 'Forms::Choice:AddOption' | abpLocalization }}
+                </a>
               </nz-col>
             </nz-row>
           </nz-col>
@@ -72,11 +85,13 @@ export class DropdownListComponent implements OnInit {
   @Input() provider: DropdownListProvider;
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Subscription = null;
-  choices: FormArray = new FormArray([]);
+  subscription: Subscription = new Subscription();
+  choicesControls: FormArray = new FormArray([]);
+  choices: Array<FormModel.ChoiceInfo> = [];
 
   updateChoices = (data: Array<FormModel.ChoiceInfo>) => {
     if(!data) return;
+    this.choices = data;
     this.buildForm(data);
   };
 
@@ -89,28 +104,46 @@ export class DropdownListComponent implements OnInit {
 
   ngOnChanges() {
     if(!this.questionId) return;
-    this.ngOnDestroy();
     this.subscription.add(this.provider.getChoicesByQuestionId$(this.questionId).subscribe(
       this.updateChoices
     ));
   }
 
   ngOnDestroy() {
-    if(!this.subscription) { this.subscription = new Subscription(); return; }
     this.subscription.unsubscribe();
   }
 
   buildForm(choices: Array<FormModel.ChoiceInfo>) {
-    this.choices = this.fb.array(choices.map(((x, i) => {
+    this.choicesControls = this.fb.array(choices.map(((x, i) => {
       return this.fb.group(x);
     })));
     this.formGroup = this.fb.group({
-      choices: this.choices
+      choices: this.choicesControls
     });
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         this.provider.setChoices(x.choices);
       })
     );
+  }
+
+  addNewChoice() {
+    let index = (this.choices.length <= 0) ? 1 : Math.max(...this.choices.map(x => x.index)) + 1;
+    let choice = new FormModel.ChoiceInfo(this.questionId,
+    {
+      id: index.toString(),
+      index: index,
+      isCorrect: false,
+      value: "Question " + index.toString()
+    } as Volo.Forms.Choices.ChoiceDto);
+    this.provider.setChoiceOne(choice);
+  }
+
+  removeChoice(id: string) {
+    let choices = _.cloneDeep(this.choices);
+    let result = _.remove(choices, function(o) {
+      return o.id != id;
+    });
+    this.provider.setChoices(result);
   }
 }

@@ -1,49 +1,51 @@
-<nz-card
-  [nzBordered]="true"
-  [nzTitle]="questionTitle"
-  [nzExtra]="extraTemplate"
-  *ngIf="question"
->
-  <fs-tw-question-info [provider]="provider" [questionId]="question.id"></fs-tw-question-info>
+<form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
+  <nz-card
+    [nzBordered]="true"
+    [nzTitle]="questionTitle"
+    [nzExtra]="extraTemplate"
+    *ngIf="question"
+  >
+    <fs-tw-question-info [provider]="provider" [questionId]="question.id"></fs-tw-question-info>
 
-  <div [ngSwitch]="question.questionType">
-    <ng-container *ngSwitchCase="4">
-      <fs-tw-checkbox
-        [provider]="provider"
-        [questionId]="question.id"
-      ></fs-tw-checkbox>
-    </ng-container>
-    <ng-container *ngSwitchCase="5">
-      <fs-tw-dropdown-list
-        [provider]="provider"
-        [questionId]="question.id"
-      ></fs-tw-dropdown-list>
-    </ng-container>
-  </div>
+    <div [ngSwitch]="question.questionType">
+      <ng-container *ngSwitchCase="4">
+        <fs-tw-checkbox
+          [provider]="provider"
+          [questionId]="question.id"
+        ></fs-tw-checkbox>
+      </ng-container>
+      <ng-container *ngSwitchCase="5">
+        <fs-tw-dropdown-list
+          [provider]="provider"
+          [questionId]="question.id"
+        ></fs-tw-dropdown-list>
+      </ng-container>
+    </div>
 
-  <ng-template #questionTitle>
-    <span>{{ 'Forms::Form:Questions:QuestionIndex' | abpLocalization: question.index }}</span>
-  </ng-template>
-  <ng-template #extraTemplate>
-    <nz-row>
-      <nz-col style="padding: 9px">
-        <nz-switch style="padding-right: 10px"></nz-switch>
-        <span>{{ 'Forms::Form:Questions:Required' | abpLocalization }}</span>
-      </nz-col>
-      <nz-col style="padding: 5px">
-        <button nz-button nzType="default" style="height: 100%">
-          <span style="font-weight: bold">{{
-            'Forms::Form:Questions:Save' | abpLocalization
-          }}</span>
-        </button>
-      </nz-col>
-      <nz-col style="padding: 5px">
-        <button nz-button nzType="default" style="height: 100%">
-          <span style="font-weight: bold">{{
-            'Forms::Form:Questions:Remove' | abpLocalization
-          }}</span>
-        </button>
-      </nz-col>
-    </nz-row>
-  </ng-template>
-</nz-card>
+    <ng-template #questionTitle>
+      <span>{{ 'Forms::Form:Questions:QuestionIndex' | abpLocalization: question.index }}</span>
+    </ng-template>
+    <ng-template #extraTemplate>
+      <nz-row>
+        <nz-col style="padding: 9px">
+          <nz-switch style="padding-right: 10px" [formControlName]="'isRequired'"></nz-switch>
+          <span>{{ 'Forms::Form:Questions:Required' | abpLocalization }}</span>
+        </nz-col>
+        <nz-col style="padding: 5px">
+          <button nz-button nzType="default" style="height: 100%">
+            <span style="font-weight: bold">{{
+              'Forms::Form:Questions:Save' | abpLocalization
+            }}</span>
+          </button>
+        </nz-col>
+        <nz-col style="padding: 5px">
+          <button nz-button nzType="default" style="height: 100%">
+            <span style="font-weight: bold" (click)="removeQuestion()">{{
+              'Forms::Form:Questions:Remove' | abpLocalization
+            }}</span>
+          </button>
+        </nz-col>
+      </nz-row>
+    </ng-template>
+  </nz-card>
+</form>

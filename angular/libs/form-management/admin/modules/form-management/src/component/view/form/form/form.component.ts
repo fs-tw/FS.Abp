@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from '../models/models';
+import { Volo } from '@fs-tw/form-management/proxy';
+import * as _ from 'lodash';
 
 export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;
@@ -19,7 +21,7 @@ export class FormComponent implements OnInit {
   @Input() provider: FormProvider;
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Subscription = null;
+  subscription: Subscription = new Subscription();
   form: FormModel.FormInfo = null;
 
   updateForm = (data: FormModel.FormInfo) => {
@@ -35,14 +37,12 @@ export class FormComponent implements OnInit {
 
   ngOnChanges() {
     if (!this.formId) return;
-    this.ngOnDestroy();
     this.subscription.add(
       this.provider.getFormById$(this.formId).subscribe(this.updateForm)
     );
   }
 
   ngOnDestroy() {
-    if(!this.subscription) { this.subscription = new Subscription(); return; }
     this.subscription.unsubscribe();
   }
 
@@ -64,7 +64,7 @@ export class FormComponent implements OnInit {
     let form = this.provider.getFormById(this.formId);
     let questions = form.questions;
     let index = Math.max(...questions.map(x => x.index)) + 1;
-    let question = {
+    let question = new FormModel.QuestionInfo({
       formId: this.formId,
       id: index.toString(),
       index: index,
@@ -74,7 +74,15 @@ export class FormComponent implements OnInit {
       hasOtherOption: false,
       questionType: 1,
       choices: []
-    } as FormModel.QuestionInfo;
+    } as Volo.Forms.Questions.QuestionDto);
     this.provider.setFormOne({ ...form, questions: questions.concat([question]) });
+  }
+
+  onRemoveQuestionEvent(questionId: string) {
+    let form = _.cloneDeep(this.form);
+    form.questions = _.remove(form.questions, function(o) {
+      return o.id != questionId;
+    });
+    this.provider.setFormOne(form);
   }
 }
