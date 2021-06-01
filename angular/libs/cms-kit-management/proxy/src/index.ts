@@ -1,2 +1,1 @@
-import * as Volo from './volo';
-export { Volo };
+export * from './lib/index'

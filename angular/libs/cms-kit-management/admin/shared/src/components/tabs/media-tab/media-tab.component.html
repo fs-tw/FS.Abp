@@ -1,0 +1,30 @@
+<ng-template>
+  <!-- <nz-upload
+    nzListType="picture-card"
+    [(nzFileList)]="CoverImageMediaFiles"
+    [nzBeforeUpload]="beforeUpload"
+    [nzPreview]="handlePreview"
+  >
+    <div>
+      <i nz-icon nzType="plus"></i>
+      <div style="margin-top: 8px">Upload</div>
+    </div>
+    <nz-modal
+      [nzVisible]="previewVisible"
+      [nzContent]="modalContent"
+      [nzFooter]="null"
+      (nzOnCancel)="previewVisible = false"
+    >
+      <ng-template #modalContent>
+        <img [src]="previewImage" [ngStyle]="{ width: '100%' }" />
+      </ng-template>
+    </nz-modal>
+  </nz-upload> -->
+  <nz-upload
+    [default]="upload"
+    (file)="addFile($event)"
+    [(nzFileList)]="CoverImageMediaFiles"
+  >
+    <nz-upload-default #upload></nz-upload-default>
+  </nz-upload>
+</ng-template>

@@ -1,0 +1,41 @@
+<nz-row nzGutter="16">
+    <nz-col nzSpan="8">
+        <fs-tw-list></fs-tw-list>
+    </nz-col>
+    <!-- <nz-col nzSpan="16">
+      <nz-table #dataTable [nzData]="vocabularyDatas.items" *ngIf="vocabularyDatas$ | async as vocabularyDatas" nzSize="small" nzBordered 
+        nzPageSize="10"
+        [nzTotal]="vocabularyDatas.totalCount$|async" >
+        <thead>
+          <tr>
+            <th>名稱</th>
+            <th>No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of dataTable.data" style="cursor: pointer;" class="bg-white listColor">
+            <td>{{ data.displayName }}</td>
+            <td>{{ data.no }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-col> -->
+    <nz-col nzSpan="16">
+        <nz-table #dataTable [nzData]="vocabularyDatas.items" *ngIf="vocabularyDatas$ | async as vocabularyDatas"
+            nzSize="small" nzBordered nzPageSize="10" [nzTotal]="vocabularyDatas.totalCount$|async">
+            <thead>
+                <tr>
+                    <th>名稱</th>
+                    <th>No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataTable.data" style="cursor: pointer;" class="bg-white listColor">
+                    <td>{{ data.displayName }}</td>
+                    <td>{{ data.no }}</td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </nz-col>
+
+</nz-row>

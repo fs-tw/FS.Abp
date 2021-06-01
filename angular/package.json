@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "nx": "nx",
     "start": "ng serve",
     "build": "ng build",
@@ -53,7 +53,6 @@
     "@angular/compiler-cli": "^11.2.0",
     "@angular/language-service": "^11.2.0",
     "@npm/abp": "file:npm/abp",
-    "@npm/fs-tw": "file:npm/fs-tw",
     "@nrwl/cli": "12.0.8",
     "@nrwl/cypress": "12.0.8",
     "@nrwl/eslint-plugin-nx": "12.0.8",
