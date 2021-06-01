@@ -70,7 +70,7 @@
     </nz-row>
     <nz-row *ngFor="let item of form?.questions; let index = index">
       <nz-col style="width: 100%; padding: 0px 15px 0px 15px;">
-        <fs-tw-question-card [questionId]="item.id" [provider]="provider"></fs-tw-question-card>
+        <fs-tw-question-card [questionId]="item.id" [provider]="provider" (removeQuestionEvent)="onRemoveQuestionEvent($event)"></fs-tw-question-card>
       </nz-col>
     </nz-row>
     <nz-row>
@@ -79,6 +79,7 @@
           nz-button
           nzType="default"
           style="width: 100%; height: 50px;"
+          (click)="addNewQuestion()"
         >
           <span style="font-weight:bold;">
             {{ 'Forms::Form:Questions:NewQuestion' | abpLocalization }}

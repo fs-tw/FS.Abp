@@ -15,12 +15,12 @@ import { Subscription } from 'rxjs';
   providedIn: 'root',
 })
 export class ViewStateService extends FormStateService {
-  mergeForm(): Array<FormModel.FormInfo> {
-    return this.store.state.Forms.map(x => {
+  mergeForm(data: FormModel.State): Array<FormModel.FormInfo> {
+    return data.Forms.map(x => {
       return {
         ...x,
-        questions: this.store.state.Questions.filter((y) => x.id == y.formId).map((z) => {
-          return { ...z, choices: this.store.state.Choices.filter((res) => res.questionId == z.id) };
+        questions: data.Questions.filter((y) => x.id == y.formId).map((z) => {
+          return { ...z, choices: data.Choices.filter((res) => res.questionId == z.id) };
         })
       }
     });
@@ -54,8 +54,8 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscription.add(this.viewStateService.get$().subscribe(x => {
-      let result = this.viewStateService.mergeForm();
+    this.subscription.add(this.viewStateService.getFormChangedDataOfDelayTime$().subscribe(x => {
+      let result = this.viewStateService.mergeForm(x);
       console.log(result);
     }));
   }
@@ -73,7 +73,7 @@ export class ViewComponent implements OnInit {
     this.pageService.getById(this.formId).subscribe((x) => {
       let result = new FormModel.FormInfo(x, x.questions);
       this.viewStateService.setFormOne(result);
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     });
   }
 }

@@ -1,13 +1,19 @@
 import {
   Component,
+  EventEmitter,
   Input,
-  OnInit
+  OnInit,
+  Output
 } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from '../models/models';
+import * as _ from 'lodash';
 
 export type QuestionCardProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
+  setQuestionOne(data: FormModel.QuestionInfo);
 }
 
 @Component({
@@ -18,16 +24,22 @@ export class QuestionCardComponent implements OnInit {
   @Input() questionId: string = null;
   @Input() provider: QuestionCardProvider;
 
-  subscription: Subscription = null;
+  @Output()
+  removeQuestionEvent: EventEmitter<string> = new EventEmitter<string>();
+
+  subscription: Subscription = new Subscription();
+  
+  formGroup: FormGroup = this.fb.group({});
   question: FormModel.QuestionInfo = null;
 
   updateQuestion = (data: FormModel.QuestionInfo) => {
     if(!data) return;
     this.question = data;
+    this.buildForm(data);
   };
 
   constructor(
-    //public formStateService: FormStateService,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
@@ -35,14 +47,29 @@ export class QuestionCardComponent implements OnInit {
 
   ngOnChanges() {
     if(!this.questionId) return;
-    this.ngOnDestroy();
     this.subscription.add(this.provider.getQuestionsByQuestionId$(this.questionId).subscribe(
       this.updateQuestion
     ));
   }
 
   ngOnDestroy() {
-    if(!this.subscription) { this.subscription = new Subscription(); return; }
     this.subscription.unsubscribe();
+  }
+
+  buildForm(question: FormModel.QuestionInfo) {
+    this.formGroup = this.fb.group({
+      isRequired: question.isRequired
+    });
+    this.subscription.add(
+      this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
+        let question = _.cloneDeep(this.question);
+        question.isRequired = x.isRequired;
+        this.provider.setQuestionOne(question);
+      })
+    );
+  }
+
+  removeQuestion() {
+    this.removeQuestionEvent.emit(this.questionId);
   }
 }

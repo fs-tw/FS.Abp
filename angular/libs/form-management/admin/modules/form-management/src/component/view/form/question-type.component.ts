@@ -34,7 +34,7 @@ export class QuestionTypeComponent implements OnInit {
   questionTypeChange: EventEmitter<FormModel.QuestionTypes> = new EventEmitter<FormModel.QuestionTypes>();
 
   formGroup: FormGroup = this.fb.group({});
-  subscription: Subscription = null;
+  subscription: Subscription = new Subscription();
 
   constructor(
     private fb: FormBuilder
@@ -46,12 +46,10 @@ export class QuestionTypeComponent implements OnInit {
 
   ngOnChanges() {
     if(!this.questionType) return;
-    this.ngOnDestroy();
     this.buildForm(this.questionType);
   }
 
   ngOnDestroy() {
-    if(!this.subscription) { this.subscription = new Subscription(); return; }
     this.subscription.unsubscribe();
   }
 

@@ -1,4 +1,3 @@
-import { EmbeddedTemplateAst } from '@angular/compiler';
 import { Volo } from '@fs-tw/form-management/proxy';
 
 export namespace FormModel {
