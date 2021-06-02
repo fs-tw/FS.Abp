@@ -5,6 +5,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from '../models/models';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;
@@ -13,7 +14,7 @@ export type FormProvider = {
 };
 
 @Component({
-  selector: 'fs-tw-form',
+  selector: 'fs-form',
   templateUrl: 'form.component.html',
 })
 export class FormComponent implements OnInit {
@@ -30,7 +31,7 @@ export class FormComponent implements OnInit {
     this.buildForm(data);
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
   }
 
   ngOnInit() {}
@@ -84,5 +85,9 @@ export class FormComponent implements OnInit {
       return o.id != questionId;
     });
     this.provider.setFormOne(form);
+  }
+
+  goToPreView(id: string) {
+    this.router.navigate(["/form-management/forms/preview/" + id]);
   }
 }

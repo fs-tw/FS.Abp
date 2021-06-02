@@ -11,12 +11,14 @@ import { QuestionTypeComponent } from './component/view/form/question-type.compo
 import { QuestionInfoComponent } from './component/view/form/question-info.component';
 import { QuestionCardComponent } from './component/view/form/question-card/question-card.component';
 import { FormComponent } from './component/view/form/form/form.component';
+import { PreviewComponent } from './component/preview/preview.component';
 
 @NgModule({
   declarations: [
     MainComponent, ViewComponent,
     FormComponent, QuestionCardComponent, QuestionInfoComponent, QuestionTypeComponent,
-    CheckboxComponent, DropdownListComponent
+    CheckboxComponent, DropdownListComponent,
+    PreviewComponent
   ],
   imports: [
     FormManagementAdminSharedModule,

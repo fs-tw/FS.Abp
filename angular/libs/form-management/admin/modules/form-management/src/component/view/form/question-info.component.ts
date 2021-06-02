@@ -7,11 +7,11 @@ import * as _ from 'lodash';
 
 export type QuestionProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
-  setQuestionOne(data: FormModel.QuestionInfo);
+  setQuestionsWithForms(data: Array<FormModel.QuestionInfo>)
 }
 
 @Component({
-  selector: 'fs-tw-question-info',
+  selector: 'fs-question-info',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="question">
       <nz-row [nzGutter]="16">
@@ -29,10 +29,10 @@ export type QuestionProvider ={
           </div>
         </nz-col>
         <nz-col [nzXs]="24" [nzSm]="12">
-          <fs-tw-question-type
+          <fs-question-type
             [questionType]="question.questionType"
             (questionTypeChange)="onQuestionTypeChange($event)"
-          ></fs-tw-question-type>
+          ></fs-question-type>
         </nz-col>
       </nz-row>
       <div class="form-group">
@@ -90,7 +90,7 @@ export class QuestionInfoComponent implements OnInit {
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         let result = { ...this.question, ...x };
         this.question = result;
-        this.provider.setQuestionOne(result);
+        this.provider.setQuestionsWithForms([result]);
       })
     );
   }
@@ -99,6 +99,6 @@ export class QuestionInfoComponent implements OnInit {
     // this.question.questionType = questionType;
     let question = _.cloneDeep(this.question);
     question.questionType = questionType;
-    this.provider.setQuestionOne(question);
+    this.provider.setQuestionsWithForms([question]);
   }
 }

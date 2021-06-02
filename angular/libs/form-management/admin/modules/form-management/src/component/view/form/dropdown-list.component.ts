@@ -8,12 +8,12 @@ import * as _ from 'lodash';
 
 export type DropdownListProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
-  setChoices(data: Array<FormModel.ChoiceInfo>);
-  setChoiceOne(data: FormModel.ChoiceInfo);
+  setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>)
+  setChoiceOneWithFormsAndQuestions(data: FormModel.ChoiceInfo)
 }
 
 @Component({
-  selector: 'fs-tw-dropdown-list',
+  selector: 'fs-dropdown-list',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
       <div class="form-group" [formArrayName]="'choices'">
@@ -122,7 +122,7 @@ export class DropdownListComponent implements OnInit {
     });
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
-        this.provider.setChoices(x.choices);
+        this.provider.setChoicesWithFormsAndQuestions(x.choices);
       })
     );
   }
@@ -136,7 +136,7 @@ export class DropdownListComponent implements OnInit {
       isCorrect: false,
       value: "Question " + index.toString()
     } as Volo.Forms.Choices.ChoiceDto);
-    this.provider.setChoiceOne(choice);
+    this.provider.setChoiceOneWithFormsAndQuestions(choice);
   }
 
   removeChoice(id: string) {
@@ -144,6 +144,6 @@ export class DropdownListComponent implements OnInit {
     let result = _.remove(choices, function(o) {
       return o.id != id;
     });
-    this.provider.setChoices(result);
+    this.provider.setChoicesWithFormsAndQuestions(result);
   }
 }
