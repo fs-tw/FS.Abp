@@ -8,12 +8,12 @@ import * as _ from 'lodash';
 
 export type CheckboxProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
-  setChoices(data: Array<FormModel.ChoiceInfo>);
-  setChoiceOne(data: FormModel.ChoiceInfo);
+  setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>)
+  setChoiceOneWithFormsAndQuestions(data: FormModel.ChoiceInfo)
 }
 
 @Component({
-  selector: 'fs-tw-checkbox',
+  selector: 'fs-checkbox',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
       <div class="form-group" [formArrayName]="'choices'">
@@ -118,7 +118,7 @@ export class CheckboxComponent implements OnInit {
 
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
-        this.provider.setChoices(x.choices);
+        this.provider.setChoicesWithFormsAndQuestions(x.choices);
       })
     );
   }
@@ -133,7 +133,7 @@ export class CheckboxComponent implements OnInit {
       isCorrect: false,
       value: value
     } as Volo.Forms.Choices.ChoiceDto);
-    this.provider.setChoiceOne(choice);
+    this.provider.setChoiceOneWithFormsAndQuestions(choice);
   }
 
   removeChoice(id: string) {
@@ -141,6 +141,6 @@ export class CheckboxComponent implements OnInit {
     let result = _.remove(choices, function(o) {
       return o.id != id;
     });
-    this.provider.setChoices(result);
+    this.provider.setChoicesWithFormsAndQuestions(result);
   }
 }

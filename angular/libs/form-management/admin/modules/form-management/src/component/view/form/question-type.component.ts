@@ -5,7 +5,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
 
 @Component({
-  selector: 'fs-tw-question-type',
+  selector: 'fs-question-type',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionType">
         <div class="form-group">

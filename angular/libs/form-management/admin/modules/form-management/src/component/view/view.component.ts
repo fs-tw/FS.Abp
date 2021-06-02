@@ -28,12 +28,12 @@ export class ViewStateService extends FormStateService {
 }
 
 @Component({
-  selector: 'fs-tw-view',
+  selector: 'fs-view',
   template: `
     <abp-page [title]="'Forms::Form' | abpLocalization">
       <nz-tabset>
         <nz-tab nzTitle="{{ 'Forms::Menu:Questions' | abpLocalization }}">
-          <fs-tw-form [formId]="formId" [provider]="viewStateService"></fs-tw-form>
+          <fs-form [formId]="formId" [provider]="viewStateService"></fs-form>
         </nz-tab>
         <nz-tab nzTitle="{{ 'Forms::Menu:Responses' | abpLocalization }}">
         </nz-tab>
@@ -54,7 +54,7 @@ export class ViewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscription.add(this.viewStateService.getFormChangedDataOfDelayTime$().subscribe(x => {
+    this.subscription.add(this.viewStateService.getAllDataOfDelayTime$().subscribe(x => {
       let result = this.viewStateService.mergeForm(x);
       console.log(result);
     }));
@@ -62,18 +62,18 @@ export class ViewComponent implements OnInit {
 
   ngOnChanges() {
     if (!this.formId) return null;
-    this.loadQuestionsData();
+    this.loadFormData();
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  loadQuestionsData() {
-    this.pageService.getById(this.formId).subscribe((x) => {
+  loadFormData() {
+    this.subscription.add(this.pageService.getById(this.formId).subscribe((x) => {
       let result = new FormModel.FormInfo(x, x.questions);
       this.viewStateService.setFormOne(result);
       this.cdr.detectChanges();
-    });
+    }));
   }
 }
