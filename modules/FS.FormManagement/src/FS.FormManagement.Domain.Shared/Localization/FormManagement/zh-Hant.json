@@ -42,6 +42,12 @@
     "DisplayName:Item.Update": "編輯",
     "DisplayName:Item.Delete": "刪除",
 
+    "FS.FormManagement.Groups.Group": "群組管理",
+
+    "FS.FormManagement.Groups.GroupQuestion": "題目群組",
+    "DisplayName:GroupQuestion.Create": "新增",
+    "DisplayName:GroupQuestion.Update": "編輯",
+    "DisplayName:GroupQuestion.Delete": "刪除",
 
     "Forms": "表單",
     "Versions": "版本",
@@ -85,6 +91,8 @@
 
     "FS.RecordItem.Asnwer": "答案",
     "FS.RecordItem.ItemId": "項目編號"
+
+
 
   }
 }
