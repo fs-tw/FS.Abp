@@ -1,6 +1,15 @@
 {
   "culture": "zh-Hant",
   "texts": {
-    "ManageYourProfile":  "管理個人資料" 
+    "FS.CmsKitManagement.Vocabularies": "詞彙定義管理",
+    "FS.CmsKitManagement.Vocabularies.VocabularyDefinition": "詞彙定義",
+    "DisplayName:VocabularyDefinition.Create": "新增",
+    "DisplayName:VocabularyDefinition.Update": "編輯",
+    "DisplayName:VocabularyDefinition.Delete": "刪除",
+
+    "FS.CmsKitManagement.Vocabularies.Vocabulary": "詞彙",
+    "DisplayName:Vocabulary.Create": "新增",
+    "DisplayName:Vocabulary.Update": "編輯",
+    "DisplayName:Vocabulary.Delete": "刪除"
   }
 }
