@@ -6,14 +6,14 @@ import { FormModel } from './models/models';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
 
-export type CheckboxProvider ={
+export type RadioProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
   setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>)
   setChoiceOneWithFormsAndQuestions(data: FormModel.ChoiceInfo)
 }
 
 @Component({
-  selector: 'fs-checkbox',
+  selector: 'fs-radio',
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
       <div class="form-group" [formArrayName]="'choices'">
@@ -27,7 +27,7 @@ export type CheckboxProvider ={
           <nz-col [nzSpan]="18">
             <nz-row [nzGutter]="16">
               <nz-col [nzSpan]="22">
-                <label nz-checkbox nzDisabled style="width: 100%;">
+                <label nz-radio nzDisabled style="width: 100%;">
                   <input
                     style="width: 100%;"
                     class="form-control"
@@ -48,7 +48,7 @@ export type CheckboxProvider ={
           <nz-col [nzSpan]="18">
             <nz-row [nzGutter]="16">
               <nz-col [nzSpan]="24">
-                <label nz-checkbox nzDisabled>
+                <label nz-radio nzDisabled>
                   <a style="color: blue;" (click)="addNewChoice(1)">{{
                     'Forms::Choice:AddOption' | abpLocalization
                   }}</a>
@@ -67,12 +67,12 @@ export type CheckboxProvider ={
     </form>
   `,
   styles: [
-    '::ng-deep .ant-checkbox + span { width: 100%; padding-left: 15px; }',
+    '::ng-deep .ant-radio + span { width: 100%; padding-left: 15px; }',
   ]
 })
-export class CheckboxComponent implements OnInit {
+export class RadioComponent implements OnInit {
   @Input() questionId: string = null;
-  @Input() provider: CheckboxProvider;
+  @Input() provider: RadioProvider;
 
   subscription: Subscription = new Subscription();
 

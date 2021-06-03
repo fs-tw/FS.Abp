@@ -8,6 +8,12 @@
     <fs-question-info [provider]="provider" [questionId]="question.id"></fs-question-info>
 
     <div [ngSwitch]="question.questionType">
+      <ng-container *ngSwitchCase="3">
+        <fs-radio
+          [provider]="provider"
+          [questionId]="question.id"
+        ></fs-radio>
+      </ng-container>
       <ng-container *ngSwitchCase="4">
         <fs-checkbox
           [provider]="provider"

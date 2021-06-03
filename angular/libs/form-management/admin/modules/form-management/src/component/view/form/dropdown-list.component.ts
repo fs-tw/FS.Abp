@@ -134,7 +134,7 @@ export class DropdownListComponent implements OnInit {
       id: index.toString(),
       index: index,
       isCorrect: false,
-      value: "Question " + index.toString()
+      value: "Choice " + index.toString()
     } as Volo.Forms.Choices.ChoiceDto);
     this.provider.setChoiceOneWithFormsAndQuestions(choice);
   }
