@@ -7,7 +7,7 @@
             </nz-card>
         </nz-col>
     </nz-row>
-    <form nz-form [nzAutoTips]="autoTips" [formGroup]="formGroup" validateOnSubmit (ngSubmit)="submitForm(formGroup.value)">
+    <form nz-form [formGroup]="formGroup" validateOnSubmit (ngSubmit)="submitForm(formGroup.value)">
         <div [formArrayName]="'questions'">
             <nz-row  [nzGutter]="16" *ngFor="let item of formDetail.questions; let i = index" [formGroupName]="i" style="margin-bottom: 10px;">
                 <nz-col [nzSpan]="24">
@@ -15,9 +15,18 @@
                         <h6><nz-tag *ngIf="item.isRequired" [nzColor]="'red'">必填</nz-tag>{{ item.title }}</h6>
                         <p>{{ item.description }}</p>
                         <div class="form-group" [ngSwitch]="item.questionType">
+                            <ng-container *ngSwitchCase="3">
+                                <nz-radio-group  [formControlName]="'value'">
+                                    <ng-container *ngFor="let choice of item.choices;">
+                                        <label nz-radio [nzValue]="choice.id">
+                                            {{ choice.value }}
+                                        </label>
+                                    </ng-container>
+                                </nz-radio-group>
+                            </ng-container>
                             <ng-container *ngSwitchCase="4">
                                 <div [formGroupName]="'choices'">
-                                    <ng-container *ngFor="let choice of item.choices; let j = index" [formGroupName]="j">
+                                    <ng-container *ngFor="let choice of item.choices; let j = index;" [formGroupName]="j">
                                         <label nz-checkbox [formControlName]="'value'">
                                             {{ choice.value }}
                                         </label>
@@ -50,7 +59,7 @@
             <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
                 <nz-col [nzSpan]="24" style="text-align: center;">
                     <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
-                        <button nz-button nzType="primary">Submit</button>
+                        <button nz-button nzType="primary" [nzSize]="'large'" [disabled]="!formGroup.valid">{{ 'Forms::Submit' | abpLocalization }}</button>
                     </nz-card>
                 </nz-col>
             </nz-row>

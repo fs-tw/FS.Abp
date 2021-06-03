@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
 import { PageService } from '../../providers/page.service';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { ActivatedRoute } from '@angular/router';
+import { NzSafeAny } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'fs-preview',
@@ -16,15 +17,6 @@ export class PreviewComponent implements OnInit {
     questionsControls: FormArray = new FormArray([]);
     subscription: Subscription = new Subscription();
     formDetail: Volo.Forms.Forms.FormWithDetailsDto;
-
-    autoTips: Record<string, Record<string, string>> = {
-        'zh-cn': {
-          required: '必填題目'
-        },
-        en: {
-          required: 'Question is required'
-        },
-    };
 
     constructor(
       private fb: FormBuilder,
@@ -52,14 +44,15 @@ export class PreviewComponent implements OnInit {
     }
 
     buildForm() {
+        const { required, choiceValidator } = PreviewValidators;
         this.questionsControls = this.fb.array(this.formDetail.questions.map(((x, i) => {
             let result = { questionId: x.id }; 
             if (x.questionType == 4) {
                 result["choices"] = this.fb.array(x.choices.map(y =>
-                    this.fb.group({ id: y.id, value: [null, undefined] })
-                ));
+                    this.fb.group({ id: y.id, value: null })
+                ), (x.isRequired) ? [choiceValidator] : undefined);
             } else {
-                result['value'] = [null, (x.isRequired) ? [Validators.required] : undefined];
+                result['value'] = [null, (x.isRequired) ? [required] : undefined];
             }
             return this.fb.group(result);
         })));
@@ -69,10 +62,13 @@ export class PreviewComponent implements OnInit {
     }
 
     submitForm(value): void {
-        for (const key in this.formGroup.controls) {
-          this.formGroup.controls[key].markAsDirty();
-          this.formGroup.controls[key].updateValueAndValidity();
-        }
         console.log(value);
+    }
+}
+
+export class PreviewValidators extends Validators {
+    static choiceValidator(control: AbstractControl) {
+        let result = control.value.filter(x => x.value != null && x.value != false).length > 0;
+        return (result) ? null : { choiceValidator: false };
     }
 }

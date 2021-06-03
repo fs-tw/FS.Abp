@@ -12,12 +12,13 @@ import { QuestionInfoComponent } from './component/view/form/question-info.compo
 import { QuestionCardComponent } from './component/view/form/question-card/question-card.component';
 import { FormComponent } from './component/view/form/form/form.component';
 import { PreviewComponent } from './component/preview/preview.component';
+import { RadioComponent } from './component/view/form/radio.component';
 
 @NgModule({
   declarations: [
     MainComponent, ViewComponent,
     FormComponent, QuestionCardComponent, QuestionInfoComponent, QuestionTypeComponent,
-    CheckboxComponent, DropdownListComponent,
+    RadioComponent, CheckboxComponent, DropdownListComponent,
     PreviewComponent
   ],
   imports: [
