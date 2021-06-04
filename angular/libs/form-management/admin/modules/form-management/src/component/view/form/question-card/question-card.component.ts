@@ -13,7 +13,7 @@ import * as _ from 'lodash';
 
 export type QuestionCardProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
-  setQuestionsWithForms(data: Array<FormModel.QuestionInfo>)
+  setQuestionsWithForms(data: Array<FormModel.QuestionInfo>);
 }
 
 @Component({
@@ -23,9 +23,6 @@ export type QuestionCardProvider ={
 export class QuestionCardComponent implements OnInit {
   @Input() questionId: string = null;
   @Input() provider: QuestionCardProvider;
-
-  @Output()
-  removeQuestionEvent: EventEmitter<string> = new EventEmitter<string>();
 
   subscription: Subscription = new Subscription();
   
@@ -64,12 +61,15 @@ export class QuestionCardComponent implements OnInit {
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         let question = _.cloneDeep(this.question);
         question.isRequired = x.isRequired;
+        question.isDirty = true;
         this.provider.setQuestionsWithForms([question]);
       })
     );
   }
 
   removeQuestion() {
-    this.removeQuestionEvent.emit(this.questionId);
+    let question = _.cloneDeep(this.question);
+    question.isDelete = question.isDirty = true;
+    this.provider.setQuestionsWithForms([question]);
   }
 }

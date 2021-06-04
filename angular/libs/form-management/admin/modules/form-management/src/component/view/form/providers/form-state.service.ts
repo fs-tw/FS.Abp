@@ -8,6 +8,7 @@ import { DropdownListProvider } from './../dropdown-list.component';
 import { FormProvider } from '../form/form.component';
 import { QuestionCardProvider } from '../question-card/question-card.component';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { RadioProvider } from '../radio.component';
 
 // @dynamic
 @Injectable({
@@ -18,7 +19,8 @@ export class FormStateService
     CheckboxProvider,
     DropdownListProvider,
     FormProvider,
-    QuestionCardProvider {
+    QuestionCardProvider,
+    RadioProvider {
   public store = new InternalStore({
     Forms: [] as Array<FormModel.FormInfo>,
     Questions: [] as Array<FormModel.QuestionInfo>,
@@ -29,6 +31,18 @@ export class FormStateService
 
   getAllDataOfDelayTime$(): Observable<FormModel.State> {
     return this.store.sliceState((state) => state).pipe(debounceTime(500), distinctUntilChanged());
+  }
+
+  getFormsDataOfDelayTime$(): Observable<Array<FormModel.FormInfo>> {
+    return this.store.sliceState((state) => state.Forms).pipe(debounceTime(500), distinctUntilChanged());
+  }
+
+  getQuestionsDataOfDelayTime$(): Observable<Array<FormModel.QuestionInfo>> {
+    return this.store.sliceState((state) => state.Questions).pipe(debounceTime(500), distinctUntilChanged());
+  }
+
+  getChoicesDataOfDelayTime$(): Observable<Array<FormModel.ChoiceInfo>> {
+    return this.store.sliceState((state) => state.Choices).pipe(debounceTime(500), distinctUntilChanged());
   }
 
   get$() {
@@ -108,6 +122,7 @@ export class FormStateService
     });
     let formsResult = this.store.state.Forms.map(x => {
       let questions = questionsResult.filter(y => y.formId == x.id);
+      x.isDirty = (questions.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
       return { ...x, questions: questions }
     });
     this.store.patch({
@@ -144,28 +159,20 @@ export class FormStateService
 
   setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>) {
     if (!data || data.length <= 0) return;
-    let choicesResult = this.choicesDataProcessing(data);
-    this.choicesWithFormsAndQuestionsDataProcessing(choicesResult);
-  }
-
-  setChoiceOneWithFormsAndQuestions(data: FormModel.ChoiceInfo) {
-    if (!data) return;
-    let choicesResult = _.unionBy([data], this.store.state.Choices, 'id');
-    this.choicesWithFormsAndQuestionsDataProcessing(choicesResult);
-  }
-
-  private choicesWithFormsAndQuestionsDataProcessing(choicesResult: Array<FormModel.ChoiceInfo>) {
+    let choicesResult = _.unionBy(data, this.store.state.Choices, 'id');
     choicesResult = choicesResult.sort((a, b) => {
       return a.index - b.index;
     });
     let questionsResult = this.store.state.Questions.map(x => {
       let choices = choicesResult.filter(y => y.questionId == x.id);
+      x.isDirty = (choices.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
       return { ...x, choices: choices }
     }).sort((a, b) => {
       return a.index - b.index;
     });
     let formsResult = this.store.state.Forms.map(x => {
       let questions = questionsResult.filter(y => y.formId == x.id);
+      x.isDirty = (questions.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
       return { ...x, questions: questions }
     });
     this.store.patch({
@@ -177,31 +184,12 @@ export class FormStateService
 
   setChoices(data: Array<FormModel.ChoiceInfo>) {
     if (!data || data.length <= 0) return;
-    let result = this.choicesDataProcessing(data);
-    this.store.patch({
-      Choices: result,
-    });
-  }
-
-  setChoiceOne(data: FormModel.ChoiceInfo) {
-    if (!data) return;
     let result = _.unionBy([data], this.store.state.Choices, 'id').sort((a, b) => {
       return a.index - b.index;
     });
     this.store.patch({
       Choices: result,
     });
-  }
-
-  private choicesDataProcessing(data: Array<FormModel.ChoiceInfo>): Array<FormModel.ChoiceInfo> {
-    let questionIds = _.unionBy(data.map(x => x.questionId));
-    let removeChoicesByQuestionId = _.remove(this.store.state.Choices, function(o) {
-      return questionIds.filter(x => x == o.questionId).length <= 0;
-    });
-    let result = _.unionBy(data, removeChoicesByQuestionId, 'id').sort((a, b) => {
-      return a.index - b.index;
-    });
-    return result;
   }
 
   constructor() {

@@ -19,8 +19,17 @@ export namespace FormModel {
     isQuiz: boolean;
     requiresLogin: boolean;
     questions: Array<QuestionInfo>;
+    isNewForm: boolean;
+    isDirty: boolean;
+    isDeleteForm: boolean;
 
-    constructor(initialValues: Volo.Forms.Forms.FormDto | Volo.Forms.Forms.FormWithDetailsDto, questions: Array<Volo.Forms.Questions.QuestionDto> = []) {
+    constructor(
+      initialValues: Volo.Forms.Forms.FormDto | Volo.Forms.Forms.FormWithDetailsDto,
+      questions: Array<Volo.Forms.Questions.QuestionDto> = [],
+      isNewForm: boolean = false,
+      isDirty: boolean = false,
+      isDeleteForm: boolean = false
+    ) {
       this.id = initialValues.id;
       this.title = initialValues.title;
       this.description = initialValues.description;
@@ -32,6 +41,9 @@ export namespace FormModel {
       this.isQuiz = initialValues.isQuiz;
       this.requiresLogin = initialValues.requiresLogin;
       this.questions = questions.map(x => new QuestionInfo(x));
+      this.isNewForm = isNewForm;
+      this.isDirty = isDirty;
+      this.isDeleteForm = isDeleteForm;
     }
   }
 
@@ -45,8 +57,16 @@ export namespace FormModel {
     hasOtherOption: boolean;
     questionType: QuestionTypes;
     choices: Array<ChoiceInfo>;
+    isNewQuestion: boolean;
+    isDirty: boolean;
+    isDeleteQuestion: boolean;
 
-    constructor(initialValues: Volo.Forms.Questions.QuestionDto) {
+    constructor(
+      initialValues: Volo.Forms.Questions.QuestionDto,
+      isNewQuestion: boolean = false,
+      isDirty: boolean = false,
+      isDeleteQuestion: boolean = false
+    ) {
       this.formId = initialValues.formId;
       this.id = initialValues.id;
       this.index = initialValues.index;
@@ -56,6 +76,9 @@ export namespace FormModel {
       this.hasOtherOption = initialValues.hasOtherOption;
       this.questionType = initialValues.questionType;
       this.choices = initialValues.choices ? initialValues.choices.map(x => new ChoiceInfo(initialValues.id, x)) : [];
+      this.isNewQuestion = isNewQuestion;
+      this.isDirty = isDirty;
+      this.isDeleteQuestion = isDeleteQuestion;
     }
   }
 
@@ -65,13 +88,25 @@ export namespace FormModel {
     index: number;
     isCorrect: boolean;
     value: string;
+    isNewChoice: boolean;
+    isDirty: boolean;
+    isDeleteChoice: boolean;
 
-    constructor(questionId: string, choice: Volo.Forms.Choices.ChoiceDto) {
+    constructor(
+      questionId: string,
+      choice: Volo.Forms.Choices.ChoiceDto,
+      isNewChoice: boolean = false,
+      isDirty: boolean = false,
+      isDeleteChoice: boolean = false
+    ) {
       this.questionId = questionId;
       this.id = choice.id;
       this.index = choice.index;
       this.isCorrect = choice.isCorrect;
       this.value = choice.value;
+      this.isNewChoice = isNewChoice;
+      this.isDirty = isDirty;
+      this.isDeleteChoice = isDeleteChoice;
     }
   }
 

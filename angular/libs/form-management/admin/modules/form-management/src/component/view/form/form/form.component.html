@@ -70,7 +70,7 @@
     </nz-row>
     <nz-row *ngFor="let item of form?.questions; let index = index">
       <nz-col style="width: 100%; padding: 0px 15px 0px 15px;">
-        <fs-question-card [questionId]="item.id" [provider]="provider" (removeQuestionEvent)="onRemoveQuestionEvent($event)"></fs-question-card>
+        <fs-question-card [questionId]="item.id" [provider]="provider"></fs-question-card>
       </nz-col>
     </nz-row>
     <nz-row>

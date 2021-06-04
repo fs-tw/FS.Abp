@@ -8,8 +8,7 @@ import * as _ from 'lodash';
 
 export type RadioProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
-  setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>)
-  setChoiceOneWithFormsAndQuestions(data: FormModel.ChoiceInfo)
+  setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>);
 }
 
 @Component({
@@ -118,7 +117,9 @@ export class RadioComponent implements OnInit {
 
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
-        this.provider.setChoicesWithFormsAndQuestions(x.choices);
+        let result = _.cloneDeep(x.choices);
+        result = result.map(y => { return { ...y, isDirty: true } });
+        this.provider.setChoicesWithFormsAndQuestions(result);
       })
     );
   }
@@ -131,16 +132,16 @@ export class RadioComponent implements OnInit {
       id: index.toString(),
       index: index,
       isCorrect: false,
-      value: value
-    } as Volo.Forms.Choices.ChoiceDto);
-    this.provider.setChoiceOneWithFormsAndQuestions(choice);
+      value: value,
+      isNewChoice: true,
+      isDirty: true
+    } as Volo.Forms.Choices.ChoiceDto, true, true);
+    this.provider.setChoicesWithFormsAndQuestions([choice]);
   }
 
   removeChoice(id: string) {
-    let choices = _.cloneDeep(this.choices);
-    let result = _.remove(choices, function(o) {
-      return o.id != id;
-    });
-    this.provider.setChoicesWithFormsAndQuestions(result);
+    let result = _.cloneDeep(this.choices.find(x => x.id == id));
+    result.isDeleteChoice = result.isDirty = true;
+    this.provider.setChoicesWithFormsAndQuestions([result]);
   }
 }
