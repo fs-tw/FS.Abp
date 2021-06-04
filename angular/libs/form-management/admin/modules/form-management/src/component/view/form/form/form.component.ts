@@ -54,8 +54,7 @@ export class FormComponent implements OnInit {
     });
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
-        let result = { ...this.form, ...x };
-        this.form = result;
+        let result = { ...this.form, isDirty: true, ...x };
         this.provider.setFormOne(result);
       })
     );
@@ -64,7 +63,7 @@ export class FormComponent implements OnInit {
   addNewQuestion() {
     let form = this.provider.getFormById(this.formId);
     let questions = form.questions;
-    let index = Math.max(...questions.map(x => x.index)) + 1;
+    let index = (questions.length <= 0) ? 1 : Math.max(...questions.map(x => x.index)) + 1;
     let question = new FormModel.QuestionInfo({
       formId: this.formId,
       id: index.toString(),
@@ -74,17 +73,9 @@ export class FormComponent implements OnInit {
       isRequired: false,
       hasOtherOption: false,
       questionType: 1,
-      choices: []
-    } as Volo.Forms.Questions.QuestionDto);
-    this.provider.setFormOne({ ...form, questions: questions.concat([question]) });
-  }
-
-  onRemoveQuestionEvent(questionId: string) {
-    let form = _.cloneDeep(this.form);
-    form.questions = _.remove(form.questions, function(o) {
-      return o.id != questionId;
-    });
-    this.provider.setFormOne(form);
+      choices: [],
+    } as Volo.Forms.Questions.QuestionDto, true, true);
+    this.provider.setFormOne({ ...form, isDirty: true ,questions: questions.concat([question]) });
   }
 
   goToPreView(id: string) {

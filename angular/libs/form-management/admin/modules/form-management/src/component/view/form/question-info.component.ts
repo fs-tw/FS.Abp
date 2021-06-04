@@ -88,15 +88,13 @@ export class QuestionInfoComponent implements OnInit {
     });
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
-        let result = { ...this.question, ...x };
-        this.question = result;
+        let result = { ...this.question, isDirty: true, ...x };
         this.provider.setQuestionsWithForms([result]);
       })
     );
   }
 
   onQuestionTypeChange(questionType: FormModel.QuestionTypes) {
-    // this.question.questionType = questionType;
     let question = _.cloneDeep(this.question);
     question.questionType = questionType;
     this.provider.setQuestionsWithForms([question]);

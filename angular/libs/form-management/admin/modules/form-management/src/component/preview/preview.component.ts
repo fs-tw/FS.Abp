@@ -2,10 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
-import { PageService } from '../../providers/page.service';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { ActivatedRoute } from '@angular/router';
-import { NzSafeAny } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'fs-preview',
@@ -20,7 +18,7 @@ export class PreviewComponent implements OnInit {
 
     constructor(
       private fb: FormBuilder,
-      private pageService: PageService,
+      private formService: Volo.Forms.Forms.FormService,
       private route: ActivatedRoute,
     ) {
         this.route.paramMap.subscribe(paramMap => {
@@ -33,7 +31,7 @@ export class PreviewComponent implements OnInit {
     ngOnInit() {}
 
     loadFormData() {
-        this.subscription.add(this.pageService.getById(this.formId).subscribe((x) => {
+        this.subscription.add(this.formService.getById(this.formId).subscribe((x) => {
             this.formDetail = x;
             this.buildForm();
         }));
