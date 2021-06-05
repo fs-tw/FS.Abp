@@ -27,7 +27,7 @@
                             <ng-container *ngSwitchCase="4">
                                 <div [formGroupName]="'choices'">
                                     <ng-container *ngFor="let choice of item.choices; let j = index;" [formGroupName]="j">
-                                        <label nz-checkbox [formControlName]="'value'">
+                                        <label nz-checkbox [formControlName]="'isChecked'">
                                             {{ choice.value }}
                                         </label>
                                     </ng-container>
@@ -39,7 +39,7 @@
                                         style="word-wrap: break-word;" 
                                         *ngFor="let choice of item.choices;"
                                         [nzLabel]="choice.value"
-                                        [nzValue]="choice.value"
+                                        [nzValue]="choice.id"
                                     >
                                     </nz-option>
                                 </nz-select>
