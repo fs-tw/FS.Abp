@@ -132,9 +132,7 @@ export class RadioComponent implements OnInit {
       id: index.toString(),
       index: index,
       isCorrect: false,
-      value: value,
-      isNewChoice: true,
-      isDirty: true
+      value: value
     } as Volo.Forms.Choices.ChoiceDto, true, true);
     this.provider.setChoicesWithFormsAndQuestions([choice]);
   }

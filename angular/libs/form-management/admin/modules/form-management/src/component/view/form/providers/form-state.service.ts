@@ -105,16 +105,6 @@ export class FormStateService
     this.setQuestions(questions);
   }
 
-  setFormOne(data: FormModel.FormInfo) {
-    if (!data) return;
-    let result = _.unionBy([data], this.store.state.Forms, 'id');
-    this.store.patch({
-      Forms: result,
-    });
-    let questions = data.questions.map((y) => y);
-    this.setQuestions(questions);
-  }
-
   setQuestionsWithForms(data: Array<FormModel.QuestionInfo>) {
     if (!data || data.length <= 0) return;
     let questionsResult = _.unionBy(data, this.store.state.Questions, 'id').sort((a, b) => {
@@ -122,7 +112,6 @@ export class FormStateService
     });
     let formsResult = this.store.state.Forms.map(x => {
       let questions = questionsResult.filter(y => y.formId == x.id);
-      x.isDirty = (questions.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
       return { ...x, questions: questions }
     });
     this.store.patch({
@@ -145,18 +134,6 @@ export class FormStateService
     this.setChoices(choices);
   }
 
-  setQuestionOne(data: FormModel.QuestionInfo) {
-    if (!data) return;
-    let result = _.unionBy([data], this.store.state.Questions, 'id').sort((a, b) => {
-      return a.index - b.index;
-    });
-    this.store.patch({
-      Questions: result,
-    });
-    let choices = data.choices.map((y) => y);
-    this.setChoices(choices);
-  }
-
   setChoicesWithFormsAndQuestions(data: Array<FormModel.ChoiceInfo>) {
     if (!data || data.length <= 0) return;
     let choicesResult = _.unionBy(data, this.store.state.Choices, 'id');
@@ -172,7 +149,6 @@ export class FormStateService
     });
     let formsResult = this.store.state.Forms.map(x => {
       let questions = questionsResult.filter(y => y.formId == x.id);
-      x.isDirty = (questions.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
       return { ...x, questions: questions }
     });
     this.store.patch({

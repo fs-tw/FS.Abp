@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;
   getFormById(key: string): FormModel.FormInfo;
-  setFormOne(data: FormModel.FormInfo);
+  setForms(data: Array<FormModel.FormInfo>)
 };
 
 @Component({
@@ -55,7 +55,7 @@ export class FormComponent implements OnInit {
     this.subscription.add(
       this.formGroup.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((x) => {
         let result = { ...this.form, isDirty: true, ...x };
-        this.provider.setFormOne(result);
+        this.provider.setForms([result]);
       })
     );
   }
@@ -75,7 +75,7 @@ export class FormComponent implements OnInit {
       questionType: 1,
       choices: [],
     } as Volo.Forms.Questions.QuestionDto, true, true);
-    this.provider.setFormOne({ ...form, isDirty: true ,questions: questions.concat([question]) });
+    this.provider.setForms([{ ...form, questions: questions.concat([question]) }]);
   }
 
   goToPreView(id: string) {
