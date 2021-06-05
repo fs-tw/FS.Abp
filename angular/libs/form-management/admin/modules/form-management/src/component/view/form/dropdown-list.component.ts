@@ -103,9 +103,11 @@ export class DropdownListComponent implements OnInit {
 
   ngOnChanges() {
     if(!this.questionId) return;
-    this.subscription.add(this.provider.getChoicesByQuestionId$(this.questionId).subscribe(
-      this.updateChoices
-    ));
+    this.subscription.add(
+      this.provider
+        .getChoicesByQuestionId$(this.questionId)
+        .subscribe(this.updateChoices)
+    );
   }
 
   ngOnDestroy() {

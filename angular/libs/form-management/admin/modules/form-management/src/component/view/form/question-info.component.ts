@@ -4,6 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormModel } from './models/models';
 import * as _ from 'lodash';
+import { Volo } from '@fs-tw/form-management/proxy';
 
 export type QuestionProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
@@ -97,6 +98,7 @@ export class QuestionInfoComponent implements OnInit {
   onQuestionTypeChange(questionType: FormModel.QuestionTypes) {
     let question = _.cloneDeep(this.question);
     question.questionType = questionType;
+    question.isDirty = true;
     this.provider.setQuestionsWithForms([question]);
   }
 }
