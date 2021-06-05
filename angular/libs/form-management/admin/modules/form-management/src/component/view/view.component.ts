@@ -64,14 +64,12 @@ export class ViewComponent implements OnInit {
     this.subscription.add(this.viewStateService.getFormsDataOfDelayTime$().subscribe(x => {
       let result = x.filter(y => y.isDirty == true);
       if(result.length > 0) {
-        console.log(result);
         this.createAndUpdateForms(result);
       }
     }));
     this.subscription.add(this.viewStateService.getQuestionsDataOfDelayTime$().subscribe(x => {
       let result = x.filter(y => y.isDirty == true);
       if(result.length > 0) {
-        console.log(result);
         this.createAndUpdateQuestrions(result);
       }
     }));

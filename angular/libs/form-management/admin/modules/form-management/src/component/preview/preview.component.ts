@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
 import { Volo } from '@fs-tw/form-management/proxy';
@@ -19,6 +19,7 @@ export class PreviewComponent implements OnInit {
     constructor(
       private fb: FormBuilder,
       private formService: Volo.Forms.Forms.FormService,
+      private responseService: Volo.Forms.Responses.ResponseService,
       private route: ActivatedRoute,
     ) {
         this.route.paramMap.subscribe(paramMap => {
@@ -44,12 +45,18 @@ export class PreviewComponent implements OnInit {
     buildForm() {
         const { required, choiceValidator } = PreviewValidators;
         this.questionsControls = this.fb.array(this.formDetail.questions.map(((x, i) => {
-            let result = { questionId: x.id }; 
+            let result = { questionType: x.questionType }; 
             if (x.questionType == 4) {
                 result["choices"] = this.fb.array(x.choices.map(y =>
-                    this.fb.group({ id: y.id, value: null })
+                    this.fb.group({
+                        questionId: x.id,
+                        choiceId: y.id,
+                        isChecked: false,
+                        value: y.value
+                    })
                 ), (x.isRequired) ? [choiceValidator] : undefined);
             } else {
+                result['questionId'] = x.id;
                 result['value'] = [null, (x.isRequired) ? [required] : undefined];
             }
             return this.fb.group(result);
@@ -59,8 +66,25 @@ export class PreviewComponent implements OnInit {
         });
     }
 
-    submitForm(value): void {
-        console.log(value);
+    submitForm(data): void {
+        let answers = _.flatten(data.questions.map(x => {
+            let result = {};
+            if(x.questionType == 4) {
+                result = x.choices.filter(y => y.isChecked == true).map(y => { return y; });
+            } else if(x.questionType == 3 || x.questionType == 5) {
+                result = {
+                    ...x,
+                    choiceId: x.value,
+                    value: (x.value)
+                            ? this.formDetail.questions
+                                .find(y => y.id == x.questionId).choices
+                                .find(y => y.id == x.value).value
+                            : x.value
+                };
+            } else { result = x; }
+            return result;
+        }));
+        console.log(answers);
     }
 }
 
