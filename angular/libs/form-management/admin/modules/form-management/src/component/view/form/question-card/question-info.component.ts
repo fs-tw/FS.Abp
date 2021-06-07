@@ -2,9 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { FormModel } from './models/models';
 import * as _ from 'lodash';
-import { Volo } from '@fs-tw/form-management/proxy';
+import { FormModel } from '../../../providers/models';
 
 export type QuestionProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;

@@ -7,7 +7,7 @@
             </nz-card>
         </nz-col>
     </nz-row>
-    <form nz-form [formGroup]="formGroup" validateOnSubmit (ngSubmit)="submitForm(formGroup.value)">
+    <form nz-form [formGroup]="formGroup" validateOnSubmit (ngSubmit)="submitForm(formGroup.value)" *ngIf="!isSubmitAnswer">
         <div [formArrayName]="'questions'">
             <nz-row  [nzGutter]="16" *ngFor="let item of formDetail.questions; let i = index" [formGroupName]="i" style="margin-bottom: 10px;">
                 <nz-col [nzSpan]="24">
@@ -65,4 +65,11 @@
             </nz-row>
         </div>
     </form>
+    <nz-row [nzGutter]="16" style="margin-bottom: 10px;" *ngIf="isSubmitAnswer">
+        <nz-col [nzSpan]="24" style="text-align: center;">
+            <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
+                <a (click)="loadFormData()" style="font-size: 18px;">{{ 'Forms::Response:SubmitNewAnswer' | abpLocalization }}</a>
+            </nz-card>
+        </nz-col>
+    </nz-row>
 </div>

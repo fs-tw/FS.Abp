@@ -6,17 +6,17 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { FormStateService } from './form/providers';
-import { FormModel } from './form/models/models';
 import { forkJoin, Subscription } from 'rxjs';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
+import { FormStateService } from '../providers/form-state.service';
+import { FormModel } from '../providers/models';
+import { filter, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ViewStateService extends FormStateService {
-
   initForm(data: FormModel.FormInfo) {
     if (!data) return;
     let formsResult = [data];
@@ -73,6 +73,10 @@ export class ViewComponent implements OnInit {
         this.createAndUpdateQuestrions(result);
       }
     }));
+    this.subscription.add(this.viewStateService.onSaveQuestion$.subscribe(x => {
+      if(!x) return;
+      this.updateQuestion(x);
+    }));
   }
 
   ngOnChanges() {
@@ -124,6 +128,15 @@ export class ViewComponent implements OnInit {
       return this.questionService.deleteById(z.id);
     });
     this.subscription.add(forkJoin([...createQuestions, ...updateQuestions, ...deleteQuestions]).subscribe(x => {
+      this.isLoading = false;
+      this.loadFormData();
+    }, error =>  this.isLoading = false));
+  }
+
+  updateQuestion(result: FormModel.QuestionInfo) {
+    this.isLoading = true;
+    let input = this.mapperQuestionData(result) as Volo.Forms.Questions.UpdateQuestionDto;
+    this.subscription.add(this.questionService.updateByIdAndInput(result.id, input).subscribe(x => {
       this.isLoading = false;
       this.loadFormData();
     }, error =>  this.isLoading = false));
