@@ -13,7 +13,6 @@ import { ToasterService } from '@abp/ng.theme.shared';
 export class PreviewComponent implements OnInit {
     formId: string = null;
     formGroup: FormGroup = this.fb.group({});
-    questionsControls: FormArray = new FormArray([]);
     subscription: Subscription = new Subscription();
     formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
     isSubmitAnswer: boolean = false;
@@ -48,7 +47,7 @@ export class PreviewComponent implements OnInit {
 
     buildForm() {
         const { required, choiceValidator } = PreviewValidators;
-        this.questionsControls = this.fb.array(this.formDetail.questions.map(((x, i) => {
+       let questionsControls = this.fb.array(this.formDetail.questions.map(((x, i) => {
             let result = { questionType: x.questionType };
             if (x.questionType == 4) {
                 result["choices"] = this.fb.array(x.choices.map(y =>
@@ -66,11 +65,10 @@ export class PreviewComponent implements OnInit {
                 result['questionId'] = x.id;
                 result['value'] = [null, (x.isRequired) ? [required] : undefined];
             };
-            let formgroup = this.fb.group(result);
-            return formgroup;
+            return this.fb.group(result);
         })));
         this.formGroup = this.fb.group({
-            questions: this.questionsControls
+            questions: questionsControls
         });
     }
 

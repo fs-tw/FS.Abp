@@ -13,13 +13,14 @@ import { QuestionTypeComponent } from './component/view/form/question-card/quest
 import { RadioComponent } from './component/view/form/choice/radio.component';
 import { CheckboxComponent } from './component/view/form/choice/checkbox.component';
 import { DropdownListComponent } from './component/view/form/choice/dropdown-list.component';
+import { ResponsesComponent } from './component/view/responses/responses.component';
 
 @NgModule({
   declarations: [
     MainComponent, ViewComponent,
     FormComponent, QuestionCardComponent, QuestionInfoComponent, QuestionTypeComponent,
     RadioComponent, CheckboxComponent, DropdownListComponent,
-    PreviewComponent
+    PreviewComponent, ResponsesComponent
   ],
   imports: [
     FormManagementAdminSharedModule,
