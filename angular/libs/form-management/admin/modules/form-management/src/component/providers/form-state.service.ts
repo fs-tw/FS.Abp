@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { InternalStore } from '@abp/ng.core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { FormModel } from '../models/models';
 import * as _ from 'lodash';
-import { CheckboxProvider } from './../checkbox.component';
-import { DropdownListProvider } from './../dropdown-list.component';
-import { FormProvider } from '../form/form.component';
-import { QuestionCardProvider } from '../question-card/question-card.component';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { RadioProvider } from '../radio.component';
+import { CheckboxProvider } from '../view/form/choice/checkbox.component';
+import { DropdownListProvider } from '../view/form/choice/dropdown-list.component';
+import { FormProvider } from '../view/form/form/form.component';
+import { QuestionCardProvider } from '../view/form/question-card/question-card.component';
+import { RadioProvider } from '../view/form/choice/radio.component';
+import { FormModel } from './models';
 
 // @dynamic
 @Injectable({
@@ -28,7 +28,8 @@ export class FormStateService
   } as FormModel.State);
 
   refresh$: BehaviorSubject<boolean>;
-
+  onSaveQuestion$: BehaviorSubject<FormModel.QuestionInfo>;
+  
   getAllDataOfDelayTime$(): Observable<FormModel.State> {
     return this.store.sliceState((state) => state).pipe(debounceTime(500), distinctUntilChanged());
   }
@@ -55,6 +56,10 @@ export class FormStateService
 
   getOne$(key: string) {
     return this.store.sliceState((state) => state[key]);
+  }
+
+  getOne(key: string) {
+    return this.store.state[key];
   }
 
   getFormById$(key: string): Observable<FormModel.FormInfo> {
@@ -170,6 +175,7 @@ export class FormStateService
 
   constructor() {
     this.refresh$ = new BehaviorSubject<boolean>(false);
+    this.onSaveQuestion$ = new BehaviorSubject<FormModel.QuestionInfo>(null);
     this.store.set(this.store.state);
   }
 }

@@ -38,7 +38,7 @@
           <span>{{ 'Forms::Form:Questions:Required' | abpLocalization }}</span>
         </nz-col>
         <nz-col style="padding: 5px">
-          <button nz-button nzType="default" style="height: 100%">
+          <button nz-button nzType="default" style="height: 100%" (click)="onSave(question.id)">
             <span style="font-weight: bold">{{
               'Forms::Form:Questions:Save' | abpLocalization
             }}</span>

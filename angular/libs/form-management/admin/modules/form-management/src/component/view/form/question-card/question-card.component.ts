@@ -1,19 +1,19 @@
 import {
   Component,
-  EventEmitter,
   Input,
   OnInit,
-  Output
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { FormModel } from '../models/models';
 import * as _ from 'lodash';
+import { FormModel } from '../../../providers/models';
 
 export type QuestionCardProvider ={
   getQuestionsByQuestionId$(key: string): Observable<FormModel.QuestionInfo>;
+  getQuestionsByQuestionId(key: string): FormModel.QuestionInfo;
   setQuestionsWithForms(data: Array<FormModel.QuestionInfo>);
+  onSaveQuestion$: BehaviorSubject<FormModel.QuestionInfo>;
 }
 
 @Component({
@@ -71,5 +71,10 @@ export class QuestionCardComponent implements OnInit {
     let question = _.cloneDeep(this.question);
     question.isDelete = question.isDirty = true;
     this.provider.setQuestionsWithForms([question]);
+  }
+
+  onSave(questionId: string) {
+    let result = this.provider.getQuestionsByQuestionId(questionId);
+    this.provider.onSaveQuestion$.next(result);
   }
 }

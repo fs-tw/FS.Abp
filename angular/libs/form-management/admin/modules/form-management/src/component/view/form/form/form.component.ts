@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { FormModel } from '../models/models';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
+import { FormModel } from '../../../providers/models';
 
 export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;

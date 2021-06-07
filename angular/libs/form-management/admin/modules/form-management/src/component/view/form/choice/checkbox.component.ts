@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { FormModel } from './models/models';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
+import { FormModel } from '../../../providers/models';
 
 export type CheckboxProvider ={
   getChoicesByQuestionId$(key: string): Observable<Array<FormModel.ChoiceInfo>>;
