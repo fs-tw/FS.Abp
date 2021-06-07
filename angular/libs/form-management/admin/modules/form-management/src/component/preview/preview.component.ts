@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { ActivatedRoute } from '@angular/router';
+import { ToasterService } from '@abp/ng.theme.shared';
 
 @Component({
   selector: 'fs-preview',
@@ -14,13 +15,15 @@ export class PreviewComponent implements OnInit {
     formGroup: FormGroup = this.fb.group({});
     questionsControls: FormArray = new FormArray([]);
     subscription: Subscription = new Subscription();
-    formDetail: Volo.Forms.Forms.FormWithDetailsDto;
+    formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
+    isSubmitAnswer: boolean = false;
 
     constructor(
       private fb: FormBuilder,
       private formService: Volo.Forms.Forms.FormService,
       private responseService: Volo.Forms.Responses.ResponseService,
       private route: ActivatedRoute,
+      private toasterService: ToasterService
     ) {
         this.route.paramMap.subscribe(paramMap => {
             if (!paramMap.get('id')) return null;
@@ -32,6 +35,7 @@ export class PreviewComponent implements OnInit {
     ngOnInit() {}
 
     loadFormData() {
+        this.isSubmitAnswer = false;
         this.subscription.add(this.formService.getById(this.formId).subscribe((x) => {
             this.formDetail = x;
             this.buildForm();
@@ -45,7 +49,7 @@ export class PreviewComponent implements OnInit {
     buildForm() {
         const { required, choiceValidator } = PreviewValidators;
         this.questionsControls = this.fb.array(this.formDetail.questions.map(((x, i) => {
-            let result = { questionType: x.questionType }; 
+            let result = { questionType: x.questionType };
             if (x.questionType == 4) {
                 result["choices"] = this.fb.array(x.choices.map(y =>
                     this.fb.group({
@@ -55,11 +59,15 @@ export class PreviewComponent implements OnInit {
                         value: y.value
                     })
                 ), (x.isRequired) ? [choiceValidator] : undefined);
+            } else  if(x.questionType == 3 || x.questionType == 5) {
+                result['questionId'] = x.id;
+                result['value'] = [null, (x.isRequired) ? [required] : undefined];
             } else {
                 result['questionId'] = x.id;
                 result['value'] = [null, (x.isRequired) ? [required] : undefined];
-            }
-            return this.fb.group(result);
+            };
+            let formgroup = this.fb.group(result);
+            return formgroup;
         })));
         this.formGroup = this.fb.group({
             questions: this.questionsControls
@@ -84,7 +92,14 @@ export class PreviewComponent implements OnInit {
             } else { result = x; }
             return result;
         }));
-        console.log(answers);
+        let input = {
+            email: null,
+            answers: answers as Array<Volo.Forms.Answers.CreateAnswerDto>
+        } as Volo.Forms.Responses.CreateResponseDto;
+        this.responseService.saveAnswersByFormIdAndInput(this.formId, input).subscribe(x => {
+            this.toasterService.success('建立成功！');
+            this.isSubmitAnswer = true;
+        }, error =>  this.toasterService.error('建立失敗！'));
     }
 }
 
