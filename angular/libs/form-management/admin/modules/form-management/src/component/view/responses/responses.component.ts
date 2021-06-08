@@ -1,4 +1,5 @@
 import {
+    ChangeDetectorRef,
     Component,
     Injector,
     Input,
@@ -8,72 +9,120 @@ import { Subscription } from 'rxjs';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
 import { FormBuilder, FormGroup } from '@angular/forms';
-  
+import { ToasterService } from '@abp/ng.theme.shared';
+
 @Component({
     selector: 'fs-responses',
     templateUrl: 'responses.component.html'
 })
 export class ResponsesComponent implements OnInit {
-    @Input() formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
-    responses: Array<Volo.Forms.Responses.FormResponseDetailedDto> = null;
+    @Input() formId: string = null;
+    formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
+    response: Volo.Forms.Responses.FormResponseDetailedDto = null;
     subscription: Subscription = new Subscription();
     formGroup: FormGroup = this.fb.group({});
+    isLoading: boolean = true;
+    totalCount: number = 0;
+    pageIndex = 1;
     constructor(
       protected injector: Injector,
       private fb: FormBuilder,
+      private cdr: ChangeDetectorRef,
+      private toasterService: ToasterService,
       private formService: Volo.Forms.Forms.FormService,
+      private responseService: Volo.Forms.Responses.ResponseService,
     ) {}
   
     ngOnInit() {
     }
   
     ngOnChanges() {
-        if(!this.formDetail) return;
-        let input = { maxResultCount: 999 } as Volo.Forms.Responses.GetResponseListInputDto;
+        if(!this.formId) return;
+        this.isLoading = true;
+        this.subscription.add(this.formService.getById(this.formId).subscribe((x) => {
+            this.formDetail = _.cloneDeep(x);
+            this.isLoading = false
+            this.loadResponses();
+        }, error => this.isLoading = false));
+    }
+
+    loadResponses() {
+        this.isLoading = true;
+        let input = { skipCount: (this.pageIndex - 1) * 1, maxResultCount: 1 } as Volo.Forms.Responses.GetResponseListInputDto;
         this.subscription.add(this.formService.getResponsesByIdAndInput(this.formDetail.id, input).subscribe(res => {
-            this.responses = res.items;
+            if(!res || res.items.length <= 0) {
+                this.isLoading = false;
+                return;
+            }
+            this.totalCount = res.totalCount;
+            this.response = _.head(res.items);
+            this.isLoading = false;
             this.buildForm();
-        }));
-        
+        }, error => this.isLoading = false));
     }
   
     ngOnDestroy() {
       this.subscription.unsubscribe();
     }
 
+    previousResponses() {
+        if (this.pageIndex <= 1) return;
+        this.pageIndex -= 1;
+        this.loadResponses();
+    }
+
+    nextResponses() {
+        if(this.pageIndex >= this.totalCount) return;
+        this.pageIndex += 1;
+        this.loadResponses();
+    }
+
+    goToResponse() {
+        this.cdr.detectChanges();
+        if(this.pageIndex < 1) {
+            this.pageIndex = 1;
+        } else if ( this.pageIndex > this.totalCount) {
+            this.pageIndex = this.totalCount;
+        }
+        this.loadResponses();
+    }
+
+    deleteResponse() {
+        this.subscription.add(this.responseService.deleteById(this.response.id).subscribe(x => {
+            this.pageIndex = 1;
+            this.toasterService.success('刪除成功！');
+            this.loadResponses();
+        }, error => this.toasterService.error('刪除失敗！')));
+    }
+
     buildForm() {
-        let responses = this.fb.array(this.responses.map(res => {
-            let questions = {
-                questions: this.fb.array(this.formDetail.questions.map(((x, i) => {
-                    let result = { questionType: x.questionType, isRequired: x.isRequired };
-                    if (x.questionType == 4) {
-                        result["choices"] = this.fb.array(x.choices.map(y =>
-                            this.fb.group({
-                                questionId: x.id,
-                                choiceId: y.id,
-                                isChecked: (res.answers.find(z => z.questionId == x.id && z.choiceId == y.id))
-                                            ? true
-                                            : false,
-                                value: [{ value: y.value, disabled: true }, undefined]
-                            })
-                        ), undefined);
-                    } else {
-                        let findAnswer = res.answers.find(z => z.questionId == x.id);
-                        let resValue = (findAnswer)
-                                    ? (x.questionType == 3 || x.questionType == 5)
-                                        ? findAnswer.choiceId
-                                        : findAnswer.value
-                                    : null;
-                        result['questionId'] = x.id;
-                        result['value'] = [{ value: resValue, disabled: true }, undefined];
-                    };
-                    return this.fb.group(result);
-                })))
-            };
-            return this.fb.group(questions);
-        }));
+        let questions = this.fb.array(this.formDetail.questions.map(((x, i) => {
+                let result = { questionType: x.questionType, isRequired: x.isRequired };
+                if (x.questionType == 4) {
+                    result["choices"] = this.fb.array(x.choices.map(y =>
+                        this.fb.group({
+                            questionId: x.id,
+                            choiceId: y.id,
+                            isChecked: (this.response.answers.find(z => z.questionId == x.id && z.choiceId == y.id))
+                                        ? true
+                                        : false,
+                            value: [{ value: y.value, disabled: true }, undefined]
+                        })
+                    ), undefined);
+                } else {
+                    let findAnswer = this.response.answers.find(z => z.questionId == x.id);
+                    let resValue = (findAnswer)
+                                ? (x.questionType == 3 || x.questionType == 5)
+                                    ? findAnswer.choiceId
+                                    : findAnswer.value
+                                : null;
+                    result['questionId'] = x.id;
+                    result['value'] = [{ value: resValue, disabled: true }, undefined];
+                };
+                return this.fb.group(result);
+            })));
         this.formGroup = this.fb.group({
-            responses: responses
+            questions: questions
         });
     }
 }
