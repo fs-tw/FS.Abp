@@ -58,9 +58,6 @@ export class PreviewComponent implements OnInit {
                         value: y.value
                     })
                 ), (x.isRequired) ? [choiceValidator] : undefined);
-            } else  if(x.questionType == 3 || x.questionType == 5) {
-                result['questionId'] = x.id;
-                result['value'] = [null, (x.isRequired) ? [required] : undefined];
             } else {
                 result['questionId'] = x.id;
                 result['value'] = [null, (x.isRequired) ? [required] : undefined];
@@ -74,11 +71,10 @@ export class PreviewComponent implements OnInit {
 
     submitForm(data): void {
         let answers = _.flatten(data.questions.map(x => {
-            let result = {};
             if(x.questionType == 4) {
-                result = x.choices.filter(y => y.isChecked == true).map(y => { return y; });
+                return x.choices.filter(y => y.isChecked == true).map(y => { return y; });
             } else if(x.questionType == 3 || x.questionType == 5) {
-                result = {
+                return {
                     ...x,
                     choiceId: x.value,
                     value: (x.value)
@@ -87,8 +83,7 @@ export class PreviewComponent implements OnInit {
                                 .find(y => y.id == x.value).value
                             : x.value
                 };
-            } else { result = x; }
-            return result;
+            } else { return x; }
         }));
         let input = {
             email: null,

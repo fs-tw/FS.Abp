@@ -41,7 +41,9 @@ export class ViewStateService extends FormStateService {
           </nz-spin>
         </nz-tab>
         <nz-tab nzTitle="{{ 'Forms::Menu:Responses' | abpLocalization }}">
-          <fs-responses [formDetail]="formDetail"></fs-responses>
+          <nz-spin [nzSpinning]="isLoading" style="min-height: 100px;">
+            <fs-responses [formId]="formId"></fs-responses>
+          </nz-spin>
         </nz-tab>
       </nz-tabset>
     </abp-page>
@@ -54,6 +56,7 @@ export class ViewComponent implements OnInit {
   isLoading: boolean = true;
   subscription: Subscription = new Subscription();
   formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
+  
   constructor(
     protected injector: Injector,
     public viewStateService: ViewStateService,
