@@ -31,7 +31,7 @@ import {
   ],
 })
 export class FormsComponent implements OnInit {
-  public static NAME: string = 'FromManagement:FormsComponent';
+  public static NAME: string = 'FormManagement:FormsComponent';
 
   data$: Observable<PagedResultDto<Volo.Forms.Forms.FormDto>>;
   service: Volo.Forms.Forms.FormService;

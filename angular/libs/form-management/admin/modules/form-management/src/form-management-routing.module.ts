@@ -5,12 +5,10 @@ import { PreviewComponent } from './component/preview/preview.component';
 
 const routes: Routes = [
   {
-    path: '',
-    //canActivate: [FormManagementInitializer],
-    children: [
-      { path: '', component: MainComponent },
-      { path: 'preview/:id', component: PreviewComponent },
-    ],
+    path: '', component: MainComponent, //canActivate: [FormManagementInitializer],
+  },
+  {
+    path: 'preview/:id', component: PreviewComponent, //canActivate: [FormManagementInitializer],
   },
 ];
 // @dynamic

@@ -79,6 +79,6 @@ export class FormComponent implements OnInit {
   }
 
   goToPreView(id: string) {
-    this.router.navigate(["/form-management/forms/preview/" + id]);
+    this.router.navigate(["/form-management/form/preview/" + id]);
   }
 }
