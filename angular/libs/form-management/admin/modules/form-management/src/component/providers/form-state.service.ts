@@ -27,7 +27,7 @@ export class FormStateService
     Choices: [] as Array<FormModel.ChoiceInfo>,
   } as FormModel.State);
 
-  finish$: BehaviorSubject<boolean>;
+  isLoading$: BehaviorSubject<boolean>;
   refresh$: BehaviorSubject<boolean>;
   onSaveQuestion$: BehaviorSubject<FormModel.QuestionInfo>;
   
@@ -101,7 +101,7 @@ export class FormStateService
     this.store.patch(data);
   }
 
-  setForms(data: Array<FormModel.FormInfo>) {
+  setForms(data: Array<FormModel.FormInfo>): BehaviorSubject<boolean> {
     if (!data || data.length <= 0) return;
     let result = _.unionBy(data, this.store.state.Forms, 'id');
     this.store.patch({
@@ -109,6 +109,7 @@ export class FormStateService
     });
     let questions = _.flatten(data.map((x) => x.questions.map((y) => y)));
     this.setQuestions(questions);
+    return this.isLoading$;
   }
 
   setQuestionsWithForms(data: Array<FormModel.QuestionInfo>) {
@@ -176,7 +177,7 @@ export class FormStateService
   }
 
   constructor() {
-    this.finish$ = new BehaviorSubject<boolean>(false);
+    this.isLoading$ = new BehaviorSubject<boolean>(false);
     this.refresh$ = new BehaviorSubject<boolean>(false);
     this.onSaveQuestion$ = new BehaviorSubject<FormModel.QuestionInfo>(null);
     this.store.set(this.store.state);
