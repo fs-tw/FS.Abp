@@ -12,8 +12,7 @@ declare let $: any;
 export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;
   getFormById(key: string): FormModel.FormInfo;
-  setForms(data: Array<FormModel.FormInfo>);
-  finish$: BehaviorSubject<boolean>;
+  setForms(data: Array<FormModel.FormInfo>): BehaviorSubject<boolean>;
 };
 
 @Component({
@@ -37,8 +36,8 @@ export class FormComponent implements OnInit {
   };
 
   loadingData = (data: boolean) => {
-    this.isLoading = !data;
-    if(!this.isLoading && this.isAddNewQuestion) {
+    this.isLoading = data;
+    if(this.isLoading && this.isAddNewQuestion) {
       this.isAddNewQuestion = false;
       $("div.alain-ms__product-body.scrollbar")
         .scrollTop(
@@ -51,9 +50,6 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.subscription.add(
-      this.provider.finish$.subscribe(this.loadingData)
-    );
   }
 
   ngOnChanges() {
@@ -97,7 +93,10 @@ export class FormComponent implements OnInit {
       questionType: 1,
       choices: [],
     } as Volo.Forms.Questions.QuestionDto, true, true);
-    this.provider.setForms([{ ...form, questions: questions.concat([question]) }]);
+    this.subscription.add(
+      this.provider.setForms([{ ...form, questions: questions.concat([question]) }])
+                   .subscribe(this.loadingData)
+    );
   }
 
   goToPreView(id: string) {
