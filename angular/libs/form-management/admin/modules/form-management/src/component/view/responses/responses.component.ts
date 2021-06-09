@@ -51,6 +51,8 @@ export class ResponsesComponent implements OnInit {
         let input = { skipCount: (this.pageIndex - 1) * 1, maxResultCount: 1 } as Volo.Forms.Responses.GetResponseListInputDto;
         this.subscription.add(this.formService.getResponsesByIdAndInput(this.formDetail.id, input).subscribe(res => {
             if(!res || res.items.length <= 0) {
+                this.totalCount = this.pageIndex = 0;
+                this.response = null;
                 this.isLoading = false;
                 return;
             }

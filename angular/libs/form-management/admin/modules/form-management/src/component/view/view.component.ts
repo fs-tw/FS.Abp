@@ -94,13 +94,15 @@ export class ViewComponent implements OnInit {
 
   loadFormData() {
     this.isLoading = true;
+    this.viewStateService.finish$.next(false);
     this.subscription.add(this.formService.getById(this.formId).subscribe((x) => {
-      this.formDetail = _.cloneDeep(x);
       let result = new FormModel.FormInfo(x, x.questions);
       this.viewStateService.initForm(result);
-      this.isLoading = false;
+      this.formDetail = _.cloneDeep(x);
       this.cdr.detectChanges();
-    }, error => this.isLoading = false));
+      this.isLoading = false;
+      this.viewStateService.finish$.next(true);
+    }, error => { this.isLoading = false; this.viewStateService.finish$.next(true); }));
   }
 
   createAndUpdateForms(result: Array<FormModel.FormInfo>) {

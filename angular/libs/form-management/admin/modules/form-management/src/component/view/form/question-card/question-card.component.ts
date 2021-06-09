@@ -23,6 +23,7 @@ export type QuestionCardProvider ={
 export class QuestionCardComponent implements OnInit {
   @Input() questionId: string = null;
   @Input() provider: QuestionCardProvider;
+  @Input() questionNo: number = null;
 
   subscription: Subscription = new Subscription();
   
@@ -69,7 +70,7 @@ export class QuestionCardComponent implements OnInit {
 
   removeQuestion() {
     let question = _.cloneDeep(this.question);
-    question.isDelete = question.isDirty = true;
+    question.isDeleteQuestion = question.isDirty = true;
     this.provider.setQuestionsWithForms([question]);
   }
 

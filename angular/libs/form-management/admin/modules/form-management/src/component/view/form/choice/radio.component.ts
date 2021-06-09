@@ -51,12 +51,14 @@ export type RadioProvider ={
                   <a style="color: blue;" (click)="addNewChoice(1)">{{
                     'Forms::Choice:AddOption' | abpLocalization
                   }}</a>
-                  <span style="padding: 5px;">{{
-                    'Forms::Choice:Or' | abpLocalization
-                  }}</span>
-                  <a style="color: blue;" (click)="addNewChoice(2)">{{
-                    'Forms::Choice:AddOther' | abpLocalization
-                  }}</a>
+                  <ng-container *ngIf="!hasOtherOption">
+                    <span style="padding: 5px;">{{
+                      'Forms::Choice:Or' | abpLocalization
+                    }}</span>
+                    <a style="color: blue;" (click)="addNewChoice(2)">{{
+                      'Forms::Choice:AddOther' | abpLocalization
+                    }}</a>
+                  </ng-container>
                 </label>
               </nz-col>
             </nz-row>
@@ -79,6 +81,7 @@ export class RadioComponent implements OnInit {
 
   choicesControls: FormArray = new FormArray([]);
   choices: Array<FormModel.ChoiceInfo> = [];
+  hasOtherOption: boolean = false;
 
   updateChoices = (data: Array<FormModel.ChoiceInfo>) => {
     if (!data) return;
@@ -108,7 +111,9 @@ export class RadioComponent implements OnInit {
   buildForm(choices: Array<FormModel.ChoiceInfo>) {
     this.choicesControls = this.fb.array(
       choices.map((x, i) => {
-        return this.fb.group(x);
+        this.hasOtherOption = (x.value == "Other...");
+        let value = (this.hasOtherOption) ? [{ value: x.value, disabled: true }, undefined] : [x.value, undefined];
+        return this.fb.group({ ...x, value: value });
       })
     );
     this.formGroup = this.fb.group({

@@ -27,6 +27,7 @@ export class FormStateService
     Choices: [] as Array<FormModel.ChoiceInfo>,
   } as FormModel.State);
 
+  finish$: BehaviorSubject<boolean>;
   refresh$: BehaviorSubject<boolean>;
   onSaveQuestion$: BehaviorSubject<FormModel.QuestionInfo>;
   
@@ -147,8 +148,9 @@ export class FormStateService
     });
     let questionsResult = this.store.state.Questions.map(x => {
       let choices = choicesResult.filter(y => y.questionId == x.id);
-      x.isDirty = (choices.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
-      return { ...x, choices: choices }
+      let isDirty = (choices.filter(y => y.isDirty == true).length > 0) ? true : x.isDirty;
+      let hasOtherOption = (choices.filter(y => y.value == "Other..." && y.isDeleteChoice == false).length > 0) ? true : false;
+      return { ...x, isDirty: isDirty, hasOtherOption: hasOtherOption, choices: choices};
     }).sort((a, b) => {
       return a.index - b.index;
     });
@@ -174,6 +176,7 @@ export class FormStateService
   }
 
   constructor() {
+    this.finish$ = new BehaviorSubject<boolean>(false);
     this.refresh$ = new BehaviorSubject<boolean>(false);
     this.onSaveQuestion$ = new BehaviorSubject<FormModel.QuestionInfo>(null);
     this.store.set(this.store.state);

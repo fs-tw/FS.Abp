@@ -1,16 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
 import { FormModel } from '../../../providers/models';
 
+declare let $: any;
+
 export type FormProvider = {
   getFormById$(key: string): Observable<FormModel.FormInfo>;
   getFormById(key: string): FormModel.FormInfo;
-  setForms(data: Array<FormModel.FormInfo>)
+  setForms(data: Array<FormModel.FormInfo>);
+  finish$: BehaviorSubject<boolean>;
 };
 
 @Component({
@@ -24,6 +27,8 @@ export class FormComponent implements OnInit {
   formGroup: FormGroup = this.fb.group({});
   subscription: Subscription = new Subscription();
   form: FormModel.FormInfo = null;
+  isLoading: boolean = false;
+  isAddNewQuestion: boolean = false;
 
   updateForm = (data: FormModel.FormInfo) => {
     if (!data) return;
@@ -31,10 +36,25 @@ export class FormComponent implements OnInit {
     this.buildForm(data);
   };
 
+  loadingData = (data: boolean) => {
+    this.isLoading = !data;
+    if(!this.isLoading && this.isAddNewQuestion) {
+      this.isAddNewQuestion = false;
+      $("div.alain-ms__product-body.scrollbar")
+        .scrollTop(
+          $("div.alain-ms__product-body.scrollbar").prop("scrollHeight")
+        );
+    }
+  };
+
   constructor(private fb: FormBuilder, private router: Router) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscription.add(
+      this.provider.finish$.subscribe(this.loadingData)
+    );
+  }
 
   ngOnChanges() {
     if (!this.formId) return;
@@ -61,6 +81,8 @@ export class FormComponent implements OnInit {
   }
 
   addNewQuestion() {
+    this.isLoading = true;
+    this.isAddNewQuestion = true;
     let form = this.provider.getFormById(this.formId);
     let questions = form.questions;
     let index = (questions.length <= 0) ? 1 : Math.max(...questions.map(x => x.index)) + 1;
