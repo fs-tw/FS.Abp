@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
 import { FormModel } from '../../../providers/models';
@@ -16,7 +17,7 @@ export type RadioProvider ={
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionId">
       <div class="form-group" [formArrayName]="'choices'">
-        <label [for]="'choices'">題項</label>
+        <label [for]="'choices'">{{ 'Forms::Choice:Option' | abpLocalization }}</label>
         <nz-row
           [nzGutter]="16"
           style="padding: 5px;"
@@ -90,7 +91,8 @@ export class RadioComponent implements OnInit {
   };
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private confirmationService: ConfirmationService
   ) {}
 
   ngOnInit() {}
@@ -143,8 +145,16 @@ export class RadioComponent implements OnInit {
   }
 
   removeChoice(id: string) {
-    let result = _.cloneDeep(this.choices.find(x => x.id == id));
-    result.isDeleteChoice = result.isDirty = true;
-    this.provider.setChoicesWithFormsAndQuestions([result]);
+    this.confirmationService.warn("Forms::ItemWillBeDeletedMessage" , "Warn")
+    .subscribe(x => {
+      if (x != Confirmation.Status.confirm) return;
+      toDelete(id);
+    })
+
+    function toDelete(id: string) {
+      let result = _.cloneDeep(this.choices.find(x => x.id == id));
+      result.isDeleteChoice = result.isDirty = true;
+      this.provider.setChoicesWithFormsAndQuestions([result]);
+    }
   }
 }

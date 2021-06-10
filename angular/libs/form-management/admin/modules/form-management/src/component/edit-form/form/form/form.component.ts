@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
-import { Router } from '@angular/router';
 import { FormModel } from '../../../providers/models';
 
 declare let $: any;
@@ -46,7 +45,9 @@ export class FormComponent implements OnInit {
     }
   };
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder
+  ) {
   }
 
   ngOnInit() {
@@ -97,9 +98,5 @@ export class FormComponent implements OnInit {
       this.provider.setForms([{ ...form, questions: questions.concat([question]) }])
                    .subscribe(this.loadingData)
     );
-  }
-
-  goToPreView(id: string) {
-    this.router.navigate(["/form-management/form/preview/" + id]);
   }
 }

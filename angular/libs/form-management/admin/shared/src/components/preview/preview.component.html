@@ -1,4 +1,4 @@
-<div *ngIf="formDetail">
+<div *ngIf="formDetail && formId">
     <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
         <nz-col [nzSpan]="24" style="text-align: center;">
             <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
@@ -12,7 +12,7 @@
             <nz-row  [nzGutter]="16" *ngFor="let item of formDetail.questions; let i = index" [formGroupName]="i" style="margin-bottom: 10px;">
                 <nz-col [nzSpan]="24">
                     <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
-                        <h6><nz-tag *ngIf="item.isRequired" [nzColor]="'red'">必填</nz-tag>{{ item.title }}</h6>
+                        <h6><nz-tag *ngIf="item.isRequired" [nzColor]="'red'">{{ 'Forms::Form:Questions:Required' | abpLocalization }}</nz-tag>{{ item.title }}</h6>
                         <p>{{ item.description }}</p>
                         <div class="form-group" [ngSwitch]="item.questionType">
                             <ng-container *ngSwitchCase="3">

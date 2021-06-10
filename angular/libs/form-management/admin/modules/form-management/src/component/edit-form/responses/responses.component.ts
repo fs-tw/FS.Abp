@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 import { Volo } from '@fs-tw/form-management/proxy';
 import * as _ from 'lodash';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ToasterService } from '@abp/ng.theme.shared';
+import { ToasterService, ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
 
 @Component({
     selector: 'fs-responses',
@@ -31,6 +31,7 @@ export class ResponsesComponent implements OnInit {
       private toasterService: ToasterService,
       private formService: Volo.Forms.Forms.FormService,
       private responseService: Volo.Forms.Responses.ResponseService,
+      private confirmationService: ConfirmationService
     ) {}
   
     ngOnInit() {
@@ -90,11 +91,19 @@ export class ResponsesComponent implements OnInit {
     }
 
     deleteResponse() {
-        this.subscription.add(this.responseService.deleteById(this.response.id).subscribe(x => {
-            this.pageIndex = 1;
-            this.toasterService.success('刪除成功！');
-            this.loadResponses();
-        }, error => this.toasterService.error('刪除失敗！')));
+        this.confirmationService.warn("Forms::Form:Responses:ResponseWillBeDeletedMsg" , "Warn")
+        .subscribe(x => {
+            if (x != Confirmation.Status.confirm) return;
+            toDelete();
+        })
+
+        function toDelete() {
+            this.subscription.add(this.responseService.deleteById(this.response.id).subscribe(x => {
+                this.pageIndex = 1;
+                this.toasterService.success("Forms::DeletedSuccessfully");
+                this.loadResponses();
+            }, error => this.toasterService.error("Forms::Error")));
+        }
     }
 
     buildForm() {

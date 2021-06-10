@@ -3,11 +3,11 @@ import { InternalStore } from '@abp/ng.core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import * as _ from 'lodash';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { CheckboxProvider } from '../view/form/choice/checkbox.component';
-import { DropdownListProvider } from '../view/form/choice/dropdown-list.component';
-import { FormProvider } from '../view/form/form/form.component';
-import { QuestionCardProvider } from '../view/form/question-card/question-card.component';
-import { RadioProvider } from '../view/form/choice/radio.component';
+import { CheckboxProvider } from '../edit-form/form/choice/checkbox.component';
+import { DropdownListProvider } from '../edit-form/form/choice/dropdown-list.component';
+import { FormProvider } from '../edit-form/form/form/form.component';
+import { QuestionCardProvider } from '../edit-form/form/question-card/question-card.component';
+import { RadioProvider } from '../edit-form/form/choice/radio.component';
 import { FormModel } from './models';
 
 // @dynamic

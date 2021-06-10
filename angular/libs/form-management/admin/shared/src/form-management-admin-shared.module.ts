@@ -6,6 +6,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { PageHeaderDefaultDirective } from './directives/page-header-default/page-header-default.directive';
 import { PageHeaderDefaultComponent } from './directives/page-header-default/page-header-default.component';
 import { LayoutModule} from '@fs-tw/theme-alain-ms/layout'
+import { PreviewComponent } from './components/preview/preview.component';
 
 let COMPONENT = [
   PageHeaderDefaultDirective
@@ -14,8 +15,8 @@ let COMPONENT = [
 let MODAL_COMPONENT = [];
 
 @NgModule({
-  declarations: [...COMPONENT, ...MODAL_COMPONENT, FormsComponent,PageHeaderDefaultComponent],
+  declarations: [...COMPONENT, ...MODAL_COMPONENT, FormsComponent,PageHeaderDefaultComponent, PreviewComponent],
   imports: [CoreModule, PageModule, ThemeAlainSharedModule,LayoutModule],
-  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT, FormsComponent],
+  exports: [ThemeAlainSharedModule, ...COMPONENT, ...MODAL_COMPONENT, FormsComponent, PreviewComponent],
 })
 export class FormManagementAdminSharedModule {}

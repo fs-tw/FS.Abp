@@ -9,7 +9,7 @@ import { FormModel } from '../../../providers/models';
   template: `
     <form [formGroup]="formGroup" validateOnSubmit *ngIf="questionType">
         <div class="form-group">
-            <label [for]="'questionType'">類型</label>
+            <label [for]="'questionType'">Type</label>
             <nz-select style="width: 100%;" [nzSize]="'large'" [formControlName]="'questionType'" [id]="'questionType'" nzShowSearch>
               <nz-option style="word-wrap: break-word;" nzLabel="{{ shortText | abpLocalization }}" [nzValue]="1"></nz-option>
               <nz-option style="word-wrap: break-word;" nzLabel="{{ paragraphText | abpLocalization }}" [nzValue]="2"></nz-option>
