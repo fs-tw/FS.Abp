@@ -13,28 +13,24 @@ export const FORM_MANAGEMENT_ROUTE_PROVIDERS = [
   },
 ];
 
+export const FormRoutes = [
+  {
+    path: '/form-management',
+    name: eFormmanagementRouteNames.Forms,
+    parentName: eThemeSharedRouteNames.Administration,
+    layout: eLayoutType.application,
+    iconClass: 'fa fa-folder-open',
+    order: 0,
+    //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
+  }
+];
+
 export function configureRoutes(routes: RoutesService) {
 
 
   return () => {
     routes.add([
-      {
-        path: '/form-management',
-        name: eFormmanagementRouteNames.FormManagement,
-        parentName: eThemeSharedRouteNames.Administration,
-        layout: eLayoutType.application,
-        iconClass: 'fa fa-folder-open',
-        order: -1
-        //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
-      },
-      {
-        path: '/form-management/forms',
-        name: eFormmanagementRouteNames.Forms,
-        parentName: eFormmanagementRouteNames.FormManagement,
-        iconClass: 'fa fa-folder-open',
-        order: 1
-        //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,        
-      }
+      ...FormRoutes
     ]);
   };
 }

@@ -35,6 +35,7 @@ namespace DEMO
         typeof(AbpGlobalFeaturesModule),
         typeof(BlobStoringDatabaseDomainSharedModule)
         )]
+    [DependsOn(typeof(FS.FormManagement.FormManagementDomainSharedModule))]
     public class DEMODomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

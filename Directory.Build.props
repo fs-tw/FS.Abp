@@ -4,8 +4,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>430.0.2</Version>
-    <FSVersion>430.0.1</FSVersion>
+    <Version>430.2.0</Version>
+    <FSVersion>430.0.2</FSVersion>
     <VoloVersion>430.0.1</VoloVersion>
   </PropertyGroup>
 

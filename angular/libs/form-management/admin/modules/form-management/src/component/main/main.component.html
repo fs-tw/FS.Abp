@@ -1,0 +1,12 @@
+<ng-template #formsTemplate let-input>
+    <fs-tw-forms></fs-tw-forms>
+</ng-template>
+
+<ng-template #viewTemplate let-input>
+    <fs-edit-form [formId]="input"></fs-edit-form>
+</ng-template>
+
+<div *ngIf="itemTemplate">
+    <ng-container [ngTemplateOutlet]="itemTemplate" [ngTemplateOutletContext]="{$implicit: formId}">
+    </ng-container>
+</div>

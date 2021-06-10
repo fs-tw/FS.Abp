@@ -1,30 +1,39 @@
-import { Component, Injector, Input, OnInit } from '@angular/core';
-import { ListService } from '@abp/ng.core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { ListService, PagedResultDto } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
-import { eFormsComponents,ExtensionsService } from '@fs-tw/form-management/config';
 import { Volo } from '@fs-tw/form-management/proxy';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
-import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
+import { filter, switchMap, take, tap } from 'rxjs/operators';
+import { setDefaults } from '@fs-tw/theme-alain/shared/extensions';
+import {
+  FORMS_TOOLBAR_ACTIONS,
+  FORMS_ENTITY_ACTIONS,
+  FORMS_ENTITY_PROPS,
+  FORMS_CREATE_FORM_PROPS,
+  FORMS_EDIT_FORM_PROPS,
+} from './defaults';
 
 @Component({
   selector: 'fs-tw-forms',
   templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.less'],
   providers: [
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: eFormsComponents.Form,
+      useValue: FormsComponent.NAME,
     },
   ],
 })
 export class FormsComponent implements OnInit {
+  public static NAME: string = 'FormManagement:FormsComponent';
+
+  data$: Observable<PagedResultDto<Volo.Forms.Forms.FormDto>>;
   service: Volo.Forms.Forms.FormService;
   subs: Subscription = new Subscription();
 
@@ -35,38 +44,41 @@ export class FormsComponent implements OnInit {
   editForm: FormGroup;
   editSelectedRecord: Volo.Forms.Forms.FormDto;
 
-  streamCreator=(q)=>{
+  streamCreator = (q) => {
     return this.service.getListByInput(q);
-  }
+  };
 
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService,
-    private extensionsService: ExtensionsService
+    private confirmationService: ConfirmationService
   ) {
+    this.subs.add(
+      setDefaults(injector, FormsComponent.NAME, {
+        entityAction: FORMS_ENTITY_ACTIONS,
+        toolbarActions: FORMS_TOOLBAR_ACTIONS,
+        entityProps: FORMS_ENTITY_PROPS,
+        editFormProps: FORMS_EDIT_FORM_PROPS,
+        createFormProps: FORMS_CREATE_FORM_PROPS,
+      }).subscribe((x) => {
+        switch (x.method) {
+          case 'Create':
+            this.onAdd();
+            break;
+          case 'Edit':
+            this.onEdit(x.data.record.id);
+            break;
+          case 'Delete':
+            this.delete(x.data.record.id);
+            break;
+        }
+      })
+    );
     this.service = this.injector.get(Volo.Forms.Forms.FormService);
-
-   }
+  }
 
   ngOnInit(): void {
-    this.subs.add(
-      this.extensionsService.Actions$[eFormsComponents.Form].subscribe(
-        (x) => {
-          switch (x.method) {
-            case 'Create':
-              this.onAdd();
-              break;
-            case 'Edit':
-              this.onEdit(x.data.record.id);
-              break;
-            case 'Delete':
-              this.delete(x.data.record.id);
-              break;
-          }
-        }
-      )
-    );    
+    this.data$ = this.list.hookToQuery(this.streamCreator);
   }
 
   onAdd() {
@@ -128,5 +140,4 @@ export class FormsComponent implements OnInit {
         this.list.get();
       });
   }
-
 }

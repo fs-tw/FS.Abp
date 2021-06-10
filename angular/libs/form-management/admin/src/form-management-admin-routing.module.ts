@@ -1,24 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard, PermissionGuard } from '@abp/ng.core';
-//import { VersionsModule } from './versions/versions.module';
-import { FormManagementModule } from './form-management/form-management.module';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full',redirectTo: 'forms', },
+  { path: '', pathMatch: 'full', redirectTo: 'form', },
   {
-    path: '',
+    path: 'form',
+    loadChildren: ()=>import('@fs-tw/form-management/admin/modules/form-management').then(m=>m.FormManagementModule)
     //canActivate: [AuthGuard, PermissionGuard],
-    children: [
-      {
-        path: 'forms',
-        loadChildren: FormManagementModule.forEarly,
-      },
-      // {
-      //   path: 'versions',
-      //   loadChildren: VersionsModule.forEarly,
-      // },
-    ],
   },
 ];
 // @dynamic

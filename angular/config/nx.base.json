@@ -1,5 +1,5 @@
 {
-  "npmScope": "fs-tw",
+  "npmScope": "fs",
   "implicitDependencies": {
     "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"

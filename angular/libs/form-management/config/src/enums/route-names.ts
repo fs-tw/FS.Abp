@@ -9,6 +9,7 @@ export const enum eFormmanagementRouteNames {
   RecordItem="FormManagement::FS.RecordItem",
 
   Forms="Forms::Menu:Forms.Management",
+  View="Forms::View",
   Versions="FormManagement::Versions",
   Records="FormManagement::Records",
 

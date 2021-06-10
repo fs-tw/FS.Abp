@@ -10,7 +10,7 @@
       "projectType": "library",
       "root": "libs/form-management",
       "sourceRoot": "libs/form-management/src",
-      "prefix": "fs-tw",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",

@@ -6,7 +6,7 @@
     "peerDependencies": {
     },
     "dependencies": {
-        "@fs-tw/theme-alain": "430.0.1",
+        "@fs-tw/theme-alain": "430.0.4",
         "@abp/ng.identity":"~4.3.0"
     }
   }

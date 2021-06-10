@@ -1,0 +1,133 @@
+<nz-spin [nzSpinning]="isLoading" style="min-height: 100px;">
+    <ng-container *ngIf="formDetail && response">
+        <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
+            <nz-col [nzSpan]="24" style="text-align: center;">
+                <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
+                    <nz-row [nzGutter]="16">
+                        <nz-col
+                          [nzLg]="4"
+                          [nzMd]="24"
+                          [nzSm]="24"
+                          [nzXs]="24"
+                        >
+                          <button nz-button nzType="default" style="width: 100%; height: 100%;" (click)="previousResponses()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                            </svg>
+                          </button>
+                        </nz-col>
+                        <nz-col
+                          [nzLg]="12"
+                          [nzMd]="24"
+                          [nzSm]="24"
+                          [nzXs]="24"
+                        >
+                            <nz-row [nzGutter]="16">
+                                <nz-col [nzSpan]="10">
+                                    <input class="form-control" type="number" min="1" [max]="totalCount" step="1" [(ngModel)]="pageIndex" (ngModelChange)="goToResponse()" />
+                                </nz-col>
+                                <nz-col [nzSpan]="14">
+                                    <span style="font-weight:bold; line-height: 2.5;">
+                                        {{ 'Forms::Total' | abpLocalization }} {{ 'Forms::Form:Responses:TotalResponses' | abpLocalization: totalCount.toString() }}
+                                    </span>
+                                </nz-col>
+                            </nz-row>
+                        </nz-col>
+                        <nz-col
+                          [nzLg]="4"
+                          [nzMd]="24"
+                          [nzSm]="24"
+                          [nzXs]="24"
+                        >
+                          <button nz-button nzType="default" style="width: 100%; height: 100%;" (click)="nextResponses()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                            </svg>
+                          </button>
+                        </nz-col>
+                        <nz-col
+                          [nzLg]="4"
+                          [nzMd]="24"
+                          [nzSm]="24"
+                          [nzXs]="24"
+                        >
+                          <button nz-button nzType="default" style="width: 100%; height: 100%;" (click)="deleteResponse()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                          </button>
+                        </nz-col>
+                    </nz-row>
+                </nz-card>
+            </nz-col>
+        </nz-row>
+        <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
+            <nz-col [nzSpan]="24" style="text-align: center;">
+                <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
+                    <h4>{{ formDetail.title }}</h4>
+                    <p>{{ formDetail.description }}</p>
+                </nz-card>
+            </nz-col>
+        </nz-row>
+        <form nz-form [formGroup]="formGroup" validateOnSubmit>
+            <div [formArrayName]="'questions'">
+                <nz-row  [nzGutter]="16" *ngFor="let item of formDetail.questions; let i = index" [formGroupName]="i" style="margin-bottom: 10px;">
+                    <nz-col [nzSpan]="24">
+                        <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
+                            <h6><nz-tag *ngIf="item.isRequired" [nzColor]="'red'">必填</nz-tag>{{ item.title }}</h6>
+                            <p>{{ item.description }}</p>
+                            <div class="form-group" [ngSwitch]="item.questionType">
+                                <ng-container *ngSwitchCase="3">
+                                    <nz-radio-group  [formControlName]="'value'">
+                                        <ng-container *ngFor="let choice of item.choices;">
+                                            <label nz-radio [nzValue]="choice.id" [nzDisabled]="true">
+                                                {{ choice.value }}
+                                            </label>
+                                        </ng-container>
+                                    </nz-radio-group>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="4">
+                                    <div [formGroupName]="'choices'">
+                                        <ng-container *ngFor="let choice of item.choices; let j = index;" [formGroupName]="j">
+                                            <label nz-checkbox [formControlName]="'isChecked'" [nzDisabled]="true">
+                                                {{ choice.value }}
+                                            </label>
+                                        </ng-container>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngSwitchCase="5">
+                                    <nz-select [formControlName]="'value'" style="width: 100%;" nzShowSearch>
+                                        <nz-option 
+                                            style="word-wrap: break-word;" 
+                                            *ngFor="let choice of item.choices;"
+                                            [nzLabel]="choice.value"
+                                            [nzValue]="choice.id"
+                                        >
+                                        </nz-option>
+                                    </nz-select>
+                                </ng-container>
+                                <ng-container *ngSwitchDefault>
+                                    <input
+                                        class="form-control"
+                                        [formControlName]="'value'"
+                                        [id]="'value'"
+                                        type="text"
+                                    />
+                                </ng-container>
+                            </div>
+                        </nz-card>
+                    </nz-col>
+                </nz-row>
+            </div>
+        </form>
+    </ng-container>
+    <ng-container *ngIf="!formDetail || !response">
+        <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
+            <nz-col [nzSpan]="24" style="text-align: center;">
+                <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
+                    <h4>{{ 'Forms::Form:Responses:NoResponse' | abpLocalization }}</h4>
+                </nz-card>
+            </nz-col>
+        </nz-row>
+    </ng-container>
+</nz-spin>
