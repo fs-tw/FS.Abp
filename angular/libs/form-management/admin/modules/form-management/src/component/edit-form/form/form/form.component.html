@@ -58,11 +58,11 @@
               [nzXs]="24"
               style="padding: 8px;"
             >
-              <button nz-button nzType="default" style="width: 100%;" (click)="goToPreView(formId)">
+              <a nz-button target="_blank" [routerLink]="'./view-form/' + formId" nzType="default" style="width: 100%;">
                 <span style="font-weight:bold;">
                   {{ 'Forms::Form:Questions:Preview' | abpLocalization }}
                 </span>
-              </button>
+              </a>
             </nz-col>
           </nz-row>
         </nz-card>

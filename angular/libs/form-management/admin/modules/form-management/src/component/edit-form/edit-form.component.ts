@@ -15,7 +15,7 @@ import { FormModel } from '../providers/models';
 @Injectable({
   providedIn: 'root',
 })
-export class ViewStateService extends FormStateService {
+export class EditFormStateService extends FormStateService {
   initForm(data: FormModel.FormInfo) {
     if (!data) return;
     let formsResult = [data];
@@ -30,13 +30,13 @@ export class ViewStateService extends FormStateService {
 }
 
 @Component({
-  selector: 'fs-view',
+  selector: 'fs-edit-form',
   template: `
     <abp-page [title]="'Forms::Form' | abpLocalization">
       <nz-tabset>
         <nz-tab nzTitle="{{ 'Forms::Menu:Questions' | abpLocalization }}">
           <nz-spin [nzSpinning]="isLoading" style="min-height: 100px;">
-            <fs-form [formId]="formId" [provider]="viewStateService"></fs-form>
+            <fs-form [formId]="formId" [provider]="editFormStateService"></fs-form>
           </nz-spin>
         </nz-tab>
         <nz-tab nzTitle="{{ 'Forms::Menu:Responses' | abpLocalization }}">
@@ -47,9 +47,9 @@ export class ViewStateService extends FormStateService {
       </nz-tabset>
     </abp-page>
   `,
-  providers: [ViewStateService]
+  providers: [EditFormStateService]
 })
-export class ViewComponent implements OnInit {
+export class EditFormComponent implements OnInit {
   @Input() formId: string;
 
   isLoading: boolean = true;
@@ -58,26 +58,26 @@ export class ViewComponent implements OnInit {
   
   constructor(
     protected injector: Injector,
-    public viewStateService: ViewStateService,
+    public editFormStateService: EditFormStateService,
     private formService: Volo.Forms.Forms.FormService,
     private questionService: Volo.Forms.Questions.QuestionService,
     private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.subscription.add(this.viewStateService.getFormsDataOfDelayTime$().subscribe(x => {
+    this.subscription.add(this.editFormStateService.getFormsDataOfDelayTime$().subscribe(x => {
       let result = x.filter(y => y.isDirty == true);
       if(result.length > 0) {
         this.createAndUpdateForms(result);
       }
     }));
-    this.subscription.add(this.viewStateService.getQuestionsDataOfDelayTime$().subscribe(x => {
+    this.subscription.add(this.editFormStateService.getQuestionsDataOfDelayTime$().subscribe(x => {
       let result = x.filter(y => y.isDirty == true);
       if(result.length > 0) {
         this.createAndUpdateQuestrions(result);
       }
     }));
-    this.subscription.add(this.viewStateService.onSaveQuestion$.subscribe(x => {
+    this.subscription.add(this.editFormStateService.onSaveQuestion$.subscribe(x => {
       if(!x) return;
       this.updateQuestion(x);
     }));
@@ -94,15 +94,15 @@ export class ViewComponent implements OnInit {
 
   loadFormData() {
     this.isLoading = true;
-    this.viewStateService.isLoading$.next(true);
+    this.editFormStateService.isLoading$.next(true);
     this.subscription.add(this.formService.getById(this.formId).subscribe((x) => {
       let result = new FormModel.FormInfo(x, x.questions);
-      this.viewStateService.initForm(result);
+      this.editFormStateService.initForm(result);
       this.formDetail = _.cloneDeep(x);
       this.cdr.detectChanges();
       this.isLoading = false;
-      this.viewStateService.isLoading$.next(false);
-    }, error => { this.isLoading = false; this.viewStateService.isLoading$.next(false); }));
+      this.editFormStateService.isLoading$.next(false);
+    }, error => { this.isLoading = false; this.editFormStateService.isLoading$.next(false); }));
   }
 
   createAndUpdateForms(result: Array<FormModel.FormInfo>) {

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
 import { Volo } from '@fs-tw/form-management/proxy';
-import { ActivatedRoute } from '@angular/router';
 import { ToasterService } from '@abp/ng.theme.shared';
 
 @Component({
@@ -11,7 +10,7 @@ import { ToasterService } from '@abp/ng.theme.shared';
   templateUrl: 'preview.component.html',
 })
 export class PreviewComponent implements OnInit {
-    formId: string = null;
+    @Input() formId: string = null;
     formGroup: FormGroup = this.fb.group({});
     subscription: Subscription = new Subscription();
     formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
@@ -21,17 +20,16 @@ export class PreviewComponent implements OnInit {
       private fb: FormBuilder,
       private formService: Volo.Forms.Forms.FormService,
       private responseService: Volo.Forms.Responses.ResponseService,
-      private route: ActivatedRoute,
       private toasterService: ToasterService
     ) {
-        this.route.paramMap.subscribe(paramMap => {
-            if (!paramMap.get('id')) return null;
-            this.formId = paramMap.get('id');
-            this.loadFormData();
-        });
     }
 
     ngOnInit() {}
+
+    ngOnChanges() {
+        if (!this.formId) return null;
+        this.loadFormData();
+      }
 
     loadFormData() {
         this.isSubmitAnswer = false;
@@ -90,9 +88,9 @@ export class PreviewComponent implements OnInit {
             answers: answers as Array<Volo.Forms.Answers.CreateAnswerDto>
         } as Volo.Forms.Responses.CreateResponseDto;
         this.responseService.saveAnswersByFormIdAndInput(this.formId, input).subscribe(x => {
-            this.toasterService.success('建立成功！');
+            this.toasterService.success("Forms::Submit");
             this.isSubmitAnswer = true;
-        }, error =>  this.toasterService.error('建立失敗！'));
+        }, error =>  this.toasterService.error("Forms::Error"));
     }
 }
 

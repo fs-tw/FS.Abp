@@ -6,6 +6,7 @@ import {
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
 import * as _ from 'lodash';
 import { FormModel } from '../../../providers/models';
 
@@ -37,7 +38,8 @@ export class QuestionCardComponent implements OnInit {
   };
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private confirmationService: ConfirmationService
   ) {}
 
   ngOnInit() {
@@ -69,9 +71,17 @@ export class QuestionCardComponent implements OnInit {
   }
 
   removeQuestion() {
-    let question = _.cloneDeep(this.question);
-    question.isDeleteQuestion = question.isDirty = true;
-    this.provider.setQuestionsWithForms([question]);
+    this.confirmationService.warn("Forms::ItemWillBeDeletedMessage" , "Warn")
+    .subscribe(x => {
+      if (x != Confirmation.Status.confirm) return;
+      toDelete();
+    })
+
+    function toDelete() {
+      let question = _.cloneDeep(this.question);
+      question.isDeleteQuestion = question.isDirty = true;
+      this.provider.setQuestionsWithForms([question]);
+    }
   }
 
   onSave(questionId: string) {
