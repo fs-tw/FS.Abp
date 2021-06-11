@@ -21,7 +21,6 @@ import {
 })
 export class ResponsesComponent implements OnInit {
   @Input() formId: string = null;
-  formDetail: Volo.Forms.Forms.FormWithDetailsDto = null;
   response: Volo.Forms.Responses.FormResponseDetailedDto = null;
   subscription: Subscription = new Subscription();
   formGroup: FormGroup = this.fb.group({});
@@ -39,25 +38,15 @@ export class ResponsesComponent implements OnInit {
     private toasterService: ToasterService,
     private confirmationService: ConfirmationService
   ) {
-    this.injector.get(Volo.Forms.Forms.FormService);
-    this.injector.get(Volo.Forms.Responses.ResponseService);
+    this.formService = this.injector.get(Volo.Forms.Forms.FormService);
+    this.responseService = this.injector.get(Volo.Forms.Responses.ResponseService);
   }
 
   ngOnInit() {}
 
   ngOnChanges() {
     if (!this.formId) return;
-    this.isLoading = true;
-    this.subscription.add(
-      this.formService.getById(this.formId).subscribe(
-        (x) => {
-          this.formDetail = _.cloneDeep(x);
-          this.isLoading = false;
-          this.loadResponses();
-        },
-        (error) => (this.isLoading = false)
-      )
-    );
+    this.loadResponses();
   }
 
   loadResponses() {
@@ -68,7 +57,7 @@ export class ResponsesComponent implements OnInit {
     } as Volo.Forms.Responses.GetResponseListInputDto;
     this.subscription.add(
       this.formService
-        .getResponsesByIdAndInput(this.formDetail.id, input)
+        .getResponsesByIdAndInput(this.formId, input)
         .subscribe(
           (res) => {
             if (!res || res.items.length <= 0) {
@@ -80,7 +69,6 @@ export class ResponsesComponent implements OnInit {
             this.totalCount = res.totalCount;
             this.response = _.head(res.items);
             this.isLoading = false;
-            this.buildForm();
           },
           (error) => (this.isLoading = false)
         )
@@ -135,43 +123,14 @@ export class ResponsesComponent implements OnInit {
     }
   }
 
-  buildForm() {
-    let questions = this.fb.array(
-      this.formDetail.questions.map((x, i) => {
-        let result = { questionType: x.questionType, isRequired: x.isRequired };
-        if (x.questionType == 4) {
-          result['choices'] = this.fb.array(
-            x.choices.map((y) =>
-              this.fb.group({
-                questionId: x.id,
-                choiceId: y.id,
-                isChecked: this.response.answers.find(
-                  (z) => z.questionId == x.id && z.choiceId == y.id
-                )
-                  ? true
-                  : false,
-                value: [{ value: y.value, disabled: true }, undefined],
-              })
-            ),
-            undefined
-          );
-        } else {
-          let findAnswer = this.response.answers.find(
-            (z) => z.questionId == x.id
-          );
-          let resValue = findAnswer
-            ? x.questionType == 3 || x.questionType == 5
-              ? findAnswer.choiceId
-              : findAnswer.value
-            : null;
-          result['questionId'] = x.id;
-          result['value'] = [{ value: resValue, disabled: true }, undefined];
-        }
-        return this.fb.group(result);
-      })
-    );
-    this.formGroup = this.fb.group({
-      questions: questions,
-    });
+  submitForm(data): void {
+    let service =  this.responseService.updateAnswersByIdAndInput(this.response.id, data);
+    this.subscription.add(service.subscribe(
+      (x) => {
+        this.toasterService.success('Forms::Submit');
+        this.loadResponses();
+      },
+      (error) => this.toasterService.error('Forms::Error')
+    ));
   }
 }

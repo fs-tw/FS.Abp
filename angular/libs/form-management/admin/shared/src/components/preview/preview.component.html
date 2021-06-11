@@ -16,7 +16,7 @@
                         <p>{{ item.description }}</p>
                         <div class="form-group" [ngSwitch]="item.questionType">
                             <ng-container *ngSwitchCase="3">
-                                <nz-radio-group  [formControlName]="'value'">
+                                <nz-radio-group  [formControlName]="'value'" [nzDisabled]="onlyView">
                                     <ng-container *ngFor="let choice of item.choices;">
                                         <label nz-radio [nzValue]="choice.id">
                                             {{ choice.value }}
@@ -27,7 +27,7 @@
                             <ng-container *ngSwitchCase="4">
                                 <div [formGroupName]="'choices'">
                                     <ng-container *ngFor="let choice of item.choices; let j = index;" [formGroupName]="j">
-                                        <label nz-checkbox [formControlName]="'isChecked'">
+                                        <label nz-checkbox [formControlName]="'isChecked'" [nzDisabled]="onlyView">
                                             {{ choice.value }}
                                         </label>
                                     </ng-container>
@@ -59,7 +59,7 @@
             <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
                 <nz-col [nzSpan]="24" style="text-align: center;">
                     <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
-                        <button nz-button nzType="primary" [nzSize]="'large'" [disabled]="!formGroup.valid">{{ 'Forms::Submit' | abpLocalization }}</button>
+                        <button nz-button nzType="primary" [nzSize]="'large'" [disabled]="!formGroup.valid || onlyView">{{ 'Forms::Submit' | abpLocalization }}</button>
                     </nz-card>
                 </nz-col>
             </nz-row>
@@ -68,7 +68,7 @@
     <nz-row [nzGutter]="16" style="margin-bottom: 10px;" *ngIf="isSubmitAnswer">
         <nz-col [nzSpan]="24" style="text-align: center;">
             <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
-                <a (click)="loadFormData()" style="font-size: 18px;">{{ 'Forms::Response:SubmitNewAnswer' | abpLocalization }}</a>
+                <a (click)="submitOtherResponseEvent.emit(true)" style="font-size: 18px;">{{ 'Forms::Response:SubmitNewAnswer' | abpLocalization }}</a>
             </nz-card>
         </nz-col>
     </nz-row>
