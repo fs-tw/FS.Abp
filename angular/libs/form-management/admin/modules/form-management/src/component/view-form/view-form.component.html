@@ -1,1 +1,8 @@
-<fs-preview [formId]="formId" ></fs-preview>
+<fs-preview
+    [onlyView]="false"
+    [formId]="formId"
+    [response]="response"
+    [isSubmitAnswer]="isSubmitAnswer"
+    (submitResponseEvent)="submitForm($event)"
+    (submitOtherResponseEvent)="submitOtherResponse($event)">
+</fs-preview>

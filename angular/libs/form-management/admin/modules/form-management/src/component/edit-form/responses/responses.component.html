@@ -1,5 +1,5 @@
 <nz-spin [nzSpinning]="isLoading" style="min-height: 100px;">
-    <ng-container *ngIf="formDetail && response">
+    <ng-container *ngIf="response">
         <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
             <nz-col [nzSpan]="24" style="text-align: center;">
                 <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
@@ -61,67 +61,9 @@
                 </nz-card>
             </nz-col>
         </nz-row>
-        <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
-            <nz-col [nzSpan]="24" style="text-align: center;">
-                <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
-                    <h4>{{ formDetail.title }}</h4>
-                    <p>{{ formDetail.description }}</p>
-                </nz-card>
-            </nz-col>
-        </nz-row>
-        <form nz-form [formGroup]="formGroup" validateOnSubmit>
-            <div [formArrayName]="'questions'">
-                <nz-row  [nzGutter]="16" *ngFor="let item of formDetail.questions; let i = index" [formGroupName]="i" style="margin-bottom: 10px;">
-                    <nz-col [nzSpan]="24">
-                        <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
-                            <h6><nz-tag *ngIf="item.isRequired" [nzColor]="'red'">必填</nz-tag>{{ item.title }}</h6>
-                            <p>{{ item.description }}</p>
-                            <div class="form-group" [ngSwitch]="item.questionType">
-                                <ng-container *ngSwitchCase="3">
-                                    <nz-radio-group  [formControlName]="'value'">
-                                        <ng-container *ngFor="let choice of item.choices;">
-                                            <label nz-radio [nzValue]="choice.id" [nzDisabled]="true">
-                                                {{ choice.value }}
-                                            </label>
-                                        </ng-container>
-                                    </nz-radio-group>
-                                </ng-container>
-                                <ng-container *ngSwitchCase="4">
-                                    <div [formGroupName]="'choices'">
-                                        <ng-container *ngFor="let choice of item.choices; let j = index;" [formGroupName]="j">
-                                            <label nz-checkbox [formControlName]="'isChecked'" [nzDisabled]="true">
-                                                {{ choice.value }}
-                                            </label>
-                                        </ng-container>
-                                    </div>
-                                </ng-container>
-                                <ng-container *ngSwitchCase="5">
-                                    <nz-select [formControlName]="'value'" style="width: 100%;" nzShowSearch>
-                                        <nz-option 
-                                            style="word-wrap: break-word;" 
-                                            *ngFor="let choice of item.choices;"
-                                            [nzLabel]="choice.value"
-                                            [nzValue]="choice.id"
-                                        >
-                                        </nz-option>
-                                    </nz-select>
-                                </ng-container>
-                                <ng-container *ngSwitchDefault>
-                                    <input
-                                        class="form-control"
-                                        [formControlName]="'value'"
-                                        [id]="'value'"
-                                        type="text"
-                                    />
-                                </ng-container>
-                            </div>
-                        </nz-card>
-                    </nz-col>
-                </nz-row>
-            </div>
-        </form>
+        <fs-preview [onlyView]="false" [formId]="formId" [response]="response" (submitResponseEvent)="submitForm($event)"></fs-preview>
     </ng-container>
-    <ng-container *ngIf="!formDetail || !response">
+    <ng-container *ngIf="!response">
         <nz-row [nzGutter]="16" style="margin-bottom: 10px;">
             <nz-col [nzSpan]="24" style="text-align: center;">
                 <nz-card style="box-shadow: 1px 1px 10px 1px #ececec; width: 50%; margin: auto;">
