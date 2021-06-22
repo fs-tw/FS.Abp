@@ -1,6 +1,6 @@
 {
   "name": "@fs-tw/theme-alain-ms",
-  "version": "430.2.0",
+  "version": "430.3.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com:fs-tw/FS.Works.git"
@@ -15,6 +15,6 @@
     "quill-image-resize-module": "^3.0.0",
     "perfect-scrollbar": "^1.5.0",
     "masonry-layout": "^4.2.2",
-    "@fs-tw/theme-alain":"^430.0.6"
+    "@fs-tw/theme-alain":"430.3.0"
   }
 }
