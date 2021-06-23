@@ -10,11 +10,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsModule } from '@ngxs/store';
+import { QuillModule } from 'ngx-quill';
+
+import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
+
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
-import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
 
 @NgModule({
   imports: [
@@ -32,7 +35,8 @@ import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
     SettingManagementConfigModule.forRoot(),
     CmsKitManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
-    ThemeAlainModule.forRoot()
+    ThemeAlainModule.forRoot(),
+    QuillModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
