@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
+    "postinstall": "node ./decorate-angular-cli.js",
     "nx": "nx",
     "start": "ng serve",
     "build": "ng build",
@@ -37,7 +37,7 @@
     "@angular/platform-browser": "^11.2.0",
     "@angular/platform-browser-dynamic": "^11.2.0",
     "@angular/router": "^11.2.0",
-    "@fs-tw/theme-alain": "^430.0.1",
+    "@fs-tw/theme-alain": "^430.3.0",
     "@nrwl/angular": "12.0.8",
     "date-fns": "^2.21.1",
     "rxjs": "~6.6.3",
