@@ -32,6 +32,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Routes\UrlType.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

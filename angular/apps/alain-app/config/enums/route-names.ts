@@ -1,3 +1,3 @@
 export const enum eRouteNames {
-  Vocabularies = 'Vocabularies::vocabulary',
+  Vocabularies = 'CmsKitManagement::Vocabularies',
 }

@@ -28,7 +28,7 @@ export function configureRoutes(routes: RoutesService) {
 
   return () => {
     routes.add([
-      ...VocabulariesRoutes
+      // ...VocabulariesRoutes
     ]);
   };
 }
