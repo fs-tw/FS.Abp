@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.CmsKitManagement.Blogs\IBlogsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>

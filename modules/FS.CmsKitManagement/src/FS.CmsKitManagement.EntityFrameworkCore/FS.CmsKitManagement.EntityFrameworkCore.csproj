@@ -16,6 +16,9 @@
     <Compile Update="EntityFrameworkCore\CmsKitManagementDbContextModelCreatingExtensions.cs">
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="FS.CmsKitManagement.Blogs\BlogsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>

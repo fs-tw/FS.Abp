@@ -335,7 +335,7 @@
       <column name="" not-null="False" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Routes.Route" entity-set="Routes" p1:Guid="6d3dfb7e-98a9-459c-bb57-509930a8de2b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Route&gt;">
+  <class name="FS.CmsKitManagement.Routes.Route" entity-set="Routes" p1:Guid="6d3dfb7e-98a9-459c-bb57-509930a8de2b" p1:AbpEditor="YinChang" p1:GetListAsync="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Route&gt;">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -410,7 +410,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Routes.RouteDefinition" entity-set="RouteDefinitions" p1:Guid="1c2ec248-87bd-46bb-8b98-95295e365ad3" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Routes.RouteDefinition" entity-set="RouteDefinitions" p1:Guid="1c2ec248-87bd-46bb-8b98-95295e365ad3" p1:AbpEditor="YinChang" p1:GetListAsync="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

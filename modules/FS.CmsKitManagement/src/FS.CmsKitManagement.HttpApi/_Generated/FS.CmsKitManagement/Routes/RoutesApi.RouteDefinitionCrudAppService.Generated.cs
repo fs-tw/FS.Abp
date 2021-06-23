@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.Routes
 
         [HttpGet]
         [Route("route-definition")]
-        [RemoteService(true)]
+        [NonAction][RemoteService(false)]
         public Task<PagedResultDto<RouteDefinitionWithDetailsDto>> GetListAsync(RouteDefinitionGetListDto RouteDefinitionGetList)
         {
             return this.RouteDefinitionCrudAppService.GetListAsync(RouteDefinitionGetList);

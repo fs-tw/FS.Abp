@@ -17,8 +17,11 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\CmsKitManagement\*.json" />
+    <Compile Remove="Data\**" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
+    <EmbeddedResource Remove="Data\**" />
     <None Remove="**\Files\**\*.*" />
+    <None Remove="Data\**" />
     <EmbeddedResource Include="**\Files\**\*.*" />
   </ItemGroup>
   
@@ -73,10 +76,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>
