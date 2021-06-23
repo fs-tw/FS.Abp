@@ -1,6 +1,7 @@
 {
   "culture": "zh-Hant",
   "texts": {
+    "Vocabularies": "詞彙管理",
     "FS.CmsKitManagement.Vocabularies": "詞彙定義管理",
     "FS.CmsKitManagement.Vocabularies.VocabularyDefinition": "詞彙定義",
     "DisplayName:VocabularyDefinition.Create": "新增",

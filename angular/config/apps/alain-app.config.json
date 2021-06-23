@@ -82,9 +82,12 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },              
-              "apps/alain-app/src/styles.less"
+              "apps/alain-app/src/styles.less",
+              "node_modules/quill/dist/quill.snow.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -2,6 +2,7 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using MediatR;
 
 namespace FS.CmsKitManagement
 {
@@ -22,6 +23,11 @@ namespace FS.CmsKitManagement
             {
                 options.AddMaps<CmsKitManagementApplicationModule>(validate: false);
             });
+
+            context.Services.AddMediatR(
+                typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
+                typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
+                );
         }
     }
 }

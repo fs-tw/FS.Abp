@@ -18,8 +18,166 @@ namespace FS.Migrations
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.6")
+                .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("FS.CmsKitManagement.Blogs.PostRoute", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("PostId");
+
+                    b.Property<Guid>("RouteId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("RouteId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CmsKitManagementPostRoutes");
+                });
+
+            modelBuilder.Entity("FS.CmsKitManagement.Routes.Route", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Code");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("DisplayName");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsHidden")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsHidden");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int")
+                        .HasColumnName("Level");
+
+                    b.Property<string>("No")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("No");
+
+                    b.Property<Guid?>("ParentId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ParentId");
+
+                    b.Property<Guid>("RouteDefinitionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("RouteDefinitionId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Url");
+
+                    b.Property<int>("UrlType")
+                        .HasColumnType("int")
+                        .HasColumnName("UrlType");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.HasIndex("ParentId");
+
+                    b.HasIndex("RouteDefinitionId");
+
+                    b.ToTable("CmsKitManagementRoutes");
+                });
+
+            modelBuilder.Entity("FS.CmsKitManagement.Routes.RouteDefinition", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("DisplayName");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("No")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("No");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.ToTable("CmsKitManagementRouteDefinitions");
+                });
 
             modelBuilder.Entity("FS.CmsKitManagement.Vocabularies.Vocabulary", b =>
                 {
@@ -2793,6 +2951,23 @@ namespace FS.Migrations
                     b.HasDiscriminator().HasValue("Person");
                 });
 
+            modelBuilder.Entity("FS.CmsKitManagement.Routes.Route", b =>
+                {
+                    b.HasOne("FS.CmsKitManagement.Routes.Route", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
+
+                    b.HasOne("FS.CmsKitManagement.Routes.RouteDefinition", "RouteDefinition")
+                        .WithMany("Routes")
+                        .HasForeignKey("RouteDefinitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Parent");
+
+                    b.Navigation("RouteDefinition");
+                });
+
             modelBuilder.Entity("FS.CmsKitManagement.Vocabularies.Vocabulary", b =>
                 {
                     b.HasOne("FS.CmsKitManagement.Vocabularies.Vocabulary", "Parent")
@@ -3096,6 +3271,16 @@ namespace FS.Migrations
                         .IsRequired();
 
                     b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("FS.CmsKitManagement.Routes.Route", b =>
+                {
+                    b.Navigation("Children");
+                });
+
+            modelBuilder.Entity("FS.CmsKitManagement.Routes.RouteDefinition", b =>
+                {
+                    b.Navigation("Routes");
                 });
 
             modelBuilder.Entity("FS.CmsKitManagement.Vocabularies.Vocabulary", b =>

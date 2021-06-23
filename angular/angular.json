@@ -77,9 +77,12 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },
-              "apps/alain-app/src/styles.less"
+              "apps/alain-app/src/styles.less",
+              "node_modules/quill/dist/quill.snow.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -139,7 +142,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/alain-app"],
+          "outputs": [
+            "coverage/apps/alain-app"
+          ],
           "options": {
             "jestConfig": "apps/alain-app/jest.config.js",
             "passWithNoTests": true
@@ -176,7 +181,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/cms-kit-management"],
+          "outputs": [
+            "coverage/libs/cms-kit-management"
+          ],
           "options": {
             "jestConfig": "libs/cms-kit-management/jest.config.js",
             "passWithNoTests": true

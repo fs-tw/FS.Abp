@@ -34,7 +34,7 @@ namespace FS.CmsKitManagement.Data.Vocabularies
             public string Code { get; set; }
         }
         protected IVirtualFileNpoiReader VirtualFileNpoiReader => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileNpoiReader>();
-        protected VocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<VocabulariesStore>();
+        protected IVocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<IVocabulariesStore>();
 
 
         protected override async Task SeedAsync(DataSeedContext context)

@@ -18,9 +18,4 @@ namespace FS.CmsKitManagement.Vocabularies
         IVocabularyDefinitionRepository VocabularyDefinition { get; }
         IVocabularyTreeRepository Vocabulary { get; }
     }
-    public partial class VocabulariesStore : DomainService, IVocabulariesStore //auto-generated
-    {
-        public IVocabularyDefinitionRepository VocabularyDefinition => this.LazyServiceProvider.LazyGetRequiredService<IVocabularyDefinitionRepository>();
-        public IVocabularyTreeRepository Vocabulary => this.LazyServiceProvider.LazyGetRequiredService<IVocabularyTreeRepository>();
-    }
 }
