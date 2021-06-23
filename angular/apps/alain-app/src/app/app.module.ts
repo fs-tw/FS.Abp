@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
-import { VocabulariesAdminConfigModule } from '../../config';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -32,8 +32,7 @@ import { VocabulariesAdminConfigModule } from '../../config';
     SettingManagementConfigModule.forRoot(),
     CmsKitManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
-    ThemeAlainModule.forRoot(),
-    VocabulariesAdminConfigModule.forRoot(),
+    ThemeAlainModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
