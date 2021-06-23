@@ -1,0 +1,12 @@
+.download-link {
+    cursor: pointer;
+}
+
+.download-link.primary:hover {
+    color :#00c1de;
+}
+
+i {
+    display: inline-flex;
+    margin-right: 5px;
+}

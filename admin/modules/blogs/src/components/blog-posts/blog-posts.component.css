@@ -1,0 +1,5 @@
+.table-title {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    margin-bottom: 10px;
+}
