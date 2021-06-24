@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
     <ProjectReference Include="..\FS.Abp.MediatR\FS.Abp.MediatR.csproj" />
   </ItemGroup>
 

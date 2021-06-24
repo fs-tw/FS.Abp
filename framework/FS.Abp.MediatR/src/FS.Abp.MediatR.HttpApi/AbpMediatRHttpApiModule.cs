@@ -11,7 +11,6 @@ using MediatR;
 namespace FS.Abp.MediatR
 {
     [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
     [DependsOn(typeof(AbpAspNetCoreMvcModule))]
     public class AbpMediatRHttpApiModule : AbpModule
     {
