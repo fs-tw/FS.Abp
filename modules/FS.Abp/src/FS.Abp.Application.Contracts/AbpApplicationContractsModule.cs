@@ -9,7 +9,7 @@ namespace FS.Abp
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesAbstractionsModule))]
+    [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
     public class AbpApplicationContractsModule : AbpModule
     {
 
