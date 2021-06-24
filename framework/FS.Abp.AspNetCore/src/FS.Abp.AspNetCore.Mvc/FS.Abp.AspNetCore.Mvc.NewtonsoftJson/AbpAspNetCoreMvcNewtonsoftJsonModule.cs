@@ -30,8 +30,8 @@ namespace FS.Abp.AspNetCore.Mvc.NewtonsoftJson
                 }
                 void configureJsonSubTypeConverters()
                 {
-                    var options = serviceProvider.GetRequiredService<IOptions<JsonSubtypesOptions>>().Value;
-                    options.Profiles.ToList().ForEach(profile =>
+                    var profiles = serviceProvider.GetServices<IJsonSubtypesConverterProfile>();
+                    profiles.ToList().ForEach(profile =>
                     {
                         profile.JsonSubtypesConverterDefinitions.ForEach(definition =>
                         {
@@ -47,10 +47,10 @@ namespace FS.Abp.AspNetCore.Mvc.NewtonsoftJson
                 }
             });
 
-            context.Services.Configure<AbpSystemTextJsonSerializerOptions>(abpSystemTextJsonSerializerOptions =>
+            Configure<AbpSystemTextJsonSerializerOptions>(abpSystemTextJsonSerializerOptions =>
             {
-                var options = serviceProvider.GetRequiredService<IOptions<JsonSubtypesOptions>>().Value;
-                options.Profiles.ToList().ForEach(profile =>
+                var profiles = serviceProvider.GetServices<IJsonSubtypesConverterProfile>();
+                profiles.ToList().ForEach(profile =>
                 {
                     profile.JsonSubtypesConverterDefinitions.ForEach(definition =>
                     {
@@ -60,8 +60,6 @@ namespace FS.Abp.AspNetCore.Mvc.NewtonsoftJson
                 });
 
             });
-
-
         }
     }
 }
