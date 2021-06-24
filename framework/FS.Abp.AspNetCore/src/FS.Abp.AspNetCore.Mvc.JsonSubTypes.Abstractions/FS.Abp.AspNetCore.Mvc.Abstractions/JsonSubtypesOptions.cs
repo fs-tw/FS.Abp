@@ -7,6 +7,7 @@ using Volo.Abp.Collections;
 
 namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
 {
+    [Obsolete("Remove")]
     public class JsonSubtypesOptions
     {
         public IList<IJsonSubtypesConverterProfile> Profiles { get; }

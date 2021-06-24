@@ -33,16 +33,21 @@ namespace FS.Abp.AspNetCore.Mvc
         private readonly AbpAspNetCoreMvcOptions _abpAspNetCoreMvcOptions;
         private readonly AbpApiDescriptionModelOptions _modelOptions;
 
+        private readonly global::MediatR.IMediator _mediator;
+
         public AspNetCoreApiDescriptionModelProvider(
             IOptions<AspNetCoreApiDescriptionModelProviderOptions> options,
             IApiDescriptionGroupCollectionProvider descriptionProvider,
             IOptions<AbpAspNetCoreMvcOptions> abpAspNetCoreMvcOptions,
-            IOptions<AbpApiDescriptionModelOptions> modelOptions)
+            IOptions<AbpApiDescriptionModelOptions> modelOptions,
+            global::MediatR.IMediator mediator
+            )
         {
             _options = options.Value;
             _descriptionProvider = descriptionProvider;
             _abpAspNetCoreMvcOptions = abpAspNetCoreMvcOptions.Value;
             _modelOptions = modelOptions.Value;
+            _mediator = mediator;
 
             Logger = NullLogger<AspNetCoreApiDescriptionModelProvider>.Instance;
         }
@@ -65,7 +70,10 @@ namespace FS.Abp.AspNetCore.Mvc
                     AddApiDescriptionToModel(apiDescription, model, input);
                 }
             }
-
+            this._mediator.Send(new Commands.ApplicationApiDescriptionModels.AddCommand(model)
+            {
+                Action = (x) => { AddCustomTypesToModel(model, x); }
+            });
             return model;
         }
 

@@ -1,18 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
 {
-    public interface IJsonSubtypesConverterProfile
+    public interface IJsonSubtypesConverterProfile : Volo.Abp.DependencyInjection.ISingletonDependency
     {
         List<JsonSubtypesConverterDefinition> JsonSubtypesConverterDefinitions { get; set; }
     }
-    public interface IBaseTypeExpression
-    {
-        ISubtypesExpression CreateJsonSubtypesConverter<TBaseType>(string discriminatorProperty);
-        ISubtypesExpression CreateJsonSubtypesConverter<TBaseType, TFallbackSubtype>(string discriminatorProperty);
-    }
-    public class JsonSubtypesConverterProfile : IJsonSubtypesConverterProfile,IBaseTypeExpression
+
+    public abstract class JsonSubtypesConverterProfile : IJsonSubtypesConverterProfile
     {
         public List<JsonSubtypesConverterDefinition> JsonSubtypesConverterDefinitions { get; set; }
         public JsonSubtypesConverterProfile()
@@ -27,7 +24,10 @@ namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
 
         public ISubtypesExpression CreateJsonSubtypesConverter<TBaseType, TFallbackSubtype>(string discriminatorProperty)
         {
-            var result = new JsonSubtypesConverterDefinition(typeof(TBaseType), typeof(TFallbackSubtype), discriminatorProperty);
+            var result = JsonSubtypesConverterDefinitions.SingleOrDefault(x => x.BaseType == typeof(TBaseType));
+            if (result == null)
+                result = new JsonSubtypesConverterDefinition(typeof(TBaseType), typeof(TFallbackSubtype), discriminatorProperty);
+
             JsonSubtypesConverterDefinitions.Add(result);
             return result;
         }

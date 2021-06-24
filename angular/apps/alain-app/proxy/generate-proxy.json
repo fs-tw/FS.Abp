@@ -1,9 +1,9 @@
 {
   "generated": [
-    "cms-kit",
-    "cms-kit-management"
+    "mediator"
   ],
   "modules": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
     "cms-kit": {
       "rootPath": "cms-kit",
       "remoteServiceName": "CmsKitAdmin",
@@ -29,17 +29,48 @@
                   "typeAsString": "Volo.CmsKit.Admin.Tags.EntityTagCreateDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Tags.EntityTagCreateDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.EntityTagCreateDto",
+=======
+    "mediator": {
+      "rootPath": "mediator",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "FS.Abp.MediatR.HttpApi.MediatorApi": {
+          "controllerName": "MediatorApi",
+          "type": "FS.Abp.MediatR.HttpApi.MediatorApi",
+          "interfaces": [],
+          "actions": {
+            "QueryByRequest": {
+              "uniqueName": "QueryByRequest",
+              "name": "Query",
+              "httpMethod": "POST",
+              "url": "api/mediator/query",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "request",
+                  "typeAsString": "FS.Abp.MediatR.IQuery, FS.Abp.MediatR",
+                  "type": "FS.Abp.MediatR.IQuery",
+                  "typeSimple": "FS.Abp.MediatR.IQuery",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
                   "type": "Volo.CmsKit.Admin.Tags.EntityTagCreateDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.EntityTagCreateDto",
+=======
+                  "nameOnMethod": "request",
+                  "name": "request",
+                  "jsonName": null,
+                  "type": "FS.Abp.MediatR.IQuery",
+                  "typeSimple": "FS.Abp.MediatR.IQuery",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -48,6 +79,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               }
@@ -64,12 +96,73 @@
                   "typeAsString": "Volo.CmsKit.Admin.Tags.EntityTagRemoveDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Tags.EntityTagRemoveDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.EntityTagRemoveDto",
+=======
+                "type": "System.Object",
+                "typeSimple": "object"
+              }
+            },
+            "CommandByRequest": {
+              "uniqueName": "CommandByRequest",
+              "name": "Command",
+              "httpMethod": "POST",
+              "url": "api/mediator/command",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "request",
+                  "typeAsString": "FS.Abp.MediatR.ICommand, FS.Abp.MediatR",
+                  "type": "FS.Abp.MediatR.ICommand",
+                  "typeSimple": "FS.Abp.MediatR.ICommand",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+                  "nameOnMethod": "request",
+                  "name": "request",
+                  "jsonName": null,
+                  "type": "FS.Abp.MediatR.ICommand",
+                  "typeSimple": "FS.Abp.MediatR.ICommand",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Object",
+                "typeSimple": "object"
+              }
+            }
+          }
+        },
+        "FS.Customers.Querys.Customers.CustomersQuerysApi": {
+          "controllerName": "CustomersQuerysApi",
+          "type": "FS.Customers.Querys.Customers.CustomersQuerysApi",
+          "interfaces": null,
+          "actions": {
+            "FindQuery": {
+              "uniqueName": "FindQuery",
+              "name": "FindQuery",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.Customers.Querys.Customers.FindQuery",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.Customers.Querys.Customers.FindQuery",
+                  "type": "FS.Customers.Querys.Customers.FindQuery",
+                  "typeSimple": "FS.Customers.Querys.Customers.FindQuery",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "input",
                   "name": "TagId",
                   "jsonName": null,
@@ -134,20 +227,63 @@
                   "jsonName": null,
                   "type": "Volo.CmsKit.Admin.Tags.EntityTagSetDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.EntityTagSetDto",
+=======
+                  "nameOnMethod": "{...query,...{$type:'FS.Customers.Querys.Customers.FindQuery'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.Customers.Querys.Customers.FindQuery",
+                  "typeSimple": "FS.Customers.Querys.Customers.FindQuery",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "Body",
-                  "descriptorName": ""
+                  "descriptorName": null
                 }
               ],
               "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "Query": {
+              "uniqueName": "Query",
+              "name": "Query",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.Customers.Querys.Customers.Query",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.Customers.Querys.Customers.Query",
+                  "type": "FS.Customers.Querys.Customers.Query",
+                  "typeSimple": "FS.Customers.Querys.Customers.Query",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.Customers.Querys.Customers.Query'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.Customers.Querys.Customers.Query",
+                  "typeSimple": "FS.Customers.Querys.Customers.Query",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>"
               }
             }
           }
         },
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
         "Volo.CmsKit.Admin.Tags.TagAdminController": {
           "controllerName": "TagAdmin",
           "type": "Volo.CmsKit.Admin.Tags.TagAdminController",
@@ -169,21 +305,49 @@
                   "typeAsString": "Volo.CmsKit.Admin.Tags.TagCreateDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Tags.TagCreateDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.TagCreateDto",
+=======
+        "FS.Customers.Commands.Customers.CustomersCommandsApi": {
+          "controllerName": "CustomersCommandsApi",
+          "type": "FS.Customers.Commands.Customers.CustomersCommandsApi",
+          "interfaces": null,
+          "actions": {
+            "CreateCommand": {
+              "uniqueName": "CreateCommand",
+              "name": "CreateCommand",
+              "httpMethod": "POST",
+              "url": "api/mediator/command?$type=FS.Customers.Commands.Customers.CreateCommand",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "command",
+                  "typeAsString": "FS.Customers.Commands.Customers.CreateCommand",
+                  "type": "FS.Customers.Commands.Customers.CreateCommand",
+                  "typeSimple": "FS.Customers.Commands.Customers.CreateCommand",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
                   "type": "Volo.CmsKit.Admin.Tags.TagCreateDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.TagCreateDto",
+=======
+                  "nameOnMethod": "{...command,...{$type:'FS.Customers.Commands.Customers.CreateCommand'}}",
+                  "name": "command",
+                  "jsonName": null,
+                  "type": "FS.Customers.Commands.Customers.CreateCommand",
+                  "typeSimple": "FS.Customers.Commands.Customers.CreateCommand",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "Body",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "descriptorName": ""
                 }
               ],
@@ -198,31 +362,48 @@
               "httpMethod": "DELETE",
               "url": "api/cms-kit-admin/tags/{id}",
               "supportedVersions": [],
+=======
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "UpdateCommand": {
+              "uniqueName": "UpdateCommand",
+              "name": "UpdateCommand",
+              "httpMethod": "POST",
+              "url": "api/mediator/command?$type=FS.Customers.Commands.Customers.UpdateCommand",
+              "supportedVersions": null,
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "parametersOnMethod": [
                 {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
+                  "name": "command",
+                  "typeAsString": "FS.Customers.Commands.Customers.UpdateCommand",
+                  "type": "FS.Customers.Commands.Customers.UpdateCommand",
+                  "typeSimple": "FS.Customers.Commands.Customers.UpdateCommand",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "id",
-                  "name": "id",
+                  "nameOnMethod": "{...command,...{$type:'FS.Customers.Commands.Customers.UpdateCommand'}}",
+                  "name": "command",
                   "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
+                  "type": "FS.Customers.Commands.Customers.UpdateCommand",
+                  "typeSimple": "FS.Customers.Commands.Customers.UpdateCommand",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               }
@@ -274,6 +455,54 @@
                   "typeAsString": "Volo.CmsKit.Admin.Tags.TagGetListInput, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Tags.TagGetListInput",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.TagGetListInput",
+=======
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "identity": {
+      "rootPath": "identity",
+      "remoteServiceName": "AbpIdentity",
+      "controllers": {
+        "Volo.Abp.Identity.IdentityRoleController": {
+          "controllerName": "IdentityRole",
+          "type": "Volo.Abp.Identity.IdentityRoleController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Identity.IIdentityRoleAppService"
+            }
+          ],
+          "actions": {
+            "GetAllList": {
+              "uniqueName": "GetAllList",
+              "name": "GetAllListAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/roles/all",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Identity.IdentityRoleDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Identity.IdentityRoleDto>"
+              }
+            },
+            "GetListByInput": {
+              "uniqueName": "GetListByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/roles",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Identity.GetIdentityRolesInput, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.GetIdentityRolesInput",
+                  "typeSimple": "Volo.Abp.Identity.GetIdentityRolesInput",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -326,18 +555,100 @@
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
                   "descriptorName": "input"
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 }
               ],
               "returnValue": {
                 "type": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.CmsKit.Tags.TagDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.CmsKit.Tags.TagDto>"
+=======
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityRoleDto>"
+              }
+            },
+            "GetById": {
+              "uniqueName": "GetById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/roles/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityRoleDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityRoleDto"
+              }
+            },
+            "CreateByInput": {
+              "uniqueName": "CreateByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/identity/roles",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Identity.IdentityRoleCreateDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.IdentityRoleCreateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityRoleCreateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Identity.IdentityRoleCreateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityRoleCreateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityRoleDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityRoleDto"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               }
             },
             "UpdateByIdAndInput": {
               "uniqueName": "UpdateByIdAndInput",
               "name": "UpdateAsync",
               "httpMethod": "PUT",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               "url": "api/cms-kit-admin/tags/{id}",
+=======
+              "url": "api/identity/roles/{id}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -350,9 +661,15 @@
                 },
                 {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Admin.Tags.TagUpdateDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Tags.TagUpdateDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.TagUpdateDto",
+=======
+                  "typeAsString": "Volo.Abp.Identity.IdentityRoleUpdateDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.IdentityRoleUpdateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityRoleUpdateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -374,8 +691,13 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "Volo.CmsKit.Admin.Tags.TagUpdateDto",
                   "typeSimple": "Volo.CmsKit.Admin.Tags.TagUpdateDto",
+=======
+                  "type": "Volo.Abp.Identity.IdentityRoleUpdateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityRoleUpdateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -384,6 +706,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Tags.TagDto",
                 "typeSimple": "Volo.CmsKit.Tags.TagDto"
               }
@@ -417,6 +740,17 @@
               "name": "GetAsync",
               "httpMethod": "GET",
               "url": "api/cms-kit-admin/pages/{id}",
+=======
+                "type": "Volo.Abp.Identity.IdentityRoleDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityRoleDto"
+              }
+            },
+            "DeleteById": {
+              "uniqueName": "DeleteById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/identity/roles/{id}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -443,22 +777,83 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Admin.Pages.PageDto",
                 "typeSimple": "Volo.CmsKit.Admin.Pages.PageDto"
+=======
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            }
+          }
+        },
+        "Volo.Abp.Identity.IdentityUserController": {
+          "controllerName": "IdentityUser",
+          "type": "Volo.Abp.Identity.IdentityUserController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Identity.IIdentityUserAppService"
+            }
+          ],
+          "actions": {
+            "GetById": {
+              "uniqueName": "GetById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               }
             },
             "GetListByInput": {
               "uniqueName": "GetListByInput",
               "name": "GetListAsync",
               "httpMethod": "GET",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               "url": "api/cms-kit-admin/pages",
+=======
+              "url": "api/identity/users",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Admin.Pages.GetPagesInputDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Pages.GetPagesInputDto",
                   "typeSimple": "Volo.CmsKit.Admin.Pages.GetPagesInputDto",
+=======
+                  "typeAsString": "Volo.Abp.Identity.GetIdentityUsersInput, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.GetIdentityUsersInput",
+                  "typeSimple": "Volo.Abp.Identity.GetIdentityUsersInput",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -514,22 +909,37 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.CmsKit.Admin.Pages.PageDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.CmsKit.Admin.Pages.PageDto>"
+=======
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityUserDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.Identity.IdentityUserDto>"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               }
             },
             "CreateByInput": {
               "uniqueName": "CreateByInput",
               "name": "CreateAsync",
               "httpMethod": "POST",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               "url": "api/cms-kit-admin/pages",
+=======
+              "url": "api/identity/users",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Admin.Pages.CreatePageInputDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Pages.CreatePageInputDto",
                   "typeSimple": "Volo.CmsKit.Admin.Pages.CreatePageInputDto",
+=======
+                  "typeAsString": "Volo.Abp.Identity.IdentityUserCreateDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.IdentityUserCreateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityUserCreateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -539,8 +949,13 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "Volo.CmsKit.Admin.Pages.CreatePageInputDto",
                   "typeSimple": "Volo.CmsKit.Admin.Pages.CreatePageInputDto",
+=======
+                  "type": "Volo.Abp.Identity.IdentityUserCreateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityUserCreateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -549,15 +964,24 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Admin.Pages.PageDto",
                 "typeSimple": "Volo.CmsKit.Admin.Pages.PageDto"
+=======
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               }
             },
             "UpdateByIdAndInput": {
               "uniqueName": "UpdateByIdAndInput",
               "name": "UpdateAsync",
               "httpMethod": "PUT",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               "url": "api/cms-kit-admin/pages/{id}",
+=======
+              "url": "api/identity/users/{id}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -570,9 +994,15 @@
                 },
                 {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Admin.Pages.UpdatePageInputDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Pages.UpdatePageInputDto",
                   "typeSimple": "Volo.CmsKit.Admin.Pages.UpdatePageInputDto",
+=======
+                  "typeAsString": "Volo.Abp.Identity.IdentityUserUpdateDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.IdentityUserUpdateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityUserUpdateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -594,8 +1024,13 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "Volo.CmsKit.Admin.Pages.UpdatePageInputDto",
                   "typeSimple": "Volo.CmsKit.Admin.Pages.UpdatePageInputDto",
+=======
+                  "type": "Volo.Abp.Identity.IdentityUserUpdateDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityUserUpdateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -604,15 +1039,24 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Admin.Pages.PageDto",
                 "typeSimple": "Volo.CmsKit.Admin.Pages.PageDto"
+=======
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               }
             },
             "DeleteById": {
               "uniqueName": "DeleteById",
               "name": "DeleteAsync",
               "httpMethod": "DELETE",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               "url": "api/cms-kit-admin/pages/{id}",
+=======
+              "url": "api/identity/users/{id}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -642,6 +1086,7 @@
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               }
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
             }
           }
         },
@@ -726,6 +1171,14 @@
               "name": "DeleteAsync",
               "httpMethod": "DELETE",
               "url": "api/cms-kit-admin/media/{id}",
+=======
+            },
+            "GetRolesById": {
+              "uniqueName": "GetRolesById",
+              "name": "GetRolesAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/{id}/roles",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -752,6 +1205,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               }
@@ -772,19 +1226,58 @@
               "name": "GetListAsync",
               "httpMethod": "GET",
               "url": "api/cms-kit-admin/comments",
+=======
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Identity.IdentityRoleDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Identity.IdentityRoleDto>"
+              }
+            },
+            "GetAssignableRoles": {
+              "uniqueName": "GetAssignableRoles",
+              "name": "GetAssignableRolesAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/assignable-roles",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Identity.IdentityRoleDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Identity.IdentityRoleDto>"
+              }
+            },
+            "UpdateRolesByIdAndInput": {
+              "uniqueName": "UpdateRolesByIdAndInput",
+              "name": "UpdateRolesAsync",
+              "httpMethod": "PUT",
+              "url": "api/identity/users/{id}/roles",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Admin.Comments.CommentGetListInput, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Comments.CommentGetListInput",
                   "typeSimple": "Volo.CmsKit.Admin.Comments.CommentGetListInput",
+=======
+                  "typeAsString": "Volo.Abp.Identity.IdentityUserUpdateRolesDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.IdentityUserUpdateRolesDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityUserUpdateRolesDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "input",
                   "name": "EntityType",
                   "jsonName": null,
@@ -823,17 +1316,22 @@
                 {
                   "nameOnMethod": "input",
                   "name": "Author",
+=======
+                  "nameOnMethod": "id",
+                  "name": "id",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
-                  "type": "System.String",
+                  "type": "System.Guid",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
                 },
                 {
                   "nameOnMethod": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "name": "CreationStartDate",
                   "jsonName": null,
                   "type": "System.DateTime?",
@@ -859,16 +1357,33 @@
                 {
                   "nameOnMethod": "input",
                   "name": "Sorting",
+=======
+                  "name": "input",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
+                  "type": "Volo.Abp.Identity.IdentityUserUpdateRolesDto",
+                  "typeSimple": "Volo.Abp.Identity.IdentityUserUpdateRolesDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "FindByUsernameByUserName": {
+              "uniqueName": "FindByUsernameByUserName",
+              "name": "FindByUsernameAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/by-username/{userName}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "input",
                   "name": "SkipCount",
                   "jsonName": null,
@@ -909,6 +1424,11 @@
                   "name": "id",
                   "typeAsString": "System.Guid, System.Private.CoreLib",
                   "type": "System.Guid",
+=======
+                  "name": "userName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
@@ -916,10 +1436,17 @@
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "id",
                   "name": "id",
                   "jsonName": null,
                   "type": "System.Guid",
+=======
+                  "nameOnMethod": "userName",
+                  "name": "userName",
+                  "jsonName": null,
+                  "type": "System.String",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
@@ -933,17 +1460,25 @@
                 "typeSimple": "Volo.CmsKit.Admin.Comments.CommentWithAuthorDto"
               }
             },
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
             "DeleteById": {
               "uniqueName": "DeleteById",
               "name": "DeleteAsync",
               "httpMethod": "DELETE",
               "url": "api/cms-kit-admin/comments/{id}",
+=======
+            "FindByEmailByEmail": {
+              "uniqueName": "FindByEmailByEmail",
+              "name": "FindByEmailAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/by-email/{email}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
+                  "name": "email",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
@@ -951,10 +1486,10 @@
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "id",
-                  "name": "id",
+                  "nameOnMethod": "email",
+                  "name": "email",
                   "jsonName": null,
-                  "type": "System.Guid",
+                  "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
@@ -970,6 +1505,7 @@
             }
           }
         },
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
         "Volo.CmsKit.Admin.Blogs.BlogAdminController": {
           "controllerName": "BlogAdmin",
           "type": "Volo.CmsKit.Admin.Blogs.BlogAdminController",
@@ -984,6 +1520,22 @@
               "name": "GetAsync",
               "httpMethod": "GET",
               "url": "api/cms-kit-admin/blogs/{id}",
+=======
+        "Volo.Abp.Identity.IdentityUserLookupController": {
+          "controllerName": "IdentityUserLookup",
+          "type": "Volo.Abp.Identity.IdentityUserLookupController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Identity.IIdentityUserLookupAppService"
+            }
+          ],
+          "actions": {
+            "FindByIdById": {
+              "uniqueName": "FindByIdById",
+              "name": "FindByIdAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/lookup/{id}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -1010,6 +1562,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Admin.Blogs.BlogDto",
                 "typeSimple": "Volo.CmsKit.Admin.Blogs.BlogDto"
               }
@@ -1026,14 +1579,37 @@
                   "typeAsString": "Volo.CmsKit.Admin.Blogs.BlogGetListInput, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Blogs.BlogGetListInput",
                   "typeSimple": "Volo.CmsKit.Admin.Blogs.BlogGetListInput",
+=======
+                "type": "Volo.Abp.Users.UserData",
+                "typeSimple": "Volo.Abp.Users.UserData"
+              }
+            },
+            "FindByUserNameByUserName": {
+              "uniqueName": "FindByUserNameByUserName",
+              "name": "FindByUserNameAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/lookup/by-username/{userName}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "userName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "input",
                   "name": "Filter",
+=======
+                  "nameOnMethod": "userName",
+                  "name": "userName",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
@@ -1081,6 +1657,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.CmsKit.Admin.Blogs.BlogDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.CmsKit.Admin.Blogs.BlogDto>"
               }
@@ -1125,52 +1702,91 @@
               "name": "UpdateAsync",
               "httpMethod": "PUT",
               "url": "api/cms-kit-admin/blogs/{id}",
+=======
+                "type": "Volo.Abp.Users.UserData",
+                "typeSimple": "Volo.Abp.Users.UserData"
+              }
+            },
+            "SearchByInput": {
+              "uniqueName": "SearchByInput",
+              "name": "SearchAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/lookup/search",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Admin.Blogs.UpdateBlogDto, Volo.CmsKit.Admin.Application.Contracts",
                   "type": "Volo.CmsKit.Admin.Blogs.UpdateBlogDto",
                   "typeSimple": "Volo.CmsKit.Admin.Blogs.UpdateBlogDto",
+=======
+                  "typeAsString": "Volo.Abp.Identity.UserLookupSearchInputDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.UserLookupSearchInputDto",
+                  "typeSimple": "Volo.Abp.Identity.UserLookupSearchInputDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "id",
-                  "name": "id",
+                  "nameOnMethod": "input",
+                  "name": "Filter",
                   "jsonName": null,
-                  "type": "System.Guid",
+                  "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
                 },
                 {
                   "nameOnMethod": "input",
-                  "name": "input",
+                  "name": "Sorting",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "Volo.CmsKit.Admin.Blogs.UpdateBlogDto",
                   "typeSimple": "Volo.CmsKit.Admin.Blogs.UpdateBlogDto",
+=======
+                  "type": "System.String",
+                  "typeSimple": "string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Admin.Blogs.BlogDto",
                 "typeSimple": "Volo.CmsKit.Admin.Blogs.BlogDto"
               }
@@ -1187,19 +1803,43 @@
                   "typeAsString": "System.Guid, System.Private.CoreLib",
                   "type": "System.Guid",
                   "typeSimple": "string",
+=======
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Users.UserData>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Volo.Abp.Users.UserData>"
+              }
+            },
+            "GetCountByInput": {
+              "uniqueName": "GetCountByInput",
+              "name": "GetCountAsync",
+              "httpMethod": "GET",
+              "url": "api/identity/users/lookup/count",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Identity.UserLookupCountInputDto, Volo.Abp.Identity.Application.Contracts",
+                  "type": "Volo.Abp.Identity.UserLookupCountInputDto",
+                  "typeSimple": "Volo.Abp.Identity.UserLookupCountInputDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "id",
                   "name": "id",
+=======
+                  "nameOnMethod": "input",
+                  "name": "Filter",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.Guid",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -1560,6 +2200,11 @@
                   "constraintTypes": null,
                   "bindingSourceId": "Body",
                   "descriptorName": ""
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                 }
               ],
               "returnValue": {
@@ -1634,6 +2279,7 @@
               }
             }
           }
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
         },
         "Volo.CmsKit.Public.Reactions.ReactionPublicController": {
           "controllerName": "ReactionPublic",
@@ -1664,37 +2310,120 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+        }
+      }
+    },
+    "account": {
+      "rootPath": "account",
+      "remoteServiceName": "AbpAccount",
+      "controllers": {
+        "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController": {
+          "controllerName": "Account",
+          "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController",
+          "interfaces": [],
+          "actions": {
+            "LoginByLogin": {
+              "uniqueName": "LoginByLogin",
+              "name": "Login",
+              "httpMethod": "POST",
+              "url": "api/account/login",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "login",
+                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
+=======
+                  "nameOnMethod": "login",
+                  "name": "login",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "entityId",
-                  "name": "entityId",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "descriptorName": ""
                 }
               ],
               "returnValue": {
+                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
+                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
+              }
+            },
+            "Logout": {
+              "uniqueName": "Logout",
+              "name": "Logout",
+              "httpMethod": "GET",
+              "url": "api/account/logout",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "CheckPasswordByLogin": {
+              "uniqueName": "CheckPasswordByLogin",
+              "name": "CheckPassword",
+              "httpMethod": "POST",
+              "url": "api/account/check-password",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "nameOnMethod": "entityId",
+                  "name": "entityId",
+=======
+                  "name": "login",
+                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "login",
+                  "name": "login",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.Abp.Application.Dtos.ListResultDto<Volo.CmsKit.Public.Reactions.ReactionWithSelectionDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Volo.CmsKit.Public.Reactions.ReactionWithSelectionDto>"
               }
@@ -1711,40 +2440,126 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
+=======
+                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
+                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
+              }
+            }
+          }
+        },
+        "Volo.Abp.Account.AccountController": {
+          "controllerName": "Account",
+          "type": "Volo.Abp.Account.AccountController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Account.IAccountAppService"
+            }
+          ],
+          "actions": {
+            "RegisterByInput": {
+              "uniqueName": "RegisterByInput",
+              "name": "RegisterAsync",
+              "httpMethod": "POST",
+              "url": "api/account/register",
+              "supportedVersions": [],
+              "parametersOnMethod": [
                 {
-                  "name": "entityId",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "reaction",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.RegisterDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.RegisterDto",
+                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "entityType",
-                  "name": "entityType",
-                  "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "name": "entityId",
+                  "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.RegisterDto",
+                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+              }
+            },
+            "SendPasswordResetCodeByInput": {
+              "uniqueName": "SendPasswordResetCodeByInput",
+              "name": "SendPasswordResetCodeAsync",
+              "httpMethod": "POST",
+              "url": "api/account/send-password-reset-code",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "name": "reaction",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+=======
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.SendPasswordResetCodeDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "nameOnMethod": "entityType",
+                  "name": "entityType",
+=======
+                  "nameOnMethod": "input",
+                  "name": "input",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "descriptorName": ""
-                },
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "ResetPasswordByInput": {
+              "uniqueName": "ResetPasswordByInput",
+              "name": "ResetPasswordAsync",
+              "httpMethod": "POST",
+              "url": "api/account/reset-password",
+              "supportedVersions": [],
+              "parametersOnMethod": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityId",
                   "name": "entityId",
                   "jsonName": null,
@@ -1756,12 +2571,28 @@
                   "bindingSourceId": "Path",
                   "descriptorName": ""
                 },
+=======
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.ResetPasswordDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.ResetPasswordDto",
+                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                 {
                   "nameOnMethod": "reaction",
                   "name": "reaction",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+                  "type": "Volo.Abp.Account.ResetPasswordDto",
+                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": [],
@@ -1773,6 +2604,7 @@
                 "type": "System.Void",
                 "typeSimple": "System.Void"
               }
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
             },
             "DeleteByEntityTypeAndEntityIdAndReaction": {
               "uniqueName": "DeleteByEntityTypeAndEntityIdAndReaction",
@@ -1786,10 +2618,46 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+            }
+          }
+        }
+      }
+    },
+    "fs": {
+      "rootPath": "fs",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "FS.Customers.CustomersApi": {
+          "controllerName": "CustomersApi",
+          "type": "FS.Customers.CustomersApi",
+          "interfaces": [
+            {
+              "type": "FS.Customers.ICustomersApi"
+            },
+            {
+              "type": "FS.Customers.ICustomerCrudAppService"
+            }
+          ],
+          "actions": {
+            "GetByCustomerPrimaryKey": {
+              "uniqueName": "GetByCustomerPrimaryKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/fs/customers/customer/id",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerPrimaryKey",
+                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 },
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "name": "entityId",
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
@@ -1802,19 +2670,56 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+                  "nameOnMethod": "CustomerPrimaryKey",
+                  "name": "Id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Query",
+                  "descriptorName": "CustomerPrimaryKey"
+                }
+              ],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "GetListByCustomerGetList": {
+              "uniqueName": "GetListByCustomerGetList",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/fs/customers/customer",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerGetList",
+                  "typeAsString": "FS.Customers.Dtos.CustomerGetListDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerGetListDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerGetListDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
+=======
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Discriminator",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -1822,11 +2727,21 @@
                 {
                   "nameOnMethod": "entityId",
                   "name": "entityId",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Fields",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -1834,11 +2749,57 @@
                 {
                   "nameOnMethod": "reaction",
                   "name": "reaction",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Value",
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "MaxResultCount",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -1880,22 +2841,93 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>"
+              }
+            },
+            "CreateByCustomerCreate": {
+              "uniqueName": "CreateByCustomerCreate",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/fs/customers/customer",
+              "supportedVersions": [],
+              "parametersOnMethod": [
                 {
-                  "name": "input",
-                  "typeAsString": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput, Volo.CmsKit.Public.Application.Contracts",
-                  "type": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput",
-                  "typeSimple": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput",
+                  "name": "CustomerCreate",
+                  "typeAsString": "FS.Customers.Dtos.CustomerCreateDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerCreateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+                  "nameOnMethod": "CustomerCreate",
+                  "name": "CustomerCreate",
+                  "jsonName": null,
+                  "type": "FS.Customers.Dtos.CustomerCreateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "UpdateByCustomerPrimaryKeyAndCustomerUpdate": {
+              "uniqueName": "UpdateByCustomerPrimaryKeyAndCustomerUpdate",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/fs/customers/customer/id",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerPrimaryKey",
+                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "name": "input",
+                  "typeAsString": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput, Volo.CmsKit.Public.Application.Contracts",
+                  "type": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput",
+                  "typeSimple": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput",
+=======
+                  "name": "CustomerUpdate",
+                  "typeAsString": "FS.Customers.Dtos.CustomerUpdateDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
+=======
+                  "nameOnMethod": "CustomerPrimaryKey",
+                  "name": "Id",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
@@ -1913,16 +2945,21 @@
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
+                  "constraintTypes": null,
+                  "bindingSourceId": "Query",
+                  "descriptorName": "CustomerPrimaryKey"
                 },
                 {
-                  "nameOnMethod": "input",
-                  "name": "input",
+                  "nameOnMethod": "CustomerUpdate",
+                  "name": "CustomerUpdate",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput",
                   "typeSimple": "Volo.CmsKit.Public.Ratings.CreateUpdateRatingInput",
+=======
+                  "type": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1931,6 +2968,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Public.Ratings.RatingDto",
                 "typeSimple": "Volo.CmsKit.Public.Ratings.RatingDto"
               }
@@ -1955,19 +2993,43 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "DeleteByCustomerPrimaryKey": {
+              "uniqueName": "DeleteByCustomerPrimaryKey",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/fs/customers/customer/id",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerPrimaryKey",
+                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
+=======
+                  "nameOnMethod": "CustomerPrimaryKey",
+                  "name": "Id",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -2010,12 +3072,80 @@
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "Query",
+                  "descriptorName": "CustomerPrimaryKey"
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "Options": {
+              "uniqueName": "Options",
+              "name": "Options",
+              "httpMethod": "OPTIONS",
+              "url": "api/fs/customers",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.MetaData",
+                "typeSimple": "FS.Customers.Dtos.MetaData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "settingManagement": {
+      "rootPath": "settingManagement",
+      "remoteServiceName": "SettingManagement",
+      "controllers": {
+        "Volo.Abp.SettingManagement.EmailSettingsController": {
+          "controllerName": "EmailSettings",
+          "type": "Volo.Abp.SettingManagement.EmailSettingsController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
+            }
+          ],
+          "actions": {
+            "Get": {
+              "uniqueName": "Get",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/setting-management/emailing",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.SettingManagement.EmailSettingsDto",
+                "typeSimple": "Volo.Abp.SettingManagement.EmailSettingsDto"
+              }
+            },
+            "UpdateByInput": {
+              "uniqueName": "UpdateByInput",
+              "name": "UpdateAsync",
+              "httpMethod": "POST",
+              "url": "api/setting-management/emailing",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto, Volo.Abp.SettingManagement.Application.Contracts",
+                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
                   "jsonName": null,
@@ -2030,13 +3160,22 @@
                 {
                   "nameOnMethod": "entityId",
                   "name": "entityId",
+=======
+                  "nameOnMethod": "input",
+                  "name": "input",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
+                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "descriptorName": ""
                 }
               ],
@@ -2046,6 +3185,7 @@
               }
             }
           }
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
         },
         "Volo.CmsKit.Public.Pages.PagesPublicController": {
           "controllerName": "PagesPublic",
@@ -2066,27 +3206,211 @@
                 {
                   "name": "slug",
                   "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
+=======
+        }
+      }
+    },
+    "cms-kit-management": {
+      "rootPath": "cms-kit-management",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "FS.CmsKitManagement.Vocabularies.VocabulariesApi": {
+          "controllerName": "VocabulariesApi",
+          "type": "FS.CmsKitManagement.Vocabularies.VocabulariesApi",
+          "interfaces": [
+            {
+              "type": "FS.CmsKitManagement.Vocabularies.IVocabulariesApi"
+            },
+            {
+              "type": "FS.CmsKitManagement.Vocabularies.IVocabularyDefinitionCrudAppService"
+            },
+            {
+              "type": "FS.CmsKitManagement.Vocabularies.IVocabularyCrudAppService"
+            }
+          ],
+          "actions": {
+            "Options": {
+              "uniqueName": "Options",
+              "name": "Options",
+              "httpMethod": "OPTIONS",
+              "url": "api/cms-kit-management/vocabularies",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Vocabularies.Dtos.MetaData",
+                "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.MetaData"
+              }
+            },
+            "GetListByVocabularyGetList": {
+              "uniqueName": "GetListByVocabularyGetList",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/cms-kit-management/vocabularies/vocabulary",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "VocabularyGetList",
+                  "typeAsString": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto, FS.CmsKitManagement.Application.Contracts",
+                  "type": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto",
+                  "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "slug",
-                  "name": "slug",
+                  "nameOnMethod": "VocabularyGetList",
+                  "name": "Fields",
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyGetList",
+                  "name": "Value",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyGetList",
+                  "name": "Sorting",
+                  "jsonName": null,
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyGetList",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyGetList",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyGetList"
                 }
               ],
               "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyWithDetailsDto>"
+              }
+            },
+            "GetListByVocabularyDefinitionGetList": {
+              "uniqueName": "GetListByVocabularyDefinitionGetList",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/cms-kit-management/vocabularies/vocabulary-definition",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "VocabularyDefinitionGetList",
+                  "typeAsString": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto, FS.CmsKitManagement.Application.Contracts",
+                  "type": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto",
+                  "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "nameOnMethod": "slug",
+                  "name": "slug",
+=======
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "Fields",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "Value",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                }
+              ],
+              "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Public.Pages.PageDto",
                 "typeSimple": "Volo.CmsKit.Public.Pages.PageDto"
               }
@@ -2111,6 +3435,38 @@
               "parametersOnMethod": [
                 {
                   "name": "entityType",
+=======
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto>"
+              }
+            }
+          }
+        }
+      }
+    },
+    "featureManagement": {
+      "rootPath": "featureManagement",
+      "remoteServiceName": "AbpFeatureManagement",
+      "controllers": {
+        "Volo.Abp.FeatureManagement.FeaturesController": {
+          "controllerName": "Features",
+          "type": "Volo.Abp.FeatureManagement.FeaturesController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.FeatureManagement.IFeatureAppService"
+            }
+          ],
+          "actions": {
+            "GetByProviderNameAndProviderKey": {
+              "uniqueName": "GetByProviderNameAndProviderKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/feature-management/features",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
@@ -2118,7 +3474,11 @@
                   "defaultValue": null
                 },
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "name": "entityId",
+=======
+                  "name": "providerKey",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
@@ -2128,13 +3488,19 @@
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
+=======
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -2142,17 +3508,32 @@
                 {
                   "nameOnMethod": "entityId",
                   "name": "entityId",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "descriptorName": ""
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.Abp.Application.Dtos.ListResultDto<Volo.CmsKit.Public.Comments.CommentWithDetailsDto>",
                 "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<Volo.CmsKit.Public.Comments.CommentWithDetailsDto>"
               }
@@ -2166,6 +3547,21 @@
               "parametersOnMethod": [
                 {
                   "name": "entityType",
+=======
+                "type": "Volo.Abp.FeatureManagement.GetFeatureListResultDto",
+                "typeSimple": "Volo.Abp.FeatureManagement.GetFeatureListResultDto"
+              }
+            },
+            "UpdateByProviderNameAndProviderKeyAndInput": {
+              "uniqueName": "UpdateByProviderNameAndProviderKeyAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/feature-management/features",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
@@ -2173,7 +3569,11 @@
                   "defaultValue": null
                 },
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "name": "entityId",
+=======
+                  "name": "providerKey",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "typeAsString": "System.String, System.Private.CoreLib",
                   "type": "System.String",
                   "typeSimple": "string",
@@ -2182,22 +3582,34 @@
                 },
                 {
                   "name": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "typeAsString": "Volo.CmsKit.Public.Comments.CreateCommentInput, Volo.CmsKit.Public.Application.Contracts",
                   "type": "Volo.CmsKit.Public.Comments.CreateCommentInput",
                   "typeSimple": "Volo.CmsKit.Public.Comments.CreateCommentInput",
+=======
+                  "typeAsString": "Volo.Abp.FeatureManagement.UpdateFeaturesDto, Volo.Abp.FeatureManagement.Application.Contracts",
+                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "entityType",
                   "name": "entityType",
+=======
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
@@ -2205,21 +3617,40 @@
                 {
                   "nameOnMethod": "entityId",
                   "name": "entityId",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
+=======
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "descriptorName": ""
                 },
                 {
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "type": "Volo.CmsKit.Public.Comments.CreateCommentInput",
                   "typeSimple": "Volo.CmsKit.Public.Comments.CreateCommentInput",
+=======
+                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -2228,6 +3659,7 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Public.Comments.CommentDto",
                 "typeSimple": "Volo.CmsKit.Public.Comments.CommentDto"
               }
@@ -2252,12 +3684,48 @@
                   "typeAsString": "Volo.CmsKit.Public.Comments.UpdateCommentInput, Volo.CmsKit.Public.Application.Contracts",
                   "type": "Volo.CmsKit.Public.Comments.UpdateCommentInput",
                   "typeSimple": "Volo.CmsKit.Public.Comments.UpdateCommentInput",
+=======
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            }
+          }
+        }
+      }
+    },
+    "abp": {
+      "rootPath": "abp",
+      "remoteServiceName": "abp",
+      "controllers": {
+        "Pages.Abp.MultiTenancy.AbpTenantController": {
+          "controllerName": "AbpTenant",
+          "type": "Pages.Abp.MultiTenancy.AbpTenantController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.IAbpTenantAppService"
+            }
+          ],
+          "actions": {
+            "FindTenantByNameByName": {
+              "uniqueName": "FindTenantByNameByName",
+              "name": "FindTenantByNameAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/multi-tenancy/tenants/by-name/{name}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "name",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                   "nameOnMethod": "id",
                   "name": "id",
                   "jsonName": null,
@@ -2275,14 +3743,22 @@
                   "jsonName": null,
                   "type": "Volo.CmsKit.Public.Comments.UpdateCommentInput",
                   "typeSimple": "Volo.CmsKit.Public.Comments.UpdateCommentInput",
+=======
+                  "nameOnMethod": "name",
+                  "name": "name",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
                   "descriptorName": ""
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 "type": "Volo.CmsKit.Public.Comments.CommentDto",
                 "typeSimple": "Volo.CmsKit.Public.Comments.CommentDto"
               }
@@ -2292,6 +3768,17 @@
               "name": "DeleteAsync",
               "httpMethod": "DELETE",
               "url": "api/cms-kit-public/comments/{id}",
+=======
+                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
+              }
+            },
+            "FindTenantByIdById": {
+              "uniqueName": "FindTenantByIdById",
+              "name": "FindTenantByIdAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/multi-tenancy/tenants/by-id/{id}",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
@@ -2315,11 +3802,80 @@
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+=======
                 }
               ],
               "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
+                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
+              }
+            }
+          }
+        },
+        "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController": {
+          "controllerName": "AbpApplicationConfiguration",
+          "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.IAbpApplicationConfigurationAppService"
+            }
+          ],
+          "actions": {
+            "Get": {
+              "uniqueName": "Get",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/application-configuration",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto"
+              }
+            }
+          }
+        },
+        "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController": {
+          "controllerName": "AbpApiDefinition",
+          "type": "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController",
+          "interfaces": [],
+          "actions": {
+            "GetByModel": {
+              "uniqueName": "GetByModel",
+              "name": "Get",
+              "httpMethod": "GET",
+              "url": "api/abp/api-definition",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "model",
+                  "typeAsString": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto, Volo.Abp.Http",
+                  "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
+                  "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "model",
+                  "name": "IncludeTypes",
+                  "jsonName": null,
+                  "type": "System.Boolean",
+                  "typeSimple": "boolean",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "model"
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel",
+                "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel"
               }
             }
           }
@@ -5024,6 +6580,272 @@
                 }
               ],
               "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                "type": "Volo.Abp.TenantManagement.TenantDto",
+                "typeSimple": "Volo.Abp.TenantManagement.TenantDto"
+              }
+            },
+            "GetListByInput": {
+              "uniqueName": "GetListByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/multi-tenancy/tenants",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.TenantManagement.GetTenantsInput, Volo.Abp.TenantManagement.Application.Contracts",
+                  "type": "Volo.Abp.TenantManagement.GetTenantsInput",
+                  "typeSimple": "Volo.Abp.TenantManagement.GetTenantsInput",
+=======
+                "type": "Volo.CmsKit.Blogs.BlogFeatureDto",
+                "typeSimple": "Volo.CmsKit.Blogs.BlogFeatureDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "permissionManagement": {
+      "rootPath": "permissionManagement",
+      "remoteServiceName": "AbpPermissionManagement",
+      "controllers": {
+        "Volo.Abp.PermissionManagement.PermissionsController": {
+          "controllerName": "Permissions",
+          "type": "Volo.Abp.PermissionManagement.PermissionsController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.PermissionManagement.IPermissionAppService"
+            }
+          ],
+          "actions": {
+            "GetByProviderNameAndProviderKey": {
+              "uniqueName": "GetByProviderNameAndProviderKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/permission-management/permissions",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.PermissionManagement.GetPermissionListResultDto",
+                "typeSimple": "Volo.Abp.PermissionManagement.GetPermissionListResultDto"
+              }
+            },
+            "UpdateByProviderNameAndProviderKeyAndInput": {
+              "uniqueName": "UpdateByProviderNameAndProviderKeyAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/permission-management/permissions",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.PermissionManagement.UpdatePermissionsDto, Volo.Abp.PermissionManagement.Application.Contracts",
+                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            }
+          }
+        }
+      }
+    },
+    "app": {
+      "rootPath": "app",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "FS.CmsKitManagement.Samples.SampleController": {
+          "controllerName": "Sample",
+          "type": "FS.CmsKitManagement.Samples.SampleController",
+          "interfaces": [
+            {
+              "type": "FS.CmsKitManagement.Samples.ISampleAppService"
+            }
+          ],
+          "actions": {
+            "Get": {
+              "uniqueName": "Get",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/CmsKitManagement/sample",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Samples.SampleDto",
+                "typeSimple": "FS.CmsKitManagement.Samples.SampleDto"
+              }
+            },
+            "GetAuthorized": {
+              "uniqueName": "GetAuthorized",
+              "name": "GetAuthorizedAsync",
+              "httpMethod": "GET",
+              "url": "api/CmsKitManagement/sample/authorized",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Samples.SampleDto",
+                "typeSimple": "FS.CmsKitManagement.Samples.SampleDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "multi-tenancy": {
+      "rootPath": "multi-tenancy",
+      "remoteServiceName": "AbpTenantManagement",
+      "controllers": {
+        "Volo.Abp.TenantManagement.TenantController": {
+          "controllerName": "Tenant",
+          "type": "Volo.Abp.TenantManagement.TenantController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.TenantManagement.ITenantAppService"
+            }
+          ],
+          "actions": {
+            "GetById": {
+              "uniqueName": "GetById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/multi-tenancy/tenants/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "nameOnMethod": "input",
+                  "name": "Filter",
+                  "jsonName": null,
+=======
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
                 "type": "Volo.Abp.TenantManagement.TenantDto",
                 "typeSimple": "Volo.Abp.TenantManagement.TenantDto"
               }
@@ -5049,6 +6871,7 @@
                   "nameOnMethod": "input",
                   "name": "Filter",
                   "jsonName": null,
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "type": "System.String",
                   "typeSimple": "string",
                   "isOptional": false,
@@ -5056,6 +6879,12 @@
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
                   "descriptorName": "input"
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+=======
                 },
                 {
                   "nameOnMethod": "input",
@@ -5072,6 +6901,7 @@
                 {
                   "nameOnMethod": "input",
                   "name": "SkipCount",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -5083,7 +6913,11 @@
                 },
                 {
                   "nameOnMethod": "input",
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "name": "SkipCount",
+=======
                   "name": "MaxResultCount",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "jsonName": null,
                   "type": "System.Int32",
                   "typeSimple": "number",
@@ -5092,6 +6926,12 @@
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
                   "descriptorName": "input"
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+=======
                 }
               ],
               "returnValue": {
@@ -5162,6 +7002,182 @@
                 {
                   "nameOnMethod": "id",
                   "name": "id",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.TenantManagement.TenantUpdateDto",
+                  "typeSimple": "Volo.Abp.TenantManagement.TenantUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.TenantManagement.TenantDto",
+                "typeSimple": "Volo.Abp.TenantManagement.TenantDto"
+              }
+            },
+            "DeleteById": {
+              "uniqueName": "DeleteById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/multi-tenancy/tenants/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.TenantManagement.TenantDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<Volo.Abp.TenantManagement.TenantDto>"
+              }
+            },
+            "CreateByInput": {
+              "uniqueName": "CreateByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/multi-tenancy/tenants",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.TenantManagement.TenantCreateDto, Volo.Abp.TenantManagement.Application.Contracts",
+                  "type": "Volo.Abp.TenantManagement.TenantCreateDto",
+                  "typeSimple": "Volo.Abp.TenantManagement.TenantCreateDto",
+=======
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "GetDefaultConnectionStringById": {
+              "uniqueName": "GetDefaultConnectionStringById",
+              "name": "GetDefaultConnectionStringAsync",
+              "httpMethod": "GET",
+              "url": "api/multi-tenancy/tenants/{id}/default-connection-string",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.TenantManagement.TenantCreateDto",
+                  "typeSimple": "Volo.Abp.TenantManagement.TenantCreateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+=======
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                "type": "Volo.Abp.TenantManagement.TenantDto",
+                "typeSimple": "Volo.Abp.TenantManagement.TenantDto"
+              }
+            },
+            "UpdateByIdAndInput": {
+              "uniqueName": "UpdateByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/multi-tenancy/tenants/{id}",
+=======
+                "type": "System.String",
+                "typeSimple": "string"
+              }
+            },
+            "UpdateDefaultConnectionStringByIdAndDefaultConnectionString": {
+              "uniqueName": "UpdateDefaultConnectionStringByIdAndDefaultConnectionString",
+              "name": "UpdateDefaultConnectionStringAsync",
+              "httpMethod": "PUT",
+              "url": "api/multi-tenancy/tenants/{id}/default-connection-string",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.TenantManagement.TenantUpdateDto, Volo.Abp.TenantManagement.Application.Contracts",
+                  "type": "Volo.Abp.TenantManagement.TenantUpdateDto",
+                  "typeSimple": "Volo.Abp.TenantManagement.TenantUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
                   "jsonName": null,
                   "type": "System.Guid",
                   "typeSimple": "string",
@@ -5216,12 +7232,46 @@
                   "defaultValue": null,
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
+=======
+                  "name": "defaultConnectionString",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "defaultConnectionString",
+                  "name": "defaultConnectionString",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                   "descriptorName": ""
                 }
               ],
               "returnValue": {
                 "type": "System.Void",
                 "typeSimple": "System.Void"
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               }
             },
             "GetDefaultConnectionStringById": {
@@ -5263,6 +7313,14 @@
               "uniqueName": "UpdateDefaultConnectionStringByIdAndDefaultConnectionString",
               "name": "UpdateDefaultConnectionStringAsync",
               "httpMethod": "PUT",
+=======
+              }
+            },
+            "DeleteDefaultConnectionStringById": {
+              "uniqueName": "DeleteDefaultConnectionStringById",
+              "name": "DeleteDefaultConnectionStringAsync",
+              "httpMethod": "DELETE",
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               "url": "api/multi-tenancy/tenants/{id}/default-connection-string",
               "supportedVersions": [],
               "parametersOnMethod": [
@@ -5273,6 +7331,7 @@
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 },
                 {
                   "name": "defaultConnectionString",
@@ -5281,6 +7340,8 @@
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
+=======
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                 }
               ],
               "parameters": [
@@ -5295,6 +7356,7 @@
                   "constraintTypes": [],
                   "bindingSourceId": "Path",
                   "descriptorName": ""
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
                 },
                 {
                   "nameOnMethod": "defaultConnectionString",
@@ -5307,11 +7369,14 @@
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
                   "descriptorName": ""
+=======
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
                 }
               ],
               "returnValue": {
                 "type": "System.Void",
                 "typeSimple": "System.Void"
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
               }
             },
             "DeleteDefaultConnectionStringById": {
@@ -5347,6 +7412,8 @@
               "returnValue": {
                 "type": "System.Void",
                 "typeSimple": "System.Void"
+=======
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
               }
             }
           }
@@ -6822,7 +8889,27 @@
         }
       ]
     },
+<<<<<<< HEAD:angular/apps/alain-app/proxy/generate-proxy.json
     "Volo.CmsKit.Admin.Blogs.UpdateBlogDto": {
+=======
+    "FS.Abp.MediatR.IQuery": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": []
+    },
+    "FS.Abp.MediatR.ICommand": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": []
+    },
+    "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo": {
+>>>>>>> feature_add_MediatR:angular/apps/alain-app/src/app/proxy/generate-proxy.json
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -11215,6 +13302,77 @@
           "jsonName": null,
           "type": "System.Boolean",
           "typeSimple": "boolean",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.Customers.Querys.Customers.FindQuery": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "id",
+          "jsonName": null,
+          "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+          "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.Customers.Querys.Customers.Query": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "input",
+          "jsonName": null,
+          "type": "FS.Customers.Dtos.CustomerGetListDto",
+          "typeSimple": "FS.Customers.Dtos.CustomerGetListDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.Customers.Commands.Customers.CreateCommand": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "input",
+          "jsonName": null,
+          "type": "FS.Customers.Dtos.CustomerCreateDto",
+          "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.Customers.Commands.Customers.UpdateCommand": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "id",
+          "jsonName": null,
+          "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+          "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+          "isRequired": false
+        },
+        {
+          "name": "input",
+          "jsonName": null,
+          "type": "FS.Customers.Dtos.CustomerUpdateDto",
+          "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
           "isRequired": false
         }
       ]
