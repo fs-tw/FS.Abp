@@ -1,6 +1,7 @@
-import { Component, OnInit, Injector, Input } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { PagedAndSortedResultRequestDto, EnvironmentService } from '@abp/ng.core';
 import { ToasterService, ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
+import { forkJoin } from 'rxjs';
 
 import { Volo, Fs } from '@fs-tw/cms-kit-management/proxy';
 import { PageStateService } from '../../providers/paget-state.service';
@@ -42,9 +43,16 @@ export class BlogPostsComponent implements OnInit {
   }
 
   getBlogs() {
-    this.blogsApiService.get()
-      .subscribe((x) => {
-        this.blogs = x;
+    let getBlogs = this.blogsApiService.get();
+    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback({
+      providerKey: null,
+      providerName: "T"
+    } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto);
+
+    forkJoin([getBlogs, getBlogPostSetting])
+      .subscribe(([blog, setting]) => {
+        this.blogs = blog;
+        this.defaultImageUrl = setting.defaultImage;
 
         let selectedBlogId = this.pageStateService.getOne("SelectedBlogId");
         let selectedBlog = this.blogs.find(x => x.id == selectedBlogId);

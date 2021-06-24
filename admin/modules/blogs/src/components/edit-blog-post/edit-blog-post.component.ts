@@ -1,7 +1,7 @@
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { ToasterService } from '@abp/ng.theme.shared';
 
@@ -53,10 +53,17 @@ export class EditBlogPostComponent implements OnInit {
 
   getBlogs() {
     this.blogId = "";
-    this.blogsApiService.get()
-      .subscribe((x) => {
+    let getBlogs = this.blogsApiService.get();
+    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback({
+      providerKey: null,
+      providerName: "T"
+    } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto);
+
+    forkJoin([getBlogs, getBlogPostSetting])
+      .subscribe(([blog, setting]) => {
         // 不顯示講習文章、比賽文章
-        this.blogs = x.filter(y => y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' && y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang');
+        this.blogs = blog.filter(y => y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' && y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang');
+        this.defaultImageUrl = setting.defaultImage;
 
         let selectedBlogId = this.pageStateService.getOne("SelectedBlogId");
         let selectedBlog = this.blogs.find(x => x.id == selectedBlogId);
