@@ -11,13 +11,14 @@
         <File Name="VocabulariesPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="BlogsPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="RoutesPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
+        <File Name="IBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="BlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="BlogsApi.PostRouteCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="BlogsApi.BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="IVocabulariesApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="VocabulariesApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="VocabulariesApi.VocabularyDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="VocabulariesApi.VocabularyCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
-        <File Name="IBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
-        <File Name="BlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
-        <File Name="BlogsApi.PostRouteCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="IRoutesApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
         <File Name="RoutesApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
         <File Name="RoutesApi.RouteCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
@@ -37,16 +38,22 @@
         <File Name="PostRouteDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="RouteDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Routes\Dtos" />
         <File Name="RouteDefinitionDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Routes\Dtos" />
+        <File Name="BlogPostSettingDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="VocabularyDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies\Dtos" />
         <File Name="VocabularyDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies\Dtos" />
         <File Name="PostRouteDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="RouteDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Routes\Dtos" />
         <File Name="RouteDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Routes\Dtos" />
+        <File Name="BlogPostSettingDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="VocabularyDefinitionDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies\Dtos" />
         <File Name="VocabularyDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies\Dtos" />
         <File Name="PostRouteDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="RouteDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Routes\Dtos" />
         <File Name="RouteDefinitionDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Routes\Dtos" />
+        <File Name="BlogPostSettingDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
+        <File Name="BlogPostSetting.AbpSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="IBlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="VocabulariesStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="VocabulariesStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="BlogsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
@@ -62,6 +69,7 @@
         <File Name="PostRoute.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="Route.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
         <File Name="RouteDefinition.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
+        <File Name="BlogPostSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="UrlType.Generated.cs" Project="FS.CmsKitManagement.Domain.Shared" ProjectFolder="_Generated\FS.CmsKitManagement\Routes" />
         <File Name="VocabularyDefinition.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
         <File Name="Vocabulary.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Vocabularies" />
@@ -101,6 +109,7 @@
     </ExtendedProperties>
     <Diagrams>
       <Diagram Name="Diagram1" DefaultDiagram="True" />
+      <Diagram Name="Settings" />
     </Diagrams>
     <Templates>
       <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl" />

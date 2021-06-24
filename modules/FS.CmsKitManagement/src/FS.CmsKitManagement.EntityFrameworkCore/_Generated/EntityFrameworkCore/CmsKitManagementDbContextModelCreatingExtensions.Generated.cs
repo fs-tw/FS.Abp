@@ -30,6 +30,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
 
             CustomizeMapping(ref builder);
 
+            builder.Ignore<FS.CmsKitManagement.Blogs.BlogPostSetting>();
             builder.ApplyConfiguration<FS.CmsKitManagement.Vocabularies.VocabularyDefinition>(new FS.CmsKitManagement.Vocabularies.VocabularyDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Vocabularies.Vocabulary>(new FS.CmsKitManagement.Vocabularies.VocabularyConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Blogs.PostRoute>(new FS.CmsKitManagement.Blogs.PostRouteConfiguration(options));

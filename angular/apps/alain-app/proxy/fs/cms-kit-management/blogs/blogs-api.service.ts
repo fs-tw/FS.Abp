@@ -1,4 +1,4 @@
-import type { BlogDto, BlogPostDto, MetaData, PetchBlogPostDto, PostRouteGetListDto, PostRouteWithDetailsDto } from './dtos/models';
+import type { BlogDto, BlogPostDto, BlogPostSettingDto, BlogPostSettingGetDto, MetaData, PetchBlogPostDto } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedAndSortedResultRequestDto, PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -46,11 +46,11 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
-  getListByPostRouteGetList = (PostRouteGetList: PostRouteGetListDto) =>
-    this.restService.request<any, PagedResultDto<PostRouteWithDetailsDto>>({
+  getByBlogPostSettingGetAndFallback = (BlogPostSettingGet?: BlogPostSettingGetDto, fallback: boolean = true) =>
+    this.restService.request<any, BlogPostSettingDto>({
       method: 'GET',
-      url: '/api/cms-kit-management/blogs/post-route',
-      params: { fields: PostRouteGetList.fields, value: PostRouteGetList.value, sorting: PostRouteGetList.sorting, skipCount: PostRouteGetList.skipCount, maxResultCount: PostRouteGetList.maxResultCount },
+      url: '/api/cms-kit-management/blogs/blog-post-setting',
+      params: { providerName: BlogPostSettingGet.providerName, providerKey: BlogPostSettingGet.providerKey, fallback },
     },
     { apiName: this.apiName });
 
