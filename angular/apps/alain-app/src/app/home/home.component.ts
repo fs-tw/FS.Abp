@@ -12,13 +12,13 @@ export class HomeComponent {
   get hasLoggedIn(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
-  service: Fs.Customers.Querys.CustomersQuerysApiService;
+  service: Fs.Customers.Querys.Customers.CustomersQuerysApiService;
   constructor(
     injector: Injector,
     private oAuthService: OAuthService,
     private authService: AuthService
   ) {
-    this.service = injector.get(Fs.Customers.Querys.CustomersQuerysApiService);
+    this.service = injector.get(Fs.Customers.Querys.Customers.CustomersQuerysApiService);
 
     this.service.query({} as any).subscribe((x) => {
       console.log(x);
