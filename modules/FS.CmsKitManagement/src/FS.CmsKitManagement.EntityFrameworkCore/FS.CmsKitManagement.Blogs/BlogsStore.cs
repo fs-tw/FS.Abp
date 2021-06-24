@@ -12,43 +12,8 @@ namespace FS.CmsKitManagement.Blogs
 {
     public partial class BlogsStore : DomainService, IBlogsStore
     {
-        private IBlogPostRepository BlogPostRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
+        public IBlogPostRepository BlogPost => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
 
-        private BlogPostManager BlogPostManager => this.LazyServiceProvider.LazyGetRequiredService<BlogPostManager>();
-
-        private IObjectMapper ObjectMapper => this.LazyServiceProvider.LazyGetRequiredService<IObjectMapper>();
-
-
-        public async Task<BlogPost> PatchBlogPostAsync(BlogPost blogPost, List<Guid> routeIds, Guid userId)
-        {
-            if (blogPost.Id == Guid.Empty)
-            {
-                blogPost.AuthorId = userId;
-                EntityHelper.TrySetId(blogPost, this.GuidGenerator.Create);
-                blogPost = await this.BlogPostRepository.InsertAsync(blogPost, true);
-            }
-            else
-            {
-                var data = await this.BlogPostRepository.GetAsync(blogPost.Id);
-                //data = ObjectMapper.Map(blogPost, data);
-                data.SetTitle(blogPost.Title);
-                data.SetShortDescription(blogPost.ShortDescription);
-                data.SetContent(blogPost.Content);
-                data.CoverImageMediaId = blogPost.CoverImageMediaId;
-                data.SetAttachmentMediaIds(blogPost.GetAttachmentMediaIds());
-
-                if (data.Slug != blogPost.Slug)
-                {
-                    await this.BlogPostManager.SetSlugUrlAsync(data, blogPost.Slug);
-                }
-
-                blogPost = await this.BlogPostRepository.UpdateAsync(data, true);
-            }
-
-            await this.patchRoutes(blogPost.Id, routeIds);
-
-            return blogPost;
-        }
 
         public async Task DeletePostRouteByRouteIdAsync(Guid routeId)
         {
@@ -59,7 +24,7 @@ namespace FS.CmsKitManagement.Blogs
             await this.PostRoute.DeleteManyAsync(deleteIds);
         }
 
-        private async Task patchRoutes(Guid postId, List<Guid> routeIds)
+        public async Task PatchRoutesAsync(Guid postId, List<Guid> routeIds)
         {
             var postRoutes = await this.AsyncExecuter.ToListAsync(this.PostRoute
                 .Where(x => x.PostId == postId));
