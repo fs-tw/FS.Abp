@@ -10,6 +10,8 @@ using Volo.Abp.Threading;
 using Volo.CmsKit.GlobalFeatures;
 using Volo.Abp.GlobalFeatures;
 using Volo.CmsKit;
+using Volo.Abp;
+using FS.Abp.AspNetCore.Mvc.JsonSubTypes;
 
 namespace FS
 {
@@ -28,14 +30,15 @@ namespace FS
         typeof(FS.Abp.AbpApplicationContractsModule)
         )]
     [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule))]
+
     public class FSApplicationContractsModule : AbpModule
     {
+        public override void OnPreApplicationInitialization(ApplicationInitializationContext context)
+        {
+            base.OnPreApplicationInitialization(context);
+        }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-                Configure<FS.Abp.AspNetCore.Mvc.JsonSubTypes.JsonSubtypesOptions>(o =>
-                {
-                    o.AddProfiles<FSApplicationContractsModule>();
-                });
         }
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
         public override void PreConfigureServices(ServiceConfigurationContext context)

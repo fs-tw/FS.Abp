@@ -23,6 +23,14 @@ namespace FS.Customers.Dtos
         public CustomerUpdateDto CustomerUpdateDto => new CustomerUpdateDto();
         public CustomerGetListDto CustomerGetListDto => new CustomerGetListDto();
         public CustomerWithDetailsDto CustomerWithDetailsDto => new CustomerWithDetailsDto();
+
+        //public Querys.Customers.FindQuery FindQuery => new Querys.Customers.FindQuery();
+        //public Querys.Customers.Query Query => new Querys.Customers.Query();
+
+        //public Commands.Customers.CreateCommand CreateCommand => new Commands.Customers.CreateCommand(null);
+        //public Commands.Customers.UpdateCommand UpdateCommand => new Commands.Customers.UpdateCommand(null,null);
+
+
     }
 
     public partial class CustomerPrimaryKeyDto : EntityDto<Guid>
