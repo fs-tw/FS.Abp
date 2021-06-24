@@ -1,6 +1,6 @@
 <div class="mb-md">
   <span class="h3">
-      {{ 'RSO::BlogPost' | abpLocalization }}
+      {{ 'CmsKitManagement::BlogPost' | abpLocalization }}
   </span>
   <hr>
 </div>
@@ -11,7 +11,7 @@
       </nz-select>
   </div>
   <div style="text-align: right">
-      <button nz-button nzType="primary" [routerLink]="['create']">{{ 'RSO::BlogPost:Create' | abpLocalization }}</button>
+      <button nz-button nzType="primary" [routerLink]="['create']">{{ 'CmsKitManagement::BlogPost:Create' | abpLocalization }}</button>
   </div>
 </div>
 
@@ -19,10 +19,10 @@
   <nz-table #basicTable [nzData]="posts" [nzTotal]="totalCount" [nzPageSize]="10" [nzFrontPagination]="false" (nzPageIndexChange)="refreshPost($event)">
       <thead>
           <tr>
-              <th [nzWidth]="'60px'"></th>
-              <th [nzWidth]="'300px'">{{ 'RSO::BlogPost:Route' | abpLocalization }}</th>
-              <th>{{ 'RSO::BlogPost:ShortDescription' | abpLocalization }}</th>
-              <th [nzWidth]="'150px'">{{ 'RSO::BlogPost:CoverImageMedia' | abpLocalization }}</th>
+              <th [nzWidth]="'80px'"></th>
+              <th [nzWidth]="'150px'">{{ 'CmsKitManagement::BlogPost:CoverImageMedia' | abpLocalization }}</th>
+              <th [nzWidth]="'300px'">{{ 'CmsKitManagement::BlogPost:Route' | abpLocalization }}</th>
+              <th>{{ 'CmsKitManagement::BlogPost:Title' | abpLocalization }}</th>
           </tr>
       </thead>
       <tbody>
@@ -40,16 +40,16 @@
                   </nz-dropdown-menu>
               </td>
               <td>
+                  <div style="width: 100%; height: 100px;" *ngIf="coverMediaUrls[data.coverImageMediaId]">
+                      <img [src]="coverMediaUrls[data.coverImageMediaId]" style="width: 100px; height: 100%;" />
+                  </div>
+              </td>
+              <td>
                   <nz-tag *ngFor="let route of data.routes" nzColor="processing">
                       {{ route.displayName }}
                   </nz-tag>
               </td>
-              <td>{{ data.shortDescription }}</td>
-              <td>
-                  <div style="width: 100%; height: 100px;">
-                      <img [src]="coverMediaUrls[data.coverImageMediaId]" style="width: 100px; height: 100%;" />
-                  </div>
-              </td>
+              <td>{{ data.title }}</td>
           </tr>
       </tbody>
   </nz-table>

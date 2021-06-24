@@ -32,6 +32,9 @@ export class EditBlogPostComponent implements OnInit {
   loading: boolean = false;
   isEdit: boolean = false;
 
+
+  defaultImageUrl: string;
+
   constructor(
     injector: Injector,
     private activatedRoute: ActivatedRoute,
@@ -83,11 +86,12 @@ export class EditBlogPostComponent implements OnInit {
       vm.coverImageMediaId = data?.coverImageMediaId;
       vm.content = data?.content;
       vm.blogId = data ? data.blogId : vm.blogId;
+
       vm.formGroup = vm.fb.group({
         blogId: new FormControl(vm.blogId, [Validators.required]),
         title: new FormControl(data?.title, [Validators.required]),
         slug: new FormControl(data?.slug, [Validators.required]),
-        shortDescription: new FormControl(data?.shortDescription, [Validators.required])
+        shortDescription: data?.shortDescription
       });
     }
   }
@@ -96,7 +100,7 @@ export class EditBlogPostComponent implements OnInit {
     let formData = this.formGroup.value;
     let result = { ...this.blogPost, ...formData } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto;
 
-    if (!result.extraProperties) result.extraProperties = { AttachmentMediaIds: [], ViewCount: 0 };
+    if (!result.extraProperties) result.extraProperties = { AttachmentMediaIds: [] };
     result.extraProperties["AttachmentMediaIds"] = this.attachmentMedias.map(x => x.id);
     result.attachmentMedias = this.attachmentMedias;
     result.content = this.content;
@@ -116,7 +120,7 @@ export class EditBlogPostComponent implements OnInit {
         })
       )
       .subscribe((x) => {
-        this.toasterService.success("RSO::DataUpdateSuccess")
+        this.toasterService.success("CmsKitManagement::DataUpdateSuccess")
         this.loading = false;
 
         this.blogId = x.blogId;
@@ -124,7 +128,7 @@ export class EditBlogPostComponent implements OnInit {
         this.back();
       }, (error) => {
         this.loading = false;
-        this.toasterService.success("RSO::DataUpdateFaild")
+        this.toasterService.error("CmsKitManagement::DataUpdateFaild")
 
         console.error(error)
       })
@@ -148,6 +152,6 @@ export class EditBlogPostComponent implements OnInit {
   }
 
   back() {
-    this.router.navigateByUrl("/blog-post");
+    this.router.navigate(["../"], { relativeTo: this.activatedRoute });
   }
 }

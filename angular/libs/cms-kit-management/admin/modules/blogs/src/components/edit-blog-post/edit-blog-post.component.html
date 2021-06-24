@@ -1,36 +1,36 @@
 <div>
     <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'">
-        <nz-tab [nzTitle]="'RSO::BlogPost:BaseInfo' | abpLocalization">
+        <nz-tab [nzTitle]="'CmsKitManagement::BlogPost:BaseInfo' | abpLocalization">
             <form *ngIf="formGroup" [formGroup]="formGroup" se-container="1">
-                <se [label]="'RSO::BlogPost:BlogId' | abpLocalization" required>
+                <se [label]="'CmsKitManagement::BlogPost:BlogId' | abpLocalization" required>
                     <nz-select id="blogId" formControlName="blogId" [nzDisabled]="isEdit">
                         <nz-option *ngFor="let item of blogs" [nzValue]="item.id" [nzLabel]="item.name"></nz-option>
                     </nz-select>
                 </se>
-                <se [label]="'RSO::BlogPost:Title' | abpLocalization" required>
+                <se [label]="'CmsKitManagement::BlogPost:Title' | abpLocalization" required>
                     <input nz-input id="title" type="text" formControlName="title">
                 </se>
-                <se [label]="'RSO::BlogPost:Slug' | abpLocalization" required>
+                <se [label]="'CmsKitManagement::BlogPost:Slug' | abpLocalization" required>
                     <input nz-input id="slug" type="text" formControlName="slug">
                 </se>
-                <se [label]="'RSO::BlogPost:ShortDescription' | abpLocalization" required>
+                <se [label]="'CmsKitManagement::BlogPost:ShortDescription' | abpLocalization">
                     <input nz-input id="shortDescription" type="text" formControlName="shortDescription">
                 </se>
-                <se [label]="'RSO::BlogPost:Content' | abpLocalization">
+                <se [label]="'CmsKitManagement::BlogPost:Content' | abpLocalization">
                     <fs-quill-editor 
                         [(content)]="content"
-                        [modalTitle]="'RSO::UploadImage'"></fs-quill-editor>
+                        [modalTitle]="'CmsKitManagement::UploadImage'"></fs-quill-editor>
                 </se>
-                <se [label]="'RSO::BlogPost:CoverImageMedia' | abpLocalization">
-                    <fs-tw-pick-cover-image #CoverImage [(coverImageMediaId)]="coverImageMediaId"></fs-tw-pick-cover-image>
+                <se [label]="'CmsKitManagement::BlogPost:CoverImageMedia' | abpLocalization">
+                    <fs-tw-pick-cover-image #CoverImage [(coverImageMediaId)]="coverImageMediaId" [defaultImageUrl]="defaultImageUrl"></fs-tw-pick-cover-image>
                 </se>
-                <se [label]="'RSO::BlogPost:AttachmentMedia' | abpLocalization">
+                <se [label]="'CmsKitManagement::BlogPost:AttachmentMedia' | abpLocalization">
                     <fs-tw-pick-files [(attachmentMedias)]="attachmentMedias"></fs-tw-pick-files>
                 </se>
             </form>
 
         </nz-tab>
-        <nz-tab [nzTitle]="'RSO::BlogPost:Route' | abpLocalization">
+        <nz-tab [nzTitle]="'CmsKitManagement::BlogPost:Route' | abpLocalization">
             <fs-select-routes [(routeIds)]='routeIds'></fs-select-routes>
         </nz-tab>
     </nz-tabset>

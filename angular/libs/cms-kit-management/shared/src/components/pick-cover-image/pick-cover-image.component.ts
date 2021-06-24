@@ -10,8 +10,11 @@ import { ImageFile, FsNgAlainImagePickerComponent } from '@fs-tw/theme-alain/sha
 })
 export class PickCoverImageComponent implements OnInit, OnChanges {
 
+  @Input()
+  defaultImageUrl: string;
+
   @Input() 
-  coverImageMediaId;
+  coverImageMediaId: string;
 
   @ViewChild("imgPicker") imagePickerComponent: FsNgAlainImagePickerComponent;
   coverImage: ImageFile[] = [];

@@ -1,9 +1,9 @@
 <div class="imageGrid">
     <!-- 預覽圖 -->
-    <!-- <div style="text-align: center;">
-        <img style="height: 104px; width: 104px;" src="assets/Projectimage/img/default.jpg" />
-        ({{ 'RSO::ThisIsDefaultImage' | abpLocalization }})
-    </div> -->
+    <div style="text-align: center;" *ngIf="defaultImageUrl">
+        <img style="height: 104px; width: 104px;" [src]="defaultImageUrl" />
+        ({{ 'CmsKitManagement::ThisIsDefaultImage' | abpLocalization }})
+    </div>
     <div>
         <fs-ng-alain-image-picker #imgPicker [existFiles]="coverImage" [maxImageCount]="1"></fs-ng-alain-image-picker>
     </div>

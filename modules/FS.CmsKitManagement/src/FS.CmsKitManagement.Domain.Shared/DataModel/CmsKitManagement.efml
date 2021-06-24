@@ -292,7 +292,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Blogs.PostRoute" entity-set="PostRoutes" p1:Guid="d8e7c3dd-1715-4513-b50e-6635021ee01a" p1:ShapeColor="-2180985" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Guid&gt;">
+  <class name="FS.CmsKitManagement.Blogs.PostRoute" entity-set="PostRoutes" p1:Guid="d8e7c3dd-1715-4513-b50e-6635021ee01a" p1:ShapeColor="-2180985" p1:AbpEditor="YinChang" p1:GetListAsync="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Guid&gt;">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

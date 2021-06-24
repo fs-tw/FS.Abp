@@ -14,6 +14,8 @@ namespace FS.CmsKitManagement.Blogs
     {
         private IBlogPostRepository BlogPostRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
 
+        private BlogPostManager BlogPostManager => this.LazyServiceProvider.LazyGetRequiredService<BlogPostManager>();
+
         private IObjectMapper ObjectMapper => this.LazyServiceProvider.LazyGetRequiredService<IObjectMapper>();
 
 
@@ -28,7 +30,17 @@ namespace FS.CmsKitManagement.Blogs
             else
             {
                 var data = await this.BlogPostRepository.GetAsync(blogPost.Id);
-                ObjectMapper.Map(blogPost, data);
+                //data = ObjectMapper.Map(blogPost, data);
+                data.SetTitle(blogPost.Title);
+                data.SetShortDescription(blogPost.ShortDescription);
+                data.SetContent(blogPost.Content);
+                data.CoverImageMediaId = blogPost.CoverImageMediaId;
+                data.SetAttachmentMediaIds(blogPost.GetAttachmentMediaIds());
+
+                if (data.Slug != blogPost.Slug)
+                {
+                    await this.BlogPostManager.SetSlugUrlAsync(data, blogPost.Slug);
+                }
 
                 blogPost = await this.BlogPostRepository.UpdateAsync(data, true);
             }

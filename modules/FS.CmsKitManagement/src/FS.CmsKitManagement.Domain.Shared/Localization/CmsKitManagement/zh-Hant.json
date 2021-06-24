@@ -11,6 +11,31 @@
     "FS.CmsKitManagement.Vocabularies.Vocabulary": "詞彙",
     "DisplayName:Vocabulary.Create": "新增",
     "DisplayName:Vocabulary.Update": "編輯",
-    "DisplayName:Vocabulary.Delete": "刪除"
+    "DisplayName:Vocabulary.Delete": "刪除",
+
+    "Warn": "警告",
+    "AreYouSureToDelete": "確定刪除資料?",
+    "DataUpdateSuccess": "資料更新成功",
+    "DataUpdateFaild": "資料更新失敗",
+    "DataDeleteSuccess": "資料刪除成功",
+    "DataDeleteFaild": "資料刪除失敗",
+    "UploadImage": "上傳圖片",
+    "ThisIsDefaultImage": "此為預設圖",
+
+    "PickFiles:ClickOrDragToUpload": "點擊或拖拽至此處進行上傳",
+    "PickFiles:ImageRepeat": "{0} 檔案名稱重複",
+    "PickFiles:AreYouSureToDeleteFile": "確定刪除檔案 {0} ?",
+
+    "BlogPost": "文章",
+    "BlogPost:CoverImageMedia": "封面圖",
+    "BlogPost:BlogId": "文章分類",
+    "BlogPost:Title": "標題",
+    "BlogPost:Slug": "路由名稱",
+    "BlogPost:ShortDescription": "短文描述",
+    "BlogPost:Content": "內文",
+    "BlogPost:AttachmentMedia": "附件",
+    "BlogPost:BaseInfo": "基本資料",
+    "BlogPost:Route": "分類",
+    "BlogPost:Create": "新增"
   }
 }

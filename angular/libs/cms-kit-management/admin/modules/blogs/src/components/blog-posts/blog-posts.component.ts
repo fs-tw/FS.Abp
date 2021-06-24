@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Input } from '@angular/core';
 import { PagedAndSortedResultRequestDto, EnvironmentService } from '@abp/ng.core';
 import { ToasterService, ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
 
@@ -11,6 +11,8 @@ import { PageStateService } from '../../providers/paget-state.service';
   styleUrls: ['./blog-posts.component.css']
 })
 export class BlogPostsComponent implements OnInit {
+
+  defaultImageUrl: string;
 
   blogsApiService: Fs.CmsKitManagement.Blogs.BlogsApiService = null;
   blogPostAdminService: Volo.CmsKit.Admin.Blogs.BlogPostAdminService = null;
@@ -74,18 +76,19 @@ export class BlogPostsComponent implements OnInit {
         this.coverMediaUrls = {};
         x.items.forEach(x => {
           let url = `${this.environmentService.getApiUrl('cms-kit')}/api/cms-kit/media/${x.coverImageMediaId}`
-          this.coverMediaUrls[x.coverImageMediaId] = x.coverImageMediaId ? url : '/assets/Projectimage/img/default.jpg';
+          this.coverMediaUrls[x.coverImageMediaId] = x.coverImageMediaId ? url : this.defaultImageUrl;
         })
 
         this.totalCount = x.totalCount;
         this.posts = x.items;
+        console.log(x)
       })
   }
 
   deletePost(id: string) {
     let self = this;
 
-    this.confirmationService.warn("RSO::AreYouSureToDelete" , "RSO::Warn")
+    this.confirmationService.warn("CmsKitManagement::AreYouSureToDelete" , "CmsKitManagement::Warn")
       .subscribe(x => {
         if (x != Confirmation.Status.confirm) return;
         toDelete(id);
@@ -97,10 +100,10 @@ export class BlogPostsComponent implements OnInit {
           if (self.posts.length == 1 && self.page > 1) self.page--;
 
           self.refreshPost(self.page);
-          self.toasterService.success("RSO::DataDeleteSuccess");
+          self.toasterService.success("CmsKitManagement::DataDeleteSuccess");
         }, (error) => {
           console.error(error);
-          self.toasterService.error("RSO::DataDeleteFaild");
+          self.toasterService.error("CmsKitManagement::DataDeleteFaild");
         })
     }
   }
