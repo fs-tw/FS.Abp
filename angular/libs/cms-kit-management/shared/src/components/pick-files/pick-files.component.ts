@@ -44,7 +44,7 @@ export class PickFilesComponent implements OnInit, OnChanges {
   beforeUpload = (file: NzUploadFile): boolean => {
     let hasData = this.files.findIndex(x => x.name == file.name) > -1;
     if (hasData) {
-      this.toasterService.error(this.localizationService.instant("RSO::PickFiles:ImageRepeat", file.name))
+      this.toasterService.error(this.localizationService.instant("CmsKitManagement::PickFiles:ImageRepeat", file.name))
       return false;
     }
 
@@ -88,7 +88,7 @@ export class PickFilesComponent implements OnInit, OnChanges {
   }
 
   deleteFile(item: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto) {
-    this.confirmationService.warn(this.localizationService.instant("RSO::PickFiles:AreYouSureToDeleteFile", item.name), "RSO::Warn")
+    this.confirmationService.warn(this.localizationService.instant("CmsKitManagement::PickFiles:AreYouSureToDeleteFile", item.name), "CmsKitManagement::Warn")
       .subscribe((x) => {
         if (x != Confirmation.Status.confirm) return;
 

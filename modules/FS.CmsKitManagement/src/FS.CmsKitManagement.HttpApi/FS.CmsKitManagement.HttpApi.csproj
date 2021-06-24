@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.BlogPostSettingAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>

@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.Blogs
 
         [HttpGet]
         [Route("post-route")]
-        [RemoteService(true)]
+        [NonAction][RemoteService(false)]
         public Task<PagedResultDto<PostRouteWithDetailsDto>> GetListAsync(PostRouteGetListDto PostRouteGetList)
         {
             return this.PostRouteCrudAppService.GetListAsync(PostRouteGetList);

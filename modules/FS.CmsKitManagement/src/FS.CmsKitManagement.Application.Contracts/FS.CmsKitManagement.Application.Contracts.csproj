@@ -23,9 +23,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\BlogPostSettingDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogPostSettingAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogsApi.Generated.cs">
       <AutoGen>True</AutoGen>

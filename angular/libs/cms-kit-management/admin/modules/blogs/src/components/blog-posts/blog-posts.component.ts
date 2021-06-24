@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { PagedAndSortedResultRequestDto, EnvironmentService } from '@abp/ng.core';
 import { ToasterService, ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
+import { forkJoin } from 'rxjs';
 
 import { Volo, Fs } from '@fs-tw/cms-kit-management/proxy';
 import { PageStateService } from '../../providers/paget-state.service';
@@ -11,6 +12,8 @@ import { PageStateService } from '../../providers/paget-state.service';
   styleUrls: ['./blog-posts.component.css']
 })
 export class BlogPostsComponent implements OnInit {
+
+  defaultImageUrl: string;
 
   blogsApiService: Fs.CmsKitManagement.Blogs.BlogsApiService = null;
   blogPostAdminService: Volo.CmsKit.Admin.Blogs.BlogPostAdminService = null;
@@ -40,9 +43,16 @@ export class BlogPostsComponent implements OnInit {
   }
 
   getBlogs() {
-    this.blogsApiService.get()
-      .subscribe((x) => {
-        this.blogs = x;
+    let getBlogs = this.blogsApiService.get();
+    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback({
+      providerKey: null,
+      providerName: "T"
+    } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto);
+
+    forkJoin([getBlogs, getBlogPostSetting])
+      .subscribe(([blog, setting]) => {
+        this.blogs = blog;
+        this.defaultImageUrl = setting.defaultImage;
 
         let selectedBlogId = this.pageStateService.getOne("SelectedBlogId");
         let selectedBlog = this.blogs.find(x => x.id == selectedBlogId);
@@ -74,18 +84,19 @@ export class BlogPostsComponent implements OnInit {
         this.coverMediaUrls = {};
         x.items.forEach(x => {
           let url = `${this.environmentService.getApiUrl('cms-kit')}/api/cms-kit/media/${x.coverImageMediaId}`
-          this.coverMediaUrls[x.coverImageMediaId] = x.coverImageMediaId ? url : '/assets/Projectimage/img/default.jpg';
+          this.coverMediaUrls[x.coverImageMediaId] = x.coverImageMediaId ? url : this.defaultImageUrl;
         })
 
         this.totalCount = x.totalCount;
         this.posts = x.items;
+        console.log(x)
       })
   }
 
   deletePost(id: string) {
     let self = this;
 
-    this.confirmationService.warn("RSO::AreYouSureToDelete" , "RSO::Warn")
+    this.confirmationService.warn("CmsKitManagement::AreYouSureToDelete" , "CmsKitManagement::Warn")
       .subscribe(x => {
         if (x != Confirmation.Status.confirm) return;
         toDelete(id);
@@ -97,10 +108,10 @@ export class BlogPostsComponent implements OnInit {
           if (self.posts.length == 1 && self.page > 1) self.page--;
 
           self.refreshPost(self.page);
-          self.toasterService.success("RSO::DataDeleteSuccess");
+          self.toasterService.success("CmsKitManagement::DataDeleteSuccess");
         }, (error) => {
           console.error(error);
-          self.toasterService.error("RSO::DataDeleteFaild");
+          self.toasterService.error("CmsKitManagement::DataDeleteFaild");
         })
     }
   }

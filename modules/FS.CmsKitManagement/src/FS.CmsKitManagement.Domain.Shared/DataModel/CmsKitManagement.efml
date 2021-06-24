@@ -168,6 +168,29 @@
         <column name="" />
       </property>
     </component>
+    <component class="FS.CmsKitManagement.Blogs.BlogPostSetting" p1:Guid="a64ed490-142d-4f64-9bc5-adceac2fb7c9" p1:ShapeColor="-8355648" p1:AbpEditor="YinChang" p1:GetAsync="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Settings</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Blogs</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="DefaultImage" type="String" p1:ValidateRequired="true" p1:Guid="3c98079c-cbec-4130-87bd-9d41b1b342f5">
+        <column name="" />
+      </property>
+    </component>
   </class>
   <class name="FS.CmsKitManagement.Vocabularies.VocabularyDefinition" entity-set="VocabularyDefinitions" p1:Guid="dbe59402-9049-47c7-8e4e-04d4f44da4b3" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
@@ -292,7 +315,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Blogs.PostRoute" entity-set="PostRoutes" p1:Guid="d8e7c3dd-1715-4513-b50e-6635021ee01a" p1:ShapeColor="-2180985" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Guid&gt;">
+  <class name="FS.CmsKitManagement.Blogs.PostRoute" entity-set="PostRoutes" p1:Guid="d8e7c3dd-1715-4513-b50e-6635021ee01a" p1:ShapeColor="-2180985" p1:AbpEditor="YinChang" p1:GetListAsync="False" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Entity&lt;Guid&gt;">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

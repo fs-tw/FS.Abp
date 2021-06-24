@@ -11,6 +11,7 @@ namespace FS.CmsKitManagement.Blogs.Commands.BlogPosts
     {
         public async Task<BlogPostDto> Handle(PatchCommand request, CancellationToken cancellationToken)
         {
+            
             var domain = ObjectMapper.Map<BlogPostDto, BlogPost>(request.input.BlogPost);
             var blogPost = await this.BlogsStore.PatchBlogPostAsync(domain, request.input.RouteIds, this.CurrentUser.Id.Value);
 

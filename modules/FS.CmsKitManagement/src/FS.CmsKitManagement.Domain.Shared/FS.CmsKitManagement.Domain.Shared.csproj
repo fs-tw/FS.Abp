@@ -76,6 +76,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </None>
+    <None Update="DataModel\CmsKitManagement.Settings.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKitManagement.efml</DependentUpon>
+    </None>
   </ItemGroup>
 
 </Project>

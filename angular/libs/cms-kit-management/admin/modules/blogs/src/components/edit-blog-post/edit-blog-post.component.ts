@@ -1,7 +1,7 @@
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { ToasterService } from '@abp/ng.theme.shared';
 
@@ -32,6 +32,9 @@ export class EditBlogPostComponent implements OnInit {
   loading: boolean = false;
   isEdit: boolean = false;
 
+
+  defaultImageUrl: string;
+
   constructor(
     injector: Injector,
     private activatedRoute: ActivatedRoute,
@@ -50,10 +53,17 @@ export class EditBlogPostComponent implements OnInit {
 
   getBlogs() {
     this.blogId = "";
-    this.blogsApiService.get()
-      .subscribe((x) => {
+    let getBlogs = this.blogsApiService.get();
+    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback({
+      providerKey: null,
+      providerName: "T"
+    } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto);
+
+    forkJoin([getBlogs, getBlogPostSetting])
+      .subscribe(([blog, setting]) => {
         // 不顯示講習文章、比賽文章
-        this.blogs = x.filter(y => y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' && y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang');
+        this.blogs = blog.filter(y => y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' && y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang');
+        this.defaultImageUrl = setting.defaultImage;
 
         let selectedBlogId = this.pageStateService.getOne("SelectedBlogId");
         let selectedBlog = this.blogs.find(x => x.id == selectedBlogId);
@@ -83,11 +93,12 @@ export class EditBlogPostComponent implements OnInit {
       vm.coverImageMediaId = data?.coverImageMediaId;
       vm.content = data?.content;
       vm.blogId = data ? data.blogId : vm.blogId;
+
       vm.formGroup = vm.fb.group({
         blogId: new FormControl(vm.blogId, [Validators.required]),
         title: new FormControl(data?.title, [Validators.required]),
         slug: new FormControl(data?.slug, [Validators.required]),
-        shortDescription: new FormControl(data?.shortDescription, [Validators.required])
+        shortDescription: data?.shortDescription
       });
     }
   }
@@ -96,7 +107,7 @@ export class EditBlogPostComponent implements OnInit {
     let formData = this.formGroup.value;
     let result = { ...this.blogPost, ...formData } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto;
 
-    if (!result.extraProperties) result.extraProperties = { AttachmentMediaIds: [], ViewCount: 0 };
+    if (!result.extraProperties) result.extraProperties = { AttachmentMediaIds: [] };
     result.extraProperties["AttachmentMediaIds"] = this.attachmentMedias.map(x => x.id);
     result.attachmentMedias = this.attachmentMedias;
     result.content = this.content;
@@ -116,7 +127,7 @@ export class EditBlogPostComponent implements OnInit {
         })
       )
       .subscribe((x) => {
-        this.toasterService.success("RSO::DataUpdateSuccess")
+        this.toasterService.success("CmsKitManagement::DataUpdateSuccess")
         this.loading = false;
 
         this.blogId = x.blogId;
@@ -124,7 +135,7 @@ export class EditBlogPostComponent implements OnInit {
         this.back();
       }, (error) => {
         this.loading = false;
-        this.toasterService.success("RSO::DataUpdateFaild")
+        this.toasterService.error("CmsKitManagement::DataUpdateFaild")
 
         console.error(error)
       })
@@ -148,6 +159,6 @@ export class EditBlogPostComponent implements OnInit {
   }
 
   back() {
-    this.router.navigateByUrl("/blog-post");
+    this.router.navigate(["../"], { relativeTo: this.activatedRoute });
   }
 }

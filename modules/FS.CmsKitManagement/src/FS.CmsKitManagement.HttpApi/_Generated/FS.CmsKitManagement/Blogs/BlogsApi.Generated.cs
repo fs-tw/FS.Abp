@@ -20,6 +20,8 @@ namespace FS.CmsKitManagement.Blogs
     public partial class BlogsApi : CmsKitManagementController , IBlogsApi //auto-generated
     {
 
+        protected IBlogPostSettingAppService BlogPostSettingAppService => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostSettingAppService>();
+
         protected IPostRouteCrudAppService PostRouteCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IPostRouteCrudAppService>();
 
         [HttpOptions]
