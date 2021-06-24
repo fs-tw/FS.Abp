@@ -1,46 +1,56 @@
-<nz-card [nzBordered]="true">
-  <nz-tabset
-    nzSize="large"
-    *ngIf="tabs$ | async as tabs"
-    (nzSelectedIndexChange)="selectedChanged(tabs[$event - 1])"
-  >
-    <nz-tab nzTitle="全部"></nz-tab>
-    <nz-tab *ngFor="let i of tabs" [nzTitle]="i.tab"></nz-tab>
-  </nz-tabset>
-  <abp-page-toolbar></abp-page-toolbar><br />
-  <ng-container *ngIf="data$ | async as data">
-    <nz-extensible-table
-      [data]="data.items"
-      [recordsTotal]="data.totalCount"
-      [list]="list"
-    ></nz-extensible-table>
-  </ng-container>
-</nz-card>
+<div class="mb-md">
+  <span class="h3">
+      {{ 'CmsKitManagement::BlogPost' | abpLocalization }}
+  </span>
+  <hr>
+</div>
+<div class="table-title">
+  <div>
+      <nz-select [(ngModel)]="selectBlogSlug" (ngModelChange)="onSelectBlogSlugChange($event)" style="min-width: 200px;">
+          <nz-option *ngFor="let item of blogs" [nzValue]="item.slug" [nzLabel]="item.name"></nz-option>
+      </nz-select>
+  </div>
+  <div style="text-align: right">
+      <button nz-button nzType="primary" [routerLink]="['create']">{{ 'CmsKitManagement::BlogPost:Create' | abpLocalization }}</button>
+  </div>
+</div>
 
-<fs-modal
-  title="CmsKit::NewBlogPost"
-  *ngIf="createModalVisible"
-  [(visible)]="createModalVisible"
-  (save)="create($event)"
->
-  <fs-modal-info-tab
-    title="CmsKit::BlogPosts"
-    [form]="addForm"
-  ></fs-modal-info-tab>
-  <fs-media-tab title="Media"></fs-media-tab>
-</fs-modal>
-
-<fs-modal
-  title="AbpUi::Edit"
-  *ngIf="editModalVisible"
-  [(visible)]="editModalVisible"
-  (save)="edit($event)"
->
-  <fs-modal-info-tab
-    title="CmsKit::BlogPosts"
-    [form]="editForm"
-  ></fs-modal-info-tab>
-  <fs-media-tab
-    title="CmsKit::Media"
-  ></fs-media-tab>
-</fs-modal>
+<div style="overflow: auto;">
+  <nz-table #basicTable [nzData]="posts" [nzTotal]="totalCount" [nzPageSize]="10" [nzFrontPagination]="false" (nzPageIndexChange)="refreshPost($event)">
+      <thead>
+          <tr>
+              <th [nzWidth]="'80px'"></th>
+              <th [nzWidth]="'150px'">{{ 'CmsKitManagement::BlogPost:CoverImageMedia' | abpLocalization }}</th>
+              <th [nzWidth]="'300px'">{{ 'CmsKitManagement::BlogPost:Route' | abpLocalization }}</th>
+              <th>{{ 'CmsKitManagement::BlogPost:Title' | abpLocalization }}</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let data of basicTable.data">
+              <td>
+                  <a nz-dropdown [nzDropdownMenu]="menu">
+                      {{ "AbpUi::Actions" | abpLocalization }}
+                      <i nz-icon nzType="down"></i>
+                  </a>
+                  <nz-dropdown-menu #menu="nzDropdownMenu">
+                      <ul nz-menu nzSelectable>
+                          <li [routerLink]="[data.id]" nz-menu-item>{{ "AbpUi::Edit" | abpLocalization }}</li>
+                          <li nz-menu-item (click)="deletePost(data.id)">{{ "AbpUi::Delete" | abpLocalization }}</li>
+                      </ul>
+                  </nz-dropdown-menu>
+              </td>
+              <td>
+                  <div style="width: 100%; height: 100px;" *ngIf="coverMediaUrls[data.coverImageMediaId]">
+                      <img [src]="coverMediaUrls[data.coverImageMediaId]" style="width: 100px; height: 100%;" />
+                  </div>
+              </td>
+              <td>
+                  <nz-tag *ngFor="let route of data.routes" nzColor="processing">
+                      {{ route.displayName }}
+                  </nz-tag>
+              </td>
+              <td>{{ data.title }}</td>
+          </tr>
+      </tbody>
+  </nz-table>
+</div>

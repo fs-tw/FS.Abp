@@ -30,8 +30,12 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
 
             CustomizeMapping(ref builder);
 
+            builder.Ignore<FS.CmsKitManagement.Blogs.BlogPostSetting>();
             builder.ApplyConfiguration<FS.CmsKitManagement.Vocabularies.VocabularyDefinition>(new FS.CmsKitManagement.Vocabularies.VocabularyDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Vocabularies.Vocabulary>(new FS.CmsKitManagement.Vocabularies.VocabularyConfiguration(options));
+            builder.ApplyConfiguration<FS.CmsKitManagement.Blogs.PostRoute>(new FS.CmsKitManagement.Blogs.PostRouteConfiguration(options));
+            builder.ApplyConfiguration<FS.CmsKitManagement.Routes.Route>(new FS.CmsKitManagement.Routes.RouteConfiguration(options));
+            builder.ApplyConfiguration<FS.CmsKitManagement.Routes.RouteDefinition>(new FS.CmsKitManagement.Routes.RouteDefinitionConfiguration(options));
         }
         static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }

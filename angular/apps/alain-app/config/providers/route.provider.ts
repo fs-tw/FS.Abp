@@ -11,24 +11,12 @@ export const ROUTE_PROVIDERS = [
   },
 ];
 
-export const VocabulariesRoutes = [
-  {
-    path: '/Vocabularies',
-    name: eRouteNames.Vocabularies,
-    parentName: eThemeSharedRouteNames.Administration,
-    layout: eLayoutType.application,
-    iconClass: 'fa fa-folder-open',
-    order: 0,
-    //requiredPolicy: eThemePolicyNames.DirectoryDescriptor,
-  }
-];
-
 export function configureRoutes(routes: RoutesService) {
 
 
   return () => {
     routes.add([
-      ...VocabulariesRoutes
+      
     ]);
   };
 }

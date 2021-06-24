@@ -1,7 +1,15 @@
 {
   "culture": "en",
   "texts": {
-    "ManageYourProfile":  "Manage your profile",
-    "SamplePageMessage": "A sample page for the CmsKitManagement module"
+    "FS.CmsKitManagement.Vocabularies": "Vocabulary Management",
+    "FS.CmsKitManagement.Vocabularies.VocabularyDefinition": "Vocabulary Definition",
+    "DisplayName:VocabularyDefinition.Create": "Create",
+    "DisplayName:VocabularyDefinition.Update": "Update",
+    "DisplayName:VocabularyDefinition.Delete": "Delete",
+
+    "FS.CmsKitManagement.Vocabularies.Vocabulary": "Vocabulary",
+    "DisplayName:Vocabulary.Create": "Create",
+    "DisplayName:Vocabulary.Update": "Update",
+    "DisplayName:Vocabulary.Delete": "Delete"
   }
 }

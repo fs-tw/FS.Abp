@@ -17,8 +17,11 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\CmsKitManagement\*.json" />
+    <Compile Remove="Data\**" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
+    <EmbeddedResource Remove="Data\**" />
     <None Remove="**\Files\**\*.*" />
+    <None Remove="Data\**" />
     <EmbeddedResource Include="**\Files\**\*.*" />
   </ItemGroup>
   
@@ -31,6 +34,10 @@
     <Compile Update="DataModel\CmsKitManagement.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Routes\UrlType.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -69,10 +76,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\" />
+    <None Update="DataModel\CmsKitManagement.Settings.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CmsKitManagement.efml</DependentUpon>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,1 +1,0 @@
-export { VocabulariesModule } from './vocabularies.module';

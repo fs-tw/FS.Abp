@@ -39,10 +39,10 @@ using Volo.Abp.Json.SystemTextJson;
 namespace FS
 {
     [DependsOn(
+        typeof(FSApplicationModule),
         typeof(FSHttpApiModule),
         typeof(AbpAutofacModule),
         typeof(AbpAspNetCoreMultiTenancyModule),
-        typeof(FSApplicationModule),
         typeof(FSEntityFrameworkCoreDbMigrationsModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
         typeof(AbpAspNetCoreAuthenticationJwtBearerModule),

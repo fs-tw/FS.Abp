@@ -20,7 +20,7 @@ namespace FS.CmsKitManagement.Data.Vocabularies
     }
     public class TwZipCodeSeeder : FS.Abp.Data.Seeder<TwZipCodeSeederOptions>, ITransientDependency
     {
-        protected VocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<VocabulariesStore>();
+        protected IVocabulariesStore VocabulariesStore => this.LazyServiceProvider.LazyGetRequiredService<IVocabulariesStore>();
 
         protected IVirtualFileProvider virtualFileProvider => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileProvider>();
 

@@ -8,6 +8,8 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using MediatR;
+using Volo.Abp;
 
 namespace FS
 {
@@ -35,6 +37,11 @@ namespace FS
             {
                 options.AddMaps<FSApplicationModule>();
             });
+
+            context.Services.AddMediatR(
+                typeof(FS.FSApplicationContractsModule),
+                typeof(FS.FSApplicationModule)
+                );
         }
     }
 }

@@ -40,6 +40,19 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             get;
             set;
         }
+
+
+        public virtual DbSet<FS.CmsKitManagement.Routes.Route> Routes
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.Routes.RouteDefinition> RouteDefinitions
+        {
+            get;
+            set;
+        }
         public CmsKitManagementDbContext(DbContextOptions<CmsKitManagementDbContext> options) :
             base(options)
         {

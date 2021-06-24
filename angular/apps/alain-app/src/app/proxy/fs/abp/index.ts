@@ -1,2 +1,3 @@
 import * as Application from './application';
-export { Application };
+import * as MediatR from './mediat-r';
+export { Application, MediatR };
