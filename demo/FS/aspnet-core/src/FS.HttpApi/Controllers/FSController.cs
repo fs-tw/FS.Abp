@@ -7,6 +7,7 @@ namespace FS
      */
     public abstract class FSController : AbpController
     {
+        protected MediatR.IMediator Mediator => this.LazyServiceProvider.LazyGetRequiredService<MediatR.IMediator>();
         protected FSController()
         {
             LocalizationResource = typeof(FSResource);

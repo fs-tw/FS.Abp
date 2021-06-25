@@ -9,7 +9,9 @@ namespace FS.CmsKitManagement.Blogs
 {
     public partial interface IBlogsStore
     {
-        Task<BlogPost> PatchBlogPostAsync(BlogPost blogPost, List<Guid> routeIds, Guid userId);
+        IBlogPostRepository BlogPost { get; }
+
+        Task PatchRoutesAsync(Guid postId, List<Guid> routeIds);
 
         Task DeletePostRouteByRouteIdAsync(Guid routeId);
     }
