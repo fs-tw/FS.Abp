@@ -138,6 +138,7 @@ namespace FS.Abp.Npoi.Mapper
                 .Select(o => o?.ToString()?.PadLeft(4, '0') ?? "0000")
                 .Where(o => o != "0000");
                 node.Code = string.Join(".", codes);
+                node.Children = new List<T>();
                 return node;
             }).OrderBy(x => x.Code).ToList();
 
