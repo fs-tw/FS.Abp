@@ -9,7 +9,7 @@ import { CmsKitEntityBaseComponent } from './components/cms-kit-entity-base/cms-
 import { BlogFeatureTabComponent } from './components/tabs/blog-feature-tab/blog-feature-tab.component';
 import { MediaTabComponent } from './components/tabs/media-tab/media-tab.component';
 import { PickCoverImageComponent } from './components/pick-cover-image/pick-cover-image.component';
-import { PickFilesComponent } from './components/pick-files/pick-files.component';
+//import { PickFilesComponent } from './components/pick-files/pick-files.component';
 import { SelectRoutesComponent } from './components/select-routes/select-routes.component';
 import { FsQuillEditorComponent } from './components/quill-editor/quill-editor.component';
 
@@ -21,7 +21,7 @@ let COMPONENT = [
   BlogFeatureTabComponent,
   MediaTabComponent,
   PickCoverImageComponent,
-  PickFilesComponent,
+  //PickFilesComponent,
   SelectRoutesComponent,
   FsQuillEditorComponent,
 

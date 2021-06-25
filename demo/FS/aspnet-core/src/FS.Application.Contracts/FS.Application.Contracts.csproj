@@ -36,9 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.Customers\JsonSubtypesConverterProfile.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\CompanyDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>

@@ -26,6 +26,7 @@ namespace FS
     [DependsOn(
         typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule)
         )]
+    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
     public class FSHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

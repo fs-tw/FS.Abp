@@ -1,0 +1,27 @@
+<div>
+    <nz-upload
+      nzType="drag"
+      [nzMultiple]="true"
+      [nzFileList]="[]" 
+      [nzBeforeUpload]="beforeUpload">
+
+      <p class="ant-upload-drag-icon">
+        <i nz-icon nzType="inbox"></i>
+      </p>
+      <p class="ant-upload-text">{{ 'CmsKitManagement::PickFiles:ClickOrDragToUpload' | abpLocalization }}</p>
+    </nz-upload>
+    
+</div>
+
+
+<div>
+    <div *ngFor='let item of files' style="margin-top: 5px;">
+        <span class="download-link" style="color: #ff4d4f" (click)="deleteFile(item)">
+            <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </span>
+        <span (click)="download(item)" class="download-link primary">
+            <i nz-icon nzType="download" nzTheme="outline"></i>
+            {{ item.name }}
+        </span>
+    </div>
+</div>

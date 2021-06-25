@@ -80,9 +80,7 @@
               "apps/alain-app/src/styles.less",
               "node_modules/quill/dist/quill.snow.css"
             ],
-            "scripts": [
-              "node_modules/quill/dist/quill.min.js"
-            ]
+            "scripts": ["node_modules/quill/dist/quill.min.js"]
           },
           "configurations": {
             "production": {
@@ -142,9 +140,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/alain-app"
-          ],
+          "outputs": ["coverage/apps/alain-app"],
           "options": {
             "jestConfig": "apps/alain-app/jest.config.js",
             "passWithNoTests": true
@@ -181,12 +177,39 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/cms-kit-management"
-          ],
+          "outputs": ["coverage/libs/cms-kit-management"],
           "options": {
             "jestConfig": "libs/cms-kit-management/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "components": {
+      "projectType": "library",
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/components/tsconfig.lib.json",
+            "project": "libs/components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/components/src/**/*.ts",
+              "libs/components/src/**/*.html"
+            ]
           }
         }
       }
