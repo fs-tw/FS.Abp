@@ -4,6 +4,7 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Services;
 using FS.CmsKitManagement.Data;
 using FS.CmsKitManagement.Data.Vocabularies;
+using FS.CmsKitManagement.Data.Routes;
 
 namespace DEMO.Data.CmsKitManagement
 {
@@ -13,6 +14,8 @@ namespace DEMO.Data.CmsKitManagement
         public TwZipCodeSeeder TwZipCodeSeeder => this.LazyServiceProvider.LazyGetRequiredService<TwZipCodeSeeder>();
         public VocabulariesSeeder VocabulariesSeeder => this.LazyServiceProvider.LazyGetRequiredService<VocabulariesSeeder>();
 
+        public RouteDefinitionsSeeder RouteDefinitionsSeeder => this.LazyServiceProvider.LazyGetRequiredService<RouteDefinitionsSeeder>();
+        public RoutesSeeder RoutesSeeder => this.LazyServiceProvider.LazyGetRequiredService<RoutesSeeder>();
 
         public async Task SeedAsync(DataSeedContext context)
         {
@@ -26,6 +29,16 @@ namespace DEMO.Data.CmsKitManagement
             {
                 options.FileNames.Add("Files/Vocabularies/Vocabularies.xlsx");
 
+            });
+
+            await RouteDefinitionsSeeder.SeedAsync(context, options =>
+            {
+                options.Ignore = false;
+            });
+            await RoutesSeeder.SeedAsync(context, options =>
+            {
+                options.Ignore = false;
+                options.FileName = "Files/Routes/Routes.xlsx";
             });
 
         }
