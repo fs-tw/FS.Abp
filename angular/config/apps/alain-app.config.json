@@ -10,7 +10,7 @@
       "projectType": "application",
       "root": "apps/alain-app",
       "sourceRoot": "apps/alain-app/src",
-      "prefix": "fs-tw",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
