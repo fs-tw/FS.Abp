@@ -18,7 +18,9 @@ export class HomeComponent {
     private oAuthService: OAuthService,
     private authService: AuthService
   ) {
-    this.service = injector.get(Fs.Customers.Querys.Customers.CustomersQuerysApiService);
+    this.service = injector.get(
+      Fs.Customers.Querys.Customers.CustomersQuerysApiService
+    );
 
     this.service.query({} as any).subscribe((x) => {
       console.log(x);

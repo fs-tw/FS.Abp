@@ -1,0 +1,24 @@
+{
+  "cli": "nx",
+  "id": "proxy-add",
+  "type": "object",
+  "properties": {
+    "module": {
+      "type": "string",
+      "description": "module name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "source":{
+      "type": "string",
+      "description": "app name(default value : defaultProject in angular.json)",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      }
+    }
+  },
+  "required": ["module"]
+}
