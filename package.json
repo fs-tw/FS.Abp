@@ -8,7 +8,9 @@
   },
   "peerDependencies": {
     "@angular/common": "^11.2.11",
-    "@angular/core": "^11.2.11"
+    "@angular/core": "^11.2.11",
+    "@fs-tw/proxy":"",
+    "@fs-tw/components":""
   },
   "dependencies": {
     "tslib": "^2.0.0"
