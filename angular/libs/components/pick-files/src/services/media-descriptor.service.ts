@@ -1,7 +1,8 @@
 import { RestService } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
-import { MediaDescriptorDto } from '../models/models';
+import { Volo } from '@fs-tw/proxy/cms-kit';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
+type MediaDescriptorDto = Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto;
 
 @Injectable({
   providedIn: 'root',

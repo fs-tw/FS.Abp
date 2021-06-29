@@ -6,7 +6,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { LocalizationService } from '@abp/ng.core';
+import { RestService, LocalizationService } from '@abp/ng.core';
 import {
   ToasterService,
   ConfirmationService,
@@ -16,7 +16,7 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { saveAs } from 'file-saver';
 import * as _ from 'lodash';
 
-import { MediaDescriptorDto } from '../models/models';
+import { Volo } from '@fs-tw/proxy/cms-kit';
 import { MediaDescriptorService } from '../services/media-descriptor.service';
 
 @Component({
@@ -29,18 +29,21 @@ export class PickFilesComponent implements OnInit, OnChanges {
   entityType: string = 'blogpost';
 
   @Input()
-  attachmentMedias: MediaDescriptorDto[] = [];
+  attachmentMedias: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto[] = [];
 
   @Output()
-  attachmentMediasChange = new EventEmitter<MediaDescriptorDto[]>();
+  attachmentMediasChange = new EventEmitter<
+    Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto[]
+  >();
 
-  files: MediaDescriptorDto[] = [];
+  files: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto[] = [];
 
   constructor(
-    private mediaDescriptorService: MediaDescriptorService,
+    private restService: RestService,
     private toasterService: ToasterService,
     private localizationService: LocalizationService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private mediaDescriptorService:MediaDescriptorService
   ) {}
 
   ngOnInit(): void {}
@@ -72,23 +75,23 @@ export class PickFilesComponent implements OnInit, OnChanges {
     return false;
   };
 
-  download(item: MediaDescriptorDto) {
-    this.mediaDescriptorService.download(item).subscribe((x) => {
+  download(item: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto) {
+    this.mediaDescriptorService.download(item)
+    .subscribe((x) => {
       saveAs(new Blob([x], { type: item.mimeType }), item.name);
     });
   }
 
   uploadFile(file: NzUploadFile) {
-    this.mediaDescriptorService
-      .uploadFile(this.entityType, file)
-      .subscribe((x) => {
-        let i = this.files.findIndex((y) => y.name == x.name);
-        this.files[i] = x;
-        this.attachmentMediasChange.emit(this.files);
-      });
+    this.mediaDescriptorService.uploadFile(this.entityType,file)
+    .subscribe((x) => {
+      let i = this.files.findIndex((y) => y.name == x.name);
+      this.files[i] = x;
+      this.attachmentMediasChange.emit(this.files);
+    });
   }
 
-  deleteFile(item: MediaDescriptorDto) {
+  deleteFile(item: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto) {
     this.confirmationService
       .warn(
         this.localizationService.instant(
