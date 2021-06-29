@@ -3,7 +3,7 @@ import { FsNgAlainImagePickerComponent } from '@fs-tw/theme-alain/shared';
 import { RestService, EnvironmentService } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
-import { Volo } from '@fs-tw/cms-kit-management/proxy';
+import { Volo } from '@fs-tw/proxy/cms-kit';
 
 @Component({
   selector: 'fs-quill-editor',

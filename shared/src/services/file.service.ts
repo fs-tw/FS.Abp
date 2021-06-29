@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { RestService } from '@abp/ng.core';
 import * as _ from 'lodash';
 
-import { Volo } from '@fs-tw/cms-kit-management/proxy';
+import { Volo } from '@fs-tw/proxy/cms-kit';
 
 @Injectable({
     providedIn: 'root',
