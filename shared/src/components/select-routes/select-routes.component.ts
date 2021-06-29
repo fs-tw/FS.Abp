@@ -1,9 +1,18 @@
-import { Component, OnInit, Injector, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Injector,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+} from '@angular/core';
 import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 
-import { Fs } from '@fs-tw/proxy/cms-kit-management'
+import { Fs } from '@fs-tw/proxy/cms-kit-management';
+import { RoutesApiService } from '../../services/routes-api.service';
 
 class RouteWithSpaceLength {
   spaceLength: number = 0;
@@ -17,26 +26,19 @@ class RouteWithSpaceLength {
 
 @Component({
   selector: 'fs-select-routes',
-  templateUrl: './select-routes.component.html'
+  templateUrl: './select-routes.component.html',
 })
 export class SelectRoutesComponent implements OnInit, OnChanges {
-
   @Input()
   routeIds: string[] = [];
 
   @Output()
   routeIdsChange = new EventEmitter<string[]>();
 
-  routesApiService: Fs.CmsKitManagement.Routes.RoutesApiService = null;
-  
   routes: RouteWithSpaceLength[] = [];
   selectedRoute = new Set<string>();
-  
-  constructor(
-    injector: Injector
-  ) {
-    this.routesApiService = injector.get(Fs.CmsKitManagement.Routes.RoutesApiService);
-  }
+
+  constructor(injector: Injector, public routesApiService: RoutesApiService) {}
 
   ngOnInit(): void {
     this.getRoutes();
@@ -44,21 +46,24 @@ export class SelectRoutesComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.selectedRoute = new Set<string>();
-    this.routeIds.forEach(x => this.selectedRoute.add(x));
+    this.routeIds.forEach((x) => this.selectedRoute.add(x));
   }
 
   getRoutes() {
-    this.routesApiService.getRouteDefinitions()
+    this.routesApiService.RouteDefinitionsQuerys.query({} as any)
       .pipe(
         mergeMap((x) => {
-          let routeDefinition = x.find(x => x.no == "Public");
-          return routeDefinition ?
-            this.routesApiService.getRoutesByRouteDefinitionId(routeDefinition.id) :
-            of([] as Fs.CmsKitManagement.Routes.Dtos.RouteDto[])
+          let routeDefinition = x.find((x) => x.no == 'Public');
+          return routeDefinition
+            ? this.routesApiService.RoutesQuerys.query({
+                routeDefinitionId: routeDefinition.id,
+              })
+            : of([] as Fs.CmsKitManagement.Routes.Dtos.RouteDto[]);
         })
-      ).subscribe((x) => {
+      )
+      .subscribe((x) => {
         x = _.orderBy(x, ['code'], ['asc']);
-        this.routes = x.map(y => new RouteWithSpaceLength(y));
+        this.routes = x.map((y) => new RouteWithSpaceLength(y));
       });
   }
 
@@ -70,10 +75,10 @@ export class SelectRoutesComponent implements OnInit, OnChanges {
     }
 
     let routeIds = [];
-    for(let id of this.selectedRoute) {
+    for (let id of this.selectedRoute) {
       routeIds.push(id);
     }
-    
+
     this.routeIdsChange.emit(routeIds);
   }
 }
