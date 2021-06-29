@@ -13,9 +13,9 @@ import { ToasterService } from '@abp/ng.theme.shared';
 import { Volo } from '@fs-tw/proxy/cms-kit';
 import { Fs } from '@fs-tw/proxy/cms-kit-management';
 import {
-  PickCoverImageComponent,
   FileService,
 } from '@fs-tw/cms-kit-management/shared';
+import { PickCoverImageComponent } from '@fs-tw/components/pick-cover-image';
 
 import { PageStateService } from '../../providers/paget-state.service';
 
