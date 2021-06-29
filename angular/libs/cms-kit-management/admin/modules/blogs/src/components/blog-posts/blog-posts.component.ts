@@ -12,6 +12,10 @@ import { forkJoin } from 'rxjs';
 
 import { Fs } from '@fs-tw/proxy/cms-kit-management';
 import { Volo } from '@fs-tw/proxy/cms-kit';
+import {
+  BlogsApiService,
+  AdminBlogsApiService,
+} from '@fs-tw/cms-kit-management/shared';
 import { PageStateService } from '../../providers/paget-state.service';
 
 @Component({
@@ -21,12 +25,6 @@ import { PageStateService } from '../../providers/paget-state.service';
 })
 export class BlogPostsComponent implements OnInit {
   defaultImageUrl: string;
-
-  blogsApiService: Fs.CmsKitManagement.Blogs.BlogsApiService = null;
-  blogPostAdminService: Volo.CmsKit.Admin.Blogs.BlogPostAdminService = null;
-
-  blogsQuerysApiService: Fs.CmsKitManagement.Blogs.BlogsQuerysApiService = null;
-  blogPostsQuerysApiService: Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService = null;
 
   blogs: Fs.CmsKitManagement.Blogs.Dtos.BlogDto[] = [];
   selectBlogSlug: string = null;
@@ -42,32 +40,21 @@ export class BlogPostsComponent implements OnInit {
     private environmentService: EnvironmentService,
     private pageStateService: PageStateService,
     private toasterService: ToasterService,
-    private confirmationService: ConfirmationService
-  ) {
-    this.blogsApiService = injector.get(
-      Fs.CmsKitManagement.Blogs.BlogsApiService
-    );
-    this.blogPostAdminService = injector.get(
-      Volo.CmsKit.Admin.Blogs.BlogPostAdminService
-    );
-    this.blogPostsQuerysApiService = injector.get(
-      Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService
-    );
-    this.blogsQuerysApiService = injector.get(
-      Fs.CmsKitManagement.Blogs.BlogsQuerysApiService
-    );
-  }
+    private confirmationService: ConfirmationService,
+    private blogsApiService: BlogsApiService,
+    private adminBlogsApiService: AdminBlogsApiService
+  ) {}
 
   ngOnInit(): void {
     this.getBlogs();
   }
 
   getBlogs() {
-    let getBlogs = this.blogsQuerysApiService.query({
+    let getBlogs = this.blogsApiService.BlogsQuerys.query({
       maxResultCount: 30,
       skipCount: 0,
     });
-    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback(
+    let getBlogPostSetting = this.blogsApiService.Blogs.getByBlogPostSettingGetAndFallback(
       {
         providerKey: null,
         providerName: 'T',
@@ -112,7 +99,7 @@ export class BlogPostsComponent implements OnInit {
       input: input,
     };
 
-    this.blogPostsQuerysApiService.blogQuery(request).subscribe((x) => {
+    this.blogsApiService.BlogPostsQuerys.blogQuery(request).subscribe((x) => {
       this.coverMediaUrls = {};
       x.items.forEach((x) => {
         let url = `${this.environmentService.getApiUrl(
@@ -140,7 +127,7 @@ export class BlogPostsComponent implements OnInit {
       });
 
     function toDelete(id: string) {
-      self.blogPostAdminService.deleteById(id).subscribe(
+      self.adminBlogsApiService.BlogPost.deleteById(id).subscribe(
         () => {
           if (self.posts.length == 1 && self.page > 1) self.page--;
 

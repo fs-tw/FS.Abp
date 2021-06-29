@@ -1,4 +1,4 @@
-import type { BlogPostSettingDto, BlogPostSettingGetDto, MetaData } from './dtos/models';
+import type { BlogPostSettingDto, BlogPostSettingGetDto } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
 
@@ -13,13 +13,6 @@ export class BlogsApiService {
       method: 'GET',
       url: '/api/cms-kit-management/blogs/blog-post-setting',
       params: { providerName: BlogPostSettingGet.providerName, providerKey: BlogPostSettingGet.providerKey, fallback },
-    },
-    { apiName: this.apiName });
-
-  options = () =>
-    this.restService.request<any, MetaData>({
-      method: 'OPTIONS',
-      url: '/api/cms-kit-management/blogs',
     },
     { apiName: this.apiName });
 

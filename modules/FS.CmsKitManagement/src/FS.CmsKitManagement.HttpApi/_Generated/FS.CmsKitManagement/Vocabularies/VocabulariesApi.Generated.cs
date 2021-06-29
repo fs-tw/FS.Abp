@@ -24,10 +24,5 @@ namespace FS.CmsKitManagement.Vocabularies
 
         protected IVocabularyCrudAppService VocabularyCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IVocabularyCrudAppService>();
 
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }

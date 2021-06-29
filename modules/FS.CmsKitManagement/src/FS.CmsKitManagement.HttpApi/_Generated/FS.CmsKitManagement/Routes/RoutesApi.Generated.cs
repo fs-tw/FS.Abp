@@ -24,10 +24,5 @@ namespace FS.CmsKitManagement.Routes
 
         protected IRouteDefinitionCrudAppService RouteDefinitionCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IRouteDefinitionCrudAppService>();
 
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }

@@ -1,8 +1,7 @@
-import type { EntityDto, ExtensibleEntityDto, ExtensibleObject } from '@abp/ng.core';
+import type { ExtensibleEntityDto } from '@abp/ng.core';
 import type { CmsUserDto } from '../../../../volo/cms-kit/public/comments/models';
 import type { RouteDto } from '../../routes/dtos/models';
 import type { MediaDescriptorDto } from '../../../../volo/cms-kit/admin/media-descriptors/models';
-import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
 
 export interface BlogDto extends ExtensibleEntityDto<string> {
   name?: string;
@@ -33,41 +32,6 @@ export interface BlogPostSettingDto {
 export interface BlogPostSettingGetDto {
   providerName?: string;
   providerKey?: string;
-}
-
-export interface MetaData {
-  blogPostSettingGetDto: BlogPostSettingGetDto;
-  blogPostSettingDto: BlogPostSettingDto;
-  postRoutePrimaryKeyDto: PostRoutePrimaryKeyDto;
-  postRouteDto: PostRouteDto;
-  postRouteCreateDto: PostRouteCreateDto;
-  postRouteUpdateDto: PostRouteUpdateDto;
-  postRouteGetListDto: PostRouteGetListDto;
-  postRouteWithDetailsDto: PostRouteWithDetailsDto;
-}
-
-export interface PostRouteCreateDto extends ExtensibleObject {
-  postId?: string;
-  routeId?: string;
-}
-
-export interface PostRouteDto extends ExtensibleEntityDto<string> {
-  postId?: string;
-  routeId?: string;
-}
-
-export interface PostRouteGetListDto extends SearchResultRequestDto {
-}
-
-export interface PostRoutePrimaryKeyDto extends EntityDto<string> {
-}
-
-export interface PostRouteUpdateDto extends ExtensibleObject {
-  postId?: string;
-  routeId?: string;
-}
-
-export interface PostRouteWithDetailsDto extends PostRouteDto {
 }
 
 export interface PetchBlogPostDto {

@@ -24,10 +24,5 @@ namespace FS.CmsKitManagement.Blogs
 
         protected IPostRouteCrudAppService PostRouteCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IPostRouteCrudAppService>();
 
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }
