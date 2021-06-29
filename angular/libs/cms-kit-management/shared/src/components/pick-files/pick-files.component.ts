@@ -5,7 +5,7 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { saveAs } from 'file-saver';
 import * as _ from 'lodash';
 
-import { Volo } from '@fs-tw/cms-kit-management/proxy';
+import { Volo } from '@fs-tw/proxy/cms-kit';
 
 @Component({
   selector: 'fs-tw-pick-files',

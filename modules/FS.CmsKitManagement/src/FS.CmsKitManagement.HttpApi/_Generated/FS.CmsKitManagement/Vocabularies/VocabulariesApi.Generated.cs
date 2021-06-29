@@ -14,7 +14,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.CmsKitManagement.Vocabularies
 {
     [Area("cms-kit-management")]
-    [RemoteService(true)]
+    [RemoteService(Name ="cms-kit-management")]
     [ControllerName("FS.CmsKitManagement.Vocabularies(cms-kit-management)")]
     [Route("api/cms-kit-management/vocabularies")]
     public partial class VocabulariesApi : CmsKitManagementController , IVocabulariesApi //auto-generated

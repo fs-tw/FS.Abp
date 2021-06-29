@@ -17,7 +17,7 @@ namespace FS.CmsKitManagement.Blogs
     {
         protected IBlogPostSettingFactory Factory => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostSettingFactory>();
 
-        public async Task<BlogPostSettingDto> GetAsync(BlogPostSettingGetDto BlogPostSettingGet = null, bool fallback = true)
+        public async Task<BlogPostSettingDto> GetAsync(BlogPostSettingGetDto BlogPostSettingGet, bool fallback = true)
         {
             BlogPostSettingDto result = new BlogPostSettingDto();
             return ObjectMapper.Map(await Factory.GetAsync(BlogPostSettingGet.ProviderName,BlogPostSettingGet.ProviderKey), result);

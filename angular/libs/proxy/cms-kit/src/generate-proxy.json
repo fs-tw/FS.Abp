@@ -960,16 +960,97 @@
         }
       }
     },
-    "settingManagement": {
-      "rootPath": "settingManagement",
-      "remoteServiceName": "SettingManagement",
+    "abp": {
+      "rootPath": "abp",
+      "remoteServiceName": "abp",
       "controllers": {
-        "Volo.Abp.SettingManagement.EmailSettingsController": {
-          "controllerName": "EmailSettings",
-          "type": "Volo.Abp.SettingManagement.EmailSettingsController",
+        "Pages.Abp.MultiTenancy.AbpTenantController": {
+          "controllerName": "AbpTenant",
+          "type": "Pages.Abp.MultiTenancy.AbpTenantController",
           "interfaces": [
             {
-              "type": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
+              "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.IAbpTenantAppService"
+            }
+          ],
+          "actions": {
+            "FindTenantByNameByName": {
+              "uniqueName": "FindTenantByNameByName",
+              "name": "FindTenantByNameAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/multi-tenancy/tenants/by-name/{name}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "name",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "name",
+                  "name": "name",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
+              }
+            },
+            "FindTenantByIdById": {
+              "uniqueName": "FindTenantByIdById",
+              "name": "FindTenantByIdAsync",
+              "httpMethod": "GET",
+              "url": "api/abp/multi-tenancy/tenants/by-id/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
+              }
+            }
+          }
+        },
+        "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController": {
+          "controllerName": "AbpApplicationConfiguration",
+          "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.IAbpApplicationConfigurationAppService"
             }
           ],
           "actions": {
@@ -977,48 +1058,55 @@
               "uniqueName": "Get",
               "name": "GetAsync",
               "httpMethod": "GET",
-              "url": "api/setting-management/emailing",
+              "url": "api/abp/application-configuration",
               "supportedVersions": [],
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "Volo.Abp.SettingManagement.EmailSettingsDto",
-                "typeSimple": "Volo.Abp.SettingManagement.EmailSettingsDto"
+                "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto",
+                "typeSimple": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto"
               }
-            },
-            "UpdateByInput": {
-              "uniqueName": "UpdateByInput",
-              "name": "UpdateAsync",
-              "httpMethod": "POST",
-              "url": "api/setting-management/emailing",
+            }
+          }
+        },
+        "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController": {
+          "controllerName": "AbpApiDefinition",
+          "type": "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController",
+          "interfaces": [],
+          "actions": {
+            "GetByModel": {
+              "uniqueName": "GetByModel",
+              "name": "Get",
+              "httpMethod": "GET",
+              "url": "api/abp/api-definition",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto, Volo.Abp.SettingManagement.Application.Contracts",
-                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
-                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "name": "model",
+                  "typeAsString": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto, Volo.Abp.Http",
+                  "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
+                  "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "input",
-                  "name": "input",
+                  "nameOnMethod": "model",
+                  "name": "IncludeTypes",
                   "jsonName": null,
-                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
-                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "type": "System.Boolean",
+                  "typeSimple": "boolean",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "model"
                 }
               ],
               "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
+                "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel",
+                "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel"
               }
             }
           }
@@ -1398,6 +1486,294 @@
         }
       }
     },
+    "fs": {
+      "rootPath": "fs",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "FS.Customers.CustomersApi": {
+          "controllerName": "CustomersApi",
+          "type": "FS.Customers.CustomersApi",
+          "interfaces": [
+            {
+              "type": "FS.Customers.ICustomersApi"
+            },
+            {
+              "type": "FS.Customers.ICustomerCrudAppService"
+            }
+          ],
+          "actions": {
+            "GetByCustomerPrimaryKey": {
+              "uniqueName": "GetByCustomerPrimaryKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/fs/customers/customer/id",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerPrimaryKey",
+                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "CustomerPrimaryKey",
+                  "name": "Id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Query",
+                  "descriptorName": "CustomerPrimaryKey"
+                }
+              ],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "GetListByCustomerGetList": {
+              "uniqueName": "GetListByCustomerGetList",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/fs/customers/customer",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerGetList",
+                  "typeAsString": "FS.Customers.Dtos.CustomerGetListDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerGetListDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerGetListDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Discriminator",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Fields",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Value",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                },
+                {
+                  "nameOnMethod": "CustomerGetList",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "CustomerGetList"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>"
+              }
+            },
+            "CreateByCustomerCreate": {
+              "uniqueName": "CreateByCustomerCreate",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/fs/customers/customer",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerCreate",
+                  "typeAsString": "FS.Customers.Dtos.CustomerCreateDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerCreateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "CustomerCreate",
+                  "name": "CustomerCreate",
+                  "jsonName": null,
+                  "type": "FS.Customers.Dtos.CustomerCreateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "UpdateByCustomerPrimaryKeyAndCustomerUpdate": {
+              "uniqueName": "UpdateByCustomerPrimaryKeyAndCustomerUpdate",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/fs/customers/customer/id",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerPrimaryKey",
+                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "CustomerUpdate",
+                  "typeAsString": "FS.Customers.Dtos.CustomerUpdateDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "CustomerPrimaryKey",
+                  "name": "Id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Query",
+                  "descriptorName": "CustomerPrimaryKey"
+                },
+                {
+                  "nameOnMethod": "CustomerUpdate",
+                  "name": "CustomerUpdate",
+                  "jsonName": null,
+                  "type": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
+                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+              }
+            },
+            "DeleteByCustomerPrimaryKey": {
+              "uniqueName": "DeleteByCustomerPrimaryKey",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/fs/customers/customer/id",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "CustomerPrimaryKey",
+                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
+                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "CustomerPrimaryKey",
+                  "name": "Id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Query",
+                  "descriptorName": "CustomerPrimaryKey"
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "Options": {
+              "uniqueName": "Options",
+              "name": "Options",
+              "httpMethod": "OPTIONS",
+              "url": "api/fs/customers",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "FS.Customers.Dtos.MetaData",
+                "typeSimple": "FS.Customers.Dtos.MetaData"
+              }
+            }
+          }
+        }
+      }
+    },
     "app": {
       "rootPath": "app",
       "remoteServiceName": "Default",
@@ -1441,97 +1817,16 @@
         }
       }
     },
-    "abp": {
-      "rootPath": "abp",
-      "remoteServiceName": "abp",
+    "settingManagement": {
+      "rootPath": "settingManagement",
+      "remoteServiceName": "SettingManagement",
       "controllers": {
-        "Pages.Abp.MultiTenancy.AbpTenantController": {
-          "controllerName": "AbpTenant",
-          "type": "Pages.Abp.MultiTenancy.AbpTenantController",
+        "Volo.Abp.SettingManagement.EmailSettingsController": {
+          "controllerName": "EmailSettings",
+          "type": "Volo.Abp.SettingManagement.EmailSettingsController",
           "interfaces": [
             {
-              "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.IAbpTenantAppService"
-            }
-          ],
-          "actions": {
-            "FindTenantByNameByName": {
-              "uniqueName": "FindTenantByNameByName",
-              "name": "FindTenantByNameAsync",
-              "httpMethod": "GET",
-              "url": "api/abp/multi-tenancy/tenants/by-name/{name}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "name",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "name",
-                  "name": "name",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
-                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
-              }
-            },
-            "FindTenantByIdById": {
-              "uniqueName": "FindTenantByIdById",
-              "name": "FindTenantByIdAsync",
-              "httpMethod": "GET",
-              "url": "api/abp/multi-tenancy/tenants/by-id/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto",
-                "typeSimple": "Volo.Abp.AspNetCore.Mvc.MultiTenancy.FindTenantResultDto"
-              }
-            }
-          }
-        },
-        "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController": {
-          "controllerName": "AbpApplicationConfiguration",
-          "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.IAbpApplicationConfigurationAppService"
+              "type": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
             }
           ],
           "actions": {
@@ -1539,1143 +1834,27 @@
               "uniqueName": "Get",
               "name": "GetAsync",
               "httpMethod": "GET",
-              "url": "api/abp/application-configuration",
+              "url": "api/setting-management/emailing",
               "supportedVersions": [],
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto",
-                "typeSimple": "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationConfigurationDto"
-              }
-            }
-          }
-        },
-        "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController": {
-          "controllerName": "AbpApiDefinition",
-          "type": "Volo.Abp.AspNetCore.Mvc.ApiExploring.AbpApiDefinitionController",
-          "interfaces": [],
-          "actions": {
-            "GetByModel": {
-              "uniqueName": "GetByModel",
-              "name": "Get",
-              "httpMethod": "GET",
-              "url": "api/abp/api-definition",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "model",
-                  "typeAsString": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto, Volo.Abp.Http",
-                  "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
-                  "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModelRequestDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "model",
-                  "name": "IncludeTypes",
-                  "jsonName": null,
-                  "type": "System.Boolean",
-                  "typeSimple": "boolean",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "model"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel",
-                "typeSimple": "Volo.Abp.Http.Modeling.ApplicationApiDescriptionModel"
-              }
-            }
-          }
-        }
-      }
-    },
-    "permissionManagement": {
-      "rootPath": "permissionManagement",
-      "remoteServiceName": "AbpPermissionManagement",
-      "controllers": {
-        "Volo.Abp.PermissionManagement.PermissionsController": {
-          "controllerName": "Permissions",
-          "type": "Volo.Abp.PermissionManagement.PermissionsController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.PermissionManagement.IPermissionAppService"
-            }
-          ],
-          "actions": {
-            "GetByProviderNameAndProviderKey": {
-              "uniqueName": "GetByProviderNameAndProviderKey",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/permission-management/permissions",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.PermissionManagement.GetPermissionListResultDto",
-                "typeSimple": "Volo.Abp.PermissionManagement.GetPermissionListResultDto"
+                "type": "Volo.Abp.SettingManagement.EmailSettingsDto",
+                "typeSimple": "Volo.Abp.SettingManagement.EmailSettingsDto"
               }
             },
-            "UpdateByProviderNameAndProviderKeyAndInput": {
-              "uniqueName": "UpdateByProviderNameAndProviderKeyAndInput",
+            "UpdateByInput": {
+              "uniqueName": "UpdateByInput",
               "name": "UpdateAsync",
-              "httpMethod": "PUT",
-              "url": "api/permission-management/permissions",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.PermissionManagement.UpdatePermissionsDto, Volo.Abp.PermissionManagement.Application.Contracts",
-                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            }
-          }
-        }
-      }
-    },
-    "featureManagement": {
-      "rootPath": "featureManagement",
-      "remoteServiceName": "AbpFeatureManagement",
-      "controllers": {
-        "Volo.Abp.FeatureManagement.FeaturesController": {
-          "controllerName": "Features",
-          "type": "Volo.Abp.FeatureManagement.FeaturesController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.FeatureManagement.IFeatureAppService"
-            }
-          ],
-          "actions": {
-            "GetByProviderNameAndProviderKey": {
-              "uniqueName": "GetByProviderNameAndProviderKey",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/feature-management/features",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.FeatureManagement.GetFeatureListResultDto",
-                "typeSimple": "Volo.Abp.FeatureManagement.GetFeatureListResultDto"
-              }
-            },
-            "UpdateByProviderNameAndProviderKeyAndInput": {
-              "uniqueName": "UpdateByProviderNameAndProviderKeyAndInput",
-              "name": "UpdateAsync",
-              "httpMethod": "PUT",
-              "url": "api/feature-management/features",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.FeatureManagement.UpdateFeaturesDto, Volo.Abp.FeatureManagement.Application.Contracts",
-                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            }
-          }
-        }
-      }
-    },
-    "cms-kit-management": {
-      "rootPath": "cms-kit-management",
-      "remoteServiceName": "Default",
-      "controllers": {
-        "FS.CmsKitManagement.Vocabularies.VocabulariesApi": {
-          "controllerName": "VocabulariesApi",
-          "type": "FS.CmsKitManagement.Vocabularies.VocabulariesApi",
-          "interfaces": [
-            {
-              "type": "FS.CmsKitManagement.Vocabularies.IVocabulariesApi"
-            },
-            {
-              "type": "FS.CmsKitManagement.Vocabularies.IVocabularyDefinitionCrudAppService"
-            },
-            {
-              "type": "FS.CmsKitManagement.Vocabularies.IVocabularyCrudAppService"
-            }
-          ],
-          "actions": {
-            "Options": {
-              "uniqueName": "Options",
-              "name": "Options",
-              "httpMethod": "OPTIONS",
-              "url": "api/cms-kit-management/vocabularies",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Vocabularies.Dtos.MetaData",
-                "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.MetaData"
-              }
-            },
-            "GetListByVocabularyGetList": {
-              "uniqueName": "GetListByVocabularyGetList",
-              "name": "GetListAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/vocabularies/vocabulary",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "VocabularyGetList",
-                  "typeAsString": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto, FS.CmsKitManagement.Application.Contracts",
-                  "type": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto",
-                  "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "VocabularyGetList",
-                  "name": "Fields",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyGetList",
-                  "name": "Value",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyGetList",
-                  "name": "Sorting",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyGetList",
-                  "name": "SkipCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyGetList",
-                  "name": "MaxResultCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyGetList"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyWithDetailsDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyWithDetailsDto>"
-              }
-            },
-            "GetListByVocabularyDefinitionGetList": {
-              "uniqueName": "GetListByVocabularyDefinitionGetList",
-              "name": "GetListAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/vocabularies/vocabulary-definition",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "VocabularyDefinitionGetList",
-                  "typeAsString": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto, FS.CmsKitManagement.Application.Contracts",
-                  "type": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto",
-                  "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "VocabularyDefinitionGetList",
-                  "name": "Fields",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyDefinitionGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyDefinitionGetList",
-                  "name": "Value",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyDefinitionGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyDefinitionGetList",
-                  "name": "Sorting",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyDefinitionGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyDefinitionGetList",
-                  "name": "SkipCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyDefinitionGetList"
-                },
-                {
-                  "nameOnMethod": "VocabularyDefinitionGetList",
-                  "name": "MaxResultCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "VocabularyDefinitionGetList"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto>"
-              }
-            }
-          }
-        },
-        "FS.CmsKitManagement.Routes.RoutesApi": {
-          "controllerName": "RoutesApi",
-          "type": "FS.CmsKitManagement.Routes.RoutesApi",
-          "interfaces": [
-            {
-              "type": "FS.CmsKitManagement.Routes.IRoutesApi"
-            },
-            {
-              "type": "FS.CmsKitManagement.Routes.IRouteCrudAppService"
-            },
-            {
-              "type": "FS.CmsKitManagement.Routes.IRouteDefinitionCrudAppService"
-            }
-          ],
-          "actions": {
-            "GetRouteDefinitions": {
-              "uniqueName": "GetRouteDefinitions",
-              "name": "GetRouteDefinitionsAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/routes/route-definitions",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Routes.Dtos.RouteDefinitionDto>",
-                "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDefinitionDto]"
-              }
-            },
-            "GetRoutesByRouteDefinitionId": {
-              "uniqueName": "GetRoutesByRouteDefinitionId",
-              "name": "GetRoutesAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/routes/routes/{routeDefinitionId}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "routeDefinitionId",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "routeDefinitionId",
-                  "name": "routeDefinitionId",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Routes.Dtos.RouteDto>",
-                "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]"
-              }
-            },
-            "Options": {
-              "uniqueName": "Options",
-              "name": "Options",
-              "httpMethod": "OPTIONS",
-              "url": "api/cms-kit-management/routes",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Routes.Dtos.MetaData",
-                "typeSimple": "FS.CmsKitManagement.Routes.Dtos.MetaData"
-              }
-            }
-          }
-        },
-        "FS.CmsKitManagement.Blogs.BlogsApi": {
-          "controllerName": "BlogsApi",
-          "type": "FS.CmsKitManagement.Blogs.BlogsApi",
-          "interfaces": [
-            {
-              "type": "FS.CmsKitManagement.Blogs.IBlogsApi"
-            },
-            {
-              "type": "FS.CmsKitManagement.Blogs.IBlogPostSettingAppService"
-            },
-            {
-              "type": "FS.CmsKitManagement.Blogs.IPostRouteCrudAppService"
-            }
-          ],
-          "actions": {
-            "Get": {
-              "uniqueName": "Get",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/blogs/blog",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Blogs.Dtos.BlogDto>",
-                "typeSimple": "[FS.CmsKitManagement.Blogs.Dtos.BlogDto]"
-              }
-            },
-            "GetBlogPostsByBlogSlugAndInput": {
-              "uniqueName": "GetBlogPostsByBlogSlugAndInput",
-              "name": "GetBlogPostsAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/blogs/blog-post/blog-slug/{blogSlug}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "blogSlug",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
-                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "blogSlug",
-                  "name": "blogSlug",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "SkipCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "MaxResultCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "Sorting",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>"
-              }
-            },
-            "GetBlogPostsByRouteIdAndInput": {
-              "uniqueName": "GetBlogPostsByRouteIdAndInput",
-              "name": "GetBlogPostsAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/blogs/blog-post/route/{routeId}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "routeId",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
-                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "routeId",
-                  "name": "routeId",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "SkipCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "MaxResultCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "Sorting",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>"
-              }
-            },
-            "GetBlogPostBySlugByBlogSlugAndBlogPostSlug": {
-              "uniqueName": "GetBlogPostBySlugByBlogSlugAndBlogPostSlug",
-              "name": "GetBlogPostBySlugAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/blogs/blog-post/slug/{blogSlug}/{blogPostSlug}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "blogSlug",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "blogPostSlug",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "blogSlug",
-                  "name": "blogSlug",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "blogPostSlug",
-                  "name": "blogPostSlug",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
-                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto"
-              }
-            },
-            "GetBlogPostByIdById": {
-              "uniqueName": "GetBlogPostByIdById",
-              "name": "GetBlogPostByIdAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/blogs/blog-post/admin/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
-                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto"
-              }
-            },
-            "PatchBlogPostByInput": {
-              "uniqueName": "PatchBlogPostByInput",
-              "name": "PatchBlogPostAsync",
-              "httpMethod": "PATCH",
-              "url": "api/cms-kit-management/blogs/blog-post/admin",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto, FS.CmsKitManagement.Application.Contracts",
-                  "type": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto",
-                  "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto",
-                  "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
-                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto"
-              }
-            },
-            "GetByBlogPostSettingGetAndFallback": {
-              "uniqueName": "GetByBlogPostSettingGetAndFallback",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/cms-kit-management/blogs/blog-post-setting",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "BlogPostSettingGet",
-                  "typeAsString": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto, FS.CmsKitManagement.Application.Contracts",
-                  "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto",
-                  "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto",
-                  "isOptional": true,
-                  "defaultValue": null
-                },
-                {
-                  "name": "fallback",
-                  "typeAsString": "System.Boolean, System.Private.CoreLib",
-                  "type": "System.Boolean",
-                  "typeSimple": "boolean",
-                  "isOptional": true,
-                  "defaultValue": true
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "BlogPostSettingGet",
-                  "name": "ProviderName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "BlogPostSettingGet"
-                },
-                {
-                  "nameOnMethod": "BlogPostSettingGet",
-                  "name": "ProviderKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "BlogPostSettingGet"
-                },
-                {
-                  "nameOnMethod": "fallback",
-                  "name": "fallback",
-                  "jsonName": null,
-                  "type": "System.Boolean",
-                  "typeSimple": "boolean",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingDto",
-                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingDto"
-              }
-            },
-            "Options": {
-              "uniqueName": "Options",
-              "name": "Options",
-              "httpMethod": "OPTIONS",
-              "url": "api/cms-kit-management/blogs",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "FS.CmsKitManagement.Blogs.Dtos.MetaData",
-                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.MetaData"
-              }
-            }
-          }
-        }
-      }
-    },
-    "account": {
-      "rootPath": "account",
-      "remoteServiceName": "AbpAccount",
-      "controllers": {
-        "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController": {
-          "controllerName": "Account",
-          "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController",
-          "interfaces": [],
-          "actions": {
-            "LoginByLogin": {
-              "uniqueName": "LoginByLogin",
-              "name": "Login",
               "httpMethod": "POST",
-              "url": "api/account/login",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "login",
-                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "login",
-                  "name": "login",
-                  "jsonName": null,
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
-                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
-              }
-            },
-            "Logout": {
-              "uniqueName": "Logout",
-              "name": "Logout",
-              "httpMethod": "GET",
-              "url": "api/account/logout",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            },
-            "CheckPasswordByLogin": {
-              "uniqueName": "CheckPasswordByLogin",
-              "name": "CheckPassword",
-              "httpMethod": "POST",
-              "url": "api/account/check-password",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "login",
-                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "login",
-                  "name": "login",
-                  "jsonName": null,
-                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
-                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
-              }
-            }
-          }
-        },
-        "Volo.Abp.Account.AccountController": {
-          "controllerName": "Account",
-          "type": "Volo.Abp.Account.AccountController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.Account.IAccountAppService"
-            }
-          ],
-          "actions": {
-            "RegisterByInput": {
-              "uniqueName": "RegisterByInput",
-              "name": "RegisterAsync",
-              "httpMethod": "POST",
-              "url": "api/account/register",
+              "url": "api/setting-management/emailing",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
                   "name": "input",
-                  "typeAsString": "Volo.Abp.Account.RegisterDto, Volo.Abp.Account.Application.Contracts",
-                  "type": "Volo.Abp.Account.RegisterDto",
-                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+                  "typeAsString": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto, Volo.Abp.SettingManagement.Application.Contracts",
+                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
@@ -2685,78 +1864,8 @@
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "Volo.Abp.Account.RegisterDto",
-                  "typeSimple": "Volo.Abp.Account.RegisterDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Identity.IdentityUserDto",
-                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
-              }
-            },
-            "SendPasswordResetCodeByInput": {
-              "uniqueName": "SendPasswordResetCodeByInput",
-              "name": "SendPasswordResetCodeAsync",
-              "httpMethod": "POST",
-              "url": "api/account/send-password-reset-code",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Account.SendPasswordResetCodeDto, Volo.Abp.Account.Application.Contracts",
-                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              }
-            },
-            "ResetPasswordByInput": {
-              "uniqueName": "ResetPasswordByInput",
-              "name": "ResetPasswordAsync",
-              "httpMethod": "POST",
-              "url": "api/account/reset-password",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Account.ResetPasswordDto, Volo.Abp.Account.Application.Contracts",
-                  "type": "Volo.Abp.Account.ResetPasswordDto",
-                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "Volo.Abp.Account.ResetPasswordDto",
-                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
+                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -5352,6 +4461,365 @@
         }
       }
     },
+    "permissionManagement": {
+      "rootPath": "permissionManagement",
+      "remoteServiceName": "AbpPermissionManagement",
+      "controllers": {
+        "Volo.Abp.PermissionManagement.PermissionsController": {
+          "controllerName": "Permissions",
+          "type": "Volo.Abp.PermissionManagement.PermissionsController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.PermissionManagement.IPermissionAppService"
+            }
+          ],
+          "actions": {
+            "GetByProviderNameAndProviderKey": {
+              "uniqueName": "GetByProviderNameAndProviderKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/permission-management/permissions",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.PermissionManagement.GetPermissionListResultDto",
+                "typeSimple": "Volo.Abp.PermissionManagement.GetPermissionListResultDto"
+              }
+            },
+            "UpdateByProviderNameAndProviderKeyAndInput": {
+              "uniqueName": "UpdateByProviderNameAndProviderKeyAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/permission-management/permissions",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.PermissionManagement.UpdatePermissionsDto, Volo.Abp.PermissionManagement.Application.Contracts",
+                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "typeSimple": "Volo.Abp.PermissionManagement.UpdatePermissionsDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            }
+          }
+        }
+      }
+    },
+    "account": {
+      "rootPath": "account",
+      "remoteServiceName": "AbpAccount",
+      "controllers": {
+        "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController": {
+          "controllerName": "Account",
+          "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.AccountController",
+          "interfaces": [],
+          "actions": {
+            "LoginByLogin": {
+              "uniqueName": "LoginByLogin",
+              "name": "Login",
+              "httpMethod": "POST",
+              "url": "api/account/login",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "login",
+                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "login",
+                  "name": "login",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
+                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
+              }
+            },
+            "Logout": {
+              "uniqueName": "Logout",
+              "name": "Logout",
+              "httpMethod": "GET",
+              "url": "api/account/logout",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "CheckPasswordByLogin": {
+              "uniqueName": "CheckPasswordByLogin",
+              "name": "CheckPassword",
+              "httpMethod": "POST",
+              "url": "api/account/check-password",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "login",
+                  "typeAsString": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo, Volo.Abp.Account.Web",
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "login",
+                  "name": "login",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.UserLoginInfo",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult",
+                "typeSimple": "Volo.Abp.Account.Web.Areas.Account.Controllers.Models.AbpLoginResult"
+              }
+            }
+          }
+        },
+        "Volo.Abp.Account.AccountController": {
+          "controllerName": "Account",
+          "type": "Volo.Abp.Account.AccountController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Account.IAccountAppService"
+            }
+          ],
+          "actions": {
+            "RegisterByInput": {
+              "uniqueName": "RegisterByInput",
+              "name": "RegisterAsync",
+              "httpMethod": "POST",
+              "url": "api/account/register",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.RegisterDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.RegisterDto",
+                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.RegisterDto",
+                  "typeSimple": "Volo.Abp.Account.RegisterDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+              }
+            },
+            "SendPasswordResetCodeByInput": {
+              "uniqueName": "SendPasswordResetCodeByInput",
+              "name": "SendPasswordResetCodeAsync",
+              "httpMethod": "POST",
+              "url": "api/account/send-password-reset-code",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.SendPasswordResetCodeDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "typeSimple": "Volo.Abp.Account.SendPasswordResetCodeDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            },
+            "ResetPasswordByInput": {
+              "uniqueName": "ResetPasswordByInput",
+              "name": "ResetPasswordAsync",
+              "httpMethod": "POST",
+              "url": "api/account/reset-password",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Account.ResetPasswordDto, Volo.Abp.Account.Application.Contracts",
+                  "type": "Volo.Abp.Account.ResetPasswordDto",
+                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.Account.ResetPasswordDto",
+                  "typeSimple": "Volo.Abp.Account.ResetPasswordDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              }
+            }
+          }
+        }
+      }
+    },
     "mediator": {
       "rootPath": "mediator",
       "remoteServiceName": "Default",
@@ -5432,245 +4900,60 @@
               }
             }
           }
-        },
-        "FS.Customers.Querys.Customers.CustomersQuerysApi": {
-          "controllerName": "CustomersQuerysApi",
-          "type": "FS.Customers.Querys.Customers.CustomersQuerysApi",
-          "interfaces": null,
-          "actions": {
-            "FindQuery": {
-              "uniqueName": "FindQuery",
-              "name": "FindQuery",
-              "httpMethod": "POST",
-              "url": "api/mediator/query?$type=FS.Customers.Querys.Customers.FindQuery",
-              "supportedVersions": null,
-              "parametersOnMethod": [
-                {
-                  "name": "query",
-                  "typeAsString": "FS.Customers.Querys.Customers.FindQuery",
-                  "type": "FS.Customers.Querys.Customers.FindQuery",
-                  "typeSimple": "FS.Customers.Querys.Customers.FindQuery",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "{...query,...{$type:'FS.Customers.Querys.Customers.FindQuery'}}",
-                  "name": "query",
-                  "jsonName": null,
-                  "type": "FS.Customers.Querys.Customers.FindQuery",
-                  "typeSimple": "FS.Customers.Querys.Customers.FindQuery",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": null
-                }
-              ],
-              "returnValue": {
-                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
-                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
-              }
-            },
-            "Query": {
-              "uniqueName": "Query",
-              "name": "Query",
-              "httpMethod": "POST",
-              "url": "api/mediator/query?$type=FS.Customers.Querys.Customers.Query",
-              "supportedVersions": null,
-              "parametersOnMethod": [
-                {
-                  "name": "query",
-                  "typeAsString": "FS.Customers.Querys.Customers.Query",
-                  "type": "FS.Customers.Querys.Customers.Query",
-                  "typeSimple": "FS.Customers.Querys.Customers.Query",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "{...query,...{$type:'FS.Customers.Querys.Customers.Query'}}",
-                  "name": "query",
-                  "jsonName": null,
-                  "type": "FS.Customers.Querys.Customers.Query",
-                  "typeSimple": "FS.Customers.Querys.Customers.Query",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": null
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>"
-              }
-            }
-          }
-        },
-        "FS.Customers.Commands.Customers.CustomersCommandsApi": {
-          "controllerName": "CustomersCommandsApi",
-          "type": "FS.Customers.Commands.Customers.CustomersCommandsApi",
-          "interfaces": null,
-          "actions": {
-            "CreateCommand": {
-              "uniqueName": "CreateCommand",
-              "name": "CreateCommand",
-              "httpMethod": "POST",
-              "url": "api/mediator/command?$type=FS.Customers.Commands.Customers.CreateCommand",
-              "supportedVersions": null,
-              "parametersOnMethod": [
-                {
-                  "name": "command",
-                  "typeAsString": "FS.Customers.Commands.Customers.CreateCommand",
-                  "type": "FS.Customers.Commands.Customers.CreateCommand",
-                  "typeSimple": "FS.Customers.Commands.Customers.CreateCommand",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "{...command,...{$type:'FS.Customers.Commands.Customers.CreateCommand'}}",
-                  "name": "command",
-                  "jsonName": null,
-                  "type": "FS.Customers.Commands.Customers.CreateCommand",
-                  "typeSimple": "FS.Customers.Commands.Customers.CreateCommand",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": null
-                }
-              ],
-              "returnValue": {
-                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
-                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
-              }
-            },
-            "UpdateCommand": {
-              "uniqueName": "UpdateCommand",
-              "name": "UpdateCommand",
-              "httpMethod": "POST",
-              "url": "api/mediator/command?$type=FS.Customers.Commands.Customers.UpdateCommand",
-              "supportedVersions": null,
-              "parametersOnMethod": [
-                {
-                  "name": "command",
-                  "typeAsString": "FS.Customers.Commands.Customers.UpdateCommand",
-                  "type": "FS.Customers.Commands.Customers.UpdateCommand",
-                  "typeSimple": "FS.Customers.Commands.Customers.UpdateCommand",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "{...command,...{$type:'FS.Customers.Commands.Customers.UpdateCommand'}}",
-                  "name": "command",
-                  "jsonName": null,
-                  "type": "FS.Customers.Commands.Customers.UpdateCommand",
-                  "typeSimple": "FS.Customers.Commands.Customers.UpdateCommand",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": null
-                }
-              ],
-              "returnValue": {
-                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
-                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
-              }
-            }
-          }
         }
       }
     },
-    "fs": {
-      "rootPath": "fs",
-      "remoteServiceName": "Default",
+    "cms-kit-management": {
+      "rootPath": "cms-kit-management",
+      "remoteServiceName": "cms-kit-management",
       "controllers": {
-        "FS.Customers.CustomersApi": {
-          "controllerName": "CustomersApi",
-          "type": "FS.Customers.CustomersApi",
+        "FS.CmsKitManagement.Vocabularies.VocabulariesApi": {
+          "controllerName": "VocabulariesApi",
+          "type": "FS.CmsKitManagement.Vocabularies.VocabulariesApi",
           "interfaces": [
             {
-              "type": "FS.Customers.ICustomersApi"
+              "type": "FS.CmsKitManagement.Vocabularies.IVocabulariesApi"
             },
             {
-              "type": "FS.Customers.ICustomerCrudAppService"
+              "type": "FS.CmsKitManagement.Vocabularies.IVocabularyDefinitionCrudAppService"
+            },
+            {
+              "type": "FS.CmsKitManagement.Vocabularies.IVocabularyCrudAppService"
             }
           ],
           "actions": {
-            "GetByCustomerPrimaryKey": {
-              "uniqueName": "GetByCustomerPrimaryKey",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/fs/customers/customer/id",
+            "Options": {
+              "uniqueName": "Options",
+              "name": "Options",
+              "httpMethod": "OPTIONS",
+              "url": "api/cms-kit-management/vocabularies",
               "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "CustomerPrimaryKey",
-                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
-                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "CustomerPrimaryKey",
-                  "name": "Id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Query",
-                  "descriptorName": "CustomerPrimaryKey"
-                }
-              ],
+              "parametersOnMethod": [],
+              "parameters": [],
               "returnValue": {
-                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
-                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+                "type": "FS.CmsKitManagement.Vocabularies.Dtos.MetaData",
+                "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.MetaData"
               }
             },
-            "GetListByCustomerGetList": {
-              "uniqueName": "GetListByCustomerGetList",
+            "GetListByVocabularyGetList": {
+              "uniqueName": "GetListByVocabularyGetList",
               "name": "GetListAsync",
               "httpMethod": "GET",
-              "url": "api/fs/customers/customer",
+              "url": "api/cms-kit-management/vocabularies/vocabulary",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "CustomerGetList",
-                  "typeAsString": "FS.Customers.Dtos.CustomerGetListDto, FS.Application.Contracts",
-                  "type": "FS.Customers.Dtos.CustomerGetListDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerGetListDto",
+                  "name": "VocabularyGetList",
+                  "typeAsString": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto, FS.CmsKitManagement.Application.Contracts",
+                  "type": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto",
+                  "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyGetListDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "CustomerGetList",
-                  "name": "Discriminator",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "CustomerGetList"
-                },
-                {
-                  "nameOnMethod": "CustomerGetList",
+                  "nameOnMethod": "VocabularyGetList",
                   "name": "Fields",
                   "jsonName": null,
                   "type": "System.String",
@@ -5679,10 +4962,10 @@
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
-                  "descriptorName": "CustomerGetList"
+                  "descriptorName": "VocabularyGetList"
                 },
                 {
-                  "nameOnMethod": "CustomerGetList",
+                  "nameOnMethod": "VocabularyGetList",
                   "name": "Value",
                   "jsonName": null,
                   "type": "System.String",
@@ -5691,10 +4974,10 @@
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
-                  "descriptorName": "CustomerGetList"
+                  "descriptorName": "VocabularyGetList"
                 },
                 {
-                  "nameOnMethod": "CustomerGetList",
+                  "nameOnMethod": "VocabularyGetList",
                   "name": "Sorting",
                   "jsonName": null,
                   "type": "System.String",
@@ -5703,10 +4986,10 @@
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
-                  "descriptorName": "CustomerGetList"
+                  "descriptorName": "VocabularyGetList"
                 },
                 {
-                  "nameOnMethod": "CustomerGetList",
+                  "nameOnMethod": "VocabularyGetList",
                   "name": "SkipCount",
                   "jsonName": null,
                   "type": "System.Int32",
@@ -5715,10 +4998,10 @@
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
-                  "descriptorName": "CustomerGetList"
+                  "descriptorName": "VocabularyGetList"
                 },
                 {
-                  "nameOnMethod": "CustomerGetList",
+                  "nameOnMethod": "VocabularyGetList",
                   "name": "MaxResultCount",
                   "jsonName": null,
                   "type": "System.Int32",
@@ -5727,150 +5010,732 @@
                   "defaultValue": null,
                   "constraintTypes": null,
                   "bindingSourceId": "ModelBinding",
-                  "descriptorName": "CustomerGetList"
+                  "descriptorName": "VocabularyGetList"
                 }
               ],
               "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.Customers.Dtos.CustomerWithDetailsDto>"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyWithDetailsDto>"
               }
             },
-            "CreateByCustomerCreate": {
-              "uniqueName": "CreateByCustomerCreate",
-              "name": "CreateAsync",
-              "httpMethod": "POST",
-              "url": "api/fs/customers/customer",
+            "GetListByVocabularyDefinitionGetList": {
+              "uniqueName": "GetListByVocabularyDefinitionGetList",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/cms-kit-management/vocabularies/vocabulary-definition",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "CustomerCreate",
-                  "typeAsString": "FS.Customers.Dtos.CustomerCreateDto, FS.Application.Contracts",
-                  "type": "FS.Customers.Dtos.CustomerCreateDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
+                  "name": "VocabularyDefinitionGetList",
+                  "typeAsString": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto, FS.CmsKitManagement.Application.Contracts",
+                  "type": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto",
+                  "typeSimple": "FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "CustomerCreate",
-                  "name": "CustomerCreate",
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "Fields",
                   "jsonName": null,
-                  "type": "FS.Customers.Dtos.CustomerCreateDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
+                  "type": "System.String",
+                  "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "Value",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
+                },
+                {
+                  "nameOnMethod": "VocabularyDefinitionGetList",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "VocabularyDefinitionGetList"
                 }
               ],
               "returnValue": {
-                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
-                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto>"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Routes.RoutesApi": {
+          "controllerName": "RoutesApi",
+          "type": "FS.CmsKitManagement.Routes.RoutesApi",
+          "interfaces": [
+            {
+              "type": "FS.CmsKitManagement.Routes.IRoutesApi"
+            },
+            {
+              "type": "FS.CmsKitManagement.Routes.IRouteCrudAppService"
+            },
+            {
+              "type": "FS.CmsKitManagement.Routes.IRouteDefinitionCrudAppService"
+            }
+          ],
+          "actions": {
+            "GetRouteDefinitions": {
+              "uniqueName": "GetRouteDefinitions",
+              "name": "GetRouteDefinitionsAsync",
+              "httpMethod": "GET",
+              "url": "api/cms-kit-management/routes/route-definitions",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Routes.Dtos.RouteDefinitionDto>",
+                "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDefinitionDto]"
               }
             },
-            "UpdateByCustomerPrimaryKeyAndCustomerUpdate": {
-              "uniqueName": "UpdateByCustomerPrimaryKeyAndCustomerUpdate",
-              "name": "UpdateAsync",
-              "httpMethod": "PUT",
-              "url": "api/fs/customers/customer/id",
+            "GetRoutesByRouteDefinitionId": {
+              "uniqueName": "GetRoutesByRouteDefinitionId",
+              "name": "GetRoutesAsync",
+              "httpMethod": "GET",
+              "url": "api/cms-kit-management/routes/routes/{routeDefinitionId}",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "CustomerPrimaryKey",
-                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
-                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "CustomerUpdate",
-                  "typeAsString": "FS.Customers.Dtos.CustomerUpdateDto, FS.Application.Contracts",
-                  "type": "FS.Customers.Dtos.CustomerUpdateDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
+                  "name": "routeDefinitionId",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "CustomerPrimaryKey",
-                  "name": "Id",
+                  "nameOnMethod": "routeDefinitionId",
+                  "name": "routeDefinitionId",
                   "jsonName": null,
                   "type": "System.Guid",
                   "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Query",
-                  "descriptorName": "CustomerPrimaryKey"
-                },
-                {
-                  "nameOnMethod": "CustomerUpdate",
-                  "name": "CustomerUpdate",
-                  "jsonName": null,
-                  "type": "FS.Customers.Dtos.CustomerUpdateDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
                   "descriptorName": ""
                 }
               ],
               "returnValue": {
-                "type": "FS.Customers.Dtos.CustomerWithDetailsDto",
-                "typeSimple": "FS.Customers.Dtos.CustomerWithDetailsDto"
-              }
-            },
-            "DeleteByCustomerPrimaryKey": {
-              "uniqueName": "DeleteByCustomerPrimaryKey",
-              "name": "DeleteAsync",
-              "httpMethod": "DELETE",
-              "url": "api/fs/customers/customer/id",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "CustomerPrimaryKey",
-                  "typeAsString": "FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Application.Contracts",
-                  "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-                  "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "CustomerPrimaryKey",
-                  "name": "Id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Query",
-                  "descriptorName": "CustomerPrimaryKey"
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
+                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Routes.Dtos.RouteDto>",
+                "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]"
               }
             },
             "Options": {
               "uniqueName": "Options",
               "name": "Options",
               "httpMethod": "OPTIONS",
-              "url": "api/fs/customers",
+              "url": "api/cms-kit-management/routes",
               "supportedVersions": [],
               "parametersOnMethod": [],
               "parameters": [],
               "returnValue": {
-                "type": "FS.Customers.Dtos.MetaData",
-                "typeSimple": "FS.Customers.Dtos.MetaData"
+                "type": "FS.CmsKitManagement.Routes.Dtos.MetaData",
+                "typeSimple": "FS.CmsKitManagement.Routes.Dtos.MetaData"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Blogs.BlogsApi": {
+          "controllerName": "BlogsApi",
+          "type": "FS.CmsKitManagement.Blogs.BlogsApi",
+          "interfaces": [
+            {
+              "type": "FS.CmsKitManagement.Blogs.IBlogsApi"
+            },
+            {
+              "type": "FS.CmsKitManagement.Blogs.IBlogPostSettingAppService"
+            },
+            {
+              "type": "FS.CmsKitManagement.Blogs.IPostRouteCrudAppService"
+            }
+          ],
+          "actions": {
+            "GetByBlogPostSettingGetAndFallback": {
+              "uniqueName": "GetByBlogPostSettingGetAndFallback",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/cms-kit-management/blogs/blog-post-setting",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "BlogPostSettingGet",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto, FS.CmsKitManagement.Application.Contracts",
+                  "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "fallback",
+                  "typeAsString": "System.Boolean, System.Private.CoreLib",
+                  "type": "System.Boolean",
+                  "typeSimple": "boolean",
+                  "isOptional": true,
+                  "defaultValue": true
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "BlogPostSettingGet",
+                  "name": "ProviderName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "BlogPostSettingGet"
+                },
+                {
+                  "nameOnMethod": "BlogPostSettingGet",
+                  "name": "ProviderKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "BlogPostSettingGet"
+                },
+                {
+                  "nameOnMethod": "fallback",
+                  "name": "fallback",
+                  "jsonName": null,
+                  "type": "System.Boolean",
+                  "typeSimple": "boolean",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingDto",
+                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostSettingDto"
+              }
+            },
+            "Options": {
+              "uniqueName": "Options",
+              "name": "Options",
+              "httpMethod": "OPTIONS",
+              "url": "api/cms-kit-management/blogs",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Blogs.Dtos.MetaData",
+                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.MetaData"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Routes.RoutesQuerysApi": {
+          "controllerName": "RoutesQuerysApi",
+          "type": "FS.CmsKitManagement.Routes.RoutesQuerysApi",
+          "interfaces": null,
+          "actions": {
+            "Query": {
+              "uniqueName": "Query",
+              "name": "Query",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Routes.Querys.Routes.Query",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Routes.Querys.Routes.Query",
+                  "type": "FS.CmsKitManagement.Routes.Querys.Routes.Query",
+                  "typeSimple": "FS.CmsKitManagement.Routes.Querys.Routes.Query",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Routes.Querys.Routes.Query'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Routes.Querys.Routes.Query",
+                  "typeSimple": "FS.CmsKitManagement.Routes.Querys.Routes.Query",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Routes.Dtos.RouteDto>",
+                "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Routes.RouteDefinitionsQuerysApi": {
+          "controllerName": "RouteDefinitionsQuerysApi",
+          "type": "FS.CmsKitManagement.Routes.RouteDefinitionsQuerysApi",
+          "interfaces": null,
+          "actions": {
+            "Query": {
+              "uniqueName": "Query",
+              "name": "Query",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query",
+                  "type": "FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query",
+                  "typeSimple": "FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query",
+                  "typeSimple": "FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Routes.Dtos.RouteDefinitionDto>",
+                "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDefinitionDto]"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Blogs.BlogsQuerysApi": {
+          "controllerName": "BlogsQuerysApi",
+          "type": "FS.CmsKitManagement.Blogs.BlogsQuerysApi",
+          "interfaces": null,
+          "actions": {
+            "Query": {
+              "uniqueName": "Query",
+              "name": "Query",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Blogs.Querys.Blogs.Query",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Querys.Blogs.Query",
+                  "type": "FS.CmsKitManagement.Blogs.Querys.Blogs.Query",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.Blogs.Query",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Blogs.Querys.Blogs.Query'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Blogs.Querys.Blogs.Query",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.Blogs.Query",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<FS.CmsKitManagement.Blogs.Dtos.BlogDto>",
+                "typeSimple": "[FS.CmsKitManagement.Blogs.Dtos.BlogDto]"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Blogs.BlogPostsQuerysApi": {
+          "controllerName": "BlogPostsQuerysApi",
+          "type": "FS.CmsKitManagement.Blogs.BlogPostsQuerysApi",
+          "interfaces": null,
+          "actions": {
+            "FindQuery": {
+              "uniqueName": "FindQuery",
+              "name": "FindQuery",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery",
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
+                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto"
+              }
+            },
+            "BlogQuery": {
+              "uniqueName": "BlogQuery",
+              "name": "BlogQuery",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery",
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>"
+              }
+            },
+            "RouteQuery": {
+              "uniqueName": "RouteQuery",
+              "name": "RouteQuery",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery",
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<FS.CmsKitManagement.Blogs.Dtos.BlogPostDto>"
+              }
+            },
+            "SlugQuery": {
+              "uniqueName": "SlugQuery",
+              "name": "SlugQuery",
+              "httpMethod": "POST",
+              "url": "api/mediator/query?$type=FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "query",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery",
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...query,...{$type:'FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery'}}",
+                  "name": "query",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
+                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto"
+              }
+            }
+          }
+        },
+        "FS.CmsKitManagement.Blogs.BlogPostsCommandsApi": {
+          "controllerName": "BlogPostsCommandsApi",
+          "type": "FS.CmsKitManagement.Blogs.BlogPostsCommandsApi",
+          "interfaces": null,
+          "actions": {
+            "PatchCommand": {
+              "uniqueName": "PatchCommand",
+              "name": "PatchCommand",
+              "httpMethod": "POST",
+              "url": "api/mediator/command?$type=FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand",
+              "supportedVersions": null,
+              "parametersOnMethod": [
+                {
+                  "name": "command",
+                  "typeAsString": "FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand",
+                  "type": "FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "{...command,...{$type:'FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand'}}",
+                  "name": "command",
+                  "jsonName": null,
+                  "type": "FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand",
+                  "typeSimple": "FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": null
+                }
+              ],
+              "returnValue": {
+                "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
+                "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "featureManagement": {
+      "rootPath": "featureManagement",
+      "remoteServiceName": "AbpFeatureManagement",
+      "controllers": {
+        "Volo.Abp.FeatureManagement.FeaturesController": {
+          "controllerName": "Features",
+          "type": "Volo.Abp.FeatureManagement.FeaturesController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.FeatureManagement.IFeatureAppService"
+            }
+          ],
+          "actions": {
+            "GetByProviderNameAndProviderKey": {
+              "uniqueName": "GetByProviderNameAndProviderKey",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/feature-management/features",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.FeatureManagement.GetFeatureListResultDto",
+                "typeSimple": "Volo.Abp.FeatureManagement.GetFeatureListResultDto"
+              }
+            },
+            "UpdateByProviderNameAndProviderKeyAndInput": {
+              "uniqueName": "UpdateByProviderNameAndProviderKeyAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/feature-management/features",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.FeatureManagement.UpdateFeaturesDto, Volo.Abp.FeatureManagement.Application.Contracts",
+                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
               }
             }
           }
@@ -7372,226 +7237,6 @@
           "jsonName": null,
           "type": "FS.CmsKitManagement.Routes.Dtos.RouteDto",
           "typeSimple": "FS.CmsKitManagement.Routes.Dtos.RouteDto",
-          "isRequired": false
-        }
-      ]
-    },
-    "FS.CmsKitManagement.Blogs.Dtos.BlogDto": {
-      "baseType": "Volo.Abp.Application.Dtos.ExtensibleEntityDto<System.Guid>",
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "Name",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Slug",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        }
-      ]
-    },
-    "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto": {
-      "baseType": "Volo.Abp.Application.Dtos.ExtensibleEntityDto<System.Guid>",
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "BlogId",
-          "jsonName": null,
-          "type": "System.Guid",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "BlogName",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "BlogSlug",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Title",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Slug",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "ShortDescription",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Content",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "CoverImageMediaId",
-          "jsonName": null,
-          "type": "System.Guid?",
-          "typeSimple": "string?",
-          "isRequired": false
-        },
-        {
-          "name": "CreationTime",
-          "jsonName": null,
-          "type": "System.DateTime",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "LastModificationTime",
-          "jsonName": null,
-          "type": "System.DateTime?",
-          "typeSimple": "string?",
-          "isRequired": false
-        },
-        {
-          "name": "Author",
-          "jsonName": null,
-          "type": "Volo.CmsKit.Public.Comments.CmsUserDto",
-          "typeSimple": "Volo.CmsKit.Public.Comments.CmsUserDto",
-          "isRequired": false
-        },
-        {
-          "name": "AuthorId",
-          "jsonName": null,
-          "type": "System.Guid",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Routes",
-          "jsonName": null,
-          "type": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]",
-          "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]",
-          "isRequired": false
-        },
-        {
-          "name": "AttachmentMedias",
-          "jsonName": null,
-          "type": "[Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto]",
-          "typeSimple": "[Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto]",
-          "isRequired": false
-        }
-      ]
-    },
-    "Volo.CmsKit.Public.Comments.CmsUserDto": {
-      "baseType": null,
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "Id",
-          "jsonName": null,
-          "type": "System.Guid",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "UserName",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Name",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Surname",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        }
-      ]
-    },
-    "Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto": {
-      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "Name",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "MimeType",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": false
-        },
-        {
-          "name": "Size",
-          "jsonName": null,
-          "type": "System.Int32",
-          "typeSimple": "number",
-          "isRequired": false
-        }
-      ]
-    },
-    "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto": {
-      "baseType": null,
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "BlogPost",
-          "jsonName": null,
-          "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
-          "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
-          "isRequired": false
-        },
-        {
-          "name": "RouteIds",
-          "jsonName": null,
-          "type": "[System.Guid]",
-          "typeSimple": "[string]",
           "isRequired": false
         }
       ]
@@ -9670,6 +9315,36 @@
         }
       ]
     },
+    "Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "MimeType",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Size",
+          "jsonName": null,
+          "type": "System.Int32",
+          "typeSimple": "number",
+          "isRequired": false
+        }
+      ]
+    },
     "Volo.CmsKit.Admin.Comments.CommentGetListInput": {
       "baseType": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
       "isEnum": false,
@@ -10529,6 +10204,43 @@
           "jsonName": null,
           "type": "Volo.CmsKit.Public.Comments.CmsUserDto",
           "typeSimple": "Volo.CmsKit.Public.Comments.CmsUserDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "Volo.CmsKit.Public.Comments.CmsUserDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Id",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "UserName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Surname",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
           "isRequired": false
         }
       ]
@@ -12146,7 +11858,91 @@
         }
       ]
     },
-    "FS.Customers.Querys.Customers.FindQuery": {
+    "FS.CmsKitManagement.Routes.Querys.Routes.Query": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "RouteDefinitionId",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Routes.Querys.RouteDefinitions.Query": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": []
+    },
+    "FS.CmsKitManagement.Blogs.Querys.Blogs.Query": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "filter",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "sorting",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "maxResultCount",
+          "jsonName": null,
+          "type": "System.Int32",
+          "typeSimple": "number",
+          "isRequired": false
+        },
+        {
+          "name": "skipCount",
+          "jsonName": null,
+          "type": "System.Int32",
+          "typeSimple": "number",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Dtos.BlogDto": {
+      "baseType": "Volo.Abp.Application.Dtos.ExtensibleEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Slug",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Querys.BlogPosts.FindQuery": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -12156,13 +11952,120 @@
         {
           "name": "id",
           "jsonName": null,
-          "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-          "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+          "type": "System.Guid",
+          "typeSimple": "string",
           "isRequired": false
         }
       ]
     },
-    "FS.Customers.Querys.Customers.Query": {
+    "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto": {
+      "baseType": "Volo.Abp.Application.Dtos.ExtensibleEntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "BlogId",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "BlogName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "BlogSlug",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Title",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Slug",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "ShortDescription",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Content",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "CoverImageMediaId",
+          "jsonName": null,
+          "type": "System.Guid?",
+          "typeSimple": "string?",
+          "isRequired": false
+        },
+        {
+          "name": "CreationTime",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "LastModificationTime",
+          "jsonName": null,
+          "type": "System.DateTime?",
+          "typeSimple": "string?",
+          "isRequired": false
+        },
+        {
+          "name": "Author",
+          "jsonName": null,
+          "type": "Volo.CmsKit.Public.Comments.CmsUserDto",
+          "typeSimple": "Volo.CmsKit.Public.Comments.CmsUserDto",
+          "isRequired": false
+        },
+        {
+          "name": "AuthorId",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "Routes",
+          "jsonName": null,
+          "type": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]",
+          "typeSimple": "[FS.CmsKitManagement.Routes.Dtos.RouteDto]",
+          "isRequired": false
+        },
+        {
+          "name": "AttachmentMedias",
+          "jsonName": null,
+          "type": "[Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto]",
+          "typeSimple": "[Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorDto]",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery": {
       "baseType": null,
       "isEnum": false,
       "enumNames": null,
@@ -12170,49 +12073,102 @@
       "genericArguments": null,
       "properties": [
         {
-          "name": "input",
+          "name": "blogSlug",
           "jsonName": null,
-          "type": "FS.Customers.Dtos.CustomerGetListDto",
-          "typeSimple": "FS.Customers.Dtos.CustomerGetListDto",
-          "isRequired": false
-        }
-      ]
-    },
-    "FS.Customers.Commands.Customers.CreateCommand": {
-      "baseType": null,
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "input",
-          "jsonName": null,
-          "type": "FS.Customers.Dtos.CustomerCreateDto",
-          "typeSimple": "FS.Customers.Dtos.CustomerCreateDto",
-          "isRequired": false
-        }
-      ]
-    },
-    "FS.Customers.Commands.Customers.UpdateCommand": {
-      "baseType": null,
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "id",
-          "jsonName": null,
-          "type": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
-          "typeSimple": "FS.Customers.Dtos.CustomerPrimaryKeyDto",
+          "type": "System.String",
+          "typeSimple": "string",
           "isRequired": false
         },
         {
           "name": "input",
           "jsonName": null,
-          "type": "FS.Customers.Dtos.CustomerUpdateDto",
-          "typeSimple": "FS.Customers.Dtos.CustomerUpdateDto",
+          "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+          "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Querys.BlogPosts.RouteQuery": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "routeId",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "input",
+          "jsonName": null,
+          "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+          "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Querys.BlogPosts.SlugQuery": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "blogSlug",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "blogPostSlug",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "input",
+          "jsonName": null,
+          "type": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto",
+          "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto",
+          "isRequired": false
+        }
+      ]
+    },
+    "FS.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "BlogPost",
+          "jsonName": null,
+          "type": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
+          "typeSimple": "FS.CmsKitManagement.Blogs.Dtos.BlogPostDto",
+          "isRequired": false
+        },
+        {
+          "name": "RouteIds",
+          "jsonName": null,
+          "type": "[System.Guid]",
+          "typeSimple": "[string]",
           "isRequired": false
         }
       ]

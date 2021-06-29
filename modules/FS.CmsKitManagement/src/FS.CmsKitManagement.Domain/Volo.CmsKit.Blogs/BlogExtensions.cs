@@ -7,6 +7,13 @@ namespace Volo.CmsKit.Blogs
 {
     public static class BlogExtensions
     {
+        public static bool HasAttachmentMediaIds(this BlogPost post)
+        {
+            if (post.ExtraProperties.ContainsKey("AttachmentMediaIds") && post.GetAttachmentMediaIds() != null)
+                return true;
+            return false;
+        }
+
         public static List<Guid> GetAttachmentMediaIds(this BlogPost post)
         {
             return post.GetExtraProperty<List<Guid>>("AttachmentMediaIds");

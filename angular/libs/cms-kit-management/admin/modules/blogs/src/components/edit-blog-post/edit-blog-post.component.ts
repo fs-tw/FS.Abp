@@ -1,23 +1,35 @@
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { forkJoin, Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { ToasterService } from '@abp/ng.theme.shared';
 
-import { Fs, Volo } from '@fs-tw/cms-kit-management/proxy';
-import { PickCoverImageComponent, FileService } from '@fs-tw/cms-kit-management/shared';
+import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Fs } from '@fs-tw/proxy/cms-kit-management';
+import {
+  PickCoverImageComponent,
+  FileService,
+} from '@fs-tw/cms-kit-management/shared';
 
 import { PageStateService } from '../../providers/paget-state.service';
 
 @Component({
   selector: 'fs-tw-edit-blog-post',
-  templateUrl: './edit-blog-post.component.html'
+  templateUrl: './edit-blog-post.component.html',
 })
 export class EditBlogPostComponent implements OnInit {
-  @ViewChild("CoverImage") pickCoverImageComponent: PickCoverImageComponent;
+  @ViewChild('CoverImage') pickCoverImageComponent: PickCoverImageComponent;
 
   blogsApiService: Fs.CmsKitManagement.Blogs.BlogsApiService = null;
+  blogsQuerysApiService: Fs.CmsKitManagement.Blogs.BlogsQuerysApiService = null;
+  blogPostsQuerysApiService: Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService = null;
+  blogPostsCommandsApiService: Fs.CmsKitManagement.Blogs.BlogPostsCommandsApiService = null;
 
   blogs: Fs.CmsKitManagement.Blogs.Dtos.BlogDto[] = [];
   blogPost: Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto;
@@ -32,7 +44,6 @@ export class EditBlogPostComponent implements OnInit {
   loading: boolean = false;
   isEdit: boolean = false;
 
-
   defaultImageUrl: string;
 
   constructor(
@@ -44,7 +55,18 @@ export class EditBlogPostComponent implements OnInit {
     private toasterService: ToasterService,
     private router: Router
   ) {
-    this.blogsApiService = injector.get(Fs.CmsKitManagement.Blogs.BlogsApiService);
+    this.blogsApiService = injector.get(
+      Fs.CmsKitManagement.Blogs.BlogsApiService
+    );
+    this.blogsQuerysApiService = injector.get(
+      Fs.CmsKitManagement.Blogs.BlogsQuerysApiService
+    );
+    this.blogPostsQuerysApiService = injector.get(
+      Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService
+    );
+    this.blogPostsCommandsApiService = injector.get(
+      Fs.CmsKitManagement.Blogs.BlogPostsCommandsApiService
+    );
   }
 
   ngOnInit(): void {
@@ -52,24 +74,33 @@ export class EditBlogPostComponent implements OnInit {
   }
 
   getBlogs() {
-    this.blogId = "";
-    let getBlogs = this.blogsApiService.get();
-    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback({
-      providerKey: null,
-      providerName: "T"
-    } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto);
+    this.blogId = '';
+    let getBlogs = this.blogsQuerysApiService.query({} as any);
+    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback(
+      {
+        providerKey: null,
+        providerName: 'T',
+      } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
+    );
 
-    forkJoin([getBlogs, getBlogPostSetting])
-      .subscribe(([blog, setting]) => {
-        // 不顯示講習文章、比賽文章
-        this.blogs = blog.filter(y => y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' && y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang');
-        this.defaultImageUrl = setting.defaultImage;
+    forkJoin([getBlogs, getBlogPostSetting]).subscribe(([blog, setting]) => {
+      // 不顯示講習文章、比賽文章
+      this.blogs = blog.filter(
+        (y) =>
+          y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' &&
+          y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang'
+      );
+      this.defaultImageUrl = setting.defaultImage;
 
-        let selectedBlogId = this.pageStateService.getOne("SelectedBlogId");
-        let selectedBlog = this.blogs.find(x => x.id == selectedBlogId);
-        this.blogId = selectedBlog ? selectedBlog.id : (this.blogs.length > 0 ? this.blogs[0].id : "");
-        this.initData();
-      });
+      let selectedBlogId = this.pageStateService.getOne('SelectedBlogId');
+      let selectedBlog = this.blogs.find((x) => x.id == selectedBlogId);
+      this.blogId = selectedBlog
+        ? selectedBlog.id
+        : this.blogs.length > 0
+        ? this.blogs[0].id
+        : '';
+      this.initData();
+    });
   }
 
   initData() {
@@ -80,15 +111,16 @@ export class EditBlogPostComponent implements OnInit {
       initForm();
     } else {
       this.isEdit = true;
-      this.blogsApiService.getBlogPostByIdById(blogPostId)
-        .subscribe(x => {
+      this.blogPostsQuerysApiService
+        .findQuery({ id: blogPostId })
+        .subscribe((x) => {
           this.blogPost = x;
           initForm(x);
-        })
+        });
     }
 
     function initForm(data: Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto = null) {
-      vm.routeIds = data ? data.routes.map(y => y.id) : [];
+      vm.routeIds = data ? data.routes.map((y) => y.id) : [];
       vm.attachmentMedias = data ? data.attachmentMedias : [];
       vm.coverImageMediaId = data?.coverImageMediaId;
       vm.content = data?.content;
@@ -98,17 +130,23 @@ export class EditBlogPostComponent implements OnInit {
         blogId: new FormControl(vm.blogId, [Validators.required]),
         title: new FormControl(data?.title, [Validators.required]),
         slug: new FormControl(data?.slug, [Validators.required]),
-        shortDescription: data?.shortDescription
+        shortDescription: data?.shortDescription,
       });
     }
   }
 
   save() {
     let formData = this.formGroup.value;
-    let result = { ...this.blogPost, ...formData } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto;
+    let result = {
+      ...this.blogPost,
+      ...formData,
+    } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto;
 
-    if (!result.extraProperties) result.extraProperties = { AttachmentMediaIds: [] };
-    result.extraProperties["AttachmentMediaIds"] = this.attachmentMedias.map(x => x.id);
+    if (!result.extraProperties)
+      result.extraProperties = { AttachmentMediaIds: [] };
+    result.extraProperties['AttachmentMediaIds'] = this.attachmentMedias.map(
+      (x) => x.id
+    );
     result.attachmentMedias = this.attachmentMedias;
     result.content = this.content;
 
@@ -120,45 +158,50 @@ export class EditBlogPostComponent implements OnInit {
         mergeMap((x) => {
           result.coverImageMediaId = x;
 
-          return this.blogsApiService.patchBlogPostByInput({
-            blogPost: result,
-            routeIds: routeIds
-          } as Fs.CmsKitManagement.Blogs.Dtos.PetchBlogPostDto)
+          let command:Fs.CmsKitManagement.Blogs.Commands.BlogPosts.PatchCommand={
+            input: {
+              blogPost: result,
+              routeIds: routeIds,
+            }            
+          }
+          return this.blogPostsCommandsApiService.patchCommand(command);
         })
       )
-      .subscribe((x) => {
-        this.toasterService.success("CmsKitManagement::DataUpdateSuccess")
-        this.loading = false;
+      .subscribe(
+        (x) => {
+          this.toasterService.success('CmsKitManagement::DataUpdateSuccess');
+          this.loading = false;
 
-        this.blogId = x.blogId;
-        this.pageStateService.setOne("SelectedBlogId", this.blogId);
-        this.back();
-      }, (error) => {
-        this.loading = false;
-        this.toasterService.error("CmsKitManagement::DataUpdateFaild")
+          this.blogId = x.blogId;
+          this.pageStateService.setOne('SelectedBlogId', this.blogId);
+          this.back();
+        },
+        (error) => {
+          this.loading = false;
+          this.toasterService.error('CmsKitManagement::DataUpdateFaild');
 
-        console.error(error)
-      })
+          console.error(error);
+        }
+      );
   }
 
   saveCoverImage(): Observable<string> {
     if (!this.pickCoverImageComponent) return of(null);
-    
+
     let file = this.pickCoverImageComponent.getCoverImage();
-    if (typeof(file) == 'string' || file == null) {
+    if (typeof file == 'string' || file == null) {
       let str: string = file as string;
       return of(str);
     }
 
-    return this.fileService.uploadFile(file, "blogpost")
-      .pipe(
-        map((x) => {
-          return x.id;
-        })
-      );
+    return this.fileService.uploadFile(file, 'blogpost').pipe(
+      map((x) => {
+        return x.id;
+      })
+    );
   }
 
   back() {
-    this.router.navigate(["../"], { relativeTo: this.activatedRoute });
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
   }
 }

@@ -15,12 +15,15 @@ namespace FS.CmsKitManagement.Blogs
     {
         [HttpGet]
         [Route("blog")]
+        [NonAction][RemoteService(false)]
         public async Task<List<BlogDto>> GetAsync()
         {
             return await this.Mediator.Send(new Querys.Blogs.Query());
         }
         [HttpGet]
         [Route("blog-post/blog-slug/{blogSlug}")]
+        [NonAction]
+        [RemoteService(false)]
         public async Task<PagedResultDto<BlogPostDto>> GetBlogPostsAsync([NotNull] string blogSlug, PagedAndSortedResultRequestDto input)
         {
             return await this.Mediator.Send(new Querys.BlogPosts.BlogQuery(blogSlug, input));
@@ -28,6 +31,8 @@ namespace FS.CmsKitManagement.Blogs
 
         [HttpGet]
         [Route("blog-post/route/{routeId}")]
+        [NonAction]
+        [RemoteService(false)]
         public async Task<PagedResultDto<BlogPostDto>> GetBlogPostsAsync(Guid routeId, PagedAndSortedResultRequestDto input)
         {
             return await this.Mediator.Send(new Querys.BlogPosts.RouteQuery(routeId, input));
@@ -35,6 +40,8 @@ namespace FS.CmsKitManagement.Blogs
 
         [HttpGet]
         [Route("blog-post/slug/{blogSlug}/{blogPostSlug}")]
+        [NonAction]
+        [RemoteService(false)]
         public async Task<BlogPostDto> GetBlogPostBySlugAsync(string blogSlug, string blogPostSlug)
         {
             return await this.Mediator.Send(new Querys.BlogPosts.SlugQuery(blogSlug, blogPostSlug));
@@ -43,6 +50,8 @@ namespace FS.CmsKitManagement.Blogs
         [HttpGet]
         [Route("blog-post/admin/{id}")]
         [Authorize]
+        [NonAction]
+        [RemoteService(false)]
         public async Task<BlogPostDto> GetBlogPostByIdAsync(Guid id)
         {
             return await this.Mediator.Send(new Querys.BlogPosts.FindQuery(id));
@@ -51,6 +60,8 @@ namespace FS.CmsKitManagement.Blogs
         [HttpPatch]
         [Route("blog-post/admin")]
         [Authorize]
+        [NonAction]
+        [RemoteService(false)]
         public async Task<BlogPostDto> PatchBlogPostAsync(PetchBlogPostDto input)
         {
             return await this.Mediator.Send(new Commands.BlogPosts.PatchCommand(input));

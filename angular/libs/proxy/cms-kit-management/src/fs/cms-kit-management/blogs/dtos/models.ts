@@ -46,11 +46,6 @@ export interface MetaData {
   postRouteWithDetailsDto: PostRouteWithDetailsDto;
 }
 
-export interface PetchBlogPostDto {
-  blogPost: BlogPostDto;
-  routeIds: string[];
-}
-
 export interface PostRouteCreateDto extends ExtensibleObject {
   postId?: string;
   routeId?: string;
@@ -73,4 +68,9 @@ export interface PostRouteUpdateDto extends ExtensibleObject {
 }
 
 export interface PostRouteWithDetailsDto extends PostRouteDto {
+}
+
+export interface PetchBlogPostDto {
+  blogPost: BlogPostDto;
+  routeIds: string[];
 }

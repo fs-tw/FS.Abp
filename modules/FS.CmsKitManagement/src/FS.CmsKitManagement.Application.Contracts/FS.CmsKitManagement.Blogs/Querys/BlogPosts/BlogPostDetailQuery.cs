@@ -4,7 +4,9 @@ using System.Text;
 
 namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
 {
-    public record FindQuery(Guid id) : MediatR.IRequest<BlogPostDto>
+    public record FindQuery(Guid id) :
+        FS.Abp.MediatR.IQuery,
+        MediatR.IRequest<BlogPostDto>
     {
     }
 }

@@ -14,7 +14,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.CmsKitManagement.Blogs
 {
     [Area("cms-kit-management")]
-    [RemoteService(true)]
+    [RemoteService(Name ="cms-kit-management")]
     [ControllerName("FS.CmsKitManagement.Blogs(cms-kit-management)")]
     [Route("api/cms-kit-management/blogs")]
     public partial class BlogsApi : CmsKitManagementController , IBlogsApi //auto-generated

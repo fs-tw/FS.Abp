@@ -14,7 +14,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.CmsKitManagement.Routes
 {
     [Area("cms-kit-management")]
-    [RemoteService(true)]
+    [RemoteService(Name ="cms-kit-management")]
     [ControllerName("FS.CmsKitManagement.Routes(cms-kit-management)")]
     [Route("api/cms-kit-management/routes")]
     public partial class RoutesApi : CmsKitManagementController , IRoutesApi //auto-generated

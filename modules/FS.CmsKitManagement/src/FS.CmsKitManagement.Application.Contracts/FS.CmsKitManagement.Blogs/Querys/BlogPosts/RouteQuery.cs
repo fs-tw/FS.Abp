@@ -8,7 +8,9 @@ namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
 {
     public record RouteQuery(
         Guid routeId,
-        PagedAndSortedResultRequestDto input) : MediatR.IRequest<PagedResultDto<BlogPostDto>>
+        PagedAndSortedResultRequestDto input) :
+        FS.Abp.MediatR.IQuery,
+        MediatR.IRequest<PagedResultDto<BlogPostDto>>
     {
     }
 }

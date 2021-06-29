@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class VocabulariesApiService {
-  apiName = 'Default';
+  apiName = 'cms-kit-management';
 
   getListByVocabularyDefinitionGetList = (VocabularyDefinitionGetList: VocabularyDefinitionGetListDto) =>
     this.restService.request<any, PagedResultDto<VocabularyDefinitionWithDetailsDto>>({

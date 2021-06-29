@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Volo.Abp.Collections;
+using Volo.Abp.MediatR;
 
 namespace FS.Abp.MediatR
 {
@@ -14,20 +16,23 @@ namespace FS.Abp.MediatR
             IServiceProvider serviceProvider
             )
         {
+            var options = serviceProvider.GetService<IOptions<AbpMediatROptions>>().Value;
+
             var querySubType = this.CreateJsonSubtypesConverter<IQuery>("$type");
-            var querys = serviceProvider.GetServices<IQuery>();
+            var querys = options.QueryTypes;
 
             querys.ToList().ForEach(t =>
             {
-                querySubType.RegisterSubtype(t.GetType());
+                querySubType.RegisterSubtype(t);
             });
 
             var commandSubType = this.CreateJsonSubtypesConverter<ICommand>("$type");
-            var commands = serviceProvider.GetServices<ICommand>();
+            
+            var commands = options.CommandTypes;
 
             commands.ToList().ForEach(t =>
             {
-                querySubType.RegisterSubtype(t.GetType());
+                commandSubType.RegisterSubtype(t);
             });
 
         }

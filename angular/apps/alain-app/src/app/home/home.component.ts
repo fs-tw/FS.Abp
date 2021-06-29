@@ -1,8 +1,7 @@
 import { AuthService } from '@abp/ng.core';
 import { Component, Injector } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { Fs } from '../proxy/index';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+
 
 @Component({
   selector: 'app-home',
@@ -13,20 +12,14 @@ export class HomeComponent {
   get hasLoggedIn(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
-  service: Fs.Customers.Querys.Customers.CustomersQuerysApiService;
-  test: Volo.CmsKit.Admin.Blogs.BlogAdminService;
   constructor(
     injector: Injector,
     private oAuthService: OAuthService,
     private authService: AuthService
   ) {
-    this.service = injector.get(
-      Fs.Customers.Querys.Customers.CustomersQuerysApiService
-    );
 
-    this.service.query({} as any).subscribe((x) => {
-      console.log(x);
-    });
+
+
   }
 
   login() {

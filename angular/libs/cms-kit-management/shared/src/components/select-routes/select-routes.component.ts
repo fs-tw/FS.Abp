@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 
-import { Fs } from '@fs-tw/cms-kit-management/proxy'
+import { Fs } from '@fs-tw/proxy/cms-kit-management'
 
 class RouteWithSpaceLength {
   spaceLength: number = 0;

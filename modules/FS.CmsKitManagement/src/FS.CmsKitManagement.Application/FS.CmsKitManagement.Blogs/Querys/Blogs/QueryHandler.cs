@@ -6,7 +6,7 @@ using Volo.CmsKit.Blogs;
 
 namespace FS.CmsKitManagement.Blogs.Querys.Blogs
 {
-    
+
     public class QueryHandler : CmsKitManagementAppService, MediatR.IRequestHandler<Query, List<BlogDto>>
     {
         public async Task<List<BlogDto>> Handle(Query request, CancellationToken cancellationToken)
@@ -15,9 +15,8 @@ namespace FS.CmsKitManagement.Blogs.Querys.Blogs
             var blogs = await blogRepository.GetListAsync(
                 request.filter,
                 request.sorting,
-                request.maxResultCount,
-                request.skipCount,
-                request.cancellationToken);
+                request.maxResultCount == 0 ? 30 : request.maxResultCount,
+                request.skipCount);
             return ObjectMapper.Map<List<Blog>, List<BlogDto>>(blogs);
         }
     }

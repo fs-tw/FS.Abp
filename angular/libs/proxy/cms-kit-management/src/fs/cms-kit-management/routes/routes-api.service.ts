@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class RoutesApiService {
-  apiName = 'Default';
+  apiName = 'cms-kit-management';
 
   getRouteDefinitions = () =>
     this.restService.request<any, RouteDefinitionDto[]>({
