@@ -23,18 +23,6 @@
       ],
       "@fs-tw/cms-kit-management/*": [
         "libs/cms-kit-management/*/src/index.ts"
-      ],
-      "@fs-tw/components": [
-        "libs/components/src/index.ts"
-      ],
-      "@fs-tw/components/*": [
-        "libs/components/*/src/index.ts"
-      ],
-      "@fs-tw/proxy": [
-        "libs/proxy/src/index.ts"
-      ],
-      "@fs-tw/proxy/*": [
-        "libs/proxy/*/src/index.ts"
       ]
     }
   },

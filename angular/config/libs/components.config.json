@@ -37,7 +37,5 @@
     }
   },
   "tsconfig": {
-    "@fs-tw/components": ["libs/components/src/index.ts"],
-    "@fs-tw/components/*": ["libs/components/*/src/index.ts"]
   }
 }
