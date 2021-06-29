@@ -46,7 +46,7 @@ export class BlogsApiService {
     },
     { apiName: this.apiName });
 
-  getByBlogPostSettingGetAndFallback = (BlogPostSettingGet?: BlogPostSettingGetDto, fallback: boolean = true) =>
+  getByBlogPostSettingGetAndFallback = (BlogPostSettingGet: BlogPostSettingGetDto, fallback: boolean = true) =>
     this.restService.request<any, BlogPostSettingDto>({
       method: 'GET',
       url: '/api/cms-kit-management/blogs/blog-post-setting',
