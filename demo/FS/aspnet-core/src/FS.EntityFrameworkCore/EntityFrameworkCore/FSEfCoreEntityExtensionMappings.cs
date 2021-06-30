@@ -16,12 +16,6 @@ namespace FS.EntityFrameworkCore
 
             OneTimeRunner.Run(() =>
             {
-                ObjectExtensionManager.Instance
-                        .MapEfCoreProperty<Customers.Customer, string>("test");
-                ObjectExtensionManager.Instance
-                        .MapEfCoreProperty<Customers.Person, string>("test");
-                ObjectExtensionManager.Instance
-                        .MapEfCoreProperty<Customers.Company, string>("test");
                 /* You can configure extra properties for the
                  * entities defined in the modules used by your application.
                  *
