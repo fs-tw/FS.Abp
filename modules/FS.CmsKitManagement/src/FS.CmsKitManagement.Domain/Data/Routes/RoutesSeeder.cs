@@ -37,6 +37,7 @@ namespace FS.CmsKitManagement.Data.Routes
                 .Where(x => !x.ParentId.HasValue)
                 .Select(x => x.No));
 
+            var result = new List<Route>();
             var sheetNames = this.VirtualFileNpoiReader.GetSheetNames(Options.FileName);
             foreach (var sheetName in sheetNames)
             {
@@ -61,8 +62,12 @@ namespace FS.CmsKitManagement.Data.Routes
                 }
 
                 await this.RoutesStore.Route.InsertManyAsync(entityTrees);
+                result = result.Concat(entityTrees).ToList();
                 existDataNos = existDataNos.Concat(entityTrees.Select(x => x.No).ToList()).ToList();
             };
+
+            context.SetProperty<Route>(
+                result.ToDictionary(x => x.Code, x => x));
         }
 
         protected List<TEntity> mapToEntity<TInfo, TEntity>(List<TInfo> datas, Guid? parentId)
