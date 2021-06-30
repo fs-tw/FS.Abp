@@ -50,6 +50,7 @@ namespace FS
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
+    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
     public class FSHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
