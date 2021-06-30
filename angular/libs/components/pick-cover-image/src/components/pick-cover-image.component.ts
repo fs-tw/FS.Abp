@@ -4,7 +4,7 @@ import { EnvironmentService } from '@abp/ng.core';
 import {
   ImageFile,
   FsNgAlainImagePickerComponent,
-} from '@fs-tw/theme-alain/shared';
+} from '@fs-tw/components/image-picker';
 
 @Component({
   selector: 'fs-tw-pick-cover-image',

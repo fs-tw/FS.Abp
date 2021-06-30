@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FsNgAlainImagePickerComponent } from '@fs-tw/theme-alain/shared';
+import {
+  FsNgAlainImagePickerComponent,
+} from '@fs-tw/components/image-picker';
 import { RestService, EnvironmentService } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 

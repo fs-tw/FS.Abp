@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CoreModule } from '@abp/ng.core';
-import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 import { PickFilesComponent } from './components/pick-files.component';
+import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 
 const exportedDeclarations = [PickFilesComponent];
 
 @NgModule({
   declarations: [...exportedDeclarations],
   exports: [...exportedDeclarations],
-  imports: [CoreModule, ThemeAlainSharedModule],
+  imports: [CoreModule, ...SHARED_ZORRO_MODULES],
 })
 export class PickFilesModule {}
