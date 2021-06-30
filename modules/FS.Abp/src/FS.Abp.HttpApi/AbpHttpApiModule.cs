@@ -27,6 +27,7 @@ namespace FS.Abp
         {
             Configure<AspNetCoreApiDescriptionModelProviderOptions>(o =>
             {
+                
                 o.ActionNameGenerator = (method) =>
                 {
                     var methodNameBuilder = new StringBuilder(method.Name).Replace("Async", "");

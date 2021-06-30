@@ -5,7 +5,9 @@ using System.Text;
 
 namespace FS.CmsKitManagement.Routes.Querys.RouteDefinitions
 {
-    public class Query : MediatR.IRequest<List<RouteDefinitionDto>>
+    public class Query :
+        FS.Abp.MediatR.IQuery,
+        MediatR.IRequest<List<RouteDefinitionDto>>
     {
 
     }

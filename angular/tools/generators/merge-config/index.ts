@@ -1,5 +1,6 @@
 import { SchematicContext, Tree, chain, Rule } from '@angular-devkit/schematics';
-import { updateJsonInTree, readJsonInTree, NxJson } from '@nrwl/workspace';
+import { updateJsonInTree, readJsonInTree } from '@nrwl/workspace';
+import type { NxJsonConfiguration } from '@nrwl/devkit';
 import { ProjectConfigFile } from './commons';
 
 let configs: Array<ProjectConfigFile> = [];
@@ -27,7 +28,7 @@ const updateNx = (host: Tree, context: SchematicContext) => {
   let nxs = configs
     .map(j => j.nx)
     .reduce((a, b) => { return { ...a, ...b } });
-  const nxJson = readJsonInTree<NxJson>(host, 'config/nx.base.json');
+  const nxJson = readJsonInTree<NxJsonConfiguration>(host, 'config/nx.base.json');
   nxJson.projects = { ...nxJson.projects, ...nxs };
   return updateJsonInTree('/nx.json', json => nxJson);
 }

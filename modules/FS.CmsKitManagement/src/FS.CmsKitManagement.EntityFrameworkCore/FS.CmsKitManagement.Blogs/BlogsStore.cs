@@ -26,6 +26,7 @@ namespace FS.CmsKitManagement.Blogs
 
         public async Task PatchRoutesAsync(Guid postId, List<Guid> routeIds)
         {
+
             var postRoutes = await this.AsyncExecuter.ToListAsync(this.PostRoute
                 .Where(x => x.PostId == postId));
 

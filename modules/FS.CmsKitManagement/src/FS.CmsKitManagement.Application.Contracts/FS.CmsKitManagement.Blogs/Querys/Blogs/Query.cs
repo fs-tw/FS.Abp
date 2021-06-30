@@ -11,8 +11,9 @@ namespace FS.CmsKitManagement.Blogs.Querys.Blogs
         string filter = null,
         string sorting = null,
         int maxResultCount = int.MaxValue,
-        int skipCount = 0,
-        CancellationToken cancellationToken = default) : MediatR.IRequest<List<BlogDto>>
+        int skipCount = 0) :
+        FS.Abp.MediatR.IQuery,
+        MediatR.IRequest<List<BlogDto>>
     {
     }
 }

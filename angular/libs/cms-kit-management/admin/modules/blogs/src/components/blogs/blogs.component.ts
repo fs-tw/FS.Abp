@@ -5,7 +5,7 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
-import { Volo } from '@fs-tw/cms-kit-management/proxy';
+import { Volo } from '@fs-tw/proxy/cms-kit';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
@@ -21,6 +21,7 @@ import {
   BLOGS_ENTITY_PROPS,
   BLOGS_TOOLBAR_ACTIONS,
 } from './defaults/index';
+import { eCmsKitManagementComponents } from '../../enums/components';
 
 @Component({
   selector: 'fs-tw-blogs',
@@ -29,12 +30,11 @@ import {
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: BlogsComponent.NAME,
+      useValue: eCmsKitManagementComponents.BlogsComponent,
     },
   ],
 })
 export class BlogsComponent implements OnInit {
-  public static NAME: string = 'Posts.BlogsComponent';
   subs: Subscription = new Subscription();
   service: Volo.CmsKit.Admin.Blogs.BlogAdminService;
   blogFeatureService: Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService;
@@ -53,8 +53,10 @@ export class BlogsComponent implements OnInit {
     public readonly list: ListService,
     private confirmationService: ConfirmationService
   ) {
+    const name = injector.get(EXTENSIONS_IDENTIFIER);
+    console.log(name);
     this.subs.add(
-      setDefaults(injector, BlogsComponent.NAME, {
+      setDefaults(injector, eCmsKitManagementComponents.BlogsComponent, {
         entityAction: BLOGS_ENTITY_ACTIONS,
         toolbarActions: BLOGS_TOOLBAR_ACTIONS,
         entityProps: BLOGS_ENTITY_PROPS,

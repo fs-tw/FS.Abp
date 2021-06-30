@@ -32,7 +32,6 @@
     "@abp/ng.tenant-management": "~4.3.0",
     "@abp/ng.theme.basic": "~4.3.0",
     "@abp/ng.theme.shared": "~4.3.0",
-    "@abp/ng.schematics": "4.3.3",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^6.0.1",

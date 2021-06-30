@@ -2,13 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  providers: [
-    
-  ]
+  imports: [CommonModule],
+  providers: [],
 })
-export class CmsKitManagementModule {
-
-}
+export class CmsKitManagementModule {}

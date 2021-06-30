@@ -3,15 +3,12 @@ import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 import { CoreModule } from '@abp/ng.core';
 import { PageModule } from '@abp/ng.components/page';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
 
 import { CmsKitEntityBaseComponent } from './components/cms-kit-entity-base/cms-kit-entity-base.component';
 import { BlogFeatureTabComponent } from './components/tabs/blog-feature-tab/blog-feature-tab.component';
 import { MediaTabComponent } from './components/tabs/media-tab/media-tab.component';
-import { PickCoverImageComponent } from './components/pick-cover-image/pick-cover-image.component';
-import { PickFilesComponent } from './components/pick-files/pick-files.component';
 import { SelectRoutesComponent } from './components/select-routes/select-routes.component';
-import { FsQuillEditorComponent } from './components/quill-editor/quill-editor.component';
 
 import { NzUploadDefaultDirective } from './directives/nz-upload-default.directive';
 import { NzUploadDefaultComponent } from './directives/nz-upload-default.component';
@@ -20,23 +17,21 @@ let COMPONENT = [
   CmsKitEntityBaseComponent,
   BlogFeatureTabComponent,
   MediaTabComponent,
-  PickCoverImageComponent,
-  PickFilesComponent,
   SelectRoutesComponent,
-  FsQuillEditorComponent,
 
   NzUploadDefaultDirective,
-  NzUploadDefaultComponent
+  NzUploadDefaultComponent,
 ];
 
 @NgModule({
-  declarations: [
-    ...COMPONENT
-  ],
-  imports: [CoreModule, PageModule, NgbNavModule, ThemeAlainSharedModule, QuillModule],
-  exports: [
+  declarations: [...COMPONENT],
+  imports: [
+    CoreModule,
+    PageModule,
+    NgbNavModule,
     ThemeAlainSharedModule,
-    ...COMPONENT
+    QuillModule,
   ],
+  exports: [ThemeAlainSharedModule, ...COMPONENT],
 })
 export class CmsKitManagementAdminSharedModule {}

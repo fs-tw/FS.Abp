@@ -34,13 +34,14 @@ namespace FS.Abp.AspNetCore.Mvc
             {
                 return this.Namespaces.Select(x =>
                 {
+                    var apiNamespace = string.Join(".", x.Split(".").Take(x.Split(".").Length - 2));
                     var names = x.Split('.').Reverse().Take(2);
                     var controllerName = string.Join("", names) + "Api";
                     var typeName = controllerName.Substring(controllerName.LastIndexOf(".") + 1);
                     ControllerApiDescriptionModel item = new ControllerApiDescriptionModel()
                     {
                         ControllerName = controllerName,
-                        Type = $"{x}.{typeName}",
+                        Type = $"{apiNamespace}.{typeName}",
                         Actions =
                         NamespaceTypes[x].ToList().Select(x =>
                         {

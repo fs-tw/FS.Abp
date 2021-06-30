@@ -29,6 +29,12 @@
     },
     "cms-kit-management": {
       "tags": []
+    },
+    "components": {
+      "tags": []
+    },
+    "proxy": {
+      "tags": []
     }
   }
 }

@@ -14,7 +14,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.CmsKitManagement.Routes
 {
     [Area("cms-kit-management")]
-    [RemoteService(true)]
+    [RemoteService(Name ="cms-kit-management")]
     [ControllerName("FS.CmsKitManagement.Routes(cms-kit-management)")]
     [Route("api/cms-kit-management/routes")]
     public partial class RoutesApi : CmsKitManagementController , IRoutesApi //auto-generated
@@ -24,10 +24,5 @@ namespace FS.CmsKitManagement.Routes
 
         protected IRouteDefinitionCrudAppService RouteDefinitionCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IRouteDefinitionCrudAppService>();
 
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }

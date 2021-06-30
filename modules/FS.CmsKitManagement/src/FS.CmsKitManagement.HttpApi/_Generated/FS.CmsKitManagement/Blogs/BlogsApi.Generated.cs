@@ -14,7 +14,7 @@ using Volo.Abp.AspNetCore.Mvc;
 namespace FS.CmsKitManagement.Blogs
 {
     [Area("cms-kit-management")]
-    [RemoteService(true)]
+    [RemoteService(Name ="cms-kit-management")]
     [ControllerName("FS.CmsKitManagement.Blogs(cms-kit-management)")]
     [Route("api/cms-kit-management/blogs")]
     public partial class BlogsApi : CmsKitManagementController , IBlogsApi //auto-generated
@@ -24,10 +24,5 @@ namespace FS.CmsKitManagement.Blogs
 
         protected IPostRouteCrudAppService PostRouteCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IPostRouteCrudAppService>();
 
-        [HttpOptions]
-        public Dtos.MetaData Options()
-        {
-            return new Dtos.MetaData();
-        }
     }
 }

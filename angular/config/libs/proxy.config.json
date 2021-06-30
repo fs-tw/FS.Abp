@@ -1,0 +1,54 @@
+{
+  "order": 2002,
+  "nx": {
+    "proxy": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "proxy": {
+      "projectType": "library",
+      "root": "libs/proxy",
+      "sourceRoot": "libs/proxy/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/proxy"],
+          "options": {
+            "project": "libs/proxy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/proxy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/proxy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/proxy"],
+          "options": {
+            "jestConfig": "libs/proxy/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/proxy/src/**/*.ts",
+              "libs/proxy/src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+
+  },
+  "tsconfig": {
+  }  
+}

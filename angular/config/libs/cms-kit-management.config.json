@@ -8,7 +8,7 @@
       "projectType": "library",
       "root": "libs/cms-kit-management",
       "sourceRoot": "libs/cms-kit-management/src",
-      "prefix": "fs-tw",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",

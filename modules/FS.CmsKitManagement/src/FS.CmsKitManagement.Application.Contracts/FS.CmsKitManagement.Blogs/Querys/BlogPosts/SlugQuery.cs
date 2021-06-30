@@ -6,7 +6,9 @@ namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
 {
     public record SlugQuery(
         string blogSlug,
-        string blogPostSlug) : MediatR.IRequest<BlogPostDto>
+        string blogPostSlug) :
+        FS.Abp.MediatR.IQuery,
+        MediatR.IRequest<BlogPostDto>
     {
     }
 }

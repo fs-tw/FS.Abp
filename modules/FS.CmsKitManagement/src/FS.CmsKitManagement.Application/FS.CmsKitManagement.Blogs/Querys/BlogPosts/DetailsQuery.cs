@@ -37,10 +37,12 @@ namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
                     })
                 );
 
+
             var attachmentMediaIds = request.blogPosts
-                .Where(x => x.ExtraProperties.ContainsKey("AttachmentMediaIds"))
+                .Where(x => x.HasAttachmentMediaIds())
                 .SelectMany(x => x.GetAttachmentMediaIds())
                 .ToList();
+
             var attachmentMedias = await MediaDescriptorsStore.GetMediaDescriptorsAsync(attachmentMediaIds);
 
             var dtoList = request.blogPosts.Select(x =>

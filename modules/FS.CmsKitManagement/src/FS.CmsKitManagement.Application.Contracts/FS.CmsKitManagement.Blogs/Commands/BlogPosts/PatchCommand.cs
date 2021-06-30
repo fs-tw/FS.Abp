@@ -5,7 +5,9 @@ using System.Text;
 
 namespace FS.CmsKitManagement.Blogs.Commands.BlogPosts
 {
-    public record PatchCommand(PetchBlogPostDto input) : MediatR.IRequest<BlogPostDto>
+    public record PatchCommand(PetchBlogPostDto input = null) :
+        FS.Abp.MediatR.ICommand,
+        MediatR.IRequest<BlogPostDto>
     {
     }
 }

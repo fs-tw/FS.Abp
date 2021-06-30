@@ -7,7 +7,9 @@ namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
 {
     public record BlogQuery(
         string blogSlug,
-        PagedAndSortedResultRequestDto input) : MediatR.IRequest<PagedResultDto<BlogPostDto>>
+        PagedAndSortedResultRequestDto input) :
+        FS.Abp.MediatR.IQuery,
+        MediatR.IRequest<PagedResultDto<BlogPostDto>>
     {
         
     }

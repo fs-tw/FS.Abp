@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/theme-alain',
     '<rootDir>/apps/alain-app',
     '<rootDir>/libs/cms-kit-management',
+    '<rootDir>/libs/proxy',
   ],
 };

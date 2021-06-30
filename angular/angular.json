@@ -5,7 +5,7 @@
       "projectType": "application",
       "root": "apps/alain-app",
       "sourceRoot": "apps/alain-app/src",
-      "prefix": "fs-tw",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -156,7 +156,7 @@
       "projectType": "library",
       "root": "libs/cms-kit-management",
       "sourceRoot": "libs/cms-kit-management/src",
-      "prefix": "fs-tw",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
@@ -187,6 +187,80 @@
           "options": {
             "jestConfig": "libs/cms-kit-management/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "components": {
+      "projectType": "library",
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/components/tsconfig.lib.json",
+            "project": "libs/components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/components/src/**/*.ts",
+              "libs/components/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "proxy": {
+      "projectType": "library",
+      "root": "libs/proxy",
+      "sourceRoot": "libs/proxy/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": [
+            "dist/libs/proxy"
+          ],
+          "options": {
+            "project": "libs/proxy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/proxy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/proxy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/proxy"
+          ],
+          "options": {
+            "jestConfig": "libs/proxy/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/proxy/src/**/*.ts",
+              "libs/proxy/src/**/*.html"
+            ]
           }
         }
       }
