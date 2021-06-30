@@ -27,6 +27,7 @@
     <ProjectReference Include="..\FS.Application\FS.Application.csproj" />
     <ProjectReference Include="..\FS.EntityFrameworkCore.DbMigrations\FS.EntityFrameworkCore.DbMigrations.csproj" />
     <ProjectReference Include="..\FS.HttpApi\FS.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
   </ItemGroup>
 
   <ItemGroup>

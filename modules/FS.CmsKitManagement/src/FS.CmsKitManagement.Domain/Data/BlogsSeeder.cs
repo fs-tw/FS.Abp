@@ -10,6 +10,7 @@ using Volo.Abp.BlobStoring;
 using Volo.CmsKit.Users;
 using Volo.Abp.VirtualFileSystem;
 using Npoi.Mapper.Attributes;
+using FS.Abp.Data;
 
 namespace FS.CmsKitManagement.Data
 {
@@ -123,7 +124,7 @@ namespace FS.CmsKitManagement.Data
 
             var mediaList = await this.MediaDescriptorRepository.GetListAsync();
 
-            var blogPosts = new List<BlogPost>();
+            var blogPosts = new List<BlogPostWithBlogName>();
             var datas = this.VirtualFileNpoiReader.Read<BlogPostInfo>(SourceData, "BlogPosts");
             var dbBlogPostDatas = this.BlogPostRepository.GetListAsync();
             var postTitleExcept = datas.Select(x=>x.PostTitle).Except(dbBlogPostDatas.Result.Select(o=>o.Title)).ToList();
@@ -135,10 +136,24 @@ namespace FS.CmsKitManagement.Data
                     Blog blog = blogList.Where(x => x.Name == post.PostBlog).First();
                     MediaDescriptor media = mediaList.Where(x => x.Name == post.PostTitle).First();
                     BlogPost blogPost = await this.BlogPostManager.CreateAsync(user, blog, post.PostTitle, post.PostSlug, content: post.PostContent.ToString(), coverImageMediaId: media.Id);
-                    blogPosts.Add(blogPost);
+                    blogPosts.Add(new BlogPostWithBlogName()
+                    {
+                        BlogName = blog.Name,
+                        Data = blogPost
+                    });
                 }
             }
-            await this.BlogPostRepository.InsertManyAsync(blogPosts, true);
+            await this.BlogPostRepository.InsertManyAsync(blogPosts.Select(x => x.Data).ToList(), true);
+
+            context.SetProperty<BlogPost>(
+                blogPosts.ToDictionary(x => x.BlogName + x.Data.Slug, x => x.Data));
         }
+    }
+
+    public class BlogPostWithBlogName
+    {
+        public string BlogName { get; set; }
+
+        public BlogPost Data { get; set; }
     }
 }

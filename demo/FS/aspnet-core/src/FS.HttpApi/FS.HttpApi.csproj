@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.HttpApi\FS.CmsKitManagement.HttpApi.csproj" />
     <ProjectReference Include="..\FS.Application.Contracts\FS.Application.Contracts.csproj" />
