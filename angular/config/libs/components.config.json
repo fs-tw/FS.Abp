@@ -14,6 +14,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
+          "outputs": ["node_modules/@fs-tw/components"],
           "options": {
             "tsConfig": "libs/components/tsconfig.lib.json",
             "project": "libs/components/ng-package.json"

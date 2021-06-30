@@ -14,7 +14,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
-          "outputs": ["dist/libs/proxy"],
+          "outputs": ["node_modules/@fs-tw/proxy"],
           "options": {
             "project": "libs/proxy/ng-package.json"
           },
