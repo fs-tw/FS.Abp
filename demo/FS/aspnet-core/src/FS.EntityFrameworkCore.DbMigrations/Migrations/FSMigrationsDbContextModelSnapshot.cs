@@ -357,9 +357,6 @@ namespace FS.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
 
-                    b.Property<string>("test")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreationTime");
@@ -2313,6 +2310,9 @@ namespace FS.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
 
+                    b.Property<string>("DisplayStyle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
@@ -2489,6 +2489,9 @@ namespace FS.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
@@ -2648,6 +2651,9 @@ namespace FS.Migrations
                     b.Property<DateTime?>("DeletionTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
+
+                    b.Property<string>("DisplayStyle")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")
