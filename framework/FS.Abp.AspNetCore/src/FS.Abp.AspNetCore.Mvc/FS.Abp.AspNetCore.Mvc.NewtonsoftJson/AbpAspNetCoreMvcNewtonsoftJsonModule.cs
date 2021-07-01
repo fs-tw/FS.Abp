@@ -10,7 +10,6 @@ using Volo.Abp.Json.SystemTextJson;
 
 namespace FS.Abp.AspNetCore.Mvc.NewtonsoftJson
 {
-    [DependsOn(typeof(FS.Abp.Json.AbpJsonModule))]
     [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesAbstractionsModule))]
     public class AbpAspNetCoreMvcNewtonsoftJsonModule : AbpModule
     {
@@ -19,32 +18,20 @@ namespace FS.Abp.AspNetCore.Mvc.NewtonsoftJson
             var serviceProvider = context.Services.BuildServiceProvider();
             Configure<Microsoft.AspNetCore.Mvc.MvcNewtonsoftJsonOptions>(mvcNewtonsoftJsonOptions =>
             {
-                configureExtraPropertyDictionaryConverter();
-                configureJsonSubTypeConverters();
-
-
-                void configureExtraPropertyDictionaryConverter()
+                var profiles = serviceProvider.GetServices<IJsonSubtypesConverterProfile>();
+                profiles.ToList().ForEach(profile =>
                 {
-                    var converter = serviceProvider.GetRequiredService<FS.Abp.Json.Newtonsoft.ExtraPropertyDictionaryConverter>();
-                    mvcNewtonsoftJsonOptions.SerializerSettings.Converters.Add(converter);
-                }
-                void configureJsonSubTypeConverters()
-                {
-                    var profiles = serviceProvider.GetServices<IJsonSubtypesConverterProfile>();
-                    profiles.ToList().ForEach(profile =>
+                    profile.JsonSubtypesConverterDefinitions.ForEach(definition =>
                     {
-                        profile.JsonSubtypesConverterDefinitions.ForEach(definition =>
+                        var item = JsonSubtypesConverterBuilder.Of(definition.BaseType, definition.DiscriminatorProperty).SetFallbackSubtype(definition.FallbackSubtype);
+                        definition.Subtypes.ForEach(subtypeOption =>
                         {
-                            var item = JsonSubtypesConverterBuilder.Of(definition.BaseType, definition.DiscriminatorProperty).SetFallbackSubtype(definition.FallbackSubtype);
-                            definition.Subtypes.ForEach(subtypeOption =>
-                            {
-                                item.RegisterSubtype(subtypeOption.Subtype, subtypeOption.value);
-                            });
-
-                            mvcNewtonsoftJsonOptions.SerializerSettings.Converters.Add(item.Build());
+                            item.RegisterSubtype(subtypeOption.Subtype, subtypeOption.value);
                         });
+
+                        mvcNewtonsoftJsonOptions.SerializerSettings.Converters.Add(item.Build());
                     });
-                }
+                });
             });
 
             Configure<AbpSystemTextJsonSerializerOptions>(abpSystemTextJsonSerializerOptions =>
