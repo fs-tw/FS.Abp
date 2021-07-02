@@ -26,7 +26,7 @@ import { PageStateService } from '../../providers/paget-state.service';
 export class EditBlogPostComponent implements OnInit {
   @ViewChild('CoverImage') pickCoverImageComponent: PickCoverImageComponent;
 
-  blogsApiService: Fs.CmsKitManagement.Blogs.BlogsApiService = null;
+  //blogsApiService: Fs.CmsKitManagement.Blogs.BlogsApiService = null;
   blogsQuerysApiService: Fs.CmsKitManagement.Blogs.BlogsQuerysApiService = null;
   blogPostsQuerysApiService: Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService = null;
   blogPostsCommandsApiService: Fs.CmsKitManagement.Blogs.BlogPostsCommandsApiService = null;
@@ -55,9 +55,9 @@ export class EditBlogPostComponent implements OnInit {
     private toasterService: ToasterService,
     private router: Router
   ) {
-    this.blogsApiService = injector.get(
-      Fs.CmsKitManagement.Blogs.BlogsApiService
-    );
+    // this.blogsApiService = injector.get(
+    //   Fs.CmsKitManagement.Blogs.BlogsApiService
+    // );
     this.blogsQuerysApiService = injector.get(
       Fs.CmsKitManagement.Blogs.BlogsQuerysApiService
     );
@@ -76,21 +76,25 @@ export class EditBlogPostComponent implements OnInit {
   getBlogs() {
     this.blogId = '';
     let getBlogs = this.blogsQuerysApiService.query({} as any);
-    let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback(
-      {
-        providerKey: null,
-        providerName: 'T',
-      } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
-    );
+
+    //todo add setting api
+    let getBlogPostSetting=null;
+    // let getBlogPostSetting = this.blogsApiService.getByBlogPostSettingGetAndFallback(
+    //   {
+    //     providerKey: null,
+    //     providerName: 'T',
+    //   } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
+    // );
 
     forkJoin([getBlogs, getBlogPostSetting]).subscribe(([blog, setting]) => {
+      //todo add setting api
       // 不顯示講習文章、比賽文章
-      this.blogs = blog.filter(
-        (y) =>
-          y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' &&
-          y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang'
-      );
-      this.defaultImageUrl = setting.defaultImage;
+      // this.blogs = blog.filter(
+      //   (y) =>
+      //     y.slug.toLowerCase().trim() != 'jiang-xi-wen-zhang' &&
+      //     y.slug.toLowerCase().trim() != 'bi-sai-wen-zhang'
+      // );
+      //this.defaultImageUrl = setting.defaultImage;
 
       let selectedBlogId = this.pageStateService.getOne('SelectedBlogId');
       let selectedBlog = this.blogs.find((x) => x.id == selectedBlogId);
