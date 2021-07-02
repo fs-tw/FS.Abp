@@ -9,12 +9,12 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Domain.Services;
 
 namespace FS.Customers
 {
-    public partial interface ICustomersApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        ICustomerCrudAppService
+    public partial class CustomersStore : DomainService, ICustomersStore //auto-generated
     {
+        public ICustomerRepository Customer => this.LazyServiceProvider.LazyGetRequiredService<ICustomerRepository>();
     }
 }

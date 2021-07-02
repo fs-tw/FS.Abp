@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class MediaDescriptorAdminService {
   apiName = 'CmsKitAdmin';
 
-  createByEntityTypeAndInputStream = (entityType: string, inputStream: CreateMediaInputWithStream) =>
+  create = (entityType: string, inputStream: CreateMediaInputWithStream) =>
     this.restService.request<any, MediaDescriptorDto>({
       method: 'POST',
       url: `/api/cms-kit-admin/media/${entityType}`,
@@ -16,7 +16,7 @@ export class MediaDescriptorAdminService {
     },
     { apiName: this.apiName });
 
-  deleteById = (id: string) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms-kit-admin/media/${id}`,

@@ -11,18 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.Customers.Dtos
 {
-    public partial class MetaData
-    {
-        public CompanyDto CompanyDto => new CompanyDto();
-        public CompanyCreateDto CompanyCreateDto => new CompanyCreateDto();
-        public CompanyUpdateDto CompanyUpdateDto => new CompanyUpdateDto();
-        public CompanyGetListDto CompanyGetListDto => new CompanyGetListDto();
-        public CompanyWithDetailsDto CompanyWithDetailsDto => new CompanyWithDetailsDto();
-    }
 
     public partial class CompanyDto : FS.Customers.Dtos.CustomerDto
     {

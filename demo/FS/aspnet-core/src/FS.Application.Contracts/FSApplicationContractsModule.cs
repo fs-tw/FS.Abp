@@ -11,7 +11,7 @@ using Volo.CmsKit.GlobalFeatures;
 using Volo.Abp.GlobalFeatures;
 using Volo.CmsKit;
 using Volo.Abp;
-using FS.Abp.AspNetCore.Mvc.JsonSubTypes;
+using Volo.Abp.MediatR;
 
 namespace FS
 {
@@ -30,15 +30,14 @@ namespace FS
         typeof(FS.Abp.AbpApplicationContractsModule)
         )]
     [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule))]
-
     public class FSApplicationContractsModule : AbpModule
     {
-        public override void OnPreApplicationInitialization(ApplicationInitializationContext context)
-        {
-            base.OnPreApplicationInitialization(context);
-        }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<AbpMediatROptions>(o =>
+            {
+                o.AddModule<FSApplicationContractsModule>("app");
+            });
         }
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
         public override void PreConfigureServices(ServiceConfigurationContext context)

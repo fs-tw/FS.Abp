@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.EntityFrameworkCore" namespace="FS" p1:name="FSDbContext" p1:Guid="092903ab-5c67-4707-ae7a-bdf62d5d05a1" p1:VersionTag="4.3.0" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.EntityFrameworkCore" namespace="FS" p1:name="FSDbContext" p1:Guid="092903ab-5c67-4707-ae7a-bdf62d5d05a1" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$ComplexTypes">
     <component class="FS.CreationAuditedEntity" IsExternal="true" p1:Guid="d9cb6177-0164-4e56-9fec-d32e3c615ec3" p1:GenerateDTO="False">
       <p1:Attributes>
@@ -217,7 +217,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.Customers.Customer" entity-set="Customers" discriminator-value="Customer" p1:Guid="fec8008a-3bfe-4ea3-8a51-48c2a2eda06b" p1:AbpEditor="YinChang" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.Customers.Customer" entity-set="Customers" discriminator-value="Customer" p1:Guid="fec8008a-3bfe-4ea3-8a51-48c2a2eda06b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GetAsync="True" p1:CreateAsync="True" p1:UpdateAsync="True" p1:DeleteAsync="True">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

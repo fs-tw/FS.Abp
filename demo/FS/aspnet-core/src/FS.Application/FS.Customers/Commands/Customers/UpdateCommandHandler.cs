@@ -9,7 +9,7 @@ namespace FS.Customers.Commands.Customers
         public async Task<CustomerWithDetailsDto> Handle(UpdateCommand request, CancellationToken cancellationToken)
         {
             ICustomerCrudAppService appService = this.LazyServiceProvider.LazyGetRequiredService<ICustomerCrudAppService>();
-            return await appService.UpdateAsync(request.id, request.input);
+            return await appService.UpdateAsync(request.id.Value, request.input);
         }
     }
 }

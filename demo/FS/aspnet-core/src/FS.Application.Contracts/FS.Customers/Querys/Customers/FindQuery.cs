@@ -7,7 +7,7 @@ using System.Text;
 
 namespace FS.Customers.Querys.Customers
 {
-    public record FindQuery(CustomerPrimaryKeyDto id = null) :
+    public record FindQuery(Guid? id = null) :
         IQuery,
         MediatR.IRequest<CustomerWithDetailsDto>
     {

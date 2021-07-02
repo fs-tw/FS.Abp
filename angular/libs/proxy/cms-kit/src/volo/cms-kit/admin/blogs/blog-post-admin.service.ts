@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class BlogPostAdminService {
   apiName = 'CmsKitAdmin';
 
-  createByInput = (input: CreateBlogPostDto) =>
+  create = (input: CreateBlogPostDto) =>
     this.restService.request<any, BlogPostDto>({
       method: 'POST',
       url: '/api/cms-kit-admin/blogs/blog-posts',
@@ -17,21 +17,21 @@ export class BlogPostAdminService {
     },
     { apiName: this.apiName });
 
-  deleteById = (id: string) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms-kit-admin/blogs/blog-posts/${id}`,
     },
     { apiName: this.apiName });
 
-  getById = (id: string) =>
+  get = (id: string) =>
     this.restService.request<any, BlogPostDto>({
       method: 'GET',
       url: `/api/cms-kit-admin/blogs/blog-posts/${id}`,
     },
     { apiName: this.apiName });
 
-  getListByInput = (input: BlogPostGetListInput) =>
+  getList = (input: BlogPostGetListInput) =>
     this.restService.request<any, PagedResultDto<BlogPostListDto>>({
       method: 'GET',
       url: '/api/cms-kit-admin/blogs/blog-posts',
@@ -39,7 +39,7 @@ export class BlogPostAdminService {
     },
     { apiName: this.apiName });
 
-  updateByIdAndInput = (id: string, input: UpdateBlogPostDto) =>
+  update = (id: string, input: UpdateBlogPostDto) =>
     this.restService.request<any, BlogPostDto>({
       method: 'PUT',
       url: `/api/cms-kit-admin/blogs/blog-posts/${id}`,

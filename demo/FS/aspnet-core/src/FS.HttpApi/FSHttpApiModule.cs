@@ -8,6 +8,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using MediatR;
 
 namespace FS
 {
@@ -26,11 +27,14 @@ namespace FS
     [DependsOn(
         typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule)
         )]
+    [DependsOn(typeof(EasyAbp.EShop.EShopHttpApiModule))]
     public class FSHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             ConfigureLocalization();
+
+            context.Services.AddMediatR(typeof(FSHttpApiModule));
         }
 
         private void ConfigureLocalization()

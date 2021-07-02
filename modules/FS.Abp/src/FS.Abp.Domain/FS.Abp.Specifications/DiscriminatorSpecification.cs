@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
+namespace FS.Abp.Specifications
 {
     public class DiscriminatorSpecification<T> : Volo.Abp.Specifications.Specification<T>
     {

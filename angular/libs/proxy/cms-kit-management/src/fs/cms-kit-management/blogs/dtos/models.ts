@@ -25,15 +25,6 @@ export interface BlogPostDto extends ExtensibleEntityDto<string> {
   attachmentMedias: MediaDescriptorDto[];
 }
 
-export interface BlogPostSettingDto {
-  defaultImage?: string;
-}
-
-export interface BlogPostSettingGetDto {
-  providerName?: string;
-  providerKey?: string;
-}
-
 export interface PetchBlogPostDto {
   blogPost: BlogPostDto;
   routeIds: string[];

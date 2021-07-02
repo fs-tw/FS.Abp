@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class PagesPublicService {
   apiName = 'CmsKitAdmin';
 
-  findBySlugBySlug = (slug: string) =>
+  findBySlug = (slug: string) =>
     this.restService.request<any, PageDto>({
       method: 'GET',
       url: `/api/cms-kit-public/pages/${slug}`,

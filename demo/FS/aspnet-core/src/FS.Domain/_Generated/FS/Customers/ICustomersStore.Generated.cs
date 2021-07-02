@@ -9,13 +9,12 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Domain.Services;
 
-namespace FS.CmsKitManagement.Vocabularies
+namespace FS.Customers
 {
-    public partial interface IVocabulariesApi : //auto-generated
-        Volo.Abp.Application.Services.IApplicationService,
-        IVocabularyDefinitionCrudAppService,
-        IVocabularyCrudAppService
+    public partial interface ICustomersStore : IDomainService //auto-generated
     {
+        ICustomerRepository Customer { get; }
     }
 }

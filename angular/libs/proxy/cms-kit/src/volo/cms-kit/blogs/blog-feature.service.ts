@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class BlogFeatureService {
   apiName = 'CmsKitAdmin';
 
-  getOrDefaultByBlogIdAndFeatureName = (blogId: string, featureName: string) =>
+  getOrDefault = (blogId: string, featureName: string) =>
     this.restService.request<any, BlogFeatureDto>({
       method: 'GET',
       url: `/api/cms-kit/blogs/${blogId}/features/${featureName}`,

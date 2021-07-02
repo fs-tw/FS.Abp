@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 namespace FS.EntityFrameworkCore
 {
-    public static class FSDbContextModelCreatingExtensions
+    public static partial class FSDbContextModelCreatingExtensions
     {
         public static void ConfigureFS(
             this ModelBuilder builder,
@@ -28,9 +28,12 @@ namespace FS.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
+            CustomizeMapping(ref builder);
+
             builder.ApplyConfiguration<FS.Customers.Person>(new FS.Customers.PersonConfiguration(options));
             builder.ApplyConfiguration<FS.Customers.Company>(new FS.Customers.CompanyConfiguration(options));
             builder.ApplyConfiguration<FS.Customers.Customer>(new FS.Customers.CustomerConfiguration(options));
         }
+        static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }
 }

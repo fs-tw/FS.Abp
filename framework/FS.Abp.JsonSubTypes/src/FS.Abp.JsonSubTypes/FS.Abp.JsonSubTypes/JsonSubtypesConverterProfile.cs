@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
+namespace FS.Abp.JsonSubTypes
 {
     public interface IJsonSubtypesConverterProfile : Volo.Abp.DependencyInjection.ISingletonDependency
     {

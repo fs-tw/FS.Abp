@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\CustomersStore.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Emplyee.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Enterprise.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IEmplyeeRepository.Generated.cs" />
@@ -46,15 +47,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS\Customers\CustomersStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS\Customers\ICompanyRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\ICustomerRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\ICustomersStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>

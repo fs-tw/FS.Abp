@@ -11,23 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Vocabularies.Dtos
 {
-    public partial class MetaData
-    {
-        public VocabularyPrimaryKeyDto VocabularyPrimaryKeyDto => new VocabularyPrimaryKeyDto();
-        public VocabularyDto VocabularyDto => new VocabularyDto();
-        public VocabularyCreateDto VocabularyCreateDto => new VocabularyCreateDto();
-        public VocabularyUpdateDto VocabularyUpdateDto => new VocabularyUpdateDto();
-        public VocabularyGetListDto VocabularyGetListDto => new VocabularyGetListDto();
-        public VocabularyWithDetailsDto VocabularyWithDetailsDto => new VocabularyWithDetailsDto();
-    }
-
-    public partial class VocabularyPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class VocabularyDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -77,7 +63,7 @@ namespace FS.CmsKitManagement.Vocabularies.Dtos
 
     }
 
-    public partial class VocabularyGetListDto : SearchResultRequestDto
+    public partial class VocabularyGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.Customers
 {
     public partial interface ICustomerCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.Customers.Dtos.CustomerWithDetailsDto, FS.Customers.Dtos.CustomerPrimaryKeyDto, FS.Customers.Dtos.CustomerGetListDto, FS.Customers.Dtos.CustomerCreateDto, FS.Customers.Dtos.CustomerUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.Customers.Dtos.CustomerWithDetailsDto, Guid, FS.Customers.Dtos.CustomerGetListDto, FS.Customers.Dtos.CustomerCreateDto, FS.Customers.Dtos.CustomerUpdateDto>
     {
 
     }

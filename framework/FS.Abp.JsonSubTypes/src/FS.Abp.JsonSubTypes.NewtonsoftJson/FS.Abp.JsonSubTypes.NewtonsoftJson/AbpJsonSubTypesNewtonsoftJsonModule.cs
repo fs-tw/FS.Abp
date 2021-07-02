@@ -4,14 +4,15 @@ using System.Linq;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
-using FS.Abp.AspNetCore.Mvc.JsonSubTypes;
 using JsonSubTypes;
 using Volo.Abp.Json.SystemTextJson;
 
-namespace FS.Abp.AspNetCore.Mvc.NewtonsoftJson
+namespace FS.Abp.JsonSubTypes.NewtonsoftJson
 {
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesAbstractionsModule))]
-    public class AbpAspNetCoreMvcNewtonsoftJsonModule : AbpModule
+    [DependsOn(typeof(FS.Abp.JsonSubTypes.JsonSubTypesModule))]
+    [DependsOn(typeof(Volo.Abp.Json.AbpJsonModule))]
+    [DependsOn(typeof(Volo.Abp.AspNetCore.AbpAspNetCoreModule))]
+    public class AbpJsonSubTypesNewtonsoftJsonModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

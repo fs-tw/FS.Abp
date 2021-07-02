@@ -5,9 +5,6 @@
     <Generation>
       <GeneratedFiles>
         <File Name="FS.cs" />
-        <File Name="ICustomersApi.Generated.cs" Project="FS.Application.Contracts" ProjectFolder="_Generated\FS\Customers" />
-        <File Name="CustomersApi.Generated.cs" Project="FS.HttpApi" ProjectFolder="_Generated\FS\Customers" />
-        <File Name="CustomersApi.CustomerCrudAppService.Generated.cs" Project="FS.HttpApi" ProjectFolder="_Generated\FS\Customers" />
         <File Name="ICustomerCrudAppService.Generated.cs" Project="FS.Application.Contracts" ProjectFolder="_Generated\FS\Customers" />
         <File Name="CustomerCrudAppService.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers" />
         <File Name="PersonDto.Generated.cs" Project="FS.Application.Contracts" ProjectFolder="_Generated\FS\Customers\Dtos" />
@@ -20,7 +17,8 @@
         <File Name="CompanyDtoValidator.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers\Dtos" />
         <File Name="CustomerDtoValidator.Generated.cs" Project="FS.Application" ProjectFolder="_Generated\FS\Customers\Dtos" />
         <File Name="CustomerDtoJsonSubtypesConverterBuilders.Generated.cs" Project="FS.Application.Contracts" ProjectFolder="_Generated\FS\Customers\Dtos" />
-        <File Name="CustomersStore.Generated.cs" Project="FS.Domain" ProjectFolder="_Generated\FS\Customers" />
+        <File Name="ICustomersStore.Generated.cs" Project="FS.Domain" ProjectFolder="_Generated\FS\Customers" />
+        <File Name="CustomersStore.Generated.cs" Project="FS.EntityFrameworkCore" ProjectFolder="_Generated\FS\Customers" />
         <File Name="IFSDbContext.Generated.cs" Project="FS.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FSDbContext.Generated.cs" Project="FS.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="FSModelBuilderConfigurationOptions.Generated.cs" Project="FS.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -61,28 +59,6 @@
     </Diagrams>
     <Templates>
       <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl" />
-      <Template Name="Application.Api" Enabled="True" File="..\..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Api.tmpl">
-        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="KebabCaseApiName" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>true</boolean>
-        </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.Application.Contracts</Project>
-            <ProjectFolder>FS</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.HttpApi</Project>
-            <ProjectFolder>FS</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-      </Template>
       <Template Name="Application.AppService" Enabled="True" File="..\..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AppService.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
@@ -268,7 +244,7 @@
         </ed:Property>
         <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1213.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.Domain</Project>
+            <Project>FS.EntityFrameworkCore</Project>
             <ProjectFolder>FS</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>

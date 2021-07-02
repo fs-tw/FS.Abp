@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.JsonSubTypes\src\FS.Abp.JsonSubTypes\FS.Abp.JsonSubTypes.csproj" />
   </ItemGroup>
 
 </Project>

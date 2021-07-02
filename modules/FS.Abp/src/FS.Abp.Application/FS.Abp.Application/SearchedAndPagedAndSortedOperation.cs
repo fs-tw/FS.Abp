@@ -48,7 +48,7 @@ namespace FS.Abp.Application
         {
             if (input is IDiscriminatorResultRequest discriminatorInput)
             {
-                var discriminatorSpec = new FS.Abp.AspNetCore.Mvc.JsonSubTypes.DiscriminatorSpecification<TEntity>(input);
+                var discriminatorSpec = new FS.Abp.Specifications.DiscriminatorSpecification<TEntity>(input);
                 query = query.Where(discriminatorSpec);
             }
 

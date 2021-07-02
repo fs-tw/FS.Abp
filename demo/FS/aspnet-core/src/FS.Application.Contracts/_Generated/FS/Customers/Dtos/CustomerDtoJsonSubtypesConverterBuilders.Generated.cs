@@ -10,7 +10,7 @@
 
 namespace FS.Customers.Dtos
 {
-    public partial class CustomerJsonSubtypesConverterProfile : FS.Abp.AspNetCore.Mvc.JsonSubTypes.JsonSubtypesConverterProfile
+    public partial class CustomerJsonSubtypesConverterProfile : FS.Abp.JsonSubTypes.JsonSubtypesConverterProfile
     {
         public CustomerJsonSubtypesConverterProfile()
         {

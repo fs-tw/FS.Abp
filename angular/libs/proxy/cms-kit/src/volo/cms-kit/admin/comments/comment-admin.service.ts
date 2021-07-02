@@ -9,21 +9,21 @@ import { Injectable } from '@angular/core';
 export class CommentAdminService {
   apiName = 'CmsKitAdmin';
 
-  deleteById = (id: string) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms-kit-admin/comments/${id}`,
     },
     { apiName: this.apiName });
 
-  getById = (id: string) =>
+  get = (id: string) =>
     this.restService.request<any, CommentWithAuthorDto>({
       method: 'GET',
       url: `/api/cms-kit-admin/comments/${id}`,
     },
     { apiName: this.apiName });
 
-  getListByInput = (input: CommentGetListInput) =>
+  getList = (input: CommentGetListInput) =>
     this.restService.request<any, PagedResultDto<CommentWithAuthorDto>>({
       method: 'GET',
       url: '/api/cms-kit-admin/comments',

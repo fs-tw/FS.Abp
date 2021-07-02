@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class BlogAdminService {
   apiName = 'CmsKitAdmin';
 
-  createByInput = (input: CreateBlogDto) =>
+  create = (input: CreateBlogDto) =>
     this.restService.request<any, BlogDto>({
       method: 'POST',
       url: '/api/cms-kit-admin/blogs',
@@ -17,21 +17,21 @@ export class BlogAdminService {
     },
     { apiName: this.apiName });
 
-  deleteById = (id: string) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms-kit-admin/blogs/${id}`,
     },
     { apiName: this.apiName });
 
-  getById = (id: string) =>
+  get = (id: string) =>
     this.restService.request<any, BlogDto>({
       method: 'GET',
       url: `/api/cms-kit-admin/blogs/${id}`,
     },
     { apiName: this.apiName });
 
-  getListByInput = (input: BlogGetListInput) =>
+  getList = (input: BlogGetListInput) =>
     this.restService.request<any, PagedResultDto<BlogDto>>({
       method: 'GET',
       url: '/api/cms-kit-admin/blogs',
@@ -39,7 +39,7 @@ export class BlogAdminService {
     },
     { apiName: this.apiName });
 
-  updateByIdAndInput = (id: string, input: UpdateBlogDto) =>
+  update = (id: string, input: UpdateBlogDto) =>
     this.restService.request<any, BlogDto>({
       method: 'PUT',
       url: `/api/cms-kit-admin/blogs/${id}`,

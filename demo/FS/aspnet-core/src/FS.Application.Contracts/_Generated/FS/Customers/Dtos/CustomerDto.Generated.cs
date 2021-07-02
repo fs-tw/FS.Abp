@@ -11,31 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.Customers.Dtos
 {
-    public partial class MetaData
-    {
-        public CustomerPrimaryKeyDto CustomerPrimaryKeyDto => new CustomerPrimaryKeyDto();
-        public CustomerDto CustomerDto => new CustomerDto();
-        public CustomerCreateDto CustomerCreateDto => new CustomerCreateDto();
-        public CustomerUpdateDto CustomerUpdateDto => new CustomerUpdateDto();
-        public CustomerGetListDto CustomerGetListDto => new CustomerGetListDto();
-        public CustomerWithDetailsDto CustomerWithDetailsDto => new CustomerWithDetailsDto();
-
-        //public Querys.Customers.FindQuery FindQuery => new Querys.Customers.FindQuery();
-        //public Querys.Customers.Query Query => new Querys.Customers.Query();
-
-        //public Commands.Customers.CreateCommand CreateCommand => new Commands.Customers.CreateCommand(null);
-        //public Commands.Customers.UpdateCommand UpdateCommand => new Commands.Customers.UpdateCommand(null,null);
-
-
-    }
-
-    public partial class CustomerPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class CustomerDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -67,7 +45,7 @@ namespace FS.Customers.Dtos
 
     }
 
-    public partial class CustomerGetListDto : SearchResultRequestDto,IDiscriminatorResultRequest
+    public partial class CustomerGetListDto : PagedAndSortedResultRequestDto, FS.Abp.Application.Dtos.IDiscriminatorResultRequest
     {
         public virtual string Discriminator { get; set; }
 

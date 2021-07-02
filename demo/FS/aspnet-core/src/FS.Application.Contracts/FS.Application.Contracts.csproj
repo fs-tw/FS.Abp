@@ -12,6 +12,7 @@
     <Compile Remove="_Generated\FS\Customers\Dtos\EmplyeeDto.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Dtos\EnterpriseDto.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\ICompanyCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Customers\ICustomersApi.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IEmplyeeCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IEnterpriseCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IPersonCrudAppService.Generated.cs" />
@@ -53,10 +54,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\ICustomerCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS\Customers\ICustomersApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>

@@ -10,7 +10,6 @@ namespace FS.Abp
     [DependsOn(
         typeof(AbpValidationModule)
     )]
-    [DependsOn(typeof(FS.Abp.Json.AbpJsonModule))]
     [DependsOn(
         typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule)
         )]

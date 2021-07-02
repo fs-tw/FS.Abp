@@ -7,7 +7,7 @@ using System;
 
 namespace FS.Abp.MediatR
 {
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.JsonSubTypes.AbpAspNetCoreMvcJsonSubTypesAbstractionsModule))]
+    [DependsOn(typeof(FS.Abp.JsonSubTypes.JsonSubTypesModule))]
     public class AbpMediatRModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

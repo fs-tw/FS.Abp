@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FS.Abp.AspNetCore.Mvc.JsonSubTypes
+namespace FS.Abp.JsonSubTypes
 {
     public interface ISubtypesExpression
     {

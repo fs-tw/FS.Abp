@@ -12,6 +12,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace FS.Abp.Application.Services
 {
+    [Obsolete("Remove")]
     public abstract class EntityWithKeyCrudAppService<TEntity, TGetOutputDto, TKeyDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
         : AbstractKeyCrudAppService<TEntity, TGetOutputDto, TGetOutputDto, TKeyDto, TGetListInput, TCreateInput, TUpdateInput>
         where TEntity : class, IEntity<TKey>

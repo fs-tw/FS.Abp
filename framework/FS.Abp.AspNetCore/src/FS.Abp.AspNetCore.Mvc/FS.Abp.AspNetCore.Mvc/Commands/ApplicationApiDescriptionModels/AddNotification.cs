@@ -10,16 +10,17 @@ using System.Threading.Tasks;
 using Volo.Abp.Http.Modeling;
 using Volo.Abp.MediatR;
 
-namespace FS.Abp.AspNetCore.Mvc.Commands.ApplicationApiDescriptionModels
+namespace FS.Abp.AspNetCore.Mvc.Notifications.ApplicationApiDescriptionModels
 {
-    public record AddCommand(ApplicationApiDescriptionModel model) : IRequest
+    public record AddNotification(ApplicationApiDescriptionModel model) : INotification
     {
         public Action<Type> Action { get; set; }
     }
 
-    public class AddCommandHandler : Volo.Abp.Domain.Services.DomainService, IRequestHandler<AddCommand>
+    public class AddNotificationHandler : Volo.Abp.Domain.Services.DomainService,INotificationHandler<AddNotification>
     {
-        public Task<Unit> Handle(AddCommand request, CancellationToken cancellationToken)
+
+        public Task Handle(AddNotification notification, CancellationToken cancellationToken)
         {
             var serviceProvider = LazyServiceProvider.LazyGetRequiredService<IServiceProvider>();
             var options = serviceProvider.GetService<IOptions<AbpMediatROptions>>().Value;
@@ -32,15 +33,14 @@ namespace FS.Abp.AspNetCore.Mvc.Commands.ApplicationApiDescriptionModels
             addTypes();
             addMediatRApis();
 
-
-            return Unit.Task;
+            return Task.CompletedTask;
 
             void addMediatRApis()
             {
                 options.ModuleNames.ForEach(x =>
                 {
                     var typesOfModule = options.MediatRTypesOfModule(x);
-                    var modules = request.model.GetOrAddModule(x, x);
+                    var modules = notification.model.GetOrAddModule(x, x);
                     ControllersInfo controllersInfo = new ControllersInfo(typesOfModule);
                     controllersInfo.Controllers.ForEach(x =>
                     {
@@ -56,7 +56,7 @@ namespace FS.Abp.AspNetCore.Mvc.Commands.ApplicationApiDescriptionModels
 
                 allTypes.ForEach(t =>
                 {
-                    request.Action(t);
+                    notification.Action(t);
 
                     var outputInterface = Volo.Abp.Reflection.ReflectionHelper
                     .GetImplementedGenericTypes(t, typeof(IRequest<>));
@@ -65,7 +65,7 @@ namespace FS.Abp.AspNetCore.Mvc.Commands.ApplicationApiDescriptionModels
                     {
                         outputInterface.ForEach(x =>
                         {
-                            request.Action(x.GetGenericArguments().FirstOrDefault());
+                            notification.Action(x.GetGenericArguments().FirstOrDefault());
                         });
                     }
                 });
@@ -73,7 +73,5 @@ namespace FS.Abp.AspNetCore.Mvc.Commands.ApplicationApiDescriptionModels
 
             }
         }
-
-
     }
 }

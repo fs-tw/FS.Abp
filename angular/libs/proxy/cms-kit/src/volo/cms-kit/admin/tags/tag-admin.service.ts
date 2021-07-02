@@ -10,7 +10,7 @@ import type { TagDto } from '../../tags/models';
 export class TagAdminService {
   apiName = 'CmsKitAdmin';
 
-  createByInput = (input: TagCreateDto) =>
+  create = (input: TagCreateDto) =>
     this.restService.request<any, TagDto>({
       method: 'POST',
       url: '/api/cms-kit-admin/tags',
@@ -18,21 +18,21 @@ export class TagAdminService {
     },
     { apiName: this.apiName });
 
-  deleteById = (id: string) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms-kit-admin/tags/${id}`,
     },
     { apiName: this.apiName });
 
-  getById = (id: string) =>
+  get = (id: string) =>
     this.restService.request<any, TagDto>({
       method: 'GET',
       url: `/api/cms-kit-admin/tags/${id}`,
     },
     { apiName: this.apiName });
 
-  getListByInput = (input: TagGetListInput) =>
+  getList = (input: TagGetListInput) =>
     this.restService.request<any, PagedResultDto<TagDto>>({
       method: 'GET',
       url: '/api/cms-kit-admin/tags',
@@ -47,7 +47,7 @@ export class TagAdminService {
     },
     { apiName: this.apiName });
 
-  updateByIdAndInput = (id: string, input: TagUpdateDto) =>
+  update = (id: string, input: TagUpdateDto) =>
     this.restService.request<any, TagDto>({
       method: 'PUT',
       url: `/api/cms-kit-admin/tags/${id}`,

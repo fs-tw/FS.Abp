@@ -8,7 +8,7 @@ import type { RemoteStreamContent } from '../../abp/content/models';
 export class MediaDescriptorService {
   apiName = 'CmsKitAdmin';
 
-  downloadById = (id: string) =>
+  download = (id: string) =>
     this.restService.request<any, RemoteStreamContent>({
       method: 'GET',
       url: `/api/cms-kit/media/${id}`,
