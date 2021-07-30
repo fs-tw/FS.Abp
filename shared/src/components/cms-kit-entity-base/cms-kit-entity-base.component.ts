@@ -8,7 +8,7 @@ import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
 export type EntityService<T> = {
-  getListByInput: (query: ABP.PageQueryParams) => Observable<PagedResultDto<T>>;
+  getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<T>>;
 };
 
 @Component({
@@ -33,7 +33,7 @@ export class CmsKitEntityBaseComponent<T> implements OnInit {
 
   hookToQuery() {
     this.data$ = this.list.hookToQuery((query) =>{
-      return this.service.getListByInput(query);
+      return this.service.getList(query);
     });
   }
 
