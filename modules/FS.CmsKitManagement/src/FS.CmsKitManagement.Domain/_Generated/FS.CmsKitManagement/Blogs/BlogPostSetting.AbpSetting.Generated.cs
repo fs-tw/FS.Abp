@@ -41,23 +41,19 @@ namespace FS.CmsKitManagement.Blogs
             return LocalizableString.Create<CmsKitManagementResource>(name);
         }
     }
-    public partial interface IBlogPostSettingFactory : FS.Abp.Settings.IFactory<BlogPostSetting>, ITransientDependency { }
-    public partial class BlogPostSettingFactory : DomainService, IBlogPostSettingFactory
+    public partial interface IBlogPostSettingFactory : IFactory<BlogPostSetting>, ITransientDependency { }
+    public partial class BlogPostSettingFactory : Factory<BlogPostSetting>, IBlogPostSettingFactory
     {
-        public ISettingManager SettingManager => this.LazyServiceProvider.LazyGetRequiredService<ISettingManager>();
-
-        public ISettingProvider SettingProvider => this.LazyServiceProvider.LazyGetRequiredService<ISettingProvider>();
-
-        public async Task<BlogPostSetting> GetAsync(string providerName = null, string providerKey = null, bool fallback = true)
+        public override async Task<BlogPostSetting> GetAsync(string providerName = null, string providerKey = null, bool fallback = true)
         {
             var result = new BlogPostSetting();
             result.DefaultImage = await this.TryGetAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultImage, providerName, providerKey, fallback);
             return result;
         }
 
-        public async Task SetAsync(BlogPostSetting input, string providerName, string providerKey)
+        public override async Task SetAsync(BlogPostSetting input, string providerName, string providerKey, bool forceToSet = false)
         {
-            await this.TrySetAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultImage, input.DefaultImage.ToString(), providerName, providerKey);
+            await this.TrySetAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultImage, input.DefaultImage.ToString(), providerName, providerKey, forceToSet);
         }
     }
 }
