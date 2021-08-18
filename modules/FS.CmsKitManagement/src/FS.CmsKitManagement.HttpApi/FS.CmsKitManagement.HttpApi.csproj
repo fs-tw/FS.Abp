@@ -6,28 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.BlogPostSettingAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesApi.RouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesApi.RouteDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyDefinitionCrudAppService.Generated.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.HttpApi" Version="$(AbpVersion)" />
     <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CmsKitManagement\Blogs\" />
-    <Folder Include="_Generated\FS.CmsKitManagement\Routes\" />
-    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\" />
   </ItemGroup>
 
 </Project>
