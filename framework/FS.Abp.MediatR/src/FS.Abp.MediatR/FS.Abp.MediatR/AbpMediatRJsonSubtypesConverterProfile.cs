@@ -10,7 +10,7 @@ using Volo.Abp.MediatR;
 
 namespace FS.Abp.MediatR
 {
-    public class AbpMediatRJsonSubtypesConverterProfile : FS.Abp.AspNetCore.Mvc.JsonSubTypes.JsonSubtypesConverterProfile
+    public class AbpMediatRJsonSubtypesConverterProfile : FS.Abp.JsonSubTypes.JsonSubtypesConverterProfile
     {
         public AbpMediatRJsonSubtypesConverterProfile(
             IServiceProvider serviceProvider

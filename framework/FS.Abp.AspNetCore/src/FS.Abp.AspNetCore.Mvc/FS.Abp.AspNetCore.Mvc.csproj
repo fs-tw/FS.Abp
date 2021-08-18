@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FS.Abp.Json\src\FS.Abp.Json\FS.Abp.Json.csproj" />
-    <ProjectReference Include="..\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions\FS.Abp.AspNetCore.Mvc.JsonSubTypes.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.JsonSubTypes\src\FS.Abp.JsonSubTypes.NewtonsoftJson\FS.Abp.JsonSubTypes.NewtonsoftJson.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.MediatR\src\FS.Abp.MediatR.HttpApi\FS.Abp.MediatR.HttpApi.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class PageAdminService {
   apiName = 'CmsKitAdmin';
 
-  createByInput = (input: CreatePageInputDto) =>
+  create = (input: CreatePageInputDto) =>
     this.restService.request<any, PageDto>({
       method: 'POST',
       url: '/api/cms-kit-admin/pages',
@@ -17,21 +17,21 @@ export class PageAdminService {
     },
     { apiName: this.apiName });
 
-  deleteById = (id: string) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/cms-kit-admin/pages/${id}`,
     },
     { apiName: this.apiName });
 
-  getById = (id: string) =>
+  get = (id: string) =>
     this.restService.request<any, PageDto>({
       method: 'GET',
       url: `/api/cms-kit-admin/pages/${id}`,
     },
     { apiName: this.apiName });
 
-  getListByInput = (input: GetPagesInputDto) =>
+  getList = (input: GetPagesInputDto) =>
     this.restService.request<any, PagedResultDto<PageDto>>({
       method: 'GET',
       url: '/api/cms-kit-admin/pages',
@@ -39,7 +39,7 @@ export class PageAdminService {
     },
     { apiName: this.apiName });
 
-  updateByIdAndInput = (id: string, input: UpdatePageInputDto) =>
+  update = (id: string, input: UpdatePageInputDto) =>
     this.restService.request<any, PageDto>({
       method: 'PUT',
       url: `/api/cms-kit-admin/pages/${id}`,

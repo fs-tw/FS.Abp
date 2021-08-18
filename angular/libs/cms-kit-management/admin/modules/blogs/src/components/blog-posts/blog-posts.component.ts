@@ -54,16 +54,19 @@ export class BlogPostsComponent implements OnInit {
       maxResultCount: 30,
       skipCount: 0,
     });
-    let getBlogPostSetting = this.blogsApiService.Blogs.getByBlogPostSettingGetAndFallback(
-      {
-        providerKey: null,
-        providerName: 'T',
-      } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
-    );
+    //to do add setting api
+    let getBlogPostSetting = null;
+    // let getBlogPostSetting = this.blogsApiService.Blogs.getByBlogPostSettingGetAndFallback(
+    //   {
+    //     providerKey: null,
+    //     providerName: 'T',
+    //   } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
+    // );
 
     forkJoin([getBlogs, getBlogPostSetting]).subscribe(([blog, setting]) => {
-      this.blogs = blog;
-      this.defaultImageUrl = setting.defaultImage;
+      //to do add setting api
+      //this.blogs = blog;
+      //this.defaultImageUrl = setting.defaultImage;
 
       let selectedBlogId = this.pageStateService.getOne('SelectedBlogId');
       let selectedBlog = this.blogs.find((x) => x.id == selectedBlogId);
@@ -127,7 +130,7 @@ export class BlogPostsComponent implements OnInit {
       });
 
     function toDelete(id: string) {
-      self.adminBlogsApiService.BlogPost.deleteById(id).subscribe(
+      self.adminBlogsApiService.BlogPost.delete(id).subscribe(
         () => {
           if (self.posts.length == 1 && self.page > 1) self.page--;
 

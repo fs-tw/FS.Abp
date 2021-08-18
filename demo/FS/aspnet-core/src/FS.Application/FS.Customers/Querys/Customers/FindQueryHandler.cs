@@ -9,7 +9,7 @@ namespace FS.Customers.Querys.Customers
         public async Task<CustomerWithDetailsDto> Handle(FindQuery request, CancellationToken cancellationToken)
         {
             ICustomerCrudAppService appService = this.LazyServiceProvider.LazyGetRequiredService<ICustomerCrudAppService>();
-            return await appService.GetAsync(request.id);
+            return await appService.GetAsync(request.id.Value);
         }
     }
 }

@@ -11,23 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Blogs.Dtos
 {
-    public partial class MetaData
-    {
-        public PostRoutePrimaryKeyDto PostRoutePrimaryKeyDto => new PostRoutePrimaryKeyDto();
-        public PostRouteDto PostRouteDto => new PostRouteDto();
-        public PostRouteCreateDto PostRouteCreateDto => new PostRouteCreateDto();
-        public PostRouteUpdateDto PostRouteUpdateDto => new PostRouteUpdateDto();
-        public PostRouteGetListDto PostRouteGetListDto => new PostRouteGetListDto();
-        public PostRouteWithDetailsDto PostRouteWithDetailsDto => new PostRouteWithDetailsDto();
-    }
-
-    public partial class PostRoutePrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class PostRouteDto : Volo.Abp.Application.Dtos.ExtensibleEntityDto<Guid>
     {
@@ -53,7 +39,7 @@ namespace FS.CmsKitManagement.Blogs.Dtos
 
     }
 
-    public partial class PostRouteGetListDto : SearchResultRequestDto
+    public partial class PostRouteGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

@@ -64,6 +64,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS\Customers\CustomersStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS\Customers\EfCoreCompanyRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>

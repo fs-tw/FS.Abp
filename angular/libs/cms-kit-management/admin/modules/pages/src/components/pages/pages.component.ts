@@ -75,7 +75,7 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
   create(formValue) {
     this.service
-      .createByInput(formValue)
+      .create(formValue)
       .pipe(take(1))
       .subscribe((_) => {
         this.createModalVisible = false;
@@ -85,7 +85,7 @@ export class PagesComponent implements OnInit, OnDestroy {
 
   onEdit(id: string) {
     this.service
-      .getById(id)
+      .get(id)
       .pipe(take(1))
       .subscribe((selected) => {
         this.editSelectedRecord = selected;
@@ -100,7 +100,7 @@ export class PagesComponent implements OnInit, OnDestroy {
       ...formValue,
     };
     this.service
-      .updateByIdAndInput(this.editSelectedRecord.id, request)
+      .update(this.editSelectedRecord.id, request)
       .pipe(take(1))
       .subscribe((_) => {
         this.editModalVisible = false;
@@ -113,7 +113,7 @@ export class PagesComponent implements OnInit, OnDestroy {
       .warn('CmsKit::PageDeletionConfirmationMessage', 'CmsKit::AreYouSure')
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
-        switchMap((_) => this.service.deleteById(id)),
+        switchMap((_) => this.service.delete(id)),
         take(1)
       )
       .subscribe((_) => {

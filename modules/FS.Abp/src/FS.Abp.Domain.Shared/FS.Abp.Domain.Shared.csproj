@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Json\src\FS.Abp.Json\FS.Abp.Json.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="DataModel\Abp.Diagram1.view">
       <AutoGen>True</AutoGen>
       <DependentUpon>Abp.efml</DependentUpon>

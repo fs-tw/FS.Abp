@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.Blogs
 {
     public partial interface IPostRouteCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.Blogs.Dtos.PostRouteWithDetailsDto, FS.CmsKitManagement.Blogs.Dtos.PostRoutePrimaryKeyDto, FS.CmsKitManagement.Blogs.Dtos.PostRouteGetListDto, FS.CmsKitManagement.Blogs.Dtos.PostRouteCreateDto, FS.CmsKitManagement.Blogs.Dtos.PostRouteUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.Blogs.Dtos.PostRouteWithDetailsDto, Guid, FS.CmsKitManagement.Blogs.Dtos.PostRouteGetListDto, FS.CmsKitManagement.Blogs.Dtos.PostRouteCreateDto, FS.CmsKitManagement.Blogs.Dtos.PostRouteUpdateDto>
     {
 
     }

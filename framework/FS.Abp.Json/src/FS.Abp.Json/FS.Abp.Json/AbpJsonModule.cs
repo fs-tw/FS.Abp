@@ -5,6 +5,7 @@ using Volo.Abp.Modularity;
 
 namespace FS.Abp.Json
 {
+    [System.Obsolete("remove")]
     [DependsOn(
         typeof(Volo.Abp.Json.AbpJsonModule)
         )]

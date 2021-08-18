@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class EntityTagAdminService {
   apiName = 'CmsKitAdmin';
 
-  addTagToEntityByInput = (input: EntityTagCreateDto) =>
+  addTagToEntity = (input: EntityTagCreateDto) =>
     this.restService.request<any, void>({
       method: 'POST',
       url: '/api/cms-kit-admin/entity-tags',
@@ -16,7 +16,7 @@ export class EntityTagAdminService {
     },
     { apiName: this.apiName });
 
-  removeTagFromEntityByInput = (input: EntityTagRemoveDto) =>
+  removeTagFromEntity = (input: EntityTagRemoveDto) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: '/api/cms-kit-admin/entity-tags',
@@ -24,7 +24,7 @@ export class EntityTagAdminService {
     },
     { apiName: this.apiName });
 
-  setEntityTagsByInput = (input: EntityTagSetDto) =>
+  setEntityTags = (input: EntityTagSetDto) =>
     this.restService.request<any, void>({
       method: 'PUT',
       url: '/api/cms-kit-admin/entity-tags',

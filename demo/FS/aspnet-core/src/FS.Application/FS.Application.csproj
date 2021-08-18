@@ -20,6 +20,12 @@
     <Compile Remove="_Generated\FS\Customers\EnterpriseCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\PersonCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS\PersonCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\DemoAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\DemoSettingAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Dtos\DemoDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Dtos\DemoDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Dtos\DemoSettingDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Dtos\DemoSettingDtoValidator.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +72,18 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\Dtos\PersonDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\DemoSettingsAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\Dtos\DemoSettingsDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\Dtos\DemoSettingsDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

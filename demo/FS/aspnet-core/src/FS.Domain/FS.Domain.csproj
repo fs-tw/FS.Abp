@@ -8,12 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS\Customers\CustomersStore.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Emplyee.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\Enterprise.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IEmplyeeRepository.Generated.cs" />
     <Compile Remove="_Generated\FS\Customers\IEnterpriseRepository.Generated.cs" />
     <Compile Remove="_Generated\FS\IPersonRepository.Generated.cs" />
     <Compile Remove="_Generated\FS\Person.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Demo.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Demo.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\DemoSetting.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\DemoSetting.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,15 +51,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS\Customers\CustomersStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Customers</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS\Customers\ICompanyRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS\Customers\ICustomerRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Customers\ICustomersStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
     </Compile>
@@ -65,6 +70,14 @@
     <Compile Update="_Generated\FS\Customers\Person.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\DemoSettings.AbpSetting.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\DemoSettings.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings</DependentUpon>
     </Compile>
   </ItemGroup>
 

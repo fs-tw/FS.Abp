@@ -9,14 +9,14 @@ import { Injectable } from '@angular/core';
 export class BlogPostPublicService {
   apiName = 'CmsKitAdmin';
 
-  getByBlogSlugAndBlogPostSlug = (blogSlug: string, blogPostSlug: string) =>
+  get = (blogSlug: string, blogPostSlug: string) =>
     this.restService.request<any, BlogPostPublicDto>({
       method: 'GET',
       url: `/api/cms-kit-public/blog-posts/${blogSlug}/${blogPostSlug}`,
     },
     { apiName: this.apiName });
 
-  getListByBlogSlugAndInput = (blogSlug: string, input: PagedAndSortedResultRequestDto) =>
+  getList = (blogSlug: string, input: PagedAndSortedResultRequestDto) =>
     this.restService.request<any, PagedResultDto<BlogPostPublicDto>>({
       method: 'GET',
       url: `/api/cms-kit-public/blog-posts/${blogSlug}`,

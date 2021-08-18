@@ -5,13 +5,11 @@ import { Fs } from '@fs-tw/proxy/cms-kit-management';
   providedIn: 'root',
 })
 export class BlogsApiService {
-  public Blogs: Fs.CmsKitManagement.Blogs.BlogsApiService;
   public BlogPostsQuerys: Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService;
   public BlogPostsCommands: Fs.CmsKitManagement.Blogs.BlogPostsCommandsApiService;
   public BlogsQuerys: Fs.CmsKitManagement.Blogs.BlogsQuerysApiService;
 
   constructor(private injector: Injector) {
-    this.Blogs = injector.get(Fs.CmsKitManagement.Blogs.BlogsApiService);
     this.BlogPostsQuerys = injector.get(
       Fs.CmsKitManagement.Blogs.BlogPostsQuerysApiService
     );

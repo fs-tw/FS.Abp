@@ -9,14 +9,14 @@ import type { BlogFeatureDto } from '../../blogs/models';
 export class BlogFeatureAdminService {
   apiName = 'CmsKitAdmin';
 
-  getListByBlogId = (blogId: string) =>
+  getList = (blogId: string) =>
     this.restService.request<any, BlogFeatureDto[]>({
       method: 'GET',
       url: `/api/cms-kit-admin/blogs/${blogId}/features`,
     },
     { apiName: this.apiName });
 
-  setByBlogIdAndDto = (blogId: string, dto: BlogFeatureInputDto) =>
+  set = (blogId: string, dto: BlogFeatureInputDto) =>
     this.restService.request<any, void>({
       method: 'PUT',
       url: `/api/cms-kit-admin/blogs/${blogId}/features`,

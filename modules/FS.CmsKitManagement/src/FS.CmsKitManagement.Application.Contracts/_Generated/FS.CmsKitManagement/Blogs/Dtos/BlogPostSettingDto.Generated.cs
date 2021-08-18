@@ -11,15 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Blogs.Dtos
 {
-    public partial class MetaData
-    {
-        public BlogPostSettingGetDto BlogPostSettingGetDto => new BlogPostSettingGetDto();
-        public BlogPostSettingDto BlogPostSettingDto => new BlogPostSettingDto();
-    }
 
     public partial class BlogPostSettingGetDto
     {

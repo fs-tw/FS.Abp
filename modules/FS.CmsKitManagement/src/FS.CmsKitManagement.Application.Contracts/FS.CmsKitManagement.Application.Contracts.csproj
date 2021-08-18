@@ -6,11 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRoutesApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesApi.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.Application.Contracts" Version="$(AbpVersion)" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR\FS.Abp.MediatR.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
+    <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />-->
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -35,10 +41,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
@@ -59,10 +61,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRoutesApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionDefinitionProviders.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
@@ -78,10 +76,6 @@
     <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>

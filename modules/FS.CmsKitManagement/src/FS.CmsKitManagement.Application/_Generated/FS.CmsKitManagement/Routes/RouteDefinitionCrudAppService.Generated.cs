@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.Routes
 {
     public partial class RouteDefinitionCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.Routes.RouteDefinition, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionWithDetailsDto, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionPrimaryKeyDto, Guid, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionGetListDto, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionCreateDto, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionUpdateDto>,
+        Volo.Abp.Application.Services.CrudAppService<FS.CmsKitManagement.Routes.RouteDefinition, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionWithDetailsDto, Guid, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionGetListDto, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionCreateDto, FS.CmsKitManagement.Routes.Dtos.RouteDefinitionUpdateDto>,
         IRouteDefinitionCrudAppService
     {
         private readonly IRouteDefinitionRepository _repository;

@@ -11,23 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Routes.Dtos
 {
-    public partial class MetaData
-    {
-        public RoutePrimaryKeyDto RoutePrimaryKeyDto => new RoutePrimaryKeyDto();
-        public RouteDto RouteDto => new RouteDto();
-        public RouteCreateDto RouteCreateDto => new RouteCreateDto();
-        public RouteUpdateDto RouteUpdateDto => new RouteUpdateDto();
-        public RouteGetListDto RouteGetListDto => new RouteGetListDto();
-        public RouteWithDetailsDto RouteWithDetailsDto => new RouteWithDetailsDto();
-    }
-
-    public partial class RoutePrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class RouteDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -95,7 +81,7 @@ namespace FS.CmsKitManagement.Routes.Dtos
 
     }
 
-    public partial class RouteGetListDto : SearchResultRequestDto
+    public partial class RouteGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.Vocabularies
 {
     public partial class VocabularyDefinitionCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.Vocabularies.VocabularyDefinition, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionPrimaryKeyDto, Guid, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionCreateDto, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionUpdateDto>,
+        Volo.Abp.Application.Services.CrudAppService<FS.CmsKitManagement.Vocabularies.VocabularyDefinition, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionWithDetailsDto, Guid, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionGetListDto, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionCreateDto, FS.CmsKitManagement.Vocabularies.Dtos.VocabularyDefinitionUpdateDto>,
         IVocabularyDefinitionCrudAppService
     {
         private readonly IVocabularyDefinitionRepository _repository;

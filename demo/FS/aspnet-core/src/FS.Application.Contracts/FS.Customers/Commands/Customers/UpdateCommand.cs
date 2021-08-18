@@ -7,7 +7,7 @@ using System.Text;
 
 namespace FS.Customers.Commands.Customers
 {
-    public record UpdateCommand(CustomerPrimaryKeyDto id = null, CustomerUpdateDto input = null) :
+    public record UpdateCommand(Guid? id = null, CustomerUpdateDto input = null) :
         ICommand,
         MediatR.IRequest<CustomerWithDetailsDto>
     {

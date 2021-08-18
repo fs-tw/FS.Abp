@@ -95,7 +95,7 @@ export class BlogsComponent implements OnInit {
   }
   create(formValue) {
     this.service
-      .createByInput(formValue)
+      .create(formValue)
       .pipe(take(1))
       .subscribe((_) => {
         this.createModalVisible = false;
@@ -105,7 +105,7 @@ export class BlogsComponent implements OnInit {
 
   onEdit(id: string) {
     this.service
-      .getById(id)
+      .get(id)
       .pipe(take(1))
       .pipe(
         tap((selected) => {
@@ -116,7 +116,7 @@ export class BlogsComponent implements OnInit {
       )
       .pipe(
         mergeMap((selected) =>
-          this.blogFeatureService.getListByBlogId(selected.id).pipe(
+          this.blogFeatureService.getList(selected.id).pipe(
             tap((blogFeatures) => {
               this.editBlogFeatures = blogFeatures;
               this.editBlogFeaturesForm = new FormGroup({});
@@ -142,13 +142,13 @@ export class BlogsComponent implements OnInit {
       formValue.blogFeatures;
 
     this.service
-      .updateByIdAndInput(this.editSelectedRecord.id, request)
+      .update(this.editSelectedRecord.id, request)
       .pipe(
         mergeMap((x) => {
           if (blogFeatures.length === 0) return of(null);
           return forkJoin(
             blogFeatures.map((a) =>
-              this.blogFeatureService.setByBlogIdAndDto(x.id, a)
+              this.blogFeatureService.set(x.id, a)
             )
           );
         })
@@ -167,7 +167,7 @@ export class BlogsComponent implements OnInit {
       })
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
-        switchMap((_) => this.service.deleteById(id)),
+        switchMap((_) => this.service.delete(id)),
         take(1)
       )
       .subscribe((_) => {

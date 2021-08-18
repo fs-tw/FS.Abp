@@ -11,9 +11,9 @@ namespace FS.CmsKitManagement.Routes
 {
     public partial class RouteCrudAppService
     {
-        public override async Task DeleteAsync(RoutePrimaryKeyDto id)
+        public override async Task DeleteAsync(Guid id)
         {
-            await this.deleteRouteRelation(id.Id);
+            await this.deleteRouteRelation(id);
             await base.DeleteAsync(id);
         }
 

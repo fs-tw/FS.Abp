@@ -9,7 +9,7 @@ import { filter, map } from 'rxjs/operators';
   ]
 })
 export class VocabulariesComponent implements OnInit {
-  VocabulariesAdminService: Fs.CmsKitManagement.Vocabularies.VocabulariesApiService;
+  //VocabulariesAdminService: Fs.CmsKitManagement.Vocabularies.VocabulariesApiService;
   public vocabularyDefinitionDatas$: Observable<any>;
   public vocabularyDatas$:Observable<any>;
   public totalCount$: Observable<number>;
@@ -18,22 +18,22 @@ export class VocabulariesComponent implements OnInit {
     private readonly injector: Injector,
   ) {
     
-    this.VocabulariesAdminService = injector.get(
-      Fs.CmsKitManagement.Vocabularies.VocabulariesApiService
-    );
+    // this.VocabulariesAdminService = injector.get(
+    //   Fs.CmsKitManagement.Vocabularies.VocabulariesApiService
+    // );
    }
 
   ngOnInit(): void {
-    this.vocabularyDefinitionDatas$ = this.VocabulariesAdminService.getListByVocabularyDefinitionGetList({} as any).pipe(
-      map((json) => {
-        return json.items.map((i) => {
-          return {
-            key: i.id,
-            displayName: i.displayName,
-          };
-        });
-      })
-    );
+    // this.vocabularyDefinitionDatas$ = this.VocabulariesAdminService.getListByVocabularyDefinitionGetList({} as any).pipe(
+    //   map((json) => {
+    //     return json.items.map((i) => {
+    //       return {
+    //         key: i.id,
+    //         displayName: i.displayName,
+    //       };
+    //     });
+    //   })
+    // );
 
     /* this.vocabularyTotalData$=this.VocabulariesAdminService.getListByVocabularyGetList({maxResultCount:999}as any).pipe(
       map((json)=>{
@@ -56,23 +56,23 @@ export class VocabulariesComponent implements OnInit {
   
   showDetail(Definition: any) {
     if (Definition != null) {
-      this.vocabularyDatas$ =this.VocabulariesAdminService.getListByVocabularyGetList({maxResultCount: 999} as any).pipe(
-        map((json)=>{
-          return {
-            totalCount: json.totalCount,
-            items: json.items.map((i)=>{
-              return {
-                key:i.id,
-                displayName:i.displayName,
-                definition:i.vocabularyDefinition.id,
-                no:i.no,
-              };
-            }).filter(y => {
-              return y.definition == Definition.key
-            })
-          }
-        }),
-      )
+      // this.vocabularyDatas$ =this.VocabulariesAdminService.getListByVocabularyGetList({maxResultCount: 999} as any).pipe(
+      //   map((json)=>{
+      //     return {
+      //       totalCount: json.totalCount,
+      //       items: json.items.map((i)=>{
+      //         return {
+      //           key:i.id,
+      //           displayName:i.displayName,
+      //           definition:i.vocabularyDefinition.id,
+      //           no:i.no,
+      //         };
+      //       }).filter(y => {
+      //         return y.definition == Definition.key
+      //       })
+      //     }
+      //   }),
+      // )
       /* this.vocabularyDatas$ =this.vocabularyTotalData$.pipe(
         map((list)=>{
           return {
