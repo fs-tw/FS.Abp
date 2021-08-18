@@ -11,20 +11,14 @@ using System.Reflection;
 using AutoMapper;
 using Volo.Abp.AutoMapper;
 
-namespace FS.Customers.Dtos
+namespace FS.Settings.Dtos
 {
-    public partial class CompanyAutoMapperProfile : Profile
+    public partial class DemoSettingsAutoMapperProfile : Profile
     {
-        public CompanyAutoMapperProfile()
+        public DemoSettingsAutoMapperProfile()
         {
-            CreateMap<FS.Customers.Company, CompanyDto>()
+            CreateMap<FS.Settings.DemoSettings, DemoSettingsDto>()
             .ReverseMap();
-        
-            CreateMap<CompanyCreateDto, FS.Customers.Company>();
-        
-            CreateMap<CompanyUpdateDto, FS.Customers.Company>();
-        
-            CreateMap<FS.Customers.Company, CompanyWithDetailsDto>();
         
             CustomizeConfiguration();
         }

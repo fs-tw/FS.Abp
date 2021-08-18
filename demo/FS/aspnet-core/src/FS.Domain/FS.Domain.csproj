@@ -15,6 +15,10 @@
     <Compile Remove="_Generated\FS\Customers\IEnterpriseRepository.Generated.cs" />
     <Compile Remove="_Generated\FS\IPersonRepository.Generated.cs" />
     <Compile Remove="_Generated\FS\Person.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Demo.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\Demo.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\DemoSetting.AbpSetting.Generated.cs" />
+    <Compile Remove="_Generated\FS\Settings\DemoSetting.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +70,14 @@
     <Compile Update="_Generated\FS\Customers\Person.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Customers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\DemoSettings.AbpSetting.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\DemoSettings.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings</DependentUpon>
     </Compile>
   </ItemGroup>
 

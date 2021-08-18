@@ -18,17 +18,35 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.Customers
+namespace FS.Settings
 {
-    public partial class Company : Customer
+    public partial class DemoSettings 
     {
 
-        public Company()
+        public DemoSettings()
         {
             OnCreated();
         }
 
-        public virtual string Address
+        public virtual string Name
+        {
+            get;
+            set;
+        }
+
+        public virtual string Title
+        {
+            get;
+            set;
+        }
+
+        public virtual System.DateTime EndTime
+        {
+            get;
+            set;
+        }
+
+        public virtual Status Status
         {
             get;
             set;
