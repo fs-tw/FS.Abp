@@ -21,10 +21,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\FS\*.json" />
-    <Compile Remove="_Generated\**" />
     <Content Remove="Localization\FS\*.json" />
-    <EmbeddedResource Remove="_Generated\**" />
-    <None Remove="_Generated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,6 +67,10 @@
     <Compile Update="DataModel\FS.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>FS.efml</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS\Settings\Status.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings</DependentUpon>
     </Compile>
   </ItemGroup>
 

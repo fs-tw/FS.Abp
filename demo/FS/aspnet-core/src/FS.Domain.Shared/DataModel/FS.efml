@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.EntityFrameworkCore" namespace="FS" p1:name="FSDbContext" p1:Guid="092903ab-5c67-4707-ae7a-bdf62d5d05a1" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.EntityFrameworkCore" namespace="FS" p1:name="FSDbContext" p1:Guid="092903ab-5c67-4707-ae7a-bdf62d5d05a1" p1:VersionTag="4.4.0" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="$EnumTypes">
+    <EnumType Name="Status" class="FS.Settings.Status" p1:Guid="1dec479c-9580-494d-9d6b-801f06a31bfc" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Settings</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <Member Name="A" p1:Guid="7b4198a2-880b-4804-a2a3-6996929ef10d" />
+      <Member Name="B" p1:Guid="f6b0a904-0e5f-4e5e-9941-f65a894dd5c0" />
+    </EnumType>
+  </class>
   <class name="$ComplexTypes">
     <component class="FS.CreationAuditedEntity" IsExternal="true" p1:Guid="d9cb6177-0164-4e56-9fec-d32e3c615ec3" p1:GenerateDTO="False">
       <p1:Attributes>
@@ -213,6 +229,38 @@
         <column name="" />
       </property>
       <property name="Address" type="String" p1:ValidateRequired="true" p1:Guid="c015b61a-3728-47c9-a5fc-3755b73e8a59">
+        <column name="" />
+      </property>
+    </component>
+    <component class="FS.Settings.DemoSettings" p1:Guid="7b060480-732a-4c46-8297-9a169b5e992d" p1:ShapeColor="-8355648" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Settings</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>Settings</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="eeea2296-a974-49ca-b966-e9d50d669e25">
+        <column name="" />
+      </property>
+      <property name="Title" type="String" p1:ValidateRequired="true" p1:Guid="c73f2f2e-9f50-4848-b045-85a0615c7961">
+        <column name="" />
+      </property>
+      <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="db0efef8-5fb5-4eae-889d-02c22ceef44b">
+        <column name="" />
+      </property>
+      <property name="Status" type="FS.Settings.Status" p1:ValidateRequired="true" p1:Guid="a5c677f9-8fd1-46d6-aca5-4bf534c94e9c">
         <column name="" />
       </property>
     </component>
