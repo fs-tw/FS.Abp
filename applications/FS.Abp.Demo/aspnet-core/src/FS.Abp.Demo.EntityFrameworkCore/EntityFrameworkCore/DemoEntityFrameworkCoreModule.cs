@@ -25,6 +25,7 @@ namespace FS.Abp.Demo.EntityFrameworkCore
         typeof(AbpTenantManagementEntityFrameworkCoreModule),
         typeof(AbpFeatureManagementEntityFrameworkCoreModule)
         )]
+    [DependsOn(typeof(FS.CmsKitManagement.EntityFrameworkCore.CmsKitManagementEntityFrameworkCoreModule))]
     public class DemoEntityFrameworkCoreModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

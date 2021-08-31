@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.HttpApi\FS.CmsKitManagement.HttpApi.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Application.Contracts\FS.Abp.Demo.Application.Contracts.csproj" />
   </ItemGroup>
 

@@ -12,6 +12,7 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.Abp.Demo.EntityFrameworkCore
 {
@@ -72,7 +73,7 @@ namespace FS.Abp.Demo.EntityFrameworkCore
             builder.ConfigureIdentityServer();
             builder.ConfigureFeatureManagement();
             builder.ConfigureTenantManagement();
-
+            builder.ConfigureCmsKitManagement();
             /* Configure your own tables/entities inside here */
 
             //builder.Entity<YourEntity>(b =>

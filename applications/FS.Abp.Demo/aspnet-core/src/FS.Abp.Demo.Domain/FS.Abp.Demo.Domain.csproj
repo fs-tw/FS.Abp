@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Domain.Shared\FS.Abp.Demo.Domain.Shared.csproj" />
   </ItemGroup>
 

@@ -29,6 +29,7 @@ namespace FS.Abp.Demo
         typeof(AbpTenantManagementDomainModule),
         typeof(AbpEmailingModule)
     )]
+    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementDomainModule))]
     public class DemoDomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

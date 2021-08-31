@@ -28,4 +28,8 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
