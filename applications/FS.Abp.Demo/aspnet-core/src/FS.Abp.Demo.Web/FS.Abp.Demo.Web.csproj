@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Web\FS.CmsKitManagement.Web.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Application\FS.Abp.Demo.Application.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.HttpApi\FS.Abp.Demo.HttpApi.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.EntityFrameworkCore\FS.Abp.Demo.EntityFrameworkCore.csproj" />

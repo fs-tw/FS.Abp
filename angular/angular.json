@@ -1,36 +1,26 @@
 {
   "version": 1,
   "projects": {
-    "alain-app": {
+    "fs": {
       "projectType": "application",
-      "root": "apps/alain-app",
-      "sourceRoot": "apps/alain-app/src",
-      "prefix": "fs",
+      "root": "apps/fs",
+      "sourceRoot": "apps/fs/src",
+      "prefix": "fs-tw",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
-            "outputPath": "dist/apps/alain-app",
-            "index": "apps/alain-app/src/index.html",
-            "main": "apps/alain-app/src/main.ts",
-            "polyfills": "apps/alain-app/src/polyfills.ts",
-            "tsConfig": "apps/alain-app/tsconfig.app.json",
-            "aot": true,
+            "outputPath": "dist/apps/fs",
+            "index": "apps/fs/src/index.html",
+            "main": "apps/fs/src/main.ts",
+            "polyfills": "apps/fs/src/polyfills.ts",
+            "tsConfig": "apps/fs/tsconfig.app.json",
             "allowedCommonJsDependencies": [
-              "@ant-design/colors",
-              "@antv/adjust",
-              "@antv/attr",
-              "@antv/component",
-              "@antv/g-base",
-              "@antv/g-canvas",
-              "@antv/g-math",
-              "@antv/g-svg",
-              "@antv/path-util",
-              "@antv/util",
-              "file-saver",
-              "hammerjs",
               "ajv",
-              "date-fns"
+              "ajv-formats"
             ],
             "assets": [
               {
@@ -38,10 +28,20 @@
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               },
-              "apps/alain-app/src/favicon.ico",
-              "apps/alain-app/src/assets"
+              "apps/fs/src/favicon.ico",
+              "apps/fs/src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-all.min"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-v4-shims.min"
+              },
               {
                 "input": "node_modules/@swimlane/ngx-datatable/index.css",
                 "inject": true,
@@ -58,16 +58,6 @@
                 "bundleName": "ngx-datatable-material"
               },
               {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-all.min"
-              },
-              {
-                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
-                "inject": true,
-                "bundleName": "fontawesome-v4-shims.min"
-              },
-              {
                 "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
                 "inject": false,
                 "bundleName": "bootstrap-rtl.min"
@@ -77,76 +67,116 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },
-              "apps/alain-app/src/styles.less",
-              "node_modules/quill/dist/quill.snow.css"
+              "apps/fs/src/styles.less"
             ],
-            "scripts": [
-              "node_modules/quill/dist/quill.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/alain-app/src/environments/environment.ts",
-                  "with": "apps/alain-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
-              ]
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/fs/src/environments/environment.ts",
+                  "with": "apps/fs/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "alain-app:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "alain-app:build:production"
+              "browserTarget": "fs:build:production"
+            },
+            "development": {
+              "browserTarget": "fs:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "alain-app:build"
+            "browserTarget": "fs:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/alain-app/src/**/*.ts",
-              "apps/alain-app/src/**/*.html"
+              "apps/fs/src/**/*.ts",
+              "apps/fs/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/apps/alain-app"
+            "coverage/apps/fs"
           ],
           "options": {
-            "jestConfig": "apps/alain-app/jest.config.js",
+            "jestConfig": "apps/fs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "theme-alain": {
+      "projectType": "library",
+      "root": "libs/theme-alain",
+      "sourceRoot": "libs/theme-alain/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/theme-alain/tsconfig.lib.json",
+            "project": "libs/theme-alain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-alain/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-alain/src/**/*.ts",
+              "libs/theme-alain/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/theme-alain"
+          ],
+          "options": {
+            "jestConfig": "libs/theme-alain/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -270,7 +300,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
   },
   "schematics": {
     "@nrwl/angular": {
@@ -299,5 +330,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "alain-app"
+  "defaultProject": "fs"
 }
