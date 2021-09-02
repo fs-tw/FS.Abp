@@ -38,6 +38,8 @@ using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
 using Volo.CmsKit.Web;
+using Volo.Abp.BlobStoring;
+using Volo.Abp.BlobStoring.FileSystem;
 
 namespace FS.Abp.Demo.Web
 {
@@ -56,6 +58,7 @@ namespace FS.Abp.Demo.Web
         typeof(AbpSwashbuckleModule)
         )]
     [DependsOn(typeof(FS.CmsKitManagement.Web.CmsKitManagementWebModule))]
+    [DependsOn(typeof(AbpBlobStoringFileSystemModule))]
     public class DemoWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -87,6 +90,7 @@ namespace FS.Abp.Demo.Web
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
             ConfigureSwaggerServices(context.Services);
+            ConfigureBlog();
         }
 
         private void ConfigureUrls(IConfiguration configuration)
@@ -197,6 +201,20 @@ namespace FS.Abp.Demo.Web
             );
         }
 
+        private void ConfigureBlog()
+        {
+            Configure<AbpBlobStoringOptions>(options =>
+            {
+                options.Containers.ConfigureDefault(container =>
+                {
+                    container.UseFileSystem(fileSystem =>
+                    {
+                        fileSystem.BasePath = "C:\\BlogPostCoverImage";
+                    });
+                });
+            });
+        }
+
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             var app = context.GetApplicationBuilder();
@@ -237,5 +255,7 @@ namespace FS.Abp.Demo.Web
             app.UseAbpSerilogEnrichers();
             app.UseConfiguredEndpoints();
         }
+
+
     }
 }

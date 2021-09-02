@@ -50,6 +50,9 @@
     <PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="4.4.0" />
     <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="4.4.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.Web" Version="4.4.0" />
+    <PackageReference Include="Volo.Abp.BlobStoring.FileSystem" Version="$(AbpVersion)" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
