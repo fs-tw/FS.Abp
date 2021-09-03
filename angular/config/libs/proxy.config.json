@@ -50,5 +50,11 @@
 
   },
   "tsconfig": {
+    "@fs-tw/proxy": [
+      "libs/proxy/src/index.ts"
+    ],
+    "@fs-tw/proxy/*": [
+      "libs/proxy/*/src/index.ts"
+    ]
   }  
 }
