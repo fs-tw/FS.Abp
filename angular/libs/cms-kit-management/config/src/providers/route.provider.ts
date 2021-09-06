@@ -10,7 +10,7 @@ export const CMS_KIT_MANAGEMENT_ROUTE_PROVIDERS = [
 
 const blogsModules=[
   {
-    path: '/cms/blogs',
+    path: '/cms-kit-management/blogs',
     name: eCmsKitManagementRouteNames.Blogs,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
@@ -18,7 +18,7 @@ const blogsModules=[
     order: 1
   },
   {
-    path: '/cms/blogs/blog',
+    path: '/cms-kit-management/blogs/blog',
     name: eCmsKitManagementRouteNames.Blogs+'.blog',
     parentName: eCmsKitManagementRouteNames.Blogs,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
@@ -26,7 +26,7 @@ const blogsModules=[
     order: 1
   },
   {
-    path: '/cms/blogs/blog-posts',
+    path: '/cms-kit-management/blogs/blog-posts',
     name: eCmsKitManagementRouteNames.Blogs+'.blog-posts',
     parentName: eCmsKitManagementRouteNames.Blogs,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
@@ -37,7 +37,7 @@ const blogsModules=[
 
 const commentsModels=[
   {
-    path: '/cms/comments',
+    path: '/cms-kit-management/comments',
     name: eCmsKitManagementRouteNames.Comments,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Comments,
@@ -45,7 +45,7 @@ const commentsModels=[
     order: 2
   },
   {
-    path: '/cms/comments/comment',
+    path: '/cms-kit-management/comments/comment',
     name: eCmsKitManagementRouteNames.Comments+'.comment',
     parentName: eCmsKitManagementRouteNames.Comments,
     requiredPolicy: eCmsManagementPolicyNames.Comments,
@@ -56,7 +56,7 @@ const commentsModels=[
 ];
 const pagesModels=[
   {
-    path: '/cms/pages',
+    path: '/cms-kit-management/pages',
     name: eCmsKitManagementRouteNames.Pages,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Pages,
@@ -64,7 +64,7 @@ const pagesModels=[
     order: 3
   },
   {
-    path: '/cms/pages/page',
+    path: '/cms-kit-management/pages/page',
     name: eCmsKitManagementRouteNames.Pages+".page",
     parentName: eCmsKitManagementRouteNames.Pages,
     requiredPolicy: eCmsManagementPolicyNames.Pages,
@@ -74,7 +74,7 @@ const pagesModels=[
 ];
 const tagsModels=[
   {
-    path: '/cms/tags',
+    path: '/cms-kit-management/tags',
     name: eCmsKitManagementRouteNames.Tags,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Tags,
@@ -82,7 +82,7 @@ const tagsModels=[
     order: 4
   },
   {
-    path: '/cms/tags/tag',
+    path: '/cms-kit-management/tags/tag',
     name: eCmsKitManagementRouteNames.Tags+'.tag',
     parentName: eCmsKitManagementRouteNames.Tags,
     requiredPolicy: eCmsManagementPolicyNames.Tags,
@@ -93,7 +93,7 @@ const tagsModels=[
 
 const vocabulariesModels=[
   {
-    path: '/cms/vocabularies',
+    path: '/cms-kit-management/vocabularies',
     name: eCmsKitManagementRouteNames.Vocabularies,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     //requiredPolicy: eCmsManagementPolicyNames.Comments,
@@ -101,7 +101,7 @@ const vocabulariesModels=[
     order: 6
   },
   {
-    path: '/cms/vocabularies/vocabulary',
+    path: '/cms-kit-management/vocabularies/vocabulary',
     name: eCmsKitManagementRouteNames.Vocabularies+'vocabulary',
     parentName: eCmsKitManagementRouteNames.Vocabularies,
     //requiredPolicy: eCmsManagementPolicyNames.Comments,
@@ -114,7 +114,7 @@ export function configureRoutes(routes: RoutesService) {
   return () => {
     routes.add([
       {
-        path: '/cms',
+        path: '/cms-kit-management',
         name: eCmsKitManagementRouteNames.CmsKitManagement,
         parentName: eThemeSharedRouteNames.Administration,
         requiredPolicy: eCmsManagementPolicyNames.CmsKitManagement,

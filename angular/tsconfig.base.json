@@ -18,11 +18,29 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fs-tw/theme-alain": [
+        "libs/theme-alain/src/index.ts"
+      ],
+      "@fs-tw/theme-alain/*": [
+        "libs/theme-alain/*/src/index.ts"
+      ],
       "@fs-tw/cms-kit-management": [
         "libs/cms-kit-management/src/index.ts"
       ],
       "@fs-tw/cms-kit-management/*": [
         "libs/cms-kit-management/*/src/index.ts"
+      ],
+      "@fs-tw/components": [
+        "libs/components/src/index.ts"
+      ],
+      "@fs-tw/components/*": [
+        "libs/components/*/src/index.ts"
+      ],
+      "@fs-tw/proxy": [
+        "libs/proxy/src/index.ts"
+      ],
+      "@fs-tw/proxy/*": [
+        "libs/proxy/*/src/index.ts"
       ]
     }
   },

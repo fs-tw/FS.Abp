@@ -3,7 +3,8 @@
   "projects": {
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
   },
   "schematics": {
     "@nrwl/angular": {
@@ -32,5 +33,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "alain-app"
+  "defaultProject": "fs"
 }
