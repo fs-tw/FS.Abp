@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.CodingManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.CodingManagement\Cods\Dtos\CodeDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\Cods\ICodeCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\Dtos\CodingDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\ICodingCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\CodsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\CodsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\Dtos\CodingDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\ICodingCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\Dtos\SerialNumberDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumberCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

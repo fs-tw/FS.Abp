@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>FS.CodingManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.CodingManagement\Cods\Code.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\Cods\EfCoreCodeTreeRepository.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\EntityFrameworkCore\CodingManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CodingManagementDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\CodingManagementModelBuilderConfigurationOptions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\EntityFrameworkCore\ICodingManagementDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\Coding.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\EfCoreCodingTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\Coding.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\CodsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\CodsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Cods\EfCoreCodingTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cods</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EfCoreSerialNumberRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
