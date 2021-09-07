@@ -1,15 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using Volo.Abp;
-using Volo.Abp.Data;
-using Volo.Abp.Reflection;
 
 namespace Volo.Abp.Data
 {
-    public static class FSHasExtraPropertiesExtensions
+    public static class IHasExtraPropertiesExtension
     {
         public static TProperty GetExtraProperty<TProperty>(this IHasExtraProperties source, string name)
             where TProperty : class
