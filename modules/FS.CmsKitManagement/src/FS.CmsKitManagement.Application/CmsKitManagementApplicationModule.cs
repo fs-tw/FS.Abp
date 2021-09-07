@@ -12,7 +12,6 @@ namespace FS.CmsKitManagement
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    //[DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitApplicationModule))]
     public class CmsKitManagementApplicationModule : AbpModule
