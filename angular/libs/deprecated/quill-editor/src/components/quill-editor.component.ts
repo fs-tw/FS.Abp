@@ -5,7 +5,7 @@ import {
 import { RestService, EnvironmentService } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
 @Component({
   selector: 'fs-quill-editor',

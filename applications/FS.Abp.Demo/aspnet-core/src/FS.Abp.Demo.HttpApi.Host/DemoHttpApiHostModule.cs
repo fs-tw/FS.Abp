@@ -112,6 +112,13 @@ namespace FS.Abp.Demo
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(DemoApplicationModule).Assembly);
+                options.ConventionalControllers.Create(
+                    typeof(FS.CodingManagement.CodingManagementApplicationModule).Assembly,
+                    options =>
+                    {
+                        options.RemoteServiceName = "coding-management";
+                        options.RootPath = "coding-management";
+                    });
             });
         }
 
@@ -141,7 +148,7 @@ namespace FS.Abp.Demo
                 },
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "Demo API", Version = "v1"});
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
@@ -175,21 +182,21 @@ namespace FS.Abp.Demo
         {
             context.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy( builder =>
-                {
-                    builder
-                        .WithOrigins(
-                            configuration["App:CorsOrigins"]
-                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => o.RemovePostFix("/"))
-                                .ToArray()
-                        )
-                        .WithAbpExposedHeaders()
-                        .SetIsOriginAllowedToAllowWildcardSubdomains()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials();
-                });
+                options.AddDefaultPolicy(builder =>
+               {
+                   builder
+                       .WithOrigins(
+                           configuration["App:CorsOrigins"]
+                               .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                               .Select(o => o.RemovePostFix("/"))
+                               .ToArray()
+                       )
+                       .WithAbpExposedHeaders()
+                       .SetIsOriginAllowedToAllowWildcardSubdomains()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials();
+               });
             });
         }
 

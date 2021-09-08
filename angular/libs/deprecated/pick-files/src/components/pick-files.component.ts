@@ -16,7 +16,7 @@ import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { saveAs } from 'file-saver';
 import * as _ from 'lodash';
 
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { MediaDescriptorService } from '../services/media-descriptor.service';
 
 @Component({
