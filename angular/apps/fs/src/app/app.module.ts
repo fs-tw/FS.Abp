@@ -5,6 +5,7 @@ import { IdentityConfigModule } from '@abp/ng.identity/config';
 import { SettingManagementConfigModule } from '@abp/ng.setting-management/config';
 import { TenantManagementConfigModule } from '@abp/ng.tenant-management/config';
 import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
+import { CodingManagementConfigModule} from '@fs-tw/coding-management/config';
 import { ThemeBasicModule } from '@abp/ng.theme.basic';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ import { QuillModule } from 'ngx-quill';
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
     CmsKitManagementConfigModule.forRoot(),
+    CodingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeAlainModule.forRoot(),
     QuillModule.forRoot()

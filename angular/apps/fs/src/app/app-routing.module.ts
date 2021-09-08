@@ -30,6 +30,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@fs-tw/cms-kit-management/admin').then(m => m.CmsKitManagementAdminModule.forLazy()),
   },
+  {
+    path: 'coding-management',
+    loadChildren: () =>
+      import('@fs-tw/coding-management/admin').then(m => m.CodingManagementAdminModule.forLazy()),
+  },
 ];
 
 @NgModule({
