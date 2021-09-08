@@ -133,6 +133,25 @@ const codesModels = [
   },
 ];
 
+const serialNumbersModels = [
+  {
+    path: '/coding-management/serial-numbers',
+    name: eCodingManagementRouteNames.SerialNumbers,
+    parentName: eCodingManagementRouteNames.CodingManagement,
+    //requiredPolicy: eCodingManagementPolicyNames.Coding,
+    iconClass: 'fa fa-comments',
+    order: 1,
+  },
+  {
+    path: '/coding-management/serial-numbers/serial-number',
+    name: eCodingManagementRouteNames.SerialNumbers + '.serial-number',
+    parentName: eCodingManagementRouteNames.SerialNumbers,
+    //requiredPolicy: eCmsManagementPolicyNames.Blogs,
+    iconClass: 'fa fa-blog',
+    order: 1,
+  },
+];
+
 export function configureRoutes(routes: RoutesService) {
   return () => {
     routes.add([
@@ -146,7 +165,7 @@ export function configureRoutes(routes: RoutesService) {
         order: -1,
       },
       ...codesModels,
-      // ...commentsModels,
+      ...serialNumbersModels,
       // ...pagesModels,
       // ...tagsModels,
       // ...vocabulariesModels

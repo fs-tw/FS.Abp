@@ -20,7 +20,7 @@ export const environment = {
   apis: {
     default: {
       url: 'https://localhost:44323',
-      rootNamespace: 'FS.Abp.Demo',
+      rootNamespace: '',
     },
   },
 } as Environment;

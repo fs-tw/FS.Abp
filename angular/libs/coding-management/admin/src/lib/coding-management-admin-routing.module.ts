@@ -20,6 +20,13 @@ const routes: Routes = [
             (m) => m.CodesModule
           ),
       },
+      {
+        path: 'serial-numbers',
+        loadChildren: () =>
+          import('@fs-tw/coding-management/admin/modules/serial-numbers').then(
+            (m) => m.SerialNumbersModule
+          ),
+      },
     ],
   },
 ];

@@ -9,8 +9,8 @@ import { CodingComponent } from './components/coding/coding.component';
     CodingComponent
   ],
   imports: [
-    CodesRoutingModule,
-    CodingManagementSharedModule
+    CodingManagementSharedModule,
+    CodesRoutingModule
   ]
 })
 export class CodesModule { }
