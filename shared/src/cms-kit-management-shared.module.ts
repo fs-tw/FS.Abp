@@ -34,4 +34,4 @@ let COMPONENT = [
   ],
   exports: [ThemeAlainSharedModule, ...COMPONENT],
 })
-export class CmsKitManagementAdminSharedModule {}
+export class CmsKitManagementSharedModule {}

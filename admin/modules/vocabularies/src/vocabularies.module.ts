@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { VocabulariesRoutingModule } from './vocabularies-routing.module';
-import { CmsKitManagementAdminSharedModule } from '@fs-tw/cms-kit-management/shared';
+import { CmsKitManagementSharedModule } from '@fs-tw/cms-kit-management/shared';
 import { VocabulariesComponent } from './components/vocabularies.component';
 
 
@@ -9,7 +9,7 @@ import { VocabulariesComponent } from './components/vocabularies.component';
   declarations: [VocabulariesComponent],
   imports: [
     VocabulariesRoutingModule,
-    CmsKitManagementAdminSharedModule
+    CmsKitManagementSharedModule
   ]
 })
 export class VocabulariesModule { }

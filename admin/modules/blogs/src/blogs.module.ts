@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { BlogsRoutingModule } from './blogs-routing.module';
-import { CmsKitManagementAdminSharedModule } from '@fs-tw/cms-kit-management/shared';
+import { CmsKitManagementSharedModule } from '@fs-tw/cms-kit-management/shared';
 
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { BlogPostsComponent } from './components/blog-posts/blog-posts.component';
@@ -14,7 +14,7 @@ import { QuillEditorModule } from '@fs-tw/components/quill-editor';
   declarations: [BlogsComponent, BlogPostsComponent, EditBlogPostComponent],
   imports: [
     BlogsRoutingModule,
-    CmsKitManagementAdminSharedModule,
+    CmsKitManagementSharedModule,
     PickFilesModule,
     PickCoverImageModule,
     QuillEditorModule

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PagesRoutingModule } from './pages-routing.module';
-import { CmsKitManagementAdminSharedModule } from '@fs-tw/cms-kit-management/shared';
+import { CmsKitManagementSharedModule } from '@fs-tw/cms-kit-management/shared';
 import { PagesComponent } from './components/pages/pages.component';
 
 
@@ -8,7 +8,7 @@ import { PagesComponent } from './components/pages/pages.component';
   declarations: [PagesComponent],
   imports: [
     PagesRoutingModule,
-    CmsKitManagementAdminSharedModule
+    CmsKitManagementSharedModule
   ]
 })
 export class PagesModule { }
