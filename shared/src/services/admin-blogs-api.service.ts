@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
 @Injectable({
   providedIn: 'root',

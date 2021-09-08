@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   setDefaults,
   setContributors,

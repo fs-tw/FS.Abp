@@ -10,8 +10,8 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { ToasterService } from '@abp/ng.theme.shared';
 
-import { Volo } from '@fs-tw/proxy/cms-kit';
-import { Fs } from '@fs-tw/proxy/cms-kit-management';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import {
   FileService,
 } from '@fs-tw/cms-kit-management/shared';

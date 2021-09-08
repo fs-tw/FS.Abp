@@ -6,7 +6,7 @@ import {
   FormPropData,
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { filter, switchMap, take } from 'rxjs/operators';

@@ -1,5 +1,5 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
 export const DEFAULT_COMMENTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Comments.CommentWithAuthorDto>([
   {

@@ -1,6 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Fs } from '@fs-tw/proxy/cms-kit-management';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import { filter, map } from 'rxjs/operators';
 @Component({
   selector: 'fs-tw-vocabularies',
