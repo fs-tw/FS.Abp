@@ -2,23 +2,20 @@
   "cli": "nx",
   "id": "proxy-add",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "module": {
       "type": "string",
-      "description": "module name",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
+      "description": "module name"
     },
-    "source":{
+    "application":{
       "type": "string",
-      "description": "app name(default value : defaultProject in angular.json)",
-      "$default": {
-        "$source": "argv",
-        "index": 1
-      }
+      "description": "app name(default value : defaultProject in angular.json)"
+    },
+    "library":{
+      "type": "string",
+      "description": "module add proxy"
     }
   },
-  "required": ["module"]
+  "required": ["module", "application","library"]
 }
