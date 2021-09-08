@@ -19,7 +19,7 @@ namespace FS.CodingManagement
             context.Services.AddAutoMapperObjectMapper<CodingManagementApplicationModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<CodingManagementApplicationModule>(validate: true);
+                options.AddMaps<CodingManagementApplicationModule>(validate: false);
             });
         }
     }

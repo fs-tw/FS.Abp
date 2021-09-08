@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
 </Project>

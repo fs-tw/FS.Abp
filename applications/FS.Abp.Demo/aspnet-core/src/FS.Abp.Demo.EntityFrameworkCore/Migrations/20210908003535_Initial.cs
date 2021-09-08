@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FS.Abp.Demo.Migrations
 {
-    public partial class Initialll : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -557,6 +557,58 @@ namespace FS.Abp.Demo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CmsUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CodingManagementCodings",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    No = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DisplayName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ParentId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Level = table.Column<int>(type: "int", nullable: false),
+                    TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CodingManagementCodings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CodingManagementCodings_CodingManagementCodings_ParentId",
+                        column: x => x.ParentId,
+                        principalTable: "CodingManagementCodings",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CodingManagementSerialNumbers",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProviderName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Value = table.Column<int>(type: "int", nullable: false),
+                    TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CodingManagementSerialNumbers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -1678,6 +1730,21 @@ namespace FS.Abp.Demo.Migrations
                 columns: new[] { "TenantId", "UserName" });
 
             migrationBuilder.CreateIndex(
+                name: "IX_CodingManagementCodings_CreationTime",
+                table: "CodingManagementCodings",
+                column: "CreationTime");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CodingManagementCodings_ParentId",
+                table: "CodingManagementCodings",
+                column: "ParentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CodingManagementSerialNumbers_CreationTime",
+                table: "CodingManagementSerialNumbers",
+                column: "CreationTime");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_IdentityServerClients_ClientId",
                 table: "IdentityServerClients",
                 column: "ClientId");
@@ -1808,6 +1875,12 @@ namespace FS.Abp.Demo.Migrations
 
             migrationBuilder.DropTable(
                 name: "CmsUserReactions");
+
+            migrationBuilder.DropTable(
+                name: "CodingManagementCodings");
+
+            migrationBuilder.DropTable(
+                name: "CodingManagementSerialNumbers");
 
             migrationBuilder.DropTable(
                 name: "IdentityServerApiResourceClaims");

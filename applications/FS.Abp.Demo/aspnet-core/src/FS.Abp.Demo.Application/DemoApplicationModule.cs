@@ -20,6 +20,7 @@ namespace FS.Abp.Demo
         typeof(AbpSettingManagementApplicationModule)
         )]
     [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule))]
+    [DependsOn(typeof(FS.CodingManagement.CodingManagementApplicationModule))]
     public class DemoApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

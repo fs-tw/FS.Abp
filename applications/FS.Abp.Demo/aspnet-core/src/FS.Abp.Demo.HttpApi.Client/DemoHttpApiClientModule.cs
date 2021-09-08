@@ -19,6 +19,7 @@ namespace FS.Abp.Demo
         typeof(AbpSettingManagementHttpApiClientModule)
     )]
     [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementHttpApiClientModule))]
+    [DependsOn(typeof(FS.CodingManagement.CodingManagementHttpApiClientModule))]
     public class DemoHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "Default";
