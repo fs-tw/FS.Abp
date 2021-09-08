@@ -10,8 +10,8 @@ import {
 } from '@abp/ng.theme.shared';
 import { forkJoin } from 'rxjs';
 
-import { Fs } from '@fs-tw/proxy/cms-kit-management';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   BlogsApiService,
   AdminBlogsApiService,

@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { Fs } from '@fs-tw/proxy/cms-kit-management';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 
 @Injectable({
   providedIn: 'root',

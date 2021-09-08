@@ -5,7 +5,7 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';

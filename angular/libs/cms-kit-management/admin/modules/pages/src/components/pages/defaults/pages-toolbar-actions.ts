@@ -1,5 +1,5 @@
 import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { notify } from '@fs-tw/theme-alain/shared/extensions';
 
 export const PAGES_TOOLBAR_ACTIONS = ToolbarAction.createMany<

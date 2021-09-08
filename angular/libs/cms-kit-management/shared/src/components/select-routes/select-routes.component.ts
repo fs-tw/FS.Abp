@@ -11,7 +11,7 @@ import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 
-import { Fs } from '@fs-tw/proxy/cms-kit-management';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import { RoutesApiService } from '../../services/routes-api.service';
 
 class RouteWithSpaceLength {
