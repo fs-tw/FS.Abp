@@ -255,7 +255,7 @@
         <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
-    <id name="Id" type="Guid" shadow="True" p1:ValidateRequired="true" p1:Guid="f145e476-7b8f-445c-9a2e-ae717db002e9" p1:GenerateDTO="False">
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="f145e476-7b8f-445c-9a2e-ae717db002e9" p1:GenerateDTO="False">
       <column name="" />
     </id>
     <property name="ProviderName" type="String" p1:ValidateRequired="true" p1:Guid="1ddcec7d-10fd-48a5-883f-c9d4856a98dc">

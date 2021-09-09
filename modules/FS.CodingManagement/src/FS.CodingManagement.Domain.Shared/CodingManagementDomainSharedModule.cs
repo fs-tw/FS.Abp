@@ -5,6 +5,7 @@ using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using FS.CodingManagement.SerialNumbers;
 
 namespace FS.CodingManagement
 {
@@ -12,7 +13,7 @@ namespace FS.CodingManagement
         typeof(AbpValidationModule)
     )]
     [DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule))]
-    
+
     public class CodingManagementDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -33,6 +34,11 @@ namespace FS.CodingManagement
             Configure<AbpExceptionLocalizationOptions>(options =>
             {
                 options.MapCodeNamespace("CodingManagement", typeof(CodingManagementResource));
+            });
+
+            Configure<ProviderOptions>(options =>
+            {
+                options.Providers.AddOrReplace(ProviderOptions.DefaultProviderName, 5);
             });
         }
     }

@@ -10,9 +10,9 @@ namespace FS.CodingManagement.SerialNumbers
 {
     public interface IProviderStore
     {
-        Task<List<Provider>> GetDefinitionsAsync();
+        Task<List<Provider>> GetProvidersAsync();
 
-        Task<Provider> GetDefinitionAsync([NotNull] string name);
+        Task<Provider> GetProviderAsync([NotNull] string name);
 
         Task<bool> IsDefinedAsync([NotNull] string name);
     }
@@ -25,24 +25,34 @@ namespace FS.CodingManagement.SerialNumbers
             this.options = options.Value;
         }
 
-        public virtual Task<Provider> GetDefinitionAsync([NotNull] string providerKey)
+        public virtual Task<Provider> GetProviderAsync([NotNull] string name)
         {
-            Check.NotNullOrWhiteSpace(providerKey, nameof(providerKey));
+            Provider result = null;
+            Check.NotNullOrWhiteSpace(name, nameof(name));
 
-            var result = options.Providers.GetOrDefault(providerKey) ?? throw new KeyNotFoundException(providerKey);
+            if (options.Providers.ContainsKey(name))
+            {
+                result = options.Providers.GetOrDefault(name);
+            }
+            else
+            {
+                result = options.Providers.GetOrDefault(ProviderOptions.DefaultProviderName);
+            }
+            if (result == null)
+                throw new KeyNotFoundException(name);
 
             return Task.FromResult(result);
         }
 
-        public virtual Task<List<Provider>> GetDefinitionsAsync()
+        public virtual Task<List<Provider>> GetProvidersAsync()
         {
             return Task.FromResult(options.Providers.Values.ToList());
         }
 
-        public virtual Task<bool> IsDefinedAsync([NotNull] string providerKey)
+        public virtual Task<bool> IsDefinedAsync([NotNull] string name)
         {
-            Check.NotNullOrWhiteSpace(providerKey, nameof(providerKey));
-            return Task.FromResult(options.Providers.ContainsKey(providerKey));
+            Check.NotNullOrWhiteSpace(name, nameof(name));
+            return Task.FromResult(options.Providers.ContainsKey(name));
         }
     }
 }

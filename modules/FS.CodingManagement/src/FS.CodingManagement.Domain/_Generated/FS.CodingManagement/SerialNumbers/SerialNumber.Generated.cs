@@ -30,6 +30,11 @@ namespace FS.CodingManagement.SerialNumbers
             OnCreated();
         }
 
+        public SerialNumber(System.Guid id) : this()
+        {
+            this.Id = id;
+        }
+
         public virtual string ProviderName
         {
             get;
