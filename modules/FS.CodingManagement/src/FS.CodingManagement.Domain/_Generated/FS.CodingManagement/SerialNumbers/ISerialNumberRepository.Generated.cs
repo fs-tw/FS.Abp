@@ -9,12 +9,12 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FS.CodingManagement.SerialNumbers
 {
     public partial interface ISerialNumberRepository : 
         Volo.Abp.Domain.Repositories.IRepository<FS.CodingManagement.SerialNumbers.SerialNumber,Guid>
     {
-
     }
 }

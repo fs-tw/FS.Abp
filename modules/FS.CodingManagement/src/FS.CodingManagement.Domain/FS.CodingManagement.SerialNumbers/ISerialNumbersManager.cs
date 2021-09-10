@@ -8,6 +8,6 @@ namespace FS.CodingManagement.SerialNumbers
 {
     public interface ISerialNumbersManager : IDomainService
     {
-        Task<SerialNumber> GenerateAsync(string providerName,string providerKey);
+        Task<string> GenerateAsync(string providerName,string providerKey);
     }
 }

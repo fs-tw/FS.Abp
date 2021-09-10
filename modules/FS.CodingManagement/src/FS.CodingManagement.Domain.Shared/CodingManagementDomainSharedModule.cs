@@ -5,7 +5,6 @@ using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
-using FS.CodingManagement.SerialNumbers;
 
 namespace FS.CodingManagement
 {
@@ -34,11 +33,6 @@ namespace FS.CodingManagement
             Configure<AbpExceptionLocalizationOptions>(options =>
             {
                 options.MapCodeNamespace("CodingManagement", typeof(CodingManagementResource));
-            });
-
-            Configure<ProviderOptions>(options =>
-            {
-                options.Providers.AddOrReplace(ProviderOptions.DefaultProviderName, 5);
             });
         }
     }

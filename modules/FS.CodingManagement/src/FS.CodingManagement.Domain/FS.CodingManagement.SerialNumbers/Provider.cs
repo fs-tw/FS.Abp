@@ -9,6 +9,7 @@ namespace FS.CodingManagement.SerialNumbers
     {
         public string Name { get; }
         public int Length { get; }
+        public Type GeneratorType { get; }
 
         protected Provider()
         {
@@ -16,11 +17,13 @@ namespace FS.CodingManagement.SerialNumbers
 
         public Provider(
             [NotNull] string name,
-            [NotNull] int length
+            [NotNull] int length,
+            Type generatorType = null
             )
         {
             Name = name;
             Length = length;
+            GeneratorType = generatorType ?? typeof(DefaultGenerator);
         }
 
     }

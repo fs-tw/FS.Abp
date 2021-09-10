@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace FS.CodingManagement.SerialNumbers
 {
@@ -22,5 +23,6 @@ namespace FS.CodingManagement.SerialNumbers
     {
         public EfCoreSerialNumberRepository(IDbContextProvider<FS.CodingManagement.EntityFrameworkCore.ICodingManagementDbContext> dbContextProvider)
             : base(dbContextProvider) { }
+
     }
 }

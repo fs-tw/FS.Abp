@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.CodingManagement.SerialNumbers\EfCoreSerialNumberRepository.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\CodingManagementDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>

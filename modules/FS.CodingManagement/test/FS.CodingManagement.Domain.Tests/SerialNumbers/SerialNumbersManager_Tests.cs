@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Shouldly;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace FS.CodingManagement.SerialNumbers
@@ -13,17 +14,22 @@ namespace FS.CodingManagement.SerialNumbers
         }
 
         [Fact]
-        public async Task Method1Async()
+        public async Task Should_Generated_Correctly()
         {
             await WithUnitOfWorkAsync(async () =>
             {
                 var first = await _serialNumbersManager.GenerateAsync(ProviderOptions.DefaultProviderName, System.DateTime.Now.ToString("yyyy/MM/dd"));
+                var second = await _serialNumbersManager.GenerateAsync(ProviderOptions.DefaultProviderName, System.DateTime.Now.ToString("yyyy/MM/dd"));
+
+                first.ShouldBe("000001");
+                second.ShouldBe("000002");
                 return Task.CompletedTask;
             });
 
             await WithUnitOfWorkAsync(async () =>
             {
-                var second = await _serialNumbersManager.GenerateAsync(ProviderOptions.DefaultProviderName, System.DateTime.Now.ToString("yyyy/MM/dd"));
+                var third = await _serialNumbersManager.GenerateAsync(ProviderOptions.DefaultProviderName, System.DateTime.Now.ToString("yyyy/MM/dd"));
+                third.ShouldBe("000003");
                 return Task.CompletedTask;
             });
 

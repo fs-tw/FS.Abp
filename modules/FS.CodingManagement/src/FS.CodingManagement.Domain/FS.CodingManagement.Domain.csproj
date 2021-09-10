@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.CodingManagement.SerialNumbers\ISerialNumberRepository.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.CodingManagement\Codes\Coding.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Codes</DependentUpon>

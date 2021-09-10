@@ -8,14 +8,6 @@ using Volo.Abp.DependencyInjection;
 
 namespace FS.CodingManagement.SerialNumbers
 {
-    public interface IProviderStore
-    {
-        Task<List<Provider>> GetProvidersAsync();
-
-        Task<Provider> GetProviderAsync([NotNull] string name);
-
-        Task<bool> IsDefinedAsync([NotNull] string name);
-    }
     public class DefaultProviderStore : IProviderStore, ITransientDependency
     {
         private readonly ProviderOptions options;
