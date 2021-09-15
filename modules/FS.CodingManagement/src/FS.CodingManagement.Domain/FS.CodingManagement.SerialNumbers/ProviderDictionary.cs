@@ -9,10 +9,11 @@ namespace FS.CodingManagement.SerialNumbers
     {
         public void AddOrReplace(
             [NotNull] string name,
-            [NotNull] int length
+            [NotNull] int length,
+            Type generatorType = null
             )
         {
-            this[name] = new Provider(name, length);
+            this[name] = new Provider(name, length, generatorType);
         }
     }
 }

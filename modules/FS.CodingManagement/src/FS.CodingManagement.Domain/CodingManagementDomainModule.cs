@@ -15,7 +15,7 @@ namespace FS.CodingManagement
         {
             Configure<ProviderOptions>(options =>
             {
-                options.Providers.AddOrReplace(ProviderOptions.DefaultProviderName, 5);
+                options.Providers.AddOrReplace(ProviderOptions.DefaultProviderName, 5,typeof(FS.CodingManagement.SerialNumbers.DefaultGenerator));
             });
         }
 
