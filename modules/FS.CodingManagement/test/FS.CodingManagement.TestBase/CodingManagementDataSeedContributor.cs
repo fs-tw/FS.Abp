@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
@@ -10,23 +11,35 @@ namespace FS.CodingManagement
     {
         private readonly IGuidGenerator _guidGenerator;
         private readonly ICurrentTenant _currentTenant;
+        private readonly IAbpLazyServiceProvider _lazyServiceProvider;
 
         public CodingManagementDataSeedContributor(
-            IGuidGenerator guidGenerator, ICurrentTenant currentTenant)
+            IGuidGenerator guidGenerator, ICurrentTenant currentTenant,
+            IAbpLazyServiceProvider lazyServiceProvider)
         {
             _guidGenerator = guidGenerator;
             _currentTenant = currentTenant;
+            _lazyServiceProvider = lazyServiceProvider;
         }
 
-        public Task SeedAsync(DataSeedContext context)
+        public async Task SeedAsync(DataSeedContext context)
         {
             /* Instead of returning the Task.CompletedTask, you can insert your test data
              * at this point!
              */
 
+
             using (_currentTenant.Change(context?.TenantId))
             {
-                return Task.CompletedTask;
+                var codesStore = _lazyServiceProvider.LazyGetRequiredService<FS.CodingManagement.Codes.ICodesStore>();
+                var datas = new List<Codes.Coding>
+                {
+                    new Codes.Coding(_guidGenerator.Create()){No = "FS_Str",Value = "fs",DisplayName=""},
+                    new Codes.Coding(_guidGenerator.Create()){No = "FS_Int",Value = "42",DisplayName=""},
+                    new Codes.Coding(_guidGenerator.Create()){No = "FS_Decimal",Value = "42.3",DisplayName=""},
+                    new Codes.Coding(_guidGenerator.Create()){No = "FS_Bool",Value = "true",DisplayName=""}
+                };
+                await codesStore.Coding.InsertManyAsync(datas);
             }
         }
     }

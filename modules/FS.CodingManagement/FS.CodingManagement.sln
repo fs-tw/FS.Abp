@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CodingManagement.Blazor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CodingManagement.Blazor.Server.Host", "host\FS.CodingManagement.Blazor.Server.Host\FS.CodingManagement.Blazor.Server.Host.csproj", "{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{5318477F-82D1-48B9-A16F-00FCF3759479}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Shared", "..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj", "{C6F4A825-8ABF-40CB-BF05-5F87321F1152}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +169,10 @@ Global
 		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F4A825-8ABF-40CB-BF05-5F87321F1152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F4A825-8ABF-40CB-BF05-5F87321F1152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F4A825-8ABF-40CB-BF05-5F87321F1152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F4A825-8ABF-40CB-BF05-5F87321F1152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,6 +203,7 @@ Global
 		{299BE52E-823F-408E-9C6D-7E2F81BA34FF} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{F0EE5760-262D-456A-AA7C-E84F484A05F6} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52} = {E400416D-2895-4512-9D17-90681EEC7E0A}
+		{C6F4A825-8ABF-40CB-BF05-5F87321F1152} = {5318477F-82D1-48B9-A16F-00FCF3759479}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
