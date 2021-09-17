@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
 
 namespace FS.CmsKitManagement.EntityFrameworkCore
 {
+    //[Obsolete("Remove")]
     public static class CmsKitManagementEfCoreEntityExtensionMappings
     {
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();

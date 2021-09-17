@@ -119,6 +119,13 @@ namespace FS.Abp.Demo
                         options.RemoteServiceName = "coding-management";
                         options.RootPath = "coding-management";
                     });
+                //options.ConventionalControllers.Create(
+                //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule).Assembly,
+                //    options =>
+                //    {
+                //        options.RemoteServiceName = "cms-kit-management";
+                //        options.RootPath = "cms-kit-management";
+                //    });
             });
         }
 

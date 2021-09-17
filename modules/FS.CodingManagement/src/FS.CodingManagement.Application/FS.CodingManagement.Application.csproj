@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.CodingManagement\Cods\CodeCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\Cods\Dtos\CodeDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\Cods\Dtos\CodeDtoValidator.Generated.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
@@ -31,18 +25,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CodingManagement\Codes\Dtos\CodingDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\CodingCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Cods</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\Dtos\CodingDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\Dtos\CodingDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

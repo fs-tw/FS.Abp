@@ -8,20 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.CodingManagement\Cods\Code.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\Cods\EfCoreCodeTreeRepository.Generated.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.CodingManagement.SerialNumbers\EfCoreSerialNumberRepository.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\CodingManagementDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
@@ -53,22 +45,6 @@
     <Compile Update="_Generated\FS.CodingManagement\Codes\EfCoreCodingTreeRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Codes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\Coding.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Cods</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\CodsQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Cods</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\CodsStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Cods</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Cods\EfCoreCodingTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Cods</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EfCoreSerialNumberRepository.Generated.cs">
       <AutoGen>True</AutoGen>

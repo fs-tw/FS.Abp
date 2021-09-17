@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FS.CmsKitManagement.Blogs.Dtos
 {
-    public class PetchBlogPostDto
+    public class PatchBlogPostDto
     {
         public BlogPostDto BlogPost { get; set; }
 
