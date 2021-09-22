@@ -8,17 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.CodingManagement\Codes\ICodesStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumbersStore.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\Coding.Generated.cs">
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Codes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\ICodesStore.Generated.cs">
+    <Compile Update="_Generated\FS.CodingManagement\Codes\Coding.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Codes</DependentUpon>
     </Compile>
@@ -30,11 +35,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SerialNumbers</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumbersStore.Generated.cs">
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>SerialNumbers</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Generated.cs">
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>SerialNumbers</DependentUpon>
     </Compile>

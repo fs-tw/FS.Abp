@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CodingManagement.Codes
 {
     public partial interface ICodingCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.CodingManagement.Codes.Dtos.CodingWithDetailsDto, Guid, FS.CodingManagement.Codes.Dtos.CodingGetListDto, FS.CodingManagement.Codes.Dtos.CodingCreateDto, FS.CodingManagement.Codes.Dtos.CodingUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.CodingManagement.Codes.Dtos.CodingWithDetailsDto, FS.CodingManagement.Codes.Dtos.CodingPrimaryKeyDto, FS.CodingManagement.Codes.Dtos.CodingGetListDto, FS.CodingManagement.Codes.Dtos.CodingCreateDto, FS.CodingManagement.Codes.Dtos.CodingUpdateDto>
     {
 
     }

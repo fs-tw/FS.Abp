@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -26,6 +27,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\ICodesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.CodingManagement\Codes\ICodingCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Codes</DependentUpon>
@@ -35,6 +40,10 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumberCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumbersApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>SerialNumbers</DependentUpon>
     </Compile>

@@ -12,6 +12,7 @@ namespace FS.CodingManagement
         typeof(AbpAutoMapperModule)
         )]
     [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
+    [DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     public class CodingManagementApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CodingManagement.SerialNumbers
 {
     public partial class SerialNumberCrudAppService :  // auto-generated
-        Volo.Abp.Application.Services.CrudAppService<FS.CodingManagement.SerialNumbers.SerialNumber, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberWithDetailsDto, Guid, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberGetListDto, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberCreateDto, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberUpdateDto>,
+        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CodingManagement.SerialNumbers.SerialNumber, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberWithDetailsDto, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberPrimaryKeyDto, Guid, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberGetListDto, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberCreateDto, FS.CodingManagement.SerialNumbers.Dtos.SerialNumberUpdateDto>,
         ISerialNumberCrudAppService
     {
         private readonly ISerialNumberRepository _repository;

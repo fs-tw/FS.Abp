@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CodingManagement.Codes
 {
     public partial class CodingCrudAppService :  // auto-generated
-        Volo.Abp.Application.Services.CrudAppService<FS.CodingManagement.Codes.Coding, FS.CodingManagement.Codes.Dtos.CodingWithDetailsDto, Guid, FS.CodingManagement.Codes.Dtos.CodingGetListDto, FS.CodingManagement.Codes.Dtos.CodingCreateDto, FS.CodingManagement.Codes.Dtos.CodingUpdateDto>,
+        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CodingManagement.Codes.Coding, FS.CodingManagement.Codes.Dtos.CodingWithDetailsDto, FS.CodingManagement.Codes.Dtos.CodingPrimaryKeyDto, Guid, FS.CodingManagement.Codes.Dtos.CodingGetListDto, FS.CodingManagement.Codes.Dtos.CodingCreateDto, FS.CodingManagement.Codes.Dtos.CodingUpdateDto>,
         ICodingCrudAppService
     {
         private readonly ICodingTreeRepository _repository;

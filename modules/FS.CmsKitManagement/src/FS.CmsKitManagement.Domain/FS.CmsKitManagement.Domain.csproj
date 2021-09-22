@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRoutesStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesStore.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,7 +33,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
@@ -49,10 +49,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRoutesStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRouteTreeRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
@@ -65,15 +61,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Routes</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesStore.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesStore.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
+      <DependentUpon>Routes</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Vocabularies</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyTreeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Vocabularies</DependentUpon>
     </Compile>

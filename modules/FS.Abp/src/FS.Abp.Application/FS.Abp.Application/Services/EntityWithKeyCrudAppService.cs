@@ -12,7 +12,6 @@ using Volo.Abp.Domain.Repositories;
 
 namespace FS.Abp.Application.Services
 {
-    [Obsolete("Remove")]
     public abstract class EntityWithKeyCrudAppService<TEntity, TGetOutputDto, TKeyDto, TKey, TGetListInput, TCreateInput, TUpdateInput>
         : AbstractKeyCrudAppService<TEntity, TGetOutputDto, TGetOutputDto, TKeyDto, TGetListInput, TCreateInput, TUpdateInput>
         where TEntity : class, IEntity<TKey>
@@ -28,6 +27,7 @@ namespace FS.Abp.Application.Services
         {
             Repository = repository;
         }
+
         protected override async Task<IQueryable<TEntity>> CreateFilteredQueryAsync(TGetListInput input)
         {
             var query = await Repository.WithDetailsAsync();
@@ -54,6 +54,7 @@ namespace FS.Abp.Application.Services
 
             base.MapToEntity(updateInput, entity);
         }
+
         protected override IQueryable<TEntity> ApplyDefaultSorting(IQueryable<TEntity> query)
         {
             if (typeof(TEntity).IsAssignableTo<IHasCreationTime>())

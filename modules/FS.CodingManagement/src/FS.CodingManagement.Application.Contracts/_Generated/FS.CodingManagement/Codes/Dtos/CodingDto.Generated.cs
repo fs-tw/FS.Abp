@@ -11,9 +11,14 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
 
 namespace FS.CodingManagement.Codes.Dtos
 {
+
+    public partial class CodingPrimaryKeyDto : EntityDto<Guid>
+    {
+    }
 
     public partial class CodingDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -69,7 +74,7 @@ namespace FS.CodingManagement.Codes.Dtos
 
     }
 
-    public partial class CodingGetListDto : PagedAndSortedResultRequestDto
+    public partial class CodingGetListDto : SearchResultRequestDto
     {
     }
 

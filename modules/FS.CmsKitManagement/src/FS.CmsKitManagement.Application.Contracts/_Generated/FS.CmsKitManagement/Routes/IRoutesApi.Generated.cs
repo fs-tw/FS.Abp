@@ -9,13 +9,13 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Volo.Abp.Domain.Services;
 
-namespace FS.CodingManagement.SerialNumbers
+namespace FS.CmsKitManagement.Routes
 {
-    public partial interface ISerialNumbersStore : IDomainService //auto-generated
+    public partial interface IRoutesApi : //auto-generated
+        Volo.Abp.Application.Services.IApplicationService,
+        IRouteCrudAppService,
+        IRouteDefinitionCrudAppService
     {
-        ISerialNumberRepository SerialNumber { get; }
     }
 }

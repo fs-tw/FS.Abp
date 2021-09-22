@@ -9,6 +9,7 @@ namespace FS.CodingManagement
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
+    [DependsOn(typeof(FS.Abp.AbpApplicationContractsModule))]
     public class CodingManagementApplicationContractsModule : AbpModule
     {
 

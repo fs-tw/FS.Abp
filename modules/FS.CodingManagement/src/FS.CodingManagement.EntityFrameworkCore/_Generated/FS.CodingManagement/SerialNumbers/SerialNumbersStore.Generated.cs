@@ -9,7 +9,6 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Volo.Abp.Domain.Services;
 
 namespace FS.CodingManagement.SerialNumbers
@@ -17,7 +16,5 @@ namespace FS.CodingManagement.SerialNumbers
     public partial class SerialNumbersStore : DomainService, ISerialNumbersStore //auto-generated
     {
         public ISerialNumberRepository SerialNumber => this.LazyServiceProvider.LazyGetRequiredService<ISerialNumberRepository>();
-
-
     }
 }

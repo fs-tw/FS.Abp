@@ -11,26 +11,26 @@ namespace FS.CmsKitManagement.Routes
 {
     public partial class RouteDefinitionCrudAppService
     {
-        public override async Task DeleteAsync(Guid id)
-        {
-            await this.deleteRouteRelation(id);
-            await base.DeleteAsync(id);
-        }
+        //public override async Task DeleteAsync(Guid id)
+        //{
+        //    await this.deleteRouteRelation(id);
+        //    await base.DeleteAsync(id);
+        //}
 
-        private async Task deleteRouteRelation(Guid routeDefinitionId)
-        {
-            var routesStore = this.LazyServiceProvider.LazyGetRequiredService<IRoutesStore>();
-            var blogsStore = this.LazyServiceProvider.LazyGetRequiredService<IBlogsStore>();
+        //private async Task deleteRouteRelation(Guid routeDefinitionId)
+        //{
+        //    var routesStore = this.LazyServiceProvider.LazyGetRequiredService<IRoutesStore>();
+        //    var blogsStore = this.LazyServiceProvider.LazyGetRequiredService<IBlogsStore>();
 
-            var routeIds = await this.AsyncExecuter.ToListAsync(routesStore.Route
-                .Where(x => x.RouteDefinitionId == routeDefinitionId)
-                .Select(x => x.Id));
+        //    var routeIds = await this.AsyncExecuter.ToListAsync(routesStore.Route
+        //        .Where(x => x.RouteDefinitionId == routeDefinitionId)
+        //        .Select(x => x.Id));
 
-            foreach (var routeId in routeIds)
-            {
-                await blogsStore.DeletePostRouteByRouteIdAsync(routeId);
-                await routesStore.Route.DeleteAsync(routeId);
-            }
-        }
+        //    foreach (var routeId in routeIds)
+        //    {
+        //        await blogsStore.DeletePostRouteByRouteIdAsync(routeId);
+        //        await routesStore.Route.DeleteAsync(routeId);
+        //    }
+        //}
     }
 }

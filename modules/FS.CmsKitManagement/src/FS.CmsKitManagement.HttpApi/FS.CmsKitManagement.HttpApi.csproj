@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -11,6 +11,45 @@
     <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
     <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.BlogPostSettingAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Routes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesApi.RouteCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RoutesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesApi.RouteDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RoutesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vocabularies</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VocabulariesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VocabulariesApi.Generated.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -11,9 +11,14 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
+using FS.Abp.Application.Dtos;
 
 namespace FS.CodingManagement.SerialNumbers.Dtos
 {
+
+    public partial class SerialNumberPrimaryKeyDto : EntityDto<Guid>
+    {
+    }
 
     public partial class SerialNumberDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -45,7 +50,7 @@ namespace FS.CodingManagement.SerialNumbers.Dtos
 
     }
 
-    public partial class SerialNumberGetListDto : PagedAndSortedResultRequestDto
+    public partial class SerialNumberGetListDto : SearchResultRequestDto
     {
     }
 
