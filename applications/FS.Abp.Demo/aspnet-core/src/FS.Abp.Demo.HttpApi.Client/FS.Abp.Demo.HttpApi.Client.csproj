@@ -8,18 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.HttpApi.Client\FS.CmsKitManagement.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.HttpApi.Client\FS.CodingManagement.HttpApi.Client.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Application.Contracts\FS.Abp.Demo.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.HttpApi.Client" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi.Client" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Account.HttpApi.Client" Version="4.4.2" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="4.4.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="4.4.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi.Client" Version="4.4.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="4.4.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="4.4.2" />
   </ItemGroup>
 
 </Project>

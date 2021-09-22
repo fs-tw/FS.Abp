@@ -74,10 +74,10 @@ namespace FS.Abp.Demo.EntityFrameworkCore
             builder.ConfigureIdentityServer();
             builder.ConfigureFeatureManagement();
             builder.ConfigureTenantManagement();
+
+            /* Configure your own tables/entities inside here */
             builder.ConfigureCmsKitManagement();
             builder.ConfigureCodingManagement();
-            /* Configure your own tables/entities inside here */
-
             //builder.Entity<YourEntity>(b =>
             //{
             //    b.ToTable(DemoConsts.DbTablePrefix + "YourEntities", DemoConsts.DbSchema);

@@ -13,8 +13,6 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
-using Volo.Abp.BlobStoring.FileSystem;
-using Volo.Abp.BlobStoring;
 
 namespace FS.Abp.Demo
 {
@@ -31,9 +29,10 @@ namespace FS.Abp.Demo
         typeof(AbpTenantManagementDomainModule),
         typeof(AbpEmailingModule)
     )]
-    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementDomainModule))]
-    [DependsOn(typeof(FS.CodingManagement.CodingManagementDomainModule))]
-    [DependsOn(typeof(AbpBlobStoringFileSystemModule))]
+    [DependsOn(
+        typeof(FS.CmsKitManagement.CmsKitManagementDomainModule),
+        typeof(FS.CodingManagement.CodingManagementDomainModule)
+        )]
     public class DemoDomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -41,16 +40,6 @@ namespace FS.Abp.Demo
             Configure<AbpMultiTenancyOptions>(options =>
             {
                 options.IsEnabled = MultiTenancyConsts.IsEnabled;
-            });
-            Configure<AbpBlobStoringOptions>(options =>
-            {
-                options.Containers.ConfigureDefault(container =>
-                {
-                    container.UseFileSystem(fileSystem =>
-                    {
-                        fileSystem.BasePath = "C:\\BlogPostCoverImage";
-                    });
-                });
             });
 
 #if DEBUG
