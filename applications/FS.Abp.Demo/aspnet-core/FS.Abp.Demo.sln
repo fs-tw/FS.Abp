@@ -87,6 +87,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Shared", "..\..\..\f
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Demo.Web", "src\FS.Abp.Demo.Web\FS.Abp.Demo.Web.csproj", "{6C6EDF3D-6A16-4DFA-8D73-F33F49C2400D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.Web", "..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Web\FS.CmsKitManagement.Web.csproj", "{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -233,6 +235,10 @@ Global
 		{6C6EDF3D-6A16-4DFA-8D73-F33F49C2400D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C6EDF3D-6A16-4DFA-8D73-F33F49C2400D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C6EDF3D-6A16-4DFA-8D73-F33F49C2400D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -276,6 +282,7 @@ Global
 		{8385422C-900F-4587-97AC-2C20A39F8B9D} = {9C08C15E-D444-408B-854B-BBE5712DDA2A}
 		{C6F4A825-8ABF-40CB-BF05-5F87321F1152} = {D5F70872-BACC-45AB-8EC0-05A0BF0E4A96}
 		{6C6EDF3D-6A16-4DFA-8D73-F33F49C2400D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2} = {E1C55CA0-BC51-44F5-A198-900BF5F0B23C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

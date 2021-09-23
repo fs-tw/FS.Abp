@@ -54,6 +54,7 @@ namespace FS.Abp.Demo.Web
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
         )]
+    [DependsOn(typeof(FS.CmsKitManagement.Web.CmsKitManagementWebModule))]
     public class DemoWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
