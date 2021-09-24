@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { SHARED_DELON_MODULES } from './shared-delon.module';
 import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
-import { ModalComponent } from './modals/modal.component';
-import { ModalTabComponent } from './modals/tabs/modal-tab.component';
-import { ModalInfoTabComponent } from './modals/tabs/modal-info-tab/modal-info-tab.component';
+// import { ModalComponent } from './modals/modal.component';
+// import { ModalTabComponent } from './modals/tabs/modal-tab.component';
+// import { ModalInfoTabComponent } from './modals/tabs/modal-info-tab/modal-info-tab.component';
 import { SHARED_ABP_MODULES } from './shared-abp.module';
 import { ThemeAlainUiExtensionsModule } from '@fs-tw/theme-alain/shared/extensions';
 import { FsNgAlainTreeComponent } from './components/fs-ng-alain-tree/fs-ng-alain-tree.component';
@@ -15,9 +15,9 @@ import { ImageUrlTempPipe } from './pipes/image-url.pipe';
 import { MapperPipe } from './pipes/mapper.pipe';
 
 const PUBLIC = [
-  ModalComponent,
-  ModalTabComponent,
-  ModalInfoTabComponent,
+  // ModalComponent,
+  // ModalTabComponent,
+  // ModalInfoTabComponent,
 
   FsNgAlainTreeComponent,
   FsNgAlainImagePickerComponent,

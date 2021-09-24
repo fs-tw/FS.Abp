@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ModalTabComponent } from '@fs-tw/theme-alain/shared';
+import { ModalTabComponent } from '@fs-tw/components/modals';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
 @Component({

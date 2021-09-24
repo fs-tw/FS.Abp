@@ -54,7 +54,6 @@ export class BlogsComponent implements OnInit {
     private confirmationService: ConfirmationService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
-    console.log(name);
     this.subs.add(
       setDefaults(injector, eCmsKitManagementComponents.BlogsComponent, {
         entityAction: BLOGS_ENTITY_ACTIONS,
