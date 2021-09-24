@@ -8,13 +8,13 @@ namespace FS.CmsKitManagement.Routes
 {
     public partial class RoutesStore : DomainService, IRoutesStore
     {
-        public async Task<List<Route>> GetRouteWithDescendantsAsync(Guid id)
-        {
-            var route = await this.Route.GetAsync(id);
-            var result = await this.AsyncExecuter.ToListAsync(this.Route
-                .Where(x => x.Code.StartsWith(route.Code)));
+        //public async Task<List<Route>> GetRouteWithDescendantsAsync(Guid id)
+        //{
+        //    var route = await this.Route.GetAsync(id);
+        //    var result = await this.AsyncExecuter.ToListAsync(this.Route
+        //        .Where(x => x.Code.StartsWith(route.Code)));
 
-            return result;
-        }
+        //    return result;
+        //}
     }
 }

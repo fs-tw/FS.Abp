@@ -6,6 +6,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="FS.CmsKitManagement.Routes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionNames.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRouteDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRoutesApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionNames.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionDefinitionProviders.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionNames.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.Application.Contracts" Version="$(AbpVersion)" />
@@ -15,19 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\BlogPostSettingDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -39,66 +54,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRouteCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRouteDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRoutesApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionDefinitionProviders.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionNames.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.CmsKitManagement\Routes\Dtos\" />
+    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\" />
   </ItemGroup>
 
 </Project>

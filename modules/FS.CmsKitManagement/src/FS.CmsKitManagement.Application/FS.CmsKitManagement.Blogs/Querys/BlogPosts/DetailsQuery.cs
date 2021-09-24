@@ -1,5 +1,5 @@
 ﻿using FS.CmsKitManagement.Blogs.Dtos;
-using FS.CmsKitManagement.Routes;
+//using FS.CmsKitManagement.Routes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,38 +25,38 @@ namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
 
             var blogPostIds = request.blogPosts.Select(x => x.Id).ToList();
 
-            var routes = await this.AsyncExecuter.ToListAsync(BlogsStore.PostRoute
-                .Where(x => blogPostIds.Contains(x.PostId))
-                .Join(RoutesStore.Route,
-                    a => a.RouteId,
-                    b => b.Id,
-                    (a, b) => new
-                    {
-                        PostRoute = a,
-                        Route = b
-                    })
-                );
+            //var routes = await this.AsyncExecuter.ToListAsync(BlogsStore.PostRoute
+            //    .Where(x => blogPostIds.Contains(x.PostId))
+            //    .Join(RoutesStore.Route,
+            //        a => a.RouteId,
+            //        b => b.Id,
+            //        (a, b) => new
+            //        {
+            //            PostRoute = a,
+            //            Route = b
+            //        })
+            //    );
 
 
-            var attachmentMediaIds = request.blogPosts
-                .Where(x => x.HasAttachmentMediaIds())
-                .SelectMany(x => x.GetAttachmentMediaIds())
-                .ToList();
+            //var attachmentMediaIds = request.blogPosts
+            //    .Where(x => x.HasAttachmentMediaIds())
+            //    .SelectMany(x => x.GetAttachmentMediaIds())
+            //    .ToList();
 
-            var attachmentMedias = await MediaDescriptorsStore.GetMediaDescriptorsAsync(attachmentMediaIds);
+            //var attachmentMedias = await MediaDescriptorsStore.GetMediaDescriptorsAsync(attachmentMediaIds);
 
             var dtoList = request.blogPosts.Select(x =>
             {
-                var dtoRoutes = routes.Where(y => y.PostRoute.PostId == x.Id).Select(x => x.Route).ToList();
-                var postAttachmentMedias = x.ExtraProperties.ContainsKey("AttachmentMediaIds") ?
-                    attachmentMedias.Where(y => x.GetAttachmentMediaIds().Contains(y.Id)).ToList() :
-                    new List<MediaDescriptor>();
+                //var dtoRoutes = routes.Where(y => y.PostRoute.PostId == x.Id).Select(x => x.Route).ToList();
+                //var postAttachmentMedias = x.ExtraProperties.ContainsKey("AttachmentMediaIds") ?
+                //    attachmentMedias.Where(y => x.GetAttachmentMediaIds().Contains(y.Id)).ToList() :
+                //    new List<MediaDescriptor>();
 
                 var dto = ObjectMapper.Map<BlogPost, BlogPostDto>(x);
                 dto.BlogName = blogs.ContainsKey(x.BlogId) ? blogs[x.BlogId].Name : null;
                 dto.BlogSlug = blogs.ContainsKey(x.BlogId) ? blogs[x.BlogId].Slug : null;
-                dto.Routes = ObjectMapper.Map<List<Route>, List<Routes.Dtos.RouteDto>>(dtoRoutes);
-                dto.AttachmentMedias = ObjectMapper.Map<List<MediaDescriptor>, List<MediaDescriptorDto>>(postAttachmentMedias);
+                //dto.Routes = ObjectMapper.Map<List<Route>, List<Routes.Dtos.RouteDto>>(dtoRoutes);
+                //dto.AttachmentMedias = ObjectMapper.Map<List<MediaDescriptor>, List<MediaDescriptorDto>>(postAttachmentMedias);
                 return dto;
             }).ToList();
 

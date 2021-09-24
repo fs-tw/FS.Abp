@@ -63,9 +63,9 @@ export class BlogPostsComponent implements OnInit {
     //   } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
     // );
 
-    forkJoin([getBlogs, getBlogPostSetting]).subscribe(([blog, setting]) => {
+    forkJoin([getBlogs]).subscribe(([blog]) => {
       //to do add setting api
-      //this.blogs = blog;
+      this.blogs = blog;
       //this.defaultImageUrl = setting.defaultImage;
 
       let selectedBlogId = this.pageStateService.getOne('SelectedBlogId');
@@ -115,7 +115,6 @@ export class BlogPostsComponent implements OnInit {
 
       this.totalCount = x.totalCount;
       this.posts = x.items;
-      console.log(x);
     });
   }
 

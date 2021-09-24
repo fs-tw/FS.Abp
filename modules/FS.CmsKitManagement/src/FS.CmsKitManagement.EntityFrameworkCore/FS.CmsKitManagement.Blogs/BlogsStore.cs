@@ -15,51 +15,51 @@ namespace FS.CmsKitManagement.Blogs
         public IBlogPostRepository BlogPost => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
 
 
-        public async Task DeletePostRouteByRouteIdAsync(Guid routeId)
-        {
-            var deleteIds = await this.AsyncExecuter.ToListAsync(this.PostRoute
-                .Where(x => x.RouteId == routeId)
-                .Select(x => x.Id));
+        //public async Task DeletePostRouteByRouteIdAsync(Guid routeId)
+        //{
+        //    var deleteIds = await this.AsyncExecuter.ToListAsync(this.PostRoute
+        //        .Where(x => x.RouteId == routeId)
+        //        .Select(x => x.Id));
 
-            await this.PostRoute.DeleteManyAsync(deleteIds);
-        }
+        //    await this.PostRoute.DeleteManyAsync(deleteIds);
+        //}
 
-        public async Task PatchRoutesAsync(Guid postId, List<Guid> routeIds)
-        {
+        //public async Task PatchRoutesAsync(Guid postId, List<Guid> routeIds)
+        //{
 
-            var postRoutes = await this.AsyncExecuter.ToListAsync(this.PostRoute
-                .Where(x => x.PostId == postId));
+        //    var postRoutes = await this.AsyncExecuter.ToListAsync(this.PostRoute
+        //        .Where(x => x.PostId == postId));
 
-            // 過去有 現在沒有
-            var deleteRouteIds = postRoutes
-                .Where(x => !routeIds.Contains(x.RouteId))
-                .Select(x => x.Id)
-                .ToList();
+        //    // 過去有 現在沒有
+        //    var deleteRouteIds = postRoutes
+        //        .Where(x => !routeIds.Contains(x.RouteId))
+        //        .Select(x => x.Id)
+        //        .ToList();
 
-            // 現在有 過去沒有
-            var createIds = routeIds
-                .Where(x => !postRoutes.Select(y => y.RouteId).Contains(x));
+        //    // 現在有 過去沒有
+        //    var createIds = routeIds
+        //        .Where(x => !postRoutes.Select(y => y.RouteId).Contains(x));
 
-            foreach (var id in deleteRouteIds)
-            {
-                await this.PostRoute.DeleteAsync(id);
-            }
+        //    foreach (var id in deleteRouteIds)
+        //    {
+        //        await this.PostRoute.DeleteAsync(id);
+        //    }
 
-            var createPostRoutes = new List<PostRoute>();
-            foreach (var routeId in createIds)
-            {
-                var domain = new PostRoute()
-                {
-                    PostId = postId,
-                    RouteId = routeId
-                };
+        //    var createPostRoutes = new List<PostRoute>();
+        //    foreach (var routeId in createIds)
+        //    {
+        //        var domain = new PostRoute()
+        //        {
+        //            PostId = postId,
+        //            RouteId = routeId
+        //        };
 
-                EntityHelper.TrySetId(domain, this.GuidGenerator.Create);
-                createPostRoutes.Add(domain);
-            }
+        //        EntityHelper.TrySetId(domain, this.GuidGenerator.Create);
+        //        createPostRoutes.Add(domain);
+        //    }
 
-            await this.PostRoute.InsertManyAsync(createPostRoutes);
-        }
+        //    await this.PostRoute.InsertManyAsync(createPostRoutes);
+        //}
 
     }
 }

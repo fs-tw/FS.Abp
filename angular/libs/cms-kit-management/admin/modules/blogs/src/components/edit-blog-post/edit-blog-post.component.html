@@ -17,15 +17,15 @@
                     <input nz-input id="shortDescription" type="text" formControlName="shortDescription">
                 </se>
                 <se [label]="'CmsKitManagement::BlogPost:Content' | abpLocalization">
-                    <fs-quill-editor 
+                    <!-- <fs-quill-editor 
                         [(content)]="content"
-                        [modalTitle]="'CmsKitManagement::UploadImage'"></fs-quill-editor>
+                        [modalTitle]="'CmsKitManagement::UploadImage'"></fs-quill-editor> -->
                 </se>
                 <se [label]="'CmsKitManagement::BlogPost:CoverImageMedia' | abpLocalization">
                     <fs-tw-pick-cover-image #CoverImage [(coverImageMediaId)]="coverImageMediaId" [defaultImageUrl]="defaultImageUrl"></fs-tw-pick-cover-image>
                 </se>
                 <se [label]="'CmsKitManagement::BlogPost:AttachmentMedia' | abpLocalization">
-                    <fs-tw-pick-files [(attachmentMedias)]="attachmentMedias"></fs-tw-pick-files>
+                    <!-- <fs-tw-pick-files [(attachmentMedias)]="attachmentMedias"></fs-tw-pick-files> -->
                 </se>
             </form>
 

@@ -6,6 +6,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <None Remove="FS.CmsKitManagement.Routes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.Blogs\Querys\BlogPosts\RouteQueryHandler.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RouteDefinitionCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinitionCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
@@ -16,12 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.CmsKitManagement.Routes\RouteCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Routes\RouteDefinitionCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogPostSettingAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
@@ -34,66 +56,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RouteCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RouteDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.CmsKitManagement\Routes\Dtos\" />
+    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\" />
   </ItemGroup>
 
 </Project>

@@ -28,9 +28,5 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
     [ConnectionStringName(CmsKitManagementDbProperties.ConnectionStringName)]
     public partial interface ICmsKitManagementDbContext : IEfCoreDbContext
     {
-        DbSet<FS.CmsKitManagement.Vocabularies.VocabularyDefinition> VocabularyDefinitions { get; set; }
-        DbSet<FS.CmsKitManagement.Vocabularies.Vocabulary> Vocabularies { get; set; }
-        DbSet<FS.CmsKitManagement.Routes.Route> Routes { get; set; }
-        DbSet<FS.CmsKitManagement.Routes.RouteDefinition> RouteDefinitions { get; set; }
     }
 }

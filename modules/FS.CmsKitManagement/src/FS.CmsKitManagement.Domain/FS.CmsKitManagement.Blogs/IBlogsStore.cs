@@ -11,8 +11,8 @@ namespace FS.CmsKitManagement.Blogs
     {
         IBlogPostRepository BlogPost { get; }
 
-        Task PatchRoutesAsync(Guid postId, List<Guid> routeIds);
+        //Task PatchRoutesAsync(Guid postId, List<Guid> routeIds);
 
-        Task DeletePostRouteByRouteIdAsync(Guid routeId);
+        //Task DeletePostRouteByRouteIdAsync(Guid routeId);
     }
 }

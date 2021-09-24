@@ -28,31 +28,6 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
     [ConnectionStringName(CmsKitManagementDbProperties.ConnectionStringName)]
     public partial class CmsKitManagementDbContext : AbpDbContext<CmsKitManagementDbContext>, ICmsKitManagementDbContext
     {
-
-        public virtual DbSet<FS.CmsKitManagement.Vocabularies.VocabularyDefinition> VocabularyDefinitions
-        {
-            get;
-            set;
-        }
-
-        public virtual DbSet<FS.CmsKitManagement.Vocabularies.Vocabulary> Vocabularies
-        {
-            get;
-            set;
-        }
-
-
-        public virtual DbSet<FS.CmsKitManagement.Routes.Route> Routes
-        {
-            get;
-            set;
-        }
-
-        public virtual DbSet<FS.CmsKitManagement.Routes.RouteDefinition> RouteDefinitions
-        {
-            get;
-            set;
-        }
         public CmsKitManagementDbContext(DbContextOptions<CmsKitManagementDbContext> options) :
             base(options)
         {

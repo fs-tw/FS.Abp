@@ -22,7 +22,5 @@ namespace FS.CmsKitManagement.Blogs
 
         protected IBlogPostSettingAppService BlogPostSettingAppService => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostSettingAppService>();
 
-        protected IPostRouteCrudAppService PostRouteCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IPostRouteCrudAppService>();
-
     }
 }

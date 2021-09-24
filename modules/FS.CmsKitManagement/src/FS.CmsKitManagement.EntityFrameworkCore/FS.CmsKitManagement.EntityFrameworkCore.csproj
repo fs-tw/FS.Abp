@@ -6,6 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="FS.CmsKitManagement.Routes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsQueryableExtensions.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\EfCorePostRouteRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\EfCoreRouteDefinitionRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\EfCoreRouteTreeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Route.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RouteDefinition.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesQueryableExtensions.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\EfCoreVocabularyDefinitionRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\EfCoreVocabularyTreeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesQueryableExtensions.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Vocabulary.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinition.Configuration.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
@@ -35,70 +60,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\EfCorePostRouteRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\EfCoreRouteDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\EfCoreRouteTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Route.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RouteDefinition.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RoutesStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\EfCoreVocabularyDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\EfCoreVocabularyTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Vocabulary.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinition.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.CmsKitManagement\Blogs\" />
+    <Folder Include="_Generated\FS.CmsKitManagement\Routes\" />
+    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\" />
   </ItemGroup>
 
 </Project>

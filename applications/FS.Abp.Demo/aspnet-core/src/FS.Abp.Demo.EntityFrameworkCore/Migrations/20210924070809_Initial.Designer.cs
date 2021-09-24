@@ -11,8 +11,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace FS.Abp.Demo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20210922025947_AddModules")]
-    partial class AddModules
+    [Migration("20210924070809_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -2376,9 +2376,6 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
 
-                    b.Property<string>("DisplayStyle")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
@@ -2554,9 +2551,6 @@ namespace FS.Abp.Demo.Migrations
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
-
-                    b.Property<int>("ViewCount")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -2792,9 +2786,6 @@ namespace FS.Abp.Demo.Migrations
                     b.Property<DateTime?>("DeletionTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
-
-                    b.Property<string>("DisplayStyle")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("nvarchar(max)")

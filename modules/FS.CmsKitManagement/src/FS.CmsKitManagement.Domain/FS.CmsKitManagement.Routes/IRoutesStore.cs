@@ -8,6 +8,6 @@ namespace FS.CmsKitManagement.Routes
 {
     public partial interface IRoutesStore
     {
-        Task<List<Route>> GetRouteWithDescendantsAsync(Guid id);
+        //Task<List<Route>> GetRouteWithDescendantsAsync(Guid id);
     }
 }

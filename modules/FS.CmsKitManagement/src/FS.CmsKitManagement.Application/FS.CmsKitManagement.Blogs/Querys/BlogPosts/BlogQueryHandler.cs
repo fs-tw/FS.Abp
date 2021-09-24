@@ -16,10 +16,9 @@ namespace FS.CmsKitManagement.Blogs.Querys.BlogPosts
             var blogPostRepository = this.LazyServiceProvider.LazyGetRequiredService<IBlogPostRepository>();
             if (String.IsNullOrEmpty(request.input.Sorting)) request.input.Sorting = "CreationTime desc";
 
-            var blogs = (await blogRepository.GetListAsync()).ToDictionary(x => x.Id);
-            var blog = blogs.LastOrDefault(x => x.Value.Slug == request.blogSlug).Value;
-            var blogPosts = await blogPostRepository.GetListAsync(null, blog.Id, request.input.MaxResultCount, request.input.SkipCount, request.input.Sorting);
+            var blog = await blogRepository.GetBySlugAsync(request.blogSlug);
 
+            var blogPosts = await blogPostRepository.GetListAsync(null, blog.Id, request.input.MaxResultCount, request.input.SkipCount, request.input.Sorting);
             var dtoList = (await this.Mediator.Send(new DetailsQuery(blogPosts)));
 
             return new PagedResultDto<BlogPostDto>(

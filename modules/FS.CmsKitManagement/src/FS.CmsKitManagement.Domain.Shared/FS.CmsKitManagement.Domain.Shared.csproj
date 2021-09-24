@@ -14,11 +14,34 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\CmsKitManagement\*.json" />
     <Compile Remove="Data\**" />
+    <Compile Remove="Files\BlogPostCoverImageMedia\**" />
+    <Compile Remove="Files\Routes\**" />
+    <Compile Remove="Files\Vocabularies\**" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
     <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\**" />
+    <EmbeddedResource Remove="Files\Routes\**" />
+    <EmbeddedResource Remove="Files\Vocabularies\**" />
     <None Remove="**\Files\**\*.*" />
     <None Remove="Data\**" />
+    <None Remove="Files\BlogPostCoverImageMedia\**" />
+    <None Remove="Files\Routes\**" />
+    <None Remove="Files\Vocabularies\**" />
     <EmbeddedResource Include="**\Files\**\*.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\UrlType.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\KANO與嘉義棒球 講座活動 就在本周六 趕快來報名.jfif" />
+    <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\KANO與嘉義棒球 講座活動 現正報名中.jpg" />
+    <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\嘉義市立博物館開館特展 296件老文物回憶舊時光.jpg" />
+    <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\報名聽嘉憶的事%28二%29講座，有驚喜小禮品.jfif" />
+    <EmbeddedResource Remove="Files\Routes\Routes.xlsx" />
+    <EmbeddedResource Remove="Files\Vocabularies\TwZipCode.json" />
+    <EmbeddedResource Remove="Files\Vocabularies\Vocabularies.xlsx" />
   </ItemGroup>
   
   <ItemGroup>
@@ -31,10 +54,6 @@
     <Compile Update="DataModel\CmsKitManagement.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\UrlType.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -77,6 +96,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_Generated\FS.CmsKitManagement\Routes\" />
   </ItemGroup>
 
 </Project>

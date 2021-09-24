@@ -86,7 +86,7 @@ export class EditBlogPostComponent implements OnInit {
     //   } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
     // );
 
-    forkJoin([getBlogs, getBlogPostSetting]).subscribe(([blog, setting]) => {
+    forkJoin([getBlogs]).subscribe(([blog]) => {
       //todo add setting api
       // 不顯示講習文章、比賽文章
       // this.blogs = blog.filter(

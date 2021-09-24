@@ -14,8 +14,7 @@ namespace FS.CmsKitManagement.Blogs
 {
     public partial interface IBlogsApi : //auto-generated
         Volo.Abp.Application.Services.IApplicationService,
-        IBlogPostSettingAppService,
-        IPostRouteCrudAppService
+        IBlogPostSettingAppService
     {
     }
 }
