@@ -3,7 +3,7 @@ import {
   Component,
   Injector
 } from '@angular/core';
-import { ModalTabComponent } from '@fs-tw/theme-alain/shared';
+import { ModalTabComponent } from '@fs-tw/components/modals';
 import { NzUploadFile } from 'ng-zorro-antd/upload';
 import { EnvironmentService } from '@abp/ng.core';
 
