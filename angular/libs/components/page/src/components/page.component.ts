@@ -12,10 +12,10 @@ export type EntityService<T> = {
 };
 
 @Component({
-  selector: 'fs-tw-cms-kit-entity-base',
-  templateUrl: './cms-kit-entity-base.component.html'
+  selector: 'fs-page',
+  templateUrl: './page.component.html'
 })
-export class CmsKitEntityBaseComponent<T> implements OnInit {
+export class PageComponent<T> {
   @Input() title: string;
   @Input() list: ListService;
   @Input() service: EntityService<T>;
@@ -37,4 +37,6 @@ export class CmsKitEntityBaseComponent<T> implements OnInit {
     });
   }
 
+
+  
 }
