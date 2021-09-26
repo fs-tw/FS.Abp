@@ -31,6 +31,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             CustomizeMapping(ref builder);
 
             builder.Ignore<FS.CmsKitManagement.Blogs.BlogPostSetting>();
+            builder.ApplyConfiguration<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia>(new FS.CmsKitManagement.MediaDescriptors.AttachmentMediaConfiguration(options));
         }
         static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }

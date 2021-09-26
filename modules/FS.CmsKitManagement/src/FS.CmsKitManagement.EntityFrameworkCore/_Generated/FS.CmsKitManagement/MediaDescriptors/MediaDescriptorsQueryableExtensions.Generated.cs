@@ -7,26 +7,12 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
-using System;
-using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
-
-namespace FS.CmsKitManagement.Blogs.Dtos
+namespace FS.CmsKitManagement.MediaDescriptors
 {
-
-    public partial class BlogPostSettingGetDto
+    public static class MediaDescriptorsQueryableExtensions //auto-generated
     {
-        public virtual string ProviderName { get; set; }
-
-        public virtual string ProviderKey { get; set; }
-
-    }
-
-    public partial class BlogPostSettingDto
-    {
-        public virtual string DefaultCoverImage { get; set; }
-
     }
 }

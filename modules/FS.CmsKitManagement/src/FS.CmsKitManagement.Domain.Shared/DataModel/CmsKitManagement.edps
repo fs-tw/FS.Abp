@@ -5,20 +5,37 @@
     <Generation>
       <GeneratedFiles>
         <File Name="CmsKitManagement.cs" />
+        <File Name="MediaDescriptorsPermissionNames.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="MediaDescriptorsPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="IAttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="AttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="AttachmentMediaDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="BlogPostSettingDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
+        <File Name="AttachmentMediaDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="BlogPostSettingDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
+        <File Name="AttachmentMediaDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="BlogPostSettingDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="BlogPostSetting.AbpSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="IBlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="MediaDescriptorsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="MediaDescriptorsStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ICmsKitManagementDbContext.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsKitManagementDbContext.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsKitManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsKitManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
+        <File Name="AttachmentMedia.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="BlogPostSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="AttachmentMedia.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="IAttachmentMediaRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="EfCoreAttachmentMediaRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="MediaDescriptorsQueryableExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="IBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogsApi.BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
+        <File Name="IMediaDescriptorsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="MediaDescriptorsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="MediaDescriptorsApi.AttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>

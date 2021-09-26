@@ -8,10 +8,16 @@
   <ItemGroup>
     <Compile Remove="FS.CmsKitManagement.Blogs\Commands\**" />
     <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Blogs\Commands\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <None Remove="FS.CmsKitManagement.Blogs\Commands\**" />
     <None Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,18 +25,6 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RouteDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinitionCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,11 +50,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CmsKitManagement\Routes\Dtos\" />
-    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\" />
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMediaCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

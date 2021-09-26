@@ -17,21 +17,20 @@
     <Compile Remove="Files\BlogPostCoverImageMedia\**" />
     <Compile Remove="Files\Routes\**" />
     <Compile Remove="Files\Vocabularies\**" />
+    <Compile Remove="_Generated\**" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
     <EmbeddedResource Remove="Data\**" />
     <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\**" />
     <EmbeddedResource Remove="Files\Routes\**" />
     <EmbeddedResource Remove="Files\Vocabularies\**" />
+    <EmbeddedResource Remove="_Generated\**" />
     <None Remove="**\Files\**\*.*" />
     <None Remove="Data\**" />
     <None Remove="Files\BlogPostCoverImageMedia\**" />
     <None Remove="Files\Routes\**" />
     <None Remove="Files\Vocabularies\**" />
+    <None Remove="_Generated\**" />
     <EmbeddedResource Include="**\Files\**\*.*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\UrlType.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -96,10 +95,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CmsKitManagement.efml</DependentUpon>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CmsKitManagement\Routes\" />
   </ItemGroup>
 
 </Project>

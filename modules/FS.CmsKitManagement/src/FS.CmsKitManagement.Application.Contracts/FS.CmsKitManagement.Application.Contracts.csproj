@@ -7,8 +7,14 @@
 
   <ItemGroup>
     <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <None Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,20 +22,6 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRouteDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRoutesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesPermissionNames.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesPermissionNames.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,11 +46,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CmsKitManagement\Routes\Dtos\" />
-    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\" />
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IAttachmentMediaCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IMediaDescriptorsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

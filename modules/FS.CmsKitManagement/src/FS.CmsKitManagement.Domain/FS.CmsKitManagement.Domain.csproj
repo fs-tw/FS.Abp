@@ -11,16 +11,22 @@
     <Compile Remove="FS.CmsKitManagement.Routes\**" />
     <Compile Remove="Volo.CmsKit.Blogs\**" />
     <Compile Remove="Volo.CmsKit.Pages\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <EmbeddedResource Remove="Data\Routes\**" />
     <EmbeddedResource Remove="Data\Vocabularies\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
     <EmbeddedResource Remove="Volo.CmsKit.Blogs\**" />
     <EmbeddedResource Remove="Volo.CmsKit.Pages\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <None Remove="Data\Routes\**" />
     <None Remove="Data\Vocabularies\**" />
     <None Remove="FS.CmsKitManagement.Routes\**" />
     <None Remove="Volo.CmsKit.Blogs\**" />
     <None Remove="Volo.CmsKit.Pages\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,18 +34,6 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRouteDefinitionRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRoutesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\IRouteTreeRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\Route.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RouteDefinition.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyTreeRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\Vocabulary.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinition.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,11 +58,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CmsKitManagement\Routes\" />
-    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\" />
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMedia.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IAttachmentMediaRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

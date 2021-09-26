@@ -18,17 +18,42 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.CmsKitManagement.Blogs
+namespace FS.CmsKitManagement.MediaDescriptors
 {
-    public partial class BlogPostSetting 
+    public partial class AttachmentMedia : 
+        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
+        Volo.Abp.MultiTenancy.IMultiTenant
     {
 
-        public BlogPostSetting()
+        public AttachmentMedia()
         {
             OnCreated();
         }
 
-        public virtual string DefaultCoverImage
+        public AttachmentMedia(System.Guid id) : this()
+        {
+            this.Id = id;
+        }
+
+        public virtual string EntityType
+        {
+            get;
+            set;
+        }
+
+        public virtual string EntityId
+        {
+            get;
+            set;
+        }
+
+        public virtual System.Guid MediaDescriptorId
+        {
+            get;
+            set;
+        }
+
+        public virtual System.Guid? TenantId
         {
             get;
             set;

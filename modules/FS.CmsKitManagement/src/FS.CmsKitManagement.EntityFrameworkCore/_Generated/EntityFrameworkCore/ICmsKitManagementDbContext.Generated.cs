@@ -28,5 +28,6 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
     [ConnectionStringName(CmsKitManagementDbProperties.ConnectionStringName)]
     public partial interface ICmsKitManagementDbContext : IEfCoreDbContext
     {
+        DbSet<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia> AttachmentMedia { get; set; }
     }
 }

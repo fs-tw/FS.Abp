@@ -7,26 +7,14 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-
 using System;
 using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
+using Volo.Abp.Domain.Services;
 
-namespace FS.CmsKitManagement.Blogs.Dtos
+namespace FS.CmsKitManagement.MediaDescriptors
 {
-
-    public partial class BlogPostSettingGetDto
+    public partial class MediaDescriptorsStore : DomainService, IMediaDescriptorsStore //auto-generated
     {
-        public virtual string ProviderName { get; set; }
-
-        public virtual string ProviderKey { get; set; }
-
-    }
-
-    public partial class BlogPostSettingDto
-    {
-        public virtual string DefaultCoverImage { get; set; }
-
+        public IAttachmentMediaRepository AttachmentMedia => this.LazyServiceProvider.LazyGetRequiredService<IAttachmentMediaRepository>();
     }
 }

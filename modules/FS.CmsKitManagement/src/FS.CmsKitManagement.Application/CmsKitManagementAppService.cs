@@ -13,7 +13,7 @@ namespace FS.CmsKitManagement
         //protected IRoutesStore RoutesStore => this.LazyServiceProvider.LazyGetRequiredService<IRoutesStore>();
         protected IBlogsStore BlogsStore => this.LazyServiceProvider.LazyGetRequiredService<IBlogsStore>();
         protected BlogPostManager BlogPostManager => this.LazyServiceProvider.LazyGetRequiredService<BlogPostManager>();
-        protected IMediaDescriptorsStore MediaDescriptorsStore => this.LazyServiceProvider.LazyGetRequiredService<IMediaDescriptorsStore>();
+        protected FS.CmsKitManagement.MediaDescriptors.IMediaDescriptorsStore MediaDescriptorsStore => this.LazyServiceProvider.LazyGetRequiredService<FS.CmsKitManagement.MediaDescriptors.IMediaDescriptorsStore>();
 
         protected CmsKitManagementAppService()
         {

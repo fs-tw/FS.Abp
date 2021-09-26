@@ -33,6 +33,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.AttachmentMediaCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptorsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

@@ -28,6 +28,12 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
     [ConnectionStringName(CmsKitManagementDbProperties.ConnectionStringName)]
     public partial class CmsKitManagementDbContext : AbpDbContext<CmsKitManagementDbContext>, ICmsKitManagementDbContext
     {
+
+        public virtual DbSet<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia> AttachmentMedia
+        {
+            get;
+            set;
+        }
         public CmsKitManagementDbContext(DbContextOptions<CmsKitManagementDbContext> options) :
             base(options)
         {
