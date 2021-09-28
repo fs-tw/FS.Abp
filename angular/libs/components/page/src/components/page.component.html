@@ -1,21 +1,27 @@
 <nz-card  [nzBordered]="true" [nzTitle]="searchTpl">
   <ng-template #searchTpl>
-    <div class="input-group">
-      <input
-        type="search"
-        class="form-control"
-        [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-        [(ngModel)]="list.filter"
-      />
-      <div class="input-group-append">
-        <button class="btn btn-primary" (click)="list.get()">
-          <i class="fas fa-search"></i>
-        </button>
+    <div class="row entry-row">
+      <div class="col">
+        <div class="input-group">
+          <input
+            type="search"
+            class="form-control"
+            [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+            [(ngModel)]="list.filter"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="list.get()">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <abp-page-toolbar></abp-page-toolbar>
       </div>
     </div>
   </ng-template>
 
-  <abp-page-toolbar></abp-page-toolbar>
   <ng-container *ngIf="data$ | async as data">
     <nz-extensible-table
       [data]="data.items"
