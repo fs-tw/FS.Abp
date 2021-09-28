@@ -16,7 +16,7 @@ import {
 } from '@fs-tw/theme-alain/shared/extensions';
 import {
   PAGES_CREATE_FORM_PROPS,
-  DEFAULT_PAGES_EDIT_FORM_PROPS,
+  PAGES_EDIT_FORM_PROPS,
   PAGES_ENTITY_ACTIONS,
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
@@ -50,13 +50,28 @@ export class PagesComponent implements OnInit, OnDestroy {
     public readonly list: ListService,
     private confirmationService: ConfirmationService
   ) {
-    setDefaults(injector, PagesComponent.NAME, {
-      entityAction: PAGES_ENTITY_ACTIONS,
-      toolbarActions: PAGES_TOOLBAR_ACTIONS,
-      entityProps: PAGES_ENTITY_PROPS,
-      createFormProps: PAGES_CREATE_FORM_PROPS,
-      editFormProps: DEFAULT_PAGES_EDIT_FORM_PROPS,
-    });
+    this.subs.add(
+      setDefaults(injector, PagesComponent.NAME, {
+        entityAction: PAGES_ENTITY_ACTIONS,
+        toolbarActions: PAGES_TOOLBAR_ACTIONS,
+        entityProps: PAGES_ENTITY_PROPS,
+        createFormProps: PAGES_CREATE_FORM_PROPS,
+        editFormProps: PAGES_EDIT_FORM_PROPS,
+      }).subscribe((x) => {
+        switch (x.method) {
+          case 'Create':
+            this.onAdd();
+            break;
+          case 'Edit':
+            this.onEdit(x.data.record.id);
+            break;
+          case 'Delete':
+            this.delete(x.data.record.id);
+            break;
+        }
+      })
+    );
+
     this.service = this.injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
   }
   ngOnDestroy(): void {
