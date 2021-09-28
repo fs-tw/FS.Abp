@@ -40,4 +40,4 @@ export const PAGES_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Pag
   }
 ]);
 
-export const DEFAULT_PAGES_EDIT_FORM_PROPS = PAGES_CREATE_FORM_PROPS;
+export const PAGES_EDIT_FORM_PROPS = PAGES_CREATE_FORM_PROPS;

@@ -1,8 +1,8 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
 import { Validators } from '@angular/forms';
-import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 
-export const BLOGS_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Blogs.BlogDto>([
+export const BLOG_POSTS_CREATE_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto>([
   {
     type: ePropType.String,
     name: 'name',
@@ -19,4 +19,4 @@ export const BLOGS_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Blo
   }
 ]);
 
-export const BLOGS_EDIT_FORM_PROPS = BLOGS_CREATE_FORM_PROPS;
+export const BLOG_POSTS_EDIT_FORM_PROPS = BLOG_POSTS_CREATE_FORM_PROPS;

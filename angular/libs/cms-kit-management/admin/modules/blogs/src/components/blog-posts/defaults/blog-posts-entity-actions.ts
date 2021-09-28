@@ -1,18 +1,16 @@
 import { ToolbarAction } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
+import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import { notify } from '@fs-tw/theme-alain/shared/extensions';
 
-export const BLOGS_ENTITY_ACTIONS = ToolbarAction.createMany<Volo.CmsKit.Admin.Blogs.BlogDto>(
+export const BLOG_POSTS_ENTITY_ACTIONS = ToolbarAction.createMany<Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto>(
   [
     {
       text: 'CmsKit::Edit',
       action: notify('Edit'),
-      permission: 'CmsKit.Blogs.Update',
     },
     {
       text: 'CmsKit::Delete',
       action: notify('Delete'),
-      permission: 'CmsKit.Blogs.Delete',
     },
   ]
 );
