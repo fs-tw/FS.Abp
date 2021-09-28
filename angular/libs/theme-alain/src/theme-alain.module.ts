@@ -4,23 +4,18 @@ import { LayoutModule } from '@fs-tw/theme-alain/layout';
 import { AccountLayoutComponent } from './components/account-layout/account-layout.component';
 import { ApplicationLayoutComponent } from './components/application-layout/application-layout.component';
 import { EmptyLayoutComponent } from './components/empty-layout/empty-layout.component';
-import { BaseRootModule } from './root/base-root.module';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { RootModule } from './root/root.module';
 import { NG_ALAIN_THEME_STYLES_PROVIDERS } from './providers/styles.provider';
-import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 
 @NgModule({
   imports: [
     CoreModule, 
     ThemeSharedModule,
-    //ThemeAlainSharedModule,
     LayoutModule
     
   ],
   exports:[
-    //ThemeAlainSharedModule,
-    //LayoutModule
   ],
   declarations: [ApplicationLayoutComponent,AccountLayoutComponent,EmptyLayoutComponent]
 })

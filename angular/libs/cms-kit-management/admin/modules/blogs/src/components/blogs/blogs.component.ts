@@ -13,7 +13,7 @@ import { forkJoin, of, Subscription } from 'rxjs';
 import {
   setDefaults,
   setContributors,
-} from '@fs-tw/theme-alain/shared/extensions';
+} from '@fs-tw/theme-alain/extensions';
 import {
   BLOGS_CREATE_FORM_PROPS,
   BLOGS_EDIT_FORM_PROPS,
