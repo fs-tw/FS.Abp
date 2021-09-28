@@ -5,7 +5,7 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   setContributors,
   setDefaults,
-} from '@fs-tw/theme-alain/shared/extensions';
+} from '@fs-tw/theme-alain/extensions';
 import { DEFAULT_COMMENTS_ENTITY_PROPS } from './defaults/index';
 
 @Component({
