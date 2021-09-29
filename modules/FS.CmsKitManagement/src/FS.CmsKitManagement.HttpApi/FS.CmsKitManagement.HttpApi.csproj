@@ -7,12 +7,6 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesApi.RouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesApi.RouteDefinitionCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesApi.VocabularyDefinitionCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,11 +35,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CmsKitManagement\Routes\" />
-    <Folder Include="_Generated\FS.CmsKitManagement\Vocabularies\" />
   </ItemGroup>
 
 </Project>

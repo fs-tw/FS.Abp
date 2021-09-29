@@ -8,35 +8,32 @@ export const PAGES_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Pag
     name: 'title',
     id:'title',
     displayName: 'CmsKit::Title',
-    //defaultValue:''
+    validators: () => [Validators.required],
   },
   {
     type: ePropType.String,
     name: 'slug',
     id: 'slug',
     displayName: 'CmsKit::Slug',
-    //defaultValue:''
+    validators: () => [Validators.required],
   },
   {
     type: ePropType.String,
     name: 'content',
     id: 'content',
     displayName: 'CmsKit::Content',
-    // defaultValue:''
   },
   {
     type: ePropType.String,
     name: 'script',
     id: 'script',
     displayName: 'CmsKit::Script',
-    // defaultValue:''
   },
   {
     type: ePropType.String,
     name: 'style',
     id: 'style',
     displayName: 'CmsKit::Style',
-    // defaultValue:''
   }
 ]);
 

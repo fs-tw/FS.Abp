@@ -5,19 +5,20 @@ import { QuillModule } from 'ngx-quill';
 
 import { BlogFeatureTabComponent } from './components/tabs/blog-feature-tab/blog-feature-tab.component';
 import { MediaTabComponent } from './components/tabs/media-tab/media-tab.component';
-import { SelectRoutesComponent } from './components/select-routes/select-routes.component';
 
 import { NzUploadDefaultDirective } from './directives/nz-upload-default.directive';
 import { NzUploadDefaultComponent } from './directives/nz-upload-default.component';
 
 import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
+import { SHARED_DELON_MODULES } from './shared-delon.module';
 import { SHARED_ABP_MODULES } from './shared-abp.module';
 import { SHARED_FS_MODULES } from './shared-fs.module';
+
+import { PageModule } from '@fs-tw/components/page';
 
 let COMPONENT = [
   BlogFeatureTabComponent,
   MediaTabComponent,
-  SelectRoutesComponent,
 
   NzUploadDefaultDirective,
   NzUploadDefaultComponent,
@@ -33,6 +34,7 @@ let COMPONENT = [
   ],
   exports: [
     SHARED_ZORRO_MODULES,
+    SHARED_DELON_MODULES,
     SHARED_ABP_MODULES,
     SHARED_FS_MODULES,
     ...COMPONENT,
