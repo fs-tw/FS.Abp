@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'blog', pathMatch: 'full' },
       { path: 'blog', component: BlogsComponent },
-      { path: 'blog-posts', component: BlogPostsComponent },
+      { path: 'blog-post', component: BlogPostsComponent },
     ],
   },
 ];

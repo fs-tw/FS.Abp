@@ -5,7 +5,7 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   setContributors,
   setDefaults,
-} from '@fs-tw/theme-alain/shared/extensions';
+} from '@fs-tw/theme-alain/extensions';
 import { COMMENTS_CREATE_FORM_PROPS, COMMENTS_EDIT_FORM_PROPS, COMMENTS_ENTITY_ACTIONS, COMMENTS_ENTITY_PROPS, COMMENTS_TOOLBAR_ACTIONS } from './defaults/index';
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';

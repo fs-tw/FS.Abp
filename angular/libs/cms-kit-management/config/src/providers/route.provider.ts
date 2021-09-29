@@ -26,8 +26,8 @@ const blogsModules=[
     order: 1
   },
   {
-    path: '/cms-kit-management/blogs/blog-posts',
-    name: eCmsKitManagementRouteNames.Blogs+'.blog-posts',
+    path: '/cms-kit-management/blogs/blog-post',
+    name: eCmsKitManagementRouteNames.Blogs+'.blog-post',
     parentName: eCmsKitManagementRouteNames.Blogs,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
     iconClass: 'fa fa-blog',
