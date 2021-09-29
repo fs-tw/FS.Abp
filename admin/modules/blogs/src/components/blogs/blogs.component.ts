@@ -12,7 +12,7 @@ import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
 import {
   setDefaults,
-} from '@fs-tw/theme-alain/shared/extensions';
+} from '@fs-tw/theme-alain/extensions';
 import {
   BLOGS_CREATE_FORM_PROPS,
   BLOGS_EDIT_FORM_PROPS,
@@ -43,7 +43,7 @@ export class BlogsComponent implements OnInit {
 
   editModalVisible = false;
   editForm: FormGroup;
-  editSelectedRecord: Volo.CmsKit.Admin.Pages.PageDto;
+  editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogDto;
   editBlogFeatures: Volo.CmsKit.Blogs.BlogFeatureDto[];
   editBlogFeaturesForm: FormGroup;
 

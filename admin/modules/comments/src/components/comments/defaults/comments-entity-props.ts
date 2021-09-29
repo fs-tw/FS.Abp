@@ -4,13 +4,6 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 export const COMMENTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Comments.CommentWithAuthorDto>([
   {
     type: ePropType.String,
-    name: 'author.userName',
-    displayName: 'CmsKit::Username',
-    sortable: true,
-    columnWidth: 90,
-  },
-  {
-    type: ePropType.String,
     name: 'entityType',
     displayName: 'CmsKit::EntityType',
     sortable: true,
@@ -23,11 +16,4 @@ export const COMMENTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Com
     sortable: true,
     columnWidth: 90,
   },
-  {
-    type: ePropType.DateTime,
-    name: 'creationTime',
-    displayName: 'CmsKit::CreationTime',
-    sortable: true,
-    columnWidth: 90,
-  }  
 ]);
