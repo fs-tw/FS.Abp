@@ -12,7 +12,6 @@ import { FormGroup } from '@angular/forms';
 import { filter, switchMap, take } from 'rxjs/operators';
 import {
   setDefaults,
-  setContributors,
 } from '@fs-tw/theme-alain/extensions';
 import {
   PAGES_CREATE_FORM_PROPS,

@@ -5,9 +5,4 @@ import { notify } from '@fs-tw/theme-alain/extensions';
 export const COMMENTS_TOOLBAR_ACTIONS = ToolbarAction.createMany<
   Volo.CmsKit.Admin.Comments.CommentWithAuthorDto[]
 >([
-  {
-    text: '新增評論',
-    action: notify('Create'),
-    icon: 'fa fa-plus',
-  },
 ]);

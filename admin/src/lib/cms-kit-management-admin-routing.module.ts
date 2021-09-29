@@ -43,14 +43,6 @@ const routes: Routes = [
           ),
       },
       
-      {
-        path: 'vocabularies',
-        loadChildren: () =>
-          import('@fs-tw/cms-kit-management/admin/modules/vocabularies').then(
-            (m) => m.VocabulariesModule
-          ),
-      }
-
     ],
   },
 ];

@@ -1,5 +1,0 @@
-<div *ngFor="let item of routes">
-    <label [ngStyle]="{ 'margin-left': item.spaceLength + 'px' }" nz-checkbox [ngModel]="selectedRoute.has(item.data.id)" (ngModelChange)="onCheckChange(item.data.id)">
-        {{ item.data.displayName }}
-    </label>
-</div>
