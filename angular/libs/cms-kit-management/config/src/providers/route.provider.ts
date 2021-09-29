@@ -5,110 +5,114 @@ import { eCmsManagementPolicyNames } from '../enums/policy-names';
 import { eCmsKitManagementRouteNames } from '../enums/route-names';
 
 export const CMS_KIT_MANAGEMENT_ROUTE_PROVIDERS = [
-  { provide: APP_INITIALIZER, useFactory: configureRoutes, deps: [RoutesService], multi: true },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: configureRoutes,
+    deps: [RoutesService],
+    multi: true,
+  },
 ];
 
-const blogsModules=[
+const blogsModules = [
   {
     path: '/cms-kit-management/blogs',
     name: eCmsKitManagementRouteNames.Blogs,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
     iconClass: 'fa fa-blog',
-    order: 1
+    order: 1,
   },
   {
     path: '/cms-kit-management/blogs/blog',
-    name: eCmsKitManagementRouteNames.Blogs+'.blog',
+    name: eCmsKitManagementRouteNames.Blogs + '.blog',
     parentName: eCmsKitManagementRouteNames.Blogs,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
     iconClass: 'fa fa-blog',
-    order: 1
+    order: 1,
   },
   {
     path: '/cms-kit-management/blogs/blog-posts',
-    name: eCmsKitManagementRouteNames.Blogs+'.blog-posts',
+    name: eCmsKitManagementRouteNames.Blogs + '.blog-posts',
     parentName: eCmsKitManagementRouteNames.Blogs,
     requiredPolicy: eCmsManagementPolicyNames.Blogs,
     iconClass: 'fa fa-blog',
-    order: 2
-  }
-]
+    order: 2,
+  },
+];
 
-const commentsModels=[
+const commentsModels = [
   {
     path: '/cms-kit-management/comments',
     name: eCmsKitManagementRouteNames.Comments,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Comments,
     iconClass: 'fa fa-comments',
-    order: 2
+    order: 2,
   },
   {
     path: '/cms-kit-management/comments/comment',
-    name: eCmsKitManagementRouteNames.Comments+'.comment',
+    name: eCmsKitManagementRouteNames.Comments + '.comment',
     parentName: eCmsKitManagementRouteNames.Comments,
     requiredPolicy: eCmsManagementPolicyNames.Comments,
     iconClass: 'fa fa-comments',
-    order: 1
+    order: 1,
   },
-
 ];
-const pagesModels=[
+const pagesModels = [
   {
     path: '/cms-kit-management/pages',
     name: eCmsKitManagementRouteNames.Pages,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Pages,
     iconClass: 'fa fa-file-alt',
-    order: 3
+    order: 3,
   },
   {
     path: '/cms-kit-management/pages/page',
-    name: eCmsKitManagementRouteNames.Pages+".page",
+    name: eCmsKitManagementRouteNames.Pages + '.page',
     parentName: eCmsKitManagementRouteNames.Pages,
     requiredPolicy: eCmsManagementPolicyNames.Pages,
     iconClass: 'fa fa-file-alt',
-    order: 3
+    order: 3,
   },
 ];
-const tagsModels=[
+const tagsModels = [
   {
     path: '/cms-kit-management/tags',
     name: eCmsKitManagementRouteNames.Tags,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     requiredPolicy: eCmsManagementPolicyNames.Tags,
     iconClass: 'fa fa-tags',
-    order: 4
+    order: 4,
   },
   {
     path: '/cms-kit-management/tags/tag',
-    name: eCmsKitManagementRouteNames.Tags+'.tag',
+    name: eCmsKitManagementRouteNames.Tags + '.tag',
     parentName: eCmsKitManagementRouteNames.Tags,
     requiredPolicy: eCmsManagementPolicyNames.Tags,
     iconClass: 'fa fa-tags',
-    order: 1
+    order: 1,
   },
 ];
 
-const vocabulariesModels=[
+const vocabulariesModels = [
   {
     path: '/cms-kit-management/vocabularies',
     name: eCmsKitManagementRouteNames.Vocabularies,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     //requiredPolicy: eCmsManagementPolicyNames.Comments,
     iconClass: 'fa fa-comments',
-    order: 6
+    order: 6,
   },
   {
     path: '/cms-kit-management/vocabularies/vocabulary',
-    name: eCmsKitManagementRouteNames.Vocabularies+'vocabulary',
+    name: eCmsKitManagementRouteNames.Vocabularies + 'vocabulary',
     parentName: eCmsKitManagementRouteNames.Vocabularies,
     //requiredPolicy: eCmsManagementPolicyNames.Comments,
     iconClass: 'fa fa-comments',
-    order: 1
-  }
-]
+    order: 1,
+  },
+];
 
 export function configureRoutes(routes: RoutesService) {
   return () => {
@@ -120,14 +124,16 @@ export function configureRoutes(routes: RoutesService) {
         requiredPolicy: eCmsManagementPolicyNames.CmsKitManagement,
         layout: eLayoutType.application,
         iconClass: 'far fa-newspaper',
-        order: -1
-      },
+        order: -1,
+        navConfig: {
+          name: eCmsKitManagementRouteNames.CmsKitManagement,
+        }
+      } as any,
       ...blogsModules,
       ...commentsModels,
       ...pagesModels,
       ...tagsModels,
-      ...vocabulariesModels
-     
+      ...vocabulariesModels,
     ]);
   };
 }
