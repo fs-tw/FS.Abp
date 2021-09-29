@@ -1,2 +1,2 @@
-export * from './lib/index';
-//export * from './demo/index';
+export * from './root/index';
+export * from './theme-alain.module';

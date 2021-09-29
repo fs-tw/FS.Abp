@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
+//import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 import { CoreModule } from '@abp/ng.core';
 import { PageModule } from '@abp/ng.components/page';
 //import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,8 +28,8 @@ let COMPONENT:any[] = [
   imports: [
     CoreModule,
     PageModule,
-    ThemeAlainSharedModule
+    //ThemeAlainSharedModule
   ],
-  exports: [ThemeAlainSharedModule, ...COMPONENT],
+  exports: [ ...COMPONENT],
 })
 export class CodingManagementSharedModule {}

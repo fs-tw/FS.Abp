@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ThemeAlainSharedModule } from '@fs-tw/theme-alain/shared';
 import { CoreModule } from '@abp/ng.core';
-import { PageModule } from '@fs-tw/components/page';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuillModule } from 'ngx-quill';
 
@@ -11,7 +9,10 @@ import { SelectRoutesComponent } from './components/select-routes/select-routes.
 
 import { NzUploadDefaultDirective } from './directives/nz-upload-default.directive';
 import { NzUploadDefaultComponent } from './directives/nz-upload-default.component';
-import { ModalModule } from '@fs-tw/components/modals';
+
+import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
+import { SHARED_ABP_MODULES } from './shared-abp.module';
+import { SHARED_FS_MODULES } from './shared-fs.module';
 
 let COMPONENT = [
   BlogFeatureTabComponent,
@@ -25,13 +26,16 @@ let COMPONENT = [
 @NgModule({
   declarations: [...COMPONENT],
   imports: [
-    CoreModule,
-    // PageModule,
-    // ModalModule,
-    NgbNavModule,
-    ThemeAlainSharedModule,
+    SHARED_ABP_MODULES,
+    SHARED_ZORRO_MODULES,
+    SHARED_FS_MODULES,
     QuillModule,
   ],
-  exports: [ThemeAlainSharedModule,PageModule,ModalModule, ...COMPONENT],
+  exports: [
+    SHARED_ZORRO_MODULES,
+    SHARED_ABP_MODULES,
+    SHARED_FS_MODULES,
+    ...COMPONENT,
+  ],
 })
 export class CmsKitManagementSharedModule {}
