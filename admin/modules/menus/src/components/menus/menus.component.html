@@ -1,7 +1,7 @@
 <fs-page
   [list]="list"
   [service]="service"
-  title="CmsKit::Tags"
+  [title]="'CmsKit::Menu'"
 ></fs-page>
 
 <fs-modal
@@ -10,10 +10,7 @@
   [(visible)]="createModalVisible"
   (save)="create($event)"
 >
-  <fs-modal-info-tab
-    [title]="'CmsKit::Tag'"
-    [form]="addForm"
-  ></fs-modal-info-tab>
+  <fs-modal-info-tab [title]="'CmsKit::Menu'" [form]="addForm"></fs-modal-info-tab>
 </fs-modal>
 
 <fs-modal
@@ -23,7 +20,7 @@
   (save)="edit($event)"
 >
   <fs-modal-info-tab
-    [title]="'CmsKit:Tag'"
+    [title]="'CmsKit::Menu'"
     [form]="editForm"
     [selectedRecord]="editSelectedRecord"
   ></fs-modal-info-tab>

@@ -42,7 +42,34 @@ const routes: Routes = [
             (m) => m.TagsModule
           ),
       },
-      
+      {
+        path: 'ratings',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/ratings').then(
+            (m) => m.RatingsModule
+          ),
+      },
+      {
+        path: 'reactions',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/reactions').then(
+            (m) => m.ReactionsModule
+          ),
+      },
+      {
+        path: 'media-descriptors',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/media-descriptors').then(
+            (m) => m.MediaDescriptorsModule
+          ),
+      },
+      {
+        path: 'menus',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/menus').then(
+            (m) => m.MenusModule
+          ),
+      },
     ],
   },
 ];
