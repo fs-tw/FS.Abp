@@ -7,6 +7,12 @@ import { EmptyLayoutComponent } from './components/empty-layout/empty-layout.com
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { RootModule } from './root/root.module';
 import { NG_ALAIN_THEME_STYLES_PROVIDERS } from './providers/styles.provider';
+import {
+  VALIDATION_ERROR_TEMPLATE,
+  VALIDATION_INVALID_CLASSES,
+  VALIDATION_TARGET_SELECTOR
+} from '@ngx-validate/core';
+import { ValidationErrorComponent } from './root/components/validation-error-component/validation-error.component';
 
 @NgModule({
   imports: [
@@ -26,6 +32,18 @@ export class ThemeAlainModule {
       providers: [
          NG_ALAIN_THEME_STYLES_PROVIDERS,
         // NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
+        {
+          provide: VALIDATION_ERROR_TEMPLATE,
+          useValue: ValidationErrorComponent,
+        },
+        {
+          provide: VALIDATION_TARGET_SELECTOR,
+          useValue: '.form-group',
+        },
+        {
+          provide: VALIDATION_INVALID_CLASSES,
+          useValue: 'is-invalid',
+        },
       ]
     };
   }

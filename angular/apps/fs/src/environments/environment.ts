@@ -13,7 +13,7 @@ export const environment = {
     issuer: 'https://localhost:44326',
     redirectUri: baseUrl,
     clientId: 'Demo_App',
-    responseType: 'code',
+    responseType: 'password',
     scope: 'offline_access openid profile role email phone Demo',
     requireHttps: true
   },

@@ -43,7 +43,6 @@ export function listenRouter(injector: Injector) {
             ?.children?.length > 0
       ),
       map((x) => {
-        console.log(x);
         return x
           .filter(
             (y) =>

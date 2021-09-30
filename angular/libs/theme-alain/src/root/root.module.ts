@@ -3,11 +3,10 @@ import { BaseRootModule } from './base-root.module';
 import { LayoutModule } from '@fs-tw/theme-alain/layout';
 
 @NgModule({
-  imports: [LayoutModule,BaseRootModule],
-  exports: [BaseRootModule],
+  imports: [BaseRootModule],
+  exports: [LayoutModule,BaseRootModule],
   providers: [
     //...APPINIT_PROVIDES
-  ]
+  ],
 })
-export class RootModule { }
-
+export class RootModule {}
