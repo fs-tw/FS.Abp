@@ -1,0 +1,27 @@
+<fs-page
+  [list]="list"
+  [service]="service"
+  [title]="'CmsKit::Menu'"
+></fs-page>
+
+<fs-modal
+  [title]="'AbpUi::Create'"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab [title]="'CmsKit::Menu'" [form]="addForm"></fs-modal-info-tab>
+</fs-modal>
+
+<fs-modal
+  [title]="'AbpUi::Edit'"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-modal-info-tab
+    [title]="'CmsKit::Menu'"
+    [form]="editForm"
+    [selectedRecord]="editSelectedRecord"
+  ></fs-modal-info-tab>
+</fs-modal>

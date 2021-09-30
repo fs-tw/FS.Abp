@@ -65,7 +65,7 @@ export class PagesComponent implements OnInit, OnDestroy {
             this.onEdit(x.data.record.id);
             break;
           case 'Delete':
-            this.delete(x.data.record.id);
+            this.delete(x.data.record.id, x.data.record.title);
             break;
         }
       })
@@ -122,9 +122,11 @@ export class PagesComponent implements OnInit, OnDestroy {
       });
   }
 
-  delete(id: string) {
+  delete(id: string, title: string) {
     this.confirmationService
-      .warn('CmsKit::PageDeletionConfirmationMessage', 'CmsKit::AreYouSure')
+      .warn('CmsKit::PageDeletionConfirmationMessage', 'CmsKit::AreYouSure', {
+        messageLocalizationParams: [title],
+      })
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
         switchMap((_) => this.service.delete(id)),

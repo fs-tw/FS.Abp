@@ -58,7 +58,7 @@ export class TagsComponent implements OnInit {
             this.onEdit(x.data.record.id);
             break;
           case 'Delete':
-            this.delete(x.data.record.id);
+            this.delete(x.data.record.id, x.data.record.name);
             break;
         }
       })
@@ -111,9 +111,11 @@ export class TagsComponent implements OnInit {
       });
   }
 
-  delete(id: string) {
+  delete(id: string, name: string) {
     this.confirmationService
-      .warn('CmsKit::TagDeletionConfirmationMessage', 'CmsKit::AreYouSure')
+      .warn('CmsKit::TagDeletionConfirmationMessage', 'CmsKit::AreYouSure', {
+        messageLocalizationParams: [name],
+      })
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
         switchMap((_) => this.service.delete(id)),
