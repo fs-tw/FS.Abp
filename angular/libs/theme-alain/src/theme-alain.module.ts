@@ -5,21 +5,14 @@ import { AccountLayoutComponent } from './components/account-layout/account-layo
 import { ApplicationLayoutComponent } from './components/application-layout/application-layout.component';
 import { EmptyLayoutComponent } from './components/empty-layout/empty-layout.component';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
-import { RootModule } from './root/root.module';
 import { NG_ALAIN_THEME_STYLES_PROVIDERS } from './providers/styles.provider';
-import {
-  VALIDATION_ERROR_TEMPLATE,
-  VALIDATION_INVALID_CLASSES,
-  VALIDATION_TARGET_SELECTOR
-} from '@ngx-validate/core';
-import { ValidationErrorComponent } from './root/components/validation-error-component/validation-error.component';
+import { RootModule } from './root/root.module';
 
 @NgModule({
   imports: [
     CoreModule, 
     ThemeSharedModule,
     LayoutModule
-    
   ],
   exports:[
   ],
@@ -32,18 +25,6 @@ export class ThemeAlainModule {
       providers: [
          NG_ALAIN_THEME_STYLES_PROVIDERS,
         // NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
-        {
-          provide: VALIDATION_ERROR_TEMPLATE,
-          useValue: ValidationErrorComponent,
-        },
-        {
-          provide: VALIDATION_TARGET_SELECTOR,
-          useValue: '.form-group',
-        },
-        {
-          provide: VALIDATION_INVALID_CLASSES,
-          useValue: 'is-invalid',
-        },
       ]
     };
   }

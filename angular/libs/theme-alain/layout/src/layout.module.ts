@@ -1,7 +1,7 @@
 import { CoreModule } from '@abp/ng.core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GlobalFooterModule } from '@delon/abc/global-footer';
@@ -84,6 +84,14 @@ const PASSPORT = [LayoutPassportComponent];
   ],
   declarations: [...COMPONENTS, ...HEADERCOMPONENTS, ...PASSPORT, BreadcrumbComponent],
   exports: [...COMPONENTS, ...PASSPORT],
-  providers:[LAYOUT_INIT_PROVIDERS]
 })
-export class LayoutModule {}
+export class LayoutModule {
+  static forRoot(): ModuleWithProviders<LayoutModule> {
+    return {
+      ngModule: LayoutModule,
+      providers: [
+        LAYOUT_INIT_PROVIDERS
+      ]
+    };
+  }
+}

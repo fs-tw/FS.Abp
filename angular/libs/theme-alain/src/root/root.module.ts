@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BaseRootModule } from './base-root.module';
+import { ThemeAlainCoreModule } from '@fs-tw/theme-alain/core';
 import { LayoutModule } from '@fs-tw/theme-alain/layout';
 
 @NgModule({
-  imports: [BaseRootModule],
-  exports: [LayoutModule,BaseRootModule],
+  imports: [LayoutModule.forRoot(),ThemeAlainCoreModule],
+  exports: [LayoutModule,ThemeAlainCoreModule],
   providers: [
     //...APPINIT_PROVIDES
   ],
