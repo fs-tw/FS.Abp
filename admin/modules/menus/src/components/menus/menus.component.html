@@ -4,6 +4,12 @@
   [title]="'CmsKit::Menu'"
 ></fs-page>
 
+<abp-tree
+  [nodes]="nodes"
+  [(expandedKeys)]="expandedKeys"
+  [draggable]="false"
+></abp-tree>
+
 <fs-modal
   [title]="'AbpUi::Create'"
   *ngIf="createModalVisible"

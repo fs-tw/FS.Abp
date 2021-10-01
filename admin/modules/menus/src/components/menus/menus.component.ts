@@ -20,6 +20,7 @@ import {
   MENUS_ENTITY_PROPS,
   MENUS_TOOLBAR_ACTIONS,
 } from './defaults/index';
+import { BaseNode, TreeAdapter } from '@abp/ng.components/tree';
 
 @Component({
   selector: 'fs-tw-menus',
@@ -44,6 +45,9 @@ export class MenusComponent implements OnInit {
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogDto;
 
+  nodes = [];
+  treeAdapter: TreeAdapter;
+  expandedKeys: Array<string> = [];
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
@@ -75,7 +79,21 @@ export class MenusComponent implements OnInit {
     this.service = this.injector.get(Volo.CmsKit.Admin.Menus.MenuItemAdminService);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.hookToQuery();
+  }
+
+  hookToQuery = () => {
+    const StreamCreator = () => {
+      return this.service.getList();
+    };
+
+    this.list.hookToQuery(StreamCreator).subscribe((res) => {
+      this.treeAdapter = new TreeAdapter(res.items as BaseNode[]);
+      this.nodes = this.treeAdapter.getTree();
+      this.expandedKeys = [...this.expandedKeys];
+    });
+  };
 
   onAdd() {
     const data = new FormPropData(
