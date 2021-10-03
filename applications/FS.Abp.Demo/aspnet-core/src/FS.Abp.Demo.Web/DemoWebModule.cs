@@ -37,8 +37,6 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
-using Volo.CmsKit.Web;
-using Volo.Abp.BlobStoring;
 
 namespace FS.Abp.Demo.Web
 {
@@ -238,7 +236,5 @@ namespace FS.Abp.Demo.Web
             app.UseAbpSerilogEnrichers();
             app.UseConfiguredEndpoints();
         }
-
-
     }
 }

@@ -7,7 +7,7 @@ import { UiExtensionsModule } from '@abp/ng.theme.shared/extensions'
 export const SHARED_ABP_MODULES = [
     CoreModule,
     ThemeSharedModule,
-    PageModule,
+    //PageModule,
     NgxValidateCoreModule,
     UiExtensionsModule
 ];

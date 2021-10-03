@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AspNetCore", "FS.Abp.AspNetCore", "{E2D733F6-9953-4929-B6B7-044CD0372DE2}"
 EndProject
@@ -68,6 +68,28 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.JsonSubTypes.NewtonsoftJson", "framework\FS.Abp.JsonSubTypes\src\FS.Abp.JsonSubTypes.NewtonsoftJson\FS.Abp.JsonSubTypes.NewtonsoftJson.csproj", "{57DD1C63-0DD8-4644-A8FF-C067FE4FDC29}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.JsonSubTypes", "framework\FS.Abp.JsonSubTypes\src\FS.Abp.JsonSubTypes\FS.Abp.JsonSubTypes.csproj", "{6A5E7884-ABF6-481B-A942-3FD7C4766268}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.CodingManagement", "FS.CodingManagement", "{46C46385-6968-4334-8EA2-B31B2E19ABA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.Domain.Shared", "modules\FS.CodingManagement\src\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj", "{8EE7A6AC-6053-4738-B301-30DB3B663C6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.Domain", "modules\FS.CodingManagement\src\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj", "{4EFF659F-9CB5-4D29-A338-6D2104C180E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.Application.Contracts", "modules\FS.CodingManagement\src\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj", "{5E6C9870-58D5-4AD6-8310-E91A7761938D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.Application", "modules\FS.CodingManagement\src\FS.CodingManagement.Application\FS.CodingManagement.Application.csproj", "{514E9E56-7632-4916-A5D2-EA81D0EB1C09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.EntityFrameworkCore", "modules\FS.CodingManagement\src\FS.CodingManagement.EntityFrameworkCore\FS.CodingManagement.EntityFrameworkCore.csproj", "{7340C9D3-AD54-4D3A-B767-907BB60F3D4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.HttpApi", "modules\FS.CodingManagement\src\FS.CodingManagement.HttpApi\FS.CodingManagement.HttpApi.csproj", "{B202D332-AA42-42BC-88FB-84C15C023F44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.Web", "modules\FS.CodingManagement\src\FS.CodingManagement.Web\FS.CodingManagement.Web.csproj", "{DEA3083F-1B52-4C9B-9497-6BDB5448AC92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CodingManagement.HttpApi.Client", "modules\FS.CodingManagement\src\FS.CodingManagement.HttpApi.Client\FS.CodingManagement.HttpApi.Client.csproj", "{C314BA65-4252-4ABC-88B9-3CB7D8AD795D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Shared", "FS.Abp.Shared", "{0AC1BC49-D900-4559-A4FD-86092848ECDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Shared", "framework\FS.Abp.Shared\FS.Abp.Shared.csproj", "{6CEDF2DC-B99F-45ED-B395-3A393BA11A09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +189,42 @@ Global
 		{6A5E7884-ABF6-481B-A942-3FD7C4766268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A5E7884-ABF6-481B-A942-3FD7C4766268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A5E7884-ABF6-481B-A942-3FD7C4766268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE7A6AC-6053-4738-B301-30DB3B663C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE7A6AC-6053-4738-B301-30DB3B663C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE7A6AC-6053-4738-B301-30DB3B663C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE7A6AC-6053-4738-B301-30DB3B663C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFF659F-9CB5-4D29-A338-6D2104C180E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFF659F-9CB5-4D29-A338-6D2104C180E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFF659F-9CB5-4D29-A338-6D2104C180E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFF659F-9CB5-4D29-A338-6D2104C180E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6C9870-58D5-4AD6-8310-E91A7761938D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6C9870-58D5-4AD6-8310-E91A7761938D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6C9870-58D5-4AD6-8310-E91A7761938D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6C9870-58D5-4AD6-8310-E91A7761938D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514E9E56-7632-4916-A5D2-EA81D0EB1C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514E9E56-7632-4916-A5D2-EA81D0EB1C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514E9E56-7632-4916-A5D2-EA81D0EB1C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514E9E56-7632-4916-A5D2-EA81D0EB1C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7340C9D3-AD54-4D3A-B767-907BB60F3D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7340C9D3-AD54-4D3A-B767-907BB60F3D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7340C9D3-AD54-4D3A-B767-907BB60F3D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7340C9D3-AD54-4D3A-B767-907BB60F3D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B202D332-AA42-42BC-88FB-84C15C023F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B202D332-AA42-42BC-88FB-84C15C023F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B202D332-AA42-42BC-88FB-84C15C023F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B202D332-AA42-42BC-88FB-84C15C023F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA3083F-1B52-4C9B-9497-6BDB5448AC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA3083F-1B52-4C9B-9497-6BDB5448AC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA3083F-1B52-4C9B-9497-6BDB5448AC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA3083F-1B52-4C9B-9497-6BDB5448AC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C314BA65-4252-4ABC-88B9-3CB7D8AD795D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C314BA65-4252-4ABC-88B9-3CB7D8AD795D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C314BA65-4252-4ABC-88B9-3CB7D8AD795D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C314BA65-4252-4ABC-88B9-3CB7D8AD795D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEDF2DC-B99F-45ED-B395-3A393BA11A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEDF2DC-B99F-45ED-B395-3A393BA11A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEDF2DC-B99F-45ED-B395-3A393BA11A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEDF2DC-B99F-45ED-B395-3A393BA11A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,8 +261,19 @@ Global
 		{54F00C11-D0DE-4818-AF83-A11325770643} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
 		{57DD1C63-0DD8-4644-A8FF-C067FE4FDC29} = {54F00C11-D0DE-4818-AF83-A11325770643}
 		{6A5E7884-ABF6-481B-A942-3FD7C4766268} = {54F00C11-D0DE-4818-AF83-A11325770643}
+		{46C46385-6968-4334-8EA2-B31B2E19ABA1} = {BDFBCB8B-E426-4AD0-9FED-7B34E6872D57}
+		{8EE7A6AC-6053-4738-B301-30DB3B663C6A} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{4EFF659F-9CB5-4D29-A338-6D2104C180E4} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{5E6C9870-58D5-4AD6-8310-E91A7761938D} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{514E9E56-7632-4916-A5D2-EA81D0EB1C09} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{7340C9D3-AD54-4D3A-B767-907BB60F3D4E} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{B202D332-AA42-42BC-88FB-84C15C023F44} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{DEA3083F-1B52-4C9B-9497-6BDB5448AC92} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{C314BA65-4252-4ABC-88B9-3CB7D8AD795D} = {46C46385-6968-4334-8EA2-B31B2E19ABA1}
+		{0AC1BC49-D900-4559-A4FD-86092848ECDA} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
+		{6CEDF2DC-B99F-45ED-B395-3A393BA11A09} = {0AC1BC49-D900-4559-A4FD-86092848ECDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
+		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
 	EndGlobalSection
 EndGlobal

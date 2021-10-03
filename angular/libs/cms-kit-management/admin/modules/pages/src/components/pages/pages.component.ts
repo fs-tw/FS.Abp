@@ -6,17 +6,16 @@ import {
   FormPropData,
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { filter, switchMap, take } from 'rxjs/operators';
 import {
   setDefaults,
-  setContributors,
-} from '@fs-tw/theme-alain/shared/extensions';
+} from '@fs-tw/theme-alain/extensions';
 import {
   PAGES_CREATE_FORM_PROPS,
-  DEFAULT_PAGES_EDIT_FORM_PROPS,
+  PAGES_EDIT_FORM_PROPS,
   PAGES_ENTITY_ACTIONS,
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
@@ -50,13 +49,28 @@ export class PagesComponent implements OnInit, OnDestroy {
     public readonly list: ListService,
     private confirmationService: ConfirmationService
   ) {
-    setDefaults(injector, PagesComponent.NAME, {
-      entityAction: PAGES_ENTITY_ACTIONS,
-      toolbarActions: PAGES_TOOLBAR_ACTIONS,
-      entityProps: PAGES_ENTITY_PROPS,
-      createFormProps: PAGES_CREATE_FORM_PROPS,
-      editFormProps: DEFAULT_PAGES_EDIT_FORM_PROPS,
-    });
+    this.subs.add(
+      setDefaults(injector, PagesComponent.NAME, {
+        entityAction: PAGES_ENTITY_ACTIONS,
+        toolbarActions: PAGES_TOOLBAR_ACTIONS,
+        entityProps: PAGES_ENTITY_PROPS,
+        createFormProps: PAGES_CREATE_FORM_PROPS,
+        editFormProps: PAGES_EDIT_FORM_PROPS,
+      }).subscribe((x) => {
+        switch (x.method) {
+          case 'Create':
+            this.onAdd();
+            break;
+          case 'Edit':
+            this.onEdit(x.data.record.id);
+            break;
+          case 'Delete':
+            this.delete(x.data.record.id, x.data.record.title);
+            break;
+        }
+      })
+    );
+
     this.service = this.injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
   }
   ngOnDestroy(): void {
@@ -108,9 +122,11 @@ export class PagesComponent implements OnInit, OnDestroy {
       });
   }
 
-  delete(id: string) {
+  delete(id: string, title: string) {
     this.confirmationService
-      .warn('CmsKit::PageDeletionConfirmationMessage', 'CmsKit::AreYouSure')
+      .warn('CmsKit::PageDeletionConfirmationMessage', 'CmsKit::AreYouSure', {
+        messageLocalizationParams: [title],
+      })
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
         switchMap((_) => this.service.delete(id)),

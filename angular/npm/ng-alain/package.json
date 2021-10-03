@@ -1,5 +1,5 @@
 {
-  "name": "ng-alain",
+  "name": "@npm/ng-alain",
   "version": "12.2.1",
   "devDependencies": {
     "@angular/animations": "~12.2.0",

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -6,11 +6,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.HttpApi" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
+    <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
     <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.BlogPostSettingAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.AttachmentMediaCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptorsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

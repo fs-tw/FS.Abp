@@ -5,15 +5,14 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
-import { Volo } from '@fs-tw/proxy/cms-kit';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
 import {
   setDefaults,
-  setContributors,
-} from '@fs-tw/theme-alain/shared/extensions';
+} from '@fs-tw/theme-alain/extensions';
 import {
   BLOGS_CREATE_FORM_PROPS,
   BLOGS_EDIT_FORM_PROPS,
@@ -44,7 +43,7 @@ export class BlogsComponent implements OnInit {
 
   editModalVisible = false;
   editForm: FormGroup;
-  editSelectedRecord: Volo.CmsKit.Admin.Pages.PageDto;
+  editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogDto;
   editBlogFeatures: Volo.CmsKit.Blogs.BlogFeatureDto[];
   editBlogFeaturesForm: FormGroup;
 
@@ -54,7 +53,6 @@ export class BlogsComponent implements OnInit {
     private confirmationService: ConfirmationService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
-    console.log(name);
     this.subs.add(
       setDefaults(injector, eCmsKitManagementComponents.BlogsComponent, {
         entityAction: BLOGS_ENTITY_ACTIONS,

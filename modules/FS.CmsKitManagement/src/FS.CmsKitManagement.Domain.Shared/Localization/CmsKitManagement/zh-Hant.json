@@ -1,18 +1,6 @@
 {
   "culture": "zh-Hant",
   "texts": {
-    "Vocabularies": "詞彙管理",
-    "FS.CmsKitManagement.Vocabularies": "詞彙定義管理",
-    "FS.CmsKitManagement.Vocabularies.VocabularyDefinition": "詞彙定義",
-    "DisplayName:VocabularyDefinition.Create": "新增",
-    "DisplayName:VocabularyDefinition.Update": "編輯",
-    "DisplayName:VocabularyDefinition.Delete": "刪除",
-
-    "FS.CmsKitManagement.Vocabularies.Vocabulary": "詞彙",
-    "DisplayName:Vocabulary.Create": "新增",
-    "DisplayName:Vocabulary.Update": "編輯",
-    "DisplayName:Vocabulary.Delete": "刪除",
-
     "Warn": "警告",
     "AreYouSureToDelete": "確定刪除資料?",
     "DataUpdateSuccess": "資料更新成功",

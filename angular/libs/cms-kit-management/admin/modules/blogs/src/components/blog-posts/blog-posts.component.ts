@@ -1,147 +1,134 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import {
-  PagedAndSortedResultRequestDto,
-  EnvironmentService,
-} from '@abp/ng.core';
+  EXTENSIONS_IDENTIFIER,
+  FormPropData,
+  generateFormFromProps,
+} from '@abp/ng.theme.shared/extensions';
+import { ListService } from '@abp/ng.core';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
+import { Subscription } from 'rxjs';
 import {
-  ToasterService,
-  ConfirmationService,
-  Confirmation,
-} from '@abp/ng.theme.shared';
-import { forkJoin } from 'rxjs';
-
-import { Fs } from '@fs-tw/proxy/cms-kit-management';
-import { Volo } from '@fs-tw/proxy/cms-kit';
-import {
-  BlogsApiService,
-  AdminBlogsApiService,
-} from '@fs-tw/cms-kit-management/shared';
-import { PageStateService } from '../../providers/paget-state.service';
+  setDefaults,
+} from '@fs-tw/theme-alain/extensions';
+import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
+import { BLOG_POSTS_CREATE_FORM_PROPS, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_ACTIONS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
+import { FormGroup } from '@angular/forms';
+import { filter, switchMap, take, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'fs-tw-blog-posts',
   templateUrl: './blog-posts.component.html',
   styleUrls: ['./blog-posts.component.css'],
+  providers: [
+    ListService,
+    {
+      provide: EXTENSIONS_IDENTIFIER,
+      useValue: BlogPostsComponent.NAME,
+    },
+  ]
 })
 export class BlogPostsComponent implements OnInit {
-  defaultImageUrl: string;
+  public static NAME: string = 'BlogPosts.BlogPostsComponent';
+  service: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
+  subs: Subscription = new Subscription();
 
-  blogs: Fs.CmsKitManagement.Blogs.Dtos.BlogDto[] = [];
-  selectBlogSlug: string = null;
+  createModalVisible = false;
+  addForm: FormGroup;
 
-  page: number = 0;
-  totalCount: number = 0;
-  posts: Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto[] = [];
-
-  coverMediaUrls: { [id: string]: string } = {};
-
+  editModalVisible = false;
+  editForm: FormGroup;
+  editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogPostDto;
   constructor(
-    injector: Injector,
-    private environmentService: EnvironmentService,
-    private pageStateService: PageStateService,
-    private toasterService: ToasterService,
-    private confirmationService: ConfirmationService,
-    private blogsApiService: BlogsApiService,
-    private adminBlogsApiService: AdminBlogsApiService
-  ) {}
+    private readonly injector: Injector,
+    public readonly list: ListService,
+    private confirmationService: ConfirmationService
+  ) {
+    this.subs.add(
+      setDefaults(injector, BlogPostsComponent.NAME, {
+        entityAction: BLOG_POSTS_ENTITY_ACTIONS,
+        toolbarActions: BLOG_POSTS_TOOLBAR_ACTIONS,
+        entityProps: BLOG_POSTS_ENTITY_PROPS,
+        createFormProps: BLOG_POSTS_CREATE_FORM_PROPS,
+        editFormProps: BLOG_POSTS_EDIT_FORM_PROPS,
+      }).subscribe((x) => {
+        switch (x.method) {
+          case 'Create':
+            this.onAdd();
+            break;
+          case 'Edit':
+            this.onEdit(x.data.record.id);
+            break;
+          case 'Delete':
+            this.delete(x.data.record.id, x.data.record.title);
+            break;
+        }
+      })
+    );
+    this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
+  }
 
   ngOnInit(): void {
-    this.getBlogs();
   }
 
-  getBlogs() {
-    let getBlogs = this.blogsApiService.BlogsQuerys.query({
-      maxResultCount: 30,
-      skipCount: 0,
-    });
-    //to do add setting api
-    let getBlogPostSetting = null;
-    // let getBlogPostSetting = this.blogsApiService.Blogs.getByBlogPostSettingGetAndFallback(
-    //   {
-    //     providerKey: null,
-    //     providerName: 'T',
-    //   } as Fs.CmsKitManagement.Blogs.Dtos.BlogPostSettingGetDto
-    // );
-
-    forkJoin([getBlogs, getBlogPostSetting]).subscribe(([blog, setting]) => {
-      //to do add setting api
-      //this.blogs = blog;
-      //this.defaultImageUrl = setting.defaultImage;
-
-      let selectedBlogId = this.pageStateService.getOne('SelectedBlogId');
-      let selectedBlog = this.blogs.find((x) => x.id == selectedBlogId);
-      let slug = selectedBlog
-        ? selectedBlog.slug
-        : this.blogs.length > 0
-        ? this.blogs[0].slug
-        : '';
-      this.onSelectBlogSlugChange(slug);
-    });
+  onAdd() {
+    const data = new FormPropData(
+      this.injector,
+      {} as Volo.CmsKit.Admin.Blogs.CreateBlogPostDto
+    );
+    this.addForm = generateFormFromProps(data);
+    this.createModalVisible = true;
+  }
+  create(formValue) {
+    this.service
+      .create(formValue)
+      .pipe(take(1))
+      .subscribe((_) => {
+        this.createModalVisible = false;
+        this.list.get();
+      });
   }
 
-  onSelectBlogSlugChange(slug: string) {
-    this.selectBlogSlug = slug;
-
-    let blog = this.blogs.find((x) => x.slug == slug);
-    let blogId = blog ? blog.id : null;
-    this.pageStateService.setOne('SelectedBlogId', blogId);
-
-    this.refreshPost(1);
+  onEdit(id: string) {
+    this.service
+      .get(id)
+      .pipe(take(1))
+      .pipe(
+        tap((selected) => {
+          this.editSelectedRecord = selected;
+          const data = new FormPropData(this.injector, selected);
+          this.editForm = generateFormFromProps(data);
+        })
+      )
+      .subscribe((x) => {
+        this.editModalVisible = true;
+      });
   }
-
-  refreshPost(page: number) {
-    this.page = page;
-    let input = {
-      skipCount: (page - 1) * 10,
-      maxResultCount: 10,
-      sorting: 'creationTime desc',
-    } as PagedAndSortedResultRequestDto;
-
-    var request: Fs.CmsKitManagement.Blogs.Querys.BlogPosts.BlogQuery = {
-      blogSlug: this.selectBlogSlug,
-      input: input,
+  edit(formValue) {
+    const request: Volo.CmsKit.Admin.Blogs.UpdateBlogPostDto = {
+      ...formValue,
     };
 
-    this.blogsApiService.BlogPostsQuerys.blogQuery(request).subscribe((x) => {
-      this.coverMediaUrls = {};
-      x.items.forEach((x) => {
-        let url = `${this.environmentService.getApiUrl(
-          'cms-kit'
-        )}/api/cms-kit/media/${x.coverImageMediaId}`;
-        this.coverMediaUrls[x.coverImageMediaId] = x.coverImageMediaId
-          ? url
-          : this.defaultImageUrl;
+    this.service
+      .update(this.editSelectedRecord.id, request)
+      .pipe(take(1))
+      .subscribe((_) => {
+        this.editModalVisible = false;
+        this.list.get();
       });
-
-      this.totalCount = x.totalCount;
-      this.posts = x.items;
-      console.log(x);
-    });
   }
 
-  deletePost(id: string) {
-    let self = this;
-
+  delete(id: string, name: string) {
     this.confirmationService
-      .warn('CmsKitManagement::AreYouSureToDelete', 'CmsKitManagement::Warn')
-      .subscribe((x) => {
-        if (x != Confirmation.Status.confirm) return;
-        toDelete(id);
+      .warn('CmsKit::BlogPostDeletionConfirmationMessage', 'CmsKit::AreYouSure', {
+        messageLocalizationParams: [name],
+      })
+      .pipe(
+        filter((status) => status === Confirmation.Status.confirm),
+        switchMap((_) => this.service.delete(id)),
+        take(1)
+      )
+      .subscribe((_) => {
+        this.list.get();
       });
-
-    function toDelete(id: string) {
-      self.adminBlogsApiService.BlogPost.delete(id).subscribe(
-        () => {
-          if (self.posts.length == 1 && self.page > 1) self.page--;
-
-          self.refreshPost(self.page);
-          self.toasterService.success('CmsKitManagement::DataDeleteSuccess');
-        },
-        (error) => {
-          console.error(error);
-          self.toasterService.error('CmsKitManagement::DataDeleteFaild');
-        }
-      );
-    }
   }
 }

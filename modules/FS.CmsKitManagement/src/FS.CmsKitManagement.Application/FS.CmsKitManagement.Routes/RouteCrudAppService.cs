@@ -11,16 +11,16 @@ namespace FS.CmsKitManagement.Routes
 {
     public partial class RouteCrudAppService
     {
-        public override async Task DeleteAsync(Guid id)
-        {
-            await this.deleteRouteRelation(id);
-            await base.DeleteAsync(id);
-        }
+        //public override async Task DeleteAsync(Guid id)
+        //{
+        //    await this.deleteRouteRelation(id);
+        //    await base.DeleteAsync(id);
+        //}
 
-        private async Task deleteRouteRelation(Guid routeId)
-        {
-            var blogsStore = this.LazyServiceProvider.LazyGetRequiredService<IBlogsStore>();
-            await blogsStore.DeletePostRouteByRouteIdAsync(routeId);
-        }
+        //private async Task deleteRouteRelation(Guid routeId)
+        //{
+        //    var blogsStore = this.LazyServiceProvider.LazyGetRequiredService<IBlogsStore>();
+        //    await blogsStore.DeletePostRouteByRouteIdAsync(routeId);
+        //}
     }
 }

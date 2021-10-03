@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.CodingManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesApi.CodingCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CodesApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersApi.SerialNumberCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbersApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

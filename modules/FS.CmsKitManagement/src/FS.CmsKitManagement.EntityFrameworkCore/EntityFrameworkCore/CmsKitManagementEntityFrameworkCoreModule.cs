@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 
 namespace FS.CmsKitManagement.EntityFrameworkCore
 {
@@ -8,7 +9,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
         typeof(CmsKitManagementDomainModule),
         typeof(AbpEntityFrameworkCoreModule)
     )]
-    [DependsOn(typeof(FS.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule))]
+    [DependsOn(typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule))]
     [DependsOn(typeof(Volo.CmsKit.EntityFrameworkCore.CmsKitEntityFrameworkCoreModule))]
     public class CmsKitManagementEntityFrameworkCoreModule : AbpModule
     {
@@ -19,6 +20,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
+                options.AddDefaultTreeRepositories();
             });
         }
     }

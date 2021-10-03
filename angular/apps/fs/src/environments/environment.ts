@@ -10,17 +10,17 @@ export const environment = {
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44323',
+    issuer: 'https://localhost:44326',
     redirectUri: baseUrl,
     clientId: 'Demo_App',
-    responseType: 'code',
+    responseType: 'password',
     scope: 'offline_access openid profile role email phone Demo',
     requireHttps: true
   },
   apis: {
     default: {
-      url: 'https://localhost:44323',
-      rootNamespace: 'FS.Abp.Demo',
+      url: 'https://localhost:44326',
+      rootNamespace: '',
     },
   },
 } as Environment;

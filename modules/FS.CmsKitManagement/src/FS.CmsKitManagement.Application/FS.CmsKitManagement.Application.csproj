@@ -6,22 +6,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
+    <None Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <None Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.Blogs\Querys\BlogPosts\RouteQueryHandler.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.Application" Version="$(AbpVersion)" />
-    <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />-->
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.CmsKitManagement.Routes\RouteCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Routes\RouteDefinitionCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogPostSettingAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
@@ -34,65 +50,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMediaCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDtoAutoMapperProfile.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDefinitionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Dtos\RouteDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RouteCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RouteDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDefinitionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Dtos\VocabularyDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinitionCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
     </Compile>
   </ItemGroup>
 

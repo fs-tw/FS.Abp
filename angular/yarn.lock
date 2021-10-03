@@ -10405,7 +10405,7 @@ ng-alain@^12.2.1:
   resolved "https://registry.yarnpkg.com/ng-alain/-/ng-alain-12.2.1.tgz#b6c959d039272b5b1ce9754436296e43a85351af"
   integrity sha512-63QVDd+Q34HQgae4rIE2A31kLMqZ3NSmEx31LaSvmrwPOQe+szgYoiRDULJwnCGWfSJDIIf8GQHUNVoeRyvZVg==
 
-ng-packagr@^12.0.5:
+ng-packagr@^12.0.5, ng-packagr@^12.1.0:
   version "12.2.1"
   resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-12.2.1.tgz#4a68f4bbee3394d7afcdd9fdf06794b219915bb1"
   integrity sha512-awX/sRmURikw6YjcDzrz2+/SJ4yOr1MTgv4OitSeMXfwBlG5zJLN36mLQn49fYBFecBV+lcAosh0OYJuAueU5g==

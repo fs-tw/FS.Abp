@@ -47,7 +47,7 @@
                       <Y>1 px</Y>
                     </Location>
                     <Size>
-                      <Width>146 px</Width>
+                      <Width>154 px</Width>
                       <Height>18 px</Height>
                     </Size>
                     <Oid xsi:type="SchemaModelOID">
@@ -57,7 +57,7 @@
                   </Model>
                 </Children>
                 <Size>
-                  <Width>148 px</Width>
+                  <Width>156 px</Width>
                   <Height>17 px</Height>
                 </Size>
                 <MaxSize>
@@ -71,7 +71,7 @@
               <Y>-96 px</Y>
             </Location>
             <Size>
-              <Width>152 px</Width>
+              <Width>160 px</Width>
               <Height>67 px</Height>
             </Size>
             <MinSize>
@@ -96,7 +96,7 @@
           <Scale>1</Scale>
           <Location>
             <X>-552 px</X>
-            <Y>-315 px</Y>
+            <Y>-315.2 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

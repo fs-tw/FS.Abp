@@ -6,16 +6,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Routes\**" />
+    <Compile Remove="Data\Vocabularies\**" />
+    <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <Compile Remove="Volo.CmsKit.Blogs\**" />
+    <Compile Remove="Volo.CmsKit.Pages\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
+    <EmbeddedResource Remove="Data\Routes\**" />
+    <EmbeddedResource Remove="Data\Vocabularies\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="Volo.CmsKit.Blogs\**" />
+    <EmbeddedResource Remove="Volo.CmsKit.Pages\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
+    <None Remove="Data\Routes\**" />
+    <None Remove="Data\Vocabularies\**" />
+    <None Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="Volo.CmsKit.Blogs\**" />
+    <None Remove="Volo.CmsKit.Pages\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
+    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\RoutesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\VocabulariesStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
+    <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
+    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
@@ -31,57 +58,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMedia.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
+      <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IPostRouteRepository.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IAttachmentMediaRepository.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
+      <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRouteDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRoutesStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\IRouteTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\Route.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Routes\RouteDefinition.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Routes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabulariesStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\IVocabularyTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\Vocabulary.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Vocabularies\VocabularyDefinition.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Vocabularies</DependentUpon>
+      <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
   </ItemGroup>
 

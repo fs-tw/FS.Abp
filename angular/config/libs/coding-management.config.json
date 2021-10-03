@@ -1,0 +1,55 @@
+{
+  "order": 2001,
+  "nx": {
+    "coding-management": {
+      "tags": []
+    }
+  },
+  "angular": {
+    "coding-management": {
+      "projectType": "library",
+      "root": "libs/coding-management",
+      "sourceRoot": "libs/coding-management/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/coding-management"],
+          "options": {
+            "project": "libs/coding-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/coding-management/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/coding-management/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/coding-management"],
+          "options": {
+            "jestConfig": "libs/coding-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/coding-management/src/**/*.ts",
+              "libs/coding-management/src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/coding-management": ["libs/coding-management/src/index.ts"],
+    "@fs-tw/coding-management/*": ["libs/coding-management/*/src/index.ts"]
+  }
+}

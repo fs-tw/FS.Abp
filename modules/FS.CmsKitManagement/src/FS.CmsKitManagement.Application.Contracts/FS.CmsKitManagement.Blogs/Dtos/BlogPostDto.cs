@@ -1,4 +1,4 @@
-﻿using FS.CmsKitManagement.Routes.Dtos;
+﻿//using FS.CmsKitManagement.Routes.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,7 +33,7 @@ namespace FS.CmsKitManagement.Blogs.Dtos
 
         public Guid AuthorId { get; set; }
 
-        public List<RouteDto> Routes { get; set; }
+        //public List<RouteDto> Routes { get; set; }
 
         public List<MediaDescriptorDto> AttachmentMedias { get; set; }
     }

@@ -10,7 +10,7 @@ export const environment = {
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44323',
+    issuer: 'https://localhost:44326',
     redirectUri: baseUrl,
     clientId: 'Demo_App',
     responseType: 'code',
@@ -19,7 +19,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44323',
+      url: 'https://localhost:44326',
       rootNamespace: 'FS.Abp.Demo',
     },
   },

@@ -9,10 +9,7 @@ using Volo.Abp.VirtualFileSystem;
 namespace FS.CmsKitManagement
 {
     [DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule))]
-    [DependsOn(
-        typeof(AbpValidationModule)
-    )]
-    [DependsOn(typeof(FS.Abp.AbpDomainSharedModule))]
+    [DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
     public class CmsKitManagementDomainSharedModule : AbpModule
     {
