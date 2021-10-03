@@ -8,13 +8,11 @@ export const BLOGS_ENTITY_ACTIONS = ToolbarAction.createMany<Volo.CmsKit.Admin.B
       text: 'CmsKit::Edit',
       action: notify('Edit'),
       permission: 'CmsKit.Blogs.Update',
-      //icon: 'fa fa-plus',
     },
     {
       text: 'CmsKit::Delete',
       action: notify('Delete'),
       permission: 'CmsKit.Blogs.Delete',
-      //visible: data => !data.record.isStatic,
     },
   ]
 );

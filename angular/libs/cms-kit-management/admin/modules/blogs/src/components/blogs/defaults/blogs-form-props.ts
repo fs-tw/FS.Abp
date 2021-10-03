@@ -8,14 +8,14 @@ export const BLOGS_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Blo
     name: 'name',
     id:'name',
     displayName: 'CmsKit::Name',
-    //defaultValue:''
+    validators: () => [Validators.required],
   },
   {
     type: ePropType.String,
     name: 'slug',
     id: 'slug',
     displayName: 'CmsKit::Slug',
-    //defaultValue:''
+    validators: () => [Validators.required],
   }
 ]);
 

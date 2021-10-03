@@ -1,26 +1,26 @@
 <fs-page
   [list]="list"
   [service]="service"
-  title="CmsKit::Blogs"
+  [title]="'CmsKit::Blogs'"
 ></fs-page>
 
 <fs-modal
-  title="AbpUi::Edit"
+  [title]="'AbpUi::Create'"
   *ngIf="createModalVisible"
   [(visible)]="createModalVisible"
   (save)="create($event)"
 >
-  <fs-modal-info-tab title="CmsKit::Blog" [form]="addForm"></fs-modal-info-tab>
+  <fs-modal-info-tab [title]="'CmsKit::Blog'" [form]="addForm"></fs-modal-info-tab>
 </fs-modal>
 
 <fs-modal
-  title="AbpUi::Edit"
+  [title]="'AbpUi::Edit'"
   *ngIf="editModalVisible"
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
   <fs-modal-info-tab
-    title="CmsKit::Blogs"
+    [title]="'CmsKit::Blog'"
     [form]="editForm"
     [selectedRecord]="editSelectedRecord"
   ></fs-modal-info-tab>

@@ -2,9 +2,12 @@ export const enum eCmsKitManagementRouteNames {
   CmsKitManagement = 'CmsKit::Menu:CMS',
   Comments = 'CmsKit::Comments',
   Tags = 'CmsKit::Tags',
+  Ratings = 'CmsKit::Ratings',
+  Reactions = 'CmsKit::Reactions',
   Contents = 'CmsKit::Contents',
   Pages = 'CmsKit::Pages',
   Blogs = 'CmsKit::Blogs',
   BlogPosts = 'CmsKitManagement::BlogPosts',
-  Vocabularies = 'CmsKitManagement::Vocabularies'
+  MediaDescriptors = 'CmsKit::MediaDescriptors',
+  Menus = 'CmsKit::Menus'
 }
