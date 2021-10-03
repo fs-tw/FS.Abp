@@ -1,15 +1,15 @@
 <Project>
   <PropertyGroup>
-    <AbpVersion>4.4.2</AbpVersion>
-    <EasyAbpTreeVersion>2.4.1</EasyAbpTreeVersion>
+    <AbpVersion>4.4.3</AbpVersion>
+    <EasyAbpTreeVersion>2.4.2</EasyAbpTreeVersion>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>442.0.1</Version>
+    <Version>443.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup>
-    <RestSharpVersion>106.11.7</RestSharpVersion>
+    <RestSharpVersion>106.12.0</RestSharpVersion>
   </PropertyGroup>
   
   <PropertyGroup>
