@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.CmsKitManagement.EntityFrameworkCore" namespace="FS.CmsKitManagement" p1:name="CmsKitManagementDbContext" p1:Guid="ea34771b-e07b-4ca9-b0c0-86d170c5d3aa" p1:VersionTag="4.4.2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+<efcore context-namespace="FS.CmsKitManagement.EntityFrameworkCore" namespace="FS.CmsKitManagement" p1:name="CmsKitManagementDbContext" p1:Guid="ea34771b-e07b-4ca9-b0c0-86d170c5d3aa" p1:VersionTag="4.4.3" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
   <class name="$ComplexTypes">
     <component class="FS.CmsKitManagement.CreationAuditedEntity" IsExternal="true" p1:Guid="50cb1afd-e4f4-4f83-bd85-2d3b2c2b66dc" p1:GenerateDTO="False">
       <p1:Attributes>
@@ -202,7 +202,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.CmsKitManagement.MediaDescriptors.AttachmentMedia" entity-set="AttachmentMedia" table="CmsMediaDescriptors" schema="dbo" p1:Guid="d5d99f27-d554-4cf5-a994-30843e1aea71" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.MediaDescriptors.AttachmentMedia" entity-set="AttachmentMedia" schema="dbo" p1:Guid="d5d99f27-d554-4cf5-a994-30843e1aea71" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -259,7 +259,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Contents.ContentDefinition" entity-set="ContentDefinitions" table="CmsMediaDescriptors" schema="dbo" p1:Guid="2c5531ea-a490-4b81-8fc2-4f8b346373c5" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.ContentDefinition" entity-set="ContentDefinitions" schema="dbo" p1:Guid="2c5531ea-a490-4b81-8fc2-4f8b346373c5" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -313,7 +313,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Contents.ContentType" entity-set="ContentTypes" table="CmsMediaDescriptors" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.ContentType" entity-set="ContentTypes" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -370,7 +370,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Contents.Content" entity-set="Contents" table="CmsMediaDescriptors" schema="dbo" p1:Guid="8e4cfb47-2ef5-4c0f-a83a-314c9f3445c9" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.Content" entity-set="Contents" schema="dbo" p1:Guid="8e4cfb47-2ef5-4c0f-a83a-314c9f3445c9" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -430,7 +430,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" table="CmsMediaDescriptors" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -487,7 +487,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.Shapes.Shape" entity-set="Shapes" table="CmsMediaDescriptors" schema="dbo" p1:Guid="c255cb41-86b5-4b99-82f4-37e9b55f981f" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Shapes.Shape" entity-set="Shapes" schema="dbo" p1:Guid="c255cb41-86b5-4b99-82f4-37e9b55f981f" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -547,7 +547,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingual" entity-set="MultiLinguals" table="CmsMediaDescriptors" schema="dbo" p1:Guid="c9d3871a-93e2-405f-ada7-2a7073d0702c" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingual" entity-set="MultiLinguals" schema="dbo" p1:Guid="c9d3871a-93e2-405f-ada7-2a7073d0702c" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -601,7 +601,7 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
-  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation" entity-set="MultiLingualTranslations" table="CmsMediaDescriptors" schema="dbo" p1:Guid="c6db6c9b-7b6e-4bba-a880-47aa67a99df6" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation" entity-set="MultiLingualTranslations" schema="dbo" p1:Guid="c6db6c9b-7b6e-4bba-a880-47aa67a99df6" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
