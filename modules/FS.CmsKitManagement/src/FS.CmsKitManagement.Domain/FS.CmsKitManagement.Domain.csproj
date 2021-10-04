@@ -34,6 +34,10 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Shapes\ShapesStore.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +62,42 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Content.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentDefinition.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentType.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContentDefinition.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentTypeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMedia.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
@@ -66,9 +106,45 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IMediaDescriptorsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualTranslationRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingual.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualProperty.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualTranslation.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\IShapeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\IShapesStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\Shape.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
     </Compile>
   </ItemGroup>
 

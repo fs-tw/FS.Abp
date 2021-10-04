@@ -34,6 +34,48 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             get;
             set;
         }
+
+        public virtual DbSet<FS.CmsKitManagement.Contents.ContentDefinition> ContentDefinitions
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.Contents.ContentType> ContentTypes
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.Contents.Content> Contents
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.Contents.EntityContentDefinition> EntityContentDefinitions
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.Shapes.Shape> Shapes
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.MultiLinguals.MultiLingual> MultiLinguals
+        {
+            get;
+            set;
+        }
+
+        public virtual DbSet<FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation> MultiLingualTranslations
+        {
+            get;
+            set;
+        }
         public CmsKitManagementDbContext(DbContextOptions<CmsKitManagementDbContext> options) :
             base(options)
         {

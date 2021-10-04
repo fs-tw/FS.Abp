@@ -175,6 +175,32 @@
         <column name="" />
       </property>
     </component>
+    <component class="FS.CmsKitManagement.MultiLinguals.MultiLingualProperty" p1:Guid="6e6f6d15-5007-479c-9407-d3ca213e91b9" p1:AbpEditor="YinChang">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string />
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <string>MultiLinguals</string>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="21470f03-949a-4ffe-b568-3bb8e5681f12">
+        <column name="" />
+      </property>
+      <property name="Value" type="String" p1:ValidateRequired="true" p1:Guid="225834f3-b340-476e-b237-cf9ceb1adb7f">
+        <column name="" />
+      </property>
+    </component>
   </class>
   <class name="FS.CmsKitManagement.MediaDescriptors.AttachmentMedia" entity-set="AttachmentMedia" table="CmsMediaDescriptors" schema="dbo" p1:Guid="d5d99f27-d554-4cf5-a994-30843e1aea71" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
@@ -233,4 +259,440 @@
       <property name="ConcurrencyStamp" />
     </component>
   </class>
+  <class name="FS.CmsKitManagement.Contents.ContentDefinition" entity-set="ContentDefinitions" table="CmsMediaDescriptors" schema="dbo" p1:Guid="2c5531ea-a490-4b81-8fc2-4f8b346373c5" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Contents</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="cb25bf22-dc2b-49be-b13f-382be3a43448" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="600cbc6c-3e44-45c4-82d9-9aa215ee2d7f">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="615262cf-fdd4-4bdc-8880-44188821c3cd">
+      <column name="" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="042d1dc3-74b1-45b0-a291-44a799622a31" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="a59b28a9-a8de-4e49-83be-fac4b18ace03" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.CmsKitManagement.Contents.ContentType" entity-set="ContentTypes" table="CmsMediaDescriptors" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Contents</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="6ef4638d-25cd-4c6d-8173-835f7fe01e9e" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="ContentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="1918a843-ccf8-4f5a-8086-423f93a751ad">
+      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="DisplayName" type="String" p1:ValidateRequired="true" p1:Guid="d32e5bc7-77e5-4b2c-9088-6f156c0f60cf">
+      <column name="" />
+    </property>
+    <property name="Type" type="String" p1:ValidateRequired="true" p1:Guid="3438d7a2-e825-45ab-b58c-538045c08060">
+      <column name="" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cba74015-66e6-45ad-8382-4aea351187da" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="b7741ab1-400f-44d1-a364-25641d46e389" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.CmsKitManagement.Contents.Content" entity-set="Contents" table="CmsMediaDescriptors" schema="dbo" p1:Guid="8e4cfb47-2ef5-4c0f-a83a-314c9f3445c9" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Contents</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="0b0b8877-35b6-4a1d-907b-ed8f09039ba1" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="e7e83808-76ba-4363-b66e-7ac25d752144">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="67fc0d11-768c-4dc0-9f3f-c599f04b5799">
+      <column name="" />
+    </property>
+    <property name="ContentTypeId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e9d22664-74ba-411e-a067-b0285f010f12">
+      <column name="" />
+    </property>
+    <property name="Value" type="String" p1:ValidateRequired="true" p1:Guid="b57f5bff-11ec-46ec-b965-861d25aea14a">
+      <column name="" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b413dcc4-6951-4dd4-863f-9a7f7d2dfff7" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="5269b4eb-b996-43bd-a429-02777fdc696e" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" table="CmsMediaDescriptors" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Contents</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="7fd048a4-0a57-461e-ab77-205d5abed36d" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="26eb8943-40bc-40a7-a5e4-a1a9914dbbbc">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b25dcf29-381c-4450-a91c-d5db1425d364">
+      <column name="" />
+    </property>
+    <property name="ContentDefinitionId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b8e61683-6ef2-4211-bb1a-5edcae660d83">
+      <column name="" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="39ec1e8f-e44e-4066-a6b5-ef480f4c9cc1" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="9e6456ca-1e21-4eb0-98b0-05fb4c63aa2f" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.CmsKitManagement.Shapes.Shape" entity-set="Shapes" table="CmsMediaDescriptors" schema="dbo" p1:Guid="c255cb41-86b5-4b99-82f4-37e9b55f981f" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Shapes</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="5d2558c6-9ea0-45e3-b873-31a054066619" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="5e72d6c8-efa3-417e-8861-0de9d1923064">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="7d347c65-f368-46db-a8bb-ea2ab5102594">
+      <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="TextTemplateContentId" type="Guid" p1:ValidateRequired="true" p1:Guid="6e7a926c-76dc-4cab-a643-5667cebfb9a4">
+      <column name="" />
+    </property>
+    <property name="ContentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="fcee327a-ab12-459e-be10-f45580f3f6af">
+      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bf46f031-efad-4d14-8002-202080064679" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="bcb9d1bd-9acb-485e-a478-e4be019db891" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingual" entity-set="MultiLinguals" table="CmsMediaDescriptors" schema="dbo" p1:Guid="c9d3871a-93e2-405f-ada7-2a7073d0702c" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>MultiLinguals</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="64d3bc81-d3c3-4dc6-a1e9-1d28b6a10104" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="2903b6f9-bd2f-47fc-8c33-0472d424ec0b">
+      <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="b9fc4b0e-93e1-46a0-a2b4-578aeba1cbfa">
+      <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="75c049c5-848f-409f-ba46-0bcd942c68bb" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="8f73ceb3-e42a-48de-a072-6c1642fb2aa2" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation" entity-set="MultiLingualTranslations" table="CmsMediaDescriptors" schema="dbo" p1:Guid="c6db6c9b-7b6e-4bba-a880-47aa67a99df6" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+    <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>MultiLinguals</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="EntityBaseStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>AuditedAggregateRoot</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+      </p1:Attribute>
+    </p1:Attributes>
+    <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="41a1c452-8e94-4fdc-a4f0-95ef4176d57b" p1:GenerateDTO="False">
+      <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </id>
+    <property name="Culture" type="String" p1:ValidateRequired="true" p1:Guid="f60e57c6-1661-4e7b-a776-65b7cef7821f">
+      <column name="" />
+    </property>
+    <component name="Properties" class="FS.CmsKitManagement.MultiLinguals.MultiLingualProperty" p1:ValidateRequired="false" p1:Guid="02190269-1134-4a27-9b2f-406c3b88071a" p1:Shadow="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Name" />
+      <property name="Value" />
+    </component>
+    <property name="MultiLingualId" type="Guid" p1:ValidateRequired="true" p1:Guid="28fc7809-cce8-4d66-a4b0-8d25039292fe">
+      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5981ac17-15da-499d-9dd3-ac00cea63fe6" p1:GenerateDTO="False">
+      <column name="" />
+    </property>
+    <component name="AuditedAggregateRoot" class="FS.CmsKitManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="61ed4f59-7ee7-4bc9-afd9-23da956d8d9a" p1:Shadow="True">
+      <property name="CreationTime" />
+      <property name="CreatorId" />
+      <property name="LastModificationTime" />
+      <property name="LastModifierId" />
+      <property name="ExtraProperties" />
+      <property name="ConcurrencyStamp" />
+    </component>
+  </class>
+  <associations>
+    <association name="ContentDefinition_ContentType" cardinality="OneToMany" p1:Guid="bff2a38a-5137-442f-a5ab-d3ff93ffb5d8">
+      <end1 multiplicity="One" name="ContentDefinition" class="ContentType" relation-class="ContentDefinition" constrained="True" lazy="False" p1:Guid="735f7632-1c18-4b7b-ae83-7fa3c8484baf">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="ContentTypes" class="ContentDefinition" relation-class="ContentType" lazy="False" p1:Guid="ddd2f0b3-926f-4f40-ac73-ae7504f1bf15">
+        <property name="ContentDefinitionId" />
+      </end2>
+    </association>
+    <association name="MultiLingualObject_MultiLingualTranslation" cardinality="OneToMany" p1:Guid="e1ee9d09-8326-465e-a1ee-4708244a0c65">
+      <end1 multiplicity="One" name="MultiLingual" class="MultiLingualTranslation" relation-class="MultiLingual" constrained="True" lazy="False" p1:Guid="ea4c1626-77c8-487c-b145-cca7942bbbe2">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="MultiLingualTranslations" class="MultiLingual" relation-class="MultiLingualTranslation" lazy="False" p1:Guid="073dd552-a7fb-4787-b91e-b9b5fcde3478">
+        <property name="MultiLingualId" />
+      </end2>
+    </association>
+  </associations>
 </efcore>
