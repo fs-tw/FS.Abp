@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.MultiLinguals
         [HttpGet]
         [Route("multi-lingual-translation")]
         [RemoteService(true)]
-        public Task<PagedResultDto<MultiLingualTranslationWithDetailsDto>> GetListAsync(MultiLingualTranslationGetListDto MultiLingualTranslationGetList)
+        public Task<PagedResultDto<MultiLingualTranslationWithDetailsDto>> GetListAsync(MultiLingualTranslationGetListDto MultiLingualTranslation)
         {
-            return this.MultiLingualTranslationCrudAppService.GetListAsync(MultiLingualTranslationGetList);
+            return this.MultiLingualTranslationCrudAppService.GetListAsync(MultiLingualTranslation);
         }
 
         [HttpPost]
         [Route("multi-lingual-translation")]
         [NonAction][RemoteService(false)]
-        public Task<MultiLingualTranslationWithDetailsDto> CreateAsync(MultiLingualTranslationCreateDto MultiLingualTranslationCreate)
+        public Task<MultiLingualTranslationWithDetailsDto> CreateAsync(MultiLingualTranslationCreateDto MultiLingualTranslation)
         {
-            return this.MultiLingualTranslationCrudAppService.CreateAsync(MultiLingualTranslationCreate);
+            return this.MultiLingualTranslationCrudAppService.CreateAsync(MultiLingualTranslation);
         }
 
         [HttpPut]
         [Route("multi-lingual-translation/id")]
         [NonAction][RemoteService(false)]
-        public Task<MultiLingualTranslationWithDetailsDto> UpdateAsync([FromQuery] MultiLingualTranslationPrimaryKeyDto MultiLingualTranslationPrimaryKey, MultiLingualTranslationUpdateDto MultiLingualTranslationUpdate)
+        public Task<MultiLingualTranslationWithDetailsDto> UpdateAsync([FromQuery] MultiLingualTranslationPrimaryKeyDto MultiLingualTranslationPrimaryKey, MultiLingualTranslationUpdateDto MultiLingualTranslation)
         {
-            return this.MultiLingualTranslationCrudAppService.UpdateAsync(MultiLingualTranslationPrimaryKey,MultiLingualTranslationUpdate);
+            return this.MultiLingualTranslationCrudAppService.UpdateAsync(MultiLingualTranslationPrimaryKey,MultiLingualTranslation);
         }
 
         [HttpDelete]

@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.Contents
         [HttpGet]
         [Route("content-definition")]
         [RemoteService(true)]
-        public Task<PagedResultDto<ContentDefinitionWithDetailsDto>> GetListAsync(ContentDefinitionGetListDto ContentDefinitionGetList)
+        public Task<PagedResultDto<ContentDefinitionWithDetailsDto>> GetListAsync(ContentDefinitionGetListDto ContentDefinition)
         {
-            return this.ContentDefinitionCrudAppService.GetListAsync(ContentDefinitionGetList);
+            return this.ContentDefinitionCrudAppService.GetListAsync(ContentDefinition);
         }
 
         [HttpPost]
         [Route("content-definition")]
         [NonAction][RemoteService(false)]
-        public Task<ContentDefinitionWithDetailsDto> CreateAsync(ContentDefinitionCreateDto ContentDefinitionCreate)
+        public Task<ContentDefinitionWithDetailsDto> CreateAsync(ContentDefinitionCreateDto ContentDefinition)
         {
-            return this.ContentDefinitionCrudAppService.CreateAsync(ContentDefinitionCreate);
+            return this.ContentDefinitionCrudAppService.CreateAsync(ContentDefinition);
         }
 
         [HttpPut]
         [Route("content-definition/id")]
         [NonAction][RemoteService(false)]
-        public Task<ContentDefinitionWithDetailsDto> UpdateAsync([FromQuery] ContentDefinitionPrimaryKeyDto ContentDefinitionPrimaryKey, ContentDefinitionUpdateDto ContentDefinitionUpdate)
+        public Task<ContentDefinitionWithDetailsDto> UpdateAsync([FromQuery] ContentDefinitionPrimaryKeyDto ContentDefinitionPrimaryKey, ContentDefinitionUpdateDto ContentDefinition)
         {
-            return this.ContentDefinitionCrudAppService.UpdateAsync(ContentDefinitionPrimaryKey,ContentDefinitionUpdate);
+            return this.ContentDefinitionCrudAppService.UpdateAsync(ContentDefinitionPrimaryKey,ContentDefinition);
         }
 
         [HttpDelete]

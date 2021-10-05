@@ -62,13 +62,13 @@
         <File Name="BlogPostSetting.AbpSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="IBlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
-        <File Name="MediaDescriptorsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
+        <File Name="IMediaDescriptorsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="MediaDescriptorsStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
-        <File Name="ContentsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="IContentsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentsStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="ShapesStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
+        <File Name="IShapesStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="ShapesStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
-        <File Name="MultiLingualsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="IMultiLingualsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="MultiLingualsStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="ICmsKitManagementDbContext.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsKitManagementDbContext.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />

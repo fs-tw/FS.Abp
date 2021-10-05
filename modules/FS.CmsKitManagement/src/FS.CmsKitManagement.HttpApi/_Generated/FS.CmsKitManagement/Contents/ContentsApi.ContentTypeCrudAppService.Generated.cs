@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.Contents
         [HttpGet]
         [Route("content-type")]
         [RemoteService(true)]
-        public Task<PagedResultDto<ContentTypeWithDetailsDto>> GetListAsync(ContentTypeGetListDto ContentTypeGetList)
+        public Task<PagedResultDto<ContentTypeWithDetailsDto>> GetListAsync(ContentTypeGetListDto ContentType)
         {
-            return this.ContentTypeCrudAppService.GetListAsync(ContentTypeGetList);
+            return this.ContentTypeCrudAppService.GetListAsync(ContentType);
         }
 
         [HttpPost]
         [Route("content-type")]
         [NonAction][RemoteService(false)]
-        public Task<ContentTypeWithDetailsDto> CreateAsync(ContentTypeCreateDto ContentTypeCreate)
+        public Task<ContentTypeWithDetailsDto> CreateAsync(ContentTypeCreateDto ContentType)
         {
-            return this.ContentTypeCrudAppService.CreateAsync(ContentTypeCreate);
+            return this.ContentTypeCrudAppService.CreateAsync(ContentType);
         }
 
         [HttpPut]
         [Route("content-type/id")]
         [NonAction][RemoteService(false)]
-        public Task<ContentTypeWithDetailsDto> UpdateAsync([FromQuery] ContentTypePrimaryKeyDto ContentTypePrimaryKey, ContentTypeUpdateDto ContentTypeUpdate)
+        public Task<ContentTypeWithDetailsDto> UpdateAsync([FromQuery] ContentTypePrimaryKeyDto ContentTypePrimaryKey, ContentTypeUpdateDto ContentType)
         {
-            return this.ContentTypeCrudAppService.UpdateAsync(ContentTypePrimaryKey,ContentTypeUpdate);
+            return this.ContentTypeCrudAppService.UpdateAsync(ContentTypePrimaryKey,ContentType);
         }
 
         [HttpDelete]

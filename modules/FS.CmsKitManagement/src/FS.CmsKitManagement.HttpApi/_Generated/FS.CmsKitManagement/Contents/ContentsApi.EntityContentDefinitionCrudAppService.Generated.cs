@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.Contents
         [HttpGet]
         [Route("entity-content-definition")]
         [RemoteService(true)]
-        public Task<PagedResultDto<EntityContentDefinitionWithDetailsDto>> GetListAsync(EntityContentDefinitionGetListDto EntityContentDefinitionGetList)
+        public Task<PagedResultDto<EntityContentDefinitionWithDetailsDto>> GetListAsync(EntityContentDefinitionGetListDto EntityContentDefinition)
         {
-            return this.EntityContentDefinitionCrudAppService.GetListAsync(EntityContentDefinitionGetList);
+            return this.EntityContentDefinitionCrudAppService.GetListAsync(EntityContentDefinition);
         }
 
         [HttpPost]
         [Route("entity-content-definition")]
         [NonAction][RemoteService(false)]
-        public Task<EntityContentDefinitionWithDetailsDto> CreateAsync(EntityContentDefinitionCreateDto EntityContentDefinitionCreate)
+        public Task<EntityContentDefinitionWithDetailsDto> CreateAsync(EntityContentDefinitionCreateDto EntityContentDefinition)
         {
-            return this.EntityContentDefinitionCrudAppService.CreateAsync(EntityContentDefinitionCreate);
+            return this.EntityContentDefinitionCrudAppService.CreateAsync(EntityContentDefinition);
         }
 
         [HttpPut]
         [Route("entity-content-definition/id")]
         [NonAction][RemoteService(false)]
-        public Task<EntityContentDefinitionWithDetailsDto> UpdateAsync([FromQuery] EntityContentDefinitionPrimaryKeyDto EntityContentDefinitionPrimaryKey, EntityContentDefinitionUpdateDto EntityContentDefinitionUpdate)
+        public Task<EntityContentDefinitionWithDetailsDto> UpdateAsync([FromQuery] EntityContentDefinitionPrimaryKeyDto EntityContentDefinitionPrimaryKey, EntityContentDefinitionUpdateDto EntityContentDefinition)
         {
-            return this.EntityContentDefinitionCrudAppService.UpdateAsync(EntityContentDefinitionPrimaryKey,EntityContentDefinitionUpdate);
+            return this.EntityContentDefinitionCrudAppService.UpdateAsync(EntityContentDefinitionPrimaryKey,EntityContentDefinition);
         }
 
         [HttpDelete]

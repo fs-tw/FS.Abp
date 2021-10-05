@@ -9,11 +9,11 @@ import { Injectable } from '@angular/core';
 export class ShapesApiService {
   apiName = 'cms-kit-management';
 
-  getList = (ShapeGetList: ShapeGetListDto) =>
+  getListByShape = (Shape: ShapeGetListDto) =>
     this.restService.request<any, PagedResultDto<ShapeWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/shapes/shape',
-      params: { fields: ShapeGetList.fields, value: ShapeGetList.value, sorting: ShapeGetList.sorting, skipCount: ShapeGetList.skipCount, maxResultCount: ShapeGetList.maxResultCount },
+      params: { fields: Shape.fields, value: Shape.value, sorting: Shape.sorting, skipCount: Shape.skipCount, maxResultCount: Shape.maxResultCount },
     },
     { apiName: this.apiName });
 

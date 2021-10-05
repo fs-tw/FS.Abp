@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.MultiLinguals
         [HttpGet]
         [Route("multi-lingual")]
         [RemoteService(true)]
-        public Task<PagedResultDto<MultiLingualWithDetailsDto>> GetListAsync(MultiLingualGetListDto MultiLingualGetList)
+        public Task<PagedResultDto<MultiLingualWithDetailsDto>> GetListAsync(MultiLingualGetListDto MultiLingual)
         {
-            return this.MultiLingualCrudAppService.GetListAsync(MultiLingualGetList);
+            return this.MultiLingualCrudAppService.GetListAsync(MultiLingual);
         }
 
         [HttpPost]
         [Route("multi-lingual")]
         [NonAction][RemoteService(false)]
-        public Task<MultiLingualWithDetailsDto> CreateAsync(MultiLingualCreateDto MultiLingualCreate)
+        public Task<MultiLingualWithDetailsDto> CreateAsync(MultiLingualCreateDto MultiLingual)
         {
-            return this.MultiLingualCrudAppService.CreateAsync(MultiLingualCreate);
+            return this.MultiLingualCrudAppService.CreateAsync(MultiLingual);
         }
 
         [HttpPut]
         [Route("multi-lingual/id")]
         [NonAction][RemoteService(false)]
-        public Task<MultiLingualWithDetailsDto> UpdateAsync([FromQuery] MultiLingualPrimaryKeyDto MultiLingualPrimaryKey, MultiLingualUpdateDto MultiLingualUpdate)
+        public Task<MultiLingualWithDetailsDto> UpdateAsync([FromQuery] MultiLingualPrimaryKeyDto MultiLingualPrimaryKey, MultiLingualUpdateDto MultiLingual)
         {
-            return this.MultiLingualCrudAppService.UpdateAsync(MultiLingualPrimaryKey,MultiLingualUpdate);
+            return this.MultiLingualCrudAppService.UpdateAsync(MultiLingualPrimaryKey,MultiLingual);
         }
 
         [HttpDelete]

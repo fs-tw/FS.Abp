@@ -9,11 +9,11 @@ import { Injectable } from '@angular/core';
 export class MediaDescriptorsApiService {
   apiName = 'cms-kit-management';
 
-  getList = (AttachmentMediaGetList: AttachmentMediaGetListDto) =>
+  getListByAttachmentMedia = (AttachmentMedia: AttachmentMediaGetListDto) =>
     this.restService.request<any, PagedResultDto<AttachmentMediaWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/media-descriptors/attachment-media',
-      params: { fields: AttachmentMediaGetList.fields, value: AttachmentMediaGetList.value, sorting: AttachmentMediaGetList.sorting, skipCount: AttachmentMediaGetList.skipCount, maxResultCount: AttachmentMediaGetList.maxResultCount },
+      params: { fields: AttachmentMedia.fields, value: AttachmentMedia.value, sorting: AttachmentMedia.sorting, skipCount: AttachmentMedia.skipCount, maxResultCount: AttachmentMedia.maxResultCount },
     },
     { apiName: this.apiName });
 

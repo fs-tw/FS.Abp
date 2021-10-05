@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.Shapes
         [HttpGet]
         [Route("shape")]
         [RemoteService(true)]
-        public Task<PagedResultDto<ShapeWithDetailsDto>> GetListAsync(ShapeGetListDto ShapeGetList)
+        public Task<PagedResultDto<ShapeWithDetailsDto>> GetListAsync(ShapeGetListDto Shape)
         {
-            return this.ShapeCrudAppService.GetListAsync(ShapeGetList);
+            return this.ShapeCrudAppService.GetListAsync(Shape);
         }
 
         [HttpPost]
         [Route("shape")]
         [NonAction][RemoteService(false)]
-        public Task<ShapeWithDetailsDto> CreateAsync(ShapeCreateDto ShapeCreate)
+        public Task<ShapeWithDetailsDto> CreateAsync(ShapeCreateDto Shape)
         {
-            return this.ShapeCrudAppService.CreateAsync(ShapeCreate);
+            return this.ShapeCrudAppService.CreateAsync(Shape);
         }
 
         [HttpPut]
         [Route("shape/id")]
         [NonAction][RemoteService(false)]
-        public Task<ShapeWithDetailsDto> UpdateAsync([FromQuery] ShapePrimaryKeyDto ShapePrimaryKey, ShapeUpdateDto ShapeUpdate)
+        public Task<ShapeWithDetailsDto> UpdateAsync([FromQuery] ShapePrimaryKeyDto ShapePrimaryKey, ShapeUpdateDto Shape)
         {
-            return this.ShapeCrudAppService.UpdateAsync(ShapePrimaryKey,ShapeUpdate);
+            return this.ShapeCrudAppService.UpdateAsync(ShapePrimaryKey,Shape);
         }
 
         [HttpDelete]

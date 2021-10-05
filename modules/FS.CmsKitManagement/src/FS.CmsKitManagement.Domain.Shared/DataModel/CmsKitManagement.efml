@@ -152,7 +152,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.CmsKitManagement.Blogs.BlogPostSetting" p1:Guid="a64ed490-142d-4f64-9bc5-adceac2fb7c9" p1:ShapeColor="-8355648" p1:AbpEditor="YinChang" p1:GetAsync="True">
+    <component class="FS.CmsKitManagement.Blogs.BlogPostSetting" p1:Guid="a64ed490-142d-4f64-9bc5-adceac2fb7c9" p1:ShapeColor="-8355648" p1:AbpEditor="YinChang" p1:GetAsync="True" p1:UpdateAsync="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />

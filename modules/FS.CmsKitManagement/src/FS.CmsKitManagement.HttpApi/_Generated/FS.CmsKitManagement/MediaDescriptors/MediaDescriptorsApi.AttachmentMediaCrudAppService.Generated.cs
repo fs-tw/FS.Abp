@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.MediaDescriptors
         [HttpGet]
         [Route("attachment-media")]
         [RemoteService(true)]
-        public Task<PagedResultDto<AttachmentMediaWithDetailsDto>> GetListAsync(AttachmentMediaGetListDto AttachmentMediaGetList)
+        public Task<PagedResultDto<AttachmentMediaWithDetailsDto>> GetListAsync(AttachmentMediaGetListDto AttachmentMedia)
         {
-            return this.AttachmentMediaCrudAppService.GetListAsync(AttachmentMediaGetList);
+            return this.AttachmentMediaCrudAppService.GetListAsync(AttachmentMedia);
         }
 
         [HttpPost]
         [Route("attachment-media")]
         [NonAction][RemoteService(false)]
-        public Task<AttachmentMediaWithDetailsDto> CreateAsync(AttachmentMediaCreateDto AttachmentMediaCreate)
+        public Task<AttachmentMediaWithDetailsDto> CreateAsync(AttachmentMediaCreateDto AttachmentMedia)
         {
-            return this.AttachmentMediaCrudAppService.CreateAsync(AttachmentMediaCreate);
+            return this.AttachmentMediaCrudAppService.CreateAsync(AttachmentMedia);
         }
 
         [HttpPut]
         [Route("attachment-media/id")]
         [NonAction][RemoteService(false)]
-        public Task<AttachmentMediaWithDetailsDto> UpdateAsync([FromQuery] AttachmentMediaPrimaryKeyDto AttachmentMediaPrimaryKey, AttachmentMediaUpdateDto AttachmentMediaUpdate)
+        public Task<AttachmentMediaWithDetailsDto> UpdateAsync([FromQuery] AttachmentMediaPrimaryKeyDto AttachmentMediaPrimaryKey, AttachmentMediaUpdateDto AttachmentMedia)
         {
-            return this.AttachmentMediaCrudAppService.UpdateAsync(AttachmentMediaPrimaryKey,AttachmentMediaUpdate);
+            return this.AttachmentMediaCrudAppService.UpdateAsync(AttachmentMediaPrimaryKey,AttachmentMedia);
         }
 
         [HttpDelete]

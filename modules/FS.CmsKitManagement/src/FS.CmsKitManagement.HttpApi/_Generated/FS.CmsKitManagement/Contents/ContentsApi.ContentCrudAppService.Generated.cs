@@ -28,25 +28,25 @@ namespace FS.CmsKitManagement.Contents
         [HttpGet]
         [Route("content")]
         [RemoteService(true)]
-        public Task<PagedResultDto<ContentWithDetailsDto>> GetListAsync(ContentGetListDto ContentGetList)
+        public Task<PagedResultDto<ContentWithDetailsDto>> GetListAsync(ContentGetListDto Content)
         {
-            return this.ContentCrudAppService.GetListAsync(ContentGetList);
+            return this.ContentCrudAppService.GetListAsync(Content);
         }
 
         [HttpPost]
         [Route("content")]
         [NonAction][RemoteService(false)]
-        public Task<ContentWithDetailsDto> CreateAsync(ContentCreateDto ContentCreate)
+        public Task<ContentWithDetailsDto> CreateAsync(ContentCreateDto Content)
         {
-            return this.ContentCrudAppService.CreateAsync(ContentCreate);
+            return this.ContentCrudAppService.CreateAsync(Content);
         }
 
         [HttpPut]
         [Route("content/id")]
         [NonAction][RemoteService(false)]
-        public Task<ContentWithDetailsDto> UpdateAsync([FromQuery] ContentPrimaryKeyDto ContentPrimaryKey, ContentUpdateDto ContentUpdate)
+        public Task<ContentWithDetailsDto> UpdateAsync([FromQuery] ContentPrimaryKeyDto ContentPrimaryKey, ContentUpdateDto Content)
         {
-            return this.ContentCrudAppService.UpdateAsync(ContentPrimaryKey,ContentUpdate);
+            return this.ContentCrudAppService.UpdateAsync(ContentPrimaryKey,Content);
         }
 
         [HttpDelete]

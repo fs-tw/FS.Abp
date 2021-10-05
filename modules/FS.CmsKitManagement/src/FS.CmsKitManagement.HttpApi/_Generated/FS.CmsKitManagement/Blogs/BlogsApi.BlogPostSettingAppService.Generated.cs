@@ -21,14 +21,14 @@ namespace FS.CmsKitManagement.Blogs
         [HttpGet]
         [Route("blog-post-setting")]
         [RemoteService(true)]
-        public Task<BlogPostSettingDto> GetAsync(BlogPostSettingGetDto BlogPostSettingGet, bool fallback = true)
+        public Task<BlogPostSettingDto> GetAsync(BlogPostSettingGetDto BlogPostSetting, bool fallback = true)
         {
-            return BlogPostSettingAppService.GetAsync(BlogPostSettingGet);
+            return BlogPostSettingAppService.GetAsync(BlogPostSetting , fallback);
         }
 
         [HttpPut]
         [Route("blog-post-setting")]
-        [NonAction][RemoteService(false)]
+        [RemoteService(true)]
         public Task UpdateAsync(BlogPostSettingDto BlogPostSetting, string providerName = null, string providerKey = null)
         {
             return BlogPostSettingAppService.UpdateAsync(BlogPostSetting, providerName, providerKey);
