@@ -8,7 +8,37 @@
   [nodes]="nodes"
   [(expandedKeys)]="expandedKeys"
   [draggable]="false"
-></abp-tree>
+  [noAnimation]="false"
+>
+  <ng-template abpTreeExpandedIconTemplate let-node let-origin="origin">
+    <i
+      class="far"
+      style="line-height: 26px"
+      [class.fa-plus-square]="!node.isExpanded"
+      [class.fa-minus-square]="node.isExpanded"
+      aria-hidden="true"
+    ></i>
+  </ng-template>
+
+  <ng-template abpTreeNodeTemplate let-node>
+    <i class="fas fa-folder fs-15px text-primary mr-1"></i>
+    {{ node.title }}
+  </ng-template>
+
+  <ng-template #menu let-node>
+    <ul nz-menu>
+      <li nz-menu-item (click)="onEdit(node.origin.entity.id)">
+        {{ 'AbpUi::Edit' | abpLocalization }}
+      </li>
+      <li nz-menu-item (click)="onAddSubItem(node.origin.entity.id)">
+        {{ 'CmsKit::AddSubMenuItem' | abpLocalization }}
+      </li>
+      <li nz-menu-item (click)="delete(node.origin.entity.id, node.origin.entity.displayName)">
+        {{ 'CmsKit::Delete' | abpLocalization }}
+      </li>
+    </ul>
+  </ng-template>
+</abp-tree>
 
 <fs-modal
   [title]="'AbpUi::Create'"
@@ -17,6 +47,15 @@
   (save)="create($event)"
 >
   <fs-modal-info-tab [title]="'CmsKit::Menu'" [form]="addForm"></fs-modal-info-tab>
+</fs-modal>
+
+<fs-modal
+  [title]="'CmsKit::AddSubMenuItem'"
+  *ngIf="createSubItemModalVisible"
+  [(visible)]="createSubItemModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab [title]="'CmsKit::MenuItem'" [form]="addForm"></fs-modal-info-tab>
 </fs-modal>
 
 <fs-modal

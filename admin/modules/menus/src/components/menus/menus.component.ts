@@ -39,6 +39,7 @@ export class MenusComponent implements OnInit {
   service: Volo.CmsKit.Admin.Menus.MenuItemAdminService;
 
   createModalVisible = false;
+  createSubItemModalVisible = false;
   addForm: FormGroup;
 
   editModalVisible = false;
@@ -103,12 +104,21 @@ export class MenusComponent implements OnInit {
     this.addForm = generateFormFromProps(data);
     this.createModalVisible = true;
   }
+  onAddSubItem(id: string) {
+    const data = new FormPropData(
+      this.injector,
+      { parentId: id } as Volo.CmsKit.Admin.Menus.MenuItemCreateInput
+    );
+    this.addForm = generateFormFromProps(data);
+    this.createSubItemModalVisible = true;
+  }
   create(formValue) {
     this.service
       .create(formValue)
       .pipe(take(1))
       .subscribe((_) => {
         this.createModalVisible = false;
+        this.createSubItemModalVisible = false;
         this.list.get();
       });
   }
