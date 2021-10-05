@@ -21,22 +21,20 @@ import {
   ATTACH_MENTMEDIA_TOOLBAR_ACTIONS,
 } from './defaults/index';
 import type { PagedResultDto } from '@abp/ng.core';
+import { EntityService } from '@fs-tw/components/page';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ComponentService {
-  service: Fs.CmsKitManagement.MediaDescriptors.MediaDescriptorsApiService;
+class ComponentService implements EntityService<
+  Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+> {
   constructor(
     private readonly injector: Injector,
-  ) {
-    this.service = this.injector.get(Fs.CmsKitManagement.MediaDescriptors.MediaDescriptorsApiService);
-  }
+  ) {}
 
   getList(AttachmentMedia: Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaGetListDto):
     Observable<PagedResultDto<Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto>>
   {
-    return this.service.getListByAttachmentMedia(AttachmentMedia);
+    let service = this.injector.get(Fs.CmsKitManagement.MediaDescriptors.MediaDescriptorsApiService);
+    return service.getListByAttachmentMedia(AttachmentMedia);
   }
 }
 
@@ -80,7 +78,7 @@ export class AttachmentMediaComponent implements OnInit {
         }
       })
     );
-    this.service = this.injector.get(ComponentService);
+    this.service = new ComponentService(this.injector);
   }
 
   ngOnInit(): void {}
