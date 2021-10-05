@@ -9,19 +9,19 @@ import { Injectable } from '@angular/core';
 export class MultiLingualsApiService {
   apiName = 'cms-kit-management';
 
-  getList = (MultiLingualTranslationGetList: MultiLingualTranslationGetListDto) =>
-    this.restService.request<any, PagedResultDto<MultiLingualTranslationWithDetailsDto>>({
-      method: 'GET',
-      url: '/api/cms-kit-management/multi-linguals/multi-lingual-translation',
-      params: { fields: MultiLingualTranslationGetList.fields, value: MultiLingualTranslationGetList.value, sorting: MultiLingualTranslationGetList.sorting, skipCount: MultiLingualTranslationGetList.skipCount, maxResultCount: MultiLingualTranslationGetList.maxResultCount },
-    },
-    { apiName: this.apiName });
-
-  getList = (MultiLingualGetList: MultiLingualGetListDto) =>
+  getListByMultiLingual = (MultiLingual: MultiLingualGetListDto) =>
     this.restService.request<any, PagedResultDto<MultiLingualWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/multi-linguals/multi-lingual',
-      params: { fields: MultiLingualGetList.fields, value: MultiLingualGetList.value, sorting: MultiLingualGetList.sorting, skipCount: MultiLingualGetList.skipCount, maxResultCount: MultiLingualGetList.maxResultCount },
+      params: { fields: MultiLingual.fields, value: MultiLingual.value, sorting: MultiLingual.sorting, skipCount: MultiLingual.skipCount, maxResultCount: MultiLingual.maxResultCount },
+    },
+    { apiName: this.apiName });
+
+  getListByMultiLingualTranslation = (MultiLingualTranslation: MultiLingualTranslationGetListDto) =>
+    this.restService.request<any, PagedResultDto<MultiLingualTranslationWithDetailsDto>>({
+      method: 'GET',
+      url: '/api/cms-kit-management/multi-linguals/multi-lingual-translation',
+      params: { fields: MultiLingualTranslation.fields, value: MultiLingualTranslation.value, sorting: MultiLingualTranslation.sorting, skipCount: MultiLingualTranslation.skipCount, maxResultCount: MultiLingualTranslation.maxResultCount },
     },
     { apiName: this.apiName });
 

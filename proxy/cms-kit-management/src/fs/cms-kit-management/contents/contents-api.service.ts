@@ -9,35 +9,35 @@ import { Injectable } from '@angular/core';
 export class ContentsApiService {
   apiName = 'cms-kit-management';
 
-  getList = (EntityContentDefinitionGetList: EntityContentDefinitionGetListDto) =>
-    this.restService.request<any, PagedResultDto<EntityContentDefinitionWithDetailsDto>>({
-      method: 'GET',
-      url: '/api/cms-kit-management/contents/entity-content-definition',
-      params: { fields: EntityContentDefinitionGetList.fields, value: EntityContentDefinitionGetList.value, sorting: EntityContentDefinitionGetList.sorting, skipCount: EntityContentDefinitionGetList.skipCount, maxResultCount: EntityContentDefinitionGetList.maxResultCount },
-    },
-    { apiName: this.apiName });
-
-  getList = (ContentTypeGetList: ContentTypeGetListDto) =>
-    this.restService.request<any, PagedResultDto<ContentTypeWithDetailsDto>>({
-      method: 'GET',
-      url: '/api/cms-kit-management/contents/content-type',
-      params: { fields: ContentTypeGetList.fields, value: ContentTypeGetList.value, sorting: ContentTypeGetList.sorting, skipCount: ContentTypeGetList.skipCount, maxResultCount: ContentTypeGetList.maxResultCount },
-    },
-    { apiName: this.apiName });
-
-  getList = (ContentDefinitionGetList: ContentDefinitionGetListDto) =>
-    this.restService.request<any, PagedResultDto<ContentDefinitionWithDetailsDto>>({
-      method: 'GET',
-      url: '/api/cms-kit-management/contents/content-definition',
-      params: { fields: ContentDefinitionGetList.fields, value: ContentDefinitionGetList.value, sorting: ContentDefinitionGetList.sorting, skipCount: ContentDefinitionGetList.skipCount, maxResultCount: ContentDefinitionGetList.maxResultCount },
-    },
-    { apiName: this.apiName });
-
-  getList = (ContentGetList: ContentGetListDto) =>
+  getListByContent = (Content: ContentGetListDto) =>
     this.restService.request<any, PagedResultDto<ContentWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/content',
-      params: { fields: ContentGetList.fields, value: ContentGetList.value, sorting: ContentGetList.sorting, skipCount: ContentGetList.skipCount, maxResultCount: ContentGetList.maxResultCount },
+      params: { fields: Content.fields, value: Content.value, sorting: Content.sorting, skipCount: Content.skipCount, maxResultCount: Content.maxResultCount },
+    },
+    { apiName: this.apiName });
+
+  getListByContentDefinition = (ContentDefinition: ContentDefinitionGetListDto) =>
+    this.restService.request<any, PagedResultDto<ContentDefinitionWithDetailsDto>>({
+      method: 'GET',
+      url: '/api/cms-kit-management/contents/content-definition',
+      params: { fields: ContentDefinition.fields, value: ContentDefinition.value, sorting: ContentDefinition.sorting, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount },
+    },
+    { apiName: this.apiName });
+
+  getListByContentType = (ContentType: ContentTypeGetListDto) =>
+    this.restService.request<any, PagedResultDto<ContentTypeWithDetailsDto>>({
+      method: 'GET',
+      url: '/api/cms-kit-management/contents/content-type',
+      params: { fields: ContentType.fields, value: ContentType.value, sorting: ContentType.sorting, skipCount: ContentType.skipCount, maxResultCount: ContentType.maxResultCount },
+    },
+    { apiName: this.apiName });
+
+  getListByEntityContentDefinition = (EntityContentDefinition: EntityContentDefinitionGetListDto) =>
+    this.restService.request<any, PagedResultDto<EntityContentDefinitionWithDetailsDto>>({
+      method: 'GET',
+      url: '/api/cms-kit-management/contents/entity-content-definition',
+      params: { fields: EntityContentDefinition.fields, value: EntityContentDefinition.value, sorting: EntityContentDefinition.sorting, skipCount: EntityContentDefinition.skipCount, maxResultCount: EntityContentDefinition.maxResultCount },
     },
     { apiName: this.apiName });
 
