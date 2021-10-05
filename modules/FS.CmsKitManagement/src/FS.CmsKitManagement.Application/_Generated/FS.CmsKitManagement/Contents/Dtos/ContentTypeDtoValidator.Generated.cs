@@ -19,6 +19,9 @@ namespace FS.CmsKitManagement.Contents.Dtos
             RuleFor(p => p.ContentDefinitionId)
                 .NotNull()
                 ;
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
             RuleFor(p => p.DisplayName)
                 .NotNull()
                 ;
@@ -34,6 +37,9 @@ namespace FS.CmsKitManagement.Contents.Dtos
         public ContentTypeUpdateDtoValidator()
         {
             RuleFor(p => p.ContentDefinitionId)
+                .NotNull()
+                ;
+            RuleFor(p => p.Sequence)
                 .NotNull()
                 ;
             RuleFor(p => p.DisplayName)

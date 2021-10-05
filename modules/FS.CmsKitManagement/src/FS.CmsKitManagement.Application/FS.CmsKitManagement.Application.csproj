@@ -25,6 +25,9 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoValidator.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,10 +53,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
@@ -67,14 +66,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDefinitionDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
@@ -93,6 +84,18 @@
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\EntityContentDefinitionDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\EntityContentDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\EntityContentDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContentCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>

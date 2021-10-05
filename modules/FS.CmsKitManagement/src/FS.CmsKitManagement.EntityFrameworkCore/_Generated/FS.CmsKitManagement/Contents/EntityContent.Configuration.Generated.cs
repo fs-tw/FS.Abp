@@ -22,23 +22,25 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class ContentConfiguration : IEntityTypeConfiguration<Content>
+    public partial class EntityContentConfiguration : IEntityTypeConfiguration<EntityContent>
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
-        public ContentConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
+        public EntityContentConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
         {
             this.options = options;
         }
-        public void Configure(EntityTypeBuilder<Content> builder)
+        public void Configure(EntityTypeBuilder<EntityContent> builder)
         {
-            builder.ToTable(options.TablePrefix + @"Contents", options.Schema);
+            builder.ToTable(options.TablePrefix + @"EntityContents", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").HasColumnType(@"uniqueidentifier").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.ContentTypeId).HasColumnName(@"ContentTypeId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
             builder.Property(x => x.EntityType).HasColumnName(@"EntityType").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
-            builder.Property(x => x.EntityId).HasColumnName(@"EntityId").ValueGeneratedNever();
-            builder.Property(x => x.ContentTypeId).HasColumnName(@"ContentTypeId").ValueGeneratedNever();
-            builder.Property(x => x.Value).HasColumnName(@"Value").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.EntityId).HasColumnName(@"EntityId").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.Index).HasColumnName(@"Index").IsRequired().ValueGeneratedNever();
+            builder.Property(x => x.Value).HasColumnName(@"Value").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
+            builder.HasOne(x => x.ContentType).WithMany().IsRequired(true).HasForeignKey(@"ContentTypeId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);
@@ -48,7 +50,7 @@ namespace FS.CmsKitManagement.Contents
 
         #region Partial Methods
 
-        partial void CustomizeConfiguration(EntityTypeBuilder<Content> builder);
+        partial void CustomizeConfiguration(EntityTypeBuilder<EntityContent> builder);
 
         #endregion
     }

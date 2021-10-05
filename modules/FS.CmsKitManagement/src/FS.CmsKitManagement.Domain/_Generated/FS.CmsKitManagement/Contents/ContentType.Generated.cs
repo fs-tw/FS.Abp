@@ -41,6 +41,12 @@ namespace FS.CmsKitManagement.Contents
             set;
         }
 
+        public virtual int Sequence
+        {
+            get;
+            set;
+        }
+
         public virtual string DisplayName
         {
             get;

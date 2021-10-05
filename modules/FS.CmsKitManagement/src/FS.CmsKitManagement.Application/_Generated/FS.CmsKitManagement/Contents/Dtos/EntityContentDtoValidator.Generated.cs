@@ -12,39 +12,47 @@ using FluentValidation;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
-    public partial class ContentCreateDtoValidator : AbstractValidator<ContentCreateDto>
+    public partial class EntityContentCreateDtoValidator : AbstractValidator<EntityContentCreateDto>
     {
-        public ContentCreateDtoValidator()
+        public EntityContentCreateDtoValidator()
         {
+            RuleFor(p => p.ContentTypeId)
+                .NotNull()
+                ;
             RuleFor(p => p.EntityType)
                 .Length(0, 64)
                 .NotNull()
                 ;
             RuleFor(p => p.EntityId)
+                .NotNull()
                 ;
-            RuleFor(p => p.ContentTypeId)
+            RuleFor(p => p.Index)
+                .NotNull()
                 ;
             RuleFor(p => p.Value)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
     }
-    public partial class ContentUpdateDtoValidator : AbstractValidator<ContentUpdateDto>
+    public partial class EntityContentUpdateDtoValidator : AbstractValidator<EntityContentUpdateDto>
     {
-        public ContentUpdateDtoValidator()
+        public EntityContentUpdateDtoValidator()
         {
+            RuleFor(p => p.ContentTypeId)
+                .NotNull()
+                ;
             RuleFor(p => p.EntityType)
                 .Length(0, 64)
                 .NotNull()
                 ;
             RuleFor(p => p.EntityId)
+                .NotNull()
                 ;
-            RuleFor(p => p.ContentTypeId)
+            RuleFor(p => p.Index)
+                .NotNull()
                 ;
             RuleFor(p => p.Value)
-                .NotNull()
                 ;
             CustomizeConfiguration();
         }

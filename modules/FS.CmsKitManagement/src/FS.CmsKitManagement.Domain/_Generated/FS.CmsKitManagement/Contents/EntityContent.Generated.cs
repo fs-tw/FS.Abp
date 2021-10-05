@@ -20,19 +20,25 @@ using Volo.Abp.Data;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class Content : 
+    public partial class EntityContent : 
         Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
         Volo.Abp.MultiTenancy.IMultiTenant
     {
 
-        public Content()
+        public EntityContent()
         {
             OnCreated();
         }
 
-        public Content(System.Guid id) : this()
+        public EntityContent(System.Guid id) : this()
         {
             this.Id = id;
+        }
+
+        public virtual System.Guid ContentTypeId
+        {
+            get;
+            set;
         }
 
         public virtual string EntityType
@@ -47,7 +53,7 @@ namespace FS.CmsKitManagement.Contents
             set;
         }
 
-        public virtual System.Guid? ContentTypeId
+        public virtual int Index
         {
             get;
             set;
@@ -60,6 +66,12 @@ namespace FS.CmsKitManagement.Contents
         }
 
         public virtual System.Guid? TenantId
+        {
+            get;
+            set;
+        }
+
+        public virtual ContentType ContentType
         {
             get;
             set;

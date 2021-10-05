@@ -47,7 +47,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.CmsKitManagement.Contents.Content> Contents
+        public virtual DbSet<FS.CmsKitManagement.Contents.EntityContent> EntityContents
         {
             get;
             set;

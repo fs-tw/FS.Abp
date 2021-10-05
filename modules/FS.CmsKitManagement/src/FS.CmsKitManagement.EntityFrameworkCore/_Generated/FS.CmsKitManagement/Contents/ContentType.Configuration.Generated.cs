@@ -34,6 +34,7 @@ namespace FS.CmsKitManagement.Contents
             builder.ToTable(options.TablePrefix + @"ContentTypes", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").HasColumnType(@"uniqueidentifier").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.ContentDefinitionId).HasColumnName(@"ContentDefinitionId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
+            builder.Property(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.DisplayName).HasColumnName(@"DisplayName").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.Type).HasColumnName(@"Type").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();

@@ -16,7 +16,7 @@ namespace FS.CmsKitManagement.Contents
         Volo.Abp.Application.Services.IApplicationService,
         IContentDefinitionCrudAppService,
         IContentTypeCrudAppService,
-        IContentCrudAppService,
+        IEntityContentCrudAppService,
         IEntityContentDefinitionCrudAppService
     {
     }

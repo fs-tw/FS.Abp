@@ -28,9 +28,9 @@ namespace FS.CmsKitManagement.Contents
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";
         }
-        public static class Content
+        public static class EntityContent
         {
-            public const string Default = ModuleName + ".Content";
+            public const string Default = ModuleName + ".EntityContent";
             public const string Create = Default + ".Create";
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";

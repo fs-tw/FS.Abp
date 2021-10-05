@@ -1,4 +1,5 @@
 ﻿using FS.CmsKitManagement.Contents;
+using FS.CmsKitManagement.EntityType;
 using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
@@ -15,11 +16,14 @@ namespace FS.CmsKitManagement
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            Configure<ContentsOptions>(o =>
+            Configure<EntityTypeOptions>(o =>
             {
-                o.EntityTypes.AddOrReplace<Volo.CmsKit.Pages.Page>();
-                o.EntityTypes.AddOrReplace<Volo.CmsKit.Blogs.Blog>();
-                o.EntityTypes.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>();
+                o.Entity<ContentDefinition>(a =>
+                {
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>();
+                    a.AddOrReplace<Volo.CmsKit.Blogs.Blog>();
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>();
+                });
             });
         }
     }

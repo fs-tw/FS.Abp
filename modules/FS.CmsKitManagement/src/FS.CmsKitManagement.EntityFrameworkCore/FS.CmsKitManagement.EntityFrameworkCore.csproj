@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Content.Configuration.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\EfCoreContentRepository.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
@@ -44,10 +49,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Content.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentDefinition.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
@@ -68,15 +69,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreContentRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreContentTypeRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreEntityContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreEntityContentRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContent.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>

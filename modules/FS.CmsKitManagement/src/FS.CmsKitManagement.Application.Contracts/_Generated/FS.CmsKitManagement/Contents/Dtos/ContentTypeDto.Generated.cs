@@ -24,6 +24,8 @@ namespace FS.CmsKitManagement.Contents.Dtos
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
+        public virtual int Sequence { get; set; }
+
         public virtual string DisplayName { get; set; }
 
         public virtual string Type { get; set; }
@@ -34,6 +36,8 @@ namespace FS.CmsKitManagement.Contents.Dtos
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
+        public virtual int Sequence { get; set; }
+
         public virtual string DisplayName { get; set; }
 
         public virtual string Type { get; set; }
@@ -43,6 +47,8 @@ namespace FS.CmsKitManagement.Contents.Dtos
     public partial class ContentTypeUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
+
+        public virtual int Sequence { get; set; }
 
         public virtual string DisplayName { get; set; }
 

@@ -22,6 +22,8 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionNames.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDto.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,10 +60,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentTypeDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -70,9 +68,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentCrudAppService.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\EntityContentDto.Generated.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
+      <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +81,10 @@
       <DependentUpon>Contents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentTypeCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>

@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentCrudAppService.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,15 +28,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentTypeCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.EntityContentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
     </Compile>

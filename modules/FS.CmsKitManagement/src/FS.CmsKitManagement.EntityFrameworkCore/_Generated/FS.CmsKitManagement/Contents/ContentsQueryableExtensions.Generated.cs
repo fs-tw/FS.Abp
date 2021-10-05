@@ -32,5 +32,14 @@ namespace FS.CmsKitManagement.Contents
             return queryable
                 .Include(x => x.ContentDefinition);
         }
+        public static IQueryable<EntityContent> IncludeDetails(this IQueryable<EntityContent> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
+            return queryable
+                .Include(x => x.ContentType);
+        }
     }
 }

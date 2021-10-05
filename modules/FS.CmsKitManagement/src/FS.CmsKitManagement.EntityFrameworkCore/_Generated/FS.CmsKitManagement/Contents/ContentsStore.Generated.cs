@@ -17,7 +17,7 @@ namespace FS.CmsKitManagement.Contents
     {
         public IContentDefinitionRepository ContentDefinition => this.LazyServiceProvider.LazyGetRequiredService<IContentDefinitionRepository>();
         public IContentTypeRepository ContentType => this.LazyServiceProvider.LazyGetRequiredService<IContentTypeRepository>();
-        public IContentRepository Content => this.LazyServiceProvider.LazyGetRequiredService<IContentRepository>();
+        public IEntityContentRepository EntityContent => this.LazyServiceProvider.LazyGetRequiredService<IEntityContentRepository>();
         public IEntityContentDefinitionRepository EntityContentDefinition => this.LazyServiceProvider.LazyGetRequiredService<IEntityContentDefinitionRepository>();
     }
 }

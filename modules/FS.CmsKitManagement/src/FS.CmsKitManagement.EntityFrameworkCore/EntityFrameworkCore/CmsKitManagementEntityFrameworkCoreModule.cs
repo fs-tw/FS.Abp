@@ -2,6 +2,7 @@
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.EntityFrameworkCore.DependencyInjection;
+using FS.CmsKitManagement.EntityType;
 
 namespace FS.CmsKitManagement.EntityFrameworkCore
 {
@@ -21,7 +22,10 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
                 options.AddDefaultTreeRepositories();
+                options.AddDefaultRepositories(true);
             });
+
+            context.Services.AddTransient(typeof(IEntityTypeStore<,>), typeof(EntityTypeStore<,>));
         }
     }
 }

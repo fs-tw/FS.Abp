@@ -16,7 +16,7 @@
         <File Name="IAttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="IContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IContentTypeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="IContentCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="IEntityContentCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IEntityContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IShapeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="IMultiLingualCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
@@ -24,7 +24,7 @@
         <File Name="AttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentTypeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="ContentCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="EntityContentCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EntityContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ShapeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingualCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
@@ -32,7 +32,7 @@
         <File Name="AttachmentMediaDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="ContentDefinitionDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ContentTypeDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
-        <File Name="ContentDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
+        <File Name="EntityContentDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="EntityContentDefinitionDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ShapeDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes\Dtos" />
         <File Name="MultiLingualDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
@@ -42,7 +42,7 @@
         <File Name="AttachmentMediaDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="ContentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ContentTypeDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
-        <File Name="ContentDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
+        <File Name="EntityContentDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="EntityContentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ShapeDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes\Dtos" />
         <File Name="MultiLingualDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
@@ -52,7 +52,7 @@
         <File Name="AttachmentMediaDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="ContentDefinitionDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ContentTypeDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
-        <File Name="ContentDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
+        <File Name="EntityContentDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="EntityContentDefinitionDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ShapeDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes\Dtos" />
         <File Name="MultiLingualDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
@@ -77,7 +77,7 @@
         <File Name="AttachmentMedia.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentDefinition.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentType.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="Content.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="EntityContent.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EntityContentDefinition.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="Shape.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingual.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
@@ -87,7 +87,7 @@
         <File Name="AttachmentMedia.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentDefinition.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentType.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="Content.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="EntityContent.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EntityContentDefinition.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="Shape.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingual.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
@@ -95,7 +95,7 @@
         <File Name="IAttachmentMediaRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="IContentDefinitionRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IContentTypeRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="IContentRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="IEntityContentRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IEntityContentDefinitionRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IShapeRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="IMultiLingualRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
@@ -103,7 +103,7 @@
         <File Name="EfCoreAttachmentMediaRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="EfCoreContentDefinitionRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EfCoreContentTypeRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="EfCoreContentRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="EfCoreEntityContentRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EfCoreEntityContentDefinitionRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EfCoreShapeRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="EfCoreMultiLingualRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
@@ -126,7 +126,7 @@
         <File Name="ContentsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentsApi.ContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentsApi.ContentTypeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
-        <File Name="ContentsApi.ContentCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
+        <File Name="ContentsApi.EntityContentCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentsApi.EntityContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IShapesApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="ShapesApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />

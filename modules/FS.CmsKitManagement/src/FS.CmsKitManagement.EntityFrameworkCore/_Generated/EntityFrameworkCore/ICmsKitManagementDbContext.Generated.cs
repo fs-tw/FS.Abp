@@ -31,7 +31,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
         DbSet<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia> AttachmentMedia { get; set; }
         DbSet<FS.CmsKitManagement.Contents.ContentDefinition> ContentDefinitions { get; set; }
         DbSet<FS.CmsKitManagement.Contents.ContentType> ContentTypes { get; set; }
-        DbSet<FS.CmsKitManagement.Contents.Content> Contents { get; set; }
+        DbSet<FS.CmsKitManagement.Contents.EntityContent> EntityContents { get; set; }
         DbSet<FS.CmsKitManagement.Contents.EntityContentDefinition> EntityContentDefinitions { get; set; }
         DbSet<FS.CmsKitManagement.Shapes.Shape> Shapes { get; set; }
         DbSet<FS.CmsKitManagement.MultiLinguals.MultiLingual> MultiLinguals { get; set; }

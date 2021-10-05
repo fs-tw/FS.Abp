@@ -13,18 +13,18 @@ using Volo.Abp.AutoMapper;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
-    public partial class ContentAutoMapperProfile : Profile
+    public partial class EntityContentAutoMapperProfile : Profile
     {
-        public ContentAutoMapperProfile()
+        public EntityContentAutoMapperProfile()
         {
-            CreateMap<FS.CmsKitManagement.Contents.Content, ContentDto>()
+            CreateMap<FS.CmsKitManagement.Contents.EntityContent, EntityContentDto>()
             .ReverseMap();
         
-            CreateMap<ContentCreateDto, FS.CmsKitManagement.Contents.Content>();
+            CreateMap<EntityContentCreateDto, FS.CmsKitManagement.Contents.EntityContent>();
         
-            CreateMap<ContentUpdateDto, FS.CmsKitManagement.Contents.Content>();
+            CreateMap<EntityContentUpdateDto, FS.CmsKitManagement.Contents.EntityContent>();
         
-            CreateMap<FS.CmsKitManagement.Contents.Content, ContentWithDetailsDto>();
+            CreateMap<FS.CmsKitManagement.Contents.EntityContent, EntityContentWithDetailsDto>();
         
             CustomizeConfiguration();
         }

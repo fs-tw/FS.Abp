@@ -16,13 +16,13 @@ using Volo.Abp.Application.Services;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class ContentCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.Contents.Content, FS.CmsKitManagement.Contents.Dtos.ContentWithDetailsDto, FS.CmsKitManagement.Contents.Dtos.ContentPrimaryKeyDto, Guid, FS.CmsKitManagement.Contents.Dtos.ContentGetListDto, FS.CmsKitManagement.Contents.Dtos.ContentCreateDto, FS.CmsKitManagement.Contents.Dtos.ContentUpdateDto>,
-        IContentCrudAppService
+    public partial class EntityContentCrudAppService :  // auto-generated
+        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.Contents.EntityContent, FS.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto, FS.CmsKitManagement.Contents.Dtos.EntityContentPrimaryKeyDto, Guid, FS.CmsKitManagement.Contents.Dtos.EntityContentGetListDto, FS.CmsKitManagement.Contents.Dtos.EntityContentCreateDto, FS.CmsKitManagement.Contents.Dtos.EntityContentUpdateDto>,
+        IEntityContentCrudAppService
     {
-        private readonly IContentRepository _repository;
+        private readonly IEntityContentRepository _repository;
 
-        public ContentCrudAppService(IContentRepository repository) : base(repository)
+        public EntityContentCrudAppService(IEntityContentRepository repository) : base(repository)
         {
             this._repository = repository;
         }

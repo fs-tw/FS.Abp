@@ -35,7 +35,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             builder.ApplyConfiguration<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia>(new FS.CmsKitManagement.MediaDescriptors.AttachmentMediaConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentDefinition>(new FS.CmsKitManagement.Contents.ContentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentType>(new FS.CmsKitManagement.Contents.ContentTypeConfiguration(options));
-            builder.ApplyConfiguration<FS.CmsKitManagement.Contents.Content>(new FS.CmsKitManagement.Contents.ContentConfiguration(options));
+            builder.ApplyConfiguration<FS.CmsKitManagement.Contents.EntityContent>(new FS.CmsKitManagement.Contents.EntityContentConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.EntityContentDefinition>(new FS.CmsKitManagement.Contents.EntityContentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Shapes.Shape>(new FS.CmsKitManagement.Shapes.ShapeConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.MultiLinguals.MultiLingual>(new FS.CmsKitManagement.MultiLinguals.MultiLingualConfiguration(options));

@@ -28,10 +28,10 @@ namespace FS.CmsKitManagement.Contents
             ContentType.AddChild(ContentsPermissionNames.ContentType.Update , L("DisplayName:ContentType.Update"));
             ContentType.AddChild(ContentsPermissionNames.ContentType.Delete , L("DisplayName:ContentType.Delete"));
 
-            var Content = _ContentsGroup.AddPermission(ContentsPermissionNames.Content.Default,L(ContentsPermissionNames.Content.Default));
-            Content.AddChild(ContentsPermissionNames.Content.Create , L("DisplayName:Content.Create"));
-            Content.AddChild(ContentsPermissionNames.Content.Update , L("DisplayName:Content.Update"));
-            Content.AddChild(ContentsPermissionNames.Content.Delete , L("DisplayName:Content.Delete"));
+            var EntityContent = _ContentsGroup.AddPermission(ContentsPermissionNames.EntityContent.Default,L(ContentsPermissionNames.EntityContent.Default));
+            EntityContent.AddChild(ContentsPermissionNames.EntityContent.Create , L("DisplayName:EntityContent.Create"));
+            EntityContent.AddChild(ContentsPermissionNames.EntityContent.Update , L("DisplayName:EntityContent.Update"));
+            EntityContent.AddChild(ContentsPermissionNames.EntityContent.Delete , L("DisplayName:EntityContent.Delete"));
 
             var EntityContentDefinition = _ContentsGroup.AddPermission(ContentsPermissionNames.EntityContentDefinition.Default,L(ContentsPermissionNames.EntityContentDefinition.Default));
             EntityContentDefinition.AddChild(ContentsPermissionNames.EntityContentDefinition.Create , L("DisplayName:EntityContentDefinition.Create"));

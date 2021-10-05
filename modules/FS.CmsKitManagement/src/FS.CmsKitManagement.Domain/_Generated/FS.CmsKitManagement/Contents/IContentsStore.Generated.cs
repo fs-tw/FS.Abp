@@ -17,7 +17,7 @@ namespace FS.CmsKitManagement.Contents
     {
         IContentDefinitionRepository ContentDefinition { get; }
         IContentTypeRepository ContentType { get; }
-        IContentRepository Content { get; }
+        IEntityContentRepository EntityContent { get; }
         IEntityContentDefinitionRepository EntityContentDefinition { get; }
     }
 }

@@ -34,7 +34,9 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Content.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Shapes\ShapesStore.Generated.cs" />
@@ -62,15 +64,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Content.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentDefinition.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentType.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContent.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
@@ -82,7 +84,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentRepository.Generated.cs">
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
@@ -95,6 +97,10 @@
       <DependentUpon>Contents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
