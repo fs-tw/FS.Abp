@@ -73,16 +73,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
             {
                 var content = VirtualFileNpoiReader.ReadToTreeNode<ContentInfo>(Options.FileName, entityType);
                 await convertToDefinitionWithTypeAsync(content, entityType: entityType);
-                
-                //return;
-
             }
-
-            
-
-
-
-            
         }
     }
 }
