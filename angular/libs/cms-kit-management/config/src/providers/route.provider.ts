@@ -175,6 +175,22 @@ const contentsModels = [
     order: 1,
   },
 ];
+const shapesModels = [
+  {
+    path: '/cms-kit-management/shapes',
+    name: eCmsKitManagementRouteNames.Shapes,
+    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    iconClass: 'fa fa-file-alt',
+    order: 8,
+  },
+  {
+    path: '/cms-kit-management/shapes/shape',
+    name: eCmsKitManagementRouteNames.Shapes + '.shape',
+    parentName: eCmsKitManagementRouteNames.Shapes,
+    iconClass: 'fa fa-file-alt',
+    order: 1,
+  },
+];
 
 export function configureRoutes(routes: RoutesService) {
   return () => {
@@ -199,7 +215,8 @@ export function configureRoutes(routes: RoutesService) {
       ...reactionsModels,
       ...mediaDescriptorsModels,
       ...menusModels,
-      ...contentsModels
+      ...contentsModels,
+      ...shapesModels
     ]);
   };
 }

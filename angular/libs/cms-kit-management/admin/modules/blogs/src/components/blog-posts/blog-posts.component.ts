@@ -28,7 +28,7 @@ import { filter, switchMap, take, tap } from 'rxjs/operators';
   ]
 })
 export class BlogPostsComponent implements OnInit {
-  public static NAME: string = 'BlogPosts.BlogPostsComponent';
+  public static NAME: string = 'Blogs.BlogPostsComponent';
   service: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
   subs: Subscription = new Subscription();
 

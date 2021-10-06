@@ -4,15 +4,5 @@ import { notify } from '@fs-tw/theme-alain/extensions';
 
 export const CONTENT_DEFINITION_ENTITY_ACTIONS = ToolbarAction.createMany<Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionDto>(
   [
-    {
-      text: 'CmsKit::Edit',
-      action: notify('Edit'),
-      permission: 'CmsKit.Contents.Update',
-    },
-    {
-      text: 'CmsKit::Delete',
-      action: notify('Delete'),
-      permission: 'CmsKit.Contents.Delete',
-    },
   ]
 );

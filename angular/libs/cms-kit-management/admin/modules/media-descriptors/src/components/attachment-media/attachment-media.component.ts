@@ -50,7 +50,7 @@ class ComponentService implements EntityService<
   ],
 })
 export class AttachmentMediaComponent implements OnInit {
-  public static NAME: string = 'AttachmentMedia.AttachmentMediaComponent';
+  public static NAME: string = 'MediaDescriptors.AttachmentMediaComponent';
   service: ComponentService;
   subs: Subscription = new Subscription();
 
