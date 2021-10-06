@@ -77,6 +77,13 @@ const routes: Routes = [
             (m) => m.ContentsModule
           ),
       },
+      {
+        path: 'shapes',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/shapes').then(
+            (m) => m.ShapesModule
+          ),
+      },
     ],
   },
 ];

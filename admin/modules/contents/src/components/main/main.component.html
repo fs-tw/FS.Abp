@@ -1,5 +1,11 @@
-<nz-tabset nzType="card">
-    <nz-tab nzTitle="{{ 'CmsKitManagement::Content' | abpLocalization }}">
+<nz-tabset nzType="card" [nzTabPosition]="'left'">
+    <nz-tab nzTitle="{{ 'CmsKitManagement::ContentDefinitions' | abpLocalization }}">
+        <fs-tw-content-definition></fs-tw-content-definition>
+    </nz-tab>
+    <nz-tab nzTitle="{{ 'CmsKitManagement::ContentTypes' | abpLocalization }}">
+        <fs-tw-content-type></fs-tw-content-type>
+    </nz-tab>
+    <nz-tab nzTitle="{{ 'CmsKitManagement::Contents' | abpLocalization }}">
         <fs-tw-contents></fs-tw-contents>
     </nz-tab>
 </nz-tabset>

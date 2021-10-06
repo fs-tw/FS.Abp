@@ -6,11 +6,15 @@ import { CmsKitManagementSharedModule } from '@fs-tw/cms-kit-management/shared';
 import { PickCoverImageModule } from '@fs-tw/components/pick-cover-image';
 import { ContentsComponent } from './components/contents/contents.component';
 import { MainComponent } from './components/main/main.component';
+import { ContentTypeComponent } from './components/content-type/content-type.component';
+import { ContentDefinitionComponent } from './components/content-definition/content-definition.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    ContentsComponent
+    ContentDefinitionComponent,
+    ContentTypeComponent,
+    ContentsComponent,
   ],
   imports: [
     ContentsRoutingModule,

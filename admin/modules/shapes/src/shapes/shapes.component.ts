@@ -14,11 +14,11 @@ import {
   setDefaults,
 } from '@fs-tw/theme-alain/extensions';
 import {
-    CONTENT_TYPE_CREATE_FORM_PROPS,
-    CONTENT_TYPE_EDIT_FORM_PROPS,
-    CONTENT_TYPE_ENTITY_ACTIONS,
-    CONTENT_TYPE_ENTITY_PROPS,
-    CONTENT_TYPE_TOOLBAR_ACTIONS,
+    SHAPES_CREATE_FORM_PROPS,
+    SHAPES_EDIT_FORM_PROPS,
+    SHAPES_ENTITY_ACTIONS,
+    SHAPES_ENTITY_PROPS,
+    SHAPES_TOOLBAR_ACTIONS,
 } from './defaults/index';
 import type { PagedResultDto } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
@@ -30,27 +30,27 @@ class ComponentService implements EntityService<
     private readonly injector: Injector,
   ) {}
 
-  getList(ContentType: Fs.CmsKitManagement.Contents.Dtos.ContentTypeGetListDto):
-    Observable<PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentTypeWithDetailsDto>>
+  getList(Shape: Fs.CmsKitManagement.Shapes.Dtos.ShapeGetListDto):
+    Observable<PagedResultDto<Fs.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto>>
   {
-    let service = this.injector.get(Fs.CmsKitManagement.Contents.ContentsApiService);
-    return service.getListByContentType(ContentType);
+    let service = this.injector.get(Fs.CmsKitManagement.Shapes.ShapesApiService);
+    return service.getListByShape(Shape);
   }
 }
 
 @Component({
-  selector: 'fs-tw-content-type',
-  templateUrl: './content-type.component.html',
+  selector: 'fs-tw-shapes',
+  templateUrl: './shapes.component.html',
   providers: [
     ListService,
     {
       provide: EXTENSIONS_IDENTIFIER,
-      useValue: ContentTypeComponent.NAME,
+      useValue: ShapesComponent.NAME,
     },
   ],
 })
-export class ContentTypeComponent implements OnInit {
-  public static NAME: string = 'Contents.ContentTypeComponent';
+export class ShapesComponent implements OnInit {
+  public static NAME: string = 'Shapes.ShapesComponent';
   subs: Subscription = new Subscription();
   service: ComponentService;
 
@@ -61,12 +61,12 @@ export class ContentTypeComponent implements OnInit {
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     this.subs.add(
-      setDefaults(injector, ContentTypeComponent.NAME, {
-        entityAction:  CONTENT_TYPE_ENTITY_ACTIONS,
-        toolbarActions:  CONTENT_TYPE_TOOLBAR_ACTIONS,
-        entityProps:  CONTENT_TYPE_ENTITY_PROPS,
-        createFormProps:  CONTENT_TYPE_CREATE_FORM_PROPS,
-        editFormProps:  CONTENT_TYPE_EDIT_FORM_PROPS,
+      setDefaults(injector, ShapesComponent.NAME, {
+        entityAction:  SHAPES_ENTITY_ACTIONS,
+        toolbarActions:  SHAPES_TOOLBAR_ACTIONS,
+        entityProps:  SHAPES_ENTITY_PROPS,
+        createFormProps:  SHAPES_CREATE_FORM_PROPS,
+        editFormProps:  SHAPES_EDIT_FORM_PROPS,
       }).subscribe((x) => {
         switch (x.method) {
         }

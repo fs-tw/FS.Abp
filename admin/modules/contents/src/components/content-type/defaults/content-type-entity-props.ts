@@ -4,15 +4,15 @@ import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 export const CONTENT_TYPE_ENTITY_PROPS = EntityProp.createMany<Fs.CmsKitManagement.Contents.Dtos.ContentTypeDto>([
   {
     type: ePropType.String,
-    name: 'entityType',
-    displayName: 'CmsKit::EntityType',
+    name: 'displayName',
+    displayName: 'CmsKit::DisplayName',
     sortable: true,
     columnWidth: 90,
   },
   {
     type: ePropType.String,
-    name: 'value',
-    displayName: 'CmsKit::Value',
+    name: 'type',
+    displayName: 'CmsKit::Type',
     sortable: true,
     columnWidth: 90,
   }
