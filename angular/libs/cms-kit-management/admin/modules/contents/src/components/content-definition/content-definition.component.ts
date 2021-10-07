@@ -19,6 +19,7 @@ import {
     CONTENT_DEFINITION_ENTITY_ACTIONS,
     CONTENT_DEFINITION_ENTITY_PROPS,
     CONTENT_DEFINITION_TOOLBAR_ACTIONS,
+    GetDefaults,
 } from './defaults/index';
 import type { PagedResultDto } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
@@ -60,20 +61,23 @@ export class ContentDefinitionComponent implements OnInit {
     private confirmationService: ConfirmationService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
-    this.subs.add(
-      setDefaults(injector, ContentDefinitionComponent.NAME, {
-        entityAction:  CONTENT_DEFINITION_ENTITY_ACTIONS,
-        toolbarActions:  CONTENT_DEFINITION_TOOLBAR_ACTIONS,
-        entityProps:  CONTENT_DEFINITION_ENTITY_PROPS,
-        createFormProps:  CONTENT_DEFINITION_CREATE_FORM_PROPS,
-        editFormProps:  CONTENT_DEFINITION_EDIT_FORM_PROPS,
-      }).subscribe((x) => {
-        switch (x.method) {
-        }
-      })
-    );
-
     this.service = new ComponentService(this.injector);
+
+    let apiInput = {} as Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto;
+    this.service.getList(apiInput).subscribe(x => {
+      this.subs.add(
+        setDefaults(injector, ContentDefinitionComponent.NAME, {
+          entityAction: CONTENT_DEFINITION_ENTITY_ACTIONS,
+          toolbarActions: CONTENT_DEFINITION_TOOLBAR_ACTIONS,
+          entityProps: GetDefaults(x),
+          createFormProps: CONTENT_DEFINITION_CREATE_FORM_PROPS,
+          editFormProps: CONTENT_DEFINITION_EDIT_FORM_PROPS,
+        }).subscribe((x) => {
+          switch (x.method) {
+          }
+        })
+      );
+    });
   }
 
   ngOnInit(): void {
