@@ -6,9 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
     <Compile Remove="FS.CmsKitManagement.Routes\**" />
+    <Compile Remove="Microsoft\**" />
+    <Compile Remove="Volo\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
+    <EmbeddedResource Remove="Microsoft\**" />
+    <EmbeddedResource Remove="Volo\**" />
+    <None Remove="FS.CmsKitManagement.EntityType\**" />
     <None Remove="FS.CmsKitManagement.Routes\**" />
+    <None Remove="Microsoft\**" />
+    <None Remove="Volo\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -88,6 +97,22 @@
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContentDefinition.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EfCoreEntityBlogRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlog.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsQueryableExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMedia.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>

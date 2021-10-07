@@ -16,6 +16,7 @@ namespace FS.CmsKitManagement
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             CmsKitManagementGlobalFeatureConfigurator.Configure();
+            CmsKitManagementModuleExtensionConfigurator.Configure();
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

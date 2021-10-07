@@ -7,14 +7,17 @@
 
   <ItemGroup>
     <Compile Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
     <Compile Remove="FS.CmsKitManagement.Routes\**" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
     <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
     <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <None Remove="FS.CmsKitManagement.Blogs\Commands\**" />
+    <None Remove="FS.CmsKitManagement.EntityType\**" />
     <None Remove="FS.CmsKitManagement.Routes\**" />
     <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
     <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
@@ -100,6 +103,18 @@
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContentDefinitionCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos\EntityBlogDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos\EntityBlogDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMediaCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>

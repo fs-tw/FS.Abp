@@ -9,10 +9,12 @@
         <File Name="ContentsPermissionNames.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ShapesPermissionNames.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingualsPermissionNames.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EntityBlogsPermissionNames.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="MediaDescriptorsPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentsPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ShapesPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingualsPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EntityBlogsPermissionDefinitionProviders.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="IAttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="IContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IContentTypeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
@@ -21,6 +23,7 @@
         <File Name="IShapeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="IMultiLingualCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="IMultiLingualTranslationCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="IEntityBlogCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="AttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentDefinitionCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentTypeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
@@ -29,6 +32,7 @@
         <File Name="ShapeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingualCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="MultiLingualTranslationCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EntityBlogCrudAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="AttachmentMediaDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="ContentDefinitionDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ContentTypeDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
@@ -37,6 +41,7 @@
         <File Name="ShapeDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes\Dtos" />
         <File Name="MultiLingualDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="MultiLingualTranslationDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
+        <File Name="EntityBlogDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos" />
         <File Name="BlogPostSettingDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="MultiLingualPropertyDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="AttachmentMediaDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
@@ -47,6 +52,7 @@
         <File Name="ShapeDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes\Dtos" />
         <File Name="MultiLingualDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="MultiLingualTranslationDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
+        <File Name="EntityBlogDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos" />
         <File Name="BlogPostSettingDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="MultiLingualPropertyDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="AttachmentMediaDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
@@ -57,6 +63,7 @@
         <File Name="ShapeDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes\Dtos" />
         <File Name="MultiLingualDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="MultiLingualTranslationDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
+        <File Name="EntityBlogDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos" />
         <File Name="BlogPostSettingDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
         <File Name="MultiLingualPropertyDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="BlogPostSetting.AbpSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
@@ -70,6 +77,8 @@
         <File Name="ShapesStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="IMultiLingualsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="MultiLingualsStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="IEntityBlogsStore.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
+        <File Name="EntityBlogsStore.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="ICmsKitManagementDbContext.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsKitManagementDbContext.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CmsKitManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -82,6 +91,7 @@
         <File Name="Shape.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingual.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="MultiLingualTranslation.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EntityBlog.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="BlogPostSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="MultiLingualProperty.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="AttachmentMedia.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
@@ -92,6 +102,7 @@
         <File Name="Shape.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingual.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="MultiLingualTranslation.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EntityBlog.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="IAttachmentMediaRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="IContentDefinitionRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="IContentTypeRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
@@ -100,6 +111,7 @@
         <File Name="IShapeRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="IMultiLingualRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="IMultiLingualTranslationRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="IEntityBlogRepository.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="EfCoreAttachmentMediaRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="EfCoreContentDefinitionRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="EfCoreContentTypeRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
@@ -108,10 +120,12 @@
         <File Name="EfCoreShapeRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="EfCoreMultiLingualRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="EfCoreMultiLingualTranslationRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EfCoreEntityBlogRepository.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="MediaDescriptorsQueryableExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentsQueryableExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ShapesQueryableExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="MultiLingualsQueryableExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="EntityBlogsQueryableExtensions.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="IBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogsApi.BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
@@ -131,6 +145,9 @@
         <File Name="IShapesApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="ShapesApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="ShapesApi.ShapeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
+        <File Name="IEntityBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
+        <File Name="EntityBlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
+        <File Name="EntityBlogsApi.EntityBlogCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>

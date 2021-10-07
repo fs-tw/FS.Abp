@@ -1,4 +1,6 @@
 ﻿using FS.CmsKitManagement.Contents;
+using FS.CmsKitManagement.EntityFrameworkCore;
+using FS.CmsKitManagement.EntityType;
 using Microsoft.Extensions.Options;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,32 +18,49 @@ namespace FS.CmsKitManagement.Samples
         }
 
         [Fact]
-        public async Task ShouldGetContentsEntityTypeOptions()
+        public async Task ShouldGetContentsEntityTypeStore()
         {
-            var options = GetRequiredService<IOptions<FS.CmsKitManagement.EntityType.EntityTypeOptions>>();
+            var store = GetRequiredService<IEntityTypeDefinitionStore>();
 
-            var entityEntityTypeOptions = options.Value.GetOrNull<FS.CmsKitManagement.Contents.ContentDefinition>();
+            var result = store.GetList();
 
-            //var interfaceOptions= GetRequiredService<IOptions<IEntityTypeOptions<ContentsEntityTypeDefinition>>>();
+            var t = store.FindEntityTypeFromEntity<Volo.CmsKit.Blogs.BlogPost>();
 
         }
 
         [Fact]
-        public async Task ShouldGetEntityTypeStore()
+        public async Task ShouldGetEntityTypeRepository()
         {
-            var entityTypeStore = GetRequiredService<
-                FS.CmsKitManagement.EntityType.IEntityTypeStore<FS.CmsKitManagement.Contents.ContentDefinition, Volo.CmsKit.Blogs.BlogPost>>();
-
+            var blogPostContentDefinitionRepository = GetRequiredService<
+                IEntityTypeRepository<
+                    FS.CmsKitManagement.Contents.ContentDefinition,
+                    Volo.CmsKit.Blogs.BlogPost>>();
+            var blogContentDefinitionRepository = GetRequiredService<
+                IEntityTypeRepository<
+                    FS.CmsKitManagement.Contents.ContentDefinition,
+                    Volo.CmsKit.Blogs.Blog>>();
 
             await WithUnitOfWorkAsync(async () =>
             {
-                var query=await entityTypeStore.GetQueryableAsync();
-                var list = query.ToList();
+                ContentDefinition entity = new ContentDefinition();
+
+                entity.DisplayName = "YinChang";
+
+                await blogContentDefinitionRepository.InsertAsync(entity);
             });
 
-            // var entityEntityTypeOptions = options.Value.GetOrNull<FS.CmsKitManagement.Contents.ContentDefinition>();
+            await WithUnitOfWorkAsync(async () =>
+            {
+                var query1 = await blogContentDefinitionRepository.GetPagedListAsync(0, 100, "Id", true);
+                var list1 = query1.ToList();
 
-            //var interfaceOptions= GetRequiredService<IOptions<IEntityTypeOptions<ContentsEntityTypeDefinition>>>();
+                var t = await blogContentDefinitionRepository.FindAsync(x => x.DisplayName == "YinChang");
+
+                var query2 = await blogPostContentDefinitionRepository.GetPagedListAsync(0, 100, "Id", true);
+                var list2 = query2.ToList();
+            });
+
+
 
         }
     }

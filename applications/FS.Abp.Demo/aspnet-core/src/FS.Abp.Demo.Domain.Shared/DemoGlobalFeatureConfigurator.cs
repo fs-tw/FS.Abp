@@ -18,10 +18,6 @@ namespace FS.Abp.Demo
                  * Please refer to the documentation to lear more about the Global Features System:
                  * https://docs.abp.io/en/abp/latest/Global-Features
                  */
-                GlobalFeatureManager.Instance.Modules.CmsKit(cmskit =>
-                {
-                    cmskit.EnableAll();
-                });
             });
         }
     }

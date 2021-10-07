@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Remove="Data\Routes\**" />
     <Compile Remove="Data\Vocabularies\**" />
+    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
     <Compile Remove="FS.CmsKitManagement.Routes\**" />
     <Compile Remove="Volo.CmsKit.Blogs\**" />
     <Compile Remove="Volo.CmsKit.Pages\**" />
@@ -15,6 +16,7 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <EmbeddedResource Remove="Data\Routes\**" />
     <EmbeddedResource Remove="Data\Vocabularies\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
     <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
     <EmbeddedResource Remove="Volo.CmsKit.Blogs\**" />
     <EmbeddedResource Remove="Volo.CmsKit.Pages\**" />
@@ -22,6 +24,7 @@
     <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <None Remove="Data\Routes\**" />
     <None Remove="Data\Vocabularies\**" />
+    <None Remove="FS.CmsKitManagement.EntityType\**" />
     <None Remove="FS.CmsKitManagement.Routes\**" />
     <None Remove="Volo.CmsKit.Blogs\**" />
     <None Remove="Volo.CmsKit.Pages\**" />
@@ -45,6 +48,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain\FS.Abp.EntityTypes.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
     <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
@@ -103,6 +107,18 @@
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentRepository.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlog.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\IEntityBlogRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\IEntityBlogsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMedia.Generated.cs">
       <AutoGen>True</AutoGen>

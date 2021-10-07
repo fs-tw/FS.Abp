@@ -76,6 +76,12 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             get;
             set;
         }
+
+        public virtual DbSet<FS.CmsKitManagement.EntityBlogs.EntityBlog> EntityBlogs
+        {
+            get;
+            set;
+        }
         public CmsKitManagementDbContext(DbContextOptions<CmsKitManagementDbContext> options) :
             base(options)
         {

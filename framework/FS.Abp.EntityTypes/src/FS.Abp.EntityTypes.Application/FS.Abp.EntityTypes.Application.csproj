@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Abp.EntityTypes</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.4.3" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="4.4.3" />
+    <ProjectReference Include="..\FS.Abp.EntityTypes.Application.Contracts\FS.Abp.EntityTypes.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Abp.EntityTypes.Domain\FS.Abp.EntityTypes.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

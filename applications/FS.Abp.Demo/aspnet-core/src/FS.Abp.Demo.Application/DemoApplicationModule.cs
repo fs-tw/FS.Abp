@@ -19,6 +19,7 @@ namespace FS.Abp.Demo
         typeof(AbpFeatureManagementApplicationModule),
         typeof(AbpSettingManagementApplicationModule)
         )]
+    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesApplicationModule))]
     [DependsOn(
         typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule),
         typeof(FS.CodingManagement.CodingManagementApplicationModule)

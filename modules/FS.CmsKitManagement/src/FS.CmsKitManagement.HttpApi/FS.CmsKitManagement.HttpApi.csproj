@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
+    <None Remove="FS.CmsKitManagement.EntityType\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentCrudAppService.Generated.cs" />
   </ItemGroup>
@@ -14,8 +20,6 @@
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.HttpApi" Version="$(AbpVersion)" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
-    <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
-    <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj" />-->
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
@@ -47,6 +51,14 @@
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsApi.EntityBlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.AttachmentMediaCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>

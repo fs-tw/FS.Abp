@@ -89,6 +89,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Demo.Web", "src\FS.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.Web", "..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Web\FS.CmsKitManagement.Web.csproj", "{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.EntityTypes", "FS.Abp.EntityTypes", "{A8B071E6-4AE7-4090-B727-CB1466A838A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.Domain.Shared", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain.Shared\FS.Abp.EntityTypes.Domain.Shared.csproj", "{A808749F-D24B-43EB-9C0F-F0D877FED1E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.Domain", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain\FS.Abp.EntityTypes.Domain.csproj", "{ECA41C8A-2585-43B8-81AF-0DABFFDA7358}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.Application.Contracts", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Application.Contracts\FS.Abp.EntityTypes.Application.Contracts.csproj", "{B899F5B9-DB04-4A51-8367-3FEAC8B16E02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.Application", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Application\FS.Abp.EntityTypes.Application.csproj", "{42702813-56F4-4B71-B1CA-E720F3810DA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.EntityFrameworkCore", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.EntityFrameworkCore\FS.Abp.EntityTypes.EntityFrameworkCore.csproj", "{493E0345-D2C2-4E0F-95A8-4B124E2D4C03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.HttpApi", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.HttpApi\FS.Abp.EntityTypes.HttpApi.csproj", "{64E75509-A1A0-4CEC-BB32-2A831A6CDA54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.HttpApi.Client", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.HttpApi.Client\FS.Abp.EntityTypes.HttpApi.Client.csproj", "{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -239,6 +255,34 @@ Global
 		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A808749F-D24B-43EB-9C0F-F0D877FED1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A808749F-D24B-43EB-9C0F-F0D877FED1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A808749F-D24B-43EB-9C0F-F0D877FED1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A808749F-D24B-43EB-9C0F-F0D877FED1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA41C8A-2585-43B8-81AF-0DABFFDA7358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA41C8A-2585-43B8-81AF-0DABFFDA7358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA41C8A-2585-43B8-81AF-0DABFFDA7358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA41C8A-2585-43B8-81AF-0DABFFDA7358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B899F5B9-DB04-4A51-8367-3FEAC8B16E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B899F5B9-DB04-4A51-8367-3FEAC8B16E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B899F5B9-DB04-4A51-8367-3FEAC8B16E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B899F5B9-DB04-4A51-8367-3FEAC8B16E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42702813-56F4-4B71-B1CA-E720F3810DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42702813-56F4-4B71-B1CA-E720F3810DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42702813-56F4-4B71-B1CA-E720F3810DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42702813-56F4-4B71-B1CA-E720F3810DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{493E0345-D2C2-4E0F-95A8-4B124E2D4C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493E0345-D2C2-4E0F-95A8-4B124E2D4C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493E0345-D2C2-4E0F-95A8-4B124E2D4C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493E0345-D2C2-4E0F-95A8-4B124E2D4C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E75509-A1A0-4CEC-BB32-2A831A6CDA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E75509-A1A0-4CEC-BB32-2A831A6CDA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E75509-A1A0-4CEC-BB32-2A831A6CDA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E75509-A1A0-4CEC-BB32-2A831A6CDA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -283,6 +327,14 @@ Global
 		{C6F4A825-8ABF-40CB-BF05-5F87321F1152} = {D5F70872-BACC-45AB-8EC0-05A0BF0E4A96}
 		{6C6EDF3D-6A16-4DFA-8D73-F33F49C2400D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{37BBF8A2-E8BC-440D-8986-07FC81A0A3A2} = {E1C55CA0-BC51-44F5-A198-900BF5F0B23C}
+		{A8B071E6-4AE7-4090-B727-CB1466A838A6} = {D5F70872-BACC-45AB-8EC0-05A0BF0E4A96}
+		{A808749F-D24B-43EB-9C0F-F0D877FED1E0} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
+		{ECA41C8A-2585-43B8-81AF-0DABFFDA7358} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
+		{B899F5B9-DB04-4A51-8367-3FEAC8B16E02} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
+		{42702813-56F4-4B71-B1CA-E720F3810DA9} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
+		{493E0345-D2C2-4E0F-95A8-4B124E2D4C03} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
+		{64E75509-A1A0-4CEC-BB32-2A831A6CDA54} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751} = {A8B071E6-4AE7-4090-B727-CB1466A838A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

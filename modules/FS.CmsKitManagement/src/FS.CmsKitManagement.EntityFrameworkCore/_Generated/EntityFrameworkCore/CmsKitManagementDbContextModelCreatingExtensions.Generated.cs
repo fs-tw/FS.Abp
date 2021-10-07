@@ -40,6 +40,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             builder.ApplyConfiguration<FS.CmsKitManagement.Shapes.Shape>(new FS.CmsKitManagement.Shapes.ShapeConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.MultiLinguals.MultiLingual>(new FS.CmsKitManagement.MultiLinguals.MultiLingualConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation>(new FS.CmsKitManagement.MultiLinguals.MultiLingualTranslationConfiguration(options));
+            builder.ApplyConfiguration<FS.CmsKitManagement.EntityBlogs.EntityBlog>(new FS.CmsKitManagement.EntityBlogs.EntityBlogConfiguration(options));
         }
         static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }

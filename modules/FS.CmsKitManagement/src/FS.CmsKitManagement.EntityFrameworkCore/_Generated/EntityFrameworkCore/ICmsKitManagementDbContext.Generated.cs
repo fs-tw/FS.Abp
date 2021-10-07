@@ -36,5 +36,6 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
         DbSet<FS.CmsKitManagement.Shapes.Shape> Shapes { get; set; }
         DbSet<FS.CmsKitManagement.MultiLinguals.MultiLingual> MultiLinguals { get; set; }
         DbSet<FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation> MultiLingualTranslations { get; set; }
+        DbSet<FS.CmsKitManagement.EntityBlogs.EntityBlog> EntityBlogs { get; set; }
     }
 }

@@ -19,13 +19,11 @@ namespace FS.Abp.Application.Services
         where TKeyDto : IEntityDto<TKey>
         where TGetListInput : ISearchResultRequest
     {
-        protected new IRepository<TEntity, TKey> Repository { get; }
         protected ISearchedAndPagedAndSortedOperation SearchedAndPagedAndSortedOperation => this.LazyServiceProvider.LazyGetRequiredService<ISearchedAndPagedAndSortedOperation>();
 
-        protected EntityWithKeyCrudAppService(IRepository<TEntity, TKey> repository)
+        protected EntityWithKeyCrudAppService(IRepository<TEntity> repository)
             : base(repository)
         {
-            Repository = repository;
         }
 
         protected override async Task<IQueryable<TEntity>> CreateFilteredQueryAsync(TGetListInput input)
@@ -37,12 +35,12 @@ namespace FS.Abp.Application.Services
 
         protected override async Task DeleteByIdAsync(TKeyDto id)
         {
-            await Repository.DeleteAsync(id.Id);
+            await Repository.DeleteAsync(x => x.Id.Equals(id));
         }
 
         protected override async Task<TEntity> GetEntityByIdAsync(TKeyDto id)
         {
-            return await Repository.GetAsync(id.Id);
+            return await Repository.GetAsync(x => x.Id.Equals(id));
         }
 
         protected override void MapToEntity(TUpdateInput updateInput, TEntity entity)

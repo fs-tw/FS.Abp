@@ -17,18 +17,21 @@
     <Compile Remove="Files\BlogPostCoverImageMedia\**" />
     <Compile Remove="Files\Routes\**" />
     <Compile Remove="Files\Vocabularies\**" />
+    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
     <Compile Remove="_Generated\**" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
     <EmbeddedResource Remove="Data\**" />
     <EmbeddedResource Remove="Files\BlogPostCoverImageMedia\**" />
     <EmbeddedResource Remove="Files\Routes\**" />
     <EmbeddedResource Remove="Files\Vocabularies\**" />
+    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
     <EmbeddedResource Remove="_Generated\**" />
     <None Remove="**\Files\**\*.*" />
     <None Remove="Data\**" />
     <None Remove="Files\BlogPostCoverImageMedia\**" />
     <None Remove="Files\Routes\**" />
     <None Remove="Files\Vocabularies\**" />
+    <None Remove="FS.CmsKitManagement.EntityType\**" />
     <None Remove="_Generated\**" />
     <EmbeddedResource Include="**\Files\**\*.*" />
   </ItemGroup>

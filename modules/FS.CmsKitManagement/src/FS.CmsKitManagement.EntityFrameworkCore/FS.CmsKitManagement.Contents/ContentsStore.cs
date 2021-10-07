@@ -6,14 +6,14 @@ using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using FS.CmsKitManagement.EntityType;
+using FS.Abp.EntityTypes;
 
 namespace FS.CmsKitManagement.Contents
 {
 
     public partial class ContentsStore
     {
-        protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
+        protected IOptions<EntityTypeOption> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOption>>();
         public async Task<IQueryable<ContentDefinition>> GetByEntityTypeAsync<T>()
         {
             return await GetByEntityTypeAsync(typeof(T));

@@ -11,6 +11,7 @@ namespace FS.Abp.Demo.EntityFrameworkCore
 
         public static void Configure()
         {
+            FS.CmsKitManagement.EntityFrameworkCore.CmsKitManagementEfCoreEntityExtensionMappings.Configure();
             DemoGlobalFeatureConfigurator.Configure();
             DemoModuleExtensionConfigurator.Configure();
 
