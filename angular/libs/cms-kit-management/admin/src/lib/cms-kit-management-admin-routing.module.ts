@@ -70,6 +70,20 @@ const routes: Routes = [
             (m) => m.MenusModule
           ),
       },
+      {
+        path: 'contents',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/contents').then(
+            (m) => m.ContentsModule
+          ),
+      },
+      {
+        path: 'shapes',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/shapes').then(
+            (m) => m.ShapesModule
+          ),
+      },
     ],
   },
 ];

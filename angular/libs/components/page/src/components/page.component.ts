@@ -13,7 +13,8 @@ export type EntityService<T> = {
 
 @Component({
   selector: 'fs-page',
-  templateUrl: './page.component.html'
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.less']
 })
 export class PageComponent<T> {
   @Input() title: string;

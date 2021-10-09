@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './components/main/main.component';
+import { ShapesComponent } from './shapes/shapes.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '', redirectTo: 'media-descriptor', pathMatch: 'full' },
-      { path: 'media-descriptor', component: MainComponent },
+      { path: '', redirectTo: 'shape', pathMatch: 'full' },
+      { path: 'shape', component: ShapesComponent },
     ],
   },
 ];
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MediaDescriptorsRoutingModule {}
+export class ShapesRoutingModule {}

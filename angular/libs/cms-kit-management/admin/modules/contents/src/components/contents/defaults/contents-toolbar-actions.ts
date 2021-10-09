@@ -5,10 +5,4 @@ import { notify } from '@fs-tw/theme-alain/extensions';
 export const CONTENTS_TOOLBAR_ACTIONS = ToolbarAction.createMany<
   Fs.CmsKitManagement.Contents.Dtos.ContentDto[]
 >([
-  {
-    text: 'CmsKit::NewContent',
-    action: notify('Create'),
-    permission: 'CmsKit.Contents.Create',
-    icon: 'fa fa-plus',
-  },
 ]);
