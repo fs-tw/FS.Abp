@@ -27,6 +27,7 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDto.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentCrudAppService.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDto.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -136,10 +137,6 @@
       <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualDto.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

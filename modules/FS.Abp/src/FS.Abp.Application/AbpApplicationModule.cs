@@ -11,6 +11,7 @@ namespace FS.Abp
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
+    [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
     public class AbpApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

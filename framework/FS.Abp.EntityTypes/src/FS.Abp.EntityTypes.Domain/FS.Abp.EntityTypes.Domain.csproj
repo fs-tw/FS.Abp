@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.4.3" />
-    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Abp.EntityTypes.Domain.Shared\FS.Abp.EntityTypes.Domain.Shared.csproj" />
   </ItemGroup>
 

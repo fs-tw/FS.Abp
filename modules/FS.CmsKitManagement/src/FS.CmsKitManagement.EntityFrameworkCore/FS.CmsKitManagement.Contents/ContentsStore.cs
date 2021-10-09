@@ -13,7 +13,7 @@ namespace FS.CmsKitManagement.Contents
 
     public partial class ContentsStore
     {
-        protected IOptions<EntityTypeOption> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOption>>();
+        protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
         public async Task<IQueryable<ContentDefinition>> GetByEntityTypeAsync<T>()
         {
             return await GetByEntityTypeAsync(typeof(T));
@@ -21,7 +21,7 @@ namespace FS.CmsKitManagement.Contents
 
         public async Task<IQueryable<ContentDefinition>> GetByEntityTypeAsync(Type type)
         {
-            var entityType = Options.Value.GetOrNull<ContentDefinition>().Get(type).EntityType;
+            var entityType = Options.Value.GetOrDefault<ContentDefinition>().GetOrDefault(type).EntityType;
 
             return await GetByEntityTypeAsync(entityType);
         }
@@ -35,7 +35,7 @@ namespace FS.CmsKitManagement.Contents
 
         public async Task<List<EntityContentModel>> GetEntityContentAsync(Volo.Abp.Domain.Entities.Entity<Guid> entity)
         {
-            var entityType = Options.Value.GetOrNull<ContentDefinition>().Get(entity.GetType()).EntityType;
+            var entityType = Options.Value.GetOrDefault<ContentDefinition>().GetOrDefault(entity.GetType()).EntityType;
             var contentDefinitions = (await this.GetByEntityTypeAsync(entity.GetType())).ToDictionary(x => x.Id, y => y);
             var contentDefinitionIds = contentDefinitions.Keys.ToList();
 

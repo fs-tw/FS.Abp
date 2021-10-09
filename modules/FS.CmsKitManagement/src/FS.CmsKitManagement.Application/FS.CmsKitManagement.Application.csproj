@@ -31,16 +31,21 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentCrudAppService.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoAutoMapperProfile.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoValidator.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDtoAutoMapperProfile.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDtoValidator.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.Application" Version="$(AbpVersion)" />
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FS.CmsKitManagement.MultiLinguals\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -133,14 +138,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualDtoValidator.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDtoValidator.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>

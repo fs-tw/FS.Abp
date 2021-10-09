@@ -22,7 +22,7 @@ namespace FS.Abp.EntityTypes.EntityFrameworkCore
         where TDbContext : IEfCoreDbContext
         where TEntityType : class, IEntity
     {
-        protected IOptions<EntityTypeOption> Options => LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOption>>();
+        protected IOptions<EntityTypeOptions> Options => LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
         public EfCoreEntityTypeRepository(
             IDbContextProvider<TDbContext> dbContextProvider) : base(dbContextProvider) { }
 
@@ -92,7 +92,7 @@ namespace FS.Abp.EntityTypes.EntityFrameworkCore
         {
             EntityTypeDefinition foo = null;
 
-            var entityType = Options.Value.GetOrNull<TEntityType>().Get<TEntity>().EntityType;
+            var entityType = Options.Value.GetOrDefault<TEntityType>().GetOrDefault<TEntity>().EntityType;
             ObjectHelper.TrySetProperty(entity,
                 (e) => foo.EntityType,
                 () => entityType);
@@ -104,7 +104,7 @@ namespace FS.Abp.EntityTypes.EntityFrameworkCore
         {
             get
             {
-                var entityType = Options.Value.GetOrNull<TEntityType>().Get<TEntity>().EntityType;
+                var entityType = Options.Value.GetOrDefault<TEntityType>().GetOrDefault<TEntity>().EntityType;
                 Expression<Func<TEntityType, bool>> entityTypePredicate = e => EF.Property<string>(e, nameof(EntityTypeDefinition.EntityType)) == entityType;
                 return entityTypePredicate;
             }

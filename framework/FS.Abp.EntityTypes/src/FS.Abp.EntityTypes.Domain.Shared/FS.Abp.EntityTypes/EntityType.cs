@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Volo.CmsKit;
 
 namespace FS.Abp.EntityTypes
 {
-    public class EntityTypeModel
+    public class EntityType
     {
         public string Name { get; set; }
-        public List<string> Entities { get; set; }
+        public List<EntityTypeDefinition> Definitions { get; set; }
     }
 }

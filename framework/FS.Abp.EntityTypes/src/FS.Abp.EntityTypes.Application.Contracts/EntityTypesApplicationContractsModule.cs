@@ -11,6 +11,6 @@ namespace FS.Abp.EntityTypes
         )]
     public class EntityTypesApplicationContractsModule : AbpModule
     {
-
+        
     }
 }

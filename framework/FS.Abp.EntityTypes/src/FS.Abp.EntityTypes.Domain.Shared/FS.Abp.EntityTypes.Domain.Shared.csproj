@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -9,7 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Validation" Version="4.4.3" />
+    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\EntityTypes\*.json" />
     <Content Remove="Localization\EntityTypes\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Abp.Shared\FS.Abp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

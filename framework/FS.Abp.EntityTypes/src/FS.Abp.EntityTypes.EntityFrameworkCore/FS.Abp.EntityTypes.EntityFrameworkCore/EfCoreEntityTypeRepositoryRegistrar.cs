@@ -15,12 +15,12 @@ namespace FS.Abp.EntityTypes.EntityFrameworkCore
     {
         public AbpEntityTypeRepositoryRegistrationOptions Options { get; }
 
-        public EntityTypeOption EntityTypeOptions { get; set; }
+        public EntityTypeOptions EntityTypeOptions { get; set; }
         public EfCoreEntityTypeRepositoryRegistrar(AbpEntityTypeRepositoryRegistrationOptions options)
         {
             Options = options;
 
-            EntityTypeOptions = Options.Services.ExecutePreConfiguredActions<EntityTypeOption>();
+            EntityTypeOptions = Options.Services.ExecutePreConfiguredActions<EntityTypeOptions>();
             //using (var provider = Options.Services.BuildServiceProvider())
             //{
             //    EntityTypeOptions = provider.GetRequiredService<IOptions<EntityTypeOptions>>().Value;
@@ -37,7 +37,7 @@ namespace FS.Abp.EntityTypes.EntityFrameworkCore
         {
             foreach (var entityType in
                 GetEntityTypes(Options.OriginalDbContextType)
-                .Where(t => EntityTypeOptions.Contains(t)))
+                .Where(t => EntityTypeOptions.ContainsKey(t)))
             {
                 RegisterDefaultRepository(entityType);
             }
@@ -45,7 +45,7 @@ namespace FS.Abp.EntityTypes.EntityFrameworkCore
 
         protected void RegisterDefaultRepository(Type entityType)
         {
-            var entities = EntityTypeOptions.GetOrNull(entityType).GetList().Select(x => x.Key).ToList();
+            var entities = EntityTypeOptions.GetOrDefault(entityType).ToList().Select(x => x.Key).ToList();
 
             var primaryKeyType = EntityHelper.FindPrimaryKeyType(entityType);
 

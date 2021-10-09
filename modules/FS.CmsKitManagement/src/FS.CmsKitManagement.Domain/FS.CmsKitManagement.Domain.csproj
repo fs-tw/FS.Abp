@@ -41,6 +41,7 @@
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentRepository.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualProperty.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsStore.Generated.cs" />
     <Compile Remove="_Generated\FS.CmsKitManagement\Shapes\ShapesStore.Generated.cs" />
   </ItemGroup>
@@ -85,10 +86,6 @@
       <DependentUpon>Contents</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentDefinitionRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
@@ -145,10 +142,6 @@
       <DependentUpon>MultiLinguals</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingual.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>MultiLinguals</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualProperty.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MultiLinguals</DependentUpon>
     </Compile>

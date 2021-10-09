@@ -31,7 +31,6 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             CustomizeMapping(ref builder);
 
             builder.Ignore<FS.CmsKitManagement.Blogs.BlogPostSetting>();
-            builder.Ignore<FS.CmsKitManagement.MultiLinguals.MultiLingualProperty>();
             builder.ApplyConfiguration<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia>(new FS.CmsKitManagement.MediaDescriptors.AttachmentMediaConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentDefinition>(new FS.CmsKitManagement.Contents.ContentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentType>(new FS.CmsKitManagement.Contents.ContentTypeConfiguration(options));

@@ -4,6 +4,10 @@ using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc;
+using FS.Abp.AspNetCore.Mvc.Json;
 
 namespace FS.Abp.EntityTypes
 {
@@ -22,12 +26,16 @@ namespace FS.Abp.EntityTypes
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            context.Services.TryAddEnumerable(ServiceDescriptor
+                .Transient<IConfigureOptions<JsonOptions>, AbpJsonOptionsSetup>());
+
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
                     .Get<EntityTypesResource>()
                     .AddBaseTypes(typeof(AbpUiResource));
             });
+
         }
     }
 }

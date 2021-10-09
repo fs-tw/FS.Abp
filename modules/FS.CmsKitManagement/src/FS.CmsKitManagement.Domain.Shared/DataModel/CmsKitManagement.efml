@@ -175,25 +175,7 @@
         <column name="" />
       </property>
     </component>
-    <component class="FS.CmsKitManagement.MultiLinguals.MultiLingualProperty" p1:Guid="6e6f6d15-5007-479c-9407-d3ca213e91b9" p1:AbpEditor="YinChang">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string />
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-          <p1:Properties>
-            <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-              <string>MultiLinguals</string>
-            </p1:PropertyValue>
-          </p1:Properties>
-        </p1:Attribute>
-      </p1:Attributes>
+    <component class="Volo.Abp.NameValue" IsExternal="true" p1:Guid="6e6f6d15-5007-479c-9407-d3ca213e91b9" p1:AbpEditor="YinChang" p1:GenerateDTO="False">
       <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="21470f03-949a-4ffe-b568-3bb8e5681f12">
         <column name="" />
       </property>
@@ -595,6 +577,9 @@
     <property name="EntityId" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="b9fc4b0e-93e1-46a0-a2b4-578aeba1cbfa">
       <column name="EntityId" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
     </property>
+    <property name="DefaultCulture" type="String" p1:ValidateRequired="true" p1:Guid="20ddd0e8-c898-4856-a643-3caab7302136">
+      <column name="" />
+    </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="75c049c5-848f-409f-ba46-0bcd942c68bb" p1:GenerateDTO="False">
       <column name="" />
     </property>
@@ -646,7 +631,7 @@
     <property name="Culture" type="String" p1:ValidateRequired="true" p1:Guid="f60e57c6-1661-4e7b-a776-65b7cef7821f">
       <column name="" />
     </property>
-    <component name="Properties" class="FS.CmsKitManagement.MultiLinguals.MultiLingualProperty" p1:ValidateRequired="false" p1:Guid="02190269-1134-4a27-9b2f-406c3b88071a" p1:Shadow="True">
+    <component name="Properties" class="Volo.Abp.NameValue" p1:ValidateRequired="false" p1:Guid="02190269-1134-4a27-9b2f-406c3b88071a" p1:Shadow="True">
       <p1:Attributes>
         <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
           <p1:AttributeConstructor />

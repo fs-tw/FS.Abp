@@ -15,6 +15,7 @@ namespace FS.Abp.AspNetCore.Mvc
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.AddMediatR(typeof(AbpAspNetCoreMvcModule));
+
             Configure<AspNetCoreApiDescriptionModelProviderOptions>(o =>
             {
                 

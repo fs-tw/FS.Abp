@@ -40,12 +40,12 @@ namespace FS.CmsKitManagement.MultiLinguals
             get;
             set;
         }
-        public virtual List<FS.CmsKitManagement.MultiLinguals.MultiLingualProperty> Properties 
+        public virtual List<Volo.Abp.NameValue> Properties 
         {
 
             get
             {
-                return this.GetExtraProperty<List<FS.CmsKitManagement.MultiLinguals.MultiLingualProperty>>(nameof(Properties));
+                return this.GetExtraProperty<List<Volo.Abp.NameValue>>(nameof(Properties));
             }
             set
             {

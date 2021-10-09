@@ -43,7 +43,6 @@
         <File Name="MultiLingualTranslationDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="EntityBlogDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos" />
         <File Name="BlogPostSettingDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
-        <File Name="MultiLingualPropertyDto.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="AttachmentMediaDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="ContentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ContentTypeDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
@@ -54,7 +53,6 @@
         <File Name="MultiLingualTranslationDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="EntityBlogDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos" />
         <File Name="BlogPostSettingDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
-        <File Name="MultiLingualPropertyDtoAutoMapperProfile.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="AttachmentMediaDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos" />
         <File Name="ContentDefinitionDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
         <File Name="ContentTypeDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Contents\Dtos" />
@@ -65,7 +63,6 @@
         <File Name="MultiLingualTranslationDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="EntityBlogDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos" />
         <File Name="BlogPostSettingDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs\Dtos" />
-        <File Name="MultiLingualPropertyDtoValidator.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos" />
         <File Name="BlogPostSetting.AbpSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="IBlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.Application" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
@@ -93,7 +90,6 @@
         <File Name="MultiLingualTranslation.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="EntityBlog.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="BlogPostSetting.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
-        <File Name="MultiLingualProperty.Generated.cs" Project="FS.CmsKitManagement.Domain" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="AttachmentMedia.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="ContentDefinition.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
         <File Name="ContentType.Configuration.Generated.cs" Project="FS.CmsKitManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CmsKitManagement\Contents" />
@@ -129,10 +125,6 @@
         <File Name="IBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
         <File Name="BlogsApi.BlogPostSettingAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Blogs" />
-        <File Name="IMultiLingualsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
-        <File Name="MultiLingualsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
-        <File Name="MultiLingualsApi.MultiLingualCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
-        <File Name="MultiLingualsApi.MultiLingualTranslationCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="IMediaDescriptorsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="MediaDescriptorsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
         <File Name="MediaDescriptorsApi.AttachmentMediaCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MediaDescriptors" />
@@ -145,6 +137,10 @@
         <File Name="IShapesApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="ShapesApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
         <File Name="ShapesApi.ShapeCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\Shapes" />
+        <File Name="IMultiLingualsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="MultiLingualsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="MultiLingualsApi.MultiLingualCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
+        <File Name="MultiLingualsApi.MultiLingualTranslationCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\MultiLinguals" />
         <File Name="IEntityBlogsApi.Generated.cs" Project="FS.CmsKitManagement.Application.Contracts" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="EntityBlogsApi.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
         <File Name="EntityBlogsApi.EntityBlogCrudAppService.Generated.cs" Project="FS.CmsKitManagement.HttpApi" ProjectFolder="_Generated\FS.CmsKitManagement\EntityBlogs" />
@@ -311,9 +307,6 @@
       <Template Name="Domain.AbpSettings" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSettings.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="GenSettingsApi" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>true</boolean>
         </ed:Property>
         <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">

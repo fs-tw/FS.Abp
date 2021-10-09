@@ -12,6 +12,6 @@ namespace FS.Abp
     [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
     public class AbpApplicationContractsModule : AbpModule
     {
-
+        
     }
 }

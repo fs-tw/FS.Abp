@@ -11,25 +11,17 @@ namespace FS.Abp.EntityTypes
     [Area("entity-types")]
     [RemoteService(Name = "entity-types")]
     [ControllerName("FS.Abp.EntityTypes.EntityType(entity-types)")]
-    [Route("api/entity-types")]
+    [Route("api/entity-types/definitions")]
     public class EntityTypeApi : EntityTypesController, IEntityTypeApi
     {
         protected IEntityTypeDefinitionAppService EntityTypeDefinitionAppService => this.LazyServiceProvider.LazyGetRequiredService<IEntityTypeDefinitionAppService>();
 
         [HttpGet]
-        [Route("definitions/type-name")]
         [RemoteService(true)]
-        public List<string> FindEntityTypeFromEntity(string typeName)
-        {
-            return EntityTypeDefinitionAppService.FindEntityTypeFromEntity(typeName);
-        }
-
-        [HttpGet]
-        [Route("definitions")]
-        [RemoteService(true)]
-        public List<EntityTypeModel> GetList()
+        public List<EntityType> GetList()
         {
             return EntityTypeDefinitionAppService.GetList();
         }
+
     }
 }

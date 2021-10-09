@@ -11,7 +11,6 @@ namespace FS.CodingManagement
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
     [DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     public class CodingManagementApplicationModule : AbpModule
     {

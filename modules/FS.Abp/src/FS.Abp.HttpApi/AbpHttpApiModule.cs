@@ -13,6 +13,10 @@ namespace FS.Abp
     [DependsOn(
         typeof(AbpApplicationContractsModule),
         typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
+    [DependsOn(
+        typeof(FS.Abp.EntityTypes.EntityTypesApplicationModule),
+        typeof(FS.Abp.EntityTypes.EntityTypesHttpApiModule)
+        )]
     public class AbpHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
