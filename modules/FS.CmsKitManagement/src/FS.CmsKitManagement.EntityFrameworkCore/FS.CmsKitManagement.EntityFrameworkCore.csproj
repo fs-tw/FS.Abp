@@ -42,6 +42,12 @@
     <Compile Update="FS.CmsKitManagement.Contents\ContentsStore.cs">
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="FS.CmsKitManagement.EntityBlogs\EntityBlogsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKitManagement.MultiLinguals\MultiLingualsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>

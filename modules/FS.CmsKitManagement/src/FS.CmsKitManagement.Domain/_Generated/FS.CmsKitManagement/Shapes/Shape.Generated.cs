@@ -53,12 +53,6 @@ namespace FS.CmsKitManagement.Shapes
             set;
         }
 
-        public virtual System.Guid ContentDefinitionId
-        {
-            get;
-            set;
-        }
-
         public virtual System.Guid? TenantId
         {
             get;

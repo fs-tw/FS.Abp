@@ -520,9 +520,6 @@
     <property name="TextTemplateContentId" type="Guid" p1:ValidateRequired="true" p1:Guid="6e7a926c-76dc-4cab-a643-5667cebfb9a4">
       <column name="" />
     </property>
-    <property name="ContentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="fcee327a-ab12-459e-be10-f45580f3f6af">
-      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
-    </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bf46f031-efad-4d14-8002-202080064679" p1:GenerateDTO="False">
       <column name="" />
     </property>

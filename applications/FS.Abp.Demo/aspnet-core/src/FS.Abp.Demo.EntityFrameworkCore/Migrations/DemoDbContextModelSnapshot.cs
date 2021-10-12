@@ -507,10 +507,6 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
 
-                    b.Property<Guid>("ContentDefinitionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ContentDefinitionId");
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreationTime");
