@@ -182,6 +182,45 @@
         }
       }
     },
+    "entity-type-management": {
+      "projectType": "library",
+      "root": "libs/entity-type-management",
+      "sourceRoot": "libs/entity-type-management/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/entity-type-management/tsconfig.lib.json",
+            "project": "libs/entity-type-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/entity-type-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/entity-type-management/src/**/*.ts",
+              "libs/entity-type-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/entity-type-management"
+          ],
+          "options": {
+            "jestConfig": "libs/entity-type-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "cms-kit-management": {
       "projectType": "library",
       "root": "libs/cms-kit-management",
@@ -345,6 +384,7 @@
     }
   },
   "cli": {
+    "analytics": "e42b537b-f75f-46c6-b359-a18200dda32b",
     "defaultCollection": "@nrwl/angular",
     "packageManager": "npm"
   },

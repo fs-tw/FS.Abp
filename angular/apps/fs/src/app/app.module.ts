@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { QuillModule } from 'ngx-quill';
-
+import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/config';
 @NgModule({
   imports: [
     BrowserModule,
@@ -37,7 +37,9 @@ import { QuillModule } from 'ngx-quill';
     CodingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeAlainModule.forRoot(),
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+
+    EntityTypeManagementConfigModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
