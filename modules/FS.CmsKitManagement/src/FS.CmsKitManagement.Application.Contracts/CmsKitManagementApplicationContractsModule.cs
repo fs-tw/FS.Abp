@@ -13,7 +13,6 @@ namespace FS.CmsKitManagement
     [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
     [DependsOn(typeof(FS.Abp.AbpApplicationContractsModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitApplicationContractsModule))]
-    
     public class CmsKitManagementApplicationContractsModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

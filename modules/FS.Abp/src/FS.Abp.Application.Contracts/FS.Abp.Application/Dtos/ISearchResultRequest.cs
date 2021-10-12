@@ -1,12 +1,12 @@
-﻿using System;
+﻿using AutoFilterer.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FS.Abp.Application.Dtos
 {
-    public interface ISearchResultRequest
+    public interface ISearchResultRequest : Volo.Abp.Application.Dtos.IPagedAndSortedResultRequest
     {
-        string Fields { get; set; }
-        string Value { get; set; }
+        string Sort { get; set; }
     }
 }

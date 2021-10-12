@@ -90,4 +90,8 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FS.CmsKitManagement.Contents\" />
+  </ItemGroup>
+
 </Project>

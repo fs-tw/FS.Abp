@@ -6,7 +6,7 @@ using Volo.Abp.Linq;
 
 namespace FS.Abp.Application
 {
-    public interface ISearchedAndPagedAndSortedOperation: Volo.Abp.DependencyInjection.ITransientDependency
+    public interface ISearchedAndPagedAndSortedOperation
     {
         System.Threading.Tasks.Task<(int TotalCount, System.Collections.Generic.List<TEntity> Entities)> ListAsync<TEntity, TInput>(
             IQueryable<TEntity> query,

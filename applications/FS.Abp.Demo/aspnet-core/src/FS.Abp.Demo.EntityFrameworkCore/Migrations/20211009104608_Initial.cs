@@ -391,6 +391,27 @@ namespace FS.Abp.Demo.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CmsKitManagementEntityBlogs",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    EntityId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    BlogId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CmsKitManagementEntityBlogs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CmsKitManagementEntityContentDefinitions",
                 columns: table => new
                 {
@@ -418,6 +439,7 @@ namespace FS.Abp.Demo.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     EntityId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    DefaultCulture = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
@@ -1734,6 +1756,11 @@ namespace FS.Abp.Demo.Migrations
                 column: "CreationTime");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CmsKitManagementEntityBlogs_CreationTime",
+                table: "CmsKitManagementEntityBlogs",
+                column: "CreationTime");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CmsKitManagementEntityContentDefinitions_CreationTime",
                 table: "CmsKitManagementEntityContentDefinitions",
                 column: "CreationTime");
@@ -1925,6 +1952,9 @@ namespace FS.Abp.Demo.Migrations
 
             migrationBuilder.DropTable(
                 name: "CmsKitManagementAttachmentMedia");
+
+            migrationBuilder.DropTable(
+                name: "CmsKitManagementEntityBlogs");
 
             migrationBuilder.DropTable(
                 name: "CmsKitManagementEntityContentDefinitions");

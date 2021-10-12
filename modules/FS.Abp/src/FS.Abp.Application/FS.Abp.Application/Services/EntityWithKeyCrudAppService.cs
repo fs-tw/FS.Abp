@@ -25,46 +25,30 @@ namespace FS.Abp.Application.Services
             : base(repository)
         {
         }
-
-        protected override async Task<IQueryable<TEntity>> CreateFilteredQueryAsync(TGetListInput input)
+        public override async Task<PagedResultDto<TGetOutputDto>> GetListAsync(TGetListInput input)
         {
+            await CheckGetListPolicyAsync();
+
             var query = await Repository.WithDetailsAsync();
 
-            return SearchedAndPagedAndSortedOperation.ApplySearching(query, input);
-        }
+            var result = await SearchedAndPagedAndSortedOperation.ListAsync(query, input);
 
-        protected override async Task DeleteByIdAsync(TKeyDto id)
+            var entityDtos = await MapToGetListOutputDtosAsync(result.Entities);
+
+            return new PagedResultDto<TGetOutputDto>(
+                result.TotalCount,
+                entityDtos
+            );
+        }
+        protected override async Task DeleteByIdAsync(TKeyDto key)
         {
-            await Repository.DeleteAsync(x => x.Id.Equals(id));
+            await Repository.DeleteAsync(x => x.Id.Equals(key.Id));
         }
 
-        protected override async Task<TEntity> GetEntityByIdAsync(TKeyDto id)
+        protected override async Task<TEntity> GetEntityByIdAsync(TKeyDto key)
         {
-            return await Repository.GetAsync(x => x.Id.Equals(id));
+            return await Repository.GetAsync(x => x.Id.Equals(key.Id));
         }
-
-        protected override void MapToEntity(TUpdateInput updateInput, TEntity entity)
-        {
-            if (updateInput is IEntityDto<TKey> entityDto)
-            {
-                entityDto.Id = entity.Id;
-            }
-
-            base.MapToEntity(updateInput, entity);
-        }
-
-        protected override IQueryable<TEntity> ApplyDefaultSorting(IQueryable<TEntity> query)
-        {
-            if (typeof(TEntity).IsAssignableTo<IHasCreationTime>())
-            {
-                return query.OrderByDescending(e => ((IHasCreationTime)e).CreationTime);
-            }
-            else
-            {
-                return query.OrderByDescending(e => e.Id);
-            }
-        }
-
 
     }
 

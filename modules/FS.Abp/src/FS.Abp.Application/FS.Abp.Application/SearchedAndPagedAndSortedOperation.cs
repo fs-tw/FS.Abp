@@ -10,22 +10,19 @@ using System.Linq.Dynamic.Core;
 using Volo.Abp.Auditing;
 using FS.Abp.Application.Dtos;
 using System.Reflection;
+using AutoFilterer.Abstractions;
+using Volo.Abp;
 
 namespace FS.Abp.Application
 {
-    public class SearchedAndPagedAndSortedOperation : ISearchedAndPagedAndSortedOperation
+    public abstract class DefaultSearchedAndPagedAndSortedOperation : ISearchedAndPagedAndSortedOperation
     {
         protected IAsyncQueryableExecuter AsyncQueryableExecuter { get; set; }
-
-        public SearchedAndPagedAndSortedOperation(
-            IAsyncQueryableExecuter asyncQueryableExecuter
-            )
+        protected DefaultSearchedAndPagedAndSortedOperation(IAsyncQueryableExecuter asyncQueryableExecuter)
         {
             AsyncQueryableExecuter = asyncQueryableExecuter;
         }
-        public virtual async Task<(int TotalCount, List<TEntity> Entities)> ListAsync<TEntity, TInput>(
-            IQueryable<TEntity> query,
-            TInput input)
+        public virtual async Task<(int TotalCount, List<TEntity> Entities)> ListAsync<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
             if (query == null) throw new Exception("query must be not null");
@@ -34,6 +31,14 @@ namespace FS.Abp.Application
 
             var totalCount = await AsyncQueryableExecuter.CountAsync(query);
 
+            if (input is ISortedResultRequest sortedResultRequest)
+            {
+                if (sortedResultRequest.Sorting.IsNullOrWhiteSpace())
+                {
+                    sortedResultRequest.Sorting = getDefaultSortProperty<TEntity>();
+                }
+            }
+
             query = ApplySorting(query, input);
             query = ApplyPaging(query, input);
 
@@ -41,66 +46,43 @@ namespace FS.Abp.Application
 
             return (TotalCount: totalCount, Entities: entities);
         }
+        private string getDefaultSortProperty<TEntity>()
+        {
+            if (typeof(TEntity).IsAssignableTo<IHasCreationTime>())
+            {
+                return $"{nameof(IHasCreationTime.CreationTime)} Desc";
+            }
+            if (Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>)))
+            {
 
-
+                return $"{nameof(IEntity<Guid>.Id)} Desc";
+            }
+            throw new AbpException("No sorting specified but this query requires sorting!");
+        }
         public virtual IQueryable<TEntity> ApplySearching<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
-            if (input is IDiscriminatorResultRequest discriminatorInput)
-            {
-                var discriminatorSpec = new FS.Abp.Specifications.DiscriminatorSpecification<TEntity>(input);
-                query = query.Where(discriminatorSpec);
-            }
-
-            if (input is ISearchResultRequest searchInput)
-            {
-                var searchSpec = new FS.Abp.Specifications.SearchSpecification<TEntity>(searchInput.Fields, searchInput.Value);
-                query = query.Where(searchSpec);
-            }
             return query;
         }
 
-        /// <summary>
-        /// Should apply sorting if needed.
-        /// </summary>
-        /// <param name="query">The query.</param>
-        /// <param name="input">The input.</param>
         public virtual IQueryable<TEntity> ApplySorting<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
-            //Try to sort query if available
-            if (input is ISortedResultRequest sortInput)
+            if (input is ISortedResultRequest sortedResultRequest)
             {
-                if (!sortInput.Sorting.IsNullOrWhiteSpace())
-                {
-                    return query.OrderBy(sortInput.Sorting);
-                }
-            }
+                return query.OrderBy(sortedResultRequest.Sorting);
 
-            //IQueryable.Take requires sorting, so we should sort if Take will be used.
+            }
             if (input is ILimitedResultRequest)
             {
-                if (typeof(TEntity).IsAssignableTo<IHasCreationTime>())
-                {
-                    return query.OrderBy($"{nameof(IHasCreationTime.CreationTime)} Desc");
-                }
-                if (Volo.Abp.Reflection.ReflectionHelper.IsAssignableToGenericType(typeof(TEntity), typeof(IEntity<>)))
-                {
-
-                    return query.OrderBy($"{nameof(IEntity<Guid>.Id)} Desc");
-                }
-
+                return query.OrderBy(getDefaultSortProperty<TEntity>());
             }
+
 
             //No sorting
             return query;
         }
 
-        /// <summary>
-        /// Should apply paging if needed.
-        /// </summary>
-        /// <param name="query">The query.</param>
-        /// <param name="input">The input.</param>
         public virtual IQueryable<TEntity> ApplyPaging<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
             where TEntity : class, IEntity
         {
@@ -118,6 +100,46 @@ namespace FS.Abp.Application
 
             //No paging
             return query;
+        }
+
+
+    }
+
+    public class AutoFiltererSearchedAndPagedAndSortedOperation
+        : DefaultSearchedAndPagedAndSortedOperation, ISearchedAndPagedAndSortedOperation, Volo.Abp.DependencyInjection.ITransientDependency
+    {
+
+        public AutoFiltererSearchedAndPagedAndSortedOperation(
+            IAsyncQueryableExecuter asyncQueryableExecuter
+            )
+            : base(asyncQueryableExecuter)
+        {
+        }
+
+        public override IQueryable<TEntity> ApplySearching<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+        {
+            if (input is IOrderablePaginationFilter fullFilter)
+            {
+                return fullFilter.ApplyFilterWithoutPaginationAndOrdering(query);
+            }
+
+            return base.ApplySearching(query, input);
+        }
+
+        public override IQueryable<TEntity> ApplySorting<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+        {
+            if (input is IOrderable orderable)
+            {
+                return orderable.ApplyOrder(query);
+            }
+            return base.ApplySorting(query, input);
+        }
+
+        public override IQueryable<TEntity> ApplyPaging<TEntity, TInput>(IQueryable<TEntity> query, TInput input)
+        {
+            if (input is IOrderable orderableFilter)
+                return orderableFilter.ApplyOrder(query);
+            return base.ApplyPaging(query, input);
         }
 
 

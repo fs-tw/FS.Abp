@@ -8,59 +8,31 @@
   <ItemGroup>
     <Compile Remove="Data\Routes\**" />
     <Compile Remove="Data\Vocabularies\**" />
-    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
-    <Compile Remove="FS.CmsKitManagement.Routes\**" />
-    <Compile Remove="Volo.CmsKit.Blogs\**" />
-    <Compile Remove="Volo.CmsKit.Pages\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <EmbeddedResource Remove="Data\Routes\**" />
     <EmbeddedResource Remove="Data\Vocabularies\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
-    <EmbeddedResource Remove="Volo.CmsKit.Blogs\**" />
-    <EmbeddedResource Remove="Volo.CmsKit.Pages\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
     <None Remove="Data\Routes\**" />
     <None Remove="Data\Vocabularies\**" />
-    <None Remove="FS.CmsKitManagement.EntityType\**" />
-    <None Remove="FS.CmsKitManagement.Routes\**" />
-    <None Remove="Volo.CmsKit.Blogs\**" />
-    <None Remove="Volo.CmsKit.Pages\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRoute.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Content.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualProperty.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Shapes\ShapesStore.Generated.cs" />
+    <Compile Remove="Data\BlogsSeeder.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
+    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain\FS.Abp.EntityTypes.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
-    <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
-    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.CmsKitManagement.Blogs\IBlogsStore.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogPostSetting.AbpSetting.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
@@ -161,6 +133,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Shapes</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

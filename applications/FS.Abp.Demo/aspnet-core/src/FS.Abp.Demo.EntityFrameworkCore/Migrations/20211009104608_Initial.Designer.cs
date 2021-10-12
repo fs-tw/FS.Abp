@@ -11,7 +11,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace FS.Abp.Demo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20211007042948_Initial")]
+    [Migration("20211009104608_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -265,6 +265,65 @@ namespace FS.Abp.Demo.Migrations
                     b.ToTable("CmsKitManagementEntityContentDefinitions");
                 });
 
+            modelBuilder.Entity("FS.CmsKitManagement.EntityBlogs.EntityBlog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<Guid>("BlogId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("BlogId");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("EntityId")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("EntityId");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("EntityType");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime");
+
+                    b.ToTable("CmsKitManagementEntityBlogs");
+                });
+
             modelBuilder.Entity("FS.CmsKitManagement.MediaDescriptors.AttachmentMedia", b =>
                 {
                     b.Property<Guid>("Id")
@@ -343,6 +402,11 @@ namespace FS.Abp.Demo.Migrations
                     b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CreatorId");
+
+                    b.Property<string>("DefaultCulture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("DefaultCulture");
 
                     b.Property<string>("EntityId")
                         .IsRequired()

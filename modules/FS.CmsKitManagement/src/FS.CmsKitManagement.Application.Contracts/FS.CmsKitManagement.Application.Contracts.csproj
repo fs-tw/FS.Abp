@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -40,6 +40,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.CmsKitManagement.EntityBlog\Dtos\EntityBlogDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKitManagement.Contents\Dtos\ContentDefinitionDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKitManagement.Contents\IContentDefinitionCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\BlogPostSettingDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
