@@ -14,12 +14,14 @@ import {
   setDefaults,
 } from '@fs-tw/theme-alain/extensions';
 import {
+  AddToolbarAction,
   PAGES_CREATE_FORM_PROPS,
   PAGES_EDIT_FORM_PROPS,
   PAGES_ENTITY_ACTIONS,
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
 } from './defaults/index';
+import { EntityTypeService } from '@fs-tw/entity-type-management/config';
 
 @Component({
   selector: 'fs-tw-pages',
@@ -34,6 +36,10 @@ import {
 })
 export class PagesComponent implements OnInit, OnDestroy {
   public static NAME: string = 'Pages.CommentsComponent';
+  public static EntityType = "Volo.CmsKit.Pages.Page";
+
+  feature: Array<string>;
+
   service: Volo.CmsKit.Admin.Pages.PageAdminService;
   subs: Subscription = new Subscription();
 
@@ -47,31 +53,39 @@ export class PagesComponent implements OnInit, OnDestroy {
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
+    public entityTypeService: EntityTypeService,
     private confirmationService: ConfirmationService
   ) {
-    this.subs.add(
-      setDefaults(injector, PagesComponent.NAME, {
-        entityAction: PAGES_ENTITY_ACTIONS,
-        toolbarActions: PAGES_TOOLBAR_ACTIONS,
-        entityProps: PAGES_ENTITY_PROPS,
-        createFormProps: PAGES_CREATE_FORM_PROPS,
-        editFormProps: PAGES_EDIT_FORM_PROPS,
-      }).subscribe((x) => {
-        switch (x.method) {
-          case 'Create':
-            this.onAdd();
-            break;
-          case 'Edit':
-            this.onEdit(x.data.record.id);
-            break;
-          case 'Delete':
-            this.delete(x.data.record.id, x.data.record.title);
-            break;
-        }
-      })
-    );
+    this.service = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
+    this.entityTypeService = injector.get(EntityTypeService);
 
-    this.service = this.injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
+    this.subs.add(this.entityTypeService.getEntityTypeByType$(PagesComponent.EntityType).subscribe(x => {
+      this.feature = x.map(y => y.name);
+      this.subs.add(
+        setDefaults(injector, PagesComponent.NAME, {
+          entityAction: AddToolbarAction(this.feature),
+          toolbarActions: PAGES_TOOLBAR_ACTIONS,
+          entityProps: PAGES_ENTITY_PROPS,
+          createFormProps: PAGES_CREATE_FORM_PROPS,
+          editFormProps: PAGES_EDIT_FORM_PROPS,
+        }).subscribe((x) => {
+          switch (x.method) {
+            case 'Create':
+              this.onAdd();
+              break;
+            case 'Edit':
+              this.onEdit(x.data.record.id);
+              break;
+            case 'Delete':
+              this.delete(x.data.record.id, x.data.record.title);
+              break;
+            default:
+              this.featureFunction(x.method);
+              break;
+          }
+        })
+      );
+    }));
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
@@ -135,5 +149,9 @@ export class PagesComponent implements OnInit, OnDestroy {
       .subscribe((_) => {
         this.list.get();
       });
+  }
+
+  featureFunction(method: string) {
+    console.log(method)
   }
 }
