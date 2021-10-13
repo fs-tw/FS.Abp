@@ -73,17 +73,27 @@ namespace FS.CmsKitManagement
             {
                 var pageManager = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.PageManager>();
                 var multiLingualsStore = this.LazyServiceProvider.LazyGetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualsStore>();
+
+                var pageRepository = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.IPageRepository>();
+
+
                 var page = await pageManager.CreateAsync("豐碩資訊", "further", "豐碩資訊");
 
                 var multiLingual = await multiLingualsStore.CreateMultiLingualAsync(page);
 
+                await pageRepository.InsertAsync(page,true);
+
+                await multiLingualsStore.MultiLingual.InsertAsync(multiLingual, true);
+
                 FS.CmsKit.Pages.PageTranslation enPageTranslation = new CmsKit.Pages.PageTranslation()
                 {
-                    Content="further content",
-                    Title="further title"
+                    Content = "further content",
+                    Title = "further title"
                 };
 
-                await multiLingual.AddOrReplaceTranslationAsync(multiLingualsStore, "en", enPageTranslation);
+                await multiLingual.AddOrReplaceTranslationAsync(multiLingualsStore, page, "en", enPageTranslation);
+
+                await multiLingualsStore.MultiLingual.UpdateAsync(multiLingual);
             }
         }
     }

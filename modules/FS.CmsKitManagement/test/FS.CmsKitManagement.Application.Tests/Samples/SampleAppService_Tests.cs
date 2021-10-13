@@ -19,19 +19,30 @@ namespace FS.CmsKitManagement.Samples
         [Fact]
         public async Task Should_Has_MultiLingual_In_Page()
         {
-            //await this.WithUnitOfWorkAsync(async () =>
-            //{
-            //    var options = GetRequiredService<IOptions<FS.Abp.EntityTypes.EntityTypeOption>>();
+            var multiLingualsStore = GetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualsStore>();
+            var objectMapper = GetRequiredService<Volo.Abp.ObjectMapping.IObjectMapper>();
+            await this.WithUnitOfWorkAsync(async () =>
+            {
+                var options = GetRequiredService<IOptions<FS.Abp.EntityTypes.EntityTypeOptions>>();
 
-            //    var pageRepository = GetRequiredService<Volo.CmsKit.Pages.IPageRepository>();
+                var pageRepository = GetRequiredService<Volo.CmsKit.Pages.IPageRepository>();
 
-            //    var page = await pageRepository.GetBySlugAsync("further");
+                var page = await pageRepository.GetBySlugAsync("further");
 
-            //    var multiLingualRepository = GetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualRepository>();
+                var multiLingualRepository = GetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualRepository>();
 
 
-            //    var multiLingual = (await multiLingualRepository.WithDetailsAsync()).Where(x => x.EntityId == page.Id.ToString()).SingleOrDefault();
-            //});
+                var multiLingual = (await multiLingualRepository.WithDetailsAsync()).Where(x => x.EntityId == page.Id.ToString()).SingleOrDefault();
+
+                var translation = await multiLingual.GetOrDefaultTranslationAsync<Volo.CmsKit.Pages.Page, FS.CmsKit.Pages.PageTranslation>(multiLingualsStore, page, "en");
+
+                translation.Content.ShouldBe("further content");
+
+
+                //var dto=objectMapper.Map<Volo.CmsKit.Pages.Page, Volo.CmsKit.Public.Pages.PageDto>(page, result);
+
+                //objectMapper.Map<FS.CmsKit.Pages.PageTranslation, Volo.CmsKit.Public.Pages.PageDto>(translation,dto);
+            });
 
             //var result = await _sampleAppService.GetAsync();
             //result.Value.ShouldBe(42);

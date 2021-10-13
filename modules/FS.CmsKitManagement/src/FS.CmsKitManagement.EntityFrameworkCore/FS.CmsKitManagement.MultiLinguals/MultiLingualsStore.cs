@@ -37,6 +37,7 @@ namespace FS.CmsKitManagement.MultiLinguals
 
             var result = new MultiLingual(GuidGenerator.Create())
             {
+                DefaultCulture = "tw",
                 EntityType = options.GetOrDefault<MultiLingual>().GetOrDefault<T>().EntityType,
                 EntityId = entity.Id.ToString(),
                 TenantId = CurrentTenant.Id,
