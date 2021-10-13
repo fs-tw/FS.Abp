@@ -10,7 +10,7 @@ namespace FS.CmsKitManagement.MediaDescriptors
     {
         Task<List<MediaDescriptor>> GetMediaDescriptorsAsync(List<Guid> mediaDescriptorIds);
 
-        Task<AttachmentMedia> CreateAsync<T>(T entity, MediaDescriptor mediaDescriptor)
+        Task<AttachmentMedia> CreateAttachmentMediaAsync<T>(T entity, MediaDescriptor mediaDescriptor)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>;
 
     }

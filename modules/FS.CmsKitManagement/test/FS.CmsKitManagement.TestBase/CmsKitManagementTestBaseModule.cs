@@ -19,22 +19,22 @@ namespace FS.CmsKitManagement
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
-            PreConfigure<EntityTypeOption>(options =>
-            {
-                options.Entity<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
-                {
-                    a.AddOrReplaceDefaults(
-                        typeof(Volo.CmsKit.Pages.Page)
-                        );
-                });
-            });
+            //PreConfigure<EntityTypeOption>(options =>
+            //{
+            //    options.Entity<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
+            //    {
+            //        a.AddOrReplaceDefaults(
+            //            typeof(Volo.CmsKit.Pages.Page)
+            //            );
+            //    });
+            //});
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            Configure<EntityTypeOption>(options =>
-            {
-                context.Services.ExecutePreConfiguredActions(options);
-            });
+            //Configure<EntityTypeOption>(options =>
+            //{
+            //    context.Services.ExecutePreConfiguredActions(options);
+            //});
 
             context.Services.AddAlwaysAllowAuthorization();
         }

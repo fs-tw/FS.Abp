@@ -7,7 +7,14 @@ namespace FS.CmsKitManagement.MultiLinguals
 {
     public partial interface IMultiLingualsStore : IDomainService
     {
-        Task<MultiLingual> CreateAsync<T>(T entity)
+        Task<MultiLingual> FindMultiLingualAsync<T>(T entity)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>;
+
+        Task<MultiLingual> CreateMultiLingualAsync<T>(T entity)
+            where T : Volo.Abp.Domain.Entities.IEntity<Guid>;
+
+        Task<MultiLingualTranslation> CreateMultiLingualTranslationAsync(MultiLingual entity, string culture);
+
+
     }
 }

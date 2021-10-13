@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.MediaDescriptors
             return result;
         }
 
-        public async Task<AttachmentMedia> CreateAsync<T>(T entity, MediaDescriptor mediaDescriptor)
+        public async Task<AttachmentMedia> CreateAttachmentMediaAsync<T>(T entity, MediaDescriptor mediaDescriptor)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var options = Options.Value;
