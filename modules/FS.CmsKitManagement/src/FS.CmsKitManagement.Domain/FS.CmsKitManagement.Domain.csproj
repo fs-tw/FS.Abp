@@ -33,6 +33,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FS.CmsKitManagement.Contents\IContentsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKitManagement.EntityBlogs\IEntityBlogsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FS.CmsKitManagement.MultiLinguals\IMultiLingualsStore.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogPostSetting.AbpSetting.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>

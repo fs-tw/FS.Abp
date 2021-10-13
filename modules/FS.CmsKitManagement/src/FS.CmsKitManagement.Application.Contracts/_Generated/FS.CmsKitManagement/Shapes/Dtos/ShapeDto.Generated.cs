@@ -28,8 +28,6 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
         public virtual System.Guid TextTemplateContentId { get; set; }
 
-        public virtual System.Guid ContentDefinitionId { get; set; }
-
     }
 
     public partial class ShapeCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
@@ -40,8 +38,6 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
         public virtual System.Guid TextTemplateContentId { get; set; }
 
-        public virtual System.Guid ContentDefinitionId { get; set; }
-
     }
 
     public partial class ShapeUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
@@ -51,8 +47,6 @@ namespace FS.CmsKitManagement.Shapes.Dtos
         public virtual string EntityId { get; set; }
 
         public virtual System.Guid TextTemplateContentId { get; set; }
-
-        public virtual System.Guid ContentDefinitionId { get; set; }
 
     }
 
