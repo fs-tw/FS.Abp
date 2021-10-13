@@ -40,6 +40,12 @@ export class EntityTypeService extends AbstractNavTreeService<EntityTypeInfo> {
         )));
     }
 
+    getMultiLingualByType$(featureName: string, entityType: string): Observable<Volo.CmsKit.EntityTypeDefinition> {
+        return this.flat$.pipe(map(x =>
+            x.find(y => y.name == featureName)?.definitions.find(z => z.entityType == entityType)
+        ));
+    }
+
     getFeatureByName$(featureName: string): Observable<EntityTypeInfo[]> {
         return this.flat$.pipe(map(x => x.filter(y =>
             y.name == featureName

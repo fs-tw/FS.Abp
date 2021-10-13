@@ -1,0 +1,22 @@
+<div *ngIf="selectedRecord">
+  <abp-modal [(visible)]="visible">
+    <ng-template #abpHeader>
+      <h5 class="modal-title" id="modal-basic-title">
+        {{  title | abpLocalization }}
+      </h5>
+    </ng-template>
+    <ng-template #abpBody>
+      <form [formGroup]="form">
+        <abp-extensible-form [selectedRecord]="selectedRecord"></abp-extensible-form>
+      </form>
+    </ng-template>
+    <ng-template #abpFooter>
+      <button type="button" class="btn btn-secondary" abpClose>
+        {{ 'AbpUi::Cancel' | abpLocalization }}
+      </button>
+      <abp-button iconClass="fa fa-check">{{
+        'AbpUi::Save' | abpLocalization
+      }}</abp-button>
+    </ng-template>
+  </abp-modal>
+</div>

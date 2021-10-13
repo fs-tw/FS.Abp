@@ -1,4 +1,4 @@
-import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import {
@@ -22,6 +22,7 @@ import {
   PAGES_TOOLBAR_ACTIONS,
 } from './defaults/index';
 import { EntityTypeService } from '@fs-tw/entity-type-management/config';
+import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 
 @Component({
   selector: 'fs-tw-pages',
@@ -35,9 +36,11 @@ import { EntityTypeService } from '@fs-tw/entity-type-management/config';
   ],
 })
 export class PagesComponent implements OnInit, OnDestroy {
-  public static NAME: string = 'Pages.CommentsComponent';
+  public static NAME: string = 'Pages.PagesComponent';
   public static EntityType = "Volo.CmsKit.Pages.Page";
 
+  @ViewChild(MultiLingualModalComponent) child: MultiLingualModalComponent;
+  
   feature: Array<string>;
 
   service: Volo.CmsKit.Admin.Pages.PageAdminService;
@@ -152,6 +155,6 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
 
   featureFunction(method: string) {
-    console.log(method)
+    this.child.setVisible();
   }
 }
