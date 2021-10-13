@@ -12,7 +12,7 @@ namespace FS.CmsKitManagement.EntityBlogs
     public partial class EntityBlogsStore : IEntityBlogsStore
     {
         protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
-        public virtual async Task<EntityBlog> CreateAsync<T>(T entity, Blog blog)
+        public virtual async Task<EntityBlog> CreateEntityBlogAsync<T>(T entity, Blog blog)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var options = Options.Value;

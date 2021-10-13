@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
+    <Compile Remove="Deprecated\**" />
+    <EmbeddedResource Remove="Deprecated\**" />
+    <None Remove="Deprecated\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Specifications" Version="$(AbpVersion)" />

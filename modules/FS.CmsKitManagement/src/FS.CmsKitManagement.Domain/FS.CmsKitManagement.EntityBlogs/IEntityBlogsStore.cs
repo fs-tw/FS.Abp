@@ -9,7 +9,7 @@ namespace FS.CmsKitManagement.EntityBlogs
 {
     public partial interface IEntityBlogsStore : IDomainService
     {
-        Task<EntityBlog> CreateAsync<T>(T entity, Blog blog)
+        Task<EntityBlog> CreateEntityBlogAsync<T>(T entity, Blog blog)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>;
     }
 }

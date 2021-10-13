@@ -15,7 +15,7 @@ namespace FS.CmsKitManagement.Contents
     {
         protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
 
-        public virtual async Task<ContentDefinition> CreateAsync<T>(string displayName)
+        public virtual async Task<ContentDefinition> CreateContentDefinitionAsync<T>(string displayName)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var options = Options.Value;
