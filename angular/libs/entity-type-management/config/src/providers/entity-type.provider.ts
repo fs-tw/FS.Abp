@@ -17,7 +17,7 @@ export function configureStyles(
   return () => {
     apiService.getList().subscribe(x => {
         let result = x.map(y => new EntityTypeInfo(y.name, y.definitions));
-        service.setData(result);
+        service.add(result);
     })
   };
 }
