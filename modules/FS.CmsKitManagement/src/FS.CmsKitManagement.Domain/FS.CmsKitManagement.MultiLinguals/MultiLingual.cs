@@ -13,12 +13,13 @@ namespace FS.CmsKitManagement.MultiLinguals
 {
     public partial class MultiLingual
     {
-        public async Task<TTranslation> GetOrDefaultTranslationAsync<TTranslation>(IMultiLingualsStore store, string culture = null)
+        public async Task<TTranslation> GetOrDefaultTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, TEntity entity, string culture = null)
             where TTranslation : class, new()
+            where TEntity : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var result = new TTranslation();
 
-            var multiLingual = await store.FindMultiLingualAsync(this);
+            var multiLingual = await store.FindMultiLingualAsync(entity);
 
             var translation = multiLingual.MultiLingualTranslations
                 .SingleOrDefault(x => x.Culture == (culture ?? multiLingual.DefaultCulture));
@@ -36,16 +37,11 @@ namespace FS.CmsKitManagement.MultiLinguals
             return result;
         }
 
-        public async Task<TTranslation> AddOrReplaceTranslationAsync<TTranslation>(IMultiLingualsStore store, string culture, TTranslation translation)
+        public async Task AddOrReplaceTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, TEntity entity, string culture, TTranslation translation)
             where TTranslation : class, new()
+            where TEntity : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
-            TTranslation result = default(TTranslation);
-
-            var multiLingual = await store.FindMultiLingualAsync(this);
-
-            multiLingual.MultiLingualTranslations.RemoveAll(x => x.Culture == culture);
-
-            var multiLingualTranslation = await store.CreateMultiLingualTranslationAsync(multiLingual, culture);
+            var multiLingualTranslation = await store.CreateMultiLingualTranslationAsync(this, culture);
 
             multiLingualTranslation.Properties = translation.GetType().GetProperties()
                 .Select(p =>
@@ -53,7 +49,8 @@ namespace FS.CmsKitManagement.MultiLinguals
                     return new Volo.Abp.NameValue(p.Name, p.GetValue(translation).ToString());
                 }).ToList();
 
-            return result;
+            this.MultiLingualTranslations.RemoveAll(x => x.Culture == culture);
+            this.MultiLingualTranslations.Add(multiLingualTranslation);
         }
     }
 

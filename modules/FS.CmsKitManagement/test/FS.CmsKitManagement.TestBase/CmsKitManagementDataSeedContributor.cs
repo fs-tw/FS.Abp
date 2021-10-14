@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
@@ -22,68 +23,57 @@ namespace FS.CmsKitManagement
 
         public async Task SeedAsync(DataSeedContext context)
         {
-            /* Instead of returning the Task.CompletedTask, you can insert your test data
-             * at this point!
-             */
-            //var pageManager = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.PageManager>();
-            //var pageRepository = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.IPageRepository>();
-
-            //var multiLingualRepository = this.LazyServiceProvider.LazyGetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualRepository>();
-
-            //var options = this.LazyServiceProvider.LazyGetRequiredService<IOptions<FS.Abp.EntityTypes.EntityTypeOption>>();
+            var pageManager = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.PageManager>();
+            var multiLingualsStore = this.LazyServiceProvider.LazyGetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualsStore>();
+            var contentsStore = this.LazyServiceProvider.LazyGetRequiredService<FS.CmsKitManagement.Contents.IContentsStore>();
+            var pageRepository = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.IPageRepository>();
+            var oldTenantId = context?.TenantId;
+            _currentTenant.Change(context?.TenantId);
 
 
+            Volo.CmsKit.Pages.Page page = null;
+            FS.CmsKitManagement.MultiLinguals.MultiLingual multiLingual = null;
+            FS.CmsKitManagement.Contents.ContentDefinition contentDefinition = null;
 
-            //var page = await pageManager.CreateAsync("豐碩資訊", "further", "豐碩資訊");
-            //await pageRepository.InsertAsync(page, true);
+            await CreatePageAndMultiLingualAsync();
+            await CreateContentAsync();
+            _currentTenant.Change(oldTenantId);
 
-            //var multiLingual = new MultiLinguals.MultiLingual(GuidGenerator.Create())
-            //{
-            //    EntityType = options.Value.GetOrNull<MultiLinguals.MultiLingual>().Get<Volo.CmsKit.Pages.Page>().EntityType,
-            //    EntityId = page.Id.ToString(),
-            //    DefaultCulture="en",
-            //    MultiLingualTranslations = new List<MultiLinguals.MultiLingualTranslation>
-            //    {
-            //        new MultiLinguals.MultiLingualTranslation(GuidGenerator.Create()){
-            //            Culture="zh-tw",
-            //            Properties=new List<MultiLinguals.MultiLingualProperty>()
-            //            {
-            //                new MultiLinguals.MultiLingualProperty(){Name="Title",Value="豐碩資訊" },
-            //                new MultiLinguals.MultiLingualProperty(){Name="Content",Value="豐碩資訊" }
-            //            }
-            //        },
-            //        new MultiLinguals.MultiLingualTranslation(GuidGenerator.Create()){
-            //            Culture="en",
-            //            Properties=new List<MultiLinguals.MultiLingualProperty>()
-            //            {
-            //                new MultiLinguals.MultiLingualProperty(){Name="Title",Value="further" },
-            //                new MultiLinguals.MultiLingualProperty(){Name="Content",Value="further" }
-            //            }
-            //        }
-            //    }
-            //};
-            //await multiLingualRepository.InsertAsync(multiLingual);
-            CreateSampleAsync();
-            using (_currentTenant.Change(context?.TenantId))
+            async Task CreateContentAsync()
             {
+                contentDefinition = await contentsStore.CreateContentDefinitionAsync<Volo.CmsKit.Pages.Page>("Contact us");
+
+                List<string> types = new List<string>() { "Name", "Tel", "Qestion", "EMail" };
+
+                var contentTypes = (await types.SelectAsync(async x =>
+                  {
+                      return await contentsStore.CreateContentTypeAsync(contentDefinition, x);
+                  })).ToList();
+
+                contentDefinition.PatchContentTypes(contentTypes);
+
+                await contentsStore.ContentDefinition.InsertAsync(contentDefinition);
+
 
             }
 
-            async Task CreateSampleAsync()
+            async Task CreatePageAndMultiLingualAsync()
             {
-                var pageManager = this.LazyServiceProvider.LazyGetRequiredService<Volo.CmsKit.Pages.PageManager>();
-                var multiLingualsStore = this.LazyServiceProvider.LazyGetRequiredService<FS.CmsKitManagement.MultiLinguals.IMultiLingualsStore>();
-                var page = await pageManager.CreateAsync("豐碩資訊", "further", "豐碩資訊");
+                page = await pageManager.CreateAsync("豐碩資訊", "further", "豐碩資訊");
 
-                var multiLingual = await multiLingualsStore.CreateMultiLingualAsync(page);
+                multiLingual = await multiLingualsStore.CreateMultiLingualAsync(page);
 
                 FS.CmsKit.Pages.PageTranslation enPageTranslation = new CmsKit.Pages.PageTranslation()
                 {
-                    Content="further content",
-                    Title="further title"
+                    Content = "further content",
+                    Title = "further title"
                 };
 
-                await multiLingual.AddOrReplaceTranslationAsync(multiLingualsStore, "en", enPageTranslation);
+                await multiLingual.AddOrReplaceTranslationAsync(multiLingualsStore, page, "en", enPageTranslation);
+
+                await pageRepository.InsertAsync(page, true);
+
+                await multiLingualsStore.MultiLingual.InsertAsync(multiLingual, true);
             }
         }
     }
