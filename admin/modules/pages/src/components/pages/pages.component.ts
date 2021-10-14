@@ -39,7 +39,7 @@ export class PagesComponent implements OnInit, OnDestroy {
   public static NAME: string = 'Pages.PagesComponent';
   public static EntityType = "Volo.CmsKit.Pages.Page";
 
-  @ViewChild(MultiLingualModalComponent) child: MultiLingualModalComponent;
+  @ViewChild(MultiLingualModalComponent) multiLingualModal: MultiLingualModalComponent;
   
   feature: Array<string>;
 
@@ -155,6 +155,6 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
 
   featureFunction(method: string) {
-    this.child.setVisible();
+    this.multiLingualModal.openModal();
   }
 }
