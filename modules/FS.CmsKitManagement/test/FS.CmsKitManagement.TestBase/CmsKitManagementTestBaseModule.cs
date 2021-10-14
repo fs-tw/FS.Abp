@@ -27,6 +27,13 @@ namespace FS.CmsKitManagement
                         typeof(Volo.CmsKit.Pages.Page)
                         );
                 });
+
+                options.GetOrAdd<FS.CmsKitManagement.Contents.ContentDefinition>(a =>
+                {
+                    a.AddOrReplace(
+                        typeof(Volo.CmsKit.Pages.Page)
+                        );
+                });
             });
         }
         public override void ConfigureServices(ServiceConfigurationContext context)

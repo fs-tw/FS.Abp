@@ -7,26 +7,54 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using FS.Abp.EntityTypes;
+using System.ComponentModel.DataAnnotations;
 
 namespace FS.CmsKitManagement.Contents
 {
 
-    public partial class ContentsStore: IContentsStore
+    public partial class ContentsStore : IContentsStore
     {
         protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
+        public async Task<List<ContentDefinition>> ListContentDefinitionAsync<T>()
+            where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        {
+            var options = Options.Value;
+            var entityType = Options.Value
+                .GetOrDefault<ContentDefinition>()
+                .GetOrDefault<T>().EntityType;
 
-        public virtual async Task<ContentDefinition> CreateContentDefinitionAsync<T>(string displayName)
+            var result = (await ContentDefinition.WithDetailsAsync())
+                .Where(x => x.EntityType == entityType)
+                .ToList();
+
+            return result;
+        }
+        public virtual Task<ContentDefinition> CreateContentDefinitionAsync<T>(string displayName)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var options = Options.Value;
 
-            return new ContentDefinition(GuidGenerator.Create())
+            return Task.FromResult(new ContentDefinition(GuidGenerator.Create())
             {
                 EntityType = options.GetOrDefault<ContentDefinition>().GetOrDefault<T>().EntityType,
                 DisplayName = displayName,
                 TenantId = CurrentTenant.Id
-            };
+            });
         }
+
+        public virtual Task<ContentType> CreateContentTypeAsync(ContentDefinition entity, string displayName, DataType type = DataType.Text, int sequence = 0)
+        {
+            return Task.FromResult(new ContentType(this.GuidGenerator.Create())
+            {
+                ContentDefinition = entity,
+                ContentDefinitionId = entity.Id,
+                DisplayName = displayName,
+                Type = type.ToString(),
+                Sequence = sequence,
+                TenantId = CurrentTenant.Id
+            });
+        }
+
         //public async Task<IQueryable<ContentDefinition>> GetByEntityTypeAsync<T>()
         //{
         //    return await GetByEntityTypeAsync(typeof(T));
