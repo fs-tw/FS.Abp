@@ -47,10 +47,9 @@ namespace FS.Abp.Demo.DbMigrator.Data
         protected PageManager PageManager => this.LazyServiceProvider.LazyGetRequiredService<PageManager>();
         protected IBlogRepository BlogRepository => this.LazyServiceProvider.LazyGetRequiredService<IBlogRepository>();
         protected BlogManager BlogManager => this.LazyServiceProvider.LazyGetRequiredService<BlogManager>();
-        protected IEntityBlogRepository EntityBlogRepository => this.LazyServiceProvider.LazyGetRequiredService<IEntityBlogRepository>();
-        protected IContentDefinitionRepository ContentDefinitions => this.LazyServiceProvider.LazyGetRequiredService<IContentDefinitionRepository>();
-        protected IEntityContentDefinitionRepository EntityContentDefinitionRepository => this.LazyServiceProvider.LazyGetRequiredService<IEntityContentDefinitionRepository>();
-
+        protected IEntityBlogsStore EntityBlogsStore => this.LazyServiceProvider.LazyGetRequiredService<IEntityBlogsStore>();
+        protected IContentsStore ContentsStore => this.LazyServiceProvider.LazyGetRequiredService<IContentsStore>();
+        
         protected override async Task SeedAsync(DataSeedContext context)
         {
             await processMenuAsync();
@@ -72,10 +71,10 @@ namespace FS.Abp.Demo.DbMigrator.Data
 
                 var tt = menuItems.Where(x => x.Url.IsNullOrWhiteSpace()).ToList();
 
-                await MenuItemRepository.InsertManyAsync(menuItems);
-                await PageRepository.InsertManyAsync(pages);
-                await BlogRepository.InsertManyAsync(blogs);
-                await EntityBlogRepository.InsertManyAsync(entityBlogs);
+                await MenuItemRepository.InsertManyAsync(menuItems,true);
+                await PageRepository.InsertManyAsync(pages, true);
+                await BlogRepository.InsertManyAsync(blogs, true);
+                await EntityBlogsStore.EntityBlog.InsertManyAsync(entityBlogs, true);
 
 
                 async Task createMenuItemWithPageAsync(List<MenuInfo> datas, Guid? partntId = null)
@@ -103,13 +102,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
 
                                 Blog blog = await BlogManager.CreateAsync(item.DisplayName, item.Slug);
                                 blogs.Add(blog);
-
-                                EntityBlog entityBlog = new EntityBlog()
-                                {
-                                    EntityType = "Page",
-                                    EntityId = page.Id.ToString(),
-                                    BlogId = blog.Id
-                                };
+                                EntityBlog entityBlog = await EntityBlogsStore.CreateEntityBlogAsync(page, blog);
                                 entityBlogs.Add(entityBlog);
                                 break;
                             default:
@@ -127,18 +120,18 @@ namespace FS.Abp.Demo.DbMigrator.Data
 
             async Task processPageContentAsync()
             {
-                var existedDatasCount = await EntityContentDefinitionRepository.GetCountAsync();
+                var existedDatasCount = await ContentsStore.EntityContentDefinition.GetCountAsync();
                 if (existedDatasCount > 0)
                     return;
 
                 var PageContentList = VirtualFileNpoiReader.Read<PageContentInfo>(Options.FileName, Options.PageContentSheetName);
                 List<EntityContentDefinition> entityContentDefinitionList = new List<EntityContentDefinition>();
-                var a = PageContentList.GroupBy(x => new { x.PageSlug, x.ContentDefinitionDisplayName }).ToList();
-                var a2 = PageContentList.GroupBy(x => new { x.PageSlug ,x.ContentDefinitionDisplayName}).ToArray();
-                foreach (var item in PageContentList)
+                var PageContentDefinitionList = PageContentList.GroupBy(x => new { x.PageSlug, x.ContentDefinitionDisplayName }).ToList();
+                foreach (var item in PageContentDefinitionList)
                 {
-                    Page page = await this.PageRepository.GetBySlugAsync(item.PageSlug);
-                    ContentDefinition contentDefinition = await this.ContentDefinitions.GetAsync(x => x.DisplayName == item.ContentDefinitionDisplayName);
+                    
+                    Page page = await this.PageRepository.GetBySlugAsync(item.Key.PageSlug);
+                    ContentDefinition contentDefinition = await this.ContentsStore.ContentDefinition.GetAsync(x => x.DisplayName == item.Key.ContentDefinitionDisplayName);
                     EntityContentDefinition entityContentDefinition = new EntityContentDefinition()
                     {
                         EntityType = "Page",
@@ -147,7 +140,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
                     };
                     entityContentDefinitionList.Add(entityContentDefinition);
                 }
-                await this.EntityContentDefinitionRepository.InsertManyAsync(entityContentDefinitionList);
+                await this.ContentsStore.EntityContentDefinition.InsertManyAsync(entityContentDefinitionList,true);
             }
         }
     }

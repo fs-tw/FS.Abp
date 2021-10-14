@@ -11,14 +11,10 @@ namespace FS.Abp.Demo.DbMigrator.Data
     {
         public async Task SeedAsync(DataSeedContext context)
         {
-            var contentsSeeder = this.LazyServiceProvider.LazyGetRequiredService<ContentsSeeder>();
             var menusSeeder = this.LazyServiceProvider.LazyGetRequiredService<MenusSeeder>();
-
-            await contentsSeeder.SeedAsync(context, option =>
-            {
-                option.Ignore = false;
-                option.FileName = "Files/Contents.xlsx";
-            });
+            var contentsSeeder = this.LazyServiceProvider.LazyGetRequiredService<ContentsSeeder>();
+            var multiLinguals = this.LazyServiceProvider.LazyGetRequiredService<MultiLingualsSeeder>();
+            var mediaDescriptors = this.LazyServiceProvider.LazyGetRequiredService<MediaDescriptorsSeeder>();
 
             await menusSeeder.SeedAsync(context, option =>
             {
@@ -26,6 +22,28 @@ namespace FS.Abp.Demo.DbMigrator.Data
                 option.FileName = "Files/Menus.xlsx";
                 option.MenusSheetName = "Menus";
                 option.PageContentSheetName = "PageContent";
+            });
+
+            await contentsSeeder.SeedAsync(context, option =>
+            {
+                option.Ignore = false;
+                option.FileName = "Files/Contents.xlsx";
+                option.sheetNameList = new List<string> { "BlogPost", "Page" };
+            });
+
+            await multiLinguals.SeedAsync(context, option =>
+            {
+                option.Ignore = false;
+                option.FileName = "Files/MultiLinguals.xlsx";
+                option.PageMultiLingualsSheetName = "Page";
+            });
+
+            await mediaDescriptors.SeedAsync(context, option =>
+            {
+                option.Ignore = true;
+                option.FileName = "Files/MediaDescriptors.xlsx";
+                option.SheetName = "Page";
+                option.MediaDirectoryPath = "Files/MediaDescriptors";
             });
         }
     }

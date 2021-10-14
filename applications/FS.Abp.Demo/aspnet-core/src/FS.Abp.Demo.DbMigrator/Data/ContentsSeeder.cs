@@ -3,11 +3,15 @@ using FS.Abp.Npoi.Mapper.Attributes;
 using FS.CmsKitManagement.Contents;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
+using Volo.Abp.Domain.Entities;
+using Volo.CmsKit.Blogs;
+using Volo.CmsKit.Pages;
 
 namespace FS.Abp.Demo.DbMigrator.Data
 {
@@ -15,7 +19,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
     {
         public bool Ignore { get; set; }
         public string FileName { get; set; }
-
+        public List<string> sheetNameList { get; set; }
     }
 
     [LevelStartAt(2)]
@@ -26,53 +30,61 @@ namespace FS.Abp.Demo.DbMigrator.Data
         public string Code { get; set; }
         public string Type { get; set; }
     }
+    
 
     public class ContentsSeeder : FS.Abp.Data.Seeder<ContentsSeederOptions>, ITransientDependency
     {
         protected IVirtualFileNpoiReader VirtualFileNpoiReader => this.LazyServiceProvider.LazyGetRequiredService<IVirtualFileNpoiReader>();
-        protected IContentDefinitionRepository contentDefinitionRepository => this.LazyServiceProvider.LazyGetRequiredService<IContentDefinitionRepository>();
-        protected IContentTypeRepository contentTypeRepository => this.LazyServiceProvider.LazyGetRequiredService<IContentTypeRepository>();
-
+        protected IContentsStore ContentsStore => this.LazyServiceProvider.LazyGetRequiredService<IContentsStore>();
+        
         protected override async Task SeedAsync(DataSeedContext context)
         {
-            var existedDatasCount = await contentDefinitionRepository.GetCountAsync();
+            var existedDatasCount = await ContentsStore.ContentDefinition.GetCountAsync();
             if (existedDatasCount > 0)
                 return;
 
-            List<string> entityTypeList = new List<string>{ "Blog", "BlogPost", "Page" };
-            async Task convertToDefinitionWithTypeAsync(List<ContentInfo> data,Guid definitionId = default,string entityType = null)
+            List<ContentDefinition> contentDefinitionList = new List<ContentDefinition>();
+            List<ContentType> contentTypeList = new List<ContentType>();
+
+            foreach (var sheetName in Options.sheetNameList)
             {
-                foreach(var item in data)
+                var content = VirtualFileNpoiReader.ReadToTreeNode<ContentInfo>(Options.FileName, sheetName);
+                await convertToDefinitionWithTypeAsync(content, sheetName: sheetName);
+            }
+            await ContentsStore.ContentDefinition.InsertManyAsync(contentDefinitionList,true);
+            //TODO patch
+            await ContentsStore.ContentType.InsertManyAsync(contentTypeList, true);
+
+            async Task convertToDefinitionWithTypeAsync(List<ContentInfo> data, ContentDefinition definition = default, string sheetName = null)
+            {
+                foreach (var item in data)
                 {
+                    ContentDefinition contentDefinition=null;
                     if (item.Children.Count > 0)
                     {
                         //definition
-                        ContentDefinition contentDefinition = new ContentDefinition
+                        
+                        switch (sheetName)
                         {
-                            DisplayName = item.DisplayName,
-                            EntityType = entityType
-                        };
-                        await contentDefinitionRepository.InsertAsync(contentDefinition, true);
-                        await convertToDefinitionWithTypeAsync(item.Children, definitionId:contentDefinition.Id, entityType: entityType);
+                            case "BlogPost":
+                                contentDefinition = await ContentsStore.CreateContentDefinitionAsync<BlogPost>(item.DisplayName);
+                                break;
+                            case "Page":
+                                contentDefinition = await ContentsStore.CreateContentDefinitionAsync<Page>(item.DisplayName);
+                                break;
+                        }
+
+                        contentDefinitionList.Add(contentDefinition);
+                        //await ContentsStore.ContentDefinition.InsertAsync(contentDefinition, true);
+                        await convertToDefinitionWithTypeAsync(item.Children, definition: contentDefinition, sheetName: sheetName);
                     }
                     else
                     {
                         //type
-                        ContentType contentType = new ContentType
-                        {
-                            DisplayName = item.DisplayName,
-                            ContentDefinitionId = definitionId,
-                            Type =item.Type
-                        };
-                        await contentTypeRepository.InsertAsync(contentType, true);
+                        ContentType contentType = await ContentsStore.CreateContentTypeAsync(definition, item.DisplayName, Enum.Parse<DataType>(item.Type));
+                        contentTypeList.Add(contentType);
                     }
                 }
-            }
-
-            foreach (var entityType in entityTypeList)
-            {
-                var content = VirtualFileNpoiReader.ReadToTreeNode<ContentInfo>(Options.FileName, entityType);
-                await convertToDefinitionWithTypeAsync(content, entityType: entityType);
             }
         }
     }

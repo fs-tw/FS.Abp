@@ -31,8 +31,12 @@
   
 
   <ItemGroup>
+    <None Remove="Files\MediaDescriptors.xlsx" />
+    <None Remove="Files\MediaDescriptors\badge.jpg" />
+    <None Remove="Files\MediaDescriptors\flag.jpg" />
     <None Remove="Files\Menus.bk.xlsx" />
     <None Remove="Files\Menus.xlsx" />
+    <None Remove="Files\MultiLinguals.xlsx" />
   </ItemGroup>
 
   <ItemGroup>
