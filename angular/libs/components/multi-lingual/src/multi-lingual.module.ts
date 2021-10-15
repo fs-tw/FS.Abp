@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { CoreModule } from '@abp/ng.core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { UiExtensionsModule } from '@abp/ng.theme.shared/extensions'
-import { MultiLingualModalComponent } from './components/modal/modal.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { MultiLingualModalComponent } from './components/modals/modals.component';
 
 const exportedDeclarations = [
     MultiLingualModalComponent

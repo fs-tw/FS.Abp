@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, Injector, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
@@ -10,31 +10,24 @@ import {
   setDefaults,
 } from '@fs-tw/theme-alain/extensions';
 import { GenerateForm } from './defaults';
-import { EntityTypeDefinitionInfo, EntityTypeInfo, MultiLingualInfo } from '../providers';
 import { FormGroup } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { AbstractNavTreeService } from '@abp/ng.core';
+import { EntityTypeDefinitionInfo, EntityTypeInfo, MultiLingualInfo } from '@fs-tw/components/multi-lingual/proxy';
+import { MULTI_LINGUAL_CONFIG_OPTIONS } from '@fs-tw/components/multi-lingual/config';
 
-export class ProviderService extends AbstractNavTreeService<EntityTypeInfo> {
+export class MultiLingualModalService extends AbstractNavTreeService<EntityTypeInfo> {
   public static featureName: string = "MultiLingual";
   getMultiLingualByType$(entityType: string): Observable<EntityTypeDefinitionInfo> {
     return this.flat$.pipe(map(x =>
-        x.find(y => y.name == ProviderService.featureName)?.definitions.find(z => z.entityType == entityType)
+        x.find(y => y.name == MultiLingualModalService.featureName)?.definitions.find(z => z.entityType == entityType)
     ));
   }
-
-  setData(datas){
-    this.add(datas);
-  }
-}
-
-type Provider = {
-  flat: Array<EntityTypeInfo>;
 }
 
 @Component({
   selector: 'fs-multi-lingual-modal',
-  templateUrl: './modal.component.html',
+  templateUrl: './modals.component.html',
   styles: [
   ],
   providers: [
@@ -43,13 +36,12 @@ type Provider = {
       provide: EXTENSIONS_IDENTIFIER,
       useValue: MultiLingualModalComponent.NAME,
     },
-    ProviderService
+    MultiLingualModalService
   ],
 })
 export class MultiLingualModalComponent implements OnInit {
   public static NAME: string = 'MultiLingual.MultiLingualModalComponent';
 
-  @Input() provider:Provider
   @Input() entityType: string;
   @Input() entityId: string;
   @Input() title: string;
@@ -64,16 +56,17 @@ export class MultiLingualModalComponent implements OnInit {
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    public providerService: ProviderService
+    public service: MultiLingualModalService
   ) {
+    let result = injector.get(MULTI_LINGUAL_CONFIG_OPTIONS);
+    this.service.add(result.flat);
   }
 
   ngOnInit(): void {}
 
   ngOnChanges() {
-    if(!this.provider || !this.entityType || !this.entityId) return;
-    this.providerService.setData(this.provider.flat);
-    this.subs.add(this.providerService.getMultiLingualByType$(this.entityType).subscribe(x => {
+    if(!this.entityType || !this.entityId) return;
+    this.subs.add(this.service.getMultiLingualByType$(this.entityType).subscribe(x => {
       let result: MultiLingualInfo = x as MultiLingualInfo;
       this.subs.add(
         setDefaults(this.injector, MultiLingualModalComponent.NAME, {
@@ -89,7 +82,7 @@ export class MultiLingualModalComponent implements OnInit {
   }
 
   openModal() {
-    if(!this.provider || !this.entityType || !this.entityId) return;
+    if(!this.entityType || !this.entityId) return;
     this.defaultRecord = {};
     const defaultData = new FormPropData(this.injector, this.defaultRecord);
     this.defaultForm = generateFormFromProps(defaultData);

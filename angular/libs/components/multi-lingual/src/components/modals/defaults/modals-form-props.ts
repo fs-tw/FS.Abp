@@ -1,11 +1,11 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
-import { MultiLingualInfo } from '../../providers';
+import { MultiLingualInfo } from '@fs-tw/components/multi-lingual/proxy';
 
 export function GenerateForm(data: MultiLingualInfo): FormProp<any>[]
 {
   return FormProp.createMany<any>(
     [
-      ...MODAL_EDIT_FORM_PROPS,
+      ...MODELS_EDIT_FORM_PROPS,
       ...data.properties.map(x => {
         return new FormProp({
           type: x.dataType.toLowerCase() as ePropType,
@@ -18,5 +18,5 @@ export function GenerateForm(data: MultiLingualInfo): FormProp<any>[]
   );
 }
 
-export const MODAL_EDIT_FORM_PROPS = FormProp.createMany<any>([
+export const MODELS_EDIT_FORM_PROPS = FormProp.createMany<any>([
 ]);

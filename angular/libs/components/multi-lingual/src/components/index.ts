@@ -1,2 +1,1 @@
-export * from './modal/modal.component';
-export * from './providers/index';
+export * from './modals/modals.component';

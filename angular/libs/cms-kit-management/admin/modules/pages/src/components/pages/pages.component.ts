@@ -1,4 +1,4 @@
-import { Component, Injector, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, Injector, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import {
@@ -17,7 +17,6 @@ import {
   AddToolbarAction,
   PAGES_CREATE_FORM_PROPS,
   PAGES_EDIT_FORM_PROPS,
-  PAGES_ENTITY_ACTIONS,
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
 } from './defaults/index';
@@ -57,7 +56,7 @@ export class PagesComponent implements OnInit, OnDestroy {
     private readonly injector: Injector,
     public readonly list: ListService,
     public entityTypeService: EntityTypeService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
   ) {
     this.service = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
     this.entityTypeService = injector.get(EntityTypeService);
