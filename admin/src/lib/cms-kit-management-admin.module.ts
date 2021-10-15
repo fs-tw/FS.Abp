@@ -16,7 +16,8 @@ export class CmsKitManagementAdminModule {
   static forChild(): ModuleWithProviders<CmsKitManagementAdminModule> {
     return {
       ngModule: CmsKitManagementAdminModule,
-      providers: [],
+      providers: [
+      ],
     };
   }
 
