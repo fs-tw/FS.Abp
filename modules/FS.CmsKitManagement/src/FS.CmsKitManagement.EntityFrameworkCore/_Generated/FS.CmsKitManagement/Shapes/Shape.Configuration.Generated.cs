@@ -36,7 +36,6 @@ namespace FS.CmsKitManagement.Shapes
             builder.Property(x => x.EntityType).HasColumnName(@"EntityType").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
             builder.Property(x => x.EntityId).HasColumnName(@"EntityId").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
             builder.Property(x => x.TextTemplateContentId).HasColumnName(@"TextTemplateContentId").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.ContentDefinitionId).HasColumnName(@"ContentDefinitionId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 

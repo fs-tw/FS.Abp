@@ -461,7 +461,6 @@ namespace FS.Abp.Demo.Migrations
                     EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     EntityId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     TextTemplateContentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ContentDefinitionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),

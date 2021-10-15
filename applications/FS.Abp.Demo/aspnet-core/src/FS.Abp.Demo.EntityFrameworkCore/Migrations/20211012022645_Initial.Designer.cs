@@ -11,7 +11,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace FS.Abp.Demo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20211009104608_Initial")]
+    [Migration("20211012022645_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -508,10 +508,6 @@ namespace FS.Abp.Demo.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<Guid>("ContentDefinitionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ContentDefinitionId");
 
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")

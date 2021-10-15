@@ -19,11 +19,18 @@ namespace FS.CmsKitManagement
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
-            PreConfigure<EntityTypeOption>(options =>
+            PreConfigure<EntityTypeOptions>(options =>
             {
-                options.Entity<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
+                options.GetOrAdd<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
                 {
-                    a.AddOrReplaceDefaults(
+                    a.AddOrReplace(
+                        typeof(Volo.CmsKit.Pages.Page)
+                        );
+                });
+
+                options.GetOrAdd<FS.CmsKitManagement.Contents.ContentDefinition>(a =>
+                {
+                    a.AddOrReplace(
                         typeof(Volo.CmsKit.Pages.Page)
                         );
                 });
@@ -31,7 +38,7 @@ namespace FS.CmsKitManagement
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            Configure<EntityTypeOption>(options =>
+            Configure<EntityTypeOptions>(options =>
             {
                 context.Services.ExecutePreConfiguredActions(options);
             });

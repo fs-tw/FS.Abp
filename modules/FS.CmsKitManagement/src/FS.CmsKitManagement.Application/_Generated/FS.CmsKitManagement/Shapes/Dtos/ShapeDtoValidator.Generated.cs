@@ -27,9 +27,6 @@ namespace FS.CmsKitManagement.Shapes.Dtos
             RuleFor(p => p.TextTemplateContentId)
                 .NotNull()
                 ;
-            RuleFor(p => p.ContentDefinitionId)
-                .NotNull()
-                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -47,9 +44,6 @@ namespace FS.CmsKitManagement.Shapes.Dtos
                 .NotNull()
                 ;
             RuleFor(p => p.TextTemplateContentId)
-                .NotNull()
-                ;
-            RuleFor(p => p.ContentDefinitionId)
                 .NotNull()
                 ;
             CustomizeConfiguration();
