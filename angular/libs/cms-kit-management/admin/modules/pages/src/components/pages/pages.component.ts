@@ -20,7 +20,7 @@ import {
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
 } from './defaults/index';
-import { EntityTypeService } from '@fs-tw/entity-type-management/config';
+import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 
 @Component({
@@ -55,11 +55,11 @@ export class PagesComponent implements OnInit, OnDestroy {
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    public entityTypeService: EntityTypeService,
+    public entityTypeService: EntityTypeStore,
     private confirmationService: ConfirmationService,
   ) {
     this.service = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
-    this.entityTypeService = injector.get(EntityTypeService);
+    this.entityTypeService = injector.get(EntityTypeStore);
 
     this.subs.add(this.entityTypeService.getEntityTypeByType$(PagesComponent.EntityType).subscribe(x => {
       this.feature = x.map(y => y.name);

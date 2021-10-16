@@ -2,29 +2,26 @@ import { NgModule, Type } from '@angular/core';
 import { CoreModule } from '@abp/ng.core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
-import { UiExtensionsModule } from '@abp/ng.theme.shared/extensions'
+import { UiExtensionsModule } from '@abp/ng.theme.shared/extensions';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { MultiLingualModalComponent } from './components/modals/modals.component';
+import { MultiLingualService } from './services/multi-lingual.service';
 
-const exportedDeclarations = [
-    MultiLingualModalComponent
-];
+const exportedDeclarations = [MultiLingualModalComponent];
 
 const SHARED_ABP_MODULES = [
-    CoreModule,
-    ThemeSharedModule,
-    NgxValidateCoreModule,
-    UiExtensionsModule
+  CoreModule,
+  ThemeSharedModule,
+  NgxValidateCoreModule,
+  UiExtensionsModule,
 ];
 
-export const SHARED_ZORRO_MODULES = [
-  NzGridModule
-];
-
+export const SHARED_ZORRO_MODULES = [NzGridModule];
 
 @NgModule({
   declarations: [...exportedDeclarations],
   exports: [...exportedDeclarations],
-  imports: [CoreModule, ...SHARED_ZORRO_MODULES,...SHARED_ABP_MODULES],
+  imports: [CoreModule, ...SHARED_ZORRO_MODULES, ...SHARED_ABP_MODULES],
+  providers: [MultiLingualService],
 })
 export class MultiLingualModule {}

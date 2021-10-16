@@ -1,7 +1,7 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
-import { MultiLingualInfo } from '@fs-tw/components/multi-lingual/proxy';
+import { MultiLingual } from '../../../models/models';
 
-export function GenerateForm(data: MultiLingualInfo): FormProp<any>[]
+export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormProp<any>[]
 {
   return FormProp.createMany<any>(
     [

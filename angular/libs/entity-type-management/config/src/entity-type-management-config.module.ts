@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ENTITY_TYPE_PROVIDERS } from './providers/entity-type.provider';
-import { EntityTypeService } from './providers/entity-type.service';
+import { EntityTypeStore } from './providers/entity-type.store';
 
 @NgModule()
 export class EntityTypeManagementConfigModule {
@@ -9,7 +9,7 @@ export class EntityTypeManagementConfigModule {
       ngModule: EntityTypeManagementConfigModule,
       providers: [
         ENTITY_TYPE_PROVIDERS,
-        EntityTypeService
+        EntityTypeStore
       ],
     };
   }

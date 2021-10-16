@@ -1,2 +1,2 @@
-export * from './entity-type.service';
+export * from './entity-type.store';
 export * from './entity-type.provider';
