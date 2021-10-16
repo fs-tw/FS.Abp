@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace FS.CmsKitManagement.Utils
+namespace FS.Abp.Demo.DbMigrator.Utils
 {
-    public static class FileExtensionContentTypeUtils
+    class FileExtensionContentTypeUtils
     {
         private static IDictionary<string, string> _mappings = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase) {
 
