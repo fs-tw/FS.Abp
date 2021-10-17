@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Shouldly;
+using Volo.CmsKit.Pages;
 
 namespace FS.CmsKitManagement.Contents
 {
@@ -16,7 +17,7 @@ namespace FS.CmsKitManagement.Contents
         {
             //_sampleManager = GetRequiredService<SampleManager>();
         }
-
+        //todo move to application
         [Fact]
         public async Task Should_Has_ContentDefinition_In_PageType()
         {
@@ -29,12 +30,33 @@ namespace FS.CmsKitManagement.Contents
                 contentDefinition.Count.ShouldBeGreaterThan(0);
                 contentDefinition.ForEach(d =>
                 {
-                    d.ContentTypes.Count.ShouldBeGreaterThan(0);
+                    d.ContentProperties.Count.ShouldBeGreaterThan(0);
                 });
             });
+        }
+        //todo move to application
+        [Fact]
+        public async Task Should_Has_EntityContentDefinition_And_EntityContent_In_Page()
+        {
+            var contentsStore = GetRequiredService<FS.CmsKitManagement.Contents.IContentsStore>();
+            var pageRepository = GetRequiredService<IPageRepository>();
 
+            await WithUnitOfWorkAsync(async () =>
+            {
+                var page = await pageRepository.GetBySlugAsync("further");
 
+                var entityContentDefinition = (await contentsStore.ListEntityContentDefinitionAsync(page)).FirstOrDefault();
 
+                var items = entityContentDefinition.EntityContents.OrderBy(x => x.Sequence).ToList();
+
+                items.Count.ShouldBe(5);
+
+                //contentDefinition.Count.ShouldBeGreaterThan(0);
+                //contentDefinition.ForEach(d =>
+                //{
+                //    d.ContentProperties.Count.ShouldBeGreaterThan(0);
+                //});
+            });
         }
     }
 }

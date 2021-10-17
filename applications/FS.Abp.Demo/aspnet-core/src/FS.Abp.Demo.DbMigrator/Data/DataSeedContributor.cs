@@ -16,6 +16,13 @@ namespace FS.Abp.Demo.DbMigrator.Data
             var multiLinguals = this.LazyServiceProvider.LazyGetRequiredService<MultiLingualsSeeder>();
             var mediaDescriptors = this.LazyServiceProvider.LazyGetRequiredService<MediaDescriptorsSeeder>();
 
+            await contentsSeeder.SeedAsync(context, option =>
+            {
+                option.Ignore = false;
+                option.FileName = "Files/Contents.xlsx";
+                option.sheetNameList = new List<string> { "BlogPost", "Page" };
+            });
+
             await menusSeeder.SeedAsync(context, option =>
             {
                 option.Ignore = false;
@@ -24,16 +31,9 @@ namespace FS.Abp.Demo.DbMigrator.Data
                 option.PageContentSheetName = "PageContent";
             });
 
-            await contentsSeeder.SeedAsync(context, option =>
-            {
-                option.Ignore = false;
-                option.FileName = "Files/Contents.xlsx";
-                option.sheetNameList = new List<string> { "BlogPost", "Page" };
-            });
-
             await multiLinguals.SeedAsync(context, option =>
             {
-                option.Ignore = false;
+                option.Ignore = true;
                 option.FileName = "Files/MultiLinguals.xlsx";
                 option.PageMultiLingualsSheetName = "Page";
             });

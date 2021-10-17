@@ -44,7 +44,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
                 return;
 
             List<ContentDefinition> contentDefinitionList = new List<ContentDefinition>();
-            List<ContentType> contentTypeList = new List<ContentType>();
+            List<ContentProperty> contentPropertyList = new List<ContentProperty>();
 
             foreach (var sheetName in Options.sheetNameList)
             {
@@ -52,8 +52,9 @@ namespace FS.Abp.Demo.DbMigrator.Data
                 await convertToDefinitionWithTypeAsync(content, sheetName: sheetName);
             }
             await ContentsStore.ContentDefinition.InsertManyAsync(contentDefinitionList,true);
+
             //TODO patch
-            await ContentsStore.ContentType.InsertManyAsync(contentTypeList, true);
+            await ContentsStore.ContentProperty.InsertManyAsync(contentPropertyList, true);
 
             async Task convertToDefinitionWithTypeAsync(List<ContentInfo> data, ContentDefinition definition = default, string sheetName = null)
             {
@@ -81,8 +82,8 @@ namespace FS.Abp.Demo.DbMigrator.Data
                     else
                     {
                         //type
-                        ContentType contentType = await ContentsStore.CreateContentTypeAsync(definition, item.DisplayName, Enum.Parse<DataType>(item.Type));
-                        contentTypeList.Add(contentType);
+                        ContentProperty contentType = await ContentsStore.CreateContentPropertyAsync(definition, item.DisplayName, Enum.Parse<DataType>(item.Type));
+                        contentPropertyList.Add(contentType);
                     }
                 }
             }

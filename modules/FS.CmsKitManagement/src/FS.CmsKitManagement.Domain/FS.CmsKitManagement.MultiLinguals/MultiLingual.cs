@@ -29,7 +29,7 @@ namespace FS.CmsKitManagement.MultiLinguals
                 .ForEach(p =>
                 {
                     var value = translation == null
-                        ? this.GetType().GetProperties().SingleOrDefault(x => x.Name == p.Name).GetValue(this)
+                        ? entity.GetType().GetProperties().SingleOrDefault(x => x.Name == p.Name).GetValue(entity)
                         : translation.Properties.SingleOrDefault(y => y.Name == p.Name).Value;
                     p.SetValue(result, value);
                 });

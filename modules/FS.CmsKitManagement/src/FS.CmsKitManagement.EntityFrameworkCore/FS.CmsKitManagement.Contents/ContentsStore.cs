@@ -29,6 +29,23 @@ namespace FS.CmsKitManagement.Contents
 
             return result;
         }
+
+        public async Task<List<EntityContentDefinition>> ListEntityContentDefinitionAsync<T>(T entity)
+            where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        {
+            var options = Options.Value;
+            var entityType = Options.Value
+                .GetOrDefault<ContentDefinition>()
+                .GetOrDefault<T>().EntityType;
+
+            var result = (await EntityContentDefinition.WithDetailsAsync())
+                .Where(x => x.EntityType == entityType)
+                .Where(x => x.EntityId == entity.Id.ToString())
+                .ToList();
+
+            return result;
+        }
+
         public virtual Task<ContentDefinition> CreateContentDefinitionAsync<T>(string displayName)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
@@ -42,9 +59,9 @@ namespace FS.CmsKitManagement.Contents
             });
         }
 
-        public virtual Task<ContentType> CreateContentTypeAsync(ContentDefinition entity, string displayName, DataType type = DataType.Text, int sequence = 0)
+        public virtual Task<ContentProperty> CreateContentPropertyAsync(ContentDefinition entity, string displayName, DataType type = DataType.Text, int sequence = 0)
         {
-            return Task.FromResult(new ContentType(this.GuidGenerator.Create())
+            return Task.FromResult(new ContentProperty(this.GuidGenerator.Create())
             {
                 ContentDefinition = entity,
                 ContentDefinitionId = entity.Id,
@@ -54,6 +71,36 @@ namespace FS.CmsKitManagement.Contents
                 TenantId = CurrentTenant.Id
             });
         }
+
+        public virtual Task<EntityContentDefinition> CreateEntityContentDefinitionAsync<T>(T entity, ContentDefinition contentDefinition)
+            where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        {
+            var options = Options.Value;
+
+            return Task.FromResult(new EntityContentDefinition(this.GuidGenerator.Create())
+            {
+                EntityType = options.GetOrDefault<ContentDefinition>().GetOrDefault<T>().EntityType,
+                EntityId = entity.Id.ToString(),
+                ContentDefinitionId = contentDefinition.Id,
+                TenantId = CurrentTenant.Id
+            });
+        }
+
+        public virtual Task<EntityContent> CreateEntityContentAsync<T>(T entity, EntityContentDefinition entityContentDefinition, int sequence = 0)
+            where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        {
+
+            return Task.FromResult(new EntityContent(this.GuidGenerator.Create())
+            {
+                EntityType = entityContentDefinition.EntityType,
+                EntityId = entity.Id.ToString(),
+                EntityContentDefinition = entityContentDefinition,
+                EntityContentDefinitionId = entityContentDefinition.Id,
+                Sequence = sequence,
+                TenantId = CurrentTenant.Id
+            });
+        }
+
 
         //public async Task<IQueryable<ContentDefinition>> GetByEntityTypeAsync<T>()
         //{

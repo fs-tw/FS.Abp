@@ -1,12 +1,10 @@
 ﻿using FS.Abp.EntityTypes;
-using FS.CmsKit.Pages;
-using FS.CmsKitManagement.MultiLinguals;
+using Volo.CmsKit.Pages;
 using Microsoft.Extensions.Options;
 using Shouldly;
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.ObjectMapping;
-using Volo.CmsKit.Pages;
 using Xunit;
 
 namespace FS.CmsKitManagement.MultiLinguals

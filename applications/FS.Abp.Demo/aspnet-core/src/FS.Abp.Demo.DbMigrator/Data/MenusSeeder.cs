@@ -49,12 +49,24 @@ namespace FS.Abp.Demo.DbMigrator.Data
         protected BlogManager BlogManager => this.LazyServiceProvider.LazyGetRequiredService<BlogManager>();
         protected IEntityBlogsStore EntityBlogsStore => this.LazyServiceProvider.LazyGetRequiredService<IEntityBlogsStore>();
         protected IContentsStore ContentsStore => this.LazyServiceProvider.LazyGetRequiredService<IContentsStore>();
-        
+
         protected override async Task SeedAsync(DataSeedContext context)
         {
+            List<MenuItem> menuItems = new List<MenuItem>();
+            List<Page> pages = new List<Page>();
+            List<Blog> blogs = new List<Blog>();
+            List<EntityBlog> entityBlogs = new List<EntityBlog>();
+            List<EntityContentDefinition> entityContentDefinitionList = new List<EntityContentDefinition>();
+
             await processMenuAsync();
 
-            //await processPageContentAsync();
+            await processPageContentAsync();
+
+            await MenuItemRepository.InsertManyAsync(menuItems, true);
+            await PageRepository.InsertManyAsync(pages, true);
+            await BlogRepository.InsertManyAsync(blogs, true);
+            await EntityBlogsStore.EntityBlog.InsertManyAsync(entityBlogs, true);
+            await this.ContentsStore.EntityContentDefinition.InsertManyAsync(entityContentDefinitionList, true);
 
             async Task processMenuAsync()
             {
@@ -63,18 +75,12 @@ namespace FS.Abp.Demo.DbMigrator.Data
                     return;
 
                 var MenuList = VirtualFileNpoiReader.ReadToTreeNode<MenuInfo>(Options.FileName, Options.MenusSheetName);
-                List<MenuItem> menuItems = new List<MenuItem>();
-                List<Page> pages = new List<Page>();
-                List<Blog> blogs = new List<Blog>();
-                List<EntityBlog> entityBlogs = new List<EntityBlog>();
+
                 await createMenuItemWithPageAsync(MenuList);
 
                 var tt = menuItems.Where(x => x.Url.IsNullOrWhiteSpace()).ToList();
 
-                await MenuItemRepository.InsertManyAsync(menuItems,true);
-                await PageRepository.InsertManyAsync(pages, true);
-                await BlogRepository.InsertManyAsync(blogs, true);
-                await EntityBlogsStore.EntityBlog.InsertManyAsync(entityBlogs, true);
+
 
 
                 async Task createMenuItemWithPageAsync(List<MenuInfo> datas, Guid? partntId = null)
@@ -125,22 +131,18 @@ namespace FS.Abp.Demo.DbMigrator.Data
                     return;
 
                 var PageContentList = VirtualFileNpoiReader.Read<PageContentInfo>(Options.FileName, Options.PageContentSheetName);
-                List<EntityContentDefinition> entityContentDefinitionList = new List<EntityContentDefinition>();
+                
                 var PageContentDefinitionList = PageContentList.GroupBy(x => new { x.PageSlug, x.ContentDefinitionDisplayName }).ToList();
                 foreach (var item in PageContentDefinitionList)
                 {
-                    
+
                     Page page = await this.PageRepository.GetBySlugAsync(item.Key.PageSlug);
                     ContentDefinition contentDefinition = await this.ContentsStore.ContentDefinition.GetAsync(x => x.DisplayName == item.Key.ContentDefinitionDisplayName);
-                    EntityContentDefinition entityContentDefinition = new EntityContentDefinition()
-                    {
-                        EntityType = "Page",
-                        EntityId = page.Id.ToString(),
-                        ContentDefinitionId = contentDefinition.Id
-                    };
+
+                    EntityContentDefinition entityContentDefinition = await ContentsStore.CreateEntityContentDefinitionAsync(page, contentDefinition);
+
                     entityContentDefinitionList.Add(entityContentDefinition);
                 }
-                await this.ContentsStore.EntityContentDefinition.InsertManyAsync(entityContentDefinitionList,true);
             }
         }
     }

@@ -12,30 +12,30 @@ namespace FS.CmsKitManagement.Contents
 {
     public partial class ContentDefinition
     {
-        public void PatchContentTypes(List<ContentType> contentTypes)
+        public void PatchContentProperties(List<ContentProperty> contentProperties)
         {
             //to update
-            var toUpdate = this.ContentTypes.Intersect(contentTypes);
+            var toUpdate = this.ContentProperties.Intersect(contentProperties);
             toUpdate.ToList().ForEach(c =>
             {
-                var match = contentTypes.SingleOrDefault(x => x.Id == c.Id);
+                var match = contentProperties.SingleOrDefault(x => x.Id == c.Id);
                 c.DisplayName = match.DisplayName;
                 c.Type = match.Type;
                 c.Sequence = match.Sequence;
             });
 
             //to delete
-            var toDelete = this.ContentTypes.Except(contentTypes);
+            var toDelete = this.ContentProperties.Except(contentProperties);
             toDelete.ToList().ForEach(c =>
             {
-                this.ContentTypes.Remove(c);
+                this.ContentProperties.Remove(c);
             });
 
             //to add
-            var toAdd = contentTypes.Except(this.ContentTypes);
+            var toAdd = contentProperties.Except(this.ContentProperties);
             toAdd.ToList().ForEach(c =>
             {
-                this.ContentTypes.Add(c);
+                this.ContentProperties.Add(c);
             });
 
 
