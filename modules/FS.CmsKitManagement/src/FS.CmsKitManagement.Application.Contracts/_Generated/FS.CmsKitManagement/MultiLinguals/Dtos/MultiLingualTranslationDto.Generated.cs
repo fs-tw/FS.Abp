@@ -24,6 +24,8 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
     {
         public virtual string Culture { get; set; }
 
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
+
         public virtual System.Guid MultiLingualId { get; set; }
 
     }
@@ -32,6 +34,8 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
     {
         public virtual string Culture { get; set; }
 
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
+
         public virtual System.Guid MultiLingualId { get; set; }
 
     }
@@ -39,6 +43,8 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
     public partial class MultiLingualTranslationUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual string Culture { get; set; }
+
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
 
         public virtual System.Guid MultiLingualId { get; set; }
 

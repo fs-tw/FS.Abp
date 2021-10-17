@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.MultiLinguals
 
         [HttpGet]
         [Route("multi-lingual-translation")]
-        [RemoteService(true)]
+        [NonAction][RemoteService(false)]
         public Task<PagedResultDto<MultiLingualTranslationWithDetailsDto>> GetListAsync(MultiLingualTranslationGetListDto MultiLingualTranslation)
         {
             return this.MultiLingualTranslationCrudAppService.GetListAsync(MultiLingualTranslation);

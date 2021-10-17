@@ -11,6 +11,12 @@ using AutoFiltererSorting = AutoFilterer.Enums.Sorting;
 
 namespace FS.Abp.Application.Dtos
 {
+    public class FilterRequestDto : FilterBase
+    {
+        [BindNever]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public override CombineType CombineWith { get => base.CombineWith; set => base.CombineWith = value; }
+    }
     public class SearchResultRequestDto : PaginationFilterBase, ISearchResultRequest
     {
         public int SkipCount { get => (Page - 1) * PerPage; set => Page = value / PerPage + 1; }

@@ -12,38 +12,43 @@ namespace FS.CmsKitManagement.MultiLinguals
     {
         protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
 
+        public async Task<MultiLingual> FindMultiLingualAsync(string entityType, string entityId)
+        {
+            return (await MultiLingual.WithDetailsAsync())
+                .Where(x => x.EntityType == entityType && x.EntityId == entityId)
+                .SingleOrDefault();
+        }
+
         public async Task<MultiLingual> FindMultiLingualAsync<T>(T entity)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var options = Options.Value;
-            var entityType = Options.Value
-                .GetOrDefault<MultiLingual>()
-                .GetOrDefault<T>().EntityType;
-
+            var entityType = options.GetOrDefault<MultiLingual>().GetOrDefault<T>().EntityType;
             var entityId = entity.Id.ToString();
 
-            var multiLingual = (await MultiLingual.WithDetailsAsync())
-                .Where(x => x.EntityType == entityType && x.EntityId == entityId)
-                .SingleOrDefault();
-
-            return multiLingual;
+            return await FindMultiLingualAsync(entityType, entityId);
         }
 
         //todo: get default culture //DefaultCulture
-        public virtual Task<MultiLingual> CreateMultiLingualAsync<T>(T entity)
-            where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        public virtual Task<MultiLingual> CreateMultiLingualAsync(string entityType, string entityId)
         {
-            var options = Options.Value;
-
             var result = new MultiLingual(GuidGenerator.Create())
             {
-                DefaultCulture = "tw",
-                EntityType = options.GetOrDefault<MultiLingual>().GetOrDefault<T>().EntityType,
-                EntityId = entity.Id.ToString(),
+                EntityType = entityType,
+                EntityId = entityId,
                 TenantId = CurrentTenant.Id,
 
             };
             return Task.FromResult(result);
+        }
+        public virtual Task<MultiLingual> CreateMultiLingualAsync<T>(T entity)
+            where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        {
+            var options = Options.Value;
+            var entityType = options.GetOrDefault<MultiLingual>().GetOrDefault<T>().EntityType;
+            var entityId = entity.Id.ToString();
+
+            return CreateMultiLingualAsync(entityType, entityId);
         }
 
         public virtual Task<MultiLingualTranslation> CreateMultiLingualTranslationAsync(MultiLingual entity, string culture)
@@ -58,6 +63,23 @@ namespace FS.CmsKitManagement.MultiLinguals
             return Task.FromResult(result);
         }
 
+        //public async Task DeleteMultiLingualAsync(string entityType, string entityId)
+        //{
+        //    var entity= (await MultiLingual.WithDetailsAsync())
+        //        .Where(x => x.EntityType == entityType && x.EntityId == entityId)
+        //        .SingleOrDefault();
 
+        //    await DeleteMultiLingualAsync(entityType, entityId);
+        //}
+
+        //public async Task DeleteMultiLingualAsync<T>(T entity)
+        //    where T : Volo.Abp.Domain.Entities.IEntity<Guid>
+        //{
+        //    var options = Options.Value;
+        //    var entityType = options.GetOrDefault<MultiLingual>().GetOrDefault<T>().EntityType;
+        //    var entityId = entity.Id.ToString();
+
+        //    await DeleteMultiLingualAsync(entityType, entityId);
+        //}
     }
 }
