@@ -3,6 +3,15 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using MediatR;
+using System.Collections.Generic;
+using System;
+using FS.Abp.EntityTypes;
+using Volo.Abp.EventBus;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Volo.Abp.Reflection;
+using Volo.Abp.EventBus.Local;
+using Volo.Abp.EventBus.Distributed;
+using System.Linq;
 
 namespace FS.CmsKitManagement
 {
@@ -24,10 +33,53 @@ namespace FS.CmsKitManagement
                 options.AddMaps<CmsKitManagementApplicationModule>(validate: false);
             });
 
-            context.Services.AddMediatR(
-                typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
-                typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
-                );
+            AddEventHandlers(context.Services);
+            //context.Services.AddMediatR(
+            //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
+            //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
+            //    );
         }
+
+        private static void AddEventHandlers(IServiceCollection services)
+        {
+            var localHandlers = new List<Type>();
+            var distributedHandlers = new List<Type>();
+
+            var options = services.ExecutePreConfiguredActions<EntityTypeOptions>();
+
+            options.GetOrDefault<MultiLinguals.MultiLingual>()
+                .ToList().ForEach(d =>
+                {
+                    var handlerType = typeof(MultiLinguals.EntityTypeCreatedOrDeletedHandler<>).MakeGenericType(d.Key);
+                    registerType(handlerType);
+                });
+
+
+
+            void registerType(Type handlerType)
+            {
+                services.TryAddTransient(handlerType);
+
+                if (ReflectionHelper.IsAssignableToGenericType(handlerType, typeof(ILocalEventHandler<>)))
+                {
+                    localHandlers.Add(handlerType);
+                }
+                else if (ReflectionHelper.IsAssignableToGenericType(handlerType, typeof(IDistributedEventHandler<>)))
+                {
+                    distributedHandlers.Add(handlerType);
+                }
+
+                services.Configure<AbpLocalEventBusOptions>(options =>
+                {
+                    options.Handlers.AddIfNotContains(localHandlers);
+                });
+
+                services.Configure<AbpDistributedEventBusOptions>(options =>
+                {
+                    options.Handlers.AddIfNotContains(distributedHandlers);
+                });
+            }
+        }
+
     }
 }

@@ -54,49 +54,9 @@ namespace FS.CmsKitManagement
             {
                 context.Services.ExecutePreConfiguredActions(options);
             });
-            AddEventHandlers(context.Services);
         }
 
 
-        private static void AddEventHandlers(IServiceCollection services)
-        {
-            var localHandlers = new List<Type>();
-            var distributedHandlers = new List<Type>();
-
-            var options = services.ExecutePreConfiguredActions<EntityTypeOptions>();
-
-            options.GetOrDefault<MultiLinguals.MultiLingual>()
-                .ToList().ForEach(d =>
-                {
-                    var handlerType = typeof(MultiLinguals.EntityTypeCreatingOrDeletingHandler<>).MakeGenericType(d.Key);
-                    registerType(handlerType);
-                });
-
-
-
-            void registerType(Type handlerType)
-            {
-                services.TryAddTransient(handlerType);
-
-                if (ReflectionHelper.IsAssignableToGenericType(handlerType, typeof(ILocalEventHandler<>)))
-                {
-                    localHandlers.Add(handlerType);
-                }
-                else if (ReflectionHelper.IsAssignableToGenericType(handlerType, typeof(IDistributedEventHandler<>)))
-                {
-                    distributedHandlers.Add(handlerType);
-                }
-
-                services.Configure<AbpLocalEventBusOptions>(options =>
-                {
-                    options.Handlers.AddIfNotContains(localHandlers);
-                });
-
-                services.Configure<AbpDistributedEventBusOptions>(options =>
-                {
-                    options.Handlers.AddIfNotContains(distributedHandlers);
-                });
-            }
-        }
+        
     }
 }
