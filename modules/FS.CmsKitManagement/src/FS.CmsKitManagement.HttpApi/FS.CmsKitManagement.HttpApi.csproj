@@ -12,4 +12,71 @@
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.BlogPostSettingAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Blogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentPropertyCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.EntityContentCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.EntityContentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContentsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsApi.EntityBlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.AttachmentMediaCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptorsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsApi.MultiLingualCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLingualsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsApi.MultiLingualTranslationCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLingualsApi.Generated.cs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\ShapesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\ShapesApi.ShapeCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ShapesApi.Generated.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
