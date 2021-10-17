@@ -10,8 +10,6 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
     {
         public string EntityType { get; set; }
         public string EntityId { get; set; }
-
-        public Range<DateTime> CreationTime { get; set; }
     }
 
 }

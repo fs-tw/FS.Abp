@@ -35,7 +35,6 @@ namespace FS.CmsKitManagement.MultiLinguals
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").HasColumnType(@"uniqueidentifier").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.EntityType).HasColumnName(@"EntityType").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
             builder.Property(x => x.EntityId).HasColumnName(@"EntityId").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
-            builder.Property(x => x.DefaultCulture).HasColumnName(@"DefaultCulture").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
 

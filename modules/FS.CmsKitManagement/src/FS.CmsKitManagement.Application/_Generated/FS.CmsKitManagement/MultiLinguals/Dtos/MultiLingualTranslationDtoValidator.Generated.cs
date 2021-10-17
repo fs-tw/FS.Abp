@@ -19,6 +19,8 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
             RuleFor(p => p.Culture)
                 .NotNull()
                 ;
+            RuleFor(p => p.Properties)
+                ;
             RuleFor(p => p.MultiLingualId)
                 .NotNull()
                 ;
@@ -32,6 +34,8 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
         {
             RuleFor(p => p.Culture)
                 .NotNull()
+                ;
+            RuleFor(p => p.Properties)
                 ;
             RuleFor(p => p.MultiLingualId)
                 .NotNull()

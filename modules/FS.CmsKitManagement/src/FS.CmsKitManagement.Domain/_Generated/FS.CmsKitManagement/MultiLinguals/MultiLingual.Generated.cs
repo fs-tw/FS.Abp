@@ -48,12 +48,6 @@ namespace FS.CmsKitManagement.MultiLinguals
             set;
         }
 
-        public virtual string DefaultCulture
-        {
-            get;
-            set;
-        }
-
         public virtual System.Guid? TenantId
         {
             get;

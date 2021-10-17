@@ -24,9 +24,6 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
                 .Length(0, 64)
                 .NotNull()
                 ;
-            RuleFor(p => p.DefaultCulture)
-                .NotNull()
-                ;
             CustomizeConfiguration();
         }
         partial void CustomizeConfiguration();
@@ -41,9 +38,6 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
                 ;
             RuleFor(p => p.EntityId)
                 .Length(0, 64)
-                .NotNull()
-                ;
-            RuleFor(p => p.DefaultCulture)
                 .NotNull()
                 ;
             CustomizeConfiguration();
