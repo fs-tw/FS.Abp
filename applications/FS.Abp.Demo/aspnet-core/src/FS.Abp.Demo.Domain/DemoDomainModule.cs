@@ -14,8 +14,6 @@ using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using FS.Abp.EntityTypes;
-using FS.CmsKitManagement.EntityTypes;
-using FS.CmsKit.Pages;
 
 namespace FS.Abp.Demo
 {
@@ -94,19 +92,6 @@ namespace FS.Abp.Demo
                         typeof(Volo.CmsKit.Pages.Page),
                         typeof(Volo.CmsKit.Blogs.BlogPost)
                         );
-                });
-
-                options.GetOrAdd<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
-                {
-                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(
-                        MultiLingualsEntityTypeDefinition.Create<Volo.CmsKit.Pages.Page, PageTranslation>());
-
-                    //a.AddOrReplaceDefaults(
-                    //    typeof(Volo.CmsKit.Pages.Page),
-                    //    typeof(Volo.CmsKit.Blogs.Blog),
-                    //    typeof(Volo.CmsKit.Blogs.BlogPost),
-                    //    typeof(Volo.CmsKit.Menus.MenuItem)
-                    //    );
                 });
 
                 options.GetOrAdd<FS.CmsKitManagement.Shapes.Shape>(a =>

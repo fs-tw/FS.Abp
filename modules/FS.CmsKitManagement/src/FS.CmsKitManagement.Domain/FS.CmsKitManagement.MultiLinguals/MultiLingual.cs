@@ -22,7 +22,7 @@ namespace FS.CmsKitManagement.MultiLinguals
             var multiLingual = await store.FindMultiLingualAsync(entity);
 
             var translation = multiLingual.MultiLingualTranslations
-                .SingleOrDefault(x => x.Culture == (culture ?? multiLingual.DefaultCulture));
+                .SingleOrDefault(x => x.Culture == culture);
 
             typeof(TTranslation).GetProperties()
                 .ToList()
@@ -37,20 +37,33 @@ namespace FS.CmsKitManagement.MultiLinguals
             return result;
         }
 
-        public async Task AddOrReplaceTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, TEntity entity, string culture, TTranslation translation)
+        public async Task AddOrReplaceTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, string culture, TEntity entity, TTranslation translation)
             where TTranslation : class, new()
             where TEntity : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
-            var multiLingualTranslation = await store.CreateMultiLingualTranslationAsync(this, culture);
-
-            multiLingualTranslation.Properties = translation.GetType().GetProperties()
+            var properties = translation.GetType().GetProperties()
                 .Select(p =>
                 {
                     return new Volo.Abp.NameValue(p.Name, p.GetValue(translation).ToString());
                 }).ToList();
 
-            this.MultiLingualTranslations.RemoveAll(x => x.Culture == culture);
-            this.MultiLingualTranslations.Add(multiLingualTranslation);
+            await AddOrReplaceTranslationAsync(store, culture, properties);
+        }
+
+        public async Task AddOrReplaceTranslationAsync(IMultiLingualsStore store, string culture, List<Volo.Abp.NameValue> properties)
+        {
+            this.MultiLingualTranslations.Where(x => x.Culture == culture)
+                .Skip(1)
+                .ToList()
+                .ForEach(t =>
+                {
+                    this.MultiLingualTranslations.Remove(t);
+                });
+            var translation = this.MultiLingualTranslations.SingleOrDefault(x => x.Culture == culture) ?? await store.CreateMultiLingualTranslationAsync(this, culture);
+
+            translation.Properties = properties;
+
+            this.MultiLingualTranslations.AddIfNotContains(translation);
         }
     }
 

@@ -1,5 +1,4 @@
 ﻿using FS.Abp.Npoi.Mapper;
-using FS.CmsKit.Pages;
 using FS.CmsKitManagement.MultiLinguals;
 using System;
 using System.Collections.Generic;
@@ -52,7 +51,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
                     Title = item.Title
                 };
 
-                await multiLingual.AddOrReplaceTranslationAsync(MultiLingualsStore,page, item.Culture, pageTranslation);
+                await multiLingual.AddOrReplaceTranslationAsync(MultiLingualsStore, item.Culture,page, pageTranslation);
                 //---end---
                 multiLingualList.Add(multiLingual);
             }

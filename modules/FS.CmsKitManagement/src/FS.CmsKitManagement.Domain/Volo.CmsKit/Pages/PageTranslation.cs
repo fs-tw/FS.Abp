@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp.Domain.Entities.Events;
+using Volo.Abp.EventBus;
 
-namespace FS.CmsKit.Pages
+namespace Volo.CmsKit.Pages
 {
     public class PageTranslation
     {
@@ -11,6 +15,6 @@ namespace FS.CmsKit.Pages
 
         [DataType(DataType.Html)]
         public string Content { get; set; }
-
     }
+
 }
