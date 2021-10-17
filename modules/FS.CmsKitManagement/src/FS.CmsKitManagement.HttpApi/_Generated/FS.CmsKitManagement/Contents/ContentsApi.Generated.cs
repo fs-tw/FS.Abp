@@ -22,7 +22,7 @@ namespace FS.CmsKitManagement.Contents
 
         protected IContentDefinitionCrudAppService ContentDefinitionCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IContentDefinitionCrudAppService>();
 
-        protected IContentTypeCrudAppService ContentTypeCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IContentTypeCrudAppService>();
+        protected IContentPropertyCrudAppService ContentPropertyCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IContentPropertyCrudAppService>();
 
         protected IEntityContentCrudAppService EntityContentCrudAppService => this.LazyServiceProvider.LazyGetRequiredService<IEntityContentCrudAppService>();
 

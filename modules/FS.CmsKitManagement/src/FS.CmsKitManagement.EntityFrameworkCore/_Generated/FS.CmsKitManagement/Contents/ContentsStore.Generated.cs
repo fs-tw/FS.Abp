@@ -16,7 +16,7 @@ namespace FS.CmsKitManagement.Contents
     public partial class ContentsStore : DomainService, IContentsStore //auto-generated
     {
         public IContentDefinitionRepository ContentDefinition => this.LazyServiceProvider.LazyGetRequiredService<IContentDefinitionRepository>();
-        public IContentTypeRepository ContentType => this.LazyServiceProvider.LazyGetRequiredService<IContentTypeRepository>();
+        public IContentPropertyRepository ContentProperty => this.LazyServiceProvider.LazyGetRequiredService<IContentPropertyRepository>();
         public IEntityContentRepository EntityContent => this.LazyServiceProvider.LazyGetRequiredService<IEntityContentRepository>();
         public IEntityContentDefinitionRepository EntityContentDefinition => this.LazyServiceProvider.LazyGetRequiredService<IEntityContentDefinitionRepository>();
     }

@@ -35,12 +35,6 @@ namespace FS.CmsKitManagement.Contents
             this.Id = id;
         }
 
-        public virtual System.Guid ContentTypeId
-        {
-            get;
-            set;
-        }
-
         public virtual string EntityType
         {
             get;
@@ -53,17 +47,29 @@ namespace FS.CmsKitManagement.Contents
             set;
         }
 
-        public virtual int Index
+        public virtual System.Guid EntityContentDefinitionId
         {
             get;
             set;
         }
 
-        public virtual string Value
+        public virtual int Sequence
         {
             get;
             set;
         }
+        public virtual List<Volo.Abp.NameValue> Properties 
+        {
+
+            get
+            {
+                return this.GetExtraProperty<List<Volo.Abp.NameValue>>(nameof(Properties));
+            }
+            set
+            {
+                this.SetProperty(nameof(Properties), value);
+            }
+        } 
 
         public virtual System.Guid? TenantId
         {
@@ -71,7 +77,7 @@ namespace FS.CmsKitManagement.Contents
             set;
         }
 
-        public virtual ContentType ContentType
+        public virtual EntityContentDefinition EntityContentDefinition
         {
             get;
             set;

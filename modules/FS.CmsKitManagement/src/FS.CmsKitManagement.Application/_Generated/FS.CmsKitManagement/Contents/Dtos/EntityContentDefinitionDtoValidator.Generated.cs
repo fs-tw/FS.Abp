@@ -23,6 +23,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
             RuleFor(p => p.EntityId)
                 ;
             RuleFor(p => p.ContentDefinitionId)
+                .NotNull()
                 ;
             CustomizeConfiguration();
         }
@@ -39,6 +40,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
             RuleFor(p => p.EntityId)
                 ;
             RuleFor(p => p.ContentDefinitionId)
+                .NotNull()
                 ;
             CustomizeConfiguration();
         }

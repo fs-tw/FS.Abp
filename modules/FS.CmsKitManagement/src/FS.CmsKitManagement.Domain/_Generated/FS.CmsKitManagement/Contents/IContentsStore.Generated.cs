@@ -16,7 +16,7 @@ namespace FS.CmsKitManagement.Contents
     public partial interface IContentsStore : IDomainService //auto-generated
     {
         IContentDefinitionRepository ContentDefinition { get; }
-        IContentTypeRepository ContentType { get; }
+        IContentPropertyRepository ContentProperty { get; }
         IEntityContentRepository EntityContent { get; }
         IEntityContentDefinitionRepository EntityContentDefinition { get; }
     }

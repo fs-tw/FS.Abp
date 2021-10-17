@@ -27,6 +27,7 @@ namespace FS.CmsKitManagement.Contents
 
         public EntityContentDefinition()
         {
+            this.EntityContents = new List<EntityContent>();
             OnCreated();
         }
 
@@ -47,13 +48,25 @@ namespace FS.CmsKitManagement.Contents
             set;
         }
 
-        public virtual System.Guid? ContentDefinitionId
+        public virtual System.Guid? TenantId
         {
             get;
             set;
         }
 
-        public virtual System.Guid? TenantId
+        public virtual System.Guid ContentDefinitionId
+        {
+            get;
+            set;
+        }
+
+        public virtual IList<EntityContent> EntityContents
+        {
+            get;
+            set;
+        }
+
+        public virtual ContentDefinition ContentDefinition
         {
             get;
             set;

@@ -50,7 +50,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     public partial class ContentDefinitionWithDetailsDto : ContentDefinitionDto
     {
-        public List<ContentTypeDto> ContentTypes { get; set; }
+        public List<ContentPropertyDto> ContentProperties { get; set; }
 
     }
 }

@@ -12,9 +12,9 @@ using FluentValidation;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
-    public partial class ContentTypeCreateDtoValidator : AbstractValidator<ContentTypeCreateDto>
+    public partial class ContentPropertyCreateDtoValidator : AbstractValidator<ContentPropertyCreateDto>
     {
-        public ContentTypeCreateDtoValidator()
+        public ContentPropertyCreateDtoValidator()
         {
             RuleFor(p => p.ContentDefinitionId)
                 .NotNull()
@@ -32,9 +32,9 @@ namespace FS.CmsKitManagement.Contents.Dtos
         }
         partial void CustomizeConfiguration();
     }
-    public partial class ContentTypeUpdateDtoValidator : AbstractValidator<ContentTypeUpdateDto>
+    public partial class ContentPropertyUpdateDtoValidator : AbstractValidator<ContentPropertyUpdateDto>
     {
-        public ContentTypeUpdateDtoValidator()
+        public ContentPropertyUpdateDtoValidator()
         {
             RuleFor(p => p.ContentDefinitionId)
                 .NotNull()

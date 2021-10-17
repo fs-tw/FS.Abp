@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.Contents
 
         public ContentDefinition()
         {
-            this.ContentTypes = new List<ContentType>();
+            this.ContentProperties = new List<ContentProperty>();
             OnCreated();
         }
 
@@ -54,7 +54,7 @@ namespace FS.CmsKitManagement.Contents
             set;
         }
 
-        public virtual IList<ContentType> ContentTypes
+        public virtual IList<ContentProperty> ContentProperties
         {
             get;
             set;

@@ -22,16 +22,16 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class ContentTypeConfiguration : IEntityTypeConfiguration<ContentType>
+    public partial class ContentPropertyConfiguration : IEntityTypeConfiguration<ContentProperty> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
-        public ContentTypeConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
+        public ContentPropertyConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
         {
             this.options = options;
         }
-        public void Configure(EntityTypeBuilder<ContentType> builder)
+        public void Configure(EntityTypeBuilder<ContentProperty> builder)
         {
-            builder.ToTable(options.TablePrefix + @"ContentTypes", options.Schema);
+            builder.ToTable(options.TablePrefix + @"ContentProperties", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").HasColumnType(@"uniqueidentifier").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.ContentDefinitionId).HasColumnName(@"ContentDefinitionId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
             builder.Property(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
@@ -39,7 +39,7 @@ namespace FS.CmsKitManagement.Contents
             builder.Property(x => x.Type).HasColumnName(@"Type").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
-            builder.HasOne(x => x.ContentDefinition).WithMany(op => op.ContentTypes).IsRequired(true).HasForeignKey(@"ContentDefinitionId");
+            builder.HasOne(x => x.ContentDefinition).WithMany(op => op.ContentProperties).IsRequired(true).HasForeignKey(@"ContentDefinitionId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);
@@ -47,11 +47,25 @@ namespace FS.CmsKitManagement.Contents
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
-        partial void CustomizeConfiguration(EntityTypeBuilder<ContentType> builder);
-
-        #endregion
+        partial void CustomizeConfiguration(EntityTypeBuilder<ContentProperty> builder);
     }
+    public static partial class ContentPropertyQueryableExtensions //auto-generated
+    {
+        public static IQueryable<ContentProperty> IncludeDetails(this IQueryable<ContentProperty> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
 
+            IQueryable<ContentProperty> result = queryable
+                .Include(x => x.ContentDefinition);
+
+            CustomizeIncludeDetails(ref result);
+
+            return result;
+        }
+
+        static partial void CustomizeIncludeDetails(ref IQueryable<ContentProperty> query);
+    }
 }

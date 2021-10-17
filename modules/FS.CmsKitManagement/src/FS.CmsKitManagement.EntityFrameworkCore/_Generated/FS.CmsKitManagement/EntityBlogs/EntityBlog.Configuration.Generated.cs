@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.EntityBlogs
 {
-    public partial class EntityBlogConfiguration : IEntityTypeConfiguration<EntityBlog>
+    public partial class EntityBlogConfiguration : IEntityTypeConfiguration<EntityBlog> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public EntityBlogConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -45,11 +45,9 @@ namespace FS.CmsKitManagement.EntityBlogs
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<EntityBlog> builder);
-
-        #endregion
     }
-
+    public static partial class EntityBlogQueryableExtensions //auto-generated
+    {
+    }
 }

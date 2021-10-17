@@ -41,7 +41,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             set;
         }
 
-        public virtual DbSet<FS.CmsKitManagement.Contents.ContentType> ContentTypes
+        public virtual DbSet<FS.CmsKitManagement.Contents.ContentProperty> ContentProperties
         {
             get;
             set;

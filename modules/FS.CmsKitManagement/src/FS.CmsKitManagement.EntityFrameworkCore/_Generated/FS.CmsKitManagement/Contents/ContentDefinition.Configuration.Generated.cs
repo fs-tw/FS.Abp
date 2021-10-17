@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class ContentDefinitionConfiguration : IEntityTypeConfiguration<ContentDefinition>
+    public partial class ContentDefinitionConfiguration : IEntityTypeConfiguration<ContentDefinition> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public ContentDefinitionConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -44,11 +44,25 @@ namespace FS.CmsKitManagement.Contents
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<ContentDefinition> builder);
-
-        #endregion
     }
+    public static partial class ContentDefinitionQueryableExtensions //auto-generated
+    {
+        public static IQueryable<ContentDefinition> IncludeDetails(this IQueryable<ContentDefinition> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
 
+            IQueryable<ContentDefinition> result = queryable
+                .Include(x => x.ContentProperties);
+
+            CustomizeIncludeDetails(ref result);
+
+            return result;
+        }
+
+        static partial void CustomizeIncludeDetails(ref IQueryable<ContentDefinition> query);
+    }
 }

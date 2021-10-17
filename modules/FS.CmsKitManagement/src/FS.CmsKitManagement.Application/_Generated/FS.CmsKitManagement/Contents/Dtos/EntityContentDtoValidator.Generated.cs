@@ -16,9 +16,6 @@ namespace FS.CmsKitManagement.Contents.Dtos
     {
         public EntityContentCreateDtoValidator()
         {
-            RuleFor(p => p.ContentTypeId)
-                .NotNull()
-                ;
             RuleFor(p => p.EntityType)
                 .Length(0, 64)
                 .NotNull()
@@ -26,10 +23,13 @@ namespace FS.CmsKitManagement.Contents.Dtos
             RuleFor(p => p.EntityId)
                 .NotNull()
                 ;
-            RuleFor(p => p.Index)
+            RuleFor(p => p.EntityContentDefinitionId)
                 .NotNull()
                 ;
-            RuleFor(p => p.Value)
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.Properties)
                 ;
             CustomizeConfiguration();
         }
@@ -39,9 +39,6 @@ namespace FS.CmsKitManagement.Contents.Dtos
     {
         public EntityContentUpdateDtoValidator()
         {
-            RuleFor(p => p.ContentTypeId)
-                .NotNull()
-                ;
             RuleFor(p => p.EntityType)
                 .Length(0, 64)
                 .NotNull()
@@ -49,10 +46,13 @@ namespace FS.CmsKitManagement.Contents.Dtos
             RuleFor(p => p.EntityId)
                 .NotNull()
                 ;
-            RuleFor(p => p.Index)
+            RuleFor(p => p.EntityContentDefinitionId)
                 .NotNull()
                 ;
-            RuleFor(p => p.Value)
+            RuleFor(p => p.Sequence)
+                .NotNull()
+                ;
+            RuleFor(p => p.Properties)
                 ;
             CustomizeConfiguration();
         }

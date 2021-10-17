@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.MultiLinguals
 {
-    public partial class MultiLingualTranslationConfiguration : IEntityTypeConfiguration<MultiLingualTranslation>
+    public partial class MultiLingualTranslationConfiguration : IEntityTypeConfiguration<MultiLingualTranslation> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public MultiLingualTranslationConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -46,11 +46,25 @@ namespace FS.CmsKitManagement.MultiLinguals
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<MultiLingualTranslation> builder);
-
-        #endregion
     }
+    public static partial class MultiLingualTranslationQueryableExtensions //auto-generated
+    {
+        public static IQueryable<MultiLingualTranslation> IncludeDetails(this IQueryable<MultiLingualTranslation> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
 
+            IQueryable<MultiLingualTranslation> result = queryable
+                .Include(x => x.MultiLingual);
+
+            CustomizeIncludeDetails(ref result);
+
+            return result;
+        }
+
+        static partial void CustomizeIncludeDetails(ref IQueryable<MultiLingualTranslation> query);
+    }
 }

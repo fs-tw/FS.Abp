@@ -26,7 +26,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
         public virtual string EntityId { get; set; }
 
-        public virtual System.Guid? ContentDefinitionId { get; set; }
+        public virtual System.Guid ContentDefinitionId { get; set; }
 
     }
 
@@ -36,7 +36,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
         public virtual string EntityId { get; set; }
 
-        public virtual System.Guid? ContentDefinitionId { get; set; }
+        public virtual System.Guid ContentDefinitionId { get; set; }
 
     }
 
@@ -46,7 +46,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
         public virtual string EntityId { get; set; }
 
-        public virtual System.Guid? ContentDefinitionId { get; set; }
+        public virtual System.Guid ContentDefinitionId { get; set; }
 
     }
 
@@ -56,5 +56,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     public partial class EntityContentDefinitionWithDetailsDto : EntityContentDefinitionDto
     {
+        public List<EntityContentDto> EntityContents { get; set; }
+
     }
 }

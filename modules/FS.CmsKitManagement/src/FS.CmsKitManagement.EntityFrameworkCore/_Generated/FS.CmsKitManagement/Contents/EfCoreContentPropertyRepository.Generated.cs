@@ -16,13 +16,13 @@ using System.Threading.Tasks;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class EfCoreContentTypeRepository : 
-        EfCoreRepository<FS.CmsKitManagement.EntityFrameworkCore.ICmsKitManagementDbContext,FS.CmsKitManagement.Contents.ContentType,Guid>,
-        IContentTypeRepository
+    public partial class EfCoreContentPropertyRepository : 
+        EfCoreRepository<FS.CmsKitManagement.EntityFrameworkCore.ICmsKitManagementDbContext,FS.CmsKitManagement.Contents.ContentProperty,Guid>,
+        IContentPropertyRepository
     {
-        public EfCoreContentTypeRepository(IDbContextProvider<FS.CmsKitManagement.EntityFrameworkCore.ICmsKitManagementDbContext> dbContextProvider)
+        public EfCoreContentPropertyRepository(IDbContextProvider<FS.CmsKitManagement.EntityFrameworkCore.ICmsKitManagementDbContext> dbContextProvider)
             : base(dbContextProvider) { }
-        public override async Task<IQueryable<FS.CmsKitManagement.Contents.ContentType>> WithDetailsAsync()
+        public override async Task<IQueryable<FS.CmsKitManagement.Contents.ContentProperty>> WithDetailsAsync()
         {
             return (await GetQueryableAsync()).IncludeDetails();
         }

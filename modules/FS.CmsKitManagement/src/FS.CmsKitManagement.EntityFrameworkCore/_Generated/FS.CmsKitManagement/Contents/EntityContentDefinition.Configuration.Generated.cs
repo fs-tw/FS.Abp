@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class EntityContentDefinitionConfiguration : IEntityTypeConfiguration<EntityContentDefinition>
+    public partial class EntityContentDefinitionConfiguration : IEntityTypeConfiguration<EntityContentDefinition> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public EntityContentDefinitionConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -35,9 +35,10 @@ namespace FS.CmsKitManagement.Contents
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").HasColumnType(@"uniqueidentifier").IsRequired().ValueGeneratedNever();
             builder.Property(x => x.EntityType).HasColumnName(@"EntityType").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
             builder.Property(x => x.EntityId).HasColumnName(@"EntityId").ValueGeneratedNever();
-            builder.Property(x => x.ContentDefinitionId).HasColumnName(@"ContentDefinitionId").ValueGeneratedNever();
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
+            builder.Property(x => x.ContentDefinitionId).HasColumnName(@"ContentDefinitionId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
             builder.HasKey(@"Id");
+            builder.HasOne(x => x.ContentDefinition).WithMany().IsRequired(true).HasForeignKey(@"ContentDefinitionId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);
@@ -45,11 +46,26 @@ namespace FS.CmsKitManagement.Contents
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<EntityContentDefinition> builder);
-
-        #endregion
     }
+    public static partial class EntityContentDefinitionQueryableExtensions //auto-generated
+    {
+        public static IQueryable<EntityContentDefinition> IncludeDetails(this IQueryable<EntityContentDefinition> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
 
+            IQueryable<EntityContentDefinition> result = queryable
+                .Include(x => x.EntityContents)
+                .Include(x => x.ContentDefinition);
+
+            CustomizeIncludeDetails(ref result);
+
+            return result;
+        }
+
+        static partial void CustomizeIncludeDetails(ref IQueryable<EntityContentDefinition> query);
+    }
 }

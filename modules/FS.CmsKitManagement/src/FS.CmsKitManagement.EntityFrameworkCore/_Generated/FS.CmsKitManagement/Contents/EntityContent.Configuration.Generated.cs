@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class EntityContentConfiguration : IEntityTypeConfiguration<EntityContent>
+    public partial class EntityContentConfiguration : IEntityTypeConfiguration<EntityContent> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public EntityContentConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -33,14 +33,14 @@ namespace FS.CmsKitManagement.Contents
         {
             builder.ToTable(options.TablePrefix + @"EntityContents", options.Schema);
             builder.Property<Guid>(@"Id").HasColumnName(@"Id").HasColumnType(@"uniqueidentifier").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.ContentTypeId).HasColumnName(@"ContentTypeId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
             builder.Property(x => x.EntityType).HasColumnName(@"EntityType").HasColumnType(@"nvarchar").IsRequired().ValueGeneratedNever().HasMaxLength(64);
             builder.Property(x => x.EntityId).HasColumnName(@"EntityId").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.Index).HasColumnName(@"Index").IsRequired().ValueGeneratedNever();
-            builder.Property(x => x.Value).HasColumnName(@"Value").ValueGeneratedNever();
+            builder.Property(x => x.EntityContentDefinitionId).HasColumnName(@"EntityContentDefinitionId").HasColumnType(@"uniqueidentifier").ValueGeneratedNever();
+            builder.Property(x => x.Sequence).HasColumnName(@"Sequence").IsRequired().ValueGeneratedNever();
+            builder.Ignore(x => x.Properties);
             builder.Property(x => x.TenantId).HasColumnName(@"TenantId").ValueGeneratedNever();
             builder.HasKey(@"Id");
-            builder.HasOne(x => x.ContentType).WithMany().IsRequired(true).HasForeignKey(@"ContentTypeId");
+            builder.HasOne(x => x.EntityContentDefinition).WithMany(op => op.EntityContents).IsRequired(true).HasForeignKey(@"EntityContentDefinitionId");
 
             builder.ConfigureAuditedAggregateRoot();
             builder.HasIndex(x => x.CreationTime);
@@ -48,11 +48,25 @@ namespace FS.CmsKitManagement.Contents
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<EntityContent> builder);
-
-        #endregion
     }
+    public static partial class EntityContentQueryableExtensions //auto-generated
+    {
+        public static IQueryable<EntityContent> IncludeDetails(this IQueryable<EntityContent> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
 
+            IQueryable<EntityContent> result = queryable
+                .Include(x => x.EntityContentDefinition);
+
+            CustomizeIncludeDetails(ref result);
+
+            return result;
+        }
+
+        static partial void CustomizeIncludeDetails(ref IQueryable<EntityContent> query);
+    }
 }

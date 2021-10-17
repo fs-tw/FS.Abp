@@ -20,17 +20,17 @@ using Volo.Abp.Data;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial class ContentType : 
+    public partial class ContentProperty : 
         Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,
         Volo.Abp.MultiTenancy.IMultiTenant
     {
 
-        public ContentType()
+        public ContentProperty()
         {
             OnCreated();
         }
 
-        public ContentType(System.Guid id) : this()
+        public ContentProperty(System.Guid id) : this()
         {
             this.Id = id;
         }

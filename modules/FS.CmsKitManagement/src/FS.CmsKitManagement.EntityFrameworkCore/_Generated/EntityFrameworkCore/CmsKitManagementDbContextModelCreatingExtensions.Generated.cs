@@ -33,7 +33,7 @@ namespace FS.CmsKitManagement.EntityFrameworkCore
             builder.Ignore<FS.CmsKitManagement.Blogs.BlogPostSetting>();
             builder.ApplyConfiguration<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia>(new FS.CmsKitManagement.MediaDescriptors.AttachmentMediaConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentDefinition>(new FS.CmsKitManagement.Contents.ContentDefinitionConfiguration(options));
-            builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentType>(new FS.CmsKitManagement.Contents.ContentTypeConfiguration(options));
+            builder.ApplyConfiguration<FS.CmsKitManagement.Contents.ContentProperty>(new FS.CmsKitManagement.Contents.ContentPropertyConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.EntityContent>(new FS.CmsKitManagement.Contents.EntityContentConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Contents.EntityContentDefinition>(new FS.CmsKitManagement.Contents.EntityContentDefinitionConfiguration(options));
             builder.ApplyConfiguration<FS.CmsKitManagement.Shapes.Shape>(new FS.CmsKitManagement.Shapes.ShapeConfiguration(options));

@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.Shapes
 {
-    public partial class ShapeConfiguration : IEntityTypeConfiguration<Shape>
+    public partial class ShapeConfiguration : IEntityTypeConfiguration<Shape> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public ShapeConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -45,11 +45,9 @@ namespace FS.CmsKitManagement.Shapes
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<Shape> builder);
-
-        #endregion
     }
-
+    public static partial class ShapeQueryableExtensions //auto-generated
+    {
+    }
 }

@@ -22,7 +22,7 @@ using FS.CmsKitManagement.EntityFrameworkCore;
 
 namespace FS.CmsKitManagement.MediaDescriptors
 {
-    public partial class AttachmentMediaConfiguration : IEntityTypeConfiguration<AttachmentMedia>
+    public partial class AttachmentMediaConfiguration : IEntityTypeConfiguration<AttachmentMedia> //auto-generated
     {
         private CmsKitManagementModelBuilderConfigurationOptions options;
         public AttachmentMediaConfiguration(CmsKitManagementModelBuilderConfigurationOptions options)
@@ -45,11 +45,9 @@ namespace FS.CmsKitManagement.MediaDescriptors
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<AttachmentMedia> builder);
-
-        #endregion
     }
-
+    public static partial class AttachmentMediaQueryableExtensions //auto-generated
+    {
+    }
 }

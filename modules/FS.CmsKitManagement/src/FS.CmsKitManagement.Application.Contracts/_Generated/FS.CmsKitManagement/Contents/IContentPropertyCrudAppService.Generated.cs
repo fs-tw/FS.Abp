@@ -13,8 +13,8 @@ using Volo.Abp.Application.Services;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial interface IContentTypeCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.Contents.Dtos.ContentTypeWithDetailsDto, FS.CmsKitManagement.Contents.Dtos.ContentTypePrimaryKeyDto, FS.CmsKitManagement.Contents.Dtos.ContentTypeGetListDto, FS.CmsKitManagement.Contents.Dtos.ContentTypeCreateDto, FS.CmsKitManagement.Contents.Dtos.ContentTypeUpdateDto>
+    public partial interface IContentPropertyCrudAppService : // auto-generated
+        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.Contents.Dtos.ContentPropertyWithDetailsDto, FS.CmsKitManagement.Contents.Dtos.ContentPropertyPrimaryKeyDto, FS.CmsKitManagement.Contents.Dtos.ContentPropertyGetListDto, FS.CmsKitManagement.Contents.Dtos.ContentPropertyCreateDto, FS.CmsKitManagement.Contents.Dtos.ContentPropertyUpdateDto>
     {
 
     }

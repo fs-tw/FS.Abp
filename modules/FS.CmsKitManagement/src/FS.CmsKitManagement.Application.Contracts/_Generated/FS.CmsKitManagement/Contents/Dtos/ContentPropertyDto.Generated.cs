@@ -16,23 +16,11 @@ using FS.Abp.Application.Dtos;
 namespace FS.CmsKitManagement.Contents.Dtos
 {
 
-    public partial class ContentTypePrimaryKeyDto : EntityDto<Guid>
+    public partial class ContentPropertyPrimaryKeyDto : EntityDto<Guid>
     {
     }
 
-    public partial class ContentTypeDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
-    {
-        public virtual System.Guid ContentDefinitionId { get; set; }
-
-        public virtual int Sequence { get; set; }
-
-        public virtual string DisplayName { get; set; }
-
-        public virtual string Type { get; set; }
-
-    }
-
-    public partial class ContentTypeCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentPropertyDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
@@ -44,7 +32,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentTypeUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentPropertyCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
@@ -56,11 +44,23 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentTypeGetListDto : SearchResultRequestDto
+    public partial class ContentPropertyUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    {
+        public virtual System.Guid ContentDefinitionId { get; set; }
+
+        public virtual int Sequence { get; set; }
+
+        public virtual string DisplayName { get; set; }
+
+        public virtual string Type { get; set; }
+
+    }
+
+    public partial class ContentPropertyGetListDto : SearchResultRequestDto
     {
     }
 
-    public partial class ContentTypeWithDetailsDto : ContentTypeDto
+    public partial class ContentPropertyWithDetailsDto : ContentPropertyDto
     {
         public ContentDefinitionDto ContentDefinition { get; set; }
 

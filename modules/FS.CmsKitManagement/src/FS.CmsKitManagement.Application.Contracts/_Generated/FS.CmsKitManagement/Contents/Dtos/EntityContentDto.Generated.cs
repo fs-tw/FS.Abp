@@ -22,43 +22,43 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     public partial class EntityContentDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
-        public virtual System.Guid ContentTypeId { get; set; }
-
         public virtual string EntityType { get; set; }
 
         public virtual string EntityId { get; set; }
 
-        public virtual int Index { get; set; }
+        public virtual System.Guid EntityContentDefinitionId { get; set; }
 
-        public virtual string Value { get; set; }
+        public virtual int Sequence { get; set; }
+
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
 
     }
 
     public partial class EntityContentCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
-        public virtual System.Guid ContentTypeId { get; set; }
-
         public virtual string EntityType { get; set; }
 
         public virtual string EntityId { get; set; }
 
-        public virtual int Index { get; set; }
+        public virtual System.Guid EntityContentDefinitionId { get; set; }
 
-        public virtual string Value { get; set; }
+        public virtual int Sequence { get; set; }
+
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
 
     }
 
     public partial class EntityContentUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
     {
-        public virtual System.Guid ContentTypeId { get; set; }
-
         public virtual string EntityType { get; set; }
 
         public virtual string EntityId { get; set; }
 
-        public virtual int Index { get; set; }
+        public virtual System.Guid EntityContentDefinitionId { get; set; }
 
-        public virtual string Value { get; set; }
+        public virtual int Sequence { get; set; }
+
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
 
     }
 
@@ -68,7 +68,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     public partial class EntityContentWithDetailsDto : EntityContentDto
     {
-        public ContentTypeDto ContentType { get; set; }
+        public EntityContentDefinitionDto EntityContentDefinition { get; set; }
 
     }
 }

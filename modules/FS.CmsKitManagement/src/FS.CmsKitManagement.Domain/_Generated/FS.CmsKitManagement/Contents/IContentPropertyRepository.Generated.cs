@@ -12,8 +12,8 @@ using System.Collections.Generic;
 
 namespace FS.CmsKitManagement.Contents
 {
-    public partial interface IContentTypeRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.CmsKitManagement.Contents.ContentType,Guid>
+    public partial interface IContentPropertyRepository : 
+        Volo.Abp.Domain.Repositories.IRepository<FS.CmsKitManagement.Contents.ContentProperty,Guid>
     {
 
     }

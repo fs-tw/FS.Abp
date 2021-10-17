@@ -22,5 +22,9 @@ namespace FS.CmsKitManagement.Contents
     {
         public EfCoreEntityContentDefinitionRepository(IDbContextProvider<FS.CmsKitManagement.EntityFrameworkCore.ICmsKitManagementDbContext> dbContextProvider)
             : base(dbContextProvider) { }
+        public override async Task<IQueryable<FS.CmsKitManagement.Contents.EntityContentDefinition>> WithDetailsAsync()
+        {
+            return (await GetQueryableAsync()).IncludeDetails();
+        }
     }
 }

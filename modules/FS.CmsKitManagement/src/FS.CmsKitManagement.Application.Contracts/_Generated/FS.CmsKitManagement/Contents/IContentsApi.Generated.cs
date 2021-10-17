@@ -15,7 +15,7 @@ namespace FS.CmsKitManagement.Contents
     public partial interface IContentsApi : //auto-generated
         Volo.Abp.Application.Services.IApplicationService,
         IContentDefinitionCrudAppService,
-        IContentTypeCrudAppService,
+        IContentPropertyCrudAppService,
         IEntityContentCrudAppService,
         IEntityContentDefinitionCrudAppService
     {
