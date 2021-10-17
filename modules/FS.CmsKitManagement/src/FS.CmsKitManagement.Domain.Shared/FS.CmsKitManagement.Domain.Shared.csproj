@@ -9,8 +9,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\CmsKitManagement\*.json" />
     <Content Remove="Localization\CmsKitManagement\*.json" />
-    <EmbeddedResource Include="**\Files\**\*.*" />
-    <Content Remove="**\Files\**\*.*" />
+    <EmbeddedResource Include="Files\**" />
+    <Content Remove="Files\**" />
   </ItemGroup>
 
   <ItemGroup>

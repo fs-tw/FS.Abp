@@ -6,28 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
-    <Compile Remove="FS.CmsKitManagement.Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-    <None Remove="FS.CmsKitManagement.EntityType\**" />
-    <None Remove="FS.CmsKitManagement.Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionNames.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDto.Generated.cs" />
+    <Compile Remove="Deprecated\**" />
+    <EmbeddedResource Remove="Deprecated\**" />
+    <None Remove="Deprecated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,15 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FS.CmsKitManagement.EntityBlog\Dtos\EntityBlogDto.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Contents\Dtos\ContentDefinitionDto.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Contents\IContentDefinitionCrudAppService.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\Dtos\BlogPostSettingDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -194,5 +166,6 @@
       <DependentUpon>Shapes</DependentUpon>
     </Compile>
   </ItemGroup>
+
 
 </Project>

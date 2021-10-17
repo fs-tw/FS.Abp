@@ -4,50 +4,15 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>FS.CmsKitManagement</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
-    <Compile Remove="FS.CmsKitManagement.Routes\**" />
-    <Compile Remove="Microsoft\**" />
-    <Compile Remove="Volo\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
-    <EmbeddedResource Remove="Microsoft\**" />
-    <EmbeddedResource Remove="Volo\**" />
-    <None Remove="FS.CmsKitManagement.EntityType\**" />
-    <None Remove="FS.CmsKitManagement.Routes\**" />
-    <None Remove="Microsoft\**" />
-    <None Remove="Volo\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Content.Configuration.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\EfCoreContentRepository.Generated.cs" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Compile Update="EntityFrameworkCore\CmsKitManagementDbContextModelCreatingExtensions.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Blogs\BlogsStore.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Contents\ContentsStore.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.EntityBlogs\EntityBlogsStore.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.MultiLinguals\MultiLingualsStore.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>

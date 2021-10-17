@@ -6,17 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
-    <None Remove="FS.CmsKitManagement.EntityType\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsApi.PostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentsApi.ContentCrudAppService.Generated.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.HttpApi" Version="$(AbpVersion)" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
@@ -88,10 +77,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ShapesApi.Generated.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FS.CmsKitManagement.Contents\" />
   </ItemGroup>
 
 </Project>

@@ -6,33 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.Blogs\Commands\**" />
-    <Compile Remove="FS.CmsKitManagement.EntityType\**" />
-    <Compile Remove="FS.CmsKitManagement.Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Blogs\Commands\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.EntityType\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-    <None Remove="FS.CmsKitManagement.Blogs\Commands\**" />
-    <None Remove="FS.CmsKitManagement.EntityType\**" />
-    <None Remove="FS.CmsKitManagement.Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.Blogs\Querys\BlogPosts\RouteQueryHandler.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\PostRouteCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\ContentCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualPropertyDtoValidator.Generated.cs" />
+    <Compile Remove="Deprecated\**" />
+    <EmbeddedResource Remove="Deprecated\**" />
+    <None Remove="Deprecated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,10 +18,6 @@
     <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FS.CmsKitManagement.MultiLinguals\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -170,5 +142,5 @@
       <DependentUpon>Shapes</DependentUpon>
     </Compile>
   </ItemGroup>
-
+  
 </Project>
