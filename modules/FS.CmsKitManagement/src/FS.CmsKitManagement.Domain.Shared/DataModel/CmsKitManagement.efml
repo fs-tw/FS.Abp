@@ -133,7 +133,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Contents.ContentType" entity-set="ContentTypes" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.ContentProperty" entity-set="ContentProperties" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -221,26 +221,45 @@
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="0b0b8877-35b6-4a1d-907b-ed8f09039ba1" p1:GenerateDTO="False">
       <column name="Id" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
     </id>
-    <property name="ContentTypeId" type="Guid" p1:ValidateRequired="true" p1:Guid="79a7eb06-05e6-42c7-a3a3-ea1278787c04">
-      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
-    </property>
     <property name="EntityType" type="String" p1:ValidateMaxLength="64" p1:ValidateRequired="true" p1:Guid="e7e83808-76ba-4363-b66e-7ac25d752144">
       <column name="EntityType" not-null="True" length="64" sql-type="nvarchar" p1:unicode="True" />
     </property>
     <property name="EntityId" type="String" p1:ValidateRequired="true" p1:Guid="67fc0d11-768c-4dc0-9f3f-c599f04b5799">
       <column name="" />
     </property>
-    <property name="Index" type="Int32" p1:ValidateRequired="true" p1:Guid="7327d8b9-f64b-45f7-8840-6c07fc9981b5">
+    <property name="EntityContentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="da7e8396-6b41-4501-8637-8e189bc75595">
+      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+    <property name="Sequence" type="Int32" p1:ValidateRequired="true" p1:Guid="2f44dc3d-3afb-433f-b6f6-642ff7b01ec9">
       <column name="" />
     </property>
-    <property name="Value" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b57f5bff-11ec-46ec-b965-861d25aea14a">
-      <column name="" />
-    </property>
+    <component name="Properties" class="Volo.Abp.NameValue" p1:ValidateRequired="false" p1:Guid="e6dc7be0-f434-4a87-9462-91e791e754cc" p1:Shadow="True">
+      <p1:Attributes>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.ExtraPropertyAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsExtraPropertyStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+        <p1:Attribute Name="FS.ED.Attributes.ExtraProperty.PropertyTypeAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+          <p1:AttributeConstructor />
+          <p1:Properties>
+            <p1:PropertyValue Name="IsListStore" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+              <boolean>true</boolean>
+            </p1:PropertyValue>
+          </p1:Properties>
+        </p1:Attribute>
+      </p1:Attributes>
+      <property name="Name" />
+      <property name="Value" />
+    </component>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b413dcc4-6951-4dd4-863f-9a7f7d2dfff7" p1:GenerateDTO="False">
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -282,11 +301,11 @@
     <property name="EntityId" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b25dcf29-381c-4450-a91c-d5db1425d364">
       <column name="" />
     </property>
-    <property name="ContentDefinitionId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b8e61683-6ef2-4211-bb1a-5edcae660d83">
-      <column name="" />
-    </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="39ec1e8f-e44e-4066-a6b5-ef480f4c9cc1" p1:GenerateDTO="False">
       <column name="" />
+    </property>
+    <property name="ContentDefinitionId" type="Guid" p1:ValidateRequired="true" p1:Guid="148663ba-2c65-4be5-ad4a-44f1360f76f6">
+      <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
     </property>
   </class>
   <class name="FS.CmsKitManagement.Shapes.Shape" entity-set="Shapes" schema="dbo" p1:Guid="c255cb41-86b5-4b99-82f4-37e9b55f981f" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
@@ -503,10 +522,10 @@
   </class>
   <associations>
     <association name="ContentDefinition_ContentType" cardinality="OneToMany" p1:Guid="bff2a38a-5137-442f-a5ab-d3ff93ffb5d8">
-      <end1 multiplicity="One" name="ContentDefinition" class="ContentType" relation-class="ContentDefinition" constrained="True" lazy="False" p1:Guid="735f7632-1c18-4b7b-ae83-7fa3c8484baf">
+      <end1 multiplicity="One" name="ContentDefinition" class="ContentProperty" relation-class="ContentDefinition" constrained="True" lazy="False" p1:Guid="735f7632-1c18-4b7b-ae83-7fa3c8484baf">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="ContentTypes" class="ContentDefinition" relation-class="ContentType" lazy="False" p1:Guid="ddd2f0b3-926f-4f40-ac73-ae7504f1bf15">
+      <end2 multiplicity="Many" name="ContentProperties" class="ContentDefinition" relation-class="ContentProperty" lazy="False" p1:Guid="ddd2f0b3-926f-4f40-ac73-ae7504f1bf15">
         <property name="ContentDefinitionId" />
       </end2>
     </association>
@@ -518,12 +537,20 @@
         <property name="MultiLingualId" />
       </end2>
     </association>
-    <association name="ContentType_Content" cardinality="OneToMany" p1:Guid="2735684a-8683-4e5f-a095-65316934ea93">
-      <end1 multiplicity="One" name="ContentType" class="EntityContent" relation-class="ContentType" constrained="True" lazy="False" p1:Guid="f939dde1-a9b5-4f16-981e-4a9cf7f67513">
+    <association name="EntityContentDefinition_EntityContent" cardinality="OneToMany" p1:Guid="fcb184d9-03ce-45d9-b94f-bbde4bd570f7">
+      <end1 multiplicity="One" name="EntityContentDefinition" class="EntityContent" relation-class="EntityContentDefinition" constrained="True" lazy="False" p1:Guid="c47149c9-976e-4167-b5ac-e9308e450b39">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="Contents" class="ContentType" relation-class="EntityContent" generate="False" lazy="False" p1:Guid="02df82d0-424b-4bf4-bfbb-b476e5db1e58">
-        <property name="ContentTypeId" />
+      <end2 multiplicity="Many" name="EntityContents" class="EntityContentDefinition" relation-class="EntityContent" lazy="False" p1:Guid="22decd78-8ee2-4ffa-a9bb-b8ce51641615">
+        <property name="EntityContentDefinitionId" />
+      </end2>
+    </association>
+    <association name="ContentDefinition_EntityContentDefinition" cardinality="OneToMany" p1:Guid="a9bf6863-68b6-40bb-ab7d-29751004fbb9">
+      <end1 multiplicity="One" name="ContentDefinition" class="EntityContentDefinition" relation-class="ContentDefinition" constrained="True" lazy="False" p1:Guid="16366194-b09d-4d38-92e3-b68319572e32" p1:GenerateDTO="False">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="EntityContentDefinitions" class="ContentDefinition" relation-class="EntityContentDefinition" generate="False" lazy="False" p1:Guid="9bd05f4a-7383-4f61-8fc9-f86cbe1e2398">
+        <property name="ContentDefinitionId" />
       </end2>
     </association>
   </associations>
