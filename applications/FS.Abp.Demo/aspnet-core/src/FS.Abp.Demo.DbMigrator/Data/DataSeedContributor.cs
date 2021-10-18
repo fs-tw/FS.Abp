@@ -33,7 +33,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
 
             await multiLinguals.SeedAsync(context, option =>
             {
-                option.Ignore = true;
+                option.Ignore = false;
                 option.FileName = "Files/MultiLinguals.xlsx";
                 option.PageMultiLingualsSheetName = "Page";
             });

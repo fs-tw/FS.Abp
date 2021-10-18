@@ -412,34 +412,12 @@ namespace FS.Abp.Demo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CmsKitManagementEntityContentDefinitions",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    EntityId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContentDefinitionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
-                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CmsKitManagementEntityContentDefinitions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CmsKitManagementMultiLinguals",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     EntityId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    DefaultCulture = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
@@ -1101,7 +1079,7 @@ namespace FS.Abp.Demo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CmsKitManagementContentTypes",
+                name: "CmsKitManagementContentProperties",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -1119,9 +1097,36 @@ namespace FS.Abp.Demo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CmsKitManagementContentTypes", x => x.Id);
+                    table.PrimaryKey("PK_CmsKitManagementContentProperties", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CmsKitManagementContentTypes_CmsKitManagementContentDefinitions_ContentDefinitionId",
+                        name: "FK_CmsKitManagementContentProperties_CmsKitManagementContentDefinitions_ContentDefinitionId",
+                        column: x => x.ContentDefinitionId,
+                        principalTable: "CmsKitManagementContentDefinitions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CmsKitManagementEntityContentDefinitions",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    EntityId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ContentDefinitionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    LastModificationTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastModifierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CmsKitManagementEntityContentDefinitions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CmsKitManagementEntityContentDefinitions_CmsKitManagementContentDefinitions_ContentDefinitionId",
                         column: x => x.ContentDefinitionId,
                         principalTable: "CmsKitManagementContentDefinitions",
                         principalColumn: "Id",
@@ -1533,11 +1538,10 @@ namespace FS.Abp.Demo.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ContentTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntityType = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     EntityId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Index = table.Column<int>(type: "int", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EntityContentDefinitionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Sequence = table.Column<int>(type: "int", nullable: false),
                     TenantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExtraProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
@@ -1550,9 +1554,9 @@ namespace FS.Abp.Demo.Migrations
                 {
                     table.PrimaryKey("PK_CmsKitManagementEntityContents", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CmsKitManagementEntityContents_CmsKitManagementContentTypes_ContentTypeId",
-                        column: x => x.ContentTypeId,
-                        principalTable: "CmsKitManagementContentTypes",
+                        name: "FK_CmsKitManagementEntityContents_CmsKitManagementEntityContentDefinitions_EntityContentDefinitionId",
+                        column: x => x.EntityContentDefinitionId,
+                        principalTable: "CmsKitManagementEntityContentDefinitions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1745,13 +1749,13 @@ namespace FS.Abp.Demo.Migrations
                 column: "CreationTime");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CmsKitManagementContentTypes_ContentDefinitionId",
-                table: "CmsKitManagementContentTypes",
+                name: "IX_CmsKitManagementContentProperties_ContentDefinitionId",
+                table: "CmsKitManagementContentProperties",
                 column: "ContentDefinitionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CmsKitManagementContentTypes_CreationTime",
-                table: "CmsKitManagementContentTypes",
+                name: "IX_CmsKitManagementContentProperties_CreationTime",
+                table: "CmsKitManagementContentProperties",
                 column: "CreationTime");
 
             migrationBuilder.CreateIndex(
@@ -1760,14 +1764,14 @@ namespace FS.Abp.Demo.Migrations
                 column: "CreationTime");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CmsKitManagementEntityContentDefinitions_ContentDefinitionId",
+                table: "CmsKitManagementEntityContentDefinitions",
+                column: "ContentDefinitionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CmsKitManagementEntityContentDefinitions_CreationTime",
                 table: "CmsKitManagementEntityContentDefinitions",
                 column: "CreationTime");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CmsKitManagementEntityContents_ContentTypeId",
-                table: "CmsKitManagementEntityContents",
-                column: "ContentTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CmsKitManagementEntityContents_CreationTime",
@@ -1775,9 +1779,20 @@ namespace FS.Abp.Demo.Migrations
                 column: "CreationTime");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CmsKitManagementEntityContents_EntityContentDefinitionId",
+                table: "CmsKitManagementEntityContents",
+                column: "EntityContentDefinitionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CmsKitManagementMultiLinguals_CreationTime",
                 table: "CmsKitManagementMultiLinguals",
                 column: "CreationTime");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CmsKitManagementMultiLinguals_EntityType_EntityId",
+                table: "CmsKitManagementMultiLinguals",
+                columns: new[] { "EntityType", "EntityId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_CmsKitManagementMultiLingualTranslations_CreationTime",
@@ -1953,10 +1968,10 @@ namespace FS.Abp.Demo.Migrations
                 name: "CmsKitManagementAttachmentMedia");
 
             migrationBuilder.DropTable(
-                name: "CmsKitManagementEntityBlogs");
+                name: "CmsKitManagementContentProperties");
 
             migrationBuilder.DropTable(
-                name: "CmsKitManagementEntityContentDefinitions");
+                name: "CmsKitManagementEntityBlogs");
 
             migrationBuilder.DropTable(
                 name: "CmsKitManagementEntityContents");
@@ -2067,7 +2082,7 @@ namespace FS.Abp.Demo.Migrations
                 name: "CmsUsers");
 
             migrationBuilder.DropTable(
-                name: "CmsKitManagementContentTypes");
+                name: "CmsKitManagementEntityContentDefinitions");
 
             migrationBuilder.DropTable(
                 name: "CmsKitManagementMultiLinguals");

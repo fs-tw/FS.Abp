@@ -56,16 +56,17 @@ namespace FS.Abp.Demo.DbMigrator.Data
             List<Page> pages = new List<Page>();
             List<Blog> blogs = new List<Blog>();
             List<EntityBlog> entityBlogs = new List<EntityBlog>();
-            List<EntityContentDefinition> entityContentDefinitionList = new List<EntityContentDefinition>();
+            
 
             await processMenuAsync();
-
-            await processPageContentAsync();
-
             await MenuItemRepository.InsertManyAsync(menuItems, true);
             await PageRepository.InsertManyAsync(pages, true);
             await BlogRepository.InsertManyAsync(blogs, true);
             await EntityBlogsStore.EntityBlog.InsertManyAsync(entityBlogs, true);
+
+
+            List<EntityContentDefinition> entityContentDefinitionList = new List<EntityContentDefinition>();
+            await processPageContentAsync();
             await this.ContentsStore.EntityContentDefinition.InsertManyAsync(entityContentDefinitionList, true);
 
             async Task processMenuAsync()
