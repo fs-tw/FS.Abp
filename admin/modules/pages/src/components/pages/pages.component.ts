@@ -35,15 +35,16 @@ import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
   ],
 })
 export class PagesComponent implements OnInit, OnDestroy {
+  @ViewChild(MultiLingualModalComponent)
+  multiLingualModal: MultiLingualModalComponent<Volo.CmsKit.Admin.Pages.PageDto>;
+
   public static NAME: string = 'Pages.PagesComponent';
-  public static EntityType = "Volo.CmsKit.Pages.Page";
-
-  @ViewChild(MultiLingualModalComponent) multiLingualModal: MultiLingualModalComponent;
+  public EntityType = "Volo.CmsKit.Pages.Page";
+  public EntityId: string;
+  public apiService: Volo.CmsKit.Admin.Pages.PageAdminService;
   
-  feature: Array<string>;
-
-  service: Volo.CmsKit.Admin.Pages.PageAdminService;
   subs: Subscription = new Subscription();
+  feature: Array<string>;
 
   createModalVisible = false;
   addForm: FormGroup;
@@ -58,10 +59,10 @@ export class PagesComponent implements OnInit, OnDestroy {
     public entityTypeService: EntityTypeStore,
     private confirmationService: ConfirmationService,
   ) {
-    this.service = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
+    this.apiService = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
     this.entityTypeService = injector.get(EntityTypeStore);
 
-    this.subs.add(this.entityTypeService.getEntityTypeByType$(PagesComponent.EntityType).subscribe(x => {
+    this.subs.add(this.entityTypeService.getEntityTypeByType$(this.EntityType).subscribe(x => {
       this.feature = x.map(y => y.name);
       this.subs.add(
         setDefaults(injector, PagesComponent.NAME, {
@@ -82,7 +83,7 @@ export class PagesComponent implements OnInit, OnDestroy {
               this.delete(x.data.record.id, x.data.record.title);
               break;
             default:
-              this.featureFunction(x.method);
+              this.featureFunction(x.method, x.data.record.id);
               break;
           }
         })
@@ -104,7 +105,7 @@ export class PagesComponent implements OnInit, OnDestroy {
     this.createModalVisible = true;
   }
   create(formValue) {
-    this.service
+    this.apiService
       .create(formValue)
       .pipe(take(1))
       .subscribe((_) => {
@@ -114,7 +115,7 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
 
   onEdit(id: string) {
-    this.service
+    this.apiService
       .get(id)
       .pipe(take(1))
       .subscribe((selected) => {
@@ -129,7 +130,7 @@ export class PagesComponent implements OnInit, OnDestroy {
     const request: Volo.CmsKit.Admin.Pages.UpdatePageInputDto = {
       ...formValue,
     };
-    this.service
+    this.apiService
       .update(this.editSelectedRecord.id, request)
       .pipe(take(1))
       .subscribe((_) => {
@@ -145,7 +146,7 @@ export class PagesComponent implements OnInit, OnDestroy {
       })
       .pipe(
         filter((status) => status === Confirmation.Status.confirm),
-        switchMap((_) => this.service.delete(id)),
+        switchMap((_) => this.apiService.delete(id)),
         take(1)
       )
       .subscribe((_) => {
@@ -153,7 +154,8 @@ export class PagesComponent implements OnInit, OnDestroy {
       });
   }
 
-  featureFunction(method: string) {
+  featureFunction(method: string, entityId: string) {
+    this.EntityId = entityId;
     this.multiLingualModal.openModal();
   }
 }

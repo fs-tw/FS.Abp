@@ -1,6 +1,6 @@
 <fs-page
   [list]="list"
-  [service]="service"
+  [service]="apiService"
   [title]="'CmsKit::Pages'"
 ></fs-page>
 
@@ -30,5 +30,5 @@
 </fs-modal>
 
 <fs-multi-lingual-modal
-  [entityType]="'Volo.CmsKit.Pages.Page'" [entityId]="'Test'">
+  [provider]="apiService" [entityType]="EntityType" [entityId]="EntityId">
 </fs-multi-lingual-modal>
