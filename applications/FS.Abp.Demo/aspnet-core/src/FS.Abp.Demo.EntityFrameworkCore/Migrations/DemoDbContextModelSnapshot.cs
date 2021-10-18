@@ -75,7 +75,7 @@ namespace FS.Abp.Demo.Migrations
                     b.ToTable("CmsKitManagementContentDefinitions");
                 });
 
-            modelBuilder.Entity("FS.CmsKitManagement.Contents.ContentType", b =>
+            modelBuilder.Entity("FS.CmsKitManagement.Contents.ContentProperty", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier")
@@ -135,7 +135,7 @@ namespace FS.Abp.Demo.Migrations
 
                     b.HasIndex("CreationTime");
 
-                    b.ToTable("CmsKitManagementContentTypes");
+                    b.ToTable("CmsKitManagementContentProperties");
                 });
 
             modelBuilder.Entity("FS.CmsKitManagement.Contents.EntityContent", b =>
@@ -150,10 +150,6 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
 
-                    b.Property<Guid>("ContentTypeId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ContentTypeId");
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreationTime");
@@ -161,6 +157,10 @@ namespace FS.Abp.Demo.Migrations
                     b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("CreatorId");
+
+                    b.Property<Guid>("EntityContentDefinitionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("EntityContentDefinitionId");
 
                     b.Property<string>("EntityId")
                         .IsRequired()
@@ -177,10 +177,6 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<int>("Index")
-                        .HasColumnType("int")
-                        .HasColumnName("Index");
-
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("LastModificationTime");
@@ -189,19 +185,19 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
 
+                    b.Property<int>("Sequence")
+                        .HasColumnType("int")
+                        .HasColumnName("Sequence");
+
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Value");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ContentTypeId");
-
                     b.HasIndex("CreationTime");
+
+                    b.HasIndex("EntityContentDefinitionId");
 
                     b.ToTable("CmsKitManagementEntityContents");
                 });
@@ -218,7 +214,7 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
 
-                    b.Property<Guid?>("ContentDefinitionId")
+                    b.Property<Guid>("ContentDefinitionId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ContentDefinitionId");
 
@@ -257,6 +253,8 @@ namespace FS.Abp.Demo.Migrations
                         .HasColumnName("TenantId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ContentDefinitionId");
 
                     b.HasIndex("CreationTime");
 
@@ -3309,10 +3307,10 @@ namespace FS.Abp.Demo.Migrations
                     b.ToTable("CmsUsers");
                 });
 
-            modelBuilder.Entity("FS.CmsKitManagement.Contents.ContentType", b =>
+            modelBuilder.Entity("FS.CmsKitManagement.Contents.ContentProperty", b =>
                 {
                     b.HasOne("FS.CmsKitManagement.Contents.ContentDefinition", "ContentDefinition")
-                        .WithMany("ContentTypes")
+                        .WithMany("ContentProperties")
                         .HasForeignKey("ContentDefinitionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -3322,13 +3320,24 @@ namespace FS.Abp.Demo.Migrations
 
             modelBuilder.Entity("FS.CmsKitManagement.Contents.EntityContent", b =>
                 {
-                    b.HasOne("FS.CmsKitManagement.Contents.ContentType", "ContentType")
-                        .WithMany()
-                        .HasForeignKey("ContentTypeId")
+                    b.HasOne("FS.CmsKitManagement.Contents.EntityContentDefinition", "EntityContentDefinition")
+                        .WithMany("EntityContents")
+                        .HasForeignKey("EntityContentDefinitionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ContentType");
+                    b.Navigation("EntityContentDefinition");
+                });
+
+            modelBuilder.Entity("FS.CmsKitManagement.Contents.EntityContentDefinition", b =>
+                {
+                    b.HasOne("FS.CmsKitManagement.Contents.ContentDefinition", "ContentDefinition")
+                        .WithMany()
+                        .HasForeignKey("ContentDefinitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ContentDefinition");
                 });
 
             modelBuilder.Entity("FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation", b =>
@@ -3641,7 +3650,12 @@ namespace FS.Abp.Demo.Migrations
 
             modelBuilder.Entity("FS.CmsKitManagement.Contents.ContentDefinition", b =>
                 {
-                    b.Navigation("ContentTypes");
+                    b.Navigation("ContentProperties");
+                });
+
+            modelBuilder.Entity("FS.CmsKitManagement.Contents.EntityContentDefinition", b =>
+                {
+                    b.Navigation("EntityContents");
                 });
 
             modelBuilder.Entity("FS.CmsKitManagement.MultiLinguals.MultiLingual", b =>

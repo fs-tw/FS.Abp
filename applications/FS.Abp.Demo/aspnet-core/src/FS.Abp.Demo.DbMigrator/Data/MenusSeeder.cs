@@ -36,6 +36,9 @@ namespace FS.Abp.Demo.DbMigrator.Data
     {
         public string PageSlug { get; set; }
         public string ContentDefinitionDisplayName { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public int Sequence { get; set; }
     }
 
     public class MenusSeeder : FS.Abp.Data.Seeder<MenusSeederOptions>, ITransientDependency
@@ -136,11 +139,41 @@ namespace FS.Abp.Demo.DbMigrator.Data
                 foreach (var item in PageContentDefinitionList)
                 {
 
-                    Page page = await this.PageRepository.GetBySlugAsync(item.Key.PageSlug);
-                    ContentDefinition contentDefinition = await this.ContentsStore.ContentDefinition.GetAsync(x => x.DisplayName == item.Key.ContentDefinitionDisplayName);
-
+                    Page page = pages.Where( x => x.Slug == item.Key.PageSlug).Single();
+                    ContentDefinition contentDefinition = (await this.ContentsStore.ContentDefinition.WithDetailsAsync())
+                        .Where(x => x.DisplayName == item.Key.ContentDefinitionDisplayName)
+                        .Single();
                     EntityContentDefinition entityContentDefinition = await ContentsStore.CreateEntityContentDefinitionAsync(page, contentDefinition);
+                    List<EntityContent> entityContents = new List<EntityContent>();
+                    
+                    var contentList = item.ToList().GroupBy(x=>x.Sequence).ToList();
+                    foreach(var content in contentList)
+                    {
+                        var entityContent = await ContentsStore.CreateEntityContentAsync(page, entityContentDefinition, content.Key);
 
+                        try
+                        {
+                            List<ContentProperty> contentProperties = contentDefinition.ContentProperties.OrderBy(x => x.Sequence).ToList();
+                            
+                            entityContent.Properties = (contentProperties.Zip(content.ToList(), (x, y) =>
+                            {
+                                if (x.DisplayName != y.Name)
+                                {
+                                    Exception e = new Exception($"ContentProperty錯誤,DB-ContentProperty:{x.DisplayName},Excel-ContentProperty:{y.Name}");
+                                    throw e;
+                                }
+                                return new Volo.Abp.NameValue(x.DisplayName, y.Value);
+                            })).ToList();
+
+                            entityContents.Add(entityContent);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                        
+                    }
+                    entityContentDefinition.EntityContents = entityContents;
                     entityContentDefinitionList.Add(entityContentDefinition);
                 }
             }
