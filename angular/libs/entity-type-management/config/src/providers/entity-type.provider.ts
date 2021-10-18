@@ -1,5 +1,5 @@
 import { APP_INITIALIZER } from '@angular/core';
-import { EntityTypeInfo, EntityTypeStore } from './entity-type.store';
+import { EntityType, EntityTypeStore } from './entity-type.store';
 import { Fs } from '@fs-tw/entity-type-management/proxy/entity-types';
 import { tap } from 'rxjs/operators';
 
@@ -17,7 +17,7 @@ export function configureStyles(
 ) {
   return () => 
     apiService.getList().pipe(tap(x=>{
-      let result = x.map(y => new EntityTypeInfo(y.name, y.definitions));
+      let result = x.map(y => new EntityType(y.name, y.definitions));
       service.add(result);
     })).toPromise();
   ;

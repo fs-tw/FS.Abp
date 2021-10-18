@@ -1,5 +1,6 @@
 import type { ExtensibleAuditedEntityDto } from '@abp/ng.core';
 import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
+import type { NameValue } from '../../../../volo/abp/models';
 
 export interface ContentDefinitionDto extends ExtensibleAuditedEntityDto<string> {
   entityType?: string;
@@ -7,36 +8,25 @@ export interface ContentDefinitionDto extends ExtensibleAuditedEntityDto<string>
 }
 
 export interface ContentDefinitionGetListDto extends SearchResultRequestDto {
+  entityType?: string;
 }
 
 export interface ContentDefinitionWithDetailsDto extends ContentDefinitionDto {
-  contentTypes: ContentTypeDto[];
+  contentProperties: ContentPropertyDto[];
 }
 
-export interface ContentDto extends ExtensibleAuditedEntityDto<string> {
-  entityType?: string;
-  entityId?: string;
-  contentTypeId?: string;
-  value?: string;
-}
-
-export interface ContentGetListDto extends SearchResultRequestDto {
-}
-
-export interface ContentTypeDto extends ExtensibleAuditedEntityDto<string> {
+export interface ContentPropertyDto extends ExtensibleAuditedEntityDto<string> {
   contentDefinitionId?: string;
+  sequence: number;
   displayName?: string;
   type?: string;
 }
 
-export interface ContentTypeGetListDto extends SearchResultRequestDto {
+export interface ContentPropertyGetListDto extends SearchResultRequestDto {
 }
 
-export interface ContentTypeWithDetailsDto extends ContentTypeDto {
+export interface ContentPropertyWithDetailsDto extends ContentPropertyDto {
   contentDefinition: ContentDefinitionDto;
-}
-
-export interface ContentWithDetailsDto extends ContentDto {
 }
 
 export interface EntityContentDefinitionDto extends ExtensibleAuditedEntityDto<string> {
@@ -46,7 +36,26 @@ export interface EntityContentDefinitionDto extends ExtensibleAuditedEntityDto<s
 }
 
 export interface EntityContentDefinitionGetListDto extends SearchResultRequestDto {
+  entityType?: string;
+  entityId?: string;
 }
 
 export interface EntityContentDefinitionWithDetailsDto extends EntityContentDefinitionDto {
+  contentDefinition: ContentDefinitionWithDetailsDto;
+  entityContents: EntityContentDto[];
+}
+
+export interface EntityContentDto extends ExtensibleAuditedEntityDto<string> {
+  entityType?: string;
+  entityId?: string;
+  entityContentDefinitionId?: string;
+  sequence: number;
+  properties: NameValue[];
+}
+
+export interface EntityContentGetListDto extends SearchResultRequestDto {
+}
+
+export interface EntityContentWithDetailsDto extends EntityContentDto {
+  entityContentDefinition: EntityContentDefinitionDto;
 }

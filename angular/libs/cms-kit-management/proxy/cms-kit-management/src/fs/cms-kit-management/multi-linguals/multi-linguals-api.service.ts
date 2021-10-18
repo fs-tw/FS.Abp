@@ -1,4 +1,4 @@
-import type { MultiLingualGetListDto, MultiLingualTranslationGetListDto, MultiLingualTranslationWithDetailsDto, MultiLingualWithDetailsDto } from './dtos/models';
+import type { MultiLingualFindDto, MultiLingualGetListDto, MultiLingualPatchDto, MultiLingualWithDetailsDto } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -9,19 +9,27 @@ import { Injectable } from '@angular/core';
 export class MultiLingualsApiService {
   apiName = 'cms-kit-management';
 
+  findByInput = (input: MultiLingualFindDto) =>
+    this.restService.request<any, MultiLingualWithDetailsDto>({
+      method: 'GET',
+      url: '/api/cms-kit-management/multi-linguals/multi-lingual/find',
+      params: { entityType: input.entityType, entityId: input.entityId, combineWith: input.combineWith },
+    },
+    { apiName: this.apiName });
+
   getListByMultiLingual = (MultiLingual: MultiLingualGetListDto) =>
     this.restService.request<any, PagedResultDto<MultiLingualWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/multi-linguals/multi-lingual',
-      params: { fields: MultiLingual.fields, value: MultiLingual.value, sorting: MultiLingual.sorting, skipCount: MultiLingual.skipCount, maxResultCount: MultiLingual.maxResultCount },
+      params: { skipCount: MultiLingual.skipCount, maxResultCount: MultiLingual.maxResultCount, page: MultiLingual.page, perPage: MultiLingual.perPage, combineWith: MultiLingual.combineWith, sort: MultiLingual.sort, sortBy: MultiLingual.sortBy, sorting: MultiLingual.sorting },
     },
     { apiName: this.apiName });
 
-  getListByMultiLingualTranslation = (MultiLingualTranslation: MultiLingualTranslationGetListDto) =>
-    this.restService.request<any, PagedResultDto<MultiLingualTranslationWithDetailsDto>>({
-      method: 'GET',
-      url: '/api/cms-kit-management/multi-linguals/multi-lingual-translation',
-      params: { fields: MultiLingualTranslation.fields, value: MultiLingualTranslation.value, sorting: MultiLingualTranslation.sorting, skipCount: MultiLingualTranslation.skipCount, maxResultCount: MultiLingualTranslation.maxResultCount },
+  patchByInput = (input: MultiLingualPatchDto) =>
+    this.restService.request<any, void>({
+      method: 'PUT',
+      url: '/api/cms-kit-management/multi-linguals/multi-lingual/patch',
+      body: input,
     },
     { apiName: this.apiName });
 

@@ -1,4 +1,4 @@
-import type { ContentDefinitionGetListDto, ContentDefinitionWithDetailsDto, ContentGetListDto, ContentTypeGetListDto, ContentTypeWithDetailsDto, ContentWithDetailsDto, EntityContentDefinitionGetListDto, EntityContentDefinitionWithDetailsDto } from './dtos/models';
+import type { ContentDefinitionGetListDto, ContentDefinitionWithDetailsDto, ContentPropertyGetListDto, ContentPropertyWithDetailsDto, EntityContentDefinitionGetListDto, EntityContentDefinitionWithDetailsDto, EntityContentGetListDto, EntityContentWithDetailsDto } from './dtos/models';
 import { RestService } from '@abp/ng.core';
 import type { PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
@@ -9,27 +9,27 @@ import { Injectable } from '@angular/core';
 export class ContentsApiService {
   apiName = 'cms-kit-management';
 
-  getListByContent = (Content: ContentGetListDto) =>
-    this.restService.request<any, PagedResultDto<ContentWithDetailsDto>>({
-      method: 'GET',
-      url: '/api/cms-kit-management/contents/content',
-      params: { fields: Content.fields, value: Content.value, sorting: Content.sorting, skipCount: Content.skipCount, maxResultCount: Content.maxResultCount },
-    },
-    { apiName: this.apiName });
-
   getListByContentDefinition = (ContentDefinition: ContentDefinitionGetListDto) =>
     this.restService.request<any, PagedResultDto<ContentDefinitionWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/content-definition',
-      params: { fields: ContentDefinition.fields, value: ContentDefinition.value, sorting: ContentDefinition.sorting, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount },
+      params: { entityType: ContentDefinition.entityType, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount, page: ContentDefinition.page, perPage: ContentDefinition.perPage, combineWith: ContentDefinition.combineWith, sort: ContentDefinition.sort, sortBy: ContentDefinition.sortBy, sorting: ContentDefinition.sorting },
     },
     { apiName: this.apiName });
 
-  getListByContentType = (ContentType: ContentTypeGetListDto) =>
-    this.restService.request<any, PagedResultDto<ContentTypeWithDetailsDto>>({
+  getListByContentProperty = (ContentProperty: ContentPropertyGetListDto) =>
+    this.restService.request<any, PagedResultDto<ContentPropertyWithDetailsDto>>({
       method: 'GET',
-      url: '/api/cms-kit-management/contents/content-type',
-      params: { fields: ContentType.fields, value: ContentType.value, sorting: ContentType.sorting, skipCount: ContentType.skipCount, maxResultCount: ContentType.maxResultCount },
+      url: '/api/cms-kit-management/contents/content-property',
+      params: { skipCount: ContentProperty.skipCount, maxResultCount: ContentProperty.maxResultCount, page: ContentProperty.page, perPage: ContentProperty.perPage, combineWith: ContentProperty.combineWith, sort: ContentProperty.sort, sortBy: ContentProperty.sortBy, sorting: ContentProperty.sorting },
+    },
+    { apiName: this.apiName });
+
+  getListByEntityContent = (EntityContent: EntityContentGetListDto) =>
+    this.restService.request<any, PagedResultDto<EntityContentWithDetailsDto>>({
+      method: 'GET',
+      url: '/api/cms-kit-management/contents/entity-content',
+      params: { skipCount: EntityContent.skipCount, maxResultCount: EntityContent.maxResultCount, page: EntityContent.page, perPage: EntityContent.perPage, combineWith: EntityContent.combineWith, sort: EntityContent.sort, sortBy: EntityContent.sortBy, sorting: EntityContent.sorting },
     },
     { apiName: this.apiName });
 
@@ -37,7 +37,7 @@ export class ContentsApiService {
     this.restService.request<any, PagedResultDto<EntityContentDefinitionWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/entity-content-definition',
-      params: { fields: EntityContentDefinition.fields, value: EntityContentDefinition.value, sorting: EntityContentDefinition.sorting, skipCount: EntityContentDefinition.skipCount, maxResultCount: EntityContentDefinition.maxResultCount },
+      params: { entityType: EntityContentDefinition.entityType, entityId: EntityContentDefinition.entityId, skipCount: EntityContentDefinition.skipCount, maxResultCount: EntityContentDefinition.maxResultCount, page: EntityContentDefinition.page, perPage: EntityContentDefinition.perPage, combineWith: EntityContentDefinition.combineWith, sort: EntityContentDefinition.sort, sortBy: EntityContentDefinition.sortBy, sorting: EntityContentDefinition.sorting },
     },
     { apiName: this.apiName });
 

@@ -4,7 +4,7 @@ import { Injectable, Injector } from '@angular/core';
 import { AbstractNavTreeService } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
-export class EntityTypeInfo implements Fs.Abp.EntityTypes.EntityType {
+export class EntityType implements Fs.Abp.EntityTypes.EntityType {
   name: string;
   definitions: Array<Volo.CmsKit.EntityTypeDefinition>;
 
@@ -18,7 +18,7 @@ export class EntityTypeInfo implements Fs.Abp.EntityTypes.EntityType {
 }
 
 @Injectable({ providedIn: 'root' })
-export class EntityTypeStore extends AbstractNavTreeService<EntityTypeInfo> {
+export class EntityTypeStore extends AbstractNavTreeService<EntityType> {
   constructor(injector: Injector) {
     super(injector);
     this.add([]);
@@ -32,15 +32,15 @@ export class EntityTypeStore extends AbstractNavTreeService<EntityTypeInfo> {
     );
   }
 
-  getAllEntityType$(): Observable<EntityTypeInfo[]> {
+  getAllEntityType$(): Observable<EntityType[]> {
     return this.flat$;
   }
 
-  getAllEntityType(): EntityTypeInfo[] {
+  getAllEntityType(): EntityType[] {
     return this.flat;
   }
 
-  getEntityTypeByType$(entityType: string): Observable<EntityTypeInfo[]> {
+  getEntityTypeByType$(entityType: string): Observable<EntityType[]> {
     return this.flat$.pipe(
       map((x) => {
         let result = x.filter((y) =>
@@ -51,7 +51,7 @@ export class EntityTypeStore extends AbstractNavTreeService<EntityTypeInfo> {
     );
   }
 
-  getFeatureByName$(featureName: string): Observable<EntityTypeInfo[]> {
+  getFeatureByName$(featureName: string): Observable<EntityType[]> {
     return this.flat$.pipe(map((x) => x.filter((y) => y.name == featureName)));
   }
 }
