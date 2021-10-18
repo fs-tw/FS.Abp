@@ -1,6 +1,18 @@
-import type { PagedAndSortedResultRequestDto } from '@abp/ng.core';
+import type { FilterBase, PaginationFilterBase } from '../../../../auto-filterer/types/models';
+import type { CombineType } from '../../../../auto-filterer/enums/combine-type.enum';
+import type { Sorting } from '../../../../auto-filterer/enums/sorting.enum';
 
-export interface SearchResultRequestDto extends PagedAndSortedResultRequestDto {
-  fields?: string;
-  value?: string;
+export interface FilterRequestDto extends FilterBase {
+  combineWith: CombineType;
+}
+
+export interface SearchResultRequestDto extends PaginationFilterBase {
+  skipCount: number;
+  maxResultCount: number;
+  page: number;
+  perPage: number;
+  combineWith: CombineType;
+  sort?: string;
+  sortBy: Sorting;
+  sorting?: string;
 }

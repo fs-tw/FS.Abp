@@ -5,7 +5,6 @@ export interface ShapeDto extends ExtensibleAuditedEntityDto<string> {
   entityType?: string;
   entityId?: string;
   textTemplateContentId?: string;
-  contentDefinitionId?: string;
 }
 
 export interface ShapeGetListDto extends SearchResultRequestDto {

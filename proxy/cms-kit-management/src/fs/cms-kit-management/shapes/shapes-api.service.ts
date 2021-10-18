@@ -13,7 +13,7 @@ export class ShapesApiService {
     this.restService.request<any, PagedResultDto<ShapeWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/shapes/shape',
-      params: { fields: Shape.fields, value: Shape.value, sorting: Shape.sorting, skipCount: Shape.skipCount, maxResultCount: Shape.maxResultCount },
+      params: { skipCount: Shape.skipCount, maxResultCount: Shape.maxResultCount, page: Shape.page, perPage: Shape.perPage, combineWith: Shape.combineWith, sort: Shape.sort, sortBy: Shape.sortBy, sorting: Shape.sorting },
     },
     { apiName: this.apiName });
 
