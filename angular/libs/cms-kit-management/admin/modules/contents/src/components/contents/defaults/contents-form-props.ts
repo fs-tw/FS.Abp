@@ -3,7 +3,7 @@ import { Validators } from '@angular/forms';
 import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import { of } from 'rxjs';
 
-export const CONTENTS_CREATE_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagement.Contents.Dtos.ContentDto>([
+export const CONTENTS_CREATE_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagement.Contents.Dtos.EntityContentDto>([
   {
     type: ePropType.String,
     name: 'entityType',

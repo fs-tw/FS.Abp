@@ -12,15 +12,15 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
         public string EntityId { get; set; }
 
     }
+    public partial class TranslationDto
+    {
+        public virtual string Culture { get; set; }
 
+        public virtual List<Volo.Abp.NameValue> Properties { get; set; }
+    }
     public partial class MultiLingualPatchDto
     {
-        public partial class TranslationDto
-        {
-            public virtual string Culture { get; set; }
 
-            public virtual List<Volo.Abp.NameValue> Properties { get; set; }
-        }
         public string EntityType { get; set; }
         public string EntityId { get; set; }
 
