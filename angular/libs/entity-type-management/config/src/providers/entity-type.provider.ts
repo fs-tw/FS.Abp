@@ -15,10 +15,10 @@ export const ENTITY_TYPE_PROVIDERS = [
 export function configureStyles(
     service: EntityTypeStore, apiService: Fs.Abp.EntityTypes.EntityTypeApiService
 ) {
-  return () => {
+  return () => 
     apiService.getList().pipe(tap(x=>{
       let result = x.map(y => new EntityTypeInfo(y.name, y.definitions));
       service.add(result);
     })).toPromise();
-  };
+  ;
 }

@@ -13,15 +13,13 @@ namespace FS.CmsKitManagement.MultiLinguals
 {
     public partial class MultiLingual
     {
-        public async Task<TTranslation> GetOrDefaultTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, TEntity entity, string culture = null)
+        public Task<TTranslation> GetOrDefaultTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, TEntity entity, string culture = null)
             where TTranslation : class, new()
             where TEntity : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
             var result = new TTranslation();
 
-            var multiLingual = await store.FindMultiLingualAsync(entity);
-
-            var translation = multiLingual.MultiLingualTranslations
+            var translation = this.MultiLingualTranslations
                 .SingleOrDefault(x => x.Culture == culture);
 
             typeof(TTranslation).GetProperties()
@@ -34,7 +32,7 @@ namespace FS.CmsKitManagement.MultiLinguals
                     p.SetValue(result, value);
                 });
 
-            return result;
+            return Task.FromResult(result);
         }
 
         public async Task AddOrReplaceTranslationAsync<TEntity, TTranslation>(IMultiLingualsStore store, string culture, TEntity entity, TTranslation translation)

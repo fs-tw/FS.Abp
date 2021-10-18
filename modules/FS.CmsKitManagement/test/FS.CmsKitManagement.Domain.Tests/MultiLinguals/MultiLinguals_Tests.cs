@@ -32,7 +32,6 @@ namespace FS.CmsKitManagement.MultiLinguals
 
                 var multiLingualRepository = GetRequiredService<IMultiLingualRepository>();
 
-
                 var multiLingual = (await multiLingualRepository.WithDetailsAsync())
                     .Where(x => x.EntityId == page.Id.ToString())
                     .SingleOrDefault();

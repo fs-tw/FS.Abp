@@ -82,6 +82,7 @@ namespace FS.CmsKitManagement.Contents
                 EntityType = options.GetOrDefault<ContentDefinition>().GetOrDefault<T>().EntityType,
                 EntityId = entity.Id.ToString(),
                 ContentDefinitionId = contentDefinition.Id,
+                ContentDefinition=contentDefinition,
                 TenantId = CurrentTenant.Id
             });
         }

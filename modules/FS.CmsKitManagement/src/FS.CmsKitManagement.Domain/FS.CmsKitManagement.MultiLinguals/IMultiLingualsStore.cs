@@ -13,6 +13,7 @@ namespace FS.CmsKitManagement.MultiLinguals
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>;
 
         Task<MultiLingual> CreateMultiLingualAsync(string entityType, string entityId);
+
         Task<MultiLingual> CreateMultiLingualAsync<T>(T entity)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>;
 

@@ -11,5 +11,6 @@ namespace FS.CmsKitManagement.Contents
 {
     public partial class ContentDefinitionCrudAppService : IContentDefinitionCrudAppService
     {
+
     }
 }
