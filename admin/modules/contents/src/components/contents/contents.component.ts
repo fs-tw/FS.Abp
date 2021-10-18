@@ -30,11 +30,11 @@ class ComponentService implements EntityService<
     private readonly injector: Injector,
   ) {}
 
-  getList(Content: Fs.CmsKitManagement.Contents.Dtos.ContentGetListDto):
-    Observable<PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentWithDetailsDto>>
+  getList(Content: Fs.CmsKitManagement.Contents.Dtos.EntityContentGetListDto):
+    Observable<PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto>>
   {
     let service = this.injector.get(Fs.CmsKitManagement.Contents.ContentsApiService);
-    return service.getListByContent(Content);
+    return service.getListByEntityContent(Content);
   }
 }
 

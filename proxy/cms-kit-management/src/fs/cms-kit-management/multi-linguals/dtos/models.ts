@@ -18,12 +18,7 @@ export interface MultiLingualGetListDto extends SearchResultRequestDto {
 export interface MultiLingualPatchDto {
   entityType?: string;
   entityId?: string;
-  translations: MultiLingualPatchDto+TranslationDto[];
-}
-
-export interface MultiLingualPatchDto+TranslationDto {
-  culture?: string;
-  properties: NameValue[];
+  translations: TranslationDto[];
 }
 
 export interface MultiLingualTranslationDto extends ExtensibleAuditedEntityDto<string> {
@@ -34,4 +29,9 @@ export interface MultiLingualTranslationDto extends ExtensibleAuditedEntityDto<s
 
 export interface MultiLingualWithDetailsDto extends MultiLingualDto {
   multiLingualTranslations: MultiLingualTranslationDto[];
+}
+
+export interface TranslationDto {
+  culture?: string;
+  properties: NameValue[];
 }
