@@ -1,6 +1,6 @@
 import { AbstractNavTreeService } from '@abp/ng.core';
 import { Observable } from 'rxjs';
-import { ExpandOperator } from 'rxjs/internal/operators/expand';
+
 export namespace MultiLingual {
   export interface MultiLingualProperty {
     name: string;

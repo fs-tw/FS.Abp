@@ -5,11 +5,16 @@ import {
   FormPropData,
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
-import { Subscription } from 'rxjs';
+import { forkJoin, Observable, Subscription } from 'rxjs';
 import { setDefaults } from '@fs-tw/theme-alain/extensions';
 import { GenerateForm } from './defaults';
 import { FormGroup } from '@angular/forms';
 import { MultiLingualService } from '../../services/multi-lingual.service';
+import { MultiLingual } from '../../models/models';
+
+export type MultiLingualsProvider<T> = {
+  get: (id: string) => Observable<T>;
+};
 
 @Component({
   selector: 'fs-multi-lingual-modal',
@@ -23,9 +28,10 @@ import { MultiLingualService } from '../../services/multi-lingual.service';
     }
   ],
 })
-export class MultiLingualModalComponent implements OnInit {
+export class MultiLingualModalComponent<T> implements OnInit {
   public static NAME: string = 'MultiLingual.MultiLingualModalComponent';
 
+  @Input() provider: MultiLingualsProvider<T>;
   @Input() entityType: string;
   @Input() entityId: string;
   @Input() title: string;
@@ -34,8 +40,8 @@ export class MultiLingualModalComponent implements OnInit {
   visible: boolean = false;
   defaultForm: FormGroup;
   form: FormGroup;
-  defaultRecord = null;
-  selectedRecord = null;
+  defaultRecord: T;
+  selectedRecord: MultiLingual.MultiLingualWithDetailsDto;
 
   constructor(
     private readonly injector: Injector,
@@ -47,17 +53,22 @@ export class MultiLingualModalComponent implements OnInit {
   ngOnInit(): void {}
 
   ngOnChanges() {
-    if (!this.entityType || !this.entityId) return;
-    this.subs.add(
-      this.service.getMultiLingualByType$(this.entityType).subscribe((x) => {
-        this.subs.add(
-          setDefaults(this.injector, MultiLingualModalComponent.NAME, {
-            editFormProps: GenerateForm(x),
-            createFormProps: GenerateForm(x),
-          }).subscribe((x) => {})
-        );
-      })
-    );
+    if (!this.provider || !this.entityType || !this.entityId) return;
+    forkJoin([
+      this.service.getMultiLingualByType$(this.entityType),
+      this.service.getMultiLingual({ entityId: this.entityId, entityType: this.entityType })
+    ])
+    .subscribe((result) => {
+      this.subs.add(
+        setDefaults(this.injector, MultiLingualModalComponent.NAME, {
+          editFormProps: GenerateForm(result[0]),
+          createFormProps: GenerateForm(result[0]),
+        }).subscribe((x) => {})
+      );
+      this.selectedRecord = result[1];
+      const data = new FormPropData(this.injector, this.selectedRecord);
+      this.form = generateFormFromProps(data);
+    })
   }
 
   ngOnDestroy(): void {
@@ -65,13 +76,12 @@ export class MultiLingualModalComponent implements OnInit {
   }
 
   openModal() {
-    if (!this.entityType || !this.entityId) return;
-    this.defaultRecord = {};
-    const defaultData = new FormPropData(this.injector, this.defaultRecord);
-    this.defaultForm = generateFormFromProps(defaultData);
-    this.selectedRecord = {};
-    const data = new FormPropData(this.injector, this.selectedRecord);
-    this.form = generateFormFromProps(data);
-    this.visible = true;
+    if (!this.provider || !this.entityType || !this.entityId) return;
+    this.provider.get(this.entityId).subscribe(x => {
+      this.defaultRecord = x;
+      const defaultData = new FormPropData(this.injector, this.defaultRecord);
+      this.defaultForm = generateFormFromProps(defaultData);
+      this.visible = true;
+    });
   }
 }
