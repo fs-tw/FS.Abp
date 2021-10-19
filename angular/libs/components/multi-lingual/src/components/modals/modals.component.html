@@ -1,4 +1,4 @@
-<abp-modal [(visible)]="visible">
+<abp-modal [(visible)]="visible" [size]="'lg'">
   <ng-template #abpHeader>
     <h5 class="modal-title" id="modal-basic-title">
       {{  title | abpLocalization }}
@@ -7,14 +7,10 @@
   <ng-template #abpBody>
     <nz-row [nzGutter]="16">
       <nz-col [nzSpan]="12" *ngIf="defaultRecord">
-        <form [formGroup]="defaultForm">
-          <abp-extensible-form [selectedRecord]="defaultRecord"></abp-extensible-form>
-        </form>
+        <ng-container *ngTemplateOutlet="defaultSettings"></ng-container>
       </nz-col>
       <nz-col [nzSpan]="12" *ngIf="selectedRecord">
-        <form [formGroup]="form">
-          <abp-extensible-form [selectedRecord]="selectedRecord"></abp-extensible-form>
-        </form>
+        <ng-container *ngTemplateOutlet="selectedSettings"></ng-container>
       </nz-col>
     </nz-row>
   </ng-template>
@@ -22,8 +18,29 @@
     <button type="button" class="btn btn-secondary" abpClose>
       {{ 'AbpUi::Cancel' | abpLocalization }}
     </button>
-    <abp-button iconClass="fa fa-check">{{
-      'AbpUi::Save' | abpLocalization
-    }}</abp-button>
+    <abp-button iconClass="fa fa-check">
+      {{ 'AbpUi::Save' | abpLocalization }}
+    </abp-button>
   </ng-template>
 </abp-modal>
+
+<ng-template #defaultSettings>
+  <h5>預設值</h5>
+  <div class="form-group" *ngFor="let item of defaultRecord">
+    <label [for]="item.name" style="width: 100%;">{{ item.name }}</label>
+    <p class="pl-3">{{ item.value }}</p>
+  </div>
+</ng-template>
+
+<ng-template #selectedSettings>
+  <nz-select
+    style="width: 100%;"
+    nzShowSearch nzPlaceHolder="請選擇語言包"
+    [(ngModel)]="CurrentCulture" (ngModelChange)="onSelectedLanguageChange()">
+    <nz-option *ngFor="let item of Languages" [nzLabel]="item.displayName" [nzValue]="item.cultureName"></nz-option>
+  </nz-select>
+  <nz-divider nzText="語言設定"></nz-divider>
+  <form [formGroup]="selectedForm">
+    <abp-extensible-form [selectedRecord]="selectedRecord"></abp-extensible-form>
+  </form>
+</ng-template>

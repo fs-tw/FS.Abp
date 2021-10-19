@@ -11,8 +11,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace FS.Abp.Demo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20211018091131_ReInit")]
-    partial class ReInit
+    [Migration("20211018095203_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

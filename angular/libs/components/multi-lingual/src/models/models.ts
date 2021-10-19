@@ -1,4 +1,4 @@
-import { AbstractNavTreeService } from '@abp/ng.core';
+import { AbstractNavTreeService, NameValue } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
 export namespace MultiLingual {
@@ -23,10 +23,6 @@ export namespace MultiLingual {
     entityId?: string;
   }
 
-  export interface NameValue<T = string> {
-    name?: string;
-    value: T;
-  }
   export interface MultiLingualTranslationDto {
     culture?: string;
     properties: NameValue[];

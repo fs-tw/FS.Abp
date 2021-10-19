@@ -40,7 +40,6 @@ export class PagesComponent implements OnInit, OnDestroy {
 
   public static NAME: string = 'Pages.PagesComponent';
   public EntityType = "Volo.CmsKit.Pages.Page";
-  public EntityId: string;
   public apiService: Volo.CmsKit.Admin.Pages.PageAdminService;
   
   subs: Subscription = new Subscription();
@@ -155,7 +154,6 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
 
   featureFunction(method: string, entityId: string) {
-    this.EntityId = entityId;
-    this.multiLingualModal.openModal();
+    this.multiLingualModal.openModal(entityId);
   }
 }

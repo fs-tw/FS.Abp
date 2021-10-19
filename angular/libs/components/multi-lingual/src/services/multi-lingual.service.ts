@@ -28,8 +28,7 @@ export class MultiLingualService {
   ): Observable<MultiLingual.MultiLingualDefinition> {
     return this.EntityTypeStore.flat$.pipe(
       map((x) =>
-        x
-          .find((y) => y.name == MultiLingualService.featureName)
+        x.find((y) => y.name == MultiLingualService.featureName)
           ?.definitions.find((z) => z.entityType == entityType)
       )
     );

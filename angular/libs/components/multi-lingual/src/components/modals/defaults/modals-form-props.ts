@@ -1,7 +1,8 @@
+import { ABP } from '@abp/ng.core';
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
 import { MultiLingual } from '../../../models/models';
 
-export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormProp<any>[]
+export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormProp<ABP.Dictionary<string>>[]
 {
   return FormProp.createMany<any>(
     [
@@ -18,5 +19,5 @@ export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormPro
   );
 }
 
-export const MODELS_EDIT_FORM_PROPS = FormProp.createMany<any>([
+export const MODELS_EDIT_FORM_PROPS = FormProp.createMany<ABP.Dictionary<string>>([
 ]);
