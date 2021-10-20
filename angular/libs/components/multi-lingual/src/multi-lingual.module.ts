@@ -10,6 +10,7 @@ import { MultiLingualService } from './services/multi-lingual.service';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { QuillModule } from 'ngx-quill';
 
 const exportedDeclarations = [
   MultiLingualModalComponent
@@ -33,7 +34,12 @@ export const SHARED_ZORRO_MODULES = [
 @NgModule({
   declarations: [...exportedDeclarations],
   exports: [...exportedDeclarations],
-  imports: [CoreModule, ...SHARED_ZORRO_MODULES, ...SHARED_ABP_MODULES],
+  imports: [
+    CoreModule,
+    ...SHARED_ZORRO_MODULES,
+    ...SHARED_ABP_MODULES,
+    QuillModule
+  ],
   providers: [MultiLingualService],
 })
 export class MultiLingualModule {}

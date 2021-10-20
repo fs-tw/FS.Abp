@@ -13,6 +13,14 @@
         <ng-container *ngTemplateOutlet="selectedSettings"></ng-container>
       </nz-col>
     </nz-row>
+
+    <quill-editor
+      [sanitize]="true"
+      [(ngModel)]="content"
+      (ngModelChange)="onChange()"
+      (onEditorCreated)="onEditorCreate($event)">
+    </quill-editor>
+
   </ng-template>
   <ng-template #abpFooter>
     <button type="button" class="btn btn-secondary" abpClose>
