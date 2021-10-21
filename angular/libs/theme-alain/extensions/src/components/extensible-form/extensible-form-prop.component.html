@@ -130,13 +130,24 @@
     ></textarea>
   </ng-template>
 
-  <ng-template ngSwitchCase="html">
+  <!-- <ng-template ngSwitchCase="html">
     <ng-template [ngTemplateOutlet]="label"></ng-template>
     <quill-editor
       [sanitize]="true"
       [formControlName]="prop.name">
     </quill-editor>
-  </ng-template>
+  </ng-template> -->
+
+  <ng-template
+    *abpReplaceableTemplate="{
+      inputs: {
+        form: {value: form },
+        label: { value: label },
+        prop: { value: prop }
+      },
+      componentKey: getComponent(prop)
+    }"
+  ></ng-template>
 </div>
 
 <ng-template #label let-classes>

@@ -14,12 +14,6 @@ export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormPro
           id: x.name,
           displayName: x.name,
         })
-      }),
-      new FormProp({
-        type: "html" as ePropType,
-        name: "edit",
-        id: "edit",
-        displayName: "Edit",
       })
     ]
   );

@@ -1,5 +1,35 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Injectable, Injector, NgModule } from '@angular/core';
+import { Resolve, RouterModule, Routes } from '@angular/router';
+import { ReplaceableComponentsService } from '@abp/ng.core';
+import { Observable } from 'rxjs';
+import * as _ from 'lodash';
+import { QuillEditorComponent } from '@fs-tw/theme-alain/extensions';
+
+@Injectable({ providedIn: 'root' })
+export class ReplaceComponentsResolver implements Resolve<boolean> {
+  replaceableComponents: Array<any> = [
+    {
+      name: "html",
+      component: QuillEditorComponent,
+    }
+  ];
+  options: Array<any>;
+
+  constructor(injector: Injector, private replaceableComponentsService: ReplaceableComponentsService) {
+    this.options = [];
+  }
+
+  resolve(): boolean | Observable<boolean> | Promise<boolean> {
+    let result = _.uniqBy(this.options.concat(this.replaceableComponents), 'name');
+    result.forEach((item) => {
+      this.replaceableComponentsService.add({
+        key: item.name,
+        component: item.component,
+      });
+    });
+    return true;
+  }
+}
 
 const routes: Routes = [
   {
@@ -27,6 +57,7 @@ const routes: Routes = [
   },
   {
     path: 'cms-kit-management',
+    resolve: { ReplaceComponentsResolver: ReplaceComponentsResolver },
     loadChildren: () =>
       import('@fs-tw/cms-kit-management/admin').then(m => m.CmsKitManagementAdminModule.forLazy()),
   },
@@ -40,5 +71,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
+  providers: [ReplaceComponentsResolver]
 })
 export class AppRoutingModule {}

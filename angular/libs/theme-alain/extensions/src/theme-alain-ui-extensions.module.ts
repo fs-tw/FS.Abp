@@ -19,6 +19,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { ExtensibleFormComponent } from './components/extensible-form/extensible-form.component';
 import { ExtensibleFormPropComponent } from './components/extensible-form/extensible-form-prop.component';
 import { QuillModule } from 'ngx-quill';
+import { QuillEditorComponent } from './widgets/quill-editor/quill-editor.component';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -28,7 +29,9 @@ const PUBLIC = [
   NzTableListDirective,
   NzSelectDefaultDirective,
   ExtensibleFormComponent,
-  ExtensibleFormPropComponent
+  ExtensibleFormPropComponent,
+
+  QuillEditorComponent
 ];
 const PRIVATE = [NzSelectLoadingComponent];
 
