@@ -16,6 +16,8 @@ import { SVModule } from '@delon/abc/sv';
 import { NzSelectDefaultDirective } from './directives/nz-select-default.directive';
 import { NzSelectLoadingComponent } from './directives/nz-select-loading.component';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { ExtensibleFormComponent } from './components/extensible-form/extensible-form.component';
+import { ExtensibleFormPropComponent } from './components/extensible-form/extensible-form-prop.component';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -24,6 +26,8 @@ const PUBLIC = [
   PageToolbarComponent,
   NzTableListDirective,
   NzSelectDefaultDirective,
+  ExtensibleFormComponent,
+  ExtensibleFormPropComponent
 ];
 const PRIVATE = [NzSelectLoadingComponent];
 

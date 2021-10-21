@@ -8,7 +8,7 @@ export const PAGES_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Pag
     name: 'title',
     id:'title',
     displayName: 'CmsKit::Title',
-    validators: () => [Validators.required],
+    validators: () => [Validators.required]
   },
   {
     type: ePropType.String,
@@ -35,6 +35,6 @@ export const PAGES_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Pag
     id: 'style',
     displayName: 'CmsKit::Style',
   }
-]);
+] );
 
 export const PAGES_EDIT_FORM_PROPS = PAGES_CREATE_FORM_PROPS;
