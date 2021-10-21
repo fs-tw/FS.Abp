@@ -7,7 +7,7 @@ export const PAGES_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Pages.
     name: 'title',
     displayName: 'CmsKit::Title',
     sortable: true,
-    columnWidth: 90,
+    columnWidth: 90
   },
   {
     type: ePropType.String,
@@ -37,4 +37,4 @@ export const PAGES_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Pages.
     sortable: true,
     columnWidth: 90,
   }
-]);
+]as any);
