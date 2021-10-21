@@ -18,6 +18,7 @@ import { NzSelectLoadingComponent } from './directives/nz-select-loading.compone
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { ExtensibleFormComponent } from './components/extensible-form/extensible-form.component';
 import { ExtensibleFormPropComponent } from './components/extensible-form/extensible-form-prop.component';
+import { QuillModule } from 'ngx-quill';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -49,6 +50,8 @@ const ZORRO_MODULES = [
     AbpUiExtensionsModule,
     SVModule,
     ...ZORRO_MODULES,
+
+    QuillModule
   ]
 })
 export class ThemeAlainUiExtensionsModule {}

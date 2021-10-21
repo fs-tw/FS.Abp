@@ -67,9 +67,12 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },
+              "node_modules/quill/dist/quill.snow.css",
               "apps/fs/src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -279,13 +282,7 @@
           ],
           "options": {
             "tsConfig": "libs/components/tsconfig.lib.json",
-            "project": "libs/components/ng-package.json",
-            "styles": [
-              "node_modules/quill/dist/quill.snow.css"
-            ],
-            "scripts": [
-              "node_modules/quill/dist/quill.min.js"
-            ]
+            "project": "libs/components/ng-package.json"
           },
           "configurations": {
             "production": {

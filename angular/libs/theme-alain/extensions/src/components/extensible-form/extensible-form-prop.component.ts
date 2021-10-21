@@ -133,7 +133,7 @@ export class ExtensibleFormPropComponent implements OnChanges, AfterViewInit {
     }
   }
 
-  getComponent(prop: FormProp): string {
+  getComponent(prop: any): string {
     switch (prop.type) {
       case ePropType.Boolean:
         return 'checkbox';
@@ -151,12 +151,14 @@ export class ExtensibleFormPropComponent implements OnChanges, AfterViewInit {
         return 'time';
       case ePropType.Typeahead:
         return 'typeahead';
+      case "html":
+        return 'html';
       default:
         return prop.options ? 'select' : 'input';
     }
   }
 
-  getType(prop: FormProp): string {
+  getType(prop: any): string {
     switch (prop.type) {
       case ePropType.Date:
       case ePropType.String:
@@ -169,6 +171,8 @@ export class ExtensibleFormPropComponent implements OnChanges, AfterViewInit {
         return 'email';
       case ePropType.Password:
         return 'password';
+      case "html":
+        return 'html';
       default:
         return 'hidden';
     }

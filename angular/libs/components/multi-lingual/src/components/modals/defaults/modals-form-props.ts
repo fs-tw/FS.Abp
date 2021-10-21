@@ -4,7 +4,7 @@ import { MultiLingual } from '../../../models/models';
 
 export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormProp<ABP.Dictionary<string>>[]
 {
-  return FormProp.createMany<any>(
+  return FormProp.createMany<ABP.Dictionary<string>>(
     [
       ...MODELS_EDIT_FORM_PROPS,
       ...data.properties.map(x => {
@@ -14,6 +14,12 @@ export function GenerateForm(data: MultiLingual.MultiLingualDefinition): FormPro
           id: x.name,
           displayName: x.name,
         })
+      }),
+      new FormProp({
+        type: "html" as ePropType,
+        name: "edit",
+        id: "edit",
+        displayName: "Edit",
       })
     ]
   );

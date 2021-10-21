@@ -129,6 +129,14 @@
       class="form-control"
     ></textarea>
   </ng-template>
+
+  <ng-template ngSwitchCase="html">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
+    <quill-editor
+      [sanitize]="true"
+      [formControlName]="prop.name">
+    </quill-editor>
+  </ng-template>
 </div>
 
 <ng-template #label let-classes>

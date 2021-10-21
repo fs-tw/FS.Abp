@@ -13,14 +13,6 @@
         <ng-container *ngTemplateOutlet="selectedSettings"></ng-container>
       </nz-col>
     </nz-row>
-
-    <quill-editor
-      [sanitize]="true"
-      [(ngModel)]="content"
-      (ngModelChange)="onChange()"
-      (onEditorCreated)="onEditorCreate($event)">
-    </quill-editor>
-
   </ng-template>
   <ng-template #abpFooter>
     <button type="button" class="btn btn-secondary" abpClose>
@@ -49,6 +41,6 @@
   </nz-select>
   <nz-divider nzText="語言設定"></nz-divider>
   <form [formGroup]="selectedForm">
-    <abp-extensible-form [selectedRecord]="selectedRecord"></abp-extensible-form>
+    <nz-extensible-form [selectedRecord]="selectedRecord"></nz-extensible-form>
   </form>
 </ng-template>
