@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abp/ng.theme.lepton-x": "^1.0.0-alpha.2",
     "@angular/animations": "^12.1.0",
     "@angular/common": "^12.1.0",
     "@angular/compiler": "^12.1.0",
