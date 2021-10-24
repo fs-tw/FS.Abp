@@ -15,7 +15,6 @@
         <th
           *ngIf="!!prop.sortable; else nonSort"
           [nzSortFn]="prop.sortable"
-          [nzWidth]="prop.columnWidth + 'px'"
           [nzColumnKey]="prop.name"
           [nzSortDirections]="['ascend', 'descend']"
         >
@@ -23,7 +22,6 @@
         </th>
         <ng-template #nonSort>
           <th
-            [nzWidth]="prop.columnWidth + 'px'"
             [nzColumnKey]="prop.name"
             [nzSortDirections]="['ascend', 'descend']"
           >

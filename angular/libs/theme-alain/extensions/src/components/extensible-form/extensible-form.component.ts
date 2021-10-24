@@ -11,11 +11,12 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { ControlContainer, FormGroup } from '@angular/forms';
-//import { EXTRA_PROPERTIES_KEY } from '../../constants/extra-properties';
-//import { FormPropList } from '../../models/form-props';
-//import { ExtensionsService } from '../../services/extensions.service';
-import { EXTENSIONS_IDENTIFIER,ExtensionsService,FormPropList,EXTRA_PROPERTIES_KEY } from '@abp/ng.theme.shared/extensions';
-//import { selfFactory } from '../../utils/factory.util';
+import {
+  EXTENSIONS_IDENTIFIER,
+  ExtensionsService,
+  FormPropList,
+  EXTRA_PROPERTIES_KEY,
+} from '@abp/ng.theme.shared/extensions';
 import { ExtensibleFormPropComponent } from './extensible-form-prop.component';
 
 export function selfFactory(dependency?: any) {
@@ -42,7 +43,9 @@ export class ExtensibleFormComponent<R = any> {
   @Input()
   set selectedRecord(record: R) {
     const type = !record || JSON.stringify(record) === '{}' ? 'create' : 'edit';
-    this.propList = this.extensions[`${type}FormProps`].get(this.identifier).props;
+    this.propList = this.extensions[`${type}FormProps`].get(
+      this.identifier
+    ).props;
     this.record = record;
   }
 
@@ -51,11 +54,15 @@ export class ExtensibleFormComponent<R = any> {
   record: R;
 
   get form(): FormGroup {
-    return (this.container ? this.container.control : { controls: {} }) as FormGroup;
+    return (
+      this.container ? this.container.control : { controls: {} }
+    ) as FormGroup;
   }
 
   get extraProperties(): FormGroup {
-    return (this.form.controls.extraProperties || { controls: {} }) as FormGroup;
+    return (this.form.controls.extraProperties || {
+      controls: {},
+    }) as FormGroup;
   }
 
   constructor(
@@ -63,6 +70,6 @@ export class ExtensibleFormComponent<R = any> {
     public readonly track: TrackByService,
     private container: ControlContainer,
     private extensions: ExtensionsService,
-    @Inject(EXTENSIONS_IDENTIFIER) private identifier: string,
+    @Inject(EXTENSIONS_IDENTIFIER) private identifier: string
   ) {}
 }
