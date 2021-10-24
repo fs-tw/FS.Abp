@@ -8,7 +8,7 @@ export interface ContentDefinitionDto extends ExtensibleAuditedEntityDto<string>
 }
 
 export interface ContentDefinitionGetListDto extends SearchResultRequestDto {
-  entityType?: string;
+  filter?: string;
 }
 
 export interface ContentDefinitionWithDetailsDto extends ContentDefinitionDto {

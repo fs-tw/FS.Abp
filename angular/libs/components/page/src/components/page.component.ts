@@ -7,8 +7,8 @@ import {
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 
-export type EntityService<T> = {
-  getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<T>>;
+export type EntityService<R> = {
+  getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<R>>;
 };
 
 @Component({
@@ -16,12 +16,12 @@ export type EntityService<T> = {
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.less']
 })
-export class PageComponent<T> {
+export class PageComponent<R> {
   @Input() title: string;
   @Input() list: ListService;
-  @Input() service: EntityService<T>;
+  @Input() service: EntityService<R>;
 
-  data$: Observable<PagedResultDto<T>>;
+  data$: Observable<PagedResultDto<R>>;
 
   constructor(
     private readonly injector: Injector,
@@ -34,7 +34,7 @@ export class PageComponent<T> {
 
   hookToQuery() {
     this.data$ = this.list.hookToQuery((query) =>{
-      return this.service.getList(query);
+      return this.service.getList(query as any);
     });
   }
 

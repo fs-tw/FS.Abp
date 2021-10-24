@@ -10,30 +10,33 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, Observable, of, Subscription } from 'rxjs';
+import { setDefaults } from '@fs-tw/theme-alain/extensions';
 import {
-  setDefaults,
-} from '@fs-tw/theme-alain/extensions';
-import {
-    CONTENTS_CREATE_FORM_PROPS,
-    CONTENTS_EDIT_FORM_PROPS,
-    CONTENTS_ENTITY_ACTIONS,
-    CONTENTS_ENTITY_PROPS,
-    CONTENTS_TOOLBAR_ACTIONS,
+  CONTENTS_CREATE_FORM_PROPS,
+  CONTENTS_EDIT_FORM_PROPS,
+  CONTENTS_ENTITY_ACTIONS,
+  CONTENTS_ENTITY_PROPS,
+  CONTENTS_TOOLBAR_ACTIONS,
 } from './defaults/index';
 import type { PagedResultDto } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService implements EntityService<
-  Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-> {
-  constructor(
-    private readonly injector: Injector,
-  ) {}
+class ComponentService
+  implements
+    EntityService<
+      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+    >
+{
+  constructor(private readonly injector: Injector) {}
 
-  getList(Content: Fs.CmsKitManagement.Contents.Dtos.EntityContentGetListDto):
-    Observable<PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto>>
-  {
-    let service = this.injector.get(Fs.CmsKitManagement.Contents.ContentsApiService);
+  getList(
+    Content: Fs.CmsKitManagement.Contents.Dtos.EntityContentGetListDto
+  ): Observable<
+    PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto>
+  > {
+    let service = this.injector.get(
+      Fs.CmsKitManagement.Contents.ContentsApiService
+    );
     return service.getListByEntityContent(Content);
   }
 }
@@ -62,11 +65,11 @@ export class ContentsComponent implements OnInit {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     this.subs.add(
       setDefaults(injector, ContentsComponent.NAME, {
-        entityAction:  CONTENTS_ENTITY_ACTIONS,
-        toolbarActions:  CONTENTS_TOOLBAR_ACTIONS,
-        entityProps:  CONTENTS_ENTITY_PROPS,
-        createFormProps:  CONTENTS_CREATE_FORM_PROPS,
-        editFormProps:  CONTENTS_EDIT_FORM_PROPS,
+        entityAction: CONTENTS_ENTITY_ACTIONS,
+        toolbarActions: CONTENTS_TOOLBAR_ACTIONS,
+        entityProps: CONTENTS_ENTITY_PROPS,
+        createFormProps: CONTENTS_CREATE_FORM_PROPS,
+        editFormProps: CONTENTS_EDIT_FORM_PROPS,
       }).subscribe((x) => {
         switch (x.method) {
         }
@@ -76,6 +79,5 @@ export class ContentsComponent implements OnInit {
     this.service = new ComponentService(this.injector);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

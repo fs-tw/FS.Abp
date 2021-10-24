@@ -13,7 +13,7 @@ export class ContentsApiService {
     this.restService.request<any, PagedResultDto<ContentDefinitionWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/content-definition',
-      params: { entityType: ContentDefinition.entityType, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount, page: ContentDefinition.page, perPage: ContentDefinition.perPage, combineWith: ContentDefinition.combineWith, sort: ContentDefinition.sort, sortBy: ContentDefinition.sortBy, sorting: ContentDefinition.sorting },
+      params: { filter: ContentDefinition.filter, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount, page: ContentDefinition.page, perPage: ContentDefinition.perPage, combineWith: ContentDefinition.combineWith, sort: ContentDefinition.sort, sortBy: ContentDefinition.sortBy, sorting: ContentDefinition.sorting },
     },
     { apiName: this.apiName });
 
