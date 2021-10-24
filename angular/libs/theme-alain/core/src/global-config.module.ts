@@ -42,7 +42,7 @@ const alainModules: any[] = [AlainThemeModule.forRoot()];
 @NgModule({
   imports: [
     ...alainModules,
-    DelonFormModule.forRoot(),
+    //DelonFormModule.forRoot(),
     //DelonACLModule.forRoot()
   ],
 })

@@ -38,7 +38,7 @@ export class MultiLingualModalComponent<T> implements OnInit {
   @Input() provider: MultiLingualsProvider<T>;
   @Input() entityType: string;
   @Input() title: string;
-  entityId: string;
+  @Input() entityId: string;
 
   subs: Subscription = new Subscription();
   visible: boolean = false;
@@ -82,8 +82,8 @@ export class MultiLingualModalComponent<T> implements OnInit {
   }
 
   openModal(entityId: string) {
-    if (!entityId) return;
-    this.entityId = entityId = "dba2be8d-1c40-3565-0fce-39ffa4fe3a09";
+    //if (!entityId) return;
+    //this.entityId = entityId = "dba2be8d-1c40-3565-0fce-39ffa4fe3a09";
     forkJoin([
       this.provider.get(entityId),
       this.service.getMultiLingual({ entityId: entityId, entityType: this.entityType })
@@ -137,5 +137,9 @@ export class MultiLingualModalComponent<T> implements OnInit {
   }
   onChange() {
     console.log(this.content)
+  }
+  onSave(){
+    //todo call api to save
+    console.log(this.selectedForm);
   }
 }

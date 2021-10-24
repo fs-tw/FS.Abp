@@ -22,9 +22,6 @@ import {
 } from './defaults/index';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
-import { SFSchema,WidgetFactory,SFComponent } from '@delon/form';
-//import { TerminatorService } from '@delon/form/src/terminator.service';
-import { PagesModule } from '../..';
 
 
 @Component({
@@ -35,17 +32,13 @@ import { PagesModule } from '../..';
     {
       provide: EXTENSIONS_IDENTIFIER,
       useValue: PagesComponent.NAME,
-    },
-    WidgetFactory,
-    //TerminatorService
+    }
   ],
 })
 export class PagesComponent implements OnInit, OnDestroy {
   @ViewChild(MultiLingualModalComponent)
   multiLingualModal: MultiLingualModalComponent<Volo.CmsKit.Admin.Pages.PageDto>;
 
-  @ViewChild(SFComponent)
-  sfComponent: SFComponent;
 
   public static NAME: string = 'Pages.PagesComponent';
   public EntityType = "Volo.CmsKit.Pages.Page";
@@ -66,7 +59,6 @@ export class PagesComponent implements OnInit, OnDestroy {
     public readonly list: ListService,
     public entityTypeService: EntityTypeStore,
     private confirmationService: ConfirmationService,
-    private widgetFactory: WidgetFactory,
     private resolver: ComponentFactoryResolver
   ) {
     this.apiService = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
@@ -104,22 +96,7 @@ export class PagesComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
-  @ViewChild('target', { read: ViewContainerRef, static: true })
-  container: ViewContainerRef;
   ngOnInit(): void {
-    // const componentClass = PagesComponent;//this.registry.getType(type) as NzSafeAny;
-    // const componentFactory =
-    //   this.resolver.resolveComponentFactory(componentClass);
-    //this.container.createComponent(componentFactory);
-
-  //  let ref= this.widgetFactory.createWidget(this.container, 'text');
-  //  let widget=ref.instance;
-  //  //widget.formProperty = this.formProperty;
-  //  //widget.schema = this.formProperty.schema;
-  //  //widget.ui = ui;
-  //  widget.id = 'test';
-  //  widget.firstVisual = true;//ui.firstVisual as boolean;
-   //formProperty.widget = widget;
   }
 
   onAdd() {
@@ -154,7 +131,7 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
   edit(formValue) {
     const request: Volo.CmsKit.Admin.Pages.UpdatePageInputDto = {
-      ...formValue,
+      ...this.editForm.value,
     };
     this.apiService
       .update(this.editSelectedRecord.id, request)
@@ -184,54 +161,6 @@ export class PagesComponent implements OnInit, OnDestroy {
     this.multiLingualModal.openModal(entityId);
   }
 
-  check(){
-    console.log(this.sfComponent);
-  }
-
-  schema: SFSchema = {
-    properties: {
-      id1: { type: 'number', ui: { widget: 'text' } },
-      id2: {
-        type: 'number',
-        ui: { widget: 'text', defaultText: 'default text' },
-      },
-      name: {
-        type: 'string',
-        title: 'Name',
-        ui: {
-          addOnAfter: 'RMB',
-          placeholder: 'RMB结算',
-        },
-      },
-      datetime: {
-        type: 'string',
-        format: 'date-time',
-      },
-      unit: { type: 'number', default: 10, ui: { unit: '%' } },
-      status: {
-        type: 'string',
-        title: '状态',
-        enum: [
-          { label: '待支付', value: 'WAIT_BUYER_PAY' },
-          { label: '已支付', value: 'TRADE_SUCCESS' },
-          { label: '交易完成', value: 'TRADE_FINISHED' },
-        ],
-        default: 'WAIT_BUYER_PAY',
-        ui: {
-          widget: 'select',
-        },
-      },
-      single: {
-        type: 'boolean',
-        title: '同意本协议',
-        ui: {
-          widget: 'checkbox',
-        },
-        default: true,
-      },
-    },
-    required: ['name'],
-  };
 
 
 }

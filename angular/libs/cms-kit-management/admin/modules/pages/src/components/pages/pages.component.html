@@ -3,7 +3,6 @@
   [service]="apiService"
   [title]="'CmsKit::Pages'"
 ></fs-page>
-<button (click)="check()">123</button>
 <fs-modal
   [title]="'AbpUi::Create'"
   *ngIf="createModalVisible"
@@ -18,28 +17,24 @@
 
 <fs-modal
   [title]="'AbpUi::Edit'"
-  *ngIf="false"
+  *ngIf="editModalVisible"
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
-  <!-- <fs-modal-info-tab
-    [title]="'CmsKit::Page'"
-    [form]="editForm"
-    [selectedRecord]="editSelectedRecord"
-  ></fs-modal-info-tab> -->
+  <fs-modal-tab [title]="'CmsKit::Page'">
+    <form [formGroup]="editForm">
+      <nz-extensible-form
+        [selectedRecord]="editSelectedRecord"
+      ></nz-extensible-form>
+    </form>
+  </fs-modal-tab>
 </fs-modal>
 
-<fs-multi-lingual-modal [provider]="apiService" [entityType]="EntityType">
+<fs-multi-lingual-modal
+  [provider]="apiService"
+  [entityType]="EntityType"
+  [entityId]="editSelectedRecord?.id"
+>
 </fs-multi-lingual-modal>
-<ng-template #target></ng-template>
-<div *ngIf="editModalVisible">
-
-  <form [formGroup]="editForm">
-    <nz-extensible-form
-    [selectedRecord]="editSelectedRecord"
-  ></nz-extensible-form>
-  </form>
-  
-</div>
 
 
