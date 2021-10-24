@@ -13,9 +13,12 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
-
 import { ThemeLeptonXModule } from '@abp/ng.theme.lepton-x';
 import { SideMenuLayoutModule } from '@abp/ng.theme.lepton-x/layouts';
+import { QuillModule } from 'ngx-quill';
+import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
+import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/config';
+import { CodingManagementConfigModule} from '@fs-tw/coding-management/config';
 
 @NgModule({
   imports: [
@@ -31,9 +34,18 @@ import { SideMenuLayoutModule } from '@abp/ng.theme.lepton-x/layouts';
     IdentityConfigModule.forRoot(),
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
+
+    CmsKitManagementConfigModule.forRoot(),
+    CodingManagementConfigModule.forRoot(),
+
     NgxsModule.forRoot(),
     ThemeLeptonXModule.forRoot(),
     SideMenuLayoutModule.forRoot(),
+    
+    
+    QuillModule.forRoot(),
+    EntityTypeManagementConfigModule.forRoot(),
+
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
