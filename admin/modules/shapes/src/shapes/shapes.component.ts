@@ -10,30 +10,33 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, Observable, of, Subscription } from 'rxjs';
+import { setDefaults } from '@fs-tw/theme-alain/extensions';
 import {
-  setDefaults,
-} from '@fs-tw/theme-alain/extensions';
-import {
-    SHAPES_CREATE_FORM_PROPS,
-    SHAPES_EDIT_FORM_PROPS,
-    SHAPES_ENTITY_ACTIONS,
-    SHAPES_ENTITY_PROPS,
-    SHAPES_TOOLBAR_ACTIONS,
+  SHAPES_CREATE_FORM_PROPS,
+  SHAPES_EDIT_FORM_PROPS,
+  SHAPES_ENTITY_ACTIONS,
+  SHAPES_ENTITY_PROPS,
+  SHAPES_TOOLBAR_ACTIONS,
 } from './defaults/index';
 import type { PagedResultDto } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService implements EntityService<
-  Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-> {
-  constructor(
-    private readonly injector: Injector,
-  ) {}
+class ComponentService
+  implements
+    EntityService<
+      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+    >
+{
+  constructor(private readonly injector: Injector) {}
 
-  getList(Shape: Fs.CmsKitManagement.Shapes.Dtos.ShapeGetListDto):
-    Observable<PagedResultDto<Fs.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto>>
-  {
-    let service = this.injector.get(Fs.CmsKitManagement.Shapes.ShapesApiService);
+  getList(
+    Shape: Fs.CmsKitManagement.Shapes.Dtos.ShapeGetListDto
+  ): Observable<
+    PagedResultDto<Fs.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto>
+  > {
+    let service = this.injector.get(
+      Fs.CmsKitManagement.Shapes.ShapesApiService
+    );
     return service.getListByShape(Shape);
   }
 }
@@ -62,11 +65,11 @@ export class ShapesComponent implements OnInit {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     this.subs.add(
       setDefaults(injector, ShapesComponent.NAME, {
-        entityAction:  SHAPES_ENTITY_ACTIONS,
-        toolbarActions:  SHAPES_TOOLBAR_ACTIONS,
-        entityProps:  SHAPES_ENTITY_PROPS,
-        createFormProps:  SHAPES_CREATE_FORM_PROPS,
-        editFormProps:  SHAPES_EDIT_FORM_PROPS,
+        entityAction: SHAPES_ENTITY_ACTIONS,
+        toolbarActions: SHAPES_TOOLBAR_ACTIONS,
+        entityProps: SHAPES_ENTITY_PROPS,
+        createFormProps: SHAPES_CREATE_FORM_PROPS,
+        editFormProps: SHAPES_EDIT_FORM_PROPS,
       }).subscribe((x) => {
         switch (x.method) {
         }
@@ -76,6 +79,5 @@ export class ShapesComponent implements OnInit {
     this.service = new ComponentService(this.injector);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
