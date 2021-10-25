@@ -18,26 +18,9 @@ const blogsModules = [
     path: '/cms-kit-management/blogs',
     name: eCmsKitManagementRouteNames.Blogs,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
-    requiredPolicy: eCmsManagementPolicyNames.Blogs,
     iconClass: 'fa fa-blog',
     order: 1,
-  },
-  {
-    path: '/cms-kit-management/blogs/blog',
-    name: eCmsKitManagementRouteNames.Blogs + '.blog',
-    parentName: eCmsKitManagementRouteNames.Blogs,
-    requiredPolicy: eCmsManagementPolicyNames.Blogs,
-    iconClass: 'fa fa-blog',
-    order: 1,
-  },
-  {
-    path: '/cms-kit-management/blogs/blog-post',
-    name: eCmsKitManagementRouteNames.Blogs + '.blog-post',
-    parentName: eCmsKitManagementRouteNames.Blogs,
-    requiredPolicy: eCmsManagementPolicyNames.Blogs,
-    iconClass: 'fa fa-blog',
-    order: 2,
-  },
+  }
 ];
 
 const commentsModels = [

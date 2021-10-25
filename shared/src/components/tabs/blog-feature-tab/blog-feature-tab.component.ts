@@ -30,8 +30,6 @@ export class BlogFeatureTabComponent extends ModalTabComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.form);
-    console.log(this.blogFeatures);
   }
 
   isValid() {
