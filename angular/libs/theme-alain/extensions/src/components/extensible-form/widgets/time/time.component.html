@@ -1,4 +1,10 @@
   <form [formGroup]="form">
     <ng-template [ngTemplateOutlet]="label"></ng-template>
-    <nz-time-picker [formControlName]="prop.name"></nz-time-picker>
+    <nz-time-picker
+      #field
+      [id]="prop.id"
+      [abpDisabled]="disabled"
+      [formControlName]="prop.name"
+      style="width: 100%;">
+    </nz-time-picker>
   </form>

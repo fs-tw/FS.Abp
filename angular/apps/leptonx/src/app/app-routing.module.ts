@@ -1,94 +1,5 @@
-import { Injectable, Injector, NgModule } from '@angular/core';
-import { Resolve, RouterModule, Routes } from '@angular/router';
-import {
-  CheckboxComponent,
-  DateComponent,
-  DateTimeComponent,
-  HiddenComponent,
-  InputComponent,
-  MultiselectComponent,
-  QuillEditorComponent,
-  SelectComponent,
-  TextareaComponent,
-  TimeComponent,
-  TypeaheadComponent
-} from '@fs-tw/theme-alain/extensions';
-import { Observable } from 'rxjs';
-import { ReplaceableComponentsService } from '@abp/ng.core';
-import * as _ from 'lodash';
-
-@Injectable({ providedIn: 'root' })
-export class ReplaceComponentsResolver implements Resolve<boolean> {
-  replaceableComponents: Array<any> = [
-    {
-      name: 'checkbox',
-      component: CheckboxComponent,
-    },
-    {
-      name: 'date',
-      component: DateComponent,
-    },
-    {
-      name: 'dateTime',
-      component: DateTimeComponent,
-    },
-    {
-      name: 'hidden',
-      component: HiddenComponent,
-    },
-    {
-      name: 'input',
-      component: InputComponent,
-    },
-    {
-      name: 'multiselect',
-      component: MultiselectComponent,
-    },
-    {
-      name: 'quill-editor',
-      component: QuillEditorComponent,
-    },
-    {
-      name: 'select',
-      component: SelectComponent,
-    },
-    {
-      name: 'textarea',
-      component: TextareaComponent,
-    },
-    {
-      name: 'time',
-      component: TimeComponent,
-    },
-    {
-      name: 'typeahead',
-      component: TypeaheadComponent,
-    },
-
-  ];
-  options: Array<any>;
-
-  constructor(
-    injector: Injector,
-    private replaceableComponentsService: ReplaceableComponentsService
-  ) {
-    this.options = [];
-  }
-
-  resolve(): boolean | Observable<boolean> | Promise<boolean> {
-    let result = _.uniqBy(
-      this.options.concat(this.replaceableComponents),
-      'name'
-    );
-    result.forEach((item:any) => {
-      this.replaceableComponentsService.add({
-        key: item.name,
-        component: item.component,
-      });
-    });
-    return true;
-  }
-}
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -116,7 +27,6 @@ const routes: Routes = [
   },
   {
     path: 'cms-kit-management',
-    resolve: { ReplaceComponentsResolver: ReplaceComponentsResolver },
     loadChildren: () =>
       import('@fs-tw/cms-kit-management/admin').then(m => m.CmsKitManagementAdminModule.forLazy()),
   },
@@ -125,6 +35,5 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
-  providers: [ReplaceComponentsResolver],
 })
 export class AppRoutingModule {}

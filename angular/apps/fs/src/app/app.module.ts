@@ -18,7 +18,6 @@ import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { ThemeAlainUiExtensionsModule } from '@fs-tw/theme-alain/extensions';
-import { QuillModule } from 'ngx-quill';
 import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/config';
 
 @NgModule({
@@ -40,8 +39,6 @@ import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/
     NgxsModule.forRoot(),
     ThemeAlainModule.forRoot(),
     ThemeAlainUiExtensionsModule.forRoot(),
-
-    QuillModule.forRoot(),
 
     EntityTypeManagementConfigModule.forRoot()
   ],

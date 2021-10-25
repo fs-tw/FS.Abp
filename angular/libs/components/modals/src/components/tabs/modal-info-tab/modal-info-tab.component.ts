@@ -2,7 +2,6 @@ import {
   Component,
   Input,
   ChangeDetectionStrategy,
-  Injector,
 } from '@angular/core';
 import { ModalTabComponent } from '../modal-tab.component';
 import { FormGroup } from '@angular/forms';

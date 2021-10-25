@@ -1,10 +1,11 @@
-
-
-  <nz-checkbox-wrapper style="width: 100%;">
-    <div nz-row >
-     <div [formGroup]="form">
-      <label nz-checkbox nzValue="true" [formControlName]="prop.name">{{prop.name}}</label>
-     </div>
-    </div>
-  </nz-checkbox-wrapper>
-
+<form [formGroup]="form">
+  <label
+    #field
+    [id]="prop.id"
+    [abpDisabled]="disabled"
+    nz-checkbox nzValue="true"
+    [formControlName]="prop.name"
+  >
+    {{prop.name}}
+  </label>
+</form>

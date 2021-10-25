@@ -36,6 +36,9 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { EXTENSIBLE_FORM_INITIALIZER } from './providers/extensible-table.initializer';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { ExtensibleTreeComponent } from './components/extensible-tree/extensible-tree.component';
+import { TreeModule } from '@abp/ng.components/tree';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -45,7 +48,8 @@ const PUBLIC = [
   NzTableListDirective,
   NzSelectDefaultDirective,
   ExtensibleFormComponent,
-  ExtensibleFormPropComponent
+  ExtensibleFormPropComponent,
+  ExtensibleTreeComponent
 ];
 const PRIVATE = [NzSelectLoadingComponent];
 
@@ -60,6 +64,7 @@ const ZORRO_MODULES = [
   NzDatePickerModule,
   NzTimePickerModule,
   NzAutocompleteModule,
+  NzSelectModule
 ];
 
 const FORM_WIDGETs = [
@@ -86,10 +91,9 @@ const FORM_WIDGETs = [
     ThemeSharedModule,
     NgxValidateCoreModule,
     AbpUiExtensionsModule,
-    //SVModule,
     ...ZORRO_MODULES,
-
     QuillModule,
+    TreeModule
   ],
 })
 export class ThemeAlainUiExtensionsModule {
@@ -98,9 +102,9 @@ export class ThemeAlainUiExtensionsModule {
       ngModule: ThemeAlainUiExtensionsModule,
       providers: [
         EXTENSIBLE_FORM_INITIALIZER
-         //NG_ALAIN_THEME_STYLES_PROVIDERS,
+        // NG_ALAIN_THEME_STYLES_PROVIDERS,
         // NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
-      ]
+      ],
     };
   }
 }

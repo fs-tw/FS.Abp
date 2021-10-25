@@ -65,7 +65,6 @@ export class ExtensibleFormPropComponent implements OnChanges {
 
   getComponentKey(prop: any): string {
     if (!!prop.componentKey) return prop.componentKey;
-
     return this.getDefaultComponentKey(prop);
   }
 

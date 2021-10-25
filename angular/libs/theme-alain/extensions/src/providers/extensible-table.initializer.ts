@@ -1,5 +1,6 @@
 import { ReplaceableComponentsService } from '@abp/ng.core';
 import { APP_INITIALIZER } from '@angular/core';
+import { QuillModule } from 'ngx-quill';
 import { CheckboxComponent, DateComponent, DateTimeComponent, HiddenComponent, InputComponent, MultiselectComponent, QuillEditorComponent, SelectComponent, TextareaComponent, TimeComponent, TypeaheadComponent } from '../components/extensible-form/widgets';
 
 export const EXTENSIBLE_FORM_INITIALIZER = [
@@ -8,6 +9,7 @@ export const EXTENSIBLE_FORM_INITIALIZER = [
     useFactory: configure,
     deps: [ReplaceableComponentsService],
     multi: true,
+    import: [QuillModule.forRoot()]
   },
 ];
 const replaceableComponents: Array<any> = [

@@ -21,13 +21,10 @@
   [(visible)]="editModalVisible"
   (save)="edit($event)"
 >
-  <fs-modal-tab [title]="'CmsKit::Page'">
-    <form [formGroup]="editForm">
-      <nz-extensible-form
-        [selectedRecord]="editSelectedRecord"
-      ></nz-extensible-form>
-    </form>
-  </fs-modal-tab>
+  <fs-modal-info-tab
+    [title]="'CmsKit::Page'"
+    [form]="editForm"
+  ></fs-modal-info-tab>
 </fs-modal>
 
 <fs-multi-lingual-modal
