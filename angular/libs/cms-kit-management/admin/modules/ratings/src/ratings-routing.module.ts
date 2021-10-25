@@ -3,13 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RatingsComponent } from './components/ratings/ratings.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '', redirectTo: 'rating', pathMatch: 'full' },
-      { path: 'rating', component: RatingsComponent },
-    ],
-  },
+  { path: '', component: RatingsComponent }
 ];
 
 @NgModule({
