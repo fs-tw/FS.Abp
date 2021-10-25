@@ -14,7 +14,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/leptonx",
             "index": "apps/leptonx/src/index.html",
@@ -22,7 +24,10 @@
             "polyfills": "apps/leptonx/src/polyfills.ts",
             "tsConfig": "apps/leptonx/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "allowedCommonJsDependencies": ["chart.js", "js-sha256"],
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "js-sha256"
+            ],
             "assets": [
               "apps/leptonx/src/favicon.ico",
               "apps/leptonx/src/assets"
@@ -60,9 +65,13 @@
               },
               "node_modules/@volo/ngx-lepton-x.lite/styles/sidemenu-layout.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "node_modules/quill/dist/quill.snow.css",
               "apps/leptonx/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
