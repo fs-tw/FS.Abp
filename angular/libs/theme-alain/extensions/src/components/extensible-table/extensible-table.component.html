@@ -7,14 +7,15 @@
 >
   <thead>
     <tr>
-      <th [nzWidth]="'50px'"></th>
-      <th *ngIf="haveRowDetail" [nzWidth]="'50px'"></th>
+      <th [nzWidth]="'15px'"></th>
+      <th *ngIf="haveRowDetail" [nzWidth]="'15px'"></th>
       <ng-container
         *ngFor="let prop of propList; let i = index; trackBy: trackByFn"
       >
         <th
           *ngIf="!!prop.sortable; else nonSort"
           [nzSortFn]="prop.sortable"
+          [nzWidth]="prop.columnWidth + 'px'"
           [nzColumnKey]="prop.name"
           [nzSortDirections]="['ascend', 'descend']"
         >
@@ -22,6 +23,7 @@
         </th>
         <ng-template #nonSort>
           <th
+            [nzWidth]="prop.columnWidth + 'px'"
             [nzColumnKey]="prop.name"
             [nzSortDirections]="['ascend', 'descend']"
           >
@@ -51,9 +53,9 @@
           *ngFor="let prop of propList; let i = index; trackBy: trackByFn"
         >
           <td (click)="selected(row)">
-            <span class="ant-table-rep__title" *ngIf="!scroll">
+            <!-- <span class="ant-table-rep__title" *ngIf="!scroll">
               {{ prop.displayName | abpLocalization }}
-            </span>
+            </span> -->
             <div
               *ngIf="row['_' + prop.name].visible"
               [innerHTML]="row['_' + prop.name].value | async"

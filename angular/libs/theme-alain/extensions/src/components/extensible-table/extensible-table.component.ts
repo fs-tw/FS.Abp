@@ -16,7 +16,7 @@ import {
   OnInit
 } from '@angular/core';
 import { ExtensibleTableComponent as AbpExtensibleTableComponent } from '@abp/ng.theme.shared/extensions'
-const DEFAULT_ACTIONS_COLUMN_WIDTH = 100;
+const DEFAULT_ACTIONS_COLUMN_WIDTH = 50;
 import { NzTableRowDetailDirective } from '../../directives/nz-table-row-detail.directive'
 
 
@@ -26,9 +26,9 @@ import { NzTableRowDetailDirective } from '../../directives/nz-table-row-detail.
   styleUrls: ['./extensible-table.component.css'],
   templateUrl: './extensible-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    '[class.ant-table-rep]': `responsive`,
-  },
+  // host: {
+  //   '[class.ant-table-rep]': `responsive`,
+  // },
 })
 export class ExtensibleTableComponent<R = any> extends AbpExtensibleTableComponent<R> implements OnInit {
   @Input()  responsive: boolean = true;
