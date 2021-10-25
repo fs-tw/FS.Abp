@@ -14,7 +14,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -27,6 +32,12 @@
     ]
   },
   "projects": {
+    "fs": {
+      "tags": []
+    },
+    "theme-alain": {
+      "tags": []
+    },
     "cms-kit-management": {
       "tags": []
     },
@@ -37,18 +48,6 @@
       "tags": []
     },
     "entity-type-management": {
-      "tags": []
-    },
-    "fs": {
-      "tags": []
-    },
-    "leptonx": {
-      "tags": []
-    },
-    "proxy": {
-      "tags": []
-    },
-    "theme-alain": {
       "tags": []
     }
   }

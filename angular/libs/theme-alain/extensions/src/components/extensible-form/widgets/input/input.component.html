@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <ng-template *ngTemplateOutlet="label"></ng-template>
+  <input
+    #field
+    nz-input
+    [type]="getType(prop)"
+    [formControlName]="prop.name"
+    [autocomplete]="prop.autocomplete"
+    class="form-control"
+  />
+</form>

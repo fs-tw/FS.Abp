@@ -24,6 +24,7 @@
     "@npm/cms-kit-management": "file:npm/cms-kit-management",
     "@npm/ng-alain": "file:npm/ng-alain",
     "@nrwl/angular": "12.8.0",
+    "ngx-quill": "^14.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

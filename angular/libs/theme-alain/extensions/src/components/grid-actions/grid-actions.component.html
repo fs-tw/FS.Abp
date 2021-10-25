@@ -8,8 +8,8 @@
     <ul nz-menu>
       <ng-container *ngFor="let action of actionList; trackBy: trackByFn">
         <ng-container *abpPermission="action.permission">
-          <li nz-menu-item *ngIf="action.visible(data)">
-            <a (click)="action.action(data)">{{
+          <li nz-menu-item *ngIf="action.visible(data)" (click)="action.action(data)">
+            <a>{{
               action.text | abpLocalization
             }}</a>
           </li>

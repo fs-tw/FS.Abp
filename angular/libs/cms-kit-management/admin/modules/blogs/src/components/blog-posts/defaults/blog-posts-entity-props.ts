@@ -1,5 +1,4 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
-import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
 export const BLOG_POSTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Blogs.BlogPostDto>([

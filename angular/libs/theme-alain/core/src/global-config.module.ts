@@ -3,6 +3,7 @@ import { AlainThemeModule } from '@delon/theme';
 import { AlainConfig, ALAIN_CONFIG } from '@delon/util';
 import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
 import { LANG_PROVIDES } from './providers/lang.provider';
+import { DelonFormModule } from '@delon/form';
 
 // #region reuse-tab
 /**
@@ -40,19 +41,19 @@ import { LANG_PROVIDES } from './providers/lang.provider';
 const alainModules: any[] = [AlainThemeModule.forRoot()];
 @NgModule({
   imports: [
-    ...alainModules
+    ...alainModules,
+    //DelonFormModule.forRoot(),
     //DelonACLModule.forRoot()
   ],
 })
 export class GlobalConfigModule {
-  constructor() {
-  }
+  constructor() {}
 
   static forRoot(): ModuleWithProviders<GlobalConfigModule> {
     return {
       ngModule: GlobalConfigModule,
       providers: [
-        ...LANG_PROVIDES
+        ...LANG_PROVIDES,
         //{ provide: ALAIN_CONFIG, useValue: alainConfig },
         //{ provide: NZ_CONFIG, useValue: ngZorroConfig }
       ],

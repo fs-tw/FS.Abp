@@ -10,9 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, Observable, of, Subscription } from 'rxjs';
-import {
-  setDefaults,
-} from '@fs-tw/theme-alain/extensions';
+import { setDefaults } from '@fs-tw/theme-alain/extensions';
 import {
   ATTACH_MENTMEDIA_CREATE_FORM_PROPS,
   ATTACH_MENTMEDIA_EDIT_FORM_PROPS,
@@ -23,17 +21,22 @@ import {
 import type { PagedResultDto } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService implements EntityService<
-  Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-> {
-  constructor(
-    private readonly injector: Injector,
-  ) {}
+class ComponentService
+  implements
+    EntityService<
+      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+    >
+{
+  constructor(private readonly injector: Injector) {}
 
-  getList(AttachmentMedia: Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaGetListDto):
-    Observable<PagedResultDto<Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto>>
-  {
-    let service = this.injector.get(Fs.CmsKitManagement.MediaDescriptors.MediaDescriptorsApiService);
+  getList(
+    AttachmentMedia: Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaGetListDto
+  ): Observable<
+    PagedResultDto<Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto>
+  > {
+    let service = this.injector.get(
+      Fs.CmsKitManagement.MediaDescriptors.MediaDescriptorsApiService
+    );
     return service.getListByAttachmentMedia(AttachmentMedia);
   }
 }

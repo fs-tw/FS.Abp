@@ -1,7 +1,29 @@
-import { AbstractNavTreeService } from '@abp/ng.core';
+import { AbstractNavTreeService, NameValue } from '@abp/ng.core';
 import { Observable } from 'rxjs';
-import { ExpandOperator } from 'rxjs/internal/operators/expand';
+import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
+
 export namespace MultiLingual {
+  export class MultiLingualProperty {
+    static mapToFormProp(property: MultiLingual.MultiLingualProperty): FormProp {
+      return {
+        ...new FormProp({
+          type: property.dataType.toLowerCase() as ePropType,
+          name: property.name,
+          id: property.name,
+          displayName: property.name,
+        }),
+        ...{
+          componentKey: property['componentKey'],
+        },
+      };
+    }
+    static mapToFormProps(
+      properties: MultiLingual.MultiLingualProperty[]
+    ): FormProp[] {
+      return properties.map(MultiLingualProperty.mapToFormProp);
+    }
+  }
+
   export interface MultiLingualProperty {
     name: string;
     dataType: string;
@@ -23,10 +45,6 @@ export namespace MultiLingual {
     entityId?: string;
   }
 
-  export interface NameValue<T = string> {
-    name?: string;
-    value: T;
-  }
   export interface MultiLingualTranslationDto {
     culture?: string;
     properties: NameValue[];

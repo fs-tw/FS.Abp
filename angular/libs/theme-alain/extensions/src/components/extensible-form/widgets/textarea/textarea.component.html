@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
+    <textarea
+      #field
+      [id]="prop.id"
+      [formControlName]="prop.name"
+      [abpDisabled]="disabled"
+      [readonly]="readonly"
+      class="form-control"
+    ></textarea>
+</form>

@@ -40,7 +40,7 @@ namespace FS.Abp.Demo.DbMigrator.Data
 
             await mediaDescriptors.SeedAsync(context, option =>
             {
-                option.Ignore = true;
+                option.Ignore = false;
                 option.FileName = "Files/MediaDescriptors.xlsx";
                 option.SheetName = "Page";
                 option.MediaDirectoryPath = "Files/MediaDescriptors";

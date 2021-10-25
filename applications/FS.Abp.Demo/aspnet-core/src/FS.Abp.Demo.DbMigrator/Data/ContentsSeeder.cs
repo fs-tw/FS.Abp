@@ -44,47 +44,38 @@ namespace FS.Abp.Demo.DbMigrator.Data
                 return;
 
             List<ContentDefinition> contentDefinitionList = new List<ContentDefinition>();
-            List<ContentProperty> contentPropertyList = new List<ContentProperty>();
+            List<ContentProperty> contentPropertyList = null;
 
             foreach (var sheetName in Options.sheetNameList)
             {
                 var content = VirtualFileNpoiReader.ReadToTreeNode<ContentInfo>(Options.FileName, sheetName);
-                await convertToDefinitionWithTypeAsync(content, sheetName: sheetName);
+                await convertToDefinitionWithTypeAsync(content, sheetName);
             }
-            await ContentsStore.ContentDefinition.InsertManyAsync(contentDefinitionList,true);
+            await ContentsStore.ContentDefinition.InsertManyAsync(contentDefinitionList, true);
 
-            //TODO patch
-            await ContentsStore.ContentProperty.InsertManyAsync(contentPropertyList, true);
-
-            async Task convertToDefinitionWithTypeAsync(List<ContentInfo> data, ContentDefinition definition = default, string sheetName = null)
+            async Task convertToDefinitionWithTypeAsync(List<ContentInfo> data, string sheetName)
             {
                 foreach (var item in data)
                 {
                     ContentDefinition contentDefinition=null;
-                    if (item.Children.Count > 0)
+                    
+                    switch (sheetName)
                     {
-                        //definition
-                        
-                        switch (sheetName)
-                        {
-                            case "BlogPost":
-                                contentDefinition = await ContentsStore.CreateContentDefinitionAsync<BlogPost>(item.DisplayName);
-                                break;
-                            case "Page":
-                                contentDefinition = await ContentsStore.CreateContentDefinitionAsync<Page>(item.DisplayName);
-                                break;
-                        }
+                        case "BlogPost":
+                            contentDefinition = await ContentsStore.CreateContentDefinitionAsync<BlogPost>(item.DisplayName);
+                            break;
+                        case "Page":
+                            contentDefinition = await ContentsStore.CreateContentDefinitionAsync<Page>(item.DisplayName);
+                            break;
+                    }
 
-                        contentDefinitionList.Add(contentDefinition);
-                        //await ContentsStore.ContentDefinition.InsertAsync(contentDefinition, true);
-                        await convertToDefinitionWithTypeAsync(item.Children, definition: contentDefinition, sheetName: sheetName);
-                    }
-                    else
+                    contentPropertyList = ( await item.Children.SelectAsync(async x =>
                     {
-                        //type
-                        ContentProperty contentType = await ContentsStore.CreateContentPropertyAsync(definition, item.DisplayName, Enum.Parse<DataType>(item.Type));
-                        contentPropertyList.Add(contentType);
-                    }
+                        return await ContentsStore.CreateContentPropertyAsync(contentDefinition, x.DisplayName, Enum.Parse<DataType>(x.Type),Int32.Parse(x.Code.Substring(5,4)));
+                    })).ToList();
+                    
+                    contentDefinition.PatchContentProperties(contentPropertyList);
+                    contentDefinitionList.Add(contentDefinition);
                 }
             }
         }

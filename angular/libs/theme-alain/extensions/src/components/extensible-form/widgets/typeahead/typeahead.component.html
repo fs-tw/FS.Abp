@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
+    <input
+        nz-input
+        [(ngModel)]="inputValue"
+        [formControlName]="prop.name"
+        [nzAutocomplete]="auto"
+        (ngModelChange)="onChange($event)"
+      />
+      <nz-autocomplete  [nzDataSource]="filteredOptions$ | async" nzBackfill #auto></nz-autocomplete>
+</form>

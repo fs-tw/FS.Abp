@@ -10,31 +10,34 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, Observable, of, Subscription } from 'rxjs';
+import { setDefaults } from '@fs-tw/theme-alain/extensions';
 import {
-  setDefaults,
-} from '@fs-tw/theme-alain/extensions';
-import {
-    CONTENT_DEFINITION_CREATE_FORM_PROPS,
-    CONTENT_DEFINITION_EDIT_FORM_PROPS,
-    CONTENT_DEFINITION_ENTITY_ACTIONS,
-    CONTENT_DEFINITION_ENTITY_PROPS,
-    CONTENT_DEFINITION_TOOLBAR_ACTIONS,
-    GetDefaults,
+  CONTENT_DEFINITION_CREATE_FORM_PROPS,
+  CONTENT_DEFINITION_EDIT_FORM_PROPS,
+  CONTENT_DEFINITION_ENTITY_ACTIONS,
+  CONTENT_DEFINITION_ENTITY_PROPS,
+  CONTENT_DEFINITION_TOOLBAR_ACTIONS,
+  GetDefaults,
 } from './defaults/index';
-import type { PagedResultDto } from '@abp/ng.core';
+import type { PagedResultDto, ABP } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService implements EntityService<
-  Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-> {
-  constructor(
-    private readonly injector: Injector,
-  ) {}
+class ComponentService
+  implements
+    EntityService<
+      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+    >
+{
+  constructor(private readonly injector: Injector) {}
 
-  getList(ContentDefinition: Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto):
-    Observable<PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionWithDetailsDto>>
-  {
-    let service = this.injector.get(Fs.CmsKitManagement.Contents.ContentsApiService);
+  getList(
+    ContentDefinition: Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto
+  ): Observable<
+    PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionWithDetailsDto>
+  > {
+    let service = this.injector.get(
+      Fs.CmsKitManagement.Contents.ContentsApiService
+    );
     return service.getListByContentDefinition(ContentDefinition);
   }
 }
@@ -63,8 +66,9 @@ export class ContentDefinitionComponent implements OnInit {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     this.service = new ComponentService(this.injector);
 
-    let apiInput = {} as Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto;
-    this.service.getList(apiInput).subscribe(x => {
+    let apiInput =
+      {} as Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto;
+    this.service.getList(apiInput).subscribe((x) => {
       this.subs.add(
         setDefaults(injector, ContentDefinitionComponent.NAME, {
           entityAction: CONTENT_DEFINITION_ENTITY_ACTIONS,
@@ -80,6 +84,5 @@ export class ContentDefinitionComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

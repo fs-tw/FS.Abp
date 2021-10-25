@@ -1,0 +1,13 @@
+<div class="form-group" *abpPermission="prop.permission">
+  <ng-template
+    *abpReplaceableTemplate="{
+      inputs: {
+        form: { value: form },
+        prop: { value: prop },
+        data: { value: data },
+        first: { value: first }
+      },
+      componentKey: getComponentKey(prop)
+    }"
+  ></ng-template>
+</div>

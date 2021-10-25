@@ -1,0 +1,17 @@
+
+<form [formGroup]="form">
+  <ng-template [ngTemplateOutlet]="label"></ng-template>
+  <select
+    [id]="prop.id"
+    [formControlName]="prop.name"
+    multiple="multiple"
+    class="custom-select form-control"
+  >
+    <option
+      *ngFor="let option of options$ | async; trackBy: track.by('value')"
+      [ngValue]="option.value"
+    >
+      {{ option.key }}
+    </option>
+  </select>
+</form>
