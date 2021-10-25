@@ -1,7 +1,6 @@
 import { eLayoutType, RoutesService } from '@abp/ng.core';
 import { eThemeSharedRouteNames } from '@abp/ng.theme.shared';
 import { APP_INITIALIZER } from '@angular/core';
-import { Reactions } from 'libs/cms-kit-management/proxy/cms-kit/src/volo/cms-kit/public';
 import { eCmsManagementPolicyNames } from '../enums/policy-names';
 import { eCmsKitManagementRouteNames } from '../enums/route-names';
 
@@ -49,15 +48,7 @@ const commentsModels = [
     requiredPolicy: eCmsManagementPolicyNames.Comments,
     iconClass: 'fa fa-comments',
     order: 2,
-  },
-  {
-    path: '/cms-kit-management/comments/comment',
-    name: eCmsKitManagementRouteNames.Comments + '.comment',
-    parentName: eCmsKitManagementRouteNames.Comments,
-    requiredPolicy: eCmsManagementPolicyNames.Comments,
-    iconClass: 'fa fa-comments',
-    order: 1,
-  },
+  }
 ];
 const pagesModels = [
   {
@@ -67,15 +58,7 @@ const pagesModels = [
     requiredPolicy: eCmsManagementPolicyNames.Pages,
     iconClass: 'fa fa-file-alt',
     order: 3,
-  },
-  {
-    path: '/cms-kit-management/pages/page',
-    name: eCmsKitManagementRouteNames.Pages + '.page',
-    parentName: eCmsKitManagementRouteNames.Pages,
-    requiredPolicy: eCmsManagementPolicyNames.Pages,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+  }
 ];
 const tagsModels = [
   {
@@ -85,15 +68,7 @@ const tagsModels = [
     requiredPolicy: eCmsManagementPolicyNames.Tags,
     iconClass: 'fa fa-tags',
     order: 4,
-  },
-  {
-    path: '/cms-kit-management/tags/tag',
-    name: eCmsKitManagementRouteNames.Tags + '.tag',
-    parentName: eCmsKitManagementRouteNames.Tags,
-    requiredPolicy: eCmsManagementPolicyNames.Tags,
-    iconClass: 'fa fa-tags',
-    order: 1,
-  },
+  }
 ];
 const ratingsModels = [
   {
@@ -102,14 +77,7 @@ const ratingsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 5,
-  },
-  {
-    path: '/cms-kit-management/ratings/rating',
-    name: eCmsKitManagementRouteNames.Ratings + '.rating',
-    parentName: eCmsKitManagementRouteNames.Ratings,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+  }
 ];
 const reactionsModels = [
   {
@@ -118,14 +86,7 @@ const reactionsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 6,
-  },
-  {
-    path: '/cms-kit-management/reactions/reaction',
-    name: eCmsKitManagementRouteNames.Reactions + '.reaction',
-    parentName: eCmsKitManagementRouteNames.Reactions,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+  }
 ];
 const mediaDescriptorsModels = [
   {
@@ -134,14 +95,7 @@ const mediaDescriptorsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 7,
-  },
-  {
-    path: '/cms-kit-management/media-descriptors/media-descriptor',
-    name: eCmsKitManagementRouteNames.MediaDescriptors + '.media-descriptor',
-    parentName: eCmsKitManagementRouteNames.MediaDescriptors,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+  }
 ];
 const menusModels = [
   {
@@ -149,15 +103,8 @@ const menusModels = [
     name: eCmsKitManagementRouteNames.Menus,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
-    order: 7,
-  },
-  {
-    path: '/cms-kit-management/menus/menu',
-    name: eCmsKitManagementRouteNames.Menus + '.menu',
-    parentName: eCmsKitManagementRouteNames.Menus,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+    order: 8,
+  }
 ];
 const contentsModels = [
   {
@@ -165,15 +112,8 @@ const contentsModels = [
     name: eCmsKitManagementRouteNames.Contents,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
-    order: 8,
-  },
-  {
-    path: '/cms-kit-management/contents/content',
-    name: eCmsKitManagementRouteNames.Contents + '.content',
-    parentName: eCmsKitManagementRouteNames.Contents,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+    order: 9,
+  }
 ];
 const shapesModels = [
   {
@@ -181,15 +121,9 @@ const shapesModels = [
     name: eCmsKitManagementRouteNames.Shapes,
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
-    order: 8,
-  },
-  {
-    path: '/cms-kit-management/shapes/shape',
-    name: eCmsKitManagementRouteNames.Shapes + '.shape',
-    parentName: eCmsKitManagementRouteNames.Shapes,
-    iconClass: 'fa fa-file-alt',
-    order: 1,
-  },
+    order: 10,
+    
+  }
 ];
 
 export function configureRoutes(routes: RoutesService) {

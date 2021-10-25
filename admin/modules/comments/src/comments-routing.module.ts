@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommentsComponent } from './components/comments/comments.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'comment', pathMatch: 'full' },
-  { path: 'comment', component: CommentsComponent },
+  { path: '', component: CommentsComponent },
 ];
 
 @NgModule({

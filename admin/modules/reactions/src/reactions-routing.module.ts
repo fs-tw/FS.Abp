@@ -3,13 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactionsComponent } from './components/reactions/reactions.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '', redirectTo: 'reaction', pathMatch: 'full' },
-      { path: 'reaction', component: ReactionsComponent },
-    ],
-  },
+  { path: '', component: ReactionsComponent },
 ];
 
 @NgModule({

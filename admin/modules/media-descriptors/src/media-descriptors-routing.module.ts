@@ -3,13 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '', redirectTo: 'media-descriptor', pathMatch: 'full' },
-      { path: 'media-descriptor', component: MainComponent },
-    ],
-  },
+  { path: '', component: MainComponent },
 ];
 
 @NgModule({

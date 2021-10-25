@@ -7,13 +7,13 @@ export const BLOGS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Blogs.
     name: 'name',
     displayName: 'CmsKit::Name',
     sortable: true,
-    columnWidth: 90,
+    columnWidth: 50,
   },
   {
     type: ePropType.String,
     name: 'slug',
     displayName: 'CmsKit::Slug',
     sortable: true,
-    columnWidth: 90,
+    columnWidth: 50,
   }
 ]);
