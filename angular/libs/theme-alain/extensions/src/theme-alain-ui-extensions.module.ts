@@ -1,5 +1,5 @@
 import { CoreModule } from '@abp/ng.core';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { NzTableListDirective } from './directives/nz-table-list.directive';
 import { ExtensibleTableComponent } from './components/extensible-table/extensible-table.component';
 import { GridActionsComponent } from './components/grid-actions/grid-actions.component';
@@ -12,7 +12,6 @@ import { UiExtensionsModule as AbpUiExtensionsModule } from '@abp/ng.theme.share
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NzTableRowDetailDirective } from './directives/nz-table-row-detail.directive';
-import { SVModule } from '@delon/abc/sv';
 import { NzSelectDefaultDirective } from './directives/nz-select-default.directive';
 import { NzSelectLoadingComponent } from './directives/nz-select-loading.component';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
@@ -36,6 +35,7 @@ import { SelectComponent } from './components/extensible-form/widgets/select/sel
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { EXTENSIBLE_FORM_INITIALIZER } from './providers/extensible-table.initializer';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -45,9 +45,7 @@ const PUBLIC = [
   NzTableListDirective,
   NzSelectDefaultDirective,
   ExtensibleFormComponent,
-  ExtensibleFormPropComponent,
-
-  QuillEditorComponent,
+  ExtensibleFormPropComponent
 ];
 const PRIVATE = [NzSelectLoadingComponent];
 
@@ -77,6 +75,7 @@ const FORM_WIDGETs = [
   TimeComponent,
   TypeaheadComponent,
   SelectComponent,
+  QuillEditorComponent
 ];
 
 @NgModule({
@@ -87,10 +86,21 @@ const FORM_WIDGETs = [
     ThemeSharedModule,
     NgxValidateCoreModule,
     AbpUiExtensionsModule,
-    SVModule,
+    //SVModule,
     ...ZORRO_MODULES,
 
     QuillModule,
   ],
 })
-export class ThemeAlainUiExtensionsModule {}
+export class ThemeAlainUiExtensionsModule {
+  static forRoot(): ModuleWithProviders<ThemeAlainUiExtensionsModule> {
+    return {
+      ngModule: ThemeAlainUiExtensionsModule,
+      providers: [
+        EXTENSIBLE_FORM_INITIALIZER
+         //NG_ALAIN_THEME_STYLES_PROVIDERS,
+        // NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
+      ]
+    };
+  }
+}

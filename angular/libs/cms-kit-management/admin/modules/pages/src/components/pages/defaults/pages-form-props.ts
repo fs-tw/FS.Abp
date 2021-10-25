@@ -31,10 +31,10 @@ export const PAGES_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Pag
     displayName: 'CmsKit::Script',
   },
   {
-    type: ePropType.Text,
+    type: ePropType.String,
     name: 'style',
     id: 'style',
-    displayName: 'CmsKit::Style',
+    displayName: 'CmsKit::Style'
     // options: data => {
     //   //const localization = data.getInjected(LocalizationService);
 

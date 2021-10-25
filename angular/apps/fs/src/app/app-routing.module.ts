@@ -122,7 +122,7 @@ const routes: Routes = [
   },
   {
     path: 'cms-kit-management',
-    resolve: { ReplaceComponentsResolver: ReplaceComponentsResolver },
+    //resolve: { ReplaceComponentsResolver: ReplaceComponentsResolver },
     loadChildren: () =>
       import('@fs-tw/cms-kit-management/admin').then((m) =>
         m.CmsKitManagementAdminModule.forLazy()
