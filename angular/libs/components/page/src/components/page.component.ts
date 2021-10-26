@@ -40,6 +40,7 @@ export class PageComponent<R> {
 
   hookToQuery() {
     this.data$ = this.list.hookToQuery((query) =>{
+      query = { ...query, ...this.form.value }
       return this.service.getList(query as any);
     });
   }

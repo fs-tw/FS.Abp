@@ -9,9 +9,10 @@
       type="search"
       class="form-control"
       [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-      [formControlName]="'input'"
+      [formControlName]="'filter'"
     />
   </ng-template>
+  
   <ng-template fsPageSearchTemplate let-listService>
     <button class="btn btn-primary" (click)="listService.get()">
       <i class="fas fa-search"></i>

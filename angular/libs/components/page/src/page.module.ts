@@ -5,9 +5,9 @@ import { PageModule as AbpPageModule } from '@abp/ng.components/page';
 import { ThemeAlainUiExtensionsModule } from '@fs-tw/theme-alain/extensions';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { UiExtensionsModule } from '@abp/ng.theme.shared/extensions'
-import { PageSearchFormTemplateDirective, PageSearchTemplateDirective } from './components/templates';
+import { PageSearchTemplateDirective } from './components/templates';
 
-const exportedDeclarations = [PageComponent, PageSearchTemplateDirective, PageSearchFormTemplateDirective];
+const exportedDeclarations = [PageComponent, PageSearchTemplateDirective];
 
 @NgModule({
   imports: [

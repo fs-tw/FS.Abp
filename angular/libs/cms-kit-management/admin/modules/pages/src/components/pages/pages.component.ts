@@ -69,7 +69,7 @@ export class PagesComponent implements OnInit, OnDestroy {
       this.feature = x.map(y => y.name);
 
       this.searchForm = this.fb.group({
-        input: "主任辦公室",
+        filter: "",
       });
 
       this.subs.add(
