@@ -39,6 +39,8 @@ import { EXTENSIBLE_FORM_INITIALIZER } from './providers/extensible-table.initia
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { ExtensibleTreeComponent } from './components/extensible-tree/extensible-tree.component';
 import { TreeModule } from '@abp/ng.components/tree';
+import { UploadComponent } from './components/extensible-form/widgets/upload/upload.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -64,7 +66,8 @@ const ZORRO_MODULES = [
   NzDatePickerModule,
   NzTimePickerModule,
   NzAutocompleteModule,
-  NzSelectModule
+  NzSelectModule,
+  NzUploadModule
 ];
 
 const FORM_WIDGETs = [
@@ -80,7 +83,8 @@ const FORM_WIDGETs = [
   TimeComponent,
   TypeaheadComponent,
   SelectComponent,
-  QuillEditorComponent
+  QuillEditorComponent,
+  UploadComponent
 ];
 
 @NgModule({

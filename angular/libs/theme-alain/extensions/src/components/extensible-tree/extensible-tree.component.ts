@@ -9,7 +9,7 @@ import { BaseNode, TreeAdapter } from '@abp/ng.components/tree';
 })
 export class ExtensibleTreeComponent implements OnInit {
   @Input()
-  flatData: Array<BaseNode> = [];
+  flat: Array<BaseNode> = [];
 
   @Output()
   add: EventEmitter<any> = new EventEmitter();
@@ -34,7 +34,7 @@ export class ExtensibleTreeComponent implements OnInit {
   }
 
   ngOnChanges() {
-    this.treeAdapter = new TreeAdapter(this.flatData as BaseNode[]);
+    this.treeAdapter = new TreeAdapter(this.flat as BaseNode[]);
     this.nodes = this.treeAdapter.getTree();
     this.expandedKeys = [...this.expandedKeys];
   }

@@ -5,7 +5,7 @@
 ></fs-page>
 
 <nz-extensible-tree
-  [flatData]="treeData"
+  [flat]="treeData"
   (add)="onAddSubItem($event.origin.entity.id)"
   (edit)="onEdit($event.origin.entity.id)"
   (delete)="delete($event.origin.entity.id, $event.origin.entity.displayName)"
