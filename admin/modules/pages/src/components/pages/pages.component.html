@@ -2,7 +2,23 @@
   [list]="list"
   [service]="apiService"
   [title]="'CmsKit::Pages'"
-></fs-page>
+  [form]="searchForm"
+>
+  <ng-template fsPageSearchFormTemplate let-form>
+    <input
+      type="search"
+      class="form-control"
+      [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+      [formControlName]="'input'"
+    />
+  </ng-template>
+  <ng-template fsPageSearchTemplate let-listService>
+    <button class="btn btn-primary" (click)="listService.get()">
+      <i class="fas fa-search"></i>
+    </button>
+  </ng-template>
+</fs-page>
+
 <fs-modal
   [title]="'AbpUi::Create'"
   *ngIf="createModalVisible"
