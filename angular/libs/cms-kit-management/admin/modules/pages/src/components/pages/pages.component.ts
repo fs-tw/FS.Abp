@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, Inject, Injector, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, Injector, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import {
@@ -8,7 +8,7 @@ import {
 } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { Subscription } from 'rxjs';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, switchMap, take } from 'rxjs/operators';
 import {
   setDefaults,
@@ -22,7 +22,6 @@ import {
 } from './defaults/index';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
-
 
 @Component({
   selector: 'fs-tw-pages',
@@ -54,7 +53,9 @@ export class PagesComponent implements OnInit, OnDestroy {
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Pages.PageDto;
 
+  searchForm: FormGroup = this.fb.group({});
   constructor(
+    private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
     public entityTypeService: EntityTypeStore,
@@ -66,6 +67,11 @@ export class PagesComponent implements OnInit, OnDestroy {
 
     this.subs.add(this.entityTypeService.getEntityTypeByType$(this.EntityType).subscribe(x => {
       this.feature = x.map(y => y.name);
+
+      this.searchForm = this.fb.group({
+        input: "主任辦公室",
+      });
+
       this.subs.add(
         setDefaults(injector, PagesComponent.NAME, {
           entityAction: AddToolbarAction(this.feature),

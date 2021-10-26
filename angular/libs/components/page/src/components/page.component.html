@@ -3,19 +3,38 @@
     <ng-template #searchTpl>
       <div class="row entry-row">
         <div class="col">
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control"
-              [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-              [(ngModel)]="list.filter"
-            />
-            <div class="input-group-append">
-              <button class="btn btn-primary" (click)="list.get()">
-                <i class="fas fa-search"></i>
-              </button>
+          <form [formGroup]="form">
+            <div class="input-group">
+              <ng-container
+                *ngTemplateOutlet="
+                  customSearchFormTemplate ? customSearchFormTemplate?.template : defaultSearchFormTemplate;
+                  context: { $implicit: form }">
+              </ng-container>
+
+              <ng-template #defaultSearchFormTemplate let-form>
+                <input
+                  type="search"
+                  class="form-control"
+                  [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+                  [formControlName]="'input'"
+                />
+              </ng-template>
+
+              <ng-container
+                *ngTemplateOutlet="
+                  customSearchTemplate ? customSearchTemplate?.template : defaultSearchTemplate;
+                  context: { $implicit: list }">
+              </ng-container>
+
+              <ng-template #defaultSearchTemplate let-listService>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" (click)="listService.get()">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </ng-template>
             </div>
-          </div>
+          </form>
         </div>
         <div class="col">
           <abp-page-toolbar></abp-page-toolbar>
