@@ -4,19 +4,22 @@
   [title]="'CmsKit::Pages'"
   [form]="searchForm"
 >
-  <ng-template fsPageSearchFormTemplate let-form>
-    <input
-      type="search"
-      class="form-control"
-      [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-      [formControlName]="'filter'"
-    />
-  </ng-template>
-  
-  <ng-template fsPageSearchTemplate let-listService>
-    <button class="btn btn-primary" (click)="listService.get()">
-      <i class="fas fa-search"></i>
-    </button>
+  <ng-template PageSearchTemplate>
+    <form [formGroup]="searchForm">
+      <div class="input-group">
+        <input
+          type="search"
+          class="form-control"
+          [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+          [formControlName]="'filter'"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="list.get()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
   </ng-template>
 </fs-page>
 
