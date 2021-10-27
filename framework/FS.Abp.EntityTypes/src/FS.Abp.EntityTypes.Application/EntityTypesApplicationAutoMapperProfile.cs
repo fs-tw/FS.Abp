@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FS.Abp.EntityTypes.Dtos;
 
 namespace FS.Abp.EntityTypes
 {
@@ -9,6 +10,7 @@ namespace FS.Abp.EntityTypes
             /* You can configure your AutoMapper mapping configuration here.
              * Alternatively, you can split your mapping configurations
              * into multiple profile classes for a better organization. */
+            this.CreateMap<DefaultEntityDefinition, EntityDefinitionDto>().ForMember(t => t.EntityType, o => o.MapFrom(s => s.Entity.FullName));
         }
     }
 }

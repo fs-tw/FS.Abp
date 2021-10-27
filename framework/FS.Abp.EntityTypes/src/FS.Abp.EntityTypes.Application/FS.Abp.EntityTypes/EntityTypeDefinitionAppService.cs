@@ -8,7 +8,7 @@ namespace FS.Abp.EntityTypes
     {
         protected IEntityTypeStore EntityTypeDefinitionStore => this.LazyServiceProvider.LazyGetRequiredService<IEntityTypeStore>();
 
-        public List<EntityType> GetList()
+        public List<EntityType> GetEntityTypeDefinitionList()
         {
             return EntityTypeDefinitionStore.GetList();
         }

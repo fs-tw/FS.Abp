@@ -2,7 +2,7 @@ import { Fs, Volo } from '@fs-tw/entity-type-management/proxy/entity-types';
 import { map } from 'rxjs/operators';
 import { Injectable, Injector } from '@angular/core';
 import { AbstractNavTreeService } from '@abp/ng.core';
-import { Observable } from 'rxjs';
+import { combineLatest, forkJoin, Observable } from 'rxjs';
 
 export class EntityType implements Fs.Abp.EntityTypes.EntityType {
   name: string;
@@ -54,4 +54,5 @@ export class EntityTypeStore extends AbstractNavTreeService<EntityType> {
   getFeatureByName$(featureName: string): Observable<EntityType[]> {
     return this.flat$.pipe(map((x) => x.filter((y) => y.name == featureName)));
   }
+
 }

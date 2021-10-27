@@ -2,6 +2,7 @@
 using Volo.Abp.Modularity;
 using Volo.Abp.Authorization;
 using Volo.Abp.MediatR;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FS.CmsKitManagement
 {

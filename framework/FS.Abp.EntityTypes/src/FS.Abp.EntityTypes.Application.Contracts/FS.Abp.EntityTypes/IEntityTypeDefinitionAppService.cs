@@ -4,6 +4,6 @@ namespace FS.Abp.EntityTypes
 {
     public interface IEntityTypeDefinitionAppService
     {
-        List<EntityType> GetList();
+        List<EntityType> GetEntityTypeDefinitionList();
     }
 }
