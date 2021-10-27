@@ -5,7 +5,6 @@ import {
 } from '@abp/ng.theme.shared/extensions';
 import { Validators } from '@angular/forms';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
-import { of } from 'rxjs';
 
 export function CreateFormProp<R>(
   options: FormPropOptions<R>[]
