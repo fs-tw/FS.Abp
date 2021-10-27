@@ -104,6 +104,14 @@
     "@abp/ng.theme.shared" "~4.4.3"
     tslib "^2.0.0"
 
+"@abp/ng.theme.lepton-x@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@abp/ng.theme.lepton-x/-/ng.theme.lepton-x-1.0.0-alpha.2.tgz#8422837050b4611cf3118920c23503fe063fa8c5"
+  integrity sha512-ayjb5AXbsk6Y9ScH2eKIjOISrX2cHlK3XMWGeF0taiXuHqtcSxR6taQfkzJdV0YS5DtaDDeVa4U8fSCHFXaAMQ==
+  dependencies:
+    "@volo/ngx-lepton-x.lite" "1.0.0-alpha.2"
+    tslib "^2.1.0"
+
 "@abp/ng.theme.shared@~4.4.3":
   version "4.4.3"
   resolved "https://registry.npmjs.org/@abp/ng.theme.shared/-/ng.theme.shared-4.4.3.tgz"
@@ -3080,6 +3088,23 @@
     "@typescript-eslint/types" "4.28.5"
     eslint-visitor-keys "^2.0.0"
 
+"@volo/ngx-lepton-x.core@1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@volo/ngx-lepton-x.core/-/ngx-lepton-x.core-1.0.0-alpha.2.tgz#4bb2ac4032ed9b44a3f50a8f7dfb7cfd8d02a39a"
+  integrity sha512-FfT34ojpNZ/mhNfpg3eevhMrfXe3s+q51EGXIPqW7WHZwuq7dSAb44X1gF+8iRRbCC7h5M1OV/S3uGk1NN81OA==
+  dependencies:
+    bootstrap-icons "^1.5.0"
+    ng-observe "^1.0.1"
+    tslib "^2.0.0"
+
+"@volo/ngx-lepton-x.lite@1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@volo/ngx-lepton-x.lite/-/ngx-lepton-x.lite-1.0.0-alpha.2.tgz#77ef0591e83ba0a419b522729c98f6e9dbc70fff"
+  integrity sha512-DGayNfBKa8qgRPrZr9ufwP5w36G1YNXWh6qLJdqA5G8tFrlnYKlzezRuNmwiunF2j0FLjBRZpgWRRbEUBO4pwA==
+  dependencies:
+    "@volo/ngx-lepton-x.core" "1.0.0-alpha.2"
+    tslib "^2.0.0"
+
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.1.tgz"
@@ -3938,6 +3963,11 @@ boolbase@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+
+bootstrap-icons@^1.5.0:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.6.1.tgz#66c87beff34840efa5f248b3091c82d9348864e8"
+  integrity sha512-MNpF89+njCdVJePDRbCd2DrUusqIyNsPlBrdKqBEXAvFZpwb+Gc8k2VlyF2ueiDQn1PoeTSg9UqQNgx8tGqHAA==
 
 bootstrap@~4.6.0:
   version "4.6.0"
@@ -9885,6 +9915,13 @@ ng-alain@^12.2.1:
   version "12.2.3"
   resolved "https://registry.yarnpkg.com/ng-alain/-/ng-alain-12.2.3.tgz#a2d8631f80dbc5d50d8e7b268a35c56dc427ed22"
   integrity sha512-aawglJjuZJLaRhkOtEfy12n6PzEW1+MNieGSjcimAFwuycZDihfKkKfdaJtBie3gXG0oo8WhX0Xns+kL4yYLIg==
+
+ng-observe@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ng-observe/-/ng-observe-1.1.0.tgz#56714d40d33bc4bd7343d00e6db1387a53ee56b3"
+  integrity sha512-PNZwzcRmAK4dRZsR7GKirqd+kzHEi41Om3i5as+Q0jJCyrlE3Au7nLtEh4KugCroqNnG1c9UB8HMAKFHxSo4Uw==
+  dependencies:
+    tslib "^2.0.0"
 
 ng-packagr@^12.1.0:
   version "12.2.3"
