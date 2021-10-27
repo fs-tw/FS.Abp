@@ -3,38 +3,29 @@
     <ng-template #searchTpl>
       <div class="row entry-row">
         <div class="col">
-          <form [formGroup]="form">
-            <div class="input-group">
-              <ng-container
-                *ngTemplateOutlet="
-                  customSearchFormTemplate ? customSearchFormTemplate?.template : defaultSearchFormTemplate;
-                  context: { $implicit: form }">
-              </ng-container>
-
-              <ng-template #defaultSearchFormTemplate let-form>
-                <input
-                  type="search"
-                  class="form-control"
-                  [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-                  [formControlName]="'filter'"
-                />
-              </ng-template>
-
-              <ng-container
-                *ngTemplateOutlet="
-                  customSearchTemplate ? customSearchTemplate?.template : defaultSearchTemplate;
-                  context: { $implicit: list }">
-              </ng-container>
-
-              <ng-template #defaultSearchTemplate let-listService>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" (click)="listService.get()">
-                    <i class="fas fa-search"></i>
-                  </button>
+          <ng-container
+              *ngTemplateOutlet="customSearchTemplate
+                ? customSearchTemplate?.template
+                : defaultSearchTemplate;">
+            </ng-container>
+  
+            <ng-template #defaultSearchTemplate>
+              <form [formGroup]="form">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+                    [formControlName]="'filter'"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" (click)="list.get()">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
                 </div>
-              </ng-template>
-            </div>
-          </form>
+              </form>
+            </ng-template>
         </div>
         <div class="col">
           <abp-page-toolbar></abp-page-toolbar>

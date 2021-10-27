@@ -41,6 +41,7 @@ import { ExtensibleTreeComponent } from './components/extensible-tree/extensible
 import { TreeModule } from '@abp/ng.components/tree';
 import { UploadComponent } from './components/extensible-form/widgets/upload/upload.component';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -67,7 +68,8 @@ const ZORRO_MODULES = [
   NzTimePickerModule,
   NzAutocompleteModule,
   NzSelectModule,
-  NzUploadModule
+  NzUploadModule,
+  NzModalModule
 ];
 
 const FORM_WIDGETs = [

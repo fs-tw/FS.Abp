@@ -6,12 +6,14 @@ import {
 } from '@angular/core';
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
 import { Observable } from 'rxjs';
-import { PageSearchFormTemplateDirective, PageSearchTemplateDirective } from './templates';
+import { PageSearchTemplateDirective } from './templates';
 import { FormGroup } from '@angular/forms';
 
 export type EntityService<R> = {
   getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<R>>;
 };
+
+export type SearchService = {};
 
 @Component({
   selector: 'fs-page',
@@ -20,7 +22,6 @@ export type EntityService<R> = {
 })
 export class PageComponent<R> {
   @ContentChild(PageSearchTemplateDirective) customSearchTemplate: PageSearchTemplateDirective;
-  @ContentChild(PageSearchFormTemplateDirective) customSearchFormTemplate: PageSearchFormTemplateDirective;
 
   @Input() title: string;
   @Input() list: ListService;

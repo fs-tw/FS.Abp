@@ -1,8 +1,8 @@
 import { Directive, TemplateRef } from "@angular/core";
 
 @Directive({
-    selector: '[fsPageSearchFormTemplate],[fs-page-search-form-template]',
+    selector: '[PageSearchTemplate],[page-search-template]',
 })
-export class PageSearchFormTemplateDirective {
+export class PageSearchTemplateDirective {
     constructor(public template: TemplateRef<any>) {}
 }
