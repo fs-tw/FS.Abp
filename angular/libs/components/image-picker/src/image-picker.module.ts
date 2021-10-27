@@ -8,7 +8,6 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { ImagePickerComponent } from './components/image-picker/image-picker.component';
 
-
 const COMPONENTS = [
   ImagePickerComponent
 ]
@@ -17,7 +16,6 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     FormsModule,
-    
     NzModalModule,
     NzUploadModule,
     NzIconModule

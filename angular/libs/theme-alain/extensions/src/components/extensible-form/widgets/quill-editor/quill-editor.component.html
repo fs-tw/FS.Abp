@@ -5,15 +5,15 @@
       [formControlName]="prop.name"
       (onEditorCreated)="onEditorCreate($event)">
     </quill-editor>
-</form>
 
-<nz-modal
-  [(nzVisible)]="isVisible"
-  [nzTitle]="modalTitle | abpLocalization"
-  [nzCancelText]="null"
-  [nzOkLoading]="loading"
-  [nzCancelLoading]="loading"
-  (nzOnCancel)="handleClose()"
-  (nzOnOk)="handleOk()">
-  <fs-ng-alain-image-picker [maxImageCount]="1"></fs-ng-alain-image-picker>
-</nz-modal>
+    <nz-modal
+      [(nzVisible)]="isVisible"
+      [nzTitle]="'上傳圖片'"
+      [nzCancelText]="null"
+      [nzOkLoading]="loading"
+      [nzCancelLoading]="loading"
+      (nzOnCancel)="handleClose()"
+      (nzOnOk)="handleOk()">
+      <fs-image-picker [maxImageCount]="1"></fs-image-picker>
+    </nz-modal>
+</form>
