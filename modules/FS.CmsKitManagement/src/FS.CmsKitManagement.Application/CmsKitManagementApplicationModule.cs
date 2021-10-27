@@ -34,6 +34,27 @@ namespace FS.CmsKitManagement
             });
 
             AddEventHandlers(context.Services);
+
+            Configure<EntityDefinitionOptions>(o =>
+            {
+                o.GetOrAdd<Volo.CmsKit.Blogs.Blog>(
+                    a => { },
+                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Blogs.BlogAdminAppService, Volo.CmsKit.Blogs.Blog, Volo.CmsKit.Admin.Blogs.CreateBlogDto>());
+
+                o.GetOrAdd<Volo.CmsKit.Blogs.BlogPost>(
+                    a => { },
+                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Blogs.BlogPostAdminAppService, Volo.CmsKit.Blogs.BlogPost, Volo.CmsKit.Admin.Blogs.CreateBlogPostDto>());
+
+                o.GetOrAdd<Volo.CmsKit.Tags.Tag>(
+                    a => { },
+                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Tags.TagAdminAppService, Volo.CmsKit.Tags.Tag, Volo.CmsKit.Admin.Tags.TagCreateDto>());
+
+                o.GetOrAdd<Volo.CmsKit.Pages.Page>(
+                    a => { },
+                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Pages.PageAdminAppService, Volo.CmsKit.Pages.Page, Volo.CmsKit.Admin.Pages.CreatePageInputDto>());
+            });
+
+
             //context.Services.AddMediatR(
             //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
             //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)

@@ -5,7 +5,9 @@ import { MultiLingual } from '../../../models/models';
 export function GenerateForm(
   data: MultiLingual.MultiLingualDefinition
 ): FormProp<ABP.Dictionary<string>>[] {
+  
   data.properties[1]['componentKey']='quill-editor';
+
   return [...MODELS_EDIT_FORM_PROPS, ...MultiLingual.MultiLingualProperty.mapToFormProps(data.properties)];
 }
 

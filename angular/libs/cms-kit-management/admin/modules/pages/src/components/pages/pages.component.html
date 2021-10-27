@@ -1,27 +1,7 @@
-<fs-page
-  [list]="list"
-  [service]="apiService"
-  [title]="'CmsKit::Pages'"
-  [form]="searchForm"
->
-  <ng-template PageSearchTemplate>
-    <form [formGroup]="searchForm">
-      <div class="input-group">
-        <input
-          type="search"
-          class="form-control"
-          [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-          [formControlName]="'filter'"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-primary" (click)="list.get()">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-  </ng-template>
-</fs-page>
+<div *ngIf="this.ready$ | async">
+  <fs-page [list]="list" [service]="apiService" [title]="'CmsKit::Pages'" [form]="searchForm">
+  </fs-page>
+</div>
 
 <fs-modal
   [title]="'AbpUi::Create'"
