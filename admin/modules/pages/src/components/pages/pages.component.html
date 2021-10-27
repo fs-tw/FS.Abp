@@ -1,8 +1,8 @@
-<fs-page
-  [list]="list"
-  [service]="apiService"
-  [title]="'CmsKit::Pages'"
-></fs-page>
+<div *ngIf="this.ready$ | async">
+  <fs-page [list]="list" [service]="apiService" [title]="'CmsKit::Pages'">
+  </fs-page>
+</div>
+
 <fs-modal
   [title]="'AbpUi::Create'"
   *ngIf="createModalVisible"
@@ -36,5 +36,3 @@
   [entityId]="editSelectedRecord?.id"
 >
 </fs-multi-lingual-modal>
-
-
