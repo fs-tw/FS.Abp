@@ -1,4 +1,13 @@
-import { Component, ComponentFactoryResolver, Injector, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ComponentFactoryResolver,
+  Inject,
+  Injector,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import {
@@ -7,10 +16,29 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
-import { Subscription } from 'rxjs';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { filter, switchMap, take } from 'rxjs/operators';
 import {
+  BehaviorSubject,
+  combineLatest,
+  forkJoin,
+  Observable,
+  of,
+  Subject,
+  Subscription,
+  zip,
+} from 'rxjs';
+import { FormGroup } from '@angular/forms';
+import {
+  delay,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+  take,
+  tap,
+} from 'rxjs/operators';
+import {
+  ActionEvent,
+  ActionEventHub,
   setDefaults,
 } from '@fs-tw/theme-alain/extensions';
 import {
@@ -19,8 +47,10 @@ import {
   PAGES_EDIT_FORM_PROPS,
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
+  CreateFormProp,
 } from './defaults/index';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
+import { Fs } from '@fs-tw/entity-type-management/proxy/entity-types';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 
 @Component({
@@ -31,18 +61,17 @@ import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
     {
       provide: EXTENSIONS_IDENTIFIER,
       useValue: PagesComponent.NAME,
-    }
+    },
   ],
 })
 export class PagesComponent implements OnInit, OnDestroy {
   @ViewChild(MultiLingualModalComponent)
   multiLingualModal: MultiLingualModalComponent<Volo.CmsKit.Admin.Pages.PageDto>;
 
-
-  public static NAME: string = 'Pages.PagesComponent';
-  public EntityType = "Volo.CmsKit.Pages.Page";
+  public static NAME: string = 'Volo.CmsKit.Pages.Page'; //'Pages.PagesComponent';
+  public EntityType = 'Volo.CmsKit.Pages.Page';
   public apiService: Volo.CmsKit.Admin.Pages.PageAdminService;
-  
+
   subs: Subscription = new Subscription();
   feature: Array<string>;
 
@@ -52,58 +81,67 @@ export class PagesComponent implements OnInit, OnDestroy {
   editModalVisible = false;
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Pages.PageDto;
+  ready$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   searchForm: FormGroup = this.fb.group({});
   constructor(
     private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
-    public entityTypeService: EntityTypeStore,
-    private confirmationService: ConfirmationService,
-    private resolver: ComponentFactoryResolver
+    public entityTypeStore: EntityTypeStore,
+    private confirmationService: ConfirmationService
   ) {
     this.apiService = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
-    this.entityTypeService = injector.get(EntityTypeStore);
+    this.entityTypeStore = injector.get(EntityTypeStore);
 
-    this.subs.add(this.entityTypeService.getEntityTypeByType$(this.EntityType).subscribe(x => {
-      this.feature = x.map(y => y.name);
-
-      this.searchForm = this.fb.group({
-        filter: "辦公室",
-      });
-
-      this.subs.add(
-        setDefaults(injector, PagesComponent.NAME, {
-          entityAction: AddToolbarAction(this.feature),
-          toolbarActions: PAGES_TOOLBAR_ACTIONS,
-          entityProps: PAGES_ENTITY_PROPS,
-          createFormProps: PAGES_CREATE_FORM_PROPS,
-          editFormProps: PAGES_EDIT_FORM_PROPS,
-        }).subscribe((x) => {
-          switch (x.method) {
-            case 'Create':
-              this.onAdd();
-              break;
-            case 'Edit':
-              this.onEdit(x.data.record.id);
-              break;
-            case 'Delete':
-              this.delete(x.data.record.id, x.data.record.title);
-              break;
-            default:
-              this.featureFunction(x.method, x.data.record.id);
-              break;
+    let setDefaults$ = combineLatest([
+      //api.getEntityDefinitionList(),
+      this.entityTypeStore.getEntityTypeByType$(this.EntityType),
+    ]).pipe(
+        mergeMap(([entityType]) => {
+        this.searchForm = this.fb.group({
+            filter: "辦公室",
+        });
+        this.feature = entityType.map((y) => y.name);
+        let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
+          injector,
+          PagesComponent.NAME,
+          {
+            entityAction: AddToolbarAction(this.feature),
+            toolbarActions: PAGES_TOOLBAR_ACTIONS,
+            entityProps: PAGES_ENTITY_PROPS,
+            createFormProps: PAGES_CREATE_FORM_PROPS,
+            editFormProps: PAGES_EDIT_FORM_PROPS,
           }
-        })
-      );
-    }));
+        );
+        this.ready$.next(true);
+        return result;
+      }),
+      tap((x) => {
+        switch (x.method) {
+          case 'Create':
+            this.onAdd();
+            break;
+          case 'Edit':
+            this.onEdit(x.data.record.id);
+            break;
+          case 'Delete':
+            this.delete(x.data.record.id, x.data.record.title);
+            break;
+          default:
+            this.featureFunction(x.method, x.data.record.id);
+            break;
+        }
+      })
+    );
+
+     this.subs.add(setDefaults$.subscribe());
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onAdd() {
     const data = new FormPropData(
@@ -166,7 +204,4 @@ export class PagesComponent implements OnInit, OnDestroy {
   featureFunction(method: string, entityId: string) {
     this.multiLingualModal.openModal(entityId);
   }
-
-
-
 }
