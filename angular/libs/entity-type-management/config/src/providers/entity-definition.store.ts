@@ -1,5 +1,5 @@
 import { Fs, Volo } from '@fs-tw/entity-type-management/proxy/entity-types';
-import { filter, map, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, tap } from 'rxjs/operators';
 import { Injectable, Injector } from '@angular/core';
 import { AbstractNavTreeService } from '@abp/ng.core';
 import { combineLatest, forkJoin, Observable } from 'rxjs';
@@ -32,16 +32,11 @@ export class EntityDefinition
 @Injectable({ providedIn: 'root' })
 export class EntityDefinitionStore extends AbstractNavTreeService<EntityDefinition> {
   constructor(injector: Injector) {
-    super(injector);
-    this.flat$
-      .pipe(
-        filter((x) => x.length > 0),
-        tap((x) => this.setDefaults(x))
-      )
-      .subscribe();
+    super(injector);  
   }
 
-  setDefaults(x): void {
+
+  setDefaults(): void {
     const extensions = this.injector.get(ExtensionsService);
     //const actionEventHub = this.injector.get(ActionEventHub);
     this.flat.forEach((d) => {
@@ -49,18 +44,14 @@ export class EntityDefinitionStore extends AbstractNavTreeService<EntityDefiniti
       let createFormProp = { [key]: CreateFormProp(d.createFormProps as any) };
       let toolbarActions = { [key]: PAGES_TOOLBAR_ACTIONS };
 
-      // mergeWithDefaultProps(
-      //   extensions.createFormProps,
-      //   createFormProp,
-      //   {}
-      // );
+      mergeWithDefaultProps(
+        extensions.createFormProps,
+        createFormProp,
+        {}
+      );
 
       //mergeWithDefaultActions(extensions.toolbarActions, toolbarActions, {});
     });
-  }
-
-  getAllEntityType$(): Observable<EntityDefinition[]> {
-    return this.flat$;
   }
 }
 

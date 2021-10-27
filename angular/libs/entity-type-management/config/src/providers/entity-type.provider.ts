@@ -1,7 +1,7 @@
 import { APP_INITIALIZER } from '@angular/core';
 import { EntityType, EntityTypeStore } from './entity-type.store';
 import { Fs } from '@fs-tw/entity-type-management/proxy/entity-types';
-import { tap } from 'rxjs/operators';
+import { debounceTime, filter, tap } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 import {
   EntityDefinition,
@@ -11,7 +11,7 @@ import {
 export const ENTITY_TYPE_PROVIDERS = [
   {
     provide: APP_INITIALIZER,
-    useFactory: configureStyles,
+    useFactory: fetchApi,
     deps: [
       EntityTypeStore,
       EntityDefinitionStore,
@@ -19,9 +19,15 @@ export const ENTITY_TYPE_PROVIDERS = [
     ],
     multi: true,
   },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: setDefaults,
+    deps: [EntityDefinitionStore],
+    multi: true,
+  },
 ];
 
-export function configureStyles(
+export function fetchApi(
   entityTypeStore: EntityTypeStore,
   entityDefinitionStore: EntityDefinitionStore,
   apiService: Fs.Abp.EntityTypes.EntityTypeApiService
@@ -32,7 +38,7 @@ export function configureStyles(
       apiService.getEntityDefinitionList(),
     ])
       .pipe(
-        tap(([entityTypes,entityDefinitions]) => {
+        tap(([entityTypes, entityDefinitions]) => {
           entityTypeStore.add(
             entityTypes.map((x) => new EntityType(x.name, x.definitions))
           );
@@ -45,4 +51,16 @@ export function configureStyles(
       )
       .toPromise();
   };
+}
+
+export function setDefaults(entityDefinitionStore: EntityDefinitionStore) {
+  return () => {
+    entityDefinitionStore.flat$
+    .pipe(
+      debounceTime(210),
+      filter((x) => !!x.length),
+      tap((x) => entityDefinitionStore.setDefaults())
+    )
+    .subscribe();
+  }
 }
