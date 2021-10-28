@@ -17,7 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeAlainModule } from '@fs-tw/theme-alain';
-import { ThemeAlainUiExtensionsModule } from '@fs-tw/theme-alain/extensions';
+import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
 import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/config';
 
 @NgModule({

@@ -6,7 +6,7 @@ import {
   generateFormFromProps,
 } from '@abp/ng.theme.shared/extensions';
 import { forkJoin, Observable, Subscription } from 'rxjs';
-import { setDefaults } from '@fs-tw/theme-alain/extensions';
+import { setDefaults } from '@fs-tw/components/extensions';
 import { GenerateForm } from './defaults';
 import { FormGroup } from '@angular/forms';
 import { MultiLingualService } from '../../services/multi-lingual.service';

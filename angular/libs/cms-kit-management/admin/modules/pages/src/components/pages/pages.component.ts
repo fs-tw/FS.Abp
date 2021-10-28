@@ -29,7 +29,7 @@ import {
 } from 'rxjs/operators';
 import {
   setDefaults,
-} from '@fs-tw/theme-alain/extensions';
+} from '@fs-tw/components/extensions';
 import {
   AddToolbarAction,
   PAGES_CREATE_FORM_PROPS,

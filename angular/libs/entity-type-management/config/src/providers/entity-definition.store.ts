@@ -11,7 +11,7 @@ import {
   ToolbarAction,
   mergeWithDefaultActions,
 } from '@abp/ng.theme.shared/extensions';
-import { ActionEventHub, notify } from '@fs-tw/theme-alain/extensions';
+import { ActionEventHub, notify } from '@fs-tw/components/extensions';
 
 export class EntityDefinition
   implements Fs.Abp.EntityTypes.Dtos.EntityDefinitionDto

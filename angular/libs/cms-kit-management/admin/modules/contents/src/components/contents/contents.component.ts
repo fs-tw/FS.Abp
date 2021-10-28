@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, Observable, of, Subscription } from 'rxjs';
-import { setDefaults } from '@fs-tw/theme-alain/extensions';
+import { setDefaults } from '@fs-tw/components/extensions';
 import {
   CONTENTS_CREATE_FORM_PROPS,
   CONTENTS_EDIT_FORM_PROPS,

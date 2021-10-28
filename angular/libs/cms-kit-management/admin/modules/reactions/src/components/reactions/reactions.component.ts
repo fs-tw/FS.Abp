@@ -12,7 +12,7 @@ import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
 import {
   setDefaults,
-} from '@fs-tw/theme-alain/extensions';
+} from '@fs-tw/components/extensions';
 import {
   REACTIONS_CREATE_FORM_PROPS,
   REACTIONS_EDIT_FORM_PROPS,

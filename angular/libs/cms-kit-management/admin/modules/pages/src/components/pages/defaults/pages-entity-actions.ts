@@ -1,6 +1,6 @@
 import { EntityAction, EntityActionOptions } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
-import { notify } from '@fs-tw/theme-alain/extensions';
+import { notify } from '@fs-tw/components/extensions';
 
 export function AddToolbarAction(data: Array<string>): EntityAction<Volo.CmsKit.Admin.Pages.PageDto>[]
 {
