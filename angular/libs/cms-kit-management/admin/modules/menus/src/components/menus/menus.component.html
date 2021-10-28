@@ -4,41 +4,13 @@
   [title]="'CmsKit::Menus'"
 ></fs-page>
 
-<abp-tree
-  [nodes]="nodes"
-  [(expandedKeys)]="expandedKeys"
-  [draggable]="false"
-  [noAnimation]="false"
+<nz-extensible-tree
+  [flat]="treeData"
+  (add)="onAddSubItem($event.origin.entity.id)"
+  (edit)="onEdit($event.origin.entity.id)"
+  (delete)="delete($event.origin.entity.id, $event.origin.entity.displayName)"
 >
-  <ng-template abpTreeExpandedIconTemplate let-node let-origin="origin">
-    <i
-      class="far"
-      style="line-height: 26px"
-      [class.fa-plus-square]="!node.isExpanded"
-      [class.fa-minus-square]="node.isExpanded"
-      aria-hidden="true"
-    ></i>
-  </ng-template>
-
-  <ng-template abpTreeNodeTemplate let-node>
-    <i class="fas fa-folder fs-15px text-primary mr-1"></i>
-    {{ node.title }}
-  </ng-template>
-
-  <ng-template #menu let-node>
-    <ul nz-menu>
-      <li nz-menu-item (click)="onEdit(node.origin.entity.id)">
-        {{ 'AbpUi::Edit' | abpLocalization }}
-      </li>
-      <li nz-menu-item (click)="onAddSubItem(node.origin.entity.id)">
-        {{ 'CmsKit::AddSubMenuItem' | abpLocalization }}
-      </li>
-      <li nz-menu-item (click)="delete(node.origin.entity.id, node.origin.entity.displayName)">
-        {{ 'CmsKit::Delete' | abpLocalization }}
-      </li>
-    </ul>
-  </ng-template>
-</abp-tree>
+</nz-extensible-tree>
 
 <fs-modal
   [title]="'AbpUi::Create'"

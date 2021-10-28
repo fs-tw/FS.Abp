@@ -2,6 +2,18 @@
   <ng-template [ngTemplateOutlet]="label"></ng-template>
     <quill-editor
       [sanitize]="true"
-      [formControlName]="prop.name">
+      [formControlName]="prop.name"
+      (onEditorCreated)="onEditorCreate($event)">
     </quill-editor>
+
+    <nz-modal
+      [(nzVisible)]="isVisible"
+      [nzTitle]="'上傳圖片'"
+      [nzCancelText]="null"
+      [nzOkLoading]="loading"
+      [nzCancelLoading]="loading"
+      (nzOnCancel)="handleClose()"
+      (nzOnOk)="handleOk()">
+      <fs-image-picker [maxImageCount]="1"></fs-image-picker>
+    </nz-modal>
 </form>

@@ -9,3 +9,4 @@ export * from './select/index';
 export * from './textarea/index';
 export * from './time/index';
 export * from './typeahead/index';
+export * from './upload/index';

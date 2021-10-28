@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ComponentFactoryResolver,
   ComponentRef,
@@ -9,7 +8,6 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
-  ViewRef,
 } from '@angular/core';
 import {
   ReplaceableComponents,
@@ -18,7 +16,7 @@ import {
 } from '@abp/ng.core';
 import { FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { FormProp, PropData } from '@abp/ng.theme.shared/extensions';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ABP } from '@abp/ng.core';
 
 @Component({
@@ -35,7 +33,6 @@ export class WidgetComponentRef{
   prop:FormProp
   @Input()
   asterisk: string = '';
-
 }
 
 @Component({
@@ -119,7 +116,6 @@ export class WidgetComponent {
       this.asterisk = this.validators.some(isRequired) ? '*' : '';
     }
   }
-
 }
 
 function isRequired(validator: ValidatorFn) {

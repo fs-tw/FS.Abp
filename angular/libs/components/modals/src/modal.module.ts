@@ -15,6 +15,10 @@ const exportedDeclarations = [
 @NgModule({
   declarations: [...exportedDeclarations],
   exports: [...exportedDeclarations],
-  imports: [CoreModule, ...SHARED_ZORRO_MODULES,...SHARED_ABP_MODULES],
+  imports: [
+    CoreModule,
+    ...SHARED_ZORRO_MODULES,
+    ...SHARED_ABP_MODULES
+  ],
 })
 export class ModalModule {}

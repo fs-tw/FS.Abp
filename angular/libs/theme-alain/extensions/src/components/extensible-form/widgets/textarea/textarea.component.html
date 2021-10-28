@@ -2,10 +2,11 @@
     <ng-template [ngTemplateOutlet]="label"></ng-template>
     <textarea
       #field
+      nz-input
       [id]="prop.id"
-      [formControlName]="prop.name"
-      [abpDisabled]="disabled"
       [readonly]="readonly"
-      class="form-control"
+      [nzAutosize]="{ minRows: 3}"
+      [formControlName]="prop.name"
+      style="width: 100%;"
     ></textarea>
 </form>

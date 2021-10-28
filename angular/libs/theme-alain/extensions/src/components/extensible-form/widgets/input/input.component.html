@@ -3,9 +3,12 @@
   <input
     #field
     nz-input
+    [id]="prop.id"
+    [abpDisabled]="disabled"
+    [readonly]="readonly"
     [type]="getType(prop)"
     [formControlName]="prop.name"
     [autocomplete]="prop.autocomplete"
-    class="form-control"
+    style="width: 100%;"
   />
 </form>

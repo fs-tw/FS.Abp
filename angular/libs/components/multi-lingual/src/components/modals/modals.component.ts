@@ -130,7 +130,6 @@ export class MultiLingualModalComponent<T> implements OnInit {
     this.selectedForm = generateFormFromProps(data);
   }
 
-
   content: string;
   onEditorCreate(editor) {
     console.log(editor)

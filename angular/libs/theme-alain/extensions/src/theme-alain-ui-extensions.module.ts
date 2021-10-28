@@ -1,5 +1,5 @@
-import { CoreModule } from '@abp/ng.core';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CoreModule, EnvironmentService } from '@abp/ng.core';
+import { Injectable, Injector, ModuleWithProviders, NgModule } from '@angular/core';
 import { NzTableListDirective } from './directives/nz-table-list.directive';
 import { ExtensibleTableComponent } from './components/extensible-table/extensible-table.component';
 import { GridActionsComponent } from './components/grid-actions/grid-actions.component';
@@ -36,6 +36,14 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { EXTENSIBLE_FORM_INITIALIZER } from './providers/extensible-table.initializer';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { ExtensibleTreeComponent } from './components/extensible-tree/extensible-tree.component';
+import { TreeModule } from '@abp/ng.components/tree';
+import { UploadComponent } from './components/extensible-form/widgets/upload/upload.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ImagePickerModule, IMAGE_PICKER_TOKEN } from '@fs-tw/components/image-picker';
+import { Observable, of } from 'rxjs';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -45,7 +53,8 @@ const PUBLIC = [
   NzTableListDirective,
   NzSelectDefaultDirective,
   ExtensibleFormComponent,
-  ExtensibleFormPropComponent
+  ExtensibleFormPropComponent,
+  ExtensibleTreeComponent
 ];
 const PRIVATE = [NzSelectLoadingComponent];
 
@@ -60,6 +69,9 @@ const ZORRO_MODULES = [
   NzDatePickerModule,
   NzTimePickerModule,
   NzAutocompleteModule,
+  NzSelectModule,
+  NzUploadModule,
+  NzModalModule
 ];
 
 const FORM_WIDGETs = [
@@ -75,7 +87,8 @@ const FORM_WIDGETs = [
   TimeComponent,
   TypeaheadComponent,
   SelectComponent,
-  QuillEditorComponent
+  QuillEditorComponent,
+  UploadComponent
 ];
 
 @NgModule({
@@ -86,10 +99,11 @@ const FORM_WIDGETs = [
     ThemeSharedModule,
     NgxValidateCoreModule,
     AbpUiExtensionsModule,
-    //SVModule,
     ...ZORRO_MODULES,
 
+    ImagePickerModule,
     QuillModule,
+    TreeModule
   ],
 })
 export class ThemeAlainUiExtensionsModule {
@@ -97,10 +111,48 @@ export class ThemeAlainUiExtensionsModule {
     return {
       ngModule: ThemeAlainUiExtensionsModule,
       providers: [
-        EXTENSIBLE_FORM_INITIALIZER
-         //NG_ALAIN_THEME_STYLES_PROVIDERS,
+        EXTENSIBLE_FORM_INITIALIZER,
+        {
+          provide: IMAGE_PICKER_TOKEN,
+          useFactory: configure_IMAGE_PICKER_TOKEN,
+          deps: [Injector],
+        }
+        // NG_ALAIN_THEME_STYLES_PROVIDERS,
         // NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
-      ]
+      ],
     };
+  }
+}
+
+function configure_IMAGE_PICKER_TOKEN(injector: Injector) {
+  let api = injector.get(ImagePickerApi);
+  let environment = injector.get(EnvironmentService)
+  let notify = injector.get(Notify);
+  let result = {
+    Api: api,
+    Environment: environment,
+    Notify: notify
+  };
+  return result;
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+class ImagePickerApi {
+  uploadImage(input: FormData): Observable<string[]> {
+    return of([]);
+  }
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+class Notify {
+  success(title: string, content: string) {
+
+  }
+  error(title: string, content: string) {
+
   }
 }

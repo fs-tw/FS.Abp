@@ -1,12 +1,10 @@
 import {
   Component,
-  ComponentFactoryResolver,
   Inject,
   Injector,
   OnDestroy,
   OnInit,
   ViewChild,
-  ViewContainerRef,
 } from '@angular/core';
 import { ListService } from '@abp/ng.core';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
@@ -19,26 +17,17 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   BehaviorSubject,
   combineLatest,
-  forkJoin,
-  Observable,
-  of,
-  Subject,
   Subscription,
-  zip,
 } from 'rxjs';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {
-  delay,
   filter,
-  map,
   mergeMap,
   switchMap,
   take,
   tap,
 } from 'rxjs/operators';
 import {
-  ActionEvent,
-  ActionEventHub,
   setDefaults,
 } from '@fs-tw/theme-alain/extensions';
 import {
@@ -47,10 +36,8 @@ import {
   PAGES_EDIT_FORM_PROPS,
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
-  CreateFormProp,
 } from './defaults/index';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
-import { Fs } from '@fs-tw/entity-type-management/proxy/entity-types';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 
 @Component({
@@ -68,7 +55,7 @@ export class PagesComponent implements OnInit, OnDestroy {
   @ViewChild(MultiLingualModalComponent)
   multiLingualModal: MultiLingualModalComponent<Volo.CmsKit.Admin.Pages.PageDto>;
 
-  public static NAME: string = 'Volo.CmsKit.Pages.Page'; //'Pages.PagesComponent';
+  public static NAME: string = 'Volo.CmsKit.Pages.Page';
   public EntityType = 'Volo.CmsKit.Pages.Page';
   public apiService: Volo.CmsKit.Admin.Pages.PageAdminService;
 
@@ -83,7 +70,9 @@ export class PagesComponent implements OnInit, OnDestroy {
   editSelectedRecord: Volo.CmsKit.Admin.Pages.PageDto;
   ready$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  searchForm: FormGroup = this.fb.group({});
   constructor(
+    private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
     public entityTypeStore: EntityTypeStore,
@@ -96,7 +85,10 @@ export class PagesComponent implements OnInit, OnDestroy {
       //api.getEntityDefinitionList(),
       this.entityTypeStore.getEntityTypeByType$(this.EntityType),
     ]).pipe(
-      mergeMap(([entityType]) => {
+        mergeMap(([entityType]) => {
+        this.searchForm = this.fb.group({
+          filter: "辦公室",
+        });
         this.feature = entityType.map((y) => y.name);
         let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
           injector,
@@ -130,7 +122,7 @@ export class PagesComponent implements OnInit, OnDestroy {
       })
     );
 
-     this.subs.add(setDefaults$.subscribe());
+    this.subs.add(setDefaults$.subscribe());
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();

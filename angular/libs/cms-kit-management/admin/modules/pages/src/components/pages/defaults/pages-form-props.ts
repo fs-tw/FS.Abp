@@ -5,7 +5,6 @@ import {
 } from '@abp/ng.theme.shared/extensions';
 import { Validators } from '@angular/forms';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
-import { of } from 'rxjs';
 
 export function CreateFormProp<R>(
   options: FormPropOptions<R>[]
@@ -46,24 +45,6 @@ export const PAGES_CREATE_FORM_PROPS =
       name: 'style',
       id: 'style',
       displayName: 'CmsKit::Style',
-      // options: data => {
-      //   //const localization = data.getInjected(LocalizationService);
-
-      //   return of([
-      //     {
-      //       key: 'Saas::Enum:TenantActivationState.Active',
-      //       value: 1,
-      //     },
-      //     {
-      //       key: 'Saas::Enum:TenantActivationState.ActiveWithLimitedTime',
-      //       value: 2,
-      //     },
-      //     {
-      //       key: 'Saas::Enum:TenantActivationState.Passive',
-      //       value: 3,
-      //     },
-      //   ]);
-      // },
     },
   ]);
 

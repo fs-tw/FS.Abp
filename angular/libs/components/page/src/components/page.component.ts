@@ -1,15 +1,19 @@
 import {
   Component,
-  OnInit,
   Input,
-  Injector
+  Injector,
+  ContentChild
 } from '@angular/core';
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
 import { Observable } from 'rxjs';
+import { PageSearchTemplateDirective } from './templates';
+import { FormGroup } from '@angular/forms';
 
 export type EntityService<R> = {
   getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<R>>;
 };
+
+export type SearchService = {};
 
 @Component({
   selector: 'fs-page',
@@ -17,9 +21,12 @@ export type EntityService<R> = {
   styleUrls: ['./page.component.less']
 })
 export class PageComponent<R> {
+  @ContentChild(PageSearchTemplateDirective) customSearchTemplate: PageSearchTemplateDirective;
+
   @Input() title: string;
   @Input() list: ListService;
   @Input() service: EntityService<R>;
+  @Input() form: FormGroup;
 
   data$: Observable<PagedResultDto<R>>;
 
@@ -34,10 +41,8 @@ export class PageComponent<R> {
 
   hookToQuery() {
     this.data$ = this.list.hookToQuery((query) =>{
+      query = { ...query, ...this.form.value }
       return this.service.getList(query as any);
     });
   }
-
-
-  
 }

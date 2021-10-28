@@ -57,7 +57,9 @@ export class ExtensibleFormPropComponent implements OnChanges {
       case ePropType.Typeahead:
         return 'typeahead';
       case 'html':
-         return 'quill-editor';
+        return 'quill-editor';
+      case 'upload':
+        return 'upload';
       default:
         return prop.options ? 'select' : 'input';
     }
@@ -65,7 +67,6 @@ export class ExtensibleFormPropComponent implements OnChanges {
 
   getComponentKey(prop: any): string {
     if (!!prop.componentKey) return prop.componentKey;
-
     return this.getDefaultComponentKey(prop);
   }
 
