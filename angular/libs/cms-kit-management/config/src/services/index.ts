@@ -1,1 +1,1 @@
-export {};
+export * from './media-descriptor-admin.service';

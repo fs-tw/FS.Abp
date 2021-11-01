@@ -7,19 +7,5 @@
     </quill-editor>
 </form>
 
-<nz-modal
-  [(nzVisible)]="isVisible"
-  [nzTitle]="'上傳圖片'"
-  [nzCancelText]="null"
-  [nzOkLoading]="loading"
-  [nzCancelLoading]="loading"
-  (nzOnCancel)="handleClose()"
-  (nzOnOk)="handleOk()">
-  <ng-container *nzModalContent>
-    <fs-image-picker
-      #EditorImage
-      [maxImageCount]="1"
-      [existFiles]="editorImageInfo">
-    </fs-image-picker>
-  </ng-container>
-</nz-modal>
+<fs-image-picker-modal [entityType]="entityType" [imageInfo]="editorImageInfo">
+</fs-image-picker-modal>

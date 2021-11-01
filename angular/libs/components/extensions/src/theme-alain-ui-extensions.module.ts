@@ -103,7 +103,7 @@ const FORM_WIDGETs = [
 
     ...ZORRO_MODULES,
 
-    // ImagePickerModule,
+    ImagePickerModule,
     QuillModule.forRoot(),
   ],
 })

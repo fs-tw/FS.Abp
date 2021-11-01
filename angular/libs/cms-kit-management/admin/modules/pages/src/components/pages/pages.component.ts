@@ -57,6 +57,7 @@ export class PagesComponent implements OnInit, OnDestroy {
 
   public static NAME: string = 'Volo.CmsKit.Pages.Page';
   public EntityType = 'Volo.CmsKit.Pages.Page';
+  public ShortEntityType = 'Page';
   public apiService: Volo.CmsKit.Admin.Pages.PageAdminService;
 
   subs: Subscription = new Subscription();
@@ -83,12 +84,11 @@ export class PagesComponent implements OnInit, OnDestroy {
 
     let setDefaults$ = combineLatest([
       //api.getEntityDefinitionList(),
-      this.entityTypeStore.getEntityTypeByType$(this.EntityType),
+      this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
     ]).pipe(
         mergeMap(([entityType]) => {
-        this.searchForm = this.fb.group({
-          filter: "辦公室",
-        });
+        this.searchForm = this.fb.group({ filter: "" });
+
         this.feature = entityType.map((y) => y.name);
         let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
           injector,
@@ -189,6 +189,10 @@ export class PagesComponent implements OnInit, OnDestroy {
   }
 
   featureFunction(method: string, entityId: string) {
-    this.multiLingualModal.openModal(entityId);
+    switch(method) {
+      case "MultiLingual":
+        this.multiLingualModal.openModal(entityId);
+        break;
+    }
   }
 }

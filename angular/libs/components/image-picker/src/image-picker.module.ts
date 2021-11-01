@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { ImagePickerComponent } from './components/image-picker/image-picker.component';
-import { ImagePicker } from './models';
-import { IMAGE_PICKER_TOKEN } from '.';
+import { ImagePickerModalComponent } from './components/modals/modals.component';
 
 const COMPONENTS = [
-  ImagePickerComponent
+  ImagePickerComponent,
+  ImagePickerModalComponent
 ]
 
 @NgModule({
@@ -19,6 +20,7 @@ const COMPONENTS = [
     FormsModule,
     NzModalModule,
     NzUploadModule,
+    NzIconModule
   ],
   declarations: [
     ...COMPONENTS
@@ -28,27 +30,13 @@ const COMPONENTS = [
   ]
 })
 export class ImagePickerModule {
-  static forRoot(options: ImagePicker.ImagePickerToken = null): ModuleWithProviders<ImagePickerModule> {
+  static forRoot(): ModuleWithProviders<ImagePickerModule> {
     return {
       ngModule: ImagePickerModule,
       providers: [
-        {
-          provide: IMAGE_PICKER_TOKEN,
-          useFactory: configure_IMAGE_PICKER_TOKEN,
-          deps: [Injector, options],
-        }
         // NG_ALAIN_THEME_STYLES_PROVIDERS,
         // NG_ALAIN_MS_THEME_NAV_ITEM_PROVIDERS,
       ],
     };
   }
-}
-
-function configure_IMAGE_PICKER_TOKEN(options: ImagePicker.ImagePickerToken) {
-  let result = {
-    Api: options.Api,
-    Environment: options.Environment,
-    Notify: options.Notify
-  };
-  return result;
 }

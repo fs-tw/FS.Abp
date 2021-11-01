@@ -1,4 +1,4 @@
-import { Component, Injector, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, Injector, Input, OnInit, TemplateRef, ChangeDetectorRef } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -51,6 +51,9 @@ export class ImagePickerComponent implements OnInit {
   /** 上傳格式錯誤時顯示文字 */
   @Input() validImageTypeFailText: string = "圖片格式須為 jpg 或 png";
 
+  /** EntityType參數 */
+  @Input() entityType: string;
+
   /** 原已上傳圖片被刪除的檔名 */
   private deleteFiles: string[] = [];
 
@@ -71,7 +74,8 @@ export class ImagePickerComponent implements OnInit {
   token: ImagePicker.ImagePickerToken;
 
   constructor(
-    injector: Injector
+    injector: Injector,
+    private cdr: ChangeDetectorRef
   ) {
     this.token = injector.get(IMAGE_PICKER_TOKEN);
   }
@@ -125,6 +129,7 @@ export class ImagePickerComponent implements OnInit {
 
       this.uploadFiles.push(file);
       this.showFiles.push(new ImagePicker.ImageFile(file.uid, fileName, img));
+      this.cdr.detectChanges();
     });
 
     return false;
@@ -162,14 +167,9 @@ export class ImagePickerComponent implements OnInit {
 
   uploadImage(): Observable<string[]> {
     let uploadFiles: File[] = this.uploadFiles;
-    const formData = new FormData();
-
-    for(let file of uploadFiles) {
-      formData.append('files[]', file);
-    }
 
     let saveImageAction = uploadFiles.length > 0 ?
-      this.token.Api.uploadImage(formData) :
+      this.token.Api.uploadImage(this.entityType, uploadFiles) :
       of([] as string[])
 
     let files = this.existFiles.filter(x => !this.deleteFiles.includes(x.fileName));
@@ -177,14 +177,14 @@ export class ImagePickerComponent implements OnInit {
     
     return saveImageAction
       .pipe(
-        map((fileUrls) => {
+        map((uploadResults) => {
           allFiles = allFiles.map(y => {
             let fileIndex = this.uploadFiles.findIndex(z => z.uid == y.fileUid);
-            if (fileIndex > -1) y.fileUrl = fileUrls[fileIndex]
+            if (fileIndex > -1) y.fileUid = uploadResults[fileIndex];
             return y;
           })
 
-          return allFiles.map(y => y.fileUrl);
+          return allFiles.map(x => x.fileUid);
         })
       );
   }

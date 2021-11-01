@@ -40,11 +40,11 @@ export class EntityTypeStore extends AbstractNavTreeService<EntityType> {
     return this.flat;
   }
 
-  getEntityTypeByType$(entityType: string): Observable<EntityType[]> {
+  getEntityTypeByType$(entityType: string, shortEntityType: string = null): Observable<EntityType[]> {
     return this.flat$.pipe(
       map((x) => {
         let result = x.filter((y) =>
-          y.definitions.find((z) => z.entityType == entityType)
+          y.definitions.find((z) => z.entityType == entityType || z.entityType == shortEntityType)
         );
         return result;
       })

@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs';
+import type { EntityDto } from '@abp/ng.core';
 
 export namespace ImagePicker {
   export class ImageFile {
@@ -27,8 +28,20 @@ export namespace ImagePicker {
     uid: string;
   }
 
+  export interface MediaDescriptorDto extends EntityDto<string> {
+    name?: string;
+    mimeType?: string;
+    size: number;
+  }
+
+  export interface ImagePickerForm {
+    name: string;
+    form: FormData;
+  }
+
   export type ImagePickerApi = {
-    uploadImage(input: FormData): Observable<string[]>
+    uploadImage(entityType: string, files: Array<File>):
+      Observable<string[]>
   }
 
   export type Environment = {
