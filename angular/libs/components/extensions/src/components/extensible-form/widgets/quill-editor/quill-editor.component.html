@@ -5,15 +5,21 @@
       [formControlName]="prop.name"
       (onEditorCreated)="onEditorCreate($event)">
     </quill-editor>
-
-    <nz-modal
-      [(nzVisible)]="isVisible"
-      [nzTitle]="'上傳圖片'"
-      [nzCancelText]="null"
-      [nzOkLoading]="loading"
-      [nzCancelLoading]="loading"
-      (nzOnCancel)="handleClose()"
-      (nzOnOk)="handleOk()">
-      <fs-image-picker [maxImageCount]="1"></fs-image-picker>
-    </nz-modal>
 </form>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzTitle]="'上傳圖片'"
+  [nzCancelText]="null"
+  [nzOkLoading]="loading"
+  [nzCancelLoading]="loading"
+  (nzOnCancel)="handleClose()"
+  (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <fs-image-picker
+      #EditorImage
+      [maxImageCount]="1"
+      [existFiles]="editorImageInfo">
+    </fs-image-picker>
+  </ng-container>
+</nz-modal>

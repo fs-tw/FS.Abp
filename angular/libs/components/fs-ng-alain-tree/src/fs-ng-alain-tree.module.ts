@@ -6,8 +6,8 @@ import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 const exportedDeclarations = [FsNgAlainTreeComponent];
 
 @NgModule({
-  declarations: [FsNgAlainTreeComponent],
-  exports: [FsNgAlainTreeComponent],
+  declarations: [...exportedDeclarations],
+  exports: [...exportedDeclarations],
   imports: [
     CoreModule,
     ...SHARED_ZORRO_MODULES

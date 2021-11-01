@@ -55,9 +55,9 @@
 </div>
 
 <nz-modal [nzOkText]="null" nzCancelText="關閉"  [nzWidth]="1000"
-        [nzTitle]="'預覽圖'" 
-        [(nzVisible)]="viewImage.isVisabled" 
-        (nzOnCancel)="controllModal(false, viewImage.image)">
+    [nzTitle]="'預覽圖'" 
+    [(nzVisible)]="viewImage.isVisabled" 
+    (nzOnCancel)="controllModal(false, viewImage.image)">
     <div class="divGridCenter">
         <img [src]="viewImage.image.fileUrl" style="max-width: 100%; max-height: 500px;" />
     </div>

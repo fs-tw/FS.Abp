@@ -10,7 +10,6 @@ import { MultiLingualService } from './services/multi-lingual.service';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
 
 const exportedDeclarations = [
   MultiLingualModalComponent
@@ -38,7 +37,6 @@ export const SHARED_ZORRO_MODULES = [
     CoreModule,
     ...SHARED_ZORRO_MODULES,
     ...SHARED_ABP_MODULES,
-    ThemeAlainUiExtensionsModule
   ],
   providers: [MultiLingualService],
 })

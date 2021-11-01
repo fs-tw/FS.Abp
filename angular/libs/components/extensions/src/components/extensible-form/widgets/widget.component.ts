@@ -36,7 +36,7 @@ export class WidgetComponentRef{
 }
 
 @Component({
-  template:''
+  template: ''
 })
 export class WidgetComponent {
   private _selfRef: ComponentRef<WidgetComponentRef> = null;
@@ -97,8 +97,8 @@ export class WidgetComponent {
         WidgetComponentRef
       );
       this._selfRef = vcr.createComponent(factory);
-      this._selfRef.instance.asterisk=this.asterisk;
-      this._selfRef.instance.prop=this.prop
+      this._selfRef.instance.asterisk = this.asterisk;
+      this._selfRef.instance.prop = this.prop
     }
     if (this.first && this.field) {
       this.field.nativeElement.focus();
