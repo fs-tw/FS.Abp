@@ -6,7 +6,7 @@ import {
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
@@ -47,7 +47,9 @@ export class BlogsComponent implements OnInit {
   editBlogFeatures: Volo.CmsKit.Blogs.BlogFeatureDto[];
   editBlogFeaturesForm: FormGroup;
 
+  searchForm: FormGroup = this.fb.group({ filter: "" });
   constructor(
+    private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
     private confirmationService: ConfirmationService
