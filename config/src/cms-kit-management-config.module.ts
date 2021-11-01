@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, Injectable, Injector, ModuleWithProviders, NgModule } from '@angular/core';
+import { Injectable, Injector, ModuleWithProviders, NgModule } from '@angular/core';
 import {  EnvironmentService } from '@abp/ng.core';
 import { CMS_KIT_MANAGEMENT_ROUTE_PROVIDERS } from './providers/route.provider';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
@@ -7,11 +7,11 @@ import {
 } from '@fs-tw/components/multi-lingual';
 
 import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
-import { ImagePickerModule } from '@fs-tw/components/image-picker';
-import { Observable, of } from 'rxjs';
+import { IMAGE_PICKER_TOKEN } from '@fs-tw/components/image-picker';
+import { MediaDescriptorAdminByListService } from './services/media-descriptor-admin.service';
 
 @NgModule({
-  imports: [ImagePickerModule],
+  imports: [],
   providers: [],
 })
 export class CmsKitManagementConfigModule {
@@ -26,9 +26,9 @@ export class CmsKitManagementConfigModule {
           deps: [Injector],
         },
         {
-          provide: APP_INITIALIZER,
+          provide: IMAGE_PICKER_TOKEN,
           useFactory: configure_IMAGE_PICKER_TOKEN,
-          deps: [Injector]
+          deps: [Injector],
         }
       ],
     };
@@ -47,7 +47,7 @@ function configureMULTI_LINGUAL_ENTITY_TYPE_TOKEN(injector: Injector) {
 }
 
 function configure_IMAGE_PICKER_TOKEN(injector: Injector) {
-  let api = injector.get(ImagePickerApi);
+  let api = injector.get(MediaDescriptorAdminByListService);
   let environment = injector.get(EnvironmentService)
   let notify = injector.get(Notify);
   let result = {
@@ -55,17 +55,7 @@ function configure_IMAGE_PICKER_TOKEN(injector: Injector) {
     Environment: environment,
     Notify: notify
   };
-  ImagePickerModule.forRoot(result);
-  return of(null).toPromise();
-}
-
-@Injectable({
-  providedIn: 'root',
-})
-class ImagePickerApi {
-  uploadImage(input: FormData): Observable<string[]> {
-    return of([]);
-  }
+  return result;
 }
 
 @Injectable({
