@@ -36,7 +36,7 @@ const replaceableComponents: Array<any> = [
     component: MultiselectComponent,
   },
   {
-    name: 'quill-editor',
+    name: 'html',
     component: QuillEditorComponent,
   },
   {

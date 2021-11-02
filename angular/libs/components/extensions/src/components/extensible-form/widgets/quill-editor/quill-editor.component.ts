@@ -23,10 +23,6 @@ export class QuillEditorComponent extends WidgetComponent {
   }
 
   ngAfterViewInit() {
-    this.editorImage.outputResult.subscribe(x => {
-      if(!x) return;
-      console.log(x);
-    })
   }
 
   onEditorCreate(editor) {

@@ -57,7 +57,7 @@ export class ExtensibleFormPropComponent implements OnChanges {
       case ePropType.Typeahead:
         return 'typeahead';
       case 'html':
-        return 'quill-editor';
+        return 'html';
       case 'upload':
         return 'upload';
       default:

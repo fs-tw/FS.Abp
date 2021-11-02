@@ -41,7 +41,6 @@ export class ImagePickerModalComponent implements OnInit {
     public readonly list: ListService,
     public readonly configStateService: ConfigStateService,
   ) {
-    this.initBehaviorSubject();
   }
 
   ngOnInit(): void {
@@ -57,9 +56,9 @@ export class ImagePickerModalComponent implements OnInit {
     this.outputResult = new BehaviorSubject<string[]>(null);
   }
 
-  openModal() {
+  openModal(): BehaviorSubject<string[]> {
     this.isVisible = true;
-    this.initBehaviorSubject();
+    return this.outputResult;
   }
 
   handleOk() {

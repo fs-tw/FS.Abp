@@ -7,15 +7,14 @@ import {
 import { ListService } from '@abp/ng.core';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { BehaviorSubject, combineLatest, Subscription } from 'rxjs';
-import {
-  setDefaults,
-} from '@fs-tw/components/extensions';
+import { setDefaults } from '@fs-tw/components/extensions';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { AddToolbarAction, BLOG_POSTS_CREATE_FORM_PROPS, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'fs-tw-blog-posts',
@@ -104,10 +103,6 @@ export class BlogPostsComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.postImage.outputResult.subscribe(x => {
-      if(!x) return;
-      console.log(x);
-    })
   }
 
   onAdd() {
@@ -171,12 +166,55 @@ export class BlogPostsComponent implements OnInit {
         this.list.get();
       });
   }
-
+  
   featureFunction(method: string, entityId: string) {
     switch(method) {
       case "MediaDescriptor":
-        this.postImage.openModal();
+        this.generatorMediaDescriptor(entityId);
         break;
     }
+  }
+
+  generatorMediaDescriptor(entityId: string) {
+    this.service
+      .get(entityId)
+      .pipe(take(1))
+      .pipe(
+        tap((selected) => {
+          this.blogPostImageInfo = [
+            {
+              fileName: selected.coverImageMediaId,
+              fileUid: selected.coverImageMediaId,
+              fileUrl: "/api/cms-kit/media/" + selected.coverImageMediaId
+            }
+          ];
+          this.postImage.initBehaviorSubject();
+          this.subs.add(
+            this.postImage.openModal().subscribe(x => {
+              if(!x) return;
+              this.saveImageToBlogPost(entityId, x);
+            })
+          );
+        })
+      )
+      .subscribe((x) => {
+        this.list.get();
+      });
+  }
+
+  saveImageToBlogPost(entityId: string, imageIds: string[]) {
+    this.service
+      .get(entityId)
+      .pipe(take(1))
+      .pipe(
+        mergeMap((selected) => {
+          const request = { ...selected } as Volo.CmsKit.Admin.Blogs.UpdateBlogPostDto;
+          request.coverImageMediaId = _.head(imageIds);
+          return this.service.update(entityId, request).pipe(take(1));
+        })
+      )
+      .subscribe((x) => {
+        this.list.get();
+      });
   }
 }

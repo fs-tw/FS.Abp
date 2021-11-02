@@ -1,10 +1,10 @@
 <form [formGroup]="form">
   <ng-template [ngTemplateOutlet]="label"></ng-template>
-    <quill-editor
-      [sanitize]="true"
-      [formControlName]="prop.name"
-      (onEditorCreated)="onEditorCreate($event)">
-    </quill-editor>
+  <quill-editor
+    [sanitize]="true"
+    [formControlName]="prop.name"
+    (onEditorCreated)="onEditorCreate($event)">
+  </quill-editor>
 </form>
 
 <fs-image-picker-modal [shortEntityType]="entityType" [imageInfo]="editorImageInfo">
