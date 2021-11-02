@@ -3,10 +3,11 @@ import { ListService, ConfigStateService } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
 } from '@abp/ng.theme.shared/extensions';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import * as _ from 'lodash';
 import { ImagePicker } from '../../models/models';
 import { ImagePickerComponent } from '../image-picker/image-picker.component';
+import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class ImagePickerModalComponent implements OnInit {
   public static NAME: string = 'ImagePicker.ImagePickerModalComponent';
   subs: Subscription = new Subscription();
 
-  @Input() entityType: string;
+  @Input() shortEntityType: string;
 
   @Input()
   imageInfo: ImagePicker.ImageFile[] = [];
@@ -35,10 +36,12 @@ export class ImagePickerModalComponent implements OnInit {
   loading: boolean = false;
   isVisible: boolean = false;
 
+  outputResult: BehaviorSubject<string[]>;
   constructor(
     public readonly list: ListService,
     public readonly configStateService: ConfigStateService,
   ) {
+    this.initBehaviorSubject();
   }
 
   ngOnInit(): void {
@@ -50,15 +53,26 @@ export class ImagePickerModalComponent implements OnInit {
     this.subs.unsubscribe();
   }
 
+  initBehaviorSubject() {
+    this.outputResult = new BehaviorSubject<string[]>(null);
+  }
+
   openModal() {
     this.isVisible = true;
+    this.initBehaviorSubject();
   }
 
   handleOk() {
     this.loading = true;
-    this.imagePicker.uploadImage().subscribe(x => {
-      console.log(x)
-    })
+    this.imagePicker.uploadImage().pipe(
+      tap((x) => {
+        this.outputResult.next(x);
+        this.loading = false;
+        this.handleClose();
+      })
+    ).subscribe(() => {
+      this.outputResult.complete();
+    });
   }
 
   handleClose() {

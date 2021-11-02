@@ -52,7 +52,7 @@ export class ImagePickerComponent implements OnInit {
   @Input() validImageTypeFailText: string = "圖片格式須為 jpg 或 png";
 
   /** EntityType參數 */
-  @Input() entityType: string;
+  @Input() shortEntityType: string;
 
   /** 原已上傳圖片被刪除的檔名 */
   private deleteFiles: string[] = [];
@@ -169,7 +169,7 @@ export class ImagePickerComponent implements OnInit {
     let uploadFiles: File[] = this.uploadFiles;
 
     let saveImageAction = uploadFiles.length > 0 ?
-      this.token.Api.uploadImage(this.entityType, uploadFiles) :
+      this.token.Api.uploadImage(this.shortEntityType, uploadFiles) :
       of([] as string[])
 
     let files = this.existFiles.filter(x => !this.deleteFiles.includes(x.fileName));

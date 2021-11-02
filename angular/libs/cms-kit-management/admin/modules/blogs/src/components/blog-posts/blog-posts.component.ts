@@ -103,6 +103,13 @@ export class BlogPostsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    this.postImage.outputResult.subscribe(x => {
+      if(!x) return;
+      console.log(x);
+    })
+  }
+
   onAdd() {
     const data = new FormPropData(
       this.injector,

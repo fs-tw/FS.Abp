@@ -7,7 +7,7 @@ import {
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
 import { Observable } from 'rxjs';
 import { PageSearchTemplateDirective } from './templates';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 export type EntityService<R> = {
   getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<R>>;
@@ -32,6 +32,7 @@ export class PageComponent<R> {
 
   constructor(
     private readonly injector: Injector,
+    private fb: FormBuilder,
   ) {
   }
 
@@ -39,9 +40,15 @@ export class PageComponent<R> {
     this.hookToQuery();
   }
 
+  ngOnChanges() {
+    if(!this.form) {
+      this.form = this.fb.group({ filter: "" });
+    }
+  }
+
   hookToQuery() {
     this.data$ = this.list.hookToQuery((query) =>{
-      query = { ...query, ...this.form.value }
+      query = { ...query, ...this.form?.value }
       return this.service.getList(query as any);
     });
   }

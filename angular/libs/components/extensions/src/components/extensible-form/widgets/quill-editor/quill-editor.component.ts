@@ -9,7 +9,8 @@ import { WidgetComponent } from "../widget.component";
 export class QuillEditorComponent extends WidgetComponent {
   @ViewChild(ImagePickerModalComponent) editorImage: ImagePickerModalComponent;
 
-  @Input() entityType: string = "Page";
+  @Input() entityType: string;
+  @Input() entityId: string;
 
   editor: any;
   editorImageInfo: ImagePicker.ImageFile[] = [];
@@ -19,6 +20,13 @@ export class QuillEditorComponent extends WidgetComponent {
     public readonly cdRef: ChangeDetectorRef,
   ) {
     super(injector);
+  }
+
+  ngAfterViewInit() {
+    this.editorImage.outputResult.subscribe(x => {
+      if(!x) return;
+      console.log(x);
+    })
   }
 
   onEditorCreate(editor) {
