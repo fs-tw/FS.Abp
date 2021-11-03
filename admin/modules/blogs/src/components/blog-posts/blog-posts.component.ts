@@ -9,12 +9,13 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { BehaviorSubject, combineLatest, Subscription } from 'rxjs';
 import { setDefaults } from '@fs-tw/components/extensions';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
-import { AddToolbarAction, BLOG_POSTS_CREATE_FORM_PROPS, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
+import { AddToolbarAction, BLOG_POSTS_CREATE_FORM_PROPS, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_ACTIONS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
 import * as _ from 'lodash';
+import { ExtensionsStore } from '@fs-tw/components/extensions';
 
 @Component({
   selector: 'fs-tw-blog-posts',
@@ -52,33 +53,21 @@ export class BlogPostsComponent implements OnInit {
     private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
-    public entityTypeStore: EntityTypeStore,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    extensionsStore:ExtensionsStore
   ) {
-    this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
-    this.entityTypeStore = injector.get(EntityTypeStore);
-
-    let setDefaults$ = combineLatest([
-      this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
-    ]).pipe(
-        mergeMap(([entityType]) => {
-
-        this.feature = entityType.map((y) => y.name);
-        let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
-          injector,
-          BlogPostsComponent.NAME,
-          {
-            entityAction: AddToolbarAction(this.feature),
-            toolbarActions: BLOG_POSTS_TOOLBAR_ACTIONS,
-            entityProps: BLOG_POSTS_ENTITY_PROPS,
-            createFormProps: BLOG_POSTS_CREATE_FORM_PROPS,
-            editFormProps: BLOG_POSTS_EDIT_FORM_PROPS,
-          }
-        );
-        this.ready$.next(true);
-        return result;
-      }),
-      tap((x) => {
+    this.service=injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
+    this.searchForm = this.fb.group({
+      filter: "",
+    });    
+    this.subs.add(
+      setDefaults(injector, BlogPostsComponent.NAME, {
+        entityAction: BLOG_POSTS_ENTITY_ACTIONS,
+        toolbarActions: BLOG_POSTS_TOOLBAR_ACTIONS,
+        entityProps: BLOG_POSTS_ENTITY_PROPS,
+        createFormProps: BLOG_POSTS_CREATE_FORM_PROPS,
+        editFormProps: BLOG_POSTS_EDIT_FORM_PROPS,
+      }).subscribe((x) => {
         switch (x.method) {
           case 'Create':
             this.onAdd();
@@ -96,7 +85,7 @@ export class BlogPostsComponent implements OnInit {
       })
     );
 
-    this.subs.add(setDefaults$.subscribe());
+    // this.subs.add(setDefaults$.subscribe());
   }
 
   ngOnInit(): void {
