@@ -30,6 +30,7 @@ export class WidgetQuillEditorComponent extends WidgetComponent {
   }
 
   ngAfterViewInit() {
+    super.ngAfterViewInit();
     this.subs.add(
       this.quillEditor.initBehaviorSubject().subscribe(x => {
         if(!x) return;

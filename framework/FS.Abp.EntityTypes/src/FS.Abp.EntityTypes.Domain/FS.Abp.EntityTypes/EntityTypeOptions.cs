@@ -13,9 +13,9 @@ namespace FS.Abp.EntityTypes
         protected override Func<Type, EntityTypeDefinitions> DefaultFactory => (t) => new EntityTypeDefinitions();
     }
 
-    public class EntityDefinitionOptions : TypeDictionary<DefaultEntityDefinition>
+    public class EntityDefinitionOptions : TypeDictionary<EntityDefinition>
     {
-        protected override Func<Type, DefaultEntityDefinition> DefaultFactory => (t) => new DefaultEntityDefinition();
+        protected override Func<Type, EntityDefinition> DefaultFactory => (t) => new EntityDefinition();
 
         public Volo.Abp.Collections.TypeList Other = new Volo.Abp.Collections.TypeList();
     }

@@ -1,5 +1,4 @@
-﻿using FS.Abp.EntityTypes.Dtos;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +28,7 @@ namespace FS.Abp.EntityTypes
         [HttpGet]
         [RemoteService(true)]
         [Route("entity-definitions")]
-        public List<EntityDefinitionDto> GetEntityDefinitionList()
+        public List<EntityDefinition> GetEntityDefinitionList()
         {
             return EntityDefinitionAppService.GetEntityDefinitionList();
         }

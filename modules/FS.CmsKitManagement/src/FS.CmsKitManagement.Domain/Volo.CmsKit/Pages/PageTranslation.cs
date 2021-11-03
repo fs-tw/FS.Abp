@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FS.Abp.EntityTypes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +14,9 @@ namespace Volo.CmsKit.Pages
     {
         public string Title { get; set; }
 
-        [DataType(DataType.Html)]
+        [EntityPropertyDefinition(
+            Type = "html"
+            )]
         public string Content { get; set; }
     }
 

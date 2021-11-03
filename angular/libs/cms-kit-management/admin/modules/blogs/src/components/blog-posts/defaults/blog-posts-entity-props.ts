@@ -30,11 +30,11 @@ export const BLOG_POSTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.B
     sortable: true,
     columnWidth: 90,
   },
-  {
-    type: ePropType.String,
-    name: 'content',
-    displayName: 'Content',
-    sortable: true,
-    columnWidth: 90,
-  }
+  // {
+  //   type: ePropType.String,
+  //   name: 'content',
+  //   displayName: 'Content',
+  //   sortable: true,
+  //   columnWidth: 90,
+  // }
 ]);

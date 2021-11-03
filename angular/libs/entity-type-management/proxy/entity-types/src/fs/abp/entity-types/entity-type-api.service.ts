@@ -1,5 +1,4 @@
-import type { EntityDefinitionDto } from './dtos/models';
-import type { EntityType } from './models';
+import type { EntityDefinition, EntityType } from './models';
 import { RestService } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +9,7 @@ export class EntityTypeApiService {
   apiName = 'entity-types';
 
   getEntityDefinitionList = () =>
-    this.restService.request<any, EntityDefinitionDto[]>({
+    this.restService.request<any, EntityDefinition[]>({
       method: 'GET',
       url: '/api/entity-types/entity-definitions',
     },
