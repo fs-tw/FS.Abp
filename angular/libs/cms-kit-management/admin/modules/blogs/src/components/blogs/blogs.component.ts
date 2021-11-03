@@ -16,8 +16,6 @@ import {
   BLOGS_ENTITY_ACTIONS,
   BLOGS_ENTITY_PROPS,
   BLOGS_TOOLBAR_ACTIONS,
-
-  BLOGS_ENTITY_PROPS_CON
 } from './defaults/index';
 import { eCmsKitManagementComponents } from '../../enums/components';
 import { ExtensionsStore } from '@fs-tw/components/extensions';
@@ -65,8 +63,6 @@ export class BlogsComponent implements OnInit {
         entityProps: BLOGS_ENTITY_PROPS,
         createFormProps: BLOGS_CREATE_FORM_PROPS,
         editFormProps: BLOGS_EDIT_FORM_PROPS,
-      },{
-        entityType:''
       })
       .subscribe((x) => {
         switch (x.method) {
@@ -82,12 +78,7 @@ export class BlogsComponent implements OnInit {
         }
       });
 
-      extensionsStore.actionEventHub.Register(eCmsKitManagementComponents.BlogsComponent).subscribe(x=>{
-
-
-      })
     this.subs.add(actionSub);
-
     this.service = this.injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
     this.blogFeatureService = this.injector.get(
       Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService

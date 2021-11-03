@@ -33,6 +33,20 @@ export function fetchApi(
           entityTypeStore.add(
             entityTypes.map((x) => new EntityType(x.name, x.definitions))
           );
+          entityDefinitions.forEach(d=>{
+            d.listProps=d.listProps.filter(x=>x.visible).map(x=>{
+              delete x.visible
+              return x;});
+            d.searchFormProps=d.searchFormProps.filter(x=>x.visible).map(x=>{
+              delete x.visible
+              return x;});;
+            d.createFormProps=d.createFormProps.filter(x=>x.visible).map(x=>{
+              delete x.visible
+              return x;});;
+            d.updateFormProps=d.updateFormProps.filter(x=>x.visible).map(x=>{
+              delete x.visible
+              return x;});;
+          })
           extensionsStore.add(entityDefinitions as any);
           extensionsStore.setDefaultsbyStore();
         })

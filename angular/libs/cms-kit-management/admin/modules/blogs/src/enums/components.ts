@@ -1,3 +1,3 @@
 export const enum eCmsKitManagementComponents {
-  BlogsComponent = 'Posts.BlogsComponent',
+  BlogsComponent = 'Volo.CmsKit.Admin.Blogs.BlogAdminAppService',
 }

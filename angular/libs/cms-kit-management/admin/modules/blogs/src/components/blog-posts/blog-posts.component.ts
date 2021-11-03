@@ -54,12 +54,12 @@ export class BlogPostsComponent implements OnInit {
     private readonly injector: Injector,
     public readonly list: ListService,
     private confirmationService: ConfirmationService,
-    extensionsStore:ExtensionsStore
+    private extensionsStore: ExtensionsStore
   ) {
-    this.service=injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
+    this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
     this.searchForm = this.fb.group({
       filter: "",
-    });    
+    });
     this.subs.add(
       setDefaults(injector, BlogPostsComponent.NAME, {
         entityAction: BLOG_POSTS_ENTITY_ACTIONS,
@@ -84,8 +84,6 @@ export class BlogPostsComponent implements OnInit {
         }
       })
     );
-
-    // this.subs.add(setDefaults$.subscribe());
   }
 
   ngOnInit(): void {
