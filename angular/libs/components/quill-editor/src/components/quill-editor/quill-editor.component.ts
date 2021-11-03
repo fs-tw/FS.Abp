@@ -4,7 +4,8 @@ import { ImagePickerModalComponent } from "@fs-tw/components/image-picker";
 import { BehaviorSubject, Subscription } from "rxjs";
 import * as _ from "lodash";
 import { FormGroup } from "@angular/forms";
-import { QuillEditor, QUILL_EDITOR_DOWN_TOKEN } from "../..";
+import { QUILL_EDITOR_DOWN_TOKEN } from "../..";
+import {  EnvironmentService } from '@abp/ng.core';
 
 @Component({
   selector: 'fs-quill-editor',
@@ -27,9 +28,11 @@ export class QuillEditorComponent {
   outputResult: BehaviorSubject<any>;
   constructor(
     protected injector: Injector,
+    private environmentService: EnvironmentService,
     public readonly cdRef: ChangeDetectorRef,
   ) {
     this.token = injector.get(QUILL_EDITOR_DOWN_TOKEN);
+    this.environmentService = injector.get(EnvironmentService);
   }
 
   ngOnChanges() {
@@ -58,7 +61,7 @@ export class QuillEditorComponent {
 
   setFormValue(id: string) {
     this.form.patchValue({
-      [this.controlName]: `<p><img src="${ this.token + id }"></p>`
+      [this.controlName]: `<p><img src="${ this.environmentService.getApiUrl() + this.token + id }"></p>`
     })
   }
 }
