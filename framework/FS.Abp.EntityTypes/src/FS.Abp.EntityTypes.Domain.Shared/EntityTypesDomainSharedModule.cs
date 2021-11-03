@@ -5,6 +5,10 @@ using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.Reflection;
+using System.ComponentModel;
+using System.Linq;
 
 namespace FS.Abp.EntityTypes
 {

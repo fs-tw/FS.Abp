@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FS.Abp.EntityTypes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,8 +21,12 @@ namespace Volo.CmsKit.Blogs
 
         public virtual string ShortDescription { get; set; }
 
-        [DataType(DataType.Html)]
+        [EntityPropertyDefinition(
+            Type = "Html"
+            )]
         public virtual string Content { get; set; }
+
+
     }
 
 

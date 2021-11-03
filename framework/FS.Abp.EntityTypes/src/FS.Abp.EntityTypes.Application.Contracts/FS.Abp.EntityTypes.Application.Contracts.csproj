@@ -19,4 +19,8 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FS.Abp.EntityTypes\Dtos\" />
+  </ItemGroup>
+
 </Project>

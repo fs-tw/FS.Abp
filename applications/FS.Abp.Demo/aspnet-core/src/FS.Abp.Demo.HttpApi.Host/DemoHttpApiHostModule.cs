@@ -28,6 +28,10 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Volo.CmsKit.Blogs;
+using Volo.CmsKit.Admin.Blogs;
 
 namespace FS.Abp.Demo
 {
@@ -58,6 +62,9 @@ namespace FS.Abp.Demo
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context, configuration);
+
+            //TypeDescriptor.AddProvider(new AssociatedMetadataTypeTypeDescriptionProvider(
+            //    typeof(BlogAdminAppService), typeof(BlogAdminAppServiceMetadata)), typeof(BlogAdminAppService));
         }
 
         private void ConfigureBundles()

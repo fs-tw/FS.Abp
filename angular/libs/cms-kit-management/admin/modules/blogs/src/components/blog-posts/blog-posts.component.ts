@@ -12,8 +12,9 @@ import {
 } from '@fs-tw/components/extensions';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { BLOG_POSTS_CREATE_FORM_PROPS, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_ACTIONS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, switchMap, take, tap } from 'rxjs/operators';
+import { ExtensionsStore } from '@fs-tw/components/extensions';
 
 @Component({
   selector: 'fs-tw-blog-posts',
@@ -38,11 +39,18 @@ export class BlogPostsComponent implements OnInit {
   editModalVisible = false;
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogPostDto;
+  searchForm: FormGroup = this.fb.group({});
+
   constructor(
+    private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    extensionsStore:ExtensionsStore
   ) {
+    this.searchForm = this.fb.group({
+      filter: "",
+    });    
     this.subs.add(
       setDefaults(injector, BlogPostsComponent.NAME, {
         entityAction: BLOG_POSTS_ENTITY_ACTIONS,

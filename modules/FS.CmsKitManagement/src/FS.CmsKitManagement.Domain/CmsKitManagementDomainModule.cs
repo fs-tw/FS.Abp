@@ -14,6 +14,7 @@ using Volo.Abp.Reflection;
 using Volo.CmsKit.Pages;
 using Volo.CmsKit.Blogs;
 using Volo.CmsKit.Menus;
+using System.ComponentModel;
 
 namespace FS.CmsKitManagement
 {
@@ -54,6 +55,7 @@ namespace FS.CmsKitManagement
             {
                 context.Services.ExecutePreConfiguredActions(options);
             });
+
         }
 
 
