@@ -1,12 +1,11 @@
-<div *ngIf="this.ready$ | async">
-  <fs-page
-    [list]="list"
-    [service]="service"
-    [title]="'CmsKitManagement::BlogPost'"
-    [form]="searchForm"
-  >
-  </fs-page>
-</div>
+<fs-page
+  [list]="list"
+  [service]="service"
+  [title]="'CmsKitManagement::BlogPost'"
+  [form]="searchForm"
+>
+
+</fs-page>
 
 <fs-modal
   [title]="'AbpUi::Create'"
