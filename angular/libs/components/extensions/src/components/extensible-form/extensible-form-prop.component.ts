@@ -38,7 +38,7 @@ export class ExtensibleFormPropComponent implements OnChanges {
     this.form = groupDirective.form;
   }
 
-  getDefaultComponentKey(prop: FormProp | any): string {
+  getDefaultComponentKey(prop: FormProp): string {
     switch (prop.type) {
       case ePropType.Boolean:
         return 'checkbox';
@@ -56,9 +56,9 @@ export class ExtensibleFormPropComponent implements OnChanges {
         return 'time';
       case ePropType.Typeahead:
         return 'typeahead';
-      case 'html':
+      case 'html' as ePropType:
         return 'html';
-      case 'upload':
+      case 'upload' as ePropType:
         return 'upload';
       default:
         return prop.options ? 'select' : 'input';

@@ -29,11 +29,11 @@ export const PAGES_CREATE_FORM_PROPS =
       validators: () => [Validators.required],
     },
     {
-      type: 'html',
+      type: 'html' as ePropType,
       name: 'content',
       id: 'content',
       displayName: 'CmsKit::Content',
-    } as any,
+    },
     {
       type: ePropType.String,
       name: 'script',

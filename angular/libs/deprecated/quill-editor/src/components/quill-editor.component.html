@@ -1,8 +1,0 @@
-<quill-editor [sanitize]="true" [(ngModel)]="content" (ngModelChange)="onChange()" (onEditorCreated)="onEditorCreate($event)"></quill-editor>
-
-<nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle | abpLocalization" [nzCancelText]="null" [nzOkLoading]="loading" [nzCancelLoading]="loading" (nzOnCancel)="handleClose()" (nzOnOk)="handleOk()">
-    <fs-image-picker [maxImageCount]="1"></fs-image-picker>
-</nz-modal>
-
-
-<!-- <quill-view-html [content]="content"></quill-view-html> -->
