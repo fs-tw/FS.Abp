@@ -17,8 +17,7 @@ import { NzSelectLoadingComponent } from './directives/nz-select-loading.compone
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { ExtensibleFormComponent } from './components/extensible-form/extensible-form.component';
 import { ExtensibleFormPropComponent } from './components/extensible-form/extensible-form-prop.component';
-import { QuillModule } from 'ngx-quill';
-import { QuillEditorComponent } from './components/extensible-form/widgets/quill-editor/quill-editor.component';
+import { WidgetQuillEditorComponent } from './components/extensible-form/widgets/quill-editor/quill-editor.component';
 import { InputComponent } from './components/extensible-form/widgets/input/input.component';
 import { WidgetComponent, WidgetComponentRef } from './components/extensible-form/widgets/widget.component';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -43,6 +42,7 @@ import { UploadComponent } from './components/extensible-form/widgets/upload/upl
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ImagePickerModule } from '@fs-tw/components/image-picker';
+import { ThemeQuillEditorModule } from '@fs-tw/components/quill-editor';
 
 const PUBLIC = [
   ExtensibleTableComponent,
@@ -87,7 +87,7 @@ const FORM_WIDGETs = [
   TimeComponent,
   TypeaheadComponent,
   SelectComponent,
-  QuillEditorComponent,
+  WidgetQuillEditorComponent,
   UploadComponent
 ];
 
@@ -104,7 +104,7 @@ const FORM_WIDGETs = [
     ...ZORRO_MODULES,
 
     ImagePickerModule,
-    QuillModule.forRoot(),
+    ThemeQuillEditorModule
   ],
 })
 export class ThemeAlainUiExtensionsModule {

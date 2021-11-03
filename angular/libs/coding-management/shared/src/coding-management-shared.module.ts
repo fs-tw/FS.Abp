@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CoreModule } from '@abp/ng.core';
 import { PageModule } from '@abp/ng.components/page';
 //import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-// import { QuillModule } from 'ngx-quill';
 
 // import { CmsKitEntityBaseComponent } from './components/cms-kit-entity-base/cms-kit-entity-base.component';
 // import { BlogFeatureTabComponent } from './components/tabs/blog-feature-tab/blog-feature-tab.component';

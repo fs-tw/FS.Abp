@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+  <quill-editor
+    [sanitize]="true"
+    [formControlName]="controlName"
+    (onEditorCreated)="onEditorCreate($event)">
+  </quill-editor>
+</form>

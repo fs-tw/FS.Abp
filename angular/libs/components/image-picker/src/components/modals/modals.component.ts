@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ListService, ConfigStateService } from '@abp/ng.core';
 import {
   EXTENSIONS_IDENTIFIER,
@@ -8,7 +8,6 @@ import * as _ from 'lodash';
 import { ImagePicker } from '../../models/models';
 import { ImagePickerComponent } from '../image-picker/image-picker.component';
 import { tap } from 'rxjs/operators';
-
 
 @Component({
   selector: 'fs-image-picker-modal',
@@ -39,6 +38,7 @@ export class ImagePickerModalComponent implements OnInit {
   outputResult: BehaviorSubject<string[]>;
   constructor(
     public readonly list: ListService,
+    public readonly cdRef: ChangeDetectorRef,
     public readonly configStateService: ConfigStateService,
   ) {
   }
@@ -58,6 +58,7 @@ export class ImagePickerModalComponent implements OnInit {
 
   openModal(): BehaviorSubject<string[]> {
     this.isVisible = true;
+    this.cdRef.detectChanges();
     return this.outputResult;
   }
 
@@ -68,6 +69,7 @@ export class ImagePickerModalComponent implements OnInit {
         this.outputResult.next(x);
         this.loading = false;
         this.handleClose();
+        this.cdRef.detectChanges();
       })
     ).subscribe(() => {
       this.outputResult.complete();

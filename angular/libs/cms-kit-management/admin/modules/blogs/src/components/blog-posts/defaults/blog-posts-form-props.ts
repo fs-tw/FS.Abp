@@ -31,14 +31,14 @@ export const BLOG_POSTS_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admi
     displayName: 'Short Description'
   },
   {
-    type: ePropType.String,
+    type: "html" as ePropType,
     name: 'content',
     id: 'content',
     displayName: 'Content',
   }
 ]);
 
-export const BLOG_POSTS_EDIT_FORM_PROPS = FormProp.createMany<any>([
+export const BLOG_POSTS_EDIT_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Blogs.BlogPostDto>([
   {
     type: ePropType.Hidden,
     name: 'blogId',
@@ -67,7 +67,7 @@ export const BLOG_POSTS_EDIT_FORM_PROPS = FormProp.createMany<any>([
     displayName: 'Short Description'
   },
   {
-    type: ePropType.String,
+    type: "html" as ePropType,
     name: 'content',
     id: 'content',
     displayName: 'Content',

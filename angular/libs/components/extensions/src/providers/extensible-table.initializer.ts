@@ -1,6 +1,6 @@
 import { ReplaceableComponentsService } from '@abp/ng.core';
 import { APP_INITIALIZER } from '@angular/core';
-import { CheckboxComponent, DateComponent, DateTimeComponent, HiddenComponent, InputComponent, MultiselectComponent, QuillEditorComponent, SelectComponent, TextareaComponent, TimeComponent, TypeaheadComponent, UploadComponent } from '../components/extensible-form/widgets';
+import { CheckboxComponent, DateComponent, DateTimeComponent, HiddenComponent, InputComponent, MultiselectComponent, WidgetQuillEditorComponent, SelectComponent, TextareaComponent, TimeComponent, TypeaheadComponent, UploadComponent } from '../components/extensible-form/widgets';
 
 export const EXTENSIBLE_FORM_INITIALIZER = [
   {
@@ -37,7 +37,7 @@ const replaceableComponents: Array<any> = [
   },
   {
     name: 'html',
-    component: QuillEditorComponent,
+    component: WidgetQuillEditorComponent,
   },
   {
     name: 'select',

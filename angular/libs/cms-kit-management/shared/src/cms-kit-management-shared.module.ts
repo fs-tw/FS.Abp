@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from '@abp/ng.core';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BlogFeatureTabComponent } from './components/tabs/blog-feature-tab/blog-feature-tab.component';
 import { MediaTabComponent } from './components/tabs/media-tab/media-tab.component';
