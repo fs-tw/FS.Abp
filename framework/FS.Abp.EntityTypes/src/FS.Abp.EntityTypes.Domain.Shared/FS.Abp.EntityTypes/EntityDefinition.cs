@@ -1,141 +1,102 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
 namespace FS.Abp.EntityTypes
 {
-
-    public class EntityPropertyDefinition
+    public class EntityDefinition
     {
-        public string Type { get; set; }
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string DisplayName { get; set; }
-    }
-    public abstract class EntityDefinition
-    {
-        public virtual string EntityType { get; set; }
-        public Dictionary<string, EntityPropertyDefinition> CreateFormProps { get; }
+
+        private Type _appServiceType;
+        private Type _entityType;
+        private Type _createType;
+        private Type _updateType;
+        private Type _searchType;
+        private Type _listType;
+
+        public string Name { get { return this.AppServiceType; } }
+        public string AppServiceType { get { return _appServiceType.FullName; } }
+        public string EntityType { get { return _entityType.FullName; } }
+        public string CreateType { get { return _createType.FullName; } }
+        public string UpdateType { get { return _updateType.FullName; } }
+        public string SearchType { get { return _searchType.FullName; } }
+        public string ListType { get { return _listType.FullName; } }
+
+        public EntityDefinition() { }
+        public EntityDefinition(Type appServiceType, Type entity, Type searchType, Type createType)
+        {
+            _appServiceType = appServiceType;
+            _entityType = entity;
+            _searchType = searchType;
+            _createType = createType;
+
+        }
+
+        public virtual List<EntityPropertyDefinition> CreateFormProps
+        {
+            get
+            {
+                return EntityPropertyDefinition.CreateMany(_createType);
+            }
+        }
+
+        public virtual List<EntityPropertyDefinition> SearchFormProps
+        {
+            get
+            {
+                return EntityPropertyDefinition.CreateMany(_searchType);
+            }
+        }
+        public virtual List<EntityPropertyDefinition> ListProps
+        {
+            get
+            {
+                return EntityPropertyDefinition.CreateMany(_listType);
+            }
+        }
 
 
+        public static EntityDefinition Create<TAppServiceType, TEntity, TSearchType, TCreateType>()
+        {
+            return new EntityDefinition(typeof(TAppServiceType), typeof(TEntity), typeof(TSearchType), typeof(TCreateType));
+        }
 
+        public static EntityDefinition Create(Type appServiceType)
+        {
+            var result = new EntityDefinition()
+            {
+                _appServiceType = appServiceType,
+                _entityType = appServiceType.GenericTypeArguments[0],
+                _updateType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 1],
+                _createType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 2],
+                _searchType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 3],
+                _listType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 5]
+            };
 
-        //private static readonly List<string> CreateDtoNames = new()
-        //{
-        //    "CreateUpdate{0}Dto",
-        //    "Create{0}Dto",
-        //    "CreateUpdate{0}Input",
-        //    "Create{0}Input",
-        //    "Create{0}InputDto"
-        //};
+            return result;
+        }
 
-        //private static readonly List<string> EditDtoNames = new()
-        //{
-        //    "CreateUpdate{0}Dto",
-        //    "Update{0}Dto",
-        //    "CreateUpdate{0}Input",
-        //    "Update{0}Input",
-        //    "CreateEdit{0}Dto",
-        //    "Edit{0}Dto",
-        //    "CreateEdit{0}Input",
-        //    "CreateEdit{0}InputDto",
-        //    "Edit{0}Input"
-        //};
+        public static EntityDefinition CreateByAttribute<TAppServiceType>()
+        {
+            var attribute = TypeDescriptor.GetAttributes(typeof(TAppServiceType))
+                .OfType<EntityDefinitionAttribute>()
+                .Single();
 
-        //private static readonly List<string> ApplicationContractsNames = new()
-        //{
-        //    "{0}",
-        //    "{0}.Admin"
-        //};
+            var result = new EntityDefinition()
+            {
+                _appServiceType = attribute.AppServiceType,
+                _entityType = attribute.EntityType,
+                _updateType = attribute.UpdateType,
+                _createType = attribute.CreateType,
+                _searchType = attribute.SearchType,
+                _listType = attribute.ListType
+            };
 
-        //protected string ModuleName { get; set; }
-        //protected Assembly ApplicationContractsAssembly
-        //{
-        //    get
-        //    {
-        //        return AppDomain.CurrentDomain
-        //            .GetAssemblies()
-        //            .FirstOrDefault(x =>
-        //                ApplicationContractsNames
-        //                .Select(y => string.Format(y, ModuleName) + ".Application.Contracts")
-        //                .Contains(x.GetName().Name));
-
-        //        //.SingleOrDefault(x => x.GetName().Name == this.ModuleName + ".Application.Contracts");
-        //    }
-        //}
-
-
-        //public string Name { get; set; }
-
-        //private TypeInfo find(Assembly assembly, string entityName)
-        //{
-        //    var shortName = entityName.Substring(entityName.LastIndexOf('.') + 1);
-        //    return assembly?.DefinedTypes.FirstOrDefault(x =>
-        //                        CreateDtoNames.Select(y => string.Format(y, shortName)).Contains(x.Name));
-        //}
-
-
-
-
-
-        //public Dictionary<string, EntityPropertyDefinition> CreateFormProps
-        //{
-        //    get
-        //    {
-        //        var type = find(ApplicationContractsAssembly, Name);
-
-        //        var result = new Dictionary<string, EntityPropertyDefinition>();
-
-        //        var targetProperties = type.GetProperties().Select(p => p.Name)
-        //            .Except(typeof(Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot).GetProperties().Select(y => y.Name))
-        //            .Except(typeof(Volo.Abp.MultiTenancy.IMultiTenant).GetProperties().Select(y => y.Name))
-        //            .ToList();
-
-        //        return type.GetProperties()
-        //        .Where(x => targetProperties.Contains(x.Name))
-        //        .Select(p =>
-        //        {
-        //            var item = new EntityPropertyDefinition()
-        //            {
-        //                Id = p.Name,
-        //                DisplayName = p.Name,
-        //                Name = p.Name,
-        //                Type = p.PropertyType.FullName
-        //            };
-        //            return item;
-
-        //        }).ToDictionary(x => x.Id, y => y);
-        //    }
-        //}
-
-        //public Dictionary<string, EntityPropertyDefinition> EditFormProps
-        //{
-        //    get 
-        //    {
-        //        return null;
-        //    }
-        //}
-        //public Dictionary<string, EntityPropertyDefinition> EntityProps { get; set; }
-
-        //public EntityDefinition()
-        //{
-
-        //}
-
-        //public EntityDefinition(string entityName)
-        //{
-        //    Assembly[] AssembliesLoaded = AppDomain.CurrentDomain.GetAssemblies();
-        //    Type type = AssembliesLoaded.Select(assembly => assembly.GetType(entityName))
-        //        .Where(type => type != null)
-        //        .FirstOrDefault();
-
-        //    ModuleName = type.Assembly.GetName().Name.Replace(".Domain", "");
-        //    Name = type.FullName;
-
-        //}
-
+            return result;
+        }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace FS.Abp.EntityTypes
@@ -7,14 +8,19 @@ namespace FS.Abp.EntityTypes
     public class DefaultEntityDefinition
     {
         public Type AppServiceType { get; set; }
-        public Type Entity { get; set; }
+        public Type EntityType { get; set; }
         public Type CreateType { get; set; }
+        public Type UpdateType { get; set; }
+        public Type SearchType { get; set; }
+        public Type ListType { get; set; }
         public DefaultEntityDefinition() { }
-        public DefaultEntityDefinition(System.Type appServiceType, Type entity, Type createType)
+        public DefaultEntityDefinition(Type appServiceType, Type entity, Type searchType, Type createType)
         {
             AppServiceType = appServiceType;
-            Entity = entity;
+            EntityType = entity;
+            SearchType = searchType;
             CreateType = createType;
+
         }
 
         public virtual List<EntityPropertyDefinition> CreateFormProps
@@ -22,34 +28,33 @@ namespace FS.Abp.EntityTypes
             get
             {
                 var type = CreateType;
-
-                var result = new Dictionary<string, EntityPropertyDefinition>();
-
-                var targetProperties = type.GetProperties().Select(p => p.Name)
-                    .Except(typeof(Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot).GetProperties().Select(y => y.Name))
-                    .Except(typeof(Volo.Abp.MultiTenancy.IMultiTenant).GetProperties().Select(y => y.Name))
-                    .ToList();
-
-                return type.GetProperties()
-                .Where(x => targetProperties.Contains(x.Name))
-                .Select(p =>
-                {
-                    var propertyName = p.Name.ToCamelCase();
-                    var item = new EntityPropertyDefinition()
-                    {
-                        Id = propertyName,
-                        DisplayName = propertyName,
-                        Name = propertyName,
-                        Type = convertToePropType(p.PropertyType)
-                    };
-                    return item;
-
-                }).ToList();
+                return EntityPropertyDefinition.CreateMany(type);
             }
         }
-        public static DefaultEntityDefinition Create<TAppServiceType, TEntity, TCreateType>()
+
+        public virtual List<EntityPropertyDefinition> SearchFormProps
         {
-            return new DefaultEntityDefinition(typeof(TAppServiceType), typeof(TEntity), typeof(TCreateType));
+            get
+            {
+                var type = SearchType;
+
+                return EntityPropertyDefinition.CreateMany(type);
+            }
+        }
+        public virtual List<EntityPropertyDefinition> ListProps
+        {
+            get
+            {
+                var type = ListType;
+
+                return EntityPropertyDefinition.CreateMany(type);
+            }
+        }
+
+
+        public static DefaultEntityDefinition Create<TAppServiceType, TEntity, TSearchType, TCreateType>()
+        {
+            return new DefaultEntityDefinition(typeof(TAppServiceType), typeof(TEntity), typeof(TSearchType), typeof(TCreateType));
         }
 
         public static DefaultEntityDefinition Create(Type appServiceType)
@@ -57,41 +62,33 @@ namespace FS.Abp.EntityTypes
             var result = new DefaultEntityDefinition()
             {
                 AppServiceType = appServiceType,
-                Entity = appServiceType.GenericTypeArguments[0],
-                CreateType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 2]
+                EntityType = appServiceType.GenericTypeArguments[0],
+                UpdateType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 1],
+                CreateType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 2],
+                SearchType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 3],
+                ListType = appServiceType.GenericTypeArguments[appServiceType.GenericTypeArguments.Length - 5]
             };
 
             return result;
         }
 
-        private string convertToePropType(Type type)
+        public static DefaultEntityDefinition CreateByAttribute<TAppServiceType>()
         {
-            IReadOnlyDictionary<TypeCode, string> typeCodeToTypeMap = new Dictionary<TypeCode, string>
+            var attribute = TypeDescriptor.GetAttributes(typeof(TAppServiceType))
+                .OfType<EntityDefinitionAttribute>()
+                .Single();
+
+            var result = new DefaultEntityDefinition()
             {
-                { TypeCode.Boolean, "boolean" },
-                //{ TypeCode.Byte, typeof(byte) },
-                //{ TypeCode.Char, typeof(char) },
-                { TypeCode.DateTime, "dateTime" },
-                //{ TypeCode.DBNull, typeof(DBNull) },
-                { TypeCode.Decimal, "number" },
-                { TypeCode.Double, "number" },
-                //{ TypeCode.Empty, null },
-                { TypeCode.Int16, "number" },
-                { TypeCode.Int32, "number"},
-                { TypeCode.Int64, "number" },
-                //{ TypeCode.Object, typeof(object) },
-                //{ TypeCode.SByte, typeof(sbyte) },
-                { TypeCode.Single, "number" },
-                { TypeCode.String, "string" },
-                { TypeCode.UInt16, "number" },
-                { TypeCode.UInt32, "number" },
-                { TypeCode.UInt64, "number" }
+                AppServiceType = attribute.AppServiceType,
+                EntityType = attribute.EntityType,
+                UpdateType = attribute.UpdateType,
+                CreateType = attribute.CreateType,
+                SearchType = attribute.SearchType,
+                ListType = attribute.ListType
             };
-            var typeCode = Type.GetTypeCode(type);
-            if (typeCodeToTypeMap.ContainsKey(typeCode))
-                return typeCodeToTypeMap[Type.GetTypeCode(type)];
-            else
-                return "string";
+
+            return result;
         }
     }
 }

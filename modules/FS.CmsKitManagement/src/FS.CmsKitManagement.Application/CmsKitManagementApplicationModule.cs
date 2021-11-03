@@ -12,6 +12,9 @@ using Volo.Abp.Reflection;
 using Volo.Abp.EventBus.Local;
 using Volo.Abp.EventBus.Distributed;
 using System.Linq;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Volo.CmsKit.Blogs;
 
 namespace FS.CmsKitManagement
 {
@@ -37,21 +40,41 @@ namespace FS.CmsKitManagement
 
             Configure<EntityDefinitionOptions>(o =>
             {
-                o.GetOrAdd<Volo.CmsKit.Blogs.Blog>(
+                o.GetOrAdd<Volo.CmsKit.Admin.Blogs.BlogAdminAppService>(
                     a => { },
-                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Blogs.BlogAdminAppService, Volo.CmsKit.Blogs.Blog, Volo.CmsKit.Admin.Blogs.CreateBlogDto>());
+                    (t) => EntityDefinition.CreateByAttribute<Volo.CmsKit.Admin.Blogs.BlogAdminAppService>());
 
-                o.GetOrAdd<Volo.CmsKit.Blogs.BlogPost>(
-                    a => { },
-                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Blogs.BlogPostAdminAppService, Volo.CmsKit.Blogs.BlogPost, Volo.CmsKit.Admin.Blogs.CreateBlogPostDto>());
+                //o.GetOrAdd<Volo.CmsKit.Blogs.Blog>(
+                //    a => { },
+                //    (t) => DefaultEntityDefinition.Create<
+                //        Volo.CmsKit.Admin.Blogs.BlogAdminAppService, 
+                //        Volo.CmsKit.Blogs.Blog,
+                //        Volo.CmsKit.Admin.Blogs.BlogGetListInput,
+                //        Volo.CmsKit.Admin.Blogs.CreateBlogDto>());
 
-                o.GetOrAdd<Volo.CmsKit.Tags.Tag>(
-                    a => { },
-                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Tags.TagAdminAppService, Volo.CmsKit.Tags.Tag, Volo.CmsKit.Admin.Tags.TagCreateDto>());
+                //o.GetOrAdd<Volo.CmsKit.Blogs.BlogPost>(
+                //    a => { },
+                //    (t) => DefaultEntityDefinition.Create<
+                //        Volo.CmsKit.Admin.Blogs.BlogPostAdminAppService,
+                //        Volo.CmsKit.Blogs.BlogPost,
+                //        Volo.CmsKit.Admin.Blogs.BlogPostGetListInput,
+                //        Volo.CmsKit.Admin.Blogs.CreateBlogPostDto>());
 
-                o.GetOrAdd<Volo.CmsKit.Pages.Page>(
-                    a => { },
-                    (t) => DefaultEntityDefinition.Create<Volo.CmsKit.Admin.Pages.PageAdminAppService, Volo.CmsKit.Pages.Page, Volo.CmsKit.Admin.Pages.CreatePageInputDto>());
+                //o.GetOrAdd<Volo.CmsKit.Tags.Tag>(
+                //    a => { },
+                //    (t) => DefaultEntityDefinition.Create<
+                //        Volo.CmsKit.Admin.Tags.TagAdminAppService,
+                //        Volo.CmsKit.Tags.Tag,
+                //        Volo.CmsKit.Admin.Tags.TagGetListInput,
+                //        Volo.CmsKit.Admin.Tags.TagCreateDto>());
+
+                //o.GetOrAdd<Volo.CmsKit.Pages.Page>(
+                //    a => { },
+                //    (t) => DefaultEntityDefinition.Create<
+                //        Volo.CmsKit.Admin.Pages.PageAdminAppService,
+                //        Volo.CmsKit.Pages.Page, 
+                //        Volo.CmsKit.Admin.Pages.GetPagesInputDto,
+                //        Volo.CmsKit.Admin.Pages.CreatePageInputDto>());
             });
 
 

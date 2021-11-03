@@ -10,18 +10,13 @@ import {
   EntityActionList,
   EntityPropList,
   ActionData,
+  FormPropOptions,
+  EntityPropOptions,
 } from '@abp/ng.theme.shared/extensions';
 import { Injector } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ActionEvent, ActionEventHub } from '../providers/action-event.hub';
-
-export type Defaults<R = any> = {
-  entityAction?: EntityAction<R>[];
-  toolbarActions?: ToolbarAction<R[]>[];
-  entityProps?: EntityProp<R>[];
-  createFormProps?: FormProp<R>[];
-  editFormProps?: FormProp<R>[];
-};
+import { Extensions } from '../models/models';
 
 export type Contributors<R = any> = {
   actionContributors?: (actionList: EntityActionList<R>) => void;
@@ -30,11 +25,11 @@ export type Contributors<R = any> = {
   createFormContributors?: (propList: EntityPropList<R>) => void;
   editFormContributors?: (propList: EntityPropList<R>) => void;
 };
-
+//todo : remove
 export function setDefaults<R>(
   injector: Injector,
   key: string,
-  defaults: Defaults<R>
+  defaults: Extensions.Defaults<R>
 ): Subject<ActionEvent<R>> {
   const extensions = injector.get(ExtensionsService);
 
@@ -133,3 +128,24 @@ export function notify(method: string) {
     });
   };
 }
+
+export function CreateFormProp<R>(
+  options: FormPropOptions<R>[]
+): FormProp<R>[] {
+  return FormProp.createMany<R>(options);
+}
+
+export function CreateEntityProp<R>(
+  options: EntityPropOptions<R>[]
+): EntityProp<R>[] {
+  return EntityProp.createMany<R>(options);
+}
+
+export const PAGES_TOOLBAR_ACTIONS = ToolbarAction.createMany<any>([
+  {
+    text: 'CmsKit::NewPage',
+    action: notify('Create'),
+    permission: 'CmsKit.Pages.Create',
+    icon: 'fa fa-plus',
+  },
+]);

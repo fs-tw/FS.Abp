@@ -109,8 +109,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.Web", "f
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Volo.Abp.AutoFilterer", "Volo.Abp.AutoFilterer", "{43F1A753-09DB-4022-B832-688977258839}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volo.Abp.AutoFilterer", "framework\FS.Abp.AutoFilterer\Volo.Abp.AutoFilterer.csproj", "{4E98805F-39DE-427F-92F7-ADCB0407A305}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,10 +271,6 @@ Global
 		{77E51A47-16C1-4790-A680-9B2F0782EBB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77E51A47-16C1-4790-A680-9B2F0782EBB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77E51A47-16C1-4790-A680-9B2F0782EBB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E98805F-39DE-427F-92F7-ADCB0407A305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E98805F-39DE-427F-92F7-ADCB0407A305}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E98805F-39DE-427F-92F7-ADCB0407A305}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E98805F-39DE-427F-92F7-ADCB0407A305}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -333,7 +327,6 @@ Global
 		{FFE89463-8DC6-4F5F-8CD1-A74AA1DB59A2} = {DB1FB826-3D8C-4CAD-8AB1-3A78B49D61FF}
 		{77E51A47-16C1-4790-A680-9B2F0782EBB1} = {DB1FB826-3D8C-4CAD-8AB1-3A78B49D61FF}
 		{43F1A753-09DB-4022-B832-688977258839} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
-		{4E98805F-39DE-427F-92F7-ADCB0407A305} = {43F1A753-09DB-4022-B832-688977258839}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

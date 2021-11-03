@@ -11,16 +11,16 @@ import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
 import {
-  setDefaults,
-} from '@fs-tw/components/extensions';
-import {
   BLOGS_CREATE_FORM_PROPS,
   BLOGS_EDIT_FORM_PROPS,
   BLOGS_ENTITY_ACTIONS,
   BLOGS_ENTITY_PROPS,
   BLOGS_TOOLBAR_ACTIONS,
+
+  BLOGS_ENTITY_PROPS_CON
 } from './defaults/index';
 import { eCmsKitManagementComponents } from '../../enums/components';
+import { ExtensionsStore } from '@fs-tw/components/extensions';
 
 @Component({
   selector: 'fs-tw-blogs',
@@ -47,7 +47,8 @@ export class BlogsComponent implements OnInit {
   editBlogFeatures: Volo.CmsKit.Blogs.BlogFeatureDto[];
   editBlogFeaturesForm: FormGroup;
 
-  searchForm: FormGroup = this.fb.group({ filter: "" });
+  searchForm: FormGroup = this.fb.group({ filter: '' });
+
   constructor(
     private fb: FormBuilder,
     private readonly injector: Injector,
@@ -55,14 +56,19 @@ export class BlogsComponent implements OnInit {
     private confirmationService: ConfirmationService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
-    this.subs.add(
-      setDefaults(injector, eCmsKitManagementComponents.BlogsComponent, {
+    let extensionsStore = injector.get(ExtensionsStore);
+
+    let actionSub = extensionsStore
+      .setDefaults(eCmsKitManagementComponents.BlogsComponent, {
         entityAction: BLOGS_ENTITY_ACTIONS,
         toolbarActions: BLOGS_TOOLBAR_ACTIONS,
         entityProps: BLOGS_ENTITY_PROPS,
         createFormProps: BLOGS_CREATE_FORM_PROPS,
         editFormProps: BLOGS_EDIT_FORM_PROPS,
-      }).subscribe((x) => {
+      },{
+        entityType:''
+      })
+      .subscribe((x) => {
         switch (x.method) {
           case 'Create':
             this.onAdd();
@@ -74,8 +80,13 @@ export class BlogsComponent implements OnInit {
             this.delete(x.data.record.id, x.data.record.name);
             break;
         }
+      });
+
+      extensionsStore.actionEventHub.Register(eCmsKitManagementComponents.BlogsComponent).subscribe(x=>{
+
+
       })
-    );
+    this.subs.add(actionSub);
 
     this.service = this.injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
     this.blogFeatureService = this.injector.get(
@@ -147,9 +158,7 @@ export class BlogsComponent implements OnInit {
         mergeMap((x) => {
           if (blogFeatures.length === 0) return of(null);
           return forkJoin(
-            blogFeatures.map((a) =>
-              this.blogFeatureService.set(x.id, a)
-            )
+            blogFeatures.map((a) => this.blogFeatureService.set(x.id, a))
           );
         })
       )
