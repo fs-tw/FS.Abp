@@ -5,6 +5,35 @@
     [title]="'CmsKitManagement::BlogPost'"
     [form]="searchForm"
   >
+    <ng-template PageSearchTemplate>
+      <form [formGroup]="searchForm">
+        <nz-select
+          style="border: none!important;"
+          class="form-control"
+          nzShowSearch nzAllowClear
+          nzPlaceHolder="選擇部落格"
+          [formControlName]="'blogId'">
+          <nz-option
+            *ngFor="let item of blogList"
+            [nzValue]="item.id"
+            [nzLabel]="item.name">
+          </nz-option>
+        </nz-select>
+        <div class="input-group">
+          <input
+            type="search"
+            class="form-control"
+            [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+            [formControlName]="'filter'"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="list.get()">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </ng-template>
   </fs-page>
 </div>
 
