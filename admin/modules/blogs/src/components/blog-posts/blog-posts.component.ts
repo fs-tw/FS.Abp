@@ -52,7 +52,7 @@ export class BlogPostsComponent implements OnInit {
   editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogPostDto;
 
   ready$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  searchForm: FormGroup = this.fb.group({ filter: "" });
+  searchForm: FormGroup = this.fb.group({ filter: "", blogId: null });
 
   blogPostImageInfo: ImagePicker.ImageFile[] = [];
   constructor(
