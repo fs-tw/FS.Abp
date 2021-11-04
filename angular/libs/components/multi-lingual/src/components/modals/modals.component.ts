@@ -87,11 +87,11 @@ export class MultiLingualModalComponent<T> implements OnInit {
     forkJoin([
       this.provider.get(entityId),
       this.service.getMultiLingual({ entityId: entityId, entityType: this.entityType })
-    ]).subscribe(result => {
-      this.rawSelectedRecord = result[1];
+    ]).subscribe(([selected, multiLingual])=> {
+      this.rawSelectedRecord = multiLingual;
 
-      this.setDefaultRecord(result[0]);
-      this.setSelectedRecord(result[1]);
+      this.setDefaultRecord(selected);
+      this.setSelectedRecord(multiLingual);
       
       this.visible = true;
     });
@@ -107,7 +107,7 @@ export class MultiLingualModalComponent<T> implements OnInit {
     this.defaultRecord = this.Fields.map(x => {
       return {
         name: x,
-        value: input[x.toLowerCase()]
+        value: input[x]
       }
     });
   }

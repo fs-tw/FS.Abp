@@ -1,7 +1,9 @@
 <form [formGroup]="form">
   <ng-template [ngTemplateOutlet]="label"></ng-template>
-  <fs-quill-editor [form]="form" [controlName]="prop.name"></fs-quill-editor>
+  <fs-quill-editor
+    [entityType]="entityType"
+    [form]="form"
+    [controlName]="prop.name"
+    [editorImageInfo]="editorImageInfo">
+  </fs-quill-editor>
 </form>
-
-<fs-image-picker-modal [shortEntityType]="entityType" [imageInfo]="editorImageInfo">
-</fs-image-picker-modal>

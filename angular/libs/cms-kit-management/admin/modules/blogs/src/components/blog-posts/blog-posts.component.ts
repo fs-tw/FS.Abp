@@ -9,11 +9,12 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { BehaviorSubject, combineLatest, Subscription } from 'rxjs';
 import { setDefaults } from '@fs-tw/components/extensions';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
-import { AddToolbarAction, BLOG_POSTS_CREATE_FORM_PROPS, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_ACTIONS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
+import { AddBlogIdItems, AddToolbarAction, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
+import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 import * as _ from 'lodash';
 import { ExtensionsStore } from '@fs-tw/components/extensions';
 
@@ -30,13 +31,18 @@ import { ExtensionsStore } from '@fs-tw/components/extensions';
   ]
 })
 export class BlogPostsComponent implements OnInit {
+  @ViewChild(MultiLingualModalComponent)
+  multiLingualModal: MultiLingualModalComponent<Volo.CmsKit.Admin.Pages.PageDto>;
+  
   @ViewChild(ImagePickerModalComponent) postImage: ImagePickerModalComponent;
   public static NAME: string = 'Blogs.BlogPostsComponent';
   public EntityType = 'Volo.CmsKit.Blogs.BlogPost';
   public ShortEntityType = 'BlogPost';
+  blogService: Volo.CmsKit.Admin.Blogs.BlogAdminService;
   service: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
   subs: Subscription = new Subscription();
   feature: Array<string>;
+  blogList: Array<{ name: string, id: string }>;
 
   createModalVisible = false;
   addForm: FormGroup;
@@ -54,20 +60,34 @@ export class BlogPostsComponent implements OnInit {
     private readonly injector: Injector,
     public readonly list: ListService,
     private confirmationService: ConfirmationService,
-    private extensionsStore: ExtensionsStore
+    public entityTypeStore: EntityTypeStore,
   ) {
+    this.blogService = injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
     this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
-    this.searchForm = this.fb.group({
-      filter: "",
-    });
-    this.subs.add(
-      setDefaults(injector, BlogPostsComponent.NAME, {
-        entityAction: BLOG_POSTS_ENTITY_ACTIONS,
-        toolbarActions: BLOG_POSTS_TOOLBAR_ACTIONS,
-        entityProps: BLOG_POSTS_ENTITY_PROPS,
-        createFormProps: BLOG_POSTS_CREATE_FORM_PROPS,
-        editFormProps: BLOG_POSTS_EDIT_FORM_PROPS,
-      }).subscribe((x) => {
+    this.entityTypeStore = injector.get(EntityTypeStore);
+
+    let setDefaults$ = combineLatest([
+      this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
+      this.blogService.getList({ maxResultCount: 999 })
+    ]).pipe(
+        mergeMap(([entityType, blogList]) => {
+        this.feature = entityType.map((y) => y.name);
+        this.blogList = blogList.items.map(x => { return { name: x.name, id: x.id } });
+        let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
+          injector,
+          BlogPostsComponent.NAME,
+          {
+            entityAction: AddToolbarAction(this.feature),
+            toolbarActions: BLOG_POSTS_TOOLBAR_ACTIONS,
+            entityProps: BLOG_POSTS_ENTITY_PROPS,
+            createFormProps: AddBlogIdItems(this.blogList),
+            editFormProps: BLOG_POSTS_EDIT_FORM_PROPS,
+          }
+        );
+        this.ready$.next(true);
+        return result;
+      }),
+      tap((x) => {
         switch (x.method) {
           case 'Create':
             this.onAdd();
@@ -84,6 +104,8 @@ export class BlogPostsComponent implements OnInit {
         }
       })
     );
+
+    this.subs.add(setDefaults$.subscribe());
   }
 
   ngOnInit(): void {
@@ -156,6 +178,9 @@ export class BlogPostsComponent implements OnInit {
   
   featureFunction(method: string, entityId: string) {
     switch(method) {
+      case "MultiLingual":
+        this.multiLingualModal.openModal(entityId);
+        break;
       case "MediaDescriptor":
         this.generatorMediaDescriptor(entityId);
         break;
@@ -185,7 +210,6 @@ export class BlogPostsComponent implements OnInit {
         })
       )
       .subscribe((x) => {
-        this.list.get();
       });
   }
 

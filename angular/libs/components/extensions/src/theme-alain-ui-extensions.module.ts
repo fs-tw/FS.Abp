@@ -41,7 +41,6 @@ import { TreeModule } from '@abp/ng.components/tree';
 import { UploadComponent } from './components/extensible-form/widgets/upload/upload.component';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { ImagePickerModule } from '@fs-tw/components/image-picker';
 import { ThemeQuillEditorModule } from '@fs-tw/components/quill-editor';
 
 const PUBLIC = [
@@ -103,7 +102,6 @@ const FORM_WIDGETs = [
 
     ...ZORRO_MODULES,
 
-    ImagePickerModule,
     ThemeQuillEditorModule
   ],
 })
