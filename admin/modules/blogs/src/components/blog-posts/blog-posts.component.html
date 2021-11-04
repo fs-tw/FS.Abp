@@ -1,10 +1,12 @@
-<fs-page
-  [list]="list"
-  [service]="service"
-  [title]="'CmsKitManagement::BlogPost'"
-  [form]="searchForm"
->
-</fs-page>
+<div *ngIf="this.ready$ | async">
+  <fs-page
+    [list]="list"
+    [service]="service"
+    [title]="'CmsKitManagement::BlogPost'"
+    [form]="searchForm"
+  >
+  </fs-page>
+</div>
 
 <fs-modal
   [title]="'AbpUi::Create'"
@@ -27,6 +29,13 @@
     [selectedRecord]="editSelectedRecord"
   ></fs-modal-info-tab>
 </fs-modal>
+
+<fs-multi-lingual-modal
+  [provider]="service"
+  [entityType]="EntityType"
+  [entityId]="editSelectedRecord?.id"
+>
+</fs-multi-lingual-modal>
 
 <fs-image-picker-modal [shortEntityType]="ShortEntityType" [imageInfo]="blogPostImageInfo">
 </fs-image-picker-modal>
