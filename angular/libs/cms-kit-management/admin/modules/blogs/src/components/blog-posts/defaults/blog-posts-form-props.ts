@@ -11,7 +11,7 @@ export function AddBlogIdItems(items: Array<{ name: string, id: string }>): Form
         type: ePropType.Enum,
         name: 'blogId',
         id:'blogId',
-        displayName: 'Blog Id',
+        displayName: 'Blog',
         validators: () => [Validators.required],
         options: (data) => of([
           ...items.map(x => {
