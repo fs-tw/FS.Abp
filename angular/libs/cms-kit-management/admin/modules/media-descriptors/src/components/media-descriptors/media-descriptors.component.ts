@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injectable, Injector, OnInit } from '@angular/core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -9,10 +9,10 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
-import { forkJoin, of, Subscription } from 'rxjs';
+import { forkJoin, Observable, of, Subscription } from 'rxjs';
 import {
   setDefaults,
-} from '@fs-tw/theme-alain/extensions';
+} from '@fs-tw/components/extensions';
 import {
   MEDIA_DESCRIPTORS_CREATE_FORM_PROPS,
   MEDIA_DESCRIPTORS_EDIT_FORM_PROPS,
@@ -20,6 +20,23 @@ import {
   MEDIA_DESCRIPTORS_ENTITY_PROPS,
   MEDIA_DESCRIPTORS_TOOLBAR_ACTIONS,
 } from './defaults/index';
+import type { PagedResultDto } from '@abp/ng.core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ComponentService {
+  constructor(
+    private readonly injector: Injector,
+  ) {
+  }
+
+  getList():
+    Observable<PagedResultDto<any>>
+  {
+    return of(null);
+  }
+}
 
 @Component({
   selector: 'fs-tw-media-descriptors',
@@ -35,6 +52,7 @@ import {
 export class MediaDescriptorsComponent implements OnInit {
   public static NAME: string = 'MediaDescriptors.MediaDescriptorsComponent';
   service: Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorAdminService;
+  getService: ComponentService;
   subs: Subscription = new Subscription();
 
   createModalVisible = false;
@@ -67,6 +85,7 @@ export class MediaDescriptorsComponent implements OnInit {
       })
     );
     this.service = this.injector.get(Volo.CmsKit.Admin.MediaDescriptors.MediaDescriptorAdminService);
+    this.getService = this.injector.get(ComponentService);
   }
 
   ngOnInit(): void {}

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,22 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <EmbeddedResource Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-    <None Remove="FS.CmsKitManagement.Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Routes\**" />
-    <None Remove="_Generated\FS.CmsKitManagement\Vocabularies\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionDefinitionProviders.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\BlogsPermissionNames.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\Dtos\PostRouteDto.Generated.cs" />
-    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IPostRouteCrudAppService.Generated.cs" />
+    <Compile Remove="Deprecated\**" />
+    <EmbeddedResource Remove="Deprecated\**" />
+    <None Remove="Deprecated\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +33,70 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\ContentPropertyDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\EntityContentDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\Dtos\EntityContentDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentPropertyCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\Dtos\EntityBlogDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\IEntityBlogCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\IEntityBlogsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
@@ -66,6 +117,56 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\Dtos\MultiLingualTranslationDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualsApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualTranslationCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\Dtos\ShapeDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\IShapeCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\IShapesApi.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\ShapesPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\ShapesPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
   </ItemGroup>
+
+
 
 </Project>

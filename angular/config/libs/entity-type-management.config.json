@@ -1,0 +1,53 @@
+{
+  "order": 2001,
+  "nx": {
+    "entity-type-management": { "tags": [] }
+  },
+  "angular": {
+    "entity-type-management": {
+      "projectType": "library",
+      "root": "libs/entity-type-management",
+      "sourceRoot": "libs/entity-type-management/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/entity-type-management/tsconfig.lib.json",
+            "project": "libs/entity-type-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/entity-type-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/entity-type-management/src/**/*.ts",
+              "libs/entity-type-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/entity-type-management"],
+          "options": {
+            "jestConfig": "libs/entity-type-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/entity-type-management": [
+      "libs/entity-type-management/src/index.ts"
+    ],
+    "@fs-tw/entity-type-management/*": [
+      "libs/entity-type-management/*/src/index.ts"
+    ]
+  }
+}

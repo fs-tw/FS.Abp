@@ -12,7 +12,7 @@ import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
 import { forkJoin, of, Subscription } from 'rxjs';
 import {
   setDefaults,
-} from '@fs-tw/theme-alain/extensions';
+} from '@fs-tw/components/extensions';
 import {
   MENUS_CREATE_FORM_PROPS,
   MENUS_EDIT_FORM_PROPS,
@@ -20,7 +20,6 @@ import {
   MENUS_ENTITY_PROPS,
   MENUS_TOOLBAR_ACTIONS,
 } from './defaults/index';
-import { BaseNode, TreeAdapter } from '@abp/ng.components/tree';
 
 @Component({
   selector: 'fs-tw-menus',
@@ -39,15 +38,14 @@ export class MenusComponent implements OnInit {
   service: Volo.CmsKit.Admin.Menus.MenuItemAdminService;
 
   createModalVisible = false;
+  createSubItemModalVisible = false;
   addForm: FormGroup;
 
   editModalVisible = false;
   editForm: FormGroup;
   editSelectedRecord: Volo.CmsKit.Admin.Blogs.BlogDto;
 
-  nodes = [];
-  treeAdapter: TreeAdapter;
-  expandedKeys: Array<string> = [];
+  treeData: Volo.CmsKit.Menus.MenuItemDto[];
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
@@ -89,9 +87,7 @@ export class MenusComponent implements OnInit {
     };
 
     this.list.hookToQuery(StreamCreator).subscribe((res) => {
-      this.treeAdapter = new TreeAdapter(res.items as BaseNode[]);
-      this.nodes = this.treeAdapter.getTree();
-      this.expandedKeys = [...this.expandedKeys];
+      this.treeData = res.items;
     });
   };
 
@@ -103,12 +99,21 @@ export class MenusComponent implements OnInit {
     this.addForm = generateFormFromProps(data);
     this.createModalVisible = true;
   }
+  onAddSubItem(id: string) {
+    const data = new FormPropData(
+      this.injector,
+      { parentId: id } as Volo.CmsKit.Admin.Menus.MenuItemCreateInput
+    );
+    this.addForm = generateFormFromProps(data);
+    this.createSubItemModalVisible = true;
+  }
   create(formValue) {
     this.service
       .create(formValue)
       .pipe(take(1))
       .subscribe((_) => {
         this.createModalVisible = false;
+        this.createSubItemModalVisible = false;
         this.list.get();
       });
   }

@@ -67,9 +67,12 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },
+              "node_modules/quill/dist/quill.snow.css",
               "apps/fs/src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -139,6 +142,135 @@
           "options": {
             "jestConfig": "apps/fs/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "leptonx": {
+      "projectType": "application",
+      "root": "apps/leptonx",
+      "sourceRoot": "apps/leptonx/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/leptonx",
+            "index": "apps/leptonx/src/index.html",
+            "main": "apps/leptonx/src/main.ts",
+            "polyfills": "apps/leptonx/src/polyfills.ts",
+            "tsConfig": "apps/leptonx/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [
+              "chart.js",
+              "js-sha256"
+            ],
+            "assets": [
+              "apps/leptonx/src/favicon.ico",
+              "apps/leptonx/src/assets"
+            ],
+            "styles": [
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-all.min"
+              },
+              {
+                "input": "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+                "inject": true,
+                "bundleName": "fontawesome-v4-shims.min"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/index.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-index"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-icons"
+              },
+              {
+                "input": "node_modules/@swimlane/ngx-datatable/themes/material.css",
+                "inject": true,
+                "bundleName": "ngx-datatable-material"
+              },
+              {
+                "input": "node_modules/@abp/ng.theme.shared/styles/bootstrap-rtl.min.css",
+                "inject": false,
+                "bundleName": "bootstrap-rtl.min"
+              },
+              "node_modules/@volo/ngx-lepton-x.lite/styles/sidemenu-layout.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "apps/leptonx/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "2.5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/leptonx/src/environments/environment.ts",
+                  "with": "apps/leptonx/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "leptonx:build:production"
+            },
+            "development": {
+              "browserTarget": "leptonx:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "leptonx:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/leptonx/src/**/*.ts",
+              "apps/leptonx/src/**/*.html"
+            ]
           }
         }
       }
@@ -275,7 +407,7 @@
         "build": {
           "builder": "@nrwl/angular:package",
           "outputs": [
-            "node_modules/@fs-tw/components"
+            "dist/libs/components"
           ],
           "options": {
             "tsConfig": "libs/components/tsconfig.lib.json",
@@ -298,47 +430,41 @@
         }
       }
     },
-    "proxy": {
+    "entity-type-management": {
       "projectType": "library",
-      "root": "libs/proxy",
-      "sourceRoot": "libs/proxy/src",
+      "root": "libs/entity-type-management",
+      "sourceRoot": "libs/entity-type-management/src",
       "prefix": "fs",
       "architect": {
         "build": {
-          "builder": "@nrwl/angular:package",
-          "outputs": [
-            "node_modules/@fs-tw/proxy"
-          ],
+          "builder": "@nrwl/angular:ng-packagr-lite",
           "options": {
-            "project": "libs/proxy/ng-package.json"
+            "tsConfig": "libs/entity-type-management/tsconfig.lib.json",
+            "project": "libs/entity-type-management/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/proxy/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/proxy/tsconfig.lib.json"
+              "tsConfig": "libs/entity-type-management/tsconfig.lib.prod.json"
             }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/proxy"
-          ],
-          "options": {
-            "jestConfig": "libs/proxy/jest.config.js",
-            "passWithNoTests": true
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/proxy/src/**/*.ts",
-              "libs/proxy/src/**/*.html"
+              "libs/entity-type-management/src/**/*.ts",
+              "libs/entity-type-management/src/**/*.html"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/entity-type-management"
+          ],
+          "options": {
+            "jestConfig": "libs/entity-type-management/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -375,5 +501,5 @@
       "style": "css"
     }
   },
-  "defaultProject": ""
+  "defaultProject": "fs"
 }

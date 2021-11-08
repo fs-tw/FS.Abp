@@ -13,9 +13,11 @@ namespace FS.CmsKitManagement
     [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
     public class CmsKitManagementDomainSharedModule : AbpModule
     {
+        
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             CmsKitManagementGlobalFeatureConfigurator.Configure();
+            CmsKitManagementModuleExtensionConfigurator.Configure();
         }
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

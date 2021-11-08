@@ -9,5 +9,6 @@ export const SHARED_ABP_MODULES = [
     ThemeSharedModule,
     PageModule,
     NgxValidateCoreModule,
-    UiExtensionsModule
+    UiExtensionsModule,
+    UiExtensionsModule,
 ];

@@ -20,7 +20,7 @@ namespace FS.Abp.Specifications
                 _value = prop.GetValue(input)?.ToString();
             }
         }
-        public override System.Linq.Expressions.Expression<Func<T, bool>> ToExpression()
+        public override Expression<Func<T, bool>> ToExpression()
         {
             if (string.IsNullOrEmpty(_value))
                 return (x) => true;

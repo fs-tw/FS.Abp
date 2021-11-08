@@ -22,6 +22,8 @@ namespace FS.Abp.Demo.Samples
         [Fact]
         public async Task Initial_Data_Should_Contain_Admin_User()
         {
+
+            
             //Act
             var result = await _userAppService.GetListAsync(new GetIdentityUsersInput());
 

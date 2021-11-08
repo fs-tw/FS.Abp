@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from '@abp/ng.core';
 import { PageComponent } from './components/page.component';
-import { ThemeAlainUiExtensionsModule } from '@fs-tw/theme-alain/extensions';
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { UiExtensionsModule } from '@abp/ng.theme.shared/extensions'
+import { PageSearchTemplateDirective } from './components/templates';
+import { SHARED_ABP_MODULES } from './shared-abp.module';
+import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
+import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
 
-const exportedDeclarations = [PageComponent];
+const exportedDeclarations = [PageComponent, PageSearchTemplateDirective];
 
 @NgModule({
   imports: [
-    CoreModule,
-    NzCardModule,
-    UiExtensionsModule,
     ThemeAlainUiExtensionsModule,
+    ...SHARED_ABP_MODULES,
+    ...SHARED_ZORRO_MODULES
   ],
   declarations: [...exportedDeclarations],
-  exports: [...exportedDeclarations,ThemeAlainUiExtensionsModule]
+  exports: [...exportedDeclarations]
 })
 export class PageModule {}

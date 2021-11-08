@@ -9,7 +9,7 @@ import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   setDefaults,
-} from '@fs-tw/theme-alain/extensions';
+} from '@fs-tw/components/extensions';
 import { TAGS_CREATE_FORM_PROPS, TAGS_EDIT_FORM_PROPS, TAGS_ENTITY_ACTIONS, TAGS_ENTITY_PROPS, TAGS_TOOLBAR_ACTIONS } from './defaults/index';
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';

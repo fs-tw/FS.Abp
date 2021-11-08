@@ -21,6 +21,9 @@ namespace FS.Abp.Demo
         typeof(AbpSettingManagementHttpApiModule)
         )]
     [DependsOn(
+        typeof(FS.Abp.EntityTypes.EntityTypesHttpApiModule)
+        )]
+    [DependsOn(
         typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule),
         typeof(FS.CodingManagement.CodingManagementHttpApiModule)
         )]

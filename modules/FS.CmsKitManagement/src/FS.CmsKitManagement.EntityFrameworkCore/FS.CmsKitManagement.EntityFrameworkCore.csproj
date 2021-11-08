@@ -4,27 +4,15 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>FS.CmsKitManagement</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="FS.CmsKitManagement.Routes\**" />
-    <EmbeddedResource Remove="FS.CmsKitManagement.Routes\**" />
-    <None Remove="FS.CmsKitManagement.Routes\**" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.EntityFrameworkCore" Version="$(AbpVersion)" />
     <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain\FS.CmsKitManagement.Domain.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Compile Update="EntityFrameworkCore\CmsKitManagementDbContextModelCreatingExtensions.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="FS.CmsKitManagement.Blogs\BlogsStore.cs">
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="_Generated\EntityFrameworkCore\CmsKitManagementDbContext.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
@@ -41,6 +29,54 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
     </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentProperty.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\ContentsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreContentPropertyRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreEntityContentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EfCoreEntityContentRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContent.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Contents\EntityContentDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contents</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EfCoreEntityBlogRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlog.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\EntityBlogsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityBlogs</DependentUpon>
+    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\AttachmentMedia.Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
@@ -49,13 +85,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>MediaDescriptors</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\MediaDescriptorsStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\EfCoreMultiLingualRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\EfCoreMultiLingualTranslationRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingual.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\MultiLingualTranslation.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\EfCoreShapeRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\Shape.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\ShapesStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shapes</DependentUpon>
     </Compile>
   </ItemGroup>
 

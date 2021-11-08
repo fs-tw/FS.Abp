@@ -3,13 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MenusComponent } from './components/menus/menus.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '', redirectTo: 'menu', pathMatch: 'full' },
-      { path: 'menu', component: MenusComponent }
-    ],
-  },
+  { path: '', component: MenusComponent }
 ];
 
 @NgModule({

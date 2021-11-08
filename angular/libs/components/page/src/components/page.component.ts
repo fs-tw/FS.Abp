@@ -1,29 +1,38 @@
 import {
   Component,
-  OnInit,
   Input,
-  Injector
+  Injector,
+  ContentChild
 } from '@angular/core';
 import { ListService, ABP, PagedResultDto } from '@abp/ng.core';
 import { Observable } from 'rxjs';
+import { PageSearchTemplateDirective } from './templates';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
-export type EntityService<T> = {
-  getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<T>>;
+export type EntityService<R> = {
+  getList: (query: ABP.PageQueryParams) => Observable<PagedResultDto<R>>;
 };
+
+export type SearchService = {};
 
 @Component({
   selector: 'fs-page',
-  templateUrl: './page.component.html'
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.less']
 })
-export class PageComponent<T> {
+export class PageComponent<R> {
+  @ContentChild(PageSearchTemplateDirective) customSearchTemplate: PageSearchTemplateDirective;
+
   @Input() title: string;
   @Input() list: ListService;
-  @Input() service: EntityService<T>;
+  @Input() service: EntityService<R>;
+  @Input() form: FormGroup;
 
-  data$: Observable<PagedResultDto<T>>;
+  data$: Observable<PagedResultDto<R>>;
 
   constructor(
     private readonly injector: Injector,
+    private fb: FormBuilder,
   ) {
   }
 
@@ -31,12 +40,16 @@ export class PageComponent<T> {
     this.hookToQuery();
   }
 
-  hookToQuery() {
-    this.data$ = this.list.hookToQuery((query) =>{
-      return this.service.getList(query);
-    });
+  ngOnChanges() {
+    if(!this.form) {
+      this.form = this.fb.group({ filter: "" });
+    }
   }
 
-
-  
+  hookToQuery() {
+    this.data$ = this.list.hookToQuery((query) =>{
+      query = { ...query, ...this.form?.value }
+      return this.service.getList(query as any);
+    });
+  }
 }

@@ -42,11 +42,11 @@
       "@fs-tw/components/*": [
         "libs/components/*/src/index.ts"
       ],
-      "@fs-tw/proxy": [
-        "libs/proxy/src/index.ts"
+      "@fs-tw/entity-type-management": [
+        "libs/entity-type-management/src/index.ts"
       ],
-      "@fs-tw/proxy/*": [
-        "libs/proxy/*/src/index.ts"
+      "@fs-tw/entity-type-management/*": [
+        "libs/entity-type-management/*/src/index.ts"
       ]
     }
   },

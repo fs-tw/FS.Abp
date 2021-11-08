@@ -1,32 +1,44 @@
-<nz-card  [nzBordered]="true" [nzTitle]="searchTpl">
-  <ng-template #searchTpl>
-    <div class="row entry-row">
-      <div class="col">
-        <div class="input-group">
-          <input
-            type="search"
-            class="form-control"
-            [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
-            [(ngModel)]="list.filter"
-          />
-          <div class="input-group-append">
-            <button class="btn btn-primary" (click)="list.get()">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
+<abp-page [title]="title | abpLocalization">
+  <nz-card  [nzBordered]="true" [nzTitle]="searchTpl">
+    <ng-template #searchTpl>
+      <div class="row entry-row">
+        <div class="col">
+          <ng-container
+              *ngTemplateOutlet="customSearchTemplate
+                ? customSearchTemplate?.template
+                : defaultSearchTemplate;">
+            </ng-container>
+  
+            <ng-template #defaultSearchTemplate>
+              <form [formGroup]="form">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    [placeholder]="'AbpUi::PagerSearch' | abpLocalization"
+                    [formControlName]="'filter'"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" (click)="list.get()">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </ng-template>
+        </div>
+        <div class="col">
+          <abp-page-toolbar></abp-page-toolbar>
         </div>
       </div>
-      <div class="col">
-        <abp-page-toolbar></abp-page-toolbar>
-      </div>
-    </div>
-  </ng-template>
-
-  <ng-container *ngIf="data$ | async as data">
-    <nz-extensible-table
-      [data]="data.items"
-      [recordsTotal]="data.totalCount"
-      [list]="list"
-    ></nz-extensible-table>
-  </ng-container>  
-</nz-card>
+    </ng-template>
+  
+    <ng-container *ngIf="data$ | async as data">
+      <nz-extensible-table
+        [data]="data.items"
+        [recordsTotal]="data.totalCount"
+        [list]="list"
+      ></nz-extensible-table>
+    </ng-container>  
+  </nz-card>
+</abp-page>

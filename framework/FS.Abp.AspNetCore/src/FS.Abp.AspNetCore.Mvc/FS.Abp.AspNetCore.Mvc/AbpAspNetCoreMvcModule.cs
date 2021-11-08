@@ -1,4 +1,8 @@
 ﻿using MediatR;
+using System;
+using System.Linq;
+using System.Text;
+using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
 
 namespace FS.Abp.AspNetCore.Mvc
@@ -11,32 +15,38 @@ namespace FS.Abp.AspNetCore.Mvc
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.AddMediatR(typeof(AbpAspNetCoreMvcModule));
-            //Configure<AspNetCoreApiDescriptionModelProviderOptions>(o =>
-            //{
 
-            //    o.ActionNameGenerator = (method) =>
-            //    {
-            //        var methodNameBuilder = new StringBuilder(method.Name).Replace("Async", "");
+            Configure<AspNetCoreApiDescriptionModelProviderOptions>(o =>
+            {
+                
+                o.ActionNameGenerator = (method) =>
+                {
+                    var methodNameBuilder = new StringBuilder(method.Name);
 
-            //        var parameters = method.GetParameters();
-            //        if (parameters.Any())
-            //        {
-            //            methodNameBuilder.Append("By");
+                    if (!method.Module.Name.StartsWith("Volo"))
+                    {
+                        methodNameBuilder = new StringBuilder(method.Name).Replace("Async", "");
+                    }
 
-            //            for (var i = 0; i < parameters.Length; i++)
-            //            {
-            //                if (i > 0)
-            //                {
-            //                    methodNameBuilder.Append("And");
-            //                }
+                    var parameters = method.GetParameters();
+                    if (parameters.Any())
+                    {
+                        methodNameBuilder.Append("By");
 
-            //                methodNameBuilder.Append(parameters[i].Name.ToPascalCase());
-            //            }
-            //        }
+                        for (var i = 0; i < parameters.Length; i++)
+                        {
+                            if (i > 0)
+                            {
+                                methodNameBuilder.Append("And");
+                            }
 
-            //        return methodNameBuilder.ToString();
-            //    };
-            //});
+                            methodNameBuilder.Append(parameters[i].Name.ToPascalCase());
+                        }
+                    }
+
+                    return methodNameBuilder.ToString();
+                };
+            });
         }
     }
 }

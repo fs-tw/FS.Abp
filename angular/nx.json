@@ -35,6 +35,9 @@
     "fs": {
       "tags": []
     },
+    "leptonx": {
+      "tags": []
+    },
     "theme-alain": {
       "tags": []
     },
@@ -47,7 +50,7 @@
     "components": {
       "tags": []
     },
-    "proxy": {
+    "entity-type-management": {
       "tags": []
     }
   }

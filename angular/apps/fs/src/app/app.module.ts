@@ -6,7 +6,7 @@ import { SettingManagementConfigModule } from '@abp/ng.setting-management/config
 import { TenantManagementConfigModule } from '@abp/ng.tenant-management/config';
 import { CmsKitManagementConfigModule} from '@fs-tw/cms-kit-management/config';
 import { CodingManagementConfigModule} from '@fs-tw/coding-management/config';
-import { ThemeBasicModule } from '@abp/ng.theme.basic';
+//import { ThemeBasicModule } from '@abp/ng.theme.basic';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeAlainModule } from '@fs-tw/theme-alain';
-import { QuillModule } from 'ngx-quill';
+import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
+import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/config';
 
 @NgModule({
   imports: [
@@ -37,7 +38,9 @@ import { QuillModule } from 'ngx-quill';
     CodingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeAlainModule.forRoot(),
-    QuillModule.forRoot()
+    ThemeAlainUiExtensionsModule.forRoot(),
+
+    EntityTypeManagementConfigModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],

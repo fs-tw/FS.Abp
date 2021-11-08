@@ -66,9 +66,12 @@
                 "inject": true,
                 "bundleName": "bootstrap-ltr.min"
               },
+              "node_modules/quill/dist/quill.snow.css",
               "apps/fs/src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -10,6 +10,7 @@ namespace FS.Abp
         typeof(AbpAuthorizationModule)
         )]
     [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.Abstractions.AbpAutoFiltererAbstractionsModule))]
     public class AbpApplicationContractsModule : AbpModule
     {
 

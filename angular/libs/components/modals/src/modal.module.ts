@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from '@abp/ng.core';
 import { ModalComponent } from './components/modal.component';
 import { ModalTabComponent } from './components/tabs/modal-tab.component';
 import { ModalInfoTabComponent } from './components/tabs/modal-info-tab/modal-info-tab.component';
@@ -15,6 +14,9 @@ const exportedDeclarations = [
 @NgModule({
   declarations: [...exportedDeclarations],
   exports: [...exportedDeclarations],
-  imports: [CoreModule, ...SHARED_ZORRO_MODULES,...SHARED_ABP_MODULES],
+  imports: [
+    ...SHARED_ZORRO_MODULES,
+    ...SHARED_ABP_MODULES
+  ],
 })
 export class ModalModule {}

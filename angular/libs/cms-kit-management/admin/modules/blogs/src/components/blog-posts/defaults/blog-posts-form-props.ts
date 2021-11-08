@@ -1,8 +1,8 @@
 import { ePropType, FormProp } from '@abp/ng.theme.shared/extensions';
 import { Validators } from '@angular/forms';
-import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
+import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
-export const BLOG_POSTS_CREATE_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto>([
+export const BLOG_POSTS_CREATE_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Blogs.BlogPostDto>([
   {
     type: ePropType.String,
     name: 'blogId',
@@ -31,14 +31,14 @@ export const BLOG_POSTS_CREATE_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagem
     displayName: 'Short Description'
   },
   {
-    type: ePropType.String,
+    type: "html" as ePropType,
     name: 'content',
     id: 'content',
     displayName: 'Content',
   }
 ]);
 
-export const BLOG_POSTS_EDIT_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagement.Blogs.Dtos.BlogPostDto>([
+export const BLOG_POSTS_EDIT_FORM_PROPS = FormProp.createMany<Volo.CmsKit.Admin.Blogs.BlogPostDto>([
   {
     type: ePropType.Hidden,
     name: 'blogId',
@@ -67,7 +67,7 @@ export const BLOG_POSTS_EDIT_FORM_PROPS = FormProp.createMany<Fs.CmsKitManagemen
     displayName: 'Short Description'
   },
   {
-    type: ePropType.String,
+    type: "html" as ePropType,
     name: 'content',
     id: 'content',
     displayName: 'Content',

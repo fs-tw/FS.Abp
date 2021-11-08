@@ -2,7 +2,10 @@
   [list]="list"
   [service]="service"
   [title]="'CmsKitManagement::BlogPost'"
-></fs-page>
+  [form]="searchForm"
+>
+
+</fs-page>
 
 <fs-modal
   [title]="'AbpUi::Create'"
@@ -25,3 +28,6 @@
     [selectedRecord]="editSelectedRecord"
   ></fs-modal-info-tab>
 </fs-modal>
+
+<fs-image-picker-modal [shortEntityType]="ShortEntityType" [imageInfo]="blogPostImageInfo">
+</fs-image-picker-modal>
