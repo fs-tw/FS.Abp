@@ -7,7 +7,7 @@ export namespace MultiLingual {
     static mapToFormProp(property: MultiLingual.MultiLingualProperty): FormProp {
       return {
         ...new FormProp({
-          type: property.dataType.toLowerCase() as ePropType,
+          type: property.dataType?.toLowerCase() as ePropType,
           name: property.name,
           id: property.name,
           displayName: property.name,

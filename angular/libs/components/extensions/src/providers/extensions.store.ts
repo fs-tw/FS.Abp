@@ -105,7 +105,7 @@ export class ExtensionsStore extends AbstractNavTreeService<Extensions.EntityDef
         {}
       );
 
-      //mergeWithDefaultActions(extensions.toolbarActions, toolbarActions, {});
+      // mergeWithDefaultActions(extensions.toolbarActions, toolbarActions, {});
     });
   }
 

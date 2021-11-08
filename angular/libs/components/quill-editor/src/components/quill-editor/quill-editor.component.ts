@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, Injector, Input, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, Inject, Injector, Input, ViewChild } from "@angular/core";
 import { ImagePicker } from "@fs-tw/components/image-picker";
 import { ImagePickerModalComponent } from "@fs-tw/components/image-picker";
-import { BehaviorSubject, Subscription } from "rxjs";
+import { Subscription } from "rxjs";
 import * as _ from "lodash";
 import { FormGroup } from "@angular/forms";
-import { QuillEditor, QUILL_EDITOR_DOWN_TOKEN } from "../..";
+import {  EnvironmentService } from '@abp/ng.core';
+import { QUILL_EDITOR_DOWNLOAD_TOKEN } from "../../token/token";
 
 @Component({
   selector: 'fs-quill-editor',
@@ -13,35 +14,33 @@ import { QuillEditor, QUILL_EDITOR_DOWN_TOKEN } from "../..";
 export class QuillEditorComponent {
   @ViewChild(ImagePickerModalComponent) editorImage: ImagePickerModalComponent;
 
-  private token: string;
+  @Input()
+  entityType: string;
 
   @Input()
   form: FormGroup;
 
   @Input()
   controlName: string;
+  
+  @Input()
+  editorImageInfo: ImagePicker.ImageFile[];
 
   editor: any;
   subs: Subscription = new Subscription();
-  editorImageInfo: ImagePicker.ImageFile[] = [];
-  outputResult: BehaviorSubject<any>;
   constructor(
     protected injector: Injector,
+    private environmentService: EnvironmentService,
     public readonly cdRef: ChangeDetectorRef,
+    @Inject(QUILL_EDITOR_DOWNLOAD_TOKEN) private token: string
   ) {
-    this.token = injector.get(QUILL_EDITOR_DOWN_TOKEN);
+    this.environmentService = injector.get(EnvironmentService);
   }
 
   ngOnChanges() {
   }
 
   ngOnDestroy(): void {
-    this.outputResult.complete();
-  }
-
-  initBehaviorSubject(): BehaviorSubject<any> {
-    this.outputResult = new BehaviorSubject<any>(null);
-    return this.outputResult;
   }
 
   onEditorCreate(editor) {
@@ -49,7 +48,13 @@ export class QuillEditorComponent {
     let toolbar = editor.getModule('toolbar');
     toolbar.handlers['image'] = function (x) {
       
-      vm.outputResult.next(x);
+      vm.editorImage.initBehaviorSubject();
+      vm.subs.add(
+        vm.editorImage.openModal().subscribe(x => {
+          if(!x || x.length <= 0) return;
+          vm.setFormValue(_.head(x));
+        })
+      );
 
       vm.editor = editor;
       vm.cdRef.detectChanges()
@@ -58,7 +63,7 @@ export class QuillEditorComponent {
 
   setFormValue(id: string) {
     this.form.patchValue({
-      [this.controlName]: `<p><img src="${ this.token + id }"></p>`
+      [this.controlName]: `<p><img src="${ this.environmentService.getApiUrl() + this.token + id }"></p>`
     })
   }
 }

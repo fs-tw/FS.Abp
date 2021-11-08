@@ -5,12 +5,10 @@ import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import {
   MULTI_LINGUAL_ENTITY_TYPE_TOKEN,
 } from '@fs-tw/components/multi-lingual';
-
 import { Fs } from '@fs-tw/cms-kit-management/proxy/cms-kit-management';
 import { IMAGE_PICKER_TOKEN } from '@fs-tw/components/image-picker';
-import { QUILL_EDITOR_DOWN_TOKEN } from '@fs-tw/components/quill-editor';
+import { QUILL_EDITOR_DOWNLOAD_TOKEN } from '@fs-tw/components/quill-editor';
 import { MediaDescriptorAdminByListService } from './services/media-descriptor-admin.service';
-import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 
 @NgModule({
   imports: [],
@@ -33,9 +31,8 @@ export class CmsKitManagementConfigModule {
           deps: [Injector],
         },
         {
-          provide: QUILL_EDITOR_DOWN_TOKEN,
-          useFactory: configure_QUILL_EDITOR_DOWN_TOKEN,
-          deps: [Injector],
+          provide: QUILL_EDITOR_DOWNLOAD_TOKEN,
+          useValue: "/api/cms-kit/media/"
         },
       ],
     };
@@ -63,11 +60,6 @@ function configure_IMAGE_PICKER_TOKEN(injector: Injector) {
     Notify: notify
   };
   return result;
-}
-
-function configure_QUILL_EDITOR_DOWN_TOKEN(injector: Injector) {
-  let environment = injector.get(EnvironmentService)
-  return environment.getApiUrl() + "/api/cms-kit/media/";
 }
 
 @Injectable({

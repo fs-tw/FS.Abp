@@ -43,6 +43,14 @@ namespace FS.Abp.EntityTypes
             }
         }
 
+        public virtual List<EntityPropertyDefinition> UpdateFormProps
+        {
+            get
+            {
+                return EntityPropertyDefinition.CreateMany(_updateType);
+            }
+        }
+
         public virtual List<EntityPropertyDefinition> SearchFormProps
         {
             get

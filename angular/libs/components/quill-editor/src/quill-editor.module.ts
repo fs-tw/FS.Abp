@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
 import { QuillEditorComponent } from './components/quill-editor/quill-editor.component';
 import { CoreModule } from '@abp/ng.core';
+import { ImagePickerModule } from '@fs-tw/components/image-picker';
 
 const COMPONENTS = [
   QuillEditorComponent
@@ -12,6 +13,7 @@ const COMPONENTS = [
   imports: [
     CoreModule,
     FormsModule,
+    ImagePickerModule,
     QuillModule.forRoot(),
   ],
   declarations: [

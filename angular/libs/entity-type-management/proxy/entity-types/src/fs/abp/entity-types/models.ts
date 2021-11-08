@@ -9,6 +9,7 @@ export interface EntityDefinition {
   searchType?: string;
   listType?: string;
   createFormProps: EntityPropertyDefinition[];
+  updateFormProps: EntityPropertyDefinition[];
   searchFormProps: EntityPropertyDefinition[];
   listProps: EntityPropertyDefinition[];
 }

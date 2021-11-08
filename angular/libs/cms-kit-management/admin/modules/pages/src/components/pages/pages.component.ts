@@ -39,6 +39,7 @@ import {
 } from './defaults/index';
 import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
+import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
 
 @Component({
   selector: 'fs-tw-pages',
@@ -54,6 +55,8 @@ import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 export class PagesComponent implements OnInit, OnDestroy {
   @ViewChild(MultiLingualModalComponent)
   multiLingualModal: MultiLingualModalComponent<Volo.CmsKit.Admin.Pages.PageDto>;
+  
+  @ViewChild(ImagePickerModalComponent) pageImage: ImagePickerModalComponent;
 
   public static NAME: string = 'Volo.CmsKit.Pages.Page';
   public EntityType = 'Volo.CmsKit.Pages.Page';
@@ -72,6 +75,7 @@ export class PagesComponent implements OnInit, OnDestroy {
   ready$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   searchForm: FormGroup = this.fb.group({});
+  pageImageInfo: ImagePicker.ImageFile[] = [];
   constructor(
     private fb: FormBuilder,
     private readonly injector: Injector,
@@ -193,6 +197,44 @@ export class PagesComponent implements OnInit, OnDestroy {
       case "MultiLingual":
         this.multiLingualModal.openModal(entityId);
         break;
+      case "MediaDescriptor":
+        this.generatorMediaDescriptor(entityId);
+        break;
     }
+  }
+
+  generatorMediaDescriptor(entityId: string) {
+    this.apiService
+      .get(entityId)
+      .pipe(take(1))
+      .pipe(
+        tap((selected) => {
+          this.pageImageInfo = [];
+          this.pageImage.initBehaviorSubject();
+          this.subs.add(
+            this.pageImage.openModal().subscribe(x => {
+              if(!x) return;
+              this.saveImageToBlogPost(entityId, x);
+            })
+          );
+        })
+      )
+      .subscribe((x) => {
+      });
+  }
+
+  saveImageToBlogPost(entityId: string, imageIds: string[]) {
+    this.apiService
+      .get(entityId)
+      .pipe(take(1))
+      .pipe(
+        mergeMap((selected) => {
+          const request = { ...selected } as Volo.CmsKit.Admin.Pages.UpdatePageInputDto;
+          return this.apiService.update(entityId, request).pipe(take(1));
+        })
+      )
+      .subscribe((x) => {
+        this.list.get();
+      });
   }
 }

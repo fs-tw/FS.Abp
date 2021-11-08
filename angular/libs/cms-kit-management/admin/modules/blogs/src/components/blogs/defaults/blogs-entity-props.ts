@@ -26,5 +26,4 @@ export const BLOGS_ENTITY_PROPS =
 export const BLOGS_ENTITY_PROPS_CON = (
   propList: EntityPropList<Volo.CmsKit.Admin.Blogs.BlogDto>
 ) => {
-  
 };
