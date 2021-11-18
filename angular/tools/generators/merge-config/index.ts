@@ -14,7 +14,7 @@ export default function (): Rule {
       .sort((a, b) => { return a.order - b.order; });
 
     return chain([
-      updateNx,
+      //updateNx,
       updateNg,
       updateTs,
       updateTsProd,

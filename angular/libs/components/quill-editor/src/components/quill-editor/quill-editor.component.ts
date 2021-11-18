@@ -1,13 +1,20 @@
-import { ChangeDetectorRef, Component, Inject, Injector, Input, ViewChild } from "@angular/core";
-import { ImagePicker } from "@fs-tw/components/image-picker";
-import { ImagePickerModalComponent } from "@fs-tw/components/image-picker";
-import { Subscription } from "rxjs";
-import * as _ from "lodash";
-import { FormGroup } from "@angular/forms";
-import {  EnvironmentService } from '@abp/ng.core';
-import { QUILL_EDITOR_DOWNLOAD_TOKEN } from "../../token/token";
-import { ExtensionsStore } from "@fs-tw/components/extensions";
-import { EXTENSIONS_IDENTIFIER, } from '@abp/ng.theme.shared/extensions';
+import {
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  Injector,
+  Input,
+  ViewChild,
+} from '@angular/core';
+import { ImagePicker } from '@fs-tw/components/image-picker';
+import { ImagePickerModalComponent } from '@fs-tw/components/image-picker';
+import { Subscription } from 'rxjs';
+import * as _ from 'lodash';
+import { FormGroup } from '@angular/forms';
+import { EnvironmentService, ABP } from '@abp/ng.core';
+import { QUILL_EDITOR_DOWNLOAD_TOKEN } from '../../token/token';
+import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
+
 @Component({
   selector: 'fs-quill-editor',
   templateUrl: './quill-editor.component.html',
@@ -15,9 +22,12 @@ import { EXTENSIONS_IDENTIFIER, } from '@abp/ng.theme.shared/extensions';
 export class QuillEditorComponent {
   @ViewChild(ImagePickerModalComponent) editorImage: ImagePickerModalComponent;
 
+  @Input()
+  extraData: ABP.Dictionary<any>;
+
   get shortEntityType(): string {
-    if (this.extensionsStore)
-      return this.extensionsStore.extraData[this.identifier].shortEntityType;
+    if (this.extraData)
+      return this.extraData[this.identifier].shortEntityType;
   }
 
   @Input()
@@ -25,7 +35,7 @@ export class QuillEditorComponent {
 
   @Input()
   controlName: string;
-  
+
   @Input()
   editorImageInfo: ImagePicker.ImageFile[];
 
@@ -36,39 +46,37 @@ export class QuillEditorComponent {
     private environmentService: EnvironmentService,
     public readonly cdRef: ChangeDetectorRef,
     @Inject(QUILL_EDITOR_DOWNLOAD_TOKEN) private token: string,
-    @Inject(EXTENSIONS_IDENTIFIER) private identifier: string,
-    @Inject(ExtensionsStore) private extensionsStore: ExtensionsStore,
+    @Inject(EXTENSIONS_IDENTIFIER) private identifier: string
   ) {
     this.environmentService = injector.get(EnvironmentService);
   }
 
-  ngOnChanges() {
-  }
+  ngOnChanges() {}
 
-  ngOnDestroy(): void {
-  }
+  ngOnDestroy(): void {}
 
   onEditorCreate(editor) {
     let vm = this;
     let toolbar = editor.getModule('toolbar');
     toolbar.handlers['image'] = function (x) {
-      
       vm.editorImage.initBehaviorSubject();
       vm.subs.add(
-        vm.editorImage.openModal().subscribe(x => {
-          if(!x || x.length <= 0) return;
+        vm.editorImage.openModal().subscribe((x) => {
+          if (!x || x.length <= 0) return;
           vm.setFormValue(_.head(x));
         })
       );
 
       vm.editor = editor;
-      vm.cdRef.detectChanges()
+      vm.cdRef.detectChanges();
     };
   }
 
   setFormValue(id: string) {
     this.form.patchValue({
-      [this.controlName]: `${ this.form.value[this.controlName] }<p><img src="${ this.environmentService.getApiUrl() + this.token + id }"></p>`
-    })
+      [this.controlName]: `${this.form.value[this.controlName]}<p><img src="${
+        this.environmentService.getApiUrl() + this.token + id
+      }"></p>`,
+    });
   }
 }
