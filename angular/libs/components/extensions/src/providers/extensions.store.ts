@@ -60,7 +60,7 @@ export class ExtensionsStore extends AbstractNavTreeService<Extensions.EntityDef
   readonly searchFormProps = new SearchFormPropsFactory();
   readonly extensions: ExtensionsService = null;
   readonly actionEventHub: ActionEventHub<any> = null;
-  readonly extraData: ABP.Dictionary<ABP.Dictionary> = {};
+  readonly extraData: ABP.Dictionary<any> = {};
   get entityActions() {
     return this.extensions.entityActions;
   }

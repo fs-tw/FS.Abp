@@ -6,7 +6,8 @@ import * as _ from "lodash";
 import { FormGroup } from "@angular/forms";
 import {  EnvironmentService } from '@abp/ng.core';
 import { QUILL_EDITOR_DOWNLOAD_TOKEN } from "../../token/token";
-
+import { ExtensionsStore } from "@fs-tw/components/extensions";
+import { EXTENSIONS_IDENTIFIER, } from '@abp/ng.theme.shared/extensions';
 @Component({
   selector: 'fs-quill-editor',
   templateUrl: './quill-editor.component.html',
@@ -14,8 +15,10 @@ import { QUILL_EDITOR_DOWNLOAD_TOKEN } from "../../token/token";
 export class QuillEditorComponent {
   @ViewChild(ImagePickerModalComponent) editorImage: ImagePickerModalComponent;
 
-  @Input()
-  entityType: string;
+  get shortEntityType(): string {
+    if (this.extensionsStore)
+      return this.extensionsStore.extraData[this.identifier].shortEntityType;
+  }
 
   @Input()
   form: FormGroup;
@@ -32,7 +35,9 @@ export class QuillEditorComponent {
     protected injector: Injector,
     private environmentService: EnvironmentService,
     public readonly cdRef: ChangeDetectorRef,
-    @Inject(QUILL_EDITOR_DOWNLOAD_TOKEN) private token: string
+    @Inject(QUILL_EDITOR_DOWNLOAD_TOKEN) private token: string,
+    @Inject(EXTENSIONS_IDENTIFIER) private identifier: string,
+    @Inject(ExtensionsStore) private extensionsStore: ExtensionsStore,
   ) {
     this.environmentService = injector.get(EnvironmentService);
   }
@@ -63,7 +68,7 @@ export class QuillEditorComponent {
 
   setFormValue(id: string) {
     this.form.patchValue({
-      [this.controlName]: `<p><img src="${ this.environmentService.getApiUrl() + this.token + id }"></p>`
+      [this.controlName]: `${ this.form.value[this.controlName] }<p><img src="${ this.environmentService.getApiUrl() + this.token + id }"></p>`
     })
   }
 }

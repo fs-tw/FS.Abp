@@ -28,6 +28,7 @@ import {
   tap,
 } from 'rxjs/operators';
 import {
+  ExtensionsStore,
   setDefaults,
 } from '@fs-tw/components/extensions';
 import {
@@ -85,17 +86,16 @@ export class PagesComponent implements OnInit, OnDestroy {
   ) {
     this.apiService = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
     this.entityTypeStore = injector.get(EntityTypeStore);
-
+    let extensionsStore = injector.get(ExtensionsStore);
+    
     let setDefaults$ = combineLatest([
-      //api.getEntityDefinitionList(),
       this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
     ]).pipe(
         mergeMap(([entityType]) => {
         this.searchForm = this.fb.group({ filter: "" });
 
         this.feature = entityType.map((y) => y.name);
-        let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
-          injector,
+        let result = extensionsStore.setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
           PagesComponent.NAME,
           {
             entityAction: AddToolbarAction(this.feature),
@@ -103,7 +103,8 @@ export class PagesComponent implements OnInit, OnDestroy {
             entityProps: PAGES_ENTITY_PROPS,
             createFormProps: PAGES_CREATE_FORM_PROPS,
             editFormProps: PAGES_EDIT_FORM_PROPS,
-          }
+          },
+          { shortEntityType: this.ShortEntityType }
         );
         this.ready$.next(true);
         return result;

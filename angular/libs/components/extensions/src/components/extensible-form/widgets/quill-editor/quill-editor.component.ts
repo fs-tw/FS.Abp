@@ -7,8 +7,6 @@ import * as _ from "lodash";
   templateUrl: './quill-editor.component.html',
 })
 export class WidgetQuillEditorComponent extends WidgetComponent {
-  entityType: string = "BlogPost";
-
   editorImageInfo: ImagePicker.ImageFile[] = [];
   
   constructor(
