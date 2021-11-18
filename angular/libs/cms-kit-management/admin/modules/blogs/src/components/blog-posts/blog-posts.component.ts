@@ -65,6 +65,7 @@ export class BlogPostsComponent implements OnInit {
     this.blogService = injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
     this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
     this.entityTypeStore = injector.get(EntityTypeStore);
+    let extensionsStore = injector.get(ExtensionsStore);
 
     let setDefaults$ = combineLatest([
       this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
@@ -73,8 +74,7 @@ export class BlogPostsComponent implements OnInit {
         mergeMap(([entityType, blogList]) => {
         this.feature = entityType.map((y) => y.name);
         this.blogList = blogList.items.map(x => { return { name: x.name, id: x.id } });
-        let result = setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
-          injector,
+        let result = extensionsStore.setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
           BlogPostsComponent.NAME,
           {
             entityAction: AddToolbarAction(this.feature),
@@ -82,7 +82,8 @@ export class BlogPostsComponent implements OnInit {
             entityProps: BLOG_POSTS_ENTITY_PROPS,
             createFormProps: AddBlogIdItems(this.blogList),
             editFormProps: BLOG_POSTS_EDIT_FORM_PROPS,
-          }
+          },
+          { shortEntityType: this.ShortEntityType }
         );
         this.ready$.next(true);
         return result;
