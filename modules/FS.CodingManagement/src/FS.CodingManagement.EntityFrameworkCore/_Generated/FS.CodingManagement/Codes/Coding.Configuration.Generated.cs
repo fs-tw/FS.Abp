@@ -22,7 +22,7 @@ using FS.CodingManagement.EntityFrameworkCore;
 
 namespace FS.CodingManagement.Codes
 {
-    public partial class CodingConfiguration : IEntityTypeConfiguration<Coding>
+    public partial class CodingConfiguration : IEntityTypeConfiguration<Coding> //auto-generated
     {
         private CodingManagementModelBuilderConfigurationOptions options;
         public CodingConfiguration(CodingManagementModelBuilderConfigurationOptions options)
@@ -50,11 +50,26 @@ namespace FS.CodingManagement.Codes
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<Coding> builder);
-
-        #endregion
     }
+    public static partial class CodingQueryableExtensions //auto-generated
+    {
+        public static IQueryable<Coding> IncludeDetails(this IQueryable<Coding> queryable, bool include = true)
+        {
+            if (!include)
+            {
+                return queryable;
+            }
 
+            IQueryable<Coding> result = queryable
+                .Include(x => x.Children)
+                .Include(x => x.Parent);
+
+            CustomizeIncludeDetails(ref result);
+
+            return result;
+        }
+
+        static partial void CustomizeIncludeDetails(ref IQueryable<Coding> query);
+    }
 }

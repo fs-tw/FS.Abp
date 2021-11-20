@@ -595,7 +595,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
+                  <X>Undefined</X>
                   <Y>79 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
@@ -1951,8 +1951,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>0.87</Scale>
           <Location>
-            <X>-783.448271568078 px</X>
-            <Y>-717.241374572843 px</Y>
+            <X>-1554.023044121 px</X>
+            <Y>-544.367823792915 px</Y>
           </Location>
         </ViewPort>
         <Oid xsi:type="SchemaModelOID">

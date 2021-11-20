@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.MultiLinguals.Dtos
 {
@@ -44,7 +43,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualGetListDto : SearchResultRequestDto
+    public partial class MultiLingualGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 

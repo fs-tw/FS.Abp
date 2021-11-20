@@ -28,25 +28,25 @@ namespace FS.CodingManagement.Codes
         [HttpGet]
         [Route("coding")]
         [RemoteService(true)]
-        public Task<PagedResultDto<CodingWithDetailsDto>> GetListAsync(CodingGetListDto CodingGetList)
+        public Task<PagedResultDto<CodingWithDetailsDto>> GetListAsync(CodingGetListDto Coding)
         {
-            return this.CodingCrudAppService.GetListAsync(CodingGetList);
+            return this.CodingCrudAppService.GetListAsync(Coding);
         }
 
         [HttpPost]
         [Route("coding")]
         [NonAction][RemoteService(false)]
-        public Task<CodingWithDetailsDto> CreateAsync(CodingCreateDto CodingCreate)
+        public Task<CodingWithDetailsDto> CreateAsync(CodingCreateDto Coding)
         {
-            return this.CodingCrudAppService.CreateAsync(CodingCreate);
+            return this.CodingCrudAppService.CreateAsync(Coding);
         }
 
         [HttpPut]
         [Route("coding/id")]
         [NonAction][RemoteService(false)]
-        public Task<CodingWithDetailsDto> UpdateAsync([FromQuery] CodingPrimaryKeyDto CodingPrimaryKey, CodingUpdateDto CodingUpdate)
+        public Task<CodingWithDetailsDto> UpdateAsync([FromQuery] CodingPrimaryKeyDto CodingPrimaryKey, CodingUpdateDto Coding)
         {
-            return this.CodingCrudAppService.UpdateAsync(CodingPrimaryKey,CodingUpdate);
+            return this.CodingCrudAppService.UpdateAsync(CodingPrimaryKey,Coding);
         }
 
         [HttpDelete]

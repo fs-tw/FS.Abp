@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
@@ -56,7 +55,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentPropertyGetListDto : SearchResultRequestDto
+    public partial class ContentPropertyGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 

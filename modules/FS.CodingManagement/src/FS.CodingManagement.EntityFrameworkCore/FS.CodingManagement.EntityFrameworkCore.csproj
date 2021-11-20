@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.CodingManagement\Codes\CodesQueryableExtensions.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersQueryableExtensions.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EasyAbp.Abp.Trees.EntityFrameworkCore" Version="$(EasyAbpTreeVersion)" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
@@ -28,10 +33,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityFrameworkCore</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\CodesQueryableExtensions.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Codes</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CodingManagement\Codes\CodesStore.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Codes</DependentUpon>
@@ -49,10 +50,6 @@
       <DependentUpon>SerialNumbers</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Configuration.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SerialNumbers</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersQueryableExtensions.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>SerialNumbers</DependentUpon>
     </Compile>

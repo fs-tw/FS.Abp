@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 {
@@ -50,7 +49,7 @@ namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 
     }
 
-    public partial class AttachmentMediaGetListDto : SearchResultRequestDto
+    public partial class AttachmentMediaGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 

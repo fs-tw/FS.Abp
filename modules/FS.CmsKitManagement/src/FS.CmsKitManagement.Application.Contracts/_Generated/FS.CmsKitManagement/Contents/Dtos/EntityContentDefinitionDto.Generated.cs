@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
@@ -50,7 +49,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class EntityContentDefinitionGetListDto : SearchResultRequestDto
+    public partial class EntityContentDefinitionGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 

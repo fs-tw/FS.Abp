@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Shapes.Dtos
 {
@@ -50,7 +49,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeGetListDto : SearchResultRequestDto
+    public partial class ShapeGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 
