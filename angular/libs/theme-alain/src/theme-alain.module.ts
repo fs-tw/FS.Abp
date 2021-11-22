@@ -7,6 +7,8 @@ import { EmptyLayoutComponent } from './components/empty-layout/empty-layout.com
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NG_ALAIN_THEME_STYLES_PROVIDERS } from './providers/styles.provider';
 import { RootModule } from './root/root.module';
+import { TenantBoxComponent } from './components/account-layout/tenant-box/tenant-box.component';
+import { AuthWrapperComponent } from './components/account-layout/auth-wrapper/auth-wrapper.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { RootModule } from './root/root.module';
   ],
   exports:[
   ],
-  declarations: [ApplicationLayoutComponent,AccountLayoutComponent,EmptyLayoutComponent]
+  declarations: [ApplicationLayoutComponent,EmptyLayoutComponent,AccountLayoutComponent,TenantBoxComponent,AuthWrapperComponent]
 })
 export class ThemeAlainModule {
   static forRoot(): ModuleWithProviders<ThemeAlainModule> {
