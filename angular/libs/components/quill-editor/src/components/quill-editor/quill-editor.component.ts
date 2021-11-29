@@ -22,13 +22,13 @@ import { EXTENSIONS_IDENTIFIER } from '@abp/ng.theme.shared/extensions';
 export class QuillEditorComponent {
   @ViewChild(ImagePickerModalComponent) editorImage: ImagePickerModalComponent;
 
-  @Input()
-  extraData: ABP.Dictionary<any>;
-
   get shortEntityType(): string {
     if (this.extraData)
       return this.extraData[this.identifier].shortEntityType;
   }
+  
+  @Input()
+  extraData: ABP.Dictionary<any>;
 
   @Input()
   form: FormGroup;

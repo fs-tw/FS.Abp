@@ -10,9 +10,10 @@ import { ExtensionsStore } from '../../../../providers/extensions.store';
 export class WidgetQuillEditorComponent extends WidgetComponent {
   editorImageInfo: ImagePicker.ImageFile[] = [];
 
-  get extraData(){
+  get extraData() {
     return this.extensionsStore.extraData;
   }
+
   constructor(
     protected injector: Injector,
     private extensionsStore: ExtensionsStore
