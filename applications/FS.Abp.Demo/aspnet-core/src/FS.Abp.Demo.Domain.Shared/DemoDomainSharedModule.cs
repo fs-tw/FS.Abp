@@ -1,4 +1,5 @@
-﻿using FS.Abp.Demo.Localization;
+﻿using FS.Abp.AuditLogging;
+using FS.Abp.Demo.Localization;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.BlobStoring;
@@ -72,6 +73,11 @@ namespace FS.Abp.Demo
                         fileSystem.BasePath = "C:\\cms-kit";
                     });
                 });
+            });
+
+            Configure<AuditLoggingFilterOptions>(options =>
+            {
+                options.AddOrReplaceFilter("YinChang Test", "yinchang", "test");
             });
         }
     }

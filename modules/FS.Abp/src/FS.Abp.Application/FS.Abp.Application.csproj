@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Application\FS.Abp.AuditLogging.Application.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer\FS.Abp.AutoFilterer.csproj" />
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />

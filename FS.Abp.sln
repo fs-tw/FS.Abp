@@ -113,6 +113,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AutoFilterer.Abstrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AutoFilterer", "framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer\FS.Abp.AutoFilterer.csproj", "{FA3DE4B1-225E-4B48-9C14-EEF4114D110F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AuditLogging", "FS.Abp.AuditLogging", "{2ABC6526-9CB0-4B38-B538-F977F740E3F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Domain.Shared", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Domain.Shared\FS.Abp.AuditLogging.Domain.Shared.csproj", "{69255F91-2B27-4097-811D-BBE8BC1778FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Domain", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Domain\FS.Abp.AuditLogging.Domain.csproj", "{37EA8E4C-FDC2-46C9-9E9B-058426408119}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Application.Contracts", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Application.Contracts\FS.Abp.AuditLogging.Application.Contracts.csproj", "{B079B98E-5023-434E-A525-98FF5CE86CBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Application", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Application\FS.Abp.AuditLogging.Application.csproj", "{8968DE2F-7C52-4D7D-A101-C1649D99D450}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.EntityFrameworkCore", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.EntityFrameworkCore\FS.Abp.AuditLogging.EntityFrameworkCore.csproj", "{48FF771B-F273-410E-8400-AFD34935AFCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.HttpApi", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.HttpApi\FS.Abp.AuditLogging.HttpApi.csproj", "{4972D363-1DEA-481E-AED0-2E01DD40F355}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.HttpApi.Client", "framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.HttpApi.Client\FS.Abp.AuditLogging.HttpApi.Client.csproj", "{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +299,34 @@ Global
 		{FA3DE4B1-225E-4B48-9C14-EEF4114D110F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA3DE4B1-225E-4B48-9C14-EEF4114D110F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA3DE4B1-225E-4B48-9C14-EEF4114D110F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69255F91-2B27-4097-811D-BBE8BC1778FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69255F91-2B27-4097-811D-BBE8BC1778FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69255F91-2B27-4097-811D-BBE8BC1778FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69255F91-2B27-4097-811D-BBE8BC1778FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EA8E4C-FDC2-46C9-9E9B-058426408119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EA8E4C-FDC2-46C9-9E9B-058426408119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EA8E4C-FDC2-46C9-9E9B-058426408119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EA8E4C-FDC2-46C9-9E9B-058426408119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B079B98E-5023-434E-A525-98FF5CE86CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B079B98E-5023-434E-A525-98FF5CE86CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B079B98E-5023-434E-A525-98FF5CE86CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B079B98E-5023-434E-A525-98FF5CE86CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8968DE2F-7C52-4D7D-A101-C1649D99D450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8968DE2F-7C52-4D7D-A101-C1649D99D450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8968DE2F-7C52-4D7D-A101-C1649D99D450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8968DE2F-7C52-4D7D-A101-C1649D99D450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FF771B-F273-410E-8400-AFD34935AFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FF771B-F273-410E-8400-AFD34935AFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FF771B-F273-410E-8400-AFD34935AFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FF771B-F273-410E-8400-AFD34935AFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4972D363-1DEA-481E-AED0-2E01DD40F355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4972D363-1DEA-481E-AED0-2E01DD40F355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4972D363-1DEA-481E-AED0-2E01DD40F355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4972D363-1DEA-481E-AED0-2E01DD40F355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -341,6 +385,14 @@ Global
 		{43F1A753-09DB-4022-B832-688977258839} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
 		{CDFCFC86-44A9-41FA-8E84-FBA87DC26F1B} = {43F1A753-09DB-4022-B832-688977258839}
 		{FA3DE4B1-225E-4B48-9C14-EEF4114D110F} = {43F1A753-09DB-4022-B832-688977258839}
+		{2ABC6526-9CB0-4B38-B538-F977F740E3F4} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
+		{69255F91-2B27-4097-811D-BBE8BC1778FE} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
+		{37EA8E4C-FDC2-46C9-9E9B-058426408119} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
+		{B079B98E-5023-434E-A525-98FF5CE86CBB} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
+		{8968DE2F-7C52-4D7D-A101-C1649D99D450} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
+		{48FF771B-F273-410E-8400-AFD34935AFCB} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
+		{4972D363-1DEA-481E-AED0-2E01DD40F355} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
+		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751} = {2ABC6526-9CB0-4B38-B538-F977F740E3F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

@@ -10,6 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Application.Contracts\FS.Abp.AuditLogging.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Abstractions\FS.Abp.AutoFilterer.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR\FS.Abp.MediatR.csproj" />
     <ProjectReference Include="..\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />

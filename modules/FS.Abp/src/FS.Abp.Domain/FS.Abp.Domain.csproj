@@ -16,6 +16,7 @@
     <PackageReference Include="Volo.Abp.Specifications" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Domain\FS.Abp.AuditLogging.Domain.csproj" />
     <ProjectReference Include="..\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />
   </ItemGroup>
 

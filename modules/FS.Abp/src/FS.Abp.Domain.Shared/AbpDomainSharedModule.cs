@@ -13,6 +13,7 @@ namespace FS.Abp
     [DependsOn(
         typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule)
         )]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingDomainSharedModule))]
     public class AbpDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

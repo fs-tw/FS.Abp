@@ -17,6 +17,7 @@ namespace FS.Abp
         typeof(FS.Abp.EntityTypes.EntityTypesApplicationModule),
         typeof(FS.Abp.EntityTypes.EntityTypesHttpApiModule)
         )]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingHttpApiModule))]
     public class AbpHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

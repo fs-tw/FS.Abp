@@ -11,6 +11,7 @@ namespace FS.Abp
         )]
     [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
     [DependsOn(typeof(FS.Abp.AutoFilterer.Abstractions.AbpAutoFiltererAbstractionsModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingApplicationContractsModule))]
     public class AbpApplicationContractsModule : AbpModule
     {
 
