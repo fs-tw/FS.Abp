@@ -24,6 +24,12 @@
       "@fs-tw/theme-alain/*": [
         "libs/theme-alain/*/src/index.ts"
       ],
+      "@fs-tw/audit-log-management": [
+        "libs/audit-log-management/src/index.ts"
+      ],
+      "@fs-tw/audit-log-management/*": [
+        "libs/audit-log-management/*/src/index.ts"
+      ],
       "@fs-tw/cms-kit-management": [
         "libs/cms-kit-management/src/index.ts"
       ],
