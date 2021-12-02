@@ -185,6 +185,45 @@
         }
       }
     },
+    "audit-log-management": {
+      "projectType": "library",
+      "root": "libs/audit-log-management",
+      "sourceRoot": "libs/audit-log-management/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/audit-log-management/tsconfig.lib.json",
+            "project": "libs/audit-log-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/audit-log-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/audit-log-management/src/**/*.ts",
+              "libs/audit-log-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/audit-log-management"
+          ],
+          "options": {
+            "jestConfig": "libs/audit-log-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "cms-kit-management": {
       "projectType": "library",
       "root": "libs/cms-kit-management",
@@ -340,5 +379,38 @@
         }
       }
     }
-  }
+  },
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
+    }
+  },
+  "defaultProject": "fs"
 }

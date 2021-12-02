@@ -1,0 +1,15 @@
+{
+  "name": "@npm/audit-log-management",
+  "version": "444.0.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fs-tw/fs.abp.git"
+  },
+  "peerDependencies": {
+  },
+  "dependencies": {
+    "ang-jsoneditor":"^1.10.5",
+    "jsoneditor": "^9.5.7"
+  }
+}

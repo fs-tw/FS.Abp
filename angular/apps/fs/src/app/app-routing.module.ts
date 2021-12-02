@@ -45,6 +45,13 @@ const routes: Routes = [
         m.CodingManagementAdminModule.forLazy()
       ),
   },
+  {
+    path: 'audit-log-management',
+    loadChildren: () =>
+      import('@fs-tw/audit-log-management/admin').then((m) =>
+        m.AuditLogManagementAdminModule.forLazy()
+      ),
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,37 @@
+<ng-container *ngIf="data$ | async as data">
+  <nz-row>
+    <nz-col [nzSpan]="10">
+      <nz-select
+        style="width: 100%;" nzShowSearch
+        [(ngModel)]="selectedFiltersOption"
+        (ngModelChange)="loadData()"
+      >
+        <nz-option
+          *ngFor="let item of filtersOptions | keyvalue"
+          [nzLabel]="item.key" [nzValue]="item.value">
+        </nz-option>
+      </nz-select>
+      <nz-table [nzData]="data.items" nzTableLayout="fixed">
+        <thead>
+          <tr>
+            <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">
+              {{ column.title }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data.items" (click)="selectedData = item;">
+            <td>{{ item.userName }}</td>
+            <td>{{ item.url }}</td>
+            <td>{{ item.executionTime }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-col>
+    <nz-col [nzSpan]="14">
+      <ng-container *ngIf="selectedData">
+        <fs-tw-actions [selectedData]="selectedData"></fs-tw-actions>
+      </ng-container>
+    </nz-col>
+  </nz-row>
+</ng-container>

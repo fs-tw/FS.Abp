@@ -21,6 +21,7 @@
     "@angular/router": "^12.2.0",
     "@npm/abp": "file:npm/abp",
     "@npm/cms-kit-management": "file:npm/cms-kit-management",
+    "@npm/audit-log-management": "file:npm/audit-log-management",
     "@npm/ng-alain": "file:npm/ng-alain",
     "@nrwl/angular": "13.1.4",
     "rxjs": "~6.6.0",

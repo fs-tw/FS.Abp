@@ -19,6 +19,7 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
 import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
 import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/config';
+import { AuditLogManagementConfigModule } from '@fs-tw/audit-log-management/config';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { EntityTypeManagementConfigModule } from '@fs-tw/entity-type-management/
     ThemeAlainModule.forRoot(),
     ThemeAlainUiExtensionsModule.forRoot(),
 
-    EntityTypeManagementConfigModule.forRoot()
+    EntityTypeManagementConfigModule.forRoot(),
+    AuditLogManagementConfigModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
