@@ -135,6 +135,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.HttpApi", "..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.HttpApi\FS.Abp.AuditLogging.HttpApi.csproj", "{153DE1A9-18B5-4E73-9450-873E64650A66}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Metadata", "FS.Abp.Metadata", "{2455560E-F338-4190-8A24-5B6D7E79FE28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Metadata.Abstractions", "..\..\..\framework\FS.Abp.Metadata\src\FS.Abp.Metadata.Abstractions\FS.Abp.Metadata.Abstractions.csproj", "{524C0702-21DF-4233-9E73-63EA622F5EA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Metadata", "..\..\..\framework\FS.Abp.Metadata\src\FS.Abp.Metadata\FS.Abp.Metadata.csproj", "{34F05AFC-96DB-4072-94D5-B292ACEB91ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -357,6 +363,14 @@ Global
 		{153DE1A9-18B5-4E73-9450-873E64650A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{153DE1A9-18B5-4E73-9450-873E64650A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{153DE1A9-18B5-4E73-9450-873E64650A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524C0702-21DF-4233-9E73-63EA622F5EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524C0702-21DF-4233-9E73-63EA622F5EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524C0702-21DF-4233-9E73-63EA622F5EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524C0702-21DF-4233-9E73-63EA622F5EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F05AFC-96DB-4072-94D5-B292ACEB91ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F05AFC-96DB-4072-94D5-B292ACEB91ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F05AFC-96DB-4072-94D5-B292ACEB91ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F05AFC-96DB-4072-94D5-B292ACEB91ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -424,6 +438,9 @@ Global
 		{00EE2D3E-5337-4F34-8483-334703EA16C0} = {B08F4882-0FB1-4135-BAC3-3103B4FF6E5F}
 		{1FB403E1-D753-40FA-90B2-50DF11C692B4} = {B08F4882-0FB1-4135-BAC3-3103B4FF6E5F}
 		{153DE1A9-18B5-4E73-9450-873E64650A66} = {B08F4882-0FB1-4135-BAC3-3103B4FF6E5F}
+		{2455560E-F338-4190-8A24-5B6D7E79FE28} = {D5F70872-BACC-45AB-8EC0-05A0BF0E4A96}
+		{524C0702-21DF-4233-9E73-63EA622F5EA5} = {2455560E-F338-4190-8A24-5B6D7E79FE28}
+		{34F05AFC-96DB-4072-94D5-B292ACEB91ED} = {2455560E-F338-4190-8A24-5B6D7E79FE28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

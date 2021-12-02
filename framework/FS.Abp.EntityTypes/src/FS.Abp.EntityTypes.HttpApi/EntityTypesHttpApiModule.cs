@@ -21,33 +21,12 @@ namespace FS.Abp.EntityTypes
         typeof(AbpAspNetCoreMvcModule))]
     public class EntityTypesHttpApiModule : AbpModule
     {
-        private void addMetadataProviders()
-        {
-            var metadataProviders = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(a => a.GetTypes())
-                .Where(x => x.IsClass)
-                .Where(x => ReflectionHelper.IsAssignableToGenericType(x, typeof(IMetadataProvider<>)));
-
-            metadataProviders.ToList().ForEach(type =>
-            {
-                var interfaceType = type.GetInterfaces().FirstOrDefault();
-
-                var realType = interfaceType.GenericTypeArguments.FirstOrDefault();
-
-                //AssociatedMetadataTypeTypeDescriptionProvider need netstandard2.1
-                TypeDescriptor.AddProvider(new AssociatedMetadataTypeTypeDescriptionProvider(
-                    realType, type), realType);
-            });
-        }
-
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
                 mvcBuilder.AddApplicationPartIfNotExists(typeof(EntityTypesHttpApiModule).Assembly);
             });
-
-            addMetadataProviders();
         }
 
 

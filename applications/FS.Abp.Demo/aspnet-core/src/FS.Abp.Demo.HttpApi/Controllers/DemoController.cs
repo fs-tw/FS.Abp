@@ -1,4 +1,5 @@
-﻿using FS.Abp.Demo.Localization;
+﻿using FS.Abp.AuditLogging;
+using FS.Abp.Demo.Localization;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 using Volo.Abp.AspNetCore.Mvc;
@@ -17,19 +18,20 @@ namespace FS.Abp.Demo.Controllers
     }
 
     [Microsoft.AspNetCore.Mvc.Route("api/abp-demo")]
+    [ModifyCurrentAuditLogInfo(ApplicationName = "yinchang", ClientName = "test")]
     public class AbpDemoController : DemoController
     {
         [Microsoft.AspNetCore.Mvc.HttpPost]
         [Microsoft.AspNetCore.Mvc.Route("test")]
         public virtual async Task Test()
         {
-            var management = this.LazyServiceProvider.LazyGetRequiredService<Volo.Abp.Auditing.IAuditingManager>();
+            //var management = this.LazyServiceProvider.LazyGetRequiredService<Volo.Abp.Auditing.IAuditingManager>();
 
-            management.Current.Log.ApplicationName = "yinchang";
-            management.Current.Log.ClientName = "test";
+            //management.Current.Log.ApplicationName = "yinchang";
+            //management.Current.Log.ClientName = "test";
 
-            management.Current.Log.SetProperty("test1", "1234");
-            management.Current.Log.SetProperty("test2", "5678");
+            //management.Current.Log.SetProperty("test1", "1234");
+            //management.Current.Log.SetProperty("test2", "5678");
         }
     }
 }

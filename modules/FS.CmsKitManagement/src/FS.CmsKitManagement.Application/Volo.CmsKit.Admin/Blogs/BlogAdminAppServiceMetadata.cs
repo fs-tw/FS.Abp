@@ -1,4 +1,5 @@
 ﻿using FS.Abp.EntityTypes;
+using FS.Abp.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Text;

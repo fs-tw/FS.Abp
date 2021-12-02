@@ -21,13 +21,10 @@ namespace FS.Abp.Demo
         typeof(AbpSettingManagementHttpApiModule)
         )]
     [DependsOn(
-        typeof(FS.Abp.EntityTypes.EntityTypesHttpApiModule)
-        )]
-    [DependsOn(
         typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule),
         typeof(FS.CodingManagement.CodingManagementHttpApiModule)
         )]
-    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingHttpApiModule))]
+    [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
     public class DemoHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
