@@ -2,7 +2,6 @@
 using AutoFilterer.Attributes;
 using AutoFilterer.Enums;
 using AutoFilterer.Types;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,8 +12,6 @@ namespace FS.Abp.Application.Dtos
 {
     public class FilterRequestDto : FilterBase
     {
-        [BindNever]
-        [System.Text.Json.Serialization.JsonIgnore]
         public override CombineType CombineWith { get => base.CombineWith; set => base.CombineWith = value; }
     }
     public class SearchResultRequestDto : PaginationFilterBase, ISearchResultRequest
@@ -23,22 +20,12 @@ namespace FS.Abp.Application.Dtos
         public int MaxResultCount { get => PerPage; set => PerPage = value; }
 
         #region override for attribute
-        [BindNever]
         [IgnoreFilter]
-        [System.Text.Json.Serialization.JsonIgnore]
         public override int Page { get => base.Page; set => base.Page = value; }
-        [BindNever]
         [IgnoreFilter]
-        [System.Text.Json.Serialization.JsonIgnore]
         public override int PerPage { get => base.PerPage; set => base.PerPage = value; }
-        [BindNever]
-        [System.Text.Json.Serialization.JsonIgnore]
         public override CombineType CombineWith { get => base.CombineWith; set => base.CombineWith = value; }
-        [BindNever]
-        [System.Text.Json.Serialization.JsonIgnore]
         public override string Sort { get => base.Sort; set => base.Sort = value; }
-        [BindNever]
-        [System.Text.Json.Serialization.JsonIgnore]
         public override AutoFiltererSorting SortBy { get => base.SortBy; set => base.SortBy = value; }
         #endregion
         public string Sorting

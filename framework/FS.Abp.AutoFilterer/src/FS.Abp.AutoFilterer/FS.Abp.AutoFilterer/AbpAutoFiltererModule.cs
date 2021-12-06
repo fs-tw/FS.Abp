@@ -1,5 +1,7 @@
 ﻿using AutoFilterer.Swagger;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,9 @@ namespace FS.Abp.AutoFilterer
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.Configure<SwaggerGenOptions>(cfg => cfg.UseAutoFiltererParameters());
+
+            context.Services.AddTransient<IConfigureOptions<MvcOptions>, AddIgnoreFilterMetadataProvider>();
+
             base.ConfigureServices(context);
         }
     }
