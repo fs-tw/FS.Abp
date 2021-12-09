@@ -12,8 +12,8 @@ namespace FS.Abp.EntityTypes
         private static TypeList _ignoreType { get; set; } = new TypeList()
         {
             typeof(Volo.Abp.Domain.Entities.Auditing.FullAuditedAggregateRoot),
-            typeof(Volo.Abp.MultiTenancy.IMultiTenant),
-            typeof(FS.Abp.Application.Dtos.SearchResultRequestDto)
+            typeof(Volo.Abp.MultiTenancy.IMultiTenant)//,
+            //typeof(FS.Abp.Application.Dtos.SearchResultRequestDto)
         };
         public string Type { get; set; }
         public string Id { get; set; }

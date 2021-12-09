@@ -1,20 +1,14 @@
-﻿using Volo.Abp.Modularity;
-using Volo.Abp.Localization;
-using FS.Abp.Metadata.Localization;
-using Volo.Abp.Localization.ExceptionHandling;
-using Volo.Abp.Validation;
-using Volo.Abp.Validation.Localization;
-using Volo.Abp.VirtualFileSystem;
-using System;
-using System.Linq;
-using Volo.Abp.Reflection;
+﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using Volo.Abp.Modularity;
+using Volo.Abp.Reflection;
 
 namespace FS.Abp.Metadata
 {
     [DependsOn(
-        typeof(FS.Abp.Metadata.MetadataAbstractionsModule)
+        typeof(FS.Abp.Metadata.MetadataCoreModule)
     )]
     public class MetadataModule : AbpModule
     {
@@ -23,7 +17,7 @@ namespace FS.Abp.Metadata
             var metadataProviders = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(a => a.GetTypes())
                 .Where(x => x.IsClass)
-                .Where(x => ReflectionHelper.IsAssignableToGenericType(x, typeof(IMetadataProvider<>)));
+                .Where(x => ReflectionHelper.IsAssignableToGenericType(x, typeof(IMetadata<>)));
 
             metadataProviders.ToList().ForEach(type =>
             {

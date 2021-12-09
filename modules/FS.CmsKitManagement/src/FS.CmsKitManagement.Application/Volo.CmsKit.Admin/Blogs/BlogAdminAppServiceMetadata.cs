@@ -14,12 +14,12 @@ namespace Volo.CmsKit.Blogs
         CreateType = typeof(Admin.Blogs.CreateBlogDto),
         UpdateType = typeof(Admin.Blogs.UpdateBlogDto)
     )]
-    public class BlogAdminAppServiceMetadata : IMetadataProvider<Admin.Blogs.BlogAdminAppService>
+    public class BlogAdminAppServiceMetadata : IMetadata<Admin.Blogs.BlogAdminAppService>
     {
 
     }
 
-    public class BlogDtoMetadata : IMetadataProvider<Admin.Blogs.BlogDto>
+    public class BlogDtoMetadata : IMetadata<Admin.Blogs.BlogDto>
     {
         [EntityPropertyDefinition(
             Visible = false)]
@@ -38,7 +38,7 @@ namespace Volo.CmsKit.Blogs
         public string Slug { get; set; }
     }
 
-    public class CreateBlogDtoMetadata : IMetadataProvider<Admin.Blogs.CreateBlogDto>
+    public class CreateBlogDtoMetadata : IMetadata<Admin.Blogs.CreateBlogDto>
     {
     }
 

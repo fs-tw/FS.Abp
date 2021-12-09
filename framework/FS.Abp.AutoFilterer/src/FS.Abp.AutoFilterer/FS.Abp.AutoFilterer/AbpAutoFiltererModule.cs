@@ -12,15 +12,16 @@ using Volo.Abp.Modularity;
 
 namespace FS.Abp.AutoFilterer
 {
+    [DependsOn(typeof(Volo.Abp.Application.AbpDddApplicationModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationModule))]
+    [DependsOn(typeof(FS.Abp.Metadata.MetadataCoreModule))]
     public class AbpAutoFiltererModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.Configure<SwaggerGenOptions>(cfg => cfg.UseAutoFiltererParameters());
 
-            context.Services.AddTransient<IConfigureOptions<MvcOptions>, AddIgnoreFilterMetadataProvider>();
-
-            base.ConfigureServices(context);
+            context.Services.AddTransient<IConfigureOptions<MvcOptions>, BindNeverMetadataProviderConfigureOptions>();
         }
     }
 }

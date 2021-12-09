@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Abstractions\FS.Abp.AutoFilterer.Abstractions.csproj" />
+    <!--<ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Abstractions\FS.Abp.AutoFilterer.Contracts.csproj" />-->
     <ProjectReference Include="..\..\..\FS.Abp.Shared\FS.Abp.Shared.csproj" />
   </ItemGroup>
 

@@ -12,7 +12,7 @@ namespace FS.Abp.AuditLogging
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    [DependsOn(typeof(FS.Abp.AutoFilterer.Abstractions.AbpAutoFiltererAbstractionsModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationContractsModule))]
     public class AuditLoggingApplicationContractsModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

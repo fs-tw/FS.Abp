@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Abstractions\FS.Abp.AutoFilterer.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Application.Contracts\FS.Abp.AutoFilterer.Application.Contracts.csproj" />
     <ProjectReference Include="..\FS.Abp.AuditLogging.Domain.Shared\FS.Abp.AuditLogging.Domain.Shared.csproj" />
   </ItemGroup>
 

@@ -26,7 +26,7 @@ namespace FS.CmsKitManagement
         )]
     [DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitApplicationModule))]
-    [DependsOn(typeof(FS.Abp.Metadata.MetadataAbstractionsModule))]
+    //[DependsOn(typeof(FS.Abp.Metadata.MetadataCoreModule))]
     public class CmsKitManagementApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

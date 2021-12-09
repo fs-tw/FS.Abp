@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FS.Abp.Demo
 {
     [ModifyCurrentAuditLogInfo(ApplicationName ="Volo.CmsKit",ClientName ="Web")]
-    public class PageAdminAppServiceMetadata : FS.Abp.Metadata.IMetadataProvider<Volo.CmsKit.Admin.Pages.PageAdminAppService>
+    public class PageAdminAppServiceMetadata : FS.Abp.Metadata.IMetadata<Volo.CmsKit.Admin.Pages.PageAdminAppService>
     {
     }
 }

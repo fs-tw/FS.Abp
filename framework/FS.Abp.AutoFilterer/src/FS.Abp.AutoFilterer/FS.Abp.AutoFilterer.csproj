@@ -5,16 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoFilterer" Version="2.8.0" />
     <PackageReference Include="AutoFilterer.Swagger" Version="2.8.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\FS.Abp.AutoFilterer.Abstractions\FS.Abp.AutoFilterer.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.Metadata\src\FS.Abp.Metadata.Abstractions\FS.Abp.Metadata.Core.csproj" />
+    <ProjectReference Include="..\FS.Abp.AutoFilterer.Application\FS.Abp.AutoFilterer.Application.csproj" />
   </ItemGroup>
 
 </Project>

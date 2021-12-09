@@ -11,14 +11,9 @@ using MediatR;
 namespace FS.Abp
 {
     [DependsOn(
-        typeof(AbpApplicationContractsModule),
-        typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
-    [DependsOn(
-        typeof(FS.Abp.EntityTypes.EntityTypesApplicationModule),
-        typeof(FS.Abp.EntityTypes.EntityTypesHttpApiModule)
-        )]
+        typeof(AbpApplicationContractsModule))]
+    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesHttpApiModule))]
     [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingHttpApiModule))]
-    [DependsOn(typeof(FS.Abp.Metadata.MetadataModule))]
     public class AbpHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

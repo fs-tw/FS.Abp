@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp\FS.Abp.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Application\FS.Abp.Demo.Application.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.EntityFrameworkCore\FS.Abp.Demo.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.HttpApi\FS.Abp.Demo.HttpApi.csproj" />

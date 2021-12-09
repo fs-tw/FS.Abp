@@ -47,6 +47,7 @@ namespace FS.Abp.Demo
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
+    [DependsOn(typeof(FS.Abp.AbpModule))]
     public class DemoHttpApiHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

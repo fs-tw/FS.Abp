@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Domain.Shared\FS.Abp.AuditLogging.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain.Shared\FS.Abp.EntityTypes.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR.Core\FS.Abp.MediatR.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Metadata\src\FS.Abp.Metadata.Abstractions\FS.Abp.Metadata.Core.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
     <PackageReference Include="EasyAbp.Abp.Trees.Domain.Shared" Version="$(EasyAbpTreeVersion)" />
     <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />

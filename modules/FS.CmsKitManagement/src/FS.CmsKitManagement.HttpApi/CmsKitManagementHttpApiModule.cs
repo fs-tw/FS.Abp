@@ -12,7 +12,6 @@ namespace FS.CmsKitManagement
     [DependsOn(
         typeof(CmsKitManagementApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitHttpApiModule))]
     public class CmsKitManagementHttpApiModule : AbpModule
     {
