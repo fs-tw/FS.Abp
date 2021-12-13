@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Options;
+﻿using FS.Abp.AuditLogging.Filters;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FS.Abp.AuditLogging.Domain
+namespace FS.Abp.AuditLogging
 {
 
     public class DefaultFilterStore
@@ -14,7 +15,7 @@ namespace FS.Abp.AuditLogging.Domain
             Options = options.Value;
         }
 
-        public Dictionary<string, AuditLoggingFilter> GetList()
+        public Dictionary<string, List<AuditLogActionFilter>> GetFilters()
         {
             return Options.Filters;
         }

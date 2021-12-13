@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Application.Core\FS.Abp.AutoFilterer.Core.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.Metadata\src\FS.Abp.Metadata.Abstractions\FS.Abp.Metadata.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Auditing" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
   </ItemGroup>
@@ -21,5 +26,7 @@
     <EmbeddedResource Include="Localization\AuditLogging\*.json" />
     <Content Remove="Localization\AuditLogging\*.json" />
   </ItemGroup>
+
+
 
 </Project>

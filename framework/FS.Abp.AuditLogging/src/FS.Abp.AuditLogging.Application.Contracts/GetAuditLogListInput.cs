@@ -1,6 +1,6 @@
-﻿using AutoFilterer.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Auditing;
 
@@ -92,10 +92,22 @@ namespace FS.Abp.AuditLogging
 
         public string PropertyTypeFullName { get; set; }
     }
-    public class GetAuditLogListInput : FS.Abp.Application.Dtos.SearchResultRequestDto//PagedResultRequestDto
-    {
-        public string ApplicationName { get; set; }
-        public string ClientName { get; set; }
+}
 
+namespace FS.Abp.AuditLogging.Filters
+{
+
+    public class AuditLogsFilterInput: FS.Abp.Application.Dtos.ISearchResultRequest
+    {
+        public AuditLogFilter AuditLogFilter { get; set; }
+
+        public List<AuditLogActionFilter> AuditLogActionFilters { get; set; }
+
+        public int SkipCount { get; set; }
+
+        public int MaxResultCount { get; set; }
+
+        public string Sorting { get; set; }
     }
 }
+

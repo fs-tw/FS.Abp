@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using FS.Abp.AuditLogging.Filters;
+using System.Collections.Generic;
 
-namespace FS.Abp.AuditLogging.Domain
+namespace FS.Abp.AuditLogging
 {
     public interface IDefaultFilterStore
     {
-        Dictionary<string, AuditLoggingFilter> GetList();
+        Dictionary<string, List<AuditLogActionFilter>> GetFilters();
     }
 }
