@@ -2,7 +2,6 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
-using MediatR;
 using System.Collections.Generic;
 using System;
 using FS.Abp.EntityTypes;
@@ -15,6 +14,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Volo.CmsKit.Blogs;
+using FS.Abp.MediatR;
 
 namespace FS.CmsKitManagement
 {
@@ -35,6 +35,11 @@ namespace FS.CmsKitManagement
             Configure<AbpAutoMapperOptions>(options =>
             {
                 options.AddMaps<CmsKitManagementApplicationModule>(validate: false);
+            });
+
+            Configure<AbpMediatROptions>(o =>
+            {
+                o.AddOrReplaceSetting(CmsKitManagementApplicationConsts.AreaName, CmsKitManagementApplicationConsts.AreaName, typeof(CmsKitManagementApplicationModule));
             });
 
             AddEventHandlers(context.Services);
@@ -77,12 +82,6 @@ namespace FS.CmsKitManagement
                 //        Volo.CmsKit.Admin.Pages.GetPagesInputDto,
                 //        Volo.CmsKit.Admin.Pages.CreatePageInputDto>());
             });
-
-
-            //context.Services.AddMediatR(
-            //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
-            //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
-            //    );
         }
 
         private static void AddEventHandlers(IServiceCollection services)
@@ -98,8 +97,6 @@ namespace FS.CmsKitManagement
                     var handlerType = typeof(MultiLinguals.EntityTypeCreatedOrDeletedHandler<>).MakeGenericType(d.Key);
                     registerType(handlerType);
                 });
-
-
 
             void registerType(Type handlerType)
             {

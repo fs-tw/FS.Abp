@@ -1,7 +1,6 @@
 ﻿using Volo.Abp.Application;
 using Volo.Abp.Modularity;
 using Volo.Abp.Authorization;
-using Volo.Abp.MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FS.CmsKitManagement
@@ -17,10 +16,6 @@ namespace FS.CmsKitManagement
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            Configure<AbpMediatROptions>(o =>
-            {
-                o.AddModule<CmsKitManagementApplicationContractsModule>("cms-kit-management");
-            });
         }
     }
 }

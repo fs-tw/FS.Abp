@@ -6,6 +6,7 @@ using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Volo.Abp.AspNetCore.Mvc.Conventions;
 
 namespace FS.CmsKitManagement
 {
