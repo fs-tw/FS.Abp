@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace FS.Abp.Metadata
     [DependsOn(
         typeof(FS.Abp.Metadata.MetadataCoreModule)
     )]
+    [DependsOn(typeof(Volo.Abp.Swashbuckle.AbpSwashbuckleModule))]
     public class MetadataModule : AbpModule
     {
         private void addMetadataProviders()
@@ -33,6 +35,14 @@ namespace FS.Abp.Metadata
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             addMetadataProviders();
+        }
+
+        public override void ConfigureServices(ServiceConfigurationContext context)
+        {
+            context.Services.ConfigureSwaggerGen(option =>
+            {
+                option.SchemaFilter<SwaggerIgnoreFilter>();
+            });
         }
     }
 }
