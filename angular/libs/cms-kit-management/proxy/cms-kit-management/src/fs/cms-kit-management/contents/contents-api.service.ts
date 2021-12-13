@@ -13,7 +13,7 @@ export class ContentsApiService {
     this.restService.request<any, PagedResultDto<ContentDefinitionWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/content-definition',
-      params: { filter: ContentDefinition.filter, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount, page: ContentDefinition.page, perPage: ContentDefinition.perPage, combineWith: ContentDefinition.combineWith, sort: ContentDefinition.sort, sortBy: ContentDefinition.sortBy, sorting: ContentDefinition.sorting },
+      params: { filter: ContentDefinition.filter, skipCount: ContentDefinition.skipCount, maxResultCount: ContentDefinition.maxResultCount, sorting: ContentDefinition.sorting, page: ContentDefinition.page, perPage: ContentDefinition.perPage, sortBy: ContentDefinition.sortBy, sort: ContentDefinition.sort, combineWith: ContentDefinition.combineWith },
     },
     { apiName: this.apiName });
 
@@ -21,7 +21,7 @@ export class ContentsApiService {
     this.restService.request<any, PagedResultDto<ContentPropertyWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/content-property',
-      params: { skipCount: ContentProperty.skipCount, maxResultCount: ContentProperty.maxResultCount, page: ContentProperty.page, perPage: ContentProperty.perPage, combineWith: ContentProperty.combineWith, sort: ContentProperty.sort, sortBy: ContentProperty.sortBy, sorting: ContentProperty.sorting },
+      params: { skipCount: ContentProperty.skipCount, maxResultCount: ContentProperty.maxResultCount, sorting: ContentProperty.sorting, page: ContentProperty.page, perPage: ContentProperty.perPage, sortBy: ContentProperty.sortBy, sort: ContentProperty.sort, combineWith: ContentProperty.combineWith },
     },
     { apiName: this.apiName });
 
@@ -29,7 +29,7 @@ export class ContentsApiService {
     this.restService.request<any, PagedResultDto<EntityContentWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/entity-content',
-      params: { skipCount: EntityContent.skipCount, maxResultCount: EntityContent.maxResultCount, page: EntityContent.page, perPage: EntityContent.perPage, combineWith: EntityContent.combineWith, sort: EntityContent.sort, sortBy: EntityContent.sortBy, sorting: EntityContent.sorting },
+      params: { skipCount: EntityContent.skipCount, maxResultCount: EntityContent.maxResultCount, sorting: EntityContent.sorting, page: EntityContent.page, perPage: EntityContent.perPage, sortBy: EntityContent.sortBy, sort: EntityContent.sort, combineWith: EntityContent.combineWith },
     },
     { apiName: this.apiName });
 
@@ -37,7 +37,7 @@ export class ContentsApiService {
     this.restService.request<any, PagedResultDto<EntityContentDefinitionWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/contents/entity-content-definition',
-      params: { entityType: EntityContentDefinition.entityType, entityId: EntityContentDefinition.entityId, skipCount: EntityContentDefinition.skipCount, maxResultCount: EntityContentDefinition.maxResultCount, page: EntityContentDefinition.page, perPage: EntityContentDefinition.perPage, combineWith: EntityContentDefinition.combineWith, sort: EntityContentDefinition.sort, sortBy: EntityContentDefinition.sortBy, sorting: EntityContentDefinition.sorting },
+      params: { entityType: EntityContentDefinition.entityType, entityId: EntityContentDefinition.entityId, skipCount: EntityContentDefinition.skipCount, maxResultCount: EntityContentDefinition.maxResultCount, sorting: EntityContentDefinition.sorting, page: EntityContentDefinition.page, perPage: EntityContentDefinition.perPage, sortBy: EntityContentDefinition.sortBy, sort: EntityContentDefinition.sort, combineWith: EntityContentDefinition.combineWith },
     },
     { apiName: this.apiName });
 

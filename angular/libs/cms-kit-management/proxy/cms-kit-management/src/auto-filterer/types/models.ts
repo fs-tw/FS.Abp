@@ -2,13 +2,13 @@ import type { CombineType } from '../enums/combine-type.enum';
 import type { Sorting } from '../enums/sorting.enum';
 
 export interface FilterBase {
-  combineWith: CombineType;
   ignoreExceptions: boolean;
+  combineWith: CombineType;
 }
 
 export interface OrderableFilterBase extends FilterBase {
-  sort?: string;
   sortBy: Sorting;
+  sort?: string;
 }
 
 export interface PaginationFilterBase extends OrderableFilterBase {

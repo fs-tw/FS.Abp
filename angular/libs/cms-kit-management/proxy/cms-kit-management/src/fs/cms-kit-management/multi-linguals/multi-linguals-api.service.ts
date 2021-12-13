@@ -21,7 +21,7 @@ export class MultiLingualsApiService {
     this.restService.request<any, PagedResultDto<MultiLingualWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/multi-linguals/multi-lingual',
-      params: { skipCount: MultiLingual.skipCount, maxResultCount: MultiLingual.maxResultCount, page: MultiLingual.page, perPage: MultiLingual.perPage, combineWith: MultiLingual.combineWith, sort: MultiLingual.sort, sortBy: MultiLingual.sortBy, sorting: MultiLingual.sorting },
+      params: { skipCount: MultiLingual.skipCount, maxResultCount: MultiLingual.maxResultCount, sorting: MultiLingual.sorting, page: MultiLingual.page, perPage: MultiLingual.perPage, sortBy: MultiLingual.sortBy, sort: MultiLingual.sort, combineWith: MultiLingual.combineWith },
     },
     { apiName: this.apiName });
 
