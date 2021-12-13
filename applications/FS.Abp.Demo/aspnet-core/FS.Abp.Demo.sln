@@ -107,7 +107,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.JsonSubTypes.Core", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.MediatR.Core", "..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR.Core\FS.Abp.MediatR.Core.csproj", "{D6A2234F-6DC8-49C6-B4C0-7725758A8F41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.MediatR", "..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR.HttpApi\FS.Abp.MediatR.csproj", "{E692B3B7-6DEF-4AAF-B612-010D6621A7AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.MediatR", "..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR\FS.Abp.MediatR.csproj", "{E692B3B7-6DEF-4AAF-B612-010D6621A7AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AutoFilterer", "FS.Abp.AutoFilterer", "{2E86C9FE-5B67-4DF2-9ABD-971F3B8D9538}"
 EndProject
@@ -142,6 +142,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Application", "..\..\..\modules\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj", "{D237AA1A-3CD2-464A-8948-A1A35CC1F2AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.HttpApi", "..\..\..\modules\FS.Abp\src\FS.Abp.HttpApi\FS.Abp.HttpApi.csproj", "{07957B75-2176-414A-B202-A75014B7927A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.EntityFrameworkCore", "..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.EntityFrameworkCore\FS.Abp.AuditLogging.EntityFrameworkCore.csproj", "{496E1941-C8ED-4E85-86BB-136B346C025C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AutoFilterer.Core", "..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Application.Core\FS.Abp.AutoFilterer.Core.csproj", "{60EF6D95-5CA6-4264-92F8-44AEE0A14D89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -377,6 +381,14 @@ Global
 		{07957B75-2176-414A-B202-A75014B7927A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07957B75-2176-414A-B202-A75014B7927A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07957B75-2176-414A-B202-A75014B7927A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496E1941-C8ED-4E85-86BB-136B346C025C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496E1941-C8ED-4E85-86BB-136B346C025C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496E1941-C8ED-4E85-86BB-136B346C025C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496E1941-C8ED-4E85-86BB-136B346C025C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60EF6D95-5CA6-4264-92F8-44AEE0A14D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60EF6D95-5CA6-4264-92F8-44AEE0A14D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60EF6D95-5CA6-4264-92F8-44AEE0A14D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60EF6D95-5CA6-4264-92F8-44AEE0A14D89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -448,6 +460,8 @@ Global
 		{A2CB71F9-1CDB-45BE-9F99-74FFB6276FB9} = {DC82CBE8-8D8B-4E10-8B35-7113833C6D9F}
 		{D237AA1A-3CD2-464A-8948-A1A35CC1F2AE} = {DC82CBE8-8D8B-4E10-8B35-7113833C6D9F}
 		{07957B75-2176-414A-B202-A75014B7927A} = {DC82CBE8-8D8B-4E10-8B35-7113833C6D9F}
+		{496E1941-C8ED-4E85-86BB-136B346C025C} = {B08F4882-0FB1-4135-BAC3-3103B4FF6E5F}
+		{60EF6D95-5CA6-4264-92F8-44AEE0A14D89} = {2E86C9FE-5B67-4DF2-9ABD-971F3B8D9538}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

@@ -32,6 +32,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Volo.CmsKit.Blogs;
 using Volo.CmsKit.Admin.Blogs;
+using FS.Abp.Metadata;
 
 namespace FS.Abp.Demo
 {
@@ -119,7 +120,12 @@ namespace FS.Abp.Demo
         {
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConventionalControllers.Create(typeof(DemoApplicationModule).Assembly);
+                //options.ConventionalControllers.Create(typeof(CmsKitManagement.CmsKitManagementAppService).Assembly, o =>
+                // {
+                //     //o.RemoteServiceName = "cms-test-name";
+                //     //o.RootPath = "cms-test";
+                // });
+                //options.ConventionalControllers.Create(typeof(DemoApplicationModule).Assembly);
             });
         }
 
@@ -149,8 +155,8 @@ namespace FS.Abp.Demo
                 },
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "Demo API", Version = "v1"});
-                    options.DocInclusionPredicate((docName, description) => true);
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+                    //options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
         }
@@ -183,21 +189,21 @@ namespace FS.Abp.Demo
         {
             context.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy( builder =>
-                {
-                    builder
-                        .WithOrigins(
-                            configuration["App:CorsOrigins"]
-                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => o.RemovePostFix("/"))
-                                .ToArray()
-                        )
-                        .WithAbpExposedHeaders()
-                        .SetIsOriginAllowedToAllowWildcardSubdomains()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials();
-                });
+                options.AddDefaultPolicy(builder =>
+               {
+                   builder
+                       .WithOrigins(
+                           configuration["App:CorsOrigins"]
+                               .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                               .Select(o => o.RemovePostFix("/"))
+                               .ToArray()
+                       )
+                       .WithAbpExposedHeaders()
+                       .SetIsOriginAllowedToAllowWildcardSubdomains()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials();
+               });
             });
         }
 

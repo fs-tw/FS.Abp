@@ -77,7 +77,9 @@ namespace FS.Abp.Demo
 
             Configure<AuditLoggingFilterOptions>(options =>
             {
-                options.AddOrReplaceFilter("YinChang Test", "yinchang", "test");
+                options.AddOrReplaceFilter("YinChang Test",
+                    new AuditLogging.Filters.AuditLogActionFilter("Volo.CmsKit.Admin.Pages.PageAdminAppService", "GetAsync"),
+                    new AuditLogging.Filters.AuditLogActionFilter("Volo.CmsKit.Admin.Blogs.BlogAdminController", "UpdateAsync"));
             });
         }
     }

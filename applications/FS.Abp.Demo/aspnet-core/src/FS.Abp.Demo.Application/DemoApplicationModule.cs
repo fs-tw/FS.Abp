@@ -39,6 +39,11 @@ namespace FS.Abp.Demo
                 options.AddMaps<DemoApplicationModule>();
             });
 
+            Configure<FS.Abp.MediatR.AbpMediatROptions>(options =>
+            {
+                options.AddOrReplaceSetting("app","Default", typeof(DemoApplicationModule));
+            });
+
 
         }
     }

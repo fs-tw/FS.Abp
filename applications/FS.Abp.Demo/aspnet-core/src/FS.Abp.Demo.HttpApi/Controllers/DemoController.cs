@@ -1,7 +1,9 @@
 ﻿using FS.Abp.AuditLogging;
 using FS.Abp.Demo.Localization;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Data;
 
@@ -19,6 +21,10 @@ namespace FS.Abp.Demo.Controllers
 
     [Microsoft.AspNetCore.Mvc.Route("api/abp-demo")]
     [ModifyCurrentAuditLogInfo(ApplicationName = "yinchang", ClientName = "test")]
+    [RemoteService(Name = "AbpDemo")]
+    //[Area("abpDemo")]
+    //[Controller]
+    //[ControllerName("AbpDemo")]
     public class AbpDemoController : DemoController
     {
         [Microsoft.AspNetCore.Mvc.HttpPost]
