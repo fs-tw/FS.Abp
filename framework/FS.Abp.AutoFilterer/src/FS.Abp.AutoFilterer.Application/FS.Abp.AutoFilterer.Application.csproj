@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="AutoFilterer" Version="2.8.0" />
-    <PackageReference Include="AutoFilterer.Swagger" Version="2.8.0" />
   </ItemGroup>
 
   <ItemGroup>
