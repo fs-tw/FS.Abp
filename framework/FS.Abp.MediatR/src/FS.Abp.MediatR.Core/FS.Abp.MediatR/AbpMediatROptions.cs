@@ -1,83 +1,90 @@
-﻿using FS.Abp.MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Volo.Abp.Collections;
+using Volo.Abp.Modularity;
+using Volo.Abp.Reflection;
 
-namespace Volo.Abp.MediatR
+namespace FS.Abp.MediatR
 {
+    public class AbpMediatRSettings
+    {
+        public string RootPath { get; set; }
+        public string RemoteServiceName { get; set; }
+        public TypeList<AbpModule> Modules { get; set; }
+        public AbpMediatRSettings(string rootPath, string remoteServiceName, TypeList<AbpModule> modules)
+        {
+            RootPath = rootPath;
+            RemoteServiceName = remoteServiceName;
+            Modules = modules;
+        }
+    }
     public class AbpMediatROptions
     {
-
-        public Dictionary<string, List<Assembly>> DicModules { get; set; }
+        public Dictionary<string, AbpMediatRSettings> Settings { get; set; }
 
         public AbpMediatROptions()
         {
-            DicModules = new Dictionary<string, List<Assembly>>();
+            Settings = new Dictionary<string, AbpMediatRSettings>();
         }
-
-        public void AddModule<TModule>(string module)
+        public void AddOrReplaceSetting(string rootPath, string remoteServiceName, params Type[] moduleTypes)
         {
-            var assembly = typeof(TModule).Assembly;
-            if (!DicModules.ContainsKey(module))
+            var types = new TypeList<AbpModule>();
+
+            foreach (var module in moduleTypes)
             {
-                DicModules.Add(module, new List<Assembly>());
+                types.Add(module);
             }
-            DicModules[module].AddIfNotContains(assembly);
+
+            var item = new AbpMediatRSettings(rootPath, remoteServiceName, types);
+
+            if (!Settings.ContainsKey(rootPath))
+            {
+                Settings.Add(rootPath, item);
+            }
+            else
+            {
+                Settings[rootPath] = item;
+            }
         }
 
-        public List<Type> QueryTypes
+
+        public List<Type> RequestHandlerTypes
         {
             get
             {
-                return DicModules
-                .SelectMany(s => s.Value.SelectMany(t => t.GetTypes()))
-                .Where(p => typeof(IQuery).IsAssignableFrom(p))
-                .ToList();
+                return Settings
+                    .SelectMany(x => x.Value.Modules.SelectMany(m =>
+                    {
+                        return m.Assembly.GetTypes()
+                        .Where(type => ReflectionHelper.GetImplementedGenericTypes(type, typeof(global::MediatR.IRequestHandler<,>)).FirstOrDefault() != null);
+                    }))
+                    .Distinct()
+                    .ToList();
             }
         }
 
-        public List<Type> CommandTypes
+        public static (Type Type, string Method) GetRequestType(Type requestHandlerType)
         {
-            get
+            (Type Type, string Method) 
+                result = (Type: null, Method: null);
+
+            var requestType = ReflectionHelper.GetImplementedGenericTypes(requestHandlerType, typeof(global::MediatR.IRequestHandler<,>)).FirstOrDefault()?.GenericTypeArguments?.FirstOrDefault();
+
+            if (requestType == null) return result;
+
+            if (requestType.IsAssignableTo<IQuery>())
             {
-                return DicModules
-                .SelectMany(s => s.Value.SelectMany(t => t.GetTypes()))
-                .Where(p => typeof(ICommand).IsAssignableFrom(p))
-                .ToList();
+                result.Method = AbpMediatRConsts.Query;
             }
-        }
-
-        public List<Type> MediatRTypes
-        {
-            get
+            else if (requestType.IsAssignableTo<ICommand>())
             {
-                return QueryTypes
-                        .Concat(CommandTypes)
-                        .ToList();
+                result.Method = AbpMediatRConsts.Command;
             }
+            result.Type = requestType;
+
+            return result;
         }
-
-        public List<string> ModuleNames
-        {
-            get 
-            {
-                return this.DicModules.Keys.ToList();
-            }
-        }
-
-        public List<Type> MediatRTypesOfModule(string moduleName)
-        {
-            if (!DicModules.ContainsKey(moduleName))
-                return null;
-
-            return this.DicModules[moduleName]
-                .SelectMany(x => x.GetTypes())
-                .Where(p => typeof(IQuery).IsAssignableFrom(p) || typeof(ICommand).IsAssignableFrom(p))
-                .ToList();
-
-        }
-
     }
 }
