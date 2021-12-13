@@ -17,6 +17,7 @@ namespace FS.Abp
     [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesDomainSharedModule))]
     [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRCoreModule))]
     [DependsOn(typeof(FS.Abp.Metadata.MetadataCoreModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererCoreModule))]
     public class AbpDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
