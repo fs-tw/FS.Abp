@@ -13,7 +13,7 @@ export class MediaDescriptorsApiService {
     this.restService.request<any, PagedResultDto<AttachmentMediaWithDetailsDto>>({
       method: 'GET',
       url: '/api/cms-kit-management/media-descriptors/attachment-media',
-      params: { skipCount: AttachmentMedia.skipCount, maxResultCount: AttachmentMedia.maxResultCount, page: AttachmentMedia.page, perPage: AttachmentMedia.perPage, combineWith: AttachmentMedia.combineWith, sort: AttachmentMedia.sort, sortBy: AttachmentMedia.sortBy, sorting: AttachmentMedia.sorting },
+      params: { skipCount: AttachmentMedia.skipCount, maxResultCount: AttachmentMedia.maxResultCount, sorting: AttachmentMedia.sorting, page: AttachmentMedia.page, perPage: AttachmentMedia.perPage, sortBy: AttachmentMedia.sortBy, sort: AttachmentMedia.sort, combineWith: AttachmentMedia.combineWith },
     },
     { apiName: this.apiName });
 
