@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FS.Abp.AutoFilterer.Application.Core\FS.Abp.AutoFilterer.Core.csproj" />
+    <ProjectReference Include="..\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj" />
   </ItemGroup>
 
 </Project>

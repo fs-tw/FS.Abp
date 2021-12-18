@@ -15,7 +15,7 @@ using MR = MediatR;
 namespace FS.Abp.AspNetCore.Mvc
 {
     [Dependency(ReplaceServices = true)]
-    public class AspNetCoreApiDescriptionModelProvider :  IApiDescriptionModelProvider, ITransientDependency
+    public class AspNetCoreApiDescriptionModelProvider : IApiDescriptionModelProvider, ITransientDependency
     {
         private readonly AbpMediatROptions _options;
 

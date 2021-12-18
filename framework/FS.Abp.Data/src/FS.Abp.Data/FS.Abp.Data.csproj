@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="Volo.Abp.Core" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Data" Version="$(AbpVersion)" />
   </ItemGroup>
 
 </Project>
