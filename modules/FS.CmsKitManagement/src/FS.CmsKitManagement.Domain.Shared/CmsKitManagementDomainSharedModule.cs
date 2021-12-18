@@ -9,8 +9,9 @@ using Volo.Abp.VirtualFileSystem;
 namespace FS.CmsKitManagement
 {
     [DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule))]
-    [DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
+    [DependsOn(typeof(FS.Abp.Data.AbpDataModule))]
+    [DependsOn(typeof(FS.Abp.EntityTypes.AbpEntityTypesCoreModule))]
     public class CmsKitManagementDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

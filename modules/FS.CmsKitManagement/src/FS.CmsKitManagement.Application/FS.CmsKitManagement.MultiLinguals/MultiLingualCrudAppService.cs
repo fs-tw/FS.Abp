@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
+using FS.Abp.Data;
 
 namespace FS.CmsKitManagement.MultiLinguals
 {

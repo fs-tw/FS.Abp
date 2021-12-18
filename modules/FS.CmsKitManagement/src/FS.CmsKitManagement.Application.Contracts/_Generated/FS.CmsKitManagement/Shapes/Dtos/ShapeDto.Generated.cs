@@ -15,10 +15,6 @@ using Volo.Abp.Application.Dtos;
 namespace FS.CmsKitManagement.Shapes.Dtos
 {
 
-    public partial class ShapePrimaryKeyDto : EntityDto<Guid>
-    {
-    }
-
     public partial class ShapeDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string EntityType { get; set; }
@@ -49,7 +45,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
+    public partial class ShapeGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

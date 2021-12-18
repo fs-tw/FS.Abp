@@ -15,14 +15,6 @@ using Volo.Abp.Application.Dtos;
 namespace FS.CmsKitManagement.Blogs.Dtos
 {
 
-    public partial class BlogPostSettingGetDto
-    {
-        public virtual string ProviderName { get; set; }
-
-        public virtual string ProviderKey { get; set; }
-
-    }
-
     public partial class BlogPostSettingDto
     {
         public virtual string DefaultCoverImage { get; set; }

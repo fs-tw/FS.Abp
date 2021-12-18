@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.Shapes
 {
     public partial class ShapeCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.Shapes.Shape, FS.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto, FS.CmsKitManagement.Shapes.Dtos.ShapePrimaryKeyDto, Guid, FS.CmsKitManagement.Shapes.Dtos.ShapeGetListDto, FS.CmsKitManagement.Shapes.Dtos.ShapeCreateDto, FS.CmsKitManagement.Shapes.Dtos.ShapeUpdateDto>,
+        Volo.Abp.Application.Services.CrudAppService<FS.CmsKitManagement.Shapes.Shape, FS.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto, Guid, FS.CmsKitManagement.Shapes.Dtos.ShapeGetListDto, FS.CmsKitManagement.Shapes.Dtos.ShapeCreateDto, FS.CmsKitManagement.Shapes.Dtos.ShapeUpdateDto>,
         IShapeCrudAppService
     {
         private readonly IShapeRepository _repository;

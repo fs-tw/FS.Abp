@@ -15,10 +15,6 @@ using Volo.Abp.Application.Dtos;
 namespace FS.CmsKitManagement.EntityBlogs.Dtos
 {
 
-    public partial class EntityBlogPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
-
     public partial class EntityBlogDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string EntityType { get; set; }
@@ -49,7 +45,7 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
 
     }
 
-    public partial class EntityBlogGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
+    public partial class EntityBlogGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

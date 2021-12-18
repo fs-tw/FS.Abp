@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.CmsKitManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.CmsKitManagement.Application\FS.CmsKitManagement.Application.csproj" />
+    <ProjectReference Include="..\FS.CmsKitManagement.HttpApi\FS.CmsKitManagement.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

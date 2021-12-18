@@ -14,9 +14,6 @@ namespace Volo.CmsKit.Pages
     {
         public string Title { get; set; }
 
-        [EntityPropertyDefinition(
-            Type = "html"
-            )]
         public string Content { get; set; }
     }
 

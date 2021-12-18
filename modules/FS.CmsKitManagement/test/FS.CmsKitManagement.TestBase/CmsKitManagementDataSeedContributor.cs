@@ -6,6 +6,7 @@ using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
 using Volo.Abp.MultiTenancy;
+using FS.Abp.Data;
 
 namespace FS.CmsKitManagement
 {

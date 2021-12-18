@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.MultiLinguals
 {
     public partial interface IMultiLingualCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualWithDetailsDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualPrimaryKeyDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualGetListDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualCreateDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualWithDetailsDto, Guid, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualGetListDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualCreateDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualUpdateDto>
     {
 
     }

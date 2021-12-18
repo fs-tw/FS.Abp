@@ -6,7 +6,7 @@ using AutoFilterer.Types;
 
 namespace FS.CmsKitManagement.EntityBlogs.Dtos
 {
-    public partial class EntityBlogGetListDto : SearchResultRequestDto
+    public partial class EntityBlogGetListDto : PagedAndSortedResultRequestDto
     {
         public string EntityType { get; set; }
         public string EntityId { get; set; }

@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.MediaDescriptors
 {
     public partial class AttachmentMediaCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaPrimaryKeyDto, Guid, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaGetListDto, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaCreateDto, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaUpdateDto>,
+        Volo.Abp.Application.Services.CrudAppService<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto, Guid, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaGetListDto, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaCreateDto, FS.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaUpdateDto>,
         IAttachmentMediaCrudAppService
     {
         private readonly IAttachmentMediaRepository _repository;
