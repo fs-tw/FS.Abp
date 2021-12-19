@@ -40,6 +40,18 @@
     <None Remove="Logs\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\ContentsSeeder.cs" />
+    <Compile Remove="Data\DataSeedContributor.cs" />
+    <Compile Remove="Data\MediaDescriptorsSeeder.cs" />
+    <Compile Remove="Data\MenusSeeder.cs" />
+    <Compile Remove="Data\MultiLingualsSeeder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

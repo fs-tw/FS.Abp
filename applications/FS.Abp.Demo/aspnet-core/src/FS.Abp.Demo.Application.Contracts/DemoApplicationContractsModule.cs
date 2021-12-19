@@ -20,8 +20,7 @@ namespace FS.Abp.Demo
         typeof(AbpObjectExtendingModule)
     )]
     [DependsOn(
-        typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
-        typeof(FS.CodingManagement.CodingManagementApplicationContractsModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule)
         )]
     public class DemoApplicationContractsModule : AbpModule
     {

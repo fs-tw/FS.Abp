@@ -1,5 +1,4 @@
-﻿using FS.Abp.AuditLogging;
-using FS.Abp.Demo.Localization;
+﻿using FS.Abp.Demo.Localization;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.BlobStoring;
@@ -29,10 +28,9 @@ namespace FS.Abp.Demo
         typeof(AbpTenantManagementDomainSharedModule)
         )]
     [DependsOn(
-        typeof(FS.CmsKitManagement.CmsKitManagementDomainSharedModule),
-        typeof(FS.CodingManagement.CodingManagementDomainSharedModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementDomainSharedModule)
+        
         )]
-    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesDomainSharedModule))]
     [DependsOn(typeof(Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule))]
     public class DemoDomainSharedModule : AbpModule
     {
@@ -73,13 +71,6 @@ namespace FS.Abp.Demo
                         fileSystem.BasePath = "C:\\cms-kit";
                     });
                 });
-            });
-
-            Configure<AuditLoggingFilterOptions>(options =>
-            {
-                options.AddOrReplaceFilter("YinChang Test",
-                    new AuditLogging.Filters.AuditLogActionFilter("Volo.CmsKit.Admin.Pages.PageAdminAppService", "GetAsync"),
-                    new AuditLogging.Filters.AuditLogActionFilter("Volo.CmsKit.Admin.Blogs.BlogAdminController", "UpdateAsync"));
             });
         }
     }

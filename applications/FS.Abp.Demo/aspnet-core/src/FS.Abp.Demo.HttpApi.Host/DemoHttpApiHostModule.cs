@@ -32,7 +32,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Volo.CmsKit.Blogs;
 using Volo.CmsKit.Admin.Blogs;
-using FS.Abp.Metadata;
 
 namespace FS.Abp.Demo
 {
@@ -48,7 +47,8 @@ namespace FS.Abp.Demo
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
-    [DependsOn(typeof(FS.Abp.AbpModule))]
+    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementAspNetCoreModule))]
+    [DependsOn(typeof(FS.Abp.Swashbuckle.AbpSwashbuckleModule))]
     public class DemoHttpApiHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

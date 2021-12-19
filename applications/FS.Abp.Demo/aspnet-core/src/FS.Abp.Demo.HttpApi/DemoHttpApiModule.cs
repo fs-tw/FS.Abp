@@ -21,10 +21,8 @@ namespace FS.Abp.Demo
         typeof(AbpSettingManagementHttpApiModule)
         )]
     [DependsOn(
-        typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule),
-        typeof(FS.CodingManagement.CodingManagementHttpApiModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementHttpApiModule)
         )]
-    [DependsOn(typeof(FS.Abp.AbpHttpApiModule))]
     public class DemoHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
