@@ -1,0 +1,44 @@
+<fs-page
+  [list]="list"
+  [service]="service"
+  [title]="'CmsKit::Menus'"
+></fs-page>
+
+<nz-extensible-tree
+  [flat]="treeData"
+  (add)="onAddSubItem($event.origin.entity.id)"
+  (edit)="onEdit($event.origin.entity.id)"
+  (delete)="delete($event.origin.entity.id, $event.origin.entity.displayName)"
+>
+</nz-extensible-tree>
+
+<fs-modal
+  [title]="'AbpUi::Create'"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab [title]="'CmsKit::Menu'" [form]="addForm"></fs-modal-info-tab>
+</fs-modal>
+
+<fs-modal
+  [title]="'CmsKit::AddSubMenuItem'"
+  *ngIf="createSubItemModalVisible"
+  [(visible)]="createSubItemModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab [title]="'CmsKit::MenuItem'" [form]="addForm"></fs-modal-info-tab>
+</fs-modal>
+
+<fs-modal
+  [title]="'AbpUi::Edit'"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-modal-info-tab
+    [title]="'CmsKit::Menu'"
+    [form]="editForm"
+    [selectedRecord]="editSelectedRecord"
+  ></fs-modal-info-tab>
+</fs-modal>

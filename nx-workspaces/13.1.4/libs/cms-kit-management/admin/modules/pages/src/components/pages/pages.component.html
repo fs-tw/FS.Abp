@@ -1,0 +1,38 @@
+<div *ngIf="this.ready$ | async">
+  <fs-page [list]="list" [service]="apiService" [title]="'CmsKit::Pages'" [form]="searchForm">
+  </fs-page>
+</div>
+
+<fs-modal
+  [title]="'AbpUi::Create'"
+  *ngIf="createModalVisible"
+  [(visible)]="createModalVisible"
+  (save)="create($event)"
+>
+  <fs-modal-info-tab
+    [title]="'CmsKit::Page'"
+    [form]="addForm"
+  ></fs-modal-info-tab>
+</fs-modal>
+
+<fs-modal
+  [title]="'AbpUi::Edit'"
+  *ngIf="editModalVisible"
+  [(visible)]="editModalVisible"
+  (save)="edit($event)"
+>
+  <fs-modal-info-tab
+    [title]="'CmsKit::Page'"
+    [form]="editForm"
+  ></fs-modal-info-tab>
+</fs-modal>
+
+<fs-multi-lingual-modal
+  [provider]="apiService"
+  [entityType]="EntityType"
+  [entityId]="editSelectedRecord?.id"
+>
+</fs-multi-lingual-modal>
+
+<fs-image-picker-modal [shortEntityType]="ShortEntityType" [imageInfo]="pageImageInfo">
+</fs-image-picker-modal>

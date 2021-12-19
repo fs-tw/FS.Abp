@@ -1,0 +1,17 @@
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzTitle]="'上傳圖片'"
+  [nzCancelText]="null"
+  [nzOkLoading]="loading"
+  [nzCancelLoading]="loading"
+  (nzOnCancel)="handleClose()"
+  (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <fs-image-picker
+      #EditorImage
+      [maxImageCount]="1"
+      [existFiles]="imageInfo"
+      [shortEntityType]="shortEntityType">
+    </fs-image-picker>
+  </ng-container>
+</nz-modal>

@@ -8,8 +8,8 @@ export class EntityTypeManagementConfigModule {
     return {
       ngModule: EntityTypeManagementConfigModule,
       providers: [
-        ENTITY_TYPE_PROVIDERS,
-        EntityTypeStore
+        //ENTITY_TYPE_PROVIDERS,
+        //EntityTypeStore
       ],
     };
   }

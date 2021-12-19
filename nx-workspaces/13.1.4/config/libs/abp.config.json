@@ -1,0 +1,14 @@
+{
+    "order": 2001,
+    "devDependencies": {
+        "@abp/ng.account": "^4.4.4",
+        "@abp/ng.components": "^4.4.4",
+        "@abp/ng.core": "^4.4.4",
+        "@abp/ng.identity": "^4.4.4",
+        "@abp/ng.setting-management": "^4.4.4",
+        "@abp/ng.tenant-management": "^4.4.4",
+        "@abp/ng.theme.basic": "^4.4.4",
+        "@abp/ng.theme.shared": "^4.4.4",
+        "@abp/ng.schematics": "^4.4.4"
+    }
+}
