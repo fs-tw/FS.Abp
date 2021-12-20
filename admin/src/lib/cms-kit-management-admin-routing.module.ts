@@ -22,6 +22,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'blog-management',
+        loadChildren: () =>
+          import('@fs-tw/cms-kit-management/admin/modules/blog-management').then(
+            (m) => m.BlogManagementModule
+          ),
+      },
+      {
         path: 'comments',
         loadChildren: () =>
           import('@fs-tw/cms-kit-management/admin/modules/comments').then(

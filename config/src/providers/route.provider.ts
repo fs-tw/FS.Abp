@@ -23,6 +23,16 @@ const blogsModules = [
   }
 ];
 
+const blogManagementModules = [
+  {
+    path: '/cms-kit-management/blog-management',
+    name: eCmsKitManagementRouteNames.BlogManagement,
+    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    iconClass: 'fa fa-blog',
+    order: 1,
+  }
+];
+
 const commentsModels = [
   {
     path: '/cms-kit-management/comments',
@@ -125,6 +135,7 @@ export function configureRoutes(routes: RoutesService) {
         }
       } as any,
       ...blogsModules,
+      ...blogManagementModules,
       ...commentsModels,
       ...pagesModels,
       ...tagsModels,
