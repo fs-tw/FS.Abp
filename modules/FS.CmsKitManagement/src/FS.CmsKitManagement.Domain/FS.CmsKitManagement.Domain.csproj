@@ -12,17 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-    <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
-    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
+    <!--
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />-->
+    <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain\FS.Abp.EntityTypes.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />
-    <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.CmsKit.Domain" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>

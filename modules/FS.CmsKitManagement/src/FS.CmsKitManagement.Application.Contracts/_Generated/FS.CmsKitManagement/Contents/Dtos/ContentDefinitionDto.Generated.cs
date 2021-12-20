@@ -15,10 +15,6 @@ using Volo.Abp.Application.Dtos;
 namespace FS.CmsKitManagement.Contents.Dtos
 {
 
-    public partial class ContentDefinitionPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
-
     public partial class ContentDefinitionDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string EntityType { get; set; }
@@ -43,7 +39,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentDefinitionGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
+    public partial class ContentDefinitionGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

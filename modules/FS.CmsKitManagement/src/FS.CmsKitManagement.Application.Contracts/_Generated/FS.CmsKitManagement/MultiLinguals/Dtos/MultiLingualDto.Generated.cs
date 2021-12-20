@@ -15,10 +15,6 @@ using Volo.Abp.Application.Dtos;
 namespace FS.CmsKitManagement.MultiLinguals.Dtos
 {
 
-    public partial class MultiLingualPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
-
     public partial class MultiLingualDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
         public virtual string EntityType { get; set; }
@@ -43,7 +39,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
+    public partial class MultiLingualGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

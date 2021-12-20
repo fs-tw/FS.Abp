@@ -6,7 +6,7 @@ using AutoFilterer.Attributes;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
-    public partial class ContentDefinitionGetListDto : SearchResultRequestDto
+    public partial class ContentDefinitionGetListDto : PagedAndSortedResultRequestDto
     {
         [CompareTo("EntityType")]
         [OperatorComparison(AutoFilterer.Enums.OperatorType.Equal)]

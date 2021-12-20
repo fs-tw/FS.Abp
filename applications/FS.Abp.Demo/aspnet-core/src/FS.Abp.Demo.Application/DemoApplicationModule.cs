@@ -24,12 +24,9 @@ namespace FS.Abp.Demo
         typeof(AbpFeatureManagementApplicationModule),
         typeof(AbpSettingManagementApplicationModule)
         )]
-    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesApplicationModule))]
     [DependsOn(
-        typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule),
-        typeof(FS.CodingManagement.CodingManagementApplicationModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
         )]
-    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingApplicationModule))]
     public class DemoApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -37,11 +34,6 @@ namespace FS.Abp.Demo
             Configure<AbpAutoMapperOptions>(options =>
             {
                 options.AddMaps<DemoApplicationModule>();
-            });
-
-            Configure<FS.Abp.MediatR.AbpMediatROptions>(options =>
-            {
-                options.AddOrReplaceSetting("app","Default", typeof(DemoApplicationModule));
             });
 
 

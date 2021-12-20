@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Application\FS.Abp.EntityTypes.Application.csproj" />
+    <!--<ProjectReference Include="..\..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Application\FS.Abp.EntityTypes.Application.csproj" />-->
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Application\FS.CmsKitManagement.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.Application\FS.CodingManagement.Application.csproj" />
+    <!--<ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.Application\FS.CodingManagement.Application.csproj" />-->
     <ProjectReference Include="..\FS.Abp.Demo.Domain\FS.Abp.Demo.Domain.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Application.Contracts\FS.Abp.Demo.Application.Contracts.csproj" />
   </ItemGroup>

@@ -3,6 +3,10 @@
   "affected": {
     "defaultBase": "master"
   },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
@@ -31,11 +35,6 @@
       }
     ]
   },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
-  },
-  "defaultProject": "fs",
   "generators": {
     "@nrwl/angular": {
       "application": {
@@ -62,5 +61,6 @@
     "@nrwl/angular:component": {
       "style": "css"
     }
-  }
+  },
+  "defaultProject": "dev"
 }

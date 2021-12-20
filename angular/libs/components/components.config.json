@@ -1,31 +1,27 @@
 {
   "order": 2001,
-  "nx": {
-    "components": {
-      "tags": []
-    }
-  },
   "angular": {
     "components": {
       "projectType": "library",
       "root": "libs/components",
       "sourceRoot": "libs/components/src",
-      "prefix": "fs",
+      "prefix": "fs-tw",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
-          "outputs": [
-            "dist/libs/components"
-          ],
+          "outputs": ["dist/libs/components"],
           "options": {
-            "tsConfig": "libs/components/tsconfig.lib.json",
             "project": "libs/components/ng-package.json"
           },
           "configurations": {
             "production": {
               "tsConfig": "libs/components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/components/tsconfig.lib.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
@@ -36,7 +32,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     }
   },
   "tsconfig": {
@@ -46,5 +43,9 @@
     "@fs-tw/components/*": [
       "libs/components/*/src/index.ts"
     ]
-  }
+  },
+  "devDependencies": {
+    "ngx-quill": "^14.0.0",
+    "quill": "^1.3.7"
+}
 }

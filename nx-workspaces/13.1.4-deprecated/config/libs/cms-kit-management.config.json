@@ -1,0 +1,53 @@
+{
+  "order": 2001,
+  "nx": {
+    "cms-kit-management": { "tags": [] }
+  },
+  "angular": {
+    "cms-kit-management": {
+      "projectType": "library",
+      "root": "libs/cms-kit-management",
+      "sourceRoot": "libs/cms-kit-management/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/cms-kit-management/tsconfig.lib.json",
+            "project": "libs/cms-kit-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/cms-kit-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/cms-kit-management/src/**/*.ts",
+              "libs/cms-kit-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/cms-kit-management"],
+          "options": {
+            "jestConfig": "libs/cms-kit-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/cms-kit-management": [
+      "libs/cms-kit-management/src/index.ts"
+    ],
+    "@fs-tw/cms-kit-management/*": [
+      "libs/cms-kit-management/*/src/index.ts"
+    ]
+  }
+}

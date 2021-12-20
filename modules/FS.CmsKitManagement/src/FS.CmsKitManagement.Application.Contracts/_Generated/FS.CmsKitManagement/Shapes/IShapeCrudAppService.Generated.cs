@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.Shapes
 {
     public partial interface IShapeCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto, FS.CmsKitManagement.Shapes.Dtos.ShapePrimaryKeyDto, FS.CmsKitManagement.Shapes.Dtos.ShapeGetListDto, FS.CmsKitManagement.Shapes.Dtos.ShapeCreateDto, FS.CmsKitManagement.Shapes.Dtos.ShapeUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto, Guid, FS.CmsKitManagement.Shapes.Dtos.ShapeGetListDto, FS.CmsKitManagement.Shapes.Dtos.ShapeCreateDto, FS.CmsKitManagement.Shapes.Dtos.ShapeUpdateDto>
     {
 
     }

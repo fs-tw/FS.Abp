@@ -31,11 +31,8 @@ namespace FS.Abp.Demo
         typeof(AbpEmailingModule)
     )]
     [DependsOn(
-        typeof(FS.CmsKitManagement.CmsKitManagementDomainModule),
-        typeof(FS.CodingManagement.CodingManagementDomainModule)
-        )]
-    [DependsOn(
-        typeof(FS.Abp.EntityTypes.EntityTypesDomainModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementDomainModule)
+        //typeof(FS.CodingManagement.CodingManagementDomainModule)
         )]
     public class DemoDomainModule : AbpModule
     {

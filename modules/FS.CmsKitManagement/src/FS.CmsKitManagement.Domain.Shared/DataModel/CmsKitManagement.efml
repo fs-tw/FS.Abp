@@ -38,7 +38,7 @@
       </property>
     </component>
   </class>
-  <class name="FS.CmsKitManagement.MediaDescriptors.AttachmentMedia" entity-set="AttachmentMedia" schema="dbo" p1:Guid="d5d99f27-d554-4cf5-a994-30843e1aea71" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.MediaDescriptors.AttachmentMedia" entity-set="AttachmentMedia" schema="dbo" p1:Guid="d5d99f27-d554-4cf5-a994-30843e1aea71" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -87,7 +87,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Contents.ContentDefinition" entity-set="ContentDefinitions" schema="dbo" p1:Guid="2c5531ea-a490-4b81-8fc2-4f8b346373c5" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.ContentDefinition" entity-set="ContentDefinitions" schema="dbo" p1:Guid="2c5531ea-a490-4b81-8fc2-4f8b346373c5" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -133,7 +133,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Contents.ContentProperty" entity-set="ContentProperties" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.ContentProperty" entity-set="ContentProperties" schema="dbo" p1:Guid="29e13686-6d7b-45bf-b26b-655a78d998ba" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -185,7 +185,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Contents.EntityContent" entity-set="EntityContents" schema="dbo" p1:Guid="8e4cfb47-2ef5-4c0f-a83a-314c9f3445c9" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.EntityContent" entity-set="EntityContents" schema="dbo" p1:Guid="8e4cfb47-2ef5-4c0f-a83a-314c9f3445c9" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -259,7 +259,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Contents.EntityContentDefinition" entity-set="EntityContentDefinitions" schema="dbo" p1:Guid="8d85cfc2-2e15-401b-838f-671aa6e73216" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -308,7 +308,7 @@
       <column name="" not-null="False" sql-type="uniqueidentifier" p1:unicode="False" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.Shapes.Shape" entity-set="Shapes" schema="dbo" p1:Guid="c255cb41-86b5-4b99-82f4-37e9b55f981f" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.Shapes.Shape" entity-set="Shapes" schema="dbo" p1:Guid="c255cb41-86b5-4b99-82f4-37e9b55f981f" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -357,7 +357,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingual" entity-set="MultiLinguals" schema="dbo" p1:Guid="c9d3871a-93e2-405f-ada7-2a7073d0702c" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingual" entity-set="MultiLinguals" schema="dbo" p1:Guid="c9d3871a-93e2-405f-ada7-2a7073d0702c" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -403,7 +403,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation" entity-set="MultiLingualTranslations" schema="dbo" p1:Guid="c6db6c9b-7b6e-4bba-a880-47aa67a99df6" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GetListAsync="False">
+  <class name="FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation" entity-set="MultiLingualTranslations" schema="dbo" p1:Guid="c6db6c9b-7b6e-4bba-a880-47aa67a99df6" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant" p1:GetListAsync="False">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -471,7 +471,7 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CmsKitManagement.EntityBlogs.EntityBlog" entity-set="EntityBlogs" schema="dbo" p1:Guid="86184361-b7d3-4ff7-acb5-410e60fb4889" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CmsKitManagement.EntityBlogs.EntityBlog" entity-set="EntityBlogs" schema="dbo" p1:Guid="86184361-b7d3-4ff7-acb5-410e60fb4889" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />

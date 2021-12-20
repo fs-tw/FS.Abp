@@ -10,26 +10,27 @@
 using FS.CmsKitManagement.Blogs.Dtos;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
+using FS.Abp.Data;
 
 namespace FS.CmsKitManagement.Blogs
 {
     public partial class BlogPostSettingAppService : ApplicationService, IBlogPostSettingAppService // auto-generated
     {
-        protected IBlogPostSettingFactory Factory => this.LazyServiceProvider.LazyGetRequiredService<IBlogPostSettingFactory>();
+        protected Volo.Abp.SettingManagement.ISettingManager SettingManager => this.LazyServiceProvider.LazyGetRequiredService<Volo.Abp.SettingManagement.ISettingManager>();
 
-        public async Task<BlogPostSettingDto> GetAsync(BlogPostSettingGetDto BlogPostSettingGet = null, bool fallback = true)
+        public async Task<BlogPostSettingDto> GetAsync(string providerName, string providerKey, bool fallback = true)
         {
             BlogPostSettingDto result = new BlogPostSettingDto();
-            return ObjectMapper.Map(await Factory.GetAsync(BlogPostSettingGet.ProviderName,BlogPostSettingGet.ProviderKey), result);
+            var option = new BlogPostSetting();
+            option.DefaultCoverImage = await SettingManager.GetOrNullAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultCoverImage,providerName,providerKey,fallback);
+            return ObjectMapper.Map(option, result);
         }
 
-        public async Task UpdateAsync(BlogPostSettingDto BlogPostSetting, string providerName = null, string providerKey = null)
+        public async Task UpdateAsync(BlogPostSettingDto input, string providerName = null, string providerKey = null,bool forceToSet=true)
         {
             var domain = new BlogPostSetting();
-
-            ObjectMapper.Map(BlogPostSetting, domain);
-
-            await Factory.SetAsync(domain, providerName, providerKey);
+            await SettingManager.SetAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultCoverImage, input.DefaultCoverImage.ToString(), providerName, providerKey, forceToSet);
+            ObjectMapper.Map(input, domain);
 
         }
     }

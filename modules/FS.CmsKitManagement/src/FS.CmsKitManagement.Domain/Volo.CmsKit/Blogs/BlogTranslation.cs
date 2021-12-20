@@ -21,9 +21,6 @@ namespace Volo.CmsKit.Blogs
 
         public virtual string ShortDescription { get; set; }
 
-        [EntityPropertyDefinition(
-            Type = "html"
-            )]
         public virtual string Content { get; set; }
 
 

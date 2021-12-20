@@ -1,0 +1,100 @@
+﻿@page "/privacy-policy"
+@model CFTA.Web.Public.Pages.PrivacyPolicyModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CFTA.Localization
+@inject IHtmlLocalizer<CFTAResource> L
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+
+
+
+<abp-card Class=" overflow-hidden">
+    <abp-card-header>
+        <h2>
+            Privacy Policy
+        </h2>
+    </abp-card-header>
+    <abp-card-body>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida vel enim eu luctus. Cras dignissim maximus libero dictum ultrices. Mauris nisl lacus, semper nec justo eu, feugiat gravida mi. Phasellus vestibulum sem nec lacinia elementum. Sed at diam diam. Proin vel volutpat felis. In sagittis sit amet purus vitae iaculis.
+        </p>
+        
+        <h3>Website Visitors</h3>
+        
+        <p>
+            Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean at imperdiet odio. Integer convallis ipsum vel purus commodo, et suscipit orci tempus. Mauris euismod id libero non lacinia. Morbi id nisi aliquam, commodo turpis vitae, pharetra erat. Maecenas in commodo enim, at vehicula mauris.
+            
+            Nulla pellentesque tincidunt libero, eget tincidunt risus sodales ullamcorper.
+        </p>
+        
+        <h3>Gathering of Personally-Identifying Information</h3>
+        
+        <p>
+            Phasellus placerat vitae sapien eu volutpat. Curabitur in nunc velit. Vivamus semper ornare libero convallis varius. Morbi sagittis finibus elit, vel sagittis elit elementum eget. Cras in lacus ex. In pulvinar rhoncus enim, vitae porta orci imperdiet eu. Vestibulum pretium dolor sem, vitae efficitur dui pulvinar nec. Nam vitae luctus sem. Pellentesque in orci id velit ultricies porttitor id non arcu. Curabitur sit amet gravida tortor. Proin faucibus urna efficitur iaculis rutrum. Donec nulla orci, dapibus non est nec, luctus accumsan quam. Fusce blandit pellentesque ipsum, a ultricies orci consectetur sed. Praesent consequat feugiat metus. 
+        </p>
+        
+        <h3>Protection of Certain Personally-Identifying Information</h3>
+        
+        <p>
+            Praesent semper, ex eget convallis suscipit, felis eros aliquet velit, vel tincidunt justo urna eu nisi. Curabitur congue diam id arcu vehicula, ac suscipit lectus sagittis. Nulla facilisi. Vestibulum semper porta commodo. Donec sollicitudin ut purus a sagittis. Sed risus erat, facilisis sed molestie nec, consectetur id quam. Proin ut lacinia neque. Quisque bibendum tristique dui, a pharetra nunc tincidunt ac. In vitae venenatis neque. Etiam nec lacus risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque tincidunt tellus a mauris imperdiet, id tempor nisi suscipit. 
+        </p>
+        
+        <h3>Use of personal information</h3>
+        
+        <p>
+            Pellentesque tempor felis eget arcu vestibulum, eu lobortis lacus maximus. Nunc nec rhoncus nunc, in sollicitudin velit. Vivamus id lectus ut erat venenatis pretium. Aliquam erat volutpat. Aliquam non euismod lacus, sed aliquam quam. Maecenas tempus, nunc vitae suscipit sollicitudin, felis leo porta justo, quis aliquam augue neque ut nisi. Morbi id nibh neque. Ut quis pharetra diam. 
+        </p>
+        
+        <h3>Legal grounds for processing personal information</h3>
+        
+        <p>
+            Nulla et feugiat turpis. Aliquam ut magna vitae sapien pulvinar efficitur. Pellentesque rhoncus vulputate erat, id vestibulum nunc mollis vitae. Duis eget tristique magna, eget cursus lectus.
+        </p>
+        
+        <ul>
+            <li>Donec ornare</li>
+            <li>Nisl eu consequat</li>
+            <li>Ultricies, sapien massa</li>
+        </ul>
+        
+        <h3>Access to data</h3>
+        
+        <p>
+            Fignissim massa, at dapibus lectus sapien et diam. In nec congue metus, sit amet laoreet eros. Phasellus sit amet nunc lacinia, pharetra massa eu, placerat lacus. Mauris malesuada leo urna, id consectetur massa porttitor eget. Morbi fermentum ultricies purus fermentum fermentum. Praesent et elementum arcu, non pulvinar eros. Etiam tincidunt a nulla consequat interdum. Duis dapibus lectus dolor, nec viverra orci finibus ut. 
+        </p>
+        
+        <h3>Retention of personal information</h3>
+        
+        <p> Proin interdum mollis nisi. Pellentesque volutpat eros nisi, eget ullamcorper erat interdum sed. Quisque sodales ullamcorper viverra. Suspendisse elementum posuere nisi, et ullamcorper sem feugiat vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla iaculis massa diam, eget vehicula mi eleifend vitae. Ut ultricies est sem, et lobortis sem pulvinar sed. Praesent nec varius ante, at fringilla justo. Nulla feugiat ullamcorper nunc, et viverra mauris dapibus a. Sed malesuada eros in dui cursus, eu faucibus ligula aliquet. Sed ultricies id est et pretium. Aenean ultrices enim efficitur erat malesuada, et ultrices quam posuere. Etiam venenatis massa orci, sed tempor velit aliquam et. Phasellus sollicitudin lectus et nisl ornare faucibus. </p>
+        
+        <p>Proin fringilla lorem sed odio sagittis fermentum. Proin at quam convallis, posuere dolor eget, sagittis purus. Etiam faucibus augue ut fermentum tempor. Vestibulum sagittis iaculis imperdiet. Donec scelerisque, augue vel pulvinar posuere, neque elit rhoncus urna, et condimentum ipsum elit et velit. Suspendisse at orci ut orci venenatis volutpat nec molestie ex. Praesent et posuere ante, vitae condimentum libero. Proin nec orci eu lectus sagittis auctor. Sed blandit, urna ultricies posuere posuere, est massa accumsan nunc, vel rutrum libero leo id odio. </p>
+        
+        <p>Donec iaculis arcu vel lectus molestie, vitae elementum massa efficitur. Aliquam malesuada sagittis scelerisque. Nunc eu dui ultrices, laoreet libero nec, ornare augue. Aenean congue malesuada viverra. Integer vitae tristique nibh, in facilisis neque. Nunc vel risus turpis. Nam rhoncus ultricies dui. Mauris finibus sapien sed mauris varius, non tempor eros laoreet. Proin vel diam dapibus, imperdiet massa at, laoreet dolor. Duis aliquet hendrerit purus, sit amet mollis odio facilisis sit amet. </p>
+        
+        <h3>Rights in relation to your information</h3>
+        
+        <p>Pellentesque posuere viverra tellus in convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam fermentum odio nec leo lobortis tincidunt. </p>
+        
+        <h3>Third Party Links</h3>
+        
+        <p>Aliquam at pellentesque tortor. Vivamus vitae tellus in felis iaculis auctor nec eu elit. Praesent iaculis, erat in malesuada blandit, tellus lectus tincidunt neque, ac ultricies sapien metus condimentum mi. Sed a nibh ut orci varius tincidunt. Praesent a sapien erat. </p>
+        
+        <h3>Aggregated Statistics</h3>
+        
+        <p>Nam nibh massa, ullamcorper nec rutrum quis, fringilla nec dolor. Cras in augue non tellus sollicitudin cursus hendrerit et dolor. Curabitur ultricies ante orci, sit amet consequat elit blandit nec. Donec vel augue nec nisi cursus scelerisque. Morbi sit amet sagittis lectus. Donec faucibus consequat leo. Sed laoreet massa ut leo tempus auctor. Pellentesque non magna consequat, euismod nibh eu, consectetur sem. </p>
+        
+        <h3>Cookies</h3>
+        
+        <p>Donec vitae leo iaculis, lacinia dui at, bibendum lorem. Ut eu felis pulvinar ipsum pulvinar ultricies. Nulla facilisi. Ut nisi purus, sagittis vel consequat gravida, molestie luctus enim. Donec ac metus tincidunt, congue mauris eleifend, blandit elit. Morbi nec mi hendrerit, aliquam urna eget, sollicitudin sapien. Aenean venenatis mattis tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse tempus, nulla eu elementum pretium, erat lacus mollis dolor, ut pulvinar ligula libero vitae risus. Nunc vehicula aliquet risus, quis consectetur orci. </p>
+        
+        <h3>Privacy Policy Changes</h3>
+        
+        <p>Quisque sodales ullamcorper viverra. Suspendisse elementum posuere nisi, et ullamcorper sem feugiat vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla iaculis massa diam, eget vehicula mi eleifend vitae. Ut ultricies est sem, et lobortis sem pulvinar sed. Praesent nec varius ante, at fringilla justo. Nulla feugiat ullamcorper nunc, et viverra mauris dapibus a. Sed malesuada eros in dui cursus, eu faucibus ligula aliquet. Sed ultricies id est et pretium. Aenean ultrices enim efficitur erat malesuada, et ultrices quam posuere.</p>
+        
+        <h3>Contact</h3>
+        
+        <p>
+            Please contact us if you have any questions about our privacy policy or information we hold about you by emailing <a href="mailto:info@TestModel.com">info@test.com</a>
+        </p>
+    </abp-card-body>
+</abp-card>

@@ -1,0 +1,6 @@
+﻿@using Volo.Abp.AspNetCore.Mvc.UI.Theming
+@inject IThemeManager ThemeManager
+@{
+    Layout = ThemeManager.CurrentTheme.GetPublicLayout();
+    ViewBag.Title = "臺南市台灣鋼鐵足球隊";
+}

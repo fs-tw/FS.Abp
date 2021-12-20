@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.MultiLinguals
 {
     public partial class MultiLingualTranslationCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationWithDetailsDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationPrimaryKeyDto, Guid, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationGetListDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationCreateDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationUpdateDto>,
+        Volo.Abp.Application.Services.CrudAppService<FS.CmsKitManagement.MultiLinguals.MultiLingualTranslation, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationWithDetailsDto, Guid, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationGetListDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationCreateDto, FS.CmsKitManagement.MultiLinguals.Dtos.MultiLingualTranslationUpdateDto>,
         IMultiLingualTranslationCrudAppService
     {
         private readonly IMultiLingualTranslationRepository _repository;

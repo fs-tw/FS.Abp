@@ -1,0 +1,367 @@
+﻿@page
+@model CFTA.Web.Public.Pages.IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CFTA.Localization
+@inject IHtmlLocalizer<CFTAResource> L
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+@inject Volo.CmsKit.Admin.Blogs.IBlogAdminAppService blogAdminAppService 
+
+<div style="background-image: url('./assets/img/cfta/BackgroundImage.png') !important;">
+    <!-- Banner -->
+    <section>
+        <div class="container">
+            <div class="row" style="overflow: hidden;">
+                <div class="col-lg-12 g-mb-0--lg">
+
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./assets/img/cfta/banner.jpg" alt="First slide"
+                                     style="display: block; width: 100%;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assets/img/cfta/banner2.jpg" alt="Second slide"
+                                     style="display: block; width: 100%;">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Banner -->
+    <!-- 關於我們 -->
+    <section class="1g-bg-secondary index-py">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center g-mb-0--lg">
+                    <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+                        <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">
+                            關於我們
+                        </h2>
+                    </header>
+
+                    <p class="g-font-size-16 g-mb-30">
+                        臺南市臺灣鋼鐵足球隊在臺南市政府及臺南市體育總會足球委員會與鴻鑫企業有限公司還有臺灣鋼鐵集團共同支援下成立。我們致力於臺灣的足球發展，展翅上騰、無畏無懼就是我們的鋼鐵精神。
+                    </p>
+
+
+                </div>
+
+                <div class="col-lg-6 g-bg-img-hero g-pos-rel">
+                    <img src="./assets/img/cfta/logo.jpg" alt="First slide"
+                         style="display: block; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End 關於我們 -->
+
+    <hr class="g-brd-gray-light-v4 my-0">
+
+    <!-- 最新消息 -->
+    <section class="g-pt-70 index-py">
+        <div class="container">
+            <div class="row">
+                <!-- Articles -->
+                <div class="col-lg-12 g-mb-50 g-mb-0--lg">
+                    <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+                        <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">
+                            最新消息
+                        </h2>
+                    </header>
+                    <!-- Article -->
+                    <article class="row align-items-center g-mb-30">
+                        <div class="col-md-6 g-mb-30 g-mb-0--lg">
+                            <figure class="g-pos-rel">
+                                <img class="img-fluid w-100" src="./assets/img/cfta/post1.jpg"
+                                     alt="Image description">
+
+                                <!-- <figcaption class="g-pos-abs g-top-20 g-left-20">
+                                    <a class="btn btn-sm u-btn-pink rounded-0" href="#">UI Design</a>
+                                </figcaption> -->
+                            </figure>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="g-pa-30--md">
+                                <ul class="u-list-inline g-color-gray-dark-v4 g-font-size-12 g-mb-10">
+                                    <li class="list-inline-item">
+                                        userName
+                                    </li>
+                                    <li class="list-inline-item">/</li>
+                                    <li class="list-inline-item">
+                                        yyyy-MM-dd
+                                    </li>
+
+
+                                </ul>
+
+                                <p class="h4 g-color-black g-mb-25">
+                                    <a class="u-link-v5 g-color-black g-color-primary--hover"
+                                       href="javascript:;">post.title</a>
+                                </p>
+
+                                <!-- <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover"
+                                    href="#">Read more</a> -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- End Article -->
+
+
+                </div>
+                <!-- End Articles -->
+            </div>
+        </div>
+    </section>
+    <!-- End 最新消息 -->
+
+    <hr class="g-brd-gray-light-v4 my-0">
+
+    <!-- 影片專區 -->
+    <section class="g-pt-70 index-py">
+        <div class="container">
+            <div class="row">
+                <!-- Carousel -->
+                <div class="col-lg-12">
+                    <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+                        <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">
+                            影片專區
+                        </h2>
+                    </header>
+
+                    <div class="u-shadow-v21">
+                        <div class="js-carousel" data-infinite="true" data-autoplay="true" data-fade="true"
+                             data-speed="5000">
+                            <!-- Slider -->
+                            <div class="js-slide">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-8">
+                                        <div class="h-100 g-min-height-300 g-bg-size-cover g-bg-pos-center">
+                                            <div class="g-absolute-centered"
+                                                 style="width: 100%;display: flex;justify-content: center;z-index: 2;">
+                                                <video style="width: 100%;" autoplay controls muted loop>
+                                                    <source src="./assets//img/cfta/welcome.mp4"
+                                                            type="video/mp4" />
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="g-bg-white text-center g-px-20 g-py-100">
+                                            <a class="u-link-v5 g-color-black g-color-primary--hover"
+                                               [routerLink]="'detail'">
+                                                <h4 class="h6 g-color-black g-font-weight-700 text-uppercase mb-3">
+
+                                                    2021 AFC CUP #亞足聯盃東亞J組 <br>#首戰就在明天💪
+                                                </h4>
+                                            </a>
+
+                                            <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-3">
+                                            </div>
+                                            <span class="d-block g-color-gray-dark-v4">📹今天讓我們的小潘特派員帶大家瞧瞧球員的練習狀況。</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Slider -->
+
+
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <a class="btn btn-xl u-btn-primary text-uppercase g-font-weight-600 g-font-size-12 rounded g-mr-15 g-mb-10 g-mb-0--sm"
+                           href="javascript:;" style="width: 100%; color: #fff">觀看更多</a>
+                    </div>
+
+                </div>
+
+                <!-- End Carousel -->
+            </div>
+        </div>
+    </section>
+
+    <!-- End 影片專區 -->
+
+    <hr class="g-brd-gray-light-v4 my-0">
+
+    <!-- Our 相簿專區 -->
+    <section class="index-py">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 g-mb-50 g-mb-0--lg">
+                    <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+                        <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">
+                            相簿專區
+                        </h2>
+                    </header>
+                    <!-- Article -->
+                    <ng-container *ngIf="photoData?.length > 0">
+                        <article class="row align-items-center g-mb-30" *ngFor="let post of photoData">
+                            <div class="col-md-6 g-mb-30 g-mb-0--lg">
+                                <figure class="g-pos-rel">
+                                    <img class="img-fluid w-100" src="./assets/img/cfta/post1.jpg"
+                                         alt="Image description">
+
+                                    <!-- <figcaption class="g-pos-abs g-top-20 g-left-20">
+                                        <a class="btn btn-sm u-btn-pink rounded-0" href="#">UI Design</a>
+                                    </figcaption> -->
+                                </figure>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="g-pa-30--md">
+                                    <ul class="u-list-inline g-color-gray-dark-v4 g-font-size-12 g-mb-10">
+                                        <li class="list-inline-item">
+                                            userName
+                                        </li>
+                                        <li class="list-inline-item">/</li>
+                                        <li class="list-inline-item">
+                                            yyyy-MM-dd
+                                        </li>
+
+
+                                    </ul>
+
+                                    <p class="h4 g-color-black g-mb-25">
+                                        <a class="u-link-v5 g-color-black g-color-primary--hover"
+                                           href="javascript:;">post.title</a>
+                                    </p>
+
+                                    <!-- <a class="g-font-size-12 text-uppercase g-font-weight-600 g-color-gray-dark-v4 g-color-primary--hover"
+                                    href="#">Read more</a> -->
+                                </div>
+                            </div>
+                        </article>
+                    </ng-container>
+
+                    <!-- End Article -->
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End 相簿專區 -->
+
+    <hr class="g-brd-gray-light-v4 my-0">
+
+    <!-- 職員清單-->
+    <section class="index-py">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 g-mb-50 g-mb-0--lg">
+                    <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+                        <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">
+                            職員清單
+                        </h2>
+                    </header>
+                </div>
+
+            </div>
+            <div class="row no-gutters g-mx-minus-10">
+                <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
+                    <!-- Projects -->
+                    <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-purple--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
+                        <img class="img-fluid u-block-hover__main--zoom-v1 mb-5"
+                             src="./assets/img/cfta/Staff Member1.jpg" alt="Image Description">
+                        <span class="g-font-weight-600 g-font-size-12 text-uppercase">Head Coach</span>
+                        <h3 class="h4 g-font-weight-600 mb-0">羅智聰</h3>
+                        <h3 class="h4 g-font-weight-600 mb-0">C.T. LO</h3>
+                        <a class="u-link-v2" href="#"></a>
+                    </div>
+                    <!-- End Projects -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
+                    <!-- Projects -->
+                    <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-cyan--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
+                        <img class="img-fluid u-block-hover__main--zoom-v1 mb-5"
+                             src="./assets/img/cfta/Staff Member2.jpg" alt="Image Description">
+                        <span class="g-font-weight-600 g-font-size-12 text-uppercase">Team Manager</span>
+                        <h3 class="h4 g-font-weight-600 mb-0">陳亮辰</h3>
+                        <h3 class="h4 g-font-weight-600 mb-0">L.C. CHEN</h3>
+                        <a class="u-link-v2" href="#"></a>
+                    </div>
+                    <!-- End Projects -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
+                    <!-- Projects -->
+                    <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-teal--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
+                        <img class="img-fluid u-block-hover__main--zoom-v1 mb-5"
+                             src="./assets/img/cfta/Staff Member3.jpg" alt="Image Description">
+                        <span class="g-font-weight-600 g-font-size-12 text-uppercase">
+                            General affairs
+                            managemenl
+                        </span>
+                        <h3 class="h4 g-font-weight-600 mb-0">潘莉青</h3>
+                        <h3 class="h4 g-font-weight-600 mb-0">L.C. PAN</h3>
+                        <a class="u-link-v2" href="#"></a>
+                    </div>
+                    <!-- End Projects -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
+                    <!-- Projects -->
+                    <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-primary--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
+                        <img class="img-fluid u-block-hover__main--zoom-v1 mb-5"
+                             src="./assets/img/cfta/Staff Member4.jpg" alt="Image Description">
+                        <span class="g-font-weight-600 g-font-size-12 text-uppercase">Assistant Coach</span>
+                        <h3 class="h4 g-font-weight-600 mb-0">安以恩</h3>
+                        <h3 class="h4 g-font-weight-600 mb-0">S. KOUAME</h3>
+                        <a class="u-link-v2" href="#"></a>
+                    </div>
+                    <!-- End Projects -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
+                    <!-- Projects -->
+                    <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-brown--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
+                        <img class="img-fluid u-block-hover__main--zoom-v1 mb-5"
+                             src="./assets/img/cfta/Staff Member5.jpg" alt="Image Description">
+                        <span class="g-font-weight-600 g-font-size-12 text-uppercase">Athletic Trainer</span>
+                        <h3 class="h4 g-font-weight-600 mb-0">葉潤澤</h3>
+                        <h3 class="h4 g-font-weight-600 mb-0">J.T. YEH</h3>
+                        <a class="u-link-v2" href="#"></a>
+                    </div>
+                    <!-- End Projects -->
+                </div>
+
+                <div class="col-sm-6 col-lg-4 g-px-10 g-mb-20">
+                    <!-- Projects -->
+                    <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-pink--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
+                        <img class="img-fluid u-block-hover__main--zoom-v1 mb-5"
+                             src="./assets/img/cfta/Staff Member6.jpg" alt="Image Description">
+                        <span class="g-font-weight-600 g-font-size-12 text-uppercase">Security Officer</span>
+                        <h3 class="h4 g-font-weight-600 mb-0">穆聰進</h3>
+                        <h3 class="h4 g-font-weight-600 mb-0">T.C. MU</h3>
+                        <a class="u-link-v2" href="#"></a>
+                    </div>
+                    <!-- End Projects -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End 職員清單-->
+</div>

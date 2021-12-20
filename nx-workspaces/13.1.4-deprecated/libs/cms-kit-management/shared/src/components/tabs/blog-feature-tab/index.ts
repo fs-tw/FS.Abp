@@ -1,0 +1,1 @@
+export * from './blog-feature-tab.component';

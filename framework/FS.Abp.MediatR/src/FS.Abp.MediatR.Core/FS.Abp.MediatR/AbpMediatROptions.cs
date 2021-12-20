@@ -8,45 +8,34 @@ using Volo.Abp.Reflection;
 
 namespace FS.Abp.MediatR
 {
-    public class AbpMediatRSettings
+    public class ConventionalControllerSetting
     {
         public string RootPath { get; set; }
         public string RemoteServiceName { get; set; }
-        public TypeList<AbpModule> Modules { get; set; }
-        public AbpMediatRSettings(string rootPath, string remoteServiceName, TypeList<AbpModule> modules)
+        public Assembly Assembly { get; private set; }
+        public ConventionalControllerSetting(string rootPath, string remoteServiceName, Assembly assembly)
         {
             RootPath = rootPath;
             RemoteServiceName = remoteServiceName;
-            Modules = modules;
+            Assembly = assembly;
         }
+
+        public List<Type> RequestHandlerTypes =>
+            Assembly.GetTypes().Where(type => ReflectionHelper.IsAssignableToGenericType(type, typeof(global::MediatR.IRequestHandler<,>))).Distinct().ToList();
     }
     public class AbpMediatROptions
     {
-        public Dictionary<string, AbpMediatRSettings> Settings { get; set; }
+        public List<ConventionalControllerSetting> Settings { get; set; }
 
         public AbpMediatROptions()
         {
-            Settings = new Dictionary<string, AbpMediatRSettings>();
+            Settings = new List<ConventionalControllerSetting>();
         }
-        public void AddOrReplaceSetting(string rootPath, string remoteServiceName, params Type[] moduleTypes)
+        public void AddOrReplaceSetting(string rootPath, string remoteServiceName, Assembly assembly)
         {
-            var types = new TypeList<AbpModule>();
+            var item = new ConventionalControllerSetting(rootPath, remoteServiceName, assembly);
 
-            foreach (var module in moduleTypes)
-            {
-                types.Add(module);
-            }
-
-            var item = new AbpMediatRSettings(rootPath, remoteServiceName, types);
-
-            if (!Settings.ContainsKey(rootPath))
-            {
-                Settings.Add(rootPath, item);
-            }
-            else
-            {
-                Settings[rootPath] = item;
-            }
+            Settings.Add(item);
         }
 
 
@@ -55,36 +44,15 @@ namespace FS.Abp.MediatR
             get
             {
                 return Settings
-                    .SelectMany(x => x.Value.Modules.SelectMany(m =>
-                    {
-                        return m.Assembly.GetTypes()
-                        .Where(type => ReflectionHelper.GetImplementedGenericTypes(type, typeof(global::MediatR.IRequestHandler<,>)).FirstOrDefault() != null);
-                    }))
+                    .SelectMany(x => x.RequestHandlerTypes)
                     .Distinct()
                     .ToList();
             }
         }
 
-        public static (Type Type, string Method) GetRequestType(Type requestHandlerType)
+        public static RequestInfo GetRequestInfo(Type requestHandlerType)
         {
-            (Type Type, string Method) 
-                result = (Type: null, Method: null);
-
-            var requestType = ReflectionHelper.GetImplementedGenericTypes(requestHandlerType, typeof(global::MediatR.IRequestHandler<,>)).FirstOrDefault()?.GenericTypeArguments?.FirstOrDefault();
-
-            if (requestType == null) return result;
-
-            if (requestType.IsAssignableTo<IQuery>())
-            {
-                result.Method = AbpMediatRConsts.Query;
-            }
-            else if (requestType.IsAssignableTo<ICommand>())
-            {
-                result.Method = AbpMediatRConsts.Command;
-            }
-            result.Type = requestType;
-
-            return result;
+            return new RequestInfo(requestHandlerType);
         }
     }
 }

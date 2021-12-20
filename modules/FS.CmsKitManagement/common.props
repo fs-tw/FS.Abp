@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <Version>0.1.0</Version>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
     <AbpProjectType>module</AbpProjectType>

@@ -1,0 +1,5 @@
+<nz-tabset nzType="card" [nzTabPosition]="'left'" (nzSelectedIndexChange)="selectBlog($event)">
+    <nz-tab *ngFor="let item of blogs" [nzTitle]="item.name">
+        <wstm-blog-post *ngIf="selectedBlogId == item.id" [blogId]="item.id"></wstm-blog-post>
+    </nz-tab>
+</nz-tabset>

@@ -13,7 +13,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>YinChang</Authors>
