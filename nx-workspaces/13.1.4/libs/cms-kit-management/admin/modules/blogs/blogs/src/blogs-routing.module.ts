@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'blogs', pathMatch: 'full' },
   {
-    path: 'blogs',
-     loadChildren: () =>
-     import('@fs-tw/cms-kit-management/admin/modules/blogs/blogs').then(
-       (m) => m.BlogsModule)
+    path: '', component: MainComponent
   },
   {
     path: 'blog-management',
     loadChildren: () =>
       import('@fs-tw/cms-kit-management/admin/modules/blogs/blog-management').then(
-        (m) => m.BlogManagementModule)
+        (m) => m.BlogManagementModule
+      ),
   },
 ];
 

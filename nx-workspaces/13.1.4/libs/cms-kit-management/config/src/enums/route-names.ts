@@ -6,7 +6,12 @@ export const enum eCmsKitManagementRouteNames {
   Reactions = 'CmsKit::Reactions',
   Contents = 'CmsKit::Contents',
   Pages = 'CmsKit::Pages',
+
   Blogs = 'CmsKit::Blogs',
+  BlogsBlogs = 'CmsKit::Blogs.Blogs',
+  BlogsBlogsManagement = 'CmsKit::Blogs.BlogManagement',
+  
+  
   BlogPosts = 'CmsKitManagement::BlogPosts',
   MediaDescriptors = 'CmsKit::MediaDescriptors',
   Menus = 'CmsKit::Menus',

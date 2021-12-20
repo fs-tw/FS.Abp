@@ -12,7 +12,7 @@ export class RootModule {}
   ],
 })
 export class CoreModule {
-  static forRoot(): ModuleWithProviders<RootModule> {
+  static forRoot(): ModuleWithProviders<CoreModule> {
     return {
       ngModule: RootModule
     };
