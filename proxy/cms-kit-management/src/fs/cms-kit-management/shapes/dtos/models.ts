@@ -1,5 +1,10 @@
-import type { ExtensibleAuditedEntityDto } from '@abp/ng.core';
-import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
+import type { ExtensibleAuditedEntityDto, ExtensibleObject, PagedAndSortedResultRequestDto } from '@abp/ng.core';
+
+export interface ShapeCreateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+  textTemplateContentId?: string;
+}
 
 export interface ShapeDto extends ExtensibleAuditedEntityDto<string> {
   entityType?: string;
@@ -7,7 +12,13 @@ export interface ShapeDto extends ExtensibleAuditedEntityDto<string> {
   textTemplateContentId?: string;
 }
 
-export interface ShapeGetListDto extends SearchResultRequestDto {
+export interface ShapeGetListDto extends PagedAndSortedResultRequestDto {
+}
+
+export interface ShapeUpdateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+  textTemplateContentId?: string;
 }
 
 export interface ShapeWithDetailsDto extends ShapeDto {

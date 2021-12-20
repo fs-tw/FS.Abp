@@ -1,5 +1,10 @@
-import type { ExtensibleAuditedEntityDto } from '@abp/ng.core';
-import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
+import type { ExtensibleAuditedEntityDto, ExtensibleObject, PagedAndSortedResultRequestDto } from '@abp/ng.core';
+
+export interface AttachmentMediaCreateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+  mediaDescriptorId?: string;
+}
 
 export interface AttachmentMediaDto extends ExtensibleAuditedEntityDto<string> {
   entityType?: string;
@@ -7,7 +12,13 @@ export interface AttachmentMediaDto extends ExtensibleAuditedEntityDto<string> {
   mediaDescriptorId?: string;
 }
 
-export interface AttachmentMediaGetListDto extends SearchResultRequestDto {
+export interface AttachmentMediaGetListDto extends PagedAndSortedResultRequestDto {
+}
+
+export interface AttachmentMediaUpdateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+  mediaDescriptorId?: string;
 }
 
 export interface AttachmentMediaWithDetailsDto extends AttachmentMediaDto {

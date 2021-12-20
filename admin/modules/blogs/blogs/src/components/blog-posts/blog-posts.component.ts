@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, ViewChild } from '@angular/core';
+import { Component, OnInit, Injector, ViewChild, Inject } from '@angular/core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -6,13 +6,13 @@ import {
 } from '@abp/ng.theme.shared/extensions';
 import { ListService } from '@abp/ng.core';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
-import { BehaviorSubject, combineLatest, Subscription } from 'rxjs';
+import { BehaviorSubject, combineLatest, of, Subscription } from 'rxjs';
 import { setDefaults } from '@fs-tw/components/extensions';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { AddBlogIdItems, AddToolbarAction, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
-import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
+import { EntityTypeStore } from '@fs-tw/core/entity-types';
 import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 import * as _ from 'lodash';
@@ -38,8 +38,7 @@ export class BlogPostsComponent implements OnInit {
   public static NAME: string = 'Blogs.BlogPostsComponent';
   public EntityType = 'Volo.CmsKit.Blogs.BlogPost';
   public ShortEntityType = 'BlogPost';
-  blogService: Volo.CmsKit.Admin.Blogs.BlogAdminService;
-  service: Volo.CmsKit.Admin.Blogs.BlogPostAdminService;
+
   subs: Subscription = new Subscription();
   feature: Array<string>;
   blogList: Array<{ name: string, id: string }>;
@@ -61,18 +60,21 @@ export class BlogPostsComponent implements OnInit {
     public readonly list: ListService,
     private confirmationService: ConfirmationService,
     public entityTypeStore: EntityTypeStore,
+    public extensionsStore:ExtensionsStore,
+
+    @Inject(Volo.CmsKit.Admin.Blogs.BlogAdminService)
+    public blogService:Volo.CmsKit.Admin.Blogs.BlogAdminService,
+    
+    @Inject(Volo.CmsKit.Admin.Blogs.BlogPostAdminService)
+    public service:Volo.CmsKit.Admin.Blogs.BlogPostAdminService
   ) {
-    this.blogService = injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
-    this.service = injector.get(Volo.CmsKit.Admin.Blogs.BlogPostAdminService);
-    this.entityTypeStore = injector.get(EntityTypeStore);
-    let extensionsStore = injector.get(ExtensionsStore);
 
     let setDefaults$ = combineLatest([
       this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
       this.blogService.getList({ maxResultCount: 999 })
     ]).pipe(
         mergeMap(([entityType, blogList]) => {
-        this.feature = entityType.map((y) => y.name);
+        this.feature =entityType.map((y) => y.name);
         this.blogList = blogList.items.map(x => { return { name: x.name, id: x.id } });
         let result = extensionsStore.setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
           BlogPostsComponent.NAME,

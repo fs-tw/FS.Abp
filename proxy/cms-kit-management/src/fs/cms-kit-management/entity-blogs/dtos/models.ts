@@ -1,5 +1,10 @@
-import type { ExtensibleAuditedEntityDto } from '@abp/ng.core';
-import type { SearchResultRequestDto } from '../../../abp/application/dtos/models';
+import type { ExtensibleAuditedEntityDto, ExtensibleObject, PagedAndSortedResultRequestDto } from '@abp/ng.core';
+
+export interface EntityBlogCreateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+  blogId?: string;
+}
 
 export interface EntityBlogDto extends ExtensibleAuditedEntityDto<string> {
   entityType?: string;
@@ -7,9 +12,15 @@ export interface EntityBlogDto extends ExtensibleAuditedEntityDto<string> {
   blogId?: string;
 }
 
-export interface EntityBlogGetListDto extends SearchResultRequestDto {
+export interface EntityBlogGetListDto extends PagedAndSortedResultRequestDto {
   entityType?: string;
   entityId?: string;
+}
+
+export interface EntityBlogUpdateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+  blogId?: string;
 }
 
 export interface EntityBlogWithDetailsDto extends EntityBlogDto {

@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Inject, Injector, OnInit } from '@angular/core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -18,28 +18,23 @@ import {
   CONTENTS_ENTITY_PROPS,
   CONTENTS_TOOLBAR_ACTIONS,
 } from './defaults/index';
-import type { PagedResultDto } from '@abp/ng.core';
-import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService
-  implements
-    EntityService<
-      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-    >
-{
-  constructor(private readonly injector: Injector) {}
+// class ComponentService
+//   implements
+//     EntityService<
+//       Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+//     >
+// {
+//   constructor(private readonly service: Fs.CmsKitManagement.Contents.EntityContentCrudService) {}
 
-  getList(
-    Content: Fs.CmsKitManagement.Contents.Dtos.EntityContentGetListDto
-  ): Observable<
-    PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto>
-  > {
-    let service = this.injector.get(
-      Fs.CmsKitManagement.Contents.ContentsApiService
-    );
-    return service.getListByEntityContent(Content);
-  }
-}
+//   getList(
+//     Content: Fs.CmsKitManagement.Contents.Dtos.EntityContentGetListDto
+//   ): Observable<
+//     PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto>
+//   > {
+//     return this.service.getList(Content);
+//   }
+// }
 
 @Component({
   selector: 'fs-tw-contents',
@@ -55,12 +50,14 @@ class ComponentService
 export class ContentsComponent implements OnInit {
   public static NAME: string = 'Contents.ContentsComponent';
   subs: Subscription = new Subscription();
-  service: ComponentService;
+  // componentService: ComponentService;
 
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    @Inject(Fs.CmsKitManagement.Contents.EntityContentCrudService) 
+    public readonly service :Fs.CmsKitManagement.Contents.EntityContentCrudService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     this.subs.add(
@@ -76,7 +73,7 @@ export class ContentsComponent implements OnInit {
       })
     );
 
-    this.service = new ComponentService(this.injector);
+    // this.componentService = new ComponentService(service);
   }
 
   ngOnInit(): void {}

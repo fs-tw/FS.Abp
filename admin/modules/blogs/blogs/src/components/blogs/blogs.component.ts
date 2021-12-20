@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Inject, inject, Injector, OnInit } from '@angular/core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -33,8 +33,6 @@ import { ExtensionsStore } from '@fs-tw/components/extensions';
 })
 export class BlogsComponent implements OnInit {
   subs: Subscription = new Subscription();
-  service: Volo.CmsKit.Admin.Blogs.BlogAdminService;
-  blogFeatureService: Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService;
 
   createModalVisible = false;
   addForm: FormGroup;
@@ -51,7 +49,13 @@ export class BlogsComponent implements OnInit {
     private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+
+    @Inject(Volo.CmsKit.Admin.Blogs.BlogAdminService)
+    public service: Volo.CmsKit.Admin.Blogs.BlogAdminService,
+
+    @Inject(Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService)
+    public blogFeatureService: Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     let extensionsStore = injector.get(ExtensionsStore);
@@ -79,10 +83,6 @@ export class BlogsComponent implements OnInit {
       });
 
     this.subs.add(actionSub);
-    this.service = this.injector.get(Volo.CmsKit.Admin.Blogs.BlogAdminService);
-    this.blogFeatureService = this.injector.get(
-      Volo.CmsKit.Admin.Blogs.BlogFeatureAdminService
-    );
   }
 
   ngOnInit(): void {}
@@ -95,6 +95,7 @@ export class BlogsComponent implements OnInit {
     this.addForm = generateFormFromProps(data);
     this.createModalVisible = true;
   }
+  
   create(formValue) {
     this.service
       .create(formValue)
@@ -136,6 +137,7 @@ export class BlogsComponent implements OnInit {
         this.editModalVisible = true;
       });
   }
+
   edit(formValue) {
     const request: Volo.CmsKit.Admin.Blogs.UpdateBlogDto = {
       ...formValue,

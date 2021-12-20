@@ -1,3 +1,3 @@
 import * as Dtos from './dtos';
-export * from './blogs-api.service';
+export * from './blog-post-setting.service';
 export { Dtos };
