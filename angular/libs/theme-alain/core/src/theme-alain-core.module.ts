@@ -1,44 +1,35 @@
 import { NgModule } from '@angular/core';
-import { GlobalConfigModule } from './global-config.module';
-import { NzMessageModule } from 'ng-zorro-antd/message';
-import { NgxValidateCoreModule } from '@ngx-validate/core';
-import { ValidationErrorComponent } from './components/validation-error-component/validation-error.component';
-import { CoreModule as  AbpCoreModule} from '@abp/ng.core';
+// import { GlobalConfigModule } from './global-config.module';
+//import { NzMessageModule } from 'ng-zorro-antd/message';
+//import { CoreModule as  AbpCoreModule} from '@abp/ng.core';
 import { STYLES_PROVIDERS } from './providers/styles.provider';
-import {
-  VALIDATION_ERROR_TEMPLATE,
-  VALIDATION_INVALID_CLASSES,
-  VALIDATION_TARGET_SELECTOR
-} from '@ngx-validate/core';
+import { LANG_PROVIDES } from './providers/lang.provider';
+import { LayoutModule } from 'libs/theme-alain/layout/src';
+import { AlainThemeModule } from '@delon/theme';
 
 @NgModule({
   imports: [
-    AbpCoreModule,
-    NzMessageModule,
-    GlobalConfigModule.forRoot(),
-    NgxValidateCoreModule
+    //AbpCoreModule,
+    //NzMessageModule,
+    //GlobalConfigModule.forRoot(),
+    LayoutModule.forRoot(),
+    AlainThemeModule.forRoot()
   ],
   providers: [
     STYLES_PROVIDERS,
-    {
-      provide: VALIDATION_ERROR_TEMPLATE,
-      useValue: ValidationErrorComponent,
-    },
-    {
-      provide: VALIDATION_TARGET_SELECTOR,
-      useValue: '.form-group',
-    },
-    {
-      provide: VALIDATION_INVALID_CLASSES,
-      useValue: 'is-invalid',
-    }
-  ],
-  declarations:[
-    ValidationErrorComponent
-  ],
-  exports:[
-    ValidationErrorComponent,
-   
+    ...LANG_PROVIDES,
+    // {
+    //   provide: VALIDATION_ERROR_TEMPLATE,
+    //   useValue: ValidationErrorComponent,
+    // },
+    // {
+    //   provide: VALIDATION_TARGET_SELECTOR,
+    //   useValue: '.form-group',
+    // },
+    // {
+    //   provide: VALIDATION_INVALID_CLASSES,
+    //   useValue: 'is-invalid',
+    // }
   ]
 })
 export class ThemeAlainCoreModule { }

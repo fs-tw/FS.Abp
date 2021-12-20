@@ -38,20 +38,20 @@ const routes: Routes = [
         m.CmsKitManagementAdminModule.forLazy()
       ),
   },
-  {
-    path: 'coding-management',
-    loadChildren: () =>
-      import('@fs-tw/coding-management/admin').then((m) =>
-        m.CodingManagementAdminModule.forLazy()
-      ),
-  },
-  {
-    path: 'audit-log-management',
-    loadChildren: () =>
-      import('@fs-tw/audit-log-management/admin').then((m) =>
-        m.AuditLogManagementAdminModule.forLazy()
-      ),
-  },
+  // {
+  //   path: 'coding-management',
+  //   loadChildren: () =>
+  //     import('@fs-tw/coding-management/admin').then((m) =>
+  //       m.CodingManagementAdminModule.forLazy()
+  //     ),
+  // },
+  // {
+  //   path: 'audit-log-management',
+  //   loadChildren: () =>
+  //     import('@fs-tw/audit-log-management/admin').then((m) =>
+  //       m.AuditLogManagementAdminModule.forLazy()
+  //     ),
+  // },
 ];
 
 @NgModule({

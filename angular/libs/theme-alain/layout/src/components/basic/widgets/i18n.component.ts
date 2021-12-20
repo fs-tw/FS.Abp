@@ -7,9 +7,9 @@ import {
   Input,
 } from '@angular/core';
 import { BooleanInput, InputBoolean } from '@delon/util/decorator';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import snq from 'snq';
+// import snq from 'snq';
 
 //import { I18NService } from '@core';
 
@@ -62,11 +62,7 @@ export class HeaderI18nComponent {
   get defaultLanguage$(): Observable<string> {
     return this.languages$.pipe(
       map(
-        languages =>
-          snq(
-            () => languages.find(lang => lang.cultureName === this.selectedLangCulture).displayName,
-          ),
-        '',
+        languages =>languages.find(lang => lang.cultureName === this.selectedLangCulture)?.displayName || ''
       ),
     );
   }
@@ -74,9 +70,7 @@ export class HeaderI18nComponent {
   get dropdownLanguages$(): Observable<LanguageInfo[]> {
     return this.languages$.pipe(
       map(
-        languages =>
-          snq(() => languages.filter(lang => lang.cultureName !== this.selectedLangCulture)),
-        [],
+        languages =>languages?.filter(lang => lang.cultureName !== this.selectedLangCulture) || []
       ),
     );
   }

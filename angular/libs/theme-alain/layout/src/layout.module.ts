@@ -65,7 +65,7 @@ const PASSPORT = [LayoutPassportComponent];
     CommonModule,
     FormsModule,
     RouterModule,
-    AlainThemeModule.forChild(),
+    //AlainThemeModule.forChild(),
     ThemeBtnModule,
     SettingDrawerModule,
     LayoutDefaultModule,

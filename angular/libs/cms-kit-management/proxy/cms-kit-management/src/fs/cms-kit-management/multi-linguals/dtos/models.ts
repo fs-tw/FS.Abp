@@ -1,6 +1,11 @@
-import type { ExtensibleAuditedEntityDto } from '@abp/ng.core';
-import type { FilterRequestDto, SearchResultRequestDto } from '../../../abp/application/dtos/models';
+import type { ExtensibleAuditedEntityDto, ExtensibleObject, PagedAndSortedResultRequestDto } from '@abp/ng.core';
+import type { FilterRequestDto } from '../../../abp/application/dtos/models';
 import type { NameValue } from '../../../../volo/abp/models';
+
+export interface MultiLingualCreateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
+}
 
 export interface MultiLingualDto extends ExtensibleAuditedEntityDto<string> {
   entityType?: string;
@@ -12,7 +17,7 @@ export interface MultiLingualFindDto extends FilterRequestDto {
   entityId?: string;
 }
 
-export interface MultiLingualGetListDto extends SearchResultRequestDto {
+export interface MultiLingualGetListDto extends PagedAndSortedResultRequestDto {
 }
 
 export interface MultiLingualPatchDto {
@@ -21,10 +26,34 @@ export interface MultiLingualPatchDto {
   translations: TranslationDto[];
 }
 
+export interface MultiLingualTranslationCreateDto extends ExtensibleObject {
+  culture?: string;
+  properties: NameValue[];
+  multiLingualId?: string;
+}
+
 export interface MultiLingualTranslationDto extends ExtensibleAuditedEntityDto<string> {
   culture?: string;
   properties: NameValue[];
   multiLingualId?: string;
+}
+
+export interface MultiLingualTranslationGetListDto extends PagedAndSortedResultRequestDto {
+}
+
+export interface MultiLingualTranslationUpdateDto extends ExtensibleObject {
+  culture?: string;
+  properties: NameValue[];
+  multiLingualId?: string;
+}
+
+export interface MultiLingualTranslationWithDetailsDto extends MultiLingualTranslationDto {
+  multiLingual: MultiLingualDto;
+}
+
+export interface MultiLingualUpdateDto extends ExtensibleObject {
+  entityType?: string;
+  entityId?: string;
 }
 
 export interface MultiLingualWithDetailsDto extends MultiLingualDto {

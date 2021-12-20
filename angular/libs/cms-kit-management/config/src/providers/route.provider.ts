@@ -20,17 +20,21 @@ const blogsModules = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-blog',
     order: 1,
-  }
-];
-
-const blogManagementModules = [
+  },
   {
-    path: '/cms-kit-management/blog-management',
-    name: eCmsKitManagementRouteNames.BlogManagement,
-    parentName: eCmsKitManagementRouteNames.CmsKitManagement,
+    path: '/cms-kit-management/blogs/blogs',
+    name: eCmsKitManagementRouteNames.BlogsBlogs,
+    parentName: eCmsKitManagementRouteNames.Blogs,
     iconClass: 'fa fa-blog',
     order: 1,
-  }
+  },
+  {
+    path: '/cms-kit-management/blogs/blog-management',
+    name: eCmsKitManagementRouteNames.BlogsBlogsManagement,
+    parentName: eCmsKitManagementRouteNames.Blogs,
+    iconClass: 'fa fa-blog',
+    order: 2,
+  },
 ];
 
 const commentsModels = [
@@ -41,7 +45,7 @@ const commentsModels = [
     requiredPolicy: eCmsManagementPolicyNames.Comments,
     iconClass: 'fa fa-comments',
     order: 2,
-  }
+  },
 ];
 const pagesModels = [
   {
@@ -51,7 +55,7 @@ const pagesModels = [
     requiredPolicy: eCmsManagementPolicyNames.Pages,
     iconClass: 'fa fa-file-alt',
     order: 3,
-  }
+  },
 ];
 const tagsModels = [
   {
@@ -61,7 +65,7 @@ const tagsModels = [
     requiredPolicy: eCmsManagementPolicyNames.Tags,
     iconClass: 'fa fa-tags',
     order: 4,
-  }
+  },
 ];
 const ratingsModels = [
   {
@@ -70,7 +74,7 @@ const ratingsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 5,
-  }
+  },
 ];
 const reactionsModels = [
   {
@@ -79,7 +83,7 @@ const reactionsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 6,
-  }
+  },
 ];
 const mediaDescriptorsModels = [
   {
@@ -88,7 +92,7 @@ const mediaDescriptorsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 7,
-  }
+  },
 ];
 const menusModels = [
   {
@@ -97,7 +101,7 @@ const menusModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 8,
-  }
+  },
 ];
 const contentsModels = [
   {
@@ -106,7 +110,7 @@ const contentsModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 9,
-  }
+  },
 ];
 const shapesModels = [
   {
@@ -115,8 +119,7 @@ const shapesModels = [
     parentName: eCmsKitManagementRouteNames.CmsKitManagement,
     iconClass: 'fa fa-file-alt',
     order: 10,
-    
-  }
+  },
 ];
 
 export function configureRoutes(routes: RoutesService) {
@@ -132,19 +135,18 @@ export function configureRoutes(routes: RoutesService) {
         order: -1,
         navConfig: {
           name: eCmsKitManagementRouteNames.CmsKitManagement,
-        }
+        },
       } as any,
       ...blogsModules,
-      ...blogManagementModules,
-      ...commentsModels,
-      ...pagesModels,
-      ...tagsModels,
-      ...ratingsModels,
-      ...reactionsModels,
-      ...mediaDescriptorsModels,
-      ...menusModels,
-      ...contentsModels,
-      ...shapesModels
+      // ...commentsModels,
+      // ...pagesModels,
+      // ...tagsModels,
+      // ...ratingsModels,
+      // ...reactionsModels,
+      // ...mediaDescriptorsModels,
+      // ...menusModels,
+      // ...contentsModels,
+      // ...shapesModels
     ]);
   };
 }

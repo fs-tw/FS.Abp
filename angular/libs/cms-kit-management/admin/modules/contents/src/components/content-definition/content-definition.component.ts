@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Inject, inject, Injector, OnInit } from '@angular/core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -22,25 +22,25 @@ import {
 import type { PagedResultDto, ABP } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService
-  implements
-    EntityService<
-      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-    >
-{
-  constructor(private readonly injector: Injector) {}
+// class ComponentService
+//   implements
+//     EntityService<
+//       Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+//     >
+// {
+//   constructor(private readonly injector: Injector) {}
 
-  getList(
-    ContentDefinition: Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto
-  ): Observable<
-    PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionWithDetailsDto>
-  > {
-    let service = this.injector.get(
-      Fs.CmsKitManagement.Contents.ContentsApiService
-    );
-    return service.getListByContentDefinition(ContentDefinition);
-  }
-}
+//   getList(
+//     ContentDefinition: Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto
+//   ): Observable<
+//     PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionWithDetailsDto>
+//   > {
+//     let service = this.injector.get(
+//       Fs.CmsKitManagement.Contents.ContentDefinitionCrudService
+//     );
+//     return service.getList(ContentDefinition);
+//   }
+// }
 
 @Component({
   selector: 'fs-tw-content-definition',
@@ -56,15 +56,17 @@ class ComponentService
 export class ContentDefinitionComponent implements OnInit {
   public static NAME: string = 'Contents.ContentDefinitionComponent';
   subs: Subscription = new Subscription();
-  service: ComponentService;
+  //service: ComponentService;
 
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    @Inject(Fs.CmsKitManagement.Contents.ContentDefinitionCrudService)
+    public service:Fs.CmsKitManagement.Contents.ContentDefinitionCrudService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
-    this.service = new ComponentService(this.injector);
+    //this.service = new ComponentService(this.injector);
 
     let apiInput =
       {} as Fs.CmsKitManagement.Contents.Dtos.ContentDefinitionGetListDto;

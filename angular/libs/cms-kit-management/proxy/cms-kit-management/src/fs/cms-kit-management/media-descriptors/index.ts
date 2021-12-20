@@ -1,3 +1,3 @@
 import * as Dtos from './dtos';
-export * from './media-descriptors-api.service';
+export * from './attachment-media-crud.service';
 export { Dtos };

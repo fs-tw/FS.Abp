@@ -17,21 +17,32 @@ export default function (): Rule {
       //updateNx,
       updateNg,
       updateTs,
-      updateTsProd,
+      updatePackage
+      //updateTsProd,
       //updateSymLink
     ])(host, context);
   }
 
 }
 
-const updateNx = (host: Tree, context: SchematicContext) => {
-  let nxs = configs
-    .map(j => j.nx)
+// const updateNx = (host: Tree, context: SchematicContext) => {
+//   let nxs = configs
+//     .map(j => j.nx)
+//     .reduce((a, b) => { return { ...a, ...b } });
+//   const nxJson = readJsonInTree<NxJsonConfiguration>(host, 'config/nx.base.json');
+//   nxJson.projects = { ...nxJson.projects, ...nxs };
+//   return updateJsonInTree('/nx.json', json => nxJson);
+// }
+
+const updatePackage = (host: Tree, context: SchematicContext) => {
+  let devDependenciesSetion = configs
+    .map(j => j.devDependencies)
     .reduce((a, b) => { return { ...a, ...b } });
-  const nxJson = readJsonInTree<NxJsonConfiguration>(host, 'config/nx.base.json');
-  nxJson.projects = { ...nxJson.projects, ...nxs };
-  return updateJsonInTree('/nx.json', json => nxJson);
+  const packageJson = readJsonInTree<any>(host, 'config/package.base.json');
+  packageJson.devDependencies = { ...packageJson.devDependencies, ...devDependenciesSetion };
+  return updateJsonInTree('/package.json', json => packageJson);
 }
+
 const updateNg = (host: Tree, context: SchematicContext) => {
   let ngs = configs
     .map(j => j.angular)
@@ -40,6 +51,7 @@ const updateNg = (host: Tree, context: SchematicContext) => {
   ngJson.projects = { ...ngJson.projects, ...ngs };
   return updateJsonInTree('/angular.json', json => ngJson);
 }
+
 const updateTs = (host: Tree, context: SchematicContext) => {
   let tss = configs
     .map(j => j.tsconfig)

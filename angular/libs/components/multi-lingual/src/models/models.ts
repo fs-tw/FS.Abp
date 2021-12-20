@@ -60,7 +60,7 @@ export namespace MultiLingual {
   export type MultiLingualsStore = AbstractNavTreeService<EntityType>;
 
   export type MultiLingualsApiService = {
-    findByInput: (
+    find: (
       input: MultiLingualFindDto
     ) => Observable<MultiLingualWithDetailsDto>;
   };

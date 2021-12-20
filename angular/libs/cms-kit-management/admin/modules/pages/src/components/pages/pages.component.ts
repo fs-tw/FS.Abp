@@ -17,6 +17,7 @@ import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
 import {
   BehaviorSubject,
   combineLatest,
+  of,
   Subscription,
 } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -38,7 +39,7 @@ import {
   PAGES_ENTITY_PROPS,
   PAGES_TOOLBAR_ACTIONS,
 } from './defaults/index';
-import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
+// import { EntityTypeStore } from '@fs-tw/entity-type-management/config';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
 
@@ -81,20 +82,20 @@ export class PagesComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private readonly injector: Injector,
     public readonly list: ListService,
-    public entityTypeStore: EntityTypeStore,
+    // public entityTypeStore: EntityTypeStore,
     private confirmationService: ConfirmationService
   ) {
     this.apiService = injector.get(Volo.CmsKit.Admin.Pages.PageAdminService);
-    this.entityTypeStore = injector.get(EntityTypeStore);
+    // this.entityTypeStore = injector.get(EntityTypeStore);
     let extensionsStore = injector.get(ExtensionsStore);
     
     let setDefaults$ = combineLatest([
-      this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
+     of() // this.entityTypeStore.getEntityTypeByType$(this.EntityType, this.ShortEntityType),
     ]).pipe(
         mergeMap(([entityType]) => {
         this.searchForm = this.fb.group({ filter: "" });
 
-        this.feature = entityType.map((y) => y.name);
+        this.feature = [];//entityType.map((y) => y.name);
         let result = extensionsStore.setDefaults<Volo.CmsKit.Admin.Pages.PageDto>(
           PagesComponent.NAME,
           {

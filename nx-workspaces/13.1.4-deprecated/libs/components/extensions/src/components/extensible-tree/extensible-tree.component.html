@@ -1,0 +1,35 @@
+<abp-tree
+  [nodes]="nodes"
+  [(expandedKeys)]="expandedKeys"
+  [draggable]="false"
+  [noAnimation]="false"
+>
+  <ng-template abpTreeExpandedIconTemplate let-node let-origin="origin">
+    <i
+      class="far"
+      style="line-height: 26px"
+      [class.fa-plus-square]="!node.isExpanded"
+      [class.fa-minus-square]="node.isExpanded"
+      aria-hidden="true"
+    ></i>
+  </ng-template>
+
+  <ng-template abpTreeNodeTemplate let-node>
+    <i class="fas fa-folder fs-15px text-primary mr-1"></i>
+    {{ node.title }}
+  </ng-template>
+
+  <ng-template #menu let-node>
+    <ul nz-menu>
+      <li nz-menu-item (click)="edit.emit(node)">
+        {{ '修改' | abpLocalization }}
+      </li>
+      <li nz-menu-item (click)="add.emit(node)">
+        {{ '新增子節點' | abpLocalization }}
+      </li>
+      <li nz-menu-item (click)="delete.emit(node)">
+        {{ '刪除' | abpLocalization }}
+      </li>
+    </ul>
+  </ng-template>
+</abp-tree>

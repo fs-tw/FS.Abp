@@ -75,7 +75,7 @@ export class QuillEditorComponent {
   setFormValue(id: string) {
     this.form.patchValue({
       [this.controlName]: `${this.form.value[this.controlName]}<p><img src="${
-        this.environmentService.getApiUrl() + this.token + id
+        this.environmentService.getApiUrl(null) + this.token + id
       }"></p>`,
     });
   }

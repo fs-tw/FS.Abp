@@ -1,5 +1,6 @@
 import { ReplaceableComponentsService, CONTENT_STRATEGY, DomInsertionService } from '@abp/ng.core';
 import { APP_INITIALIZER } from '@angular/core';
+import { NzIconService } from 'ng-zorro-antd/icon';
 import { AccountLayoutComponent } from '../components/account-layout/account-layout.component';
 import { ApplicationLayoutComponent } from '../components/application-layout/application-layout.component';
 import { EmptyLayoutComponent } from '../components/empty-layout/empty-layout.component';
@@ -17,7 +18,7 @@ export const NG_ALAIN_THEME_STYLES_PROVIDERS = [
 
 export function configureStyles(
   domInsertion: DomInsertionService,
-  replaceableComponents: ReplaceableComponentsService,
+  replaceableComponents: ReplaceableComponentsService
 ) {
   return () => {
     domInsertion.insertContent(CONTENT_STRATEGY.AppendStyleToHead(styles));

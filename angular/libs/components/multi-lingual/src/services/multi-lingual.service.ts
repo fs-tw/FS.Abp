@@ -37,6 +37,6 @@ export class MultiLingualService {
   getMultiLingual(input: MultiLingual.MultiLingualFindDto):
     Observable<MultiLingual.MultiLingualWithDetailsDto>
   {
-    return this.MultiLingualsApiService.findByInput(input);
+    return this.MultiLingualsApiService.find(input);
   }
 }

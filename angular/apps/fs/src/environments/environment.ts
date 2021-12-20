@@ -21,6 +21,6 @@ export const environment = {
     default: {
       url: 'https://localhost:44326',
       rootNamespace: '',
-    },
+    }
   },
 } as Environment;

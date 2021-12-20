@@ -9,12 +9,12 @@ import { map } from "rxjs/operators";
     providedIn: 'root',
 })
 export class MediaDescriptorAdminByListService {
-  public apiService: MediaDescriptorAdminService;
+  //public apiService: MediaDescriptorAdminService;
   
   constructor(
-    private readonly injector: Injector,
+    public apiService: MediaDescriptorAdminService
   ) {
-    this.apiService = injector.get(MediaDescriptorAdminService);
+    //this.apiService = injector.get(MediaDescriptorAdminService);
   }
 
   uploadImage(

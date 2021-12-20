@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Inject, Injector, OnInit } from '@angular/core';
 import {
   EXTENSIONS_IDENTIFIER,
   FormPropData,
@@ -21,25 +21,25 @@ import {
 import type { PagedResultDto } from '@abp/ng.core';
 import { EntityService } from '@fs-tw/components/page';
 
-class ComponentService
-  implements
-    EntityService<
-      Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
-    >
-{
-  constructor(private readonly injector: Injector) {}
+// class ComponentService
+//   implements
+//     EntityService<
+//       Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto
+//     >
+// {
+//   constructor(private readonly injector: Injector) {}
 
-  getList(
-    ContentType: Fs.CmsKitManagement.Contents.Dtos.ContentPropertyGetListDto
-  ): Observable<
-    PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentPropertyWithDetailsDto>
-  > {
-    let service = this.injector.get(
-      Fs.CmsKitManagement.Contents.ContentsApiService
-    );
-    return service.getListByContentProperty(ContentType);
-  }
-}
+//   getList(
+//     ContentType: Fs.CmsKitManagement.Contents.Dtos.ContentPropertyGetListDto
+//   ): Observable<
+//     PagedResultDto<Fs.CmsKitManagement.Contents.Dtos.ContentPropertyWithDetailsDto>
+//   > {
+//     let service = this.injector.get(
+//       Fs.CmsKitManagement.Contents.ContentPropertyCrudService
+//     );
+//     return service.getList(ContentType);
+//   }
+// }
 
 @Component({
   selector: 'fs-tw-content-type',
@@ -55,12 +55,14 @@ class ComponentService
 export class ContentTypeComponent implements OnInit {
   public static NAME: string = 'Contents.ContentTypeComponent';
   subs: Subscription = new Subscription();
-  service: ComponentService;
+  //service: ComponentService;
 
   constructor(
     private readonly injector: Injector,
     public readonly list: ListService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    @Inject(Fs.CmsKitManagement.Contents.ContentPropertyCrudService)
+    public service:Fs.CmsKitManagement.Contents.ContentPropertyCrudService
   ) {
     const name = injector.get(EXTENSIONS_IDENTIFIER);
     this.subs.add(
@@ -75,8 +77,6 @@ export class ContentTypeComponent implements OnInit {
         }
       })
     );
-
-    this.service = new ComponentService(this.injector);
   }
 
   ngOnInit(): void {}

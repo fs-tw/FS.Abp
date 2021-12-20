@@ -1,6 +1,6 @@
 {
   "cli": "nx",
-  "id": "proxy-add",
+  "$id": "proxy-add",
   "type": "object",
   "additionalProperties": false,
   "properties": {
