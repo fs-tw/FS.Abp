@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/" />
+    <!-- Title -->
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/cfta/logo.jpg">
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+          href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/bootstrap.min.css">
+    <!-- CSS Global Icons -->
+    <link rel="stylesheet" href="./assets/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/vendor/icon-line/css/simple-line-icons.css">
+    <link rel="stylesheet" href="./assets/vendor/icon-etlinefont/style.css">
+    <link rel="stylesheet" href="./assets/vendor/icon-line-pro/style.css">
+    <link rel="stylesheet" href="./assets/vendor/icon-hs/style.css">
+    <link rel="stylesheet" href="./assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <link rel="stylesheet" href="./assets/vendor/dzsparallaxer/dzsscroller/scroller.css">
+    <link rel="stylesheet" href="./assets/vendor/dzsparallaxer/advancedscroller/plugin.css">
+    <link rel="stylesheet" href="./assets/vendor/animate.css">
+    <link rel="stylesheet" href="./assets/vendor/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="./assets/vendor/typedjs/typed.css">
+    <link rel="stylesheet" href="./assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="./assets/vendor/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="./assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
+
+    <!-- CSS Unify -->
+    <!-- <link rel="stylesheet" href="./assets/css/unify-core.css">
+    <link rel="stylesheet" href="./assets/css/unify-components.css">
+    <link rel="stylesheet" href="./assets/css/unify-globals.css"> -->
+
+    <link rel="stylesheet" href="./assets/css/styles.bm-classic.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/CFTA.css">
+</head>
+
+<body>
+    <main>
+        <!-- Header -->
+        <header id="js-header" class="u-header u-header--static">
+            <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+                <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+                    <div class="container">
+                        <!-- Responsive Toggle Button -->
+                        <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-3 g-right-0"
+                                type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                                data-toggle="collapse" data-target="#navBar" value="navbar">
+                            <span class="hamburger hamburger--slider">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <!-- End Responsive Toggle Button -->
+                        <!-- Logo -->
+                        <a href="./index.html" class="navbar-brand d-flex">
+                            <img title="logo" alt="logo" src="./assets/img/cfta/logo2.png"
+                                 style="width: 100%;height: 32px;">
+                        </a>
+                        <!-- End Logo -->
+                        <!-- Navigation -->
+                        <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+                             id="navBar">
+                            <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+
+                                <!-- Home -->
+                                <li class="hs-has-mega-menu nav-item active g-mx-10--lg g-mx-15--xl"
+                                    data-animation-in="fadeIn" data-animation-out="fadeOut" data-max-width="60%"
+                                    data-position="left">
+                                    <a id="mega-menu-home" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
+                                       aria-expanded="false">
+                                        首頁
+                                    </a>
+                                </li>
+                                <!-- End Home -->
+                                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                                    <a class="nav-link g-py-7 g-px-0" href="./list.html">最新消息</a>
+                                </li>
+
+                                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                                    <a class="nav-link g-py-7 g-px-0">影片專區</a>
+                                </li>
+
+                                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                                    <a class="nav-link g-py-7 g-px-0">相簿專區</a>
+                                </li>
+
+                                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                                    <a class="nav-link g-py-7 g-px-0">職員清單</a>
+                                </li>
+
+                                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                                    <a class="nav-link g-py-7 g-px-0">橫幅圖片</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Navigation -->
+
+
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        @RenderBody()
+
+        <!-- Footer -->
+        <div id="contacts-section" class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Content 關於我們-->
+                    <div class="col-lg-4 col-md-12 g-mb-40 g-mb-0--lg">
+                        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
+                            <h2 class="u-heading-v2__title h6 text-uppercase mb-0" style="color:rgb(255, 255, 255);">
+                                關於我們
+                            </h2>
+                        </div>
+
+                        <p>臺南市臺灣鋼鐵足球隊在臺南市政府及臺南市體育總會足球委員會與鴻鑫企業有限公司還有臺灣鋼鐵集團共同支援下成立。我們致力於臺灣的足球發展，展翅上騰、無畏無懼就是我們的鋼鐵精神。</p>
+                    </div>
+                    <!-- End Footer Content 關於我們-->
+                    <!-- Footer Content -->
+                    <div class="col-lg-4 col-md-12 g-mb-40 g-mb-0--lg">
+
+                    </div>
+                    <!-- End Footer Content -->
+                    <!-- Footer Content 聯絡方式-->
+                    <div class="col-lg-4 col-md-12">
+
+                    </div>
+                    <!-- End Footer Content 聯絡方式-->
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+        <!-- Copyright Footer -->
+        <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
+                        <div class="d-lg-flex">
+                            <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">
+                                2020 &copy; All Rights
+                                Reserved.
+                            </small>
+                            <ul class="u-list-inline">
+                                <li class="list-inline-item">
+                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">
+                                        Privacy
+                                        Policy
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span>|</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Terms of Use</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span>|</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">License</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span>|</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Support</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 align-self-center">
+                        <ul class="list-inline text-center text-md-right mb-0">
+                            <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top"
+                                title="Facebook">
+                                <a href="https://www.facebook.com/football.tainan.taiwan/"
+                                   class="g-color-white-opacity-0_5 g-color-white--hover">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top"
+                                title="instagram">
+                                <a href="https://www.instagram.com/tsg_fcc/"
+                                   class="g-color-white-opacity-0_5 g-color-white--hover">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Copyright Footer -->
+        <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
+  "bottom": 15,
+  "right": 15
+  }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn" title="To Top">
+            <i class="hs-icon hs-icon-arrow-top"></i>
+        </a>
+    </main>
+
+    <div class="u-outer-spaces-helper"></div>
+
+
+    <!-- JS Global Compulsory -->
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="./assets/vendor/popper.js/popper.min.js"></script>
+    <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+    <!-- JS Implementing Plugins -->
+    <script src="./assets/vendor/slick-carousel/slick/slick.js"></script>
+    <script src="./assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="./assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+    <script src="./assets/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+    <script src="./assets/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+    <script src="./assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+    <script src="./assets/vendor/typedjs/typed.min.js"></script>
+    <script src="./assets/vendor/appear.js"></script>
+    <script src="./assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
+    <!-- JS Unify -->
+    <script src="./assets/js/hs.core.js"></script>
+    <script src="./assets/js/components/hs.carousel.js"></script>
+    <script src="./assets/js/components/hs.header.js"></script>
+    <script src="./assets/js/helpers/hs.hamburgers.js"></script>
+    <script src="./assets/js/components/hs.tabs.js"></script>
+    <script src="./assets/js/components/hs.popup.js"></script>
+    <script src="./assets/js/components/text-animation/hs.text-slideshow.js"></script>
+    <script src="./assets/js/components/hs.go-to.js"></script>
+    <script src="./assets/js/components/hs.scroll-nav.js"></script>
+    <script src="./assets/js/components/hs.onscroll-animation.js"></script>
+    <script src="./assets/js/components/hs.cubeportfolio.js"></script>
+
+    <!-- JS Customization -->
+    <script src="./assets/js/custom.js"></script>
+    <!--Fontawesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+            // initialization of popups
+            $.HSCore.components.HSPopup.init('.js-fancybox');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            // initialization of text animation (typing)
+            $(".u-text-animation.u-text-animation--typing").typed({
+                strings: [
+                    "an awesome template",
+                    "perfect template",
+                    "just like a boss"
+                ],
+                typeSpeed: 60,
+                loop: true,
+                backDelay: 1500
+            });
+
+            // initialization of popups
+            $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+                helpers: {
+                    media: {},
+                    overlay: {
+                        css: {
+                            'background': 'rgba(255, 255, 255, .8)'
+                        }
+                    }
+                }
+            });
+        });
+
+        $(window).on('load', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+            $.HSCore.components.HSScrollNav.init($('#js-scroll-nav'), {
+                duration: 700
+            });
+
+            // initialization of cubeportfolio
+            $.HSCore.components.HSCubeportfolio.init('.cbp');
+        });
+
+        $(window).on('resize', function () {
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

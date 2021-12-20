@@ -1,0 +1,129 @@
+﻿@page
+@model CFTA.Web.Public.Pages.IndexModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CFTA.Localization
+@inject IHtmlLocalizer<CFTAResource> L
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+
+<div style="background-image: url('./assets/img/cfta/BackgroundImage.png') !important;">
+    <section class="container g-py-100">
+        <div class="row g-mb-70">
+            <div class="col-md-12 g-mb-30">
+                <div class="mb-5">
+                    <h2 class="g-color-black mb-1">南市台鋼2021 AFC CUP紀念球衣 預購登記開放中!!!!!!!</h2>
+                    <span class="d-block lead mb-4">穿上你的 #鋼鐵精神，一起為 #南市台鋼 加油👊🏻</span>
+                    <p>
+                        去年的企甲聯賽，是你們，陪著我們一起見證
+                        <br>奪得冠軍更首次取到了亞足聯盃的門票
+                        <br>就好像我們一直以來憑藉的那一股精神
+                        <br>直到今天我們終於能夠站上AFC CUP的舞台
+                        <br>現在，邀請你和我們一起穿上屬於我們的 #鋼鐵精神👊🏻
+                        <br>「南市台鋼2021 AFC CUP 紀念球衣」限量預購，正式開跑！
+                        <br>ˍˍˍˍˍ預購須知ˍˍˍˍˍ
+                        <br>⚽️預購期
+                        <br>1.2021/06/23 15:00至2021/06/29 22:00
+                        <br>2.填單後確認匯款，製程為一個月，若無法等候請勿填單
+                        <br>3.限量90件，若預購件數已到上限，將通知排進候補名單
+                        <br>⚽️預購方式
+                        <br>1.填表下單：(6/23 15:00開賣)
+                        <br>2.下單後，24小時內你的email會收到確認信(訂單編號、匯款方式及總金額)
+                        <br>3.匯款後，需以email回覆匯款後五碼＋金額
+                        <br>4.確認信寄送後，48小時內若無匯款視同棄單，屆時將由候補依序取得購買名額
+                        <br>⚽️寄送方式
+                        <br>郵寄(國內免運費、外島運費NT100、海外需另外估價)
+                        <br>ˍˍˍˍˍ關於「南市台鋼2021 AFC CUP紀念球衣」ˍˍˍˍˍ
+                        <br>⚽️發售項目/數量：
+                        <br>1.球員黃、球員藍、守門灰、守門綠
+                        <br>2.預購限量90件
+                        <br>⚽️價格：
+                        <br>成人：NT$ 1,500/件
+                        <br>小童：NT$ 1,200/件
+                        <br>1.價錢已包括亞協盃臂章，以及一款球員印字(球員名字皆為英文)
+                        <br>2.可不印製名字，價位相同
+                        <br>⚽️球衣尺寸：
+                        <br>成人S/M/L/XL/2XL/3XL
+                        <br>小童120/130/140/150/160
+                        <br>➡️球員穿著報告：(球員尺寸僅供參考，建議對照尺寸表選擇)
+                        <br>凱恩 171/64 著S
+                        <br>俊青 181/75 著L
+                        <br>馬可 182/79 著L
+                        <br>阿林 185/75 著XL
+                        <br>小童身高145-150著尺寸150cm
+                        <br>小童身高150-155著尺寸160cｍ
+                        <br>如有疑問，請私訊粉絲專頁，謝謝⚽️
+                    </p>
+
+                </div>
+
+            </div>
+            <!-- Carousel -->
+            <!-- <div class="col-lg-12 g-mb-50 g-mb-0--lg">
+
+
+
+                <div id="carouselCus2" class="js-carousel text-center u-carousel-v3 g-mx-minus-10"
+                    data-infinite="true" data-center-mode="true" data-lazy-load="progressive"
+                    data-slides-show="4" data-is-thumbs="true"
+                    data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-50 g-height-50 g-font-size-20 g-bg-white g-color-gray-dark-v5 g-color-primary--hover g-mt-minus-10"
+                    data-arrow-left-classes="fa fa-angle-left g-left-0 rounded-right"
+                    data-arrow-right-classes="fa fa-angle-right g-right-0 rounded-left">
+                    <div class="js-slide g-px-10">
+                        <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1"
+                            href="./assets/img/cfta/post1.jpg" title="Lightbox Gallery"
+                            data-open-effect="bounceInDown" data-close-effect="bounceOutDown"
+                            data-open-speed="1000" data-close-speed="1000" data-blur-bg="true">
+                            <img class="img-fluid g-cursor-pointer rounded"
+                                data-lazy="./assets/img/cfta/post1.jpg" alt="Image description">
+                        </a>
+
+                    </div>
+
+                    <div class="js-slide g-px-10">
+                        <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1"
+                            href="./assets/img/cfta/detail2.jpg" title="Lightbox Gallery"
+                            data-open-effect="bounceInDown" data-close-effect="bounceOutDown"
+                            data-open-speed="1000" data-close-speed="1000" data-blur-bg="true">
+                            <img class="img-fluid g-cursor-pointer rounded"
+                                data-lazy="./assets/img/cfta/detail2.jpg" alt="Image description">
+                        </a>
+                    </div>
+
+                    <div class="js-slide g-px-10">
+                        <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1"
+                            href="./assets/img/cfta/detail3.jpg" title="Lightbox Gallery"
+                            data-open-effect="bounceInDown" data-close-effect="bounceOutDown"
+                            data-open-speed="1000" data-close-speed="1000" data-blur-bg="true">
+                            <img class="img-fluid g-cursor-pointer rounded"
+                                data-lazy="./assets/img/cfta/detail3.jpg" alt="Image description">
+                        </a>
+                    </div>
+
+                    <div class="js-slide g-px-10">
+                        <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1"
+                            href="./assets/img/cfta/detail4.jpg" title="Lightbox Gallery"
+                            data-open-effect="bounceInDown" data-close-effect="bounceOutDown"
+                            data-open-speed="1000" data-close-speed="1000" data-blur-bg="true">
+                            <img class="img-fluid g-cursor-pointer rounded"
+                                data-lazy="./assets/img/cfta/detail4.jpg" alt="Image description">
+                        </a>
+                    </div>
+
+                    <div class="js-slide g-px-10">
+                        <a class="js-fancybox d-block g-pos-rel" data-rel="lightbox-gallery--08-1"
+                            href="./assets/img/cfta/detail5.jpg" title="Lightbox Gallery"
+                            data-open-effect="bounceInDown" data-close-effect="bounceOutDown"
+                            data-open-speed="1000" data-close-speed="1000" data-blur-bg="true">
+                            <img class="img-fluid g-cursor-pointer rounded"
+                                data-lazy="./assets/img/cfta/detail5.jpg" alt="Image description">
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            <!-- End Carousel -->
+
+        </div>
+
+
+    </section>
+</div>

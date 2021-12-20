@@ -1,0 +1,52 @@
+﻿
+@media only screen and (max-width: 769px) {
+    .index-py{
+        padding-top: 2.14286rem !important;
+        padding-bottom: 2.14286rem !important;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .index-py{
+        padding-top: 7.14286rem !important;
+        padding-bottom: 7.14286rem !important;
+    }
+    
+}
+
+
+
+
+
+
+
+
+/**************************btn-color**********************************/
+.btn-Gradientblue {
+    color: #fff;
+    background: linear-gradient(-45deg, rgb(10,226,241), rgb(98,129,200));
+    border-color: #fff;
+    font-weight: 600;
+}
+
+    .btn-Gradientblue:hover {
+        color: #fff;
+        background: linear-gradient(-45deg, rgb(10,226,219), rgb(98,129,222));
+        border-color: #fff;
+        font-weight: 600;
+    }
+/*********************************************************************/
+/**************************badge-color********************************/
+.badge-purple-blue{
+    color: #fff;
+    background-color: rgb(98,129,200);
+}
+/*********************************************************************/
+/**************************text-overflow********************************/
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+

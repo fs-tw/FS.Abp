@@ -36,6 +36,8 @@ using Volo.Abp.BackgroundJobs;
 using Volo.Abp.BackgroundWorkers;
 //using Owl.reCAPTCHA;
 using Volo.CmsKit.Public.Web;
+using Volo.Abp.AspNetCore.Mvc.UI.Theming;
+using CFTA.Themes;
 
 namespace CFTA.Web.Public
 {
@@ -80,7 +82,7 @@ namespace CFTA.Web.Public
             ConfigureAutoMapper();
             ConfigureVirtualFileSystem(hostingEnvironment);
             ConfigureNavigationServices(configuration);
-            ConfigureBasicTheme();
+            ConfigureTheming();
             ConfigureBackgroundJobs();
 
             //context.Services.AddreCAPTCHAV3(o =>
@@ -103,12 +105,14 @@ namespace CFTA.Web.Public
             });
         }
 
-        private void ConfigureBasicTheme()
+        private void ConfigureTheming()
         {
-            //Configure<LeptonThemeOptions>(options =>
-            //{
-            //    options.IsPublicWebsite = true;
-            //});
+            Configure<AbpThemingOptions>(options =>
+            {
+                options.Themes.Add<UnifyTheme>();
+
+                options.DefaultThemeName = UnifyTheme.Name;
+            });
         }
 
         private void ConfigureUrls(IConfiguration configuration)
