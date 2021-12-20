@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Demo.Domain", "src\FS.Abp.Demo.Domain\FS.Abp.Demo.Domain.csproj", "{554AD327-6DBA-4F8F-96F8-81CE7A0C863F}"
 EndProject
@@ -86,6 +86,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.AspNetCore", "..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.AspNetCore\FS.CmsKitManagement.AspNetCore.csproj", "{8D78A5CB-779C-4C7C-B93B-23D6781FCB09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Swashbuckle", "..\..\..\framework\FS.Abp.Swashbuckle\src\FS.Abp.Swashbuckle\FS.Abp.Swashbuckle.csproj", "{482413C3-100B-4605-9723-3759DC917058}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AuditLogging", "FS.Abp.AuditLogging", "{EC2EEF64-E99B-46AE-B0D7-7EDBD9704A44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Core", "..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Core\FS.Abp.AuditLogging.Core.csproj", "{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.AspNetCore", "..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.AspNetCore\FS.Abp.AuditLogging.AspNetCore.csproj", "{AD20BC03-9B57-46B2-A9C9-C59708CADD58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -229,6 +235,14 @@ Global
 		{482413C3-100B-4605-9723-3759DC917058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{482413C3-100B-4605-9723-3759DC917058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{482413C3-100B-4605-9723-3759DC917058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,8 +286,11 @@ Global
 		{5D3C5F28-F010-4468-8FB3-22200F685F87} = {79253ED0-D3EE-4C95-BD4C-D074E26C07BB}
 		{8D78A5CB-779C-4C7C-B93B-23D6781FCB09} = {E1C55CA0-BC51-44F5-A198-900BF5F0B23C}
 		{482413C3-100B-4605-9723-3759DC917058} = {D5F70872-BACC-45AB-8EC0-05A0BF0E4A96}
+		{EC2EEF64-E99B-46AE-B0D7-7EDBD9704A44} = {D5F70872-BACC-45AB-8EC0-05A0BF0E4A96}
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED} = {EC2EEF64-E99B-46AE-B0D7-7EDBD9704A44}
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58} = {EC2EEF64-E99B-46AE-B0D7-7EDBD9704A44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
+		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
 	EndGlobalSection
 EndGlobal

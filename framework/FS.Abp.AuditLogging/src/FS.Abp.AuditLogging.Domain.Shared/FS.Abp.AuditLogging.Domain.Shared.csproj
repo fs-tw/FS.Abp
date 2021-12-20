@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Application.Core\FS.Abp.AutoFilterer.Core.csproj" />
     <ProjectReference Include="..\..\..\FS.Abp.Metadata\src\FS.Abp.Metadata.Abstractions\FS.Abp.Metadata.Core.csproj" />
+    <ProjectReference Include="..\FS.Abp.AuditLogging.Core\FS.Abp.AuditLogging.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

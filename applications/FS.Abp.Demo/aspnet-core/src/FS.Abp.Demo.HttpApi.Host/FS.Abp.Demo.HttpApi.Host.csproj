@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <!--<ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp\FS.Abp.csproj" />-->
+    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.AspNetCore\FS.Abp.AuditLogging.AspNetCore.csproj" />
     <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.Swashbuckle\src\FS.Abp.Swashbuckle\FS.Abp.Swashbuckle.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.AspNetCore\FS.CmsKitManagement.AspNetCore.csproj" />
     <ProjectReference Include="..\FS.Abp.Demo.Application\FS.Abp.Demo.Application.csproj" />

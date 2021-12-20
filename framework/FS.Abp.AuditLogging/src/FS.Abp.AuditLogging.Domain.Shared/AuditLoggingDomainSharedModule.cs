@@ -11,7 +11,7 @@ namespace FS.Abp.AuditLogging
     [DependsOn(
         typeof(AbpValidationModule)
     )]
-    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererCoreModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AbpAuditLoggingCoreModule))]
     public class AuditLoggingDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -17,7 +17,7 @@ namespace FS.Abp.AuditLogging.EntityFrameworkCore
         {
             context.Services.AddAbpDbContext<AbpAuditLoggingDbContext>(options =>
             {
-                options.AddRepository<AuditLogAction, EfCoreAuditLogActionRepository>();
+                //options.AddRepository<AuditLogAction, EfCoreAuditLogActionRepository>();
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */

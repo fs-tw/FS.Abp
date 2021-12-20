@@ -97,17 +97,11 @@ namespace FS.Abp.AuditLogging
 namespace FS.Abp.AuditLogging.Filters
 {
 
-    public class AuditLogsFilterInput: FS.Abp.Application.Dtos.ISearchResultRequest
+    public class AuditLogsFilter 
     {
         public AuditLogFilter AuditLogFilter { get; set; }
 
         public List<AuditLogActionFilter> AuditLogActionFilters { get; set; }
-
-        public int SkipCount { get; set; }
-
-        public int MaxResultCount { get; set; }
-
-        public string Sorting { get; set; }
     }
 }
 

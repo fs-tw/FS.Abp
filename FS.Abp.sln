@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}"
 EndProject
@@ -52,6 +52,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.Web", "modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Web\FS.CmsKitManagement.Web.csproj", "{64B873F6-9E6E-4689-A245-EA7F3D691BFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.AspNetCore", "modules\FS.CmsKitManagement\src\FS.CmsKitManagement.AspNetCore\FS.CmsKitManagement.AspNetCore.csproj", "{B74101CC-4DAF-4AD4-BA60-CCBE1794F234}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Metadata", "FS.Abp.Metadata", "{A3BA62B2-C117-4C11-B749-A8C10A741304}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Metadata", "framework\FS.Abp.Metadata\src\FS.Abp.Metadata\FS.Abp.Metadata.csproj", "{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Metadata.Core", "framework\FS.Abp.Metadata\src\FS.Abp.Metadata.Core\FS.Abp.Metadata.Core.csproj", "{11D1A11C-780B-451B-AA29-F74923858DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +141,14 @@ Global
 		{B74101CC-4DAF-4AD4-BA60-CCBE1794F234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B74101CC-4DAF-4AD4-BA60-CCBE1794F234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B74101CC-4DAF-4AD4-BA60-CCBE1794F234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,8 +177,11 @@ Global
 		{36E2735F-CEAB-44C8-A6D1-2CDAFF399751} = {BCA831E9-53C5-4B52-AC9C-086B7F779E91}
 		{64B873F6-9E6E-4689-A245-EA7F3D691BFF} = {BCA831E9-53C5-4B52-AC9C-086B7F779E91}
 		{B74101CC-4DAF-4AD4-BA60-CCBE1794F234} = {BCA831E9-53C5-4B52-AC9C-086B7F779E91}
+		{A3BA62B2-C117-4C11-B749-A8C10A741304} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1} = {A3BA62B2-C117-4C11-B749-A8C10A741304}
+		{11D1A11C-780B-451B-AA29-F74923858DD1} = {A3BA62B2-C117-4C11-B749-A8C10A741304}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
+		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
 	EndGlobalSection
 EndGlobal

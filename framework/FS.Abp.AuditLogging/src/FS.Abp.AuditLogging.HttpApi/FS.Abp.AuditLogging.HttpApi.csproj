@@ -12,4 +12,8 @@
     <ProjectReference Include="..\FS.Abp.AuditLogging.Application.Contracts\FS.Abp.AuditLogging.Application.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FS.Abp.AuditLogging\" />
+  </ItemGroup>
+
 </Project>
