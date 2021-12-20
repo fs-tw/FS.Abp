@@ -18,12 +18,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fs-tw/entity-type-management": [
-        "libs/entity-type-management/src/index.ts"
-      ],
-      "@fs-tw/entity-type-management/*": [
-        "libs/entity-type-management/*/src/index.ts"
-      ],
       "@fs-tw/theme-alain": [
         "libs/theme-alain/src/index.ts"
       ],

@@ -8890,3 +8890,360 @@ System.InvalidOperationException: IDX20803: Unable to obtain configuration from:
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2021-12-20 11:03:21.335 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/account/login - - - 500 - text/html;+charset=utf-8 1652.4930ms
 2021-12-20 11:03:21.335 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/account/login - - - 500 - text/html;+charset=utf-8 5646.6176ms
+2021-12-20 11:54:18.737 +08:00 [INF] Starting public web host.
+2021-12-20 11:54:24.879 +08:00 [INF] User profile is available. Using 'C:\Users\YinChang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-12-20 11:54:24.958 +08:00 [INF] Loaded ABP modules:
+2021-12-20 11:54:24.958 +08:00 [INF] - CFTA.Web.Public.CFTAWebPublicModule
+2021-12-20 11:54:24.958 +08:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2021-12-20 11:54:24.958 +08:00 [INF]   - Volo.Abp.Caching.StackExchangeRedis.AbpCachingStackExchangeRedisModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.Caching.AbpCachingModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Threading.AbpThreadingModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Serialization.AbpSerializationModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Uow.AbpUnitOfWorkModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Data.AbpDataModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Security.AbpSecurityModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Json.AbpJsonModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Timing.AbpTimingModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.Localization.AbpLocalizationModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.Settings.AbpSettingsModule
+2021-12-20 11:54:24.958 +08:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Auditing.AbpAuditingModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Http.AbpHttpModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Http.AbpHttpAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Minify.AbpMinifyModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Authorization.AbpAuthorizationModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Validation.AbpValidationModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2021-12-20 11:54:24.958 +08:00 [INF]   - CFTA.CFTAHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - CFTA.CFTAApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - CFTA.CFTADomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - FS.CmsKitManagement.CmsKitManagementDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - FS.Abp.Npoi.Mapper.AbpNpoiMapperModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.CmsKit.CmsKitDomainSharedModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - FS.Abp.Data.AbpDataModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - FS.Abp.EntityTypes.AbpEntityTypesCoreModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.EventBus.AbpEventBusModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]               - Volo.Abp.Guids.AbpGuidsModule
+2021-12-20 11:54:24.958 +08:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2021-12-20 11:54:24.958 +08:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2021-12-20 11:54:24.958 +08:00 [INF]   - CFTA.CFTAApplicationModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - CFTA.CFTADomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2021-12-20 11:54:24.958 +08:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2021-12-20 11:54:24.958 +08:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2021-12-20 11:54:24.958 +08:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2021-12-20 11:54:24.958 +08:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2021-12-20 11:54:24.958 +08:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]   - CFTA.EntityFrameworkCore.CFTAEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - FS.CmsKitManagement.EntityFrameworkCore.CmsKitManagementEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - FS.CmsKitManagement.CmsKitManagementDomainModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.CmsKit.CmsKitDomainModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.CmsKit.EntityFrameworkCore.CmsKitEntityFrameworkCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]   - Volo.Abp.AspNetCore.Authentication.OpenIdConnect.AbpAspNetCoreAuthenticationOpenIdConnectModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.AspNetCore.Authentication.OAuth.AbpAspNetCoreAuthenticationOAuthModule
+2021-12-20 11:54:24.959 +08:00 [INF]   - Volo.Abp.Http.Client.IdentityModel.Web.AbpHttpClientIdentityModelWebModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.Http.Client.IdentityModel.AbpHttpClientIdentityModelModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.Abp.Http.Client.AbpHttpClientModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.Abp.IdentityModel.AbpIdentityModelModule
+2021-12-20 11:54:24.959 +08:00 [INF]   - Volo.CmsKit.Public.Web.CmsKitPublicWebModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.CmsKit.Public.CmsKitPublicHttpApiModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.CmsKit.Public.CmsKitPublicApplicationContractsModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.CmsKit.CmsKitCommonApplicationContractsModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.CmsKit.CmsKitCommonHttpApiModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.CmsKit.Web.CmsKitCommonWebModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2021-12-20 11:54:24.959 +08:00 [INF]           - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2021-12-20 11:54:24.959 +08:00 [INF]           - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2021-12-20 11:54:24.959 +08:00 [INF]           - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2021-12-20 11:54:24.959 +08:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2021-12-20 11:54:24.959 +08:00 [INF]   - FS.CmsKitManagement.CmsKitManagementAspNetCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - FS.CmsKitManagement.CmsKitManagementApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - FS.CmsKitManagement.CmsKitManagementApplicationContractsModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - FS.Abp.AutoFilterer.AbpAutoFiltererApplicationContractsModule
+2021-12-20 11:54:24.959 +08:00 [INF]           - FS.Abp.AutoFilterer.AbpAutoFiltererCoreModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.CmsKit.CmsKitApplicationContractsModule
+2021-12-20 11:54:24.959 +08:00 [INF]           - Volo.CmsKit.Admin.CmsKitAdminApplicationContractsModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.CmsKit.CmsKitApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.CmsKit.Public.CmsKitPublicApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]           - Volo.CmsKit.CmsKitCommonApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.CmsKit.Admin.CmsKitAdminApplicationModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.Abp.FluentValidation.AbpFluentValidationModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - FS.CmsKitManagement.CmsKitManagementHttpApiModule
+2021-12-20 11:54:24.959 +08:00 [INF]       - Volo.CmsKit.CmsKitHttpApiModule
+2021-12-20 11:54:24.959 +08:00 [INF]         - Volo.CmsKit.Admin.CmsKitAdminHttpApiModule
+2021-12-20 11:54:24.959 +08:00 [INF]     - FS.Abp.EntityTypes.AbpEntityTypesAspNetCoreModule
+2021-12-20 11:54:25.534 +08:00 [INF] Initialized all ABP modules.
+2021-12-20 11:54:25.543 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-12-20 11:54:25.543 +08:00 [INF] Hosting environment: Development
+2021-12-20 11:54:25.543 +08:00 [INF] Content root path: D:\Works\11003\fs.works.v4-1206\projects\FS.Abp\applications\CFTA\aspnet-core\src\CFTA.Web.Public
+2021-12-20 11:54:25.606 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/ - -
+2021-12-20 11:54:28.029 +08:00 [DBG] Login Url: /Account/Login
+2021-12-20 11:54:28.029 +08:00 [DBG] Login Return Url Parameter: ReturnUrl
+2021-12-20 11:54:28.029 +08:00 [DBG] Logout Url: /Account/Logout
+2021-12-20 11:54:28.029 +08:00 [DBG] ConsentUrl Url: /consent
+2021-12-20 11:54:28.029 +08:00 [DBG] Consent Return Url Parameter: returnUrl
+2021-12-20 11:54:28.029 +08:00 [DBG] Error Url: /home/error
+2021-12-20 11:54:28.029 +08:00 [DBG] Error Id Parameter: errorId
+2021-12-20 11:54:28.045 +08:00 [INF] Cookies was not authenticated. Failure message: Unprotect ticket failed
+2021-12-20 11:54:28.281 +08:00 [INF] Executing endpoint '/Index'
+2021-12-20 11:54:28.309 +08:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2021-12-20 11:54:28.310 +08:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2021-12-20 11:54:28.330 +08:00 [INF] Executing handler method CFTA.Web.Public.Pages.IndexModel.OnGet - ModelState is "Valid"
+2021-12-20 11:54:28.330 +08:00 [INF] Executed handler method OnGet, returned result .
+2021-12-20 11:54:28.333 +08:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2021-12-20 11:54:28.333 +08:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2021-12-20 11:54:34.006 +08:00 [INF] Executed page /Index in 5693.6572ms
+2021-12-20 11:54:34.006 +08:00 [INF] Executed endpoint '/Index'
+2021-12-20 11:54:34.018 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/icon-awesome/css/font-awesome.min.css - -
+2021-12-20 11:54:34.018 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/bootstrap/bootstrap.min.css - -
+2021-12-20 11:54:34.022 +08:00 [INF] The file /assets/vendor/icon-awesome/css/font-awesome.min.css was not modified
+2021-12-20 11:54:34.022 +08:00 [INF] The file /assets/vendor/bootstrap/bootstrap.min.css was not modified
+2021-12-20 11:54:34.023 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/ - - - 200 - text/html;+charset=utf-8 8417.6333ms
+2021-12-20 11:54:34.025 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/bootstrap/bootstrap.min.css - - - 304 - text/css 6.8286ms
+2021-12-20 11:54:34.056 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/icon-line/css/simple-line-icons.css - -
+2021-12-20 11:54:34.057 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/icon-etlinefont/style.css - -
+2021-12-20 11:54:34.057 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/icon-awesome/css/font-awesome.min.css - - - 304 - text/css 37.9845ms
+2021-12-20 11:54:34.057 +08:00 [INF] The file /assets/vendor/icon-line/css/simple-line-icons.css was not modified
+2021-12-20 11:54:34.057 +08:00 [INF] The file /assets/vendor/icon-etlinefont/style.css was not modified
+2021-12-20 11:54:34.057 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/icon-line/css/simple-line-icons.css - - - 304 - text/css 0.4906ms
+2021-12-20 11:54:34.057 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/icon-etlinefont/style.css - - - 304 - text/css 0.4536ms
+2021-12-20 11:54:34.062 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/icon-line-pro/style.css - -
+2021-12-20 11:54:34.062 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/icon-hs/style.css - -
+2021-12-20 11:54:34.063 +08:00 [INF] The file /assets/vendor/icon-hs/style.css was not modified
+2021-12-20 11:54:34.063 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/icon-hs/style.css - - - 304 - text/css 1.2761ms
+2021-12-20 11:54:34.070 +08:00 [INF] The file /assets/vendor/icon-line-pro/style.css was not modified
+2021-12-20 11:54:34.070 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsparallaxer.css - -
+2021-12-20 11:54:34.070 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsscroller/scroller.css - -
+2021-12-20 11:54:34.070 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/icon-line-pro/style.css - - - 304 - text/css 7.9776ms
+2021-12-20 11:54:34.071 +08:00 [INF] The file /assets/vendor/dzsparallaxer/dzsparallaxer.css was not modified
+2021-12-20 11:54:34.071 +08:00 [INF] The file /assets/vendor/dzsparallaxer/dzsscroller/scroller.css was not modified
+2021-12-20 11:54:34.071 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsparallaxer.css - - - 304 - text/css 1.2360ms
+2021-12-20 11:54:34.071 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsscroller/scroller.css - - - 304 - text/css 1.3187ms
+2021-12-20 11:54:34.078 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/animate.css - -
+2021-12-20 11:54:34.078 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/advancedscroller/plugin.css - -
+2021-12-20 11:54:34.078 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/fancybox/jquery.fancybox.min.css - -
+2021-12-20 11:54:34.078 +08:00 [INF] The file /assets/vendor/animate.css was not modified
+2021-12-20 11:54:34.078 +08:00 [INF] The file /assets/vendor/dzsparallaxer/advancedscroller/plugin.css was not modified
+2021-12-20 11:54:34.078 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/advancedscroller/plugin.css - - - 304 - text/css 0.4388ms
+2021-12-20 11:54:34.078 +08:00 [INF] The file /assets/vendor/fancybox/jquery.fancybox.min.css was not modified
+2021-12-20 11:54:34.078 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/animate.css - - - 304 - text/css 0.4367ms
+2021-12-20 11:54:34.078 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/fancybox/jquery.fancybox.min.css - - - 304 - text/css 0.4581ms
+2021-12-20 11:54:34.082 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/slick-carousel/slick/slick.css - -
+2021-12-20 11:54:34.082 +08:00 [INF] The file /assets/vendor/slick-carousel/slick/slick.css was not modified
+2021-12-20 11:54:34.083 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/typedjs/typed.css - -
+2021-12-20 11:54:34.083 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/slick-carousel/slick/slick.css - - - 304 - text/css 0.3553ms
+2021-12-20 11:54:34.083 +08:00 [INF] The file /assets/vendor/typedjs/typed.css was not modified
+2021-12-20 11:54:34.083 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/typedjs/typed.css - - - 304 - text/css 0.2999ms
+2021-12-20 11:54:34.084 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/hs-megamenu/src/hs.megamenu.css - -
+2021-12-20 11:54:34.085 +08:00 [INF] The file /assets/vendor/hs-megamenu/src/hs.megamenu.css was not modified
+2021-12-20 11:54:34.085 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/hs-megamenu/src/hs.megamenu.css - - - 304 - text/css 0.4696ms
+2021-12-20 11:54:34.087 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/hamburgers/hamburgers.min.css - -
+2021-12-20 11:54:34.087 +08:00 [INF] The file /assets/vendor/hamburgers/hamburgers.min.css was not modified
+2021-12-20 11:54:34.087 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/hamburgers/hamburgers.min.css - - - 304 - text/css 0.4610ms
+2021-12-20 11:54:34.087 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css - -
+2021-12-20 11:54:34.088 +08:00 [INF] The file /assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css was not modified
+2021-12-20 11:54:34.088 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css - - - 304 - text/css 0.2658ms
+2021-12-20 11:54:34.088 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/css/styles.bm-classic.css - -
+2021-12-20 11:54:34.088 +08:00 [INF] The file /assets/css/styles.bm-classic.css was not modified
+2021-12-20 11:54:34.088 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/css/styles.bm-classic.css - - - 304 - text/css 0.2634ms
+2021-12-20 11:54:34.091 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/css/custom.css - -
+2021-12-20 11:54:34.092 +08:00 [INF] The file /assets/css/custom.css was not modified
+2021-12-20 11:54:34.092 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/css/custom.css - - - 304 - text/css 0.3680ms
+2021-12-20 11:54:34.092 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/css/CFTA.css - -
+2021-12-20 11:54:34.092 +08:00 [INF] The file /assets/css/CFTA.css was not modified
+2021-12-20 11:54:34.092 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/css/CFTA.css - - - 304 - text/css 0.2504ms
+2021-12-20 11:54:34.095 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/jquery/jquery.min.js - -
+2021-12-20 11:54:34.095 +08:00 [INF] The file /assets/vendor/jquery/jquery.min.js was not modified
+2021-12-20 11:54:34.095 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/jquery/jquery.min.js - - - 304 - application/javascript 0.4170ms
+2021-12-20 11:54:34.112 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/jquery-migrate/jquery-migrate.min.js - -
+2021-12-20 11:54:34.112 +08:00 [INF] The file /assets/vendor/jquery-migrate/jquery-migrate.min.js was not modified
+2021-12-20 11:54:34.112 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/jquery-migrate/jquery-migrate.min.js - - - 304 - application/javascript 0.4482ms
+2021-12-20 11:54:34.112 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/popper.js/popper.min.js - -
+2021-12-20 11:54:34.112 +08:00 [INF] The file /assets/vendor/popper.js/popper.min.js was not modified
+2021-12-20 11:54:34.112 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/popper.js/popper.min.js - - - 304 - application/javascript 0.3144ms
+2021-12-20 11:54:34.115 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/bootstrap/bootstrap.min.js - -
+2021-12-20 11:54:34.115 +08:00 [INF] The file /assets/vendor/bootstrap/bootstrap.min.js was not modified
+2021-12-20 11:54:34.115 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/bootstrap/bootstrap.min.js - - - 304 - application/javascript 0.3222ms
+2021-12-20 11:54:34.121 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/slick-carousel/slick/slick.js - -
+2021-12-20 11:54:34.122 +08:00 [INF] The file /assets/vendor/slick-carousel/slick/slick.js was not modified
+2021-12-20 11:54:34.122 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/slick-carousel/slick/slick.js - - - 304 - application/javascript 0.7156ms
+2021-12-20 11:54:34.123 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/hs-megamenu/src/hs.megamenu.js - -
+2021-12-20 11:54:34.123 +08:00 [INF] The file /assets/vendor/hs-megamenu/src/hs.megamenu.js was not modified
+2021-12-20 11:54:34.123 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/hs-megamenu/src/hs.megamenu.js - - - 304 - application/javascript 0.3325ms
+2021-12-20 11:54:34.124 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsparallaxer.js - -
+2021-12-20 11:54:34.124 +08:00 [INF] The file /assets/vendor/dzsparallaxer/dzsparallaxer.js was not modified
+2021-12-20 11:54:34.124 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsparallaxer.js - - - 304 - application/javascript 0.2791ms
+2021-12-20 11:54:34.131 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsscroller/scroller.js - -
+2021-12-20 11:54:34.131 +08:00 [INF] The file /assets/vendor/dzsparallaxer/dzsscroller/scroller.js was not modified
+2021-12-20 11:54:34.131 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/dzsscroller/scroller.js - - - 304 - application/javascript 0.4501ms
+2021-12-20 11:54:34.131 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/advancedscroller/plugin.js - -
+2021-12-20 11:54:34.131 +08:00 [INF] The file /assets/vendor/dzsparallaxer/advancedscroller/plugin.js was not modified
+2021-12-20 11:54:34.132 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/dzsparallaxer/advancedscroller/plugin.js - - - 304 - application/javascript 0.2810ms
+2021-12-20 11:54:34.132 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/fancybox/jquery.fancybox.min.js - -
+2021-12-20 11:54:34.132 +08:00 [INF] The file /assets/vendor/fancybox/jquery.fancybox.min.js was not modified
+2021-12-20 11:54:34.132 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/fancybox/jquery.fancybox.min.js - - - 304 - application/javascript 0.2646ms
+2021-12-20 11:54:34.138 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/typedjs/typed.min.js - -
+2021-12-20 11:54:34.138 +08:00 [INF] The file /assets/vendor/typedjs/typed.min.js was not modified
+2021-12-20 11:54:34.138 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/typedjs/typed.min.js - - - 304 - application/javascript 0.4916ms
+2021-12-20 11:54:34.138 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/appear.js - -
+2021-12-20 11:54:34.138 +08:00 [INF] The file /assets/vendor/appear.js was not modified
+2021-12-20 11:54:34.138 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/appear.js - - - 304 - application/javascript 0.3534ms
+2021-12-20 11:54:34.141 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js - -
+2021-12-20 11:54:34.142 +08:00 [INF] The file /assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js was not modified
+2021-12-20 11:54:34.142 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js - - - 304 - application/javascript 0.5659ms
+2021-12-20 11:54:34.143 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/hs.core.js - -
+2021-12-20 11:54:34.144 +08:00 [INF] The file /assets/js/hs.core.js was not modified
+2021-12-20 11:54:34.144 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/hs.core.js - - - 304 - application/javascript 0.3803ms
+2021-12-20 11:54:34.144 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.carousel.js - -
+2021-12-20 11:54:34.145 +08:00 [INF] The file /assets/js/components/hs.carousel.js was not modified
+2021-12-20 11:54:34.145 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.carousel.js - - - 304 - application/javascript 0.5280ms
+2021-12-20 11:54:34.149 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.header.js - -
+2021-12-20 11:54:34.150 +08:00 [INF] The file /assets/js/components/hs.header.js was not modified
+2021-12-20 11:54:34.150 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.header.js - - - 304 - application/javascript 0.8710ms
+2021-12-20 11:54:34.150 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/helpers/hs.hamburgers.js - -
+2021-12-20 11:54:34.150 +08:00 [INF] The file /assets/js/helpers/hs.hamburgers.js was not modified
+2021-12-20 11:54:34.150 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/helpers/hs.hamburgers.js - - - 304 - application/javascript 0.4259ms
+2021-12-20 11:54:34.152 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.tabs.js - -
+2021-12-20 11:54:34.152 +08:00 [INF] The file /assets/js/components/hs.tabs.js was not modified
+2021-12-20 11:54:34.152 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.tabs.js - - - 304 - application/javascript 0.5092ms
+2021-12-20 11:54:34.155 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.popup.js - -
+2021-12-20 11:54:34.156 +08:00 [INF] The file /assets/js/components/hs.popup.js was not modified
+2021-12-20 11:54:34.156 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.popup.js - - - 304 - application/javascript 0.9477ms
+2021-12-20 11:54:34.156 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/text-animation/hs.text-slideshow.js - -
+2021-12-20 11:54:34.157 +08:00 [INF] The file /assets/js/components/text-animation/hs.text-slideshow.js was not modified
+2021-12-20 11:54:34.157 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/text-animation/hs.text-slideshow.js - - - 304 - application/javascript 0.4805ms
+2021-12-20 11:54:34.158 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.go-to.js - -
+2021-12-20 11:54:34.159 +08:00 [INF] The file /assets/js/components/hs.go-to.js was not modified
+2021-12-20 11:54:34.159 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.go-to.js - - - 304 - application/javascript 0.6422ms
+2021-12-20 11:54:34.161 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.scroll-nav.js - -
+2021-12-20 11:54:34.162 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.onscroll-animation.js - -
+2021-12-20 11:54:34.162 +08:00 [INF] The file /assets/js/components/hs.scroll-nav.js was not modified
+2021-12-20 11:54:34.162 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.scroll-nav.js - - - 304 - application/javascript 0.8528ms
+2021-12-20 11:54:34.162 +08:00 [INF] The file /assets/js/components/hs.onscroll-animation.js was not modified
+2021-12-20 11:54:34.162 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.onscroll-animation.js - - - 304 - application/javascript 0.4918ms
+2021-12-20 11:54:34.164 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/components/hs.cubeportfolio.js - -
+2021-12-20 11:54:34.165 +08:00 [INF] The file /assets/js/components/hs.cubeportfolio.js was not modified
+2021-12-20 11:54:34.165 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/components/hs.cubeportfolio.js - - - 304 - application/javascript 0.7638ms
+2021-12-20 11:54:34.170 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/js/custom.js - -
+2021-12-20 11:54:34.170 +08:00 [INF] The file /assets/js/custom.js was not modified
+2021-12-20 11:54:34.170 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/js/custom.js - - - 304 - application/javascript 0.6658ms
+2021-12-20 11:54:34.170 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/logo2.png - -
+2021-12-20 11:54:34.171 +08:00 [INF] The file /assets/img/cfta/logo2.png was not modified
+2021-12-20 11:54:34.171 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/logo2.png - - - 304 - image/png 0.4548ms
+2021-12-20 11:54:34.171 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/banner.jpg - -
+2021-12-20 11:54:34.171 +08:00 [INF] The file /assets/img/cfta/banner.jpg was not modified
+2021-12-20 11:54:34.171 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/banner.jpg - - - 304 - image/jpeg 0.2999ms
+2021-12-20 11:54:34.174 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/banner2.jpg - -
+2021-12-20 11:54:34.175 +08:00 [INF] The file /assets/img/cfta/banner2.jpg was not modified
+2021-12-20 11:54:34.175 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/banner2.jpg - - - 304 - image/jpeg 0.3675ms
+2021-12-20 11:54:34.175 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/logo.jpg - -
+2021-12-20 11:54:34.175 +08:00 [INF] The file /assets/img/cfta/logo.jpg was not modified
+2021-12-20 11:54:34.176 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/logo.jpg - - - 304 - image/jpeg 0.3834ms
+2021-12-20 11:54:34.176 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/post1.jpg - -
+2021-12-20 11:54:34.176 +08:00 [INF] The file /assets/img/cfta/post1.jpg was not modified
+2021-12-20 11:54:34.176 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/post1.jpg - - - 304 - image/jpeg 0.2753ms
+2021-12-20 11:54:34.179 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member2.jpg - -
+2021-12-20 11:54:34.179 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member1.jpg - -
+2021-12-20 11:54:34.179 +08:00 [INF] The file /assets/img/cfta/Staff Member1.jpg was not modified
+2021-12-20 11:54:34.179 +08:00 [INF] The file /assets/img/cfta/Staff Member2.jpg was not modified
+2021-12-20 11:54:34.180 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member1.jpg - - - 304 - image/jpeg 0.4325ms
+2021-12-20 11:54:34.180 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member2.jpg - - - 304 - image/jpeg 0.4373ms
+2021-12-20 11:54:34.180 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member3.jpg - -
+2021-12-20 11:54:34.180 +08:00 [INF] The file /assets/img/cfta/Staff Member3.jpg was not modified
+2021-12-20 11:54:34.180 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member3.jpg - - - 304 - image/jpeg 0.3959ms
+2021-12-20 11:54:34.184 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member4.jpg - -
+2021-12-20 11:54:34.185 +08:00 [INF] The file /assets/img/cfta/Staff Member4.jpg was not modified
+2021-12-20 11:54:34.185 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member5.jpg - -
+2021-12-20 11:54:34.185 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member4.jpg - - - 304 - image/jpeg 0.3779ms
+2021-12-20 11:54:34.185 +08:00 [INF] The file /assets/img/cfta/Staff Member5.jpg was not modified
+2021-12-20 11:54:34.185 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member5.jpg - - - 304 - image/jpeg 0.2946ms
+2021-12-20 11:54:34.185 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member6.jpg - -
+2021-12-20 11:54:34.185 +08:00 [INF] The file /assets/img/cfta/Staff Member6.jpg was not modified
+2021-12-20 11:54:34.186 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/Staff Member6.jpg - - - 304 - image/jpeg 0.2806ms
+2021-12-20 11:54:34.237 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/cfta/BackgroundImage.png - -
+2021-12-20 11:54:34.237 +08:00 [INF] The file /assets/img/cfta/BackgroundImage.png was not modified
+2021-12-20 11:54:34.237 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/cfta/BackgroundImage.png - - - 304 - image/png 0.4153ms
+2021-12-20 11:54:34.240 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/img/preloaders/preloader-black.svg - -
+2021-12-20 11:54:34.240 +08:00 [INF] The file /assets/img/preloaders/preloader-black.svg was not modified
+2021-12-20 11:54:34.240 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/img/preloaders/preloader-black.svg - - - 304 - image/svg+xml 0.3344ms
+2021-12-20 11:54:34.370 +08:00 [INF] Request starting HTTP/2 GET https://localhost:44304/assets/vendor/icon-hs/fonts/hs-icons.ttf?xa77py - -
+2021-12-20 11:54:34.371 +08:00 [INF] The file /assets/vendor/icon-hs/fonts/hs-icons.ttf was not modified
+2021-12-20 11:54:34.371 +08:00 [INF] Request finished HTTP/2 GET https://localhost:44304/assets/vendor/icon-hs/fonts/hs-icons.ttf?xa77py - - - 304 - application/x-font-ttf 0.6665ms

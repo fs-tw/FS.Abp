@@ -8,7 +8,8 @@ $rootFolder = (Get-Item -Path "./" -Verbose).FullName
 $solutionPaths = @(
 		"../framework",
 		"../modules/FS.CmsKitManagement",
-        "../applications/CFTA/aspnet-core"
+        "../applications/CFTA/aspnet-core",
+        "../applications/FS.Abp.Demo/aspnet-core"
 	)
 
 if ($full -eq "-f")

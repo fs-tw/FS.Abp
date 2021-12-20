@@ -83,7 +83,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.Core", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.AspNetCore", "..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.AspNetCore\FS.Abp.EntityTypes.AspNetCore.csproj", "{5D3C5F28-F010-4468-8FB3-22200F685F87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.AspNetCore", "..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.HttpApi.AspNetCore\FS.CmsKitManagement.AspNetCore.csproj", "{8D78A5CB-779C-4C7C-B93B-23D6781FCB09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.CmsKitManagement.AspNetCore", "..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.AspNetCore\FS.CmsKitManagement.AspNetCore.csproj", "{8D78A5CB-779C-4C7C-B93B-23D6781FCB09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Swashbuckle", "..\..\..\framework\FS.Abp.Swashbuckle\src\FS.Abp.Swashbuckle\FS.Abp.Swashbuckle.csproj", "{482413C3-100B-4605-9723-3759DC917058}"
 EndProject
