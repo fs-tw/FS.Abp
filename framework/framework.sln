@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.AutoFilterer", "FS.Abp.AutoFilterer", "{06EA2911-D549-44D5-B865-598158E08F25}"
 EndProject
@@ -28,6 +28,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.EntityTypes.AspNetCore", "FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.AspNetCore\FS.Abp.EntityTypes.AspNetCore.csproj", "{5D3C5F28-F010-4468-8FB3-22200F685F87}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Swashbuckle", "FS.Abp.Swashbuckle\src\FS.Abp.Swashbuckle\FS.Abp.Swashbuckle.csproj", "{482413C3-100B-4605-9723-3759DC917058}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Npoi.Mapper", "FS.Abp.Npoi.Mapper", "{2F0D43ED-0615-4C05-8C01-981C22E7022D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Npoi.Mapper.Core", "FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj", "{64D98BE7-EB48-4CA3-A7FE-89A54C0EB0EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Metadata", "FS.Abp.Metadata", "{8A3932A4-026C-4B18-B2A5-CC3F4285ABBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Metadata", "FS.Abp.Metadata\src\FS.Abp.Metadata\FS.Abp.Metadata.csproj", "{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Metadata.Core", "FS.Abp.Metadata\src\FS.Abp.Metadata.Core\FS.Abp.Metadata.Core.csproj", "{11D1A11C-780B-451B-AA29-F74923858DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +85,18 @@ Global
 		{482413C3-100B-4605-9723-3759DC917058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{482413C3-100B-4605-9723-3759DC917058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{482413C3-100B-4605-9723-3759DC917058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D98BE7-EB48-4CA3-A7FE-89A54C0EB0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D98BE7-EB48-4CA3-A7FE-89A54C0EB0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D98BE7-EB48-4CA3-A7FE-89A54C0EB0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D98BE7-EB48-4CA3-A7FE-89A54C0EB0EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D1A11C-780B-451B-AA29-F74923858DD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,8 +110,11 @@ Global
 		{72E53941-0148-4435-A95C-763A997B4864} = {96D0409D-C68D-4E9C-9983-8125709E1F54}
 		{5F7DCB19-6598-45EA-BF19-A670816350DE} = {79253ED0-D3EE-4C95-BD4C-D074E26C07BB}
 		{5D3C5F28-F010-4468-8FB3-22200F685F87} = {79253ED0-D3EE-4C95-BD4C-D074E26C07BB}
+		{64D98BE7-EB48-4CA3-A7FE-89A54C0EB0EE} = {2F0D43ED-0615-4C05-8C01-981C22E7022D}
+		{A3E054F5-DBC8-4E08-920D-B5E17F56B3E1} = {8A3932A4-026C-4B18-B2A5-CC3F4285ABBC}
+		{11D1A11C-780B-451B-AA29-F74923858DD1} = {8A3932A4-026C-4B18-B2A5-CC3F4285ABBC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
+		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
 	EndGlobalSection
 EndGlobal

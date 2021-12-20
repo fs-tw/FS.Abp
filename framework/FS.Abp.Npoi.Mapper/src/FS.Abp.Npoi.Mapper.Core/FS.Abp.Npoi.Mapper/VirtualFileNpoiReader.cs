@@ -11,18 +11,12 @@ namespace FS.Abp.Npoi.Mapper
     public partial class VirtualFileNpoiReader : IVirtualFileNpoiReader
     {
         private readonly Volo.Abp.VirtualFileSystem.IVirtualFileProvider _virtualFileProvider;
-        private readonly IErrorHandler errorHandler;
-        private readonly DataSeedOptions dataSeedOptions;
 
         public VirtualFileNpoiReader(
-            Volo.Abp.VirtualFileSystem.IVirtualFileProvider virtualFileProvider,
-            IErrorHandler errorHandler,
-            IOptions<DataSeedOptions> dataSeedOptions
+            Volo.Abp.VirtualFileSystem.IVirtualFileProvider virtualFileProvider
             )
         {
             this._virtualFileProvider = virtualFileProvider;
-            this.errorHandler = errorHandler;
-            this.dataSeedOptions = dataSeedOptions.Value;
         }
 
         public List<string> GetSheetNames(string filePath)
@@ -119,8 +113,6 @@ namespace FS.Abp.Npoi.Mapper
                 }
             }
             var rows = dtTable.AsEnumerable().AsEnumerable();
-            if (dataSeedOptions.MaxProcessCount > 0)
-                rows = rows.Take(dataSeedOptions.MaxProcessCount);
 
             var list = rows.Select(x =>
             {
@@ -153,35 +145,25 @@ namespace FS.Abp.Npoi.Mapper
                 }
                 var parentCode = n.Code.Substring(0, n.Code.LastIndexOf('.'));
                 var availableParents = list.Where(t => t.Code == parentCode);
-                var isExistParent = Validate(n, sheet, availableParents);
-                if (isExistParent)
-                {
-                    list.Single(t => t.Code == parentCode).Children.Add(n);
-                }
+                check(n, sheet, availableParents);
+                list.Single(t => t.Code == parentCode).Children.Add(n);
             });
 
             return result;
         }
 
-        private bool Validate<T>(T n, ISheet sheet, IEnumerable<T> availableParents) where T : ITreeNode<T>, new()
+        private void check<T>(T n, ISheet sheet, IEnumerable<T> availableParents) where T : ITreeNode<T>, new()
         {
             if (availableParents.Count() == 0)
             {
-                var errorInfo = new ErrorHandler.ErrorInfo()
-                {
-                    Message = $"找不到上層節點，節點:{n.ToString()},位於：{sheet.SheetName} 工作簿。"
-                };
-                errorHandler.Add(errorInfo);
+                throw new Exception($"找不到上層節點，節點:{n.ToString()},位於：{sheet.SheetName} 工作簿。");
+
             }
             if (availableParents.Count() > 1)
             {
-                var errorInfo = new ErrorHandler.ErrorInfo()
-                {
-                    Message = $"找到多個上層節點，節點:{n.ToString()},位於：{sheet.SheetName} 工作簿。"
-                };
-                errorHandler.Add(errorInfo);
+                throw new Exception($"找到多個上層節點，節點:{n.ToString()},位於：{sheet.SheetName} 工作簿。");
+
             }
-            return availableParents.Count() == 1;
         }
     }
 }

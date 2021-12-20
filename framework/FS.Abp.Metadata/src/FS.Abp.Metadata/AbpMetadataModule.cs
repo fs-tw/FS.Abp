@@ -9,10 +9,10 @@ using Volo.Abp.Reflection;
 namespace FS.Abp.Metadata
 {
     [DependsOn(
-        typeof(FS.Abp.Metadata.MetadataCoreModule)
+        typeof(FS.Abp.Metadata.AbpMetadataCoreModule)
     )]
     [DependsOn(typeof(Volo.Abp.Swashbuckle.AbpSwashbuckleModule))]
-    public class MetadataModule : AbpModule
+    public class AbpMetadataModule : AbpModule
     {
         private void addMetadataProviders()
         {

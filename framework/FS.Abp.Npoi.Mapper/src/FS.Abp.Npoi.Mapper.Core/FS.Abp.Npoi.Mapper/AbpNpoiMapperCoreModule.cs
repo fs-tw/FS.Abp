@@ -4,9 +4,9 @@ using Volo.Abp.Modularity;
 namespace FS.Abp.Npoi.Mapper
 {
     [DependsOn(
-        typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperCoreModule)
+        typeof(Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule)
         )]
-    public class AbpNpoiMapperModule : AbpModule
+    public class AbpNpoiMapperCoreModule : AbpModule
     {
     }
 }

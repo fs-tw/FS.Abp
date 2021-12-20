@@ -2,7 +2,7 @@
 
 namespace FS.Abp.Metadata
 {
-    public class MetadataCoreModule : AbpModule
+    public class AbpMetadataCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
