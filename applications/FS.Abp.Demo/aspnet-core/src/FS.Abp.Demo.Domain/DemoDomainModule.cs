@@ -13,7 +13,7 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
-using FS.Abp.EntityTypes;
+using FS.Abp.EntityFeatures;
 
 namespace FS.Abp.Demo
 {
@@ -36,37 +36,42 @@ namespace FS.Abp.Demo
         )]
     public class DemoDomainModule : AbpModule
     {
-        public override void PreConfigureServices(ServiceConfigurationContext context)
+        public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            PreConfigure<EntityTypeOptions>(options =>
+            Configure<AbpMultiTenancyOptions>(options =>
+            {
+                options.IsEnabled = MultiTenancyConsts.IsEnabled;
+            });
+
+            Configure<EntityFeaturesOptions>(options =>
             {
                 options.GetOrAdd<Volo.CmsKit.Reactions.UserReaction>(a =>
                 {
                     a.AddOrReplace(
-                        (typeof(Volo.CmsKit.Blogs.BlogPost), new DefaultEntityTypeDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType)),
-                        (typeof(Volo.CmsKit.Comments.Comment), new DefaultEntityTypeDefinition(Volo.CmsKit.Comments.CommentConsts.EntityType))
+                        (typeof(Volo.CmsKit.Blogs.BlogPost), new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType)),
+                        (typeof(Volo.CmsKit.Comments.Comment), new DefaultEntityFeatureDefinition(Volo.CmsKit.Comments.CommentConsts.EntityType))
                         );
                 });
 
                 options.GetOrAdd<Volo.CmsKit.Ratings.Rating>(a =>
                 {
-                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityTypeDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
                 });
 
                 options.GetOrAdd<Volo.CmsKit.Tags.Tag>(a =>
                 {
-                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityTypeDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
                 });
 
                 options.GetOrAdd<Volo.CmsKit.MediaDescriptors.MediaDescriptor>(a =>
                 {
-                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(new DefaultEntityTypeDefinition(Volo.CmsKit.Pages.PageConsts.EntityType));
-                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityTypeDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Pages.PageConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
                 });
 
                 options.GetOrAdd<Volo.CmsKit.Comments.Comment>(a =>
                 {
-                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityTypeDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
                 });
 
                 options.GetOrAdd<FS.CmsKitManagement.EntityBlogs.EntityBlog>(a =>
@@ -98,18 +103,6 @@ namespace FS.Abp.Demo
                         typeof(Volo.CmsKit.Blogs.BlogPost)
                         );
                 });
-            });
-        }
-        public override void ConfigureServices(ServiceConfigurationContext context)
-        {
-            Configure<AbpMultiTenancyOptions>(options =>
-            {
-                options.IsEnabled = MultiTenancyConsts.IsEnabled;
-            });
-
-            Configure<EntityTypeOptions>(options =>
-            {
-                context.Services.ExecutePreConfiguredActions(options);
             });
 
 #if DEBUG

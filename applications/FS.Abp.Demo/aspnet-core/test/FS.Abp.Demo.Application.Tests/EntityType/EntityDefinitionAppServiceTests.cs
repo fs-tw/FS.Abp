@@ -1,4 +1,4 @@
-﻿using FS.Abp.EntityTypes;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
 using Shouldly;
 using System.Threading.Tasks;
