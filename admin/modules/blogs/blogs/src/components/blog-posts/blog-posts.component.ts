@@ -12,7 +12,7 @@ import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 import { AddBlogIdItems, AddToolbarAction, BLOG_POSTS_EDIT_FORM_PROPS, BLOG_POSTS_ENTITY_PROPS, BLOG_POSTS_TOOLBAR_ACTIONS } from './defaults';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, mergeMap, switchMap, take, tap } from 'rxjs/operators';
-import { EntityTypeStore } from '@fs-tw/core/entity-types';
+import { EntityFeaturesStore } from '@fs-tw/core/entity-features';
 import { ImagePicker, ImagePickerModalComponent } from '@fs-tw/components/image-picker';
 import { MultiLingualModalComponent } from '@fs-tw/components/multi-lingual';
 import * as _ from 'lodash';
@@ -59,7 +59,7 @@ export class BlogPostsComponent implements OnInit {
     private readonly injector: Injector,
     public readonly list: ListService,
     private confirmationService: ConfirmationService,
-    public entityTypeStore: EntityTypeStore,
+    public entityTypeStore: EntityFeaturesStore,
     public extensionsStore:ExtensionsStore,
 
     @Inject(Volo.CmsKit.Admin.Blogs.BlogAdminService)

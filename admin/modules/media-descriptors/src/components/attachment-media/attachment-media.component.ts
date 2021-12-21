@@ -35,9 +35,9 @@ class ComponentService
     PagedResultDto<Fs.CmsKitManagement.MediaDescriptors.Dtos.AttachmentMediaWithDetailsDto>
   > {
     let service = this.injector.get(
-      Fs.CmsKitManagement.MediaDescriptors.MediaDescriptorsApiService
+      Fs.CmsKitManagement.MediaDescriptors.AttachmentMediaCrudService
     );
-    return service.getListByAttachmentMedia(AttachmentMedia);
+    return service.getList(AttachmentMedia);
   }
 }
 
