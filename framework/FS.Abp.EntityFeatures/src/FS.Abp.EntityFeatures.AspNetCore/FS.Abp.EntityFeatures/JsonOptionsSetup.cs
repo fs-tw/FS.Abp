@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using FS.Abp.Json.SystemTextJson.JsonConverters;
 
-namespace FS.Abp.EntityTypes
+namespace FS.Abp.EntityFeatures
 {
     public class JsonOptionsSetup : IConfigureOptions<JsonOptions>
     {
@@ -16,7 +15,7 @@ namespace FS.Abp.EntityTypes
 
         public void Configure(JsonOptions options)
         {
-            options.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<EntityTypeDefinition>());
+            options.JsonSerializerOptions.Converters.Add(new PolymorphicJsonConverter<EntityFeatureDefinition>());
         }
     }
 }

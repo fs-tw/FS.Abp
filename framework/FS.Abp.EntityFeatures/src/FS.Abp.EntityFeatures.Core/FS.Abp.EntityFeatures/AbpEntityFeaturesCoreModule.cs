@@ -1,9 +1,9 @@
 ﻿using Volo.Abp.Modularity;
 
-namespace FS.Abp.EntityTypes
+namespace FS.Abp.EntityFeatures
 {
-    [DependsOn(typeof(FS.Abp.Data.AbpDataModule))]
-    public class AbpEntityTypesCoreModule : AbpModule
+    [DependsOn(typeof(Data.AbpDataModule))]
+    public class AbpEntityFeaturesCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

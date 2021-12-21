@@ -5,11 +5,11 @@ using Microsoft.Extensions.Options;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
 
-namespace FS.Abp.EntityTypes
+namespace FS.Abp.EntityFeatures
 {
     [DependsOn(
         typeof(AbpAspNetCoreMvcModule))]
-    public class AbpEntityTypesAspNetCoreModule : AbpModule
+    public class AbpEntityFeaturesAspNetCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
@@ -19,11 +19,11 @@ namespace FS.Abp.EntityTypes
 
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConventionalControllers.Create(typeof(AbpEntityTypesAspNetCoreModule).Assembly,c=> 
-                {
-                    c.RootPath = "entity-types";
-                    c.RemoteServiceName = "entity-types";
-                });
+                options.ConventionalControllers.Create(typeof(AbpEntityFeaturesAspNetCoreModule).Assembly, c =>
+                 {
+                     c.RootPath = AbpEntityFeaturesConsts.RootPath;
+                     c.RemoteServiceName = AbpEntityFeaturesConsts.RemoteServiceName;
+                 });
             });
         }
     }

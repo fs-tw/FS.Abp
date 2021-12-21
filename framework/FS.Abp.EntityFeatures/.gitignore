@@ -251,9 +251,9 @@ paket-files/
 .idea/
 *.sln.iml
 
-# EntityTypes
-host/FS.Abp.EntityTypes.IdentityServer/Logs/logs.txt
-host/FS.Abp.EntityTypes.HttpApi.Host/Logs/logs.txt
-host/FS.Abp.EntityTypes.Web.Host/Logs/logs.txt
-host/FS.Abp.EntityTypes.Web.Unified/Logs/logs.txt
-host/FS.Abp.EntityTypes.Blazor.Server.Host/Logs/logs.txt
+# EntityFeatures
+host/FS.Abp.EntityFeatures.IdentityServer/Logs/logs.txt
+host/FS.Abp.EntityFeatures.HttpApi.Host/Logs/logs.txt
+host/FS.Abp.EntityFeatures.Web.Host/Logs/logs.txt
+host/FS.Abp.EntityFeatures.Web.Unified/Logs/logs.txt
+host/FS.Abp.EntityFeatures.Blazor.Server.Host/Logs/logs.txt

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>FS.Abp.EntityTypes</RootNamespace>
+    <RootNamespace>FS.Abp.EntityFeatures</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FS.Abp.EntityTypes.Core\FS.Abp.EntityTypes.Core.csproj" />
+    <ProjectReference Include="..\FS.Abp.EntityFeatures.Core\FS.Abp.EntityFeatures.Core.csproj" />
   </ItemGroup>
 
 </Project>

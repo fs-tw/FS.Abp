@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FS.Abp.EntityTypes
+namespace FS.Abp.EntityFeatures
 {
-    public class EntityTypeDefinitionAppService : Volo.Abp.Application.Services.ApplicationService, IEntityTypeDefinitionAppService
+    public class EntityFeatureDefinitionAppService : Volo.Abp.Application.Services.ApplicationService, IEntityFeatureDefinitionAppService
     {
-        protected EntityTypeOptions Options { get; }
+        protected EntityFeaturesOptions Options { get; }
 
-        public EntityTypeDefinitionAppService(IOptions<EntityTypeOptions> options)
+        public EntityFeatureDefinitionAppService(IOptions<EntityFeaturesOptions> options)
         {
             Options = options.Value;
         }
 
-        public List<EntityType> GetEntityTypeDefinitionList()
+        public List<EntityFeature> GetEntityFeatureDefinitionList()
         {
             var entityTypes = Options.ToList();
             return entityTypes.Select(et =>
             {
-                return new EntityType()
+                return new EntityFeature()
                 {
                     Name = et.Key.Name,
                     Definitions = et.Value.Select(e =>

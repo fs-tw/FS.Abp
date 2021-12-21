@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace FS.Abp.Json.SystemTextJson.JsonConverters
+namespace FS.Abp.EntityFeatures
 {
     //ref https://getyourbitstogether.com/polymorphic-serialization-in-system-text-json/
     public class PolymorphicJsonConverter<T> : JsonConverter<T>
