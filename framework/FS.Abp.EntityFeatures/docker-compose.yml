@@ -13,10 +13,10 @@ services:
     depends_on:
       - sqlserver      
   
-  entity-types:
+  entity-features:
     build:
       context: ../../
-      dockerfile: templates/service/host/FS.Abp.EntityTypes.Host/Dockerfile
+      dockerfile: templates/service/host/FS.Abp.EntityFeatures.Host/Dockerfile
     depends_on:
       - sqlserver
       - identity-server

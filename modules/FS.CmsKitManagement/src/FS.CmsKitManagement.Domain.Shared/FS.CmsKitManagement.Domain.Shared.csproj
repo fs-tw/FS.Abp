@@ -16,7 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper\FS.Abp.Npoi.Mapper.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityFeatures\src\FS.Abp.EntityFeatures.Core\FS.Abp.EntityFeatures.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

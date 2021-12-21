@@ -13,6 +13,7 @@ namespace FS.CmsKitManagement
         typeof(CmsKitManagementDomainSharedModule)
     )]
     [DependsOn(typeof(Volo.CmsKit.CmsKitDomainModule))]
+    [DependsOn(typeof(FS.Abp.EntityFeatures.AbpEntityFeaturesDomainModule))]
     public class CmsKitManagementDomainModule : AbpModule
     {
 

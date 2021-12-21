@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Abp.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="5.0.0" />
+    <ProjectReference Include="..\FS.Abp.EntityFeatures.Domain\FS.Abp.EntityFeatures.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

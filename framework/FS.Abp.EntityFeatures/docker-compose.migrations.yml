@@ -8,6 +8,6 @@ services:
     depends_on:
       - sqlserver
     environment:
-      - IdentityServer_DB=EntityTypes_Identity
-      - EntityTypes_DB=EntityTypes_ModuleDb
+      - IdentityServer_DB=EntityFeatures_Identity
+      - EntityFeatures_DB=EntityFeatures_ModuleDb
       - SA_PASSWORD=yourStrong(!)Password

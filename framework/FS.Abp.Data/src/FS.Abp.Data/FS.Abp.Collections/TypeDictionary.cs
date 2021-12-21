@@ -14,9 +14,16 @@ namespace FS.Abp.Collections
             return this.GetOrDefault(typeof(TKey));
         }
 
+        protected virtual void Check(Type type)
+        {
+
+        }
+
         public void GetOrAdd<TKey>([NotNull] Action<TValue> optionsAction, Func<Type, TValue> factory = null)
         {
-            Check.NotNull(optionsAction, nameof(optionsAction));
+            Volo.Abp.Check.NotNull(optionsAction, nameof(optionsAction));
+
+            Check(typeof(TKey));
 
             optionsAction(
                 this.GetOrAdd(
@@ -28,6 +35,8 @@ namespace FS.Abp.Collections
 
         public void AddOrReplace<TKey>(TValue value = default)
         {
+            Check(typeof(TKey));
+
             value = value ?? DefaultFactory.Invoke(typeof(TValue));
             this[typeof(TKey)] = value;
         }
@@ -36,6 +45,7 @@ namespace FS.Abp.Collections
         {
             foreach (var i in items)
             {
+                Check(i.type);
                 var value = i.value ?? DefaultFactory.Invoke(i.type);
                 this[i.type] = value;
             }
@@ -44,6 +54,7 @@ namespace FS.Abp.Collections
         {
             foreach (var i in items)
             {
+                Check(i);
                 var value = DefaultFactory.Invoke(i);
                 this[i] = value;
             }

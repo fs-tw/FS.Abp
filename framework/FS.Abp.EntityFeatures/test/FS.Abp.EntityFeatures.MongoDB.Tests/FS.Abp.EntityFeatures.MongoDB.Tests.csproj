@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Abp.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Mongo2Go" Version="3.1.3" />
+    <ProjectReference Include="..\..\src\FS.Abp.EntityFeatures.MongoDB\FS.Abp.EntityFeatures.MongoDB.csproj" />
+    <ProjectReference Include="..\FS.Abp.EntityFeatures.TestBase\FS.Abp.EntityFeatures.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>
