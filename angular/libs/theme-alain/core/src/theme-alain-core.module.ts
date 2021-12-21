@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 //import { CoreModule as  AbpCoreModule} from '@abp/ng.core';
 import { STYLES_PROVIDERS } from './providers/styles.provider';
 import { LANG_PROVIDES } from './providers/lang.provider';
-import { LayoutModule } from 'libs/theme-alain/layout/src';
+import { LayoutModule } from '@fs-tw/theme-alain/layout';
 import { AlainThemeModule } from '@delon/theme';
 
 @NgModule({

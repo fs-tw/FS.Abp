@@ -1,14 +1,14 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { EntityTypsModule } from '@fs-tw/core/entity-types'
+import { EntityFeaturesModule } from '@fs-tw/core/entity-features'
 
 @NgModule({
-  imports: [EntityTypsModule.forRoot()],
+  imports: [EntityFeaturesModule.forRoot()],
 })
 export class RootModule {}
 
 @NgModule({
   imports: [
-    EntityTypsModule
+    EntityFeaturesModule
   ],
 })
 export class CoreModule {

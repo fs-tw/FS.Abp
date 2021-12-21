@@ -1,7 +1,7 @@
 import { Injectable, Injector, ModuleWithProviders, NgModule } from '@angular/core';
 import {  EnvironmentService } from '@abp/ng.core';
 import { CMS_KIT_MANAGEMENT_ROUTE_PROVIDERS } from './providers/route.provider';
-import { EntityTypeStore } from '@fs-tw/core/entity-types';
+import { EntityFeaturesStore } from '@fs-tw/core/entity-features';
 import {
   MULTI_LINGUAL_ENTITY_TYPE_TOKEN,
 } from '@fs-tw/components/multi-lingual';
@@ -40,7 +40,7 @@ export class CmsKitManagementConfigModule {
 }
 
 function configureMULTI_LINGUAL_ENTITY_TYPE_TOKEN(injector: Injector) {
-  var store = injector.get(EntityTypeStore);
+  var store = injector.get(EntityFeaturesStore);
   var api = injector.get(
     Fs.CmsKitManagement.MultiLinguals.MultiLingualCrudService
   );

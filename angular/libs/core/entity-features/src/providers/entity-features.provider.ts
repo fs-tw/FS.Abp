@@ -1,19 +1,19 @@
 import { APP_INITIALIZER } from '@angular/core';
-import { EntityType, EntityTypeStore } from './entity-type.store';
-import { Fs } from '@fs-tw/core/proxy/entity-types';
+import { EntityFeature, EntityFeaturesStore } from './entity-features.store';
+import { Fs } from '@fs-tw/core/proxy/entity-features';
 import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 import { ExtensionsStore } from '@fs-tw/components/extensions';
 import { EnvironmentService } from '@abp/ng.core';
 
-export const ENTITY_TYPE_PROVIDERS = [
+export const ENTITY_FEATURES_PROVIDERS = [
   {
     provide: APP_INITIALIZER,
     useFactory: fetchApi,
     deps: [
-      EntityTypeStore,
+      EntityFeaturesStore,
       ExtensionsStore,
-      Fs.Abp.EntityTypes.EntityTypeDefinitionService,
+      Fs.Abp.EntityFeatures.EntityFeatureDefinitionService,
       EnvironmentService,
     ],
     multi: true,
@@ -21,9 +21,9 @@ export const ENTITY_TYPE_PROVIDERS = [
 ];
 
 export function fetchApi(
-  entityTypeStore: EntityTypeStore,
+  entityTypeStore: EntityFeaturesStore,
   extensionsStore: ExtensionsStore,
-  apiService: Fs.Abp.EntityTypes.EntityTypeDefinitionService,
+  apiService: Fs.Abp.EntityFeatures.EntityFeatureDefinitionService,
   environmentService: EnvironmentService
 ) {
   return () => {
@@ -31,10 +31,10 @@ export function fetchApi(
       .getEnvironment$()
       .pipe(
         filter((x) => !!x.apis),
-        mergeMap(x=>apiService.getEntityTypeDefinitionList()),
+        mergeMap(x=>apiService.getEntityFeatureDefinitionList()),
         tap((x) => {
           entityTypeStore.add(
-            x.map((y) => new EntityType(y.name, y.definitions))
+            x.map((y) => new EntityFeature(y.name, y.definitions))
           );
         })
       ).subscribe();
