@@ -24,16 +24,16 @@ namespace FS.CmsKitManagement
                 options.GetOrAdd<MultiLingual>(a =>
                 {
                     a.AddOrReplace<Page>(
-                        MultiLingualsEntityFeatureDefinition.Create<Page, PageTranslation>());
+                        MultiLingualsEntityFeatureDefinition.Default<Page, PageTranslation>());
 
                     a.AddOrReplace<Blog>(
-                        MultiLingualsEntityFeatureDefinition.Create<Blog, BlogTranslation>());
+                        MultiLingualsEntityFeatureDefinition.Default<Blog, BlogTranslation>());
 
                     a.AddOrReplace<BlogPost>(
-                        MultiLingualsEntityFeatureDefinition.Create<BlogPost, BlogPostTranslation>());
+                        MultiLingualsEntityFeatureDefinition.Default<BlogPost, BlogPostTranslation>());
 
                     a.AddOrReplace<MenuItem>(
-                        MultiLingualsEntityFeatureDefinition.Create<MenuItem, MenuItemTranslation>());
+                        MultiLingualsEntityFeatureDefinition.Default<MenuItem, MenuItemTranslation>());
                 });
             });
         }

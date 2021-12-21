@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.MultiLinguals
             TranslationType = translationType.FullName;
             Properties = translationType.GetProperties().Select(x => new MultiLingualProperty(x.Name)).ToList(); //EntityPropertyDefinition.CreateMany(translationType);
         }
-        public static MultiLingualsEntityFeatureDefinition Create<TEntity, TTranslation>()
+        public static MultiLingualsEntityFeatureDefinition Default<TEntity, TTranslation>()
         {
             return new MultiLingualsEntityFeatureDefinition(typeof(TEntity), typeof(TTranslation));
         }

@@ -47,10 +47,8 @@ namespace FS.Abp.Demo
             {
                 options.GetOrAdd<Volo.CmsKit.Reactions.UserReaction>(a =>
                 {
-                    a.AddOrReplace(
-                        (typeof(Volo.CmsKit.Blogs.BlogPost), new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType)),
-                        (typeof(Volo.CmsKit.Comments.Comment), new DefaultEntityFeatureDefinition(Volo.CmsKit.Comments.CommentConsts.EntityType))
-                        );
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Comments.Comment>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Comments.CommentConsts.EntityType));
                 });
 
                 options.GetOrAdd<Volo.CmsKit.Ratings.Rating>(a =>
@@ -65,7 +63,7 @@ namespace FS.Abp.Demo
 
                 options.GetOrAdd<Volo.CmsKit.MediaDescriptors.MediaDescriptor>(a =>
                 {
-                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Pages.PageConsts.EntityType));
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
                     a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(new DefaultEntityFeatureDefinition(Volo.CmsKit.Blogs.BlogPostConsts.EntityType));
                 });
 
@@ -76,32 +74,25 @@ namespace FS.Abp.Demo
 
                 options.GetOrAdd<FS.CmsKitManagement.EntityBlogs.EntityBlog>(a =>
                 {
-                    a.AddOrReplace(
-                        typeof(Volo.CmsKit.Pages.Page)
-                        );
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Pages.Page>());
                 });
 
                 options.GetOrAdd<FS.CmsKitManagement.MediaDescriptors.AttachmentMedia>(a =>
                 {
-                    a.AddOrReplace(
-                        (typeof(Volo.CmsKit.Pages.Page), null),
-                        (typeof(Volo.CmsKit.Blogs.BlogPost), null));
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Pages.Page>());
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Blogs.BlogPost>());
                 });
 
                 options.GetOrAdd<FS.CmsKitManagement.Contents.ContentDefinition>(a =>
                 {
-                    a.AddOrReplace(
-                        typeof(Volo.CmsKit.Pages.Page),
-                        typeof(Volo.CmsKit.Blogs.BlogPost)
-                        );
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Pages.Page>());
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Blogs.BlogPost>());
                 });
 
                 options.GetOrAdd<FS.CmsKitManagement.Shapes.Shape>(a =>
                 {
-                    a.AddOrReplace(
-                        typeof(Volo.CmsKit.Pages.Page),
-                        typeof(Volo.CmsKit.Blogs.BlogPost)
-                        );
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Pages.Page>());
+                    a.AddOrReplace<Volo.CmsKit.Blogs.BlogPost>(DefaultEntityFeatureDefinition.Default<Volo.CmsKit.Blogs.BlogPost>());
                 });
             });
 
