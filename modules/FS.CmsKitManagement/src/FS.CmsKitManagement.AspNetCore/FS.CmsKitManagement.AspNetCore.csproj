@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.AspNetCore\FS.Abp.EntityTypes.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityFeatures\src\FS.Abp.EntityFeatures.AspNetCore\FS.Abp.EntityFeatures.AspNetCore.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Application\FS.CmsKitManagement.Application.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.HttpApi\FS.CmsKitManagement.HttpApi.csproj" />
   </ItemGroup>

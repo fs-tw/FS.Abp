@@ -5,13 +5,14 @@ using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using FS.Abp.EntityFeatures;
 
 namespace FS.CmsKitManagement
 {
     [DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
     [DependsOn(typeof(FS.Abp.Data.AbpDataModule))]
-    [DependsOn(typeof(FS.Abp.EntityTypes.AbpEntityTypesCoreModule))]
+    [DependsOn(typeof(FS.Abp.EntityFeatures.AbpEntityFeaturesCoreModule))]
     public class CmsKitManagementDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

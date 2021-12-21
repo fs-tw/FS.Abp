@@ -1,17 +1,14 @@
-﻿using FS.Abp.EntityTypes;
-using JetBrains.Annotations;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Volo.Abp.Domain.Services;
 using Volo.CmsKit.Blogs;
 
 namespace FS.CmsKitManagement.EntityBlogs
 {
     public partial class EntityBlogsStore : IEntityBlogsStore
     {
-        protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
+        protected IOptions<EntityFeaturesOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityFeaturesOptions>>();
         public virtual async Task<EntityBlog> CreateEntityBlogAsync<T>(T entity, Blog blog)
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {

@@ -4,7 +4,6 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using System.Collections.Generic;
 using System;
-using FS.Abp.EntityTypes;
 using Volo.Abp.EventBus;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Volo.Abp.Reflection;
@@ -14,6 +13,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Volo.CmsKit.Blogs;
+using FS.Abp.EntityFeatures;
 
 namespace FS.CmsKitManagement
 {
@@ -82,10 +82,10 @@ namespace FS.CmsKitManagement
             var localHandlers = new List<Type>();
             var distributedHandlers = new List<Type>();
 
-            var options = services.ExecutePreConfiguredActions<EntityTypeOptions>();
+            var options = services.ExecutePreConfiguredActions<EntityFeaturesOptions>();
 
             options.GetOrDefault<MultiLinguals.MultiLingual>()
-                .ToList().ForEach(d =>
+                ?.ToList().ForEach(d =>
                 {
                     var handlerType = typeof(MultiLinguals.EntityTypeCreatedOrDeletedHandler<>).MakeGenericType(d.Key);
                     registerType(handlerType);

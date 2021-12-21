@@ -1,4 +1,4 @@
-﻿using FS.Abp.EntityTypes;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.Authorization;
@@ -17,9 +17,10 @@ namespace FS.CmsKitManagement
         )]
     public class CmsKitManagementTestBaseModule : AbpModule
     {
-        public override void PreConfigureServices(ServiceConfigurationContext context)
+
+        public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            PreConfigure<EntityTypeOptions>(options =>
+            Configure<EntityFeaturesOptions>(options =>
             {
                 options.GetOrAdd<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
                 {
@@ -34,13 +35,6 @@ namespace FS.CmsKitManagement
                         typeof(Volo.CmsKit.Pages.Page)
                         );
                 });
-            });
-        }
-        public override void ConfigureServices(ServiceConfigurationContext context)
-        {
-            Configure<EntityTypeOptions>(options =>
-            {
-                context.Services.ExecutePreConfiguredActions(options);
             });
 
             context.Services.AddAlwaysAllowAuthorization();

@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
-using FS.Abp.EntityTypes;
 
-namespace FS.CmsKitManagement.EntityTypes
+namespace FS.CmsKitManagement.MultiLinguals
 {
     public class MultiLingualProperty
     {
@@ -19,21 +18,21 @@ namespace FS.CmsKitManagement.EntityTypes
     }
 
     [Serializable]
-    public class MultiLingualsEntityTypeDefinition : FS.Abp.EntityTypes.EntityTypeDefinition, IEquatable<MultiLingualsEntityTypeDefinition>
+    public class MultiLingualsEntityFeatureDefinition : Abp.EntityFeatures.EntityFeatureDefinition, IEquatable<MultiLingualsEntityFeatureDefinition>
     {
         public string TranslationType { get; protected set; }
         public List<MultiLingualProperty> Properties { get; protected set; }
-        private MultiLingualsEntityTypeDefinition(System.Type entityType, System.Type translationType) : base(entityType.FullName)
+        private MultiLingualsEntityFeatureDefinition(Type entityType, Type translationType) : base(entityType.FullName)
         {
             TranslationType = translationType.FullName;
             Properties = translationType.GetProperties().Select(x => new MultiLingualProperty(x.Name)).ToList(); //EntityPropertyDefinition.CreateMany(translationType);
         }
-        public static MultiLingualsEntityTypeDefinition Create<TEntity, TTranslation>()
+        public static MultiLingualsEntityFeatureDefinition Create<TEntity, TTranslation>()
         {
-            return new MultiLingualsEntityTypeDefinition(typeof(TEntity), typeof(TTranslation));
+            return new MultiLingualsEntityFeatureDefinition(typeof(TEntity), typeof(TTranslation));
         }
 
-        public bool Equals(MultiLingualsEntityTypeDefinition other)
+        public bool Equals(MultiLingualsEntityFeatureDefinition other)
         {
             return EntityType == other?.EntityType && TranslationType == other?.TranslationType;
         }

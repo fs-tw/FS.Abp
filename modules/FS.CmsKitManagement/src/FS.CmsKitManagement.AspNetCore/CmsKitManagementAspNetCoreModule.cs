@@ -13,7 +13,7 @@ namespace FS.CmsKitManagement
     [DependsOn(
         typeof(CmsKitManagementApplicationModule),
         typeof(CmsKitManagementHttpApiModule))]
-    [DependsOn(typeof(FS.Abp.EntityTypes.AbpEntityTypesAspNetCoreModule))]
+    [DependsOn(typeof(FS.Abp.EntityFeatures.AbpEntityFeaturesAspNetCoreModule))]
     public class CmsKitManagementAspNetCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

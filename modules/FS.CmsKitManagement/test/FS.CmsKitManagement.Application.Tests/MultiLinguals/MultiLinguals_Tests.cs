@@ -21,7 +21,7 @@ namespace FS.CmsKitManagement.MultiLinguals
         {
             var multiLingualCrudAppService = GetRequiredService<IMultiLingualCrudAppService>();
             var pageRepository = GetRequiredService<IPageRepository>();
-            var options = GetRequiredService<IOptions<FS.Abp.EntityTypes.EntityTypeOptions>>();
+            var options = GetRequiredService<IOptions<FS.Abp.EntityFeatures.EntityFeaturesOptions>>();
 
             await this.WithUnitOfWorkAsync(async () =>
             {

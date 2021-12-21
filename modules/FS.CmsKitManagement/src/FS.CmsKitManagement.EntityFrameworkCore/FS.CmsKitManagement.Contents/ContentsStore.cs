@@ -1,20 +1,17 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
-using System.Threading.Tasks;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
-using Microsoft.EntityFrameworkCore;
-using FS.Abp.EntityTypes;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FS.CmsKitManagement.Contents
 {
 
     public partial class ContentsStore : IContentsStore
     {
-        protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
+        protected IOptions<EntityFeaturesOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityFeaturesOptions>>();
         public async Task<List<ContentDefinition>> ListContentDefinitionAsync<T>()
             where T : Volo.Abp.Domain.Entities.IEntity<Guid>
         {
