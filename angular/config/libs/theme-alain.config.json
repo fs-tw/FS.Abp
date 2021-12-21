@@ -9,7 +9,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
-          "outputs": ["dist/libs/theme-alain"],
+          "outputs": [
+            "dist/libs/theme-alain"
+          ],
           "options": {
             "project": "libs/theme-alain/ng-package.json"
           },
@@ -35,11 +37,14 @@
       },
       "tags": []
     }
-
   },
   "tsconfig": {
-    "@fs-tw/theme-alain": ["libs/theme-alain/src/index.ts"],
-    "@fs-tw/theme-alain/*": ["libs/theme-alain/*/src/index.ts"]
+    "@fs-tw/theme-alain": [
+      "libs/theme-alain/src/index.ts"
+    ],
+    "@fs-tw/theme-alain/*": [
+      "libs/theme-alain/*/src/index.ts"
+    ]
   },
   "devDependencies": {
     "@delon/abc": "^12.4.2",
@@ -51,5 +56,5 @@
     "@delon/mock": "^12.4.2",
     "@delon/theme": "^12.4.2",
     "@delon/util": "^12.4.2"
-}
+  }
 }
