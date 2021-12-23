@@ -31,7 +31,7 @@ import { Observable } from 'rxjs';
       <div nz-menu class="width-sm">
         <div nz-menu-item (click)="navigateToManageProfile()">
           <i nz-icon nzType="user" class="mr-sm"></i>
-          {{ 'AbpAccount::ManageYourProfile' | abpLocalization }}
+          {{ 'AbpAccount::MyAccount' | abpLocalization }}
         </div>
         <li nz-menu-divider></li>
         <div nz-menu-item (click)="logout()">
