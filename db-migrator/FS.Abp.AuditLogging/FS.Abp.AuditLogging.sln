@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.DbMigrator", "src\FS.Abp.AuditLogging.DbMigrator\FS.Abp.AuditLogging.DbMigrator.csproj", "{AA94D832-1CCC-4715-95A9-A483F23A1A5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{2CC10A5A-F407-4436-AA78-80294BC2F504}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Core", "..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Core\FS.Abp.AuditLogging.Core.csproj", "{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.AspNetCore", "..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.AspNetCore\FS.Abp.AuditLogging.AspNetCore.csproj", "{AD20BC03-9B57-46B2-A9C9-C59708CADD58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AutoFilterer.Core", "..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj", "{3A393494-2E46-4E09-A23B-D30EE0441098}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.EntityFrameworkCore", "..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.EntityFrameworkCore\FS.Abp.AuditLogging.EntityFrameworkCore.csproj", "{8622E481-C8A2-4307-A6C3-0D5289313C40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,31 @@ Global
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A393494-2E46-4E09-A23B-D30EE0441098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A393494-2E46-4E09-A23B-D30EE0441098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A393494-2E46-4E09-A23B-D30EE0441098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A393494-2E46-4E09-A23B-D30EE0441098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8622E481-C8A2-4307-A6C3-0D5289313C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8622E481-C8A2-4307-A6C3-0D5289313C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8622E481-C8A2-4307-A6C3-0D5289313C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8622E481-C8A2-4307-A6C3-0D5289313C40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED} = {2CC10A5A-F407-4436-AA78-80294BC2F504}
+		{AD20BC03-9B57-46B2-A9C9-C59708CADD58} = {2CC10A5A-F407-4436-AA78-80294BC2F504}
+		{3A393494-2E46-4E09-A23B-D30EE0441098} = {2CC10A5A-F407-4436-AA78-80294BC2F504}
+		{8622E481-C8A2-4307-A6C3-0D5289313C40} = {2CC10A5A-F407-4436-AA78-80294BC2F504}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

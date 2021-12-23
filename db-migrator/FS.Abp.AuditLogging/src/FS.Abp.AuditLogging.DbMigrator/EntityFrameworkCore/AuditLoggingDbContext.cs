@@ -10,10 +10,11 @@ namespace FS.Abp.AuditLogging.EntityFrameworkCore
     public class AuditLoggingDbContext : 
         AbpDbContext<AuditLoggingDbContext>
     {
-        
+
         public AuditLoggingDbContext(DbContextOptions<AuditLoggingDbContext> options)
             : base(options)
         {
+           // Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingDbContext
 
         }
 

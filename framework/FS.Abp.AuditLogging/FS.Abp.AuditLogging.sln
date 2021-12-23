@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AutoFilterer.Core", "..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj", "{3A393494-2E46-4E09-A23B-D30EE0441098}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.EntityFrameworkCore", "src\FS.Abp.AuditLogging.EntityFrameworkCore\FS.Abp.AuditLogging.EntityFrameworkCore.csproj", "{D76415B0-5EF6-466D-B9D7-B6CC72860977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3A393494-2E46-4E09-A23B-D30EE0441098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A393494-2E46-4E09-A23B-D30EE0441098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A393494-2E46-4E09-A23B-D30EE0441098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76415B0-5EF6-466D-B9D7-B6CC72860977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76415B0-5EF6-466D-B9D7-B6CC72860977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76415B0-5EF6-466D-B9D7-B6CC72860977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76415B0-5EF6-466D-B9D7-B6CC72860977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{2A5559B7-BD98-43A7-B6B0-FA43A8E1C6ED} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{AD20BC03-9B57-46B2-A9C9-C59708CADD58} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{3A393494-2E46-4E09-A23B-D30EE0441098} = {130A96A4-1682-4FC8-A71B-7891896A80D8}
+		{D76415B0-5EF6-466D-B9D7-B6CC72860977} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}

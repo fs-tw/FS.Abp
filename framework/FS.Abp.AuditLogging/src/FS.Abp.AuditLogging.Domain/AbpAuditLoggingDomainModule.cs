@@ -5,9 +5,9 @@ namespace FS.Abp.AuditLogging
 {
     [DependsOn(
         typeof(AbpDddDomainModule),
-        typeof(AuditLoggingDomainSharedModule)
+        typeof(AbpAuditLoggingDomainSharedModule)
     )]
-    public class AuditLoggingDomainModule : AbpModule
+    public class AbpAuditLoggingDomainModule : AbpModule
     {
         
     }

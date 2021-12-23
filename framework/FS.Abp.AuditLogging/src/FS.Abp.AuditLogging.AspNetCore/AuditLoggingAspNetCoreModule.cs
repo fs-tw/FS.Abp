@@ -9,10 +9,9 @@ using Volo.Abp.AuditLogging.EntityFrameworkCore;
 namespace FS.Abp.AuditLogging
 {
     [DependsOn(
-        typeof(FS.Abp.AuditLogging.AbpAuditLoggingCoreModule),
+        typeof(FS.Abp.AuditLogging.EntityFrameworkCore.AuditLoggingEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreMvcModule),
         typeof(AbpAutoMapperModule))]
-    [DependsOn(typeof(Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule))]
     public class AbpAuditLoggingAspNetCoreModule : AbpModule
     {
 

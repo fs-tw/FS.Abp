@@ -6,22 +6,17 @@ using Volo.Abp.Modularity;
 
 namespace FS.Abp.AuditLogging.EntityFrameworkCore
 {
-    [DependsOn(
-        typeof(AuditLoggingDomainModule),
-        typeof(AbpEntityFrameworkCoreModule)
-    )]
     [DependsOn(typeof(Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AbpAuditLoggingCoreModule))]
     public class AuditLoggingEntityFrameworkCoreModule : AbpModule
     {
+        public override void PreConfigureServices(ServiceConfigurationContext context)
+        {
+            AbpAuditLoggingEfCoreEntityExtensionMappings.Configure();
+        }
+
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAbpDbContext<AbpAuditLoggingDbContext>(options =>
-            {
-                //options.AddRepository<AuditLogAction, EfCoreAuditLogActionRepository>();
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
-            });
         }
     }
 }
