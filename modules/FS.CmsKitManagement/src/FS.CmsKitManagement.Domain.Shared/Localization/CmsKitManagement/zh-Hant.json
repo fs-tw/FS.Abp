@@ -14,7 +14,8 @@
     "PickFiles:ImageRepeat": "{0} 檔案名稱重複",
     "PickFiles:AreYouSureToDeleteFile": "確定刪除檔案 {0} ?",
 
-    "Blogs.Blogs": "文章分類",
+    "Blogs.Blogs": "部落格分類",
+    "Blogs:Route": "分類",
 
 
     "BlogPost": "文章",

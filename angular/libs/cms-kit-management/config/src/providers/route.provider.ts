@@ -29,10 +29,10 @@ const blogsModules = [
     order: 1,
   },
   {
-    path: '/cms-kit-management/blogs/blog-management',
+    path: '/cms-kit-management/blogs/blog-management/blog-post',
     name: eCmsKitManagementRouteNames.BlogPosts,
     parentName: eCmsKitManagementRouteNames.Blogs,
-    iconClass: 'fa fa-blog',
+    iconClass: 'fa fa-newspaper',
     order: 2,
   },
 ];
