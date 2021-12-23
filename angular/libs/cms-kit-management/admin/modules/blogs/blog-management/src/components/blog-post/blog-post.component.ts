@@ -71,7 +71,9 @@ export class BlogPostComponent implements OnInit {
         entityProps: BLOG_POST_ENTITY_PROPS,
         createFormProps: BLOG_POST_CREATE_FORM_PROPS,
         editFormProps: BLOG_POST_EDIT_FORM_PROPS,
-      })
+      },
+      { shortEntityType: this.ShortEntityType }
+      )
       .subscribe((x) => {
         switch (x.method) {
           case 'Create':

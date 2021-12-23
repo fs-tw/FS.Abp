@@ -30,7 +30,7 @@ const blogsModules = [
   },
   {
     path: '/cms-kit-management/blogs/blog-management',
-    name: eCmsKitManagementRouteNames.BlogsBlogsManagement,
+    name: eCmsKitManagementRouteNames.BlogPosts,
     parentName: eCmsKitManagementRouteNames.Blogs,
     iconClass: 'fa fa-blog',
     order: 2,
