@@ -27,7 +27,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentPropertyCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentPropertyCreateDto
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
@@ -39,7 +39,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentPropertyUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentPropertyUpdateDto
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 

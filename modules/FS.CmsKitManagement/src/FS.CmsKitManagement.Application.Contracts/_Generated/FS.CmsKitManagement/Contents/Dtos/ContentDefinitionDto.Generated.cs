@@ -23,7 +23,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentDefinitionCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentDefinitionCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -31,7 +31,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentDefinitionUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentDefinitionUpdateDto
     {
         public virtual string EntityType { get; set; }
 

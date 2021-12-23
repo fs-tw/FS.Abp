@@ -25,7 +25,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ShapeCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -35,7 +35,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ShapeUpdateDto
     {
         public virtual string EntityType { get; set; }
 

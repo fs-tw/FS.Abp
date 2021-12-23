@@ -25,7 +25,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualTranslationCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class MultiLingualTranslationCreateDto
     {
         public virtual string Culture { get; set; }
 
@@ -35,7 +35,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualTranslationUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class MultiLingualTranslationUpdateDto
     {
         public virtual string Culture { get; set; }
 

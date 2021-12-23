@@ -25,7 +25,7 @@ namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 
     }
 
-    public partial class AttachmentMediaCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class AttachmentMediaCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -35,7 +35,7 @@ namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 
     }
 
-    public partial class AttachmentMediaUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class AttachmentMediaUpdateDto
     {
         public virtual string EntityType { get; set; }
 

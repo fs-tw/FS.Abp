@@ -25,7 +25,7 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
 
     }
 
-    public partial class EntityBlogCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class EntityBlogCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -35,7 +35,7 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
 
     }
 
-    public partial class EntityBlogUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class EntityBlogUpdateDto
     {
         public virtual string EntityType { get; set; }
 

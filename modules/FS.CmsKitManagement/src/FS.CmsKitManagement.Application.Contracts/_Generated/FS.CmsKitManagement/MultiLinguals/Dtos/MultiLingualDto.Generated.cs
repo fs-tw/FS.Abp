@@ -23,7 +23,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class MultiLingualCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -31,7 +31,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class MultiLingualUpdateDto
     {
         public virtual string EntityType { get; set; }
 
