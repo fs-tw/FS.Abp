@@ -8,7 +8,7 @@ namespace FS.Abp.MediatR
 
         public Volo.Abp.Uow.AbpUnitOfWorkOptions Options { get; set; }
 
-        public bool RequiresNew { get; set; }
+        public bool RequiresNew { get; set; } = true;
 
         public BeginUow()
         {
