@@ -26,11 +26,6 @@
               "ajv-formats"
             ],
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-                "output": "/assets/"
-              },
               "apps/alain-app/src/favicon.ico",
               "apps/alain-app/src/assets"
             ],
