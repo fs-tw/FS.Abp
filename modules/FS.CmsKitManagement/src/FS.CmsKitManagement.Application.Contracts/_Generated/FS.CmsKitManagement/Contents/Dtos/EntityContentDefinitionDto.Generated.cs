@@ -11,14 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
-
-    public partial class EntityContentDefinitionPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class EntityContentDefinitionDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -30,7 +25,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class EntityContentDefinitionCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class EntityContentDefinitionCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -40,7 +35,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class EntityContentDefinitionUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class EntityContentDefinitionUpdateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -50,7 +45,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class EntityContentDefinitionGetListDto : SearchResultRequestDto
+    public partial class EntityContentDefinitionGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

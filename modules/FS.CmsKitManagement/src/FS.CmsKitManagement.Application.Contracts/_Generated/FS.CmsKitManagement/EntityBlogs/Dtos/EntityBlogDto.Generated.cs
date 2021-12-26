@@ -11,14 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.EntityBlogs.Dtos
 {
-
-    public partial class EntityBlogPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class EntityBlogDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -30,7 +25,7 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
 
     }
 
-    public partial class EntityBlogCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class EntityBlogCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -40,7 +35,7 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
 
     }
 
-    public partial class EntityBlogUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class EntityBlogUpdateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -50,7 +45,7 @@ namespace FS.CmsKitManagement.EntityBlogs.Dtos
 
     }
 
-    public partial class EntityBlogGetListDto : SearchResultRequestDto
+    public partial class EntityBlogGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

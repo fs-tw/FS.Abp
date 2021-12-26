@@ -1,0 +1,53 @@
+{
+  "order": 2001,
+  "nx": {
+    "audit-log-management": { "tags": [] }
+  },
+  "angular": {
+    "audit-log-management": {
+      "projectType": "library",
+      "root": "libs/audit-log-management",
+      "sourceRoot": "libs/audit-log-management/src",
+      "prefix": "fs",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/audit-log-management/tsconfig.lib.json",
+            "project": "libs/audit-log-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/audit-log-management/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/audit-log-management/src/**/*.ts",
+              "libs/audit-log-management/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/audit-log-management"],
+          "options": {
+            "jestConfig": "libs/audit-log-management/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/audit-log-management": [
+      "libs/audit-log-management/src/index.ts"
+    ],
+    "@fs-tw/audit-log-management/*": [
+      "libs/audit-log-management/*/src/index.ts"
+    ]
+  }
+}

@@ -11,14 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Shapes.Dtos
 {
-
-    public partial class ShapePrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class ShapeDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -30,7 +25,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ShapeCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -40,7 +35,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ShapeUpdateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -50,7 +45,7 @@ namespace FS.CmsKitManagement.Shapes.Dtos
 
     }
 
-    public partial class ShapeGetListDto : SearchResultRequestDto
+    public partial class ShapeGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

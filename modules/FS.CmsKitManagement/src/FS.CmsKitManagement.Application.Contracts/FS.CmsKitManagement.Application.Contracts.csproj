@@ -12,12 +12,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="_Generated\FS.CmsKitManagement\Blogs\IBlogsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Contents\IContentsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\EntityBlogs\IEntityBlogsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MediaDescriptors\IMediaDescriptorsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualsApi.Generated.cs" />
+    <Compile Remove="_Generated\FS.CmsKitManagement\Shapes\IShapesApi.Generated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR.Core\FS.Abp.MediatR.Core.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />-->
+    <!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Application.Contracts\FS.Abp.AutoFilterer.Application.Contracts.csproj" />-->
+    <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.CmsKit.Application.Contracts" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR\FS.Abp.MediatR.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
-    <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,10 +39,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogPostSettingAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Blogs</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Blogs\IBlogsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Blogs</DependentUpon>
     </Compile>
@@ -65,10 +74,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Contents\IContentsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Contents</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Contents\IEntityContentCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Contents</DependentUpon>
@@ -93,19 +98,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EntityBlogs</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\EntityBlogs\IEntityBlogsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EntityBlogs</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\Dtos\AttachmentMediaDto.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IAttachmentMediaCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>MediaDescriptors</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MediaDescriptors\IMediaDescriptorsApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MediaDescriptors</DependentUpon>
     </Compile>
@@ -129,10 +126,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MultiLinguals</DependentUpon>
     </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualsApi.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>MultiLinguals</DependentUpon>
-    </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\MultiLinguals\IMultiLingualTranslationCrudAppService.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>MultiLinguals</DependentUpon>
@@ -150,10 +143,6 @@
       <DependentUpon>Dtos</DependentUpon>
     </Compile>
     <Compile Update="_Generated\FS.CmsKitManagement\Shapes\IShapeCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Shapes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CmsKitManagement\Shapes\IShapesApi.Generated.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Shapes</DependentUpon>
     </Compile>

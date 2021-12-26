@@ -11,6 +11,7 @@ namespace FS.Abp.EntityFrameworkCore
     [DependsOn(
         typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule)
         )]
+    [DependsOn(typeof(FS.Abp.AuditLogging.EntityFrameworkCore.AuditLoggingEntityFrameworkCoreModule))]
     public class AbpEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

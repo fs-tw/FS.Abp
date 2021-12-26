@@ -30,23 +30,17 @@
       "@fs-tw/cms-kit-management/*": [
         "libs/cms-kit-management/*/src/index.ts"
       ],
-      "@fs-tw/coding-management": [
-        "libs/coding-management/src/index.ts"
-      ],
-      "@fs-tw/coding-management/*": [
-        "libs/coding-management/*/src/index.ts"
-      ],
       "@fs-tw/components": [
         "libs/components/src/index.ts"
       ],
       "@fs-tw/components/*": [
         "libs/components/*/src/index.ts"
       ],
-      "@fs-tw/entity-type-management": [
-        "libs/entity-type-management/src/index.ts"
+      "@fs-tw/core": [
+        "libs/core/src/index.ts"
       ],
-      "@fs-tw/entity-type-management/*": [
-        "libs/entity-type-management/*/src/index.ts"
+      "@fs-tw/core/*": [
+        "libs/core/*/src/index.ts"
       ]
     }
   },

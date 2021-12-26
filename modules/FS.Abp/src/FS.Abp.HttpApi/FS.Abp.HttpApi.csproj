@@ -7,10 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AspNetCore\src\FS.Abp.AspNetCore.Mvc\FS.Abp.AspNetCore.Mvc.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Application\FS.Abp.EntityTypes.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.HttpApi\FS.Abp.AuditLogging.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.HttpApi\FS.Abp.EntityTypes.HttpApi.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.JsonSubTypes\src\FS.Abp.JsonSubTypes.NewtonsoftJson\FS.Abp.JsonSubTypes.NewtonsoftJson.csproj" />
     <ProjectReference Include="..\FS.Abp.Application.Contracts\FS.Abp.Application.Contracts.csproj" />
   </ItemGroup>
 

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Application.Contracts\FS.CmsKitManagement.Application.Contracts.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
+    <!--<ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />-->
     <ProjectReference Include="..\FS.Abp.Demo.Domain.Shared\FS.Abp.Demo.Domain.Shared.csproj" />
   </ItemGroup>
 

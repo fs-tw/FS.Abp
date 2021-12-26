@@ -1,16 +1,14 @@
-﻿using FS.Abp.EntityTypes;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Volo.Abp.Domain.Services;
 
 namespace FS.CmsKitManagement.MultiLinguals
 {
     public partial class MultiLingualsStore : IMultiLingualsStore
     {
-        protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
+        protected IOptions<EntityFeaturesOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityFeaturesOptions>>();
 
         public async Task<MultiLingual> FindMultiLingualAsync(string entityType, string entityId)
         {

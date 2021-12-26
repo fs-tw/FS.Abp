@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FS.Abp.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Abp.EntityFeatures.Domain\FS.Abp.EntityFeatures.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

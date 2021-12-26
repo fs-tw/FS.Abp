@@ -28,25 +28,25 @@ namespace FS.CodingManagement.SerialNumbers
         [HttpGet]
         [Route("serial-number")]
         [RemoteService(true)]
-        public Task<PagedResultDto<SerialNumberWithDetailsDto>> GetListAsync(SerialNumberGetListDto SerialNumberGetList)
+        public Task<PagedResultDto<SerialNumberWithDetailsDto>> GetListAsync(SerialNumberGetListDto SerialNumber)
         {
-            return this.SerialNumberCrudAppService.GetListAsync(SerialNumberGetList);
+            return this.SerialNumberCrudAppService.GetListAsync(SerialNumber);
         }
 
         [HttpPost]
         [Route("serial-number")]
         [NonAction][RemoteService(false)]
-        public Task<SerialNumberWithDetailsDto> CreateAsync(SerialNumberCreateDto SerialNumberCreate)
+        public Task<SerialNumberWithDetailsDto> CreateAsync(SerialNumberCreateDto SerialNumber)
         {
-            return this.SerialNumberCrudAppService.CreateAsync(SerialNumberCreate);
+            return this.SerialNumberCrudAppService.CreateAsync(SerialNumber);
         }
 
         [HttpPut]
         [Route("serial-number/id")]
         [NonAction][RemoteService(false)]
-        public Task<SerialNumberWithDetailsDto> UpdateAsync([FromQuery] SerialNumberPrimaryKeyDto SerialNumberPrimaryKey, SerialNumberUpdateDto SerialNumberUpdate)
+        public Task<SerialNumberWithDetailsDto> UpdateAsync([FromQuery] SerialNumberPrimaryKeyDto SerialNumberPrimaryKey, SerialNumberUpdateDto SerialNumber)
         {
-            return this.SerialNumberCrudAppService.UpdateAsync(SerialNumberPrimaryKey,SerialNumberUpdate);
+            return this.SerialNumberCrudAppService.UpdateAsync(SerialNumberPrimaryKey,SerialNumber);
         }
 
         [HttpDelete]

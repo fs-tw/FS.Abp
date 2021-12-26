@@ -1,0 +1,15 @@
+{
+  "name": "@npm/cms-kit-management",
+  "version": "444.0.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fs-tw/fs.abp.git"
+  },
+  "peerDependencies": {
+  },
+  "dependencies": {
+    "ngx-quill": "^14.3.0",
+    "quill": "^1.3.7"
+  }
+}

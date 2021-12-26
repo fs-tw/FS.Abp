@@ -66,6 +66,10 @@ namespace FS.CmsKitManagement
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
         )]
+
+    [DependsOn(typeof(FS.Abp.EntityTypes.AbpEntityTypesAspNetCoreModule))]
+    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementAspNetCoreModule))]
+    [DependsOn(typeof(FS.Abp.Swashbuckle.AbpSwashbuckleModule))]
     public class CmsKitManagementWebUnifiedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -94,7 +98,7 @@ namespace FS.CmsKitManagement
                 options =>
                 {
                     options.SwaggerDoc("v1", new OpenApiInfo { Title = "CmsKitManagement API", Version = "v1" });
-                    options.DocInclusionPredicate((docName, description) => true);
+                    //options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
 

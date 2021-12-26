@@ -1,0 +1,52 @@
+{
+  "order": 2001,
+  "angular": {
+    "core": {
+      "projectType": "library",
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": [
+            "dist/libs/core"
+          ],
+          "options": {
+            "project": "libs/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/src/**/*.ts",
+              "libs/core/src/**/*.html",
+              "libs/core/entity-types/**/*.ts",
+              "libs/core/entity-types/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    }
+  },
+  "tsconfig": {
+    "@fs-tw/core": [
+      "libs/core/src/index.ts"
+    ],
+    "@fs-tw/core/*": [
+      "libs/core/*/src/index.ts"
+    ]
+  },
+  "devDependencies": {}
+}

@@ -12,6 +12,7 @@ namespace FS.Abp
     [DependsOn(
         typeof(EasyAbp.Abp.Trees.AbpTreesDomainModule)
         )]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingDomainModule))]
     public class AbpDomainModule : AbpModule
     {
 

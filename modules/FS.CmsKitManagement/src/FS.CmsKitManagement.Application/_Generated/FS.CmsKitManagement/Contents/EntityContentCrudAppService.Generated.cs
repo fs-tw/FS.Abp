@@ -17,7 +17,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.Contents
 {
     public partial class EntityContentCrudAppService :  // auto-generated
-        FS.Abp.Application.Services.EntityWithKeyCrudAppService<FS.CmsKitManagement.Contents.EntityContent, FS.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto, FS.CmsKitManagement.Contents.Dtos.EntityContentPrimaryKeyDto, Guid, FS.CmsKitManagement.Contents.Dtos.EntityContentGetListDto, FS.CmsKitManagement.Contents.Dtos.EntityContentCreateDto, FS.CmsKitManagement.Contents.Dtos.EntityContentUpdateDto>,
+        Volo.Abp.Application.Services.CrudAppService<FS.CmsKitManagement.Contents.EntityContent, FS.CmsKitManagement.Contents.Dtos.EntityContentWithDetailsDto, Guid, FS.CmsKitManagement.Contents.Dtos.EntityContentGetListDto, FS.CmsKitManagement.Contents.Dtos.EntityContentCreateDto, FS.CmsKitManagement.Contents.Dtos.EntityContentUpdateDto>,
         IEntityContentCrudAppService
     {
         private readonly IEntityContentRepository _repository;

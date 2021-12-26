@@ -6,10 +6,9 @@ $rootFolder = (Get-Item -Path "./" -Verbose).FullName
 
 # List of solutions used only in development mode
 $solutionPaths = @(
-		"../framework/FS.Abp.AspNetCore",
-		"../framework/FS.Abp.Npoi.Mapper",
-		"../modules/FS.LineNotify",
-        "../"
+		"../",
+        "../applications/CFTA/aspnet-core",
+        "../applications/FS.Abp.Demo/aspnet-core"
 	)
 
 if ($full -eq "-f")

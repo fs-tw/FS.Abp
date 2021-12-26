@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Abp/metadata": [
+        "projects/metadata/src/public-api.ts"
+      ],
+      "@f-s.Abp/metadata/config": [
+        "projects/metadata/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/metadata/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/metadata/src/lib/proxy/*"]
+    }
+  }
+}

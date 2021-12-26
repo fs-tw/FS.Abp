@@ -1,10 +1,5 @@
 {
   "order": 1002,
-  "nx": {
-    "theme-alain": {
-      "tags": []
-    }
-  },
   "angular": {
     "theme-alain": {
       "projectType": "library",
@@ -14,15 +9,21 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
+          "outputs": [
+            "dist/libs/theme-alain"
+          ],
           "options": {
-            "tsConfig": "libs/theme-alain/tsconfig.lib.json",
             "project": "libs/theme-alain/ng-package.json"
           },
           "configurations": {
             "production": {
               "tsConfig": "libs/theme-alain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/theme-alain/tsconfig.lib.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
@@ -32,21 +33,28 @@
               "libs/theme-alain/src/**/*.html"
             ]
           }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/theme-alain"],
-          "options": {
-            "jestConfig": "libs/theme-alain/jest.config.js",
-            "passWithNoTests": true
-          }
         }
-      }
+      },
+      "tags": []
     }
-
   },
   "tsconfig": {
-    "@fs-tw/theme-alain": ["libs/theme-alain/src/index.ts"],
-    "@fs-tw/theme-alain/*": ["libs/theme-alain/*/src/index.ts"]
-  }  
+    "@fs-tw/theme-alain": [
+      "libs/theme-alain/src/index.ts"
+    ],
+    "@fs-tw/theme-alain/*": [
+      "libs/theme-alain/*/src/index.ts"
+    ]
+  },
+  "devDependencies": {
+    "@delon/abc": "^12.4.2",
+    "@delon/acl": "^12.4.2",
+    "@delon/auth": "^12.4.2",
+    "@delon/cache": "^12.4.2",
+    "@delon/chart": "^12.4.2",
+    "@delon/form": "^12.4.2",
+    "@delon/mock": "^12.4.2",
+    "@delon/theme": "^12.4.2",
+    "@delon/util": "^12.4.2"
+  }
 }

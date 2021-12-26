@@ -9,8 +9,9 @@ namespace FS.Abp
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    [DependsOn(typeof(FS.Abp.MediatR.AbpMediatRModule))]
-    [DependsOn(typeof(FS.Abp.AutoFilterer.Abstractions.AbpAutoFiltererAbstractionsModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationContractsModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingApplicationContractsModule))]
+    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesApplicationContractsModule))]
     public class AbpApplicationContractsModule : AbpModule
     {
 

@@ -35,9 +35,9 @@ class ComponentService
     PagedResultDto<Fs.CmsKitManagement.Shapes.Dtos.ShapeWithDetailsDto>
   > {
     let service = this.injector.get(
-      Fs.CmsKitManagement.Shapes.ShapesApiService
+      Fs.CmsKitManagement.Shapes.ShapeCrudService
     );
-    return service.getListByShape(Shape);
+    return service.getList(Shape);
   }
 }
 

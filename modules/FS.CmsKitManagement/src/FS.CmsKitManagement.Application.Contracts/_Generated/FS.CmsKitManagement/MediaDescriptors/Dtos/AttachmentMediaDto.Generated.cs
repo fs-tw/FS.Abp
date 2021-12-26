@@ -11,14 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 {
-
-    public partial class AttachmentMediaPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class AttachmentMediaDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -30,7 +25,7 @@ namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 
     }
 
-    public partial class AttachmentMediaCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class AttachmentMediaCreateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -40,7 +35,7 @@ namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 
     }
 
-    public partial class AttachmentMediaUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class AttachmentMediaUpdateDto
     {
         public virtual string EntityType { get; set; }
 
@@ -50,7 +45,7 @@ namespace FS.CmsKitManagement.MediaDescriptors.Dtos
 
     }
 
-    public partial class AttachmentMediaGetListDto : SearchResultRequestDto
+    public partial class AttachmentMediaGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

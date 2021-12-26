@@ -11,14 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.Contents.Dtos
 {
-
-    public partial class ContentPropertyPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class ContentPropertyDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -32,7 +27,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentPropertyCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentPropertyCreateDto
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
@@ -44,7 +39,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentPropertyUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class ContentPropertyUpdateDto
     {
         public virtual System.Guid ContentDefinitionId { get; set; }
 
@@ -56,7 +51,7 @@ namespace FS.CmsKitManagement.Contents.Dtos
 
     }
 
-    public partial class ContentPropertyGetListDto : SearchResultRequestDto
+    public partial class ContentPropertyGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

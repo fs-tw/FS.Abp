@@ -1,159 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <efcore context-namespace="FS.CodingManagement.EntityFrameworkCore" namespace="FS.CodingManagement" p1:name="CodingManagementDbContext" p1:Guid="11f10c13-9344-4d48-aeac-99210bcf92a4" p1:VersionTag="4.4.2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
-  <class name="$ComplexTypes">
-    <component class="FS.CodingManagement.CreationAuditedEntity" IsExternal="true" p1:Guid="c5f7b5f5-353a-40a2-bc09-98fadea28ccb" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="2f5ac194-4c3e-4a0e-846d-79e1bd3d69d5">
-        <column name="" />
-      </property>
-      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="35c852cd-8ab9-40c1-bee7-bafc97bbbb18">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.CodingManagement.AuditedEntity" IsExternal="true" p1:Guid="9746d69b-19e9-459c-ae7b-4e6a5c3816a6" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="78eaab17-f4c7-43bb-9846-a648a97c38fc">
-        <column name="" />
-      </property>
-      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a68f5eab-5f72-49e8-bbcc-e7bfa94e3d2f">
-        <column name="" />
-      </property>
-      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="46f7bb4c-5f7a-4480-af8a-afb2b1562aba">
-        <column name="" />
-      </property>
-      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fa52b97a-134d-4edb-b47b-f12b5e32f7a8">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.CodingManagement.FullAuditedEntity" IsExternal="true" p1:Guid="1408c986-17f9-4efd-a00c-1a7d9c95bcce" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="e40b5dda-8173-4c99-bbeb-d1bcc98db7d4">
-        <column name="" />
-      </property>
-      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0d023365-f087-4f5d-9612-f71f102ca215">
-        <column name="" />
-      </property>
-      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="92d6b16a-fdac-4baa-a312-137b4226eb60">
-        <column name="" />
-      </property>
-      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="46e9a016-8dda-4166-9bb9-a6c3338d03b1">
-        <column name="" />
-      </property>
-      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="de9140ea-f133-4e51-a399-9593f21cea52">
-        <column name="" />
-      </property>
-      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4493abaa-8f60-4639-9006-93934121cf68">
-        <column name="" />
-      </property>
-      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="678fdc84-ef23-4bbb-b1d4-49a07966dc85">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.CodingManagement.AggregateRoot" IsExternal="true" p1:Guid="cea732ae-7c98-4eb8-8b50-9fce045cbfa5" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dceccf9b-df25-46a9-8dde-8d432cc451eb">
-        <column name="" />
-      </property>
-      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba73fd4d-5ca2-45bd-9926-82a87869701e">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.CodingManagement.CreationAuditedAggregateRoot" IsExternal="true" p1:Guid="9ee4edcd-013b-4d3c-9dd2-69f47c5a0760" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="803e5cae-e9b7-4c8e-93d4-f9c80c88c33c">
-        <column name="" />
-      </property>
-      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="91109b0b-e4ea-49c0-a220-562f400f7a8a">
-        <column name="" />
-      </property>
-      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6d976b67-d53e-483a-a3e3-b18d10038ede">
-        <column name="" />
-      </property>
-      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2e6253cc-7c06-4220-813e-d25f3c45150a">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.CodingManagement.AuditedAggregateRoot" IsExternal="true" p1:Guid="52233b8a-5f97-4690-8a47-1037b408d1ed" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="4425ed2e-e694-493b-a64c-425ab6b23a38">
-        <column name="" />
-      </property>
-      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f9433946-c742-44e4-ad01-112a60398f42">
-        <column name="" />
-      </property>
-      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a8ef1fc4-15c7-46ac-afb1-ea35c5398d42">
-        <column name="" />
-      </property>
-      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1531a95a-827b-43b8-a9b9-d90cead365eb">
-        <column name="" />
-      </property>
-      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="155ad876-8c13-4a03-9b24-d513e7c717bd">
-        <column name="" />
-      </property>
-      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="30741470-fc02-43ff-881b-27f5fd6efca2">
-        <column name="" />
-      </property>
-    </component>
-    <component class="FS.CodingManagement.FullAuditedAggregateRoot" IsExternal="true" p1:Guid="2a624b82-d21a-40ac-9450-4951a3b2422b" p1:GenerateDTO="False">
-      <p1:Attributes>
-        <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-          <p1:AttributeConstructor />
-        </p1:Attribute>
-      </p1:Attributes>
-      <property name="CreationTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="cb029fcc-4015-4055-9ec1-cf348e3845db">
-        <column name="" />
-      </property>
-      <property name="CreatorId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="51ee87c9-6544-4357-80c4-68f77804eb40">
-        <column name="" />
-      </property>
-      <property name="LastModificationTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cf6ed68e-9996-4e03-85b9-0d1dbc663b67">
-        <column name="" />
-      </property>
-      <property name="LastModifierId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ff445f2f-afa6-42b0-adb1-5e90ccfa3e0d">
-        <column name="" />
-      </property>
-      <property name="IsDeleted" type="Boolean" p1:ValidateRequired="true" p1:Guid="373155d4-4709-410e-b785-c0796f6cf9d2">
-        <column name="" />
-      </property>
-      <property name="DeleterId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3184f836-d2e1-43e9-befa-77fb7bfda312">
-        <column name="" />
-      </property>
-      <property name="DeletionTime" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="95b3ff07-f53c-41c0-8ad3-9b452fad4ed9">
-        <column name="" />
-      </property>
-      <property name="ExtraProperties" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1a432fb0-33c1-4b67-bbf0-c934c7f2fab3">
-        <column name="" />
-      </property>
-      <property name="ConcurrencyStamp" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="40242fd0-05c5-4269-bab5-86e938e32c18">
-        <column name="" />
-      </property>
-    </component>
-  </class>
-  <class name="FS.CodingManagement.Codes.Coding" entity-set="Codings" p1:Guid="485bfbf7-ffc6-4138-8bff-cc06beae5a5b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Coding&gt;">
+  <class name="FS.CodingManagement.Codes.Coding" entity-set="Codings" p1:Guid="485bfbf7-ffc6-4138-8bff-cc06beae5a5b" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Coding&gt;">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -213,16 +60,8 @@
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7a7bb42d-501e-48f7-8449-5ac04a4f34f8" p1:GenerateDTO="False">
       <column name="" />
     </property>
-    <component name="AuditedAggregateRoot" class="FS.CodingManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="8271b1eb-995a-4d4e-8594-02d0e8bf3c63" p1:Shadow="True">
-      <property name="CreationTime" />
-      <property name="CreatorId" />
-      <property name="LastModificationTime" />
-      <property name="LastModifierId" />
-      <property name="ExtraProperties" />
-      <property name="ConcurrencyStamp" />
-    </component>
   </class>
-  <class name="FS.CodingManagement.SerialNumbers.SerialNumber" entity-set="SerialNumbers" schema="dbo" p1:Guid="922c1139-ce7f-4769-9fee-9214a9724a02" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CodingManagement.SerialNumbers.SerialNumber" entity-set="SerialNumbers" schema="dbo" p1:Guid="922c1139-ce7f-4769-9fee-9214a9724a02" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
@@ -270,14 +109,6 @@
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cf4b5658-7695-4b54-becb-6f5272955f1c" p1:GenerateDTO="False">
       <column name="" />
     </property>
-    <component name="AuditedAggregateRoot" class="FS.CodingManagement.AuditedAggregateRoot" p1:ValidateRequired="false" p1:Guid="d23f016f-039d-4f2b-a12e-cbd431d4c38c" p1:Shadow="True">
-      <property name="CreationTime" />
-      <property name="CreatorId" />
-      <property name="LastModificationTime" />
-      <property name="LastModifierId" />
-      <property name="ExtraProperties" />
-      <property name="ConcurrencyStamp" />
-    </component>
   </class>
   <associations>
     <association name="Coding_Codings" cardinality="OneToMany" p1:Guid="2a6ab297-8eab-4441-925d-bf1c929379f0">

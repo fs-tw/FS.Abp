@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
-using AutoFilterer.Types;
+﻿using Volo.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.EntityBlogs.Dtos
 {
-    public partial class EntityBlogGetListDto : SearchResultRequestDto
+    public partial class EntityBlogGetListDto : PagedAndSortedResultRequestDto
     {
         public string EntityType { get; set; }
         public string EntityId { get; set; }

@@ -11,14 +11,9 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.MultiLinguals.Dtos
 {
-
-    public partial class MultiLingualTranslationPrimaryKeyDto : EntityDto<Guid>
-    {
-    }
 
     public partial class MultiLingualTranslationDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>
     {
@@ -30,7 +25,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualTranslationCreateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class MultiLingualTranslationCreateDto
     {
         public virtual string Culture { get; set; }
 
@@ -40,7 +35,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualTranslationUpdateDto : Volo.Abp.ObjectExtending.ExtensibleObject
+    public partial class MultiLingualTranslationUpdateDto
     {
         public virtual string Culture { get; set; }
 
@@ -50,7 +45,7 @@ namespace FS.CmsKitManagement.MultiLinguals.Dtos
 
     }
 
-    public partial class MultiLingualTranslationGetListDto : SearchResultRequestDto
+    public partial class MultiLingualTranslationGetListDto : PagedAndSortedResultRequestDto
     {
     }
 

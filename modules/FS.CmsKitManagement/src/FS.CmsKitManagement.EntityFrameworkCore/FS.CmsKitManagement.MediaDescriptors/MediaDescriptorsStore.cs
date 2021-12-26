@@ -1,18 +1,15 @@
-﻿using FS.Abp.EntityTypes;
-using JetBrains.Annotations;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Volo.Abp.Domain.Services;
 using Volo.CmsKit.MediaDescriptors;
 
 namespace FS.CmsKitManagement.MediaDescriptors
 {
     public partial class MediaDescriptorsStore: IMediaDescriptorsStore
     {
-        protected IOptions<EntityTypeOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityTypeOptions>>();
+        protected IOptions<EntityFeaturesOptions> Options => this.LazyServiceProvider.LazyGetRequiredService<IOptions<EntityFeaturesOptions>>();
         private IMediaDescriptorRepository MediaDescriptorRepository => this.LazyServiceProvider.LazyGetRequiredService<IMediaDescriptorRepository>();
 
         public async Task<List<MediaDescriptor>> GetMediaDescriptorsAsync(List<Guid> mediaDescriptorIds)

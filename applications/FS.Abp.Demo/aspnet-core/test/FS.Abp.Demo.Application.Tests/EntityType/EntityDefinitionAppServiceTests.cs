@@ -1,4 +1,4 @@
-﻿using FS.Abp.EntityTypes;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
 using Shouldly;
 using System.Threading.Tasks;
@@ -14,11 +14,11 @@ namespace FS.Abp.Demo.EntityType
      */
     public class EntityDefinitionAppService_Tests : DemoApplicationTestBase
     {
-        private readonly IEntityDefinitionAppService _entityDefinitionAppService;
+        //private readonly IEntityDefinitionAppService _entityDefinitionAppService;
 
         public EntityDefinitionAppService_Tests()
         {
-            _entityDefinitionAppService = GetRequiredService<IEntityDefinitionAppService>();
+            //_entityDefinitionAppService = GetRequiredService<IEntityDefinitionAppService>();
         }
 
         [Fact]
@@ -26,16 +26,16 @@ namespace FS.Abp.Demo.EntityType
         {
 
 
-            var options = GetRequiredService<IEntityDefinitionAppService>();
+            //var options = GetRequiredService<IEntityDefinitionAppService>();
             //options.GetEntityDefinitionList("Volo.CmsKit.Pages.Page");
             //var tt = DemoApplicationTestModule.list;
-            return;
+            //return;
             //Volo.CmsKit.Admin.Pages.PageAdminAppService   
             //Volo.CmsKit.Admin.Pages.CreatePageInputDto tt;
             //Volo.CmsKit.Admin.Pages.UpdatePageInputDto ff;
 
             //Volo.CmsKit.Admin.Pages.IPageAdminAppService
-            Volo.CmsKit.Admin.Pages.IPageAdminAppService a;
+            //Volo.CmsKit.Admin.Pages.IPageAdminAppService a;
             //EntityDefinition result = new EntityDefinition("Volo.CmsKit.Pages.Page");
 
            

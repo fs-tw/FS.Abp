@@ -1,7 +1,6 @@
 ﻿using Volo.Abp.Application;
 using Volo.Abp.Modularity;
 using Volo.Abp.Authorization;
-using Volo.Abp.MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FS.CmsKitManagement
@@ -11,16 +10,12 @@ namespace FS.CmsKitManagement
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    [DependsOn(typeof(FS.Abp.AbpApplicationContractsModule))]
+    //[DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationContractsModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitApplicationContractsModule))]
     public class CmsKitManagementApplicationContractsModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            Configure<AbpMediatROptions>(o =>
-            {
-                o.AddModule<CmsKitManagementApplicationContractsModule>("cms-kit-management");
-            });
         }
     }
 }

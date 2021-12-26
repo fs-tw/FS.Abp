@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CodingManagement.Codes.Dtos
 {
@@ -74,7 +73,7 @@ namespace FS.CodingManagement.Codes.Dtos
 
     }
 
-    public partial class CodingGetListDto : SearchResultRequestDto
+    public partial class CodingGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 

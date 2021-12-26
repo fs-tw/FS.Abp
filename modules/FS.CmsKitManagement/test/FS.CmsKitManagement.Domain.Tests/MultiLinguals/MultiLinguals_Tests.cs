@@ -1,10 +1,10 @@
-﻿using FS.Abp.EntityTypes;
-using Volo.CmsKit.Pages;
+﻿using FS.Abp.EntityFeatures;
 using Microsoft.Extensions.Options;
 using Shouldly;
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.ObjectMapping;
+using Volo.CmsKit.Pages;
 using Xunit;
 
 namespace FS.CmsKitManagement.MultiLinguals
@@ -23,7 +23,7 @@ namespace FS.CmsKitManagement.MultiLinguals
         {
             var multiLingualsStore = GetRequiredService<IMultiLingualsStore>();
             var objectMapper = GetRequiredService<IObjectMapper>();
-            var options = GetRequiredService<IOptions<EntityTypeOptions>>();
+            var options = GetRequiredService<IOptions<EntityFeaturesOptions>>();
             var pageRepository = GetRequiredService<IPageRepository>();
 
             await this.WithUnitOfWorkAsync(async () =>

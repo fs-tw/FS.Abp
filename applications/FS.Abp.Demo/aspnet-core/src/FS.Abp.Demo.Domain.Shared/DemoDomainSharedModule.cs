@@ -28,11 +28,11 @@ namespace FS.Abp.Demo
         typeof(AbpTenantManagementDomainSharedModule)
         )]
     [DependsOn(
-        typeof(FS.CmsKitManagement.CmsKitManagementDomainSharedModule),
-        typeof(FS.CodingManagement.CodingManagementDomainSharedModule)
+        typeof(FS.CmsKitManagement.CmsKitManagementDomainSharedModule)
+        
         )]
-    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesDomainSharedModule))]
     [DependsOn(typeof(Volo.Abp.BlobStoring.FileSystem.AbpBlobStoringFileSystemModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AbpAuditLoggingCoreModule))]
     public class DemoDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -43,6 +43,14 @@ namespace FS.Abp.Demo
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<FS.Abp.AuditLogging.AuditLoggingFilterOptions>(options =>
+            {
+                options.AddOrReplaceFilter("PageAdmin",
+                    new AuditLogging.Filters.AuditLogActionFilter("Volo.CmsKit.Admin.Pages.PageAdminAppService", "GetAsync"),
+                    new AuditLogging.Filters.AuditLogActionFilter("Volo.CmsKit.Admin.Pages.PageAdminController", "GetAsync")
+                    );
+            });
+
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
                 options.FileSets.AddEmbedded<DemoDomainSharedModule>();

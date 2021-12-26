@@ -11,7 +11,6 @@
 using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
 
 namespace FS.CodingManagement.SerialNumbers.Dtos
 {
@@ -50,7 +49,7 @@ namespace FS.CodingManagement.SerialNumbers.Dtos
 
     }
 
-    public partial class SerialNumberGetListDto : SearchResultRequestDto
+    public partial class SerialNumberGetListDto : FS.Abp.Application.Dtos.SearchResultRequestDto
     {
     }
 

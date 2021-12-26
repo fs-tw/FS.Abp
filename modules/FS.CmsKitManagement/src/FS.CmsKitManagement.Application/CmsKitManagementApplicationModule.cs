@@ -2,10 +2,8 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
-using MediatR;
 using System.Collections.Generic;
 using System;
-using FS.Abp.EntityTypes;
 using Volo.Abp.EventBus;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Volo.Abp.Reflection;
@@ -15,6 +13,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Volo.CmsKit.Blogs;
+using FS.Abp.EntityFeatures;
 
 namespace FS.CmsKitManagement
 {
@@ -24,8 +23,8 @@ namespace FS.CmsKitManagement
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    [DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitApplicationModule))]
+    [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
     public class CmsKitManagementApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -38,50 +37,44 @@ namespace FS.CmsKitManagement
 
             AddEventHandlers(context.Services);
 
-            Configure<EntityDefinitionOptions>(o =>
-            {
-                o.GetOrAdd<Volo.CmsKit.Admin.Blogs.BlogAdminAppService>(
-                    a => { },
-                    (t) => EntityDefinition.CreateByAttribute<Volo.CmsKit.Admin.Blogs.BlogAdminAppService>());
+            //Configure<EntityDefinitionOptions>(o =>
+            //{
+            //    o.GetOrAdd<Volo.CmsKit.Admin.Blogs.BlogAdminAppService>(
+            //        a => { },
+            //        (t) => EntityDefinition.CreateByAttribute<Volo.CmsKit.Admin.Blogs.BlogAdminAppService>());
 
-                //o.GetOrAdd<Volo.CmsKit.Blogs.Blog>(
-                //    a => { },
-                //    (t) => DefaultEntityDefinition.Create<
-                //        Volo.CmsKit.Admin.Blogs.BlogAdminAppService, 
-                //        Volo.CmsKit.Blogs.Blog,
-                //        Volo.CmsKit.Admin.Blogs.BlogGetListInput,
-                //        Volo.CmsKit.Admin.Blogs.CreateBlogDto>());
+            //    //o.GetOrAdd<Volo.CmsKit.Blogs.Blog>(
+            //    //    a => { },
+            //    //    (t) => DefaultEntityDefinition.Create<
+            //    //        Volo.CmsKit.Admin.Blogs.BlogAdminAppService, 
+            //    //        Volo.CmsKit.Blogs.Blog,
+            //    //        Volo.CmsKit.Admin.Blogs.BlogGetListInput,
+            //    //        Volo.CmsKit.Admin.Blogs.CreateBlogDto>());
 
-                //o.GetOrAdd<Volo.CmsKit.Blogs.BlogPost>(
-                //    a => { },
-                //    (t) => DefaultEntityDefinition.Create<
-                //        Volo.CmsKit.Admin.Blogs.BlogPostAdminAppService,
-                //        Volo.CmsKit.Blogs.BlogPost,
-                //        Volo.CmsKit.Admin.Blogs.BlogPostGetListInput,
-                //        Volo.CmsKit.Admin.Blogs.CreateBlogPostDto>());
+            //    //o.GetOrAdd<Volo.CmsKit.Blogs.BlogPost>(
+            //    //    a => { },
+            //    //    (t) => DefaultEntityDefinition.Create<
+            //    //        Volo.CmsKit.Admin.Blogs.BlogPostAdminAppService,
+            //    //        Volo.CmsKit.Blogs.BlogPost,
+            //    //        Volo.CmsKit.Admin.Blogs.BlogPostGetListInput,
+            //    //        Volo.CmsKit.Admin.Blogs.CreateBlogPostDto>());
 
-                //o.GetOrAdd<Volo.CmsKit.Tags.Tag>(
-                //    a => { },
-                //    (t) => DefaultEntityDefinition.Create<
-                //        Volo.CmsKit.Admin.Tags.TagAdminAppService,
-                //        Volo.CmsKit.Tags.Tag,
-                //        Volo.CmsKit.Admin.Tags.TagGetListInput,
-                //        Volo.CmsKit.Admin.Tags.TagCreateDto>());
+            //    //o.GetOrAdd<Volo.CmsKit.Tags.Tag>(
+            //    //    a => { },
+            //    //    (t) => DefaultEntityDefinition.Create<
+            //    //        Volo.CmsKit.Admin.Tags.TagAdminAppService,
+            //    //        Volo.CmsKit.Tags.Tag,
+            //    //        Volo.CmsKit.Admin.Tags.TagGetListInput,
+            //    //        Volo.CmsKit.Admin.Tags.TagCreateDto>());
 
-                //o.GetOrAdd<Volo.CmsKit.Pages.Page>(
-                //    a => { },
-                //    (t) => DefaultEntityDefinition.Create<
-                //        Volo.CmsKit.Admin.Pages.PageAdminAppService,
-                //        Volo.CmsKit.Pages.Page, 
-                //        Volo.CmsKit.Admin.Pages.GetPagesInputDto,
-                //        Volo.CmsKit.Admin.Pages.CreatePageInputDto>());
-            });
-
-
-            //context.Services.AddMediatR(
-            //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationContractsModule),
-            //    typeof(FS.CmsKitManagement.CmsKitManagementApplicationModule)
-            //    );
+            //    //o.GetOrAdd<Volo.CmsKit.Pages.Page>(
+            //    //    a => { },
+            //    //    (t) => DefaultEntityDefinition.Create<
+            //    //        Volo.CmsKit.Admin.Pages.PageAdminAppService,
+            //    //        Volo.CmsKit.Pages.Page, 
+            //    //        Volo.CmsKit.Admin.Pages.GetPagesInputDto,
+            //    //        Volo.CmsKit.Admin.Pages.CreatePageInputDto>());
+            //});
         }
 
         private static void AddEventHandlers(IServiceCollection services)
@@ -89,16 +82,14 @@ namespace FS.CmsKitManagement
             var localHandlers = new List<Type>();
             var distributedHandlers = new List<Type>();
 
-            var options = services.ExecutePreConfiguredActions<EntityTypeOptions>();
+            var options = services.ExecutePreConfiguredActions<EntityFeaturesOptions>();
 
             options.GetOrDefault<MultiLinguals.MultiLingual>()
-                .ToList().ForEach(d =>
+                ?.ToList().ForEach(d =>
                 {
                     var handlerType = typeof(MultiLinguals.EntityTypeCreatedOrDeletedHandler<>).MakeGenericType(d.Key);
                     registerType(handlerType);
                 });
-
-
 
             void registerType(Type handlerType)
             {

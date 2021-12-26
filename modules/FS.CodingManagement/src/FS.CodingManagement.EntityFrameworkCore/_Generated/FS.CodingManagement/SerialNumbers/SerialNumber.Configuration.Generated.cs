@@ -22,7 +22,7 @@ using FS.CodingManagement.EntityFrameworkCore;
 
 namespace FS.CodingManagement.SerialNumbers
 {
-    public partial class SerialNumberConfiguration : IEntityTypeConfiguration<SerialNumber>
+    public partial class SerialNumberConfiguration : IEntityTypeConfiguration<SerialNumber> //auto-generated
     {
         private CodingManagementModelBuilderConfigurationOptions options;
         public SerialNumberConfiguration(CodingManagementModelBuilderConfigurationOptions options)
@@ -45,11 +45,9 @@ namespace FS.CodingManagement.SerialNumbers
             CustomizeConfiguration(builder);
         }
 
-        #region Partial Methods
-
         partial void CustomizeConfiguration(EntityTypeBuilder<SerialNumber> builder);
-
-        #endregion
     }
-
+    public static partial class SerialNumberQueryableExtensions //auto-generated
+    {
+    }
 }

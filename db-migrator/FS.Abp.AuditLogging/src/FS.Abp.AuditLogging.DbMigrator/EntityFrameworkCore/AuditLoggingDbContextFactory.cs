@@ -11,6 +11,8 @@ namespace FS.Abp.AuditLogging.EntityFrameworkCore
     {
         public AuditLoggingDbContext CreateDbContext(string[] args)
         {
+            FS.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEfCoreEntityExtensionMappings.Configure();
+
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<AuditLoggingDbContext>()

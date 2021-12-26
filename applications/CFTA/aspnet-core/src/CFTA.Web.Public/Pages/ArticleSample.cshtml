@@ -1,0 +1,44 @@
+﻿@page "/article-sample"
+@model CFTA.Web.Public.Pages.ArticleSampleModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CFTA.Localization
+@using Volo.Abp.GlobalFeatures
+@using Volo.CmsKit.GlobalFeatures
+@using Volo.CmsKit.Public.Web.Pages.CmsKit.Shared.Components.Commenting
+@inject IHtmlLocalizer<CFTAResource> L
+
+<abp-card>
+    <abp-card-header>
+        <h2>
+            Article Sample
+        </h2>
+    </abp-card-header>
+    <abp-card-body>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis dui dictum, tempor elit vel, commodo quam. Fusce eu mi ac leo tristique finibus a eu leo. Aenean posuere tortor enim, a porta enim bibendum ut. Nam ante augue, suscipit quis felis sit amet, posuere interdum enim. Mauris vulputate pellentesque orci, at tincidunt eros ultricies a. Ut vulputate nulla in metus convallis, eget venenatis dolor finibus. Morbi elementum lacus in iaculis malesuada. Nam vestibulum, enim in lobortis mattis, elit diam commodo nulla, eu laoreet erat massa sed velit. Donec feugiat justo dui, ut consequat augue aliquet quis. Integer ut tincidunt felis. Nulla dignissim, magna ut lobortis molestie, orci augue venenatis leo, eget lacinia metus felis vitae velit. Morbi eu ipsum ullamcorper, mollis est ut, venenatis purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+        </p>
+
+        <p>
+            Donec congue, ex non ullamcorper consectetur, metus arcu varius sapien, in pellentesque sem orci in purus. Pellentesque ullamcorper pretium eros, eget tempor nibh finibus id. Pellentesque euismod, nisi eu tincidunt malesuada, lacus eros auctor purus, nec suscipit orci arcu non enim. Mauris quis leo felis. Suspendisse sit amet sapien at turpis tincidunt malesuada. Nunc porttitor magna vitae dictum feugiat. Nullam facilisis facilisis erat quis sodales. Ut at est quis ex tincidunt malesuada. Maecenas at nunc urna. Sed malesuada sollicitudin massa, sed interdum lectus varius vitae. Ut risus nisi, imperdiet eget arcu non, venenatis consectetur erat. Praesent vulputate, dolor vitae interdum luctus, dolor mauris congue quam, eget pulvinar massa velit ultrices purus. Fusce sodales massa quis sem iaculis ullamcorper. Integer dolor neque, imperdiet sed nunc non, scelerisque luctus urna. Nulla mattis pellentesque eros, id aliquet tellus vehicula sit amet.
+        </p>
+
+        <p>
+            Aenean iaculis, lacus ut ullamcorper faucibus, tortor magna posuere ligula, vitae sollicitudin erat orci eu diam. Duis lobortis leo sit amet dignissim tincidunt. Morbi lacinia egestas egestas. Maecenas facilisis nisi at dui laoreet, ac euismod justo tempor. In efficitur, nisi vitae aliquam commodo, odio nisi dignissim lorem, eu commodo lectus purus sit amet leo. Integer odio ipsum, imperdiet et diam a, molestie accumsan arcu. Phasellus mattis nunc nisl, et accumsan orci condimentum ac. Morbi placerat nisl ut tincidunt interdum. Praesent pulvinar pretium mollis. Aenean id ligula mollis, bibendum augue non, pretium metus. Donec rutrum, purus vitae tincidunt hendrerit, diam purus sagittis diam, in congue ante lorem ut nisl. Nulla mattis, risus at tempus tristique, dolor ipsum ullamcorper est, nec egestas arcu ex quis sapien. Vivamus nisi risus, suscipit nec nisl eget, suscipit lacinia turpis. Ut tempus gravida elit, quis porta turpis fermentum in. Sed volutpat nulla vitae accumsan sagittis.
+        </p>
+
+        <p>
+            Proin consectetur velit sem, ut porttitor erat gravida a. Praesent a erat vel tellus molestie vulputate. Fusce rhoncus dignissim aliquet. Ut auctor eros malesuada, semper lorem eu, laoreet nisl. Aliquam fermentum sed tellus sed faucibus. Nam eu mauris vel nisi scelerisque suscipit ut id enim. Cras condimentum ligula at sem semper, in varius ligula commodo. Fusce lobortis lectus erat, ut dignissim massa lobortis in. Curabitur ac sapien mi. Aliquam nec enim lacus.
+        </p>
+
+        <p>
+            Vivamus in augue in nibh laoreet congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc vitae nisi in orci dictum posuere quis ut sapien. Aliquam quam nulla, aliquam in elit sit amet, semper cursus purus. Phasellus a tortor non est posuere maximus ut sed dui. Phasellus vel lectus velit. Aliquam vel posuere nibh, vehicula blandit quam.
+        </p>
+    </abp-card-body>
+    @if (GlobalFeatureManager.Instance.IsEnabled<CommentsFeature>())
+    {
+        <abp-card-footer>
+            @await Component.InvokeAsync(typeof(CommentingViewComponent),
+                new { entityType = "SampleArticle", entityId = Guid.Empty.ToString() })
+        </abp-card-footer>
+    }
+</abp-card>

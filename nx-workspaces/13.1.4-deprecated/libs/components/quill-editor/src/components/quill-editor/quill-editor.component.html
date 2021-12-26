@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+  <quill-editor
+    [sanitize]="true"
+    [formControlName]="controlName"
+    (onEditorCreated)="onEditorCreate($event)">
+  </quill-editor>
+</form>
+
+<fs-image-picker-modal [shortEntityType]="shortEntityType" [imageInfo]="editorImageInfo">
+</fs-image-picker-modal>

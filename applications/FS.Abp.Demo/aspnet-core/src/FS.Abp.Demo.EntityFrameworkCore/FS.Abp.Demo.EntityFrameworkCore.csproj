@@ -8,8 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!--<ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.EntityFrameworkCore\FS.Abp.EntityFrameworkCore.csproj" />-->
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.EntityFrameworkCore\FS.CmsKitManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.EntityFrameworkCore\FS.CodingManagement.EntityFrameworkCore.csproj" />
+    <!--<ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.EntityFrameworkCore\FS.CodingManagement.EntityFrameworkCore.csproj" />-->
     <ProjectReference Include="..\FS.Abp.Demo.Domain\FS.Abp.Demo.Domain.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="$(AbpVersion)" />

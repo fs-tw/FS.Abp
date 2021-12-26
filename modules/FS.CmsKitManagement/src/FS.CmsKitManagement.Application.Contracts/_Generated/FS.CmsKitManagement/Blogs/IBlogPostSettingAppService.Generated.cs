@@ -15,8 +15,8 @@ namespace FS.CmsKitManagement.Blogs
     public partial interface IBlogPostSettingAppService : // auto-generated
         Volo.Abp.Application.Services.IApplicationService
     {
-        Task<BlogPostSettingDto> GetAsync(BlogPostSettingGetDto BlogPostSettingGet = null, bool fallback = true);
+        Task<BlogPostSettingDto> GetAsync(string providerName = null, string providerKey = null, bool fallback = true);
 
-        Task UpdateAsync(BlogPostSettingDto BlogPostSetting, string providerName = null, string providerKey = null);
+        Task UpdateAsync(BlogPostSettingDto input, string providerName = null, string providerKey = null, bool forceToSet = false);
     }
 }

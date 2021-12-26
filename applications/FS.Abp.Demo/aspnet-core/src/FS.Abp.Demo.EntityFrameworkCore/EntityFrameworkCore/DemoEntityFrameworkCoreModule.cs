@@ -26,8 +26,7 @@ namespace FS.Abp.Demo.EntityFrameworkCore
         typeof(AbpFeatureManagementEntityFrameworkCoreModule)
         )]
     [DependsOn(
-        typeof(FS.CmsKitManagement.EntityFrameworkCore.CmsKitManagementEntityFrameworkCoreModule),
-        typeof(FS.CodingManagement.EntityFrameworkCore.CodingManagementEntityFrameworkCoreModule)
+        typeof(FS.CmsKitManagement.EntityFrameworkCore.CmsKitManagementEntityFrameworkCoreModule)
         )]
     public class DemoEntityFrameworkCoreModule : AbpModule
     {

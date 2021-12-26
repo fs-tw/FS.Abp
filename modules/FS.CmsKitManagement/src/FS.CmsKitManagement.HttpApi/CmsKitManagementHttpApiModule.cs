@@ -6,13 +6,13 @@ using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Volo.Abp.AspNetCore.Mvc.Conventions;
 
 namespace FS.CmsKitManagement
 {
     [DependsOn(
         typeof(CmsKitManagementApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    [DependsOn(typeof(FS.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitHttpApiModule))]
     public class CmsKitManagementHttpApiModule : AbpModule
     {

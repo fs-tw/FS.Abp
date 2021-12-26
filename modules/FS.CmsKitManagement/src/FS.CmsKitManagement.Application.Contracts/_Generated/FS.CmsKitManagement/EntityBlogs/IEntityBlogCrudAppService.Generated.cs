@@ -14,7 +14,7 @@ using Volo.Abp.Application.Services;
 namespace FS.CmsKitManagement.EntityBlogs
 {
     public partial interface IEntityBlogCrudAppService : // auto-generated
-        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogWithDetailsDto, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogPrimaryKeyDto, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogGetListDto, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogCreateDto, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogUpdateDto>
+        Volo.Abp.Application.Services.ICrudAppService<FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogWithDetailsDto, Guid, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogGetListDto, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogCreateDto, FS.CmsKitManagement.EntityBlogs.Dtos.EntityBlogUpdateDto>
     {
 
     }

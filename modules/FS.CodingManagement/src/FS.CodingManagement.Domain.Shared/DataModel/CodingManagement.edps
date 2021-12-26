@@ -19,9 +19,9 @@
         <File Name="SerialNumberDtoAutoMapperProfile.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
         <File Name="CodingDtoValidator.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
         <File Name="SerialNumberDtoValidator.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
-        <File Name="CodesStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
+        <File Name="ICodesStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="CodesStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="SerialNumbersStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="ISerialNumbersStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="SerialNumbersStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="ICodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
         <File Name="CodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
@@ -35,8 +35,6 @@
         <File Name="ISerialNumberRepository.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="EfCoreCodingTreeRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="EfCoreSerialNumberRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="CodesQueryableExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="SerialNumbersQueryableExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="ICodesApi.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="CodesApi.Generated.cs" Project="FS.CodingManagement.HttpApi" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="CodesApi.CodingCrudAppService.Generated.cs" Project="FS.CodingManagement.HttpApi" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
@@ -205,9 +203,6 @@
       <Template Name="Domain.AbpSettings" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSettings.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="GenSettingsApi" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>true</boolean>
         </ed:Property>
         <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">

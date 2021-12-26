@@ -47,6 +47,9 @@ namespace FS.Abp.Demo
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
+    [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementAspNetCoreModule))]
+    [DependsOn(typeof(FS.Abp.Swashbuckle.AbpSwashbuckleModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AbpAuditLoggingAspNetCoreModule))]
     public class DemoHttpApiHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -118,7 +121,12 @@ namespace FS.Abp.Demo
         {
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConventionalControllers.Create(typeof(DemoApplicationModule).Assembly);
+                //options.ConventionalControllers.Create(typeof(CmsKitManagement.CmsKitManagementAppService).Assembly, o =>
+                // {
+                //     //o.RemoteServiceName = "cms-test-name";
+                //     //o.RootPath = "cms-test";
+                // });
+                //options.ConventionalControllers.Create(typeof(DemoApplicationModule).Assembly);
             });
         }
 
@@ -148,8 +156,8 @@ namespace FS.Abp.Demo
                 },
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "Demo API", Version = "v1"});
-                    options.DocInclusionPredicate((docName, description) => true);
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+                    //options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
         }
@@ -182,21 +190,21 @@ namespace FS.Abp.Demo
         {
             context.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy( builder =>
-                {
-                    builder
-                        .WithOrigins(
-                            configuration["App:CorsOrigins"]
-                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => o.RemovePostFix("/"))
-                                .ToArray()
-                        )
-                        .WithAbpExposedHeaders()
-                        .SetIsOriginAllowedToAllowWildcardSubdomains()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials();
-                });
+                options.AddDefaultPolicy(builder =>
+               {
+                   builder
+                       .WithOrigins(
+                           configuration["App:CorsOrigins"]
+                               .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                               .Select(o => o.RemovePostFix("/"))
+                               .ToArray()
+                       )
+                       .WithAbpExposedHeaders()
+                       .SetIsOriginAllowedToAllowWildcardSubdomains()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials();
+               });
             });
         }
 

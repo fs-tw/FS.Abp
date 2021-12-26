@@ -12,7 +12,9 @@ namespace FS.Abp
         typeof(AbpAutoMapperModule)
         )]
     [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
-    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationModule))]
+    [DependsOn(typeof(FS.Abp.AuditLogging.AuditLoggingApplicationModule))]
+    [DependsOn(typeof(FS.Abp.EntityTypes.EntityTypesApplicationModule))]
     public class AbpApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
