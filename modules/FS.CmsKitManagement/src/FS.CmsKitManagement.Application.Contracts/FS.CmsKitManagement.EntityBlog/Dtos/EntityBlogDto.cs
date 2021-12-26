@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
-using AutoFilterer.Types;
+﻿using Volo.Abp.Application.Dtos;
 
 namespace FS.CmsKitManagement.EntityBlogs.Dtos
 {

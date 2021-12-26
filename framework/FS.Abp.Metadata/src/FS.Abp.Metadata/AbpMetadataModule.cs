@@ -11,7 +11,6 @@ namespace FS.Abp.Metadata
     [DependsOn(
         typeof(FS.Abp.Metadata.AbpMetadataCoreModule)
     )]
-    [DependsOn(typeof(Volo.Abp.Swashbuckle.AbpSwashbuckleModule))]
     public class AbpMetadataModule : AbpModule
     {
         private void addMetadataProviders()
@@ -35,14 +34,6 @@ namespace FS.Abp.Metadata
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             addMetadataProviders();
-        }
-
-        public override void ConfigureServices(ServiceConfigurationContext context)
-        {
-            context.Services.ConfigureSwaggerGen(option =>
-            {
-                option.SchemaFilter<SwaggerIgnoreFilter>();
-            });
         }
     }
 }

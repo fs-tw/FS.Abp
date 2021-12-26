@@ -10,7 +10,7 @@ namespace FS.CmsKitManagement
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationContractsModule))]
+    //[DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererApplicationContractsModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitApplicationContractsModule))]
     public class CmsKitManagementApplicationContractsModule : AbpModule
     {

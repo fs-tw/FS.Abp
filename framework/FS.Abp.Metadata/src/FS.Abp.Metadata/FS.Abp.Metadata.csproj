@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
     <ProjectReference Include="..\FS.Abp.Metadata.Core\FS.Abp.Metadata.Core.csproj" />
   </ItemGroup>
 

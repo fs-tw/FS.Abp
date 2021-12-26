@@ -7,6 +7,9 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FS.Abp.MediatR\FS.Abp.MediatR.csproj" />
   </ItemGroup>
 

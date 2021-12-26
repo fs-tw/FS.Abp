@@ -12,9 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Shared\FS.Abp.Shared.csproj" />
-    <ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Domain\FS.Abp.Domain.csproj" />-->
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityFeatures\src\FS.Abp.EntityFeatures.Domain\FS.Abp.EntityFeatures.Domain.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>

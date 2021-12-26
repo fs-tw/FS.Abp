@@ -11,6 +11,7 @@ namespace FS.CmsKitManagement
     [DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperModule))]
     [DependsOn(typeof(Volo.CmsKit.CmsKitDomainSharedModule))]
     [DependsOn(typeof(FS.Abp.Data.AbpDataModule))]
+    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererCoreModule))]
     public class CmsKitManagementDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

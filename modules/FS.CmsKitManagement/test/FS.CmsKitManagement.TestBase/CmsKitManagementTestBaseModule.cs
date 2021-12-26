@@ -24,16 +24,12 @@ namespace FS.CmsKitManagement
             {
                 options.GetOrAdd<FS.CmsKitManagement.MultiLinguals.MultiLingual>(a =>
                 {
-                    a.AddOrReplace(
-                        typeof(Volo.CmsKit.Pages.Page)
-                        );
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>();
                 });
 
                 options.GetOrAdd<FS.CmsKitManagement.Contents.ContentDefinition>(a =>
                 {
-                    a.AddOrReplace(
-                        typeof(Volo.CmsKit.Pages.Page)
-                        );
+                    a.AddOrReplace<Volo.CmsKit.Pages.Page>();
                 });
             });
 

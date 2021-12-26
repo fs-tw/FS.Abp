@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Volo.Abp.Application.Dtos;
-using FS.Abp.Application.Dtos;
-using AutoFilterer.Types;
+﻿using System.Collections.Generic;
 
 namespace FS.CmsKitManagement.MultiLinguals.Dtos
 {
-    public partial class MultiLingualFindDto : FilterRequestDto
+    public partial class MultiLingualFindDto : AutoFilterer.Types.FilterBase
     {
         public string EntityType { get; set; }
         public string EntityId { get; set; }
