@@ -35,19 +35,11 @@ export default function (): Rule {
 // }
 
 const updatePackage = (host: Tree, context: SchematicContext) => {
-  const packageJson = readJsonInTree<any>(host, 'config/package.base.json');
-
-  let devDependencies = configs
+  let devDependenciesSetion = configs
     .map(j => j.devDependencies)
     .reduce((a, b) => { return { ...a, ...b } });
-  packageJson.devDependencies = { ...packageJson.devDependencies, ...devDependencies };
-
-  let dependencies = configs
-    .map(j => j.dependencies)
-    .reduce((a, b) => { return { ...a, ...b } });
-  
-  packageJson.dependencies = { ...packageJson.dependencies, ...dependencies };
-
+  const packageJson = readJsonInTree<any>(host, 'config/package.base.json');
+  packageJson.devDependencies = { ...packageJson.devDependencies, ...devDependenciesSetion };
   return updateJsonInTree('/package.json', json => packageJson);
 }
 
