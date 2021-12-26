@@ -71,6 +71,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.MediatR", "framework\FS.Abp.MediatR\src\FS.Abp.MediatR\FS.Abp.MediatR.csproj", "{1C1C2B77-C224-4249-BC9C-C3BEBE5CA2D9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FS.Abp.Npoi.Mapper", "FS.Abp.Npoi.Mapper", "{2AC17E7F-103A-4215-BD81-12A2BB91D536}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.Npoi.Mapper.Core", "framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj", "{61767594-7DBE-4A8F-9F89-BE75EFFE04FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +185,10 @@ Global
 		{1C1C2B77-C224-4249-BC9C-C3BEBE5CA2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C1C2B77-C224-4249-BC9C-C3BEBE5CA2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C1C2B77-C224-4249-BC9C-C3BEBE5CA2D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61767594-7DBE-4A8F-9F89-BE75EFFE04FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61767594-7DBE-4A8F-9F89-BE75EFFE04FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61767594-7DBE-4A8F-9F89-BE75EFFE04FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61767594-7DBE-4A8F-9F89-BE75EFFE04FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,6 +226,8 @@ Global
 		{B5465620-AA4A-4A97-B05E-FA127E19C839} = {58C1110E-8ED1-4CAB-B34E-588006A9BD5F}
 		{EA6AC0A7-DEAE-4A41-B7A4-66BF3FD71E45} = {58C1110E-8ED1-4CAB-B34E-588006A9BD5F}
 		{1C1C2B77-C224-4249-BC9C-C3BEBE5CA2D9} = {96D0409D-C68D-4E9C-9983-8125709E1F54}
+		{2AC17E7F-103A-4215-BD81-12A2BB91D536} = {3F8960EB-4E1B-4ED2-B5C1-E7D2609A73A0}
+		{61767594-7DBE-4A8F-9F89-BE75EFFE04FF} = {2AC17E7F-103A-4215-BD81-12A2BB91D536}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DF6CE8A-0288-4B49-B328-6379496CC484}
