@@ -15,8 +15,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj" />
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper\FS.Abp.Npoi.Mapper.csproj" />
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
