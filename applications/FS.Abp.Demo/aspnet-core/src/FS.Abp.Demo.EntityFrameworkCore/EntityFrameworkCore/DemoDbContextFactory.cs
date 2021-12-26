@@ -13,6 +13,8 @@ namespace FS.Abp.Demo.EntityFrameworkCore
         {
             DemoEfCoreEntityExtensionMappings.Configure();
 
+            FS.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEfCoreEntityExtensionMappings.Configure();
+
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<DemoDbContext>()
