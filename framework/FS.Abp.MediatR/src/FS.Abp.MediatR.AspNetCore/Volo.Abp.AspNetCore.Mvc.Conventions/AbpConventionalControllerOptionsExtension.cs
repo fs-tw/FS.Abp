@@ -12,6 +12,17 @@ namespace Volo.Abp.AspNetCore.Mvc.Conventions
     {
         public static void Create(this AbpConventionalControllerOptions options, AbpMediatROptions _abpMediatROptions)
         {
+            var types = _abpMediatROptions.RequestHandlerTypes;
+
+            options.ConventionalControllerSettings.ForEach(x =>
+            {
+                var removeTypes = x.ControllerTypes.Where(x => types.Contains(x)).ToList();
+                removeTypes.ForEach(r =>
+                {
+                    x.ControllerTypes.Remove(r);
+                });
+            });
+
             _abpMediatROptions.Settings.ToList().ForEach(s =>
             {
                 HashSet<string> typeNames = new HashSet<string>();
@@ -49,7 +60,7 @@ namespace Volo.Abp.AspNetCore.Mvc.Conventions
                     return requestType.ActionName;
                 };
 
-                var types = _abpMediatROptions.RequestHandlerTypes;
+
 
                 foreach (var type in types)
                 {
