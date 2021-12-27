@@ -38,6 +38,13 @@ const routes: Routes = [
         m.CmsKitManagementAdminModule.forLazy()
       ),
   },
+  {
+    path: 'audit-logs/audit-logging-search',
+    loadChildren: () =>
+      import('@fs-tw/audit-logging/modules/audit-logging-search').then((m) =>
+        m.AuditLoggingSearchModule.forLazy()
+      ),
+  },
   // {
   //   path: 'coding-management',
   //   loadChildren: () =>

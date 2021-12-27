@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "abp": {
+      "projectType": "library",
+      "root": "libs/abp",
+      "sourceRoot": "libs/abp/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/abp"],
+          "options": {
+            "project": "libs/abp/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/abp/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/abp/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      },
+      "tags": []
+    },
     "cfta": {
       "projectType": "application",
       "root": "apps/cfta",
@@ -9,19 +34,14 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/cfta",
             "index": "apps/cfta/src/index.html",
             "main": "apps/cfta/src/main.ts",
             "polyfills": "apps/cfta/src/polyfills.ts",
             "tsConfig": "apps/cfta/tsconfig.app.json",
-            "allowedCommonJsDependencies": [
-              "ajv",
-              "ajv-formats"
-            ],
+            "allowedCommonJsDependencies": ["ajv", "ajv-formats"],
             "assets": [
               {
                 "glob": "**/*",
@@ -70,9 +90,7 @@
               "node_modules/quill/dist/quill.snow.css",
               "apps/cfta/src/styles.less"
             ],
-            "scripts": [
-              "node_modules/quill/dist/quill.min.js"
-            ]
+            "scripts": ["node_modules/quill/dist/quill.min.js"]
           },
           "configurations": {
             "production": {
@@ -137,6 +155,110 @@
       },
       "tags": []
     },
+    "cms-kit-management": {
+      "projectType": "library",
+      "root": "libs/cms-kit-management",
+      "sourceRoot": "libs/cms-kit-management/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/cms-kit-management"],
+          "options": {
+            "project": "libs/cms-kit-management/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/cms-kit-management/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/cms-kit-management/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/cms-kit-management/src/**/*.ts",
+              "libs/cms-kit-management/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "components": {
+      "projectType": "library",
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/components"],
+          "options": {
+            "project": "libs/components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/components/src/**/*.ts",
+              "libs/components/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "core": {
+      "projectType": "library",
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "prefix": "fs-tw",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/core"],
+          "options": {
+            "project": "libs/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/src/**/*.ts",
+              "libs/core/src/**/*.html",
+              "libs/core/entity-types/**/*.ts",
+              "libs/core/entity-types/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "demo": {
       "projectType": "application",
       "root": "apps/demo",
@@ -145,19 +267,14 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/demo",
             "index": "apps/demo/src/index.html",
             "main": "apps/demo/src/main.ts",
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
-            "allowedCommonJsDependencies": [
-              "ajv",
-              "ajv-formats"
-            ],
+            "allowedCommonJsDependencies": ["ajv", "ajv-formats"],
             "assets": [
               {
                 "glob": "**/*",
@@ -206,9 +323,7 @@
               "node_modules/quill/dist/quill.snow.css",
               "apps/demo/src/styles.less"
             ],
-            "scripts": [
-              "node_modules/quill/dist/quill.min.js"
-            ]
+            "scripts": ["node_modules/quill/dist/quill.min.js"]
           },
           "configurations": {
             "production": {
@@ -272,9 +387,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
-          "outputs": [
-            "dist/libs/theme-alain"
-          ],
+          "outputs": ["dist/libs/theme-alain"],
           "options": {
             "project": "libs/theme-alain/ng-package.json"
           },
@@ -294,116 +407,6 @@
             "lintFilePatterns": [
               "libs/theme-alain/src/**/*.ts",
               "libs/theme-alain/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
-    "cms-kit-management": {
-      "projectType": "library",
-      "root": "libs/cms-kit-management",
-      "sourceRoot": "libs/cms-kit-management/src",
-      "prefix": "fs-tw",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "outputs": [
-            "dist/libs/cms-kit-management"
-          ],
-          "options": {
-            "project": "libs/cms-kit-management/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/cms-kit-management/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/cms-kit-management/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/cms-kit-management/src/**/*.ts",
-              "libs/cms-kit-management/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
-    "components": {
-      "projectType": "library",
-      "root": "libs/components",
-      "sourceRoot": "libs/components/src",
-      "prefix": "fs-tw",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "outputs": [
-            "dist/libs/components"
-          ],
-          "options": {
-            "project": "libs/components/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/components/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/components/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/components/src/**/*.ts",
-              "libs/components/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
-    "core": {
-      "projectType": "library",
-      "root": "libs/core",
-      "sourceRoot": "libs/core/src",
-      "prefix": "fs-tw",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "outputs": [
-            "dist/libs/core"
-          ],
-          "options": {
-            "project": "libs/core/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/core/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/core/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/core/src/**/*.ts",
-              "libs/core/src/**/*.html",
-              "libs/core/entity-types/**/*.ts",
-              "libs/core/entity-types/**/*.html"
             ]
           }
         }

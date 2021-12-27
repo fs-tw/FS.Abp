@@ -1,5 +1,34 @@
 {
     "order": 200,
+    "angular": {
+        "abp": {
+            "projectType": "library",
+            "root": "libs/abp",
+            "sourceRoot": "libs/abp/src",
+            "prefix": "fs-tw",
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/angular:package",
+                    "outputs": [
+                        "dist/libs/abp"
+                    ],
+                    "options": {
+                        "project": "libs/abp/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "libs/abp/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "libs/abp/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                }
+            },
+            "tags": []
+        }
+    },
     "dependencies": {
         "@abp/ng.account": "~4.4.4",
         "@abp/ng.components": "~4.4.4",
@@ -21,8 +50,10 @@
         "tslib": "^2.1.0",
         "zone.js": "~0.11.4"
     },
+    "devDependencies": {
+        "@abp/ng.schematics": "~4.4.4"
+    },
     "_devDependencies": {
-        "@abp/ng.schematics": "~4.4.4",
         "@angular-devkit/build-angular": "~12.0.0",
         "@angular-eslint/builder": "12.1.0",
         "@angular-eslint/eslint-plugin-template": "12.1.0",
@@ -45,5 +76,13 @@
         "karma": "~6.3.0",
         "ng-packagr": "^12.0.5",
         "typescript": "~4.2.3"
+    },
+    "tsconfig": {
+        "@fs-tw/abp": [
+            "libs/abp/src/index.ts"
+        ],
+        "@fs-tw/abp/*": [
+            "libs/abp/*/src/index.ts"
+        ]
     }
 }

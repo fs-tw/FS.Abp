@@ -10,42 +10,23 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fs-tw/theme-alain": [
-        "libs/theme-alain/src/index.ts"
-      ],
-      "@fs-tw/theme-alain/*": [
-        "libs/theme-alain/*/src/index.ts"
-      ],
-      "@fs-tw/cms-kit-management": [
-        "libs/cms-kit-management/src/index.ts"
-      ],
-      "@fs-tw/cms-kit-management/*": [
-        "libs/cms-kit-management/*/src/index.ts"
-      ],
-      "@fs-tw/components": [
-        "libs/components/src/index.ts"
-      ],
-      "@fs-tw/components/*": [
-        "libs/components/*/src/index.ts"
-      ],
-      "@fs-tw/core": [
-        "libs/core/src/index.ts"
-      ],
-      "@fs-tw/core/*": [
-        "libs/core/*/src/index.ts"
-      ]
+      "@fs-tw/abp": ["libs/abp/src/index.ts"],
+      "@fs-tw/abp/*": ["libs/abp/*/src/index.ts"],
+      "@fs-tw/abp/audit-logging": ["libs/abp/audit-logging/src/index.ts"],
+      "@fs-tw/cms-kit-management": ["libs/cms-kit-management/src/index.ts"],
+      "@fs-tw/cms-kit-management/*": ["libs/cms-kit-management/*/src/index.ts"],
+      "@fs-tw/components": ["libs/components/src/index.ts"],
+      "@fs-tw/components/*": ["libs/components/*/src/index.ts"],
+      "@fs-tw/core": ["libs/core/src/index.ts"],
+      "@fs-tw/core/*": ["libs/core/*/src/index.ts"],
+      "@fs-tw/theme-alain": ["libs/theme-alain/src/index.ts"],
+      "@fs-tw/theme-alain/*": ["libs/theme-alain/*/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

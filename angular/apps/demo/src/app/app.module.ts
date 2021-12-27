@@ -19,6 +19,7 @@ import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
 import { CoreModule as FsCoreModule } from '@fs-tw/core';
 //import { EntityTypsModule} from '@fs-tw/core/entity-types';
+import { AuditLoggingConfigModule } from '@fs-tw/audit-logging/config';
 
 @NgModule({
   imports: [
@@ -31,18 +32,19 @@ import { CoreModule as FsCoreModule } from '@fs-tw/core';
     }),
 
     ThemeSharedModule.forRoot(),
+    ThemeAlainModule.forRoot(),
+    ThemeAlainUiExtensionsModule.forRoot(),
     AccountConfigModule.forRoot(),
     IdentityConfigModule.forRoot(),
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
-    ThemeAlainModule.forRoot(),
     CmsKitManagementConfigModule.forRoot(),
-    // CodingManagementConfigModule.forRoot(),
-    NgxsModule.forRoot(),
-    // ThemeAlainModule.forRoot(),
-    ThemeAlainUiExtensionsModule.forRoot(),
+    AuditLoggingConfigModule.forRoot(),    
 
-    FsCoreModule.forRoot(),
+    NgxsModule.forRoot(),
+    FsCoreModule.forRoot()
+
+
     // EntityTypsModule.forRoot()
 
     // EntityTypeManagementConfigModule.forRoot(),

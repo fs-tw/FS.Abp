@@ -23,6 +23,17 @@ namespace FS.Abp.AuditLogging
                 options.Contributors.Add(new AuditLogContributor());
             });
 
+            context.Services.AddAbpMediatR<AbpAuditLoggingApplicationModule>(true, options =>
+             {
+                 options.RootPath = "audit-logging";
+                 options.RemoteServiceName = "audit-logging";
+             });
+
+            //Configure<FS.Abp.MediatR.AbpMediatROptions>(options =>
+            //{
+            //    options.AddOrReplaceSetting("audit-logging", "audit-logging", typeof(AbpAuditLoggingApplicationModule).Assembly);
+            //});
+
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(AbpAuditLoggingApplicationModule).Assembly, c =>
@@ -32,10 +43,7 @@ namespace FS.Abp.AuditLogging
                  });
             });
 
-            Configure<FS.Abp.MediatR.AbpMediatROptions>(options =>
-            {
-                options.AddOrReplaceSetting("audit-logging", "audit-logging", typeof(AbpAuditLoggingApplicationModule).Assembly);
-            });
+
         }
     }
 }

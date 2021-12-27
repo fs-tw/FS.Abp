@@ -11,7 +11,7 @@
   <ItemGroup>
     <!--<ProjectReference Include="..\..\..\..\..\framework\FS.Abp.EntityTypes\src\FS.Abp.EntityTypes.Domain.Shared\FS.Abp.EntityTypes.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.Abp\src\FS.Abp.Domain.Shared\FS.Abp.Domain.Shared.csproj" />-->
-    <ProjectReference Include="..\..\..\..\..\framework\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Core\FS.Abp.AuditLogging.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\..\modules\FS.Abp.AuditLogging\src\FS.Abp.AuditLogging.Core\FS.Abp.AuditLogging.Core.csproj" />
     <ProjectReference Include="..\..\..\..\..\modules\FS.CmsKitManagement\src\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
     <!--<ProjectReference Include="..\..\..\..\..\modules\FS.CodingManagement\src\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />-->
   </ItemGroup>

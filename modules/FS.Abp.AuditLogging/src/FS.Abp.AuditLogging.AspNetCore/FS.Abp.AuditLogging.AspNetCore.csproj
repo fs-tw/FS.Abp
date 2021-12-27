@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FS.Abp.AuditLogging.Application\FS.Abp.AuditLogging.Application.csproj" />
     <ProjectReference Include="..\FS.Abp.AuditLogging.EntityFrameworkCore\FS.Abp.AuditLogging.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.MediatR\src\FS.Abp.MediatR.AspNetCore\FS.Abp.MediatR.AspNetCore.csproj" />
   </ItemGroup>  
   
   <ItemGroup>

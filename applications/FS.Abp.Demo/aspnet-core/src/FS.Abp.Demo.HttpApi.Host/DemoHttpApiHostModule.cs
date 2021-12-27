@@ -47,9 +47,11 @@ namespace FS.Abp.Demo
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
+    
     [DependsOn(typeof(FS.CmsKitManagement.CmsKitManagementAspNetCoreModule))]
     [DependsOn(typeof(FS.Abp.Swashbuckle.AbpSwashbuckleModule))]
     [DependsOn(typeof(FS.Abp.AuditLogging.AbpAuditLoggingAspNetCoreModule))]
+    [DependsOn(typeof(FS.Abp.MediatR.AspNetCore.AbpMediatRAspNetCoreModule))]
     public class DemoHttpApiHostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
