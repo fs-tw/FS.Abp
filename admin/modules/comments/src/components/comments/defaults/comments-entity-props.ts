@@ -1,5 +1,6 @@
 import { EntityProp, ePropType } from '@abp/ng.theme.shared/extensions';
 import { Volo } from '@fs-tw/cms-kit-management/proxy/cms-kit';
+import { of } from 'rxjs';
 
 export const COMMENTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Comments.CommentWithAuthorDto>([
   {
@@ -14,6 +15,6 @@ export const COMMENTS_ENTITY_PROPS = EntityProp.createMany<Volo.CmsKit.Admin.Com
     name: 'text',
     displayName: 'CmsKit::Text',
     sortable: true,
-    columnWidth: 90,
+    columnWidth: 90
   },
 ]);
