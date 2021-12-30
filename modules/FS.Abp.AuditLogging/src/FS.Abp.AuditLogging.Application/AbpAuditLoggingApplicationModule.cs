@@ -21,6 +21,8 @@ namespace FS.Abp.AuditLogging
             {
                 options.AddMaps<AbpAuditLoggingApplicationModule>(validate: false);
             });
+
+
         }
     }
 }

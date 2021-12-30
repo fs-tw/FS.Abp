@@ -1,0 +1,56 @@
+<form [formGroup]="searchForm" class="mb-xs">
+  <nz-tree-select
+    nzDefaultExpandAll
+    [nzNodes]="treeOptions$ | async"
+    nzShowSearch
+    nzPlaceHolder="Please select"
+    formControlName="AbpRouteName"
+  ></nz-tree-select>
+  <nz-range-picker
+    formControlName="ExecutionTime"
+    nzShowTime
+    nzFormat="yyyy-MM-dd HH:mm:ss"
+  ></nz-range-picker>
+</form>
+
+<ng-container>
+  <div *ngIf="!!dataSource">
+    <cdk-virtual-scroll-viewport itemSize="72" class="demo-infinite-container">
+      <nz-list>
+        <nz-list-item
+          *cdkVirtualFor="let item of dataSource; let index = index"
+          [ngClass]="{
+            'bg-primary-light': !!item && item?.id === (selectedId$ | async)
+          }"
+          (click)="selectedId$.emit(item?.id)"
+        >
+          <nz-list-item-meta
+            *ngIf="item"
+            [nzAvatar]="avater"
+            [nzDescription]="item.executionTime | date: 'yyyy/MM/dd HH:mm:ss'"
+          >
+            <nz-list-item-meta-title>
+              {{ item.extraProperties['AbpRouteName'] }}
+            </nz-list-item-meta-title>
+          </nz-list-item-meta>
+          <ng-template #avater>
+            <nz-badge
+              [nzCount]="(item?.exceptions | jsonParse)?.length"
+              style="margin-right: 24px"
+            >
+              <nz-avatar
+                class="ml-sm"
+                [ngStyle]="{
+                  'background-color': !(item?.exceptions | jsonParse)?.length
+                    ? '#87d068'
+                    : '#f56a00'
+                }"
+                [nzText]="item.httpStatusCode"
+              ></nz-avatar>
+            </nz-badge>
+          </ng-template>
+        </nz-list-item>
+      </nz-list>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</ng-container>

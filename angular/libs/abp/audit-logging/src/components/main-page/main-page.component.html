@@ -1,0 +1,15 @@
+<!-- <page-header [title]="null"></page-header> -->
+<!-- <div style="background: #ececec; padding: 30px"> -->
+<nz-row [nzGutter]="16">
+  <nz-col [nzSpan]="6">
+    <nz-card nzTitle="AuditLog">
+      <fs-tw-logs-list (selectedId$)="selectedId($event)"></fs-tw-logs-list>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="18">
+    <fs-tw-audit-log-descriptions
+      [model]="Selected$ | async"
+    ></fs-tw-audit-log-descriptions>
+  </nz-col>
+</nz-row>
+<!-- </div> -->

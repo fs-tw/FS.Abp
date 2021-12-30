@@ -8,7 +8,7 @@ namespace FS.Abp.AuditLogging
         public AuditLoggingApplicationAutoMapperProfile()
         {
             CreateMap<AuditLog, Dtos.AuditLogDto>()
-                         .MapExtraProperties(Volo.Abp.ObjectExtending.MappingPropertyDefinitionChecks.None);
+                .MapExtraProperties(Volo.Abp.ObjectExtending.MappingPropertyDefinitionChecks.None);
 
             CreateMap<EntityChange, Dtos.EntityChangeDto>()
                 .MapExtraProperties(Volo.Abp.ObjectExtending.MappingPropertyDefinitionChecks.None);

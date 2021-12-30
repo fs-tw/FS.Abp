@@ -12,8 +12,8 @@ import { wrapAngularDevkitSchematic } from '@nrwl/devkit/ngcli-adapter';
 
 export default async function (host: Tree, schema: any) {
   let module=schema.module;
-  let source=schema.application;
-  let target=schema.library;
+  let application=schema.application;
+  let library=schema.library;
   let runAngularLibrarySchematic = wrapAngularDevkitSchematic(
     '@abp/ng.schematics',
     'proxy-add'
@@ -21,28 +21,26 @@ export default async function (host: Tree, schema: any) {
 
   await runAngularLibrarySchematic(host, {
     module: module,
-    source: source,
-    target: target
+    source: application,
+    target: application
   });
-
-  console.log(`proxy add '${module} to ${target} success at ${source}`);
 
   moveFilesToNewDirectory(
     host,
-    `libs\\${target}\\src\\lib\\proxy`,
-    `libs\\${target}\\proxy\\${module}\\src`
+    `apps\\${application}\\src\\app\\proxy`,
+    `libs\\${library}\\proxy\\${module}\\src`
   );
 
   generateFiles(
     host,
     joinPathFragments(__dirname, '.', './files'),
-    `libs\\${target}\\proxy\\${module}`,
+    `libs\\${library}\\proxy\\${module}`,
     {
       tmpl: '',
     }
   );
 
   return () => {
-    console.log(`proxy add '${module} to ${target} success at ${source}`);
+    console.log(`proxy added '${module} to ${library} success at ${application}`);
   };
 }

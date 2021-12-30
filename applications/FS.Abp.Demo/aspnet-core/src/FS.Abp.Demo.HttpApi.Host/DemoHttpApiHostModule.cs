@@ -32,6 +32,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Volo.CmsKit.Blogs;
 using Volo.CmsKit.Admin.Blogs;
+using Volo.Abp.Timing;
 
 namespace FS.Abp.Demo
 {
@@ -67,6 +68,11 @@ namespace FS.Abp.Demo
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context, configuration);
+
+            Configure<AbpClockOptions>(options =>
+            {
+                options.Kind = DateTimeKind.Local;
+            });
 
             //TypeDescriptor.AddProvider(new AssociatedMetadataTypeTypeDescriptionProvider(
             //    typeof(BlogAdminAppService), typeof(BlogAdminAppServiceMetadata)), typeof(BlogAdminAppService));

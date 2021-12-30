@@ -44,10 +44,13 @@
     "ngx-tinymce": "^12.0.0",
     "ngx-ueditor": "^12.0.0",
     "screenfull": "^5.1.0",
-    "ajv": "^8.6.2"
+    "ajv": "^8.6.2",
+    "@angular/cdk":"9.2.4"
   },
   "devDependencies": {
     "@abp/ng.schematics": "~4.4.4",
+    "ang-jsoneditor": "^1.10.5",
+    "jsoneditor": "^9.5.7",
     "@angular-devkit/build-angular": "~12.2.0",
     "@angular-eslint/eslint-plugin": "~12.3.0",
     "@angular-eslint/eslint-plugin-template": "~12.3.0",

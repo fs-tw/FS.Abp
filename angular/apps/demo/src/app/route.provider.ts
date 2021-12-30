@@ -16,5 +16,14 @@ function configureRoutes(routesService: RoutesService) {
         layout: eLayoutType.application,
       },
     ]);
+    routesService.add([
+      {
+        path: '/audit-logs',
+        name: '::Menu:AuditLogs',
+        iconClass: 'fas fa-home',
+        order: 2,
+        layout: eLayoutType.application,
+      },
+    ]);
   };
 }

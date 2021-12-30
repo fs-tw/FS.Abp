@@ -39,10 +39,10 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'audit-logs/audit-logging-search',
+    path: 'audit-logs',
     loadChildren: () =>
-      import('@fs-tw/audit-logging/modules/audit-logging-search').then((m) =>
-        m.AuditLoggingSearchModule.forLazy()
+      import('@fs-tw/abp/audit-logging').then((m) =>
+        m.AuditLoggingModule.forLazy()
       ),
   },
   // {

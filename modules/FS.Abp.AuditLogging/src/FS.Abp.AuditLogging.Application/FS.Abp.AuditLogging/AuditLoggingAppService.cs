@@ -31,6 +31,16 @@ namespace FS.Abp.AuditLogging
             FilterOptions = options.Value;
         }
 
+        public async Task<FS.Abp.AuditLogging.Dtos.AuditLogDto> GetAsync(Guid id)
+        {
+            var query = await this.AuditLogRepository.WithDetailsAsync();
+
+            var entity=await this.AsyncExecuter.SingleOrDefaultAsync(query.Where(x => x.Id.Equals(id)));
+
+            return ObjectMapper.Map<Volo.Abp.AuditLogging.AuditLog, FS.Abp.AuditLogging.Dtos.AuditLogDto>(entity);
+
+        }
+
         public Task<Dictionary<string, List<AuditLogActionFilter>>> GetFiltersAsync()
         {
             return Task.FromResult(FilterOptions.Filters);

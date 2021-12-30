@@ -10,7 +10,8 @@ namespace FS.Abp.AutoFilterer
     {
         public override Expression BuildExpression(Expression expressionBody, PropertyInfo targetProperty, PropertyInfo filterProperty, object value)
         {
-
+            if (value == null)
+                return expressionBody;
             var type = Type.GetType("Microsoft.EntityFrameworkCore.EF, Microsoft.EntityFrameworkCore");
 
             if (type == null)

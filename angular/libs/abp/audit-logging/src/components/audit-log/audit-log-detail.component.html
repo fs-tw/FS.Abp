@@ -1,0 +1,71 @@
+<ng-container *ngIf="!!model">
+  <nz-card nzTitle="AuditLog Info">
+    <nz-descriptions nzBordered>
+      <nz-descriptions-item nzTitle="Route">{{
+        model.extraProperties['AbpRouteName']
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="userId">{{
+        model.userId
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="userName">{{
+        model.userName
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Execution Time">{{
+        model.executionTime | date: 'yyyy/MM/dd HH:mm '
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Execution Duration(ms)">
+        {{ model.executionDuration }} ms
+      </nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Client Ip Address">
+        {{ model.clientIpAddress }}
+      </nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Browser Info" [nzSpan]="3">
+        {{ model.url }}
+      </nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Browser Info" [nzSpan]="3">
+        {{ model.browserInfo }}
+      </nz-descriptions-item>
+    </nz-descriptions>
+  </nz-card>
+  <nz-card>
+    <nz-tabset>
+      <nz-tab nzTitle="Actions">
+        <nz-timeline>
+          <nz-timeline-item *ngFor="let item of model.actions">
+            <ng-template #header>
+              {{ item.serviceName }}.{{ item.methodName }}@{{
+                item.executionTime | date: 'yyyy/MM/dd HH:mm '
+              }}(
+              <span
+                [ngClass]="
+                  item.executionDuration > 2000 ? 'text-red' : 'text-green'
+                "
+                >{{ item.executionDuration }} ms</span
+              >
+              )
+            </ng-template>
+            <nz-collapse nzGhost>
+              <nz-collapse-panel [nzHeader]="header">
+                <p>parameters</p>
+                <json-editor
+                  [options]="editorOptions"
+                  [data]="item.parameters | jsonParse"
+                ></json-editor>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </nz-timeline-item>
+        </nz-timeline>
+      </nz-tab>
+
+      <nz-tab nzTitle="Exceptions">
+        <json-editor
+          [options]="editorOptions"
+          [data]="model.exceptions | jsonParse"
+        ></json-editor>
+      </nz-tab>
+      <nz-tab nzTitle="Comments"> </nz-tab>
+
+      <nz-tab nzTitle="EntityChanges"> </nz-tab>
+    </nz-tabset>
+  </nz-card>
+</ng-container>

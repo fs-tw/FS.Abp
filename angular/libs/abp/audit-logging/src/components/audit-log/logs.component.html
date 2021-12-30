@@ -1,0 +1,27 @@
+<input nz-input placeholder="filter" [(ngModel)]="search" (ngModelChange)="searchChange($event)"  />
+
+<ng-container *ngIf="data$ | async as data">
+  <nz-table #table [list]="listService" [nzData]="data.items" [nzTotal]="data.totalCount" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let column of listOfColumn"
+          [nzSortFn]="column.sortable"
+          [nzSortPriority]="column.priority"
+          [nzColumnKey]="column.name"
+          [nzSortDirections]="['ascend', 'descend']"
+        >
+          {{ column.title }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data.items" (click)="selectedData = item">
+        <td>{{ item.userName }}</td>
+        <td>{{ item.url }}</td>
+        <td>{{ item.executionTime }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+</ng-container>

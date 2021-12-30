@@ -17,7 +17,7 @@
     "paths": {
       "@fs-tw/abp": ["libs/abp/src/index.ts"],
       "@fs-tw/abp/*": ["libs/abp/*/src/index.ts"],
-      "@fs-tw/abp/audit-logging": ["libs/abp/audit-logging/src/index.ts"],
+      "@fs-tw/abp/core": ["libs/abp/core/src/index.ts"],
       "@fs-tw/cms-kit-management": ["libs/cms-kit-management/src/index.ts"],
       "@fs-tw/cms-kit-management/*": ["libs/cms-kit-management/*/src/index.ts"],
       "@fs-tw/components": ["libs/components/src/index.ts"],

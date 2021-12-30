@@ -29,11 +29,6 @@ namespace FS.Abp.AuditLogging
                  options.RemoteServiceName = "audit-logging";
              });
 
-            //Configure<FS.Abp.MediatR.AbpMediatROptions>(options =>
-            //{
-            //    options.AddOrReplaceSetting("audit-logging", "audit-logging", typeof(AbpAuditLoggingApplicationModule).Assembly);
-            //});
-
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(AbpAuditLoggingApplicationModule).Assembly, c =>
@@ -41,6 +36,11 @@ namespace FS.Abp.AuditLogging
                      c.RootPath = "audit-logging";
                      c.RemoteServiceName = "audit-logging";
                  });
+            });
+
+            Configure <Volo.Abp.AspNetCore.Auditing.AbpAspNetCoreAuditingOptions> (options =>
+            {
+                options.IgnoredUrls.Add(@"/api/audit-logging/audit-log-mediator-query/list-audit-log-by-abp-route-name");
             });
 
 

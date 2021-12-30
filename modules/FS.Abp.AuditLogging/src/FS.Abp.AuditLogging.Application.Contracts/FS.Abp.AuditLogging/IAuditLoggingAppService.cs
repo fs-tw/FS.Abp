@@ -10,6 +10,8 @@ namespace FS.Abp.AuditLogging
 {
     public interface IAuditLoggingAppService
     {
+        Task<FS.Abp.AuditLogging.Dtos.AuditLogDto> GetAsync(Guid id);
+
         Task<Dictionary<string, List<AuditLogActionFilter>>> GetFiltersAsync();
 
         Task<PagedResultDto<Dtos.AuditLogActionDto>> GetAuditLogActionSearchAsync(

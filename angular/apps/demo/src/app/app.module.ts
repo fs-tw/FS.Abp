@@ -19,7 +19,7 @@ import { ThemeAlainModule } from '@fs-tw/theme-alain';
 import { ThemeAlainUiExtensionsModule } from '@fs-tw/components/extensions';
 import { CoreModule as FsCoreModule } from '@fs-tw/core';
 //import { EntityTypsModule} from '@fs-tw/core/entity-types';
-import { AuditLoggingConfigModule } from '@fs-tw/audit-logging/config';
+//import { AuditLoggingConfigModule } from '@fs-tw/audit-logging/config';
 
 @NgModule({
   imports: [
@@ -39,7 +39,7 @@ import { AuditLoggingConfigModule } from '@fs-tw/audit-logging/config';
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
     CmsKitManagementConfigModule.forRoot(),
-    AuditLoggingConfigModule.forRoot(),    
+    //AuditLoggingConfigModule.forRoot(),    
 
     NgxsModule.forRoot(),
     FsCoreModule.forRoot()
