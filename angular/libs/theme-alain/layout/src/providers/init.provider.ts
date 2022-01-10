@@ -36,6 +36,7 @@ export function listenRouter(injector: Injector) {
         .map((c) => transToMenu(c)),
       link: route.path,
     };
+    
     return menu;
   };
 
@@ -49,13 +50,16 @@ export function listenRouter(injector: Injector) {
     .pipe(
       tap((roots) => {
       menuService.clear();
+
         let menus = roots
           .filter((r) => !routesService.hide(r))
           .map(transToMenu);
+
       let root: Menu = {
         text: environmentService.getEnvironment().application?.name,
         children: menus,
       };
+
       menuService.add([root]);
       })
     )
