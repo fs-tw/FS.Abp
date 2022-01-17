@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Abp.EntityFeatures\src\FS.Abp.EntityFeatures.Domain\FS.Abp.EntityFeatures.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Settings\src\FS.Abp.Settings.Domain\FS.Abp.Settings.Domain.csproj" />
     <ProjectReference Include="..\FS.CmsKitManagement.Domain.Shared\FS.CmsKitManagement.Domain.Shared.csproj" />
   </ItemGroup>
 

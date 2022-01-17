@@ -10,7 +10,7 @@
 using Volo.Abp.Domain.Services;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
-using FS.Abp.SettingManagement;
+using FS.Abp.Settings;
 using Volo.Abp.Localization;
 using Volo.Abp.Settings;
 using Volo.Abp.SettingManagement;
