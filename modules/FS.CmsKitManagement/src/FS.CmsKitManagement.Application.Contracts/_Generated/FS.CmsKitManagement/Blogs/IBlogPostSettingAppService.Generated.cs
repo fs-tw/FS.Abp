@@ -17,6 +17,6 @@ namespace FS.CmsKitManagement.Blogs
     {
         Task<BlogPostSettingDto> GetAsync(string providerName = null, string providerKey = null, bool fallback = true);
 
-        Task UpdateAsync(BlogPostSettingDto input, string providerName = null, string providerKey = null, bool forceToSet = false);
+        Task UpdateAsync(BlogPostSettingDto input, string providerName = null, string providerKey = null);
     }
 }

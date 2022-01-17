@@ -595,7 +595,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
+                  <X>Undefined</X>
                   <Y>79 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>

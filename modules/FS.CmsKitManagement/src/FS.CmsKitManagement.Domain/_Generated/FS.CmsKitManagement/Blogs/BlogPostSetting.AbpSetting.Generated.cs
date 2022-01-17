@@ -10,8 +10,10 @@
 using Volo.Abp.Domain.Services;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
+using FS.Abp.SettingManagement;
 using Volo.Abp.Localization;
 using Volo.Abp.Settings;
+using Volo.Abp.SettingManagement;
 using FS.CmsKitManagement.Localization;
 using System.Collections.Generic;
 using System;
@@ -37,6 +39,20 @@ namespace FS.CmsKitManagement.Blogs
         private static LocalizableString L(string name)
         {
             return LocalizableString.Create<CmsKitManagementResource>(name);
+        }
+    }
+    public partial class BlogPostSettingFactory : Factory<BlogPostSetting>
+    {
+        public override async Task<BlogPostSetting> GetAsync(string providerName = null, string providerKey = null, bool fallback = true)
+        {
+            var result = new BlogPostSetting();
+            result.DefaultCoverImage = await this.TryGetAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultCoverImage, providerName, providerKey, fallback);
+            return result;
+        }
+
+        public override async Task SetAsync(BlogPostSetting input, string providerName, string providerKey, bool forceToSet = false)
+        {
+            await this.TrySetAsync(CmsKitManagementSettingNames.BlogPostSetting.DefaultCoverImage, input.DefaultCoverImage.ToString(), providerName, providerKey, forceToSet);
         }
     }
 }
