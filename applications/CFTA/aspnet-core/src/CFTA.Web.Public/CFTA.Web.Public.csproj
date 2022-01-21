@@ -62,4 +62,6 @@
     <None Include="Themes\Basic\Components\Toolbar\UserMenu\Default.cshtml" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties package_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>
