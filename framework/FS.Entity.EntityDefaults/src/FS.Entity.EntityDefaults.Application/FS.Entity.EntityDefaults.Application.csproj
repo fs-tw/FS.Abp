@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityDefaults</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.EntityDefaults.Application.Contracts\FS.Entity.EntityDefaults.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Entity.EntityDefaults.Domain\FS.Entity.EntityDefaults.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultItemDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultItemDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityPropertyDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityPropertyDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\EntityDefaultCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityDefaults</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\EntityDefaultItemCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityDefaults</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

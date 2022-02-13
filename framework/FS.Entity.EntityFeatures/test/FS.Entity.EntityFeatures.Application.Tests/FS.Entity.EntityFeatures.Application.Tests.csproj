@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FS.Entity.EntityFeatures.Application\FS.Entity.EntityFeatures.Application.csproj" />
+    <ProjectReference Include="..\FS.Entity.EntityFeatures.Domain.Tests\FS.Entity.EntityFeatures.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+  </ItemGroup>
+
+</Project>

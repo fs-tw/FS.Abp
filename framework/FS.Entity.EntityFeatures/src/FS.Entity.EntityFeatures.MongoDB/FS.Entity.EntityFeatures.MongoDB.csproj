@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityFeatures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.MongoDB" Version="5.1.3" />
+    <ProjectReference Include="..\FS.Entity.EntityFeatures.Domain\FS.Entity.EntityFeatures.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Entity.MultiLinguals</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.MultiLinguals.Domain.Shared\FS.Entity.MultiLinguals.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\Dtos\MultiLingualDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\Dtos\MultiLingualTranslationDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\IMultiLingualCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\IMultiLingualTranslationCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

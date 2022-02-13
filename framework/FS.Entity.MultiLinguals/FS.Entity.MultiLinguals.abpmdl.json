@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Entity.MultiLinguals.Domain.Shared": {
+      "path": "src/FS.Entity.MultiLinguals.Domain.Shared/FS.Entity.MultiLinguals.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.Domain": {
+      "path": "src/FS.Entity.MultiLinguals.Domain/FS.Entity.MultiLinguals.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.Application.Contracts": {
+      "path": "src/FS.Entity.MultiLinguals.Application.Contracts/FS.Entity.MultiLinguals.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.Application": {
+      "path": "src/FS.Entity.MultiLinguals.Application/FS.Entity.MultiLinguals.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.EntityFrameworkCore": {
+      "path": "src/FS.Entity.MultiLinguals.EntityFrameworkCore/FS.Entity.MultiLinguals.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.MongoDB": {
+      "path": "src/FS.Entity.MultiLinguals.MongoDB/FS.Entity.MultiLinguals.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.HttpApi": {
+      "path": "src/FS.Entity.MultiLinguals.HttpApi/FS.Entity.MultiLinguals.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.HttpApi.Client": {
+      "path": "src/FS.Entity.MultiLinguals.HttpApi.Client/FS.Entity.MultiLinguals.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.TestBase": {
+      "path": "test/FS.Entity.MultiLinguals.TestBase/FS.Entity.MultiLinguals.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.MultiLinguals.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Entity.MultiLinguals.EntityFrameworkCore.Tests/FS.Entity.MultiLinguals.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.MultiLinguals.MongoDB.Tests": {
+      "path": "test/FS.Entity.MultiLinguals.MongoDB.Tests/FS.Entity.MultiLinguals.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.MultiLinguals.Domain.Tests": {
+      "path": "test/FS.Entity.MultiLinguals.Domain.Tests/FS.Entity.MultiLinguals.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.MultiLinguals.Application.Tests": {
+      "path": "test/FS.Entity.MultiLinguals.Application.Tests/FS.Entity.MultiLinguals.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.MultiLinguals.HttpApi.Host": {
+      "path": "host/FS.Entity.MultiLinguals.HttpApi.Host/FS.Entity.MultiLinguals.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.MultiLinguals.Web": {
+      "path": "src/FS.Entity.MultiLinguals.Web/FS.Entity.MultiLinguals.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Entity.MultiLinguals.HttpApi.Client.ConsoleTestApp/FS.Entity.MultiLinguals.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.MultiLinguals.Web.Host": {
+      "path": "host/FS.Entity.MultiLinguals.Web.Host/FS.Entity.MultiLinguals.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.MultiLinguals.IdentityServer": {
+      "path": "host/FS.Entity.MultiLinguals.IdentityServer/FS.Entity.MultiLinguals.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.MultiLinguals.Host.Shared": {
+      "path": "host/FS.Entity.MultiLinguals.Host.Shared/FS.Entity.MultiLinguals.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.MultiLinguals.Web.Unified": {
+      "path": "host/FS.Entity.MultiLinguals.Web.Unified/FS.Entity.MultiLinguals.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.MultiLinguals.Blazor": {
+      "path": "src/FS.Entity.MultiLinguals.Blazor/FS.Entity.MultiLinguals.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.Blazor.Host": {
+      "path": "host/FS.Entity.MultiLinguals.Blazor.Host/FS.Entity.MultiLinguals.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.MultiLinguals.Blazor.Server": {
+      "path": "src/FS.Entity.MultiLinguals.Blazor.Server/FS.Entity.MultiLinguals.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.Blazor.WebAssembly": {
+      "path": "src/FS.Entity.MultiLinguals.Blazor.WebAssembly/FS.Entity.MultiLinguals.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.MultiLinguals.Blazor.Server.Host": {
+      "path": "host/FS.Entity.MultiLinguals.Blazor.Server.Host/FS.Entity.MultiLinguals.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

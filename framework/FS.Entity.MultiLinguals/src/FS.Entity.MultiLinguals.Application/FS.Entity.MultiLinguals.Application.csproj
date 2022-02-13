@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Entity.MultiLinguals</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.MultiLinguals.Application.Contracts\FS.Entity.MultiLinguals.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Entity.MultiLinguals.Domain\FS.Entity.MultiLinguals.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\Dtos\MultiLingualDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\Dtos\MultiLingualDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\Dtos\MultiLingualTranslationDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\Dtos\MultiLingualTranslationDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\MultiLingualCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\MultiLingualTranslationCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

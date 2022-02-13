@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityDefaults</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.EntityDefaults.Domain.Shared\FS.Entity.EntityDefaults.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityDefaultItemDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\Dtos\EntityPropertyDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\IEntityDefaultCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityDefaults</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\EntityDefaults\IEntityDefaultItemCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityDefaults</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.Options;
+﻿using FS.Abp.Npoi.Mapper.Attributes;
 using Npoi.Mapper;
 using NPOI.SS.UserModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using Volo.Abp;
 
 namespace FS.Abp.Npoi.Mapper
 {
@@ -29,9 +31,20 @@ namespace FS.Abp.Npoi.Mapper
             return Enumerable.Range(0, mapper.Workbook.NumberOfSheets).Select(s => mapper.Workbook.GetSheetAt(s).SheetName).ToList();
         }
 
-        public List<T> Read<T>(string filePath, string sheetName)
+        public List<T> Read<T>(string filePath = null, string sheetName = null)
             where T : class, new()
         {
+            var mapToVirtualFileAttribute = FS.Abp.Attributes.AttributeHelper.Find<MapToVirtualFileAttribute>(typeof(T));//TypeDescriptor.GetAttributes(typeof(MapToVirtualFileAttribute)).OfType<MapToVirtualFileAttribute>().FirstOrDefault();
+            if (mapToVirtualFileAttribute!=null)
+            {
+                filePath=mapToVirtualFileAttribute.FilePath;
+                sheetName=mapToVirtualFileAttribute.SheetName;
+            }
+
+            Check.NotNullOrWhiteSpace(filePath, nameof(filePath));
+            Check.NotNullOrWhiteSpace(sheetName, nameof(sheetName));
+
+
             var file = _virtualFileProvider.GetFileInfo(filePath);
             if (!file.Exists)
                 return null;
@@ -68,12 +81,22 @@ namespace FS.Abp.Npoi.Mapper
 
     public partial class VirtualFileNpoiReader
     {
-        public List<T> ReadToTreeNode<T>(string filePath, string sheetName)
+        public List<T> ReadToTreeNode<T>(string filePath = null, string sheetName = null)
             where T : ITreeNode<T>, new()
         {
-            var attribute = Volo.Abp.Reflection.ReflectionHelper.GetSingleAttributeOrDefault<Npoi.Mapper.Attributes.LevelStartAtAttribute>(typeof(T));
+            var attribute = FS.Abp.Attributes.AttributeHelper.Find<LevelStartAtAttribute>(typeof(T));
             if (attribute == null) throw new Exception($"{typeof(T).Name} should has LevelStartAtAttribute");
             var levelIndex = attribute.Index;
+
+            var mapToVirtualFileAttribute = FS.Abp.Attributes.AttributeHelper.Find<MapToVirtualFileAttribute>(typeof(T));//TypeDescriptor.GetAttributes(typeof(MapToVirtualFileAttribute)).OfType<MapToVirtualFileAttribute>().FirstOrDefault();
+            if (mapToVirtualFileAttribute!=null)
+            {
+                filePath=mapToVirtualFileAttribute.FilePath;
+                sheetName=mapToVirtualFileAttribute.SheetName;
+            }
+
+            Check.NotNullOrWhiteSpace(filePath, nameof(filePath));
+            Check.NotNullOrWhiteSpace(sheetName, nameof(sheetName));
 
             var file = _virtualFileProvider.GetFileInfo(filePath);
             if (!file.Exists)

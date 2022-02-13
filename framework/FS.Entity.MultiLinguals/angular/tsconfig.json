@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Entity/multi-linguals": [
+        "projects/multi-linguals/src/public-api.ts"
+      ],
+      "@f-s.Entity/multi-linguals/config": [
+        "projects/multi-linguals/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/multi-linguals/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/multi-linguals/src/lib/proxy/*"]
+    }
+  }
+}

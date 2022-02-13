@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Entity.MultiLinguals</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.MultiLinguals.Application\FS.Entity.MultiLinguals.Application.csproj" />
+    <ProjectReference Include="..\FS.Entity.MultiLinguals.EntityFrameworkCore\FS.Entity.MultiLinguals.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

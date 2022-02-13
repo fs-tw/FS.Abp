@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="0.9.5.4" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.5.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="5.1.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme" Version="5.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="5.1.2" />
+    <PackageReference Include="Volo.Abp.Identity.Blazor.WebAssembly" Version="5.1.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Blazor.WebAssembly" Version="5.1.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Blazor.WebAssembly" Version="5.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Entity.EntityDefaults.Host.Shared\FS.Entity.EntityDefaults.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\src\FS.Entity.EntityDefaults.Blazor.WebAssembly\FS.Entity.EntityDefaults.Blazor.WebAssembly.csproj" />
+  </ItemGroup>
+
+</Project>

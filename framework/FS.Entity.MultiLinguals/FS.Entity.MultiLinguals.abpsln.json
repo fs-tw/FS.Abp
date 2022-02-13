@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Entity.MultiLinguals": {
+      "path": "FS.Entity.MultiLinguals.abpmdl.json"
+    }
+  }
+}

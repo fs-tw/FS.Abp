@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Entity.EntityDefaults</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Entity.EntityDefaults.Application\FS.Entity.EntityDefaults.Application.csproj" />
+    <ProjectReference Include="..\FS.Entity.EntityDefaults.EntityFrameworkCore\FS.Entity.EntityDefaults.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Entity.MultiLinguals</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\FS.Entity.MultiLinguals.Domain\FS.Entity.MultiLinguals.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\EntityFrameworkCore\EfCoreMultiLingualRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\EntityFrameworkCore\EfCoreMultiLingualTranslationRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\EntityFrameworkCore\IMultiLingualsDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\EntityFrameworkCore\MultiLingual.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\EntityFrameworkCore\MultiLingualTranslation.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Entity\MultiLinguals\MultiLingualsStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MultiLinguals</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

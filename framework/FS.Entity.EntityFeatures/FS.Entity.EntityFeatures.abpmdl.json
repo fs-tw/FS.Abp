@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Entity.EntityFeatures.Domain.Shared": {
+      "path": "src/FS.Entity.EntityFeatures.Domain.Shared/FS.Entity.EntityFeatures.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.Domain": {
+      "path": "src/FS.Entity.EntityFeatures.Domain/FS.Entity.EntityFeatures.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.Application.Contracts": {
+      "path": "src/FS.Entity.EntityFeatures.Application.Contracts/FS.Entity.EntityFeatures.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.Application": {
+      "path": "src/FS.Entity.EntityFeatures.Application/FS.Entity.EntityFeatures.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.EntityFrameworkCore": {
+      "path": "src/FS.Entity.EntityFeatures.EntityFrameworkCore/FS.Entity.EntityFeatures.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.MongoDB": {
+      "path": "src/FS.Entity.EntityFeatures.MongoDB/FS.Entity.EntityFeatures.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.HttpApi": {
+      "path": "src/FS.Entity.EntityFeatures.HttpApi/FS.Entity.EntityFeatures.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.HttpApi.Client": {
+      "path": "src/FS.Entity.EntityFeatures.HttpApi.Client/FS.Entity.EntityFeatures.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.TestBase": {
+      "path": "test/FS.Entity.EntityFeatures.TestBase/FS.Entity.EntityFeatures.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.EntityFeatures.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Entity.EntityFeatures.EntityFrameworkCore.Tests/FS.Entity.EntityFeatures.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.EntityFeatures.MongoDB.Tests": {
+      "path": "test/FS.Entity.EntityFeatures.MongoDB.Tests/FS.Entity.EntityFeatures.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.EntityFeatures.Domain.Tests": {
+      "path": "test/FS.Entity.EntityFeatures.Domain.Tests/FS.Entity.EntityFeatures.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.EntityFeatures.Application.Tests": {
+      "path": "test/FS.Entity.EntityFeatures.Application.Tests/FS.Entity.EntityFeatures.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.EntityFeatures.HttpApi.Host": {
+      "path": "host/FS.Entity.EntityFeatures.HttpApi.Host/FS.Entity.EntityFeatures.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.EntityFeatures.Web": {
+      "path": "src/FS.Entity.EntityFeatures.Web/FS.Entity.EntityFeatures.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Entity.EntityFeatures.HttpApi.Client.ConsoleTestApp/FS.Entity.EntityFeatures.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Entity.EntityFeatures.Web.Host": {
+      "path": "host/FS.Entity.EntityFeatures.Web.Host/FS.Entity.EntityFeatures.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.EntityFeatures.IdentityServer": {
+      "path": "host/FS.Entity.EntityFeatures.IdentityServer/FS.Entity.EntityFeatures.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.EntityFeatures.Host.Shared": {
+      "path": "host/FS.Entity.EntityFeatures.Host.Shared/FS.Entity.EntityFeatures.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.EntityFeatures.Web.Unified": {
+      "path": "host/FS.Entity.EntityFeatures.Web.Unified/FS.Entity.EntityFeatures.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.EntityFeatures.Blazor": {
+      "path": "src/FS.Entity.EntityFeatures.Blazor/FS.Entity.EntityFeatures.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.Blazor.Host": {
+      "path": "host/FS.Entity.EntityFeatures.Blazor.Host/FS.Entity.EntityFeatures.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Entity.EntityFeatures.Blazor.Server": {
+      "path": "src/FS.Entity.EntityFeatures.Blazor.Server/FS.Entity.EntityFeatures.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.Blazor.WebAssembly": {
+      "path": "src/FS.Entity.EntityFeatures.Blazor.WebAssembly/FS.Entity.EntityFeatures.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Entity.EntityFeatures.Blazor.Server.Host": {
+      "path": "host/FS.Entity.EntityFeatures.Blazor.Server.Host/FS.Entity.EntityFeatures.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

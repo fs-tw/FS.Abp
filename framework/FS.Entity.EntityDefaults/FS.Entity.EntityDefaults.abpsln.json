@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Entity.EntityDefaults": {
+      "path": "FS.Entity.EntityDefaults.abpmdl.json"
+    }
+  }
+}

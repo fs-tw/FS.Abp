@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Entity.EntityFeatures": {
+      "path": "FS.Entity.EntityFeatures.abpmdl.json"
+    }
+  }
+}

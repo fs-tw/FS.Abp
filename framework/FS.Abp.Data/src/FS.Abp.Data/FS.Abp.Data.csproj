@@ -9,4 +9,8 @@
     <PackageReference Include="Volo.Abp.Data" Version="$(AbpVersion)" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FS.Abp.Data.Core\FS.Abp.Data.Core.csproj" />
+  </ItemGroup>
+
 </Project>

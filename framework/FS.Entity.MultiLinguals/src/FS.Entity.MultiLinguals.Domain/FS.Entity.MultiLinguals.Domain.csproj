@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Entity.MultiLinguals</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--<PackageReference Include="FS.Abp.Data" Version="$(FSVersion)" />-->
+		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\..\..\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
+		<ProjectReference Include="..\FS.Entity.MultiLinguals.Domain.Shared\FS.Entity.MultiLinguals.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="_Generated\FS.Entity\MultiLinguals\IMultiLingualRepository.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MultiLinguals</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Entity\MultiLinguals\IMultiLingualsStore.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MultiLinguals</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Entity\MultiLinguals\IMultiLingualTranslationRepository.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MultiLinguals</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Entity\MultiLinguals\MultiLingual.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MultiLinguals</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Entity\MultiLinguals\MultiLingualTranslation.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MultiLinguals</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>
