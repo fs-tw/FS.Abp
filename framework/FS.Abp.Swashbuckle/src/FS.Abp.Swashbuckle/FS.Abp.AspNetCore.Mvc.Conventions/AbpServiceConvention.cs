@@ -25,7 +25,7 @@ namespace FS.Abp.AspNetCore.Mvc.Conventions
             var setting=base.GetControllerSettingOrNull(controller.ControllerType);
             base.ConfigureApiExplorer(controller);
             var module = _application.Modules.FirstOrDefault(x => x.Assembly.GetType(controller.ControllerType.FullName) != null);
-            controller.ApiExplorer.GroupName = module.Type.Name;
+            controller.ApiExplorer.GroupName = module?.Type?.Name;
         }
     }
 }

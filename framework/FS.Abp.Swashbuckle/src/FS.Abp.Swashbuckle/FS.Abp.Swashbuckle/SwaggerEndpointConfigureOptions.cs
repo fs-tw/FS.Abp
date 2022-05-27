@@ -18,6 +18,7 @@ namespace FS.Abp.Swashbuckle
         {
             var names = _descriptionProvider.ApiDescriptionGroups.Items
                 .Select(x => x.GroupName)
+                .Where(x => !string.IsNullOrEmpty(x))
                 .OrderBy(x => x)
                 .ToList();
             
