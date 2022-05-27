@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s.Abp/sync-table": [
+        "projects/sync-table/src/public-api.ts"
+      ],
+      "@f-s.Abp/sync-table/config": [
+        "projects/sync-table/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/sync-table/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/sync-table/src/lib/proxy/*"]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Abp.SyncTable.Domain.Shared": {
+      "path": "src/FS.Abp.SyncTable.Domain.Shared/FS.Abp.SyncTable.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.Domain": {
+      "path": "src/FS.Abp.SyncTable.Domain/FS.Abp.SyncTable.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.Application.Contracts": {
+      "path": "src/FS.Abp.SyncTable.Application.Contracts/FS.Abp.SyncTable.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.Application": {
+      "path": "src/FS.Abp.SyncTable.Application/FS.Abp.SyncTable.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.EntityFrameworkCore": {
+      "path": "src/FS.Abp.SyncTable.EntityFrameworkCore/FS.Abp.SyncTable.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.MongoDB": {
+      "path": "src/FS.Abp.SyncTable.MongoDB/FS.Abp.SyncTable.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.HttpApi": {
+      "path": "src/FS.Abp.SyncTable.HttpApi/FS.Abp.SyncTable.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.HttpApi.Client": {
+      "path": "src/FS.Abp.SyncTable.HttpApi.Client/FS.Abp.SyncTable.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.TestBase": {
+      "path": "test/FS.Abp.SyncTable.TestBase/FS.Abp.SyncTable.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.SyncTable.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Abp.SyncTable.EntityFrameworkCore.Tests/FS.Abp.SyncTable.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.SyncTable.MongoDB.Tests": {
+      "path": "test/FS.Abp.SyncTable.MongoDB.Tests/FS.Abp.SyncTable.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.SyncTable.Domain.Tests": {
+      "path": "test/FS.Abp.SyncTable.Domain.Tests/FS.Abp.SyncTable.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.SyncTable.Application.Tests": {
+      "path": "test/FS.Abp.SyncTable.Application.Tests/FS.Abp.SyncTable.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.SyncTable.HttpApi.Host": {
+      "path": "host/FS.Abp.SyncTable.HttpApi.Host/FS.Abp.SyncTable.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.SyncTable.Web": {
+      "path": "src/FS.Abp.SyncTable.Web/FS.Abp.SyncTable.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Abp.SyncTable.HttpApi.Client.ConsoleTestApp/FS.Abp.SyncTable.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.SyncTable.Web.Host": {
+      "path": "host/FS.Abp.SyncTable.Web.Host/FS.Abp.SyncTable.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.SyncTable.IdentityServer": {
+      "path": "host/FS.Abp.SyncTable.IdentityServer/FS.Abp.SyncTable.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.SyncTable.Host.Shared": {
+      "path": "host/FS.Abp.SyncTable.Host.Shared/FS.Abp.SyncTable.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.SyncTable.Web.Unified": {
+      "path": "host/FS.Abp.SyncTable.Web.Unified/FS.Abp.SyncTable.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.SyncTable.Blazor": {
+      "path": "src/FS.Abp.SyncTable.Blazor/FS.Abp.SyncTable.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.Blazor.Host": {
+      "path": "host/FS.Abp.SyncTable.Blazor.Host/FS.Abp.SyncTable.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.SyncTable.Blazor.Server": {
+      "path": "src/FS.Abp.SyncTable.Blazor.Server/FS.Abp.SyncTable.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.Blazor.WebAssembly": {
+      "path": "src/FS.Abp.SyncTable.Blazor.WebAssembly/FS.Abp.SyncTable.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.SyncTable.Blazor.Server.Host": {
+      "path": "host/FS.Abp.SyncTable.Blazor.Server.Host/FS.Abp.SyncTable.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

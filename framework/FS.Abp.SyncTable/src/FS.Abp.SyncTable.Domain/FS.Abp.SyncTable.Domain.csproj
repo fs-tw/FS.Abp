@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Abp.SyncTable</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.EventBus" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\..\..\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
+		<ProjectReference Include="..\FS.Abp.SyncTable.Domain.Shared\FS.Abp.SyncTable.Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

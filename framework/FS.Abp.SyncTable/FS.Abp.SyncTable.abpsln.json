@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Abp.SyncTable": {
+      "path": "FS.Abp.SyncTable.abpmdl.json"
+    }
+  }
+}

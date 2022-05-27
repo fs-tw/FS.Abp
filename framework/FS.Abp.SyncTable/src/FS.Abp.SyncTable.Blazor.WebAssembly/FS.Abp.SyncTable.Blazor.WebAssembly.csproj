@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="5.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\FS.Abp.SyncTable.Blazor\FS.Abp.SyncTable.Blazor.csproj" />
+        <ProjectReference Include="..\FS.Abp.SyncTable.HttpApi.Client\FS.Abp.SyncTable.HttpApi.Client.csproj" />
+    </ItemGroup>
+
+</Project>
