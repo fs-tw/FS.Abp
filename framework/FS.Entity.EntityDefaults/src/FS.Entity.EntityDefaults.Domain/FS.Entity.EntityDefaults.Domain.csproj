@@ -6,7 +6,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="FS.Abp.Data" Version="$(FSVersion)" />-->
 		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
 		<ProjectReference Include="..\..\..\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
 		<ProjectReference Include="..\FS.Entity.EntityDefaults.Domain.Shared\FS.Entity.EntityDefaults.Domain.Shared.csproj" />
