@@ -42,15 +42,30 @@ namespace FS.Abp.Npoi.Mapper
             }
 
             Check.NotNullOrWhiteSpace(filePath, nameof(filePath));
+
             Check.NotNullOrWhiteSpace(sheetName, nameof(sheetName));
 
 
             var file = _virtualFileProvider.GetFileInfo(filePath);
+
             if (!file.Exists)
                 return null;
+
             global::Npoi.Mapper.Mapper mapper = new global::Npoi.Mapper.Mapper(file.CreateReadStream());
+
             filterEmptyRows(mapper, sheetName);
-            List<T> sheet = mapper.Take<T>(sheetName).Select(x => x.Value).ToList();
+
+            var datas = mapper.Take<T>(sheetName).ToList();
+
+            var errorDatas = datas.Where(x => !String.IsNullOrEmpty(x.ErrorMessage)).ToList();
+
+            if (errorDatas.Count > 0)
+            {
+                throw new Exception("Excel 有錯誤資料");
+            }
+
+            List<T> sheet = datas.Select(x => x.Value).ToList();
+
             return sheet;
 
             static void filterEmptyRows(global::Npoi.Mapper.Mapper mapper, string sheetName)
