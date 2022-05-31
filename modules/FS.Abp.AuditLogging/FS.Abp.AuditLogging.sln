@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29001.49
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{649A3FFA-182F-4E56-9717-E6A9A2BEC545}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Application.Contracts", "src\FS.Abp.AuditLogging.Application.Contracts\FS.Abp.AuditLogging.Application.Contracts.csproj", "{477342F7-7620-49BD-8936-88BB47BBA198}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.Application", "src\FS.Abp.AuditLogging.Application\FS.Abp.AuditLogging.Application.csproj", "{11161FD3-0C43-47D7-A709-6691697203E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FS.Abp.AuditLogging.DbMigrator", "src\FS.Abp.AuditLogging.DbMigrator\FS.Abp.AuditLogging.DbMigrator.csproj", "{CA21C680-D5F3-4D33-BF71-DD61A73FD0D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db-migrator", "db-migrator", "{5DA6831A-67BD-4B4E-89F9-B62A00F3B085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{11161FD3-0C43-47D7-A709-6691697203E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11161FD3-0C43-47D7-A709-6691697203E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11161FD3-0C43-47D7-A709-6691697203E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA21C680-D5F3-4D33-BF71-DD61A73FD0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA21C680-D5F3-4D33-BF71-DD61A73FD0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA21C680-D5F3-4D33-BF71-DD61A73FD0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA21C680-D5F3-4D33-BF71-DD61A73FD0D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{5BB62CFE-1C7C-4264-A375-E032A7D79E61} = {130A96A4-1682-4FC8-A71B-7891896A80D8}
 		{477342F7-7620-49BD-8936-88BB47BBA198} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{11161FD3-0C43-47D7-A709-6691697203E4} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{CA21C680-D5F3-4D33-BF71-DD61A73FD0D7} = {5DA6831A-67BD-4B4E-89F9-B62A00F3B085}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21499090-BC3F-14BB-6010-2F9E8399A0EC}
