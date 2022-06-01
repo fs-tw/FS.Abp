@@ -5,6 +5,8 @@ using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
+using Volo.Abp.Timing;
+using System;
 
 namespace FS.Abp.AuditLogging
 {
@@ -43,7 +45,15 @@ namespace FS.Abp.AuditLogging
                 options.IgnoredUrls.Add(@"/api/audit-logging/audit-log-mediator-query/list-audit-log-by-abp-route-name");
             });
 
+            ConfigureClockUtc();
+        }
 
+        private void ConfigureClockUtc()
+        {
+            Configure<AbpClockOptions>(options =>
+            {
+                options.Kind = DateTimeKind.Utc;
+            });
         }
     }
 }
