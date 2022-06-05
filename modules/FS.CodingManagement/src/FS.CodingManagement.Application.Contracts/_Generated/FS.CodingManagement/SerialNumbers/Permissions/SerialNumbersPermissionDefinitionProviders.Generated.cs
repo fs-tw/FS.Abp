@@ -8,16 +8,16 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 using Volo.Abp.Localization;
-using FS.CodingManagement.Localization;
-using FS.CodingManagement.Permissions;
+using FS.Coding.Localization;
+using FS.Coding.Permissions;
 
-namespace FS.CodingManagement.SerialNumbers.Permissions
+namespace FS.Coding.SerialNumbers.Permissions
 {
     public partial class SerialNumbersPermissionDefinitionProvider : Volo.Abp.Authorization.Permissions.PermissionDefinitionProvider
     {
         public override void Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext context)
         {
-            var group = context.GetGroup(CodingManagementPermissions.GroupName);
+            var group = context.GetGroup(CodingPermissions.GroupName);
 
             var SerialNumber = group.AddPermission(SerialNumbersPermissionNames.SerialNumber.Default,L(SerialNumbersPermissionNames.SerialNumber.Default));
             SerialNumber.AddChild(SerialNumbersPermissionNames.SerialNumber.Create , L("DisplayName:SerialNumber.Create"));
@@ -31,7 +31,7 @@ namespace FS.CodingManagement.SerialNumbers.Permissions
 
         private static LocalizableString L(string name)
         {
-            return LocalizableString.Create<CodingManagementResource>(name);
+            return LocalizableString.Create<CodingResource>(name);
         }
     }
 }

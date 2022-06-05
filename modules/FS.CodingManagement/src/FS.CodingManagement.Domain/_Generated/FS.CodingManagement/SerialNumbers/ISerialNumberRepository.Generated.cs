@@ -10,10 +10,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace FS.CodingManagement.SerialNumbers
+namespace FS.Coding.SerialNumbers
 {
     public partial interface ISerialNumberRepository : 
-        Volo.Abp.Domain.Repositories.IRepository<FS.CodingManagement.SerialNumbers.SerialNumber,Guid>
+        Volo.Abp.Domain.Repositories.IRepository<FS.Coding.SerialNumbers.SerialNumber,Guid>
     {
 
     }

@@ -11,16 +11,16 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Services;
 
-namespace FS.CodingManagement.SerialNumbers
+namespace FS.Coding.SerialNumbers
 {
     public partial interface ISerialNumberCrudAppService : // auto-generated
         Volo.Abp.Application.Services.ICrudAppService<
-            FS.CodingManagement.SerialNumbers.Dtos.SerialNumberWithDetailsDto, 
-            FS.CodingManagement.SerialNumbers.Dtos.SerialNumberDto, 
+            FS.Coding.SerialNumbers.Dtos.SerialNumberWithDetailsDto, 
+            FS.Coding.SerialNumbers.Dtos.SerialNumberDto, 
             Guid, 
-            FS.CodingManagement.SerialNumbers.Dtos.SerialNumberGetListDto, 
-            FS.CodingManagement.SerialNumbers.Dtos.SerialNumberCreateDto, 
-            FS.CodingManagement.SerialNumbers.Dtos.SerialNumberUpdateDto>
+            FS.Coding.SerialNumbers.Dtos.SerialNumberGetListDto, 
+            FS.Coding.SerialNumbers.Dtos.SerialNumberCreateDto, 
+            FS.Coding.SerialNumbers.Dtos.SerialNumberUpdateDto>
     {
 
     }

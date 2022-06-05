@@ -11,6 +11,7 @@ namespace FS.Coding;
 [DependsOn(
     typeof(AbpValidationModule)
 )]
+[DependsOn(typeof(FS.Abp.Data.AbpDataCoreModule))]
 public class CodingDomainSharedModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

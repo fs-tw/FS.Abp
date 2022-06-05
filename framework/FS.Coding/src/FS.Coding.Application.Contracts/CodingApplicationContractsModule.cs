@@ -9,6 +9,7 @@ namespace FS.Coding;
     typeof(AbpDddApplicationContractsModule),
     typeof(AbpAuthorizationModule)
     )]
+[DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
 public class CodingApplicationContractsModule : AbpModule
 {
 

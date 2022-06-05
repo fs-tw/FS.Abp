@@ -5,40 +5,40 @@
     <Generation>
       <GeneratedFiles>
         <File Name="CodingManagement.cs" />
-        <File Name="CodesPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Permissions" />
+        <File Name="CodesPermissionNames.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Permissions" />
         <File Name="SerialNumbersPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Permissions" />
-        <File Name="CodesPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Permissions" />
+        <File Name="CodesPermissionDefinitionProviders.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Permissions" />
         <File Name="SerialNumbersPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Permissions" />
-        <File Name="ICodingCrudAppService.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
+        <File Name="ICodingCrudAppService.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes" />
         <File Name="ISerialNumberCrudAppService.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="CodingCrudAppService.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
+        <File Name="CodingCrudAppService.Generated.cs" Project="FS.Coding.Codes.Application" ProjectFolder="_Generated\FS.Coding\Codes" />
         <File Name="SerialNumberCrudAppService.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="CodingDto.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
+        <File Name="CodingDto.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Dtos" />
         <File Name="SerialNumberDto.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
-        <File Name="CodingDtoAutoMapperProfile.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
+        <File Name="CodingDtoAutoMapperProfile.Generated.cs" Project="FS.Coding.Codes.Application" ProjectFolder="_Generated\FS.Coding\Codes\Dtos" />
         <File Name="SerialNumberDtoAutoMapperProfile.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
-        <File Name="CodingDtoValidator.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
+        <File Name="CodingDtoValidator.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Dtos" />
         <File Name="SerialNumberDtoValidator.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
-        <File Name="ICodesStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="CodesStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
+        <File Name="ICodesStore.Generated.cs" Project="FS.Coding.Codes.Domain" ProjectFolder="_Generated\FS.Coding\Codes" />
+        <File Name="CodesStore.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes" />
         <File Name="ISerialNumbersStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="SerialNumbersStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="ICodesDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
-        <File Name="CodesDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
-        <File Name="CodesDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="ICodesDbContext.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
+        <File Name="CodesDbContext.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
+        <File Name="CodesDbContextModelCreatingExtensions.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
         <File Name="ISerialNumbersDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
         <File Name="SerialNumbersDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
         <File Name="SerialNumbersDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
         <File Name="ICodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
         <File Name="CodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
         <File Name="CodingManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
-        <File Name="Coding.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
+        <File Name="Coding.Generated.cs" Project="FS.Coding.Codes.Domain" ProjectFolder="_Generated\FS.Coding\Codes" />
         <File Name="SerialNumber.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="Coding.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="Coding.Configuration.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
         <File Name="SerialNumber.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
-        <File Name="ICodingTreeRepository.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
+        <File Name="ICodingTreeRepository.Generated.cs" Project="FS.Coding.Codes.Domain" ProjectFolder="_Generated\FS.Coding\Codes" />
         <File Name="ISerialNumberRepository.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="EfCoreCodingTreeRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="EfCoreCodingTreeRepository.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
         <File Name="EfCoreSerialNumberRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
       </GeneratedFiles>
     </Generation>

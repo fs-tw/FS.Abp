@@ -1,48 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>FS.CodingManagement</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CodingManagement</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CodingManagement\Codes\Dtos\CodingDtoValidator.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\CodingCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\Dtos\CodingDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\Dtos\SerialNumberDtoAutoMapperProfile.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\SerialNumberCrudAppService.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\Dtos\SerialNumberDtoValidator.Generated.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.CodingManagement\CodingCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumberCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\Dtos\SerialNumberDtoValidator.Generated.cs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
-    <!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />-->
-    <ProjectReference Include="..\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
-    <ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\framework\FS.Coding.Codes\src\FS.Coding.Codes.Application\FS.Coding.Codes.Application.csproj" />
+		<!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />-->
+		<ProjectReference Include="..\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="_Generated\FS.CodingManagement\Dtos\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\CodingCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Codes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\Dtos\CodingDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\Dtos\SerialNumberDtoAutoMapperProfile.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Dtos</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumberCrudAppService.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SerialNumbers</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\Dtos\SerialNumberDtoAutoMapperProfile.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumberCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SerialNumbers</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
 </Project>

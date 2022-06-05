@@ -10,7 +10,7 @@
 using System.Reflection;
 using FluentValidation;
 
-namespace FS.CodingManagement.SerialNumbers.Dtos
+namespace FS.Coding.SerialNumbers.Dtos
 {
     public partial class SerialNumberCreateDtoValidator : AbstractValidator<SerialNumberCreateDto>
     {

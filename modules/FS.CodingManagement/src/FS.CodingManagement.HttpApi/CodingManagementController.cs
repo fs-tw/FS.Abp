@@ -1,4 +1,4 @@
-﻿using FS.CodingManagement.Localization;
+﻿using FS.Coding.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace FS.CodingManagement
@@ -7,7 +7,7 @@ namespace FS.CodingManagement
     {
         protected CodingManagementController()
         {
-            LocalizationResource = typeof(CodingManagementResource);
+            LocalizationResource = typeof(CodingResource);
         }
     }
 }

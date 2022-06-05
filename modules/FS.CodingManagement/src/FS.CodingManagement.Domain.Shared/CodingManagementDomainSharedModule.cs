@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Modularity;
 using Volo.Abp.Localization;
-using FS.CodingManagement.Localization;
+using FS.Coding.Localization;
 using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
@@ -8,12 +8,8 @@ using Volo.Abp.VirtualFileSystem;
 
 namespace FS.CodingManagement
 {
-    [DependsOn(
-        typeof(AbpValidationModule)
-    )]
+    [DependsOn(typeof(FS.Coding.Codes.CodesDomainSharedModule))]
     [DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule))]
-    [DependsOn(typeof(FS.Abp.Data.AbpDataCoreModule))]
-
     public class CodingManagementDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -26,14 +22,14 @@ namespace FS.CodingManagement
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
-                    .Add<CodingManagementResource>("en")
-                    .AddBaseTypes(typeof(AbpValidationResource))
+                    .Get<CodingResource>()
+                    //.AddBaseTypes(typeof(AbpValidationResource))
                     .AddVirtualJson("/Localization/CodingManagement");
             });
 
             Configure<AbpExceptionLocalizationOptions>(options =>
             {
-                options.MapCodeNamespace("CodingManagement", typeof(CodingManagementResource));
+                options.MapCodeNamespace("CodingManagement", typeof(CodingResource));
             });
         }
     }

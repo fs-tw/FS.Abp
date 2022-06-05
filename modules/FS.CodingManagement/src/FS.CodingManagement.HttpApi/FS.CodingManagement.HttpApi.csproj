@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Coding.Codes\src\FS.Coding.Codes.HttpApi\FS.Coding.Codes.HttpApi.csproj" />
     <ProjectReference Include="..\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
   </ItemGroup>
 

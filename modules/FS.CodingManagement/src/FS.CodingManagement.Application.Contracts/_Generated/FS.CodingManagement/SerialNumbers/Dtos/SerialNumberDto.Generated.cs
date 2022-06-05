@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 
-namespace FS.CodingManagement.SerialNumbers.Dtos
+namespace FS.Coding.SerialNumbers.Dtos
 {
 
     public partial class SerialNumberDto : Volo.Abp.Application.Dtos.ExtensibleAuditedEntityDto<Guid>

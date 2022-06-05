@@ -4,7 +4,7 @@ namespace FS.Coding.Permissions;
 
 public class CodingPermissions
 {
-    public const string GroupName = "Coding";
+    public const string GroupName = "CodingManagement";
 
     public static string[] GetAll()
     {

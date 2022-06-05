@@ -1,4 +1,4 @@
-﻿using FS.CodingManagement.Localization;
+﻿using FS.Coding.Localization;
 using Volo.Abp.Application.Services;
 
 namespace FS.CodingManagement
@@ -7,7 +7,7 @@ namespace FS.CodingManagement
     {
         protected CodingManagementAppService()
         {
-            LocalizationResource = typeof(CodingManagementResource);
+            LocalizationResource = typeof(CodingResource);
             ObjectMapperContext = typeof(CodingManagementApplicationModule);
         }
     }

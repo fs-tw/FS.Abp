@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Domain.Services;
 
-namespace FS.CodingManagement.SerialNumbers
+namespace FS.Coding.SerialNumbers
 {
     public partial class SerialNumbersStore : DomainService, ISerialNumbersStore //auto-generated
     {

@@ -9,11 +9,11 @@
 //------------------------------------------------------------------------------
 using Volo.Abp.Reflection;
 
-namespace FS.CodingManagement.SerialNumbers.Permissions
+namespace FS.Coding.SerialNumbers.Permissions
 {
     public class SerialNumbersPermissionNames
     {
-        public const string ModuleName = "FS.CodingManagement.SerialNumbers";
+        public const string ModuleName = "FS.Coding.SerialNumbers";
         public static class SerialNumber
         {
             public const string Default = ModuleName + ".SerialNumber";

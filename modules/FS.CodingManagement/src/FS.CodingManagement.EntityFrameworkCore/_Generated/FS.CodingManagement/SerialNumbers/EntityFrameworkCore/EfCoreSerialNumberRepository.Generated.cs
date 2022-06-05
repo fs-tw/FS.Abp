@@ -13,12 +13,12 @@ using System.Collections.Generic;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using System.Threading.Tasks;
-using FS.CodingManagement.SerialNumbers.EntityFrameworkCore;
+using FS.Coding.SerialNumbers.EntityFrameworkCore;
 
-namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
+namespace FS.Coding.SerialNumbers.EntityFrameworkCore
 {
     public partial class EfCoreSerialNumberRepository : 
-        EfCoreRepository<ISerialNumbersDbContext,FS.CodingManagement.SerialNumbers.SerialNumber,Guid>,
+        EfCoreRepository<ISerialNumbersDbContext,FS.Coding.SerialNumbers.SerialNumber,Guid>,
         ISerialNumberRepository
     {
         public EfCoreSerialNumberRepository(IDbContextProvider<ISerialNumbersDbContext> dbContextProvider)

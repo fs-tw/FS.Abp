@@ -11,8 +11,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
-using FS.CodingManagement.Codes.EntityFrameworkCore;
-using FS.CodingManagement.SerialNumbers.EntityFrameworkCore;
+using FS.Coding.Codes.EntityFrameworkCore;
+using FS.Coding.SerialNumbers.EntityFrameworkCore;
 
 
 namespace FS.CodingManagement.EntityFrameworkCore

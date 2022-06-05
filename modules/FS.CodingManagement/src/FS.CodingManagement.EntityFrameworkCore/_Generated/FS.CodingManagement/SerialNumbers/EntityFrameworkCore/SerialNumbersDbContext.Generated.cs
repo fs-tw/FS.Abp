@@ -25,11 +25,11 @@ using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Volo.Abp.DependencyInjection;
 
-namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
+namespace FS.Coding.SerialNumbers.EntityFrameworkCore
 {
     public partial class SerialNumbersDbContext : AbpDbContext<SerialNumbersDbContext>, ISerialNumbersDbContext
     {
-        public DbSet<FS.CodingManagement.SerialNumbers.SerialNumber> SerialNumbers { get; set; }
+        public DbSet<FS.Coding.SerialNumbers.SerialNumber> SerialNumbers { get; set; }
 
         public SerialNumbersDbContext(DbContextOptions<SerialNumbersDbContext> options)
             : base(options)

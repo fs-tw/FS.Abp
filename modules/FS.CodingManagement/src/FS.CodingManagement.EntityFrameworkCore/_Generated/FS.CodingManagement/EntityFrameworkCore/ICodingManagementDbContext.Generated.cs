@@ -29,10 +29,10 @@ namespace FS.CodingManagement.EntityFrameworkCore
 {
     [ConnectionStringName(CodingManagementDbProperties.ConnectionStringName)]
     public partial interface ICodingManagementDbContext : IEfCoreDbContext,
-        FS.CodingManagement.Codes.EntityFrameworkCore.ICodesDbContext,
-        FS.CodingManagement.SerialNumbers.EntityFrameworkCore.ISerialNumbersDbContext
+        FS.Coding.Codes.EntityFrameworkCore.ICodesDbContext,
+        FS.Coding.SerialNumbers.EntityFrameworkCore.ISerialNumbersDbContext
     {
-        //DbSet<FS.CodingManagement.Codes.Coding> Codings { get; set; }
-        //DbSet<FS.CodingManagement.SerialNumbers.SerialNumber> SerialNumbers { get; set; }
+        //DbSet<FS.Coding.Codes.Coding> Codings { get; set; }
+        //DbSet<FS.Coding.SerialNumbers.SerialNumber> SerialNumbers { get; set; }
     }
 }

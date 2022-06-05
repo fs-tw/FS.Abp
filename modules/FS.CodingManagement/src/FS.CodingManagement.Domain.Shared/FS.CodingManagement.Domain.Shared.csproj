@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data.Core\FS.Abp.Data.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Coding.Codes\src\FS.Coding.Codes.Domain.Shared\FS.Coding.Codes.Domain.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EasyAbp.Abp.Trees.Domain.Shared" Version="$(EasyAbpTreeVersion)" />
-    <PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
   </ItemGroup>
 
   <ItemGroup>

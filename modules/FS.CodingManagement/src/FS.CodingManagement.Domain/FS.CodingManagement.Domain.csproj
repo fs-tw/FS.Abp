@@ -1,49 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>FS.CodingManagement</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.CodingManagement</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="_Generated\FS.CodingManagement\Codes\ICodingRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\Coding.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\ICodingTreeRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\ISerialNumberRepository.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\SerialNumber.Generated.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\framework\FS.Coding.Codes\src\FS.Coding.Codes.Domain\FS.Coding.Codes.Domain.csproj" />
+		<ProjectReference Include="..\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="EasyAbp.Abp.Trees.Domain" Version="$(EasyAbpTreeVersion)" />
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.CodingManagement\Coding.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\ICodingTreeRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\ISerialNumberRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumber.Generated.cs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\Coding.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Codes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\ICodesStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Codes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\Codes\ICodingTreeRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Codes</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumberRepository.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SerialNumbers</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumbersStore.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SerialNumbers</DependentUpon>
-    </Compile>
-    <Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Generated.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SerialNumbers</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumberRepository.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SerialNumbers</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumbersStore.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SerialNumbers</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SerialNumbers</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
 </Project>

@@ -9,6 +9,7 @@ namespace FS.Coding.Codes.EntityFrameworkCore;
     typeof(AbpEntityFrameworkCoreModule)
 )]
 [DependsOn(typeof(FS.Coding.EntityFrameworkCore.CodingEntityFrameworkCoreModule))]
+[DependsOn(typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule))]
 public class CodesEntityFrameworkCoreModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

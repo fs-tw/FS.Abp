@@ -12,7 +12,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 
-namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
+namespace FS.Coding.SerialNumbers.EntityFrameworkCore
 {
     public static partial class SerialNumbersDbContextModelCreatingExtensions
     {
@@ -23,7 +23,7 @@ namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
 
             CustomizeMapping(ref builder);
 
-            builder.ApplyConfiguration<FS.CodingManagement.SerialNumbers.SerialNumber>(new FS.CodingManagement.SerialNumbers.EntityFrameworkCore.SerialNumberConfiguration(CodingManagementDbProperties.DbTablePrefix,CodingManagementDbProperties.DbSchema));
+            builder.ApplyConfiguration<FS.Coding.SerialNumbers.SerialNumber>(new FS.Coding.SerialNumbers.EntityFrameworkCore.SerialNumberConfiguration(CodingDbProperties.DbTablePrefix,CodingDbProperties.DbSchema));
         }
         static partial void CustomizeMapping(ref ModelBuilder modelBuilder);
     }

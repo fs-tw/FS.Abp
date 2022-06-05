@@ -7,6 +7,7 @@ namespace FS.Coding.Codes;
     typeof(CodesDomainSharedModule)
 )]
 [DependsOn(typeof(FS.Coding.CodingDomainModule))]
+[DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainModule))]
 public class CodesDomainModule : AbpModule
 {
 

@@ -7,10 +7,9 @@ namespace FS.CodingManagement
 {
     [DependsOn(
         typeof(CodingManagementDomainModule),
-        typeof(CodingManagementApplicationContractsModule),
-        typeof(AbpDddApplicationModule),
-        typeof(AbpAutoMapperModule)
+        typeof(CodingManagementApplicationContractsModule)
         )]
+    [DependsOn(typeof(FS.Coding.Codes.CodesApplicationModule))]
     //[DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     public class CodingManagementApplicationModule : AbpModule
     {

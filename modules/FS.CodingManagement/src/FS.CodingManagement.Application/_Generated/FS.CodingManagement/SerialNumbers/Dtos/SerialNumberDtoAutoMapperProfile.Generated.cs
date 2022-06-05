@@ -11,20 +11,20 @@ using System.Reflection;
 using AutoMapper;
 using Volo.Abp.AutoMapper;
 
-namespace FS.CodingManagement.SerialNumbers.Dtos
+namespace FS.Coding.SerialNumbers.Dtos
 {
     public partial class SerialNumberAutoMapperProfile : Profile
     {
         public SerialNumberAutoMapperProfile()
         {
-            CreateMap<FS.CodingManagement.SerialNumbers.SerialNumber, SerialNumberDto>()
+            CreateMap<FS.Coding.SerialNumbers.SerialNumber, SerialNumberDto>()
             .ReverseMap();
         
-            CreateMap<SerialNumberCreateDto, FS.CodingManagement.SerialNumbers.SerialNumber>();
+            CreateMap<SerialNumberCreateDto, FS.Coding.SerialNumbers.SerialNumber>();
         
-            CreateMap<SerialNumberUpdateDto, FS.CodingManagement.SerialNumbers.SerialNumber>();
+            CreateMap<SerialNumberUpdateDto, FS.Coding.SerialNumbers.SerialNumber>();
         
-            CreateMap<FS.CodingManagement.SerialNumbers.SerialNumber, SerialNumberWithDetailsDto>();
+            CreateMap<FS.Coding.SerialNumbers.SerialNumber, SerialNumberWithDetailsDto>();
         
             CustomizeConfiguration();
         }

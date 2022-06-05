@@ -19,7 +19,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
+namespace FS.Coding.SerialNumbers.EntityFrameworkCore
 {
     public partial class SerialNumberConfiguration : IEntityTypeConfiguration<SerialNumber> //auto-generated
     {

@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Data;
 
-namespace FS.CodingManagement.SerialNumbers
+namespace FS.Coding.SerialNumbers
 {
     public partial class SerialNumber : 
         Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot<Guid>,

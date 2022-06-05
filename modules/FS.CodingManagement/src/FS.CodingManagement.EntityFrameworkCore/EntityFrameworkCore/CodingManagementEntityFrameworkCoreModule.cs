@@ -6,10 +6,9 @@ using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 namespace FS.CodingManagement.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(CodingManagementDomainModule),
-        typeof(AbpEntityFrameworkCoreModule)
+        typeof(CodingManagementDomainModule)
     )]
-    [DependsOn(typeof(EasyAbp.Abp.Trees.EntityFrameworkCore.AbpTreesEntityFrameworkCoreModule))]
+    [DependsOn(typeof(FS.Coding.Codes.EntityFrameworkCore.CodesEntityFrameworkCoreModule))]
     public class CodingManagementEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

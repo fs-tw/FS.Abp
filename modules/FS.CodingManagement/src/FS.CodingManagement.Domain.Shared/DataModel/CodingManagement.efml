@@ -72,13 +72,16 @@
       </p1:Properties>
     </p1:Attribute>
   </p1:Attributes>
-  <class name="FS.CodingManagement.Codes.Coding" entity-set="Codings" p1:Guid="485bfbf7-ffc6-4138-8bff-cc06beae5a5b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Coding&gt;">
+  <class name="FS.Coding.Codes.Coding" entity-set="Codings" p1:Guid="485bfbf7-ffc6-4138-8bff-cc06beae5a5b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Coding&gt;">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>Codes</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -98,6 +101,76 @@
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOnRydWUsIk11bHRpVGVuYW50Ijp0cnVlLCJVc2VyIjpmYWxzZX19</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>DomainShared</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding.Codes.Domain.Shared</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Domain</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding.Codes.Domain</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Application</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding.Codes.Application</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>ApplicationContracts</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding.Codes.Application.Contracts</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>EntityFrameworkCore</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding.Codes.EntityFrameworkCore</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -130,13 +203,16 @@
       <column name="" />
     </property>
   </class>
-  <class name="FS.CodingManagement.SerialNumbers.SerialNumber" entity-set="SerialNumbers" schema="dbo" p1:Guid="922c1139-ce7f-4769-9fee-9214a9724a02" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.Coding.SerialNumbers.SerialNumber" entity-set="SerialNumbers" schema="dbo" p1:Guid="922c1139-ce7f-4769-9fee-9214a9724a02" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
       <p1:Attribute Name="FS.ED.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>SerialNumbers</string>
+          </p1:PropertyValue>
+          <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>FS.Coding</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>

@@ -27,19 +27,19 @@ using Volo.Abp.DependencyInjection;
 
 namespace FS.CodingManagement.EntityFrameworkCore
 {
-    [ReplaceDbContext(typeof(FS.CodingManagement.Codes.EntityFrameworkCore.ICodesDbContext))]
-    [ReplaceDbContext(typeof(FS.CodingManagement.SerialNumbers.EntityFrameworkCore.ISerialNumbersDbContext))]
+    [ReplaceDbContext(typeof(FS.Coding.Codes.EntityFrameworkCore.ICodesDbContext))]
+    [ReplaceDbContext(typeof(FS.Coding.SerialNumbers.EntityFrameworkCore.ISerialNumbersDbContext))]
     [ConnectionStringName(CodingManagementDbProperties.ConnectionStringName)]
     public partial class CodingManagementDbContext : AbpDbContext<CodingManagementDbContext>, ICodingManagementDbContext
     {
 
-        public virtual DbSet<FS.CodingManagement.Codes.Coding> Codings
+        public virtual DbSet<FS.Coding.Codes.Coding> Codings
         {
             get;
             set;
         }
 
-        public virtual DbSet<FS.CodingManagement.SerialNumbers.SerialNumber> SerialNumbers
+        public virtual DbSet<FS.Coding.SerialNumbers.SerialNumber> SerialNumbers
         {
             get;
             set;

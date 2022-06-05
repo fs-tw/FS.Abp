@@ -1,21 +1,20 @@
-﻿using FS.CodingManagement.SerialNumbers;
+﻿using FS.Coding.SerialNumbers;
 using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
 namespace FS.CodingManagement
 {
     [DependsOn(
-        typeof(AbpDddDomainModule),
         typeof(CodingManagementDomainSharedModule)
     )]
-    [DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainModule))]
+    [DependsOn(typeof(FS.Coding.Codes.CodesDomainModule))]
     public class CodingManagementDomainModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             Configure<ProviderOptions>(options =>
             {
-                options.Providers.AddOrReplace(ProviderOptions.DefaultProviderName, 5,typeof(FS.CodingManagement.SerialNumbers.DefaultGenerator));
+                options.Providers.AddOrReplace(ProviderOptions.DefaultProviderName, 5,typeof(FS.Coding.SerialNumbers.DefaultGenerator));
             });
         }
 

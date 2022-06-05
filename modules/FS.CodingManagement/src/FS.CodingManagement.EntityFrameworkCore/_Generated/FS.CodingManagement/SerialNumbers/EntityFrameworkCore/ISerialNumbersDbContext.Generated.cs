@@ -26,10 +26,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Volo.Abp.DependencyInjection;
 
 
-namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
+namespace FS.Coding.SerialNumbers.EntityFrameworkCore
 {
     public partial interface ISerialNumbersDbContext : IEfCoreDbContext //auto-generated
     {
-        DbSet<FS.CodingManagement.SerialNumbers.SerialNumber> SerialNumbers { get; set; }
+        DbSet<FS.Coding.SerialNumbers.SerialNumber> SerialNumbers { get; set; }
     }
 }

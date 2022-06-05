@@ -5,12 +5,9 @@ using Volo.Abp.Authorization;
 namespace FS.CodingManagement
 {
     [DependsOn(
-        typeof(CodingManagementDomainSharedModule),
-        typeof(AbpDddApplicationContractsModule),
-        typeof(AbpAuthorizationModule)
+        typeof(CodingManagementDomainSharedModule)
         )]
-    [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
-    //[DependsOn(typeof(FS.Abp.AbpApplicationContractsModule))]
+    [DependsOn(typeof(FS.Coding.Codes.CodesApplicationContractsModule))]
     public class CodingManagementApplicationContractsModule : AbpModule
     {
 
