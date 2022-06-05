@@ -23,7 +23,7 @@ public class CodesAspNetCoreModule : AbpModule
 
         Configure<Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(FS.Coding.CodingApplicationModule).Assembly, actionOptions =>
+            options.ConventionalControllers.Create(typeof(FS.Coding.Codes.CodesApplicationModule).Assembly, actionOptions =>
             {
                 actionOptions.RemoteServiceName=FS.Coding.CodingRemoteServiceConsts.RemoteServiceName;
                 actionOptions.RootPath=FS.Coding.CodingRemoteServiceConsts.ModuleName;

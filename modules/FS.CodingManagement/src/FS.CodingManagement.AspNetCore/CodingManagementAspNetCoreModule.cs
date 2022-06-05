@@ -8,7 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 namespace FS.CodingManagement
 {
     [DependsOn(
-        typeof(CodingManagementApplicationContractsModule))]
+        typeof(CodingManagementApplicationModule),
+        typeof(EntityFrameworkCore.CodingManagementEntityFrameworkCoreModule),
+        typeof(CodingManagementHttpApiModule)
+        )]
     [DependsOn(typeof(FS.Coding.Codes.CodesAspNetCoreModule))]
     public class CodingManagementAspNetCoreModule : AbpModule
     {
@@ -22,6 +25,15 @@ namespace FS.CodingManagement
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcOptions>(options =>
+            {
+                options.ConventionalControllers.Create(typeof(FS.CodingManagement.CodingManagementApplicationModule).Assembly, actionOptions =>
+                {
+                    actionOptions.RemoteServiceName=FS.Coding.CodingRemoteServiceConsts.RemoteServiceName;
+                    actionOptions.RootPath=FS.Coding.CodingRemoteServiceConsts.ModuleName;
+                });
+            });
+
             Configure<AbpLocalizationOptions>(options =>
             {
                 //options.Resources

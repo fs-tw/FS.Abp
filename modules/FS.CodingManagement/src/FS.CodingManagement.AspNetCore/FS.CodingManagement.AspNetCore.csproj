@@ -7,7 +7,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\framework\FS.Coding.Codes\src\FS.Coding.Codes.AspNetCore\FS.Coding.Codes.AspNetCore.csproj" />
-    <ProjectReference Include="..\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.CodingManagement.Application\FS.CodingManagement.Application.csproj" />
+    <ProjectReference Include="..\FS.CodingManagement.EntityFrameworkCore\FS.CodingManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.CodingManagement.HttpApi\FS.CodingManagement.HttpApi.csproj" />
   </ItemGroup>
 
 </Project>
