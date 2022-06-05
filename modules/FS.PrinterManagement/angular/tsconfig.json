@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s/printer-management": [
+        "projects/printer-management/src/public-api.ts"
+      ],
+      "@f-s/printer-management/config": [
+        "projects/printer-management/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/printer-management/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/printer-management/src/lib/proxy/*"]
+    }
+  }
+}

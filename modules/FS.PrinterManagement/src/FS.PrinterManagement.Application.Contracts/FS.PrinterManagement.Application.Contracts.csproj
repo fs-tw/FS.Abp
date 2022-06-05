@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.PrinterManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FluentValidation" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.PrinterManagement.Domain.Shared\FS.PrinterManagement.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.PrinterManagement\Printers\**" />
+		<EmbeddedResource Remove="_Generated\FS.PrinterManagement\Printers\**" />
+		<None Remove="_Generated\FS.PrinterManagement\Printers\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.PrinterManagement\IPrintDocumentDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\EntityPrintDocumentDefinitionDto.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\IEntityPrintDocumentDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\PrintingPermissionDefinitionProviders.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\PrintingPermissionNames.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FS.PrinterManagement\Dtos\PrintDocumentDefinitionDto.cs">
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\MarginsDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\MarginsDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\PaperSizeDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\PaperSizeDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\ParagraphDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\ParagraphDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\PrintDocumentDefinitionDto.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\PrintDocumentDefinitionDtoValidator.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Dtos</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\IPrintDocumentDefinitionCrudAppService.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Permissions\PrintingPermissionDefinitionProviders.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\Permissions\PrintingPermissionNames.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Permissions</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

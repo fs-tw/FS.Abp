@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.PrinterManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FS.PrinterManagement.Application\FS.PrinterManagement.Application.csproj" />
+    <ProjectReference Include="..\FS.PrinterManagement.EntityFrameworkCore\FS.PrinterManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.PrinterManagement.HttpApi\FS.PrinterManagement.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

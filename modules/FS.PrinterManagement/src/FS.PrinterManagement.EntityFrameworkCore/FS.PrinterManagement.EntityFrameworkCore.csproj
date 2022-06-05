@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FS.PrinterManagement</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.PrinterManagement.Domain\FS.PrinterManagement.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\EntityFrameworkCore\**" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printers\**" />
+		<EmbeddedResource Remove="_Generated\EntityFrameworkCore\**" />
+		<EmbeddedResource Remove="_Generated\FS.PrinterManagement\Printers\**" />
+		<None Remove="_Generated\EntityFrameworkCore\**" />
+		<None Remove="_Generated\FS.PrinterManagement\Printers\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="_Generated\FS.PrinterManagement\EntityFrameworkCore\EfCorePrintDocumentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\EntityFrameworkCore\IPrintingDbContext.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\EntityFrameworkCore\PrintDocumentDefinition.Configuration.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\EntityFrameworkCore\PrinterManagementModelBuilderConfigurationOptions.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\PrintingStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\EfCoreEntityPrintDocumentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\EfCorePrintDocumentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\EntityPrintDocumentDefinition.Configuration.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\PrintDocumentDefinition.Configuration.Generated.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="_Generated\FS.PrinterManagement\EntityFrameworkCore\IPrinterManagementDbContext.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\EntityFrameworkCore\PrinterManagementDbContext.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\EntityFrameworkCore\PrinterManagementDbContextModelCreatingExtensions.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore\EfCorePrintDocumentDefinitionRepository.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore\IPrintingDbContext.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore\PrintDocumentDefinition.Configuration.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore\PrintingDbContext.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore\PrintingDbContextModelCreatingExtensions.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>EntityFrameworkCore</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.PrinterManagement\Printing\PrintingStore.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>
