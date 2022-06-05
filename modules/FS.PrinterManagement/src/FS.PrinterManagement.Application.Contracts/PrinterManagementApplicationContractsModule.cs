@@ -5,11 +5,9 @@ using Volo.Abp.Authorization;
 namespace FS.PrinterManagement
 {
     [DependsOn(
-        typeof(PrinterManagementDomainSharedModule),
-        typeof(AbpDddApplicationContractsModule),
-        typeof(AbpAuthorizationModule)
+        typeof(PrinterManagementDomainSharedModule)
         )]
-    [DependsOn(typeof(Volo.Abp.FluentValidation.AbpFluentValidationModule))]
+    [DependsOn(typeof(FS.Printer.Printing.PrintingApplicationContractsModule))]
     public class PrinterManagementApplicationContractsModule : AbpModule
     {
 

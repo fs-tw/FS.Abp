@@ -7,10 +7,9 @@ namespace FS.PrinterManagement
 {
     [DependsOn(
         typeof(PrinterManagementDomainModule),
-        typeof(PrinterManagementApplicationContractsModule),
-        typeof(AbpDddApplicationModule),
-        typeof(AbpAutoMapperModule)
+        typeof(PrinterManagementApplicationContractsModule)
         )]
+    [DependsOn(typeof(FS.Printer.Printing.PrintingApplicationModule))]
     public class PrinterManagementApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

@@ -11,6 +11,8 @@ namespace FS.Printer;
 [DependsOn(
     typeof(AbpValidationModule)
 )]
+[DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperCoreModule))]
+[DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererCoreModule))]
 public class PrinterDomainSharedModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

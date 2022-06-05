@@ -1,5 +1,5 @@
 ﻿using Localization.Resources.AbpUi;
-using FS.PrinterManagement.Localization;
+using FS.Printer.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;

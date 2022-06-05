@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\..\..\..\framework\FS.Printer.Printing\src\FS.Printer.Printing.HttpApi\FS.Printer.Printing.HttpApi.csproj" />
     <ProjectReference Include="..\FS.PrinterManagement.Application.Contracts\FS.PrinterManagement.Application.Contracts.csproj" />
   </ItemGroup>
 

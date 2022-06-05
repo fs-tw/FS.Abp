@@ -8,8 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
-		<PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Printer.Printing\src\FS.Printer.Printing.Application\FS.Printer.Printing.Application.csproj" />
 		<ProjectReference Include="..\FS.PrinterManagement.Application.Contracts\FS.PrinterManagement.Application.Contracts.csproj" />
 		<ProjectReference Include="..\FS.PrinterManagement.Domain\FS.PrinterManagement.Domain.csproj" />
 	</ItemGroup>
@@ -24,37 +23,20 @@
 		<Compile Remove="_Generated\FS.PrinterManagement\PrintDocumentDefinitionCrudAppService.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\EntityPrintDocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\EntityPrintDocumentDefinitionDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\MarginsDtoAutoMapperProfile.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\MarginsDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\PaperSizeDtoAutoMapperProfile.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\PaperSizeDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\ParagraphDtoAutoMapperProfile.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\ParagraphDtoValidator.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\PrintDocumentDefinitionDtoAutoMapperProfile.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Dtos\PrintDocumentDefinitionDtoValidator.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\EntityPrintDocumentDefinitionCrudAppService.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\PrintDocumentDefinitionCrudAppService.Generated.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="FS.PrinterManagement\PrintDocumentDefinitionCrudAppService.cs">
-			<AutoGen>True</AutoGen>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\MarginsDtoAutoMapperProfile.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Dtos</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\PaperSizeDtoAutoMapperProfile.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Dtos</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\ParagraphDtoAutoMapperProfile.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Dtos</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\Dtos\PrintDocumentDefinitionDtoAutoMapperProfile.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Dtos</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\PrintDocumentDefinitionCrudAppService.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
+	  <Folder Include="_Generated\FS.PrinterManagement\Printing\Dtos\" />
 	</ItemGroup>
 
 </Project>

@@ -29,8 +29,8 @@ namespace FS.PrinterManagement.EntityFrameworkCore
 {
     [ConnectionStringName(PrinterManagementDbProperties.ConnectionStringName)]
     public partial interface IPrinterManagementDbContext : IEfCoreDbContext,
-        FS.PrinterManagement.Printing.EntityFrameworkCore.IPrintingDbContext
+        FS.Printer.Printing.EntityFrameworkCore.IPrintingDbContext
     {
-        //DbSet<FS.PrinterManagement.Printing.PrintDocumentDefinition> PrintDocumentDefinitions { get; set; }
+        //DbSet<FS.Printer.Printing.PrintDocumentDefinition> PrintDocumentDefinitions { get; set; }
     }
 }

@@ -11,7 +11,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
-using FS.PrinterManagement.Printing.EntityFrameworkCore;
+using FS.Printer.Printing.EntityFrameworkCore;
 
 
 namespace FS.PrinterManagement.EntityFrameworkCore

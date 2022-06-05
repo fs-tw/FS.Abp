@@ -5,9 +5,9 @@ using Volo.Abp.Modularity;
 namespace FS.PrinterManagement.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(PrinterManagementDomainModule),
-        typeof(AbpEntityFrameworkCoreModule)
+        typeof(PrinterManagementDomainModule)
     )]
+    [DependsOn(typeof(FS.Printer.Printing.EntityFrameworkCore.PrintingEntityFrameworkCoreModule))]
     public class PrinterManagementEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

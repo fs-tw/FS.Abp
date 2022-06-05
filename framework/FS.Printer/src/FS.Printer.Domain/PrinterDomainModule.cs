@@ -7,6 +7,7 @@ namespace FS.Printer;
     typeof(AbpDddDomainModule),
     typeof(PrinterDomainSharedModule)
 )]
+[DependsOn(typeof(FS.Abp.Data.AbpDataModule))]
 public class PrinterDomainModule : AbpModule
 {
 

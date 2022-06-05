@@ -21,4 +21,9 @@
     <Content Remove="Localization\Printer\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj" />
+    <ProjectReference Include="..\..\..\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
+  </ItemGroup>
+
 </Project>

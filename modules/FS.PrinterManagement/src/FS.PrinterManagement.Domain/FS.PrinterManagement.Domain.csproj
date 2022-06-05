@@ -8,10 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BarcodeLib" Version="2.4.0" />
-		<PackageReference Include="System.Drawing.Common" Version="5.0.2" />
-		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-		<ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Printer.Printing\src\FS.Printer.Printing.Domain\FS.Printer.Printing.Domain.csproj" />
 		<ProjectReference Include="..\FS.PrinterManagement.Domain.Shared\FS.PrinterManagement.Domain.Shared.csproj" />
 	</ItemGroup>
 
@@ -30,33 +27,16 @@
 		<Compile Remove="_Generated\FS.PrinterManagement\PrintDocumentDefinition.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\EntityPrintDocumentDefinition.Generated.cs" />
 		<Compile Remove="_Generated\FS.PrinterManagement\Printing\IEntityPrintDocumentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\IPrintDocumentDefinitionRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\IPrintingStore.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Margins.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\PaperSize.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\Paragraph.Generated.cs" />
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\PrintDocumentDefinition.Generated.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\IPrintDocumentDefinitionRepository.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\IPrintingStore.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\Margins.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\PaperSize.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\Paragraph.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\PrintDocumentDefinition.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
-		</Compile>
+	  <Folder Include="_Generated\FS.PrinterManagement\Printing\" />
 	</ItemGroup>
 
 </Project>

@@ -12,4 +12,54 @@
     <ProjectReference Include="..\FS.Printer.Printing.Domain.Shared\FS.Printer.Printing.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FS.Printer.Printing\Dtos\PrintDocumentDefinitionDto.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\MarginsDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\MarginsDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\PaperSizeDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\PaperSizeDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\ParagraphDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\ParagraphDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\PrintDocumentDefinitionDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\PrintDocumentDefinitionDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\IPrintDocumentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Printing</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Permissions\PrintingPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Permissions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Permissions\PrintingPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Permissions</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

@@ -1,15 +1,44 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
+	<Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>FS.Printer.Printing</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FS.Printer.Printing</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\FS.Printer\src\FS.Printer.Domain\FS.Printer.Domain.csproj" />
-    <ProjectReference Include="..\FS.Printer.Printing.Domain.Shared\FS.Printer.Printing.Domain.Shared.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+		<PackageReference Include="BarcodeLib" Version="2.4.0" />
+		<ProjectReference Include="..\..\..\FS.Printer\src\FS.Printer.Domain\FS.Printer.Domain.csproj" />
+		<ProjectReference Include="..\FS.Printer.Printing.Domain.Shared\FS.Printer.Printing.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="_Generated\FS.Printer\Printing\IPrintDocumentDefinitionRepository.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Printer\Printing\IPrintingStore.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Printer\Printing\Margins.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Printer\Printing\PaperSize.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Printer\Printing\Paragraph.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+		<Compile Update="_Generated\FS.Printer\Printing\PrintDocumentDefinition.Generated.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Printing</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
 </Project>

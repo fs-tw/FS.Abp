@@ -27,12 +27,12 @@ using Volo.Abp.DependencyInjection;
 
 namespace FS.PrinterManagement.EntityFrameworkCore
 {
-    [ReplaceDbContext(typeof(FS.PrinterManagement.Printing.EntityFrameworkCore.IPrintingDbContext))]
+    [ReplaceDbContext(typeof(FS.Printer.Printing.EntityFrameworkCore.IPrintingDbContext))]
     [ConnectionStringName(PrinterManagementDbProperties.ConnectionStringName)]
     public partial class PrinterManagementDbContext : AbpDbContext<PrinterManagementDbContext>, IPrinterManagementDbContext
     {
 
-        public virtual DbSet<FS.PrinterManagement.Printing.PrintDocumentDefinition> PrintDocumentDefinitions
+        public virtual DbSet<FS.Printer.Printing.PrintDocumentDefinition> PrintDocumentDefinitions
         {
             get;
             set;

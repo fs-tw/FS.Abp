@@ -5,38 +5,38 @@
     <Generation>
       <GeneratedFiles>
         <File Name="PrinterManagement.cs" />
-        <File Name="PrintingPermissionNames.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Permissions" />
-        <File Name="PrintingPermissionDefinitionProviders.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Permissions" />
-        <File Name="IPrintDocumentDefinitionCrudAppService.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="PrintDocumentDefinitionCrudAppService.Generated.cs" Project="FS.PrinterManagement.Application" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="PrintDocumentDefinitionDto.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="PaperSizeDto.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="MarginsDto.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="ParagraphDto.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="PrintDocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.PrinterManagement.Application" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="PaperSizeDtoAutoMapperProfile.Generated.cs" Project="FS.PrinterManagement.Application" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="MarginsDtoAutoMapperProfile.Generated.cs" Project="FS.PrinterManagement.Application" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="ParagraphDtoAutoMapperProfile.Generated.cs" Project="FS.PrinterManagement.Application" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="PrintDocumentDefinitionDtoValidator.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="PaperSizeDtoValidator.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="MarginsDtoValidator.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="ParagraphDtoValidator.Generated.cs" Project="FS.PrinterManagement.Application.Contracts" ProjectFolder="_Generated\FS.PrinterManagement\Printing\Dtos" />
-        <File Name="IPrintingStore.Generated.cs" Project="FS.PrinterManagement.Domain" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="PrintingStore.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="IPrintingDbContext.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore" />
-        <File Name="PrintingDbContext.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore" />
-        <File Name="PrintingDbContextModelCreatingExtensions.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore" />
+        <File Name="PrintingPermissionNames.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Permissions" />
+        <File Name="PrintingPermissionDefinitionProviders.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Permissions" />
+        <File Name="IPrintDocumentDefinitionCrudAppService.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="PrintDocumentDefinitionCrudAppService.Generated.cs" Project="FS.Printer.Printing.Application" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="PrintDocumentDefinitionDto.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="PaperSizeDto.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="MarginsDto.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="ParagraphDto.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="PrintDocumentDefinitionDtoAutoMapperProfile.Generated.cs" Project="FS.Printer.Printing.Application" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="PaperSizeDtoAutoMapperProfile.Generated.cs" Project="FS.Printer.Printing.Application" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="MarginsDtoAutoMapperProfile.Generated.cs" Project="FS.Printer.Printing.Application" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="ParagraphDtoAutoMapperProfile.Generated.cs" Project="FS.Printer.Printing.Application" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="PrintDocumentDefinitionDtoValidator.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="PaperSizeDtoValidator.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="MarginsDtoValidator.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="ParagraphDtoValidator.Generated.cs" Project="FS.Printer.Printing.Application.Contracts" ProjectFolder="_Generated\FS.Printer\Printing\Dtos" />
+        <File Name="IPrintingStore.Generated.cs" Project="FS.Printer.Printing.Domain" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="PrintingStore.Generated.cs" Project="FS.Printer.Printing.EntityFrameworkCore" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="IPrintingDbContext.Generated.cs" Project="FS.Printer.Printing.EntityFrameworkCore" ProjectFolder="_Generated\FS.Printer\Printing\EntityFrameworkCore" />
+        <File Name="PrintingDbContext.Generated.cs" Project="FS.Printer.Printing.EntityFrameworkCore" ProjectFolder="_Generated\FS.Printer\Printing\EntityFrameworkCore" />
+        <File Name="PrintingDbContextModelCreatingExtensions.Generated.cs" Project="FS.Printer.Printing.EntityFrameworkCore" ProjectFolder="_Generated\FS.Printer\Printing\EntityFrameworkCore" />
         <File Name="IPrinterManagementDbContext.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\EntityFrameworkCore" />
         <File Name="PrinterManagementDbContext.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\EntityFrameworkCore" />
         <File Name="PrinterManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\EntityFrameworkCore" />
-        <File Name="PrintDocumentDefinition.Generated.cs" Project="FS.PrinterManagement.Domain" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="PaperSize.Generated.cs" Project="FS.PrinterManagement.Domain" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="Margins.Generated.cs" Project="FS.PrinterManagement.Domain" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="Paragraph.Generated.cs" Project="FS.PrinterManagement.Domain" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="DrawMethod.Generated.cs" Project="FS.PrinterManagement.Domain.Shared" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="PrintDocumentDefinition.Configuration.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore" />
-        <File Name="IPrintDocumentDefinitionRepository.Generated.cs" Project="FS.PrinterManagement.Domain" ProjectFolder="_Generated\FS.PrinterManagement\Printing" />
-        <File Name="EfCorePrintDocumentDefinitionRepository.Generated.cs" Project="FS.PrinterManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.PrinterManagement\Printing\EntityFrameworkCore" />
+        <File Name="PrintDocumentDefinition.Generated.cs" Project="FS.Printer.Printing.Domain" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="PaperSize.Generated.cs" Project="FS.Printer.Printing.Domain" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="Margins.Generated.cs" Project="FS.Printer.Printing.Domain" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="Paragraph.Generated.cs" Project="FS.Printer.Printing.Domain" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="DrawMethod.Generated.cs" Project="FS.Printer.Printing.Domain.Shared" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="PrintDocumentDefinition.Configuration.Generated.cs" Project="FS.Printer.Printing.EntityFrameworkCore" ProjectFolder="_Generated\FS.Printer\Printing\EntityFrameworkCore" />
+        <File Name="IPrintDocumentDefinitionRepository.Generated.cs" Project="FS.Printer.Printing.Domain" ProjectFolder="_Generated\FS.Printer\Printing" />
+        <File Name="EfCorePrintDocumentDefinitionRepository.Generated.cs" Project="FS.Printer.Printing.EntityFrameworkCore" ProjectFolder="_Generated\FS.Printer\Printing\EntityFrameworkCore" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -59,17 +59,17 @@
       <Diagram Name="Diagram1" DefaultDiagram="True" />
     </Diagrams>
     <Templates>
-      <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl">
+      <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="Application.AbpPermissions" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AbpPermissions.tmpl">
+      <Template Name="Application.AbpPermissions" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AbpPermissions.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="Application.Api" Enabled="False" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Api.tmpl">
+      <Template Name="Application.Api" Enabled="False" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Api.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -91,12 +91,12 @@
           </OutputInfo>
         </ed:Property>
       </Template>
-      <Template Name="Application.AppService" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AppService.tmpl">
+      <Template Name="Application.AppService" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AppService.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="Application.Dto" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Dto.tmpl">
+      <Template Name="Application.Dto" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Dto.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -116,7 +116,7 @@
           <boolean>true</boolean>
         </ed:Property>
       </Template>
-      <Template Name="Domain.AbpDeriveds" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpDeriveds.tmpl">
+      <Template Name="Domain.AbpDeriveds" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpDeriveds.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -128,7 +128,7 @@
           </OutputInfo>
         </ed:Property>
       </Template>
-      <Template Name="Domain.AbpLocalizations" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpLocalizations.tmpl">
+      <Template Name="Domain.AbpLocalizations" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpLocalizations.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -161,17 +161,17 @@
           </OutputInfo>
         </ed:Property>
       </Template>
-      <Template Name="Domain.AbpPermissions" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpPermissions.tmpl">
+      <Template Name="Domain.AbpPermissions" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpPermissions.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="Domain.AbpSettings" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSettings.tmpl">
+      <Template Name="Domain.AbpSettings" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSettings.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="Domain.AbpSpecifications" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSpecifications.tmpl">
+      <Template Name="Domain.AbpSpecifications" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSpecifications.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -183,17 +183,17 @@
           </OutputInfo>
         </ed:Property>
       </Template>
-      <Template Name="Domain.Store" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.Store.tmpl">
+      <Template Name="Domain.Store" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.Store.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="EFCore.DbContext" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.DbContext.tmpl">
+      <Template Name="EFCore.DbContext" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.DbContext.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="EFCore.Entities" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Entities.tmpl">
+      <Template Name="EFCore.Entities" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Entities.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -243,7 +243,7 @@
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
-      <Template Name="EFCore.EntitiesConfiguration" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.EntitiesConfiguration.tmpl">
+      <Template Name="EFCore.EntitiesConfiguration" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.EntitiesConfiguration.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -260,7 +260,7 @@
           <ReferenceTypeNullability>Default</ReferenceTypeNullability>
         </ed:Property>
       </Template>
-      <Template Name="EFCore.Repository" Enabled="True" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Repository.tmpl">
+      <Template Name="EFCore.Repository" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Repository.tmpl">
         <ed:Property Name="InterfaceLayerNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -274,14 +274,14 @@
           <boolean>false</boolean>
         </ed:Property>
       </Template>
-      <Template Name="FS.ED" Enabled="False" File="..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.ED.tmpl">
+      <Template Name="FS.ED" Enabled="False" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.ED.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
     </Templates>
     <AttributeAssemblies>
-      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="..\..\..\..\..\..\..\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
+      <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
         <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>

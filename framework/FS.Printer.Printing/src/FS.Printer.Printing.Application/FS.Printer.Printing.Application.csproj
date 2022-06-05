@@ -13,4 +13,30 @@
     <ProjectReference Include="..\FS.Printer.Printing.Domain\FS.Printer.Printing.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FS.Printer.Printing\PrintDocumentDefinitionCrudAppService.cs">
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\MarginsDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\PaperSizeDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\ParagraphDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\Dtos\PrintDocumentDefinitionDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\PrintDocumentDefinitionCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Printing</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

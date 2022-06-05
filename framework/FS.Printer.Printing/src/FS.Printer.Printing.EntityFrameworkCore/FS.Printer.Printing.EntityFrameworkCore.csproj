@@ -12,4 +12,31 @@
     <ProjectReference Include="..\FS.Printer.Printing.Domain\FS.Printer.Printing.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Printer\Printing\EntityFrameworkCore\EfCorePrintDocumentDefinitionRepository.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\EntityFrameworkCore\IPrintingDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\EntityFrameworkCore\PrintDocumentDefinition.Configuration.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\EntityFrameworkCore\PrintingDbContext.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\EntityFrameworkCore\PrintingDbContextModelCreatingExtensions.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EntityFrameworkCore</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Printer\Printing\PrintingStore.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Printing</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

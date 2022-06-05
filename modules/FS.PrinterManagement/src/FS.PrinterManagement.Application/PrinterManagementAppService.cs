@@ -1,4 +1,4 @@
-﻿using FS.PrinterManagement.Localization;
+﻿using FS.Printer.Localization;
 using Volo.Abp.Application.Services;
 
 namespace FS.PrinterManagement
@@ -7,7 +7,7 @@ namespace FS.PrinterManagement
     {
         protected PrinterManagementAppService()
         {
-            LocalizationResource = typeof(PrinterManagementResource);
+            LocalizationResource = typeof(PrinterResource);
             ObjectMapperContext = typeof(PrinterManagementApplicationModule);
         }
     }

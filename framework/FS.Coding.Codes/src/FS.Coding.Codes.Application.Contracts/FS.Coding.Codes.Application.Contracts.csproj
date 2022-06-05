@@ -12,4 +12,27 @@
     <ProjectReference Include="..\FS.Coding.Codes.Domain.Shared\FS.Coding.Codes.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Coding\Codes\Dtos\CodingDto.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Coding\Codes\Dtos\CodingDtoValidator.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Coding\Codes\ICodingCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Coding\Codes\Permissions\CodesPermissionDefinitionProviders.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Permissions</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Coding\Codes\Permissions\CodesPermissionNames.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Permissions</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

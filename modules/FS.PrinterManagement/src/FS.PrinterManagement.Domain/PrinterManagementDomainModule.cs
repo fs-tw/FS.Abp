@@ -4,10 +4,9 @@ using Volo.Abp.Modularity;
 namespace FS.PrinterManagement
 {
     [DependsOn(
-        typeof(AbpDddDomainModule),
         typeof(PrinterManagementDomainSharedModule)
     )]
-    [DependsOn(typeof(FS.Abp.Data.AbpDataModule))]
+    [DependsOn(typeof(FS.Printer.Printing.PrintingDomainModule))]
     public class PrinterManagementDomainModule : AbpModule
     {
 

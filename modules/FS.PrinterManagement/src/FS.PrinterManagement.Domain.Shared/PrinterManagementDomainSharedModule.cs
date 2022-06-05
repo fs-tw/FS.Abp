@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Modularity;
 using Volo.Abp.Localization;
-using FS.PrinterManagement.Localization;
+using FS.Printer.Localization;
 using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
@@ -8,11 +8,7 @@ using Volo.Abp.VirtualFileSystem;
 
 namespace FS.PrinterManagement
 {
-    [DependsOn(
-        typeof(AbpValidationModule)
-    )]
-    [DependsOn(typeof(FS.Abp.Npoi.Mapper.AbpNpoiMapperCoreModule))]
-    [DependsOn(typeof(FS.Abp.AutoFilterer.AbpAutoFiltererCoreModule))]
+    [DependsOn(typeof(FS.Printer.Printing.PrintingDomainSharedModule))]
     public class PrinterManagementDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -25,14 +21,14 @@ namespace FS.PrinterManagement
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
-                    .Add<PrinterManagementResource>("en")
-                    .AddBaseTypes(typeof(AbpValidationResource))
+                    .Get<PrinterResource>()
+                    //.AddBaseTypes(typeof(AbpValidationResource))
                     .AddVirtualJson("/Localization/PrinterManagement");
             });
 
             Configure<AbpExceptionLocalizationOptions>(options =>
             {
-                options.MapCodeNamespace("PrinterManagement", typeof(PrinterManagementResource));
+                options.MapCodeNamespace("PrinterManagement", typeof(PrinterResource));
             });
         }
     }

@@ -13,4 +13,15 @@
     <ProjectReference Include="..\FS.Coding.Codes.Domain\FS.Coding.Codes.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Coding\Codes\CodingCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Codes</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Coding\Codes\Dtos\CodingDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

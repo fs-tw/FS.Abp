@@ -9,25 +9,19 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="FS.Abp.Npoi.Mapper.Core" Version="$(FSVersion)" />
-    <PackageReference Include="FS.Abp.Data" Version="$(FSVersion)" />
-    <PackageReference Include="FS.Abp.AutoFilterer.Core" Version="$(FSVersion)" />-->
-		<PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="$(MicrosoftPackageVersion)" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj" />
-		<ProjectReference Include="..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Printer.Printing\src\FS.Printer.Printing.Domain.Shared\FS.Printer.Printing.Domain.Shared.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<!--<ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />-->
 
 		<Compile Remove="_Generated\FS.PrinterManagement\DrawMethod.Generated.cs" />
+
+		<Compile Remove="_Generated\FS.PrinterManagement\Printing\DrawMethod.Generated.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -44,10 +38,6 @@
 		<Compile Update="DataModel\PrinterManagement.cs">
 			<AutoGen>True</AutoGen>
 			<DependentUpon>PrinterManagement.efml</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.PrinterManagement\Printing\DrawMethod.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Printing</DependentUpon>
 		</Compile>
 	</ItemGroup>
 
@@ -69,6 +59,10 @@
 			<AutoGen>True</AutoGen>
 			<DependentUpon>PrinterManagement.efml</DependentUpon>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="_Generated\FS.PrinterManagement\Printing\" />
 	</ItemGroup>
 
 </Project>

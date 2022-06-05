@@ -8,7 +8,7 @@ using Volo.Abp.Domain.Services;
 using System.Linq;
 using Volo.Abp.Uow;
 
-namespace FS.PrinterManagement.Data
+namespace FS.Printer.Data
 {
     public class PrinterSeeder : DomainService, Volo.Abp.Data.IDataSeeder
     {

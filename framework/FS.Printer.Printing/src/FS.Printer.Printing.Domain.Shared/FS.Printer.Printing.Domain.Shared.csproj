@@ -21,4 +21,11 @@
     <ProjectReference Include="..\..\..\FS.Printer\src\FS.Printer.Domain.Shared\FS.Printer.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Printer\Printing\DrawMethod.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Printing</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
