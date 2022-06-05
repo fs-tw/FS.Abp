@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Coding": {
+      "path": "FS.Coding.abpmdl.json"
+    }
+  }
+}

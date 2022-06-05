@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Coding.Codes</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Mongo2Go" Version="3.1.3" />
+    <ProjectReference Include="..\..\src\FS.Coding.Codes.MongoDB\FS.Coding.Codes.MongoDB.csproj" />
+    <ProjectReference Include="..\FS.Coding.Codes.TestBase\FS.Coding.Codes.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

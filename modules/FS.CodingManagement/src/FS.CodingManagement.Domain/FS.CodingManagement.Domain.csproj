@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="_Generated\FS.CodingManagement\Codes\CodesStore.Generated.cs" />
-    <Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersStore.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\Codes\ICodingRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\Coding.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\ICodingTreeRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\ISerialNumberRepository.Generated.cs" />
+    <Compile Remove="_Generated\FS.CodingManagement\SerialNumber.Generated.cs" />
   </ItemGroup>
 
   <ItemGroup>

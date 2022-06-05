@@ -20,8 +20,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\projects\FS.Abp\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj" />
-		<ProjectReference Include="..\..\..\..\projects\FS.Abp\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Abp.AutoFilterer\src\FS.Abp.AutoFilterer.Core\FS.Abp.AutoFilterer.Core.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Abp.Npoi.Mapper\src\FS.Abp.Npoi.Mapper.Core\FS.Abp.Npoi.Mapper.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

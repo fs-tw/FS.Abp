@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Printer.Printing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Printer\src\FS.Printer.EntityFrameworkCore\FS.Printer.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.Printer.Printing.Domain\FS.Printer.Printing.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

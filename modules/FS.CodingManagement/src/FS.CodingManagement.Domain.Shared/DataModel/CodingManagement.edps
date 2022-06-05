@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityDeveloper Version="6.11.1297.0">
+<EntityDeveloper Version="6.12.1419.0">
   <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore20" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version3" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="" Provider="" />
     <Generation>
       <GeneratedFiles>
         <File Name="CodingManagement.cs" />
-        <File Name="CodesPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="SerialNumbersPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="CodesPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="SerialNumbersPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="CodesPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Permissions" />
+        <File Name="SerialNumbersPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Permissions" />
+        <File Name="CodesPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Permissions" />
+        <File Name="SerialNumbersPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Permissions" />
         <File Name="ICodingCrudAppService.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="ISerialNumberCrudAppService.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="CodingCrudAppService.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
@@ -17,30 +17,29 @@
         <File Name="SerialNumberDto.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
         <File Name="CodingDtoAutoMapperProfile.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
         <File Name="SerialNumberDtoAutoMapperProfile.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
-        <File Name="CodingDtoValidator.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
-        <File Name="SerialNumberDtoValidator.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
+        <File Name="CodingDtoValidator.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes\Dtos" />
+        <File Name="SerialNumberDtoValidator.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
         <File Name="ICodesStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="CodesStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="ISerialNumbersStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
         <File Name="SerialNumbersStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="ICodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
-        <File Name="CodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
-        <File Name="CodingManagementModelBuilderConfigurationOptions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
-        <File Name="CodingManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\EntityFrameworkCore" />
+        <File Name="ICodesDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="CodesDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="CodesDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="ISerialNumbersDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
+        <File Name="SerialNumbersDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
+        <File Name="SerialNumbersDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
+        <File Name="ICodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
+        <File Name="CodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
+        <File Name="CodingManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
         <File Name="Coding.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="SerialNumber.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="Coding.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="SerialNumber.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="Coding.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="SerialNumber.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
         <File Name="ICodingTreeRepository.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
         <File Name="ISerialNumberRepository.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="EfCoreCodingTreeRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="EfCoreSerialNumberRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="ICodesApi.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="CodesApi.Generated.cs" Project="FS.CodingManagement.HttpApi" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="CodesApi.CodingCrudAppService.Generated.cs" Project="FS.CodingManagement.HttpApi" ProjectFolder="_Generated\FS.CodingManagement\Codes" />
-        <File Name="ISerialNumbersApi.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="SerialNumbersApi.Generated.cs" Project="FS.CodingManagement.HttpApi" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="SerialNumbersApi.SerialNumberCrudAppService.Generated.cs" Project="FS.CodingManagement.HttpApi" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="EfCoreCodingTreeRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore" />
+        <File Name="EfCoreSerialNumberRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -63,74 +62,29 @@
       <Diagram Name="Diagram1" DefaultDiagram="True" />
     </Diagrams>
     <Templates>
-      <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl" />
-      <Template Name="Application.AbpPermissions" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AbpPermissions.tmpl">
+      <Template Name="FS.Abp" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\FS.Abp.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ApplicationContractsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
+      </Template>
+      <Template Name="Application.AbpPermissions" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AbpPermissions.tmpl">
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
       </Template>
       <Template Name="Application.AppService" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.AppService.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
       </Template>
       <Template Name="Application.Dto" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Dto.tmpl">
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="DtosOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="AutoMapperProfileOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="JsonSubtypesConverterBuildersOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="ValidatorOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
         <ed:Property Name="DtoNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
         <ed:Property Name="DtoClassNamePrefix" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -147,7 +101,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain</Project>
             <ProjectFolder>FS.CodingManagement</ProjectFolder>
@@ -159,28 +113,28 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain.Shared</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Application.Contracts</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain.Shared</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Application.Contracts</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
@@ -192,52 +146,17 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpPermissionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
       </Template>
       <Template Name="Domain.AbpSettings" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSettings.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="AbpSettingsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Domain</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="IServiceCollectionExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Domain</Project>
-            <ProjectFolder>Microsoft.Extensions.DependencyInjection</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
         </ed:Property>
       </Template>
       <Template Name="Domain.AbpSpecifications" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Domain.AbpSpecifications.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain</Project>
             <ProjectFolder>FS.CodingManagement</ProjectFolder>
@@ -249,55 +168,27 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Domain</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.EntityFrameworkCore</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
       </Template>
       <Template Name="EFCore.DbContext" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.DbContext.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ContextOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.EntityFrameworkCore</Project>
-            <ProjectFolder>EntityFrameworkCore</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
       </Template>
       <Template Name="EFCore.Entities" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Entities.tmpl">
-        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationFramework>None</ValidationFramework>
         </ed:Property>
-        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
-        </ed:Property>
-        <ed:Property Name="EntitiesOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Domain</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
         </ed:Property>
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
         <ed:Property Name="ModelNameAsFilesPrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
-        </ed:Property>
-        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
         <ed:Property Name="PropertyChangeNotifiers" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
@@ -332,13 +223,6 @@
         <ed:Property Name="JsonFileBasePath" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainSharedOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Domain.Shared</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
       </Template>
       <Template Name="EFCore.EntitiesConfiguration" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.EntitiesConfiguration.tmpl">
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -347,38 +231,17 @@
         <ed:Property Name="SelfContainedEntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="EntitiesConfigurationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.EntityFrameworkCore</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionPropertyType>Default</EFCoreCollectionPropertyType>
         </ed:Property>
-        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionInitializationType>Default</EFCoreCollectionInitializationType>
         </ed:Property>
-        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ReferenceTypeNullability>Default</ReferenceTypeNullability>
         </ed:Property>
       </Template>
       <Template Name="EFCore.Repository" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\EFCore.Repository.tmpl">
-        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Domain</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.EntityFrameworkCore</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
         <ed:Property Name="InterfaceLayerNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
@@ -392,31 +255,52 @@
           <boolean>false</boolean>
         </ed:Property>
       </Template>
-      <Template Name="Application.Api" Enabled="True" File="..\..\..\..\..\..\..\tools\entitydeveloper\FS.ED\Templates\Application.Api.tmpl">
-        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
-        </ed:Property>
-        <ed:Property Name="KebabCaseApiName" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>true</boolean>
-        </ed:Property>
-        <ed:Property Name="InterfaceOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.Application.Contracts</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-        <ed:Property Name="ImplementOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.11.1297.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <Project>FS.CodingManagement.HttpApi</Project>
-            <ProjectFolder>FS.CodingManagement</ProjectFolder>
-            <DestinationFolder />
-          </OutputInfo>
-        </ed:Property>
-      </Template>
     </Templates>
     <AttributeAssemblies>
       <AttributeAssembly Name="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null" File="C:\Program Files (x86)\Common Files\Devart\EntityDeveloper\NET4\FS.ED.dll">
+        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="OutputInfoAttribute" AttributeNamespace="FS.ED.OutputInfos" AttributeAllowMultiple="True" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ObjectExtendingCmtAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ObjectExtendingProAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="ModuleAttribute" AttributeNamespace="FS.ED.Module" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+          <Properties>
+            <ed:Property Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+            <ed:Property Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+          </Properties>
+        </AttributeType>
+        <AttributeType Name="AttributeFactory" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
+          <AttributeConstructor />
+        </AttributeType>
         <AttributeType Name="EntityEnumTypeAttribute" AttributeNamespace="FS.ED.Attributes" AttributeAllowMultiple="False" AttributeValidOn="All">
           <AttributeConstructor />
           <Properties>
@@ -436,12 +320,6 @@
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="ModuleAttribute" AttributeNamespace="FS.ED.Attributes.Module" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
         <AttributeType Name="LocalizationTextAttribute" AttributeNamespace="FS.ED.Attributes.Localizations" AttributeAllowMultiple="False" AttributeValidOn="All">
@@ -521,31 +399,6 @@
           <AttributeConstructor />
           <Properties>
             <ed:Property Name="AbpFeatureStore" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="PermissionsAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="PermissionDefinitionAttribute" AttributeNamespace="FS.ED.Permissions" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="MultiTenancySides" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            <ed:Property Name="DisplayName" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="ObjectExtendingCmtAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-          </Properties>
-        </AttributeType>
-        <AttributeType Name="ObjectExtendingProAttribute" AttributeNamespace="FS.ED.ObjectExtending" AttributeAllowMultiple="False" AttributeValidOn="All">
-          <AttributeConstructor />
-          <Properties>
-            <ed:Property Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
           </Properties>
         </AttributeType>
       </AttributeAssembly>

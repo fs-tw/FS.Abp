@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Coding.Codes</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Coding\src\FS.Coding.AspNetCore\FS.Coding.AspNetCore.csproj" />
+    <ProjectReference Include="..\FS.Coding.Codes.Application\FS.Coding.Codes.Application.csproj" />
+    <ProjectReference Include="..\FS.Coding.Codes.EntityFrameworkCore\FS.Coding.Codes.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.Coding.Codes.HttpApi\FS.Coding.Codes.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

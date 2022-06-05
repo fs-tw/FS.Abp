@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FS.Abp.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace FS.CodingManagement.Codes
             try
             {
                 var result = await this.Coding.FindByNoAsync(codeNo);
-                var methodInfo = FS.Abp.Shared.TypeHelper.GetConverMethod(Type.GetTypeCode(typeof(T)));
+                var methodInfo = TypeHelper.GetConverMethod(Type.GetTypeCode(typeof(T)));
                 return (T)methodInfo.Invoke(null, new[] { result.Value });
             }
             catch

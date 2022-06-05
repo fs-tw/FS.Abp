@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Printer.Printing": {
+      "path": "FS.Printer.Printing.abpmdl.json"
+    }
+  }
+}

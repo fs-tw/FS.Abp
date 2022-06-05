@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Printer.Domain.Shared": {
+      "path": "src/FS.Printer.Domain.Shared/FS.Printer.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.Domain": {
+      "path": "src/FS.Printer.Domain/FS.Printer.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.Application.Contracts": {
+      "path": "src/FS.Printer.Application.Contracts/FS.Printer.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.Application": {
+      "path": "src/FS.Printer.Application/FS.Printer.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.EntityFrameworkCore": {
+      "path": "src/FS.Printer.EntityFrameworkCore/FS.Printer.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.MongoDB": {
+      "path": "src/FS.Printer.MongoDB/FS.Printer.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.HttpApi": {
+      "path": "src/FS.Printer.HttpApi/FS.Printer.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.HttpApi.Client": {
+      "path": "src/FS.Printer.HttpApi.Client/FS.Printer.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.TestBase": {
+      "path": "test/FS.Printer.TestBase/FS.Printer.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Printer.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Printer.EntityFrameworkCore.Tests/FS.Printer.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Printer.MongoDB.Tests": {
+      "path": "test/FS.Printer.MongoDB.Tests/FS.Printer.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Printer.Domain.Tests": {
+      "path": "test/FS.Printer.Domain.Tests/FS.Printer.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Printer.Application.Tests": {
+      "path": "test/FS.Printer.Application.Tests/FS.Printer.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Printer.HttpApi.Host": {
+      "path": "host/FS.Printer.HttpApi.Host/FS.Printer.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Printer.Web": {
+      "path": "src/FS.Printer.Web/FS.Printer.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Printer.HttpApi.Client.ConsoleTestApp/FS.Printer.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Printer.Web.Host": {
+      "path": "host/FS.Printer.Web.Host/FS.Printer.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Printer.IdentityServer": {
+      "path": "host/FS.Printer.IdentityServer/FS.Printer.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Printer.Host.Shared": {
+      "path": "host/FS.Printer.Host.Shared/FS.Printer.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Printer.Web.Unified": {
+      "path": "host/FS.Printer.Web.Unified/FS.Printer.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Printer.Blazor": {
+      "path": "src/FS.Printer.Blazor/FS.Printer.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.Blazor.Host": {
+      "path": "host/FS.Printer.Blazor.Host/FS.Printer.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Printer.Blazor.Server": {
+      "path": "src/FS.Printer.Blazor.Server/FS.Printer.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.Blazor.WebAssembly": {
+      "path": "src/FS.Printer.Blazor.WebAssembly/FS.Printer.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Printer.Blazor.Server.Host": {
+      "path": "host/FS.Printer.Blazor.Server.Host/FS.Printer.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FS.Printer.Printing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Printer\src\FS.Printer.Application\FS.Printer.Application.csproj" />
+    <ProjectReference Include="..\FS.Printer.Printing.Application.Contracts\FS.Printer.Printing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FS.Printer.Printing.Domain\FS.Printer.Printing.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

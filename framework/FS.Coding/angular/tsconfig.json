@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@f-s/coding": [
+        "projects/coding/src/public-api.ts"
+      ],
+      "@f-s/coding/config": [
+        "projects/coding/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/coding/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/coding/src/lib/proxy/*"]
+    }
+  }
+}

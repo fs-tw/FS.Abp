@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace FS.CodingManagement.SerialNumbers
+namespace FS.CodingManagement.SerialNumbers.EntityFrameworkCore
 {
-    public partial class EfCoreSerialNumberRepository :
-        EfCoreRepository<FS.CodingManagement.EntityFrameworkCore.ICodingManagementDbContext, FS.CodingManagement.SerialNumbers.SerialNumber, Guid>,
-        ISerialNumberRepository
+    public partial class EfCoreSerialNumberRepository
     {
 
         public async Task<SerialNumber> LookupAsync(string providerName, string providerKey = null)

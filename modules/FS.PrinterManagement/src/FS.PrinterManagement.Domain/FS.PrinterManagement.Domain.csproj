@@ -11,7 +11,7 @@
 		<PackageReference Include="BarcodeLib" Version="2.4.0" />
 		<PackageReference Include="System.Drawing.Common" Version="5.0.2" />
 		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-		<ProjectReference Include="..\..\..\..\projects\FS.Abp\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
+		<ProjectReference Include="..\..\..\..\framework\FS.Abp.Data\src\FS.Abp.Data\FS.Abp.Data.csproj" />
 		<ProjectReference Include="..\FS.PrinterManagement.Domain.Shared\FS.PrinterManagement.Domain.Shared.csproj" />
 	</ItemGroup>
 

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Coding.Codes</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FS.Coding\src\FS.Coding.EntityFrameworkCore\FS.Coding.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\FS.Coding.Codes.Domain\FS.Coding.Codes.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Coding.Domain.Shared": {
+      "path": "src/FS.Coding.Domain.Shared/FS.Coding.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.Domain": {
+      "path": "src/FS.Coding.Domain/FS.Coding.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.Application.Contracts": {
+      "path": "src/FS.Coding.Application.Contracts/FS.Coding.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.Application": {
+      "path": "src/FS.Coding.Application/FS.Coding.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.EntityFrameworkCore": {
+      "path": "src/FS.Coding.EntityFrameworkCore/FS.Coding.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.MongoDB": {
+      "path": "src/FS.Coding.MongoDB/FS.Coding.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.HttpApi": {
+      "path": "src/FS.Coding.HttpApi/FS.Coding.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.HttpApi.Client": {
+      "path": "src/FS.Coding.HttpApi.Client/FS.Coding.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.TestBase": {
+      "path": "test/FS.Coding.TestBase/FS.Coding.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Coding.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Coding.EntityFrameworkCore.Tests/FS.Coding.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Coding.MongoDB.Tests": {
+      "path": "test/FS.Coding.MongoDB.Tests/FS.Coding.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Coding.Domain.Tests": {
+      "path": "test/FS.Coding.Domain.Tests/FS.Coding.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Coding.Application.Tests": {
+      "path": "test/FS.Coding.Application.Tests/FS.Coding.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Coding.HttpApi.Host": {
+      "path": "host/FS.Coding.HttpApi.Host/FS.Coding.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Coding.Web": {
+      "path": "src/FS.Coding.Web/FS.Coding.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Coding.HttpApi.Client.ConsoleTestApp/FS.Coding.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Coding.Web.Host": {
+      "path": "host/FS.Coding.Web.Host/FS.Coding.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Coding.IdentityServer": {
+      "path": "host/FS.Coding.IdentityServer/FS.Coding.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Coding.Host.Shared": {
+      "path": "host/FS.Coding.Host.Shared/FS.Coding.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Coding.Web.Unified": {
+      "path": "host/FS.Coding.Web.Unified/FS.Coding.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Coding.Blazor": {
+      "path": "src/FS.Coding.Blazor/FS.Coding.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.Blazor.Host": {
+      "path": "host/FS.Coding.Blazor.Host/FS.Coding.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Coding.Blazor.Server": {
+      "path": "src/FS.Coding.Blazor.Server/FS.Coding.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.Blazor.WebAssembly": {
+      "path": "src/FS.Coding.Blazor.WebAssembly/FS.Coding.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Coding.Blazor.Server.Host": {
+      "path": "host/FS.Coding.Blazor.Server.Host/FS.Coding.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

@@ -12,6 +12,7 @@ namespace FS.CodingManagement
         typeof(AbpValidationModule)
     )]
     [DependsOn(typeof(EasyAbp.Abp.Trees.AbpTreesDomainSharedModule))]
+    [DependsOn(typeof(FS.Abp.Data.AbpDataCoreModule))]
 
     public class CodingManagementDomainSharedModule : AbpModule
     {

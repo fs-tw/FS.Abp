@@ -11,7 +11,7 @@ namespace FS.CodingManagement
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    [DependsOn(typeof(FS.Abp.AbpApplicationModule))]
+    //[DependsOn(typeof(FS.Abp.AbpApplicationModule))]
     public class CodingManagementApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

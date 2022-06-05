@@ -1,7 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<efcore context-namespace="FS.CodingManagement.EntityFrameworkCore" namespace="FS.CodingManagement" p1:name="CodingManagementDbContext" p1:Guid="11f10c13-9344-4d48-aeac-99210bcf92a4" p1:VersionTag="4.4.2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
-  <class name="FS.CodingManagement.Codes.Coding" entity-set="Codings" p1:Guid="485bfbf7-ffc6-4138-8bff-cc06beae5a5b" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Coding&gt;">
+<efcore context-namespace="FS.CodingManagement.EntityFrameworkCore" namespace="FS.CodingManagement" p1:name="CodingManagementDbContext" p1:Guid="11f10c13-9344-4d48-aeac-99210bcf92a4" p1:VersionTag="5.1.3" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <p1:Attributes>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>DomainShared</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement.Domain.Shared</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Domain</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement.Domain</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>Application</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement.Application</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>ApplicationContracts</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement.Application.Contracts</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+    <p1:Attribute Name="FS.ED.OutputInfos.OutputInfoAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+      <p1:AttributeConstructor />
+      <p1:Properties>
+        <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>EntityFrameworkCore</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="Project" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement.EntityFrameworkCore</string>
+        </p1:PropertyValue>
+        <p1:PropertyValue Name="ProjectFolder" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string>FS.CodingManagement</string>
+        </p1:PropertyValue>
+      </p1:Properties>
+    </p1:Attribute>
+  </p1:Attributes>
+  <class name="FS.CodingManagement.Codes.Coding" entity-set="Codings" p1:Guid="485bfbf7-ffc6-4138-8bff-cc06beae5a5b" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant,&#xD;&#xA;        EasyAbp.Abp.Trees.ITree&lt;Coding&gt;">
     <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>Codes</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
+      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Attributes.Entities.EntityAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
         <p1:Properties>
@@ -10,25 +98,6 @@
           </p1:PropertyValue>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOnRydWUsIk11bHRpVGVuYW50Ijp0cnVlLCJVc2VyIjpmYWxzZX19</string>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>Codes</string>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -51,31 +120,31 @@
     <property name="Code" type="String" p1:ValidateRequired="true" p1:Guid="ee60b42e-4144-4a3a-9ce5-7f2571e6b60b">
       <column name="" />
     </property>
-    <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a8e84025-c92e-4fcf-8aac-8d977a093738">
-      <column name="" />
-    </property>
     <property name="Level" type="int" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="46999c70-7c6e-4026-a8c9-23a481e578e2">
       <column name="" />
     </property>
     <property name="TenantId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7a7bb42d-501e-48f7-8449-5ac04a4f34f8" p1:GenerateDTO="False">
       <column name="" />
     </property>
+    <property name="ParentId" type="Guid" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a838322e-67e1-4039-b6f5-6cd2c9ed4680">
+      <column name="" />
+    </property>
   </class>
-  <class name="FS.CodingManagement.SerialNumbers.SerialNumber" entity-set="SerialNumbers" schema="dbo" p1:Guid="922c1139-ce7f-4769-9fee-9214a9724a02" p1:AbpEditor="YinChang" p1:CrudAppServiceType="EntityWithKeyCrudAppService" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
+  <class name="FS.CodingManagement.SerialNumbers.SerialNumber" entity-set="SerialNumbers" schema="dbo" p1:Guid="922c1139-ce7f-4769-9fee-9214a9724a02" p1:AbpEditor="YinChang" p1:EntityBase="&#xD;&#xA;        Volo.Abp.Domain.Entities.Auditing.AuditedAggregateRoot&lt;Guid&gt;,&#xD;&#xA;        Volo.Abp.MultiTenancy.IMultiTenant">
     <p1:Attributes>
+      <p1:Attribute Name="FS.ED.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
+        <p1:AttributeConstructor />
+        <p1:Properties>
+          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <string>SerialNumbers</string>
+          </p1:PropertyValue>
+        </p1:Properties>
+      </p1:Attribute>
       <p1:Attribute Name="FS.ED.Permissions.PermissionsAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
         <p1:AttributeConstructor />
         <p1:Properties>
           <p1:PropertyValue Name="Base64Text" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
             <string>eyIkaWQiOiIxIiwiUGVybWlzc2lvbkRlZmluaXRpb25EaWN0aW9uYXJ5Ijp7IiRpZCI6IjIiLCJDcmVhdGUiOnsiJGlkIjoiMyIsIk5hbWUiOiJDcmVhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJVcGRhdGUiOnsiJGlkIjoiNCIsIk5hbWUiOiJVcGRhdGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9LCJEZWxldGUiOnsiJGlkIjoiNSIsIk5hbWUiOiJEZWxldGUiLCJNdWx0aVRlbmFuY3lTaWRlcyI6bnVsbCwiRGlzcGxheU5hbWUiOm51bGx9fX0=</string>
-          </p1:PropertyValue>
-        </p1:Properties>
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.Module.ModuleAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
-        <p1:Properties>
-          <p1:PropertyValue Name="Name" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-            <string>SerialNumbers</string>
           </p1:PropertyValue>
         </p1:Properties>
       </p1:Attribute>
@@ -89,9 +158,6 @@
             <string>eyIkaWQiOiIxIiwiRW50aXR5RmVhdHVyZURlZmluaXRpb24iOnsiJGlkIjoiMiIsIlRyZWUiOmZhbHNlLCJNdWx0aVRlbmFudCI6dHJ1ZSwiVXNlciI6ZmFsc2V9fQ==</string>
           </p1:PropertyValue>
         </p1:Properties>
-      </p1:Attribute>
-      <p1:Attribute Name="FS.ED.Attributes.AbpFeature.AbpFeatureAttribute" Assembly="FS.ED, Version=1.102.0.0, Culture=neutral, PublicKeyToken=null">
-        <p1:AttributeConstructor />
       </p1:Attribute>
     </p1:Attributes>
     <id name="Id" type="Guid" shadow="True" constructor-parameter="True" p1:ValidateRequired="true" p1:Guid="f145e476-7b8f-445c-9a2e-ae717db002e9" p1:GenerateDTO="False">
@@ -111,11 +177,11 @@
     </property>
   </class>
   <associations>
-    <association name="Coding_Codings" cardinality="OneToMany" p1:Guid="2a6ab297-8eab-4441-925d-bf1c929379f0">
-      <end1 multiplicity="ZeroOrOne" name="Parent" class="Coding" relation-class="Coding" constrained="True" lazy="False" p1:Guid="3cba809b-caf0-4b61-a6d8-90947e24481e">
+    <association name="Coding_Coding" cardinality="OneToMany" p1:Guid="c8dae506-5326-46e9-9d82-8617911ca153">
+      <end1 multiplicity="ZeroOrOne" name="Parent" class="Coding" relation-class="Coding" constrained="True" lazy="False" p1:Guid="6d70c836-1e78-4a9f-bd7d-58bf8ead9f25">
         <property name="Id" />
       </end1>
-      <end2 multiplicity="Many" name="Children" class="Coding" relation-class="Coding" lazy="False" p1:Guid="b3f6c7e0-84d7-42bb-88bc-dd1ea724da33" p1:CollectionTypeName="ICollection&lt;Coding&gt;">
+      <end2 multiplicity="Many" name="Children" class="Coding" relation-class="Coding" lazy="False" p1:Guid="6a539a97-be08-4e35-ba5d-f97b05181fb5" p1:CollectionTypeName="ICollection&lt;Coding&gt;">
         <property name="ParentId" />
       </end2>
     </association>
