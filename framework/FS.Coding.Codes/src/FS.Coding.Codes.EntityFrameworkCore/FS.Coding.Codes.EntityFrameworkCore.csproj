@@ -13,4 +13,31 @@
 		<ProjectReference Include="..\FS.Coding.Codes.Domain\FS.Coding.Codes.Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.Coding\Codes\CodesStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Codes</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\EntityFrameworkCore\CodesDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\EntityFrameworkCore\CodesDbContextModelCreatingExtensions.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\EntityFrameworkCore\Coding.Configuration.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\EntityFrameworkCore\EfCoreCodingTreeRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\EntityFrameworkCore\ICodesDbContext.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EntityFrameworkCore</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>

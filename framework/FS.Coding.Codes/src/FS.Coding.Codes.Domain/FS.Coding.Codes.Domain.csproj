@@ -13,4 +13,19 @@
 		<ProjectReference Include="..\FS.Coding.Codes.Domain.Shared\FS.Coding.Codes.Domain.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.Coding\Codes\Coding.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Codes</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\ICodesStore.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Codes</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\Codes\ICodingTreeRepository.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Codes</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
