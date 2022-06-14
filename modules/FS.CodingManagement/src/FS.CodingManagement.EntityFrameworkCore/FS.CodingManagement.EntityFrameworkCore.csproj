@@ -6,28 +6,30 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="_Generated\FS.CodingManagement\Codes\**" />
+	  <EmbeddedResource Remove="_Generated\FS.CodingManagement\Codes\**" />
+	  <None Remove="_Generated\FS.CodingManagement\Codes\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\..\..\framework\FS.Coding.Codes\src\FS.Coding.Codes.EntityFrameworkCore\FS.Coding.Codes.EntityFrameworkCore.csproj" />
 		<ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\CodesQueryableExtensions.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\CodesStore.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\Coding.Configuration.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EfCoreCodingTreeRepository.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\CodesDbContext.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\CodesDbContextModelCreatingExtensions.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\Coding.Configuration.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\EfCoreCodingRepository.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\EfCoreCodingTreeRepository.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\ICodesDbContext.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\EntityFrameworkCore\Coding.Configuration.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\EntityFrameworkCore\EfCoreCodingTreeRepository.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\EntityFrameworkCore\EfCoreSerialNumberRepository.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\EntityFrameworkCore\SerialNumber.Configuration.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\EfCoreSerialNumberRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\EfCoreSerialNumberRepository.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\ISerialNumbersDbContext.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\SerialNumber.Configuration.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\SerialNumbersDbContext.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\SerialNumbersDbContextModelCreatingExtensions.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Configuration.Generated.cs" />
 		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersQueryableExtensions.Generated.cs" />
+		<Compile Remove="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersStore.Generated.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -43,34 +45,10 @@
 			<AutoGen>True</AutoGen>
 			<DependentUpon>EntityFrameworkCore</DependentUpon>
 		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\EfCoreSerialNumberRepository.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>EntityFrameworkCore</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\ISerialNumbersDbContext.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>EntityFrameworkCore</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\SerialNumber.Configuration.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>EntityFrameworkCore</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\SerialNumbersDbContext.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>EntityFrameworkCore</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\SerialNumbersDbContextModelCreatingExtensions.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>EntityFrameworkCore</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumbersStore.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>SerialNumbers</DependentUpon>
-		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="_Generated\FS.CodingManagement\Codes\EntityFrameworkCore\" />
+		<Folder Include="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore\" />
 	</ItemGroup>
 
 </Project>

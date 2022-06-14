@@ -1,6 +1,7 @@
 ﻿using Shouldly;
 using System.Threading.Tasks;
 using Xunit;
+using FS.Coding.SerialNumbers;
 
 namespace FS.CodingManagement.SerialNumbers
 {

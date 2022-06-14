@@ -12,6 +12,7 @@ namespace FS.Coding;
     typeof(AbpValidationModule)
 )]
 [DependsOn(typeof(FS.Abp.Data.AbpDataCoreModule))]
+[DependsOn(typeof(FS.Abp.MediatR.AbpMediatRCoreModule))]
 public class CodingDomainSharedModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
@@ -25,7 +26,7 @@ public class CodingDomainSharedModule : AbpModule
         {
             options.Resources
                 .Add<CodingResource>("en")
-                .AddBaseTypes(typeof(AbpValidationResource))
+                //.AddBaseTypes(typeof(AbpValidationResource))
                 .AddVirtualJson("/Localization/Coding");
         });
 

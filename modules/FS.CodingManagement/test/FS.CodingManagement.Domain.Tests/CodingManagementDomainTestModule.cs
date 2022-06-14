@@ -1,4 +1,5 @@
-﻿using FS.CodingManagement.EntityFrameworkCore;
+﻿using FS.Coding.SerialNumbers;
+using FS.CodingManagement.EntityFrameworkCore;
 using FS.CodingManagement.SerialNumbers;
 using Volo.Abp.Modularity;
 

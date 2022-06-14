@@ -14,4 +14,15 @@
     <ProjectReference Include="..\FS.Coding.Domain\FS.Coding.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="_Generated\FS.Coding\SerialNumbers\Dtos\SerialNumberDtoAutoMapperProfile.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dtos</DependentUpon>
+    </Compile>
+    <Compile Update="_Generated\FS.Coding\SerialNumbers\SerialNumberCrudAppService.Generated.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SerialNumbers</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

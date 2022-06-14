@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityDeveloper Version="6.12.1419.0">
+<EntityDeveloper Version="6.12.1395.0">
   <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="NetCore20" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version3" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="" Provider="" />
     <Generation>
       <GeneratedFiles>
         <File Name="CodingManagement.cs" />
         <File Name="CodesPermissionNames.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Permissions" />
-        <File Name="SerialNumbersPermissionNames.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Permissions" />
+        <File Name="SerialNumbersPermissionNames.Generated.cs" Project="FS.Coding.Application.Contracts" ProjectFolder="_Generated\FS.Coding\SerialNumbers\Permissions" />
         <File Name="CodesPermissionDefinitionProviders.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Permissions" />
-        <File Name="SerialNumbersPermissionDefinitionProviders.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Permissions" />
+        <File Name="SerialNumbersPermissionDefinitionProviders.Generated.cs" Project="FS.Coding.Application.Contracts" ProjectFolder="_Generated\FS.Coding\SerialNumbers\Permissions" />
         <File Name="ICodingCrudAppService.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes" />
-        <File Name="ISerialNumberCrudAppService.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="ISerialNumberCrudAppService.Generated.cs" Project="FS.Coding.Application.Contracts" ProjectFolder="_Generated\FS.Coding\SerialNumbers" />
         <File Name="CodingCrudAppService.Generated.cs" Project="FS.Coding.Codes.Application" ProjectFolder="_Generated\FS.Coding\Codes" />
-        <File Name="SerialNumberCrudAppService.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="SerialNumberCrudAppService.Generated.cs" Project="FS.Coding.Application" ProjectFolder="_Generated\FS.Coding\SerialNumbers" />
         <File Name="CodingDto.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Dtos" />
-        <File Name="SerialNumberDto.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
+        <File Name="SerialNumberDto.Generated.cs" Project="FS.Coding.Application.Contracts" ProjectFolder="_Generated\FS.Coding\SerialNumbers\Dtos" />
         <File Name="CodingDtoAutoMapperProfile.Generated.cs" Project="FS.Coding.Codes.Application" ProjectFolder="_Generated\FS.Coding\Codes\Dtos" />
-        <File Name="SerialNumberDtoAutoMapperProfile.Generated.cs" Project="FS.CodingManagement.Application" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
+        <File Name="SerialNumberDtoAutoMapperProfile.Generated.cs" Project="FS.Coding.Application" ProjectFolder="_Generated\FS.Coding\SerialNumbers\Dtos" />
         <File Name="CodingDtoValidator.Generated.cs" Project="FS.Coding.Codes.Application.Contracts" ProjectFolder="_Generated\FS.Coding\Codes\Dtos" />
-        <File Name="SerialNumberDtoValidator.Generated.cs" Project="FS.CodingManagement.Application.Contracts" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\Dtos" />
+        <File Name="SerialNumberDtoValidator.Generated.cs" Project="FS.Coding.Application.Contracts" ProjectFolder="_Generated\FS.Coding\SerialNumbers\Dtos" />
         <File Name="ICodesStore.Generated.cs" Project="FS.Coding.Codes.Domain" ProjectFolder="_Generated\FS.Coding\Codes" />
         <File Name="CodesStore.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes" />
-        <File Name="ISerialNumbersStore.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
-        <File Name="SerialNumbersStore.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="ISerialNumbersStore.Generated.cs" Project="FS.Coding.Domain" ProjectFolder="_Generated\FS.Coding\SerialNumbers" />
+        <File Name="SerialNumbersStore.Generated.cs" Project="FS.Coding.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\SerialNumbers" />
         <File Name="ICodesDbContext.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
         <File Name="CodesDbContext.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
         <File Name="CodesDbContextModelCreatingExtensions.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
-        <File Name="ISerialNumbersDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
-        <File Name="SerialNumbersDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
-        <File Name="SerialNumbersDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
+        <File Name="ISerialNumbersDbContext.Generated.cs" Project="FS.Coding.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\SerialNumbers\EntityFrameworkCore" />
+        <File Name="SerialNumbersDbContext.Generated.cs" Project="FS.Coding.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\SerialNumbers\EntityFrameworkCore" />
+        <File Name="SerialNumbersDbContextModelCreatingExtensions.Generated.cs" Project="FS.Coding.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\SerialNumbers\EntityFrameworkCore" />
         <File Name="ICodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
         <File Name="CodingManagementDbContext.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
         <File Name="CodingManagementDbContextModelCreatingExtensions.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\EntityFrameworkCore" />
         <File Name="Coding.Generated.cs" Project="FS.Coding.Codes.Domain" ProjectFolder="_Generated\FS.Coding\Codes" />
-        <File Name="SerialNumber.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="SerialNumber.Generated.cs" Project="FS.Coding.Domain" ProjectFolder="_Generated\FS.Coding\SerialNumbers" />
         <File Name="Coding.Configuration.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
-        <File Name="SerialNumber.Configuration.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
+        <File Name="SerialNumber.Configuration.Generated.cs" Project="FS.Coding.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\SerialNumbers\EntityFrameworkCore" />
         <File Name="ICodingTreeRepository.Generated.cs" Project="FS.Coding.Codes.Domain" ProjectFolder="_Generated\FS.Coding\Codes" />
-        <File Name="ISerialNumberRepository.Generated.cs" Project="FS.CodingManagement.Domain" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers" />
+        <File Name="ISerialNumberRepository.Generated.cs" Project="FS.Coding.Domain" ProjectFolder="_Generated\FS.Coding\SerialNumbers" />
         <File Name="EfCoreCodingTreeRepository.Generated.cs" Project="FS.Coding.Codes.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\Codes\EntityFrameworkCore" />
-        <File Name="EfCoreSerialNumberRepository.Generated.cs" Project="FS.CodingManagement.EntityFrameworkCore" ProjectFolder="_Generated\FS.CodingManagement\SerialNumbers\EntityFrameworkCore" />
+        <File Name="EfCoreSerialNumberRepository.Generated.cs" Project="FS.Coding.EntityFrameworkCore" ProjectFolder="_Generated\FS.Coding\SerialNumbers\EntityFrameworkCore" />
       </GeneratedFiles>
     </Generation>
     <DatabaseFirstNamingRules>
@@ -101,7 +101,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpDerivedsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain</Project>
             <ProjectFolder>FS.CodingManagement</ProjectFolder>
@@ -113,28 +113,28 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain.Shared</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Application.Contracts</Project>
             <ProjectFolder>Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="DomainExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain.Shared</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
             <DestinationFolder />
           </OutputInfo>
         </ed:Property>
-        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ApplicationExtensionsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Application.Contracts</Project>
             <ProjectFolder>Volo.Abp.Localization</ProjectFolder>
@@ -156,7 +156,7 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="AbpSpecificationsOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <OutputInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <Project>FS.CodingManagement.Domain</Project>
             <ProjectFolder>FS.CodingManagement</ProjectFolder>
@@ -178,10 +178,10 @@
         <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
-        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationFramework" Type="EntityDeveloper.TemplateEngine.ValidationFramework, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationFramework>None</ValidationFramework>
         </ed:Property>
-        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="ValidationErrorMessages" Type="EntityDeveloper.TemplateEngine.ValidationErrorMessages, EntityDeveloper.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ValidationErrorMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
         </ed:Property>
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -231,13 +231,13 @@
         <ed:Property Name="SelfContainedEntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
-        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionPropertyType>Default</EFCoreCollectionPropertyType>
         </ed:Property>
-        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <EFCoreCollectionInitializationType>Default</EFCoreCollectionInitializationType>
         </ed:Property>
-        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+        <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.12.1395.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
           <ReferenceTypeNullability>Default</ReferenceTypeNullability>
         </ed:Property>
       </Template>

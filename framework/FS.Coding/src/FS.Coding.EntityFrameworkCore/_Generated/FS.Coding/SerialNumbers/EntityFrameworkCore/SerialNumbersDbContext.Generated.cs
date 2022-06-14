@@ -39,6 +39,7 @@ namespace FS.Coding.SerialNumbers.EntityFrameworkCore
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ConfigureSerialNumbers();
 
             CustomizeMapping(ref builder);
 

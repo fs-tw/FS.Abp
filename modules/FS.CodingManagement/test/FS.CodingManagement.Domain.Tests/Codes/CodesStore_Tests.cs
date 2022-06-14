@@ -1,4 +1,5 @@
-﻿using Shouldly;
+﻿using FS.Coding.Codes;
+using Shouldly;
 using System.Threading.Tasks;
 using Xunit;
 

@@ -10,26 +10,4 @@
 		<ProjectReference Include="..\FS.CodingManagement.Domain.Shared\FS.CodingManagement.Domain.Shared.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="_Generated\FS.CodingManagement\Coding.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\ICodingTreeRepository.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\ISerialNumberRepository.Generated.cs" />
-		<Compile Remove="_Generated\FS.CodingManagement\SerialNumber.Generated.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumberRepository.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>SerialNumbers</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\ISerialNumbersStore.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>SerialNumbers</DependentUpon>
-		</Compile>
-		<Compile Update="_Generated\FS.CodingManagement\SerialNumbers\SerialNumber.Generated.cs">
-			<AutoGen>True</AutoGen>
-			<DependentUpon>SerialNumbers</DependentUpon>
-		</Compile>
-	</ItemGroup>
-
 </Project>

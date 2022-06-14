@@ -14,4 +14,27 @@
 		<ProjectReference Include="..\FS.Coding.Domain.Shared\FS.Coding.Domain.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="_Generated\FS.Coding\SerialNumbers\Dtos\SerialNumberDto.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\SerialNumbers\Dtos\SerialNumberDtoValidator.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dtos</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\SerialNumbers\ISerialNumberCrudAppService.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>SerialNumbers</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\SerialNumbers\Permissions\SerialNumbersPermissionDefinitionProviders.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	  <Compile Update="_Generated\FS.Coding\SerialNumbers\Permissions\SerialNumbersPermissionNames.Generated.cs">
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Permissions</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
