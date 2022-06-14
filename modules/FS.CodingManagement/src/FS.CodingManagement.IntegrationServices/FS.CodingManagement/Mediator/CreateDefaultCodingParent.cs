@@ -11,7 +11,7 @@ namespace FS.CodingManagement.Mediator
 {
     public class CreateDefaultCodingParent : IRequest<Coding.Codes.Coding>
     {
-        public string No { get; set; } = "Taichung";
+        public string Value { get; set; } = "Taichung";
         public string DisplayName { get; set; } = "台中";
     }
 
@@ -28,8 +28,8 @@ namespace FS.CodingManagement.Mediator
 
         public async Task<Coding.Codes.Coding> Handle(CreateDefaultCodingParent request, CancellationToken cancellationToken)
         {
-            var code = new Coding.Codes.Coding(_guidGenerator.Create()) { No = request.No, Value = request.No, DisplayName = request.DisplayName };
-            return await _codesStore.Coding.InsertAsync(code);
+            var code = new Coding.Codes.Coding(_guidGenerator.Create()) { No = request.Value, Value = request.Value, DisplayName = request.DisplayName };
+            return await _codesStore.Coding.InsertAsync(code,true);
         }
 
     }

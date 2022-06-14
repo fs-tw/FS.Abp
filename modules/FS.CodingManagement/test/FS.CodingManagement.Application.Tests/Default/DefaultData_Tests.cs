@@ -22,15 +22,28 @@ namespace FS.CodingManagement
         }
 
         [Fact]
-        public async Task DefaultDataAsync()
+        public async Task DefaultDataValidationAsync()
         {
 
-            //var no = "Taichung";
-            //var assetDatas = await _codingTreeRepository.FindByNoAsync(no);
-            //assetDatas.No.ShouldBe("Taichung");
-            //var noArray = assetDatas.Children.ToList().Select(x => x.No);
-            //noArray.ShouldContain("South");
-            //noArray.ShouldContain("North");
+            var no = "Taichung";
+            var parent = await _codingTreeRepository.FindByNoAsync(no);
+            var children = await _codingTreeRepository.FindByNoAsync("South");
+            var children2 = await _codingTreeRepository.FindByNoAsync("North");
+            children.ParentId.ShouldBe(parent.Id);
+            children2.ParentId.ShouldBe(parent.Id);
+
+
+        }
+
+        [Fact]
+        public async Task TreeDataValidationAsync()
+        {
+
+            var no = "Taichung";
+            var assetDatas = await _codingTreeRepository.FindByNoAsync(no);
+            assetDatas.No.ShouldBe("Taichung");
+            assetDatas.Children.Count.ShouldBeGreaterThan(0);
+            
 
         }
     }

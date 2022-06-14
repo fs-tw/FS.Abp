@@ -13,20 +13,17 @@ namespace FS.CodingManagement
         private readonly IGuidGenerator _guidGenerator;
         private readonly ICurrentTenant _currentTenant;
         private readonly IAbpLazyServiceProvider _lazyServiceProvider;
-        private readonly CreateParentCodeDataSeed _createParentCodeDataSeed;
-        private readonly CreateChildrenCodeDataSeed _createChildrenCodeDataSeed;
+        private readonly CreateTreeCodeDataSeed _createParentCodeDataSeed;
 
         public DefaultDataSeedContributor(
             IGuidGenerator guidGenerator, ICurrentTenant currentTenant,
-             CreateParentCodeDataSeed createParentCodeDataSeed,
-             CreateChildrenCodeDataSeed createChildrenCodeDataSeed,
+             CreateTreeCodeDataSeed createParentCodeDataSeed,
         IAbpLazyServiceProvider lazyServiceProvider)
         {
             _guidGenerator = guidGenerator;
             _currentTenant = currentTenant;
             _lazyServiceProvider = lazyServiceProvider;
             _createParentCodeDataSeed = createParentCodeDataSeed;
-            _createChildrenCodeDataSeed = createChildrenCodeDataSeed;
         }
 
         public async Task SeedAsync(DataSeedContext context)
@@ -35,7 +32,6 @@ namespace FS.CodingManagement
             {
 
                 await _createParentCodeDataSeed.ExecuteAsync();
-                //await _createChildrenCodeDataSeed.ExecuteAsync();
             }
         }
     }

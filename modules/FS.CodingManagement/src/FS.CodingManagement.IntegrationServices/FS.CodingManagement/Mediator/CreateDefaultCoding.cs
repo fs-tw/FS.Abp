@@ -11,7 +11,8 @@ namespace FS.CodingManagement.Mediator
 {
     public class CreateDefaultCoding : IRequest
     {
-        public string ParentNo { get; set; } = "Taichung";
+        public Coding.Codes.Coding Coding { get; set; }
+        
     }
 
     public class CreateDefaultCodingHandler : IRequestHandler<CreateDefaultCoding>
@@ -30,12 +31,10 @@ namespace FS.CodingManagement.Mediator
 
         public async Task<Unit> Handle(CreateDefaultCoding request, CancellationToken cancellationToken)
         {
-            var parentCode = await _codingTreeRepository.FindByNoAsync(request.ParentNo);
-
             var datas = new List<Coding.Codes.Coding>
                 {
-                    new Coding.Codes.Coding(_guidGenerator.Create()){No = "North",Value = "北區",DisplayName="北區",ParentId = parentCode.Id},
-                    new Coding.Codes.Coding(_guidGenerator.Create()){No = "South",Value = "南區",DisplayName="南區",ParentId = parentCode.Id},
+                    new Coding.Codes.Coding(_guidGenerator.Create()){No = "South",Value = "北區",DisplayName="北區",ParentId = request.Coding.Id},
+                    new Coding.Codes.Coding(_guidGenerator.Create()){No = "North",Value = "南區",DisplayName="南區",ParentId = request.Coding.Id},
                 };
            await _codesStore.Coding.InsertManyAsync(datas);
            return Unit.Value;
