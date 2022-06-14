@@ -41,6 +41,7 @@ namespace FS.CodingManagement
                     new Coding.Codes.Coding(_guidGenerator.Create()){No = "FS_Bool",Value = "true",DisplayName=""}
                 };
                 await codesStore.Coding.InsertManyAsync(datas);
+
             }
         }
     }

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.VirtualFileSystem;
 using FS.CodingManagement;
 
-namespace FS.CrmKitManagement;
+namespace FS.CodingManagement;
 
 [DependsOn(typeof(FS.Coding.CodingApplicationModule))]
 

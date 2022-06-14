@@ -10,6 +10,7 @@
 		<!--<ProjectReference Include="..\..\..\FS.Abp\src\FS.Abp.Application\FS.Abp.Application.csproj" />-->
 		<ProjectReference Include="..\FS.CodingManagement.Application.Contracts\FS.CodingManagement.Application.Contracts.csproj" />
 		<ProjectReference Include="..\FS.CodingManagement.Domain\FS.CodingManagement.Domain.csproj" />
+		<ProjectReference Include="..\FS.CodingManagement.IntegrationServices\FS.CodingManagement.IntegrationServices.csproj" />
 	</ItemGroup>
 
 </Project>
