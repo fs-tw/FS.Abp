@@ -13,12 +13,12 @@ namespace FS.CodingManagement
         private readonly IGuidGenerator _guidGenerator;
         private readonly ICurrentTenant _currentTenant;
         private readonly IAbpLazyServiceProvider _lazyServiceProvider;
-        private readonly CreateTreeCodeDataSeed _createParentCodeDataSeed;
+        private readonly CreateDefaultCodesDataSeed _createParentCodeDataSeed;
 
         public DefaultDataSeedContributor(
             IGuidGenerator guidGenerator, ICurrentTenant currentTenant,
-             CreateTreeCodeDataSeed createParentCodeDataSeed,
-        IAbpLazyServiceProvider lazyServiceProvider)
+             CreateDefaultCodesDataSeed createParentCodeDataSeed,
+             IAbpLazyServiceProvider lazyServiceProvider)
         {
             _guidGenerator = guidGenerator;
             _currentTenant = currentTenant;

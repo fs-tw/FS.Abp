@@ -22,30 +22,10 @@ namespace FS.CodingManagement
         }
 
         [Fact]
-        public async Task DefaultDataValidationAsync()
+        public async Task Create_Default_Coding()
         {
-
             var no = "Taichung";
-            var parent = await _codingTreeRepository.FindByNoAsync(no);
-            var children = await _codingTreeRepository.FindByNoAsync("South");
-            var children2 = await _codingTreeRepository.FindByNoAsync("North");
-            children.ParentId.ShouldBe(parent.Id);
-            children2.ParentId.ShouldBe(parent.Id);
-
-
-        }
-
-        [Fact]
-        public async Task TreeDataValidationAsync()
-        {
-
-            var no = "Taichung";
-            var parent = await _codingTreeRepository.FindByNoAsync(no);
-            var assetDatas = await _codingTreeRepository.GetChildrenAsync(parent.Id);
-            parent.No.ShouldBe("Taichung");
-            assetDatas.Count.ShouldBeGreaterThan(0);
-            
-
+            var trees = (await _codingTreeRepository.GetListAsync()).Single(x => x.No==no);
         }
     }
 }
