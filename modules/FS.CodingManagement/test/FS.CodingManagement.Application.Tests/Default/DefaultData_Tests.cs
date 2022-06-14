@@ -40,9 +40,10 @@ namespace FS.CodingManagement
         {
 
             var no = "Taichung";
-            var assetDatas = await _codingTreeRepository.FindByNoAsync(no);
-            assetDatas.No.ShouldBe("Taichung");
-            assetDatas.Children.Count.ShouldBeGreaterThan(0);
+            var parent = await _codingTreeRepository.FindByNoAsync(no);
+            var assetDatas = await _codingTreeRepository.GetChildrenAsync(parent.Id);
+            parent.No.ShouldBe("Taichung");
+            assetDatas.Count.ShouldBeGreaterThan(0);
             
 
         }
