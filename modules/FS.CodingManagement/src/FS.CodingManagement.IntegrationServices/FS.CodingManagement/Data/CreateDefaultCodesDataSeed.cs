@@ -23,8 +23,8 @@ namespace FS.CodingManagement.Data
                 No="Taichung",
                 Children=new System.Collections.Generic.List<Mediator.CreateDefaultCodes>()
                 {
-                    new Mediator.CreateDefaultCodes(){No="北區", Value="北區",DisplayName="北區"},
-                    new Mediator.CreateDefaultCodes(){No="南區" ,Value="南區",DisplayName="南區"}
+                    new Mediator.CreateDefaultCodes(){No="North", Value="北區",DisplayName="北區"},
+                    new Mediator.CreateDefaultCodes(){No="South" ,Value="南區",DisplayName="南區"}
                 }
             };
             await mediator.Send(command);

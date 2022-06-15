@@ -25,7 +25,15 @@ namespace FS.CodingManagement
         public async Task Create_Default_Coding()
         {
             var no = "Taichung";
-            var trees = (await _codingTreeRepository.GetListAsync()).Single(x => x.No==no);
+            var trees = (await _codingTreeRepository.GetListAsync()).SingleOrDefault(x => x.No==no);
+
+            trees.ShouldNotBeNull();
+
+            trees.No.ShouldBe(no);
+
+            trees.Children.Any(x => x.No=="South").ShouldBeTrue();
+
+            trees.Children.Any(x => x.No=="North").ShouldBeTrue();
         }
     }
 }

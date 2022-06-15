@@ -46,10 +46,10 @@ namespace FS.CodingManagement.Mediator
         {
             var root = new Coding.Codes.Coding(_guidGenerator.Create()) { No=request.No, Value=request.Value, DisplayName=request.DisplayName };
 
-
             append(root, request.Children);
 
             await _codesStore.Coding.InsertAsync(root);
+
             return Unit.Value;
 
         }
@@ -59,6 +59,7 @@ namespace FS.CodingManagement.Mediator
             children.ForEach(x =>
             {
                 var item = new Coding.Codes.Coding(_guidGenerator.Create()) { No =x.No, Value = x.Value, DisplayName=x.Value, ParentId = parent.Id };
+                
                 parent.Children.Add(item);
 
                 if (x.Children?.Count>0)
