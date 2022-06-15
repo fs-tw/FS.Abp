@@ -52,7 +52,7 @@ namespace FS.Abp.AuditLogging
         {
             Configure<AbpClockOptions>(options =>
             {
-                options.Kind = DateTimeKind.Utc;
+                options.Kind = DateTimeKind.Local;
             });
         }
     }
