@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FS.Abp.Identity.Domain.Shared": {
+      "path": "src/FS.Abp.Identity.Domain.Shared/FS.Abp.Identity.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.Domain": {
+      "path": "src/FS.Abp.Identity.Domain/FS.Abp.Identity.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.Application.Contracts": {
+      "path": "src/FS.Abp.Identity.Application.Contracts/FS.Abp.Identity.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.Application": {
+      "path": "src/FS.Abp.Identity.Application/FS.Abp.Identity.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.EntityFrameworkCore": {
+      "path": "src/FS.Abp.Identity.EntityFrameworkCore/FS.Abp.Identity.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.MongoDB": {
+      "path": "src/FS.Abp.Identity.MongoDB/FS.Abp.Identity.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.HttpApi": {
+      "path": "src/FS.Abp.Identity.HttpApi/FS.Abp.Identity.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.HttpApi.Client": {
+      "path": "src/FS.Abp.Identity.HttpApi.Client/FS.Abp.Identity.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.TestBase": {
+      "path": "test/FS.Abp.Identity.TestBase/FS.Abp.Identity.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Identity.EntityFrameworkCore.Tests": {
+      "path": "test/FS.Abp.Identity.EntityFrameworkCore.Tests/FS.Abp.Identity.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Identity.MongoDB.Tests": {
+      "path": "test/FS.Abp.Identity.MongoDB.Tests/FS.Abp.Identity.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Identity.Domain.Tests": {
+      "path": "test/FS.Abp.Identity.Domain.Tests/FS.Abp.Identity.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Identity.Application.Tests": {
+      "path": "test/FS.Abp.Identity.Application.Tests/FS.Abp.Identity.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Identity.HttpApi.Host": {
+      "path": "host/FS.Abp.Identity.HttpApi.Host/FS.Abp.Identity.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Identity.Web": {
+      "path": "src/FS.Abp.Identity.Web/FS.Abp.Identity.Web.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FS.Abp.Identity.HttpApi.Client.ConsoleTestApp/FS.Abp.Identity.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FS.Abp.Identity.Web.Host": {
+      "path": "host/FS.Abp.Identity.Web.Host/FS.Abp.Identity.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Identity.IdentityServer": {
+      "path": "host/FS.Abp.Identity.IdentityServer/FS.Abp.Identity.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Identity.Host.Shared": {
+      "path": "host/FS.Abp.Identity.Host.Shared/FS.Abp.Identity.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Identity.Web.Unified": {
+      "path": "host/FS.Abp.Identity.Web.Unified/FS.Abp.Identity.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Identity.Blazor": {
+      "path": "src/FS.Abp.Identity.Blazor/FS.Abp.Identity.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.Blazor.Host": {
+      "path": "host/FS.Abp.Identity.Blazor.Host/FS.Abp.Identity.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FS.Abp.Identity.Blazor.Server": {
+      "path": "src/FS.Abp.Identity.Blazor.Server/FS.Abp.Identity.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.Blazor.WebAssembly": {
+      "path": "src/FS.Abp.Identity.Blazor.WebAssembly/FS.Abp.Identity.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "FS.Abp.Identity.Blazor.Server.Host": {
+      "path": "host/FS.Abp.Identity.Blazor.Server.Host/FS.Abp.Identity.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

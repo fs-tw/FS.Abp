@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FS.Abp.Identity": {
+      "path": "FS.Abp.Identity.abpmdl.json"
+    }
+  }
+}

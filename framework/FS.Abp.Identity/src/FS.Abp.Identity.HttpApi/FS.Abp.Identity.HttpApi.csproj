@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FS.Abp.Identity</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="5.3.0" />
+    <ProjectReference Include="..\FS.Abp.Identity.Application.Contracts\FS.Abp.Identity.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
