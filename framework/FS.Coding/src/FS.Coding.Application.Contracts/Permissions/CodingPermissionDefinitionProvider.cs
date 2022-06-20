@@ -6,12 +6,15 @@ namespace FS.Coding.Permissions;
 
 public class CodingPermissionDefinitionProvider : PermissionDefinitionProvider
 {
-    public override void Define(IPermissionDefinitionContext context)
+    public override void PreDefine(IPermissionDefinitionContext context)
     {
     }
     public override void PreDefine(IPermissionDefinitionContext context)
     {
         var myGroup = context.AddGroup(CodingPermissions.GroupName, L("Permission:Coding"));
+    }
+    public override void Define(IPermissionDefinitionContext context)
+    {
     }
 
     private static LocalizableString L(string name)
