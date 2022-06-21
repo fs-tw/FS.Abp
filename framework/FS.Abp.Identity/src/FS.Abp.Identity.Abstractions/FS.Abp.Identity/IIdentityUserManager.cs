@@ -5,7 +5,7 @@ namespace FS.Abp.Identity
 {
     public interface IIdentityUserManager
     {
-        Task ChangeTenantClaimsAsync(Guid? tenantId, Func<Task> action);
-        Task ChangeTenantClaimsAsync(Guid? tenantId, string email, Func<Task> action);
+        Task ChangeUserClaimsAsync(Func<Task> action, string roleName = "admin");
+        Task ChangeUserClaimsAsync(string email, Func<Task> action,string roleName="admin");
     }
 }
