@@ -10,6 +10,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\FS.Abp.Identity.Abstractions\FS.Abp.Identity.Abstractions.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

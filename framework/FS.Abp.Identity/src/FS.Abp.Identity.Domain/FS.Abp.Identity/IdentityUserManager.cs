@@ -9,7 +9,7 @@ using Volo.Abp.Uow;
 
 namespace FS.Abp.Identity
 {
-    public class IdentityUserManager : DomainService
+    public class IdentityUserManager : DomainService, IIdentityUserManager
     {
         private static string AuthenticationType => "Identity.Application";
         private static string DefaultRoleName => "guest";
