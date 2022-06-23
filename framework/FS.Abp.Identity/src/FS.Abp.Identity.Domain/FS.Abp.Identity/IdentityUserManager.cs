@@ -13,20 +13,29 @@ namespace FS.Abp.Identity
 {
     public class IdentityUserLookupService : Volo.Abp.DependencyInjection.ITransientDependency
     {
+        private readonly IUnitOfWorkManager unitOfWorkManager;
         private readonly IGuidGenerator guidGenerator;
         private readonly Volo.Abp.Identity.IdentityUserManager userManager;
+        private readonly AbpUserClaimsPrincipalFactory abpUserClaimsPrincipalFactory;
 
         public IdentityUserLookupService(
+            Volo.Abp.Uow.IUnitOfWorkManager unitOfWorkManager,
             Volo.Abp.Guids.IGuidGenerator guidGenerator,
-            Volo.Abp.Identity.IdentityUserManager userManager)
+            Volo.Abp.Identity.IdentityUserManager userManager,
+            AbpUserClaimsPrincipalFactory abpUserClaimsPrincipalFactory)
         {
-            this.guidGenerator=guidGenerator;
-            this.userManager=userManager;
+            this.unitOfWorkManager = unitOfWorkManager;
+            this.guidGenerator = guidGenerator;
+            this.userManager = userManager;
+            this.abpUserClaimsPrincipalFactory = abpUserClaimsPrincipalFactory;
         }
+
         [Volo.Abp.Uow.UnitOfWork]
-        public virtual async Task<IdentityUser> LookupUserAsync(string email, string roleName)
+        public virtual async Task<ClaimsPrincipal> LookupUserAsync(string email, string roleName)
         {
             var user = await this.userManager.FindByEmailAsync(email);
+
+            user = await this.userManager.FindByIdAsync(user.Id.ToString());
 
             if (user == null)
             {
@@ -37,7 +46,9 @@ namespace FS.Abp.Identity
                 await this.userManager.SetRolesAsync(user, new[] { roleName });
             }
 
-            return user;
+            ClaimsPrincipal claimsPrincipal = await this.abpUserClaimsPrincipalFactory.CreateAsync(user);
+
+            return claimsPrincipal;
         }
     }
 
@@ -64,14 +75,12 @@ namespace FS.Abp.Identity
             this.CurrentPrincipalAccessor = CurrentPrincipalAccessor;
             this.AbpClaimsPrincipalFactory = AbpClaimsPrincipalFactory;
             this.AbpUserClaimsPrincipalFactory = AbpUserClaimsPrincipalFactory;
-            this.identityUserLookupService=identityUserLookupService;
+            this.identityUserLookupService = identityUserLookupService;
         }
 
         public virtual async Task ChangeUserClaimsAsync(string email, Func<Task> action, string roleName = "admin")
         {
-            var user = await identityUserLookupService.LookupUserAsync(email, roleName);
-
-            ClaimsPrincipal claimsPrincipal = await this.AbpUserClaimsPrincipalFactory.CreateAsync(user);
+            ClaimsPrincipal claimsPrincipal = await identityUserLookupService.LookupUserAsync(email, roleName);
 
             using (this.CurrentPrincipalAccessor.Change(
                 await this.AbpClaimsPrincipalFactory.CreateAsync(claimsPrincipal)))
@@ -96,7 +105,7 @@ namespace FS.Abp.Identity
                     AbpClaimTypes.Role
                 ));
 
-            claimsPrincipal=await this.AbpClaimsPrincipalFactory.CreateAsync(claimsPrincipal);
+            claimsPrincipal = await this.AbpClaimsPrincipalFactory.CreateAsync(claimsPrincipal);
 
             using (this.CurrentPrincipalAccessor.Change(claimsPrincipal))
             {
