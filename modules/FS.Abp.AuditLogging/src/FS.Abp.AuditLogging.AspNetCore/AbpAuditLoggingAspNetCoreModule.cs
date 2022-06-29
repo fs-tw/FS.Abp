@@ -44,16 +44,6 @@ namespace FS.Abp.AuditLogging
             {
                 options.IgnoredUrls.Add(@"/api/audit-logging/audit-log-mediator-query/list-audit-log-by-abp-route-name");
             });
-
-            ConfigureClockUtc();
-        }
-
-        private void ConfigureClockUtc()
-        {
-            Configure<AbpClockOptions>(options =>
-            {
-                options.Kind = DateTimeKind.Local;
-            });
         }
     }
 }
