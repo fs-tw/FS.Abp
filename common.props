@@ -1,7 +1,20 @@
 <Project>
-  <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
-    <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
-    <AbpProjectType>module</AbpProjectType>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="*.abppkg.analyze.json" />
+    <Content Remove="*.abppkg.analyze.json" />
+    <EmbeddedResource Include="*.abppkg.json" />
+    <Content Remove="*.abppkg.json" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(AssemblyName.EndsWith('HttpApi.Client'))">
+    <EmbeddedResource Include="**\*generate-proxy.json" />
+    <Content Remove="**\*generate-proxy.json" />
+  </ItemGroup>
 </Project>
