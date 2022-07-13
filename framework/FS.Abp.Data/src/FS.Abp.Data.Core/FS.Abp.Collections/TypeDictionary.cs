@@ -30,7 +30,7 @@ namespace FS.Abp.Collections
             );
         }
 
-        public void AddOrReplace<TKey>(TValue value = default)
+        public virtual void AddOrReplace<TKey>(TValue value = default)
         {
             this[typeof(TKey)] = value;
         }
