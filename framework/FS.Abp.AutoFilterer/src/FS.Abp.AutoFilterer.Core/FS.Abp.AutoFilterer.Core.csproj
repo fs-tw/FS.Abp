@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoFilterer" Version="2.8.0" />
+    <PackageReference Include="AutoFilterer" Version="$(AutoFiltererVersion)" />
   </ItemGroup>
 
   <ItemGroup>
