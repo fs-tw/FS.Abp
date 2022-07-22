@@ -45,15 +45,15 @@ namespace FS.Abp.AuditLogging
                 options.IgnoredUrls.Add(@"/api/audit-logging/audit-log-mediator-query/list-audit-log-by-abp-route-name");
             });
 
-            ConfigureClockUtc();
+            //ConfigureClockUtc();
         }
 
-        private void ConfigureClockUtc()
-        {
-            Configure<AbpClockOptions>(options =>
-            {
-                options.Kind = DateTimeKind.Utc;
-            });
-        }
+        //private void ConfigureClockUtc()
+        //{
+        //    Configure<AbpClockOptions>(options =>
+        //    {
+        //        options.Kind = DateTimeKind.Utc;
+        //    });
+        //}
     }
 }
